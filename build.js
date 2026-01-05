@@ -425,35 +425,23 @@ function buildToolPage(toolId, lang) {
   window.toolsData = ${JSON.stringify(allToolsData)};
 </script>`;
   
-  // Replace all placeholders
+  // Replace all placeholders - dynamically get all tool translations
   const replacements = {
     'tool.name': toolI18n.name,
     'tool.description': toolI18n.description,
-    'tool.whatIsPercent': toolI18n.whatIsPercent,
-    'tool.of': toolI18n.of,
-    'tool.percentOf': toolI18n.percentOf,
-    'tool.isWhat': toolI18n.isWhat,
-    'tool.isWhatPercent': toolI18n.isWhatPercent,
-    'tool.percentChange': toolI18n.percentChange,
-    'tool.from': toolI18n.from,
-    'tool.to': toolI18n.to,
-    'tool.increase': toolI18n.increase,
-    'tool.decrease': toolI18n.decrease,
-    'tool.originalPrice': toolI18n.originalPrice,
-    'tool.discount': toolI18n.discount,
-    'tool.finalPrice': toolI18n.finalPrice,
-    'tool.youSave': toolI18n.youSave,
-    'tool.afterDiscount': toolI18n.afterDiscount,
-    'tool.priceBecame': toolI18n.priceBecame,
-    'tool.originalWas': toolI18n.originalWas,
-    'tool.buyPrice': toolI18n.buyPrice,
-    'tool.sellPrice': toolI18n.sellPrice,
     'tool.howToUseText': toolI18n.howToUseText,
     'ui.calculate': ui.calculate,
     'ui.result': ui.result,
     'ui.howToUse': ui.howToUse,
     'validationMsg': isArabic ? 'أدخل أرقاماً صحيحة' : 'Enter valid numbers'
   };
+  
+  // Add all tool-specific translations dynamically
+  Object.keys(toolI18n).forEach(key => {
+    if (!['name', 'title', 'metaDescription', 'keywords', 'description', 'searchTerms', 'howToUseText'].includes(key)) {
+      replacements[`tool.${key}`] = toolI18n[key];
+    }
+  });
   
   Object.entries(replacements).forEach(([key, value]) => {
     const regex = new RegExp(`\\{\\{${key.replace('.', '\\.')}\\}\\}`, 'g');
