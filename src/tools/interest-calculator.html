@@ -46,11 +46,11 @@
     <h3 class="section-title">📈 {{tool.compoundInterest}}</h3>
     <div class="calc-row-inline">
       <span class="calc-label">{{tool.principal}}</span>
-      <input type="number" class="calc-input-sm" id="compound-principal" placeholder="10000" oninput="calcCompound()">
+      <input type="number" class="calc-input-sm" id="compound-principal" placeholder="1000" oninput="calcCompound()">
       <span class="calc-label">× {{tool.rate}}</span>
       <input type="number" class="calc-input-sm" id="compound-rate" placeholder="5" oninput="calcCompound()">
       <span class="calc-label">% × {{tool.time}}</span>
-      <input type="number" class="calc-input-sm" id="compound-time" placeholder="3" oninput="calcCompound()">
+      <input type="number" class="calc-input-sm" id="compound-time" placeholder="10" oninput="calcCompound()">
     </div>
     <div class="calc-row-inline">
       <span class="calc-label">{{tool.compound}}</span>
@@ -62,34 +62,64 @@
         <option value="365">{{tool.daily}}</option>
       </select>
     </div>
-    <div class="results-row">
-      <div class="result-box">
-        <span class="result-label">{{tool.totalInterest}}</span>
-        <span class="calc-result" id="compound-interest">—</span>
-        <div class="result-controls">
-          <button class="ctrl-btn" onclick="adjustPrecision('compound-interest', -1)">−</button>
-          <button class="ctrl-btn" onclick="adjustPrecision('compound-interest', 1)">+</button>
-          <button class="ctrl-btn" onclick="copyResult('compound-interest')">📋</button>
+    
+    <!-- Main Results -->
+    <div class="main-results" id="main-results" style="display: none;">
+      <div class="big-result">
+        <span class="big-result-label">{{tool.totalAmount}}</span>
+        <div class="big-result-row">
+          <span class="big-result-value" id="compound-total-big">—</span>
+          <button class="copy-big-btn" onclick="copyBigResult()" title="{{tool.copy}}">📋</button>
         </div>
       </div>
-      <div class="result-box">
-        <span class="result-label">{{tool.totalAmount}}</span>
-        <span class="calc-result increase" id="compound-total">—</span>
-        <div class="result-controls">
-          <button class="ctrl-btn" onclick="adjustPrecision('compound-total', -1)">−</button>
-          <button class="ctrl-btn" onclick="adjustPrecision('compound-total', 1)">+</button>
-          <button class="ctrl-btn" onclick="copyResult('compound-total')">📋</button>
+      <div class="sub-results">
+        <div class="sub-result">
+          <span class="sub-label">{{tool.totalInterest}}</span>
+          <span class="sub-value interest-color" id="compound-interest-display">—</span>
         </div>
+        <div class="sub-result">
+          <span class="sub-label">{{tool.principal}}</span>
+          <span class="sub-value" id="compound-principal-display">—</span>
+        </div>
+      </div>
+      
+      <!-- Export Buttons -->
+      <div class="export-buttons">
+        <button class="export-btn" onclick="exportToExcel()">
+          <span class="btn-icon">📊</span>
+          <span>{{tool.exportExcel}}</span>
+        </button>
+        <button class="export-btn chart-btn" onclick="downloadChart()">
+          <span class="btn-icon">📈</span>
+          <span>{{tool.downloadChart}}</span>
+        </button>
+        <button class="export-btn secondary" onclick="copyAllData()">
+          <span class="btn-icon">📋</span>
+          <span>{{tool.copyAll}}</span>
+        </button>
       </div>
     </div>
-  </div>
-  
-  <!-- Comparison -->
-  <div class="comparison-box" id="comparison" style="display: none;">
-    <h4>📊 المقارنة</h4>
-    <div class="comparison-content">
-      <span>الفرق: الفائدة المركبة أكثر بـ </span>
-      <span class="comparison-diff" id="diff-amount">—</span>
+    
+    <!-- Chart -->
+    <div class="chart-container" id="chart-container" style="display: none;">
+      <canvas id="growth-chart"></canvas>
+    </div>
+    
+    <!-- Yearly Table -->
+    <div class="table-container" id="table-container" style="display: none;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>{{tool.year}}</th>
+            <th>{{tool.startBalance}}</th>
+            <th>{{tool.yearlyInterest}}</th>
+            <th>{{tool.accumulatedInterest}}</th>
+            <th>{{tool.endBalance}}</th>
+          </tr>
+        </thead>
+        <tbody id="yearly-table-body">
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
@@ -99,6 +129,9 @@
   <h3>📖 {{ui.howToUse}}</h3>
   <p>{{tool.howToUseText}}</p>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
 
 <style>
 .interest-section {
@@ -235,23 +268,201 @@
   color: white;
 }
 
-.comparison-box {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
-  border: 2px solid var(--accent-primary);
+/* Main Results Display */
+.main-results {
+  margin-top: 24px;
+  padding: 24px;
+  background: var(--bg-secondary);
   border-radius: var(--border-radius-lg);
-  padding: 20px;
   text-align: center;
 }
 
-.comparison-box h4 {
-  margin: 0 0 12px 0;
+.big-result {
+  margin-bottom: 16px;
+}
+
+.big-result-label {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.big-result-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sub-results {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.sub-result {
+  text-align: center;
+}
+
+.sub-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.sub-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sub-value.interest-color {
+  color: #22c55e;
+}
+
+/* Big Result Copy Button */
+.big-result-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.copy-big-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-big-btn:hover {
+  background: var(--accent-primary);
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Export Buttons */
+.export-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.export-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--border-radius);
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.export-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+}
+
+.export-btn.secondary {
+  background: var(--accent-gradient);
+}
+
+.export-btn.secondary:hover {
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.export-btn.chart-btn {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.export-btn.chart-btn:hover {
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+.btn-icon {
+  font-size: 1.1rem;
+}
+
+/* Chart */
+.chart-container {
+  margin-top: 24px;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius-lg);
+  height: 320px;
+}
+
+/* Table */
+.table-container {
+  margin-top: 24px;
+  overflow-x: auto;
+  border-radius: var(--border-radius-lg);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-secondary);
+  font-size: 0.95rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.data-table th {
+  background: var(--accent-primary);
+  color: white;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.data-table tbody tr:hover {
+  background: var(--bg-tertiary);
+}
+
+.data-table td:first-child {
+  font-weight: 600;
   color: var(--accent-primary);
 }
 
-.comparison-diff {
-  font-size: 1.5rem;
+.data-table td:last-child {
   font-weight: 700;
-  color: var(--accent-primary);
+  color: var(--text-primary);
+}
+
+.interest-cell {
+  color: #22c55e !important;
 }
 
 @media (max-width: 768px) {
@@ -267,6 +478,37 @@
   .calc-result {
     font-size: 1.1rem;
   }
+  
+  .big-result-value {
+    font-size: 2rem;
+  }
+  
+  .sub-results {
+    gap: 20px;
+  }
+  
+  .data-table {
+    font-size: 0.8rem;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 8px 6px;
+  }
+  
+  .chart-container {
+    height: 250px;
+  }
+  
+  .export-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .export-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 </style>
 
@@ -279,15 +521,23 @@ const interestData = {
   'compound-total': { raw: null, precision: 2 }
 };
 
+let growthChart = null;
+let yearlyDataCache = [];  // Store yearly data for export
+
 function formatNumber(num, precision) {
   if (num === null || isNaN(num)) return '—';
   return num.toFixed(precision);
 }
 
+function formatCurrency(num) {
+  if (num === null || isNaN(num)) return '—';
+  return num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
 function updateResult(id) {
   const data = interestData[id];
   const el = document.getElementById(id);
-  el.textContent = formatNumber(data.raw, data.precision);
+  if (el) el.textContent = formatNumber(data.raw, data.precision);
 }
 
 function adjustPrecision(id, delta) {
@@ -324,44 +574,439 @@ function calcSimple() {
   
   updateResult('simple-interest');
   updateResult('simple-total');
-  updateComparison();
 }
 
-// Compound Interest: A = P × (1 + r/n)^(n×t)
+// Compound Interest: A = P × (1 + r)^(n×t)
 function calcCompound() {
   const P = parseFloat(document.getElementById('compound-principal').value);
   const r = parseFloat(document.getElementById('compound-rate').value) / 100;
-  const t = parseFloat(document.getElementById('compound-time').value);
+  const t = parseInt(document.getElementById('compound-time').value);
   const n = parseFloat(document.getElementById('compound-frequency').value);
   
-  if (!isNaN(P) && !isNaN(r) && !isNaN(t) && !isNaN(n)) {
-    const total = P * Math.pow(1 + r/n, n * t);
+  if (!isNaN(P) && !isNaN(r) && !isNaN(t) && !isNaN(n) && P > 0 && t > 0) {
+    const total = P * Math.pow(1 + r, n * t);
     const interest = total - P;
     
     interestData['compound-interest'].raw = interest;
     interestData['compound-total'].raw = total;
+    
+    // Update main display
+    document.getElementById('main-results').style.display = 'block';
+    document.getElementById('compound-total-big').textContent = '$' + formatCurrency(total);
+    document.getElementById('compound-interest-display').textContent = '$' + formatCurrency(interest);
+    document.getElementById('compound-principal-display').textContent = '$' + formatCurrency(P);
+    
+    // Generate yearly data and update chart/table
+    generateYearlyData(P, r, n, t);
+    
+    document.getElementById('chart-container').style.display = 'block';
+    document.getElementById('table-container').style.display = 'block';
   } else {
     interestData['compound-interest'].raw = null;
     interestData['compound-total'].raw = null;
+    
+    document.getElementById('main-results').style.display = 'none';
+    document.getElementById('chart-container').style.display = 'none';
+    document.getElementById('table-container').style.display = 'none';
   }
-  
-  updateResult('compound-interest');
-  updateResult('compound-total');
-  updateComparison();
 }
 
-function updateComparison() {
-  const simpleInterest = interestData['simple-interest'].raw;
-  const compoundInterest = interestData['compound-interest'].raw;
-  const comparisonEl = document.getElementById('comparison');
-  const diffEl = document.getElementById('diff-amount');
+function generateYearlyData(P, r, n, years) {
+  const yearlyData = [];
+  let balance = P;
+  let totalInterest = 0;
   
-  if (simpleInterest !== null && compoundInterest !== null) {
-    const diff = compoundInterest - simpleInterest;
-    diffEl.textContent = formatNumber(Math.abs(diff), 2);
-    comparisonEl.style.display = 'block';
-  } else {
-    comparisonEl.style.display = 'none';
+  for (let year = 1; year <= years; year++) {
+    const startBalance = balance;
+    const periodsThisYear = n;
+    const endBalance = startBalance * Math.pow(1 + r, periodsThisYear);
+    const yearInterest = endBalance - startBalance;
+    totalInterest += yearInterest;
+    
+    yearlyData.push({
+      year,
+      startBalance,
+      yearInterest,
+      totalInterest,
+      endBalance
+    });
+    
+    balance = endBalance;
   }
+  
+  yearlyDataCache = yearlyData;  // Cache for export
+  
+  updateChart(yearlyData, P);
+  updateTable(yearlyData);
+}
+
+function updateChart(data, principal) {
+  const ctx = document.getElementById('growth-chart').getContext('2d');
+  
+  const labels = data.map(d => d.year);
+  const balances = data.map(d => d.endBalance);
+  const principalLine = data.map(() => principal);
+  
+  if (growthChart) {
+    growthChart.destroy();
+  }
+  
+  const isArabic = App.state.lang === 'ar';
+  
+  // Always use dark colors for better contrast
+  const textColor = '#374151';  // Dark gray
+  const gridColor = '#E5E7EB';  // Light gray
+  
+  growthChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: isArabic ? 'الرصيد النهائي' : 'End Balance',
+          data: balances,
+          backgroundColor: 'rgba(34, 197, 94, 0.85)',
+          borderColor: 'rgba(22, 163, 74, 1)',
+          borderWidth: 2,
+          borderRadius: 6,
+          order: 2
+        },
+        {
+          label: isArabic ? 'المبلغ الأصلي' : 'Principal',
+          data: principalLine,
+          type: 'line',
+          borderColor: 'rgba(99, 102, 241, 1)',
+          borderWidth: 3,
+          borderDash: [8, 4],
+          fill: false,
+          pointRadius: 0,
+          order: 1
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          rtl: isArabic,
+          labels: {
+            color: textColor,
+            padding: 20,
+            font: { family: 'inherit', size: 13, weight: '600' }
+          }
+        },
+        tooltip: {
+          rtl: isArabic,
+          backgroundColor: 'rgba(17, 24, 39, 0.95)',
+          titleFont: { size: 14, weight: '600' },
+          bodyFont: { size: 13 },
+          padding: 12,
+          callbacks: {
+            label: function(context) {
+              return context.dataset.label + ': $' + context.raw.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: isArabic ? 'السنة' : 'Year',
+            color: textColor,
+            font: { size: 13, weight: '600' }
+          },
+          grid: { display: false },
+          ticks: { 
+            color: textColor,
+            font: { size: 12, weight: '500' }
+          }
+        },
+        y: {
+          title: {
+            display: true,
+            text: isArabic ? 'المبلغ ($)' : 'Amount ($)',
+            color: textColor,
+            font: { size: 13, weight: '600' }
+          },
+          grid: {
+            color: gridColor
+          },
+          ticks: {
+            color: textColor,
+            font: { size: 12, weight: '500' },
+            callback: function(value) {
+              if (value >= 1000000) return '$' + (value/1000000).toFixed(1) + 'M';
+              if (value >= 1000) return '$' + (value/1000).toFixed(0) + 'K';
+              return '$' + value.toLocaleString();
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+function updateTable(data) {
+  const tbody = document.getElementById('yearly-table-body');
+  tbody.innerHTML = '';
+  
+  data.forEach(row => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${row.year}</td>
+      <td>$${formatCurrency(row.startBalance)}</td>
+      <td class="interest-cell">$${formatCurrency(row.yearInterest)}</td>
+      <td class="interest-cell">$${formatCurrency(row.totalInterest)}</td>
+      <td>$${formatCurrency(row.endBalance)}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+// Copy big result
+function copyBigResult() {
+  const total = interestData['compound-total'].raw;
+  if (total === null) return;
+  
+  navigator.clipboard.writeText(total.toFixed(2)).then(() => {
+    App.showToast(App.state.lang === 'ar' ? 'تم النسخ!' : 'Copied!');
+  });
+}
+
+// Export to Excel with chart image embedded using ExcelJS
+async function exportToExcel() {
+  if (yearlyDataCache.length === 0) return;
+  
+  const isArabic = App.state.lang === 'ar';
+  const P = parseFloat(document.getElementById('compound-principal').value);
+  const r = parseFloat(document.getElementById('compound-rate').value);
+  const t = parseInt(document.getElementById('compound-time').value);
+  const freq = document.getElementById('compound-frequency');
+  const freqText = freq.options[freq.selectedIndex].text;
+  
+  // Create workbook
+  const workbook = new ExcelJS.Workbook();
+  workbook.creator = 'Udda Tools';
+  workbook.created = new Date();
+  
+  const sheetName = isArabic ? 'الفائدة المركبة' : 'Compound Interest';
+  const worksheet = workbook.addWorksheet(sheetName);
+  
+  // Set RTL for Arabic
+  if (isArabic) {
+    worksheet.views = [{ rightToLeft: true }];
+  }
+  
+  // Title
+  worksheet.mergeCells('A1:E1');
+  const titleCell = worksheet.getCell('A1');
+  titleCell.value = isArabic ? 'حاسبة الفائدة المركبة' : 'Compound Interest Calculator';
+  titleCell.font = { size: 18, bold: true, color: { argb: 'FF6366F1' } };
+  titleCell.alignment = { horizontal: 'center', vertical: 'middle' };
+  worksheet.getRow(1).height = 30;
+  
+  // Summary section
+  const summaryData = [
+    [isArabic ? 'المبلغ الأصلي' : 'Principal', P],
+    [isArabic ? 'معدل الفائدة' : 'Interest Rate', r + '%'],
+    [isArabic ? 'المدة (سنوات)' : 'Time (years)', t],
+    [isArabic ? 'التركيب' : 'Compound', freqText],
+  ];
+  
+  summaryData.forEach((row, i) => {
+    const rowNum = i + 3;
+    worksheet.getCell(`A${rowNum}`).value = row[0];
+    worksheet.getCell(`A${rowNum}`).font = { bold: true };
+    worksheet.getCell(`B${rowNum}`).value = row[1];
+  });
+  
+  // Results section with background
+  worksheet.getCell('A8').value = isArabic ? 'المبلغ النهائي' : 'Total Amount';
+  worksheet.getCell('A8').font = { bold: true, size: 12 };
+  worksheet.getCell('B8').value = interestData['compound-total'].raw;
+  worksheet.getCell('B8').numFmt = '$#,##0.00';
+  worksheet.getCell('B8').font = { bold: true, size: 14, color: { argb: 'FF22C55E' } };
+  
+  worksheet.getCell('A9').value = isArabic ? 'إجمالي الفائدة' : 'Total Interest';
+  worksheet.getCell('A9').font = { bold: true, size: 12 };
+  worksheet.getCell('B9').value = interestData['compound-interest'].raw;
+  worksheet.getCell('B9').numFmt = '$#,##0.00';
+  worksheet.getCell('B9').font = { bold: true, size: 14, color: { argb: 'FF22C55E' } };
+  
+  // Table headers
+  const headerRow = 12;
+  const headers = isArabic 
+    ? ['السنة', 'رصيد البداية', 'الفائدة السنوية', 'الفائدة المتراكمة', 'الرصيد النهائي']
+    : ['Year', 'Start Balance', 'Yearly Interest', 'Accumulated Interest', 'End Balance'];
+  
+  headers.forEach((header, i) => {
+    const cell = worksheet.getCell(headerRow, i + 1);
+    cell.value = header;
+    cell.font = { bold: true, color: { argb: 'FFFFFFFF' } };
+    cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF6366F1' } };
+    cell.alignment = { horizontal: 'center' };
+    cell.border = {
+      top: { style: 'thin' },
+      bottom: { style: 'thin' },
+      left: { style: 'thin' },
+      right: { style: 'thin' }
+    };
+  });
+  
+  // Table data
+  yearlyDataCache.forEach((row, i) => {
+    const rowNum = headerRow + 1 + i;
+    worksheet.getCell(rowNum, 1).value = row.year;
+    worksheet.getCell(rowNum, 1).alignment = { horizontal: 'center' };
+    worksheet.getCell(rowNum, 2).value = row.startBalance;
+    worksheet.getCell(rowNum, 3).value = row.yearInterest;
+    worksheet.getCell(rowNum, 4).value = row.totalInterest;
+    worksheet.getCell(rowNum, 5).value = row.endBalance;
+    
+    // Format currency and borders
+    for (let col = 1; col <= 5; col++) {
+      const cell = worksheet.getCell(rowNum, col);
+      if (col > 1) cell.numFmt = '$#,##0.00';
+      cell.border = {
+        top: { style: 'thin', color: { argb: 'FFE5E7EB' } },
+        bottom: { style: 'thin', color: { argb: 'FFE5E7EB' } },
+        left: { style: 'thin', color: { argb: 'FFE5E7EB' } },
+        right: { style: 'thin', color: { argb: 'FFE5E7EB' } }
+      };
+      
+      // Alternate row colors
+      if (i % 2 === 0) {
+        cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF9FAFB' } };
+      }
+    }
+  });
+  
+  // Set column widths
+  worksheet.columns = [
+    { width: 12 },
+    { width: 18 },
+    { width: 18 },
+    { width: 22 },
+    { width: 18 }
+  ];
+  
+  // Add chart image
+  const canvas = document.getElementById('growth-chart');
+  const tempCanvas = document.createElement('canvas');
+  const tempCtx = tempCanvas.getContext('2d');
+  tempCanvas.width = canvas.width;
+  tempCanvas.height = canvas.height;
+  tempCtx.fillStyle = '#ffffff';
+  tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+  tempCtx.drawImage(canvas, 0, 0);
+  
+  const chartImageBase64 = tempCanvas.toDataURL('image/png').split(',')[1];
+  
+  const imageId = workbook.addImage({
+    base64: chartImageBase64,
+    extension: 'png',
+  });
+  
+  const chartStartRow = headerRow + yearlyDataCache.length + 3;
+  worksheet.addImage(imageId, {
+    tl: { col: 0, row: chartStartRow },
+    ext: { width: 600, height: 300 }
+  });
+  
+  // Generate and download
+  const buffer = await workbook.xlsx.writeBuffer();
+  const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+  const url = URL.createObjectURL(blob);
+  
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = isArabic ? 'حاسبة_الفائدة_المركبة.xlsx' : 'compound_interest_calculator.xlsx';
+  link.click();
+  
+  URL.revokeObjectURL(url);
+  
+  App.showToast(isArabic ? 'تم التصدير مع المخطط!' : 'Exported with chart!');
+}
+
+// Copy all data to clipboard
+function copyAllData() {
+  if (yearlyDataCache.length === 0) return;
+  
+  const isArabic = App.state.lang === 'ar';
+  const P = parseFloat(document.getElementById('compound-principal').value);
+  const r = parseFloat(document.getElementById('compound-rate').value);
+  const t = parseInt(document.getElementById('compound-time').value);
+  const freq = document.getElementById('compound-frequency');
+  const freqText = freq.options[freq.selectedIndex].text;
+  
+  let text = '';
+  
+  // Title and summary
+  text += (isArabic ? 'حاسبة الفائدة المركبة\n' : 'Compound Interest Calculator\n');
+  text += '═'.repeat(40) + '\n\n';
+  
+  text += (isArabic ? 'المبلغ الأصلي: ' : 'Principal: ') + '$' + formatCurrency(P) + '\n';
+  text += (isArabic ? 'معدل الفائدة: ' : 'Interest Rate: ') + r + '%\n';
+  text += (isArabic ? 'المدة: ' : 'Time: ') + t + (isArabic ? ' سنوات\n' : ' years\n');
+  text += (isArabic ? 'التركيب: ' : 'Compound: ') + freqText + '\n\n';
+  
+  text += '═'.repeat(40) + '\n';
+  text += (isArabic ? 'المبلغ النهائي: ' : 'Total Amount: ') + '$' + formatCurrency(interestData['compound-total'].raw) + '\n';
+  text += (isArabic ? 'إجمالي الفائدة: ' : 'Total Interest: ') + '$' + formatCurrency(interestData['compound-interest'].raw) + '\n';
+  text += '═'.repeat(40) + '\n\n';
+  
+  // Table
+  const headers = isArabic 
+    ? ['السنة', 'رصيد البداية', 'الفائدة السنوية', 'الفائدة المتراكمة', 'الرصيد النهائي']
+    : ['Year', 'Start Balance', 'Yearly Interest', 'Accumulated', 'End Balance'];
+  
+  text += headers.join('\t') + '\n';
+  text += '─'.repeat(60) + '\n';
+  
+  yearlyDataCache.forEach(row => {
+    text += [
+      row.year,
+      '$' + formatCurrency(row.startBalance),
+      '$' + formatCurrency(row.yearInterest),
+      '$' + formatCurrency(row.totalInterest),
+      '$' + formatCurrency(row.endBalance)
+    ].join('\t') + '\n';
+  });
+  
+  navigator.clipboard.writeText(text).then(() => {
+    App.showToast(isArabic ? 'تم نسخ كل البيانات!' : 'All data copied!');
+  });
+}
+
+// Download chart as PNG image
+function downloadChart() {
+  if (!growthChart) return;
+  
+  const isArabic = App.state.lang === 'ar';
+  const canvas = document.getElementById('growth-chart');
+  
+  // Create a temporary canvas with white background
+  const tempCanvas = document.createElement('canvas');
+  const tempCtx = tempCanvas.getContext('2d');
+  tempCanvas.width = canvas.width;
+  tempCanvas.height = canvas.height;
+  
+  // Fill white background
+  tempCtx.fillStyle = '#ffffff';
+  tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+  
+  // Draw the chart on top
+  tempCtx.drawImage(canvas, 0, 0);
+  
+  // Convert to image and download
+  const link = document.createElement('a');
+  link.download = isArabic ? 'مخطط_الفائدة_المركبة.png' : 'compound_interest_chart.png';
+  link.href = tempCanvas.toDataURL('image/png');
+  link.click();
+  
+  App.showToast(isArabic ? 'تم تحميل المخطط!' : 'Chart downloaded!');
 }
 </script>
