@@ -910,6 +910,16 @@ async function exportToExcel() {
     { width: 18 }
   ];
   
+  // Check if dark mode and redraw chart with light colors for export
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const wasDark = currentTheme === 'dark';
+  
+  if (wasDark) {
+    renderChartForExport(yearlyDataCache, P, isArabic);
+    // Wait for chart to render
+    await new Promise(resolve => setTimeout(resolve, 150));
+  }
+  
   // Add chart image
   const canvas = document.getElementById('growth-chart');
   const tempCanvas = document.createElement('canvas');
@@ -921,6 +931,11 @@ async function exportToExcel() {
   tempCtx.drawImage(canvas, 0, 0);
   
   const chartImageBase64 = tempCanvas.toDataURL('image/png').split(',')[1];
+  
+  // Restore chart to dark mode if needed
+  if (wasDark) {
+    updateChart(yearlyDataCache, P);
+  }
   
   const imageId = workbook.addImage({
     base64: chartImageBase64,
@@ -1000,30 +1015,145 @@ function copyAllData() {
 
 // Download chart as PNG image
 function downloadChart() {
-  if (!growthChart) return;
+  if (!growthChart || yearlyDataCache.length === 0) return;
   
   const isArabic = App.state.lang === 'ar';
   const canvas = document.getElementById('growth-chart');
+  const P = parseFloat(document.getElementById('compound-principal').value);
   
-  // Create a temporary canvas with white background
-  const tempCanvas = document.createElement('canvas');
-  const tempCtx = tempCanvas.getContext('2d');
-  tempCanvas.width = canvas.width;
-  tempCanvas.height = canvas.height;
+  // Store current theme state
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const wasDark = currentTheme === 'dark';
   
-  // Fill white background
-  tempCtx.fillStyle = '#ffffff';
-  tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+  // If in dark mode, temporarily redraw chart with light colors for export
+  if (wasDark) {
+    renderChartForExport(yearlyDataCache, P, isArabic);
+  }
   
-  // Draw the chart on top
-  tempCtx.drawImage(canvas, 0, 0);
+  // Small delay to ensure chart is redrawn
+  setTimeout(() => {
+    const chartCanvas = document.getElementById('growth-chart');
+    
+    // Create a temporary canvas with white background
+    const tempCanvas = document.createElement('canvas');
+    const tempCtx = tempCanvas.getContext('2d');
+    tempCanvas.width = chartCanvas.width;
+    tempCanvas.height = chartCanvas.height;
+    
+    // Fill white background
+    tempCtx.fillStyle = '#ffffff';
+    tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+    
+    // Draw the chart on top
+    tempCtx.drawImage(chartCanvas, 0, 0);
+    
+    // Convert to image and download
+    const link = document.createElement('a');
+    link.download = isArabic ? 'مخطط_الفائدة_المركبة.png' : 'compound_interest_chart.png';
+    link.href = tempCanvas.toDataURL('image/png');
+    link.click();
+    
+    // Restore original chart if was dark mode
+    if (wasDark) {
+      updateChart(yearlyDataCache, P);
+    }
+    
+    App.showToast(isArabic ? 'تم تحميل المخطط!' : 'Chart downloaded!');
+  }, 100);
+}
+
+// Render chart with light theme colors (for export)
+function renderChartForExport(data, principal, isArabic) {
+  const ctx = document.getElementById('growth-chart').getContext('2d');
   
-  // Convert to image and download
-  const link = document.createElement('a');
-  link.download = isArabic ? 'مخطط_الفائدة_المركبة.png' : 'compound_interest_chart.png';
-  link.href = tempCanvas.toDataURL('image/png');
-  link.click();
+  const labels = data.map(d => d.year);
+  const balances = data.map(d => d.endBalance);
+  const principalLine = data.map(() => principal);
   
-  App.showToast(isArabic ? 'تم تحميل المخطط!' : 'Chart downloaded!');
+  if (growthChart) {
+    growthChart.destroy();
+  }
+  
+  // Always use light theme colors for export
+  const textColor = '#374151';
+  const gridColor = '#E5E7EB';
+  
+  growthChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: isArabic ? 'الرصيد النهائي' : 'End Balance',
+          data: balances,
+          backgroundColor: 'rgba(34, 197, 94, 0.85)',
+          borderColor: 'rgba(22, 163, 74, 1)',
+          borderWidth: 2,
+          borderRadius: 6,
+          order: 2
+        },
+        {
+          label: isArabic ? 'المبلغ الأصلي' : 'Principal',
+          data: principalLine,
+          type: 'line',
+          borderColor: 'rgba(99, 102, 241, 1)',
+          borderWidth: 3,
+          borderDash: [8, 4],
+          fill: false,
+          pointRadius: 0,
+          order: 1
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false, // Disable animation for immediate render
+      plugins: {
+        legend: {
+          position: 'bottom',
+          rtl: isArabic,
+          labels: {
+            color: textColor,
+            padding: 20,
+            font: { family: 'inherit', size: 13, weight: '600' }
+          }
+        }
+      },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: isArabic ? 'السنة' : 'Year',
+            color: textColor,
+            font: { size: 13, weight: '600' }
+          },
+          grid: { display: false },
+          ticks: { 
+            color: textColor,
+            font: { size: 12, weight: '500' }
+          }
+        },
+        y: {
+          title: {
+            display: true,
+            text: isArabic ? 'المبلغ ($)' : 'Amount ($)',
+            color: textColor,
+            font: { size: 13, weight: '600' }
+          },
+          grid: { color: gridColor },
+          ticks: {
+            color: textColor,
+            font: { size: 12, weight: '500' },
+            callback: function(value) {
+              if (value >= 1000000) return '$' + (value/1000000).toFixed(1) + 'M';
+              if (value >= 1000) return '$' + (value/1000).toFixed(0) + 'K';
+              return '$' + value.toLocaleString();
+            }
+          }
+        }
+      }
+    }
+  });
 }
 </script>
