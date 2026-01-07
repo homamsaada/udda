@@ -346,6 +346,12 @@
   border-color: var(--primary);
 }
 
+.input-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
 .result-box {
   display: none;
 }
@@ -615,11 +621,13 @@
       <div class="form-row">
         <div class="form-group">
           <label>تاريخ الميلاد</label>
-          <input type="date" id="birth-date" onchange="calculateAge()">
+          <input type="datetime-local" id="birth-date" onchange="calculateAge()" step="1">
+          <span class="input-hint">يوم/شهر/سنة ساعة:دقيقة:ثانية</span>
         </div>
         <div class="form-group">
           <label>حساب حتى تاريخ</label>
-          <input type="date" id="calc-to-date" onchange="calculateAge()">
+          <input type="datetime-local" id="calc-to-date" onchange="calculateAge()" step="1">
+          <span class="input-hint">يوم/شهر/سنة ساعة:دقيقة:ثانية</span>
         </div>
       </div>
     </div>
@@ -701,11 +709,13 @@
       <div class="form-row">
         <div class="form-group">
           <label>من تاريخ</label>
-          <input type="date" id="diff-from" onchange="calculateDiff()">
+          <input type="datetime-local" id="diff-from" onchange="calculateDiff()" step="1">
+          <span class="input-hint">يوم/شهر/سنة ساعة:دقيقة:ثانية</span>
         </div>
         <div class="form-group">
           <label>إلى تاريخ</label>
-          <input type="date" id="diff-to" onchange="calculateDiff()">
+          <input type="datetime-local" id="diff-to" onchange="calculateDiff()" step="1">
+          <span class="input-hint">يوم/شهر/سنة ساعة:دقيقة:ثانية</span>
         </div>
       </div>
     </div>
@@ -748,7 +758,8 @@
       <div class="form-row">
         <div class="form-group">
           <label>تاريخ البداية</label>
-          <input type="date" id="add-start" onchange="calculateAdd()">
+          <input type="datetime-local" id="add-start" onchange="calculateAdd()" step="1">
+          <span class="input-hint">يوم/شهر/سنة ساعة:دقيقة:ثانية</span>
         </div>
       </div>
       <div class="form-row">
@@ -805,9 +816,17 @@ const zodiacSigns = [
   { name: isArabic ? 'القوس' : 'Sagittarius', icon: '♐', start: [11, 22], end: [12, 21] }
 ];
 
-// Initialize with today's date
+// Initialize with today's date and time
 document.addEventListener('DOMContentLoaded', () => {
-  const today = new Date().toISOString().split('T')[0];
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+  const today = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+  
   document.getElementById('calc-to-date').value = today;
   document.getElementById('diff-to').value = today;
   document.getElementById('add-start').value = today;
