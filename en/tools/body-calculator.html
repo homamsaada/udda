@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Body Calculator - BMI, BMR, Ideal Weight & Body Fat | Udda</title>
+  <meta name="description" content="Comprehensive body calculator - BMI, BMR, TDEE, Ideal Weight, Body Fat Percentage, Waist-to-Hip Ratio.">
+  <meta name="keywords" content="BMI calculator, body mass index, ideal weight, calorie calculator, body fat">
+  <meta name="author" content="Udda">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Body Calculator - BMI, BMR, Ideal Weight & Body Fat | Udda">
+  <meta property="og:description" content="Comprehensive body calculator - BMI, BMR, TDEE, Ideal Weight, Body Fat Percentage, Waist-to-Hip Ratio.">
+  <meta property="og:url" content="https://udda.tools/en/tools/body-calculator.html">
+  <meta property="og:site_name" content="Udda">
+  <meta property="og:locale" content="en_US">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Body Calculator - BMI, BMR, Ideal Weight & Body Fat | Udda">
+  <meta name="twitter:description" content="Comprehensive body calculator - BMI, BMR, TDEE, Ideal Weight, Body Fat Percentage, Waist-to-Hip Ratio.">
+  
+  <link rel="alternate" hreflang="ar" href="https://udda.tools/ar/tools/body-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://udda.tools/en/tools/body-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://udda.tools/ar/tools/body-calculator.html">
+  <link rel="canonical" href="https://udda.tools/en/tools/body-calculator.html">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/udda/assets/css/main.css">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Body Calculator",
+    "description": "Comprehensive body calculator - BMI, BMR, TDEE, Ideal Weight, Body Fat Percentage, Waist-to-Hip Ratio.",
+    "url": "https://udda.tools/en/tools/body-calculator.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "inLanguage": ["ar", "en"],
+    "isAccessibleForFree": true
+  }
+  </script>
+</head>
+<body data-tool-id="body-calculator">
+  <div class="app-container">
+    <div class="sidebar-overlay"></div>
+    
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="/udda/en/" class="logo">
+          <div class="logo-icon">🔧</div>
+          <span class="logo-text sidebar-text">Udda</span>
+        </a>
+      </div>
+      
+      <div class="sidebar-search">
+        <div class="search-input-wrapper">
+          <input type="text" class="search-input" placeholder="Search for a tool..." aria-label="Search for a tool...">
+          <svg class="search-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </div>
+      </div>
+      
+      <nav class="sidebar-nav">
+        
+        <a href="/udda/en/" class="nav-item ">
+          <span class="nav-item-icon">🏠</span>
+          <span class="sidebar-text">Home</span>
+        </a>
+        <div class="nav-section open">
+          <div class="nav-section-title">
+            <span>
+              <span class="nav-section-icon">🧮</span>
+              <span class="sidebar-text">Calculators</span>
+            </span>
+            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="nav-section-items">
+            <a href="/udda/en/tools/percentage.html" class="nav-item ">
+              <span class="nav-item-icon">🔢</span>
+              <span class="sidebar-text">Percentage Calculator</span>
+            </a>
+            <a href="/udda/en/tools/interest-calculator.html" class="nav-item ">
+              <span class="nav-item-icon">💰</span>
+              <span class="sidebar-text">Interest Calculator</span>
+            </a>
+            <a href="/udda/en/tools/loan-calculator.html" class="nav-item ">
+              <span class="nav-item-icon">🏦</span>
+              <span class="sidebar-text">Loan Calculator</span>
+            </a>
+            <a href="/udda/en/tools/body-calculator.html" class="nav-item active">
+              <span class="nav-item-icon">⚖️</span>
+              <span class="sidebar-text">Body Calculator</span>
+            </a>
+            <a href="/udda/en/tools/age-calculator.html" class="nav-item ">
+              <span class="nav-item-icon">🎂</span>
+              <span class="sidebar-text">Age Calculator</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section ">
+          <div class="nav-section-title">
+            <span>
+              <span class="nav-section-icon">🔄</span>
+              <span class="sidebar-text">Converters</span>
+            </span>
+            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="nav-section-items">
+          </div>
+        </div>
+        <div class="nav-section ">
+          <div class="nav-section-title">
+            <span>
+              <span class="nav-section-icon">📝</span>
+              <span class="sidebar-text">Text Tools</span>
+            </span>
+            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="nav-section-items">
+          </div>
+        </div>
+        <div class="nav-section ">
+          <div class="nav-section-title">
+            <span>
+              <span class="nav-section-icon">📅</span>
+              <span class="sidebar-text">Date & Time</span>
+            </span>
+            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="nav-section-items">
+          </div>
+        </div>
+        <div class="nav-section ">
+          <div class="nav-section-title">
+            <span>
+              <span class="nav-section-icon">⚡</span>
+              <span class="sidebar-text">Generators</span>
+            </span>
+            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="nav-section-items">
+          </div>
+        </div>
+        <div class="nav-section ">
+          <div class="nav-section-title">
+            <span>
+              <span class="nav-section-icon">🖼️</span>
+              <span class="sidebar-text">Image Tools</span>
+            </span>
+            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="nav-section-items">
+          </div>
+        </div>
+        <div class="nav-section ">
+          <div class="nav-section-title">
+            <span>
+              <span class="nav-section-icon">💻</span>
+              <span class="sidebar-text">Developer Tools</span>
+            </span>
+            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="nav-section-items">
+          </div>
+        </div>
+        <div class="nav-section ">
+          <div class="nav-section-title">
+            <span>
+              <span class="nav-section-icon">🏠</span>
+              <span class="sidebar-text">Everyday Tools</span>
+            </span>
+            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="nav-section-items">
+          </div>
+        </div>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <button class="sidebar-toggle" aria-label="Toggle sidebar">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path>
+          </svg>
+          <span class="sidebar-text">Sidebar</span>
+        </button>
+      </div>
+    </aside>
+    
+    <div class="main-content">
+      <header class="main-header">
+        <button class="header-btn mobile-menu-btn" aria-label="Menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        
+        <nav class="header-breadcrumb">
+          <a href="/udda/en/" class="breadcrumb-link">Home</a>
+          <span class="breadcrumb-separator">›</span>
+          <a href="/udda/en/category/calculators.html" class="breadcrumb-link">Calculators</a>
+          <span class="breadcrumb-separator">›</span>
+          <span class="breadcrumb-current">Body Calculator</span>
+        </nav>
+        
+        <div class="header-actions">
+          <button class="header-btn" data-favorite-btn aria-label="Add to Favorites">☆</button>
+          <button class="header-btn" onclick="App.shareUrl('Body Calculator')" aria-label="Share">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+              <polyline points="16 6 12 2 8 6"></polyline>
+              <line x1="12" y1="2" x2="12" y2="15"></line>
+            </svg>
+          </button>
+          <button class="header-btn" data-open-settings aria-label="Settings">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+      
+      <main class="page-content">
+        <style>
+/* Body Metrics Calculator Styles */
+.body-calculator {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: inherit;
+}
+
+.body-calculator * {
+  font-family: inherit;
+}
+
+.calc-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.calc-tab {
+  flex: 1;
+  min-width: 100px;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.calc-tab:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.calc-tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.calc-section {
+  display: none;
+}
+
+.calc-section.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.input-form {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.form-group input, .form-group select {
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.unit-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.unit-btn {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.unit-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.gender-selector {
+  display: flex;
+  gap: 12px;
+}
+
+.gender-btn {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.gender-btn.active {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary);
+}
+
+.gender-btn .icon {
+  font-size: 1.3rem;
+}
+
+/* Results */
+.result-box {
+  display: none;
+  margin-top: 24px;
+}
+
+.result-box.show {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.main-result {
+  text-align: center;
+  padding: 30px;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.result-number {
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.result-label {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* BMI Scale */
+.bmi-scale {
+  margin: 24px 0;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+}
+
+.scale-bar {
+  height: 30px;
+  border-radius: 15px;
+  background: linear-gradient(to right, 
+    #3b82f6 0%, #3b82f6 20%, 
+    #22c55e 20%, #22c55e 40%, 
+    #f59e0b 40%, #f59e0b 60%, 
+    #ef4444 60%, #ef4444 80%,
+    #991b1b 80%, #991b1b 100%
+  );
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.scale-marker {
+  position: absolute;
+  top: -8px;
+  width: 4px;
+  height: 46px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: left 0.5s ease;
+}
+
+.scale-marker::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid var(--text-primary);
+}
+
+.scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding: 0 5px;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 16px;
+}
+
+.category-badge.underweight { background: #3b82f6; color: white; }
+.category-badge.normal { background: #22c55e; color: white; }
+.category-badge.overweight { background: #f59e0b; color: white; }
+.category-badge.obese { background: #ef4444; color: white; }
+.category-badge.severe-obese { background: #991b1b; color: white; }
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.stat-card {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.stat-card.highlight {
+  border: 2px solid var(--primary);
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.stat-card .value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-card.highlight .value {
+  color: var(--primary);
+}
+
+.stat-card .label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Explanation Box */
+.explanation-box {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.explanation-box h4 {
+  color: var(--primary);
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.explanation-box p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.explanation-box .tip {
+  background: rgba(34, 197, 94, 0.1);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #22c55e;
+}
+
+/* Weight Goal Planner */
+.goal-planner {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.goal-planner h3 {
+  margin: 0 0 20px 0;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.goal-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 20px;
+  background: var(--bg-primary);
+  border-radius: 12px;
+}
+
+.goal-item {
+  text-align: center;
+}
+
+.goal-item .number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.goal-item .text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.goal-item.target .number {
+  color: #22c55e;
+}
+
+.goal-item.diff .number {
+  color: #f59e0b;
+}
+
+/* Timeline */
+.timeline-section {
+  margin-top: 20px;
+}
+
+.timeline-section h4 {
+  margin: 0 0 16px 0;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.timeline-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timeline-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+}
+
+.timeline-option.recommended {
+  border-color: #22c55e;
+  background: rgba(34, 197, 94, 0.05);
+}
+
+.timeline-option .rate {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.timeline-option .rate small {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.timeline-option .duration {
+  text-align: center;
+}
+
+.timeline-option .duration .time {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.timeline-option .duration .unit {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.timeline-option .calories {
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.timeline-option .calories .cal-num {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.timeline-option .badge {
+  background: #22c55e;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* Progress Chart */
+.progress-chart {
+  margin-top: 24px;
+  padding: 20px;
+  background: var(--bg-primary);
+  border-radius: 12px;
+}
+
+.progress-chart h4 {
+  margin: 0 0 16px 0;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.chart-container {
+  height: 200px;
+  position: relative;
+}
+
+.chart-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Activity Level */
+.activity-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.activity-btn {
+  padding: 14px 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.activity-btn:hover {
+  border-color: var(--primary);
+}
+
+.activity-btn.active {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary);
+}
+
+.activity-btn .level {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.activity-btn .desc {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.activity-btn .example {
+  font-size: 0.7rem;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--border-color);
+  opacity: 0.7;
+}
+
+/* Info Cards for BMR */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.info-card {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.info-card h5 {
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.info-card .value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+/* Macros Section */
+.macros-section {
+  margin-top: 20px;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+}
+
+.macros-section h4 {
+  margin: 0 0 16px 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.macros-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.macro-card {
+  text-align: center;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.macro-card.protein {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.macro-card.carbs {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.macro-card.fat {
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.macro-card .macro-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.macro-card.protein .macro-value { color: #ef4444; }
+.macro-card.carbs .macro-value { color: #3b82f6; }
+.macro-card.fat .macro-value { color: #f59e0b; }
+
+.macro-card .macro-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+  .goal-summary {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .timeline-option {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  
+  .macros-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<div class="body-calculator">
+  <!-- Calculator Tabs -->
+  <div class="calc-tabs">
+    <button class="calc-tab active" onclick="switchTab('bmi')">BMI</button>
+    <button class="calc-tab" onclick="switchTab('bmr')">Calories</button>
+    <button class="calc-tab" onclick="switchTab('ibw')">Ideal Weight</button>
+    <button class="calc-tab" onclick="switchTab('bodyfat')">Body Fat</button>
+    <button class="calc-tab" onclick="switchTab('whr')">Waist/Hip</button>
+  </div>
+
+  <!-- BMI Calculator -->
+  <div class="calc-section active" id="bmi-section">
+    <div class="input-form">
+      <div class="unit-toggle">
+        <button class="unit-btn active" onclick="setUnit('metric', 'bmi', this)">Metric</button>
+        <button class="unit-btn" onclick="setUnit('imperial', 'bmi', this)">Imperial</button>
+      </div>
+      <div class="form-row" id="bmi-inputs-metric">
+        <div class="form-group">
+          <label>Height (cm)</label>
+          <input type="number" id="bmi-height-cm" placeholder="170" oninput="calculateBMI()">
+        </div>
+        <div class="form-group">
+          <label>Weight (kg)</label>
+          <input type="number" id="bmi-weight-kg" placeholder="70" oninput="calculateBMI()">
+        </div>
+      </div>
+      <div class="form-row" id="bmi-inputs-imperial" style="display:none">
+        <div class="form-group">
+          <label>Height (ft)</label>
+          <input type="number" id="bmi-height-ft" placeholder="5" oninput="calculateBMI()">
+        </div>
+        <div class="form-group">
+          <label>in</label>
+          <input type="number" id="bmi-height-in" placeholder="7" oninput="calculateBMI()">
+        </div>
+        <div class="form-group">
+          <label>Weight (lb)</label>
+          <input type="number" id="bmi-weight-lb" placeholder="154" oninput="calculateBMI()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="bmi-result">
+      <div class="main-result">
+        <div class="result-number" id="bmi-value">0</div>
+        <div class="result-label">Body Mass Index</div>
+        <div class="category-badge normal" id="bmi-category">Normal</div>
+      </div>
+
+      <div class="bmi-scale">
+        <div class="scale-bar">
+          <div class="scale-marker" id="bmi-marker" style="left: 50%"></div>
+        </div>
+        <div class="scale-labels">
+          <span>16</span>
+          <span>18.5</span>
+          <span>25</span>
+          <span>30</span>
+          <span>35</span>
+          <span>40</span>
+        </div>
+      </div>
+
+      <!-- Explanation Box -->
+      <div class="explanation-box" id="bmi-explanation">
+        <h4>💡 <span id="bmi-explanation-title"></span></h4>
+        <p id="bmi-explanation-text"></p>
+        <div class="tip" id="bmi-tip"></div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card highlight">
+          <div class="value" id="ideal-weight-range">-</div>
+          <div class="label">Ideal Weight Range</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="weight-to-normal">-</div>
+          <div class="label">To Reach Normal</div>
+        </div>
+      </div>
+
+      <!-- Weight Goal Planner -->
+      <div class="goal-planner" id="weight-goal-planner" style="display:none">
+        <h3>🎯 <span id="goal-planner-title"></span></h3>
+        
+        <div class="goal-summary">
+          <div class="goal-item">
+            <div class="number" id="current-weight-display">-</div>
+            <div class="text" id="current-weight-label"></div>
+          </div>
+          <div class="goal-item target">
+            <div class="number" id="target-weight-display">-</div>
+            <div class="text" id="target-weight-label"></div>
+          </div>
+          <div class="goal-item diff">
+            <div class="number" id="weight-diff-display">-</div>
+            <div class="text" id="weight-diff-label"></div>
+          </div>
+        </div>
+
+        <div class="timeline-section">
+          <h4 id="timeline-title"></h4>
+          <div class="timeline-options" id="timeline-options"></div>
+        </div>
+
+        <div class="progress-chart">
+          <h4 id="chart-title"></h4>
+          <div class="chart-container">
+            <svg class="chart-svg" id="weight-chart"></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BMR Calculator -->
+  <div class="calc-section" id="bmr-section">
+    <div class="input-form">
+      <div class="form-group" style="margin-bottom: 16px">
+        <label>Gender</label>
+        <div class="gender-selector">
+          <button class="gender-btn active" onclick="setGender('male', 'bmr', this)">
+            <span class="icon">👨</span> Male
+          </button>
+          <button class="gender-btn" onclick="setGender('female', 'bmr', this)">
+            <span class="icon">👩</span> Female
+          </button>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Age</label>
+          <input type="number" id="bmr-age" placeholder="30" oninput="calculateBMR()">
+        </div>
+        <div class="form-group">
+          <label>Height (cm)</label>
+          <input type="number" id="bmr-height" placeholder="170" oninput="calculateBMR()">
+        </div>
+        <div class="form-group">
+          <label>Weight (kg)</label>
+          <input type="number" id="bmr-weight" placeholder="70" oninput="calculateBMR()">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Activity Level</label>
+        <div class="activity-selector">
+          <button class="activity-btn active" onclick="setActivity(1.2, this)" data-level="1.2">
+            <span class="level">Sedentary</span>
+            <span class="desc">Little or no exercise</span>
+            <span class="example" id="sedentary-example"></span>
+          </button>
+          <button class="activity-btn" onclick="setActivity(1.375, this)" data-level="1.375">
+            <span class="level">Light</span>
+            <span class="desc">1-3 days/week</span>
+            <span class="example" id="light-example"></span>
+          </button>
+          <button class="activity-btn" onclick="setActivity(1.55, this)" data-level="1.55">
+            <span class="level">Moderate</span>
+            <span class="desc">3-5 days/week</span>
+            <span class="example" id="moderate-example"></span>
+          </button>
+          <button class="activity-btn" onclick="setActivity(1.725, this)" data-level="1.725">
+            <span class="level">Active</span>
+            <span class="desc">6-7 days/week</span>
+            <span class="example" id="active-example"></span>
+          </button>
+          <button class="activity-btn" onclick="setActivity(1.9, this)" data-level="1.9">
+            <span class="level">Very Active</span>
+            <span class="desc">Intense exercise</span>
+            <span class="example" id="very-active-example"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="bmr-result">
+      <!-- Main Results -->
+      <div class="info-cards">
+        <div class="info-card">
+          <h5>🔥 BMR</h5>
+          <div class="value" id="bmr-value">0</div>
+          <p id="bmr-desc"></p>
+        </div>
+        <div class="info-card" style="border: 2px solid var(--primary);">
+          <h5>⚡ TDEE</h5>
+          <div class="value" id="tdee-value">0</div>
+          <p id="tdee-desc"></p>
+        </div>
+      </div>
+
+      <!-- Explanation -->
+      <div class="explanation-box">
+        <h4>💡 <span id="bmr-explanation-title"></span></h4>
+        <p id="bmr-explanation-text"></p>
+      </div>
+
+      <!-- Calorie Goals -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="value" style="color: #ef4444;" id="calories-lose-fast">0</div>
+          <div class="label" id="lose-fast-label"></div>
+        </div>
+        <div class="stat-card">
+          <div class="value" style="color: #f59e0b;" id="calories-lose">0</div>
+          <div class="label" id="lose-label"></div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="value" id="calories-maintain">0</div>
+          <div class="label" id="maintain-label"></div>
+        </div>
+        <div class="stat-card">
+          <div class="value" style="color: #22c55e;" id="calories-gain">0</div>
+          <div class="label" id="gain-label"></div>
+        </div>
+      </div>
+
+      <!-- Macros -->
+      <div class="macros-section">
+        <h4 id="macros-title"></h4>
+        <div class="macros-grid">
+          <div class="macro-card protein">
+            <div class="macro-value" id="macro-protein">0g</div>
+            <div class="macro-label" id="protein-label"></div>
+          </div>
+          <div class="macro-card carbs">
+            <div class="macro-value" id="macro-carbs">0g</div>
+            <div class="macro-label" id="carbs-label"></div>
+          </div>
+          <div class="macro-card fat">
+            <div class="macro-value" id="macro-fat">0g</div>
+            <div class="macro-label" id="fat-label"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ideal Body Weight -->
+  <div class="calc-section" id="ibw-section">
+    <div class="input-form">
+      <div class="form-group" style="margin-bottom: 16px">
+        <label>Gender</label>
+        <div class="gender-selector">
+          <button class="gender-btn active" onclick="setGender('male', 'ibw', this)">
+            <span class="icon">👨</span> Male
+          </button>
+          <button class="gender-btn" onclick="setGender('female', 'ibw', this)">
+            <span class="icon">👩</span> Female
+          </button>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Height (cm)</label>
+          <input type="number" id="ibw-height" placeholder="170" oninput="calculateIBW()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="ibw-result">
+      <div class="stats-grid">
+        <div class="stat-card highlight">
+          <div class="value" id="ibw-devine">-</div>
+          <div class="label">Devine (Most common)</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="ibw-robinson">-</div>
+          <div class="label">Robinson</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="ibw-miller">-</div>
+          <div class="label">Miller</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="ibw-hamwi">-</div>
+          <div class="label">Hamwi</div>
+        </div>
+      </div>
+
+      <div class="explanation-box">
+        <h4>💡 Ideal Weight Formulas</h4>
+        <p>Several formulas exist for ideal weight. Devine is most commonly used in medicine.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Body Fat -->
+  <div class="calc-section" id="bodyfat-section">
+    <div class="input-form">
+      <div class="form-group" style="margin-bottom: 16px">
+        <label>Gender</label>
+        <div class="gender-selector">
+          <button class="gender-btn active" onclick="setGender('male', 'bodyfat', this)">
+            <span class="icon">👨</span> Male
+          </button>
+          <button class="gender-btn" onclick="setGender('female', 'bodyfat', this)">
+            <span class="icon">👩</span> Female
+          </button>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Height (cm)</label>
+          <input type="number" id="bf-height" placeholder="170" oninput="calculateBodyFat()">
+        </div>
+        <div class="form-group">
+          <label>Waist (cm)</label>
+          <input type="number" id="bf-waist" placeholder="80" oninput="calculateBodyFat()">
+        </div>
+        <div class="form-group">
+          <label>Neck (cm)</label>
+          <input type="number" id="bf-neck" placeholder="37" oninput="calculateBodyFat()">
+        </div>
+        <div class="form-group" id="bf-hip-group" style="display:none">
+          <label>Hip (cm)</label>
+          <input type="number" id="bf-hip" placeholder="95" oninput="calculateBodyFat()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="bodyfat-result">
+      <div class="main-result">
+        <div class="result-number" id="bodyfat-value">0%</div>
+        <div class="result-label">Body Fat Percentage</div>
+        <div class="category-badge normal" id="bodyfat-category">-</div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="value" id="fat-mass">-</div>
+          <div class="label">Fat Mass</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="lean-mass">-</div>
+          <div class="label">Lean Mass</div>
+        </div>
+      </div>
+
+      <div class="explanation-box">
+        <h4>💡 Body Fat Categories</h4>
+        <p id="bodyfat-ranges"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHR -->
+  <div class="calc-section" id="whr-section">
+    <div class="input-form">
+      <div class="form-group" style="margin-bottom: 16px">
+        <label>Gender</label>
+        <div class="gender-selector">
+          <button class="gender-btn active" onclick="setGender('male', 'whr', this)">
+            <span class="icon">👨</span> Male
+          </button>
+          <button class="gender-btn" onclick="setGender('female', 'whr', this)">
+            <span class="icon">👩</span> Female
+          </button>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Waist (cm)</label>
+          <input type="number" id="whr-waist" placeholder="80" oninput="calculateWHR()">
+        </div>
+        <div class="form-group">
+          <label>Hip (cm)</label>
+          <input type="number" id="whr-hip" placeholder="100" oninput="calculateWHR()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="whr-result">
+      <div class="main-result">
+        <div class="result-number" id="whr-value">0</div>
+        <div class="result-label">Waist-to-Hip Ratio</div>
+        <div class="category-badge normal" id="whr-category">-</div>
+      </div>
+
+      <div class="explanation-box">
+        <h4>💡 WHR Risk Categories</h4>
+        <p id="whr-ranges"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const isArabic = document.documentElement.lang === 'ar';
+let currentUnit = { bmi: 'metric' };
+let currentGender = { bmr: 'male', ibw: 'male', bodyfat: 'male', whr: 'male' };
+let activityLevel = 1.2;
+let currentWeight = 0;
+let currentHeight = 0;
+
+// Translations
+const t = {
+  // BMI Explanations
+  bmiUnderweightTitle: isArabic ? 'نقص في الوزن' : 'Underweight',
+  bmiUnderweightText: isArabic ? 
+    'وزنك أقل من المعدل الطبيعي. قد يشير ذلك إلى نقص في التغذية أو مشاكل صحية. يُنصح بزيادة السعرات الحرارية بشكل صحي.' :
+    'Your weight is below the normal range. This may indicate nutritional deficiency or health issues. Consider increasing calorie intake healthily.',
+  bmiUnderweightTip: isArabic ?
+    '💪 نصيحة: ركز على الأطعمة الغنية بالبروتين والدهون الصحية مع ممارسة تمارين المقاومة لبناء العضلات.' :
+    '💪 Tip: Focus on protein-rich foods and healthy fats with resistance training to build muscle.',
+  
+  bmiNormalTitle: isArabic ? 'وزن مثالي!' : 'Ideal Weight!',
+  bmiNormalText: isArabic ?
+    'تهانينا! وزنك ضمن النطاق الصحي المثالي. هذا يقلل من مخاطر الأمراض المزمنة ويعزز صحتك العامة.' :
+    'Congratulations! Your weight is within the ideal healthy range. This reduces chronic disease risks and improves overall health.',
+  bmiNormalTip: isArabic ?
+    '✅ حافظ على نمط حياتك الصحي الحالي مع التوازن بين التغذية والنشاط البدني.' :
+    '✅ Maintain your current healthy lifestyle with balance between nutrition and physical activity.',
+  
+  bmiOverweightTitle: isArabic ? 'زيادة في الوزن' : 'Overweight',
+  bmiOverweightText: isArabic ?
+    'وزنك أعلى من المعدل الطبيعي. هذا يزيد من مخاطر أمراض القلب والسكري وضغط الدم. خسارة 5-10% من وزنك يمكن أن تحسن صحتك بشكل كبير.' :
+    'Your weight is above the normal range. This increases risks of heart disease, diabetes, and high blood pressure. Losing 5-10% of your weight can significantly improve your health.',
+  bmiOverweightTip: isArabic ?
+    '🥗 نصيحة: ابدأ بتقليل 500 سعرة يومياً للخسارة التدريجية، مع المشي 30 دقيقة يومياً.' :
+    '🥗 Tip: Start by reducing 500 calories daily for gradual loss, with 30 minutes of walking daily.',
+  
+  bmiObeseTitle: isArabic ? 'سمنة' : 'Obesity',
+  bmiObeseText: isArabic ?
+    'السمنة تزيد بشكل كبير من مخاطر الأمراض المزمنة. يُنصح بشدة باستشارة طبيب أو أخصائي تغذية لوضع خطة علاجية مناسبة.' :
+    'Obesity significantly increases chronic disease risks. It is strongly recommended to consult a doctor or nutritionist for an appropriate treatment plan.',
+  bmiObeseTip: isArabic ?
+    '⚠️ نصيحة: استشر طبيباً لفحص شامل ووضع خطة تتضمن تغييرات غذائية ونشاط بدني تحت إشراف متخصص.' :
+    '⚠️ Tip: Consult a doctor for comprehensive examination and develop a plan including dietary changes and physical activity under specialist supervision.',
+  
+  // Goal Planner
+  goalPlannerTitle: isArabic ? 'خطة الوصول للوزن المثالي' : 'Weight Goal Plan',
+  currentWeightLabel: isArabic ? 'وزنك الحالي' : 'Current Weight',
+  targetWeightLabel: isArabic ? 'الوزن المستهدف' : 'Target Weight',
+  needToLose: isArabic ? 'تحتاج لخسارة' : 'Need to Lose',
+  needToGain: isArabic ? 'تحتاج لزيادة' : 'Need to Gain',
+  timelineTitle: isArabic ? '⏱️ الوقت المتوقع للوصول:' : '⏱️ Expected Time to Reach Goal:',
+  chartTitle: isArabic ? '📈 مسار التقدم المتوقع' : '📈 Expected Progress Path',
+  safeRate: isArabic ? 'آمن وصحي' : 'Safe & Healthy',
+  moderateRate: isArabic ? 'معتدل' : 'Moderate',
+  fastRate: isArabic ? 'سريع' : 'Fast',
+  perWeek: isArabic ? '/أسبوع' : '/week',
+  weeks: isArabic ? 'أسبوع' : 'weeks',
+  months: isArabic ? 'شهر' : 'months',
+  calDay: isArabic ? 'سعرة/يوم' : 'cal/day',
+  recommended: isArabic ? 'موصى به' : 'Recommended',
+  
+  // BMR
+  bmrExplanationTitle: isArabic ? 'ماذا تعني هذه الأرقام؟' : 'What Do These Numbers Mean?',
+  bmrExplanationText: isArabic ?
+    'BMR (معدل الأيض الأساسي): السعرات التي يحرقها جسمك وأنت نائم أو في راحة تامة - للتنفس والدورة الدموية ووظائف الأعضاء.\n\nTDEE (إجمالي الطاقة اليومية): السعرات الكلية التي تحرقها يومياً بما فيها نشاطك وحركتك. هذا هو الرقم الأهم لتحديد كمية طعامك.' :
+    'BMR (Basal Metabolic Rate): Calories your body burns while sleeping or at complete rest - for breathing, circulation, and organ functions.\n\nTDEE (Total Daily Energy Expenditure): Total calories you burn daily including activity and movement. This is the key number for determining your food intake.',
+  bmrDesc: isArabic ? 'السعرات في الراحة التامة' : 'Calories at complete rest',
+  tdeeDesc: isArabic ? 'إجمالي السعرات اليومية' : 'Total daily calories',
+  loseFastLabel: isArabic ? 'خسارة سريعة (1 كغ/أسبوع)' : 'Fast loss (1 kg/week)',
+  loseLabel: isArabic ? 'خسارة معتدلة (0.5 كغ/أسبوع)' : 'Moderate loss (0.5 kg/week)',
+  maintainLabel: isArabic ? 'الحفاظ على الوزن' : 'Maintain weight',
+  gainLabel: isArabic ? 'زيادة (0.5 كغ/أسبوع)' : 'Gain (0.5 kg/week)',
+  macrosTitle: isArabic ? '🍽️ توزيع المغذيات اليومية (للحفاظ على الوزن)' : '🍽️ Daily Macros Distribution (to maintain)',
+  proteinLabel: isArabic ? 'بروتين (30%)' : 'Protein (30%)',
+  carbsLabel: isArabic ? 'كربوهيدرات (40%)' : 'Carbs (40%)',
+  fatLabel: isArabic ? 'دهون (30%)' : 'Fat (30%)',
+  
+  // Activity Examples
+  sedentaryEx: isArabic ? 'مكتبي، قليل الحركة' : 'Office work, little movement',
+  lightEx: isArabic ? 'مشي خفيف، أعمال منزلية' : 'Light walking, housework',
+  moderateEx: isArabic ? 'رياضة 3-5 مرات أسبوعياً' : 'Exercise 3-5 times weekly',
+  activeEx: isArabic ? 'رياضة يومية أو عمل بدني' : 'Daily exercise or physical job',
+  veryActiveEx: isArabic ? 'تدريب مكثف أو عمل شاق' : 'Intense training or hard labor',
+  
+  // Units
+  kg: isArabic ? 'كغ' : 'kg',
+};
+
+// Initialize activity examples
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('sedentary-example').textContent = t.sedentaryEx;
+  document.getElementById('light-example').textContent = t.lightEx;
+  document.getElementById('moderate-example').textContent = t.moderateEx;
+  document.getElementById('active-example').textContent = t.activeEx;
+  document.getElementById('very-active-example').textContent = t.veryActiveEx;
+});
+
+function switchTab(tab) {
+  document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.calc-section').forEach(s => s.classList.remove('active'));
+  
+  document.querySelectorAll('.calc-tab').forEach(t => {
+    if (t.getAttribute('onclick')?.includes(`'${tab}'`)) {
+      t.classList.add('active');
+    }
+  });
+  document.getElementById(`${tab}-section`).classList.add('active');
+}
+
+function setUnit(unit, calc, btn) {
+  currentUnit[calc] = unit;
+  document.querySelectorAll(`#${calc}-section .unit-btn`).forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  
+  if (calc === 'bmi') {
+    document.getElementById('bmi-inputs-metric').style.display = unit === 'metric' ? 'grid' : 'none';
+    document.getElementById('bmi-inputs-imperial').style.display = unit === 'imperial' ? 'grid' : 'none';
+    calculateBMI();
+  }
+}
+
+function setGender(gender, calc, btn) {
+  currentGender[calc] = gender;
+  document.querySelectorAll(`#${calc}-section .gender-btn`).forEach(b => b.classList.remove('active'));
+  btn.closest('.gender-btn').classList.add('active');
+  
+  if (calc === 'bodyfat') {
+    document.getElementById('bf-hip-group').style.display = gender === 'female' ? 'block' : 'none';
+  }
+  
+  if (calc === 'bmr') calculateBMR();
+  if (calc === 'ibw') calculateIBW();
+  if (calc === 'bodyfat') calculateBodyFat();
+  if (calc === 'whr') calculateWHR();
+}
+
+function setActivity(level, btn) {
+  activityLevel = level;
+  document.querySelectorAll('.activity-btn').forEach(b => b.classList.remove('active'));
+  btn.closest('.activity-btn').classList.add('active');
+  calculateBMR();
+}
+
+// BMI Calculator
+function calculateBMI() {
+  let height, weight;
+  
+  if (currentUnit.bmi === 'metric') {
+    height = parseFloat(document.getElementById('bmi-height-cm').value) / 100;
+    weight = parseFloat(document.getElementById('bmi-weight-kg').value);
+  } else {
+    const ft = parseFloat(document.getElementById('bmi-height-ft').value) || 0;
+    const inches = parseFloat(document.getElementById('bmi-height-in').value) || 0;
+    height = ((ft * 12) + inches) * 0.0254;
+    weight = parseFloat(document.getElementById('bmi-weight-lb').value) * 0.453592;
+  }
+  
+  if (!height || !weight || height <= 0) {
+    document.getElementById('bmi-result').classList.remove('show');
+    return;
+  }
+  
+  currentWeight = weight;
+  currentHeight = height;
+  
+  const bmi = weight / (height * height);
+  
+  document.getElementById('bmi-value').textContent = bmi.toFixed(1);
+  
+  // Category and explanation
+  let category, categoryClass, expTitle, expText, expTip;
+  if (bmi < 18.5) {
+    category = isArabic ? 'نقص في الوزن' : 'Underweight';
+    categoryClass = 'underweight';
+    expTitle = t.bmiUnderweightTitle;
+    expText = t.bmiUnderweightText;
+    expTip = t.bmiUnderweightTip;
+  } else if (bmi < 25) {
+    category = isArabic ? 'وزن طبيعي' : 'Normal';
+    categoryClass = 'normal';
+    expTitle = t.bmiNormalTitle;
+    expText = t.bmiNormalText;
+    expTip = t.bmiNormalTip;
+  } else if (bmi < 30) {
+    category = isArabic ? 'زيادة في الوزن' : 'Overweight';
+    categoryClass = 'overweight';
+    expTitle = t.bmiOverweightTitle;
+    expText = t.bmiOverweightText;
+    expTip = t.bmiOverweightTip;
+  } else {
+    category = isArabic ? 'سمنة' : 'Obese';
+    categoryClass = bmi < 35 ? 'obese' : 'severe-obese';
+    expTitle = t.bmiObeseTitle;
+    expText = t.bmiObeseText;
+    expTip = t.bmiObeseTip;
+  }
+  
+  const badge = document.getElementById('bmi-category');
+  badge.textContent = category;
+  badge.className = 'category-badge ' + categoryClass;
+  
+  // Update explanation
+  document.getElementById('bmi-explanation-title').textContent = expTitle;
+  document.getElementById('bmi-explanation-text').textContent = expText;
+  document.getElementById('bmi-tip').textContent = expTip;
+  
+  // Scale marker position (16 to 40 range)
+  const markerPos = Math.min(100, Math.max(0, ((bmi - 16) / 24) * 100));
+  document.getElementById('bmi-marker').style.left = markerPos + '%';
+  
+  // Ideal weight range
+  const minIdeal = 18.5 * height * height;
+  const maxIdeal = 24.9 * height * height;
+  const midIdeal = (minIdeal + maxIdeal) / 2;
+  document.getElementById('ideal-weight-range').textContent = 
+    `${minIdeal.toFixed(1)} - ${maxIdeal.toFixed(1)} ${t.kg}`;
+  
+  // Weight to reach normal
+  let toNormal = '-';
+  if (bmi < 18.5) {
+    toNormal = `+${(minIdeal - weight).toFixed(1)} ${t.kg}`;
+  } else if (bmi >= 25) {
+    toNormal = `-${(weight - maxIdeal).toFixed(1)} ${t.kg}`;
+  } else {
+    toNormal = isArabic ? 'أنت في الوزن المثالي!' : "You're at ideal weight!";
+  }
+  document.getElementById('weight-to-normal').textContent = toNormal;
+  
+  // Show/hide weight goal planner
+  if (bmi < 18.5 || bmi >= 25) {
+    showWeightGoalPlanner(weight, midIdeal, bmi < 18.5);
+  } else {
+    document.getElementById('weight-goal-planner').style.display = 'none';
+  }
+  
+  document.getElementById('bmi-result').classList.add('show');
+}
+
+// Weight Goal Planner
+function showWeightGoalPlanner(current, target, isGain) {
+  const planner = document.getElementById('weight-goal-planner');
+  planner.style.display = 'block';
+  
+  const diff = Math.abs(target - current);
+  
+  // Update titles
+  document.getElementById('goal-planner-title').textContent = t.goalPlannerTitle;
+  document.getElementById('current-weight-label').textContent = t.currentWeightLabel;
+  document.getElementById('target-weight-label').textContent = t.targetWeightLabel;
+  document.getElementById('weight-diff-label').textContent = isGain ? t.needToGain : t.needToLose;
+  document.getElementById('timeline-title').textContent = t.timelineTitle;
+  document.getElementById('chart-title').textContent = t.chartTitle;
+  
+  // Update values
+  document.getElementById('current-weight-display').textContent = current.toFixed(1) + ' ' + t.kg;
+  document.getElementById('target-weight-display').textContent = target.toFixed(1) + ' ' + t.kg;
+  document.getElementById('weight-diff-display').textContent = diff.toFixed(1) + ' ' + t.kg;
+  
+  // Calculate timelines
+  const rates = [
+    { rate: 0.25, label: t.safeRate, isRecommended: true },
+    { rate: 0.5, label: t.moderateRate, isRecommended: false },
+    { rate: 0.75, label: t.fastRate, isRecommended: false }
+  ];
+  
+  // Estimate TDEE (rough estimate for planning)
+  const estimatedTDEE = 2000; // Default estimate
+  
+  let timelineHTML = '';
+  rates.forEach(r => {
+    const weeks = Math.ceil(diff / r.rate);
+    const months = (weeks / 4.33).toFixed(1);
+    const calDeficit = r.rate * 7700 / 7; // 7700 cal per kg
+    const dailyCal = isGain ? estimatedTDEE + calDeficit : estimatedTDEE - calDeficit;
+    
+    timelineHTML += `
+      <div class="timeline-option ${r.isRecommended ? 'recommended' : ''}">
+        <div class="rate">
+          ${r.rate} ${t.kg}${t.perWeek}
+          <small>(${r.label})</small>
+          ${r.isRecommended ? `<span class="badge">${t.recommended}</span>` : ''}
+        </div>
+        <div class="duration">
+          <div class="time">${weeks}</div>
+          <div class="unit">${t.weeks} (${months} ${t.months})</div>
+        </div>
+        <div class="calories">
+          <span class="cal-num">${Math.round(dailyCal)}</span> ${t.calDay}
+        </div>
+      </div>
+    `;
+  });
+  
+  document.getElementById('timeline-options').innerHTML = timelineHTML;
+  
+  // Draw progress chart
+  drawProgressChart(current, target, isGain);
+}
+
+function drawProgressChart(current, target, isGain) {
+  const svg = document.getElementById('weight-chart');
+  const width = svg.clientWidth || 400;
+  const height = 180;
+  
+  const weeks = Math.ceil(Math.abs(target - current) / 0.5);
+  const padding = { top: 20, right: 20, bottom: 30, left: 50 };
+  const chartWidth = width - padding.left - padding.right;
+  const chartHeight = height - padding.top - padding.bottom;
+  
+  const minWeight = Math.min(current, target) - 2;
+  const maxWeight = Math.max(current, target) + 2;
+  
+  // Generate path points
+  let pathPoints = [];
+  for (let i = 0; i <= weeks; i++) {
+    const x = padding.left + (i / weeks) * chartWidth;
+    const weightAtWeek = isGain ? 
+      current + (i / weeks) * (target - current) :
+      current - (i / weeks) * (current - target);
+    const y = padding.top + chartHeight - ((weightAtWeek - minWeight) / (maxWeight - minWeight)) * chartHeight;
+    pathPoints.push(`${i === 0 ? 'M' : 'L'} ${x} ${y}`);
+  }
+  
+  // Target line y position
+  const targetY = padding.top + chartHeight - ((target - minWeight) / (maxWeight - minWeight)) * chartHeight;
+  
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:var(--primary)"/>
+        <stop offset="100%" style="stop-color:#22c55e"/>
+      </linearGradient>
+    </defs>
+    
+    <!-- Grid lines -->
+    <line x1="${padding.left}" y1="${padding.top}" x2="${padding.left}" y2="${padding.top + chartHeight}" 
+          stroke="var(--border-color)" stroke-width="1"/>
+    <line x1="${padding.left}" y1="${padding.top + chartHeight}" x2="${width - padding.right}" y2="${padding.top + chartHeight}" 
+          stroke="var(--border-color)" stroke-width="1"/>
+    
+    <!-- Target line -->
+    <line x1="${padding.left}" y1="${targetY}" x2="${width - padding.right}" y2="${targetY}" 
+          stroke="#22c55e" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="${width - padding.right + 5}" y="${targetY + 4}" fill="#22c55e" font-size="11">🎯</text>
+    
+    <!-- Progress line -->
+    <path d="${pathPoints.join(' ')}" fill="none" stroke="url(#lineGradient)" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Start point -->
+    <circle cx="${padding.left}" cy="${padding.top + chartHeight - ((current - minWeight) / (maxWeight - minWeight)) * chartHeight}" 
+            r="6" fill="var(--primary)"/>
+    
+    <!-- End point -->
+    <circle cx="${width - padding.right}" cy="${targetY}" r="6" fill="#22c55e"/>
+    
+    <!-- Labels -->
+    <text x="${padding.left - 5}" y="${padding.top + 5}" fill="var(--text-muted)" font-size="10" text-anchor="end">${maxWeight.toFixed(0)}</text>
+    <text x="${padding.left - 5}" y="${padding.top + chartHeight}" fill="var(--text-muted)" font-size="10" text-anchor="end">${minWeight.toFixed(0)}</text>
+    <text x="${padding.left}" y="${height - 5}" fill="var(--text-muted)" font-size="10">${isArabic ? 'الآن' : 'Now'}</text>
+    <text x="${width - padding.right}" y="${height - 5}" fill="var(--text-muted)" font-size="10" text-anchor="end">${isArabic ? 'الهدف' : 'Goal'}</text>
+  `;
+}
+
+// BMR Calculator
+function calculateBMR() {
+  const age = parseFloat(document.getElementById('bmr-age').value);
+  const height = parseFloat(document.getElementById('bmr-height').value);
+  const weight = parseFloat(document.getElementById('bmr-weight').value);
+  const gender = currentGender.bmr;
+  
+  if (!age || !height || !weight) {
+    document.getElementById('bmr-result').classList.remove('show');
+    return;
+  }
+  
+  // Mifflin-St Jeor Equation
+  let bmr;
+  if (gender === 'male') {
+    bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+  } else {
+    bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+  }
+  
+  const tdee = bmr * activityLevel;
+  
+  // Update main values
+  document.getElementById('bmr-value').textContent = Math.round(bmr);
+  document.getElementById('tdee-value').textContent = Math.round(tdee);
+  document.getElementById('bmr-desc').textContent = t.bmrDesc;
+  document.getElementById('tdee-desc').textContent = t.tdeeDesc;
+  
+  // Update explanation
+  document.getElementById('bmr-explanation-title').textContent = t.bmrExplanationTitle;
+  document.getElementById('bmr-explanation-text').textContent = t.bmrExplanationText;
+  
+  // Calorie goals
+  document.getElementById('calories-lose-fast').textContent = Math.round(tdee - 1000);
+  document.getElementById('calories-lose').textContent = Math.round(tdee - 500);
+  document.getElementById('calories-maintain').textContent = Math.round(tdee);
+  document.getElementById('calories-gain').textContent = Math.round(tdee + 500);
+  
+  // Labels
+  document.getElementById('lose-fast-label').textContent = t.loseFastLabel;
+  document.getElementById('lose-label').textContent = t.loseLabel;
+  document.getElementById('maintain-label').textContent = t.maintainLabel;
+  document.getElementById('gain-label').textContent = t.gainLabel;
+  
+  // Macros
+  document.getElementById('macros-title').textContent = t.macrosTitle;
+  const proteinCal = tdee * 0.30;
+  const carbsCal = tdee * 0.40;
+  const fatCal = tdee * 0.30;
+  
+  document.getElementById('macro-protein').textContent = Math.round(proteinCal / 4) + 'g';
+  document.getElementById('macro-carbs').textContent = Math.round(carbsCal / 4) + 'g';
+  document.getElementById('macro-fat').textContent = Math.round(fatCal / 9) + 'g';
+  
+  document.getElementById('protein-label').textContent = t.proteinLabel;
+  document.getElementById('carbs-label').textContent = t.carbsLabel;
+  document.getElementById('fat-label').textContent = t.fatLabel;
+  
+  document.getElementById('bmr-result').classList.add('show');
+}
+
+// Ideal Body Weight
+function calculateIBW() {
+  const height = parseFloat(document.getElementById('ibw-height').value);
+  const gender = currentGender.ibw;
+  
+  if (!height) {
+    document.getElementById('ibw-result').classList.remove('show');
+    return;
+  }
+  
+  const heightInch = height / 2.54;
+  const heightOver5ft = heightInch - 60;
+  
+  let devine, robinson, miller, hamwi;
+  
+  if (gender === 'male') {
+    devine = 50 + 2.3 * heightOver5ft;
+    robinson = 52 + 1.9 * heightOver5ft;
+    miller = 56.2 + 1.41 * heightOver5ft;
+    hamwi = 48 + 2.7 * heightOver5ft;
+  } else {
+    devine = 45.5 + 2.3 * heightOver5ft;
+    robinson = 49 + 1.7 * heightOver5ft;
+    miller = 53.1 + 1.36 * heightOver5ft;
+    hamwi = 45.5 + 2.2 * heightOver5ft;
+  }
+  
+  document.getElementById('ibw-devine').textContent = devine.toFixed(1) + ' ' + t.kg;
+  document.getElementById('ibw-robinson').textContent = robinson.toFixed(1) + ' ' + t.kg;
+  document.getElementById('ibw-miller').textContent = miller.toFixed(1) + ' ' + t.kg;
+  document.getElementById('ibw-hamwi').textContent = hamwi.toFixed(1) + ' ' + t.kg;
+  
+  document.getElementById('ibw-result').classList.add('show');
+}
+
+// Body Fat Calculator (US Navy Method)
+function calculateBodyFat() {
+  const height = parseFloat(document.getElementById('bf-height').value);
+  const waist = parseFloat(document.getElementById('bf-waist').value);
+  const neck = parseFloat(document.getElementById('bf-neck').value);
+  const hip = parseFloat(document.getElementById('bf-hip').value);
+  const gender = currentGender.bodyfat;
+  const weight = parseFloat(document.getElementById('bmi-weight-kg').value) || 70;
+  
+  if (!height || !waist || !neck) {
+    document.getElementById('bodyfat-result').classList.remove('show');
+    return;
+  }
+  
+  if (gender === 'female' && !hip) {
+    document.getElementById('bodyfat-result').classList.remove('show');
+    return;
+  }
+  
+  let bodyFat;
+  if (gender === 'male') {
+    bodyFat = 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(height)) - 450;
+  } else {
+    bodyFat = 495 / (1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(height)) - 450;
+  }
+  
+  bodyFat = Math.max(0, Math.min(60, bodyFat));
+  
+  document.getElementById('bodyfat-value').textContent = bodyFat.toFixed(1) + '%';
+  
+  // Fat mass and lean mass
+  const fatMass = weight * (bodyFat / 100);
+  const leanMass = weight - fatMass;
+  document.getElementById('fat-mass').textContent = fatMass.toFixed(1) + ' ' + t.kg;
+  document.getElementById('lean-mass').textContent = leanMass.toFixed(1) + ' ' + t.kg;
+  
+  // Category
+  let category, categoryClass;
+  const isMale = gender === 'male';
+  
+  if (isMale) {
+    if (bodyFat < 6) { category = isArabic ? 'أساسي' : 'Essential'; categoryClass = 'underweight'; }
+    else if (bodyFat < 14) { category = isArabic ? 'رياضي' : 'Athletic'; categoryClass = 'normal'; }
+    else if (bodyFat < 18) { category = isArabic ? 'لياقة' : 'Fitness'; categoryClass = 'normal'; }
+    else if (bodyFat < 25) { category = isArabic ? 'مقبول' : 'Average'; categoryClass = 'overweight'; }
+    else { category = isArabic ? 'سمنة' : 'Obese'; categoryClass = 'obese'; }
+  } else {
+    if (bodyFat < 14) { category = isArabic ? 'أساسي' : 'Essential'; categoryClass = 'underweight'; }
+    else if (bodyFat < 21) { category = isArabic ? 'رياضي' : 'Athletic'; categoryClass = 'normal'; }
+    else if (bodyFat < 25) { category = isArabic ? 'لياقة' : 'Fitness'; categoryClass = 'normal'; }
+    else if (bodyFat < 32) { category = isArabic ? 'مقبول' : 'Average'; categoryClass = 'overweight'; }
+    else { category = isArabic ? 'سمنة' : 'Obese'; categoryClass = 'obese'; }
+  }
+  
+  const badge = document.getElementById('bodyfat-category');
+  badge.textContent = category;
+  badge.className = 'category-badge ' + categoryClass;
+  
+  // Ranges info
+  document.getElementById('bodyfat-ranges').innerHTML = isMale ?
+    (isArabic ? 'للرجال: أساسي 2-5% | رياضي 6-13% | لياقة 14-17% | مقبول 18-24% | سمنة >25%' :
+     'Men: Essential 2-5% | Athletic 6-13% | Fitness 14-17% | Average 18-24% | Obese >25%') :
+    (isArabic ? 'للنساء: أساسي 10-13% | رياضي 14-20% | لياقة 21-24% | مقبول 25-31% | سمنة >32%' :
+     'Women: Essential 10-13% | Athletic 14-20% | Fitness 21-24% | Average 25-31% | Obese >32%');
+  
+  document.getElementById('bodyfat-result').classList.add('show');
+}
+
+// WHR Calculator
+function calculateWHR() {
+  const waist = parseFloat(document.getElementById('whr-waist').value);
+  const hip = parseFloat(document.getElementById('whr-hip').value);
+  const gender = currentGender.whr;
+  
+  if (!waist || !hip) {
+    document.getElementById('whr-result').classList.remove('show');
+    return;
+  }
+  
+  const whr = waist / hip;
+  
+  document.getElementById('whr-value').textContent = whr.toFixed(2);
+  
+  // Category
+  let category, categoryClass;
+  const isMale = gender === 'male';
+  
+  if (isMale) {
+    if (whr < 0.9) { category = isArabic ? 'خطر منخفض' : 'Low Risk'; categoryClass = 'normal'; }
+    else if (whr < 1.0) { category = isArabic ? 'خطر متوسط' : 'Moderate Risk'; categoryClass = 'overweight'; }
+    else { category = isArabic ? 'خطر عالي' : 'High Risk'; categoryClass = 'obese'; }
+  } else {
+    if (whr < 0.8) { category = isArabic ? 'خطر منخفض' : 'Low Risk'; categoryClass = 'normal'; }
+    else if (whr < 0.85) { category = isArabic ? 'خطر متوسط' : 'Moderate Risk'; categoryClass = 'overweight'; }
+    else { category = isArabic ? 'خطر عالي' : 'High Risk'; categoryClass = 'obese'; }
+  }
+  
+  const badge = document.getElementById('whr-category');
+  badge.textContent = category;
+  badge.className = 'category-badge ' + categoryClass;
+  
+  // Ranges info
+  document.getElementById('whr-ranges').innerHTML = isMale ?
+    (isArabic ? 'للرجال: منخفض <0.9 | متوسط 0.9-1.0 | عالي >1.0' :
+     'Men: Low <0.9 | Moderate 0.9-1.0 | High >1.0') :
+    (isArabic ? 'للنساء: منخفض <0.8 | متوسط 0.8-0.85 | عالي >0.85' :
+     'Women: Low <0.8 | Moderate 0.8-0.85 | High >0.85');
+  
+  document.getElementById('whr-result').classList.add('show');
+}
+
+// Resize chart on window resize
+window.addEventListener('resize', () => {
+  if (currentWeight && currentHeight) {
+    const bmi = currentWeight / (currentHeight * currentHeight);
+    if (bmi < 18.5 || bmi >= 25) {
+      const minIdeal = 18.5 * currentHeight * currentHeight;
+      const maxIdeal = 24.9 * currentHeight * currentHeight;
+      const midIdeal = (minIdeal + maxIdeal) / 2;
+      drawProgressChart(currentWeight, midIdeal, bmi < 18.5);
+    }
+  }
+});
+</script>
+
+<script>
+  window.toolsData = [{"id":"percentage","icon":"🔢","name":"Percentage Calculator","keywords":"percentage calculator, calculate percentage, discount calculator, percent change","searchTerms":"percent percentage % discount sale off price change increase decrease difference quarter half third ratio math calculator profit loss tax margin fraction calculate how much what is of total part whole original cost selling buying before after","category":"calculators","categoryName":"Calculators","url":"/udda/en/tools/percentage.html"},{"id":"interest-calculator","icon":"💰","name":"Interest Calculator","keywords":"interest calculator, simple interest, compound interest, loan calculator","searchTerms":"interest simple compound loan investment return profit bank money calculate annual monthly daily quarterly yearly principal rate time period accumulate savings deposit growth calculator finance financial how much earn","category":"calculators","categoryName":"Calculators","url":"/udda/en/tools/interest-calculator.html"},{"id":"loan-calculator","icon":"🏦","name":"Loan Calculator","keywords":"loan calculator, monthly payment, amortization schedule, mortgage calculator","searchTerms":"loan loans payment payments installment installments bank mortgage mortgages monthly schedule amortization calculate calculator interest principal finance financing car home personal","category":"calculators","categoryName":"Calculators","url":"/udda/en/tools/loan-calculator.html"},{"id":"body-calculator","icon":"⚖️","name":"Body Calculator","keywords":"BMI calculator, body mass index, ideal weight, calorie calculator, body fat","searchTerms":"bmi body mass index weight fat calories calorie bmr tdee ideal healthy obesity overweight underweight waist hip ratio calculate calculator health fitness","category":"calculators","categoryName":"Calculators","url":"/udda/en/tools/body-calculator.html"},{"id":"age-calculator","icon":"🎂","name":"Age Calculator","keywords":"age calculator, calculate age, how old am I, zodiac sign, birthday calculator","searchTerms":"age birthday birth date zodiac calculate how old years months days weeks hours born sign horoscope difference between dates","category":"calculators","categoryName":"Calculators","url":"/udda/en/tools/age-calculator.html"}];
+</script>
+      </main>
+      
+      <footer class="main-footer">
+        <p>Made with ❤️ | All Rights Reserved © 2026 Udda</p>
+      </footer>
+    </div>
+  </div>
+  
+  <!-- Settings Panel -->
+  <div class="settings-overlay"></div>
+  <div class="settings-panel">
+    <div class="settings-header">
+      <h2 class="settings-title">Settings</h2>
+      <button class="settings-close" aria-label="Close">✕</button>
+    </div>
+    <div class="settings-content">
+      <div class="settings-section">
+        <div class="settings-section-title">Language</div>
+        <div class="settings-option">
+          <button class="settings-btn " data-lang-btn="ar">العربية</button>
+          <button class="settings-btn active" data-lang-btn="en">English</button>
+        </div>
+      </div>
+      <div class="settings-section">
+        <div class="settings-section-title">Theme</div>
+        <div class="settings-option">
+          <button class="settings-btn" data-theme-btn="light">☀️ Light</button>
+          <button class="settings-btn" data-theme-btn="dark">🌙 Dark</button>
+          <button class="settings-btn active" data-theme-btn="auto">💻 Auto</button>
+        </div>
+      </div>
+      <div class="settings-section">
+        <button class="settings-btn" data-clear-data style="width:100%;justify-content:center;color:var(--error);">
+          🗑️ Clear Saved Data
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="toast"></div>
+  <script src="/udda/assets/js/app.js"></script>
+</body>
+</html>
