@@ -270,6 +270,49 @@
   color: white;
 }
 
+/* Rate Type Toggle */
+.rate-type-toggle {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.rate-type-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.rate-type-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.rate-type-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.toggle-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
 .schedule-table-wrapper {
   max-height: 400px;
   overflow-y: auto;
@@ -409,6 +452,10 @@
           <input type="number" id="interest-rate" placeholder="5" step="0.1" oninput="calculateLoan()">
           <span class="input-suffix">%</span>
         </div>
+        <div class="rate-type-toggle">
+          <button type="button" class="rate-type-btn active" onclick="setRateType('yearly', this)">{{tool.yearly}}</button>
+          <button type="button" class="rate-type-btn" onclick="setRateType('monthly', this)">{{tool.monthlyRate}}</button>
+        </div>
       </div>
     </div>
     <div class="form-row">
@@ -468,8 +515,8 @@
       <div class="schedule-header">
         <h3>{{tool.paymentSchedule}}</h3>
         <div class="schedule-toggle">
-          <button class="toggle-btn active" onclick="toggleScheduleView('monthly')">{{tool.monthly}}</button>
-          <button class="toggle-btn" onclick="toggleScheduleView('yearly')">{{tool.yearly}}</button>
+          <button class="toggle-btn active" onclick="toggleScheduleView('monthly', this)">{{tool.monthly}}</button>
+          <button class="toggle-btn" onclick="toggleScheduleView('yearly', this)">{{tool.yearly}}</button>
         </div>
       </div>
       <div class="schedule-table-wrapper">
@@ -519,6 +566,7 @@ const t = {
 };
 
 let currentLoanType = 'amortized';
+let rateType = 'yearly'; // 'yearly' or 'monthly'
 let scheduleData = [];
 let pieChart = null;
 let balanceChart = null;
@@ -553,18 +601,32 @@ function updateTypeDescription() {
   }
 }
 
+function setRateType(type, btn) {
+  rateType = type;
+  document.querySelectorAll('.rate-type-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  calculateLoan();
+}
+
 function calculateLoan() {
   const principal = parseFloat(document.getElementById('loan-amount').value);
-  const annualRate = parseFloat(document.getElementById('interest-rate').value);
+  const inputRate = parseFloat(document.getElementById('interest-rate').value);
   const term = parseFloat(document.getElementById('loan-term').value);
   const termUnit = document.getElementById('term-unit').value;
 
-  if (!principal || !annualRate || !term) {
+  if (!principal || !inputRate || !term) {
     document.getElementById('loan-results').classList.remove('show');
     return;
   }
 
-  const monthlyRate = annualRate / 100 / 12;
+  // Calculate monthly rate based on rate type
+  let monthlyRate;
+  if (rateType === 'yearly') {
+    monthlyRate = inputRate / 100 / 12;
+  } else {
+    monthlyRate = inputRate / 100; // Already monthly
+  }
+  
   const totalMonths = termUnit === 'years' ? term * 12 : term;
 
   let monthlyPayment, totalPayment, totalInterest;
@@ -782,12 +844,10 @@ function updateCharts(principal, totalInterest) {
   });
 }
 
-function toggleScheduleView(view) {
+function toggleScheduleView(view, btn) {
   scheduleView = view;
-  document.querySelectorAll('.schedule-toggle .toggle-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.textContent.includes(view === 'monthly' ? 
-      (isArabic ? 'شهري' : 'Monthly') : (isArabic ? 'سنوي' : 'Yearly')));
-  });
+  document.querySelectorAll('.schedule-toggle .toggle-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
   
   const header = document.getElementById('period-header');
   header.textContent = view === 'monthly' ? t.month : t.year;
