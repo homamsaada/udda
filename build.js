@@ -49,13 +49,13 @@ function copyDirRecursive(src, dest) {
 // ========================================
 // Build Sidebar HTML
 // ========================================
-function buildSidebarHTML(lang, activeToolId = null) {
+function buildSidebarHTML(lang, activeToolId = null, basePath = '../') {
   const categories = i18n.categories[lang];
   const tools = toolsData.tools;
   const ui = i18n.ui[lang];
   
   let html = `
-        <a href="/${lang}/" class="nav-item ${!activeToolId ? 'active' : ''}">
+        <a href="${basePath}${lang}/" class="nav-item ${!activeToolId ? 'active' : ''}">
           <span class="nav-item-icon">🏠</span>
           <span class="sidebar-text">${ui.home}</span>
         </a>`;
@@ -84,7 +84,7 @@ function buildSidebarHTML(lang, activeToolId = null) {
       const toolName = i18n.tools[tool.id]?.[lang]?.name || tool.id;
       const isActive = tool.id === activeToolId;
       html += `
-            <a href="/${lang}/tools/${tool.id}.html" class="nav-item ${isActive ? 'active' : ''}">
+            <a href="${basePath}${lang}/tools/${tool.id}.html" class="nav-item ${isActive ? 'active' : ''}">
               <span class="nav-item-icon">${tool.icon}</span>
               <span class="sidebar-text">${toolName}</span>
             </a>`;
@@ -121,10 +121,14 @@ function buildPageHTML(lang, options) {
   const meta = i18n.meta[lang];
   const ui = i18n.ui[lang];
   
-  const sidebarHTML = buildSidebarHTML(lang, toolId);
+  // Calculate base path for relative URLs
+  const depth = (canonicalPath.match(/\//g) || []).length;
+  const basePath = depth <= 1 ? '../' : '../../';
+  
+  const sidebarHTML = buildSidebarHTML(lang, toolId, basePath);
   
   // Breadcrumb
-  let breadcrumbHTML = `<a href="/${lang}/" class="breadcrumb-link">${ui.home}</a>`;
+  let breadcrumbHTML = `<a href="${basePath}${lang}/" class="breadcrumb-link">${ui.home}</a>`;
   if (categoryName && categoryId) {
     if (isCategory) {
       // On category page, category name is current (not a link)
@@ -135,7 +139,7 @@ function buildPageHTML(lang, options) {
       // On tool page, category name is a link
       breadcrumbHTML += `
           <span class="breadcrumb-separator">›</span>
-          <a href="/${lang}/category/${categoryId}.html" class="breadcrumb-link">${categoryName}</a>`;
+          <a href="${basePath}${lang}/category/${categoryId}.html" class="breadcrumb-link">${categoryName}</a>`;
     }
   }
   if (toolName && !isHome && !isCategory) {
@@ -175,7 +179,7 @@ function buildPageHTML(lang, options) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="${basePath}assets/css/main.css">
   
   <script type="application/ld+json">
   {
@@ -198,7 +202,7 @@ function buildPageHTML(lang, options) {
     
     <aside class="sidebar">
       <div class="sidebar-header">
-        <a href="/${lang}/" class="logo">
+        <a href="${basePath}${lang}/" class="logo">
           <div class="logo-icon">🔧</div>
           <span class="logo-text sidebar-text">${meta.siteName}</span>
         </a>
@@ -300,7 +304,7 @@ function buildPageHTML(lang, options) {
   </div>
   
   <div class="toast"></div>
-  <script src="/assets/js/app.js"></script>
+  <script src="${basePath}assets/js/app.js"></script>
 </body>
 </html>`;
 }
@@ -313,6 +317,7 @@ function buildHomepage(lang) {
   const meta = i18n.meta[lang];
   const ui = i18n.ui[lang];
   const categories = i18n.categories[lang];
+  const basePath = '../'; // Homepage is at /ar/ or /en/
   
   // Build tools data for search
   const allToolsData = toolsData.tools.map(t => ({
@@ -323,7 +328,7 @@ function buildHomepage(lang) {
     searchTerms: i18n.tools[t.id]?.[lang]?.searchTerms || '',
     category: t.category,
     categoryName: categories[t.category]?.name || '',
-    url: `/${lang}/tools/${t.id}.html`
+    url: `${basePath}${lang}/tools/${t.id}.html`
   }));
   
   // Build category cards
@@ -334,7 +339,7 @@ function buildHomepage(lang) {
     const count = toolsData.tools.filter(t => t.category === catId).length;
     
     return `
-        <a href="/${lang}/category/${catId}.html" class="category-card">
+        <a href="${basePath}${lang}/category/${catId}.html" class="category-card">
           <div class="category-icon">${cat.icon}</div>
           <div class="category-name">${cat.name}</div>
           <div class="category-count">${count} ${ui.toolCount}</div>
@@ -392,6 +397,7 @@ function buildToolPage(toolId, lang) {
   const categories = i18n.categories[lang];
   const ui = i18n.ui[lang];
   const isArabic = lang === 'ar';
+  const basePath = '../../'; // Tool pages are at /ar/tools/
   
   if (!tool || !toolI18n) {
     console.warn(`  ⚠ Tool translations not found: ${toolId}`);
@@ -407,7 +413,7 @@ function buildToolPage(toolId, lang) {
     searchTerms: i18n.tools[t.id]?.[lang]?.searchTerms || '',
     category: t.category,
     categoryName: categories[t.category]?.name || '',
-    url: `/${lang}/tools/${t.id}.html`
+    url: `${basePath}${lang}/tools/${t.id}.html`
   }));
   
   // Load tool template
@@ -491,6 +497,7 @@ function buildCategoryPage(categoryId, lang) {
   const ui = i18n.ui[lang];
   const categories = i18n.categories[lang];
   const cat = categories[categoryId];
+  const basePath = '../../'; // Category pages are at /ar/category/
   
   if (!cat) return null;
   
@@ -503,7 +510,7 @@ function buildCategoryPage(categoryId, lang) {
     searchTerms: i18n.tools[t.id]?.[lang]?.searchTerms || '',
     category: t.category,
     categoryName: categories[t.category]?.name || '',
-    url: `/${lang}/tools/${t.id}.html`
+    url: `${basePath}${lang}/tools/${t.id}.html`
   }));
   
   // Get tools in this category
@@ -523,7 +530,7 @@ function buildCategoryPage(categoryId, lang) {
         ${catTools.map(tool => {
           const toolI18n = i18n.tools[tool.id]?.[lang];
           return `
-          <a href="/${lang}/tools/${tool.id}.html" class="tool-grid-card">
+          <a href="${basePath}${lang}/tools/${tool.id}.html" class="tool-grid-card">
             <div class="tool-grid-icon">${tool.icon}</div>
             <div class="tool-grid-info">
               <h3>${toolI18n?.name || tool.id}</h3>
@@ -621,9 +628,9 @@ function build() {
   // Redirect index
   fs.writeFileSync(path.join(config.distDir, 'index.html'), `<!DOCTYPE html>
 <html><head><meta charset="UTF-8">
-<script>window.location.href='/'+(navigator.language?.startsWith('en')?'en':'ar')+'/';</script>
-<meta http-equiv="refresh" content="0;url=/ar/">
-</head><body><a href="/ar/">العربية</a> | <a href="/en/">English</a></body></html>`);
+<script>window.location.href=(navigator.language?.startsWith('en')?'en':'ar')+'/';</script>
+<meta http-equiv="refresh" content="0;url=ar/">
+</head><body><a href="ar/">العربية</a> | <a href="en/">English</a></body></html>`);
   
   console.log('\n✓ Sitemap generated');
   console.log('✓ robots.txt generated');
