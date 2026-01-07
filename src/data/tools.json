@@ -6,15 +6,39 @@
       "icon": "🔢",
       "popular": true,
       "new": false,
-      "related": ["interest-calculator", "profit-margin", "vat-calculator"]
+      "related": ["interest-calculator", "loan-calculator", "vat-calculator"]
     },
     {
       "id": "interest-calculator",
       "category": "calculators",
       "icon": "💰",
       "popular": true,
+      "new": false,
+      "related": ["percentage", "loan-calculator"]
+    },
+    {
+      "id": "loan-calculator",
+      "category": "calculators",
+      "icon": "🏦",
+      "popular": true,
       "new": true,
-      "related": ["percentage", "profit-margin", "loan-calculator"]
+      "related": ["interest-calculator", "percentage"]
+    },
+    {
+      "id": "body-calculator",
+      "category": "calculators",
+      "icon": "⚖️",
+      "popular": true,
+      "new": true,
+      "related": ["age-calculator"]
+    },
+    {
+      "id": "age-calculator",
+      "category": "calculators",
+      "icon": "🎂",
+      "popular": true,
+      "new": true,
+      "related": ["body-calculator"]
     }
   ],
   "categoryOrder": [

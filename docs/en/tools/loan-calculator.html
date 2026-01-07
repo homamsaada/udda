@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Loan Calculator - Calculate Monthly Payment & Schedule | Udda</title>
+  <meta name="description" content="Free Loan Calculator - Calculate monthly payments, total interest, and payment schedules for mortgages and personal loans.">
+  <meta name="keywords" content="loan calculator, monthly payment, amortization schedule, mortgage calculator">
+  <meta name="author" content="Udda">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Loan Calculator - Calculate Monthly Payment & Schedule | Udda">
+  <meta property="og:description" content="Free Loan Calculator - Calculate monthly payments, total interest, and payment schedules for mortgages and personal loans.">
+  <meta property="og:url" content="https://udda.tools/en/tools/loan-calculator.html">
+  <meta property="og:site_name" content="Udda">
+  <meta property="og:locale" content="en_US">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Loan Calculator - Calculate Monthly Payment & Schedule | Udda">
+  <meta name="twitter:description" content="Free Loan Calculator - Calculate monthly payments, total interest, and payment schedules for mortgages and personal loans.">
+  
+  <link rel="alternate" hreflang="ar" href="https://udda.tools/ar/tools/loan-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://udda.tools/en/tools/loan-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://udda.tools/ar/tools/loan-calculator.html">
+  <link rel="canonical" href="https://udda.tools/en/tools/loan-calculator.html">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/udda/assets/css/main.css">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Loan Calculator",
+    "description": "Free Loan Calculator - Calculate monthly payments, total interest, and payment schedules for mortgages and personal loans.",
+    "url": "https://udda.tools/en/tools/loan-calculator.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "inLanguage": ["ar", "en"],
+    "isAccessibleForFree": true
+  }
+  </script>
+</head>
+<body data-tool-id="loan-calculator">
+  <div class="app-container">
+    <div class="sidebar-overlay"></div>
+    
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="/udda/en/" class="logo">
+          <div class="logo-icon">🔧</div>
+          <span class="logo-text sidebar-text">Udda</span>
+        </a>
+      </div>
+      
+      <div class="sidebar-search">
+        <div class="search-input-wrapper">
+          <input type="text" class="search-input" placeholder="Search for a tool..." aria-label="Search for a tool...">
+          <svg class="search-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </div>
+      </div>
+      
+      <nav class="sidebar-nav">
+        
+        <a href="/udda/en/" class="nav-item ">
+          <span class="nav-item-icon">🏠</span>
+          <span class="sidebar-text">Home</span>
+        </a>
+        <div class="nav-section open">
+          <div class="nav-section-title">
+            <span>
+              <span class="nav-section-icon">🧮</span>
+              <span class="sidebar-text">Calculators</span>
+            </span>
+            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="nav-section-items">
+            <a href="/udda/en/tools/percentage.html" class="nav-item ">
+              <span class="nav-item-icon">🔢</span>
+              <span class="sidebar-text">Percentage Calculator</span>
+            </a>
+            <a href="/udda/en/tools/interest-calculator.html" class="nav-item ">
+              <span class="nav-item-icon">💰</span>
+              <span class="sidebar-text">Interest Calculator</span>
+            </a>
+            <a href="/udda/en/tools/loan-calculator.html" class="nav-item active">
+              <span class="nav-item-icon">🏦</span>
+              <span class="sidebar-text">Loan Calculator</span>
+            </a>
+            <a href="/udda/en/tools/body-calculator.html" class="nav-item ">
+              <span class="nav-item-icon">⚖️</span>
+              <span class="sidebar-text">Body Calculator</span>
+            </a>
+            <a href="/udda/en/tools/age-calculator.html" class="nav-item ">
+              <span class="nav-item-icon">🎂</span>
+              <span class="sidebar-text">Age Calculator</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section ">
+          <div class="nav-section-title">
+            <span>
+              <span class="nav-section-icon">🔄</span>
+              <span class="sidebar-text">Converters</span>
+            </span>
+            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="nav-section-items">
+          </div>
+        </div>
+        <div class="nav-section ">
+          <div class="nav-section-title">
+            <span>
+              <span class="nav-section-icon">📝</span>
+              <span class="sidebar-text">Text Tools</span>
+            </span>
+            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="nav-section-items">
+          </div>
+        </div>
+        <div class="nav-section ">
+          <div class="nav-section-title">
+            <span>
+              <span class="nav-section-icon">📅</span>
+              <span class="sidebar-text">Date & Time</span>
+            </span>
+            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="nav-section-items">
+          </div>
+        </div>
+        <div class="nav-section ">
+          <div class="nav-section-title">
+            <span>
+              <span class="nav-section-icon">⚡</span>
+              <span class="sidebar-text">Generators</span>
+            </span>
+            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="nav-section-items">
+          </div>
+        </div>
+        <div class="nav-section ">
+          <div class="nav-section-title">
+            <span>
+              <span class="nav-section-icon">🖼️</span>
+              <span class="sidebar-text">Image Tools</span>
+            </span>
+            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="nav-section-items">
+          </div>
+        </div>
+        <div class="nav-section ">
+          <div class="nav-section-title">
+            <span>
+              <span class="nav-section-icon">💻</span>
+              <span class="sidebar-text">Developer Tools</span>
+            </span>
+            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="nav-section-items">
+          </div>
+        </div>
+        <div class="nav-section ">
+          <div class="nav-section-title">
+            <span>
+              <span class="nav-section-icon">🏠</span>
+              <span class="sidebar-text">Everyday Tools</span>
+            </span>
+            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="nav-section-items">
+          </div>
+        </div>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <button class="sidebar-toggle" aria-label="Toggle sidebar">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path>
+          </svg>
+          <span class="sidebar-text">Sidebar</span>
+        </button>
+      </div>
+    </aside>
+    
+    <div class="main-content">
+      <header class="main-header">
+        <button class="header-btn mobile-menu-btn" aria-label="Menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        
+        <nav class="header-breadcrumb">
+          <a href="/udda/en/" class="breadcrumb-link">Home</a>
+          <span class="breadcrumb-separator">›</span>
+          <a href="/udda/en/category/calculators.html" class="breadcrumb-link">Calculators</a>
+          <span class="breadcrumb-separator">›</span>
+          <span class="breadcrumb-current">Loan Calculator</span>
+        </nav>
+        
+        <div class="header-actions">
+          <button class="header-btn" data-favorite-btn aria-label="Add to Favorites">☆</button>
+          <button class="header-btn" onclick="App.shareUrl('Loan Calculator')" aria-label="Share">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+              <polyline points="16 6 12 2 8 6"></polyline>
+              <line x1="12" y1="2" x2="12" y2="15"></line>
+            </svg>
+          </button>
+          <button class="header-btn" data-open-settings aria-label="Settings">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+      
+      <main class="page-content">
+        <style>
+/* Loan Calculator Styles */
+.loan-calculator {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.loan-types {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.loan-type-btn {
+  flex: 1;
+  min-width: 140px;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.loan-type-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.loan-type-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.loan-type-btn span {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+.loan-form {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.form-group input, .form-group select {
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.input-with-suffix {
+  position: relative;
+}
+
+.input-with-suffix input {
+  width: 100%;
+  padding-right: 50px;
+}
+
+.input-suffix {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.calculate-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-top: 8px;
+}
+
+.calculate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+/* Results */
+.loan-results {
+  display: none;
+}
+
+.loan-results.show {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.results-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.result-card {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+.result-card.primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+}
+
+.result-card.primary .result-label {
+  color: rgba(255,255,255,0.85);
+}
+
+.result-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.result-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.result-card.primary .result-value {
+  color: white;
+}
+
+.result-value.green {
+  color: #22c55e;
+}
+
+.result-value.orange {
+  color: #f59e0b;
+}
+
+/* Charts Section */
+.charts-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .charts-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chart-card {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.chart-card h3 {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.chart-container {
+  height: 250px;
+  position: relative;
+}
+
+/* Schedule Table */
+.schedule-section {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.schedule-header h3 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.schedule-toggle {
+  display: flex;
+  gap: 8px;
+}
+
+.toggle-btn {
+  padding: 8px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.toggle-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.schedule-table-wrapper {
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.schedule-table th {
+  background: var(--primary);
+  color: white;
+  padding: 12px 16px;
+  text-align: center;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.schedule-table td {
+  padding: 10px 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.schedule-table tr:nth-child(even) {
+  background: var(--bg-tertiary);
+}
+
+.schedule-table tr:hover {
+  background: rgba(99, 102, 241, 0.1);
+}
+
+/* Export Buttons */
+.export-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.export-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.export-btn:hover {
+  transform: translateY(-2px);
+}
+
+.export-btn.excel {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+}
+
+.export-btn.excel:hover {
+  box-shadow: 0 6px 15px rgba(34, 197, 94, 0.3);
+}
+
+.export-btn.copy {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+}
+
+.export-btn.copy:hover {
+  box-shadow: 0 6px 15px rgba(139, 92, 246, 0.3);
+}
+
+/* Type Description */
+.type-description {
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.type-description p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.type-description strong {
+  color: var(--primary);
+}
+</style>
+
+<div class="loan-calculator">
+  <!-- Loan Type Selection -->
+  <div class="loan-types">
+    <button class="loan-type-btn active" data-type="amortized" onclick="selectLoanType('amortized')">
+      Fixed Payment
+      <span>Same payment monthly</span>
+    </button>
+    <button class="loan-type-btn" data-type="declining" onclick="selectLoanType('declining')">
+      Declining Balance
+      <span>Starts high, decreases</span>
+    </button>
+    <button class="loan-type-btn" data-type="interest-only" onclick="selectLoanType('interest-only')">
+      Interest Only
+      <span>Interest then principal</span>
+    </button>
+  </div>
+
+  <!-- Type Description -->
+  <div class="type-description" id="type-description">
+    <p id="type-desc-text"></p>
+  </div>
+
+  <!-- Input Form -->
+  <div class="loan-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label>Loan Amount</label>
+        <div class="input-with-suffix">
+          <input type="number" id="loan-amount" placeholder="100000" oninput="calculateLoan()">
+          <span class="input-suffix">$</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Annual Interest Rate</label>
+        <div class="input-with-suffix">
+          <input type="number" id="interest-rate" placeholder="5" step="0.1" oninput="calculateLoan()">
+          <span class="input-suffix">%</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Loan Term</label>
+        <input type="number" id="loan-term" placeholder="5" oninput="calculateLoan()">
+      </div>
+      <div class="form-group">
+        <label>Unit</label>
+        <select id="term-unit" onchange="calculateLoan()">
+          <option value="years">Years</option>
+          <option value="months">Months</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="loan-results" id="loan-results">
+    <div class="results-summary">
+      <div class="result-card primary">
+        <div class="result-label">Monthly Payment</div>
+        <div class="result-value" id="monthly-payment">$0</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Total Payments</div>
+        <div class="result-value" id="total-payment">$0</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Total Interest</div>
+        <div class="result-value orange" id="total-interest">$0</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Interest Ratio</div>
+        <div class="result-value" id="interest-ratio">0%</div>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts-section">
+      <div class="chart-card">
+        <h3>Payment Breakdown</h3>
+        <div class="chart-container">
+          <canvas id="pie-chart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3>Balance Over Time</h3>
+        <div class="chart-container">
+          <canvas id="balance-chart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Amortization Schedule -->
+    <div class="schedule-section">
+      <div class="schedule-header">
+        <h3>Payment Schedule</h3>
+        <div class="schedule-toggle">
+          <button class="toggle-btn active" onclick="toggleScheduleView('monthly')">Monthly</button>
+          <button class="toggle-btn" onclick="toggleScheduleView('yearly')">Yearly</button>
+        </div>
+      </div>
+      <div class="schedule-table-wrapper">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th id="period-header">Month</th>
+              <th>Payment</th>
+              <th>Principal Paid</th>
+              <th>Interest Paid</th>
+              <th>Remaining Balance</th>
+            </tr>
+          </thead>
+          <tbody id="schedule-body">
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Export -->
+    <div class="export-buttons">
+      <button class="export-btn excel" onclick="exportLoanToExcel()">
+        📊 Export Excel
+      </button>
+      <button class="export-btn copy" onclick="copyLoanData()">
+        📋 Copy All
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
+<script>
+const isArabic = App.state.lang === 'ar';
+
+// Translations
+const t = {
+  amortizedDesc: isArabic ? 'القسط الثابت هو الأكثر شيوعاً. تدفع نفس المبلغ كل شهر، لكن نسبة الفائدة تقل تدريجياً ونسبة الأصل تزيد.' : 'Fixed payment is the most common. You pay the same amount each month, but the interest portion decreases while the principal portion increases.',
+  decliningDesc: isArabic ? 'القسط المتناقص: تدفع مبلغاً ثابتاً من الأصل + الفائدة على الرصيد المتبقي. القسط يبدأ عالياً ثم يقل.' : 'Declining balance: You pay a fixed principal amount + interest on remaining balance. Payments start high and decrease.',
+  interestOnlyDesc: isArabic ? 'تدفع الفائدة فقط خلال المدة، ثم تسدد كامل الأصل في النهاية. مناسب للاستثمارات قصيرة المدى.' : 'Pay only interest during the term, then pay the full principal at the end. Suitable for short-term investments.',
+  month: isArabic ? 'الشهر' : 'Month',
+  year: isArabic ? 'السنة' : 'Year',
+  principal: isArabic ? 'الأصل' : 'Principal',
+  interest: isArabic ? 'الفائدة' : 'Interest',
+  remaining: isArabic ? 'المتبقي' : 'Remaining'
+};
+
+let currentLoanType = 'amortized';
+let scheduleData = [];
+let pieChart = null;
+let balanceChart = null;
+let scheduleView = 'monthly';
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  updateTypeDescription();
+});
+
+function selectLoanType(type) {
+  currentLoanType = type;
+  document.querySelectorAll('.loan-type-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.type === type);
+  });
+  updateTypeDescription();
+  calculateLoan();
+}
+
+function updateTypeDescription() {
+  const descText = document.getElementById('type-desc-text');
+  switch(currentLoanType) {
+    case 'amortized':
+      descText.innerHTML = t.amortizedDesc;
+      break;
+    case 'declining':
+      descText.innerHTML = t.decliningDesc;
+      break;
+    case 'interest-only':
+      descText.innerHTML = t.interestOnlyDesc;
+      break;
+  }
+}
+
+function calculateLoan() {
+  const principal = parseFloat(document.getElementById('loan-amount').value);
+  const annualRate = parseFloat(document.getElementById('interest-rate').value);
+  const term = parseFloat(document.getElementById('loan-term').value);
+  const termUnit = document.getElementById('term-unit').value;
+
+  if (!principal || !annualRate || !term) {
+    document.getElementById('loan-results').classList.remove('show');
+    return;
+  }
+
+  const monthlyRate = annualRate / 100 / 12;
+  const totalMonths = termUnit === 'years' ? term * 12 : term;
+
+  let monthlyPayment, totalPayment, totalInterest;
+  scheduleData = [];
+
+  switch(currentLoanType) {
+    case 'amortized':
+      ({ monthlyPayment, totalPayment, totalInterest, scheduleData } = 
+        calculateAmortized(principal, monthlyRate, totalMonths));
+      break;
+    case 'declining':
+      ({ monthlyPayment, totalPayment, totalInterest, scheduleData } = 
+        calculateDeclining(principal, monthlyRate, totalMonths));
+      break;
+    case 'interest-only':
+      ({ monthlyPayment, totalPayment, totalInterest, scheduleData } = 
+        calculateInterestOnly(principal, monthlyRate, totalMonths));
+      break;
+  }
+
+  // Update UI
+  document.getElementById('monthly-payment').textContent = formatCurrency(monthlyPayment);
+  document.getElementById('total-payment').textContent = formatCurrency(totalPayment);
+  document.getElementById('total-interest').textContent = formatCurrency(totalInterest);
+  document.getElementById('interest-ratio').textContent = ((totalInterest / totalPayment) * 100).toFixed(1) + '%';
+
+  document.getElementById('loan-results').classList.add('show');
+
+  updateCharts(principal, totalInterest);
+  updateScheduleTable();
+}
+
+function calculateAmortized(principal, monthlyRate, totalMonths) {
+  // M = P * [r(1+r)^n] / [(1+r)^n - 1]
+  const monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / 
+                         (Math.pow(1 + monthlyRate, totalMonths) - 1);
+  
+  const totalPayment = monthlyPayment * totalMonths;
+  const totalInterest = totalPayment - principal;
+
+  let balance = principal;
+  const schedule = [];
+
+  for (let month = 1; month <= totalMonths; month++) {
+    const interestPaid = balance * monthlyRate;
+    const principalPaid = monthlyPayment - interestPaid;
+    balance -= principalPaid;
+    
+    schedule.push({
+      month,
+      payment: monthlyPayment,
+      principalPaid,
+      interestPaid,
+      balance: Math.max(0, balance)
+    });
+  }
+
+  return { monthlyPayment, totalPayment, totalInterest, scheduleData: schedule };
+}
+
+function calculateDeclining(principal, monthlyRate, totalMonths) {
+  const fixedPrincipal = principal / totalMonths;
+  let balance = principal;
+  const schedule = [];
+  let totalPayment = 0;
+  let totalInterest = 0;
+
+  for (let month = 1; month <= totalMonths; month++) {
+    const interestPaid = balance * monthlyRate;
+    const payment = fixedPrincipal + interestPaid;
+    balance -= fixedPrincipal;
+    
+    totalPayment += payment;
+    totalInterest += interestPaid;
+
+    schedule.push({
+      month,
+      payment,
+      principalPaid: fixedPrincipal,
+      interestPaid,
+      balance: Math.max(0, balance)
+    });
+  }
+
+  const monthlyPayment = schedule[0].payment; // First payment (highest)
+
+  return { monthlyPayment, totalPayment, totalInterest, scheduleData: schedule };
+}
+
+function calculateInterestOnly(principal, monthlyRate, totalMonths) {
+  const monthlyInterest = principal * monthlyRate;
+  const totalInterest = monthlyInterest * totalMonths;
+  const totalPayment = totalInterest + principal;
+
+  const schedule = [];
+  for (let month = 1; month <= totalMonths; month++) {
+    const isLastMonth = month === totalMonths;
+    schedule.push({
+      month,
+      payment: isLastMonth ? monthlyInterest + principal : monthlyInterest,
+      principalPaid: isLastMonth ? principal : 0,
+      interestPaid: monthlyInterest,
+      balance: isLastMonth ? 0 : principal
+    });
+  }
+
+  return { 
+    monthlyPayment: monthlyInterest, 
+    totalPayment, 
+    totalInterest, 
+    scheduleData: schedule 
+  };
+}
+
+function updateCharts(principal, totalInterest) {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const textColor = isDark ? '#E5E7EB' : '#374151';
+  const gridColor = isDark ? '#374151' : '#E5E7EB';
+
+  // Pie Chart
+  const pieCtx = document.getElementById('pie-chart').getContext('2d');
+  if (pieChart) pieChart.destroy();
+
+  pieChart = new Chart(pieCtx, {
+    type: 'doughnut',
+    data: {
+      labels: [t.principal, t.interest],
+      datasets: [{
+        data: [principal, totalInterest],
+        backgroundColor: ['#22c55e', '#f59e0b'],
+        borderWidth: 0
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          rtl: isArabic,
+          labels: { color: textColor, padding: 20 }
+        },
+        tooltip: {
+          rtl: isArabic,
+          callbacks: {
+            label: (ctx) => ctx.label + ': ' + formatCurrency(ctx.raw)
+          }
+        }
+      }
+    }
+  });
+
+  // Balance Chart
+  const balanceCtx = document.getElementById('balance-chart').getContext('2d');
+  if (balanceChart) balanceChart.destroy();
+
+  const labels = scheduleData.map(d => d.month);
+  const balances = scheduleData.map(d => d.balance);
+  const principalPaid = [];
+  let cumPrincipal = 0;
+  scheduleData.forEach(d => {
+    cumPrincipal += d.principalPaid;
+    principalPaid.push(cumPrincipal);
+  });
+
+  balanceChart = new Chart(balanceCtx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: t.remaining,
+          data: balances,
+          borderColor: '#ef4444',
+          backgroundColor: 'rgba(239, 68, 68, 0.1)',
+          fill: true,
+          tension: 0.3
+        },
+        {
+          label: t.principal + ' ' + (isArabic ? 'المدفوع' : 'Paid'),
+          data: principalPaid,
+          borderColor: '#22c55e',
+          backgroundColor: 'rgba(34, 197, 94, 0.1)',
+          fill: true,
+          tension: 0.3
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          rtl: isArabic,
+          labels: { color: textColor }
+        }
+      },
+      scales: {
+        x: {
+          title: { display: true, text: t.month, color: textColor },
+          ticks: { color: textColor },
+          grid: { display: false }
+        },
+        y: {
+          title: { display: true, text: '$', color: textColor },
+          ticks: { 
+            color: textColor,
+            callback: (v) => v >= 1000 ? (v/1000).toFixed(0) + 'K' : v
+          },
+          grid: { color: gridColor }
+        }
+      }
+    }
+  });
+}
+
+function toggleScheduleView(view) {
+  scheduleView = view;
+  document.querySelectorAll('.schedule-toggle .toggle-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.includes(view === 'monthly' ? 
+      (isArabic ? 'شهري' : 'Monthly') : (isArabic ? 'سنوي' : 'Yearly')));
+  });
+  
+  const header = document.getElementById('period-header');
+  header.textContent = view === 'monthly' ? t.month : t.year;
+  
+  updateScheduleTable();
+}
+
+function updateScheduleTable() {
+  const tbody = document.getElementById('schedule-body');
+  tbody.innerHTML = '';
+
+  let dataToShow = scheduleData;
+
+  if (scheduleView === 'yearly') {
+    // Aggregate by year
+    const yearlyData = [];
+    for (let i = 0; i < scheduleData.length; i += 12) {
+      const yearSlice = scheduleData.slice(i, i + 12);
+      const year = Math.floor(i / 12) + 1;
+      yearlyData.push({
+        month: year,
+        payment: yearSlice.reduce((s, d) => s + d.payment, 0),
+        principalPaid: yearSlice.reduce((s, d) => s + d.principalPaid, 0),
+        interestPaid: yearSlice.reduce((s, d) => s + d.interestPaid, 0),
+        balance: yearSlice[yearSlice.length - 1].balance
+      });
+    }
+    dataToShow = yearlyData;
+  }
+
+  dataToShow.forEach(row => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${row.month}</td>
+      <td>${formatCurrency(row.payment)}</td>
+      <td style="color: #22c55e">${formatCurrency(row.principalPaid)}</td>
+      <td style="color: #f59e0b">${formatCurrency(row.interestPaid)}</td>
+      <td>${formatCurrency(row.balance)}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function formatCurrency(num) {
+  return '$' + num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+// Export functions
+async function exportLoanToExcel() {
+  if (scheduleData.length === 0) return;
+
+  const workbook = new ExcelJS.Workbook();
+  const worksheet = workbook.addWorksheet(isArabic ? 'جدول السداد' : 'Payment Schedule');
+
+  if (isArabic) worksheet.views = [{ rightToLeft: true }];
+
+  // Title
+  worksheet.mergeCells('A1:E1');
+  const title = worksheet.getCell('A1');
+  title.value = isArabic ? 'حاسبة القروض - جدول السداد' : 'Loan Calculator - Payment Schedule';
+  title.font = { size: 18, bold: true, color: { argb: 'FF6366F1' } };
+  title.alignment = { horizontal: 'center' };
+
+  // Summary
+  const principal = parseFloat(document.getElementById('loan-amount').value);
+  const rate = parseFloat(document.getElementById('interest-rate').value);
+  const term = parseFloat(document.getElementById('loan-term').value);
+  const unit = document.getElementById('term-unit').value;
+
+  const summaryStart = 3;
+  const summaryLabels = isArabic ? 
+    ['مبلغ القرض', 'معدل الفائدة', 'المدة', 'نوع القرض', 'القسط الشهري', 'إجمالي المدفوعات', 'إجمالي الفوائد'] :
+    ['Loan Amount', 'Interest Rate', 'Term', 'Loan Type', 'Monthly Payment', 'Total Payments', 'Total Interest'];
+  
+  const loanTypeNames = {
+    'amortized': isArabic ? 'القسط الثابت' : 'Fixed Payment',
+    'declining': isArabic ? 'القسط المتناقص' : 'Declining Balance',
+    'interest-only': isArabic ? 'فائدة فقط' : 'Interest Only'
+  };
+
+  const monthlyPayment = document.getElementById('monthly-payment').textContent;
+  const totalPayment = document.getElementById('total-payment').textContent;
+  const totalInterest = document.getElementById('total-interest').textContent;
+
+  const summaryValues = [
+    principal, rate + '%', term + ' ' + (unit === 'years' ? (isArabic ? 'سنة' : 'years') : (isArabic ? 'شهر' : 'months')),
+    loanTypeNames[currentLoanType], monthlyPayment, totalPayment, totalInterest
+  ];
+
+  summaryLabels.forEach((label, i) => {
+    worksheet.getCell(summaryStart + i, 1).value = label;
+    worksheet.getCell(summaryStart + i, 1).font = { bold: true };
+    worksheet.getCell(summaryStart + i, 2).value = summaryValues[i];
+  });
+
+  // Table headers
+  const headerRow = summaryStart + summaryLabels.length + 2;
+  const headers = isArabic ? 
+    ['الشهر', 'القسط', 'الأصل المدفوع', 'الفائدة المدفوعة', 'الرصيد المتبقي'] :
+    ['Month', 'Payment', 'Principal Paid', 'Interest Paid', 'Remaining Balance'];
+
+  headers.forEach((h, i) => {
+    const cell = worksheet.getCell(headerRow, i + 1);
+    cell.value = h;
+    cell.font = { bold: true, color: { argb: 'FFFFFFFF' } };
+    cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF6366F1' } };
+    cell.alignment = { horizontal: 'center' };
+  });
+
+  // Data
+  scheduleData.forEach((row, i) => {
+    const rowNum = headerRow + 1 + i;
+    worksheet.getCell(rowNum, 1).value = row.month;
+    worksheet.getCell(rowNum, 2).value = row.payment;
+    worksheet.getCell(rowNum, 3).value = row.principalPaid;
+    worksheet.getCell(rowNum, 4).value = row.interestPaid;
+    worksheet.getCell(rowNum, 5).value = row.balance;
+
+    [2, 3, 4, 5].forEach(col => {
+      worksheet.getCell(rowNum, col).numFmt = '$#,##0.00';
+    });
+
+    if (i % 2 === 0) {
+      for (let col = 1; col <= 5; col++) {
+        worksheet.getCell(rowNum, col).fill = { 
+          type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF9FAFB' } 
+        };
+      }
+    }
+  });
+
+  worksheet.columns = [{ width: 12 }, { width: 16 }, { width: 18 }, { width: 18 }, { width: 18 }];
+
+  const buffer = await workbook.xlsx.writeBuffer();
+  const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = isArabic ? 'جدول_سداد_القرض.xlsx' : 'loan_payment_schedule.xlsx';
+  link.click();
+
+  App.showToast(isArabic ? 'تم التصدير!' : 'Exported!');
+}
+
+function copyLoanData() {
+  if (scheduleData.length === 0) return;
+
+  const principal = document.getElementById('loan-amount').value;
+  const rate = document.getElementById('interest-rate').value;
+  const term = document.getElementById('loan-term').value;
+  const unit = document.getElementById('term-unit').value;
+
+  let text = isArabic ? '═══ حاسبة القروض ═══\n\n' : '═══ Loan Calculator ═══\n\n';
+  
+  text += isArabic ? `مبلغ القرض: $${principal}\n` : `Loan Amount: $${principal}\n`;
+  text += isArabic ? `معدل الفائدة: ${rate}%\n` : `Interest Rate: ${rate}%\n`;
+  text += isArabic ? `المدة: ${term} ${unit === 'years' ? 'سنة' : 'شهر'}\n\n` : `Term: ${term} ${unit}\n\n`;
+
+  text += isArabic ? `القسط الشهري: ${document.getElementById('monthly-payment').textContent}\n` :
+                     `Monthly Payment: ${document.getElementById('monthly-payment').textContent}\n`;
+  text += isArabic ? `إجمالي المدفوعات: ${document.getElementById('total-payment').textContent}\n` :
+                     `Total Payments: ${document.getElementById('total-payment').textContent}\n`;
+  text += isArabic ? `إجمالي الفوائد: ${document.getElementById('total-interest').textContent}\n` :
+                     `Total Interest: ${document.getElementById('total-interest').textContent}\n`;
+
+  navigator.clipboard.writeText(text);
+  App.showToast(isArabic ? 'تم النسخ!' : 'Copied!');
+}
+
+// Theme observer
+const themeObserver = new MutationObserver(() => {
+  if (scheduleData.length > 0) {
+    const principal = parseFloat(document.getElementById('loan-amount').value);
+    const totalInterest = parseFloat(document.getElementById('total-interest').textContent.replace(/[$,]/g, ''));
+    updateCharts(principal, totalInterest);
+  }
+});
+themeObserver.observe(document.documentElement, { attributes: true });
+</script>
+
+<script>
+  window.toolsData = [{"id":"percentage","icon":"🔢","name":"Percentage Calculator","keywords":"percentage calculator, calculate percentage, discount calculator, percent change","searchTerms":"percent percentage % discount sale off price change increase decrease difference quarter half third ratio math calculator profit loss tax margin fraction calculate how much what is of total part whole original cost selling buying before after","category":"calculators","categoryName":"Calculators","url":"/udda/en/tools/percentage.html"},{"id":"interest-calculator","icon":"💰","name":"Interest Calculator","keywords":"interest calculator, simple interest, compound interest, loan calculator","searchTerms":"interest simple compound loan investment return profit bank money calculate annual monthly daily quarterly yearly principal rate time period accumulate savings deposit growth calculator finance financial how much earn","category":"calculators","categoryName":"Calculators","url":"/udda/en/tools/interest-calculator.html"},{"id":"loan-calculator","icon":"🏦","name":"Loan Calculator","keywords":"loan calculator, monthly payment, amortization schedule, mortgage calculator","searchTerms":"loan loans payment payments installment installments bank mortgage mortgages monthly schedule amortization calculate calculator interest principal finance financing car home personal","category":"calculators","categoryName":"Calculators","url":"/udda/en/tools/loan-calculator.html"},{"id":"body-calculator","icon":"⚖️","name":"Body Calculator","keywords":"BMI calculator, body mass index, ideal weight, calorie calculator, body fat","searchTerms":"bmi body mass index weight fat calories calorie bmr tdee ideal healthy obesity overweight underweight waist hip ratio calculate calculator health fitness","category":"calculators","categoryName":"Calculators","url":"/udda/en/tools/body-calculator.html"},{"id":"age-calculator","icon":"🎂","name":"Age Calculator","keywords":"age calculator, calculate age, how old am I, zodiac sign, birthday calculator","searchTerms":"age birthday birth date zodiac calculate how old years months days weeks hours born sign horoscope difference between dates","category":"calculators","categoryName":"Calculators","url":"/udda/en/tools/age-calculator.html"}];
+</script>
+      </main>
+      
+      <footer class="main-footer">
+        <p>Made with ❤️ | All Rights Reserved © 2026 Udda</p>
+      </footer>
+    </div>
+  </div>
+  
+  <!-- Settings Panel -->
+  <div class="settings-overlay"></div>
+  <div class="settings-panel">
+    <div class="settings-header">
+      <h2 class="settings-title">Settings</h2>
+      <button class="settings-close" aria-label="Close">✕</button>
+    </div>
+    <div class="settings-content">
+      <div class="settings-section">
+        <div class="settings-section-title">Language</div>
+        <div class="settings-option">
+          <button class="settings-btn " data-lang-btn="ar">العربية</button>
+          <button class="settings-btn active" data-lang-btn="en">English</button>
+        </div>
+      </div>
+      <div class="settings-section">
+        <div class="settings-section-title">Theme</div>
+        <div class="settings-option">
+          <button class="settings-btn" data-theme-btn="light">☀️ Light</button>
+          <button class="settings-btn" data-theme-btn="dark">🌙 Dark</button>
+          <button class="settings-btn active" data-theme-btn="auto">💻 Auto</button>
+        </div>
+      </div>
+      <div class="settings-section">
+        <button class="settings-btn" data-clear-data style="width:100%;justify-content:center;color:var(--error);">
+          🗑️ Clear Saved Data
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="toast"></div>
+  <script src="/udda/assets/js/app.js"></script>
+</body>
+</html>

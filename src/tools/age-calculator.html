@@ -1,0 +1,769 @@
+<style>
+/* Age Calculator Styles */
+.age-calculator {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.calc-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.calc-tab {
+  flex: 1;
+  min-width: 120px;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.calc-tab:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.calc-tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.calc-section {
+  display: none;
+}
+
+.calc-section.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.input-form {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.form-group input, .form-group select {
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.result-box {
+  display: none;
+}
+
+.result-box.show {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Main Age Result */
+.age-main-result {
+  background: linear-gradient(135deg, var(--primary), #8b5cf6);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  color: white;
+  margin-bottom: 24px;
+}
+
+.age-big {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.age-unit {
+  font-size: 1.5rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.age-full {
+  margin-top: 16px;
+  font-size: 1.3rem;
+  opacity: 0.95;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Birthday Info */
+.birthday-info {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.birthday-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.birthday-row:last-child {
+  border-bottom: none;
+}
+
+.birthday-label {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.birthday-value {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.birthday-value.highlight {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+/* Zodiac */
+.zodiac-card {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.zodiac-icon {
+  font-size: 4rem;
+  margin-bottom: 12px;
+}
+
+.zodiac-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.zodiac-dates {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* Fun Facts */
+.fun-facts {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.fun-facts h3 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin: 0 0 16px 0;
+}
+
+.fact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.fact-item:last-child {
+  border-bottom: none;
+}
+
+.fact-icon {
+  font-size: 1.5rem;
+}
+
+.fact-text {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.fact-text strong {
+  color: var(--text-primary);
+}
+
+/* Date Diff Result */
+.diff-result {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.diff-main {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.diff-main strong {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.diff-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.diff-stat {
+  text-align: center;
+}
+
+.diff-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.diff-stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Add/Subtract Result */
+.add-result {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  color: white;
+  margin-bottom: 24px;
+}
+
+.add-result-date {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.add-result-day {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-top: 8px;
+}
+
+/* Operation Toggle */
+.operation-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.op-btn {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.op-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+</style>
+
+<div class="age-calculator">
+  <!-- Calculator Tabs -->
+  <div class="calc-tabs">
+    <button class="calc-tab active" onclick="switchAgeTab('age')">{{tool.myAge}}</button>
+    <button class="calc-tab" onclick="switchAgeTab('diff')">{{tool.dateDiff}}</button>
+    <button class="calc-tab" onclick="switchAgeTab('add')">{{tool.addSubtract}}</button>
+  </div>
+
+  <!-- Age Calculator -->
+  <div class="calc-section active" id="age-section">
+    <div class="input-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.birthDate}}</label>
+          <input type="date" id="birth-date" onchange="calculateAge()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.calculateTo}}</label>
+          <input type="date" id="calc-to-date" onchange="calculateAge()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="age-result">
+      <div class="age-main-result">
+        <div>
+          <span class="age-big" id="age-years">0</span>
+          <span class="age-unit">{{tool.yearsOld}}</span>
+        </div>
+        <div class="age-full" id="age-full"></div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="total-months">0</div>
+          <div class="stat-label">{{tool.months}}</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="total-weeks">0</div>
+          <div class="stat-label">{{tool.weeks}}</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="total-days">0</div>
+          <div class="stat-label">{{tool.days}}</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="total-hours">0</div>
+          <div class="stat-label">{{tool.hours}}</div>
+        </div>
+      </div>
+
+      <div class="birthday-info">
+        <div class="birthday-row">
+          <span class="birthday-label">{{tool.bornOn}}</span>
+          <span class="birthday-value" id="birth-day-name"></span>
+        </div>
+        <div class="birthday-row">
+          <span class="birthday-label">{{tool.nextBirthday}}</span>
+          <span class="birthday-value highlight" id="next-birthday"></span>
+        </div>
+        <div class="birthday-row">
+          <span class="birthday-label">{{tool.daysUntilBirthday}}</span>
+          <span class="birthday-value" id="days-until"></span>
+        </div>
+      </div>
+
+      <div class="zodiac-card">
+        <div class="zodiac-icon" id="zodiac-icon">♈</div>
+        <div class="zodiac-name" id="zodiac-name"></div>
+        <div class="zodiac-dates" id="zodiac-dates"></div>
+      </div>
+
+      <div class="fun-facts">
+        <h3>{{tool.funFacts}}</h3>
+        <div class="fact-item">
+          <span class="fact-icon">💓</span>
+          <span class="fact-text" id="heartbeats"></span>
+        </div>
+        <div class="fact-item">
+          <span class="fact-icon">🌬️</span>
+          <span class="fact-text" id="breaths"></span>
+        </div>
+        <div class="fact-item">
+          <span class="fact-icon">😴</span>
+          <span class="fact-text" id="sleep-time"></span>
+        </div>
+        <div class="fact-item">
+          <span class="fact-icon">🌙</span>
+          <span class="fact-text" id="full-moons"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Date Difference -->
+  <div class="calc-section" id="diff-section">
+    <div class="input-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.fromDate}}</label>
+          <input type="date" id="diff-from" onchange="calculateDiff()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.toDate}}</label>
+          <input type="date" id="diff-to" onchange="calculateDiff()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="diff-result">
+      <div class="diff-result">
+        <div class="diff-main" id="diff-main"></div>
+        <div class="diff-stats">
+          <div class="diff-stat">
+            <div class="diff-stat-value" id="diff-months">0</div>
+            <div class="diff-stat-label">{{tool.months}}</div>
+          </div>
+          <div class="diff-stat">
+            <div class="diff-stat-value" id="diff-weeks">0</div>
+            <div class="diff-stat-label">{{tool.weeks}}</div>
+          </div>
+          <div class="diff-stat">
+            <div class="diff-stat-value" id="diff-days">0</div>
+            <div class="diff-stat-label">{{tool.days}}</div>
+          </div>
+          <div class="diff-stat">
+            <div class="diff-stat-value" id="diff-hours">0</div>
+            <div class="diff-stat-label">{{tool.hours}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add/Subtract from Date -->
+  <div class="calc-section" id="add-section">
+    <div class="input-form">
+      <div class="form-group" style="margin-bottom: 16px">
+        <label>{{tool.operation}}</label>
+        <div class="operation-toggle">
+          <button class="op-btn active" onclick="setOperation('add')">+ {{tool.add}}</button>
+          <button class="op-btn" onclick="setOperation('subtract')">− {{tool.subtract}}</button>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.startDate}}</label>
+          <input type="date" id="add-start" onchange="calculateAdd()">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.yearsToAdd}}</label>
+          <input type="number" id="add-years" placeholder="0" oninput="calculateAdd()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.monthsToAdd}}</label>
+          <input type="number" id="add-months" placeholder="0" oninput="calculateAdd()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.daysToAdd}}</label>
+          <input type="number" id="add-days" placeholder="0" oninput="calculateAdd()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="add-result">
+      <div class="add-result">
+        <div class="add-result-date" id="add-result-date"></div>
+        <div class="add-result-day" id="add-result-day"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const isArabic = App.state.lang === 'ar';
+let currentOperation = 'add';
+
+// Day names
+const dayNames = isArabic ? 
+  ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'] :
+  ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+const monthNames = isArabic ?
+  ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'] :
+  ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+// Zodiac signs
+const zodiacSigns = [
+  { name: isArabic ? 'الجدي' : 'Capricorn', icon: '♑', start: [12, 22], end: [1, 19] },
+  { name: isArabic ? 'الدلو' : 'Aquarius', icon: '♒', start: [1, 20], end: [2, 18] },
+  { name: isArabic ? 'الحوت' : 'Pisces', icon: '♓', start: [2, 19], end: [3, 20] },
+  { name: isArabic ? 'الحمل' : 'Aries', icon: '♈', start: [3, 21], end: [4, 19] },
+  { name: isArabic ? 'الثور' : 'Taurus', icon: '♉', start: [4, 20], end: [5, 20] },
+  { name: isArabic ? 'الجوزاء' : 'Gemini', icon: '♊', start: [5, 21], end: [6, 20] },
+  { name: isArabic ? 'السرطان' : 'Cancer', icon: '♋', start: [6, 21], end: [7, 22] },
+  { name: isArabic ? 'الأسد' : 'Leo', icon: '♌', start: [7, 23], end: [8, 22] },
+  { name: isArabic ? 'العذراء' : 'Virgo', icon: '♍', start: [8, 23], end: [9, 22] },
+  { name: isArabic ? 'الميزان' : 'Libra', icon: '♎', start: [9, 23], end: [10, 22] },
+  { name: isArabic ? 'العقرب' : 'Scorpio', icon: '♏', start: [10, 23], end: [11, 21] },
+  { name: isArabic ? 'القوس' : 'Sagittarius', icon: '♐', start: [11, 22], end: [12, 21] }
+];
+
+// Initialize with today's date
+document.addEventListener('DOMContentLoaded', () => {
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('calc-to-date').value = today;
+  document.getElementById('diff-to').value = today;
+  document.getElementById('add-start').value = today;
+});
+
+function switchAgeTab(tab) {
+  document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.calc-section').forEach(s => s.classList.remove('active'));
+  
+  document.querySelector(`.calc-tab[onclick="switchAgeTab('${tab}')"]`).classList.add('active');
+  document.getElementById(`${tab}-section`).classList.add('active');
+}
+
+function setOperation(op) {
+  currentOperation = op;
+  document.querySelectorAll('.op-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  calculateAdd();
+}
+
+function calculateAge() {
+  const birthDate = new Date(document.getElementById('birth-date').value);
+  const toDate = new Date(document.getElementById('calc-to-date').value);
+  
+  if (isNaN(birthDate.getTime()) || isNaN(toDate.getTime())) {
+    document.getElementById('age-result').classList.remove('show');
+    return;
+  }
+  
+  // Calculate age
+  let years = toDate.getFullYear() - birthDate.getFullYear();
+  let months = toDate.getMonth() - birthDate.getMonth();
+  let days = toDate.getDate() - birthDate.getDate();
+  
+  if (days < 0) {
+    months--;
+    const lastMonth = new Date(toDate.getFullYear(), toDate.getMonth(), 0);
+    days += lastMonth.getDate();
+  }
+  
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+  
+  document.getElementById('age-years').textContent = years;
+  
+  const fullAge = isArabic ?
+    `${years} سنة و ${months} شهر و ${days} يوم` :
+    `${years} years, ${months} months, ${days} days`;
+  document.getElementById('age-full').textContent = fullAge;
+  
+  // Total stats
+  const diffMs = toDate - birthDate;
+  const totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  const totalWeeks = Math.floor(totalDays / 7);
+  const totalMonths = years * 12 + months;
+  const totalHours = totalDays * 24;
+  
+  document.getElementById('total-months').textContent = totalMonths.toLocaleString();
+  document.getElementById('total-weeks').textContent = totalWeeks.toLocaleString();
+  document.getElementById('total-days').textContent = totalDays.toLocaleString();
+  document.getElementById('total-hours').textContent = totalHours.toLocaleString();
+  
+  // Birth day name
+  document.getElementById('birth-day-name').textContent = dayNames[birthDate.getDay()];
+  
+  // Next birthday
+  let nextBirthday = new Date(toDate.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+  if (nextBirthday <= toDate) {
+    nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
+  }
+  
+  const nextBirthdayStr = formatDate(nextBirthday);
+  document.getElementById('next-birthday').textContent = `${nextBirthdayStr} (${dayNames[nextBirthday.getDay()]})`;
+  
+  const daysUntil = Math.ceil((nextBirthday - toDate) / (1000 * 60 * 60 * 24));
+  document.getElementById('days-until').textContent = isArabic ? 
+    `${daysUntil} يوم` : `${daysUntil} days`;
+  
+  // Zodiac
+  const zodiac = getZodiac(birthDate.getMonth() + 1, birthDate.getDate());
+  document.getElementById('zodiac-icon').textContent = zodiac.icon;
+  document.getElementById('zodiac-name').textContent = zodiac.name;
+  document.getElementById('zodiac-dates').textContent = `${zodiac.start[1]}/${zodiac.start[0]} - ${zodiac.end[1]}/${zodiac.end[0]}`;
+  
+  // Fun facts
+  const heartbeats = totalDays * 24 * 60 * 70; // ~70 beats per minute
+  const breaths = totalDays * 24 * 60 * 15; // ~15 breaths per minute
+  const sleepYears = (totalDays / 365 * 0.33).toFixed(1); // ~1/3 of life sleeping
+  const fullMoons = Math.floor(totalDays / 29.5);
+  
+  document.getElementById('heartbeats').innerHTML = isArabic ?
+    `قلبك نبض حوالي <strong>${(heartbeats / 1000000000).toFixed(1)} مليار</strong> نبضة` :
+    `Your heart has beaten about <strong>${(heartbeats / 1000000000).toFixed(1)} billion</strong> times`;
+  
+  document.getElementById('breaths').innerHTML = isArabic ?
+    `تنفست حوالي <strong>${(breaths / 1000000).toFixed(0)} مليون</strong> نفس` :
+    `You've taken about <strong>${(breaths / 1000000).toFixed(0)} million</strong> breaths`;
+  
+  document.getElementById('sleep-time').innerHTML = isArabic ?
+    `قضيت حوالي <strong>${sleepYears} سنة</strong> نائماً` :
+    `You've spent about <strong>${sleepYears} years</strong> sleeping`;
+  
+  document.getElementById('full-moons').innerHTML = isArabic ?
+    `شهدت حوالي <strong>${fullMoons}</strong> بدر كامل` :
+    `You've seen about <strong>${fullMoons}</strong> full moons`;
+  
+  document.getElementById('age-result').classList.add('show');
+}
+
+function calculateDiff() {
+  const fromDate = new Date(document.getElementById('diff-from').value);
+  const toDate = new Date(document.getElementById('diff-to').value);
+  
+  if (isNaN(fromDate.getTime()) || isNaN(toDate.getTime())) {
+    document.getElementById('diff-result').classList.remove('show');
+    return;
+  }
+  
+  const diffMs = Math.abs(toDate - fromDate);
+  const totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  
+  // Calculate years, months, days
+  let years = 0, months = 0, days = totalDays;
+  
+  const start = fromDate < toDate ? fromDate : toDate;
+  const end = fromDate < toDate ? toDate : fromDate;
+  
+  years = end.getFullYear() - start.getFullYear();
+  months = end.getMonth() - start.getMonth();
+  days = end.getDate() - start.getDate();
+  
+  if (days < 0) {
+    months--;
+    const lastMonth = new Date(end.getFullYear(), end.getMonth(), 0);
+    days += lastMonth.getDate();
+  }
+  
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+  
+  const mainText = isArabic ?
+    `<strong>${years}</strong> سنة و <strong>${months}</strong> شهر و <strong>${days}</strong> يوم` :
+    `<strong>${years}</strong> years, <strong>${months}</strong> months, <strong>${days}</strong> days`;
+  
+  document.getElementById('diff-main').innerHTML = mainText;
+  
+  document.getElementById('diff-months').textContent = (years * 12 + months).toLocaleString();
+  document.getElementById('diff-weeks').textContent = Math.floor(totalDays / 7).toLocaleString();
+  document.getElementById('diff-days').textContent = totalDays.toLocaleString();
+  document.getElementById('diff-hours').textContent = (totalDays * 24).toLocaleString();
+  
+  document.getElementById('diff-result').classList.add('show');
+}
+
+function calculateAdd() {
+  const startDate = new Date(document.getElementById('add-start').value);
+  const addYears = parseInt(document.getElementById('add-years').value) || 0;
+  const addMonths = parseInt(document.getElementById('add-months').value) || 0;
+  const addDays = parseInt(document.getElementById('add-days').value) || 0;
+  
+  if (isNaN(startDate.getTime())) {
+    document.getElementById('add-result').classList.remove('show');
+    return;
+  }
+  
+  const resultDate = new Date(startDate);
+  
+  if (currentOperation === 'add') {
+    resultDate.setFullYear(resultDate.getFullYear() + addYears);
+    resultDate.setMonth(resultDate.getMonth() + addMonths);
+    resultDate.setDate(resultDate.getDate() + addDays);
+  } else {
+    resultDate.setFullYear(resultDate.getFullYear() - addYears);
+    resultDate.setMonth(resultDate.getMonth() - addMonths);
+    resultDate.setDate(resultDate.getDate() - addDays);
+  }
+  
+  document.getElementById('add-result-date').textContent = formatDate(resultDate);
+  document.getElementById('add-result-day').textContent = dayNames[resultDate.getDay()];
+  
+  document.getElementById('add-result').classList.add('show');
+}
+
+function getZodiac(month, day) {
+  for (const sign of zodiacSigns) {
+    const [startMonth, startDay] = sign.start;
+    const [endMonth, endDay] = sign.end;
+    
+    if (startMonth === endMonth) {
+      if (month === startMonth && day >= startDay && day <= endDay) return sign;
+    } else if (startMonth > endMonth) {
+      // Capricorn spans Dec-Jan
+      if ((month === startMonth && day >= startDay) || (month === endMonth && day <= endDay)) return sign;
+    } else {
+      if ((month === startMonth && day >= startDay) || (month === endMonth && day <= endDay)) return sign;
+    }
+  }
+  return zodiacSigns[0]; // Default to Capricorn
+}
+
+function formatDate(date) {
+  const day = date.getDate();
+  const month = monthNames[date.getMonth()];
+  const year = date.getFullYear();
+  return isArabic ? `${day} ${month} ${year}` : `${month} ${day}, ${year}`;
+}
+</script>

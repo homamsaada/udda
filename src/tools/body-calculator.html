@@ -1,0 +1,964 @@
+<style>
+/* Body Metrics Calculator Styles */
+.body-calculator {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.calc-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.calc-tab {
+  flex: 1;
+  min-width: 100px;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.calc-tab:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.calc-tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.calc-section {
+  display: none;
+}
+
+.calc-section.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.input-form {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.form-group input, .form-group select {
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.unit-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.unit-btn {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.unit-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.gender-selector {
+  display: flex;
+  gap: 12px;
+}
+
+.gender-btn {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.gender-btn.active {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary);
+}
+
+.gender-btn .icon {
+  font-size: 1.3rem;
+}
+
+/* Results */
+.result-box {
+  display: none;
+  margin-top: 24px;
+}
+
+.result-box.show {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.main-result {
+  text-align: center;
+  padding: 30px;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.result-number {
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.result-label {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* BMI Scale */
+.bmi-scale {
+  margin: 24px 0;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+}
+
+.scale-bar {
+  height: 30px;
+  border-radius: 15px;
+  background: linear-gradient(to right, 
+    #3b82f6 0%, #3b82f6 20%, 
+    #22c55e 20%, #22c55e 40%, 
+    #f59e0b 40%, #f59e0b 60%, 
+    #ef4444 60%, #ef4444 80%,
+    #991b1b 80%, #991b1b 100%
+  );
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.scale-marker {
+  position: absolute;
+  top: -8px;
+  width: 4px;
+  height: 46px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: left 0.5s ease;
+}
+
+.scale-marker::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid var(--text-primary);
+}
+
+.scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding: 0 5px;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 16px;
+}
+
+.category-badge.underweight { background: #3b82f6; color: white; }
+.category-badge.normal { background: #22c55e; color: white; }
+.category-badge.overweight { background: #f59e0b; color: white; }
+.category-badge.obese { background: #ef4444; color: white; }
+.category-badge.severe-obese { background: #991b1b; color: white; }
+
+/* Extra Results Grid */
+.extra-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.extra-result-card {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.extra-result-card .value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.extra-result-card .label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.extra-result-card.highlight {
+  border: 2px solid var(--primary);
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.extra-result-card.highlight .value {
+  color: var(--primary);
+}
+
+/* Info Box */
+.info-box {
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 20px;
+}
+
+.info-box h4 {
+  color: var(--primary);
+  margin: 0 0 10px 0;
+  font-size: 0.95rem;
+}
+
+.info-box p, .info-box li {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.info-box ul {
+  margin: 10px 0 0 0;
+  padding-right: 20px;
+}
+
+/* Activity Level */
+.activity-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.activity-btn {
+  padding: 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.activity-btn:hover {
+  border-color: var(--primary);
+}
+
+.activity-btn.active {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary);
+}
+
+.activity-btn .level {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+}
+</style>
+
+<div class="body-calculator">
+  <!-- Calculator Tabs -->
+  <div class="calc-tabs">
+    <button class="calc-tab active" onclick="switchTab('bmi')">{{tool.bmiTab}}</button>
+    <button class="calc-tab" onclick="switchTab('bmr')">{{tool.bmrTab}}</button>
+    <button class="calc-tab" onclick="switchTab('ibw')">{{tool.ibwTab}}</button>
+    <button class="calc-tab" onclick="switchTab('bodyfat')">{{tool.bodyfatTab}}</button>
+    <button class="calc-tab" onclick="switchTab('whr')">{{tool.whrTab}}</button>
+  </div>
+
+  <!-- BMI Calculator -->
+  <div class="calc-section active" id="bmi-section">
+    <div class="input-form">
+      <div class="unit-toggle">
+        <button class="unit-btn active" onclick="setUnit('metric', 'bmi')">{{tool.metric}}</button>
+        <button class="unit-btn" onclick="setUnit('imperial', 'bmi')">{{tool.imperial}}</button>
+      </div>
+      <div class="form-row" id="bmi-inputs-metric">
+        <div class="form-group">
+          <label>{{tool.height}} ({{tool.cm}})</label>
+          <input type="number" id="bmi-height-cm" placeholder="170" oninput="calculateBMI()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.weight}} ({{tool.kg}})</label>
+          <input type="number" id="bmi-weight-kg" placeholder="70" oninput="calculateBMI()">
+        </div>
+      </div>
+      <div class="form-row" id="bmi-inputs-imperial" style="display:none">
+        <div class="form-group">
+          <label>{{tool.height}} ({{tool.ft}})</label>
+          <input type="number" id="bmi-height-ft" placeholder="5" oninput="calculateBMI()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.inches}}</label>
+          <input type="number" id="bmi-height-in" placeholder="7" oninput="calculateBMI()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.weight}} ({{tool.lb}})</label>
+          <input type="number" id="bmi-weight-lb" placeholder="154" oninput="calculateBMI()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="bmi-result">
+      <div class="main-result">
+        <div class="result-number" id="bmi-value">0</div>
+        <div class="result-label">{{tool.bmiIndex}}</div>
+        <div class="category-badge normal" id="bmi-category">{{tool.normal}}</div>
+      </div>
+
+      <div class="bmi-scale">
+        <div class="scale-bar">
+          <div class="scale-marker" id="bmi-marker" style="left: 50%"></div>
+        </div>
+        <div class="scale-labels">
+          <span>16</span>
+          <span>18.5</span>
+          <span>25</span>
+          <span>30</span>
+          <span>35</span>
+          <span>40</span>
+        </div>
+      </div>
+
+      <div class="extra-results">
+        <div class="extra-result-card highlight">
+          <div class="value" id="ideal-weight-range">-</div>
+          <div class="label">{{tool.idealWeightRange}}</div>
+        </div>
+        <div class="extra-result-card">
+          <div class="value" id="weight-to-normal">-</div>
+          <div class="label">{{tool.toReachNormal}}</div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <h4>{{tool.bmiCategories}}</h4>
+        <ul>
+          <li><strong style="color:#3b82f6">{{tool.underweight}}:</strong> < 18.5</li>
+          <li><strong style="color:#22c55e">{{tool.normal}}:</strong> 18.5 - 24.9</li>
+          <li><strong style="color:#f59e0b">{{tool.overweight}}:</strong> 25 - 29.9</li>
+          <li><strong style="color:#ef4444">{{tool.obese}}:</strong> 30 - 34.9</li>
+          <li><strong style="color:#991b1b">{{tool.severeObese}}:</strong> ≥ 35</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- BMR Calculator -->
+  <div class="calc-section" id="bmr-section">
+    <div class="input-form">
+      <div class="form-group" style="margin-bottom: 16px">
+        <label>{{tool.gender}}</label>
+        <div class="gender-selector">
+          <button class="gender-btn active" onclick="setGender('male', 'bmr')">
+            <span class="icon">👨</span> {{tool.male}}
+          </button>
+          <button class="gender-btn" onclick="setGender('female', 'bmr')">
+            <span class="icon">👩</span> {{tool.female}}
+          </button>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.age}}</label>
+          <input type="number" id="bmr-age" placeholder="30" oninput="calculateBMR()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.height}} ({{tool.cm}})</label>
+          <input type="number" id="bmr-height" placeholder="170" oninput="calculateBMR()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.weight}} ({{tool.kg}})</label>
+          <input type="number" id="bmr-weight" placeholder="70" oninput="calculateBMR()">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{tool.activityLevel}}</label>
+        <div class="activity-selector">
+          <button class="activity-btn active" onclick="setActivity(1.2)" data-level="1.2">
+            <span class="level">{{tool.sedentary}}</span>
+            {{tool.sedentaryDesc}}
+          </button>
+          <button class="activity-btn" onclick="setActivity(1.375)" data-level="1.375">
+            <span class="level">{{tool.light}}</span>
+            {{tool.lightDesc}}
+          </button>
+          <button class="activity-btn" onclick="setActivity(1.55)" data-level="1.55">
+            <span class="level">{{tool.moderate}}</span>
+            {{tool.moderateDesc}}
+          </button>
+          <button class="activity-btn" onclick="setActivity(1.725)" data-level="1.725">
+            <span class="level">{{tool.active}}</span>
+            {{tool.activeDesc}}
+          </button>
+          <button class="activity-btn" onclick="setActivity(1.9)" data-level="1.9">
+            <span class="level">{{tool.veryActive}}</span>
+            {{tool.veryActiveDesc}}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="bmr-result">
+      <div class="main-result">
+        <div class="result-number" id="bmr-value">0</div>
+        <div class="result-label">{{tool.bmrLabel}}</div>
+      </div>
+
+      <div class="extra-results">
+        <div class="extra-result-card highlight">
+          <div class="value" id="tdee-value">0</div>
+          <div class="label">{{tool.tdeeLabel}}</div>
+        </div>
+        <div class="extra-result-card">
+          <div class="value" id="calories-lose">0</div>
+          <div class="label">{{tool.toLoseWeight}}</div>
+        </div>
+        <div class="extra-result-card">
+          <div class="value" id="calories-gain">0</div>
+          <div class="label">{{tool.toGainWeight}}</div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <h4>{{tool.whatIsBmr}}</h4>
+        <p>{{tool.bmrExplanation}}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ideal Body Weight -->
+  <div class="calc-section" id="ibw-section">
+    <div class="input-form">
+      <div class="form-group" style="margin-bottom: 16px">
+        <label>{{tool.gender}}</label>
+        <div class="gender-selector">
+          <button class="gender-btn active" onclick="setGender('male', 'ibw')">
+            <span class="icon">👨</span> {{tool.male}}
+          </button>
+          <button class="gender-btn" onclick="setGender('female', 'ibw')">
+            <span class="icon">👩</span> {{tool.female}}
+          </button>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.height}} ({{tool.cm}})</label>
+          <input type="number" id="ibw-height" placeholder="170" oninput="calculateIBW()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="ibw-result">
+      <div class="extra-results">
+        <div class="extra-result-card highlight">
+          <div class="value" id="ibw-devine">-</div>
+          <div class="label">Devine ({{tool.mostCommon}})</div>
+        </div>
+        <div class="extra-result-card">
+          <div class="value" id="ibw-robinson">-</div>
+          <div class="label">Robinson</div>
+        </div>
+        <div class="extra-result-card">
+          <div class="value" id="ibw-miller">-</div>
+          <div class="label">Miller</div>
+        </div>
+        <div class="extra-result-card">
+          <div class="value" id="ibw-hamwi">-</div>
+          <div class="label">Hamwi</div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <h4>{{tool.ibwFormulas}}</h4>
+        <p>{{tool.ibwExplanation}}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Body Fat -->
+  <div class="calc-section" id="bodyfat-section">
+    <div class="input-form">
+      <div class="form-group" style="margin-bottom: 16px">
+        <label>{{tool.gender}}</label>
+        <div class="gender-selector">
+          <button class="gender-btn active" onclick="setGender('male', 'bodyfat')">
+            <span class="icon">👨</span> {{tool.male}}
+          </button>
+          <button class="gender-btn" onclick="setGender('female', 'bodyfat')">
+            <span class="icon">👩</span> {{tool.female}}
+          </button>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.height}} ({{tool.cm}})</label>
+          <input type="number" id="bf-height" placeholder="170" oninput="calculateBodyFat()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.waist}} ({{tool.cm}})</label>
+          <input type="number" id="bf-waist" placeholder="80" oninput="calculateBodyFat()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.neck}} ({{tool.cm}})</label>
+          <input type="number" id="bf-neck" placeholder="38" oninput="calculateBodyFat()">
+        </div>
+        <div class="form-group" id="bf-hip-group">
+          <label>{{tool.hip}} ({{tool.cm}})</label>
+          <input type="number" id="bf-hip" placeholder="95" oninput="calculateBodyFat()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="bodyfat-result">
+      <div class="main-result">
+        <div class="result-number" id="bodyfat-value">0%</div>
+        <div class="result-label">{{tool.bodyFatPercent}}</div>
+        <div class="category-badge normal" id="bodyfat-category">{{tool.normal}}</div>
+      </div>
+
+      <div class="extra-results">
+        <div class="extra-result-card">
+          <div class="value" id="fat-mass">-</div>
+          <div class="label">{{tool.fatMass}}</div>
+        </div>
+        <div class="extra-result-card">
+          <div class="value" id="lean-mass">-</div>
+          <div class="label">{{tool.leanMass}}</div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <h4>{{tool.bodyFatCategories}}</h4>
+        <p id="bodyfat-ranges"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHR -->
+  <div class="calc-section" id="whr-section">
+    <div class="input-form">
+      <div class="form-group" style="margin-bottom: 16px">
+        <label>{{tool.gender}}</label>
+        <div class="gender-selector">
+          <button class="gender-btn active" onclick="setGender('male', 'whr')">
+            <span class="icon">👨</span> {{tool.male}}
+          </button>
+          <button class="gender-btn" onclick="setGender('female', 'whr')">
+            <span class="icon">👩</span> {{tool.female}}
+          </button>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.waist}} ({{tool.cm}})</label>
+          <input type="number" id="whr-waist" placeholder="80" oninput="calculateWHR()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.hip}} ({{tool.cm}})</label>
+          <input type="number" id="whr-hip" placeholder="95" oninput="calculateWHR()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="whr-result">
+      <div class="main-result">
+        <div class="result-number" id="whr-value">0</div>
+        <div class="result-label">{{tool.whrRatio}}</div>
+        <div class="category-badge normal" id="whr-category">{{tool.lowRisk}}</div>
+      </div>
+
+      <div class="info-box">
+        <h4>{{tool.whrCategories}}</h4>
+        <p id="whr-ranges"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const isArabic = App.state.lang === 'ar';
+
+// State
+let currentUnit = { bmi: 'metric' };
+let currentGender = { bmr: 'male', ibw: 'male', bodyfat: 'male', whr: 'male' };
+let activityLevel = 1.2;
+
+function switchTab(tab) {
+  document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.calc-section').forEach(s => s.classList.remove('active'));
+  
+  document.querySelector(`.calc-tab[onclick="switchTab('${tab}')"]`).classList.add('active');
+  document.getElementById(`${tab}-section`).classList.add('active');
+}
+
+function setUnit(unit, calc) {
+  currentUnit[calc] = unit;
+  document.querySelectorAll(`#${calc}-section .unit-btn`).forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  if (calc === 'bmi') {
+    document.getElementById('bmi-inputs-metric').style.display = unit === 'metric' ? 'grid' : 'none';
+    document.getElementById('bmi-inputs-imperial').style.display = unit === 'imperial' ? 'grid' : 'none';
+    calculateBMI();
+  }
+}
+
+function setGender(gender, calc) {
+  currentGender[calc] = gender;
+  document.querySelectorAll(`#${calc}-section .gender-btn`).forEach(b => b.classList.remove('active'));
+  event.target.closest('.gender-btn').classList.add('active');
+  
+  if (calc === 'bodyfat') {
+    document.getElementById('bf-hip-group').style.display = gender === 'female' ? 'block' : 'none';
+  }
+  
+  if (calc === 'bmr') calculateBMR();
+  if (calc === 'ibw') calculateIBW();
+  if (calc === 'bodyfat') calculateBodyFat();
+  if (calc === 'whr') calculateWHR();
+}
+
+function setActivity(level) {
+  activityLevel = level;
+  document.querySelectorAll('.activity-btn').forEach(b => b.classList.remove('active'));
+  event.target.closest('.activity-btn').classList.add('active');
+  calculateBMR();
+}
+
+// BMI Calculator
+function calculateBMI() {
+  let height, weight;
+  
+  if (currentUnit.bmi === 'metric') {
+    height = parseFloat(document.getElementById('bmi-height-cm').value) / 100;
+    weight = parseFloat(document.getElementById('bmi-weight-kg').value);
+  } else {
+    const ft = parseFloat(document.getElementById('bmi-height-ft').value) || 0;
+    const inches = parseFloat(document.getElementById('bmi-height-in').value) || 0;
+    height = ((ft * 12) + inches) * 0.0254;
+    weight = parseFloat(document.getElementById('bmi-weight-lb').value) * 0.453592;
+  }
+  
+  if (!height || !weight || height <= 0) {
+    document.getElementById('bmi-result').classList.remove('show');
+    return;
+  }
+  
+  const bmi = weight / (height * height);
+  
+  document.getElementById('bmi-value').textContent = bmi.toFixed(1);
+  
+  // Category
+  let category, categoryClass;
+  if (bmi < 18.5) {
+    category = isArabic ? 'نقص في الوزن' : 'Underweight';
+    categoryClass = 'underweight';
+  } else if (bmi < 25) {
+    category = isArabic ? 'وزن طبيعي' : 'Normal';
+    categoryClass = 'normal';
+  } else if (bmi < 30) {
+    category = isArabic ? 'زيادة في الوزن' : 'Overweight';
+    categoryClass = 'overweight';
+  } else if (bmi < 35) {
+    category = isArabic ? 'سمنة' : 'Obese';
+    categoryClass = 'obese';
+  } else {
+    category = isArabic ? 'سمنة مفرطة' : 'Severely Obese';
+    categoryClass = 'severe-obese';
+  }
+  
+  const badge = document.getElementById('bmi-category');
+  badge.textContent = category;
+  badge.className = 'category-badge ' + categoryClass;
+  
+  // Scale marker position (16 to 40 range)
+  const markerPos = Math.min(100, Math.max(0, ((bmi - 16) / 24) * 100));
+  document.getElementById('bmi-marker').style.left = markerPos + '%';
+  
+  // Ideal weight range
+  const minIdeal = 18.5 * height * height;
+  const maxIdeal = 24.9 * height * height;
+  document.getElementById('ideal-weight-range').textContent = 
+    `${minIdeal.toFixed(1)} - ${maxIdeal.toFixed(1)} ${isArabic ? 'كغ' : 'kg'}`;
+  
+  // Weight to reach normal
+  let toNormal = '-';
+  if (bmi < 18.5) {
+    toNormal = `+${(minIdeal - weight).toFixed(1)} ${isArabic ? 'كغ' : 'kg'}`;
+  } else if (bmi >= 25) {
+    toNormal = `-${(weight - maxIdeal).toFixed(1)} ${isArabic ? 'كغ' : 'kg'}`;
+  } else {
+    toNormal = isArabic ? 'أنت في الوزن المثالي!' : "You're at ideal weight!";
+  }
+  document.getElementById('weight-to-normal').textContent = toNormal;
+  
+  document.getElementById('bmi-result').classList.add('show');
+}
+
+// BMR Calculator
+function calculateBMR() {
+  const age = parseFloat(document.getElementById('bmr-age').value);
+  const height = parseFloat(document.getElementById('bmr-height').value);
+  const weight = parseFloat(document.getElementById('bmr-weight').value);
+  const gender = currentGender.bmr;
+  
+  if (!age || !height || !weight) {
+    document.getElementById('bmr-result').classList.remove('show');
+    return;
+  }
+  
+  // Mifflin-St Jeor Equation
+  let bmr;
+  if (gender === 'male') {
+    bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+  } else {
+    bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+  }
+  
+  const tdee = bmr * activityLevel;
+  
+  document.getElementById('bmr-value').textContent = Math.round(bmr);
+  document.getElementById('tdee-value').textContent = Math.round(tdee);
+  document.getElementById('calories-lose').textContent = Math.round(tdee - 500);
+  document.getElementById('calories-gain').textContent = Math.round(tdee + 500);
+  
+  document.getElementById('bmr-result').classList.add('show');
+}
+
+// Ideal Body Weight
+function calculateIBW() {
+  const height = parseFloat(document.getElementById('ibw-height').value);
+  const gender = currentGender.ibw;
+  
+  if (!height) {
+    document.getElementById('ibw-result').classList.remove('show');
+    return;
+  }
+  
+  const heightInch = height / 2.54;
+  const heightOver5ft = heightInch - 60;
+  
+  let devine, robinson, miller, hamwi;
+  
+  if (gender === 'male') {
+    devine = 50 + 2.3 * heightOver5ft;
+    robinson = 52 + 1.9 * heightOver5ft;
+    miller = 56.2 + 1.41 * heightOver5ft;
+    hamwi = 48 + 2.7 * heightOver5ft;
+  } else {
+    devine = 45.5 + 2.3 * heightOver5ft;
+    robinson = 49 + 1.7 * heightOver5ft;
+    miller = 53.1 + 1.36 * heightOver5ft;
+    hamwi = 45.5 + 2.2 * heightOver5ft;
+  }
+  
+  document.getElementById('ibw-devine').textContent = devine.toFixed(1) + ' ' + (isArabic ? 'كغ' : 'kg');
+  document.getElementById('ibw-robinson').textContent = robinson.toFixed(1) + ' ' + (isArabic ? 'كغ' : 'kg');
+  document.getElementById('ibw-miller').textContent = miller.toFixed(1) + ' ' + (isArabic ? 'كغ' : 'kg');
+  document.getElementById('ibw-hamwi').textContent = hamwi.toFixed(1) + ' ' + (isArabic ? 'كغ' : 'kg');
+  
+  document.getElementById('ibw-result').classList.add('show');
+}
+
+// Body Fat Calculator (US Navy Method)
+function calculateBodyFat() {
+  const height = parseFloat(document.getElementById('bf-height').value);
+  const waist = parseFloat(document.getElementById('bf-waist').value);
+  const neck = parseFloat(document.getElementById('bf-neck').value);
+  const hip = parseFloat(document.getElementById('bf-hip').value);
+  const gender = currentGender.bodyfat;
+  
+  if (!height || !waist || !neck) {
+    document.getElementById('bodyfat-result').classList.remove('show');
+    return;
+  }
+  
+  if (gender === 'female' && !hip) {
+    document.getElementById('bodyfat-result').classList.remove('show');
+    return;
+  }
+  
+  let bodyFat;
+  if (gender === 'male') {
+    bodyFat = 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(height)) - 450;
+  } else {
+    bodyFat = 495 / (1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(height)) - 450;
+  }
+  
+  bodyFat = Math.max(0, Math.min(60, bodyFat));
+  
+  document.getElementById('bodyfat-value').textContent = bodyFat.toFixed(1) + '%';
+  
+  // Category
+  let category, categoryClass;
+  const isMale = gender === 'male';
+  
+  if (isMale) {
+    if (bodyFat < 6) { category = isArabic ? 'أساسي' : 'Essential'; categoryClass = 'underweight'; }
+    else if (bodyFat < 14) { category = isArabic ? 'رياضي' : 'Athletic'; categoryClass = 'normal'; }
+    else if (bodyFat < 18) { category = isArabic ? 'لياقة' : 'Fitness'; categoryClass = 'normal'; }
+    else if (bodyFat < 25) { category = isArabic ? 'مقبول' : 'Average'; categoryClass = 'overweight'; }
+    else { category = isArabic ? 'سمنة' : 'Obese'; categoryClass = 'obese'; }
+  } else {
+    if (bodyFat < 14) { category = isArabic ? 'أساسي' : 'Essential'; categoryClass = 'underweight'; }
+    else if (bodyFat < 21) { category = isArabic ? 'رياضي' : 'Athletic'; categoryClass = 'normal'; }
+    else if (bodyFat < 25) { category = isArabic ? 'لياقة' : 'Fitness'; categoryClass = 'normal'; }
+    else if (bodyFat < 32) { category = isArabic ? 'مقبول' : 'Average'; categoryClass = 'overweight'; }
+    else { category = isArabic ? 'سمنة' : 'Obese'; categoryClass = 'obese'; }
+  }
+  
+  const badge = document.getElementById('bodyfat-category');
+  badge.textContent = category;
+  badge.className = 'category-badge ' + categoryClass;
+  
+  // Ranges info
+  document.getElementById('bodyfat-ranges').innerHTML = isMale ?
+    (isArabic ? 'للرجال: أساسي 2-5% | رياضي 6-13% | لياقة 14-17% | مقبول 18-24% | سمنة >25%' :
+     'Men: Essential 2-5% | Athletic 6-13% | Fitness 14-17% | Average 18-24% | Obese >25%') :
+    (isArabic ? 'للنساء: أساسي 10-13% | رياضي 14-20% | لياقة 21-24% | مقبول 25-31% | سمنة >32%' :
+     'Women: Essential 10-13% | Athletic 14-20% | Fitness 21-24% | Average 25-31% | Obese >32%');
+  
+  document.getElementById('bodyfat-result').classList.add('show');
+}
+
+// WHR Calculator
+function calculateWHR() {
+  const waist = parseFloat(document.getElementById('whr-waist').value);
+  const hip = parseFloat(document.getElementById('whr-hip').value);
+  const gender = currentGender.whr;
+  
+  if (!waist || !hip) {
+    document.getElementById('whr-result').classList.remove('show');
+    return;
+  }
+  
+  const whr = waist / hip;
+  
+  document.getElementById('whr-value').textContent = whr.toFixed(2);
+  
+  // Category
+  let category, categoryClass;
+  const isMale = gender === 'male';
+  
+  if (isMale) {
+    if (whr < 0.9) { category = isArabic ? 'خطر منخفض' : 'Low Risk'; categoryClass = 'normal'; }
+    else if (whr < 1.0) { category = isArabic ? 'خطر متوسط' : 'Moderate Risk'; categoryClass = 'overweight'; }
+    else { category = isArabic ? 'خطر عالي' : 'High Risk'; categoryClass = 'obese'; }
+  } else {
+    if (whr < 0.8) { category = isArabic ? 'خطر منخفض' : 'Low Risk'; categoryClass = 'normal'; }
+    else if (whr < 0.85) { category = isArabic ? 'خطر متوسط' : 'Moderate Risk'; categoryClass = 'overweight'; }
+    else { category = isArabic ? 'خطر عالي' : 'High Risk'; categoryClass = 'obese'; }
+  }
+  
+  const badge = document.getElementById('whr-category');
+  badge.textContent = category;
+  badge.className = 'category-badge ' + categoryClass;
+  
+  // Ranges info
+  document.getElementById('whr-ranges').innerHTML = isMale ?
+    (isArabic ? 'للرجال: منخفض <0.9 | متوسط 0.9-1.0 | عالي >1.0' :
+     'Men: Low <0.9 | Moderate 0.9-1.0 | High >1.0') :
+    (isArabic ? 'للنساء: منخفض <0.8 | متوسط 0.8-0.85 | عالي >0.85' :
+     'Women: Low <0.8 | Moderate 0.8-0.85 | High >0.85');
+  
+  document.getElementById('whr-result').classList.add('show');
+}
+
+// Initialize female hip visibility
+document.getElementById('bf-hip-group').style.display = 'none';
+</script>
