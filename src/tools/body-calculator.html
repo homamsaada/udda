@@ -168,14 +168,14 @@
 
 .main-result {
   text-align: center;
-  padding: 30px;
+  padding: 24px;
   background: var(--bg-secondary);
   border-radius: 16px;
   margin-bottom: 20px;
 }
 
 .result-number {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 800;
   background: linear-gradient(135deg, var(--primary), #8b5cf6);
   -webkit-background-clip: text;
@@ -184,22 +184,22 @@
 }
 
 .result-label {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-muted);
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
-/* BMI Scale */
+/* BMI Scale - Compact */
 .bmi-scale {
-  margin: 24px 0;
-  padding: 20px;
+  margin: 16px 0;
+  padding: 16px;
   background: var(--bg-secondary);
-  border-radius: 16px;
+  border-radius: 12px;
 }
 
 .scale-bar {
-  height: 30px;
-  border-radius: 15px;
+  height: 24px;
+  border-radius: 12px;
   background: linear-gradient(to right, 
     #3b82f6 0%, #3b82f6 20%, 
     #22c55e 20%, #22c55e 40%, 
@@ -208,14 +208,14 @@
     #991b1b 80%, #991b1b 100%
   );
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .scale-marker {
   position: absolute;
-  top: -8px;
+  top: -6px;
   width: 4px;
-  height: 46px;
+  height: 36px;
   background: var(--text-primary);
   border-radius: 2px;
   transform: translateX(-50%);
@@ -225,29 +225,28 @@
 .scale-marker::after {
   content: '';
   position: absolute;
-  bottom: -8px;
+  bottom: -6px;
   left: 50%;
   transform: translateX(-50%);
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 10px solid var(--text-primary);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--text-primary);
 }
 
 .scale-labels {
   display: flex;
   justify-content: space-between;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
-  padding: 0 5px;
 }
 
 .category-badge {
   display: inline-block;
-  padding: 8px 20px;
-  border-radius: 30px;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-top: 16px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 12px;
 }
 
 .category-badge.underweight { background: #3b82f6; color: white; }
@@ -256,83 +255,359 @@
 .category-badge.obese { background: #ef4444; color: white; }
 .category-badge.severe-obese { background: #991b1b; color: white; }
 
-/* Extra Results Grid */
-.extra-results {
+/* Stats Grid */
+.stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
 }
 
-.extra-result-card {
+.stat-card {
   background: var(--bg-secondary);
   border-radius: 12px;
-  padding: 16px;
+  padding: 14px;
   text-align: center;
 }
 
-.extra-result-card .value {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.extra-result-card .label {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-top: 4px;
-}
-
-.extra-result-card.highlight {
+.stat-card.highlight {
   border: 2px solid var(--primary);
   background: rgba(99, 102, 241, 0.05);
 }
 
-.extra-result-card.highlight .value {
+.stat-card .value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-card.highlight .value {
   color: var(--primary);
 }
 
-/* Info Box */
-.info-box {
-  background: rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.2);
-  border-radius: 12px;
-  padding: 16px;
+.stat-card .label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Weight Goal Planner - NEW DESIGN */
+.goal-planner {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 20px;
   margin-top: 20px;
 }
 
-.info-box h4 {
-  color: var(--primary);
-  margin: 0 0 10px 0;
-  font-size: 0.95rem;
+.goal-planner h3 {
+  margin: 0 0 16px 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.info-box p, .info-box li {
+.goal-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.goal-item {
+  text-align: center;
+  padding: 12px;
+  background: var(--bg-primary);
+  border-radius: 10px;
+}
+
+.goal-item .number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.goal-item .text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.goal-item.target .number {
+  color: #22c55e;
+}
+
+.goal-item.diff .number {
+  color: #f59e0b;
+}
+
+/* Duration Selector */
+.duration-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.duration-btn {
+  padding: 14px 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.duration-btn:hover {
+  border-color: var(--primary);
+}
+
+.duration-btn.active {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary);
+}
+
+.duration-btn .dur-num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: block;
+}
+
+.duration-btn .dur-text {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* Plan Details */
+.plan-details {
+  background: var(--bg-primary);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.plan-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.plan-row:last-child {
+  border-bottom: none;
+}
+
+.plan-row .plan-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: var(--text-secondary);
   font-size: 0.9rem;
-  line-height: 1.6;
-  margin: 0;
 }
 
-.info-box ul {
-  margin: 10px 0 0 0;
-  padding-right: 20px;
+.plan-row .plan-value {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
 }
 
-/* Activity Level */
-.activity-selector {
+.plan-row .plan-value.calories {
+  color: #ef4444;
+}
+
+.plan-row .plan-value.exercise {
+  color: #22c55e;
+}
+
+/* Exercise Cards */
+.exercise-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
+  margin-top: 12px;
+}
+
+.exercise-card {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+
+.exercise-card .ex-icon {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.exercise-card .ex-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.exercise-card .ex-duration {
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Interactive Chart */
+.chart-section {
+  margin-top: 16px;
+}
+
+.chart-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.chart-container {
+  height: 180px;
+  position: relative;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.chart-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.chart-tooltip {
+  position: absolute;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.chart-tooltip.show {
+  opacity: 1;
+}
+
+/* Warning Box - Compact */
+.warning-box {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: #f59e0b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Info Cards for BMR */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.info-card {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.info-card h5 {
+  margin: 0 0 6px 0;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-card p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.info-card .value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+/* Macros Section */
+.macros-section {
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+}
+
+.macros-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.macros-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.macro-card {
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.macro-card.protein { background: rgba(239, 68, 68, 0.1); }
+.macro-card.carbs { background: rgba(59, 130, 246, 0.1); }
+.macro-card.fat { background: rgba(245, 158, 11, 0.1); }
+
+.macro-card .macro-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.macro-card.protein .macro-value { color: #ef4444; }
+.macro-card.carbs .macro-value { color: #3b82f6; }
+.macro-card.fat .macro-value { color: #f59e0b; }
+
+.macro-card .macro-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Activity Selector */
+.activity-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
 }
 
 .activity-btn {
-  padding: 12px;
+  padding: 12px 10px;
   border: 2px solid var(--border-color);
   border-radius: 10px;
   background: var(--bg-primary);
   color: var(--text-secondary);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: all var(--transition-fast);
   text-align: center;
@@ -352,6 +627,31 @@
   font-weight: 700;
   display: block;
   margin-bottom: 4px;
+  font-size: 0.85rem;
+}
+
+.activity-btn .desc {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  .goal-summary {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .duration-selector {
+    grid-template-columns: 1fr;
+  }
+  
+  .macros-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .exercise-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 </style>
 
@@ -419,26 +719,58 @@
         </div>
       </div>
 
-      <div class="extra-results">
-        <div class="extra-result-card highlight">
+      <div class="stats-grid">
+        <div class="stat-card highlight">
           <div class="value" id="ideal-weight-range">-</div>
           <div class="label">{{tool.idealWeightRange}}</div>
         </div>
-        <div class="extra-result-card">
+        <div class="stat-card">
           <div class="value" id="weight-to-normal">-</div>
           <div class="label">{{tool.toReachNormal}}</div>
         </div>
       </div>
 
-      <div class="info-box">
-        <h4>{{tool.bmiCategories}}</h4>
-        <ul>
-          <li><strong style="color:#3b82f6">{{tool.underweight}}:</strong> < 18.5</li>
-          <li><strong style="color:#22c55e">{{tool.normal}}:</strong> 18.5 - 24.9</li>
-          <li><strong style="color:#f59e0b">{{tool.overweight}}:</strong> 25 - 29.9</li>
-          <li><strong style="color:#ef4444">{{tool.obese}}:</strong> 30 - 34.9</li>
-          <li><strong style="color:#991b1b">{{tool.severeObese}}:</strong> ≥ 35</li>
-        </ul>
+      <!-- Weight Goal Planner - NEW -->
+      <div class="goal-planner" id="weight-goal-planner" style="display:none">
+        <h3>🎯 <span id="goal-planner-title"></span></h3>
+        
+        <div class="goal-summary">
+          <div class="goal-item">
+            <div class="number" id="current-weight-display">-</div>
+            <div class="text" id="current-weight-label"></div>
+          </div>
+          <div class="goal-item target">
+            <div class="number" id="target-weight-display">-</div>
+            <div class="text" id="target-weight-label"></div>
+          </div>
+          <div class="goal-item diff">
+            <div class="number" id="weight-diff-display">-</div>
+            <div class="text" id="weight-diff-label"></div>
+          </div>
+        </div>
+
+        <!-- Duration Selector -->
+        <div class="duration-selector" id="duration-selector"></div>
+
+        <!-- Plan Details -->
+        <div class="plan-details" id="plan-details"></div>
+
+        <!-- Exercise Suggestions -->
+        <div class="exercise-cards" id="exercise-cards"></div>
+
+        <!-- Warning if too aggressive -->
+        <div class="warning-box" id="warning-box" style="display:none">
+          ⚠️ <span id="warning-text"></span>
+        </div>
+
+        <!-- Interactive Chart -->
+        <div class="chart-section">
+          <h4 id="chart-title"></h4>
+          <div class="chart-container">
+            <svg class="chart-svg" id="weight-chart"></svg>
+            <div class="chart-tooltip" id="chart-tooltip"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -476,52 +808,77 @@
         <div class="activity-selector">
           <button class="activity-btn active" onclick="setActivity(1.2, this)" data-level="1.2">
             <span class="level">{{tool.sedentary}}</span>
-            {{tool.sedentaryDesc}}
+            <span class="desc">{{tool.sedentaryDesc}}</span>
           </button>
           <button class="activity-btn" onclick="setActivity(1.375, this)" data-level="1.375">
             <span class="level">{{tool.light}}</span>
-            {{tool.lightDesc}}
+            <span class="desc">{{tool.lightDesc}}</span>
           </button>
           <button class="activity-btn" onclick="setActivity(1.55, this)" data-level="1.55">
             <span class="level">{{tool.moderate}}</span>
-            {{tool.moderateDesc}}
+            <span class="desc">{{tool.moderateDesc}}</span>
           </button>
           <button class="activity-btn" onclick="setActivity(1.725, this)" data-level="1.725">
             <span class="level">{{tool.active}}</span>
-            {{tool.activeDesc}}
+            <span class="desc">{{tool.activeDesc}}</span>
           </button>
           <button class="activity-btn" onclick="setActivity(1.9, this)" data-level="1.9">
             <span class="level">{{tool.veryActive}}</span>
-            {{tool.veryActiveDesc}}
+            <span class="desc">{{tool.veryActiveDesc}}</span>
           </button>
         </div>
       </div>
     </div>
 
     <div class="result-box" id="bmr-result">
-      <div class="main-result">
-        <div class="result-number" id="bmr-value">0</div>
-        <div class="result-label">{{tool.bmrLabel}}</div>
-      </div>
-
-      <div class="extra-results">
-        <div class="extra-result-card highlight">
+      <div class="info-cards">
+        <div class="info-card">
+          <h5>🔥 BMR</h5>
+          <div class="value" id="bmr-value">0</div>
+          <p id="bmr-desc"></p>
+        </div>
+        <div class="info-card" style="border: 2px solid var(--primary);">
+          <h5>⚡ TDEE</h5>
           <div class="value" id="tdee-value">0</div>
-          <div class="label">{{tool.tdeeLabel}}</div>
-        </div>
-        <div class="extra-result-card">
-          <div class="value" id="calories-lose">0</div>
-          <div class="label">{{tool.toLoseWeight}}</div>
-        </div>
-        <div class="extra-result-card">
-          <div class="value" id="calories-gain">0</div>
-          <div class="label">{{tool.toGainWeight}}</div>
+          <p id="tdee-desc"></p>
         </div>
       </div>
 
-      <div class="info-box">
-        <h4>{{tool.whatIsBmr}}</h4>
-        <p>{{tool.bmrExplanation}}</p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="value" style="color: #ef4444;" id="calories-lose-fast">0</div>
+          <div class="label" id="lose-fast-label"></div>
+        </div>
+        <div class="stat-card">
+          <div class="value" style="color: #f59e0b;" id="calories-lose">0</div>
+          <div class="label" id="lose-label"></div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="value" id="calories-maintain">0</div>
+          <div class="label" id="maintain-label"></div>
+        </div>
+        <div class="stat-card">
+          <div class="value" style="color: #22c55e;" id="calories-gain">0</div>
+          <div class="label" id="gain-label"></div>
+        </div>
+      </div>
+
+      <div class="macros-section">
+        <h4 id="macros-title"></h4>
+        <div class="macros-grid">
+          <div class="macro-card protein">
+            <div class="macro-value" id="macro-protein">0g</div>
+            <div class="macro-label" id="protein-label"></div>
+          </div>
+          <div class="macro-card carbs">
+            <div class="macro-value" id="macro-carbs">0g</div>
+            <div class="macro-label" id="carbs-label"></div>
+          </div>
+          <div class="macro-card fat">
+            <div class="macro-value" id="macro-fat">0g</div>
+            <div class="macro-label" id="fat-label"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -549,28 +906,23 @@
     </div>
 
     <div class="result-box" id="ibw-result">
-      <div class="extra-results">
-        <div class="extra-result-card highlight">
+      <div class="stats-grid">
+        <div class="stat-card highlight">
           <div class="value" id="ibw-devine">-</div>
           <div class="label">Devine ({{tool.mostCommon}})</div>
         </div>
-        <div class="extra-result-card">
+        <div class="stat-card">
           <div class="value" id="ibw-robinson">-</div>
           <div class="label">Robinson</div>
         </div>
-        <div class="extra-result-card">
+        <div class="stat-card">
           <div class="value" id="ibw-miller">-</div>
           <div class="label">Miller</div>
         </div>
-        <div class="extra-result-card">
+        <div class="stat-card">
           <div class="value" id="ibw-hamwi">-</div>
           <div class="label">Hamwi</div>
         </div>
-      </div>
-
-      <div class="info-box">
-        <h4>{{tool.ibwFormulas}}</h4>
-        <p>{{tool.ibwExplanation}}</p>
       </div>
     </div>
   </div>
@@ -600,9 +952,9 @@
         </div>
         <div class="form-group">
           <label>{{tool.neck}} ({{tool.cm}})</label>
-          <input type="number" id="bf-neck" placeholder="38" oninput="calculateBodyFat()">
+          <input type="number" id="bf-neck" placeholder="37" oninput="calculateBodyFat()">
         </div>
-        <div class="form-group" id="bf-hip-group">
+        <div class="form-group" id="bf-hip-group" style="display:none">
           <label>{{tool.hip}} ({{tool.cm}})</label>
           <input type="number" id="bf-hip" placeholder="95" oninput="calculateBodyFat()">
         </div>
@@ -613,23 +965,18 @@
       <div class="main-result">
         <div class="result-number" id="bodyfat-value">0%</div>
         <div class="result-label">{{tool.bodyFatPercent}}</div>
-        <div class="category-badge normal" id="bodyfat-category">{{tool.normal}}</div>
+        <div class="category-badge normal" id="bodyfat-category">-</div>
       </div>
 
-      <div class="extra-results">
-        <div class="extra-result-card">
+      <div class="stats-grid">
+        <div class="stat-card">
           <div class="value" id="fat-mass">-</div>
           <div class="label">{{tool.fatMass}}</div>
         </div>
-        <div class="extra-result-card">
+        <div class="stat-card">
           <div class="value" id="lean-mass">-</div>
           <div class="label">{{tool.leanMass}}</div>
         </div>
-      </div>
-
-      <div class="info-box">
-        <h4>{{tool.bodyFatCategories}}</h4>
-        <p id="bodyfat-ranges"></p>
       </div>
     </div>
   </div>
@@ -655,7 +1002,7 @@
         </div>
         <div class="form-group">
           <label>{{tool.hip}} ({{tool.cm}})</label>
-          <input type="number" id="whr-hip" placeholder="95" oninput="calculateWHR()">
+          <input type="number" id="whr-hip" placeholder="100" oninput="calculateWHR()">
         </div>
       </div>
     </div>
@@ -664,12 +1011,7 @@
       <div class="main-result">
         <div class="result-number" id="whr-value">0</div>
         <div class="result-label">{{tool.whrRatio}}</div>
-        <div class="category-badge normal" id="whr-category">{{tool.lowRisk}}</div>
-      </div>
-
-      <div class="info-box">
-        <h4>{{tool.whrCategories}}</h4>
-        <p id="whr-ranges"></p>
+        <div class="category-badge normal" id="whr-category">-</div>
       </div>
     </div>
   </div>
@@ -677,17 +1019,56 @@
 
 <script>
 const isArabic = document.documentElement.lang === 'ar';
-
-// State
 let currentUnit = { bmi: 'metric' };
 let currentGender = { bmr: 'male', ibw: 'male', bodyfat: 'male', whr: 'male' };
 let activityLevel = 1.2;
+let currentWeight = 0;
+let currentHeight = 0;
+let selectedDuration = 2; // Default 2 months
+
+// Translations
+const t = {
+  kg: isArabic ? 'كغ' : 'kg',
+  goalPlannerTitle: isArabic ? 'خطة الوصول للوزن المثالي' : 'Weight Goal Plan',
+  currentWeightLabel: isArabic ? 'وزنك الحالي' : 'Current',
+  targetWeightLabel: isArabic ? 'الهدف' : 'Target',
+  needToLose: isArabic ? 'للخسارة' : 'To Lose',
+  needToGain: isArabic ? 'للزيادة' : 'To Gain',
+  month: isArabic ? 'شهر' : 'month',
+  months: isArabic ? 'أشهر' : 'months',
+  chartTitle: isArabic ? '📈 مسار التقدم المتوقع' : '📈 Expected Progress',
+  weeklyLoss: isArabic ? 'خسارة أسبوعية' : 'Weekly loss',
+  dailyCalories: isArabic ? 'السعرات اليومية' : 'Daily calories',
+  dailyDeficit: isArabic ? 'العجز اليومي' : 'Daily deficit',
+  exerciseNeeded: isArabic ? 'التمارين المطلوبة' : 'Exercise needed',
+  perDay: isArabic ? '/يوم' : '/day',
+  walking: isArabic ? 'مشي' : 'Walking',
+  running: isArabic ? 'جري' : 'Running',
+  cycling: isArabic ? 'دراجة' : 'Cycling',
+  swimming: isArabic ? 'سباحة' : 'Swimming',
+  minutes: isArabic ? 'دقيقة' : 'min',
+  warningTooFast: isArabic ? 'هذه الخطة سريعة جداً! قد تكون غير صحية. يُنصح باختيار مدة أطول.' : 'This plan is too aggressive! May be unhealthy. Consider a longer duration.',
+  week: isArabic ? 'أسبوع' : 'Week',
+  now: isArabic ? 'الآن' : 'Now',
+  goal: isArabic ? 'الهدف' : 'Goal',
+  
+  // BMR
+  bmrDesc: isArabic ? 'سعرات الراحة' : 'Resting calories',
+  tdeeDesc: isArabic ? 'إجمالي السعرات' : 'Total calories',
+  loseFastLabel: isArabic ? 'خسارة سريعة' : 'Fast loss',
+  loseLabel: isArabic ? 'خسارة معتدلة' : 'Moderate loss',
+  maintainLabel: isArabic ? 'الحفاظ' : 'Maintain',
+  gainLabel: isArabic ? 'زيادة' : 'Gain',
+  macrosTitle: isArabic ? '🍽️ المغذيات اليومية' : '🍽️ Daily Macros',
+  proteinLabel: isArabic ? 'بروتين' : 'Protein',
+  carbsLabel: isArabic ? 'كربوهيدرات' : 'Carbs',
+  fatLabel: isArabic ? 'دهون' : 'Fat',
+};
 
 function switchTab(tab) {
   document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.calc-section').forEach(s => s.classList.remove('active'));
   
-  // Find the button that calls this tab
   document.querySelectorAll('.calc-tab').forEach(t => {
     if (t.getAttribute('onclick')?.includes(`'${tab}'`)) {
       t.classList.add('active');
@@ -749,6 +1130,9 @@ function calculateBMI() {
     return;
   }
   
+  currentWeight = weight;
+  currentHeight = height;
+  
   const bmi = weight / (height * height);
   
   document.getElementById('bmi-value').textContent = bmi.toFixed(1);
@@ -776,28 +1160,243 @@ function calculateBMI() {
   badge.textContent = category;
   badge.className = 'category-badge ' + categoryClass;
   
-  // Scale marker position (16 to 40 range)
+  // Scale marker
   const markerPos = Math.min(100, Math.max(0, ((bmi - 16) / 24) * 100));
   document.getElementById('bmi-marker').style.left = markerPos + '%';
   
   // Ideal weight range
   const minIdeal = 18.5 * height * height;
   const maxIdeal = 24.9 * height * height;
+  const midIdeal = (minIdeal + maxIdeal) / 2;
   document.getElementById('ideal-weight-range').textContent = 
-    `${minIdeal.toFixed(1)} - ${maxIdeal.toFixed(1)} ${isArabic ? 'كغ' : 'kg'}`;
+    `${minIdeal.toFixed(1)} - ${maxIdeal.toFixed(1)} ${t.kg}`;
   
   // Weight to reach normal
   let toNormal = '-';
   if (bmi < 18.5) {
-    toNormal = `+${(minIdeal - weight).toFixed(1)} ${isArabic ? 'كغ' : 'kg'}`;
+    toNormal = `+${(minIdeal - weight).toFixed(1)} ${t.kg}`;
   } else if (bmi >= 25) {
-    toNormal = `-${(weight - maxIdeal).toFixed(1)} ${isArabic ? 'كغ' : 'kg'}`;
+    toNormal = `-${(weight - maxIdeal).toFixed(1)} ${t.kg}`;
   } else {
     toNormal = isArabic ? 'أنت في الوزن المثالي!' : "You're at ideal weight!";
   }
   document.getElementById('weight-to-normal').textContent = toNormal;
   
+  // Show/hide weight goal planner
+  if (bmi < 18.5 || bmi >= 25) {
+    showWeightGoalPlanner(weight, midIdeal, bmi < 18.5);
+  } else {
+    document.getElementById('weight-goal-planner').style.display = 'none';
+  }
+  
   document.getElementById('bmi-result').classList.add('show');
+}
+
+// Weight Goal Planner
+function showWeightGoalPlanner(current, target, isGain) {
+  const planner = document.getElementById('weight-goal-planner');
+  planner.style.display = 'block';
+  
+  const diff = Math.abs(target - current);
+  
+  // Update titles
+  document.getElementById('goal-planner-title').textContent = t.goalPlannerTitle;
+  document.getElementById('current-weight-label').textContent = t.currentWeightLabel;
+  document.getElementById('target-weight-label').textContent = t.targetWeightLabel;
+  document.getElementById('weight-diff-label').textContent = isGain ? t.needToGain : t.needToLose;
+  document.getElementById('chart-title').textContent = t.chartTitle;
+  
+  // Update values
+  document.getElementById('current-weight-display').textContent = current.toFixed(1);
+  document.getElementById('target-weight-display').textContent = target.toFixed(1);
+  document.getElementById('weight-diff-display').textContent = diff.toFixed(1);
+  
+  // Build duration selector
+  const durations = [1, 2, 3];
+  let durationHTML = '';
+  durations.forEach(d => {
+    const isActive = d === selectedDuration ? 'active' : '';
+    const label = d === 1 ? t.month : t.months;
+    durationHTML += `
+      <button class="duration-btn ${isActive}" onclick="selectDuration(${d}, ${current}, ${target}, ${isGain})">
+        <span class="dur-num">${d}</span>
+        <span class="dur-text">${label}</span>
+      </button>
+    `;
+  });
+  document.getElementById('duration-selector').innerHTML = durationHTML;
+  
+  // Update plan
+  updatePlan(current, target, isGain, selectedDuration);
+}
+
+function selectDuration(months, current, target, isGain) {
+  selectedDuration = months;
+  document.querySelectorAll('.duration-btn').forEach(b => b.classList.remove('active'));
+  event.target.closest('.duration-btn').classList.add('active');
+  updatePlan(current, target, isGain, months);
+}
+
+function updatePlan(current, target, isGain, months) {
+  const diff = Math.abs(target - current);
+  const weeks = months * 4.33;
+  const weeklyChange = diff / weeks;
+  const dailyCalDeficit = (weeklyChange * 7700) / 7; // 7700 cal per kg
+  
+  // Estimate TDEE (rough)
+  const estimatedTDEE = 2000;
+  const dailyCalories = isGain ? estimatedTDEE + dailyCalDeficit : estimatedTDEE - dailyCalDeficit;
+  
+  // Plan details
+  let planHTML = `
+    <div class="plan-row">
+      <span class="plan-label">📉 ${t.weeklyLoss}</span>
+      <span class="plan-value">${weeklyChange.toFixed(2)} ${t.kg}</span>
+    </div>
+    <div class="plan-row">
+      <span class="plan-label">🔥 ${t.dailyDeficit}</span>
+      <span class="plan-value calories">${Math.round(dailyCalDeficit)} cal</span>
+    </div>
+    <div class="plan-row">
+      <span class="plan-label">🍽️ ${t.dailyCalories}</span>
+      <span class="plan-value">${Math.round(dailyCalories)} cal</span>
+    </div>
+  `;
+  document.getElementById('plan-details').innerHTML = planHTML;
+  
+  // Exercise suggestions (calories burned per minute approximations)
+  const exercises = [
+    { name: t.walking, icon: '🚶', calPerMin: 5 },
+    { name: t.running, icon: '🏃', calPerMin: 12 },
+    { name: t.cycling, icon: '🚴', calPerMin: 8 },
+    { name: t.swimming, icon: '🏊', calPerMin: 10 }
+  ];
+  
+  // Calculate 50% of deficit from exercise
+  const exerciseCalories = dailyCalDeficit * 0.5;
+  
+  let exerciseHTML = '';
+  exercises.forEach(ex => {
+    const mins = Math.round(exerciseCalories / ex.calPerMin);
+    exerciseHTML += `
+      <div class="exercise-card">
+        <div class="ex-icon">${ex.icon}</div>
+        <div class="ex-name">${ex.name}</div>
+        <div class="ex-duration">${mins} ${t.minutes}${t.perDay}</div>
+      </div>
+    `;
+  });
+  document.getElementById('exercise-cards').innerHTML = exerciseHTML;
+  
+  // Warning if too aggressive
+  const warningBox = document.getElementById('warning-box');
+  if (weeklyChange > 1) {
+    warningBox.style.display = 'flex';
+    document.getElementById('warning-text').textContent = t.warningTooFast;
+  } else {
+    warningBox.style.display = 'none';
+  }
+  
+  // Draw chart
+  drawInteractiveChart(current, target, isGain, weeks);
+}
+
+function drawInteractiveChart(current, target, isGain, weeks) {
+  const svg = document.getElementById('weight-chart');
+  const container = svg.parentElement;
+  const width = container.clientWidth - 20 || 380;
+  const height = 160;
+  
+  const padding = { top: 15, right: 15, bottom: 25, left: 45 };
+  const chartWidth = width - padding.left - padding.right;
+  const chartHeight = height - padding.top - padding.bottom;
+  
+  const minWeight = Math.min(current, target) - 2;
+  const maxWeight = Math.max(current, target) + 2;
+  
+  // Generate data points
+  const dataPoints = [];
+  for (let i = 0; i <= weeks; i++) {
+    const weightAtWeek = isGain ? 
+      current + (i / weeks) * (target - current) :
+      current - (i / weeks) * (current - target);
+    dataPoints.push({ week: i, weight: weightAtWeek });
+  }
+  
+  // Create path
+  let pathD = '';
+  let circles = '';
+  dataPoints.forEach((point, i) => {
+    const x = padding.left + (i / weeks) * chartWidth;
+    const y = padding.top + chartHeight - ((point.weight - minWeight) / (maxWeight - minWeight)) * chartHeight;
+    pathD += `${i === 0 ? 'M' : 'L'} ${x} ${y}`;
+    
+    // Add interactive circles
+    circles += `<circle cx="${x}" cy="${y}" r="5" fill="var(--primary)" 
+      style="cursor:pointer" 
+      onmouseenter="showTooltip(event, ${point.week}, ${point.weight.toFixed(1)})"
+      onmouseleave="hideTooltip()"/>`;
+  });
+  
+  // Target line y
+  const targetY = padding.top + chartHeight - ((target - minWeight) / (maxWeight - minWeight)) * chartHeight;
+  
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:var(--primary)"/>
+        <stop offset="100%" style="stop-color:#22c55e"/>
+      </linearGradient>
+      <linearGradient id="areaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:var(--primary);stop-opacity:0.3"/>
+        <stop offset="100%" style="stop-color:var(--primary);stop-opacity:0"/>
+      </linearGradient>
+    </defs>
+    
+    <!-- Grid -->
+    <line x1="${padding.left}" y1="${padding.top}" x2="${padding.left}" y2="${padding.top + chartHeight}" 
+          stroke="var(--border-color)" stroke-width="1"/>
+    <line x1="${padding.left}" y1="${padding.top + chartHeight}" x2="${width - padding.right}" y2="${padding.top + chartHeight}" 
+          stroke="var(--border-color)" stroke-width="1"/>
+    
+    <!-- Target line -->
+    <line x1="${padding.left}" y1="${targetY}" x2="${width - padding.right}" y2="${targetY}" 
+          stroke="#22c55e" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- Area fill -->
+    <path d="${pathD} L ${width - padding.right} ${padding.top + chartHeight} L ${padding.left} ${padding.top + chartHeight} Z" 
+          fill="url(#areaGrad)"/>
+    
+    <!-- Line -->
+    <path d="${pathD}" fill="none" stroke="url(#lineGrad)" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Points -->
+    ${circles}
+    
+    <!-- Labels -->
+    <text x="${padding.left - 5}" y="${padding.top + 5}" fill="var(--text-muted)" font-size="10" text-anchor="end">${maxWeight.toFixed(0)}</text>
+    <text x="${padding.left - 5}" y="${padding.top + chartHeight}" fill="var(--text-muted)" font-size="10" text-anchor="end">${minWeight.toFixed(0)}</text>
+    <text x="${padding.left}" y="${height - 5}" fill="var(--text-muted)" font-size="10">${t.now}</text>
+    <text x="${width - padding.right}" y="${height - 5}" fill="var(--text-muted)" font-size="10" text-anchor="end">${t.goal}</text>
+  `;
+}
+
+function showTooltip(event, week, weight) {
+  const tooltip = document.getElementById('chart-tooltip');
+  const container = document.querySelector('.chart-container');
+  const rect = container.getBoundingClientRect();
+  
+  tooltip.innerHTML = `<strong>${t.week} ${Math.round(week)}</strong><br>${weight} ${t.kg}`;
+  tooltip.classList.add('show');
+  
+  const x = event.clientX - rect.left + 10;
+  const y = event.clientY - rect.top - 40;
+  tooltip.style.left = x + 'px';
+  tooltip.style.top = y + 'px';
+}
+
+function hideTooltip() {
+  document.getElementById('chart-tooltip').classList.remove('show');
 }
 
 // BMR Calculator
@@ -812,7 +1411,6 @@ function calculateBMR() {
     return;
   }
   
-  // Mifflin-St Jeor Equation
   let bmr;
   if (gender === 'male') {
     bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
@@ -824,8 +1422,31 @@ function calculateBMR() {
   
   document.getElementById('bmr-value').textContent = Math.round(bmr);
   document.getElementById('tdee-value').textContent = Math.round(tdee);
+  document.getElementById('bmr-desc').textContent = t.bmrDesc;
+  document.getElementById('tdee-desc').textContent = t.tdeeDesc;
+  
+  document.getElementById('calories-lose-fast').textContent = Math.round(tdee - 1000);
   document.getElementById('calories-lose').textContent = Math.round(tdee - 500);
+  document.getElementById('calories-maintain').textContent = Math.round(tdee);
   document.getElementById('calories-gain').textContent = Math.round(tdee + 500);
+  
+  document.getElementById('lose-fast-label').textContent = t.loseFastLabel;
+  document.getElementById('lose-label').textContent = t.loseLabel;
+  document.getElementById('maintain-label').textContent = t.maintainLabel;
+  document.getElementById('gain-label').textContent = t.gainLabel;
+  
+  document.getElementById('macros-title').textContent = t.macrosTitle;
+  const proteinCal = tdee * 0.30;
+  const carbsCal = tdee * 0.40;
+  const fatCal = tdee * 0.30;
+  
+  document.getElementById('macro-protein').textContent = Math.round(proteinCal / 4) + 'g';
+  document.getElementById('macro-carbs').textContent = Math.round(carbsCal / 4) + 'g';
+  document.getElementById('macro-fat').textContent = Math.round(fatCal / 9) + 'g';
+  
+  document.getElementById('protein-label').textContent = t.proteinLabel;
+  document.getElementById('carbs-label').textContent = t.carbsLabel;
+  document.getElementById('fat-label').textContent = t.fatLabel;
   
   document.getElementById('bmr-result').classList.add('show');
 }
@@ -857,21 +1478,22 @@ function calculateIBW() {
     hamwi = 45.5 + 2.2 * heightOver5ft;
   }
   
-  document.getElementById('ibw-devine').textContent = devine.toFixed(1) + ' ' + (isArabic ? 'كغ' : 'kg');
-  document.getElementById('ibw-robinson').textContent = robinson.toFixed(1) + ' ' + (isArabic ? 'كغ' : 'kg');
-  document.getElementById('ibw-miller').textContent = miller.toFixed(1) + ' ' + (isArabic ? 'كغ' : 'kg');
-  document.getElementById('ibw-hamwi').textContent = hamwi.toFixed(1) + ' ' + (isArabic ? 'كغ' : 'kg');
+  document.getElementById('ibw-devine').textContent = devine.toFixed(1) + ' ' + t.kg;
+  document.getElementById('ibw-robinson').textContent = robinson.toFixed(1) + ' ' + t.kg;
+  document.getElementById('ibw-miller').textContent = miller.toFixed(1) + ' ' + t.kg;
+  document.getElementById('ibw-hamwi').textContent = hamwi.toFixed(1) + ' ' + t.kg;
   
   document.getElementById('ibw-result').classList.add('show');
 }
 
-// Body Fat Calculator (US Navy Method)
+// Body Fat Calculator
 function calculateBodyFat() {
   const height = parseFloat(document.getElementById('bf-height').value);
   const waist = parseFloat(document.getElementById('bf-waist').value);
   const neck = parseFloat(document.getElementById('bf-neck').value);
   const hip = parseFloat(document.getElementById('bf-hip').value);
   const gender = currentGender.bodyfat;
+  const weight = parseFloat(document.getElementById('bmi-weight-kg').value) || 70;
   
   if (!height || !waist || !neck) {
     document.getElementById('bodyfat-result').classList.remove('show');
@@ -894,7 +1516,11 @@ function calculateBodyFat() {
   
   document.getElementById('bodyfat-value').textContent = bodyFat.toFixed(1) + '%';
   
-  // Category
+  const fatMass = weight * (bodyFat / 100);
+  const leanMass = weight - fatMass;
+  document.getElementById('fat-mass').textContent = fatMass.toFixed(1) + ' ' + t.kg;
+  document.getElementById('lean-mass').textContent = leanMass.toFixed(1) + ' ' + t.kg;
+  
   let category, categoryClass;
   const isMale = gender === 'male';
   
@@ -916,13 +1542,6 @@ function calculateBodyFat() {
   badge.textContent = category;
   badge.className = 'category-badge ' + categoryClass;
   
-  // Ranges info
-  document.getElementById('bodyfat-ranges').innerHTML = isMale ?
-    (isArabic ? 'للرجال: أساسي 2-5% | رياضي 6-13% | لياقة 14-17% | مقبول 18-24% | سمنة >25%' :
-     'Men: Essential 2-5% | Athletic 6-13% | Fitness 14-17% | Average 18-24% | Obese >25%') :
-    (isArabic ? 'للنساء: أساسي 10-13% | رياضي 14-20% | لياقة 21-24% | مقبول 25-31% | سمنة >32%' :
-     'Women: Essential 10-13% | Athletic 14-20% | Fitness 21-24% | Average 25-31% | Obese >32%');
-  
   document.getElementById('bodyfat-result').classList.add('show');
 }
 
@@ -941,7 +1560,6 @@ function calculateWHR() {
   
   document.getElementById('whr-value').textContent = whr.toFixed(2);
   
-  // Category
   let category, categoryClass;
   const isMale = gender === 'male';
   
@@ -959,16 +1577,20 @@ function calculateWHR() {
   badge.textContent = category;
   badge.className = 'category-badge ' + categoryClass;
   
-  // Ranges info
-  document.getElementById('whr-ranges').innerHTML = isMale ?
-    (isArabic ? 'للرجال: منخفض <0.9 | متوسط 0.9-1.0 | عالي >1.0' :
-     'Men: Low <0.9 | Moderate 0.9-1.0 | High >1.0') :
-    (isArabic ? 'للنساء: منخفض <0.8 | متوسط 0.8-0.85 | عالي >0.85' :
-     'Women: Low <0.8 | Moderate 0.8-0.85 | High >0.85');
-  
   document.getElementById('whr-result').classList.add('show');
 }
 
-// Initialize female hip visibility
-document.getElementById('bf-hip-group').style.display = 'none';
+// Resize handler
+window.addEventListener('resize', () => {
+  if (currentWeight && currentHeight) {
+    const bmi = currentWeight / (currentHeight * currentHeight);
+    if (bmi < 18.5 || bmi >= 25) {
+      const minIdeal = 18.5 * currentHeight * currentHeight;
+      const maxIdeal = 24.9 * currentHeight * currentHeight;
+      const midIdeal = (minIdeal + maxIdeal) / 2;
+      const weeks = selectedDuration * 4.33;
+      drawInteractiveChart(currentWeight, midIdeal, bmi < 18.5, weeks);
+    }
+  }
+});
 </script>
