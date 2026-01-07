@@ -352,6 +352,52 @@
   margin-top: 4px;
 }
 
+/* Input with Button */
+.input-with-btn {
+  display: flex;
+  gap: 8px;
+}
+
+.input-with-btn input {
+  flex: 1;
+}
+
+.now-btn {
+  padding: 8px 16px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.now-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* Live Age Counter */
+.age-live {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 12px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+  50% { box-shadow: 0 0 20px 5px rgba(99, 102, 241, 0.2); }
+}
+
 .result-box {
   display: none;
 }
@@ -626,7 +672,10 @@
         </div>
         <div class="form-group">
           <label>حساب حتى تاريخ</label>
-          <input type="datetime-local" id="calc-to-date" onchange="calculateAge()" step="1">
+          <div class="input-with-btn">
+            <input type="datetime-local" id="calc-to-date" onchange="stopLiveMode(); calculateAge()" step="1">
+            <button type="button" class="now-btn" onclick="setNowAndLive('calc-to-date')">الآن</button>
+          </div>
           <span class="input-hint">يوم/شهر/سنة ساعة:دقيقة:ثانية</span>
         </div>
       </div>
@@ -639,6 +688,7 @@
           <span class="age-unit">سنة</span>
         </div>
         <div class="age-full" id="age-full"></div>
+        <div class="age-live" id="age-live"></div>
       </div>
 
       <div class="stats-grid">
@@ -670,7 +720,7 @@
           <span class="birthday-value highlight" id="next-birthday"></span>
         </div>
         <div class="birthday-row">
-          <span class="birthday-label">أيام متبقية</span>
+          <span class="birthday-label" id="days-until-label">أيام متبقية</span>
           <span class="birthday-value" id="days-until"></span>
         </div>
       </div>
@@ -709,12 +759,18 @@
       <div class="form-row">
         <div class="form-group">
           <label>من تاريخ</label>
-          <input type="datetime-local" id="diff-from" onchange="calculateDiff()" step="1">
+          <div class="input-with-btn">
+            <input type="datetime-local" id="diff-from" onchange="calculateDiff()" step="1">
+            <button type="button" class="now-btn" onclick="setNow('diff-from')">الآن</button>
+          </div>
           <span class="input-hint">يوم/شهر/سنة ساعة:دقيقة:ثانية</span>
         </div>
         <div class="form-group">
           <label>إلى تاريخ</label>
-          <input type="datetime-local" id="diff-to" onchange="calculateDiff()" step="1">
+          <div class="input-with-btn">
+            <input type="datetime-local" id="diff-to" onchange="calculateDiff()" step="1">
+            <button type="button" class="now-btn" onclick="setNow('diff-to')">الآن</button>
+          </div>
           <span class="input-hint">يوم/شهر/سنة ساعة:دقيقة:ثانية</span>
         </div>
       </div>
@@ -790,6 +846,8 @@
 <script>
 const isArabic = document.documentElement.lang === 'ar';
 let currentOperation = 'add';
+let liveInterval = null;
+let liveBirthDate = null;
 
 // Day names
 const dayNames = isArabic ? 
@@ -815,6 +873,94 @@ const zodiacSigns = [
   { name: isArabic ? 'العقرب' : 'Scorpio', icon: '♏', start: [10, 23], end: [11, 21] },
   { name: isArabic ? 'القوس' : 'Sagittarius', icon: '♐', start: [11, 22], end: [12, 21] }
 ];
+
+// Format date as DD/MM/YYYY
+function formatDate(date) {
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
+}
+
+// Format datetime for input
+function formatDateTimeForInput(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  const seconds = String(date.getSeconds()).padStart(2, '0');
+  return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+}
+
+// Set current time
+function setNow(inputId) {
+  const input = document.getElementById(inputId);
+  input.value = formatDateTimeForInput(new Date());
+  if (inputId === 'diff-from' || inputId === 'diff-to') {
+    calculateDiff();
+  }
+}
+
+// Set current time and start live mode
+function setNowAndLive(inputId) {
+  liveBirthDate = new Date(document.getElementById('birth-date').value);
+  if (isNaN(liveBirthDate.getTime())) {
+    return;
+  }
+  
+  stopLiveMode();
+  updateLiveAge();
+  liveInterval = setInterval(updateLiveAge, 1000);
+  
+  // Update input value
+  document.getElementById(inputId).value = formatDateTimeForInput(new Date());
+}
+
+// Stop live mode
+function stopLiveMode() {
+  if (liveInterval) {
+    clearInterval(liveInterval);
+    liveInterval = null;
+  }
+  document.getElementById('age-live').innerHTML = '';
+}
+
+// Update live age counter
+function updateLiveAge() {
+  if (!liveBirthDate) return;
+  
+  const now = new Date();
+  document.getElementById('calc-to-date').value = formatDateTimeForInput(now);
+  
+  // Calculate detailed age
+  let years = now.getFullYear() - liveBirthDate.getFullYear();
+  let months = now.getMonth() - liveBirthDate.getMonth();
+  let days = now.getDate() - liveBirthDate.getDate();
+  let hours = now.getHours() - liveBirthDate.getHours();
+  let minutes = now.getMinutes() - liveBirthDate.getMinutes();
+  let seconds = now.getSeconds() - liveBirthDate.getSeconds();
+  
+  if (seconds < 0) { seconds += 60; minutes--; }
+  if (minutes < 0) { minutes += 60; hours--; }
+  if (hours < 0) { hours += 24; days--; }
+  if (days < 0) {
+    months--;
+    const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+    days += lastMonth.getDate();
+  }
+  if (months < 0) { years--; months += 12; }
+  
+  // Update live display
+  const liveText = isArabic ?
+    `${years} سنة و ${months} شهر و ${days} يوم و ${hours} ساعة و ${minutes} دقيقة و ${seconds} ثانية` :
+    `${years} years, ${months} months, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+  
+  document.getElementById('age-live').innerHTML = `⏱️ ${liveText}`;
+  
+  // Also update the main result
+  calculateAge(true);
+}
 
 // Initialize with today's date and time
 document.addEventListener('DOMContentLoaded', () => {
@@ -852,7 +998,7 @@ function setOperation(op, btn) {
   calculateAdd();
 }
 
-function calculateAge() {
+function calculateAge(fromLive = false) {
   const birthDate = new Date(document.getElementById('birth-date').value);
   const toDate = new Date(document.getElementById('calc-to-date').value);
   
@@ -896,8 +1042,9 @@ function calculateAge() {
   document.getElementById('total-days').textContent = totalDays.toLocaleString();
   document.getElementById('total-hours').textContent = totalHours.toLocaleString();
   
-  // Birth day name
-  document.getElementById('birth-day-name').textContent = dayNames[birthDate.getDay()];
+  // Birth day name with formatted date
+  const birthDateFormatted = formatDate(birthDate);
+  document.getElementById('birth-day-name').textContent = `${dayNames[birthDate.getDay()]} - ${birthDateFormatted}`;
   
   // Next birthday
   let nextBirthday = new Date(toDate.getFullYear(), birthDate.getMonth(), birthDate.getDate());
@@ -908,7 +1055,12 @@ function calculateAge() {
   const nextBirthdayStr = formatDate(nextBirthday);
   document.getElementById('next-birthday').textContent = `${nextBirthdayStr} (${dayNames[nextBirthday.getDay()]})`;
   
+  // Days until next birthday with age number
   const daysUntil = Math.ceil((nextBirthday - toDate) / (1000 * 60 * 60 * 24));
+  const nextAge = years + 1;
+  document.getElementById('days-until-label').textContent = isArabic ? 
+    `أيام متبقية حتى عيد ميلادك الـ ${nextAge}` : 
+    `Days until your ${nextAge}${getOrdinalSuffix(nextAge)} birthday`;
   document.getElementById('days-until').textContent = isArabic ? 
     `${daysUntil} يوم` : `${daysUntil} days`;
   
@@ -941,6 +1093,13 @@ function calculateAge() {
     `You've seen about <strong>${fullMoons}</strong> full moons`;
   
   document.getElementById('age-result').classList.add('show');
+}
+
+// Get ordinal suffix for English (1st, 2nd, 3rd, etc.)
+function getOrdinalSuffix(n) {
+  const s = ['th', 'st', 'nd', 'rd'];
+  const v = n % 100;
+  return s[(v - 20) % 10] || s[v] || s[0];
 }
 
 function calculateDiff() {
