@@ -346,36 +346,23 @@
   border-color: var(--primary);
 }
 
-/* Input with Button */
-.input-with-btn {
+/* Date and Time Inputs */
+.datetime-inputs {
   display: flex;
   gap: 8px;
 }
 
-.input-with-btn input {
+.datetime-inputs input[type="date"] {
+  flex: 2;
+}
+
+.datetime-inputs input[type="time"] {
   flex: 1;
-}
-
-.now-btn {
-  padding: 8px 16px;
-  background: var(--primary);
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  white-space: nowrap;
-}
-
-.now-btn:hover {
-  background: var(--primary-dark);
-  transform: translateY(-1px);
+  min-width: 120px;
 }
 
 /* Live Age Counter */
-.age-live {
+.age-live, .diff-live {
   margin-top: 16px;
   padding: 16px 20px;
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
@@ -385,6 +372,7 @@
   font-weight: 600;
   text-align: center;
   animation: pulse 2s ease-in-out infinite;
+}
 }
 
 @keyframes pulse {
@@ -661,13 +649,16 @@
       <div class="form-row">
         <div class="form-group">
           <label>تاريخ الميلاد</label>
-          <input type="datetime-local" id="birth-date" onchange="calculateAge()" step="1">
+          <div class="datetime-inputs">
+            <input type="date" id="birth-date" onchange="onBirthDateChange()">
+            <input type="time" id="birth-time" step="1" value="00:00:00" onchange="onBirthDateChange()">
+          </div>
         </div>
         <div class="form-group">
           <label>حساب حتى تاريخ</label>
-          <div class="input-with-btn">
-            <input type="datetime-local" id="calc-to-date" onchange="stopLiveMode(); calculateAge()" step="1">
-            <button type="button" class="now-btn" onclick="setNowAndLive('calc-to-date')">الآن</button>
+          <div class="datetime-inputs">
+            <input type="date" id="calc-to-date" onchange="stopAutoMode(); calculateAge()">
+            <input type="time" id="calc-to-time" step="1" onchange="stopAutoMode(); calculateAge()">
           </div>
         </div>
       </div>
@@ -751,16 +742,16 @@
       <div class="form-row">
         <div class="form-group">
           <label>من تاريخ</label>
-          <div class="input-with-btn">
-            <input type="datetime-local" id="diff-from" onchange="calculateDiff()" step="1">
-            <button type="button" class="now-btn" onclick="setNow('diff-from')">الآن</button>
+          <div class="datetime-inputs">
+            <input type="date" id="diff-from-date" onchange="calculateDiff()">
+            <input type="time" id="diff-from-time" step="1" value="00:00:00" onchange="calculateDiff()">
           </div>
         </div>
         <div class="form-group">
           <label>إلى تاريخ</label>
-          <div class="input-with-btn">
-            <input type="datetime-local" id="diff-to" onchange="calculateDiff()" step="1">
-            <button type="button" class="now-btn" onclick="setNow('diff-to')">الآن</button>
+          <div class="datetime-inputs">
+            <input type="date" id="diff-to-date" onchange="stopDiffAutoMode(); calculateDiff()">
+            <input type="time" id="diff-to-time" step="1" onchange="stopDiffAutoMode(); calculateDiff()">
           </div>
         </div>
       </div>
@@ -769,6 +760,7 @@
     <div class="result-box" id="diff-result">
       <div class="diff-result">
         <div class="diff-main" id="diff-main"></div>
+        <div class="diff-live" id="diff-live"></div>
         <div class="diff-stats">
           <div class="diff-stat">
             <div class="diff-stat-value" id="diff-months">0</div>
@@ -835,8 +827,10 @@
 <script>
 const isArabic = document.documentElement.lang === 'ar';
 let currentOperation = 'add';
-let liveInterval = null;
-let liveBirthDate = null;
+
+// Auto mode intervals
+let ageAutoInterval = null;
+let diffAutoInterval = null;
 
 // Day names
 const dayNames = isArabic ? 
@@ -871,67 +865,93 @@ function formatDate(date) {
   return `${day}/${month}/${year}`;
 }
 
-// Format datetime for input (datetime-local format)
-function formatDateTimeForInput(date) {
+// Format date for date input (YYYY-MM-DD)
+function formatDateForInput(date) {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, '0');
   const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+// Format time for time input (HH:MM:SS)
+function formatTimeForInput(date) {
   const hours = String(date.getHours()).padStart(2, '0');
   const minutes = String(date.getMinutes()).padStart(2, '0');
   const seconds = String(date.getSeconds()).padStart(2, '0');
-  return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+  return `${hours}:${minutes}:${seconds}`;
 }
 
-// Set current time
-function setNow(inputId) {
-  const input = document.getElementById(inputId);
-  input.value = formatDateTimeForInput(new Date());
-  if (inputId === 'diff-from' || inputId === 'diff-to') {
-    calculateDiff();
-  }
+// Get datetime from separate date and time inputs
+function getDateTime(dateId, timeId) {
+  const dateVal = document.getElementById(dateId).value;
+  const timeVal = document.getElementById(timeId).value || '00:00:00';
+  if (!dateVal) return null;
+  return new Date(`${dateVal}T${timeVal}`);
 }
 
-// Set current time and start live mode
-function setNowAndLive(inputId) {
-  // Update input value first (always)
-  document.getElementById(inputId).value = formatDateTimeForInput(new Date());
-  
-  // Try to start live mode if birth date exists
-  liveBirthDate = new Date(document.getElementById('birth-date').value);
-  if (isNaN(liveBirthDate.getTime())) {
-    // No birth date, just update and calculate
-    calculateAge();
-    return;
-  }
-  
-  stopLiveMode();
-  updateLiveAge();
-  liveInterval = setInterval(updateLiveAge, 1000);
+// Update "حساب حتى تاريخ" with current time
+function updateCalcToNow() {
+  const now = new Date();
+  document.getElementById('calc-to-date').value = formatDateForInput(now);
+  document.getElementById('calc-to-time').value = formatTimeForInput(now);
 }
 
-// Stop live mode
-function stopLiveMode() {
-  if (liveInterval) {
-    clearInterval(liveInterval);
-    liveInterval = null;
+// Update "إلى تاريخ" with current time
+function updateDiffToNow() {
+  const now = new Date();
+  document.getElementById('diff-to-date').value = formatDateForInput(now);
+  document.getElementById('diff-to-time').value = formatTimeForInput(now);
+}
+
+// Stop auto mode for age calculator
+function stopAutoMode() {
+  if (ageAutoInterval) {
+    clearInterval(ageAutoInterval);
+    ageAutoInterval = null;
   }
   document.getElementById('age-live').innerHTML = '';
 }
 
-// Update live age counter
-function updateLiveAge() {
-  if (!liveBirthDate) return;
+// Stop auto mode for diff calculator
+function stopDiffAutoMode() {
+  if (diffAutoInterval) {
+    clearInterval(diffAutoInterval);
+    diffAutoInterval = null;
+  }
+  const diffLive = document.getElementById('diff-live');
+  if (diffLive) diffLive.innerHTML = '';
+}
+
+// Start auto mode for age calculator
+function startAgeAutoMode() {
+  stopAutoMode();
+  updateAgeAuto();
+  ageAutoInterval = setInterval(updateAgeAuto, 1000);
+}
+
+// Start auto mode for diff calculator
+function startDiffAutoMode() {
+  stopDiffAutoMode();
+  updateDiffAuto();
+  diffAutoInterval = setInterval(updateDiffAuto, 1000);
+}
+
+// Auto update age calculator
+function updateAgeAuto() {
+  updateCalcToNow();
+  
+  const birthDate = getDateTime('birth-date', 'birth-time');
+  if (!birthDate) return;
   
   const now = new Date();
-  document.getElementById('calc-to-date').value = formatDateTimeForInput(now);
   
-  // Calculate detailed age
-  let years = now.getFullYear() - liveBirthDate.getFullYear();
-  let months = now.getMonth() - liveBirthDate.getMonth();
-  let days = now.getDate() - liveBirthDate.getDate();
-  let hours = now.getHours() - liveBirthDate.getHours();
-  let minutes = now.getMinutes() - liveBirthDate.getMinutes();
-  let seconds = now.getSeconds() - liveBirthDate.getSeconds();
+  // Calculate detailed age with time
+  let years = now.getFullYear() - birthDate.getFullYear();
+  let months = now.getMonth() - birthDate.getMonth();
+  let days = now.getDate() - birthDate.getDate();
+  let hours = now.getHours() - birthDate.getHours();
+  let minutes = now.getMinutes() - birthDate.getMinutes();
+  let seconds = now.getSeconds() - birthDate.getSeconds();
   
   if (seconds < 0) { seconds += 60; minutes--; }
   if (minutes < 0) { minutes += 60; hours--; }
@@ -950,27 +970,76 @@ function updateLiveAge() {
   
   document.getElementById('age-live').innerHTML = `⏱️ ${liveText}`;
   
-  // Also update the main result
-  calculateAge(true);
+  // Also update main result
+  calculateAge();
 }
 
-// Format date with midnight time (00:00:00)
-function formatDateMidnight(date) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  return `${year}-${month}-${day}T00:00:00`;
+// Auto update diff calculator
+function updateDiffAuto() {
+  updateDiffToNow();
+  
+  const fromDate = getDateTime('diff-from-date', 'diff-from-time');
+  if (!fromDate) return;
+  
+  const now = new Date();
+  
+  // Calculate detailed diff with time
+  const start = fromDate < now ? fromDate : now;
+  const end = fromDate < now ? now : fromDate;
+  
+  let years = end.getFullYear() - start.getFullYear();
+  let months = end.getMonth() - start.getMonth();
+  let days = end.getDate() - start.getDate();
+  let hours = end.getHours() - start.getHours();
+  let minutes = end.getMinutes() - start.getMinutes();
+  let seconds = end.getSeconds() - start.getSeconds();
+  
+  if (seconds < 0) { seconds += 60; minutes--; }
+  if (minutes < 0) { minutes += 60; hours--; }
+  if (hours < 0) { hours += 24; days--; }
+  if (days < 0) {
+    months--;
+    const lastMonth = new Date(end.getFullYear(), end.getMonth(), 0);
+    days += lastMonth.getDate();
+  }
+  if (months < 0) { years--; months += 12; }
+  
+  // Update live display
+  const liveText = isArabic ?
+    `${years} سنة و ${months} شهر و ${days} يوم و ${hours} ساعة و ${minutes} دقيقة و ${seconds} ثانية` :
+    `${years} years, ${months} months, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+  
+  const diffLive = document.getElementById('diff-live');
+  if (diffLive) diffLive.innerHTML = `⏱️ ${liveText}`;
+  
+  // Also update main result
+  calculateDiff();
+}
+
+// When birth date changes, start auto mode
+function onBirthDateChange() {
+  const birthDate = getDateTime('birth-date', 'birth-time');
+  if (birthDate) {
+    startAgeAutoMode();
+  } else {
+    stopAutoMode();
+    calculateAge();
+  }
 }
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-  const nowTime = formatDateTimeForInput(new Date());
+  const now = new Date();
   
   // "حساب حتى تاريخ" و "إلى تاريخ" → الوقت الحالي
-  document.getElementById('calc-to-date').value = nowTime;
-  document.getElementById('diff-to').value = nowTime;
+  document.getElementById('calc-to-date').value = formatDateForInput(now);
+  document.getElementById('calc-to-time').value = formatTimeForInput(now);
+  document.getElementById('diff-to-date').value = formatDateForInput(now);
+  document.getElementById('diff-to-time').value = formatTimeForInput(now);
   
-  // باقي الحقول تبقى فارغة (المستخدم يدخلها)
+  // Start auto modes
+  startAgeAutoMode();
+  startDiffAutoMode();
 });
 
 function switchAgeTab(tab) {
@@ -994,10 +1063,10 @@ function setOperation(op, btn) {
 }
 
 function calculateAge(fromLive = false) {
-  const birthDate = new Date(document.getElementById('birth-date').value);
-  const toDate = new Date(document.getElementById('calc-to-date').value);
+  const birthDate = getDateTime('birth-date', 'birth-time');
+  const toDate = getDateTime('calc-to-date', 'calc-to-time');
   
-  if (isNaN(birthDate.getTime()) || isNaN(toDate.getTime())) {
+  if (!birthDate || !toDate || isNaN(birthDate.getTime()) || isNaN(toDate.getTime())) {
     document.getElementById('age-result').classList.remove('show');
     return;
   }
@@ -1098,10 +1167,10 @@ function getOrdinalSuffix(n) {
 }
 
 function calculateDiff() {
-  const fromDate = new Date(document.getElementById('diff-from').value);
-  const toDate = new Date(document.getElementById('diff-to').value);
+  const fromDate = getDateTime('diff-from-date', 'diff-from-time');
+  const toDate = getDateTime('diff-to-date', 'diff-to-time');
   
-  if (isNaN(fromDate.getTime()) || isNaN(toDate.getTime())) {
+  if (!fromDate || !toDate || isNaN(fromDate.getTime()) || isNaN(toDate.getTime())) {
     document.getElementById('diff-result').classList.remove('show');
     return;
   }
