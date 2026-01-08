@@ -358,6 +358,27 @@
   min-width: 0;
 }
 
+/* Hijri Date Display */
+.hijri-display {
+  margin-top: 6px;
+  padding: 6px 12px;
+  background: rgba(34, 197, 94, 0.1);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #22c55e;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hijri-display::before {
+  content: '🌙';
+}
+
+.hijri-display:empty {
+  display: none;
+}
+
 /* Live Age Counter */
 .age-live, .diff-live {
   margin-top: 16px;
@@ -644,6 +665,7 @@
             <input type="date" id="birth-date" onchange="onBirthDateChange()">
             <input type="time" id="birth-time" step="1" value="00:00:00" onchange="onBirthDateChange()">
           </div>
+          <div class="hijri-display" id="birth-date-hijri"></div>
         </div>
         <div class="form-group">
           <label>حساب حتى تاريخ</label>
@@ -651,6 +673,7 @@
             <input type="date" id="calc-to-date" onchange="stopAutoMode(); calculateAge()">
             <input type="time" id="calc-to-time" step="1" onchange="stopAutoMode(); calculateAge()">
           </div>
+          <div class="hijri-display" id="calc-to-date-hijri"></div>
         </div>
       </div>
     </div>
@@ -737,6 +760,7 @@
             <input type="date" id="diff-from-date" onchange="calculateDiff()">
             <input type="time" id="diff-from-time" step="1" value="00:00:00" onchange="calculateDiff()">
           </div>
+          <div class="hijri-display" id="diff-from-date-hijri"></div>
         </div>
         <div class="form-group">
           <label>إلى تاريخ</label>
@@ -744,6 +768,7 @@
             <input type="date" id="diff-to-date" onchange="stopDiffAutoMode(); calculateDiff()">
             <input type="time" id="diff-to-time" step="1" onchange="stopDiffAutoMode(); calculateDiff()">
           </div>
+          <div class="hijri-display" id="diff-to-date-hijri"></div>
         </div>
       </div>
     </div>
@@ -799,6 +824,7 @@
             <input type="date" id="add-start-date" onchange="calculateAdd()">
             <input type="time" id="add-start-time" step="1" onchange="calculateAdd()">
           </div>
+          <div class="hijri-display" id="add-start-date-hijri"></div>
         </div>
       </div>
       <div class="form-row">
@@ -834,6 +860,7 @@
     <div class="result-box" id="add-result">
       <div class="add-result">
         <div class="add-result-date" id="add-result-date"></div>
+        <div class="hijri-display" id="add-result-hijri" style="justify-content: center; margin: 8px 0;"></div>
         <div class="add-result-time" id="add-result-time"></div>
         <div class="add-result-day" id="add-result-day"></div>
       </div>
@@ -858,6 +885,59 @@ const dayNames = isArabic ?
 const monthNames = isArabic ?
   ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'] :
   ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+const hijriMonthNames = isArabic ?
+  ['محرم', 'صفر', 'ربيع الأول', 'ربيع الثاني', 'جمادى الأولى', 'جمادى الآخرة', 'رجب', 'شعبان', 'رمضان', 'شوال', 'ذو القعدة', 'ذو الحجة'] :
+  ['Muharram', 'Safar', 'Rabi I', 'Rabi II', 'Jumada I', 'Jumada II', 'Rajab', 'Shaban', 'Ramadan', 'Shawwal', 'Dhul Qadah', 'Dhul Hijjah'];
+
+// Hijri Conversion Functions
+function gregorianToHijri(year, month, day) {
+  const jd = gregorianToJulian(year, month, day);
+  return julianToHijri(jd);
+}
+
+function gregorianToJulian(year, month, day) {
+  if (month <= 2) { year -= 1; month += 12; }
+  const A = Math.floor(year / 100);
+  const B = 2 - A + Math.floor(A / 4);
+  return Math.floor(365.25 * (year + 4716)) + Math.floor(30.6001 * (month + 1)) + day + B - 1524.5;
+}
+
+function julianToHijri(jd) {
+  jd = Math.floor(jd) + 0.5;
+  const year = Math.floor((30 * (jd - 1948439.5) + 10646) / 10631);
+  const month = Math.min(12, Math.ceil((jd - 29 - hijriToJulian(year, 1, 1)) / 29.5) + 1);
+  const day = Math.floor(jd - hijriToJulian(year, month, 1)) + 1;
+  return { year, month, day: Math.min(day, 30) };
+}
+
+function hijriToJulian(year, month, day) {
+  return Math.floor((11 * year + 3) / 30) + 354 * year + 30 * month - Math.floor((month - 1) / 2) + day + 1948440 - 385;
+}
+
+function formatHijriDate(h) {
+  if (!h || !h.year) return '';
+  const monthName = hijriMonthNames[h.month - 1] || '';
+  return isArabic ? `${h.day} ${monthName} ${h.year} هـ` : `${h.day} ${monthName} ${h.year} AH`;
+}
+
+function updateHijriDisplay(dateInputId, hijriDisplayId) {
+  const dateInput = document.getElementById(dateInputId);
+  const hijriDisplay = document.getElementById(hijriDisplayId);
+  if (!dateInput || !hijriDisplay) return;
+  
+  const dateValue = dateInput.value;
+  if (!dateValue) {
+    hijriDisplay.textContent = '';
+    return;
+  }
+  
+  const [year, month, day] = dateValue.split('-').map(Number);
+  if (year && month && day) {
+    const hijri = gregorianToHijri(year, month, day);
+    hijriDisplay.textContent = formatHijriDate(hijri);
+  }
+}
 
 // Zodiac signs
 const zodiacSigns = [
@@ -1036,6 +1116,7 @@ function updateDiffAuto() {
 
 // When birth date changes, start auto mode
 function onBirthDateChange() {
+  updateHijriDisplay('birth-date', 'birth-date-hijri');
   const birthDate = getDateTime('birth-date', 'birth-time');
   if (birthDate) {
     startAgeAutoMode();
@@ -1058,6 +1139,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // "تاريخ البداية" في إضافة/طرح → الوقت الحالي
   document.getElementById('add-start-date').value = formatDateForInput(now);
   document.getElementById('add-start-time').value = formatTimeForInput(now);
+  
+  // Update Hijri displays
+  updateHijriDisplay('calc-to-date', 'calc-to-date-hijri');
+  updateHijriDisplay('diff-to-date', 'diff-to-date-hijri');
+  updateHijriDisplay('add-start-date', 'add-start-date-hijri');
   
   // Start auto modes
   startAgeAutoMode();
@@ -1085,6 +1171,10 @@ function setOperation(op, btn) {
 }
 
 function calculateAge(fromLive = false) {
+  // Update Hijri displays
+  updateHijriDisplay('birth-date', 'birth-date-hijri');
+  updateHijriDisplay('calc-to-date', 'calc-to-date-hijri');
+  
   const birthDate = getDateTime('birth-date', 'birth-time');
   const toDate = getDateTime('calc-to-date', 'calc-to-time');
   
@@ -1189,6 +1279,10 @@ function getOrdinalSuffix(n) {
 }
 
 function calculateDiff() {
+  // Update Hijri displays
+  updateHijriDisplay('diff-from-date', 'diff-from-date-hijri');
+  updateHijriDisplay('diff-to-date', 'diff-to-date-hijri');
+  
   const fromDate = getDateTime('diff-from-date', 'diff-from-time');
   const toDate = getDateTime('diff-to-date', 'diff-to-time');
   
@@ -1241,6 +1335,9 @@ function calculateDiff() {
 }
 
 function calculateAdd() {
+  // Update Hijri display for start date
+  updateHijriDisplay('add-start-date', 'add-start-date-hijri');
+  
   const startDate = getDateTime('add-start-date', 'add-start-time');
   const addYears = parseInt(document.getElementById('add-years').value) || 0;
   const addMonths = parseInt(document.getElementById('add-months').value) || 0;
@@ -1273,6 +1370,11 @@ function calculateAdd() {
   }
   
   document.getElementById('add-result-date').textContent = formatDate(resultDate);
+  
+  // Update Hijri for result
+  const hijriResult = gregorianToHijri(resultDate.getFullYear(), resultDate.getMonth() + 1, resultDate.getDate());
+  document.getElementById('add-result-hijri').textContent = formatHijriDate(hijriResult);
+  
   document.getElementById('add-result-time').textContent = formatTimeForInput(resultDate);
   document.getElementById('add-result-day').textContent = dayNames[resultDate.getDay()];
   
