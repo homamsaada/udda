@@ -294,9 +294,17 @@
 .date-picker-btn { background: transparent; border: none; font-size: 1.1rem; cursor: pointer; padding: 4px 8px; border-radius: 6px; transition: background 0.2s; opacity: 0.7; }
 .date-picker-btn:hover { background: var(--bg-secondary); opacity: 1; }
 
+/* Select Dropdowns */
+.date-select { padding: 6px 8px; border: 2px solid var(--border-color); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); font-size: 0.95rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: border-color 0.2s; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236366f1' d='M6 8L2 4h8z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: left 8px center; padding-left: 24px; }
+.date-select:focus { outline: none; border-color: var(--primary); }
+.date-select:hover { border-color: var(--primary); }
+.date-select.year { min-width: 85px; }
+.date-select.month { min-width: 130px; }
+.date-select.day, .date-select.hour, .date-select.minute { min-width: 65px; }
+
 /* Calendar Popup */
 .date-input-container { position: relative; }
-.calendar-popup { position: absolute; top: 100%; left: 0; right: 0; z-index: 1000; background: var(--bg-primary); border: 2px solid var(--border-color); border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); padding: 16px; display: none; margin-top: 8px; }
+.calendar-popup { position: absolute; top: 100%; right: 0; width: 320px; z-index: 1000; background: var(--bg-primary); border: 2px solid var(--border-color); border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); padding: 16px; display: none; margin-top: 8px; }
 .calendar-popup.show { display: block; animation: fadeIn 0.2s ease; }
 .calendar-popup.hijri { border-color: rgba(34, 197, 94, 0.4); }
 
@@ -439,31 +447,31 @@
               <div class="date-block gregorian">
                 <span class="block-label">📅 Gregorian</span>
                 <div class="block-fields">
-                  <div class="field-group"><span class="field-label">Year</span><input type="number" class="date-field year" id="birth-g-year" placeholder="YYYY" min="1" max="9999" oninput="validateField(this, 1, 9999); onGregorianChange('birth')"></div>
+                  <select class="date-select day" id="birth-g-day" onchange="onGregorianChange('birth')"></select>
                   <span class="date-sep">/</span>
-                  <div class="field-group"><span class="field-label">Month</span><input type="number" class="date-field month" id="birth-g-month" placeholder="MM" min="1" max="12" oninput="validateField(this, 1, 12); onGregorianChange('birth')"></div>
+                  <select class="date-select month" id="birth-g-month" onchange="updateDays('birth', 'g'); onGregorianChange('birth')"></select>
                   <span class="date-sep">/</span>
-                  <div class="field-group"><span class="field-label">Day</span><input type="number" class="date-field day" id="birth-g-day" placeholder="DD" min="1" max="31" oninput="validateField(this, 1, 31); onGregorianChange('birth')"></div>
+                  <select class="date-select year" id="birth-g-year" onchange="updateDays('birth', 'g'); onGregorianChange('birth')"></select>
                   <button type="button" class="date-picker-btn" onclick="toggleCalendar('birth', 'gregorian')">📅</button>
                 </div>
               </div>
               <div class="date-block hijri">
                 <span class="block-label">🌙 Hijri</span>
                 <div class="block-fields">
-                  <div class="field-group"><span class="field-label">Year</span><input type="number" class="date-field year" id="birth-h-year" placeholder="YYYY" min="1" max="9999" oninput="validateField(this, 1, 9999); onHijriChange('birth')"></div>
+                  <select class="date-select day" id="birth-h-day" onchange="onHijriChange('birth')"></select>
                   <span class="date-sep">/</span>
-                  <div class="field-group"><span class="field-label">Month</span><input type="number" class="date-field month" id="birth-h-month" placeholder="MM" min="1" max="12" oninput="validateField(this, 1, 12); onHijriChange('birth')"></div>
+                  <select class="date-select month hijri-month" id="birth-h-month" onchange="updateDays('birth', 'h'); onHijriChange('birth')"></select>
                   <span class="date-sep">/</span>
-                  <div class="field-group"><span class="field-label">Day</span><input type="number" class="date-field day" id="birth-h-day" placeholder="DD" min="1" max="30" oninput="validateField(this, 1, 30); onHijriChange('birth')"></div>
+                  <select class="date-select year" id="birth-h-year" onchange="updateDays('birth', 'h'); onHijriChange('birth')"></select>
                   <button type="button" class="date-picker-btn" onclick="toggleCalendar('birth', 'hijri')">🌙</button>
                 </div>
               </div>
               <div class="date-block time-block">
                 <span class="block-label">🕐 Time</span>
                 <div class="block-fields">
-                  <div class="field-group"><span class="field-label">Hour</span><input type="number" class="date-field hour" id="birth-hour" placeholder="HH" min="0" max="23" value="0" oninput="validateField(this, 0, 23); calculateAge()"></div>
+                  <select class="date-select hour" id="birth-hour" onchange="calculateAge()"></select>
                   <span class="time-sep">:</span>
-                  <div class="field-group"><span class="field-label">Min</span><input type="number" class="date-field minute" id="birth-minute" placeholder="MM" min="0" max="59" value="0" oninput="validateField(this, 0, 59); calculateAge()"></div>
+                  <select class="date-select minute" id="birth-minute" onchange="calculateAge()"></select>
                 </div>
               </div>
             </div>
@@ -854,7 +862,12 @@ function renderCalendarDirect(p, t, y, m) {
 }
 
 function selDay(p, t, y, m, d) { if (t === 'gregorian') { setGregorian(p, y, m, d); const h = gregorianToHijri(y, m, d); setHijri(p, h.year, h.month, h.day); } else { setHijri(p, y, m, d); const g = hijriToGregorian(y, m, d); setGregorian(p, g.year, g.month, g.day); } document.getElementById(`${p}-calendar`).classList.remove('show'); openCalendar = null; triggerCalc(p); }
-document.addEventListener('click', e => { if (openCalendar && !e.target.closest('.date-input-container')) { document.getElementById(openCalendar)?.classList.remove('show'); openCalendar = null; } });
+document.addEventListener('click', e => { 
+  if (openCalendar && !e.target.closest('.date-input-container') && !e.target.closest('.calendar-popup')) { 
+    document.getElementById(openCalendar)?.classList.remove('show'); 
+    openCalendar = null; 
+  } 
+});
 
 // Tabs & Operation
 function switchAgeTab(tab) { document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active')); document.querySelectorAll('.calc-section').forEach(s => s.classList.remove('active')); document.querySelectorAll('.calc-tab').forEach(t => { if (t.getAttribute('onclick')?.includes(`'${tab}'`)) t.classList.add('active'); }); document.getElementById(`${tab}-section`).classList.add('active'); }
@@ -955,8 +968,106 @@ document.getElementById('add-result-time').textContent = `${String(r.getHours())
 const zodiacSigns = [ { n: isArabic ? 'الجدي' : 'Capricorn', i: '♑', s: [12, 22], e: [1, 19] }, { n: isArabic ? 'الدلو' : 'Aquarius', i: '♒', s: [1, 20], e: [2, 18] }, { n: isArabic ? 'الحوت' : 'Pisces', i: '♓', s: [2, 19], e: [3, 20] }, { n: isArabic ? 'الحمل' : 'Aries', i: '♈', s: [3, 21], e: [4, 19] }, { n: isArabic ? 'الثور' : 'Taurus', i: '♉', s: [4, 20], e: [5, 20] }, { n: isArabic ? 'الجوزاء' : 'Gemini', i: '♊', s: [5, 21], e: [6, 20] }, { n: isArabic ? 'السرطان' : 'Cancer', i: '♋', s: [6, 21], e: [7, 22] }, { n: isArabic ? 'الأسد' : 'Leo', i: '♌', s: [7, 23], e: [8, 22] }, { n: isArabic ? 'العذراء' : 'Virgo', i: '♍', s: [8, 23], e: [9, 22] }, { n: isArabic ? 'الميزان' : 'Libra', i: '♎', s: [9, 23], e: [10, 22] }, { n: isArabic ? 'العقرب' : 'Scorpio', i: '♏', s: [10, 23], e: [11, 21] }, { n: isArabic ? 'القوس' : 'Sagittarius', i: '♐', s: [11, 22], e: [12, 21] } ];
 function updateZodiac(m, d) { for (const z of zodiacSigns) { const [sm, sd] = z.s, [em, ed] = z.e; let match = false; if (sm === em) match = m === sm && d >= sd && d <= ed; else if (sm > em) match = (m === sm && d >= sd) || (m === em && d <= ed); else match = (m === sm && d >= sd) || (m === em && d <= ed); if (match) { document.getElementById('zodiac-icon').textContent = z.i; document.getElementById('zodiac-name').textContent = z.n; document.getElementById('zodiac-dates').textContent = `${monthNames[sm - 1]} ${sd} - ${monthNames[em - 1]} ${ed}`; return; } } }
 
+// Init Dropdowns
+function initDropdowns() {
+  const currentYear = new Date().getFullYear();
+  const currentHYear = gregorianToHijri(currentYear, 1, 1).year;
+  
+  // Birth dropdowns only (others use input fields)
+  const prefix = 'birth';
+  
+  // Gregorian Year (1900 - current)
+  const gYearSel = document.getElementById(`${prefix}-g-year`);
+  if (gYearSel) {
+    gYearSel.innerHTML = '<option value="">--</option>';
+    for (let y = currentYear; y >= 1900; y--) {
+      gYearSel.innerHTML += `<option value="${y}">${y}</option>`;
+    }
+  }
+  
+  // Gregorian Month
+  const gMonthSel = document.getElementById(`${prefix}-g-month`);
+  if (gMonthSel) {
+    gMonthSel.innerHTML = '<option value="">--</option>';
+    for (let m = 1; m <= 12; m++) {
+      gMonthSel.innerHTML += `<option value="${m}">${monthNames[m-1]} - ${m}</option>`;
+    }
+  }
+  
+  // Gregorian Day
+  const gDaySel = document.getElementById(`${prefix}-g-day`);
+  if (gDaySel) {
+    gDaySel.innerHTML = '<option value="">--</option>';
+    for (let d = 1; d <= 31; d++) {
+      gDaySel.innerHTML += `<option value="${d}">${d}</option>`;
+    }
+  }
+  
+  // Hijri Year (1300 - current)
+  const hYearSel = document.getElementById(`${prefix}-h-year`);
+  if (hYearSel) {
+    hYearSel.innerHTML = '<option value="">--</option>';
+    for (let y = currentHYear; y >= 1300; y--) {
+      hYearSel.innerHTML += `<option value="${y}">${y}</option>`;
+    }
+  }
+  
+  // Hijri Month
+  const hMonthSel = document.getElementById(`${prefix}-h-month`);
+  if (hMonthSel) {
+    hMonthSel.innerHTML = '<option value="">--</option>';
+    for (let m = 1; m <= 12; m++) {
+      hMonthSel.innerHTML += `<option value="${m}">${hijriMonthNames[m-1]} - ${m}</option>`;
+    }
+  }
+  
+  // Hijri Day
+  const hDaySel = document.getElementById(`${prefix}-h-day`);
+  if (hDaySel) {
+    hDaySel.innerHTML = '<option value="">--</option>';
+    for (let d = 1; d <= 30; d++) {
+      hDaySel.innerHTML += `<option value="${d}">${d}</option>`;
+    }
+  }
+  
+  // Hour
+  const hourSel = document.getElementById(`${prefix}-hour`);
+  if (hourSel) {
+    hourSel.innerHTML = '';
+    for (let h = 0; h <= 23; h++) {
+      hourSel.innerHTML += `<option value="${h}" ${h===0?'selected':''}>${String(h).padStart(2,'0')}</option>`;
+    }
+  }
+  
+  // Minute
+  const minSel = document.getElementById(`${prefix}-minute`);
+  if (minSel) {
+    minSel.innerHTML = '';
+    for (let m = 0; m <= 59; m++) {
+      minSel.innerHTML += `<option value="${m}" ${m===0?'selected':''}>${String(m).padStart(2,'0')}</option>`;
+    }
+  }
+}
+
+// Update days based on month/year
+function updateDays(prefix, type) {
+  const y = getVal(`${prefix}-${type}-year`);
+  const m = getVal(`${prefix}-${type}-month`);
+  const daySel = document.getElementById(`${prefix}-${type}-day`);
+  if (!daySel || !y || !m) return;
+  
+  const currentDay = getVal(`${prefix}-${type}-day`);
+  const maxDays = type === 'g' ? getDaysInGMonth(y, m) : getDaysInHMonth(y, m);
+  
+  daySel.innerHTML = '<option value="">--</option>';
+  for (let d = 1; d <= maxDays; d++) {
+    daySel.innerHTML += `<option value="${d}" ${d===currentDay?'selected':''}>${d}</option>`;
+  }
+}
+
 // Init
 document.addEventListener('DOMContentLoaded', () => { 
+  initDropdowns();
   const now = new Date(); 
   setDateTimeFromDate('diff-to', now); 
   setDateTimeFromDate('add', now); 
