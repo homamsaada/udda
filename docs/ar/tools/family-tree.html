@@ -255,7 +255,7 @@
   --primary-dark: #047857;
   --male-color: #3b82f6;
   --female-color: #ec4899;
-  --married-color: #f59e0b;
+  --marriage-color: #f59e0b;
   --divorced-color: #6b7280;
   --widowed-color: #4b5563;
   --bg-primary: #0f172a;
@@ -272,16 +272,16 @@
 
 .family-tree-app {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   min-height: 75vh;
   font-family: inherit;
 }
 
 /* Sidebar */
-.persons-sidebar {
-  width: 260px;
+.sidebar {
+  width: 240px;
   background: var(--bg-secondary);
-  border-radius: 12px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -289,7 +289,7 @@
 }
 
 .sidebar-header {
-  padding: 14px 16px;
+  padding: 12px 14px;
   border-bottom: 2px solid var(--border-color);
   display: flex;
   align-items: center;
@@ -297,35 +297,35 @@
 }
 
 .sidebar-header h3 {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-primary);
+  margin: 0;
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin: 0;
+  gap: 6px;
 }
 
 .sidebar-header .count {
   background: var(--primary);
   color: white;
-  padding: 2px 8px;
+  padding: 2px 7px;
   border-radius: 10px;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
 }
 
 .sidebar-search {
-  padding: 10px 12px;
+  padding: 8px 10px;
   border-bottom: 1px solid var(--border-color);
 }
 
 .sidebar-search input {
   width: 100%;
-  padding: 8px 12px;
+  padding: 7px 10px;
   background: var(--bg-card);
   border: 2px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 6px;
   color: var(--text-primary);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-family: inherit;
 }
 
@@ -334,123 +334,123 @@
   border-color: var(--primary);
 }
 
-.persons-list {
+.sidebar-list {
   flex: 1;
   overflow-y: auto;
-  padding: 8px;
+  padding: 6px;
 }
 
-.person-list-item {
+.list-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 10px;
+  gap: 8px;
+  padding: 7px 8px;
   background: var(--bg-card);
-  border-radius: 8px;
-  margin-bottom: 5px;
+  border-radius: 6px;
+  margin-bottom: 4px;
   cursor: pointer;
-  transition: all 0.2s;
   border: 2px solid transparent;
+  transition: all 0.2s;
 }
 
-.person-list-item:hover { border-color: var(--primary); }
-.person-list-item.unlinked { border-color: var(--divorced-color); border-style: dashed; }
+.list-item:hover { border-color: var(--primary); }
+.list-item.orphan { border: 2px dashed var(--divorced-color); }
 
-.person-list-item .avatar {
-  width: 32px;
-  height: 32px;
+.list-item .icon {
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   flex-shrink: 0;
 }
 
-.person-list-item .avatar.male { background: rgba(59, 130, 246, 0.2); }
-.person-list-item .avatar.female { background: rgba(236, 72, 153, 0.2); }
-.person-list-item .avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.list-item .icon.male { background: rgba(59, 130, 246, 0.2); }
+.list-item .icon.female { background: rgba(236, 72, 153, 0.2); }
+.list-item .icon img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
 
-.person-list-item .info { flex: 1; min-width: 0; }
-.person-list-item .name { font-size: 0.8rem; font-weight: 600; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.person-list-item .lineage { font-size: 0.65rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.list-item .info { flex: 1; min-width: 0; }
+.list-item .name { font-size: 0.75rem; font-weight: 600; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.list-item .sub { font-size: 0.65rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-.person-list-item .menu-btn {
-  padding: 2px 6px;
+.list-item .menu-btn {
+  padding: 2px 5px;
   background: none;
   border: none;
   color: var(--text-muted);
   cursor: pointer;
-  font-size: 0.9rem;
-  border-radius: 4px;
+  font-size: 0.85rem;
+  border-radius: 3px;
 }
 
-.person-list-item .menu-btn:hover { background: var(--bg-secondary); color: var(--text-primary); }
+.list-item .menu-btn:hover { background: var(--bg-secondary); color: var(--text-primary); }
 
-.section-title {
-  font-size: 0.7rem;
+.section-label {
+  font-size: 0.65rem;
   color: var(--text-muted);
-  padding: 6px 10px;
+  padding: 6px 8px 4px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   border-top: 1px solid var(--border-color);
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
-.add-person-btn {
-  margin: 10px;
-  padding: 10px;
+.add-btn {
+  margin: 8px;
+  padding: 9px;
   background: var(--primary);
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   color: white;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
-.add-person-btn:hover { background: var(--primary-dark); }
+.add-btn:hover { background: var(--primary-dark); }
 
-/* Main Area */
+/* Main */
 .main-area { flex: 1; display: flex; flex-direction: column; min-width: 0; }
 
 /* Toolbar */
-.tree-toolbar {
+.toolbar {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  padding: 10px 14px;
+  gap: 5px;
+  padding: 8px 12px;
   background: var(--bg-secondary);
-  border-radius: 10px;
-  margin-bottom: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
   align-items: center;
 }
 
 .toolbar-group {
   display: flex;
-  gap: 4px;
-  padding: 0 10px;
-  border-right: 2px solid var(--border-color);
+  gap: 3px;
+  padding: 0 8px;
+  border-left: 2px solid var(--border-color);
 }
 
-.toolbar-group:last-child { border-right: none; }
+.toolbar-group:first-child { border-left: none; }
 
 .tool-btn {
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 7px 12px;
+  gap: 4px;
+  padding: 6px 10px;
   background: var(--bg-card);
   border: 2px solid var(--border-color);
-  border-radius: 6px;
+  border-radius: 5px;
   color: var(--text-primary);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
   cursor: pointer;
   font-family: inherit;
@@ -458,25 +458,24 @@
 }
 
 .tool-btn:hover { border-color: var(--primary); }
-.tool-btn .icon { font-size: 0.95rem; }
+.tool-btn .icon { font-size: 0.9rem; }
 
 /* Canvas */
-.canvas-container {
+.canvas-wrap {
   flex: 1;
   position: relative;
   background: var(--bg-secondary);
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
-  min-height: 400px;
+  min-height: 380px;
   border: 2px solid var(--border-color);
 }
 
-.tree-canvas { width: 100%; height: 100%; min-height: 400px; cursor: grab; font-family: inherit; }
-.tree-canvas:active { cursor: grabbing; }
-.tree-canvas text { font-family: inherit; }
+.tree-svg { width: 100%; height: 100%; min-height: 380px; cursor: grab; font-family: inherit; }
+.tree-svg:active { cursor: grabbing; }
+.tree-svg text { font-family: inherit; }
 
-/* Empty State */
-.empty-state {
+.empty-msg {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -486,57 +485,57 @@
   pointer-events: none;
 }
 
-.empty-state .icon { font-size: 3rem; margin-bottom: 10px; opacity: 0.5; }
-.empty-state h3 { font-size: 1.2rem; margin-bottom: 5px; color: var(--text-secondary); }
+.empty-msg .icon { font-size: 2.5rem; margin-bottom: 8px; opacity: 0.5; }
+.empty-msg h3 { font-size: 1.1rem; margin: 0 0 4px; color: var(--text-secondary); }
 
-/* Zoom Controls */
-.zoom-controls {
+/* Zoom */
+.zoom-panel {
   position: absolute;
-  bottom: 14px;
-  left: 14px;
+  bottom: 12px;
+  left: 12px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
   background: var(--bg-card);
-  padding: 5px;
-  border-radius: 8px;
+  padding: 4px;
+  border-radius: 6px;
   border: 2px solid var(--border-color);
 }
 
 .zoom-btn {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--bg-secondary);
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   color: var(--text-primary);
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
 }
 
 .zoom-btn:hover { background: var(--primary); }
-.zoom-level { text-align: center; font-size: 0.7rem; color: var(--text-muted); padding: 2px 0; }
+.zoom-level { text-align: center; font-size: 0.65rem; color: var(--text-muted); }
 
-/* Stats Bar */
+/* Stats */
 .stats-bar {
   display: flex;
-  gap: 14px;
-  padding: 8px 14px;
+  gap: 12px;
+  padding: 7px 12px;
   background: var(--bg-card);
-  border-radius: 8px;
-  margin-top: 10px;
+  border-radius: 6px;
+  margin-top: 8px;
   flex-wrap: wrap;
 }
 
-.stat-item { display: flex; align-items: center; gap: 5px; font-size: 0.8rem; }
-.stat-item .label { color: var(--text-muted); }
-.stat-item .value { font-weight: 700; color: var(--text-primary); }
+.stat { display: flex; align-items: center; gap: 4px; font-size: 0.75rem; }
+.stat .label { color: var(--text-muted); }
+.stat .val { font-weight: 700; color: var(--text-primary); }
 
-/* Modals */
-.modal-overlay {
+/* Modal */
+.modal-bg {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0,0,0,0.7);
@@ -549,26 +548,26 @@
   transition: all 0.3s;
 }
 
-.modal-overlay.show { opacity: 1; visibility: visible; }
+.modal-bg.show { opacity: 1; visibility: visible; }
 
-.modal-content {
+.modal {
   background: var(--bg-secondary);
-  border-radius: 14px;
+  border-radius: 12px;
   width: 90%;
-  max-width: 480px;
+  max-width: 440px;
   max-height: 85vh;
   overflow-y: auto;
   transform: scale(0.9);
   transition: transform 0.3s;
 }
 
-.modal-overlay.show .modal-content { transform: scale(1); }
+.modal-bg.show .modal { transform: scale(1); }
 
-.modal-header {
+.modal-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 18px;
+  padding: 12px 16px;
   border-bottom: 2px solid var(--border-color);
   position: sticky;
   top: 0;
@@ -576,35 +575,35 @@
   z-index: 10;
 }
 
-.modal-header h2 { font-size: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 8px; margin: 0; }
+.modal-head h2 { font-size: 0.95rem; color: var(--text-primary); display: flex; align-items: center; gap: 6px; margin: 0; }
 
 .modal-close {
   background: none;
   border: none;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--text-muted);
   cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 5px;
+  padding: 3px 6px;
+  border-radius: 4px;
 }
 
 .modal-close:hover { background: var(--bg-card); color: var(--text-primary); }
 
-.modal-body { padding: 16px 18px; }
+.modal-body { padding: 14px 16px; }
 
-.form-group { margin-bottom: 14px; }
-.form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 5px; }
+.form-group { margin-bottom: 12px; }
+.form-group label { display: block; font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 4px; }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 9px 12px;
+  padding: 8px 10px;
   background: var(--bg-card);
   border: 2px solid var(--border-color);
-  border-radius: 7px;
+  border-radius: 6px;
   color: var(--text-primary);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-family: inherit;
 }
 
@@ -612,36 +611,39 @@
 .form-group select:focus,
 .form-group textarea:focus { outline: none; border-color: var(--primary); }
 
-.form-group textarea { min-height: 60px; resize: vertical; }
+.form-group textarea { min-height: 50px; resize: vertical; }
 
-/* Gender Toggle */
-.gender-toggle { display: flex; gap: 8px; }
+.form-row { display: flex; gap: 10px; }
+.form-row .form-group { flex: 1; }
 
-.gender-option {
+/* Gender */
+.gender-toggle { display: flex; gap: 6px; }
+
+.gender-opt {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  padding: 10px;
+  gap: 4px;
+  padding: 9px;
   background: var(--bg-card);
   border: 2px solid var(--border-color);
-  border-radius: 7px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
-.gender-option input { display: none; }
-.gender-option.male:has(input:checked) { border-color: var(--male-color); background: rgba(59, 130, 246, 0.2); }
-.gender-option.female:has(input:checked) { border-color: var(--female-color); background: rgba(236, 72, 153, 0.2); }
-.gender-option span { font-weight: 600; font-size: 0.85rem; }
+.gender-opt input { display: none; }
+.gender-opt.male:has(input:checked) { border-color: var(--male-color); background: rgba(59, 130, 246, 0.2); }
+.gender-opt.female:has(input:checked) { border-color: var(--female-color); background: rgba(236, 72, 153, 0.2); }
+.gender-opt span { font-weight: 600; font-size: 0.8rem; }
 
-/* Photo Upload */
-.photo-upload { display: flex; align-items: center; gap: 12px; }
+/* Photo */
+.photo-row { display: flex; align-items: center; gap: 10px; }
 
 .photo-preview {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: var(--bg-card);
   border: 2px solid var(--border-color);
@@ -653,157 +655,102 @@
 }
 
 .photo-preview img { width: 100%; height: 100%; object-fit: cover; }
-.photo-preview .placeholder { font-size: 1.5rem; color: var(--text-muted); }
+.photo-preview .ph { font-size: 1.3rem; color: var(--text-muted); }
 
-.photo-buttons { display: flex; flex-direction: column; gap: 5px; }
+.photo-btns { display: flex; flex-direction: column; gap: 4px; }
 
 .photo-btn {
-  padding: 5px 10px;
+  padding: 4px 8px;
   background: var(--bg-card);
   border: 2px solid var(--border-color);
-  border-radius: 5px;
+  border-radius: 4px;
   color: var(--text-primary);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   cursor: pointer;
   font-family: inherit;
 }
 
 .photo-btn:hover { border-color: var(--primary); }
-.photo-btn.remove { border-color: var(--danger); color: var(--danger); }
+.photo-btn.rm { border-color: var(--danger); color: var(--danger); }
 
-/* Link Person */
-.link-selector { border: 2px solid var(--border-color); border-radius: 8px; overflow: hidden; }
-
-.link-tabs { display: flex; background: var(--bg-card); }
-
-.link-tab {
-  flex: 1;
-  padding: 9px;
-  background: none;
-  border: none;
-  color: var(--text-muted);
-  font-weight: 600;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 0.8rem;
+/* Person Selector */
+.person-select {
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-.link-tab.active { background: var(--bg-secondary); color: var(--primary); }
-
-.link-content { padding: 10px; }
-
-.link-search {
+.person-select-search {
   width: 100%;
   padding: 7px 10px;
   background: var(--bg-card);
-  border: 2px solid var(--border-color);
-  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
   color: var(--text-primary);
   font-size: 0.8rem;
-  margin-bottom: 8px;
   font-family: inherit;
 }
 
-.link-search:focus { outline: none; border-color: var(--primary); }
+.person-select-search:focus { outline: none; }
 
-.link-list { max-height: 160px; overflow-y: auto; }
+.person-select-list { max-height: 140px; overflow-y: auto; }
 
-.link-option {
+.person-select-opt {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 7px 8px;
-  border-radius: 5px;
+  padding: 6px 8px;
   cursor: pointer;
-  margin-bottom: 3px;
   border: 2px solid transparent;
-}
-
-.link-option:hover { background: var(--bg-card); }
-.link-option.selected { background: rgba(5, 150, 105, 0.2); border-color: var(--primary); }
-
-.link-option .avatar { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
-.link-option .name { font-size: 0.8rem; color: var(--text-primary); }
-.link-option .lineage { font-size: 0.65rem; color: var(--text-muted); }
-.link-option.none { border: 2px dashed var(--border-color); color: var(--text-muted); justify-content: center; }
-
-/* Relations */
-.relation-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 10px;
-  background: var(--bg-card);
-  border-radius: 6px;
-  margin-bottom: 6px;
-}
-
-.relation-item .info { display: flex; align-items: center; gap: 8px; flex: 1; }
-.relation-item .name { font-weight: 600; color: var(--text-primary); font-size: 0.85rem; }
-.relation-item .lineage { font-size: 0.7rem; color: var(--text-muted); }
-.relation-item .actions { display: flex; gap: 4px; }
-
-.relation-item .action-btn {
-  padding: 3px 7px;
-  background: var(--bg-secondary);
-  border: none;
-  border-radius: 4px;
-  color: var(--text-secondary);
-  cursor: pointer;
-  font-size: 0.75rem;
-  font-family: inherit;
-}
-
-.relation-item .action-btn:hover { color: var(--text-primary); }
-.relation-item .action-btn.danger:hover { color: var(--danger); }
-
-/* Marriage Item */
-.marriage-item {
-  background: var(--bg-card);
-  border-radius: 8px;
-  padding: 10px;
-  margin-bottom: 8px;
-  border-right: 4px solid var(--married-color);
-}
-
-.marriage-item.divorced { border-right-color: var(--divorced-color); }
-.marriage-item.widowed { border-right-color: var(--widowed-color); }
-
-.marriage-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
-.marriage-header .spouse-info { display: flex; align-items: center; gap: 8px; }
-.marriage-header .spouse-name { font-weight: 600; color: var(--text-primary); font-size: 0.85rem; }
-
-.marriage-details { display: flex; gap: 8px; flex-wrap: wrap; }
-
-.marriage-details select,
-.marriage-details input {
-  padding: 5px 8px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  margin: 3px;
   border-radius: 5px;
-  color: var(--text-primary);
-  font-size: 0.75rem;
-  font-family: inherit;
 }
 
-.marriage-children { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border-color); font-size: 0.75rem; color: var(--text-muted); }
+.person-select-opt:hover { background: var(--bg-card); }
+.person-select-opt.selected { border-color: var(--primary); background: rgba(5, 150, 105, 0.15); }
+.person-select-opt.none { color: var(--text-muted); border: 2px dashed var(--border-color); justify-content: center; font-size: 0.8rem; }
+
+.person-select-opt .av { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; }
+.person-select-opt .nm { font-size: 0.8rem; color: var(--text-primary); }
+
+/* Marriage Status */
+.marriage-status { display: flex; gap: 6px; }
+
+.status-opt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 5px;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.status-opt input { display: none; }
+.status-opt:has(input:checked) { border-color: var(--primary); background: rgba(5, 150, 105, 0.15); }
+.status-opt .ic { font-size: 1.1rem; }
+.status-opt .tx { font-size: 0.7rem; color: var(--text-secondary); }
 
 /* Modal Footer */
-.modal-footer {
+.modal-foot {
   display: flex;
-  gap: 8px;
-  padding: 12px 18px;
+  gap: 6px;
+  padding: 10px 16px;
   border-top: 2px solid var(--border-color);
   position: sticky;
   bottom: 0;
   background: var(--bg-secondary);
 }
 
-.modal-footer button {
+.modal-foot button {
   flex: 1;
-  padding: 10px;
-  border-radius: 7px;
-  font-size: 0.9rem;
+  padding: 9px;
+  border-radius: 6px;
+  font-size: 0.85rem;
   font-weight: 700;
   cursor: pointer;
   font-family: inherit;
@@ -812,50 +759,50 @@
 .btn-cancel { background: var(--bg-card); border: 2px solid var(--border-color); color: var(--text-primary); }
 .btn-save { background: var(--primary); border: none; color: white; }
 .btn-save:hover { background: var(--primary-dark); }
-.btn-delete { background: var(--danger); border: none; color: white; flex: 0.4; }
+.btn-del { background: var(--danger); border: none; color: white; flex: 0.4; }
 
 /* Context Menu */
-.context-menu {
+.ctx-menu {
   position: fixed;
   background: var(--bg-card);
   border: 2px solid var(--border-color);
   border-radius: 8px;
-  min-width: 150px;
+  min-width: 140px;
   z-index: 2000;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
   display: none;
 }
 
-.context-menu.show { display: block; }
+.ctx-menu.show { display: block; }
 
-.context-menu-item {
+.ctx-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 9px 12px;
+  gap: 7px;
+  padding: 8px 12px;
   color: var(--text-primary);
   cursor: pointer;
   font-size: 0.8rem;
 }
 
-.context-menu-item:first-child { border-radius: 6px 6px 0 0; }
-.context-menu-item:last-child { border-radius: 0 0 6px 6px; }
-.context-menu-item:hover { background: var(--bg-secondary); }
-.context-menu-item.danger { color: var(--danger); }
+.ctx-item:first-child { border-radius: 6px 6px 0 0; }
+.ctx-item:last-child { border-radius: 0 0 6px 6px; }
+.ctx-item:hover { background: var(--bg-secondary); }
+.ctx-item.danger { color: var(--danger); }
 
-.context-menu-divider { height: 1px; background: var(--border-color); margin: 3px 0; }
+.ctx-divider { height: 1px; background: var(--border-color); margin: 2px 0; }
 
 /* Add Menu */
 .add-menu {
   position: fixed;
   background: var(--bg-card);
   border: 2px solid var(--primary);
-  border-radius: 10px;
-  min-width: 140px;
+  border-radius: 8px;
+  min-width: 130px;
   z-index: 2000;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
   display: none;
-  transform: translate(-50%, 5px);
+  transform: translate(-50%, 4px);
 }
 
 .add-menu.show { display: block; }
@@ -863,81 +810,28 @@
 .add-menu-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
+  gap: 7px;
+  padding: 9px 12px;
   color: var(--text-primary);
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  transition: background 0.2s;
 }
 
-.add-menu-item:first-child { border-radius: 8px 8px 0 0; }
-.add-menu-item:last-child { border-radius: 0 0 8px 8px; }
+.add-menu-item:first-child { border-radius: 6px 6px 0 0; }
+.add-menu-item:last-child { border-radius: 0 0 6px 6px; }
 .add-menu-item:hover { background: var(--primary); }
-
-/* Drag Ghost */
-.drag-ghost {
-  position: fixed;
-  background: var(--bg-card);
-  border: 2px solid var(--primary);
-  border-radius: 8px;
-  padding: 8px 14px;
-  color: var(--text-primary);
-  font-size: 0.85rem;
-  font-weight: 600;
-  z-index: 3000;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.drag-ghost span { font-size: 1.1rem; }
-
-/* Drop Relation Options */
-.drop-relation-options {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.drop-option {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 14px 10px;
-  background: var(--bg-card);
-  border: 2px solid var(--border-color);
-  border-radius: 10px;
-  color: var(--text-primary);
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 0.85rem;
-  font-weight: 600;
-  transition: all 0.2s;
-}
-
-.drop-option:hover {
-  border-color: var(--primary);
-  background: rgba(5, 150, 105, 0.1);
-}
-
-.drop-option span:first-child { font-size: 1.5rem; }
 
 /* Toast */
 .toast {
   position: fixed;
-  bottom: 20px;
+  bottom: 18px;
   left: 50%;
-  transform: translateX(-50%) translateY(100px);
+  transform: translateX(-50%) translateY(80px);
   background: var(--bg-card);
   border: 2px solid var(--primary);
-  padding: 12px 18px;
-  border-radius: 8px;
+  padding: 10px 16px;
+  border-radius: 6px;
   color: var(--text-primary);
   font-weight: 600;
   z-index: 3000;
@@ -954,33 +848,52 @@
   position: absolute;
   top: 100%;
   left: 0;
-  margin-top: 5px;
+  margin-top: 4px;
   background: var(--bg-card);
   border: 2px solid var(--border-color);
-  border-radius: 8px;
-  min-width: 150px;
+  border-radius: 6px;
+  min-width: 130px;
   z-index: 100;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   transition: all 0.2s;
 }
 
 .dropdown.open .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
 
-.dropdown-item { display: flex; align-items: center; gap: 7px; padding: 8px 12px; color: var(--text-primary); font-size: 0.8rem; cursor: pointer; }
+.dropdown-item { display: flex; align-items: center; gap: 6px; padding: 7px 10px; color: var(--text-primary); font-size: 0.75rem; cursor: pointer; }
 .dropdown-item:hover { background: var(--bg-secondary); }
-.dropdown-item:first-child { border-radius: 6px 6px 0 0; }
-.dropdown-item:last-child { border-radius: 0 0 6px 6px; }
+.dropdown-item:first-child { border-radius: 4px 4px 0 0; }
+.dropdown-item:last-child { border-radius: 0 0 4px 4px; }
 
-.dropdown-divider { height: 1px; background: var(--border-color); margin: 3px 0; }
+.dropdown-divider { height: 1px; background: var(--border-color); margin: 2px 0; }
 
-.hidden-input { display: none; }
+.hidden { display: none; }
 
-@media (max-width: 850px) {
+/* Tabs */
+.tabs { display: flex; border-bottom: 2px solid var(--border-color); margin-bottom: 12px; }
+
+.tab {
+  flex: 1;
+  padding: 8px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.8rem;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+@media (max-width: 800px) {
   .family-tree-app { flex-direction: column; }
-  .persons-sidebar { width: 100%; max-height: 220px; }
-  .toolbar-group { border-right: none; }
+  .sidebar { width: 100%; max-height: 200px; }
+  .toolbar-group { border-left: none; }
   .tool-btn span:not(.icon) { display: none; }
 }
 </style>
@@ -995,973 +908,1042 @@
   </div>
 
   <div class="family-tree-app">
-    <aside class="persons-sidebar">
+    <aside class="sidebar">
       <div class="sidebar-header">
-        <h3>📋 <span id="sidebar-title">قائمة الأشخاص</span> <span class="count" id="persons-count">0</span></h3>
+        <h3>📋 <span id="sidebar-title">الأشخاص</span> <span class="count" id="persons-count">0</span></h3>
       </div>
       <div class="sidebar-search">
-        <input type="text" id="persons-search" placeholder="ابحث عن شخص...">
+        <input type="text" id="search-input" placeholder="ابحث...">
       </div>
-      <div class="persons-list" id="persons-list"></div>
-      <button class="add-person-btn" onclick="openAddPersonModal()">➕ إضافة شخص</button>
+      <div class="sidebar-list" id="persons-list"></div>
+      <button class="add-btn" onclick="openPersonModal()">➕ <span id="add-person-txt">إضافة شخص</span></button>
     </aside>
 
     <main class="main-area">
-      <div class="tree-toolbar">
+      <div class="toolbar">
         <div class="toolbar-group">
-          <button class="tool-btn" onclick="saveToLocal()"><span class="icon">💾</span><span>حفظ محلي</span></button>
-          <button class="tool-btn" onclick="loadFromLocal()"><span class="icon">📂</span><span>تحميل محفوظ</span></button>
+          <button class="tool-btn" onclick="saveData()"><span class="icon">💾</span><span>حفظ محلي</span></button>
+          <button class="tool-btn" onclick="loadData()"><span class="icon">📂</span><span>تحميل محفوظ</span></button>
         </div>
         <div class="toolbar-group">
-          <div class="dropdown" id="export-dropdown">
-            <button class="tool-btn" onclick="toggleDropdown('export-dropdown')"><span class="icon">📤</span><span>تصدير</span></button>
+          <div class="dropdown" id="export-dd">
+            <button class="tool-btn" onclick="toggleDD('export-dd')"><span class="icon">📤</span><span>تصدير</span></button>
             <div class="dropdown-menu">
-              <div class="dropdown-item" onclick="exportAsPNG()">🖼️ تصدير كصورة PNG</div>
-              <div class="dropdown-item" onclick="exportAsSVG()">📐 تصدير كـ SVG</div>
+              <div class="dropdown-item" onclick="exportPNG()">🖼️ PNG</div>
+              <div class="dropdown-item" onclick="exportSVG()">📐 SVG</div>
               <div class="dropdown-divider"></div>
-              <div class="dropdown-item" onclick="exportAsJSON()">📄 تصدير البيانات</div>
+              <div class="dropdown-item" onclick="exportJSON()">📄 JSON</div>
             </div>
           </div>
-          <button class="tool-btn" onclick="document.getElementById('import-input').click()"><span class="icon">📥</span><span>استيراد</span></button>
+          <button class="tool-btn" onclick="document.getElementById('import-file').click()"><span class="icon">📥</span><span>استيراد</span></button>
         </div>
         <div class="toolbar-group">
           <button class="tool-btn" onclick="clearAll()"><span class="icon">🗑️</span><span>مسح الكل</span></button>
         </div>
       </div>
 
-      <div class="canvas-container" id="canvas-container">
-        <svg class="tree-canvas" id="tree-canvas">
+      <div class="canvas-wrap" id="canvas-wrap">
+        <svg class="tree-svg" id="tree-svg">
           <defs>
             <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+              <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.2"/>
             </filter>
           </defs>
-          <g id="tree-content">
-            <g id="connections-layer"></g>
-            <g id="persons-layer"></g>
+          <g id="tree-g">
+            <g id="lines-g"></g>
+            <g id="nodes-g"></g>
           </g>
         </svg>
-        <div class="empty-state" id="empty-state">
+        <div class="empty-msg" id="empty-msg">
           <div class="icon">🌳</div>
-          <h3>ابدأ بإضافة أول شخص</h3>
-          <p>اضغط + لإضافة قريب</p>
+          <h3 id="empty-title">ابدأ بإضافة شخص</h3>
+          <p id="empty-sub">اضغط على زر الإضافة</p>
         </div>
-        <div class="zoom-controls">
+        <div class="zoom-panel">
           <button class="zoom-btn" onclick="zoomIn()">➕</button>
           <div class="zoom-level" id="zoom-level">100%</div>
           <button class="zoom-btn" onclick="zoomOut()">➖</button>
-          <button class="zoom-btn" onclick="fitToScreen()">⊡</button>
+          <button class="zoom-btn" onclick="resetView()">⊡</button>
         </div>
       </div>
 
-      <div class="stats-bar" id="stats-bar">
-        <div class="stat-item"><span class="label">👥 إجمالي الأشخاص:</span><span class="value" id="stat-total">0</span></div>
-        <div class="stat-item"><span class="label">👨 ذكور:</span><span class="value" id="stat-males">0</span></div>
-        <div class="stat-item"><span class="label">👩 إناث:</span><span class="value" id="stat-females">0</span></div>
-        <div class="stat-item"><span class="label">📊 الأجيال:</span><span class="value" id="stat-generations">0</span></div>
+      <div class="stats-bar">
+        <div class="stat"><span class="label">👥</span><span class="val" id="stat-persons">0</span></div>
+        <div class="stat"><span class="label">👨</span><span class="val" id="stat-males">0</span></div>
+        <div class="stat"><span class="label">👩</span><span class="val" id="stat-females">0</span></div>
+        <div class="stat"><span class="label">💑</span><span class="val" id="stat-marriages">0</span></div>
+        <div class="stat"><span class="label">📊</span><span class="val" id="stat-gens">0</span></div>
       </div>
     </main>
   </div>
 </div>
 
 <!-- Person Modal -->
-<div class="modal-overlay" id="person-modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2><span id="modal-icon">👤</span> <span id="modal-title">إضافة شخص</span></h2>
+<div class="modal-bg" id="person-modal">
+  <div class="modal">
+    <div class="modal-head">
+      <h2><span id="pm-icon">👤</span> <span id="pm-title">إضافة شخص</span></h2>
       <button class="modal-close" onclick="closeModal('person-modal')">&times;</button>
     </div>
     <div class="modal-body">
       <div class="form-group">
-        <label>الاسم *</label>
-        <input type="text" id="person-name" required>
+        <label id="lbl-name">الاسم *</label>
+        <input type="text" id="p-name">
       </div>
       <div class="form-group">
-        <label>الجنس</label>
+        <label id="lbl-gender">الجنس</label>
         <div class="gender-toggle">
-          <label class="gender-option male"><input type="radio" name="gender" value="male" checked><span>👨 ذكر</span></label>
-          <label class="gender-option female"><input type="radio" name="gender" value="female"><span>👩 أنثى</span></label>
+          <label class="gender-opt male"><input type="radio" name="p-gender" value="male" checked><span>👨 <span id="lbl-male">ذكر</span></span></label>
+          <label class="gender-opt female"><input type="radio" name="p-gender" value="female"><span>👩 <span id="lbl-female">أنثى</span></span></label>
         </div>
       </div>
       <div class="form-group">
-        <label>الصورة</label>
-        <div class="photo-upload">
-          <div class="photo-preview" id="photo-preview"><span class="placeholder">👤</span></div>
-          <div class="photo-buttons">
-            <button type="button" class="photo-btn" onclick="document.getElementById('photo-input').click()">📷 رفع صورة</button>
-            <button type="button" class="photo-btn remove" onclick="removePhoto()" id="remove-photo-btn" style="display:none">🗑️ إزالة الصورة</button>
+        <label id="lbl-photo">الصورة</label>
+        <div class="photo-row">
+          <div class="photo-preview" id="photo-prev"><span class="ph">👤</span></div>
+          <div class="photo-btns">
+            <button type="button" class="photo-btn" onclick="document.getElementById('photo-file').click()">📷 <span id="lbl-upload">رفع</span></button>
+            <button type="button" class="photo-btn rm" onclick="removePhoto()" id="rm-photo-btn" style="display:none">🗑️</button>
           </div>
         </div>
-        <input type="file" id="photo-input" class="hidden-input" accept="image/*" onchange="handlePhotoUpload(event)">
+        <input type="file" id="photo-file" class="hidden" accept="image/*" onchange="handlePhoto(event)">
       </div>
-      <div class="form-group"><label>تاريخ الميلاد</label><input type="date" id="person-birth"></div>
-      <div class="form-group"><label>تاريخ الوفاة</label><input type="date" id="person-death"></div>
-      <div class="form-group"><label>ملاحظات</label><textarea id="person-notes"></textarea></div>
+      <div class="form-row">
+        <div class="form-group"><label id="lbl-birth">تاريخ الميلاد</label><input type="date" id="p-birth"></div>
+        <div class="form-group"><label id="lbl-death">تاريخ الوفاة</label><input type="date" id="p-death"></div>
+      </div>
+      <div class="form-group">
+        <label id="lbl-notes">ملاحظات</label>
+        <textarea id="p-notes"></textarea>
+      </div>
     </div>
-    <div class="modal-footer">
-      <button class="btn-delete" id="delete-btn" onclick="deletePerson()" style="display:none">🗑️</button>
-      <button class="btn-cancel" onclick="closeModal('person-modal')">إلغاء</button>
-      <button class="btn-save" onclick="savePerson()">حفظ</button>
-    </div>
-  </div>
-</div>
-
-<!-- Relations Modal -->
-<div class="modal-overlay" id="relations-modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>🔗 <span id="relations-title">علاقات</span></h2>
-      <button class="modal-close" onclick="closeModal('relations-modal')">&times;</button>
-    </div>
-    <div class="modal-body" id="relations-body"></div>
-    <div class="modal-footer">
-      <button class="btn-cancel" onclick="closeModal('relations-modal')">إلغاء</button>
-      <button class="btn-save" onclick="saveRelations()">حفظ</button>
+    <div class="modal-foot">
+      <button class="btn-del" id="pm-del-btn" onclick="deletePerson()" style="display:none">🗑️</button>
+      <button class="btn-cancel" onclick="closeModal('person-modal')" id="btn-cancel">إلغاء</button>
+      <button class="btn-save" onclick="savePerson()" id="btn-save">حفظ</button>
     </div>
   </div>
 </div>
 
-<!-- Link Modal -->
-<div class="modal-overlay" id="link-modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>🔗 <span id="link-title">ربط</span></h2>
-      <button class="modal-close" onclick="closeModal('link-modal')">&times;</button>
+<!-- Marriage Modal -->
+<div class="modal-bg" id="marriage-modal">
+  <div class="modal">
+    <div class="modal-head">
+      <h2>💑 <span id="mm-title">إضافة زواج</span></h2>
+      <button class="modal-close" onclick="closeModal('marriage-modal')">&times;</button>
     </div>
     <div class="modal-body">
-      <div class="link-selector">
-        <div class="link-tabs">
-          <button class="link-tab active" onclick="switchLinkTab('existing')" data-tab="existing" id="tab-existing">شخص موجود</button>
-          <button class="link-tab" onclick="switchLinkTab('new')" data-tab="new" id="tab-new">شخص جديد</button>
+      <div class="form-group">
+        <label id="lbl-husband">الزوج</label>
+        <div class="person-select" id="husband-select"></div>
+      </div>
+      <div class="form-group">
+        <label id="lbl-wife">الزوجة</label>
+        <div class="person-select" id="wife-select"></div>
+      </div>
+      <div class="form-group">
+        <label id="lbl-status">الحالة</label>
+        <div class="marriage-status">
+          <label class="status-opt"><input type="radio" name="m-status" value="married" checked><span class="ic">💑</span><span class="tx" id="lbl-married">متزوجان</span></label>
+          <label class="status-opt"><input type="radio" name="m-status" value="divorced"><span class="ic">💔</span><span class="tx" id="lbl-divorced">مطلقان</span></label>
+          <label class="status-opt"><input type="radio" name="m-status" value="widowed"><span class="ic">✝️</span><span class="tx" id="lbl-widowed">أرمل/ة</span></label>
         </div>
-        <div class="link-content" id="link-content"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label id="lbl-start">سنة الزواج</label><input type="number" id="m-start" min="1900" max="2100"></div>
+        <div class="form-group"><label id="lbl-end">سنة الانتهاء</label><input type="number" id="m-end" min="1900" max="2100"></div>
       </div>
     </div>
-    <div class="modal-footer">
-      <button class="btn-cancel" onclick="closeModal('link-modal')">إلغاء</button>
-      <button class="btn-save" onclick="confirmLink()">حفظ</button>
+    <div class="modal-foot">
+      <button class="btn-del" id="mm-del-btn" onclick="deleteMarriage()" style="display:none">🗑️</button>
+      <button class="btn-cancel" onclick="closeModal('marriage-modal')">إلغاء</button>
+      <button class="btn-save" onclick="saveMarriage()">حفظ</button>
+    </div>
+  </div>
+</div>
+
+<!-- Child Modal -->
+<div class="modal-bg" id="child-modal">
+  <div class="modal">
+    <div class="modal-head">
+      <h2>👶 <span id="cm-title">إضافة ابن/ابنة</span></h2>
+      <button class="modal-close" onclick="closeModal('child-modal')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="tabs">
+        <button class="tab active" onclick="switchChildTab('new')" id="tab-new">شخص جديد</button>
+        <button class="tab" onclick="switchChildTab('existing')" id="tab-existing">شخص موجود</button>
+      </div>
+      
+      <div id="child-new-form">
+        <div class="form-group">
+          <label>الاسم *</label>
+          <input type="text" id="c-name">
+        </div>
+        <div class="form-group">
+          <label>الجنس</label>
+          <div class="gender-toggle">
+            <label class="gender-opt male"><input type="radio" name="c-gender" value="male" checked><span>👨 ذكر</span></label>
+            <label class="gender-opt female"><input type="radio" name="c-gender" value="female"><span>👩 أنثى</span></label>
+          </div>
+        </div>
+      </div>
+      
+      <div id="child-existing-form" style="display:none">
+        <div class="form-group">
+          <label id="lbl-select-child">اختر الشخص</label>
+          <div class="person-select" id="child-select"></div>
+        </div>
+      </div>
+      
+      <div class="form-group" style="margin-top:12px; padding-top:12px; border-top:1px solid var(--border-color)">
+        <label id="lbl-parentage">نوع العلاقة</label>
+        <div class="marriage-status">
+          <label class="status-opt" id="opt-from-marriage" style="display:none"><input type="radio" name="c-parentage" value="marriage" checked><span class="ic">💑</span><span class="tx">من الزواج</span></label>
+          <label class="status-opt"><input type="radio" name="c-parentage" value="father"><span class="ic">👨</span><span class="tx" id="lbl-from-father">من الأب فقط</span></label>
+          <label class="status-opt"><input type="radio" name="c-parentage" value="mother"><span class="ic">👩</span><span class="tx" id="lbl-from-mother">من الأم فقط</span></label>
+        </div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-cancel" onclick="closeModal('child-modal')">إلغاء</button>
+      <button class="btn-save" onclick="saveChild()">حفظ</button>
     </div>
   </div>
 </div>
 
 <!-- Context Menu -->
-<div class="context-menu" id="context-menu">
-  <div class="context-menu-item" onclick="ctxAction('edit')">✏️ <span id="ctx-edit">تعديل</span></div>
-  <div class="context-menu-item" onclick="ctxAction('relations')">🔗 <span id="ctx-relations">تعديل العلاقات</span></div>
-  <div class="context-menu-item" onclick="ctxAction('locate')">📍 <span id="ctx-locate">إظهار في الشجرة</span></div>
-  <div class="context-menu-divider"></div>
-  <div class="context-menu-item danger" onclick="ctxAction('delete')">🗑️ <span id="ctx-delete">حذف</span></div>
+<div class="ctx-menu" id="ctx-menu">
+  <div class="ctx-item" onclick="ctxAct('edit')">✏️ <span id="ctx-edit">تعديل</span></div>
+  <div class="ctx-item" onclick="ctxAct('marriage')">💑 <span id="ctx-marriage">إضافة زواج</span></div>
+  <div class="ctx-item" onclick="ctxAct('child')">👶 <span id="ctx-child">إضافة ابن/ة</span></div>
+  <div class="ctx-item" onclick="ctxAct('locate')">📍 <span id="ctx-locate">إظهار</span></div>
+  <div class="ctx-divider"></div>
+  <div class="ctx-item danger" onclick="ctxAct('delete')">🗑️ <span id="ctx-delete">حذف</span></div>
 </div>
 
 <!-- Add Menu -->
 <div class="add-menu" id="add-menu">
-  <div class="add-menu-item" onclick="addMenuAction('parent')">👨‍👩 <span id="add-parent">أب / أم</span></div>
-  <div class="add-menu-item" onclick="addMenuAction('child')">👶 <span id="add-child">ابن / ابنة</span></div>
-  <div class="add-menu-item" onclick="addMenuAction('sibling')">👫 <span id="add-sibling">أخ / أخت</span></div>
-  <div class="add-menu-item" onclick="addMenuAction('spouse')">💑 <span id="add-spouse">زوج / زوجة</span></div>
-</div>
-
-<!-- Drop Relation Modal -->
-<div class="modal-overlay" id="drop-relation-modal">
-  <div class="modal-content" style="max-width:360px">
-    <div class="modal-header">
-      <h2>🔗 <span id="drop-title">اختر العلاقة</span></h2>
-      <button class="modal-close" onclick="closeModal('drop-relation-modal')">&times;</button>
-    </div>
-    <div class="modal-body" style="text-align:center">
-      <p style="margin-bottom:15px;color:var(--text-secondary)">
-        <strong id="drop-dragged-name">-</strong> 
-        <span id="drop-relation-to">بالنسبة لـ</span> 
-        <strong id="drop-target-name">-</strong>
-      </p>
-      <div class="drop-relation-options">
-        <button class="drop-option" onclick="confirmDropRelation('child-of')">
-          <span>👶</span>
-          <span id="opt-child">ابن/ابنة</span>
-        </button>
-        <button class="drop-option" onclick="confirmDropRelation('parent-of')">
-          <span>👨‍👩</span>
-          <span id="opt-parent">أب/أم</span>
-        </button>
-        <button class="drop-option" onclick="confirmDropRelation('sibling-of')">
-          <span>👫</span>
-          <span id="opt-sibling">أخ/أخت</span>
-        </button>
-        <button class="drop-option" onclick="confirmDropRelation('spouse-of')">
-          <span>💑</span>
-          <span id="opt-spouse">زوج/زوجة</span>
-        </button>
-      </div>
-    </div>
-  </div>
+  <div class="add-menu-item" onclick="addMenuAct('parent')">👨‍👩 <span id="am-parent">والدين</span></div>
+  <div class="add-menu-item" onclick="addMenuAct('child')">👶 <span id="am-child">ابن/ة</span></div>
+  <div class="add-menu-item" onclick="addMenuAct('sibling')">👫 <span id="am-sibling">أخ/أخت</span></div>
+  <div class="add-menu-item" onclick="addMenuAct('spouse')">💑 <span id="am-spouse">زوج/ة</span></div>
 </div>
 
 <div class="toast" id="toast"></div>
-<input type="file" id="import-input" class="hidden-input" accept=".json" onchange="handleImport(event)">
+<input type="file" id="import-file" class="hidden" accept=".json" onchange="importJSON(event)">
 
 <script>
-const isArabic = document.documentElement.lang === 'ar';
-const t = (ar, en) => isArabic ? ar : en;
+const isAr = document.documentElement.lang === 'ar';
+const t = (ar, en) => isAr ? ar : en;
 
-// ترجمة العناصر
-if (!isArabic) {
-  document.getElementById('sidebar-title').textContent = 'Persons List';
-  document.getElementById('persons-search').placeholder = 'Search person...';
-  document.getElementById('tab-existing').textContent = 'Existing Person';
-  document.getElementById('tab-new').textContent = 'New Person';
-  document.getElementById('ctx-edit').textContent = 'Edit';
-  document.getElementById('ctx-relations').textContent = 'Edit Relations';
-  document.getElementById('ctx-locate').textContent = 'Show in Tree';
-  document.getElementById('ctx-delete').textContent = 'Delete';
-  document.getElementById('add-parent').textContent = 'Father / Mother';
-  document.getElementById('add-child').textContent = 'Son / Daughter';
-  document.getElementById('add-sibling').textContent = 'Brother / Sister';
-  document.getElementById('add-spouse').textContent = 'Spouse';
-  document.getElementById('drop-title').textContent = 'Select Relation';
-  document.getElementById('drop-relation-to').textContent = 'in relation to';
-  document.getElementById('opt-child').textContent = 'Son/Daughter';
-  document.getElementById('opt-parent').textContent = 'Father/Mother';
-  document.getElementById('opt-sibling').textContent = 'Sibling';
-  document.getElementById('opt-spouse').textContent = 'Spouse';
-}
+// ==================== DATA ====================
+let db = {
+  persons: {},
+  marriages: {},
+  children: {}
+};
 
-let data = { persons: {}, rootId: null };
-let currentPersonId = null;
-let editMode = false;
-let currentPhoto = null;
-let linkCallback = null;
-let selectedLinkId = null;
-let linkTab = 'existing';
-let ctxTargetId = null;
+let state = {
+  editPersonId: null,
+  editMarriageId: null,
+  currentPersonId: null,
+  currentMarriageId: null,
+  currentPhoto: null,
+  childTab: 'new',
+  ctxTarget: null,
+  zoom: 1,
+  panX: 0,
+  panY: 0
+};
 
-let zoom = 1, panX = 0, panY = 0;
-let isDragging = false, dragStartX = 0, dragStartY = 0;
+const CARD_W = 110, CARD_H = 75;
+const GAP_X = 30, GAP_Y = 55;
+const MARRIAGE_GAP = 20;
 
-const CARD_W = 125, CARD_H = 85, GAP_H = 40, GAP_V = 65;
-
+// ==================== INIT ====================
 function init() {
   setupCanvas();
-  renderPersonsList();
-  renderTree();
-  updateStats();
+  setupI18n();
+  render();
   
-  document.addEventListener('click', (e) => {
-    document.getElementById('context-menu').classList.remove('show');
+  document.addEventListener('click', e => {
+    document.getElementById('ctx-menu').classList.remove('show');
+    document.getElementById('add-menu').classList.remove('show');
     document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
-    
-    // إغلاق قائمة الإضافة إذا لم نضغط عليها
-    if (!e.target.closest('.add-menu') && !e.target.closest('.add-btn-internal')) {
-      hideAddMenu();
-    }
   });
   
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       closeModal('person-modal');
-      closeModal('relations-modal');
-      closeModal('link-modal');
-      closeModal('drop-relation-modal');
-      hideAddMenu();
+      closeModal('marriage-modal');
+      closeModal('child-modal');
     }
   });
+  
+  document.getElementById('search-input').addEventListener('input', renderList);
 }
 
-function generateId() { return 'p' + Date.now().toString(36) + Math.random().toString(36).substr(2, 5); }
+function setupI18n() {
+  if (!isAr) {
+    document.getElementById('sidebar-title').textContent = 'Persons';
+    document.getElementById('search-input').placeholder = 'Search...';
+    document.getElementById('add-person-txt').textContent = 'Add Person';
+    document.getElementById('empty-title').textContent = 'Start by adding a person';
+    document.getElementById('empty-sub').textContent = 'Click the add button';
+    document.getElementById('pm-title').textContent = 'Add Person';
+    document.getElementById('lbl-name').textContent = 'Name *';
+    document.getElementById('lbl-gender').textContent = 'Gender';
+    document.getElementById('lbl-male').textContent = 'Male';
+    document.getElementById('lbl-female').textContent = 'Female';
+    document.getElementById('lbl-photo').textContent = 'Photo';
+    document.getElementById('lbl-upload').textContent = 'Upload';
+    document.getElementById('lbl-birth').textContent = 'Birth Date';
+    document.getElementById('lbl-death').textContent = 'Death Date';
+    document.getElementById('lbl-notes').textContent = 'Notes';
+    document.getElementById('btn-cancel').textContent = 'Cancel';
+    document.getElementById('btn-save').textContent = 'Save';
+    document.getElementById('mm-title').textContent = 'Add Marriage';
+    document.getElementById('lbl-husband').textContent = 'Husband';
+    document.getElementById('lbl-wife').textContent = 'Wife';
+    document.getElementById('lbl-status').textContent = 'Status';
+    document.getElementById('lbl-married').textContent = 'Married';
+    document.getElementById('lbl-divorced').textContent = 'Divorced';
+    document.getElementById('lbl-widowed').textContent = 'Widowed';
+    document.getElementById('lbl-start').textContent = 'Marriage Year';
+    document.getElementById('lbl-end').textContent = 'End Year';
+    document.getElementById('cm-title').textContent = 'Add Child';
+    document.getElementById('tab-new').textContent = 'New Person';
+    document.getElementById('tab-existing').textContent = 'Existing Person';
+    document.getElementById('lbl-select-child').textContent = 'Select Person';
+    document.getElementById('lbl-parentage').textContent = 'Relation Type';
+    document.getElementById('lbl-from-father').textContent = 'Father only';
+    document.getElementById('lbl-from-mother').textContent = 'Mother only';
+    document.getElementById('ctx-edit').textContent = 'Edit';
+    document.getElementById('ctx-marriage').textContent = 'Add Marriage';
+    document.getElementById('ctx-child').textContent = 'Add Child';
+    document.getElementById('ctx-locate').textContent = 'Show';
+    document.getElementById('ctx-delete').textContent = 'Delete';
+    document.getElementById('am-parent').textContent = 'Parents';
+    document.getElementById('am-child').textContent = 'Child';
+    document.getElementById('am-sibling').textContent = 'Sibling';
+    document.getElementById('am-spouse').textContent = 'Spouse';
+  }
+}
 
-function getLineage(personId, maxDepth = 3) {
-  const person = data.persons[personId];
-  if (!person) return '';
-  let result = person.name, current = person, depth = 0;
-  while (current.fatherId && depth < maxDepth) {
-    const father = data.persons[current.fatherId];
-    if (!father) break;
-    const prefix = current.gender === 'female' ? t('بنت', 'd/o') : t('بن', 's/o');
-    result += ` ${prefix} ${father.name}`;
-    current = father;
-    depth++;
+// ==================== HELPERS ====================
+function genId() { return Date.now().toString(36) + Math.random().toString(36).substr(2, 5); }
+
+function getMarriagesOf(personId) {
+  return Object.values(db.marriages).filter(m => m.husbandId === personId || m.wifeId === personId);
+}
+
+function getChildrenOfMarriage(marriageId) {
+  return Object.values(db.children).filter(c => c.marriageId === marriageId).map(c => db.persons[c.childId]).filter(Boolean);
+}
+
+function getParentsOf(personId) {
+  const rec = Object.values(db.children).find(c => c.childId === personId);
+  if (!rec) return { father: null, mother: null, marriage: null };
+  if (rec.marriageId) {
+    const m = db.marriages[rec.marriageId];
+    return { father: db.persons[m?.husbandId], mother: db.persons[m?.wifeId], marriage: m };
+  }
+  return { father: db.persons[rec.fatherId], mother: db.persons[rec.motherId], marriage: null };
+}
+
+function getLineage(personId, depth = 2) {
+  const p = db.persons[personId];
+  if (!p) return '';
+  let result = p.name;
+  const parents = getParentsOf(personId);
+  if (parents.father && depth > 0) {
+    result += ' ' + (p.gender === 'female' ? t('بنت', 'd/o') : t('بن', 's/o')) + ' ' + parents.father.name;
+  } else if (parents.mother && depth > 0) {
+    result += ' ' + (p.gender === 'female' ? t('بنت', 'd/o') : t('ابن', 's/o')) + ' ' + parents.mother.name;
   }
   return result;
 }
 
-function getChildren(personId) {
-  return Object.values(data.persons).filter(p => p.fatherId === personId || p.motherId === personId);
+function canWifeMarry(wifeId, excludeId = null) {
+  return !Object.values(db.marriages).some(m => m.wifeId === wifeId && m.status === 'married' && m.id !== excludeId);
 }
 
-function getChildrenOfCouple(fatherId, motherId) {
-  return Object.values(data.persons).filter(p => p.fatherId === fatherId && p.motherId === motherId);
-}
-
-function getSiblings(personId) {
-  const person = data.persons[personId];
-  if (!person) return [];
-  return Object.values(data.persons).filter(p => 
-    p.id !== personId && ((person.fatherId && p.fatherId === person.fatherId) || (person.motherId && p.motherId === person.motherId))
-  );
-}
-
-function isDescendant(ancestorId, personId) {
-  const person = data.persons[personId];
-  if (!person) return false;
-  if (person.fatherId === ancestorId || person.motherId === ancestorId) return true;
-  if (person.fatherId && isDescendant(ancestorId, person.fatherId)) return true;
-  if (person.motherId && isDescendant(ancestorId, person.motherId)) return true;
-  return false;
-}
-
-// ========== PERSONS LIST ==========
-function renderPersonsList() {
+// ==================== RENDER LIST ====================
+function renderList() {
   const list = document.getElementById('persons-list');
-  const search = document.getElementById('persons-search').value.toLowerCase();
-  const persons = Object.values(data.persons);
+  const search = document.getElementById('search-input').value.toLowerCase();
+  const persons = Object.values(db.persons);
   
-  const linked = persons.filter(p => p.fatherId || p.motherId || (p.marriages && p.marriages.length > 0) || getChildren(p.id).length > 0);
-  const unlinked = persons.filter(p => !p.fatherId && !p.motherId && (!p.marriages || p.marriages.length === 0) && getChildren(p.id).length === 0);
-  const filterFn = p => p.name.toLowerCase().includes(search) || getLineage(p.id).toLowerCase().includes(search);
+  const hasParent = p => Object.values(db.children).some(c => c.childId === p.id);
+  const hasRelation = p => hasParent(p) || getMarriagesOf(p.id).length > 0;
+  
+  const linked = persons.filter(hasRelation);
+  const orphans = persons.filter(p => !hasRelation(p));
+  
+  const filter = p => p.name.toLowerCase().includes(search);
   
   let html = '';
-  linked.filter(filterFn).forEach(p => { html += personListItem(p); });
+  linked.filter(filter).forEach(p => { html += listItem(p); });
   
-  const fu = unlinked.filter(filterFn);
-  if (fu.length > 0) {
-    html += `<div class="section-title">⚠️ ${t('غير مرتبطين', 'Unlinked')} (${fu.length})</div>`;
-    fu.forEach(p => { html += personListItem(p, true); });
+  const fo = orphans.filter(filter);
+  if (fo.length > 0) {
+    html += `<div class="section-label">⚠️ ${t('غير مرتبطين', 'Unlinked')} (${fo.length})</div>`;
+    fo.forEach(p => { html += listItem(p, true); });
   }
   
-  list.innerHTML = html || `<div style="text-align:center;padding:20px;color:var(--text-muted)">${t('لا يوجد أشخاص', 'No persons')}</div>`;
+  list.innerHTML = html || `<div style="text-align:center;padding:15px;color:var(--text-muted)">${t('لا يوجد', 'Empty')}</div>`;
   document.getElementById('persons-count').textContent = persons.length;
 }
 
-function personListItem(person, unlinked = false) {
-  const avatar = person.photo ? `<img src="${person.photo}">` : (person.gender === 'female' ? '👩' : '👨');
-  return `<div class="person-list-item ${unlinked ? 'unlinked' : ''}" data-id="${person.id}" onclick="locateInTree('${person.id}')" oncontextmenu="showCtxMenu(event, '${person.id}')">
-    <div class="avatar ${person.gender}">${avatar}</div>
-    <div class="info"><div class="name">${person.name}</div><div class="lineage">${getLineage(person.id)}</div></div>
-    <button class="menu-btn" onclick="event.stopPropagation(); showCtxMenu(event, '${person.id}')">⋮</button>
+function listItem(p, orphan = false) {
+  const icon = p.photo ? `<img src="${p.photo}">` : (p.gender === 'female' ? '👩' : '👨');
+  return `<div class="list-item ${orphan ? 'orphan' : ''}" onclick="locatePerson('${p.id}')" oncontextmenu="showCtx(event,'${p.id}')">
+    <div class="icon ${p.gender}">${icon}</div>
+    <div class="info"><div class="name">${p.name}</div><div class="sub">${getLineage(p.id)}</div></div>
+    <button class="menu-btn" onclick="event.stopPropagation();showCtx(event,'${p.id}')">⋮</button>
   </div>`;
 }
 
-document.getElementById('persons-search').addEventListener('input', renderPersonsList);
-
-// ========== CONTEXT MENU ==========
-function showCtxMenu(e, personId) {
-  e.preventDefault();
-  e.stopPropagation();
-  ctxTargetId = personId;
-  const menu = document.getElementById('context-menu');
-  menu.style.left = e.clientX + 'px';
-  menu.style.top = e.clientY + 'px';
-  menu.classList.add('show');
-}
-
-function ctxAction(action) {
-  document.getElementById('context-menu').classList.remove('show');
-  if (!ctxTargetId) return;
-  switch (action) {
-    case 'edit': openEditPersonModal(ctxTargetId); break;
-    case 'relations': openRelationsModal(ctxTargetId); break;
-    case 'locate': locateInTree(ctxTargetId); break;
-    case 'delete':
-      if (confirm(t('حذف هذا الشخص وكل ذريته؟', 'Delete this person and descendants?'))) deletePersonWithDescendants(ctxTargetId);
-      break;
+// ==================== PERSON MODAL ====================
+function openPersonModal(editId = null) {
+  state.editPersonId = editId;
+  state.currentPhoto = null;
+  
+  if (editId) {
+    const p = db.persons[editId];
+    document.getElementById('pm-title').textContent = t('تعديل', 'Edit');
+    document.getElementById('pm-icon').textContent = '✏️';
+    document.getElementById('pm-del-btn').style.display = 'block';
+    document.getElementById('p-name').value = p.name;
+    document.querySelector(`input[name="p-gender"][value="${p.gender}"]`).checked = true;
+    document.getElementById('p-birth').value = p.birthDate || '';
+    document.getElementById('p-death').value = p.deathDate || '';
+    document.getElementById('p-notes').value = p.notes || '';
+    state.currentPhoto = p.photo;
+  } else {
+    document.getElementById('pm-title').textContent = t('إضافة شخص', 'Add Person');
+    document.getElementById('pm-icon').textContent = '👤';
+    document.getElementById('pm-del-btn').style.display = 'none';
+    document.getElementById('p-name').value = '';
+    document.querySelector('input[name="p-gender"][value="male"]').checked = true;
+    document.getElementById('p-birth').value = '';
+    document.getElementById('p-death').value = '';
+    document.getElementById('p-notes').value = '';
   }
-}
-
-// ========== PERSON MODAL ==========
-function openAddPersonModal() {
-  editMode = false;
-  currentPersonId = null;
-  currentPhoto = null;
-  document.getElementById('modal-title').textContent = t('إضافة شخص', 'Add Person');
-  document.getElementById('modal-icon').textContent = '👤';
-  document.getElementById('delete-btn').style.display = 'none';
-  resetPersonForm();
-  openModal('person-modal');
-}
-
-function openEditPersonModal(personId) {
-  editMode = true;
-  currentPersonId = personId;
-  const person = data.persons[personId];
-  if (!person) return;
   
-  document.getElementById('modal-title').textContent = t('تعديل', 'Edit');
-  document.getElementById('modal-icon').textContent = '✏️';
-  document.getElementById('delete-btn').style.display = 'block';
-  
-  document.getElementById('person-name').value = person.name || '';
-  document.querySelector(`input[name="gender"][value="${person.gender}"]`).checked = true;
-  document.getElementById('person-birth').value = person.birthDate || '';
-  document.getElementById('person-death').value = person.deathDate || '';
-  document.getElementById('person-notes').value = person.notes || '';
-  currentPhoto = person.photo || null;
   updatePhotoPreview();
   openModal('person-modal');
 }
 
 function savePerson() {
-  const name = document.getElementById('person-name').value.trim();
-  if (!name) { showToast(t('الرجاء إدخال الاسم', 'Please enter name')); return; }
+  const name = document.getElementById('p-name').value.trim();
+  if (!name) { toast(t('أدخل الاسم', 'Enter name')); return; }
   
-  const personData = {
+  const data = {
     name,
-    gender: document.querySelector('input[name="gender"]:checked').value,
-    photo: currentPhoto,
-    birthDate: document.getElementById('person-birth').value || null,
-    deathDate: document.getElementById('person-death').value || null,
-    notes: document.getElementById('person-notes').value.trim()
+    gender: document.querySelector('input[name="p-gender"]:checked').value,
+    photo: state.currentPhoto,
+    birthDate: document.getElementById('p-birth').value || null,
+    deathDate: document.getElementById('p-death').value || null,
+    notes: document.getElementById('p-notes').value.trim()
   };
   
-  if (editMode && currentPersonId) {
-    Object.assign(data.persons[currentPersonId], personData);
+  if (state.editPersonId) {
+    Object.assign(db.persons[state.editPersonId], data);
   } else {
-    const newId = generateId();
-    data.persons[newId] = { id: newId, ...personData, fatherId: null, motherId: null, marriages: [] };
-    if (!data.rootId) data.rootId = newId;
+    const id = genId();
+    db.persons[id] = { id, ...data };
   }
   
   closeModal('person-modal');
-  renderPersonsList();
-  layoutTree();
-  renderTree();
-  updateStats();
-  showToast(t('تم الحفظ', 'Saved'));
+  render();
+  toast(t('تم', 'Done'));
 }
 
 function deletePerson() {
-  if (!currentPersonId) return;
-  deletePersonWithDescendants(currentPersonId);
-  closeModal('person-modal');
-}
-
-function deletePersonWithDescendants(personId) {
-  const toDelete = [personId];
-  function collect(pid) { getChildren(pid).forEach(c => { toDelete.push(c.id); collect(c.id); }); }
-  collect(personId);
+  if (!state.editPersonId || !confirm(t('حذف؟', 'Delete?'))) return;
+  const id = state.editPersonId;
   
-  toDelete.forEach(pid => {
-    Object.values(data.persons).forEach(p => { if (p.marriages) p.marriages = p.marriages.filter(m => m.spouseId !== pid); });
-    delete data.persons[pid];
+  Object.keys(db.children).forEach(cid => {
+    const c = db.children[cid];
+    if (c.childId === id || c.fatherId === id || c.motherId === id) delete db.children[cid];
   });
   
-  if (data.rootId === personId) {
-    const rem = Object.keys(data.persons);
-    data.rootId = rem.length > 0 ? rem[0] : null;
-  }
-  
-  renderPersonsList();
-  layoutTree();
-  renderTree();
-  updateStats();
-  showToast(t('تم الحذف', 'Deleted'));
-}
-
-function resetPersonForm() {
-  document.getElementById('person-name').value = '';
-  document.querySelector('input[name="gender"][value="male"]').checked = true;
-  document.getElementById('person-birth').value = '';
-  document.getElementById('person-death').value = '';
-  document.getElementById('person-notes').value = '';
-  currentPhoto = null;
-  updatePhotoPreview();
-}
-
-// ========== RELATIONS MODAL ==========
-function openRelationsModal(personId) {
-  currentPersonId = personId;
-  const person = data.persons[personId];
-  if (!person) return;
-  
-  document.getElementById('relations-title').textContent = t(`علاقات "${person.name}"`, `Relations of "${person.name}"`);
-  let html = '';
-  
-  // الأب
-  html += `<div class="form-group"><label>👨 ${t('الأب', 'Father')}</label>
-    <div class="relation-item">
-      <div class="info">${person.fatherId ? `<span class="name">${data.persons[person.fatherId]?.name || '?'}</span><span class="lineage">${getLineage(person.fatherId)}</span>` : `<span style="color:var(--text-muted)">${t('غير محدد', 'Not set')}</span>`}</div>
-      <div class="actions">
-        <button class="action-btn" onclick="openLinkModal('father', '${personId}')">${t('تغيير', 'Change')}</button>
-        ${person.fatherId ? `<button class="action-btn danger" onclick="unlinkParent('${personId}', 'father')">✕</button>` : ''}
-      </div>
-    </div></div>`;
-  
-  // الأم
-  html += `<div class="form-group"><label>👩 ${t('الأم', 'Mother')}</label>
-    <div class="relation-item">
-      <div class="info">${person.motherId ? `<span class="name">${data.persons[person.motherId]?.name || '?'}</span><span class="lineage">${getLineage(person.motherId)}</span>` : `<span style="color:var(--text-muted)">${t('غير محدد', 'Not set')}</span>`}</div>
-      <div class="actions">
-        <button class="action-btn" onclick="openLinkModal('mother', '${personId}')">${t('تغيير', 'Change')}</button>
-        ${person.motherId ? `<button class="action-btn danger" onclick="unlinkParent('${personId}', 'mother')">✕</button>` : ''}
-      </div>
-    </div></div>`;
-  
-  // الزواجات
-  html += `<div class="form-group"><label>💑 ${t('الزواجات', 'Marriages')}</label>`;
-  if (person.marriages && person.marriages.length > 0) {
-    person.marriages.forEach((m, idx) => {
-      const spouse = data.persons[m.spouseId];
-      const children = getChildrenOfCouple(person.gender === 'male' ? personId : m.spouseId, person.gender === 'female' ? personId : m.spouseId);
-      const statusClass = m.status === 'divorced' ? 'divorced' : m.status === 'widowed' ? 'widowed' : '';
-      
-      html += `<div class="marriage-item ${statusClass}">
-        <div class="marriage-header">
-          <div class="spouse-info"><span>${spouse?.gender === 'female' ? '👩' : '👨'}</span><span class="spouse-name">${spouse?.name || '?'}</span></div>
-          <button class="action-btn danger" onclick="removeMarriage('${personId}', ${idx})">✕</button>
-        </div>
-        <div class="marriage-details">
-          <select onchange="updateMarriageStatus('${personId}', ${idx}, this.value)">
-            <option value="married" ${m.status === 'married' ? 'selected' : ''}>💑 ${t('متزوجان', 'Married')}</option>
-            <option value="divorced" ${m.status === 'divorced' ? 'selected' : ''}>💔 ${t('مطلقان', 'Divorced')}</option>
-            <option value="widowed" ${m.status === 'widowed' ? 'selected' : ''}>✝️ ${t('أرمل/ة', 'Widowed')}</option>
-          </select>
-          <input type="number" placeholder="${t('من', 'From')}" value="${m.startYear || ''}" onchange="updateMarriageYear('${personId}', ${idx}, 'start', this.value)" style="width:70px">
-          <input type="number" placeholder="${t('إلى', 'To')}" value="${m.endYear || ''}" onchange="updateMarriageYear('${personId}', ${idx}, 'end', this.value)" style="width:70px">
-        </div>
-        ${children.length > 0 ? `<div class="marriage-children">👶 ${t('الأبناء', 'Children')}: ${children.map(c => c.name).join('، ')}</div>` : ''}
-      </div>`;
-    });
-  } else {
-    html += `<div style="color:var(--text-muted);padding:8px">${t('لا توجد زواجات', 'No marriages')}</div>`;
-  }
-  html += `<button class="action-btn" onclick="openLinkModal('spouse', '${personId}')" style="margin-top:6px">➕ ${t('إضافة زوج/ة', 'Add Spouse')}</button></div>`;
-  
-  // الأبناء
-  const children = getChildren(personId);
-  html += `<div class="form-group"><label>👶 ${t('الأبناء', 'Children')} (${children.length})</label>`;
-  if (children.length > 0) {
-    children.forEach(child => {
-      const otherParent = person.gender === 'male' ? (child.motherId ? data.persons[child.motherId]?.name : t('غير محدد', 'Unknown')) : (child.fatherId ? data.persons[child.fatherId]?.name : t('غير محدد', 'Unknown'));
-      html += `<div class="relation-item"><div class="info"><span>${child.gender === 'female' ? '👧' : '👦'}</span><span class="name">${child.name}</span><span class="lineage">(${t('من', 'with')} ${otherParent})</span></div></div>`;
-    });
-  } else {
-    html += `<div style="color:var(--text-muted);padding:8px">${t('لا يوجد أبناء', 'No children')}</div>`;
-  }
-  html += `<button class="action-btn" onclick="openLinkModal('child', '${personId}')" style="margin-top:6px">➕ ${t('إضافة ابن/ة', 'Add Child')}</button></div>`;
-  
-  document.getElementById('relations-body').innerHTML = html;
-  openModal('relations-modal');
-}
-
-function unlinkParent(personId, parentType) {
-  const person = data.persons[personId];
-  if (!person) return;
-  if (parentType === 'father') person.fatherId = null;
-  else person.motherId = null;
-  openRelationsModal(personId);
-  renderPersonsList();
-  layoutTree();
-  renderTree();
-}
-
-function removeMarriage(personId, idx) {
-  const person = data.persons[personId];
-  if (!person || !person.marriages) return;
-  const m = person.marriages[idx];
-  if (m) {
-    const spouse = data.persons[m.spouseId];
-    if (spouse && spouse.marriages) spouse.marriages = spouse.marriages.filter(x => x.spouseId !== personId);
-  }
-  person.marriages.splice(idx, 1);
-  openRelationsModal(personId);
-  renderPersonsList();
-  layoutTree();
-  renderTree();
-}
-
-function updateMarriageStatus(personId, idx, status) {
-  const person = data.persons[personId];
-  if (person?.marriages?.[idx]) {
-    person.marriages[idx].status = status;
-    const spouse = data.persons[person.marriages[idx].spouseId];
-    if (spouse?.marriages) {
-      const sm = spouse.marriages.find(m => m.spouseId === personId);
-      if (sm) sm.status = status;
+  Object.keys(db.marriages).forEach(mid => {
+    const m = db.marriages[mid];
+    if (m.husbandId === id || m.wifeId === id) {
+      Object.keys(db.children).forEach(cid => {
+        if (db.children[cid].marriageId === mid) delete db.children[cid];
+      });
+      delete db.marriages[mid];
     }
-  }
-  renderTree();
-}
-
-function updateMarriageYear(personId, idx, type, value) {
-  const person = data.persons[personId];
-  if (person?.marriages?.[idx]) {
-    const year = value ? parseInt(value) : null;
-    if (type === 'start') person.marriages[idx].startYear = year;
-    else person.marriages[idx].endYear = year;
-    const spouse = data.persons[person.marriages[idx].spouseId];
-    if (spouse?.marriages) {
-      const sm = spouse.marriages.find(m => m.spouseId === personId);
-      if (sm) { if (type === 'start') sm.startYear = year; else sm.endYear = year; }
-    }
-  }
-}
-
-function saveRelations() {
-  closeModal('relations-modal');
-  renderPersonsList();
-  layoutTree();
-  renderTree();
-  updateStats();
-}
-
-// ========== LINK MODAL ==========
-function openLinkModal(relationType, personId) {
-  currentPersonId = personId;
-  linkCallback = relationType;
-  selectedLinkId = null;
-  linkTab = 'existing';
+  });
   
-  const titles = { 
-    father: t('اختر الأب', 'Select Father'), 
-    mother: t('اختر الأم', 'Select Mother'), 
-    parent: t('اختر الأب/الأم', 'Select Parent'),
-    spouse: t('اختر الزوج/ة', 'Select Spouse'), 
-    child: t('اختر الابن/ة', 'Select Child'),
-    sibling: t('اختر الأخ/الأخت', 'Select Sibling')
-  };
-  document.getElementById('link-title').textContent = titles[relationType] || t('ربط', 'Link');
-  document.querySelectorAll('.link-tab').forEach(tab => { tab.classList.toggle('active', tab.dataset.tab === 'existing'); });
-  renderLinkContent();
-  openModal('link-modal');
+  delete db.persons[id];
+  closeModal('person-modal');
+  render();
+  toast(t('تم', 'Done'));
 }
 
-function switchLinkTab(tab) {
-  linkTab = tab;
-  document.querySelectorAll('.link-tab').forEach(t => { t.classList.toggle('active', t.dataset.tab === tab); });
-  renderLinkContent();
-}
-
-function renderLinkContent() {
-  const content = document.getElementById('link-content');
+// ==================== MARRIAGE MODAL ====================
+function openMarriageModal(editId = null, preselect = null) {
+  state.editMarriageId = editId;
   
-  if (linkTab === 'new') {
-    // تحديد الجنس الافتراضي
-    let defaultGender = 'male';
-    if (linkCallback === 'mother') defaultGender = 'female';
-    
-    content.innerHTML = `
-      <div class="form-group"><label>${t('الاسم', 'Name')} *</label><input type="text" id="new-link-name"></div>
-      <div class="form-group"><label>${t('الجنس', 'Gender')}</label>
-        <div class="gender-toggle">
-          <label class="gender-option male"><input type="radio" name="new-gender" value="male" ${defaultGender === 'male' ? 'checked' : ''}><span>👨 ${t('ذكر', 'Male')}</span></label>
-          <label class="gender-option female"><input type="radio" name="new-gender" value="female" ${defaultGender === 'female' ? 'checked' : ''}><span>👩 ${t('أنثى', 'Female')}</span></label>
-        </div>
-      </div>`;
+  const males = Object.values(db.persons).filter(p => p.gender === 'male');
+  const females = Object.values(db.persons).filter(p => p.gender === 'female');
+  
+  let selH = preselect?.husbandId || null;
+  let selW = preselect?.wifeId || null;
+  
+  if (editId) {
+    const m = db.marriages[editId];
+    document.getElementById('mm-title').textContent = t('تعديل', 'Edit');
+    document.getElementById('mm-del-btn').style.display = 'block';
+    selH = m.husbandId; selW = m.wifeId;
+    document.querySelector(`input[name="m-status"][value="${m.status}"]`).checked = true;
+    document.getElementById('m-start').value = m.startYear || '';
+    document.getElementById('m-end').value = m.endYear || '';
+  } else {
+    document.getElementById('mm-title').textContent = t('إضافة زواج', 'Add Marriage');
+    document.getElementById('mm-del-btn').style.display = 'none';
+    document.querySelector('input[name="m-status"][value="married"]').checked = true;
+    document.getElementById('m-start').value = '';
+    document.getElementById('m-end').value = '';
+  }
+  
+  renderPersonSelect('husband-select', males, selH);
+  renderPersonSelect('wife-select', females, selW);
+  
+  openModal('marriage-modal');
+}
+
+function saveMarriage() {
+  const hId = document.querySelector('#husband-select .person-select-opt.selected:not(.none)')?.dataset.id;
+  const wId = document.querySelector('#wife-select .person-select-opt.selected:not(.none)')?.dataset.id;
+  
+  if (!hId && !wId) { toast(t('اختر أحدهما', 'Select one')); return; }
+  
+  const status = document.querySelector('input[name="m-status"]:checked').value;
+  if (wId && status === 'married' && !canWifeMarry(wId, state.editMarriageId)) {
+    toast(t('متزوجة حالياً', 'Already married'));
     return;
   }
   
-  let candidates = Object.values(data.persons).filter(p => p.id !== currentPersonId);
+  const data = {
+    husbandId: hId || null,
+    wifeId: wId || null,
+    status,
+    startYear: document.getElementById('m-start').value ? parseInt(document.getElementById('m-start').value) : null,
+    endYear: document.getElementById('m-end').value ? parseInt(document.getElementById('m-end').value) : null
+  };
   
-  // فلترة حسب النوع
-  if (linkCallback === 'father') {
-    candidates = candidates.filter(p => p.gender === 'male' && !isDescendant(p.id, currentPersonId));
-  } else if (linkCallback === 'mother') {
-    candidates = candidates.filter(p => p.gender === 'female' && !isDescendant(p.id, currentPersonId));
-  } else if (linkCallback === 'parent') {
-    candidates = candidates.filter(p => !isDescendant(p.id, currentPersonId));
-  } else if (linkCallback === 'child') {
-    candidates = candidates.filter(p => !isDescendant(currentPersonId, p.id));
-  } else if (linkCallback === 'sibling') {
-    // الإخوة يجب أن لا يكونوا أجداد أو أحفاد
-    candidates = candidates.filter(p => !isDescendant(p.id, currentPersonId) && !isDescendant(currentPersonId, p.id));
+  if (state.editMarriageId) {
+    Object.assign(db.marriages[state.editMarriageId], data);
+  } else {
+    const id = genId();
+    db.marriages[id] = { id, ...data };
   }
   
-  content.innerHTML = `
-    <input type="text" class="link-search" placeholder="${t('ابحث...', 'Search...')}" oninput="filterLinkOptions(this.value)">
-    <div class="link-list" id="link-list">
-      <div class="link-option none ${!selectedLinkId ? 'selected' : ''}" onclick="selectLinkOption(null)">${t('بدون (فك الارتباط)', 'None (Unlink)')}</div>
-      ${candidates.map(p => `
-        <div class="link-option ${selectedLinkId === p.id ? 'selected' : ''}" data-name="${p.name.toLowerCase()}" onclick="selectLinkOption('${p.id}')">
-          <div class="avatar" style="background:${p.gender === 'female' ? 'rgba(236,72,153,0.2)' : 'rgba(59,130,246,0.2)'}">${p.photo ? `<img src="${p.photo}" style="width:100%;height:100%;border-radius:50%;object-fit:cover">` : (p.gender === 'female' ? '👩' : '👨')}</div>
-          <div><div class="name">${p.name}</div><div class="lineage">${getLineage(p.id)}</div></div>
-        </div>
-      `).join('')}
+  closeModal('marriage-modal');
+  render();
+  toast(t('تم', 'Done'));
+}
+
+function deleteMarriage() {
+  if (!state.editMarriageId || !confirm(t('حذف؟', 'Delete?'))) return;
+  Object.keys(db.children).forEach(cid => {
+    if (db.children[cid].marriageId === state.editMarriageId) delete db.children[cid];
+  });
+  delete db.marriages[state.editMarriageId];
+  closeModal('marriage-modal');
+  render();
+  toast(t('تم', 'Done'));
+}
+
+// ==================== CHILD MODAL ====================
+function openChildModal(ctx) {
+  state.currentPersonId = ctx.personId || null;
+  state.currentMarriageId = ctx.marriageId || null;
+  state.childTab = 'new';
+  
+  document.getElementById('tab-new').classList.add('active');
+  document.getElementById('tab-existing').classList.remove('active');
+  document.getElementById('child-new-form').style.display = 'block';
+  document.getElementById('child-existing-form').style.display = 'none';
+  document.getElementById('c-name').value = '';
+  document.querySelector('input[name="c-gender"][value="male"]').checked = true;
+  
+  const optM = document.getElementById('opt-from-marriage');
+  if (state.currentMarriageId) {
+    optM.style.display = 'flex';
+    document.querySelector('input[name="c-parentage"][value="marriage"]').checked = true;
+  } else {
+    optM.style.display = 'none';
+    document.querySelector('input[name="c-parentage"][value="father"]').checked = true;
+  }
+  
+  const existing = Object.values(db.persons).filter(p => !Object.values(db.children).some(c => c.childId === p.id));
+  renderPersonSelect('child-select', existing, null);
+  
+  openModal('child-modal');
+}
+
+function switchChildTab(tab) {
+  state.childTab = tab;
+  document.getElementById('tab-new').classList.toggle('active', tab === 'new');
+  document.getElementById('tab-existing').classList.toggle('active', tab === 'existing');
+  document.getElementById('child-new-form').style.display = tab === 'new' ? 'block' : 'none';
+  document.getElementById('child-existing-form').style.display = tab === 'existing' ? 'block' : 'none';
+}
+
+function saveChild() {
+  let childId;
+  
+  if (state.childTab === 'new') {
+    const name = document.getElementById('c-name').value.trim();
+    if (!name) { toast(t('أدخل الاسم', 'Enter name')); return; }
+    childId = genId();
+    db.persons[childId] = {
+      id: childId, name,
+      gender: document.querySelector('input[name="c-gender"]:checked').value,
+      photo: null, birthDate: null, deathDate: null, notes: ''
+    };
+  } else {
+    childId = document.querySelector('#child-select .person-select-opt.selected:not(.none)')?.dataset.id;
+    if (!childId) { toast(t('اختر', 'Select')); return; }
+  }
+  
+  const parentage = document.querySelector('input[name="c-parentage"]:checked').value;
+  const rec = { id: genId(), childId };
+  
+  if (parentage === 'marriage' && state.currentMarriageId) {
+    rec.marriageId = state.currentMarriageId;
+  } else {
+    const p = db.persons[state.currentPersonId];
+    if (parentage === 'father' || (parentage !== 'mother' && p?.gender === 'male')) {
+      rec.fatherId = state.currentPersonId;
+    } else {
+      rec.motherId = state.currentPersonId;
+    }
+  }
+  
+  db.children[rec.id] = rec;
+  closeModal('child-modal');
+  render();
+  toast(t('تم', 'Done'));
+}
+
+// ==================== PERSON SELECT ====================
+function renderPersonSelect(containerId, persons, selectedId) {
+  const c = document.getElementById(containerId);
+  let html = `<input type="text" class="person-select-search" placeholder="${t('ابحث...', 'Search...')}" oninput="filterSelect('${containerId}', this.value)">`;
+  html += `<div class="person-select-list">`;
+  html += `<div class="person-select-opt none ${!selectedId ? 'selected' : ''}" onclick="pickPerson('${containerId}', null)">${t('بدون', 'None')}</div>`;
+  persons.forEach(p => {
+    const icon = p.photo ? `<img src="${p.photo}" style="width:100%;height:100%;border-radius:50%;object-fit:cover">` : (p.gender === 'female' ? '👩' : '👨');
+    html += `<div class="person-select-opt ${selectedId === p.id ? 'selected' : ''}" data-id="${p.id}" data-name="${p.name.toLowerCase()}" onclick="pickPerson('${containerId}', '${p.id}')">
+      <div class="av" style="background:${p.gender === 'female' ? 'rgba(236,72,153,0.2)' : 'rgba(59,130,246,0.2)'}">${icon}</div>
+      <span class="nm">${p.name}</span>
     </div>`;
+  });
+  html += `</div>`;
+  c.innerHTML = html;
 }
 
-function filterLinkOptions(query) {
-  const q = query.toLowerCase();
-  document.querySelectorAll('#link-list .link-option:not(.none)').forEach(opt => { opt.style.display = (opt.dataset.name || '').includes(q) ? '' : 'none'; });
+function filterSelect(cid, q) {
+  document.querySelectorAll(`#${cid} .person-select-opt:not(.none)`).forEach(o => {
+    o.style.display = (o.dataset.name || '').includes(q.toLowerCase()) ? '' : 'none';
+  });
 }
 
-function selectLinkOption(id) {
-  selectedLinkId = id;
-  document.querySelectorAll('#link-list .link-option').forEach(opt => { opt.classList.remove('selected'); });
-  if (id) document.querySelector(`#link-list .link-option[onclick*="${id}"]`)?.classList.add('selected');
-  else document.querySelector('#link-list .link-option.none')?.classList.add('selected');
+function pickPerson(cid, id) {
+  document.querySelectorAll(`#${cid} .person-select-opt`).forEach(o => {
+    o.classList.toggle('selected', id ? o.dataset.id === id : o.classList.contains('none'));
+  });
 }
 
-function confirmLink() {
-  const person = data.persons[currentPersonId];
-  if (!person) return;
-  
-  if (linkTab === 'new') {
-    const name = document.getElementById('new-link-name').value.trim();
-    if (!name) { showToast(t('الرجاء إدخال الاسم', 'Please enter name')); return; }
-    const gender = document.querySelector('input[name="new-gender"]:checked')?.value || 'male';
-    const newId = generateId();
-    data.persons[newId] = { id: newId, name, gender, photo: null, birthDate: null, deathDate: null, notes: '', fatherId: null, motherId: null, marriages: [] };
-    selectedLinkId = newId;
-  }
-  
-  switch (linkCallback) {
-    case 'father': person.fatherId = selectedLinkId; break;
-    case 'mother': person.motherId = selectedLinkId; break;
-    case 'parent':
-      if (selectedLinkId) {
-        const selected = data.persons[selectedLinkId];
-        if (selected) {
-          if (selected.gender === 'male') person.fatherId = selectedLinkId;
-          else person.motherId = selectedLinkId;
-        }
-      }
-      break;
-    case 'spouse':
-      if (selectedLinkId) {
-        const spouse = data.persons[selectedLinkId];
-        if (spouse) {
-          if (!person.marriages) person.marriages = [];
-          if (!spouse.marriages) spouse.marriages = [];
-          if (!person.marriages.find(m => m.spouseId === selectedLinkId)) person.marriages.push({ spouseId: selectedLinkId, status: 'married', startYear: null, endYear: null });
-          if (!spouse.marriages.find(m => m.spouseId === currentPersonId)) spouse.marriages.push({ spouseId: currentPersonId, status: 'married', startYear: null, endYear: null });
-        }
-      }
-      break;
-    case 'child':
-      if (selectedLinkId) {
-        const child = data.persons[selectedLinkId];
-        if (child) {
-          if (person.gender === 'male') child.fatherId = currentPersonId;
-          else child.motherId = currentPersonId;
-        }
-      }
-      break;
-    case 'sibling':
-      if (selectedLinkId) {
-        const sibling = data.persons[selectedLinkId];
-        if (sibling) {
-          if (person.fatherId) sibling.fatherId = person.fatherId;
-          if (person.motherId) sibling.motherId = person.motherId;
-        }
-      }
-      break;
-  }
-  
-  closeModal('link-modal');
-  renderPersonsList();
-  layoutTree();
-  renderTree();
-  updateStats();
-  showToast(t('تم', 'Done'));
-}
-
-// ========== PHOTO ==========
-function handlePhotoUpload(e) {
+// ==================== PHOTO ====================
+function handlePhoto(e) {
   const file = e.target.files[0];
   if (!file) return;
   const reader = new FileReader();
-  reader.onload = ev => { currentPhoto = ev.target.result; updatePhotoPreview(); };
+  reader.onload = ev => { state.currentPhoto = ev.target.result; updatePhotoPreview(); };
   reader.readAsDataURL(file);
 }
 
 function removePhoto() {
-  currentPhoto = null;
+  state.currentPhoto = null;
+  document.getElementById('photo-file').value = '';
   updatePhotoPreview();
-  document.getElementById('photo-input').value = '';
 }
 
 function updatePhotoPreview() {
-  const preview = document.getElementById('photo-preview');
-  const removeBtn = document.getElementById('remove-photo-btn');
-  if (currentPhoto) { preview.innerHTML = `<img src="${currentPhoto}">`; removeBtn.style.display = 'block'; }
-  else { preview.innerHTML = '<span class="placeholder">👤</span>'; removeBtn.style.display = 'none'; }
+  const prev = document.getElementById('photo-prev');
+  const btn = document.getElementById('rm-photo-btn');
+  if (state.currentPhoto) {
+    prev.innerHTML = `<img src="${state.currentPhoto}">`;
+    btn.style.display = 'block';
+  } else {
+    prev.innerHTML = '<span class="ph">👤</span>';
+    btn.style.display = 'none';
+  }
 }
 
-// ========== LAYOUT ==========
+// ==================== CONTEXT / ADD MENU ====================
+function showCtx(e, id) {
+  e.preventDefault(); e.stopPropagation();
+  state.ctxTarget = id;
+  const m = document.getElementById('ctx-menu');
+  m.style.left = e.clientX + 'px';
+  m.style.top = e.clientY + 'px';
+  m.classList.add('show');
+}
+
+function ctxAct(act) {
+  document.getElementById('ctx-menu').classList.remove('show');
+  if (!state.ctxTarget) return;
+  const p = db.persons[state.ctxTarget];
+  switch (act) {
+    case 'edit': openPersonModal(state.ctxTarget); break;
+    case 'marriage': openMarriageModal(null, p.gender === 'male' ? { husbandId: state.ctxTarget } : { wifeId: state.ctxTarget }); break;
+    case 'child':
+      const ms = getMarriagesOf(state.ctxTarget);
+      openChildModal({ personId: state.ctxTarget, marriageId: ms[0]?.id });
+      break;
+    case 'locate': locatePerson(state.ctxTarget); break;
+    case 'delete': state.editPersonId = state.ctxTarget; deletePerson(); break;
+  }
+}
+
+function showAddMenu(e, id, x, y) {
+  e.stopPropagation();
+  state.currentPersonId = id;
+  const m = document.getElementById('add-menu');
+  const svg = document.getElementById('tree-svg').getBoundingClientRect();
+  m.style.left = (svg.left + x * state.zoom + state.panX) + 'px';
+  m.style.top = (svg.top + y * state.zoom + state.panY) + 'px';
+  m.classList.add('show');
+}
+
+function addMenuAct(act) {
+  document.getElementById('add-menu').classList.remove('show');
+  const id = state.currentPersonId;
+  if (!id) return;
+  const p = db.persons[id];
+  
+  switch (act) {
+    case 'parent': openMarriageModal(); break;
+    case 'child':
+      const ms = getMarriagesOf(id);
+      openChildModal({ personId: id, marriageId: ms[0]?.id });
+      break;
+    case 'sibling':
+      const parents = getParentsOf(id);
+      if (parents.marriage) openChildModal({ marriageId: parents.marriage.id });
+      else if (parents.father) openChildModal({ personId: parents.father.id });
+      else if (parents.mother) openChildModal({ personId: parents.mother.id });
+      else toast(t('لا والدين', 'No parents'));
+      break;
+    case 'spouse':
+      openMarriageModal(null, p.gender === 'male' ? { husbandId: id } : { wifeId: id });
+      break;
+  }
+}
+
+// ==================== LAYOUT ====================
+function render() {
+  renderList();
+  layoutTree();
+  renderTree();
+  updateStats();
+}
+
 function layoutTree() {
-  const persons = Object.values(data.persons);
-  if (persons.length === 0) return;
+  const nodes = {};
+  const done = new Set();
   
-  const levels = {};
-  const positioned = new Set();
+  // جمع العائلات (زواجات الجذور)
+  const rootMarriages = Object.values(db.marriages).filter(m => {
+    const hp = getParentsOf(m.husbandId);
+    const wp = getParentsOf(m.wifeId);
+    return !hp.father && !hp.mother && !wp.father && !wp.mother;
+  });
   
-  function assignLevel(personId, level) {
-    if (positioned.has(personId)) return;
-    positioned.add(personId);
-    const person = data.persons[personId];
-    if (!person) return;
-    if (!levels[level]) levels[level] = [];
-    levels[level].push(personId);
-    person._level = level;
+  const rootPersons = Object.values(db.persons).filter(p => {
+    const parents = getParentsOf(p.id);
+    return !parents.father && !parents.mother && getMarriagesOf(p.id).length === 0;
+  });
+  
+  let curX = 50;
+  
+  function layoutFamily(marriageId, level, startX) {
+    const m = db.marriages[marriageId];
+    if (!m) return startX;
     
-    if (person.fatherId) assignLevel(person.fatherId, level - 1);
-    if (person.motherId) assignLevel(person.motherId, level - 1);
-    getChildren(personId).forEach(child => assignLevel(child.id, level + 1));
-    if (person.marriages) person.marriages.forEach(m => { if (!positioned.has(m.spouseId)) assignLevel(m.spouseId, level); });
-    getSiblings(personId).forEach(sib => { if (!positioned.has(sib.id)) assignLevel(sib.id, level); });
+    const husband = db.persons[m.husbandId];
+    const wife = db.persons[m.wifeId];
+    const children = getChildrenOfMarriage(marriageId);
+    
+    let x = startX;
+    const y = level * (CARD_H + GAP_Y);
+    
+    // حساب عرض الأبناء
+    let childrenWidth = 0;
+    const childLayouts = [];
+    
+    children.forEach(child => {
+      const childMs = getMarriagesOf(child.id);
+      if (childMs.length > 0) {
+        const w = layoutFamily(childMs[0].id, level + 1, x + childrenWidth);
+        childLayouts.push({ id: child.id, width: w - (x + childrenWidth) });
+        childrenWidth = w - x;
+      } else {
+        childLayouts.push({ id: child.id, width: CARD_W });
+        childrenWidth += CARD_W + GAP_X;
+      }
+    });
+    
+    if (childrenWidth > 0) childrenWidth -= GAP_X;
+    
+    // عرض الوالدين
+    const parentWidth = (husband ? CARD_W : 0) + (wife ? CARD_W : 0) + (husband && wife ? MARRIAGE_GAP : 0);
+    const familyWidth = Math.max(parentWidth, childrenWidth);
+    
+    // موضع الوالدين (في المنتصف فوق الأبناء)
+    const parentStartX = x + (familyWidth - parentWidth) / 2;
+    
+    if (husband && !done.has(m.husbandId)) {
+      done.add(m.husbandId);
+      nodes[m.husbandId] = { x: parentStartX, y, level };
+    }
+    if (wife && !done.has(m.wifeId)) {
+      done.add(m.wifeId);
+      nodes[m.wifeId] = { x: parentStartX + (husband ? CARD_W + MARRIAGE_GAP : 0), y, level };
+    }
+    
+    // موضع الأبناء
+    let childX = x + (familyWidth - childrenWidth) / 2;
+    childLayouts.forEach(cl => {
+      if (!done.has(cl.id)) {
+        done.add(cl.id);
+        nodes[cl.id] = { x: childX, y: (level + 1) * (CARD_H + GAP_Y), level: level + 1 };
+      }
+      childX += cl.width + GAP_X;
+    });
+    
+    return x + familyWidth + GAP_X * 2;
   }
   
-  const startId = data.rootId || Object.keys(data.persons)[0];
-  if (startId) assignLevel(startId, 0);
-  persons.forEach(p => { if (!positioned.has(p.id)) { if (!levels[0]) levels[0] = []; levels[0].push(p.id); p._level = 0; } });
+  // رسم الزواجات الجذرية
+  rootMarriages.forEach(m => {
+    curX = layoutFamily(m.id, 0, curX);
+  });
   
-  const levelNums = Object.keys(levels).map(Number).sort((a, b) => a - b);
-  const minLevel = Math.min(...levelNums);
-  const canvasW = document.getElementById('tree-canvas').clientWidth || 650;
+  // الأشخاص المفردين
+  rootPersons.forEach(p => {
+    if (!done.has(p.id)) {
+      done.add(p.id);
+      nodes[p.id] = { x: curX, y: 0, level: 0 };
+      curX += CARD_W + GAP_X;
+    }
+  });
   
-  levelNums.forEach(lvl => {
-    const pids = levels[lvl];
-    const totalW = pids.length * CARD_W + (pids.length - 1) * GAP_H;
-    const startX = Math.max(40, (canvasW - totalW) / 2);
-    const y = 50 + (lvl - minLevel) * (CARD_H + GAP_V);
-    pids.forEach((pid, idx) => { const p = data.persons[pid]; p._x = startX + idx * (CARD_W + GAP_H); p._y = y; });
+  // حفظ المواقع
+  Object.entries(nodes).forEach(([id, pos]) => {
+    if (db.persons[id]) {
+      db.persons[id]._x = pos.x;
+      db.persons[id]._y = pos.y;
+      db.persons[id]._level = pos.level;
+    }
   });
 }
 
-// ========== RENDER TREE ==========
 function renderTree() {
-  const connLayer = document.getElementById('connections-layer');
-  const persLayer = document.getElementById('persons-layer');
-  connLayer.innerHTML = '';
-  persLayer.innerHTML = '';
+  const linesG = document.getElementById('lines-g');
+  const nodesG = document.getElementById('nodes-g');
+  linesG.innerHTML = '';
+  nodesG.innerHTML = '';
   
-  const persons = Object.values(data.persons);
-  document.getElementById('empty-state').style.display = persons.length === 0 ? 'block' : 'none';
+  const persons = Object.values(db.persons);
+  document.getElementById('empty-msg').style.display = persons.length === 0 ? 'block' : 'none';
   if (persons.length === 0) return;
   
-  persons.forEach(person => {
-    if (person.fatherId) { const f = data.persons[person.fatherId]; if (f) drawParentLine(f, person, connLayer); }
-    if (person.motherId) { const m = data.persons[person.motherId]; if (m) drawParentLine(m, person, connLayer); }
-    if (person.marriages) person.marriages.forEach(m => { const s = data.persons[m.spouseId]; if (s && person.id < m.spouseId) drawMarriageLine(person, s, m.status, connLayer); });
+  // خطوط الزواج
+  Object.values(db.marriages).forEach(m => {
+    const h = db.persons[m.husbandId];
+    const w = db.persons[m.wifeId];
+    if (h?._x !== undefined && w?._x !== undefined) {
+      drawMarriageLine(h, w, m, linesG);
+    }
   });
   
-  persons.forEach(person => drawCard(person, persLayer));
+  // خطوط الأبناء
+  Object.values(db.children).forEach(c => {
+    const child = db.persons[c.childId];
+    if (!child || child._x === undefined) return;
+    
+    if (c.marriageId) {
+      const m = db.marriages[c.marriageId];
+      const h = db.persons[m?.husbandId];
+      const w = db.persons[m?.wifeId];
+      if (h?._x !== undefined && w?._x !== undefined) {
+        drawChildFromMarriage(h, w, child, linesG);
+      }
+    } else {
+      const parent = db.persons[c.fatherId || c.motherId];
+      if (parent?._x !== undefined) drawChildFromSingle(parent, child, linesG);
+    }
+  });
+  
+  // البطاقات
+  persons.forEach(p => { if (p._x !== undefined) drawCard(p, nodesG); });
+  
   updateTransform();
 }
 
-function drawParentLine(parent, child, layer) {
-  const x1 = parent._x + CARD_W / 2, y1 = parent._y + CARD_H;
-  const x2 = child._x + CARD_W / 2, y2 = child._y;
-  const midY = y1 + (y2 - y1) / 2;
-  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-  path.setAttribute('d', `M ${x1} ${y1} L ${x1} ${midY} L ${x2} ${midY} L ${x2} ${y2}`);
-  path.setAttribute('stroke', '#475569');
-  path.setAttribute('stroke-width', '2');
-  path.setAttribute('fill', 'none');
-  layer.appendChild(path);
-}
-
-function drawMarriageLine(p1, p2, status, layer) {
-  const x1 = Math.min(p1._x, p2._x) + CARD_W, x2 = Math.max(p1._x, p2._x), y = p1._y + CARD_H / 2;
+function drawMarriageLine(h, w, m, layer) {
+  const x1 = Math.min(h._x, w._x) + CARD_W;
+  const x2 = Math.max(h._x, w._x);
+  const y = h._y + CARD_H / 2;
+  
   const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-  line.setAttribute('x1', x1); line.setAttribute('y1', y); line.setAttribute('x2', x2); line.setAttribute('y2', y);
-  if (status === 'divorced') { line.setAttribute('stroke', '#6b7280'); line.setAttribute('stroke-dasharray', '5,5'); }
-  else if (status === 'widowed') { line.setAttribute('stroke', '#4b5563'); line.setAttribute('stroke-dasharray', '2,4'); }
+  line.setAttribute('x1', x1); line.setAttribute('y1', y);
+  line.setAttribute('x2', x2); line.setAttribute('y2', y);
+  
+  if (m.status === 'divorced') { line.setAttribute('stroke', '#6b7280'); line.setAttribute('stroke-dasharray', '5,5'); }
+  else if (m.status === 'widowed') { line.setAttribute('stroke', '#4b5563'); line.setAttribute('stroke-dasharray', '2,4'); }
   else { line.setAttribute('stroke', '#f59e0b'); }
-  line.setAttribute('stroke-width', '2');
+  line.setAttribute('stroke-width', '3');
   layer.appendChild(line);
   
   const midX = (x1 + x2) / 2;
   const icon = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-  icon.setAttribute('x', midX); icon.setAttribute('y', y - 6); icon.setAttribute('text-anchor', 'middle'); icon.setAttribute('font-size', '11');
-  icon.textContent = status === 'divorced' ? '💔' : status === 'widowed' ? '✝️' : '💑';
+  icon.setAttribute('x', midX); icon.setAttribute('y', y - 8);
+  icon.setAttribute('text-anchor', 'middle'); icon.setAttribute('font-size', '12');
+  icon.textContent = m.status === 'divorced' ? '💔' : m.status === 'widowed' ? '✝️' : '💑';
   layer.appendChild(icon);
+  
+  // زر + على خط الزواج
+  const addG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  addG.style.cursor = 'pointer';
+  const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  circle.setAttribute('cx', midX); circle.setAttribute('cy', y + 15);
+  circle.setAttribute('r', 8);
+  circle.setAttribute('fill', '#1e293b'); circle.setAttribute('stroke', '#059669'); circle.setAttribute('stroke-width', '2');
+  addG.appendChild(circle);
+  const txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  txt.setAttribute('x', midX); txt.setAttribute('y', y + 15);
+  txt.setAttribute('text-anchor', 'middle'); txt.setAttribute('dominant-baseline', 'central');
+  txt.setAttribute('fill', '#059669'); txt.setAttribute('font-size', '12'); txt.setAttribute('font-weight', 'bold');
+  txt.textContent = '+';
+  addG.appendChild(txt);
+  addG.onclick = e => { e.stopPropagation(); openChildModal({ marriageId: m.id }); };
+  addG.onmouseenter = () => { circle.setAttribute('fill', '#059669'); txt.setAttribute('fill', '#fff'); };
+  addG.onmouseleave = () => { circle.setAttribute('fill', '#1e293b'); txt.setAttribute('fill', '#059669'); };
+  layer.appendChild(addG);
 }
 
-function drawCard(person, layer) {
+function drawChildFromMarriage(h, w, child, layer) {
+  const midX = (Math.min(h._x, w._x) + Math.max(h._x, w._x) + CARD_W) / 2;
+  const y1 = h._y + CARD_H;
+  const cx = child._x + CARD_W / 2;
+  const cy = child._y;
+  const midY = y1 + (cy - y1) / 2;
+  
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', `M ${midX} ${y1} L ${midX} ${midY} L ${cx} ${midY} L ${cx} ${cy}`);
+  path.setAttribute('stroke', '#475569'); path.setAttribute('stroke-width', '2'); path.setAttribute('fill', 'none');
+  layer.appendChild(path);
+}
+
+function drawChildFromSingle(parent, child, layer) {
+  const px = parent._x + CARD_W / 2;
+  const py = parent._y + CARD_H;
+  const cx = child._x + CARD_W / 2;
+  const cy = child._y;
+  const midY = py + (cy - py) / 2;
+  
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', `M ${px} ${py} L ${px} ${midY} L ${cx} ${midY} L ${cx} ${cy}`);
+  path.setAttribute('stroke', '#475569'); path.setAttribute('stroke-width', '2'); path.setAttribute('fill', 'none');
+  layer.appendChild(path);
+}
+
+function drawCard(p, layer) {
   const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-  g.setAttribute('transform', `translate(${person._x}, ${person._y})`);
-  g.setAttribute('class', 'person-card-group');
-  g.setAttribute('data-id', person.id);
+  g.setAttribute('transform', `translate(${p._x}, ${p._y})`);
+  g.setAttribute('data-id', p.id);
   g.style.cursor = 'pointer';
   
-  // الخلفية
   const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
   rect.setAttribute('width', CARD_W); rect.setAttribute('height', CARD_H); rect.setAttribute('rx', '8');
   rect.setAttribute('fill', '#334155');
-  rect.setAttribute('stroke', person.gender === 'female' ? '#ec4899' : '#3b82f6');
-  rect.setAttribute('stroke-width', person.deathDate ? '2' : '2.5');
-  if (person.deathDate) rect.setAttribute('stroke-dasharray', '4,3');
+  rect.setAttribute('stroke', p.gender === 'female' ? '#ec4899' : '#3b82f6');
+  rect.setAttribute('stroke-width', p.deathDate ? '2' : '2.5');
+  if (p.deathDate) rect.setAttribute('stroke-dasharray', '4,3');
   rect.setAttribute('filter', 'url(#shadow)');
   g.appendChild(rect);
   
-  // الصورة أو الأيقونة
-  if (person.photo) {
+  if (p.photo) {
     const img = document.createElementNS('http://www.w3.org/2000/svg', 'image');
-    img.setAttribute('x', CARD_W/2 - 14); img.setAttribute('y', 5); img.setAttribute('width', 28); img.setAttribute('height', 28);
-    img.setAttribute('href', person.photo); img.setAttribute('clip-path', 'circle(14px at 14px 14px)');
+    img.setAttribute('x', CARD_W/2 - 12); img.setAttribute('y', 5);
+    img.setAttribute('width', 24); img.setAttribute('height', 24);
+    img.setAttribute('href', p.photo);
     g.appendChild(img);
   } else {
     const icon = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    icon.setAttribute('x', CARD_W/2); icon.setAttribute('y', 24); icon.setAttribute('text-anchor', 'middle'); icon.setAttribute('font-size', '20');
-    icon.textContent = person.gender === 'female' ? '👩' : '👨';
+    icon.setAttribute('x', CARD_W/2); icon.setAttribute('y', 22);
+    icon.setAttribute('text-anchor', 'middle'); icon.setAttribute('font-size', '18');
+    icon.textContent = p.gender === 'female' ? '👩' : '👨';
     g.appendChild(icon);
   }
   
-  // الاسم
   const name = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-  name.setAttribute('x', CARD_W/2); name.setAttribute('y', 46); name.setAttribute('text-anchor', 'middle');
+  name.setAttribute('x', CARD_W/2); name.setAttribute('y', 42);
+  name.setAttribute('text-anchor', 'middle');
   name.setAttribute('fill', '#f8fafc'); name.setAttribute('font-size', '10'); name.setAttribute('font-weight', '600');
-  name.textContent = person.name.length > 14 ? person.name.substring(0, 14) + '..' : person.name;
+  name.textContent = p.name.length > 12 ? p.name.substring(0, 12) + '..' : p.name;
   g.appendChild(name);
   
-  // العمر
-  if (person.birthDate) {
-    const age = calcAge(person.birthDate, person.deathDate);
-    const ageText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    ageText.setAttribute('x', CARD_W/2); ageText.setAttribute('y', 58); ageText.setAttribute('text-anchor', 'middle');
-    ageText.setAttribute('fill', '#94a3b8'); ageText.setAttribute('font-size', '8');
-    ageText.textContent = age + (isArabic ? ' سنة' : ' y') + (person.deathDate ? ' ✝' : '');
-    g.appendChild(ageText);
+  if (p.birthDate) {
+    const age = calcAge(p.birthDate, p.deathDate);
+    const txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    txt.setAttribute('x', CARD_W/2); txt.setAttribute('y', 54);
+    txt.setAttribute('text-anchor', 'middle');
+    txt.setAttribute('fill', '#94a3b8'); txt.setAttribute('font-size', '8');
+    txt.textContent = age + (isAr ? ' سنة' : ' y') + (p.deathDate ? ' ✝' : '');
+    g.appendChild(txt);
   }
   
-  // زر + داخل البطاقة
-  const addBtnG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-  addBtnG.setAttribute('class', 'add-btn-internal');
-  addBtnG.style.cursor = 'pointer';
-  
+  // زر +
+  const addG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  addG.setAttribute('class', 'add-g');
+  addG.style.cursor = 'pointer';
   const addRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-  addRect.setAttribute('x', CARD_W/2 - 14); addRect.setAttribute('y', CARD_H - 18);
-  addRect.setAttribute('width', 28); addRect.setAttribute('height', 14);
-  addRect.setAttribute('rx', 4);
-  addRect.setAttribute('fill', '#1e293b');
-  addRect.setAttribute('stroke', '#059669');
-  addRect.setAttribute('stroke-width', '1.5');
-  addBtnG.appendChild(addRect);
+  addRect.setAttribute('x', CARD_W/2 - 12); addRect.setAttribute('y', CARD_H - 16);
+  addRect.setAttribute('width', 24); addRect.setAttribute('height', 12); addRect.setAttribute('rx', 4);
+  addRect.setAttribute('fill', '#1e293b'); addRect.setAttribute('stroke', '#059669'); addRect.setAttribute('stroke-width', '1.5');
+  addG.appendChild(addRect);
+  const addTxt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  addTxt.setAttribute('x', CARD_W/2); addTxt.setAttribute('y', CARD_H - 7);
+  addTxt.setAttribute('text-anchor', 'middle'); addTxt.setAttribute('fill', '#059669');
+  addTxt.setAttribute('font-size', '10'); addTxt.setAttribute('font-weight', 'bold');
+  addTxt.textContent = '+';
+  addG.appendChild(addTxt);
+  addG.onclick = e => showAddMenu(e, p.id, p._x + CARD_W/2, p._y + CARD_H);
+  addG.onmouseenter = () => { addRect.setAttribute('fill', '#059669'); addTxt.setAttribute('fill', '#fff'); };
+  addG.onmouseleave = () => { addRect.setAttribute('fill', '#1e293b'); addTxt.setAttribute('fill', '#059669'); };
+  g.appendChild(addG);
   
-  const addText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-  addText.setAttribute('x', CARD_W/2); addText.setAttribute('y', CARD_H - 8);
-  addText.setAttribute('text-anchor', 'middle'); addText.setAttribute('fill', '#059669');
-  addText.setAttribute('font-size', '11'); addText.setAttribute('font-weight', 'bold');
-  addText.textContent = '+';
-  addBtnG.appendChild(addText);
-  
-  addBtnG.addEventListener('click', e => {
+  g.onclick = e => { if (!e.target.closest('.add-g')) { e.stopPropagation(); openPersonModal(p.id); } };
+  g.oncontextmenu = e => { e.preventDefault(); showCtx(e, p.id); };
+  g.ondblclick = e => {
     e.stopPropagation();
-    showAddMenu(e, person.id, person._x + CARD_W/2, person._y + CARD_H);
-  });
-  
-  addBtnG.addEventListener('mouseenter', () => {
-    addRect.setAttribute('fill', '#059669');
-    addText.setAttribute('fill', '#fff');
-  });
-  addBtnG.addEventListener('mouseleave', () => {
-    addRect.setAttribute('fill', '#1e293b');
-    addText.setAttribute('fill', '#059669');
-  });
-  
-  g.appendChild(addBtnG);
-  
-  // أحداث البطاقة
-  g.addEventListener('click', e => {
-    if (e.target.closest('.add-btn-internal')) return;
-    e.stopPropagation();
-    openEditPersonModal(person.id);
-  });
-  g.addEventListener('contextmenu', e => { e.preventDefault(); showCtxMenu(e, person.id); });
-  g.addEventListener('dblclick', e => { e.stopPropagation(); openRelationsModal(person.id); });
-  
-  // السحب والإفلات
-  g.setAttribute('draggable', 'true');
-  g.addEventListener('mousedown', e => startDragCard(e, person.id));
+    const ms = getMarriagesOf(p.id);
+    if (ms.length > 0) openMarriageModal(ms[0].id);
+    else openMarriageModal(null, p.gender === 'male' ? { husbandId: p.id } : { wifeId: p.id });
+  };
   
   layer.appendChild(g);
 }
@@ -1973,271 +1955,82 @@ function calcAge(birth, death) {
   return age;
 }
 
-// ========== ADD MENU ==========
-function showAddMenu(e, personId, x, y) {
-  hideAddMenu();
-  const person = data.persons[personId];
-  if (!person) return;
+// ==================== CANVAS ====================
+let isDrag = false, dragX = 0, dragY = 0;
+
+function setupCanvas() {
+  const svg = document.getElementById('tree-svg');
+  const wrap = document.getElementById('canvas-wrap');
   
-  const menu = document.getElementById('add-menu');
-  const canvas = document.getElementById('tree-canvas');
-  const rect = canvas.getBoundingClientRect();
+  svg.onmousedown = e => {
+    if (e.target.closest('g[data-id]') || e.target.closest('.add-g')) return;
+    isDrag = true; dragX = e.clientX - state.panX; dragY = e.clientY - state.panY;
+  };
+  svg.onmousemove = e => {
+    if (!isDrag) return;
+    state.panX = e.clientX - dragX; state.panY = e.clientY - dragY;
+    updateTransform();
+  };
+  svg.onmouseup = () => isDrag = false;
+  svg.onmouseleave = () => isDrag = false;
   
-  // حساب الموقع مع مراعاة الـ zoom و pan
-  const screenX = rect.left + (x * zoom + panX);
-  const screenY = rect.top + (y * zoom + panY);
-  
-  menu.style.left = screenX + 'px';
-  menu.style.top = screenY + 'px';
-  menu.dataset.personId = personId;
-  menu.classList.add('show');
-  
-  e.stopPropagation();
+  wrap.onwheel = e => {
+    e.preventDefault();
+    state.zoom = Math.max(0.3, Math.min(2, state.zoom + (e.deltaY > 0 ? -0.1 : 0.1)));
+    updateTransform();
+    document.getElementById('zoom-level').textContent = Math.round(state.zoom * 100) + '%';
+  };
 }
 
-function hideAddMenu() {
-  document.getElementById('add-menu').classList.remove('show');
+function updateTransform() {
+  document.getElementById('tree-g').setAttribute('transform', `translate(${state.panX}, ${state.panY}) scale(${state.zoom})`);
 }
 
-function addMenuAction(relationType) {
-  const personId = document.getElementById('add-menu').dataset.personId;
-  hideAddMenu();
-  if (personId) openLinkModal(relationType, personId);
-}
+function zoomIn() { state.zoom = Math.min(2, state.zoom + 0.1); updateTransform(); document.getElementById('zoom-level').textContent = Math.round(state.zoom * 100) + '%'; }
+function zoomOut() { state.zoom = Math.max(0.3, state.zoom - 0.1); updateTransform(); document.getElementById('zoom-level').textContent = Math.round(state.zoom * 100) + '%'; }
+function resetView() { state.zoom = 1; state.panX = 0; state.panY = 0; updateTransform(); document.getElementById('zoom-level').textContent = '100%'; }
 
-// ========== DRAG & DROP ==========
-let dragState = {
-  active: false,
-  personId: null,
-  startX: 0,
-  startY: 0,
-  ghost: null
-};
-
-function startDragCard(e, personId) {
-  if (e.target.closest('.add-btn-internal')) return;
-  if (e.button !== 0) return; // فقط الزر الأيسر
-  
-  dragState.active = true;
-  dragState.personId = personId;
-  dragState.startX = e.clientX;
-  dragState.startY = e.clientY;
-  
-  // إنشاء شبح للسحب
-  const person = data.persons[personId];
-  const ghost = document.createElement('div');
-  ghost.className = 'drag-ghost';
-  ghost.innerHTML = `<span>${person.gender === 'female' ? '👩' : '👨'}</span> ${person.name}`;
-  ghost.style.left = e.clientX + 'px';
-  ghost.style.top = e.clientY + 'px';
-  document.body.appendChild(ghost);
-  dragState.ghost = ghost;
-  
-  document.addEventListener('mousemove', onDragMove);
-  document.addEventListener('mouseup', onDragEnd);
-  
-  e.preventDefault();
-}
-
-function onDragMove(e) {
-  if (!dragState.active || !dragState.ghost) return;
-  
-  dragState.ghost.style.left = e.clientX + 'px';
-  dragState.ghost.style.top = e.clientY + 'px';
-  
-  // إظهار مناطق الإفلات
-  const canvas = document.getElementById('tree-canvas');
-  const rect = canvas.getBoundingClientRect();
-  
-  // البحث عن البطاقة تحت المؤشر
-  const cards = document.querySelectorAll('.person-card-group');
-  let foundTarget = null;
-  
-  cards.forEach(card => {
-    if (card.dataset.id === dragState.personId) return;
-    
-    const person = data.persons[card.dataset.id];
-    if (!person) return;
-    
-    const cardX = rect.left + (person._x * zoom + panX);
-    const cardY = rect.top + (person._y * zoom + panY);
-    const cardW = CARD_W * zoom;
-    const cardH = CARD_H * zoom;
-    
-    if (e.clientX >= cardX && e.clientX <= cardX + cardW &&
-        e.clientY >= cardY && e.clientY <= cardY + cardH) {
-      foundTarget = card.dataset.id;
-      card.querySelector('rect').setAttribute('stroke', '#059669');
-      card.querySelector('rect').setAttribute('stroke-width', '4');
-    } else {
-      const p = data.persons[card.dataset.id];
-      card.querySelector('rect').setAttribute('stroke', p.gender === 'female' ? '#ec4899' : '#3b82f6');
-      card.querySelector('rect').setAttribute('stroke-width', p.deathDate ? '2' : '2.5');
-    }
-  });
-  
-  dragState.targetId = foundTarget;
-}
-
-function onDragEnd(e) {
-  document.removeEventListener('mousemove', onDragMove);
-  document.removeEventListener('mouseup', onDragEnd);
-  
-  if (dragState.ghost) {
-    dragState.ghost.remove();
-    dragState.ghost = null;
-  }
-  
-  // إعادة ألوان البطاقات
-  document.querySelectorAll('.person-card-group').forEach(card => {
-    const p = data.persons[card.dataset.id];
-    if (p) {
-      card.querySelector('rect').setAttribute('stroke', p.gender === 'female' ? '#ec4899' : '#3b82f6');
-      card.querySelector('rect').setAttribute('stroke-width', p.deathDate ? '2' : '2.5');
-    }
-  });
-  
-  if (dragState.active && dragState.targetId && dragState.personId !== dragState.targetId) {
-    showDropRelationModal(dragState.personId, dragState.targetId);
-  }
-  
-  dragState.active = false;
-  dragState.personId = null;
-  dragState.targetId = null;
-}
-
-function showDropRelationModal(draggedId, targetId) {
-  const dragged = data.persons[draggedId];
-  const target = data.persons[targetId];
-  if (!dragged || !target) return;
-  
-  // فتح نافذة لاختيار نوع العلاقة
-  currentPersonId = draggedId;
-  linkCallback = null;
-  
-  const modal = document.getElementById('drop-relation-modal');
-  document.getElementById('drop-dragged-name').textContent = dragged.name;
-  document.getElementById('drop-target-name').textContent = target.name;
-  document.getElementById('drop-relation-modal').dataset.targetId = targetId;
-  
-  modal.classList.add('show');
-}
-
-function confirmDropRelation(relationType) {
-  const draggedId = currentPersonId;
-  const targetId = document.getElementById('drop-relation-modal').dataset.targetId;
-  closeModal('drop-relation-modal');
-  
-  const dragged = data.persons[draggedId];
-  const target = data.persons[targetId];
-  if (!dragged || !target) return;
-  
-  switch (relationType) {
-    case 'child-of': // المسحوب يصبح ابن الهدف
-      if (target.gender === 'male') dragged.fatherId = targetId;
-      else dragged.motherId = targetId;
-      break;
-    case 'parent-of': // المسحوب يصبح أب/أم الهدف
-      if (dragged.gender === 'male') target.fatherId = draggedId;
-      else target.motherId = draggedId;
-      break;
-    case 'spouse-of': // المسحوب يصبح زوج الهدف
-      if (!dragged.marriages) dragged.marriages = [];
-      if (!target.marriages) target.marriages = [];
-      if (!dragged.marriages.find(m => m.spouseId === targetId)) {
-        dragged.marriages.push({ spouseId: targetId, status: 'married', startYear: null, endYear: null });
-      }
-      if (!target.marriages.find(m => m.spouseId === draggedId)) {
-        target.marriages.push({ spouseId: draggedId, status: 'married', startYear: null, endYear: null });
-      }
-      break;
-    case 'sibling-of': // المسحوب يصبح أخ الهدف
-      dragged.fatherId = target.fatherId;
-      dragged.motherId = target.motherId;
-      break;
-  }
-  
-  renderPersonsList();
-  layoutTree();
-  renderTree();
-  updateStats();
-  showToast(t('تم الربط', 'Linked'));
-}
-
-function locateInTree(personId) {
-  const person = data.persons[personId];
-  if (!person || person._x === undefined) return;
-  const canvas = document.getElementById('tree-canvas');
-  panX = canvas.clientWidth / 2 - person._x - CARD_W / 2;
-  panY = canvas.clientHeight / 2 - person._y - CARD_H / 2;
-  zoom = 1;
+function locatePerson(id) {
+  const p = db.persons[id];
+  if (!p || p._x === undefined) return;
+  const svg = document.getElementById('tree-svg');
+  state.panX = svg.clientWidth / 2 - p._x - CARD_W / 2;
+  state.panY = svg.clientHeight / 2 - p._y - CARD_H / 2;
+  state.zoom = 1;
   updateTransform();
   document.getElementById('zoom-level').textContent = '100%';
 }
 
-// ========== PAN & ZOOM ==========
-function setupCanvas() {
-  const canvas = document.getElementById('tree-canvas');
-  const container = document.getElementById('canvas-container');
-  
-  canvas.addEventListener('mousedown', e => {
-    if (e.target.closest('g[style*="cursor"]')) return;
-    isDragging = true; dragStartX = e.clientX - panX; dragStartY = e.clientY - panY;
-  });
-  canvas.addEventListener('mousemove', e => { if (!isDragging) return; panX = e.clientX - dragStartX; panY = e.clientY - dragStartY; updateTransform(); });
-  canvas.addEventListener('mouseup', () => isDragging = false);
-  canvas.addEventListener('mouseleave', () => isDragging = false);
-  
-  container.addEventListener('wheel', e => {
-    e.preventDefault();
-    zoom = Math.max(0.3, Math.min(2, zoom + (e.deltaY > 0 ? -0.1 : 0.1)));
-    updateTransform();
-    document.getElementById('zoom-level').textContent = Math.round(zoom * 100) + '%';
-  });
-  
-  let touchX, touchY;
-  canvas.addEventListener('touchstart', e => { if (e.touches.length === 1) { touchX = e.touches[0].clientX - panX; touchY = e.touches[0].clientY - panY; } }, { passive: true });
-  canvas.addEventListener('touchmove', e => { if (e.touches.length === 1) { panX = e.touches[0].clientX - touchX; panY = e.touches[0].clientY - touchY; updateTransform(); } }, { passive: true });
-}
-
-function zoomIn() { zoom = Math.min(2, zoom + 0.1); updateTransform(); document.getElementById('zoom-level').textContent = Math.round(zoom * 100) + '%'; }
-function zoomOut() { zoom = Math.max(0.3, zoom - 0.1); updateTransform(); document.getElementById('zoom-level').textContent = Math.round(zoom * 100) + '%'; }
-function fitToScreen() { zoom = 1; panX = 0; panY = 0; updateTransform(); document.getElementById('zoom-level').textContent = '100%'; }
-function updateTransform() { document.getElementById('tree-content').setAttribute('transform', `translate(${panX}, ${panY}) scale(${zoom})`); }
-
-// ========== STATS ==========
+// ==================== STATS ====================
 function updateStats() {
-  const persons = Object.values(data.persons);
-  document.getElementById('stat-total').textContent = persons.length;
+  const persons = Object.values(db.persons);
+  const levels = new Set(persons.map(p => p._level).filter(l => l !== undefined));
+  document.getElementById('stat-persons').textContent = persons.length;
   document.getElementById('stat-males').textContent = persons.filter(p => p.gender === 'male').length;
   document.getElementById('stat-females').textContent = persons.filter(p => p.gender === 'female').length;
-  document.getElementById('stat-generations').textContent = new Set(persons.map(p => p._level).filter(l => l !== undefined)).size || 0;
+  document.getElementById('stat-marriages').textContent = Object.keys(db.marriages).length;
+  document.getElementById('stat-gens').textContent = levels.size;
 }
 
-// ========== SAVE/LOAD ==========
-function saveToLocal() { localStorage.setItem('familyTreeV3', JSON.stringify(data)); showToast(t('تم الحفظ', 'Saved')); }
-function loadFromLocal() {
-  const saved = localStorage.getItem('familyTreeV3');
-  if (saved) { data = JSON.parse(saved); renderPersonsList(); layoutTree(); renderTree(); updateStats(); showToast(t('تم التحميل', 'Loaded')); }
-  else showToast(t('لا توجد بيانات', 'No data'));
+// ==================== SAVE/LOAD ====================
+function saveData() { localStorage.setItem('familyTreeV55', JSON.stringify(db)); toast(t('تم', 'Done')); }
+function loadData() {
+  const s = localStorage.getItem('familyTreeV55');
+  if (s) { db = JSON.parse(s); render(); toast(t('تم', 'Done')); }
+  else toast(t('لا بيانات', 'No data'));
 }
 
-function exportAsJSON() { download(JSON.stringify(data, null, 2), 'family-tree.json', 'application/json'); }
-function handleImport(e) {
-  const file = e.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = ev => {
-    try { data = JSON.parse(ev.target.result); renderPersonsList(); layoutTree(); renderTree(); updateStats(); showToast(t('تم الاستيراد', 'Imported')); }
-    catch { showToast(t('ملف غير صالح', 'Invalid file')); }
-  };
-  reader.readAsText(file);
-  e.target.value = '';
+function exportJSON() { dl(JSON.stringify(db, null, 2), 'family-tree.json', 'application/json'); }
+function importJSON(e) {
+  const f = e.target.files[0]; if (!f) return;
+  const r = new FileReader();
+  r.onload = ev => { try { db = JSON.parse(ev.target.result); render(); toast(t('تم', 'Done')); } catch { toast(t('خطأ', 'Error')); } };
+  r.readAsText(f); e.target.value = '';
 }
 
-function exportAsPNG() {
-  const svg = document.getElementById('tree-canvas');
-  const svgData = new XMLSerializer().serializeToString(svg);
+function exportPNG() {
+  const svg = document.getElementById('tree-svg');
+  const data = new XMLSerializer().serializeToString(svg);
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
   const img = new Image();
@@ -2247,27 +2040,27 @@ function exportAsPNG() {
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     const a = document.createElement('a'); a.download = 'family-tree.png'; a.href = canvas.toDataURL('image/png'); a.click();
   };
-  img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgData)));
+  img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(data)));
 }
 
-function exportAsSVG() { download(new XMLSerializer().serializeToString(document.getElementById('tree-canvas')), 'family-tree.svg', 'image/svg+xml'); }
+function exportSVG() { dl(new XMLSerializer().serializeToString(document.getElementById('tree-svg')), 'family-tree.svg', 'image/svg+xml'); }
 
-function download(content, filename, type) {
+function dl(content, name, type) {
   const blob = new Blob([content], { type });
-  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = filename; a.click(); URL.revokeObjectURL(a.href);
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; a.click(); URL.revokeObjectURL(a.href);
 }
 
 function clearAll() {
-  if (!confirm(t('مسح الشجرة بالكامل؟', 'Clear entire tree?'))) return;
-  data = { persons: {}, rootId: null };
-  renderPersonsList(); renderTree(); updateStats(); showToast(t('تم المسح', 'Cleared'));
+  if (!confirm(t('مسح الكل؟', 'Clear all?'))) return;
+  db = { persons: {}, marriages: {}, children: {} };
+  render(); toast(t('تم', 'Done'));
 }
 
-// ========== UTILS ==========
+// ==================== UTILS ====================
 function openModal(id) { document.getElementById(id).classList.add('show'); }
 function closeModal(id) { document.getElementById(id).classList.remove('show'); }
-function showToast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2000); }
-function toggleDropdown(id) { document.getElementById(id).classList.toggle('open'); }
+function toast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2000); }
+function toggleDD(id) { event.stopPropagation(); document.getElementById(id).classList.toggle('open'); }
 
 init();
 </script>
