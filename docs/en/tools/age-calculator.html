@@ -371,7 +371,7 @@
 /* New Age Section Styles */
 .main-label { font-weight: 700; color: var(--text-primary); font-size: 1rem; display: block; margin-bottom: 12px; }
 .compact-date-input { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.date-block { background: var(--bg-primary); border: 2px solid var(--border-color); border-radius: 10px; padding: 12px; }
+.date-block { background: var(--bg-primary); border: 2px solid var(--border-color); border-radius: 10px; padding: 12px; margin-bottom: 10px; }
 .date-block.gregorian { border-color: var(--primary); }
 .date-block.hijri { border-color: #22c55e; background: rgba(34, 197, 94, 0.05); }
 .block-label { display: block; font-size: 0.75rem; font-weight: 700; margin-bottom: 8px; color: var(--text-secondary); }
@@ -379,17 +379,29 @@
 .date-block.hijri .block-label { color: #22c55e; }
 .block-fields { display: flex; align-items: center; gap: 4px; justify-content: flex-start; }
 
+/* Diff Dates Row */
+.diff-dates-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.diff-date-col { }
+@media (max-width: 768px) { .diff-dates-row { grid-template-columns: 1fr; } }
+
+/* Now Button */
+.now-btn { background: var(--primary); color: white; border: none; border-radius: 8px; padding: 6px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+.now-btn:hover { background: var(--primary-dark); }
+
+/* Diff Result Box */
+.diff-result-box { position: relative; }
+
 /* Age Live Result */
 .age-live-result { text-align: center; padding: 24px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 16px; color: white; margin-bottom: 20px; }
 .age-years-line { font-size: 3rem; font-weight: 800; display: block; margin-bottom: 8px; }
 .age-details-line { font-size: 1.1rem; font-weight: 600; opacity: 0.95; }
 
 /* Birth Info Box - Single Line Style */
-.birth-info-box { background: var(--bg-secondary); border-radius: 12px; padding: 20px; margin-bottom: 16px; position: relative; }
+.birth-info-box { background: var(--bg-secondary); border-radius: 12px; padding: 20px; margin-bottom: 16px; position: relative; text-align: start; }
 .copy-btn { position: absolute; top: 12px; left: 12px; background: var(--bg-primary); border: 2px solid var(--border-color); border-radius: 8px; padding: 8px 12px; cursor: pointer; font-size: 0.85rem; color: var(--text-secondary); transition: all 0.2s; display: flex; align-items: center; gap: 6px; }
 .copy-btn:hover { border-color: var(--primary); color: var(--primary); }
 .copy-btn.copied { background: var(--primary); border-color: var(--primary); color: white; }
-.info-row { padding: 14px 0; border-bottom: 1px solid var(--border-color); }
+.info-row { padding: 14px 0; border-bottom: 1px solid var(--border-color); text-align: start; }
 .info-row:last-child { border-bottom: none; }
 .info-row .emoji { font-size: 1.3rem; margin-left: 8px; }
 .info-row .text { font-size: 1.1rem; color: var(--text-primary); }
@@ -397,7 +409,7 @@
 .info-row .text .hijri { color: #22c55e; font-weight: 600; }
 .info-row.highlight { background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1)); margin: 0 -20px; padding: 18px 20px; border-radius: 0; }
 .info-row.highlight .text { font-size: 1.2rem; }
-.info-row.highlight .days-num { font-size: 2rem; font-weight: 800; color: var(--primary); display: block; margin-top: 8px; }
+.info-row.highlight .days-num { font-size: 2rem; font-weight: 800; color: var(--primary); display: block; margin-top: 8px; text-align: center; }
 
 /* Zodiac Inline */
 .zodiac-inline { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 16px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1)); border-radius: 12px; margin-bottom: 16px; }
@@ -406,9 +418,9 @@
 .zodiac-inline .zodiac-dates { font-size: 0.85rem; color: var(--text-muted); }
 
 /* Fun Facts - Improved */
-.fun-facts-box { background: var(--bg-secondary); border-radius: 12px; padding: 20px; position: relative; }
+.fun-facts-box { background: var(--bg-secondary); border-radius: 12px; padding: 20px; position: relative; text-align: start; }
 .fun-facts-box h3 { margin: 0 0 16px 0; font-size: 1.1rem; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
-.fact-row { padding: 12px 0; border-bottom: 1px solid var(--border-color); font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; }
+.fact-row { padding: 12px 0; border-bottom: 1px solid var(--border-color); font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; text-align: start; }
 .fact-row:last-child { border-bottom: none; }
 .fact-row .emoji { font-size: 1.2rem; margin-left: 8px; }
 .fact-row .num { color: var(--primary); font-weight: 700; }
@@ -541,95 +553,101 @@
     <!-- Date Difference -->
     <div class="calc-section" id="diff-section">
       <div class="input-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label>From Date</label>
+        <div class="diff-dates-row">
+          <!-- From Date -->
+          <div class="diff-date-col">
+            <label class="main-label">From Date</label>
             <div class="date-input-container" id="diff-from-container">
-              <div class="dual-date-input">
-                <div class="date-row gregorian">
-                  <span class="date-row-label">Gregorian</span>
-                  <div class="date-fields">
-                    <div class="field-group"><span class="field-label">Year</span><input type="number" class="date-field year" id="diff-from-g-year" placeholder="YYYY" min="1" max="9999" oninput="validateField(this, 1, 9999); onGregorianChange('diff-from')"></div>
-                    <span class="date-sep">/</span>
-                    <div class="field-group"><span class="field-label">Month</span><input type="number" class="date-field month" id="diff-from-g-month" placeholder="MM" min="1" max="12" oninput="validateField(this, 1, 12); onGregorianChange('diff-from')"></div>
-                    <span class="date-sep">/</span>
-                    <div class="field-group"><span class="field-label">Day</span><input type="number" class="date-field day" id="diff-from-g-day" placeholder="DD" min="1" max="31" oninput="validateField(this, 1, 31); onGregorianChange('diff-from')"></div>
-                  </div>
+              <div class="date-block gregorian">
+                <span class="block-label">📅 Gregorian</span>
+                <div class="block-fields">
+                  <select class="date-select day" id="diff-from-g-day" onchange="onGregorianChange('diff-from')"></select>
+                  <span class="date-sep">/</span>
+                  <select class="date-select month" id="diff-from-g-month" onchange="updateDays('diff-from', 'g'); onGregorianChange('diff-from')"></select>
+                  <span class="date-sep">/</span>
+                  <input type="number" class="date-input year" id="diff-from-g-year" placeholder="Year" min="1" max="9999" oninput="updateDays('diff-from', 'g'); onGregorianChange('diff-from')">
                   <button type="button" class="date-picker-btn" onclick="toggleCalendar('diff-from', 'gregorian')">📅</button>
                 </div>
-                <div class="date-row hijri">
-                  <span class="date-row-label">Hijri</span>
-                  <div class="date-fields">
-                    <div class="field-group"><span class="field-label">Year</span><input type="number" class="date-field year" id="diff-from-h-year" placeholder="YYYY" min="1" max="9999" oninput="validateField(this, 1, 9999); onHijriChange('diff-from')"></div>
-                    <span class="date-sep">/</span>
-                    <div class="field-group"><span class="field-label">Month</span><input type="number" class="date-field month" id="diff-from-h-month" placeholder="MM" min="1" max="12" oninput="validateField(this, 1, 12); onHijriChange('diff-from')"></div>
-                    <span class="date-sep">/</span>
-                    <div class="field-group"><span class="field-label">Day</span><input type="number" class="date-field day" id="diff-from-h-day" placeholder="DD" min="1" max="30" oninput="validateField(this, 1, 30); onHijriChange('diff-from')"></div>
-                  </div>
+              </div>
+              <div class="date-block hijri">
+                <span class="block-label">🌙 Hijri</span>
+                <div class="block-fields">
+                  <select class="date-select day" id="diff-from-h-day" onchange="onHijriChange('diff-from')"></select>
+                  <span class="date-sep">/</span>
+                  <select class="date-select month hijri-month" id="diff-from-h-month" onchange="updateDays('diff-from', 'h'); onHijriChange('diff-from')"></select>
+                  <span class="date-sep">/</span>
+                  <input type="number" class="date-input year" id="diff-from-h-year" placeholder="Year" min="1" max="9999" oninput="updateDays('diff-from', 'h'); onHijriChange('diff-from')">
                   <button type="button" class="date-picker-btn" onclick="toggleCalendar('diff-from', 'hijri')">🌙</button>
                 </div>
-                <div class="date-row time-row">
-                  <span class="date-row-label">Time</span>
-                  <div class="date-fields">
-                    <div class="field-group"><span class="field-label">Hour</span><input type="number" class="date-field hour" id="diff-from-hour" placeholder="HH" min="0" max="23" value="0" oninput="validateField(this, 0, 23); calculateDiff()"></div>
-                    <span class="time-sep">:</span>
-                    <div class="field-group"><span class="field-label">Min</span><input type="number" class="date-field minute" id="diff-from-minute" placeholder="MM" min="0" max="59" value="0" oninput="validateField(this, 0, 59); calculateDiff()"></div>
-                    <span class="time-sep">:</span>
-                    <div class="field-group"><span class="field-label">Sec</span><input type="number" class="date-field second" id="diff-from-second" placeholder="SS" min="0" max="59" value="0" oninput="validateField(this, 0, 59); calculateDiff()"></div>
-                  </div>
-                  <button type="button" class="date-picker-btn" onclick="toggleTimePicker('diff-from')">🕐</button>
+              </div>
+              <div class="time-block-row">
+                <span class="block-label">🕐 Time</span>
+                <div class="time-fields-12">
+                  <select class="date-select hour12" id="diff-from-hour12" onchange="calculateDiff()"></select>
+                  <span class="time-sep">:</span>
+                  <select class="date-select minute" id="diff-from-minute" onchange="calculateDiff()"></select>
+                  <span class="time-sep">:</span>
+                  <select class="date-select second" id="diff-from-second" onchange="calculateDiff()"></select>
+                  <select class="date-select ampm" id="diff-from-ampm" onchange="calculateDiff()">
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                  </select>
                 </div>
               </div>
               <div class="calendar-popup" id="diff-from-calendar"></div>
-              <div class="time-picker-popup" id="diff-from-time-picker"></div>
             </div>
           </div>
-          <div class="form-group">
-            <label>To Date</label>
+          
+          <!-- To Date -->
+          <div class="diff-date-col">
+            <label class="main-label">To Date</label>
             <div class="date-input-container" id="diff-to-container">
-              <div class="dual-date-input">
-                <div class="date-row gregorian">
-                  <span class="date-row-label">Gregorian</span>
-                  <div class="date-fields">
-                    <div class="field-group"><span class="field-label">Year</span><input type="number" class="date-field year" id="diff-to-g-year" placeholder="YYYY" min="1" max="9999" oninput="validateField(this, 1, 9999); onGregorianChange('diff-to'); stopDiffAutoMode()"></div>
-                    <span class="date-sep">/</span>
-                    <div class="field-group"><span class="field-label">Month</span><input type="number" class="date-field month" id="diff-to-g-month" placeholder="MM" min="1" max="12" oninput="validateField(this, 1, 12); onGregorianChange('diff-to'); stopDiffAutoMode()"></div>
-                    <span class="date-sep">/</span>
-                    <div class="field-group"><span class="field-label">Day</span><input type="number" class="date-field day" id="diff-to-g-day" placeholder="DD" min="1" max="31" oninput="validateField(this, 1, 31); onGregorianChange('diff-to'); stopDiffAutoMode()"></div>
-                  </div>
+              <div class="date-block gregorian">
+                <span class="block-label">📅 Gregorian</span>
+                <div class="block-fields">
+                  <select class="date-select day" id="diff-to-g-day" onchange="onGregorianChange('diff-to'); stopDiffAutoMode()"></select>
+                  <span class="date-sep">/</span>
+                  <select class="date-select month" id="diff-to-g-month" onchange="updateDays('diff-to', 'g'); onGregorianChange('diff-to'); stopDiffAutoMode()"></select>
+                  <span class="date-sep">/</span>
+                  <input type="number" class="date-input year" id="diff-to-g-year" placeholder="Year" min="1" max="9999" oninput="updateDays('diff-to', 'g'); onGregorianChange('diff-to'); stopDiffAutoMode()">
                   <button type="button" class="date-picker-btn" onclick="toggleCalendar('diff-to', 'gregorian'); stopDiffAutoMode()">📅</button>
                 </div>
-                <div class="date-row hijri">
-                  <span class="date-row-label">Hijri</span>
-                  <div class="date-fields">
-                    <div class="field-group"><span class="field-label">Year</span><input type="number" class="date-field year" id="diff-to-h-year" placeholder="YYYY" min="1" max="9999" oninput="validateField(this, 1, 9999); onHijriChange('diff-to'); stopDiffAutoMode()"></div>
-                    <span class="date-sep">/</span>
-                    <div class="field-group"><span class="field-label">Month</span><input type="number" class="date-field month" id="diff-to-h-month" placeholder="MM" min="1" max="12" oninput="validateField(this, 1, 12); onHijriChange('diff-to'); stopDiffAutoMode()"></div>
-                    <span class="date-sep">/</span>
-                    <div class="field-group"><span class="field-label">Day</span><input type="number" class="date-field day" id="diff-to-h-day" placeholder="DD" min="1" max="30" oninput="validateField(this, 1, 30); onHijriChange('diff-to'); stopDiffAutoMode()"></div>
-                  </div>
+              </div>
+              <div class="date-block hijri">
+                <span class="block-label">🌙 Hijri</span>
+                <div class="block-fields">
+                  <select class="date-select day" id="diff-to-h-day" onchange="onHijriChange('diff-to'); stopDiffAutoMode()"></select>
+                  <span class="date-sep">/</span>
+                  <select class="date-select month hijri-month" id="diff-to-h-month" onchange="updateDays('diff-to', 'h'); onHijriChange('diff-to'); stopDiffAutoMode()"></select>
+                  <span class="date-sep">/</span>
+                  <input type="number" class="date-input year" id="diff-to-h-year" placeholder="Year" min="1" max="9999" oninput="updateDays('diff-to', 'h'); onHijriChange('diff-to'); stopDiffAutoMode()">
                   <button type="button" class="date-picker-btn" onclick="toggleCalendar('diff-to', 'hijri'); stopDiffAutoMode()">🌙</button>
                 </div>
-                <div class="date-row time-row">
-                  <span class="date-row-label">Time</span>
-                  <div class="date-fields">
-                    <div class="field-group"><span class="field-label">Hour</span><input type="number" class="date-field hour" id="diff-to-hour" placeholder="HH" min="0" max="23" oninput="validateField(this, 0, 23); stopDiffAutoMode(); calculateDiff()"></div>
-                    <span class="time-sep">:</span>
-                    <div class="field-group"><span class="field-label">Min</span><input type="number" class="date-field minute" id="diff-to-minute" placeholder="MM" min="0" max="59" oninput="validateField(this, 0, 59); stopDiffAutoMode(); calculateDiff()"></div>
-                    <span class="time-sep">:</span>
-                    <div class="field-group"><span class="field-label">Sec</span><input type="number" class="date-field second" id="diff-to-second" placeholder="SS" min="0" max="59" oninput="validateField(this, 0, 59); stopDiffAutoMode(); calculateDiff()"></div>
-                  </div>
-                  <button type="button" class="date-picker-btn" onclick="setNowTime('diff-to'); stopDiffAutoMode()">⏱️</button>
+              </div>
+              <div class="time-block-row">
+                <span class="block-label">🕐 Time</span>
+                <div class="time-fields-12">
+                  <select class="date-select hour12" id="diff-to-hour12" onchange="stopDiffAutoMode(); calculateDiff()"></select>
+                  <span class="time-sep">:</span>
+                  <select class="date-select minute" id="diff-to-minute" onchange="stopDiffAutoMode(); calculateDiff()"></select>
+                  <span class="time-sep">:</span>
+                  <select class="date-select second" id="diff-to-second" onchange="stopDiffAutoMode(); calculateDiff()"></select>
+                  <select class="date-select ampm" id="diff-to-ampm" onchange="stopDiffAutoMode(); calculateDiff()">
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                  </select>
+                  <button type="button" class="now-btn" onclick="setNowDiff()">Now</button>
                 </div>
               </div>
               <div class="calendar-popup" id="diff-to-calendar"></div>
-              <div class="time-picker-popup" id="diff-to-time-picker"></div>
             </div>
           </div>
         </div>
       </div>
+      
       <div class="result-box" id="diff-result">
-        <div class="diff-result">
+        <div class="diff-result-box">
+          <button class="copy-btn" onclick="copyDiffResult()"><span>📋</span> Copy</button>
           <div class="diff-main" id="diff-main"></div>
           <div class="diff-live" id="diff-live"></div>
           <div class="stats-grid">
@@ -1023,12 +1041,12 @@ function calculateAge() {
       `<span class="emoji">⏳</span><span class="text">Days until birthday #${nextAge}<span class="days-num">${daysUntil} days</span></span>`;
   }
   
-  // Store for copy function
+  // Store for copy function (without emojis)
   window.ageInfo = {
     age: `${yrs} ${isArabic ? 'سنة' : 'years'} ${isArabic ? 'و' : 'and'} ${mos} ${isArabic ? 'شهر' : 'months'} ${isArabic ? 'و' : 'and'} ${dys} ${isArabic ? 'يوم' : 'days'}`,
-    born: isArabic ? `🎂 ولدت يوم ${bornGreg} الموافق لـ ${bornHijri}` : `🎂 Born on ${bornGreg} = ${bornHijri}`,
-    nextBday: isArabic ? `🎁 عيد ميلادك القادم ${nbGreg} الموافق لـ ${nbHijri}` : `🎁 Next birthday: ${nbGreg} = ${nbHijri}`,
-    daysLeft: isArabic ? `⏳ الأيام المتبقية حتى عيد ميلادك الـ ${nextAge}: ${daysUntil} يوم` : `⏳ Days until birthday #${nextAge}: ${daysUntil} days`
+    born: isArabic ? `ولدت يوم ${bornGreg} الموافق لـ ${bornHijri}` : `Born on ${bornGreg} = ${bornHijri}`,
+    nextBday: isArabic ? `عيد ميلادك القادم ${nbGreg} الموافق لـ ${nbHijri}` : `Next birthday: ${nbGreg} = ${nbHijri}`,
+    daysLeft: isArabic ? `الأيام المتبقية حتى عيد ميلادك الـ ${nextAge}: ${daysUntil} يوم` : `Days until birthday #${nextAge}: ${daysUntil} days`
   };
   
   // Zodiac
@@ -1057,17 +1075,18 @@ function calculateAge() {
   let factsText = '';
   
   if (isArabic) {
-    const f1 = `💓 نبض قلبك حوالي ${heartbeats.toLocaleString()} نبضة`;
-    const f2 = `👀 طرفت عيناك أكثر من ${blinks.toLocaleString()} طرفة`;
-    const f3 = `🚶 مشيت ما يعادل ${distanceWalked.toLocaleString()} كم، أي كأنك درت حول الأرض ${timesAroundEarth} مرة!`;
-    const f4 = `🌍 دارت بك الأرض حول الشمس ${orbitsAroundSun} دورة كاملة بسرعة 107,000 كم/ساعة`;
-    const f5 = `🌕 شهدت ${fullMoons.toLocaleString()} بدراً مكتملاً`;
-    const f6 = yearsToKahf > 0 ? 
-      `😴 نمت حوالي ${sleepHours.toLocaleString()} ساعة (${sleepYears} سنة!)، نَم ${yearsToKahf} سنة أخرى متواصلة لتلحق بأهل الكهف 😅` :
-      `😴 نمت حوالي ${sleepHours.toLocaleString()} ساعة، لقد تجاوزت أهل الكهف! 😱`;
-    const f7 = yearsToTurtle > 0 ?
-      `🐢 أمامك ${yearsToTurtle} سنة لتصل لعمر أكبر سلحفاة معروفة (190 سنة)` :
-      `🐢 لقد تجاوزت عمر أكبر سلحفاة معروفة! أنت أسطورة! 🎉`;
+    // Text without emojis for copy
+    const t1 = `نبض قلبك حوالي ${heartbeats.toLocaleString()} نبضة`;
+    const t2 = `طرفت عيناك أكثر من ${blinks.toLocaleString()} طرفة`;
+    const t3 = `مشيت ما يعادل ${distanceWalked.toLocaleString()} كم، أي كأنك درت حول الأرض ${timesAroundEarth} مرة!`;
+    const t4 = `دارت بك الأرض حول الشمس ${orbitsAroundSun} دورة كاملة بسرعة 107,000 كم/ساعة`;
+    const t5 = `شهدت ${fullMoons.toLocaleString()} بدراً مكتملاً`;
+    const t6 = yearsToKahf > 0 ? 
+      `نمت حوالي ${sleepHours.toLocaleString()} ساعة (${sleepYears} سنة!)، نَم ${yearsToKahf} سنة أخرى متواصلة لتلحق بأهل الكهف` :
+      `نمت حوالي ${sleepHours.toLocaleString()} ساعة، لقد تجاوزت أهل الكهف!`;
+    const t7 = yearsToTurtle > 0 ?
+      `أمامك ${yearsToTurtle} سنة لتصل لعمر أكبر سلحفاة معروفة (190 سنة)` :
+      `لقد تجاوزت عمر أكبر سلحفاة معروفة! أنت أسطورة!`;
     
     factsHtml = `
       <div class="fact-row"><span class="emoji">💓</span> نبض قلبك حوالي <span class="num">${heartbeats.toLocaleString()}</span> نبضة</div>
@@ -1075,22 +1094,23 @@ function calculateAge() {
       <div class="fact-row"><span class="emoji">🚶</span> مشيت ما يعادل <span class="num">${distanceWalked.toLocaleString()}</span> كم، أي كأنك درت حول الأرض <span class="num">${timesAroundEarth}</span> مرة!</div>
       <div class="fact-row"><span class="emoji">🌍</span> دارت بك الأرض حول الشمس <span class="num">${orbitsAroundSun}</span> دورة كاملة بسرعة 107,000 كم/ساعة</div>
       <div class="fact-row"><span class="emoji">🌕</span> شهدت <span class="num">${fullMoons.toLocaleString()}</span> بدراً مكتملاً</div>
-      <div class="fact-row">${f6}</div>
-      <div class="fact-row">${f7}</div>
+      <div class="fact-row"><span class="emoji">😴</span> ${t6}</div>
+      <div class="fact-row"><span class="emoji">🐢</span> ${t7}</div>
     `;
-    factsText = [f1, f2, f3, f4, f5, f6, f7].join('\n');
+    factsText = [t1, t2, t3, t4, t5, t6, t7].join('\n');
   } else {
-    const f1 = `💓 Your heart has beaten ~${heartbeats.toLocaleString()} times`;
-    const f2 = `👀 You've blinked over ${blinks.toLocaleString()} times`;
-    const f3 = `🚶 You've walked ~${distanceWalked.toLocaleString()} km, circling Earth ${timesAroundEarth} times!`;
-    const f4 = `🌍 Earth carried you around the Sun ${orbitsAroundSun} times at 107,000 km/h`;
-    const f5 = `🌕 You've witnessed ${fullMoons.toLocaleString()} full moons`;
-    const f6 = yearsToKahf > 0 ?
-      `😴 You've slept ~${sleepHours.toLocaleString()} hours (${sleepYears} years!), sleep ${yearsToKahf} more years straight to catch up with the Sleepers of the Cave 😅` :
-      `😴 You've slept ~${sleepHours.toLocaleString()} hours, you beat the Sleepers of the Cave! 😱`;
-    const f7 = yearsToTurtle > 0 ?
-      `🐢 ${yearsToTurtle} years to go to match the oldest known tortoise (190 years)` :
-      `🐢 You outlived the oldest known tortoise! Legend! 🎉`;
+    // Text without emojis for copy
+    const t1 = `Your heart has beaten ~${heartbeats.toLocaleString()} times`;
+    const t2 = `You've blinked over ${blinks.toLocaleString()} times`;
+    const t3 = `You've walked ~${distanceWalked.toLocaleString()} km, circling Earth ${timesAroundEarth} times!`;
+    const t4 = `Earth carried you around the Sun ${orbitsAroundSun} times at 107,000 km/h`;
+    const t5 = `You've witnessed ${fullMoons.toLocaleString()} full moons`;
+    const t6 = yearsToKahf > 0 ?
+      `You've slept ~${sleepHours.toLocaleString()} hours (${sleepYears} years!), sleep ${yearsToKahf} more years straight to catch up with the Sleepers of the Cave` :
+      `You've slept ~${sleepHours.toLocaleString()} hours, you beat the Sleepers of the Cave!`;
+    const t7 = yearsToTurtle > 0 ?
+      `${yearsToTurtle} years to go to match the oldest known tortoise (190 years)` :
+      `You outlived the oldest known tortoise! Legend!`;
     
     factsHtml = `
       <div class="fact-row"><span class="emoji">💓</span> Your heart has beaten ~<span class="num">${heartbeats.toLocaleString()}</span> times</div>
@@ -1098,10 +1118,10 @@ function calculateAge() {
       <div class="fact-row"><span class="emoji">🚶</span> You've walked ~<span class="num">${distanceWalked.toLocaleString()}</span> km, circling Earth <span class="num">${timesAroundEarth}</span> times!</div>
       <div class="fact-row"><span class="emoji">🌍</span> Earth carried you around the Sun <span class="num">${orbitsAroundSun}</span> times at 107,000 km/h</div>
       <div class="fact-row"><span class="emoji">🌕</span> You've witnessed <span class="num">${fullMoons.toLocaleString()}</span> full moons</div>
-      <div class="fact-row">${f6}</div>
-      <div class="fact-row">${f7}</div>
+      <div class="fact-row"><span class="emoji">😴</span> ${t6}</div>
+      <div class="fact-row"><span class="emoji">🐢</span> ${t7}</div>
     `;
-    factsText = [f1, f2, f3, f4, f5, f6, f7].join('\n');
+    factsText = [t1, t2, t3, t4, t5, t6, t7].join('\n');
   }
   document.getElementById('fun-facts-content').innerHTML = factsHtml;
   window.funFactsText = factsText;
@@ -1121,7 +1141,35 @@ const diffMs = Math.abs(td - fd), totS = Math.floor(diffMs / 1000), totMn = Math
 const st = fd < td ? fd : td, en = fd < td ? td : fd; let yrs = en.getFullYear() - st.getFullYear(), mos = en.getMonth() - st.getMonth(), dys = en.getDate() - st.getDate(); if (dys < 0) { mos--; dys += new Date(en.getFullYear(), en.getMonth(), 0).getDate(); } if (mos < 0) { yrs--; mos += 12; }
 document.getElementById('diff-main').textContent = isArabic ? `${yrs} سنة و ${mos} شهر و ${dys} يوم` : `${yrs} years, ${mos} months, ${dys} days`;
 const hrs = totH % 24, mns = totMn % 60, scs = totS % 60; document.getElementById('diff-live').textContent = isArabic ? `${totD} يوم ${hrs} ساعة ${mns} دقيقة ${scs} ثانية` : `${totD}d ${hrs}h ${mns}m ${scs}s`;
-document.getElementById('diff-months').textContent = totMo.toLocaleString(); document.getElementById('diff-weeks').textContent = totW.toLocaleString(); document.getElementById('diff-days').textContent = totD.toLocaleString(); document.getElementById('diff-hours').textContent = totH.toLocaleString(); document.getElementById('diff-minutes').textContent = totMn.toLocaleString(); document.getElementById('diff-seconds').textContent = totS.toLocaleString(); document.getElementById('diff-result').classList.add('show'); }
+document.getElementById('diff-months').textContent = totMo.toLocaleString(); document.getElementById('diff-weeks').textContent = totW.toLocaleString(); document.getElementById('diff-days').textContent = totD.toLocaleString(); document.getElementById('diff-hours').textContent = totH.toLocaleString(); document.getElementById('diff-minutes').textContent = totMn.toLocaleString(); document.getElementById('diff-seconds').textContent = totS.toLocaleString(); 
+// Store for copy
+window.diffInfo = {
+  main: isArabic ? `${yrs} سنة و ${mos} شهر و ${dys} يوم` : `${yrs} years, ${mos} months, ${dys} days`,
+  details: isArabic ? `${totD} يوم ${hrs} ساعة ${mns} دقيقة ${scs} ثانية` : `${totD}d ${hrs}h ${mns}m ${scs}s`,
+  stats: isArabic ? 
+    `${totMo.toLocaleString()} شهر | ${totW.toLocaleString()} أسبوع | ${totD.toLocaleString()} يوم | ${totH.toLocaleString()} ساعة | ${totMn.toLocaleString()} دقيقة | ${totS.toLocaleString()} ثانية` :
+    `${totMo.toLocaleString()} months | ${totW.toLocaleString()} weeks | ${totD.toLocaleString()} days | ${totH.toLocaleString()} hours | ${totMn.toLocaleString()} minutes | ${totS.toLocaleString()} seconds`
+};
+document.getElementById('diff-result').classList.add('show'); }
+
+// Set Now for Diff
+function setNowDiff() {
+  const now = new Date();
+  const h = now.getHours();
+  const h12 = h === 0 ? 12 : (h > 12 ? h - 12 : h);
+  const ampm = h < 12 ? 'AM' : 'PM';
+  
+  document.getElementById('diff-to-g-day').value = now.getDate();
+  document.getElementById('diff-to-g-month').value = now.getMonth() + 1;
+  document.getElementById('diff-to-g-year').value = now.getFullYear();
+  document.getElementById('diff-to-hour12').value = h12;
+  document.getElementById('diff-to-minute').value = now.getMinutes();
+  document.getElementById('diff-to-second').value = now.getSeconds();
+  document.getElementById('diff-to-ampm').value = ampm;
+  
+  onGregorianChange('diff-to');
+  calculateDiff();
+}
 
 // Add Calculator
 function calculateAdd() { const sd = getDateTime('add'); if (!sd) { document.getElementById('add-result').classList.remove('show'); return; }
@@ -1135,10 +1183,8 @@ document.getElementById('add-result-time').textContent = `${String(r.getHours())
 const zodiacSigns = [ { n: isArabic ? 'الجدي' : 'Capricorn', i: '♑', s: [12, 22], e: [1, 19] }, { n: isArabic ? 'الدلو' : 'Aquarius', i: '♒', s: [1, 20], e: [2, 18] }, { n: isArabic ? 'الحوت' : 'Pisces', i: '♓', s: [2, 19], e: [3, 20] }, { n: isArabic ? 'الحمل' : 'Aries', i: '♈', s: [3, 21], e: [4, 19] }, { n: isArabic ? 'الثور' : 'Taurus', i: '♉', s: [4, 20], e: [5, 20] }, { n: isArabic ? 'الجوزاء' : 'Gemini', i: '♊', s: [5, 21], e: [6, 20] }, { n: isArabic ? 'السرطان' : 'Cancer', i: '♋', s: [6, 21], e: [7, 22] }, { n: isArabic ? 'الأسد' : 'Leo', i: '♌', s: [7, 23], e: [8, 22] }, { n: isArabic ? 'العذراء' : 'Virgo', i: '♍', s: [8, 23], e: [9, 22] }, { n: isArabic ? 'الميزان' : 'Libra', i: '♎', s: [9, 23], e: [10, 22] }, { n: isArabic ? 'العقرب' : 'Scorpio', i: '♏', s: [10, 23], e: [11, 21] }, { n: isArabic ? 'القوس' : 'Sagittarius', i: '♐', s: [11, 22], e: [12, 21] } ];
 function updateZodiac(m, d) { for (const z of zodiacSigns) { const [sm, sd] = z.s, [em, ed] = z.e; let match = false; if (sm === em) match = m === sm && d >= sd && d <= ed; else if (sm > em) match = (m === sm && d >= sd) || (m === em && d <= ed); else match = (m === sm && d >= sd) || (m === em && d <= ed); if (match) { document.getElementById('zodiac-icon').textContent = z.i; document.getElementById('zodiac-name').textContent = z.n; document.getElementById('zodiac-dates').textContent = `${monthNames[sm - 1]} ${sd} - ${monthNames[em - 1]} ${ed}`; return; } } }
 
-// Init Dropdowns
-function initDropdowns() {
-  const prefix = 'birth';
-  
+// Init Dropdowns for a prefix
+function initDropdownsFor(prefix) {
   // Gregorian Month
   const gMonthSel = document.getElementById(`${prefix}-g-month`);
   if (gMonthSel) {
@@ -1203,6 +1249,13 @@ function initDropdowns() {
   }
 }
 
+// Init all dropdowns
+function initDropdowns() {
+  initDropdownsFor('birth');
+  initDropdownsFor('diff-from');
+  initDropdownsFor('diff-to');
+}
+
 // Update days based on month/year
 function updateDays(prefix, type) {
   const y = getVal(`${prefix}-${type}-year`);
@@ -1237,8 +1290,15 @@ function copyAgeInfo() {
 
 function copyFunFacts() {
   if (!window.funFactsText) return;
-  const title = isArabic ? '✨ حقائق ممتعة' : '✨ Fun Facts';
+  const title = isArabic ? 'حقائق ممتعة' : 'Fun Facts';
   copyToClipboard(title + '\n' + window.funFactsText, 'fun-facts-box');
+}
+
+function copyDiffResult() {
+  if (!window.diffInfo) return;
+  const title = isArabic ? 'الفرق بين التاريخين' : 'Date Difference';
+  const text = [title, window.diffInfo.main, window.diffInfo.details, window.diffInfo.stats].join('\n');
+  copyToClipboard(text, 'diff-result-box');
 }
 
 function copyToClipboard(text, containerId) {
