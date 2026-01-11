@@ -314,9 +314,10 @@
 
 /* Calendar Popup */
 .date-input-container { position: relative; }
-.calendar-popup { position: absolute; top: 100%; right: 0; width: 320px; z-index: 1000; background: var(--bg-primary); border: 2px solid var(--border-color); border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); padding: 16px; display: none; margin-top: 8px; }
+.calendar-popup { position: absolute; top: 100%; right: 0; left: 0; width: auto; max-width: 320px; z-index: 1000; background: var(--bg-primary); border: 2px solid var(--border-color); border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); padding: 16px; display: none; margin-top: 4px; }
 .calendar-popup.show { display: block; animation: fadeIn 0.2s ease; }
 .calendar-popup.hijri { border-color: rgba(34, 197, 94, 0.4); }
+.date-block { position: relative; }
 
 .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
 .calendar-nav { background: transparent; border: none; font-size: 1.2rem; cursor: pointer; padding: 4px 8px; border-radius: 6px; color: var(--text-secondary); }
@@ -519,6 +520,7 @@
                   <input type="number" class="date-input year" id="birth-g-year" placeholder="Year" min="1" max="9999" oninput="updateDays('birth', 'g'); onGregorianChange('birth')">
                   <button type="button" class="date-picker-btn" onclick="toggleCalendar('birth', 'gregorian')">📅</button>
                 </div>
+                <div class="calendar-popup" id="birth-calendar-g"></div>
               </div>
               <div class="date-block hijri">
                 <span class="block-label">🌙 Hijri</span>
@@ -530,6 +532,7 @@
                   <input type="number" class="date-input year" id="birth-h-year" placeholder="Year" min="1" max="9999" oninput="updateDays('birth', 'h'); onHijriChange('birth')">
                   <button type="button" class="date-picker-btn" onclick="toggleCalendar('birth', 'hijri')">🌙</button>
                 </div>
+                <div class="calendar-popup hijri" id="birth-calendar-h"></div>
               </div>
             </div>
             <div class="time-block-row">
@@ -546,7 +549,6 @@
                 </select>
               </div>
             </div>
-            <div class="calendar-popup" id="birth-calendar"></div>
           </div>
         </div>
       </div>
@@ -596,6 +598,7 @@
                   <input type="number" class="date-input year" id="diff-from-g-year" placeholder="Year" min="1" max="9999" oninput="updateDays('diff-from', 'g'); onGregorianChange('diff-from')">
                   <button type="button" class="date-picker-btn" onclick="toggleCalendar('diff-from', 'gregorian')">📅</button>
                 </div>
+                <div class="calendar-popup" id="diff-from-calendar-g"></div>
               </div>
               <div class="date-block hijri">
                 <span class="block-label">🌙 Hijri</span>
@@ -607,6 +610,7 @@
                   <input type="number" class="date-input year" id="diff-from-h-year" placeholder="Year" min="1" max="9999" oninput="updateDays('diff-from', 'h'); onHijriChange('diff-from')">
                   <button type="button" class="date-picker-btn" onclick="toggleCalendar('diff-from', 'hijri')">🌙</button>
                 </div>
+                <div class="calendar-popup hijri" id="diff-from-calendar-h"></div>
               </div>
             </div>
             <div class="time-block-row">
@@ -623,7 +627,6 @@
                 </select>
               </div>
             </div>
-            <div class="calendar-popup" id="diff-from-calendar"></div>
           </div>
         </div>
         
@@ -642,6 +645,7 @@
                   <input type="number" class="date-input year" id="diff-to-g-year" placeholder="Year" min="1" max="9999" oninput="updateDays('diff-to', 'g'); onGregorianChange('diff-to'); stopDiffAutoMode()">
                   <button type="button" class="date-picker-btn" onclick="toggleCalendar('diff-to', 'gregorian'); stopDiffAutoMode()">📅</button>
                 </div>
+                <div class="calendar-popup" id="diff-to-calendar-g"></div>
               </div>
               <div class="date-block hijri">
                 <span class="block-label">🌙 Hijri</span>
@@ -653,6 +657,7 @@
                   <input type="number" class="date-input year" id="diff-to-h-year" placeholder="Year" min="1" max="9999" oninput="updateDays('diff-to', 'h'); onHijriChange('diff-to'); stopDiffAutoMode()">
                   <button type="button" class="date-picker-btn" onclick="toggleCalendar('diff-to', 'hijri'); stopDiffAutoMode()">🌙</button>
                 </div>
+                <div class="calendar-popup hijri" id="diff-to-calendar-h"></div>
               </div>
             </div>
             <div class="time-block-row">
@@ -670,7 +675,6 @@
                 <button type="button" class="now-btn" onclick="setNowDiff()">Now</button>
               </div>
             </div>
-            <div class="calendar-popup" id="diff-to-calendar"></div>
           </div>
         </div>
       </div>
@@ -718,6 +722,7 @@
                   <input type="number" class="date-input year" id="add-g-year" placeholder="Year" min="1" max="9999" oninput="updateDays('add', 'g'); onGregorianChange('add')">
                   <button type="button" class="date-picker-btn" onclick="toggleCalendar('add', 'gregorian')">📅</button>
                 </div>
+                <div class="calendar-popup" id="add-calendar-g"></div>
               </div>
               <div class="date-block hijri">
                 <span class="block-label">🌙 Hijri</span>
@@ -729,6 +734,7 @@
                   <input type="number" class="date-input year" id="add-h-year" placeholder="Year" min="1" max="9999" oninput="updateDays('add', 'h'); onHijriChange('add')">
                   <button type="button" class="date-picker-btn" onclick="toggleCalendar('add', 'hijri')">🌙</button>
                 </div>
+                <div class="calendar-popup hijri" id="add-calendar-h"></div>
               </div>
             </div>
             <div class="time-block-row">
@@ -746,7 +752,6 @@
                 <button type="button" class="now-btn" onclick="setNowAdd()">Now</button>
               </div>
             </div>
-            <div class="calendar-popup" id="add-calendar"></div>
           </div>
         </div>
         
@@ -897,9 +902,32 @@ function getDateTime(p) { const v = getDateValues(p); if (v.gY < 1 || v.gM < 1 |
 function setDateTimeFromDate(p, d) { setGregorian(p, d.getFullYear(), d.getMonth() + 1, d.getDate()); setTime(p, d.getHours(), d.getMinutes(), d.getSeconds()); const h = gregorianToHijri(d.getFullYear(), d.getMonth() + 1, d.getDate()); setHijri(p, h.year, h.month, h.day); }
 
 // Calendar
-function toggleCalendar(p, t) { const id = `${p}-calendar`; const cal = document.getElementById(id); if (openCalendar && openCalendar !== id) document.getElementById(openCalendar)?.classList.remove('show'); if (cal.classList.contains('show')) { cal.classList.remove('show'); openCalendar = null; } else { renderCalendar(p, t); cal.classList.add('show'); cal.classList.toggle('hijri', t === 'hijri'); openCalendar = id; } }
+function toggleCalendar(p, t) { 
+  const suffix = t === 'hijri' ? 'h' : 'g';
+  const id = `${p}-calendar-${suffix}`; 
+  const cal = document.getElementById(id); 
+  if (!cal) return;
+  if (openCalendar && openCalendar !== id) {
+    const prevCal = document.getElementById(openCalendar);
+    if (prevCal) prevCal.classList.remove('show');
+  }
+  if (cal.classList.contains('show')) { 
+    cal.classList.remove('show'); 
+    openCalendar = null; 
+  } else { 
+    renderCalendar(p, t); 
+    cal.classList.add('show'); 
+    openCalendar = id; 
+  } 
+}
+function getCalendarId(p, t) {
+  const suffix = t === 'hijri' ? 'h' : 'g';
+  return `${p}-calendar-${suffix}`;
+}
+
 function renderCalendar(p, t) { 
-  const cal = document.getElementById(`${p}-calendar`); 
+  const cal = document.getElementById(getCalendarId(p, t)); 
+  if (!cal) return;
   const v = getDateValues(p); 
   let y, m, selD; 
   if (t === 'gregorian') { 
@@ -953,7 +981,8 @@ function renderCalendar(p, t) {
 }
 
 function chgYear(p, t, delta) {
-  const cal = document.getElementById(`${p}-calendar`);
+  const cal = document.getElementById(getCalendarId(p, t));
+  if (!cal) return;
   let y = parseInt(cal.dataset.year) || new Date().getFullYear();
   let m = parseInt(cal.dataset.month) || 1;
   y += delta;
@@ -962,7 +991,8 @@ function chgYear(p, t, delta) {
 }
 
 function chgMonth(p, t, delta) { 
-  const cal = document.getElementById(`${p}-calendar`);
+  const cal = document.getElementById(getCalendarId(p, t));
+  if (!cal) return;
   let y = parseInt(cal.dataset.year) || new Date().getFullYear();
   let m = parseInt(cal.dataset.month) || 1;
   m += delta; 
@@ -974,7 +1004,8 @@ function chgMonth(p, t, delta) {
 }
 
 function renderCalendarDirect(p, t, y, m) {
-  const cal = document.getElementById(`${p}-calendar`);
+  const cal = document.getElementById(getCalendarId(p, t));
+  if (!cal) return;
   const v = getDateValues(p);
   let selD = t === 'gregorian' ? v.gD : v.hD;
   
