@@ -975,18 +975,18 @@
       <div class="toolbar-group">
         <button class="tool-btn primary" onclick="addFirstPerson()" id="add-first-btn">
           <span class="icon">➕</span>
-          <span>{{tool.addPerson}}</span>
+          <span>Add Person</span>
         </button>
       </div>
       
       <div class="toolbar-group">
         <button class="tool-btn" onclick="saveToLocal()">
           <span class="icon">💾</span>
-          <span>{{tool.saveLocal}}</span>
+          <span>Save Locally</span>
         </button>
         <button class="tool-btn" onclick="loadFromLocal()">
           <span class="icon">📂</span>
-          <span>{{tool.loadLocal}}</span>
+          <span>Load Saved</span>
         </button>
       </div>
       
@@ -994,31 +994,31 @@
         <div class="dropdown" id="export-dropdown">
           <button class="tool-btn" onclick="toggleDropdown('export-dropdown')">
             <span class="icon">📤</span>
-            <span>{{tool.export}}</span>
+            <span>Export</span>
           </button>
           <div class="dropdown-menu">
             <div class="dropdown-item" onclick="exportAsPNG()">
-              <span>🖼️</span> {{tool.exportPNG}}
+              <span>🖼️</span> Export as PNG
             </div>
             <div class="dropdown-item" onclick="exportAsSVG()">
-              <span>📐</span> {{tool.exportSVG}}
+              <span>📐</span> Export as SVG
             </div>
             <div class="dropdown-divider"></div>
             <div class="dropdown-item" onclick="exportAsJSON()">
-              <span>📄</span> {{tool.exportJSON}}
+              <span>📄</span> Export Data
             </div>
           </div>
         </div>
         <button class="tool-btn" onclick="importJSON()">
           <span class="icon">📥</span>
-          <span>{{tool.import}}</span>
+          <span>Import</span>
         </button>
       </div>
       
       <div class="toolbar-group">
         <button class="tool-btn" onclick="clearAll()">
           <span class="icon">🗑️</span>
-          <span>{{tool.clearAll}}</span>
+          <span>Clear All</span>
         </button>
       </div>
     </div>
@@ -1041,10 +1041,10 @@
       <!-- Empty State -->
       <div class="empty-state" id="empty-state">
         <div class="icon">🌳</div>
-        <h3>{{tool.startPerson}}</h3>
-        <p>{{tool.clickToAdd}}</p>
+        <h3>Start by adding the first person</h3>
+        <p>Click + to add relative</p>
         <button class="start-btn" onclick="addFirstPerson()">
-          <span>➕</span> {{tool.addPerson}}
+          <span>➕</span> Add Person
         </button>
       </div>
       
@@ -1061,22 +1061,22 @@
     <div class="stats-bar" id="stats-bar" style="display: none;">
       <div class="stat-item">
         <span class="icon">👥</span>
-        <span class="label">{{tool.totalPersons}}:</span>
+        <span class="label">Total Persons:</span>
         <span class="value" id="stat-total">0</span>
       </div>
       <div class="stat-item">
         <span class="icon">👨</span>
-        <span class="label">{{tool.males}}:</span>
+        <span class="label">Males:</span>
         <span class="value" id="stat-males">0</span>
       </div>
       <div class="stat-item">
         <span class="icon">👩</span>
-        <span class="label">{{tool.females}}:</span>
+        <span class="label">Females:</span>
         <span class="value" id="stat-females">0</span>
       </div>
       <div class="stat-item">
         <span class="icon">📊</span>
-        <span class="label">{{tool.generations}}:</span>
+        <span class="label">Generations:</span>
         <span class="value" id="stat-generations">0</span>
       </div>
     </div>
@@ -1087,52 +1087,52 @@
 <div class="modal-overlay" id="person-modal">
   <div class="modal-content">
     <div class="modal-header">
-      <h2><span id="modal-icon">👤</span> <span id="modal-title">{{tool.addPerson}}</span></h2>
+      <h2><span id="modal-icon">👤</span> <span id="modal-title">Add Person</span></h2>
       <button class="modal-close" onclick="closeModal()">&times;</button>
     </div>
     <div class="modal-body">
       <!-- Relation Selection (shown when adding) -->
       <div class="form-group" id="relation-group" style="display: none;">
-        <label>{{tool.relation}}</label>
+        <label>Relation</label>
         <div class="relation-grid" id="relation-grid"></div>
       </div>
       
       <!-- Name -->
       <div class="form-group">
-        <label>Family Tree *</label>
-        <input type="text" id="person-name" placeholder="Family Tree" required>
+        <label>Name *</label>
+        <input type="text" id="person-name" placeholder="Name" required>
       </div>
       
       <!-- Gender -->
       <div class="form-group">
-        <label>{{tool.gender}}</label>
+        <label>Gender</label>
         <div class="gender-toggle">
           <label class="gender-option male">
             <input type="radio" name="gender" value="male" checked>
             <span class="icon">👨</span>
-            <span>{{tool.male}}</span>
+            <span>Male</span>
           </label>
           <label class="gender-option female">
             <input type="radio" name="gender" value="female">
             <span class="icon">👩</span>
-            <span>{{tool.female}}</span>
+            <span>Female</span>
           </label>
         </div>
       </div>
       
       <!-- Photo -->
       <div class="form-group">
-        <label>{{tool.photo}}</label>
+        <label>Photo</label>
         <div class="photo-upload">
           <div class="photo-preview" id="photo-preview">
             <span class="placeholder">👤</span>
           </div>
           <div class="photo-buttons">
             <button class="photo-btn" onclick="document.getElementById('photo-input').click()">
-              📷 {{tool.uploadPhoto}}
+              📷 Upload Photo
             </button>
             <button class="photo-btn remove" onclick="removePhoto()" id="remove-photo-btn" style="display: none;">
-              🗑️ {{tool.removePhoto}}
+              🗑️ Remove Photo
             </button>
           </div>
         </div>
@@ -1141,28 +1141,28 @@
       
       <!-- Birth Date -->
       <div class="form-group">
-        <label>{{tool.birthDate}}</label>
+        <label>Birth Date</label>
         <input type="date" id="person-birth">
       </div>
       
       <!-- Death Date -->
       <div class="form-group">
-        <label>{{tool.deathDate}}</label>
+        <label>Death Date</label>
         <input type="date" id="person-death">
       </div>
       
       <!-- Notes -->
       <div class="form-group">
-        <label>{{tool.notes}}</label>
-        <textarea id="person-notes" placeholder="{{tool.notes}}"></textarea>
+        <label>Notes</label>
+        <textarea id="person-notes" placeholder="Notes"></textarea>
       </div>
     </div>
     <div class="modal-footer">
       <button class="btn-delete" id="delete-btn" onclick="deletePerson()" style="display: none;">
-        🗑️ {{tool.deletePerson}}
+        🗑️ Delete
       </button>
-      <button class="btn-cancel" onclick="closeModal()">{{tool.cancel}}</button>
-      <button class="btn-save" onclick="savePerson()">{{tool.save}}</button>
+      <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="btn-save" onclick="savePerson()">Save</button>
     </div>
   </div>
 </div>
