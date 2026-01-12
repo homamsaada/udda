@@ -331,6 +331,7 @@
   flex: 1;
   overflow-y: auto;
   padding: 6px;
+  max-height: 400px;
 }
 
 .ft-list-item {
@@ -1196,6 +1197,7 @@
     ➕ إضافة
     <span class="ft-submenu-arrow">◀</span>
     <div class="ft-submenu">
+      <div class="ft-menu-item" onclick="cardMenuAction('parent')">👨‍👩 أب/أم</div>
       <div class="ft-menu-item" onclick="cardMenuAction('spouse')">💑 زوج/زوجة</div>
       <div class="ft-menu-item" onclick="cardMenuAction('child')">👶 ابن/ابنة</div>
       <div class="ft-menu-item" onclick="cardMenuAction('sibling')">👫 أخ/أخت</div>
@@ -1225,6 +1227,7 @@ let state = {
   childContext: null,
   currentPhoto: null,
   childTab: 'new',
+  siblingForId: null,  // لإضافة شقيق بدون أب
   zoom: 1,
   panX: 50,
   panY: 50,
@@ -1411,7 +1414,14 @@ function openPersonModal(editId = null) {
   state.currentPhoto = null;
   
   const isEdit = !!editId;
-  document.getElementById('pm-title').innerHTML = isEdit ? '✏️ تعديل' : '👤 إضافة شخص';
+  const isSibling = !isEdit && state.siblingForId;
+  
+  let title = isEdit ? '✏️ تعديل' : '👤 إضافة شخص';
+  if (isSibling) {
+    const sib = db.persons[state.siblingForId];
+    title = `👫 إضافة شقيق لـ ${sib?.name || ''}`;
+  }
+  document.getElementById('pm-title').innerHTML = title;
   document.getElementById('pm-del').style.display = isEdit ? 'block' : 'none';
   
   if (isEdit) {
@@ -1450,7 +1460,19 @@ function savePerson() {
     Object.assign(db.persons[state.editingPersonId], data);
   } else {
     const id = genId();
-    db.persons[id] = { id, ...data };
+    db.persons[id] = { id, ...data, fatherId: null, motherId: null };
+    
+    // إذا كان هناك شقيق بدون أب - نضيف علاقة sibling
+    if (state.siblingForId) {
+      const relId = genId();
+      db.relations[relId] = {
+        id: relId,
+        type: 'sibling',
+        person1Id: state.siblingForId,
+        person2Id: id
+      };
+      state.siblingForId = null;
+    }
   }
   
   closeModal('person-modal');
@@ -1462,10 +1484,17 @@ function deletePerson() {
   if (!state.editingPersonId || !confirm(t('حذف؟','Delete?'))) return;
   const id = state.editingPersonId;
   
+  // حذف علاقات الزواج والأخوة
   Object.keys(db.relations).forEach(rid => {
     const r = db.relations[rid];
     if (r.type === 'spouse' && (r.person1Id === id || r.person2Id === id)) delete db.relations[rid];
-    if (r.type === 'child' && (r.childId === id || r.fatherId === id || r.motherId === id)) delete db.relations[rid];
+    if (r.type === 'sibling' && (r.person1Id === id || r.person2Id === id)) delete db.relations[rid];
+  });
+  
+  // إزالة الأب من الأبناء
+  Object.values(db.persons).forEach(p => {
+    if (p.fatherId === id) p.fatherId = null;
+    if (p.motherId === id) p.motherId = null;
   });
   
   delete db.persons[id];
@@ -1910,23 +1939,36 @@ function cardMenuAction(action) {
     case 'relations': openRelationsModal(id); break;
     case 'spouse': openSpouseModal(null, p.gender==='male'?{husbandId:id}:{wifeId:id}); break;
     case 'child': 
-      // إضافة ابن - الأب هو الشخص الحالي (إذا ذكر) أو نسأل
+      // إضافة ابن - الأب هو الشخص الحالي (إذا ذكر)
       if (p.gender === 'male') {
         openChildModal({ fatherId: id, motherId: null });
       } else {
         // إذا أنثى، نحتاج لتحديد الأب
-        openChildModalFor(id);
+        const spRels = getSpouseRels(id);
+        if (spRels.length > 0) {
+          const sp = getSpouse(id, spRels[0].id);
+          if (sp && sp.gender === 'male') {
+            openChildModal({ fatherId: sp.id, motherId: id });
+          } else {
+            toast(t('يجب تحديد الأب أولاً', 'Must specify father first'));
+          }
+        } else {
+          toast(t('يجب إضافة زوج أولاً', 'Must add spouse first'));
+        }
       }
       break;
     case 'sibling':
-      // إضافة شقيق
+      // إضافة شقيق - إذا كان له أب نضيف لنفس الأب
       if (p.fatherId) {
-        // لديه أب - نضيف ابن لنفس الأب
         openChildModal({ fatherId: p.fatherId, motherId: p.motherId });
       } else {
-        // ليس لديه أب - نضيف علاقة sibling
+        // ليس له أب - نضيف علاقة sibling
         openSiblingModal(id);
       }
+      break;
+    case 'parent':
+      // إضافة أب/أم
+      addParentRel(id);
       break;
     case 'locate': locatePerson(id); break;
     case 'delete': 
@@ -1938,41 +1980,14 @@ function cardMenuAction(action) {
   }
 }
 
-// نافذة إضافة شقيق (بدون أب)
+// نافذة إضافة شقيق (بدون أب) - تستخدم نافذة موحدة
 function openSiblingModal(personId) {
   const p = db.persons[personId];
   if (!p) return;
   
-  // إنشاء شخص جديد وربطه كشقيق
-  const name = prompt(t('اسم الشقيق/الشقيقة:', 'Sibling name:'));
-  if (!name || !name.trim()) return;
-  
-  const gender = confirm(t('هل هو ذكر؟ (موافق = ذكر، إلغاء = أنثى)', 'Is male? (OK = male, Cancel = female)')) ? 'male' : 'female';
-  
-  const sibId = genId();
-  db.persons[sibId] = {
-    id: sibId,
-    name: name.trim(),
-    gender,
-    photo: null,
-    birthDate: null,
-    deathDate: null,
-    notes: '',
-    fatherId: null,
-    motherId: null
-  };
-  
-  // إضافة علاقة sibling
-  const relId = genId();
-  db.relations[relId] = {
-    id: relId,
-    type: 'sibling',
-    person1Id: personId,
-    person2Id: sibId
-  };
-  
-  render();
-  toast(t('تم إضافة الشقيق', 'Sibling added'));
+  // فتح نافذة إضافة شخص مع ربطه كشقيق
+  state.siblingForId = personId;
+  openPersonModal(null);
 }
 
 // دوال قديمة للتوافق مع قائمة الأشخاص الجانبية
@@ -2413,8 +2428,6 @@ function setupCanvas() {
         p._y = newY;
         p._manualX = newX;
         p._manualY = newY;
-        const g = document.querySelector(`g[data-person-id="${p.id}"]`);
-        if (g) g.setAttribute('transform', `translate(${newX}, ${newY})`);
         
         // تحريك الذرية
         if (state.dragGroup && state.dragGroup.descendants) {
@@ -2425,11 +2438,12 @@ function setupCanvas() {
               desc._y = d.origY + deltaY;
               desc._manualX = desc._x;
               desc._manualY = desc._y;
-              const dg = document.querySelector(`g[data-person-id="${d.id}"]`);
-              if (dg) dg.setAttribute('transform', `translate(${desc._x}, ${desc._y})`);
             }
           });
         }
+        
+        // إعادة رسم كل شيء (البطاقات والخطوط)
+        renderTree();
       }
       return;
     }
@@ -2564,8 +2578,14 @@ function resetLayout() {
 
 // ==================== UTILS ====================
 function openModal(id) { document.getElementById(id).classList.add('show'); }
-function closeModal(id) { document.getElementById(id).classList.remove('show'); }
-function closeAllModals() { document.querySelectorAll('.ft-modal-bg.show').forEach(m => m.classList.remove('show')); }
+function closeModal(id) { 
+  document.getElementById(id).classList.remove('show'); 
+  if (id === 'person-modal') state.siblingForId = null;
+}
+function closeAllModals() { 
+  document.querySelectorAll('.ft-modal-bg.show').forEach(m => m.classList.remove('show')); 
+  state.siblingForId = null;
+}
 function toast(msg) { const el = document.getElementById('toast'); el.textContent = msg; el.classList.add('show'); setTimeout(() => el.classList.remove('show'), 2500); }
 function toggleDD(id) { event.stopPropagation(); document.getElementById(id).classList.toggle('open'); }
 
