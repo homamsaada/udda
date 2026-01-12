@@ -988,7 +988,8 @@
           <button class="ft-btn" onclick="document.getElementById('import-file').click()"><span class="ic">📥</span><span>استيراد</span></button>
         </div>
         <div class="ft-toolbar-group">
-          <button class="ft-btn" onclick="clearAll()"><span class="ic">🗑️</span><span>مسح</span></button>
+          <button class="ft-btn" onclick="resetLayout()"><span class="ic">📐</span><span>Reset</span></button>
+          <button class="ft-btn" onclick="clearAll()"><span class="ic">🗑️</span><span>Clear</span></button>
         </div>
       </div>
 
@@ -1235,9 +1236,7 @@ let state = {
   dragStartY: 0,
   dragOrigX: 0,
   dragOrigY: 0,
-  dragLockY: false,
-  dragLockedY: 0,
-  dragDescendants: null
+  dragGroup: null
 };
 
 const CARD_W = 115, CARD_H = 80;
@@ -1305,13 +1304,29 @@ function hasRelation(p) {
   return pr.father || pr.mother || getSpouseRels(p.id).length > 0 || getChildRels(p.id).length > 0;
 }
 
-// جمع كل الذرية (أبناء، أحفاد، الخ) مع أزواجهم ومواقعهم الأصلية
-function getDescendantsWithPositions(pid) {
-  const result = [];
+// جمع كل من يجب أن يتحرك مع الشخص
+function getDragGroup(pid) {
+  const mainPerson = db.persons[pid];
+  if (!mainPerson) return { spouses: [], descendants: [] };
+  
+  const spouses = []; // الأزواج (يتحركون أفقياً فقط، نفس Y)
+  const descendants = []; // الذرية (يتحركون بالكامل)
   const visited = new Set([pid]);
   
+  // جمع أزواج الشخص الأصلي
+  getSpouseRels(pid).forEach(spRel => {
+    const spouseId = spRel.person1Id === pid ? spRel.person2Id : spRel.person1Id;
+    if (!visited.has(spouseId)) {
+      visited.add(spouseId);
+      const spouse = db.persons[spouseId];
+      if (spouse && spouse._x !== undefined) {
+        spouses.push({ id: spouseId, origX: spouse._x, origY: spouse._y });
+      }
+    }
+  });
+  
+  // جمع الذرية بشكل تكراري
   function collectDescendants(personId) {
-    // جمع الأبناء
     const childRels = getChildRels(personId);
     childRels.forEach(rel => {
       const childId = rel.childId;
@@ -1319,41 +1334,33 @@ function getDescendantsWithPositions(pid) {
         visited.add(childId);
         const child = db.persons[childId];
         if (child && child._x !== undefined) {
-          result.push({ id: childId, origX: child._x, origY: child._y });
+          descendants.push({ id: childId, origX: child._x, origY: child._y });
           
-          // جمع أزواج الابن/الابنة
+          // أزواج الابن/الابنة
           getSpouseRels(childId).forEach(spRel => {
             const spouseId = spRel.person1Id === childId ? spRel.person2Id : spRel.person1Id;
             if (!visited.has(spouseId)) {
               visited.add(spouseId);
               const spouse = db.persons[spouseId];
               if (spouse && spouse._x !== undefined) {
-                result.push({ id: spouseId, origX: spouse._x, origY: spouse._y });
+                descendants.push({ id: spouseId, origX: spouse._x, origY: spouse._y });
               }
             }
           });
           
-          // استمر بالعمق
           collectDescendants(childId);
         }
       }
     });
   }
   
-  // أيضاً نجمع أزواج الشخص الأصلي
-  getSpouseRels(pid).forEach(spRel => {
-    const spouseId = spRel.person1Id === pid ? spRel.person2Id : spRel.person1Id;
-    if (!visited.has(spouseId)) {
-      visited.add(spouseId);
-      const spouse = db.persons[spouseId];
-      if (spouse && spouse._x !== undefined) {
-        result.push({ id: spouseId, origX: spouse._x, origY: spouse._y });
-      }
-    }
-  });
-  
+  // جمع ذرية الشخص الأصلي
   collectDescendants(pid);
-  return result;
+  
+  // جمع ذرية الأزواج أيضاً (أبناء من زيجات أخرى)
+  spouses.forEach(sp => collectDescendants(sp.id));
+  
+  return { spouses, descendants };
 }
 
 // ==================== RENDER LIST ====================
@@ -2116,13 +2123,8 @@ function drawCard(p, layer) {
     state.dragOrigX = p._x;
     state.dragOrigY = p._y;
     
-    // تحديد إذا كان له إخوة (قفل Y)
-    const parents = getParents(p.id);
-    state.dragLockY = !!(parents.father || parents.mother);
-    state.dragLockedY = p._y;
-    
-    // جمع الذرية (للتحريك معاً)
-    state.dragDescendants = getDescendantsWithPositions(p.id);
+    // جمع مجموعة السحب (الأزواج + الذرية)
+    state.dragGroup = getDragGroup(p.id);
     
     g.style.cursor = 'grabbing';
     g.classList.add('ft-card-dragging');
@@ -2151,12 +2153,7 @@ function setupCanvas() {
       const p = db.persons[state.dragCardId];
       if (p) {
         const newX = (e.clientX - state.panX) / state.zoom - state.dragStartX;
-        let newY = (e.clientY - state.panY) / state.zoom - state.dragStartY;
-        
-        // قفل المحور Y إذا كان له إخوة
-        if (state.dragLockY) {
-          newY = state.dragLockedY;
-        }
+        const newY = (e.clientY - state.panY) / state.zoom - state.dragStartY;
         
         // حساب الفرق
         const deltaX = newX - state.dragOrigX;
@@ -2170,9 +2167,24 @@ function setupCanvas() {
         const g = document.querySelector(`g[data-person-id="${p.id}"]`);
         if (g) g.setAttribute('transform', `translate(${newX}, ${newY})`);
         
-        // تحريك الذرية معه
-        if (state.dragDescendants) {
-          state.dragDescendants.forEach(d => {
+        // تحريك الأزواج (نفس deltaX و deltaY للحفاظ على نفس المستوى)
+        if (state.dragGroup && state.dragGroup.spouses) {
+          state.dragGroup.spouses.forEach(sp => {
+            const spouse = db.persons[sp.id];
+            if (spouse) {
+              spouse._x = sp.origX + deltaX;
+              spouse._y = sp.origY + deltaY; // نفس التحرك العمودي
+              spouse._manualX = spouse._x;
+              spouse._manualY = spouse._y;
+              const sg = document.querySelector(`g[data-person-id="${sp.id}"]`);
+              if (sg) sg.setAttribute('transform', `translate(${spouse._x}, ${spouse._y})`);
+            }
+          });
+        }
+        
+        // تحريك الذرية
+        if (state.dragGroup && state.dragGroup.descendants) {
+          state.dragGroup.descendants.forEach(d => {
             const desc = db.persons[d.id];
             if (desc) {
               desc._x = d.origX + deltaX;
@@ -2284,6 +2296,16 @@ function clearAll() {
   if (!confirm(t('مسح الكل؟','Clear all?'))) return;
   db = { persons: {}, relations: {} };
   render(); toast(t('تم','Done'));
+}
+
+// إعادة الترتيب التلقائي (مسح المواقع اليدوية)
+function resetLayout() {
+  Object.values(db.persons).forEach(p => {
+    delete p._manualX;
+    delete p._manualY;
+  });
+  render();
+  toast(t('تم إعادة الترتيب','Layout reset'));
 }
 
 // ==================== UTILS ====================
