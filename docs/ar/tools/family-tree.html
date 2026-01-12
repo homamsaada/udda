@@ -1908,37 +1908,44 @@ function hideCtx() { hideCardMenu(); }
 
 // ==================== LAYOUT & RENDER TREE ====================
 
-// حساب عرض الشجرة الفرعية لشخص ما
-function getSubtreeWidth(pid, visited = new Set()) {
-  if (visited.has(pid)) return 0;
+// حساب عرض الشجرة الفرعية (بدون تحديد مواقع)
+function calcSubtreeWidth(pid, visited = new Set()) {
+  if (visited.has(pid)) return CARD_W;
   visited.add(pid);
   
   const p = db.persons[pid];
-  if (!p) return 0;
+  if (!p) return CARD_W;
   
-  // جمع كل الأبناء (من كل الزوجات)
-  const childRels = getChildRels(pid);
-  const childIds = [...new Set(childRels.map(r => r.childId))];
-  
-  if (childIds.length === 0) {
-    // لا أبناء - العرض هو عرض الزوج + الزوجة
-    const spouseCount = getSpouseRels(pid).filter(r => !visited.has(r.person1Id === pid ? r.person2Id : r.person1Id)).length;
-    return CARD_W + (spouseCount > 0 ? (CARD_W + SPOUSE_GAP) * spouseCount : 0);
-  }
-  
-  // حساب عرض كل ابن
-  let totalChildrenWidth = 0;
-  childIds.forEach((cid, i) => {
-    const childWidth = getSubtreeWidth(cid, new Set(visited));
-    totalChildrenWidth += childWidth;
-    if (i < childIds.length - 1) totalChildrenWidth += GAP_X;
+  // عرض الشخص مع أزواجه
+  const spouseRels = getSpouseRels(pid);
+  let selfWidth = CARD_W;
+  spouseRels.forEach(rel => {
+    const spId = rel.person1Id === pid ? rel.person2Id : rel.person1Id;
+    if (!visited.has(spId)) {
+      visited.add(spId);
+      selfWidth += CARD_W + SPOUSE_GAP;
+    }
   });
   
-  // العرض الأدنى للوالدين
-  const spouseCount = getSpouseRels(pid).length;
-  const parentsWidth = CARD_W + (spouseCount > 0 ? (CARD_W + SPOUSE_GAP) * spouseCount : 0);
+  // جمع الأبناء
+  const childRels = getChildRels(pid);
+  const childIds = [];
+  childRels.forEach(rel => {
+    if (!visited.has(rel.childId)) {
+      childIds.push(rel.childId);
+    }
+  });
   
-  return Math.max(totalChildrenWidth, parentsWidth);
+  if (childIds.length === 0) return selfWidth;
+  
+  // حساب عرض الأبناء
+  let childrenWidth = 0;
+  childIds.forEach((cid, i) => {
+    childrenWidth += calcSubtreeWidth(cid, new Set(visited));
+    if (i < childIds.length - 1) childrenWidth += GAP_X;
+  });
+  
+  return Math.max(selfWidth, childrenWidth);
 }
 
 function layoutTree() {
@@ -1946,115 +1953,102 @@ function layoutTree() {
   const processed = new Set();
   let currentX = 50;
   
-  // إيجاد الجذور (من ليس لهم والدين)
+  // إيجاد الجذور
   const roots = Object.values(db.persons).filter(p => {
     const pr = getParents(p.id);
     return !pr.father && !pr.mother;
   });
   
-  // دالة تضع شخص مع أزواجه وأبنائه بشكل متوسط
-  function layoutFamily(pid, level, startX) {
-    if (processed.has(pid)) return { endX: startX, width: 0 };
+  // دالة ترتيب عائلة كاملة
+  function layoutFamily(pid, level, centerX) {
+    if (processed.has(pid)) return;
     
     const p = db.persons[pid];
-    if (!p) return { endX: startX, width: 0 };
+    if (!p) return;
     
-    // إذا كان هناك موقع يدوي
+    // إذا كان هناك موقع يدوي، استخدمه
     if (p._manualX !== undefined && p._manualY !== undefined) {
       positions[pid] = { x: p._manualX, y: p._manualY, level };
       processed.add(pid);
-      
-      // معالجة الأزواج اليدويين
-      getSpouseRels(pid).forEach(rel => {
-        const spId = rel.person1Id === pid ? rel.person2Id : rel.person1Id;
-        if (!processed.has(spId) && db.persons[spId]) {
-          const sp = db.persons[spId];
-          if (sp._manualX !== undefined) {
-            positions[spId] = { x: sp._manualX, y: sp._manualY, level };
-          }
-          processed.add(spId);
-        }
-      });
-      
-      return { endX: startX + CARD_W + GAP_X, width: CARD_W };
+      return;
     }
     
     processed.add(pid);
     const y = level * (CARD_H + GAP_Y);
     
     // جمع الأزواج
-    const spouseRels = getSpouseRels(pid);
-    const spouses = [];
-    spouseRels.forEach(rel => {
+    const spouseIds = [];
+    getSpouseRels(pid).forEach(rel => {
       const spId = rel.person1Id === pid ? rel.person2Id : rel.person1Id;
       if (!processed.has(spId)) {
         processed.add(spId);
-        spouses.push({ id: spId, rel });
+        spouseIds.push(spId);
       }
     });
     
-    // جمع كل الأبناء من كل العلاقات
-    const allChildren = [];
-    const childRels = getChildRels(pid);
-    childRels.forEach(rel => {
+    // عرض الوالدين
+    const parentsWidth = CARD_W + spouseIds.length * (CARD_W + SPOUSE_GAP);
+    
+    // جمع الأبناء (غير المعالجين)
+    const childIds = [];
+    getChildRels(pid).forEach(rel => {
       if (!processed.has(rel.childId)) {
-        allChildren.push(rel.childId);
+        childIds.push(rel.childId);
       }
     });
     
-    // أولاً: نرتب الأبناء ونحسب عرضهم الإجمالي
-    let childrenTotalWidth = 0;
-    const childrenLayouts = [];
+    // حساب عرض كل ابن
+    const childWidths = childIds.map(cid => calcSubtreeWidth(cid, new Set(processed)));
+    const totalChildrenWidth = childWidths.reduce((sum, w, i) => sum + w + (i > 0 ? GAP_X : 0), 0);
     
-    let childX = startX;
-    allChildren.forEach((cid, i) => {
-      const result = layoutFamily(cid, level + 1, childX);
-      childrenLayouts.push({ id: cid, startX: childX, endX: result.endX, width: result.width });
-      childX = result.endX;
-      if (i < allChildren.length - 1) childX += GAP_X;
-    });
-    
-    if (allChildren.length > 0) {
-      childrenTotalWidth = childX - startX;
-    }
-    
-    // حساب عرض الوالدين
-    const parentsWidth = CARD_W + spouses.length * (CARD_W + SPOUSE_GAP);
-    
-    // تحديد العرض النهائي
-    const totalWidth = Math.max(childrenTotalWidth, parentsWidth);
-    
-    // توسيط الوالدين فوق الأبناء
-    let parentStartX;
-    if (allChildren.length > 0) {
-      // مركز الأبناء
-      const childrenCenter = startX + childrenTotalWidth / 2;
-      parentStartX = childrenCenter - parentsWidth / 2;
+    // تحديد موقع الوالدين (متوسطين فوق الأبناء)
+    let parentX;
+    if (childIds.length > 0 && totalChildrenWidth > parentsWidth) {
+      // توسيط الوالدين فوق الأبناء
+      parentX = centerX - parentsWidth / 2;
     } else {
-      parentStartX = startX;
+      parentX = centerX - parentsWidth / 2;
     }
     
     // وضع الشخص الرئيسي
-    positions[pid] = { x: parentStartX, y, level };
+    positions[pid] = { x: parentX, y, level };
     
-    // وضع الأزواج
-    let spX = parentStartX + CARD_W + SPOUSE_GAP;
-    spouses.forEach(sp => {
-      positions[sp.id] = { x: spX, y, level };
+    // وضع الأزواج بجانبه
+    let spX = parentX + CARD_W + SPOUSE_GAP;
+    spouseIds.forEach(spId => {
+      positions[spId] = { x: spX, y, level };
       spX += CARD_W + SPOUSE_GAP;
     });
     
-    const endX = Math.max(startX + totalWidth, parentStartX + parentsWidth);
-    return { endX, width: totalWidth };
+    // مركز الوالدين (نقطة الاتصال)
+    const parentsCenter = parentX + parentsWidth / 2;
+    
+    // وضع الأبناء متوسطين تحت الوالدين
+    if (childIds.length > 0) {
+      let childStartX = parentsCenter - totalChildrenWidth / 2;
+      
+      childIds.forEach((cid, i) => {
+        const childWidth = childWidths[i];
+        const childCenterX = childStartX + childWidth / 2;
+        
+        layoutFamily(cid, level + 1, childCenterX);
+        
+        childStartX += childWidth + GAP_X;
+      });
+    }
   }
   
   // ترتيب كل الجذور
-  roots.forEach(r => {
-    const result = layoutFamily(r.id, 0, currentX);
-    currentX = result.endX + GAP_X * 2;
+  roots.forEach(rootId => {
+    const rootWidth = calcSubtreeWidth(rootId, new Set());
+    const centerX = currentX + rootWidth / 2;
+    
+    layoutFamily(rootId, 0, centerX);
+    
+    currentX += rootWidth + GAP_X * 2;
   });
   
-  // تطبيق المواقع على الأشخاص
+  // تطبيق المواقع
   Object.entries(positions).forEach(([id, pos]) => {
     if (db.persons[id]) {
       db.persons[id]._x = pos.x;
@@ -2381,7 +2375,16 @@ function updateStats() {
 function saveLocal() { localStorage.setItem('familyTreeV58', JSON.stringify(db)); toast(t('تم الحفظ','Saved')); }
 function loadLocal() {
   const s = localStorage.getItem('familyTreeV58');
-  if (s) { db = JSON.parse(s); render(); toast(t('تم التحميل','Loaded')); }
+  if (s) { 
+    db = JSON.parse(s); 
+    // مسح المواقع اليدوية القديمة لتطبيق الترتيب الجديد
+    Object.values(db.persons).forEach(p => {
+      delete p._manualX;
+      delete p._manualY;
+    });
+    render(); 
+    toast(t('تم التحميل','Loaded')); 
+  }
   else toast(t('لا بيانات','No data'));
 }
 
@@ -2389,7 +2392,18 @@ function exportJSON() { download(JSON.stringify(db, null, 2), 'family-tree.json'
 function importJSON(e) {
   const f = e.target.files[0]; if (!f) return;
   const r = new FileReader();
-  r.onload = ev => { try { db = JSON.parse(ev.target.result); render(); toast(t('تم','Done')); } catch { toast(t('خطأ','Error')); } };
+  r.onload = ev => { 
+    try { 
+      db = JSON.parse(ev.target.result); 
+      // مسح المواقع اليدوية
+      Object.values(db.persons).forEach(p => {
+        delete p._manualX;
+        delete p._manualY;
+      });
+      render(); 
+      toast(t('تم','Done')); 
+    } catch { toast(t('خطأ','Error')); } 
+  };
   r.readAsText(f); e.target.value = '';
 }
 
