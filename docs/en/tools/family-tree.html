@@ -871,15 +871,15 @@
 
 .ft-submenu {
   position: absolute;
-  right: 100%;
-  top: -2px;
+  right: calc(100% - 8px);
+  top: -8px;
   background: var(--bg-card);
   border: 2px solid var(--border-color);
   border-radius: 8px;
   min-width: 140px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
   display: none;
-  margin-right: 4px;
+  z-index: 2001;
 }
 
 .ft-has-submenu:hover .ft-submenu,
@@ -1237,8 +1237,9 @@ let state = {
 };
 
 const CARD_W = 115, CARD_H = 80;
-const GAP_X = 35, GAP_Y = 60;
+const GAP_X = 35, GAP_Y = 100;  // زيادة GAP_Y لإفساح مجال لدائرة الأم
 const SPOUSE_GAP = 25;
+const MOTHER_CIRCLE_R = 18;  // نصف قطر دائرة الأم
 
 // ==================== INIT ====================
 function init() {
@@ -1259,6 +1260,7 @@ function init() {
 // ==================== HELPERS ====================
 const genId = () => Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
 
+// === علاقات الزواج (للعرض فقط) ===
 function getSpouseRels(pid) {
   return Object.values(db.relations).filter(r => r.type === 'spouse' && (r.person1Id === pid || r.person2Id === pid));
 }
@@ -1269,97 +1271,96 @@ function getSpouse(pid, rid) {
   return db.persons[r.person1Id === pid ? r.person2Id : r.person1Id];
 }
 
-function getChildRels(pid) {
-  return Object.values(db.relations).filter(r => r.type === 'child' && (r.fatherId === pid || r.motherId === pid));
+// === علاقات الأخوة ===
+function getSiblingRels(pid) {
+  return Object.values(db.relations).filter(r => r.type === 'sibling' && (r.person1Id === pid || r.person2Id === pid));
 }
 
-function getChildrenOfBoth(fid, mid) {
-  return Object.values(db.relations)
-    .filter(r => r.type === 'child' && r.fatherId === fid && r.motherId === mid)
-    .map(r => db.persons[r.childId]).filter(Boolean);
+// === الأبناء (النظام الجديد - fatherId مباشر) ===
+function getChildren(fatherId) {
+  return Object.values(db.persons).filter(p => p.fatherId === fatherId);
 }
 
-function getParentRel(pid) {
-  return Object.values(db.relations).find(r => r.type === 'child' && r.childId === pid);
+function getChildrenByMother(fatherId, motherId) {
+  return Object.values(db.persons).filter(p => p.fatherId === fatherId && p.motherId === motherId);
+}
+
+// === الوالدين ===
+function getFather(pid) {
+  const p = db.persons[pid];
+  return p?.fatherId ? db.persons[p.fatherId] : null;
+}
+
+function getMother(pid) {
+  const p = db.persons[pid];
+  return p?.motherId ? db.persons[p.motherId] : null;
 }
 
 function getParents(pid) {
-  const rel = getParentRel(pid);
-  if (!rel) return { father: null, mother: null, rel: null };
-  return { father: db.persons[rel.fatherId], mother: db.persons[rel.motherId], rel };
+  return { father: getFather(pid), mother: getMother(pid) };
 }
 
+// === الإخوة ===
+function getSiblings(pid) {
+  const p = db.persons[pid];
+  if (!p) return [];
+  
+  // إخوة من نفس الأب
+  if (p.fatherId) {
+    return Object.values(db.persons).filter(s => s.id !== pid && s.fatherId === p.fatherId);
+  }
+  
+  // إخوة عبر علاقة sibling (بدون أب)
+  const sibRels = getSiblingRels(pid);
+  return sibRels.map(r => db.persons[r.person1Id === pid ? r.person2Id : r.person1Id]).filter(Boolean);
+}
+
+// === النسب ===
 function getLineage(pid) {
   const p = db.persons[pid]; if (!p) return '';
   let r = p.name;
-  const pr = getParents(pid);
-  if (pr.father) r += ' ' + t('بن','s/o') + ' ' + pr.father.name;
-  else if (pr.mother) r += ' ' + t('ابن','s/o') + ' ' + pr.mother.name;
+  const father = getFather(pid);
+  if (father) r += ' ' + t('بن','s/o') + ' ' + father.name;
   return r;
 }
 
 function hasRelation(p) {
-  const pr = getParents(p.id);
-  return pr.father || pr.mother || getSpouseRels(p.id).length > 0 || getChildRels(p.id).length > 0;
+  return p.fatherId || getChildren(p.id).length > 0 || getSpouseRels(p.id).length > 0 || getSiblingRels(p.id).length > 0;
 }
 
-// جمع كل من يجب أن يتحرك مع الشخص
-function getDragGroup(pid) {
-  const mainPerson = db.persons[pid];
-  if (!mainPerson) return { spouses: [], descendants: [] };
+// === جمع الذرية للسحب ===
+function getDescendants(pid, visited = new Set()) {
+  if (visited.has(pid)) return [];
+  visited.add(pid);
   
-  const spouses = []; // الأزواج (يتحركون أفقياً فقط، نفس Y)
-  const descendants = []; // الذرية (يتحركون بالكامل)
-  const visited = new Set([pid]);
+  const result = [];
+  const children = getChildren(pid);
   
-  // جمع أزواج الشخص الأصلي
-  getSpouseRels(pid).forEach(spRel => {
-    const spouseId = spRel.person1Id === pid ? spRel.person2Id : spRel.person1Id;
-    if (!visited.has(spouseId)) {
-      visited.add(spouseId);
-      const spouse = db.persons[spouseId];
-      if (spouse && spouse._x !== undefined) {
-        spouses.push({ id: spouseId, origX: spouse._x, origY: spouse._y });
-      }
+  children.forEach(child => {
+    if (!visited.has(child.id)) {
+      result.push(child);
+      result.push(...getDescendants(child.id, visited));
     }
   });
   
-  // جمع الذرية بشكل تكراري
-  function collectDescendants(personId) {
-    const childRels = getChildRels(personId);
-    childRels.forEach(rel => {
-      const childId = rel.childId;
-      if (!visited.has(childId)) {
-        visited.add(childId);
-        const child = db.persons[childId];
-        if (child && child._x !== undefined) {
-          descendants.push({ id: childId, origX: child._x, origY: child._y });
-          
-          // أزواج الابن/الابنة
-          getSpouseRels(childId).forEach(spRel => {
-            const spouseId = spRel.person1Id === childId ? spRel.person2Id : spRel.person1Id;
-            if (!visited.has(spouseId)) {
-              visited.add(spouseId);
-              const spouse = db.persons[spouseId];
-              if (spouse && spouse._x !== undefined) {
-                descendants.push({ id: spouseId, origX: spouse._x, origY: spouse._y });
-              }
-            }
-          });
-          
-          collectDescendants(childId);
-        }
-      }
-    });
-  }
+  return result;
+}
+
+function getDragGroup(pid) {
+  const mainPerson = db.persons[pid];
+  if (!mainPerson) return { descendants: [] };
   
-  // جمع ذرية الشخص الأصلي
-  collectDescendants(pid);
+  const descendants = [];
+  const visited = new Set([pid]);
   
-  // جمع ذرية الأزواج أيضاً (أبناء من زيجات أخرى)
-  spouses.forEach(sp => collectDescendants(sp.id));
+  // جمع كل الذرية
+  getDescendants(pid, visited).forEach(d => {
+    if (d._x !== undefined) {
+      descendants.push({ id: d.id, origX: d._x, origY: d._y });
+    }
+  });
   
-  return { spouses, descendants };
+  return { descendants };
 }
 
 // ==================== RENDER LIST ====================
@@ -1573,7 +1574,7 @@ function openChildModal(ctx) {
   }
   opts.innerHTML = html;
   
-  const avail = Object.values(db.persons).filter(p => !getParentRel(p.id));
+  const avail = Object.values(db.persons).filter(p => !p.fatherId);
   renderPersonSelect('child-select', avail, null);
   openModal('child-modal');
 }
@@ -1592,17 +1593,27 @@ function saveChild() {
     const name = document.getElementById('c-name').value.trim();
     if (!name) return toast(t('أدخل الاسم','Enter name'));
     childId = genId();
-    db.persons[childId] = { id: childId, name, gender: document.querySelector('input[name="c-gender"]:checked').value, photo: null, birthDate: null, deathDate: null, notes: '' };
+    db.persons[childId] = { 
+      id: childId, 
+      name, 
+      gender: document.querySelector('input[name="c-gender"]:checked').value, 
+      photo: null, 
+      birthDate: null, 
+      deathDate: null, 
+      notes: '',
+      fatherId: state.childContext.fatherId || null,
+      motherId: state.childContext.motherId || null
+    };
   } else {
     childId = getSelectedPerson('child-select');
     if (!childId) return toast(t('اختر شخصاً','Select person'));
+    // تحديث الشخص الموجود
+    const child = db.persons[childId];
+    if (child) {
+      child.fatherId = state.childContext.fatherId || child.fatherId;
+      child.motherId = state.childContext.motherId || child.motherId;
+    }
   }
-  
-  const rtype = document.querySelector('input[name="c-type"]:checked')?.value || 'both';
-  const rel = { id: genId(), type: 'child', childId, fatherId: null, motherId: null };
-  if (rtype === 'both' || rtype === 'father') rel.fatherId = state.childContext.fatherId;
-  if (rtype === 'both' || rtype === 'mother') rel.motherId = state.childContext.motherId;
-  db.relations[rel.id] = rel;
   
   closeModal('child-modal');
   render();
@@ -1674,20 +1685,19 @@ function openRelationsModal(pid) {
   html += `</div>`;
   
   // الأبناء
-  const childRels = getChildRels(pid);
+  const children = getChildren(pid);
   html += `<div class="ft-rel-section">`;
   html += `<div class="ft-rel-section-head">👶 الأبناء <button class="add-btn" onclick="closeModal('relations-modal');openChildModalFor('${pid}')">+ إضافة</button></div>`;
-  if (childRels.length) {
-    childRels.forEach(rel => {
-      const child = db.persons[rel.childId];
-      if (!child) return;
-      const fromTxt = rel.fatherId && rel.motherId ? 'من الأب والأم' : rel.fatherId ? 'من الأب فقط' : 'من الأم فقط';
+  if (children.length) {
+    children.forEach(child => {
+      const mother = getMother(child.id);
+      const motherTxt = mother ? `من ${mother.name}` : 'أم غير محددة';
       html += `<div class="ft-rel-item">
         <span class="av">${child.gender === 'female' ? '👩' : '👨'}</span>
-        <div class="info"><div class="nm">${child.name}</div><div class="role">${fromTxt}</div></div>
+        <div class="info"><div class="nm">${child.name}</div><div class="role">${motherTxt}</div></div>
         <div class="actions">
-          <button class="act-btn" onclick="editChildRel('${rel.id}')">✏️ تعديل</button>
-          <button class="act-btn danger" onclick="removeChildRel('${rel.id}')">❌</button>
+          <button class="act-btn" onclick="editChildRel('${child.id}')">✏️ تعديل</button>
+          <button class="act-btn danger" onclick="removeChildRel('${child.id}')">❌</button>
         </div>
       </div>`;
     });
@@ -1702,12 +1712,23 @@ function openRelationsModal(pid) {
 
 function openChildModalFor(pid) {
   const p = db.persons[pid];
-  const spRels = getSpouseRels(pid);
-  if (spRels.length > 0) {
-    const sp = getSpouse(pid, spRels[0].id);
-    openChildModal(p.gender === 'male' ? { fatherId: pid, motherId: sp?.id } : { fatherId: sp?.id, motherId: pid });
+  if (p.gender === 'male') {
+    // الشخص ذكر - هو الأب
+    openChildModal({ fatherId: pid, motherId: null });
   } else {
-    openChildModal(p.gender === 'male' ? { fatherId: pid } : { motherId: pid });
+    // الشخص أنثى - نحتاج لتحديد الأب
+    const spRels = getSpouseRels(pid);
+    if (spRels.length > 0) {
+      const sp = getSpouse(pid, spRels[0].id);
+      if (sp && sp.gender === 'male') {
+        openChildModal({ fatherId: sp.id, motherId: pid });
+      } else {
+        // لا يوجد زوج ذكر
+        toast(t('يجب تحديد الأب أولاً', 'Must specify father first'));
+      }
+    } else {
+      toast(t('يجب إضافة زوج أولاً لتحديد الأب', 'Must add spouse first to specify father'));
+    }
   }
 }
 
@@ -1720,19 +1741,23 @@ function removeSpouseRel(rid) {
 }
 
 function removeChildRel(rid) {
-  if (!confirm(t('حذف هذه العلاقة؟','Delete?'))) return;
-  delete db.relations[rid];
+  // في النظام الجديد - نزيل fatherId من الشخص
+  if (!confirm(t('إزالة العلاقة مع الأب؟','Remove father relation?'))) return;
+  const child = db.persons[rid];
+  if (child) {
+    child.fatherId = null;
+    child.motherId = null;
+  }
   render();
   openRelationsModal(state.contextPersonId);
   toast(t('تم','Done'));
 }
 
 function removeParent(pid, which) {
-  const rel = getParentRel(pid);
-  if (!rel) return;
-  if (which === 'father') rel.fatherId = null;
-  if (which === 'mother') rel.motherId = null;
-  if (!rel.fatherId && !rel.motherId) delete db.relations[rel.id];
+  const p = db.persons[pid];
+  if (!p) return;
+  if (which === 'father') p.fatherId = null;
+  if (which === 'mother') p.motherId = null;
   render();
   openRelationsModal(pid);
   toast(t('تم','Done'));
@@ -1741,49 +1766,49 @@ function removeParent(pid, which) {
 function addParentRel(pid) {
   closeModal('relations-modal');
   state.editingChildRelId = pid;
+  const p = db.persons[pid];
   const males = Object.values(db.persons).filter(m => m.gender === 'male' && m.id !== pid);
   const females = Object.values(db.persons).filter(f => f.gender === 'female' && f.id !== pid);
-  renderPersonSelect('edit-father-select', males, null);
-  renderPersonSelect('edit-mother-select', females, null);
+  renderPersonSelect('edit-father-select', males, p?.fatherId);
+  renderPersonSelect('edit-mother-select', females, p?.motherId);
   openModal('edit-child-rel-modal');
 }
 
 function editParentRel(pid) {
   closeModal('relations-modal');
   state.editingChildRelId = pid;
-  const parents = getParents(pid);
+  const p = db.persons[pid];
   const males = Object.values(db.persons).filter(m => m.gender === 'male' && m.id !== pid);
   const females = Object.values(db.persons).filter(f => f.gender === 'female' && f.id !== pid);
-  renderPersonSelect('edit-father-select', males, parents.father?.id);
-  renderPersonSelect('edit-mother-select', females, parents.mother?.id);
+  renderPersonSelect('edit-father-select', males, p?.fatherId);
+  renderPersonSelect('edit-mother-select', females, p?.motherId);
   openModal('edit-child-rel-modal');
 }
 
-function editChildRel(rid) {
+function editChildRel(childId) {
   closeModal('relations-modal');
-  const rel = db.relations[rid];
-  if (!rel) return;
-  state.editingChildRelId = rel.childId;
-  const males = Object.values(db.persons).filter(m => m.gender === 'male' && m.id !== rel.childId);
-  const females = Object.values(db.persons).filter(f => f.gender === 'female' && f.id !== rel.childId);
-  renderPersonSelect('edit-father-select', males, rel.fatherId);
-  renderPersonSelect('edit-mother-select', females, rel.motherId);
+  const child = db.persons[childId];
+  if (!child) return;
+  state.editingChildRelId = childId;
+  const males = Object.values(db.persons).filter(m => m.gender === 'male' && m.id !== childId);
+  const females = Object.values(db.persons).filter(f => f.gender === 'female' && f.id !== childId);
+  renderPersonSelect('edit-father-select', males, child.fatherId);
+  renderPersonSelect('edit-mother-select', females, child.motherId);
   openModal('edit-child-rel-modal');
 }
 
 function saveEditChildRel() {
   const pid = state.editingChildRelId;
   if (!pid) return;
+  const p = db.persons[pid];
+  if (!p) return;
+  
   const fid = getSelectedPerson('edit-father-select');
   const mid = getSelectedPerson('edit-mother-select');
   
-  const oldRel = getParentRel(pid);
-  if (oldRel) delete db.relations[oldRel.id];
-  
-  if (fid || mid) {
-    const newRel = { id: genId(), type: 'child', childId: pid, fatherId: fid, motherId: mid };
-    db.relations[newRel.id] = newRel;
-  }
+  // تحديث الشخص مباشرة
+  p.fatherId = fid || null;
+  p.motherId = mid || null;
   
   closeModal('edit-child-rel-modal');
   render();
@@ -1793,8 +1818,11 @@ function saveEditChildRel() {
 function deleteChildRel() {
   const pid = state.editingChildRelId;
   if (!pid) return;
-  const rel = getParentRel(pid);
-  if (rel) delete db.relations[rel.id];
+  const p = db.persons[pid];
+  if (p) {
+    p.fatherId = null;
+    p.motherId = null;
+  }
   closeModal('edit-child-rel-modal');
   render();
   toast(t('تم','Done'));
@@ -1876,16 +1904,29 @@ function cardMenuAction(action) {
   const id = state.menuPersonId;
   if (!id) return;
   const p = db.persons[id];
-  const parents = getParents(id);
   
   switch (action) {
     case 'edit': openPersonModal(id); break;
     case 'relations': openRelationsModal(id); break;
     case 'spouse': openSpouseModal(null, p.gender==='male'?{husbandId:id}:{wifeId:id}); break;
-    case 'child': openChildModalFor(id); break;
+    case 'child': 
+      // إضافة ابن - الأب هو الشخص الحالي (إذا ذكر) أو نسأل
+      if (p.gender === 'male') {
+        openChildModal({ fatherId: id, motherId: null });
+      } else {
+        // إذا أنثى، نحتاج لتحديد الأب
+        openChildModalFor(id);
+      }
+      break;
     case 'sibling':
-      if (!parents.father && !parents.mother) return toast(t('لا يوجد والدين','No parents'));
-      openChildModal({ fatherId: parents.father?.id, motherId: parents.mother?.id });
+      // إضافة شقيق
+      if (p.fatherId) {
+        // لديه أب - نضيف ابن لنفس الأب
+        openChildModal({ fatherId: p.fatherId, motherId: p.motherId });
+      } else {
+        // ليس لديه أب - نضيف علاقة sibling
+        openSiblingModal(id);
+      }
       break;
     case 'locate': locatePerson(id); break;
     case 'delete': 
@@ -1895,6 +1936,43 @@ function cardMenuAction(action) {
       }
       break;
   }
+}
+
+// نافذة إضافة شقيق (بدون أب)
+function openSiblingModal(personId) {
+  const p = db.persons[personId];
+  if (!p) return;
+  
+  // إنشاء شخص جديد وربطه كشقيق
+  const name = prompt(t('اسم الشقيق/الشقيقة:', 'Sibling name:'));
+  if (!name || !name.trim()) return;
+  
+  const gender = confirm(t('هل هو ذكر؟ (موافق = ذكر، إلغاء = أنثى)', 'Is male? (OK = male, Cancel = female)')) ? 'male' : 'female';
+  
+  const sibId = genId();
+  db.persons[sibId] = {
+    id: sibId,
+    name: name.trim(),
+    gender,
+    photo: null,
+    birthDate: null,
+    deathDate: null,
+    notes: '',
+    fatherId: null,
+    motherId: null
+  };
+  
+  // إضافة علاقة sibling
+  const relId = genId();
+  db.relations[relId] = {
+    id: relId,
+    type: 'sibling',
+    person1Id: personId,
+    person2Id: sibId
+  };
+  
+  render();
+  toast(t('تم إضافة الشقيق', 'Sibling added'));
 }
 
 // دوال قديمة للتوافق مع قائمة الأشخاص الجانبية
@@ -1908,45 +1986,30 @@ function hideCtx() { hideCardMenu(); }
 
 // ==================== LAYOUT & RENDER TREE ====================
 
-// المرور الأول: حساب عرض كل شجرة فرعية بدون تحديد مواقع
-function calcWidth(personId, visited = new Set()) {
+// حساب عرض شجرة شخص (هو وأبناؤه)
+function calcTreeWidth(personId, visited = new Set()) {
   if (visited.has(personId)) return CARD_W;
   visited.add(personId);
   
   const person = db.persons[personId];
   if (!person) return CARD_W;
   
-  // عرض الشخص مع أزواجه
-  let selfWidth = CARD_W;
-  getSpouseRels(personId).forEach(rel => {
-    const spId = rel.person1Id === personId ? rel.person2Id : rel.person1Id;
-    if (!visited.has(spId)) {
-      visited.add(spId);
-      selfWidth += CARD_W + SPOUSE_GAP;
-    }
-  });
-  
   // جمع الأبناء
-  const childIds = new Set();
-  getChildRels(personId).forEach(rel => {
-    if (!visited.has(rel.childId)) childIds.add(rel.childId);
-  });
-  
-  if (childIds.size === 0) return selfWidth;
+  const children = getChildren(personId);
+  if (children.length === 0) return CARD_W;
   
   // حساب عرض الأبناء
   let childrenWidth = 0;
-  const childArray = Array.from(childIds);
-  childArray.forEach((cid, i) => {
-    childrenWidth += calcWidth(cid, new Set(visited));
-    if (i < childArray.length - 1) childrenWidth += GAP_X;
+  children.forEach((child, i) => {
+    childrenWidth += calcTreeWidth(child.id, new Set(visited));
+    if (i < children.length - 1) childrenWidth += GAP_X;
   });
   
-  return Math.max(selfWidth, childrenWidth);
+  return Math.max(CARD_W, childrenWidth);
 }
 
-// المرور الثاني: تحديد المواقع من الأعلى للأسفل
-function placeFamily(personId, level, centerX, processed) {
+// وضع شخص وأبنائه
+function placeTree(personId, level, centerX, processed) {
   if (processed.has(personId)) return;
   
   const person = db.persons[personId];
@@ -1961,65 +2024,27 @@ function placeFamily(personId, level, centerX, processed) {
   processed.add(personId);
   const y = level * (CARD_H + GAP_Y);
   
-  // جمع الأزواج
-  const spouseIds = [];
-  getSpouseRels(personId).forEach(rel => {
-    const spId = rel.person1Id === personId ? rel.person2Id : rel.person1Id;
-    if (!processed.has(spId)) {
-      processed.add(spId);
-      spouseIds.push(spId);
-    }
-  });
-  
-  // عرض الوالدين
-  const parentsWidth = CARD_W + spouseIds.length * (CARD_W + SPOUSE_GAP);
-  
-  // وضع الشخص الرئيسي متوسطاً على centerX
-  const parentStartX = centerX - parentsWidth / 2;
-  person._x = parentStartX;
+  // وضع الشخص في المركز
+  person._x = centerX - CARD_W / 2;
   person._y = y;
   person._level = level;
   
-  // وضع الأزواج بجانبه
-  let spX = parentStartX + CARD_W + SPOUSE_GAP;
-  spouseIds.forEach(spId => {
-    const sp = db.persons[spId];
-    if (sp) {
-      sp._x = spX;
-      sp._y = y;
-      sp._level = level;
-      spX += CARD_W + SPOUSE_GAP;
-    }
-  });
-  
   // جمع الأبناء
-  const childIds = [];
-  getChildRels(personId).forEach(rel => {
-    if (!processed.has(rel.childId)) childIds.push(rel.childId);
-  });
-  // أبناء الأزواج أيضاً
-  spouseIds.forEach(spId => {
-    getChildRels(spId).forEach(rel => {
-      if (!processed.has(rel.childId) && !childIds.includes(rel.childId)) {
-        childIds.push(rel.childId);
-      }
-    });
-  });
-  
-  if (childIds.length === 0) return;
+  const children = getChildren(personId);
+  if (children.length === 0) return;
   
   // حساب عرض كل ابن
-  const childWidths = childIds.map(cid => calcWidth(cid, new Set(processed)));
+  const childWidths = children.map(c => calcTreeWidth(c.id, new Set(processed)));
   const totalChildrenWidth = childWidths.reduce((sum, w, i) => sum + w + (i > 0 ? GAP_X : 0), 0);
   
-  // بدء وضع الأبناء متوسطين تحت الوالدين
+  // وضع الأبناء متوسطين تحت الأب
   let childStartX = centerX - totalChildrenWidth / 2;
   
-  childIds.forEach((cid, i) => {
+  children.forEach((child, i) => {
     const childWidth = childWidths[i];
     const childCenterX = childStartX + childWidth / 2;
     
-    placeFamily(cid, level + 1, childCenterX, processed);
+    placeTree(child.id, level + 1, childCenterX, processed);
     
     childStartX += childWidth + GAP_X;
   });
@@ -2029,24 +2054,55 @@ function layoutTree() {
   const allPersons = Object.values(db.persons);
   if (allPersons.length === 0) return;
   
-  // إيجاد الجذور
-  const roots = allPersons.filter(p => {
-    const pr = getParents(p.id);
-    return !pr.father && !pr.mother;
+  // إيجاد الجذور (من ليس لهم آباء)
+  const roots = allPersons.filter(p => !p.fatherId);
+  
+  // معالجة الإخوة بدون آباء (ربطهم معاً)
+  const processedRoots = new Set();
+  const rootGroups = [];
+  
+  roots.forEach(root => {
+    if (processedRoots.has(root.id)) return;
+    
+    const group = [root];
+    processedRoots.add(root.id);
+    
+    // البحث عن إخوة عبر علاقة sibling
+    getSiblingRels(root.id).forEach(rel => {
+      const sibId = rel.person1Id === root.id ? rel.person2Id : rel.person1Id;
+      const sib = db.persons[sibId];
+      if (sib && !sib.fatherId && !processedRoots.has(sibId)) {
+        group.push(sib);
+        processedRoots.add(sibId);
+      }
+    });
+    
+    rootGroups.push(group);
   });
   
   const processed = new Set();
   let globalX = 100;
   
-  roots.forEach(root => {
-    // حساب عرض الشجرة
-    const width = calcWidth(root.id, new Set());
-    const centerX = globalX + width / 2;
+  rootGroups.forEach(group => {
+    // حساب عرض المجموعة
+    let groupWidth = 0;
+    group.forEach((root, i) => {
+      groupWidth += calcTreeWidth(root.id, new Set());
+      if (i < group.length - 1) groupWidth += GAP_X;
+    });
     
-    // وضع العائلة
-    placeFamily(root.id, 0, centerX, processed);
+    // وضع كل شخص في المجموعة
+    let startX = globalX;
+    group.forEach((root, i) => {
+      const width = calcTreeWidth(root.id, new Set());
+      const centerX = startX + width / 2;
+      
+      placeTree(root.id, 0, centerX, processed);
+      
+      startX += width + GAP_X;
+    });
     
-    globalX += width + GAP_X * 2;
+    globalX += groupWidth + GAP_X * 2;
   });
 }
 
@@ -2060,24 +2116,145 @@ function renderTree() {
   document.getElementById('empty-msg').style.display = persons.length ? 'none' : 'block';
   if (!persons.length) return;
   
-  // Lines
+  // رسم خطوط الأب-الابن
+  persons.forEach(p => {
+    if (p._x === undefined) return;
+    const father = getFather(p.id);
+    if (father && father._x !== undefined) {
+      drawFatherChildLine(father, p, linesG);
+    }
+  });
+  
+  // رسم خطوط الزواج (للعرض فقط)
   Object.values(db.relations).filter(r => r.type === 'spouse').forEach(rel => {
     const p1 = db.persons[rel.person1Id], p2 = db.persons[rel.person2Id];
     if (p1?._x !== undefined && p2?._x !== undefined) drawSpouseLine(p1, p2, rel, linesG);
   });
   
-  Object.values(db.relations).filter(r => r.type === 'child').forEach(rel => {
-    const child = db.persons[rel.childId];
-    if (!child || child._x === undefined) return;
-    const f = db.persons[rel.fatherId], m = db.persons[rel.motherId];
-    if (f?._x !== undefined && m?._x !== undefined) drawChildLine(f, m, child, linesG);
-    else if (f?._x !== undefined) drawSingleLine(f, child, linesG);
-    else if (m?._x !== undefined) drawSingleLine(m, child, linesG);
+  // رسم خطوط الأخوة (بدون آباء)
+  Object.values(db.relations).filter(r => r.type === 'sibling').forEach(rel => {
+    const p1 = db.persons[rel.person1Id], p2 = db.persons[rel.person2Id];
+    if (p1?._x !== undefined && p2?._x !== undefined && !p1.fatherId && !p2.fatherId) {
+      drawSiblingLine(p1, p2, linesG);
+    }
   });
   
-  // Cards
+  // رسم البطاقات
   persons.forEach(p => { if (p._x !== undefined) drawCard(p, cardsG); });
+  
+  // رسم دوائر الأمهات (فوق البطاقات)
+  persons.forEach(p => {
+    if (p._x !== undefined && p.motherId) {
+      const mother = db.persons[p.motherId];
+      if (mother) drawMotherCircle(p, mother, cardsG);
+    }
+  });
+  
   updateTransform();
+}
+
+// خط من الأب للابن
+function drawFatherChildLine(father, child, layer) {
+  const fx = father._x + CARD_W / 2;
+  const fy = father._y + CARD_H;
+  const cx = child._x + CARD_W / 2;
+  // إذا كان هناك أم، الخط ينتهي عند دائرة الأم
+  const cy = child.motherId ? child._y - MOTHER_CIRCLE_R : child._y;
+  const midY = fy + (cy - fy) / 2;
+  
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', `M ${fx} ${fy} L ${fx} ${midY} L ${cx} ${midY} L ${cx} ${cy}`);
+  path.setAttribute('stroke', '#475569');
+  path.setAttribute('stroke-width', '2');
+  path.setAttribute('fill', 'none');
+  layer.appendChild(path);
+}
+
+// دائرة الأم فوق الابن
+function drawMotherCircle(child, mother, layer) {
+  const cx = child._x + CARD_W / 2;
+  const cy = child._y - MOTHER_CIRCLE_R + 2; // مماسة للمربع
+  
+  const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  g.setAttribute('class', 'mother-circle');
+  g.setAttribute('data-mother-id', mother.id);
+  g.style.cursor = 'pointer';
+  
+  // الدائرة
+  const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  circle.setAttribute('cx', cx);
+  circle.setAttribute('cy', cy);
+  circle.setAttribute('r', MOTHER_CIRCLE_R);
+  circle.setAttribute('fill', '#831843');
+  circle.setAttribute('stroke', '#ec4899');
+  circle.setAttribute('stroke-width', '2');
+  g.appendChild(circle);
+  
+  // اسم الأم مختصر
+  const name = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  name.setAttribute('x', cx);
+  name.setAttribute('y', cy + 1);
+  name.setAttribute('text-anchor', 'middle');
+  name.setAttribute('dominant-baseline', 'middle');
+  name.setAttribute('fill', '#fce7f3');
+  name.setAttribute('font-size', '8');
+  name.setAttribute('font-weight', '600');
+  const shortName = mother.name.length > 5 ? mother.name.substring(0, 4) + '..' : mother.name;
+  name.textContent = shortName;
+  g.appendChild(name);
+  
+  // زر القائمة (ثلاث نقاط)
+  const menuBtn = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  menuBtn.setAttribute('class', 'mother-menu-btn');
+  menuBtn.style.cursor = 'pointer';
+  menuBtn.style.opacity = '0';
+  
+  // نقاط أفقية صغيرة
+  [-4, 0, 4].forEach(dx => {
+    const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    dot.setAttribute('cx', cx + dx);
+    dot.setAttribute('cy', cy + MOTHER_CIRCLE_R - 5);
+    dot.setAttribute('r', 1.5);
+    dot.setAttribute('fill', '#f9a8d4');
+    menuBtn.appendChild(dot);
+  });
+  
+  g.appendChild(menuBtn);
+  
+  // الأحداث
+  g.onmouseenter = () => { 
+    circle.setAttribute('stroke-width', '3');
+    menuBtn.style.opacity = '1';
+  };
+  g.onmouseleave = () => { 
+    circle.setAttribute('stroke-width', '2');
+    menuBtn.style.opacity = '0';
+  };
+  
+  g.onclick = e => {
+    e.stopPropagation();
+    const svgRect = document.getElementById('svg').getBoundingClientRect();
+    const menuX = svgRect.left + (cx + 20) * state.zoom + state.panX;
+    const menuY = svgRect.top + (cy) * state.zoom + state.panY;
+    showCardMenu(mother.id, menuX, menuY);
+  };
+  
+  layer.appendChild(g);
+}
+
+// خط بين الإخوة (بدون آباء)
+function drawSiblingLine(p1, p2, layer) {
+  const x1 = p1._x + CARD_W / 2;
+  const x2 = p2._x + CARD_W / 2;
+  const y = Math.min(p1._y, p2._y) - 15;
+  
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', `M ${x1} ${p1._y} L ${x1} ${y} L ${x2} ${y} L ${x2} ${p2._y}`);
+  path.setAttribute('stroke', '#6366f1');
+  path.setAttribute('stroke-width', '2');
+  path.setAttribute('stroke-dasharray', '4,3');
+  path.setAttribute('fill', 'none');
+  layer.appendChild(path);
 }
 
 function drawSpouseLine(p1, p2, rel, layer) {
@@ -2096,40 +2273,6 @@ function drawSpouseLine(p1, p2, rel, layer) {
   icon.setAttribute('x', midX); icon.setAttribute('y', y - 8); icon.setAttribute('text-anchor', 'middle'); icon.setAttribute('font-size', '13');
   icon.textContent = rel.status==='divorced'?'💔':rel.status==='widowed'?'✝️':'💑';
   layer.appendChild(icon);
-  
-  // + button
-  const addG = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-  addG.style.cursor = 'pointer';
-  const circ = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-  circ.setAttribute('cx', midX); circ.setAttribute('cy', y + 16); circ.setAttribute('r', 9);
-  circ.setAttribute('fill', '#1e293b'); circ.setAttribute('stroke', '#059669'); circ.setAttribute('stroke-width', '2');
-  addG.appendChild(circ);
-  const txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-  txt.setAttribute('x', midX); txt.setAttribute('y', y + 16); txt.setAttribute('text-anchor', 'middle'); txt.setAttribute('dominant-baseline', 'central');
-  txt.setAttribute('fill', '#059669'); txt.setAttribute('font-size', '13'); txt.setAttribute('font-weight', 'bold');
-  txt.textContent = '+';
-  addG.appendChild(txt);
-  addG.onclick = e => { e.stopPropagation(); openChildModal({ fatherId: rel.person1Id, motherId: rel.person2Id }); };
-  addG.onmouseenter = () => { circ.setAttribute('fill', '#059669'); txt.setAttribute('fill', '#fff'); };
-  addG.onmouseleave = () => { circ.setAttribute('fill', '#1e293b'); txt.setAttribute('fill', '#059669'); };
-  layer.appendChild(addG);
-}
-
-function drawChildLine(f, m, c, layer) {
-  const midX = (Math.min(f._x, m._x) + Math.max(f._x, m._x) + CARD_W) / 2;
-  const y1 = f._y + CARD_H, cx = c._x + CARD_W/2, cy = c._y, midY = y1 + (cy - y1) / 2;
-  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-  path.setAttribute('d', `M ${midX} ${y1} L ${midX} ${midY} L ${cx} ${midY} L ${cx} ${cy}`);
-  path.setAttribute('stroke', '#475569'); path.setAttribute('stroke-width', '2'); path.setAttribute('fill', 'none');
-  layer.appendChild(path);
-}
-
-function drawSingleLine(p, c, layer) {
-  const px = p._x + CARD_W/2, py = p._y + CARD_H, cx = c._x + CARD_W/2, cy = c._y, midY = py + (cy - py) / 2;
-  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-  path.setAttribute('d', `M ${px} ${py} L ${px} ${midY} L ${cx} ${midY} L ${cx} ${cy}`);
-  path.setAttribute('stroke', '#475569'); path.setAttribute('stroke-width', '2'); path.setAttribute('fill', 'none');
-  layer.appendChild(path);
 }
 
 function drawCard(p, layer) {
@@ -2272,21 +2415,6 @@ function setupCanvas() {
         p._manualY = newY;
         const g = document.querySelector(`g[data-person-id="${p.id}"]`);
         if (g) g.setAttribute('transform', `translate(${newX}, ${newY})`);
-        
-        // تحريك الأزواج (نفس deltaX و deltaY للحفاظ على نفس المستوى)
-        if (state.dragGroup && state.dragGroup.spouses) {
-          state.dragGroup.spouses.forEach(sp => {
-            const spouse = db.persons[sp.id];
-            if (spouse) {
-              spouse._x = sp.origX + deltaX;
-              spouse._y = sp.origY + deltaY; // نفس التحرك العمودي
-              spouse._manualX = spouse._x;
-              spouse._manualY = spouse._y;
-              const sg = document.querySelector(`g[data-person-id="${sp.id}"]`);
-              if (sg) sg.setAttribute('transform', `translate(${spouse._x}, ${spouse._y})`);
-            }
-          });
-        }
         
         // تحريك الذرية
         if (state.dragGroup && state.dragGroup.descendants) {
