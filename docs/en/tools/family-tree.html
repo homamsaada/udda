@@ -1232,7 +1232,12 @@ let state = {
   panY: 50,
   dragCardId: null,
   dragStartX: 0,
-  dragStartY: 0
+  dragStartY: 0,
+  dragOrigX: 0,
+  dragOrigY: 0,
+  dragLockY: false,
+  dragLockedY: 0,
+  dragDescendants: null
 };
 
 const CARD_W = 115, CARD_H = 80;
@@ -1298,6 +1303,57 @@ function getLineage(pid) {
 function hasRelation(p) {
   const pr = getParents(p.id);
   return pr.father || pr.mother || getSpouseRels(p.id).length > 0 || getChildRels(p.id).length > 0;
+}
+
+// جمع كل الذرية (أبناء، أحفاد، الخ) مع أزواجهم ومواقعهم الأصلية
+function getDescendantsWithPositions(pid) {
+  const result = [];
+  const visited = new Set([pid]);
+  
+  function collectDescendants(personId) {
+    // جمع الأبناء
+    const childRels = getChildRels(personId);
+    childRels.forEach(rel => {
+      const childId = rel.childId;
+      if (!visited.has(childId)) {
+        visited.add(childId);
+        const child = db.persons[childId];
+        if (child && child._x !== undefined) {
+          result.push({ id: childId, origX: child._x, origY: child._y });
+          
+          // جمع أزواج الابن/الابنة
+          getSpouseRels(childId).forEach(spRel => {
+            const spouseId = spRel.person1Id === childId ? spRel.person2Id : spRel.person1Id;
+            if (!visited.has(spouseId)) {
+              visited.add(spouseId);
+              const spouse = db.persons[spouseId];
+              if (spouse && spouse._x !== undefined) {
+                result.push({ id: spouseId, origX: spouse._x, origY: spouse._y });
+              }
+            }
+          });
+          
+          // استمر بالعمق
+          collectDescendants(childId);
+        }
+      }
+    });
+  }
+  
+  // أيضاً نجمع أزواج الشخص الأصلي
+  getSpouseRels(pid).forEach(spRel => {
+    const spouseId = spRel.person1Id === pid ? spRel.person2Id : spRel.person1Id;
+    if (!visited.has(spouseId)) {
+      visited.add(spouseId);
+      const spouse = db.persons[spouseId];
+      if (spouse && spouse._x !== undefined) {
+        result.push({ id: spouseId, origX: spouse._x, origY: spouse._y });
+      }
+    }
+  });
+  
+  collectDescendants(pid);
+  return result;
 }
 
 // ==================== RENDER LIST ====================
@@ -2055,6 +2111,19 @@ function drawCard(p, layer) {
     state.dragCardId = p.id;
     state.dragStartX = (e.clientX - state.panX) / state.zoom - p._x;
     state.dragStartY = (e.clientY - state.panY) / state.zoom - p._y;
+    
+    // حفظ الموقع الأصلي
+    state.dragOrigX = p._x;
+    state.dragOrigY = p._y;
+    
+    // تحديد إذا كان له إخوة (قفل Y)
+    const parents = getParents(p.id);
+    state.dragLockY = !!(parents.father || parents.mother);
+    state.dragLockedY = p._y;
+    
+    // جمع الذرية (للتحريك معاً)
+    state.dragDescendants = getDescendantsWithPositions(p.id);
+    
     g.style.cursor = 'grabbing';
     g.classList.add('ft-card-dragging');
   };
@@ -2082,13 +2151,39 @@ function setupCanvas() {
       const p = db.persons[state.dragCardId];
       if (p) {
         const newX = (e.clientX - state.panX) / state.zoom - state.dragStartX;
-        const newY = (e.clientY - state.panY) / state.zoom - state.dragStartY;
+        let newY = (e.clientY - state.panY) / state.zoom - state.dragStartY;
+        
+        // قفل المحور Y إذا كان له إخوة
+        if (state.dragLockY) {
+          newY = state.dragLockedY;
+        }
+        
+        // حساب الفرق
+        const deltaX = newX - state.dragOrigX;
+        const deltaY = newY - state.dragOrigY;
+        
+        // تحريك الشخص الرئيسي
         p._x = newX;
         p._y = newY;
         p._manualX = newX;
         p._manualY = newY;
         const g = document.querySelector(`g[data-person-id="${p.id}"]`);
         if (g) g.setAttribute('transform', `translate(${newX}, ${newY})`);
+        
+        // تحريك الذرية معه
+        if (state.dragDescendants) {
+          state.dragDescendants.forEach(d => {
+            const desc = db.persons[d.id];
+            if (desc) {
+              desc._x = d.origX + deltaX;
+              desc._y = d.origY + deltaY;
+              desc._manualX = desc._x;
+              desc._manualY = desc._y;
+              const dg = document.querySelector(`g[data-person-id="${d.id}"]`);
+              if (dg) dg.setAttribute('transform', `translate(${desc._x}, ${desc._y})`);
+            }
+          });
+        }
       }
       return;
     }
