@@ -1331,39 +1331,48 @@ function hasRelation(p) {
   return p.fatherId || getChildren(p.id).length > 0 || getSpouseRels(p.id).length > 0 || getSiblingRels(p.id).length > 0;
 }
 
-// === جمع الذرية للسحب ===
-function getDescendants(pid, visited = new Set()) {
-  if (visited.has(pid)) return [];
-  visited.add(pid);
-  
-  const result = [];
-  const children = getChildren(pid);
-  
-  children.forEach(child => {
-    if (!visited.has(child.id)) {
-      result.push(child);
-      result.push(...getDescendants(child.id, visited));
-    }
-  });
-  
-  return result;
-}
-
+// === جمع كل من يتحرك مع الشخص ===
 function getDragGroup(pid) {
   const mainPerson = db.persons[pid];
-  if (!mainPerson) return { descendants: [] };
+  if (!mainPerson) return { members: [] };
   
-  const descendants = [];
+  const members = [];
   const visited = new Set([pid]);
   
-  // جمع كل الذرية
-  getDescendants(pid, visited).forEach(d => {
-    if (d._x !== undefined) {
-      descendants.push({ id: d.id, origX: d._x, origY: d._y });
+  // دالة مساعدة لجمع شخص وكل ذريته
+  function collectPersonAndDescendants(personId) {
+    if (visited.has(personId)) return;
+    visited.add(personId);
+    
+    const person = db.persons[personId];
+    if (!person || person._x === undefined) return;
+    
+    members.push({ id: personId, origX: person._x, origY: person._y });
+    
+    // جمع الأبناء
+    getChildren(personId).forEach(child => {
+      collectPersonAndDescendants(child.id);
+    });
+  }
+  
+  // 1. جمع أزواج الشخص الرئيسي
+  getSpouseRels(pid).forEach(rel => {
+    const spouseId = rel.person1Id === pid ? rel.person2Id : rel.person1Id;
+    if (!visited.has(spouseId)) {
+      const spouse = db.persons[spouseId];
+      if (spouse && spouse._x !== undefined) {
+        visited.add(spouseId);
+        members.push({ id: spouseId, origX: spouse._x, origY: spouse._y });
+      }
     }
   });
   
-  return { descendants };
+  // 2. جمع أبناء الشخص الرئيسي وذريتهم
+  getChildren(pid).forEach(child => {
+    collectPersonAndDescendants(child.id);
+  });
+  
+  return { members };
 }
 
 // ==================== RENDER LIST ====================
@@ -2001,7 +2010,7 @@ function hideCtx() { hideCardMenu(); }
 
 // ==================== LAYOUT & RENDER TREE ====================
 
-// حساب عرض شجرة شخص (هو وأبناؤه)
+// حساب عرض شجرة شخص (هو + أزواجه + أبناؤه)
 function calcTreeWidth(personId, visited = new Set()) {
   if (visited.has(personId)) return CARD_W;
   visited.add(personId);
@@ -2009,9 +2018,19 @@ function calcTreeWidth(personId, visited = new Set()) {
   const person = db.persons[personId];
   if (!person) return CARD_W;
   
+  // عرض الشخص مع أزواجه
+  let selfWidth = CARD_W;
+  getSpouseRels(personId).forEach(rel => {
+    const spId = rel.person1Id === personId ? rel.person2Id : rel.person1Id;
+    if (!visited.has(spId)) {
+      visited.add(spId);
+      selfWidth += CARD_W + SPOUSE_GAP;
+    }
+  });
+  
   // جمع الأبناء
   const children = getChildren(personId);
-  if (children.length === 0) return CARD_W;
+  if (children.length === 0) return selfWidth;
   
   // حساب عرض الأبناء
   let childrenWidth = 0;
@@ -2020,31 +2039,51 @@ function calcTreeWidth(personId, visited = new Set()) {
     if (i < children.length - 1) childrenWidth += GAP_X;
   });
   
-  return Math.max(CARD_W, childrenWidth);
+  return Math.max(selfWidth, childrenWidth);
 }
 
-// وضع شخص وأبنائه
+// وضع شخص وأزواجه وأبنائه
 function placeTree(personId, level, centerX, processed) {
   if (processed.has(personId)) return;
   
   const person = db.persons[personId];
   if (!person) return;
   
-  // تخطي إذا كان هناك موقع يدوي
-  if (person._manualX !== undefined) {
-    processed.add(personId);
-    return;
-  }
-  
   processed.add(personId);
   const y = level * (CARD_H + GAP_Y);
   
-  // وضع الشخص في المركز
-  person._x = centerX - CARD_W / 2;
+  // جمع الأزواج غير المعالجين
+  const spouseIds = [];
+  getSpouseRels(personId).forEach(rel => {
+    const spId = rel.person1Id === personId ? rel.person2Id : rel.person1Id;
+    if (!processed.has(spId)) {
+      processed.add(spId);
+      spouseIds.push(spId);
+    }
+  });
+  
+  // حساب عرض الوالدين (الشخص + أزواجه)
+  const parentsWidth = CARD_W + spouseIds.length * (CARD_W + SPOUSE_GAP);
+  const parentStartX = centerX - parentsWidth / 2;
+  
+  // وضع الشخص الرئيسي
+  person._x = parentStartX;
   person._y = y;
   person._level = level;
   
-  // جمع الأبناء
+  // وضع الأزواج بجانبه
+  let spX = parentStartX + CARD_W + SPOUSE_GAP;
+  spouseIds.forEach(spId => {
+    const sp = db.persons[spId];
+    if (sp) {
+      sp._x = spX;
+      sp._y = y;
+      sp._level = level;
+      spX += CARD_W + SPOUSE_GAP;
+    }
+  });
+  
+  // جمع أبناء الشخص الرئيسي
   const children = getChildren(personId);
   if (children.length === 0) return;
   
@@ -2052,7 +2091,7 @@ function placeTree(personId, level, centerX, processed) {
   const childWidths = children.map(c => calcTreeWidth(c.id, new Set(processed)));
   const totalChildrenWidth = childWidths.reduce((sum, w, i) => sum + w + (i > 0 ? GAP_X : 0), 0);
   
-  // وضع الأبناء متوسطين تحت الأب
+  // وضع الأبناء متوسطين تحت الوالدين
   let childStartX = centerX - totalChildrenWidth / 2;
   
   children.forEach((child, i) => {
@@ -2068,6 +2107,13 @@ function placeTree(personId, level, centerX, processed) {
 function layoutTree() {
   const allPersons = Object.values(db.persons);
   if (allPersons.length === 0) return;
+  
+  // مسح كل المواقع القديمة
+  allPersons.forEach(p => {
+    delete p._x;
+    delete p._y;
+    delete p._level;
+  });
   
   // إيجاد الجذور (من ليس لهم آباء)
   const roots = allPersons.filter(p => !p.fatherId);
@@ -2426,18 +2472,14 @@ function setupCanvas() {
         // تحريك الشخص الرئيسي
         p._x = newX;
         p._y = newY;
-        p._manualX = newX;
-        p._manualY = newY;
         
-        // تحريك الذرية
-        if (state.dragGroup && state.dragGroup.descendants) {
-          state.dragGroup.descendants.forEach(d => {
-            const desc = db.persons[d.id];
-            if (desc) {
-              desc._x = d.origX + deltaX;
-              desc._y = d.origY + deltaY;
-              desc._manualX = desc._x;
-              desc._manualY = desc._y;
+        // تحريك كل أعضاء المجموعة (الأزواج والذرية)
+        if (state.dragGroup && state.dragGroup.members) {
+          state.dragGroup.members.forEach(m => {
+            const member = db.persons[m.id];
+            if (member) {
+              member._x = m.origX + deltaX;
+              member._y = m.origY + deltaY;
             }
           });
         }
