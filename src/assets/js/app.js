@@ -8,8 +8,6 @@
 const App = {
   state: {
     theme: localStorage.getItem('udda-theme') || 'auto',
-    sidebarOpen: window.innerWidth > 1024,
-    sidebarCollapsed: localStorage.getItem('udda-sidebar-collapsed') === 'true',
     settingsOpen: false,
     favorites: JSON.parse(localStorage.getItem('udda-favorites') || '[]'),
     recent: JSON.parse(localStorage.getItem('udda-recent') || '[]'),
@@ -18,7 +16,6 @@ const App = {
 
   init() {
     this.initTheme();
-    this.initSidebar();
     this.initSettings();
     this.initSearch();
     this.trackToolUsage();
@@ -55,80 +52,6 @@ const App = {
     document.querySelectorAll('[data-theme-btn]').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.themeBtn === theme);
     });
-  },
-
-  // ========================================
-  // Sidebar Management
-  // ========================================
-  initSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    if (!sidebar) return;
-
-    // Apply saved state
-    if (this.state.sidebarCollapsed && window.innerWidth > 1024) {
-      sidebar.classList.add('collapsed');
-    }
-
-    // Toggle sections
-    document.querySelectorAll('.nav-section-title').forEach(title => {
-      title.addEventListener('click', () => {
-        const section = title.closest('.nav-section');
-        section.classList.toggle('open');
-      });
-    });
-
-    // Open active section
-    const activeItem = sidebar.querySelector('.nav-item.active');
-    if (activeItem) {
-      activeItem.closest('.nav-section')?.classList.add('open');
-    }
-
-    // Mobile menu toggle
-    document.querySelector('.mobile-menu-btn')?.addEventListener('click', () => {
-      this.toggleSidebar();
-    });
-
-    // Sidebar collapse toggle
-    document.querySelector('.sidebar-toggle')?.addEventListener('click', () => {
-      this.toggleSidebarCollapse();
-    });
-
-    // Close sidebar on overlay click (mobile)
-    document.querySelector('.sidebar-overlay')?.addEventListener('click', () => {
-      this.closeSidebar();
-    });
-
-    // Handle resize
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 1024) {
-        document.querySelector('.sidebar-overlay')?.classList.remove('active');
-      }
-    });
-  },
-
-  toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const overlay = document.querySelector('.sidebar-overlay');
-    
-    sidebar.classList.toggle('open');
-    overlay?.classList.toggle('active');
-    document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
-  },
-
-  closeSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const overlay = document.querySelector('.sidebar-overlay');
-    
-    sidebar.classList.remove('open');
-    overlay?.classList.remove('active');
-    document.body.style.overflow = '';
-  },
-
-  toggleSidebarCollapse() {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.classList.toggle('collapsed');
-    this.state.sidebarCollapsed = sidebar.classList.contains('collapsed');
-    localStorage.setItem('udda-sidebar-collapsed', this.state.sidebarCollapsed);
   },
 
   // ========================================
@@ -438,9 +361,6 @@ const App = {
       if (e.key === 'Escape') {
         if (this.state.settingsOpen) {
           this.closeSettings();
-        }
-        if (window.innerWidth <= 1024) {
-          this.closeSidebar();
         }
       }
     });
