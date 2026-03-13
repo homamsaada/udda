@@ -1,0 +1,37 @@
+name: Auto Create PR
+
+on:
+  push:
+    branches:
+      - 'claude/**'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Check if PR already exists for this branch
+          BRANCH="${GITHUB_REF_NAME}"
+          EXISTING=$(gh pr list --head "$BRANCH" --state open --json number --jq length)
+          if [ "$EXISTING" -gt 0 ]; then
+            echo "PR already exists for $BRANCH"
+            exit 0
+          fi
+          # Get last commit message as PR title
+          TITLE=$(git log -1 --pretty=%s)
+          gh pr create \
+            --title "$TITLE" \
+            --body "Auto-created PR from branch \`$BRANCH\`" \
+            --base main \
+            --head "$BRANCH"
+          # Enable auto-merge
+          PR_NUMBER=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number')
+          gh pr merge "$PR_NUMBER" --auto --merge
