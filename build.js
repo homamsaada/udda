@@ -215,11 +215,6 @@ function buildPageHTML(lang, options) {
         <main class="page-content">
           ${content}
         </main>
-        <aside class="ad-sidebar">
-          <div class="ad-slot ad-slot-sticky">
-            <!-- Google AdSense code here -->
-          </div>
-        </aside>
       </div>
 
       <footer class="main-footer">
@@ -306,15 +301,6 @@ function buildHomepage(lang) {
     <div class="hero">
       <h1 class="hero-title">${meta.siteName}</h1>
       <p class="hero-subtitle">${meta.siteSlogan}</p>
-      <div class="hero-search">
-        <div class="search-input-wrapper">
-          <input type="text" class="search-input" placeholder="${ui.search}" style="padding:16px 52px 16px 20px;font-size:1.1rem;border-radius:16px;">
-          <svg class="search-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.35-4.35"></path>
-          </svg>
-        </div>
-      </div>
     </div>
     
     <section class="tools-section">
