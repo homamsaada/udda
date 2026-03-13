@@ -47,55 +47,36 @@ function copyDirRecursive(src, dest) {
 }
 
 // ========================================
-// Build Sidebar HTML
+// Build Related Tools HTML
 // ========================================
-function buildSidebarHTML(lang, activeToolId = null, basePath = '../') {
-  const categories = i18n.categories[lang];
-  const tools = toolsData.tools;
+function buildRelatedToolsHTML(toolId, lang, basePath) {
+  const tool = toolsData.tools.find(t => t.id === toolId);
   const ui = i18n.ui[lang];
-  
-  let html = `
-        <a href="${basePath}${lang}/" class="nav-item ${!activeToolId ? 'active' : ''}">
-          <span class="nav-item-icon">🏠</span>
-          <span class="sidebar-text">${ui.home}</span>
-        </a>`;
-  
-  toolsData.categoryOrder.forEach(catId => {
-    const cat = categories[catId];
-    if (!cat) return;
-    
-    const catTools = tools.filter(t => t.category === catId);
-    const hasActiveTool = catTools.some(t => t.id === activeToolId);
-    
-    html += `
-        <div class="nav-section ${hasActiveTool ? 'open' : ''}">
-          <div class="nav-section-title">
-            <span>
-              <span class="nav-section-icon">${cat.icon}</span>
-              <span class="sidebar-text">${cat.name}</span>
-            </span>
-            <svg class="nav-section-arrow sidebar-text" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="m6 9 6 6 6-6"></path>
-            </svg>
-          </div>
-          <div class="nav-section-items">`;
-    
-    catTools.forEach(tool => {
-      const toolName = i18n.tools[tool.id]?.[lang]?.name || tool.id;
-      const isActive = tool.id === activeToolId;
-      html += `
-            <a href="${basePath}${lang}/tools/${tool.id}.html" class="nav-item ${isActive ? 'active' : ''}">
-              <span class="nav-item-icon">${tool.icon}</span>
-              <span class="sidebar-text">${toolName}</span>
+  if (!tool || !tool.related || tool.related.length === 0) return '';
+
+  const relatedHTML = tool.related
+    .map(relId => {
+      const relTool = toolsData.tools.find(t => t.id === relId);
+      const relI18n = i18n.tools[relId]?.[lang];
+      if (!relTool || !relI18n) return '';
+      return `
+            <a href="${basePath}${lang}/tools/${relId}.html" class="similar-tool-card">
+              <span class="similar-tool-icon">${relTool.icon}</span>
+              <span>${relI18n.name}</span>
             </a>`;
-    });
-    
-    html += `
+    })
+    .filter(Boolean)
+    .join('');
+
+  if (!relatedHTML) return '';
+
+  return `
+        <div class="similar-tools">
+          <h3>🔗 ${ui.similarTools}</h3>
+          <div class="similar-tools-grid">
+            ${relatedHTML}
           </div>
         </div>`;
-  });
-  
-  return html;
 }
 
 // ========================================
@@ -124,8 +105,6 @@ function buildPageHTML(lang, options) {
   // Calculate base path for relative URLs
   const depth = (canonicalPath.match(/\//g) || []).length;
   const basePath = depth <= 1 ? '../' : '../../';
-  
-  const sidebarHTML = buildSidebarHTML(lang, toolId, basePath);
   
   // Breadcrumb
   let breadcrumbHTML = `<a href="${basePath}${lang}/" class="breadcrumb-link">${ui.home}</a>`;
@@ -198,52 +177,22 @@ function buildPageHTML(lang, options) {
 </head>
 <body data-tool-id="${toolId || ''}">
   <div class="app-container">
-    <div class="sidebar-overlay"></div>
-    
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <a href="${basePath}${lang}/" class="logo">
-          <div class="logo-icon">🔧</div>
-          <span class="logo-text sidebar-text">${meta.siteName}</span>
-        </a>
-      </div>
-      
-      <div class="sidebar-search">
-        <div class="search-input-wrapper">
-          <input type="text" class="search-input" placeholder="${ui.search}" aria-label="${ui.search}">
-          <svg class="search-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.35-4.35"></path>
-          </svg>
-        </div>
-      </div>
-      
-      <nav class="sidebar-nav">
-        ${sidebarHTML}
-      </nav>
-      
-      <div class="sidebar-footer">
-        <button class="sidebar-toggle" aria-label="Toggle sidebar">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path>
-          </svg>
-          <span class="sidebar-text">${ui.sidebar}</span>
-        </button>
-      </div>
-    </aside>
-    
     <div class="main-content">
       <header class="main-header">
-        <button class="header-btn mobile-menu-btn" aria-label="Menu">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-        
         <nav class="header-breadcrumb">
           ${breadcrumbHTML}
         </nav>
-        
+
+        <div class="header-search">
+          <div class="search-input-wrapper">
+            <input type="text" class="search-input" placeholder="${ui.search}" aria-label="${ui.search}">
+            <svg class="search-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </div>
+        </div>
+
         <div class="header-actions">
           <button class="header-btn" data-favorite-btn aria-label="${ui.addFavorite}">☆</button>
           <button class="header-btn" onclick="App.shareUrl('${toolName || meta.siteName}')" aria-label="${ui.share}">
@@ -261,11 +210,18 @@ function buildPageHTML(lang, options) {
           </button>
         </div>
       </header>
-      
-      <main class="page-content">
-        ${content}
-      </main>
-      
+
+      <div class="page-layout">
+        <main class="page-content">
+          ${content}
+        </main>
+        <aside class="ad-sidebar">
+          <div class="ad-slot ad-slot-sticky">
+            <!-- Google AdSense code here -->
+          </div>
+        </aside>
+      </div>
+
       <footer class="main-footer">
         <p>${ui.madeWith} | ${ui.copyright} © ${config.year} ${meta.siteName}</p>
       </footer>
@@ -425,6 +381,12 @@ function buildToolPage(toolId, lang) {
   
   let toolContent = fs.readFileSync(toolTemplatePath, 'utf8');
   
+  // Add related tools section
+  const relatedHTML = buildRelatedToolsHTML(toolId, lang, basePath);
+  if (relatedHTML) {
+    toolContent += relatedHTML;
+  }
+
   // Add toolsData script
   toolContent += `
 <script>
