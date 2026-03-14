@@ -159,6 +159,10 @@ function buildPageHTML(lang, options) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${basePath}assets/css/main.css">
+
+  <!-- Google AdSense -->
+  <!-- TODO: Replace ca-pub-XXXXXXXXXXXXXXXX with your AdSense Publisher ID -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   
   <script type="application/ld+json">
   {
@@ -211,10 +215,23 @@ function buildPageHTML(lang, options) {
         </div>
       </header>
 
-      <div class="page-layout">
+      <div class="content-wrapper">
         <main class="page-content">
           ${content}
         </main>
+
+        <aside class="ad-sidebar">
+          <div class="ad-unit ad-sticky">
+            <!-- TODO: Replace data-ad-client and data-ad-slot with your values -->
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+              data-ad-slot="XXXXXXXXXX"
+              data-ad-format="vertical"
+              data-full-width-responsive="false"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+        </aside>
       </div>
 
       <footer class="main-footer">
