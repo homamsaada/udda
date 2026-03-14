@@ -44,6 +44,10 @@
   
   <!-- Styles -->
   <link rel="stylesheet" href="{{assetsPath}}/css/main.css">
+
+  <!-- Google AdSense -->
+  <!-- TODO: Replace ca-pub-XXXXXXXXXXXXXXXX with your AdSense Publisher ID -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -178,11 +182,26 @@
         </div>
       </header>
       
-      <!-- Page Content -->
-      <main class="page-content">
-        {{content}}
-      </main>
-      
+      <!-- Page Content + Ad Sidebar -->
+      <div class="content-wrapper">
+        <main class="page-content">
+          {{content}}
+        </main>
+
+        <aside class="ad-sidebar">
+          <div class="ad-unit ad-sticky">
+            <!-- TODO: Replace data-ad-client and data-ad-slot with your values -->
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+              data-ad-slot="XXXXXXXXXX"
+              data-ad-format="vertical"
+              data-full-width-responsive="false"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+        </aside>
+      </div>
+
       <!-- Footer -->
       <footer class="main-footer">
         <p>{{ui.madeWith}} | {{ui.copyright}} © {{year}} {{siteName}}</p>

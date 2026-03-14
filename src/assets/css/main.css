@@ -242,6 +242,61 @@ body {
   margin: 0 auto;
 }
 
+/* Content Wrapper (page content + ad sidebar) */
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  gap: 24px;
+}
+
+.content-wrapper .page-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Ad Sidebar */
+.ad-sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  padding-top: 32px;
+}
+
+.ad-sticky {
+  position: sticky;
+  top: calc(var(--header-height) + 24px);
+}
+
+.ad-unit {
+  background: var(--bg-tertiary);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--border-radius);
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Inline Ad (between tool and how-to-use) */
+.ad-inline {
+  max-width: 728px;
+  margin: 24px auto;
+  background: var(--bg-tertiary);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--border-radius);
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .ad-sidebar {
+    display: none;
+  }
+}
+
 /* Footer */
 .main-footer {
   padding: 24px 32px;
