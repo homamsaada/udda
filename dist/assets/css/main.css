@@ -277,6 +277,26 @@ body {
   overflow: hidden;
 }
 
+/* Full-width page content (homepage, category pages - no sidebar) */
+.page-content--full {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Horizontal ad banner (between sections on homepage/category) */
+.ad-banner {
+  max-width: 728px;
+  margin: 32px auto;
+  background: var(--bg-tertiary);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--border-radius);
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
 /* Inline Ad (between tool and how-to-use) */
 .ad-inline {
   max-width: 728px;

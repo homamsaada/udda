@@ -215,6 +215,11 @@ function buildPageHTML(lang, options) {
         </div>
       </header>
 
+      ${isHome || isCategory ? `
+      <main class="page-content page-content--full">
+        ${content}
+      </main>
+      ` : `
       <div class="content-wrapper">
         <main class="page-content">
           ${content}
@@ -233,6 +238,7 @@ function buildPageHTML(lang, options) {
           </div>
         </aside>
       </div>
+      `}
 
       <footer class="main-footer">
         <p>${ui.madeWith} | ${ui.copyright} © ${config.year} ${meta.siteName}</p>
@@ -314,12 +320,26 @@ function buildHomepage(lang) {
         </a>`;
   }).join('');
   
+  const adBannerHTML = `
+    <div class="ad-banner">
+      <!-- TODO: Replace data-ad-client and data-ad-slot with your values -->
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+        data-ad-slot="XXXXXXXXXX"
+        data-ad-format="horizontal"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>`;
+
   const content = `
     <div class="hero">
       <h1 class="hero-title">${meta.siteName}</h1>
       <p class="hero-subtitle">${meta.siteSlogan}</p>
     </div>
-    
+
+    ${adBannerHTML}
+
     <section class="tools-section">
       <div class="section-header">
         <h2 class="section-title">📂 ${isArabic ? 'التصنيفات' : 'Categories'}</h2>
@@ -328,7 +348,7 @@ function buildHomepage(lang) {
         ${categoriesHTML}
       </div>
     </section>
-    
+
     <script>
       window.toolsData = ${JSON.stringify(allToolsData)};
     </script>
