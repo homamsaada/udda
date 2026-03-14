@@ -1,4 +1,4 @@
-name: Auto Create PR
+name: Auto Merge to Main
 
 on:
   push:
@@ -10,28 +10,20 @@ permissions:
   pull-requests: write
 
 jobs:
-  create-pr:
+  auto-merge:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Create Pull Request
+        with:
+          fetch-depth: 0
+      - name: Merge to main directly
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Check if PR already exists for this branch
           BRANCH="${GITHUB_REF_NAME}"
-          EXISTING=$(gh pr list --head "$BRANCH" --state open --json number --jq length)
-          if [ "$EXISTING" -gt 0 ]; then
-            echo "PR already exists for $BRANCH"
-            exit 0
-          fi
-          # Get last commit message as PR title
-          TITLE=$(git log -1 --pretty=%s)
-          gh pr create \
-            --title "$TITLE" \
-            --body "Auto-created PR from branch \`$BRANCH\`" \
-            --base main \
-            --head "$BRANCH"
-          # Enable auto-merge
-          PR_NUMBER=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number')
-          gh pr merge "$PR_NUMBER" --auto --merge
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git checkout main
+          git merge "origin/$BRANCH" --no-edit
+          git push origin main
