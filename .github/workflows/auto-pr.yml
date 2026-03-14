@@ -1,4 +1,4 @@
-name: Auto Merge to Main
+name: Auto Merge & Deploy
 
 on:
   push:
@@ -7,18 +7,24 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  auto-merge:
+  merge-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Merge to main directly
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Merge to main
         run: |
           BRANCH="${GITHUB_REF_NAME}"
           git config user.name "github-actions[bot]"
@@ -27,3 +33,13 @@ jobs:
           git checkout main
           git merge "origin/$BRANCH" --no-edit
           git push origin main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
