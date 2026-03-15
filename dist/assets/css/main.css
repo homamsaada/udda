@@ -256,25 +256,31 @@ body {
 
 /* Ad Sidebar */
 .ad-sidebar {
-  width: 300px;
+  width: 336px;
   flex-shrink: 0;
-  padding-top: 32px;
+  padding-top: 24px;
+  display: flex;
+  justify-content: center;
 }
 
 .ad-sticky {
   position: sticky;
-  top: calc(var(--header-height) + 24px);
+  top: calc(var(--header-height) + 16px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ad-unit {
   background: var(--bg-tertiary);
-  border: 1px dashed var(--border-color);
-  border-radius: var(--border-radius);
-  min-height: 250px;
+  border-radius: 0;
+  width: 300px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin-bottom: 16px;
 }
 
 /* Full-width page content (homepage, category pages - no sidebar) */
@@ -283,55 +289,81 @@ body {
   min-width: 0;
 }
 
-/* Horizontal ad banner (between sections on homepage/category) */
+/* Horizontal ad banner (between sections on homepage/category) - 728x90 Leaderboard */
 .ad-banner {
   max-width: 728px;
+  height: 90px;
   margin: 16px auto;
   background: var(--bg-tertiary);
-  border: 1px dashed var(--border-color);
-  border-radius: var(--border-radius);
-  min-height: 90px;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-/* Inline Ad (between tool and how-to-use) */
-.ad-inline {
-  max-width: 728px;
-  margin: 24px auto;
-  background: var(--bg-tertiary);
-  border: 1px dashed var(--border-color);
-  border-radius: var(--border-radius);
-  min-height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+/* Mobile bottom sticky ad - 320x50 Mobile Banner */
+.ad-bottom-sticky {
+  display: none;
 }
 
 @media (max-width: 1024px) {
   .ad-sidebar {
     display: none;
   }
+
+  .ad-bottom-sticky {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    padding: 4px 0;
+    height: 58px;
+  }
+
+  .ad-bottom-sticky .ad-bottom-unit {
+    width: 320px;
+    height: 50px;
+    border-radius: 0;
+    overflow: hidden;
+    background: var(--bg-tertiary);
+  }
+
+  body {
+    padding-bottom: 58px;
+  }
 }
 
 /* Footer */
 .main-footer {
-  padding: 24px 32px;
+  padding: 10px 24px;
   text-align: center;
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   border-top: 1px solid var(--border-color);
 }
 
+.footer-links {
+  margin-top: 4px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
 .footer-link {
-  color: var(--accent-primary);
+  color: var(--text-muted);
   text-decoration: none;
+  font-size: 0.75rem;
 }
 
 .footer-link:hover {
+  color: var(--accent-primary);
   text-decoration: underline;
 }
 
@@ -341,11 +373,7 @@ body {
 
 /* Tool Card */
 .tool-card {
-  background: var(--bg-secondary);
-  border-radius: var(--border-radius-xl);
-  padding: 32px;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-color);
+  padding: 0;
 }
 
 .tool-header {
@@ -1035,17 +1063,13 @@ body {
   }
 
   .ad-banner {
+    max-width: 320px;
+    height: 100px;
     margin: 12px auto;
-    min-height: 50px;
   }
 
-  .ad-inline {
-    margin: 16px auto;
-    min-height: 50px;
-  }
-  
   .tool-card {
-    padding: 20px;
+    padding: 0;
   }
   
   .calc-row {
@@ -1073,21 +1097,31 @@ body {
 
 @media (max-width: 480px) {
   .main-header {
-    padding: 0 16px;
+    padding: 0 12px;
   }
 
   .header-search {
-    display: none;
+    max-width: 140px;
+    margin: 0 8px;
+  }
+
+  .header-search .search-input {
+    padding: 8px 32px 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  [dir="rtl"] .header-search .search-input {
+    padding: 8px 10px 8px 32px;
   }
 
   .header-breadcrumb {
     font-size: 0.8rem;
   }
-  
+
   .tools-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .categories-grid {
     grid-template-columns: repeat(2, 1fr);
   }

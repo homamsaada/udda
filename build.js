@@ -218,15 +218,21 @@ function buildPageHTML(lang, options) {
         </main>
 
         <aside class="ad-sidebar">
-          <div class="ad-unit ad-sticky">
-            <!-- TODO: Replace data-ad-client and data-ad-slot with your values -->
-            <ins class="adsbygoogle"
-              style="display:block"
-              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-              data-ad-slot="XXXXXXXXXX"
-              data-ad-format="vertical"
-              data-full-width-responsive="false"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          <div class="ad-sticky">
+            <div class="ad-unit">
+              <ins class="adsbygoogle"
+                style="display:inline-block;width:300px;height:250px"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                data-ad-slot="XXXXXXXXXX"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="ad-unit">
+              <ins class="adsbygoogle"
+                style="display:inline-block;width:300px;height:250px"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                data-ad-slot="XXXXXXXXXX"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
           </div>
         </aside>
       </div>
@@ -234,6 +240,10 @@ function buildPageHTML(lang, options) {
 
       <footer class="main-footer">
         <p>${ui.madeWith} | ${ui.copyright} © ${config.year} ${meta.siteName}</p>
+        <div class="footer-links">
+          <a href="${basePath}${lang}/privacy.html" class="footer-link">${isArabic ? 'سياسة الخصوصية' : 'Privacy Policy'}</a>
+          <a href="${basePath}${lang}/terms.html" class="footer-link">${isArabic ? 'اتفاقية الخدمة' : 'Terms of Service'}</a>
+        </div>
       </footer>
     </div>
   </div>
@@ -279,6 +289,18 @@ function buildPageHTML(lang, options) {
   </div>
   
   <div class="toast"></div>
+
+  <!-- Mobile Bottom Sticky Ad - 320x50 Mobile Banner -->
+  <div class="ad-bottom-sticky">
+    <div class="ad-bottom-unit">
+      <ins class="adsbygoogle"
+        style="display:inline-block;width:320px;height:50px"
+        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+        data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
   <script src="${basePath}assets/js/app.js"></script>
 </body>
 </html>`;

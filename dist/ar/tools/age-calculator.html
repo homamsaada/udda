@@ -672,16 +672,6 @@
   </div>
 </div>
 
-<!-- Inline Ad -->
-<div class="ad-inline">
-  <ins class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-    data-ad-slot="XXXXXXXXXX"
-    data-ad-format="horizontal"
-    data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
 
 <script>
 const isArabic = document.documentElement.lang === 'ar';
@@ -1161,15 +1151,21 @@ function formatDate(date) {
         </main>
 
         <aside class="ad-sidebar">
-          <div class="ad-unit ad-sticky">
-            <!-- TODO: Replace data-ad-client and data-ad-slot with your values -->
-            <ins class="adsbygoogle"
-              style="display:block"
-              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-              data-ad-slot="XXXXXXXXXX"
-              data-ad-format="vertical"
-              data-full-width-responsive="false"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          <div class="ad-sticky">
+            <div class="ad-unit">
+              <ins class="adsbygoogle"
+                style="display:inline-block;width:300px;height:250px"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                data-ad-slot="XXXXXXXXXX"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            <div class="ad-unit">
+              <ins class="adsbygoogle"
+                style="display:inline-block;width:300px;height:250px"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                data-ad-slot="XXXXXXXXXX"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
           </div>
         </aside>
       </div>
@@ -1177,6 +1173,10 @@ function formatDate(date) {
 
       <footer class="main-footer">
         <p>صُنع بـ ❤️ | جميع الحقوق محفوظة © 2026 عُدّة</p>
+        <div class="footer-links">
+          <a href="../../ar/privacy.html" class="footer-link">سياسة الخصوصية</a>
+          <a href="../../ar/terms.html" class="footer-link">اتفاقية الخدمة</a>
+        </div>
       </footer>
     </div>
   </div>
@@ -1222,6 +1222,18 @@ function formatDate(date) {
   </div>
   
   <div class="toast"></div>
+
+  <!-- Mobile Bottom Sticky Ad - 320x50 Mobile Banner -->
+  <div class="ad-bottom-sticky">
+    <div class="ad-bottom-unit">
+      <ins class="adsbygoogle"
+        style="display:inline-block;width:320px;height:50px"
+        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+        data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
   <script src="../../assets/js/app.js"></script>
 </body>
 </html>
