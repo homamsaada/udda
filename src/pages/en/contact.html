@@ -1,0 +1,48 @@
+<div class="static-page">
+  <h1 class="static-page-title">Contact Us</h1>
+
+  <section class="static-section">
+    <h2>We'd Love to Hear From You</h2>
+    <p>Whether you have a question, a suggestion for a new tool, feedback on an existing tool, or any other inquiry — we're here to help.</p>
+  </section>
+
+  <section class="static-section">
+    <h2>Email</h2>
+    <p>You can email us directly at: <a href="mailto:email@example.com" class="contact-email">[Enter your email here]</a></p>
+    <p>We aim to respond within 48 hours.</p>
+  </section>
+
+  <section class="static-section">
+    <h2>Contact Form</h2>
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-group">
+        <label for="contact-name">Name <span class="form-optional">(optional)</span></label>
+        <input type="text" id="contact-name" name="name" class="form-input" placeholder="Your name">
+      </div>
+
+      <div class="form-group">
+        <label for="contact-email">Email <span class="form-required">*</span></label>
+        <input type="email" id="contact-email" name="email" class="form-input" placeholder="Your email address" required>
+      </div>
+
+      <div class="form-group">
+        <label for="contact-subject">Subject</label>
+        <select id="contact-subject" name="subject" class="form-input form-select">
+          <option value="general">General inquiry</option>
+          <option value="suggest-tool">Suggest a new tool</option>
+          <option value="bug-report">Report a problem</option>
+          <option value="feedback">Feedback & improvements</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="contact-message">Message <span class="form-required">*</span></label>
+        <textarea id="contact-message" name="message" class="form-input form-textarea" placeholder="Write your message here..." rows="6" required></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">Send Message</button>
+    </form>
+    <p class="form-note">Note: Messages are sent via the Formspree service. The form ID must be configured to enable sending.</p>
+  </section>
+</div>

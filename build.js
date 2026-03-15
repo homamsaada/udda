@@ -80,6 +80,37 @@ function buildRelatedToolsHTML(toolId, lang, basePath) {
 }
 
 // ========================================
+// Static Pages Definition
+// ========================================
+const staticPages = [
+  {
+    id: 'privacy',
+    ar: { title: 'سياسة الخصوصية', description: 'سياسة الخصوصية لموقع عُدّة - كيفية جمعنا واستخدامنا وحماية معلوماتك' },
+    en: { title: 'Privacy Policy', description: 'Udda Privacy Policy - How we collect, use and protect your information' }
+  },
+  {
+    id: 'terms',
+    ar: { title: 'شروط الاستخدام', description: 'شروط استخدام موقع عُدّة وأدواته المجانية' },
+    en: { title: 'Terms of Service', description: 'Terms of Service for using Udda website and its free tools' }
+  },
+  {
+    id: 'about',
+    ar: { title: 'من نحن', description: 'تعرّف على موقع عُدّة - أدوات مجانية للجميع' },
+    en: { title: 'About Us', description: 'Learn about Udda - Free tools for everyone' }
+  },
+  {
+    id: 'contact',
+    ar: { title: 'اتصل بنا', description: 'تواصل مع فريق عُدّة - اقتراحات، ملاحظات، أو استفسارات' },
+    en: { title: 'Contact Us', description: 'Contact the Udda team - suggestions, feedback, or inquiries' }
+  },
+  {
+    id: 'disclaimer',
+    ar: { title: 'إخلاء المسؤولية', description: 'إخلاء المسؤولية لموقع عُدّة وأدواته' },
+    en: { title: 'Disclaimer', description: 'Disclaimer for Udda website and its tools' }
+  }
+];
+
+// ========================================
 // Build Full Page HTML
 // ========================================
 function buildPageHTML(lang, options) {
@@ -241,8 +272,11 @@ function buildPageHTML(lang, options) {
       <footer class="main-footer">
         <p>${ui.madeWith} | ${ui.copyright} © ${config.year} ${meta.siteName}</p>
         <div class="footer-links">
-          <a href="${basePath}${lang}/privacy.html" class="footer-link">${isArabic ? 'سياسة الخصوصية' : 'Privacy Policy'}</a>
-          <a href="${basePath}${lang}/terms.html" class="footer-link">${isArabic ? 'اتفاقية الخدمة' : 'Terms of Service'}</a>
+          <a href="${basePath}${lang}/pages/about.html" class="footer-link">${isArabic ? 'من نحن' : 'About Us'}</a>
+          <a href="${basePath}${lang}/pages/contact.html" class="footer-link">${isArabic ? 'اتصل بنا' : 'Contact Us'}</a>
+          <a href="${basePath}${lang}/pages/privacy.html" class="footer-link">${isArabic ? 'سياسة الخصوصية' : 'Privacy Policy'}</a>
+          <a href="${basePath}${lang}/pages/terms.html" class="footer-link">${isArabic ? 'شروط الاستخدام' : 'Terms of Service'}</a>
+          <a href="${basePath}${lang}/pages/disclaimer.html" class="footer-link">${isArabic ? 'إخلاء المسؤولية' : 'Disclaimer'}</a>
         </div>
       </footer>
     </div>
@@ -483,6 +517,9 @@ function buildSitemap() {
     toolsData.tools.forEach(tool => {
       urls.push(`${config.baseUrl}/${lang}/tools/${tool.id}.html`);
     });
+    staticPages.forEach(page => {
+      urls.push(`${config.baseUrl}/${lang}/pages/${page.id}.html`);
+    });
   });
   
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -577,6 +614,63 @@ function buildCategoryPage(categoryId, lang) {
 }
 
 // ========================================
+// Build Static Page (privacy, terms, about, contact, disclaimer)
+// ========================================
+function buildStaticPage(pageId, lang) {
+  const isArabic = lang === 'ar';
+  const meta = i18n.meta[lang];
+  const ui = i18n.ui[lang];
+  const categories = i18n.categories[lang];
+  const basePath = '../'; // Static pages are at /ar/ or /en/
+  const pageDef = staticPages.find(p => p.id === pageId);
+  if (!pageDef) return null;
+
+  const pageInfo = pageDef[lang];
+
+  // Load page template
+  const templatePath = path.join(config.srcDir, `pages/${lang}/${pageId}.html`);
+  if (!fs.existsSync(templatePath)) {
+    console.warn(`  ⚠ Static page template not found: ${lang}/${pageId}.html`);
+    return null;
+  }
+
+  let pageContent = fs.readFileSync(templatePath, 'utf8');
+
+  // Build tools data for search
+  const allToolsData = toolsData.tools.map(t => ({
+    id: t.id,
+    icon: t.icon,
+    name: i18n.tools[t.id]?.[lang]?.name || t.id,
+    keywords: i18n.tools[t.id]?.[lang]?.keywords || '',
+    searchTerms: i18n.tools[t.id]?.[lang]?.searchTerms || '',
+    category: t.category,
+    categoryName: categories[t.category]?.name || '',
+    url: `${basePath}${lang}/tools/${t.id}.html`
+  }));
+
+  const content = `
+    ${pageContent}
+    <script>
+      window.toolsData = ${JSON.stringify(allToolsData)};
+    </script>
+  `;
+
+  return buildPageHTML(lang, {
+    title: `${pageInfo.title} - ${meta.siteName}`,
+    metaDescription: pageInfo.description,
+    keywords: isArabic ? `${pageInfo.title}، عُدّة` : `${pageInfo.title}, Udda`,
+    canonicalPath: `/pages/${pageId}.html`,
+    toolId: null,
+    toolName: null,
+    categoryId: null,
+    categoryName: null,
+    content,
+    isHome: false,
+    isCategory: true // Use full-width layout (no sidebar)
+  });
+}
+
+// ========================================
 // Main Build
 // ========================================
 function build() {
@@ -598,8 +692,10 @@ function build() {
     const langDir = path.join(config.distDir, lang);
     const toolsDir = path.join(langDir, 'tools');
     const categoryDir = path.join(langDir, 'category');
+    const pagesDir = path.join(langDir, 'pages');
     ensureDir(toolsDir);
     ensureDir(categoryDir);
+    ensureDir(pagesDir);
     
     // Homepage
     fs.writeFileSync(path.join(langDir, 'index.html'), buildHomepage(lang));
@@ -620,6 +716,15 @@ function build() {
       if (html) {
         fs.writeFileSync(path.join(toolsDir, `${tool.id}.html`), html);
         console.log(`  ✓ Tool: ${tool.id}`);
+      }
+    });
+
+    // Static pages (privacy, terms, about, contact, disclaimer)
+    staticPages.forEach(page => {
+      const html = buildStaticPage(page.id, lang);
+      if (html) {
+        fs.writeFileSync(path.join(pagesDir, `${page.id}.html`), html);
+        console.log(`  ✓ Page: ${page.id}`);
       }
     });
   });

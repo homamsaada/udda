@@ -1,0 +1,48 @@
+<div class="static-page">
+  <h1 class="static-page-title">اتصل بنا</h1>
+
+  <section class="static-section">
+    <h2>نسعد بتواصلك معنا</h2>
+    <p>سواء كان لديك سؤال، اقتراح لأداة جديدة، ملاحظة على أداة موجودة، أو أي استفسار آخر — نحن هنا للمساعدة.</p>
+  </section>
+
+  <section class="static-section">
+    <h2>البريد الإلكتروني</h2>
+    <p>يمكنك مراسلتنا مباشرة على: <a href="mailto:email@example.com" class="contact-email">[ضع بريدك الإلكتروني هنا]</a></p>
+    <p>نحرص على الرد خلال 48 ساعة.</p>
+  </section>
+
+  <section class="static-section">
+    <h2>نموذج التواصل</h2>
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-group">
+        <label for="contact-name">الاسم <span class="form-optional">(اختياري)</span></label>
+        <input type="text" id="contact-name" name="name" class="form-input" placeholder="اسمك">
+      </div>
+
+      <div class="form-group">
+        <label for="contact-email">البريد الإلكتروني <span class="form-required">*</span></label>
+        <input type="email" id="contact-email" name="email" class="form-input" placeholder="بريدك الإلكتروني" required>
+      </div>
+
+      <div class="form-group">
+        <label for="contact-subject">الموضوع</label>
+        <select id="contact-subject" name="subject" class="form-input form-select">
+          <option value="general">استفسار عام</option>
+          <option value="suggest-tool">اقتراح أداة جديدة</option>
+          <option value="bug-report">الإبلاغ عن مشكلة</option>
+          <option value="feedback">ملاحظات وتحسينات</option>
+          <option value="other">أخرى</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="contact-message">الرسالة <span class="form-required">*</span></label>
+        <textarea id="contact-message" name="message" class="form-input form-textarea" placeholder="اكتب رسالتك هنا..." rows="6" required></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">إرسال الرسالة</button>
+    </form>
+    <p class="form-note">ملاحظة: يتم إرسال الرسائل عبر خدمة Formspree. يجب إعداد معرّف النموذج لتفعيل الإرسال.</p>
+  </section>
+</div>
