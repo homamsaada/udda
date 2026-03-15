@@ -1052,11 +1052,44 @@ body {
 
 @media (max-width: 1024px) {
   .header-search {
-    max-width: 250px;
+    max-width: 300px;
   }
 }
 
 @media (max-width: 768px) {
+  .main-header {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 10px 16px;
+    gap: 8px;
+  }
+
+  .header-breadcrumb {
+    flex: 1;
+    font-size: 0.85rem;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .header-search {
+    order: 3;
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .header-search .search-input {
+    padding: 10px 40px 10px 14px;
+    font-size: 0.9rem;
+  }
+
+  [dir="rtl"] .header-search .search-input {
+    padding: 10px 14px 10px 40px;
+  }
+
   .page-content {
     padding: 16px;
   }
@@ -1078,51 +1111,64 @@ body {
   .tool-card {
     padding: 0;
   }
-  
+
+  .categories-grid {
+    gap: 10px;
+  }
+
+  .category-card {
+    padding: 14px 10px;
+  }
+
+  .category-icon {
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+  }
+
+  .category-name {
+    font-size: 0.85rem;
+  }
+
+  .category-count {
+    font-size: 0.7rem;
+  }
+
   .calc-row {
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .calc-input {
     min-width: 100%;
   }
-  
+
   .calc-btn {
     width: 100%;
     justify-content: center;
   }
-  
+
   .result-value {
     font-size: 2rem;
   }
-  
+
   .settings-panel {
     width: 100%;
+  }
+
+  .search-results {
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    margin-top: 4px;
+    max-height: 60vh;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
   }
 }
 
 @media (max-width: 480px) {
-  .main-header {
-    padding: 0 12px;
-  }
-
-  .header-search {
-    max-width: 140px;
-    margin: 0 8px;
-  }
-
-  .header-search .search-input {
-    padding: 8px 32px 8px 10px;
-    font-size: 0.8rem;
-  }
-
-  [dir="rtl"] .header-search .search-input {
-    padding: 8px 10px 8px 32px;
-  }
-
   .header-breadcrumb {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
   .tools-grid {
