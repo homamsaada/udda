@@ -69,14 +69,6 @@
         </div>
 
         <div class="header-actions">
-          <button class="header-btn" data-favorite-btn aria-label="إضافة للمفضلة">☆</button>
-          <button class="header-btn" onclick="App.shareUrl('عُدّة')" aria-label="مشاركة">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-              <polyline points="16 6 12 2 8 6"></polyline>
-              <line x1="12" y1="2" x2="12" y2="15"></line>
-            </svg>
-          </button>
           <button class="header-btn" data-open-settings aria-label="الإعدادات">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="3"></circle>
@@ -106,12 +98,8 @@
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
-    <section class="tools-section">
-      <div class="section-header">
-        <h2 class="section-title">📂 التصنيفات</h2>
-      </div>
-      <div class="categories-grid">
-        
+    <div class="categories-grid">
+      
         <a href="../ar/category/calculators.html" class="category-card">
           <div class="category-icon">🧮</div>
           <div class="category-name">حاسبات</div>
@@ -152,8 +140,7 @@
           <div class="category-name">أدوات يومية</div>
           <div class="category-count">1 أداة</div>
         </a>
-      </div>
-    </section>
+    </div>
 
     <script>
       window.toolsData = [{"id":"percentage","icon":"🔢","name":"حاسبة النسبة المئوية","keywords":"حاسبة النسبة المئوية، حساب النسبة، نسبة الخصم، حساب الخصم، percentage calculator","searchTerms":"نسبة النسبة مئوية المئوية نسب مئويه بالمية بالميه بالمئة بالمئه المئويه خصم الخصم تخفيض التخفيض حسم الحسم سعر السعر اوف عرض العرض تنزيلات زيادة الزيادة نقصان النقصان فرق الفرق ربع الربع نص النص ثلث الثلث percent percentage حساب الحساب رياضيات ربح الربح خسارة الخسارة ضريبة الضريبة ضرايب هامش الهامش كسر الكسر كسور قبل بعد اصلي الاصلي اصل الاصل تكلفة التكلفة بيع البيع شراء الشراء جزء الجزء كل الكل مجموع المجموع","category":"calculators","categoryName":"حاسبات","url":"../ar/tools/percentage.html"},{"id":"interest-calculator","icon":"💰","name":"حاسبة الفوائد","keywords":"حاسبة الفوائد، فائدة بسيطة، فائدة مركبة، حساب القرض، interest calculator","searchTerms":"فائدة الفائدة فوائد الفوائد فايدة الفايدة فوايد بسيطة البسيطة مركبة المركبة مركبه قرض القرض قروض القروض استثمار الاستثمار عائد العائد عوائد العوائد ربح الربح بنك البنك بنوك البنوك مال المال مالية المالية فلوس الفلوس راس رأس رأسمال سنوي السنوي شهري الشهري يومي اليومي ربعي نصف تراكم التراكم تراكمي رصيد الرصيد مبلغ المبلغ اصلي الاصلي معدل المعدل نسبة النسبة حساب الحساب احسب interest loan compound simple bank money investment","category":"calculators","categoryName":"حاسبات","url":"../ar/tools/interest-calculator.html"},{"id":"loan-calculator","icon":"🏦","name":"حاسبة القروض","keywords":"حاسبة القروض، قسط شهري، جدول سداد، فائدة القرض، loan calculator","searchTerms":"قرض القرض قروض القروض تمويل التمويل بنك البنك بنوك قسط القسط اقساط الاقساط شهري سداد جدول فائدة فوائد تقسيط سيارة منزل عقار شخصي loan payment installment bank mortgage","category":"calculators","categoryName":"حاسبات","url":"../ar/tools/loan-calculator.html"},{"id":"body-calculator","icon":"⚖️","name":"حاسبة كتلة الجسم","keywords":"حاسبة BMI، مؤشر كتلة الجسم، الوزن المثالي، السعرات الحرارية، نسبة الدهون","searchTerms":"وزن الوزن كتلة الكتلة جسم الجسم bmi بي ام اي مؤشر سمنة السمنة نحافة دهون الدهون سعرات السعرات حرارية ايض الايض مثالي المثالي طول الطول خصر الخصر ورك body mass index weight fat calories ideal","category":"calculators","categoryName":"حاسبات","url":"../ar/tools/body-calculator.html"},{"id":"age-calculator","icon":"🎂","name":"حاسبة العمر","keywords":"حاسبة العمر، حساب العمر، كم عمري، البرج الفلكي، عيد الميلاد","searchTerms":"عمر العمر عمري سن السن كم ميلاد الميلاد تاريخ برج البرج ابراج فلكي زودياك سنة شهر يوم age birthday birth date zodiac calculate how old","category":"calculators","categoryName":"حاسبات","url":"../ar/tools/age-calculator.html"},{"id":"family-tree","icon":"🌳","name":"شجرة العائلة","keywords":"شجرة العائلة، شجرة عائلة، نسب، سلالة، أنساب، علاقات عائلية، family tree","searchTerms":"شجرة عائلة عائله العائله العائلة نسب أنساب الأنساب سلالة جد جدة أب أم ابن ابنة أخ أخت عم عمة خال خالة قرابة قريب أقارب الأقارب نسل ذرية family tree genealogy","category":"everyday","categoryName":"أدوات يومية","url":"../ar/tools/family-tree.html"}];
@@ -189,6 +176,15 @@
           <button class="settings-btn" data-theme-btn="light">☀️ فاتح</button>
           <button class="settings-btn" data-theme-btn="dark">🌙 داكن</button>
           <button class="settings-btn active" data-theme-btn="auto">💻 تلقائي</button>
+        </div>
+      </div>
+      <div class="settings-section">
+        <div class="settings-section-title">إجراءات</div>
+        <div class="settings-option settings-option--vertical">
+          <button class="settings-btn" data-favorite-btn>☆ إضافة للمفضلة</button>
+          <button class="settings-btn" onclick="App.shareUrl('عُدّة')">
+            📤 مشاركة
+          </button>
         </div>
       </div>
       <div class="settings-section">

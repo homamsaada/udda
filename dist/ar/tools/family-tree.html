@@ -73,14 +73,6 @@
         </div>
 
         <div class="header-actions">
-          <button class="header-btn" data-favorite-btn aria-label="إضافة للمفضلة">☆</button>
-          <button class="header-btn" onclick="App.shareUrl('شجرة العائلة')" aria-label="مشاركة">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-              <polyline points="16 6 12 2 8 6"></polyline>
-              <line x1="12" y1="2" x2="12" y2="15"></line>
-            </svg>
-          </button>
           <button class="header-btn" data-open-settings aria-label="الإعدادات">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="3"></circle>
@@ -2530,6 +2522,15 @@ init();
           <button class="settings-btn" data-theme-btn="light">☀️ فاتح</button>
           <button class="settings-btn" data-theme-btn="dark">🌙 داكن</button>
           <button class="settings-btn active" data-theme-btn="auto">💻 تلقائي</button>
+        </div>
+      </div>
+      <div class="settings-section">
+        <div class="settings-section-title">إجراءات</div>
+        <div class="settings-option settings-option--vertical">
+          <button class="settings-btn" data-favorite-btn>☆ إضافة للمفضلة</button>
+          <button class="settings-btn" onclick="App.shareUrl('شجرة العائلة')">
+            📤 مشاركة
+          </button>
         </div>
       </div>
       <div class="settings-section">

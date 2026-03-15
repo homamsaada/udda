@@ -69,14 +69,6 @@
         </div>
 
         <div class="header-actions">
-          <button class="header-btn" data-favorite-btn aria-label="Add to Favorites">☆</button>
-          <button class="header-btn" onclick="App.shareUrl('Udda')" aria-label="Share">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-              <polyline points="16 6 12 2 8 6"></polyline>
-              <line x1="12" y1="2" x2="12" y2="15"></line>
-            </svg>
-          </button>
           <button class="header-btn" data-open-settings aria-label="Settings">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="3"></circle>
@@ -106,12 +98,8 @@
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
-    <section class="tools-section">
-      <div class="section-header">
-        <h2 class="section-title">📂 Categories</h2>
-      </div>
-      <div class="categories-grid">
-        
+    <div class="categories-grid">
+      
         <a href="../en/category/calculators.html" class="category-card">
           <div class="category-icon">🧮</div>
           <div class="category-name">Calculators</div>
@@ -152,8 +140,7 @@
           <div class="category-name">Everyday Tools</div>
           <div class="category-count">1 tools</div>
         </a>
-      </div>
-    </section>
+    </div>
 
     <script>
       window.toolsData = [{"id":"percentage","icon":"🔢","name":"Percentage Calculator","keywords":"percentage calculator, calculate percentage, discount calculator, percent change","searchTerms":"percent percentage % discount sale off price change increase decrease difference quarter half third ratio math calculator profit loss tax margin fraction calculate how much what is of total part whole original cost selling buying before after","category":"calculators","categoryName":"Calculators","url":"../en/tools/percentage.html"},{"id":"interest-calculator","icon":"💰","name":"Interest Calculator","keywords":"interest calculator, simple interest, compound interest, loan calculator","searchTerms":"interest simple compound loan investment return profit bank money calculate annual monthly daily quarterly yearly principal rate time period accumulate savings deposit growth calculator finance financial how much earn","category":"calculators","categoryName":"Calculators","url":"../en/tools/interest-calculator.html"},{"id":"loan-calculator","icon":"🏦","name":"Loan Calculator","keywords":"loan calculator, monthly payment, amortization schedule, mortgage calculator","searchTerms":"loan loans payment payments installment installments bank mortgage mortgages monthly schedule amortization calculate calculator interest principal finance financing car home personal","category":"calculators","categoryName":"Calculators","url":"../en/tools/loan-calculator.html"},{"id":"body-calculator","icon":"⚖️","name":"Body Calculator","keywords":"BMI calculator, body mass index, ideal weight, calorie calculator, body fat","searchTerms":"bmi body mass index weight fat calories calorie bmr tdee ideal healthy obesity overweight underweight waist hip ratio calculate calculator health fitness","category":"calculators","categoryName":"Calculators","url":"../en/tools/body-calculator.html"},{"id":"age-calculator","icon":"🎂","name":"Age Calculator","keywords":"age calculator, calculate age, how old am I, zodiac sign, birthday calculator","searchTerms":"age birthday birth date zodiac calculate how old years months days weeks hours born sign horoscope difference between dates","category":"calculators","categoryName":"Calculators","url":"../en/tools/age-calculator.html"},{"id":"family-tree","icon":"🌳","name":"Family Tree","keywords":"family tree, genealogy, ancestry, family relationships, family tree maker","searchTerms":"family tree genealogy ancestry relatives parents grandparents children siblings uncle aunt cousin relationship lineage heritage","category":"everyday","categoryName":"Everyday Tools","url":"../en/tools/family-tree.html"}];
@@ -189,6 +176,15 @@
           <button class="settings-btn" data-theme-btn="light">☀️ Light</button>
           <button class="settings-btn" data-theme-btn="dark">🌙 Dark</button>
           <button class="settings-btn active" data-theme-btn="auto">💻 Auto</button>
+        </div>
+      </div>
+      <div class="settings-section">
+        <div class="settings-section-title">Actions</div>
+        <div class="settings-option settings-option--vertical">
+          <button class="settings-btn" data-favorite-btn>☆ Add to Favorites</button>
+          <button class="settings-btn" onclick="App.shareUrl('Udda')">
+            📤 Share
+          </button>
         </div>
       </div>
       <div class="settings-section">

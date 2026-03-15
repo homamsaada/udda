@@ -73,14 +73,6 @@
         </div>
 
         <div class="header-actions">
-          <button class="header-btn" data-favorite-btn aria-label="Add to Favorites">☆</button>
-          <button class="header-btn" onclick="App.shareUrl('Family Tree')" aria-label="Share">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-              <polyline points="16 6 12 2 8 6"></polyline>
-              <line x1="12" y1="2" x2="12" y2="15"></line>
-            </svg>
-          </button>
           <button class="header-btn" data-open-settings aria-label="Settings">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="3"></circle>
@@ -2530,6 +2522,15 @@ init();
           <button class="settings-btn" data-theme-btn="light">☀️ Light</button>
           <button class="settings-btn" data-theme-btn="dark">🌙 Dark</button>
           <button class="settings-btn active" data-theme-btn="auto">💻 Auto</button>
+        </div>
+      </div>
+      <div class="settings-section">
+        <div class="settings-section-title">Actions</div>
+        <div class="settings-option settings-option--vertical">
+          <button class="settings-btn" data-favorite-btn>☆ Add to Favorites</button>
+          <button class="settings-btn" onclick="App.shareUrl('Family Tree')">
+            📤 Share
+          </button>
         </div>
       </div>
       <div class="settings-section">

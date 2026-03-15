@@ -236,7 +236,7 @@ body {
 /* Page Content */
 .page-content {
   flex: 1;
-  padding: 32px;
+  padding: 20px 32px;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -286,7 +286,7 @@ body {
 /* Horizontal ad banner (between sections on homepage/category) */
 .ad-banner {
   max-width: 728px;
-  margin: 32px auto;
+  margin: 16px auto;
   background: var(--bg-tertiary);
   border: 1px dashed var(--border-color);
   border-radius: var(--border-radius);
@@ -664,6 +664,10 @@ body {
   margin-bottom: 8px;
 }
 
+.settings-option--vertical {
+  flex-direction: column;
+}
+
 .settings-btn {
   flex: 1;
   padding: 12px 16px;
@@ -720,7 +724,7 @@ body {
 
 .hero {
   text-align: center;
-  padding: 48px 0;
+  padding: 24px 0 16px;
 }
 
 .hero-title {
@@ -736,12 +740,12 @@ body {
 .hero-subtitle {
   font-size: 1.2rem;
   color: var(--text-secondary);
-  margin-bottom: 32px;
+  margin-bottom: 0;
 }
 
 /* Tools Grid */
 .tools-section {
-  margin-bottom: 48px;
+  margin-bottom: 24px;
 }
 
 .section-header {
@@ -1019,11 +1023,25 @@ body {
 
 @media (max-width: 768px) {
   .page-content {
-    padding: 20px;
+    padding: 16px;
   }
-  
+
+  .hero {
+    padding: 16px 0 8px;
+  }
+
   .hero-title {
     font-size: 1.8rem;
+  }
+
+  .ad-banner {
+    margin: 12px auto;
+    min-height: 50px;
+  }
+
+  .ad-inline {
+    margin: 16px auto;
+    min-height: 50px;
   }
   
   .tool-card {

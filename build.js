@@ -198,14 +198,6 @@ function buildPageHTML(lang, options) {
         </div>
 
         <div class="header-actions">
-          <button class="header-btn" data-favorite-btn aria-label="${ui.addFavorite}">☆</button>
-          <button class="header-btn" onclick="App.shareUrl('${toolName || meta.siteName}')" aria-label="${ui.share}">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-              <polyline points="16 6 12 2 8 6"></polyline>
-              <line x1="12" y1="2" x2="12" y2="15"></line>
-            </svg>
-          </button>
           <button class="header-btn" data-open-settings aria-label="${ui.settings}">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="3"></circle>
@@ -267,6 +259,15 @@ function buildPageHTML(lang, options) {
           <button class="settings-btn" data-theme-btn="light">☀️ ${ui.themeLight}</button>
           <button class="settings-btn" data-theme-btn="dark">🌙 ${ui.themeDark}</button>
           <button class="settings-btn active" data-theme-btn="auto">💻 ${ui.themeAuto}</button>
+        </div>
+      </div>
+      <div class="settings-section">
+        <div class="settings-section-title">${isArabic ? 'إجراءات' : 'Actions'}</div>
+        <div class="settings-option settings-option--vertical">
+          <button class="settings-btn" data-favorite-btn>☆ ${ui.addFavorite}</button>
+          <button class="settings-btn" onclick="App.shareUrl('${toolName || meta.siteName}')">
+            📤 ${ui.share}
+          </button>
         </div>
       </div>
       <div class="settings-section">
@@ -340,14 +341,9 @@ function buildHomepage(lang) {
 
     ${adBannerHTML}
 
-    <section class="tools-section">
-      <div class="section-header">
-        <h2 class="section-title">📂 ${isArabic ? 'التصنيفات' : 'Categories'}</h2>
-      </div>
-      <div class="categories-grid">
-        ${categoriesHTML}
-      </div>
-    </section>
+    <div class="categories-grid">
+      ${categoriesHTML}
+    </div>
 
     <script>
       window.toolsData = ${JSON.stringify(allToolsData)};
