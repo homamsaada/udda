@@ -51,6 +51,7 @@ build.js                    Build script — contains the actual HTML layout tem
 | `age-calculator` | calculators | Age, date difference, date math |
 | `family-tree` | everyday | Interactive family tree builder (SVG) |
 | `zakat-calculator` | calculators | Zakat calculation (gold, silver, cash, stocks, debt, real estate, trade) |
+| `inheritance-calculator` | calculators | Islamic inheritance (faraid) calculator with 4 madhabs, awl, radd, hajb |
 
 ## Adding a New Tool — Step by Step
 
