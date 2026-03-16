@@ -57,6 +57,73 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Gold price bar */
+.gold-price-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(234, 179, 8, 0.12));
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 14px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.gold-price-bar .gold-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.gold-price-bar .gold-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.gold-price-bar .gold-input-wrap label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.gold-price-bar .gold-input-wrap input {
+  padding: 8px 12px;
+  border: 2px solid rgba(245, 158, 11, 0.3);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  width: 130px;
+  transition: border-color var(--transition-fast);
+}
+
+.gold-price-bar .gold-input-wrap input:focus {
+  outline: none;
+  border-color: #f59e0b;
+}
+
+.gold-price-bar .gold-link {
+  font-size: 0.8rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: opacity var(--transition-fast);
+}
+
+.gold-price-bar .gold-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
 /* Currency note */
 .currency-note {
   display: flex;
@@ -348,10 +415,28 @@
   .stock-type-toggle {
     flex-direction: column;
   }
+
+  .gold-price-bar {
+    padding: 12px 14px;
+  }
+
+  .gold-price-bar .gold-input-wrap input {
+    width: 100px;
+  }
 }
 </style>
 
 <div class="zakat-calculator">
+  <!-- Gold price input -->
+  <div class="gold-price-bar">
+    <span class="gold-icon">🥇</span>
+    <div class="gold-input-wrap">
+      <label>{{tool.goldPricePerGram}}</label>
+      <input type="number" id="gold-price-global" placeholder="0" step="0.01" oninput="calculateComprehensive()">
+    </div>
+    <a class="gold-link" href="https://www.goldprice.org" target="_blank" rel="noopener noreferrer">{{tool.checkGoldPrice}} ↗</a>
+  </div>
+
   <!-- Currency note -->
   <div class="currency-note">
     <span class="icon">💱</span>
@@ -446,14 +531,6 @@
         </div>
       </div>
 
-      <!-- Gold Price (for nisab) -->
-      <div class="section-header">⚖️ {{tool.goldPricePerGram}}</div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>{{tool.goldPricePerGram}}</label>
-          <input type="number" id="comp-gold-price" placeholder="0" step="0.01" oninput="calculateComprehensive()">
-        </div>
-      </div>
     </div>
 
     <div class="result-box" id="comp-result">
@@ -603,7 +680,7 @@
     var stocksValue = parseFloat(document.getElementById('comp-stocks').value) || 0;
     var dividends = parseFloat(document.getElementById('comp-dividends').value) || 0;
     var debts = parseFloat(document.getElementById('comp-debts').value) || 0;
-    var goldPrice = parseFloat(document.getElementById('comp-gold-price').value) || 0;
+    var goldPrice = parseFloat(document.getElementById('gold-price-global').value) || 0;
 
     if (goldPrice <= 0) return;
 
