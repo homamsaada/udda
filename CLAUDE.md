@@ -231,6 +231,14 @@ padding-inline-end: 12px;   /* NOT padding-right */
 [dir="rtl"] .my-element { /* RTL-specific */ }
 ```
 
+### CSS scoping with wrapper class
+
+Every tool should wrap its content in a container with a unique class (e.g., `.kaffara-calculator`, `.zakat-calculator`) and scope all CSS selectors under it. This prevents style conflicts between tools:
+
+```css
+.my-tool .calc-tab { /* scoped to this tool only */ }
+```
+
 ### Key UI classes
 
 - `.tool-card` — Main tool container (no border/background/shadow — tools render directly on page background)
@@ -257,6 +265,26 @@ App.state.theme     // Current theme: 'light' | 'dark' | 'auto'
 App.showToast(msg)  // Show temporary notification
 ```
 
+### IIFE wrapping (required for all tool JS)
+
+All tool-specific JavaScript MUST be wrapped in an IIFE to avoid polluting the global scope. Only expose functions that are referenced in HTML `onclick`/`oninput` attributes via `window.funcName`:
+
+```js
+<script>
+(function() {
+  var lang = document.documentElement.lang || 'ar';
+  var isArabic = lang === 'ar';
+
+  // Private helper — not accessible outside
+  function formatNumber(n) { /* ... */ }
+
+  // Public — referenced in HTML oninput="myCalc()"
+  window.myCalc = function() { /* ... */ };
+  window.myReset = function() { /* ... */ };
+})();
+</script>
+```
+
 ### Calculator pattern (used in percentage tool)
 
 Each calculator row follows this structure:
@@ -271,6 +299,24 @@ Each calculator row follows this structure:
 navigator.clipboard.writeText(text).then(() => {
   App.showToast(App.state.lang === 'ar' ? 'تم النسخ!' : 'Copied!');
 });
+```
+
+### CSV export (no CDN dependencies)
+
+Never add CDN dependencies (like ExcelJS, SheetJS, etc.). Use native CSV generation with BOM for Arabic Excel compatibility:
+
+```js
+function exportCsv(rows, filename) {
+  var bom = '\uFEFF';
+  var csv = rows.map(function(r) {
+    return r.map(function(c) { return '"' + String(c).replace(/"/g, '""') + '"'; }).join(',');
+  }).join('\n');
+  var blob = new Blob([bom + csv], { type: 'text/csv;charset=utf-8' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+}
 ```
 
 ## Page Layout Architecture
@@ -327,12 +373,88 @@ Controlled by `isHome`/`isCategory` flags in `build.js` → `buildPageHTML()`:
 
 GitHub Actions (`.github/workflows/deploy.yml`) auto-deploys `dist/` to GitHub Pages on push to `main`.
 
+## Reusable UI Patterns
+
+These patterns are already used in zakat-calculator and kaffara-calculator. Reuse them instead of inventing new ones:
+
+### Tab-based tools
+
+```html
+<div class="calc-tabs">  <!-- or .kf-tabs for scrollable -->
+  <button class="calc-tab active" onclick="switchTab('tab1')">Tab 1</button>
+  <button class="calc-tab" onclick="switchTab('tab2')">Tab 2</button>
+</div>
+<div class="calc-section active" id="tab1-section">...</div>
+<div class="calc-section" id="tab2-section">...</div>
+```
+
+- Use `.calc-tabs` (flex-wrap) for ≤5 tabs
+- Use scrollable container (`overflow-x: auto; flex-wrap: nowrap`) for 6+ tabs
+
+### Shared price/input bar
+
+```html
+<div class="price-bar my-color">
+  <span class="bar-icon">🍽️</span>
+  <div class="bar-input-wrap">
+    <label>Label</label>
+    <input type="number" oninput="recalc()">
+  </div>
+  <span class="bar-hint">Hint text</span>
+</div>
+```
+
+### Disclaimer section
+
+```html
+<div class="zakat-disclaimer">
+  <div class="disclaimer-item"><span>📌</span> First note</div>
+  <div class="disclaimer-item"><span>📋</span> Second note</div>
+</div>
+```
+
+### Result display patterns
+
+- **Stat cards**: `.stats-grid` > `.stat-card` (used in zakat for summary numbers)
+- **Result box**: `.result-box` with gradient background (used for main results)
+- **Total cost banner**: `.kf-total` with accent gradient (used in kaffara for totals)
+
+## Inheritance Calculator Architecture
+
+The inheritance calculator (`src/tools/inheritance-calculator.html`) is the most complex tool (~2800+ lines). Key architectural notes:
+
+### Dynamic heir layers
+- Users can add deeper descendant layers (sons of sons of sons...), higher grandfathers, higher grandmothers, and extended agnates
+- Max 7 layers per category, tracked in `dynState` object
+- Dynamic IDs: `dynDescM{N}`, `dynDescF{N}`, `dynGf{N}`, `dynGmP{N}`, `dynGmM{N}`, `dynExtFull{N}`, `dynExtPat{N}`
+- `createHeirRow(heirId, name, maxCount)` — creates DOM elements for dynamic heirs
+- `inhAddLayer(category)` — handles 'descendants', 'ascendants', 'extended'
+
+### Blocking (hajb) system
+- `getBlockReason(heirId)` — returns blocking reason or null
+- `updateHeirStates()` — auto-unchecks blocked heirs and shows blocking reasons
+- Blocking rules depend on madhab (Hanafi, Maliki, Shafi'i, Hanbali)
+
+### Share assignment
+- `assignShares()` — the core calculation engine
+- Handles: fard (fixed shares), asaba (residuary), awl (proportional reduction), radd (redistribution of remainder)
+- Special cases: mushtaraka (shared case), akdariyyah, umariyyatan, grandfather with siblings (muqasama)
+- Radd varies by madhab: Shafi'i = no radd, Hanbali = radd to spouses when no other fard heirs
+
+### Shared pool pattern
+When multiple entries share a single fard fraction (e.g., maternal siblings sharing 1/3), use proportional distribution:
+```js
+entry.parts = sharedPoolParts * entry.count / entry.shared;
+```
+
 ## General Preferences
 
 These reflect the current style of the project. They're guidelines, not hard rules — use your judgment and adapt as the project grows:
 
 - Prefer instant results (`oninput`) over submit buttons where it makes sense
-- Prefer vanilla JS; use external libraries only when genuinely needed
+- Prefer vanilla JS; use external libraries only when genuinely needed — never add CDN dependencies
 - Keep calculators in a math-sentence style when they fit that pattern
-- Use `{{tool.xxx}}` placeholders instead of hardcoding text
+- Use `{{tool.xxx}}` placeholders instead of hardcoding text — never hardcode Arabic or English strings in HTML
 - Ads are handled by the layout in `build.js`, not inside tool templates
+- Islamic tools must include a "this is not a fatwa" disclaimer
+- Islamic terminology must be accurate — use proper fiqh terms with transliteration in English (e.g., "Kaffarat al-Yamin" not just "oath penalty")
