@@ -491,6 +491,95 @@
   line-height: 1.5;
 }
 
+/* Gold price warning */
+.gold-price-warning {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 10px;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: #b45309;
+  font-weight: 500;
+}
+
+.gold-price-warning.show {
+  display: flex;
+}
+
+/* Nisab toggle */
+.nisab-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.nisab-btn {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+  font-family: inherit;
+}
+
+.nisab-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.nisab-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+/* Field note */
+.field-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* Reset button */
+.reset-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.reset-btn:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .calc-tab {
@@ -566,6 +655,21 @@
     <div class="currency-note">
       <span class="icon">💱</span>
       <span>جميع القيم بعملتك المحلية</span>
+    </div>
+
+    <!-- Nisab standard selector -->
+    <div class="form-group" style="margin-bottom: 4px">
+      <label>معيار النصاب</label>
+      <div class="nisab-toggle">
+        <button class="nisab-btn active" onclick="setNisabStandard('gold', this)">🥇 الذهب (85 جرام)</button>
+        <button class="nisab-btn" onclick="setNisabStandard('silver', this)">🥈 الفضة (595 جرام)</button>
+      </div>
+      <div class="nisab-note" id="nisab-note">نصاب الفضة أقل وهو الأحوط</div>
+    </div>
+
+    <!-- Gold price warning -->
+    <div class="gold-price-warning" id="gold-price-warning">
+      ⚠️ أدخل سعر جرام الذهب أعلاه لحساب الزكاة
     </div>
 
     <div class="input-form">
@@ -650,10 +754,13 @@
         <div class="form-group">
           <label>الديون المستحقة عليك <span class="optional-badge">(اختياري)</span></label>
           <input type="number" id="comp-debts" placeholder="0" oninput="calculateComprehensive()">
+          <div class="field-note">تُخصم الديون الحالّة (المستحقة الآن) فقط، وليس جميع الديون المؤجلة</div>
         </div>
       </div>
 
     </div>
+
+    <button class="reset-btn" onclick="resetComprehensive()">🗑️ مسح الكل</button>
 
     <div class="result-box" id="comp-result">
       <div class="nisab-status" id="comp-nisab-status"></div>
@@ -688,11 +795,18 @@
           <input type="number" id="fitr-members" placeholder="1" min="1" oninput="calculateFitr()">
         </div>
         <div class="form-group">
+          <label>مقدار الصاع (كغ)</label>
+          <input type="number" id="fitr-sa-weight" placeholder="3" min="0.1" step="0.1" value="3" oninput="calculateFitr()">
+          <div class="field-note">المقدار تقريبي (2.5 - 3 كغ) ويختلف حسب نوع القوت</div>
+        </div>
+        <div class="form-group">
           <label>سعر الكيلو من الطعام الأساسي</label>
           <input type="number" id="fitr-price" placeholder="0" step="0.01" oninput="calculateFitr()">
         </div>
       </div>
     </div>
+
+    <button class="reset-btn" onclick="resetFitr()">🗑️ مسح الكل</button>
 
     <div class="result-box" id="fitr-result">
       <div class="fitr-main-result">
@@ -732,9 +846,30 @@
   const lang = document.documentElement.lang || 'ar';
   const isArabic = lang === 'ar';
   let currentStockType = 'trading';
+  let nisabStandard = 'gold';
 
   // Update stock note on load
   updateStockNote();
+  updateNisabNote();
+
+  // Nisab standard toggle
+  window.setNisabStandard = function(standard, btn) {
+    document.querySelectorAll('.nisab-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    nisabStandard = standard;
+    updateNisabNote();
+    calculateComprehensive();
+  };
+
+  function updateNisabNote() {
+    var el = document.getElementById('nisab-note');
+    if (nisabStandard === 'silver') {
+      el.style.display = 'block';
+      el.textContent = isArabic ? 'نصاب الفضة أقل وهو الأحوط' : 'Silver nisab is lower and more cautious';
+    } else {
+      el.style.display = 'none';
+    }
+  }
 
   // Tab switching
   window.switchZakatTab = function(tab) {
@@ -805,7 +940,17 @@
     var debts = parseFloat(document.getElementById('comp-debts').value) || 0;
     var goldPrice = parseFloat(document.getElementById('gold-price-global').value) || 0;
 
-    if (goldPrice <= 0) return;
+    var warningEl = document.getElementById('gold-price-warning');
+    var hasAnyInput = cash > 0 || goldWeight > 0 || silverWeight > 0 || tradeGoods > 0 || stocksValue > 0 || dividends > 0 || debts > 0;
+
+    if (goldPrice <= 0) {
+      if (hasAnyInput) {
+        warningEl.classList.add('show');
+      }
+      document.getElementById('comp-result').classList.remove('show');
+      return;
+    }
+    warningEl.classList.remove('show');
 
     // Calculate gold value in money
     var pureGoldWeight = goldWeight * (goldKarat / 24);
@@ -824,7 +969,15 @@
     }
 
     var totalWealth = cash + goldValue + silverValue + tradeGoods + stocksZakatable - debts;
-    var nisab = 85 * goldPrice;
+
+    // Nisab calculation based on selected standard
+    var nisab;
+    if (nisabStandard === 'silver') {
+      nisab = silverPrice > 0 ? 595 * silverPrice : 85 * goldPrice;
+    } else {
+      nisab = 85 * goldPrice;
+    }
+
     var reached = totalWealth >= nisab;
     var zakatAmount = reached ? totalWealth * 0.025 : 0;
     var remaining = totalWealth - zakatAmount;
@@ -840,16 +993,45 @@
   // Zakat al-Fitr calculation
   window.calculateFitr = function() {
     var members = parseInt(document.getElementById('fitr-members').value) || 0;
+    var saWeight = parseFloat(document.getElementById('fitr-sa-weight').value) || 3;
     var pricePerKg = parseFloat(document.getElementById('fitr-price').value) || 0;
 
     if (members <= 0 || pricePerKg <= 0) return;
 
-    var totalKg = members * 3;
+    var totalKg = members * saWeight;
     var totalCost = totalKg * pricePerKg;
 
     document.getElementById('fitr-total-cost').textContent = fmt(totalCost);
     document.getElementById('fitr-total-kg').textContent = totalKg + ' ' + (isArabic ? 'كغ' : 'Kg');
+    document.getElementById('fitr-per-person').textContent = '≈ ' + saWeight;
     showResult('fitr-result');
+  };
+
+  // Reset comprehensive
+  window.resetComprehensive = function() {
+    ['gold-price-global', 'silver-price-global', 'comp-cash', 'comp-gold-weight', 'comp-silver-weight', 'comp-trade', 'comp-stocks', 'comp-dividends', 'comp-debts'].forEach(function(id) {
+      document.getElementById(id).value = '';
+    });
+    document.getElementById('comp-gold-karat').value = '24';
+    document.getElementById('comp-silver-karat').value = '999';
+    document.getElementById('comp-result').classList.remove('show');
+    document.getElementById('gold-price-warning').classList.remove('show');
+    currentStockType = 'trading';
+    document.querySelectorAll('.stock-type-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelector('.stock-type-btn[data-type="trading"]').classList.add('active');
+    document.getElementById('dividends-group').style.display = 'none';
+    updateStockNote();
+  };
+
+  // Reset fitr
+  window.resetFitr = function() {
+    document.getElementById('fitr-members').value = '';
+    document.getElementById('fitr-sa-weight').value = '3';
+    document.getElementById('fitr-price').value = '';
+    document.getElementById('fitr-result').classList.remove('show');
+    document.getElementById('fitr-total-cost').textContent = '—';
+    document.getElementById('fitr-total-kg').textContent = '—';
+    document.getElementById('fitr-per-person').textContent = '≈ 3';
   };
 })();
 </script>
