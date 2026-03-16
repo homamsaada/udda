@@ -18,10 +18,11 @@ src/                        Source files (edit here)
   assets/js/app.js          Main application JS (global App object)
   data/i18n.json            All translations (AR/EN)
   data/tools.json           Tools registry and category order
-  layouts/                  Base HTML layout templates (NOT used by build — see note below)
+  layouts/                  LEGACY — NOT used by build (see Critical Notes)
   tools/                    Individual tool HTML templates
 dist/                       Generated output — do NOT edit directly
-build.js                    Build script (Node.js) — contains the actual HTML template
+docs/                       GitHub Pages deployment folder — do NOT edit directly
+build.js                    Build script — contains the actual HTML layout template
 ```
 
 ## Tech Stack
@@ -30,25 +31,127 @@ build.js                    Build script (Node.js) — contains the actual HTML 
 - Node.js for the build system only (`build.js`)
 - No external npm dependencies
 
-## Code Conventions
+## Critical Notes
 
-- **JS**: ES6+, global `App` object with methods, `localStorage` for state, event delegation
-- **CSS**: CSS custom properties for theming, `[dir="rtl"]`/`[dir="ltr"]` selectors, responsive breakpoints at 1024px/768px/480px, light/dark/auto themes
-- **HTML**: Template placeholders `{{variable}}`, semantic HTML with ARIA attributes
-- **i18n**: Keyed by `tools[toolId][lang][property]` in `i18n.json`
-
-## Critical: build.js Contains the HTML Template
-
-**`build.js` uses an inline HTML template** inside `buildPageHTML()` — it does NOT read from `src/layouts/base.html`. Any layout changes (header, footer, ads, page structure) must be made directly in `build.js`. The `src/layouts/` directory is legacy and not used.
+- `dist/` and `docs/` are auto-generated — always edit files in `src/` and `build.js`
+- Layout changes go in `build.js` (function `buildPageHTML()`), not in `src/layouts/`
+- Every tool must support both Arabic and English
+- The site supports dark/light/auto themes via `data-theme` attribute
+- Base URL: `https://udda.tools`
 
 ## Current Tools
 
-- `percentage` — Percentage calculator (13 sub-calculators)
-- `interest-calculator` — Simple & compound interest calculator
-- `loan-calculator` — Loan payment & amortization calculator
-- `body-calculator` — BMI, BMR, ideal weight, body fat calculators
-- `age-calculator` — Age, date difference, add/subtract dates
-- `family-tree` — Interactive family tree builder (SVG/Canvas)
+| ID | Category | Description |
+|---|---|---|
+| `percentage` | calculators | 13 inline percentage calculators |
+| `interest-calculator` | calculators | Simple & compound interest |
+| `loan-calculator` | calculators | Loan payments & amortization |
+| `body-calculator` | calculators | BMI, BMR, ideal weight, body fat |
+| `age-calculator` | calculators | Age, date difference, date math |
+| `family-tree` | everyday | Interactive family tree builder (SVG) |
+
+## Adding a New Tool — Step by Step
+
+This is the most common task. Follow these steps exactly:
+
+### Step 1: Add translations in `src/data/i18n.json`
+
+Location: inside `"tools"` object, add a new key matching your tool ID.
+
+```json
+"tools": {
+  "my-tool": {
+    "ar": {
+      "name": "اسم الأداة",
+      "title": "اسم الأداة - وصف قصير | عُدّة",
+      "metaDescription": "وصف SEO بالعربي (150-160 حرف)",
+      "keywords": "كلمة1، كلمة2، كلمة3",
+      "description": "وصف قصير يظهر تحت اسم الأداة",
+      "searchTerms": "كلمات بحث متنوعة بالعامي والفصحى والإنجليزي",
+      "howToUseText": "شرح مختصر لكيفية الاستخدام",
+      "customKey1": "نص مخصص 1",
+      "customKey2": "نص مخصص 2"
+    },
+    "en": {
+      "name": "Tool Name",
+      "title": "Tool Name - Short Description | Udda",
+      "metaDescription": "English SEO description (150-160 chars)",
+      "keywords": "keyword1, keyword2, keyword3",
+      "description": "Short description shown under tool name",
+      "searchTerms": "various search terms synonyms misspellings",
+      "howToUseText": "Brief usage instructions",
+      "customKey1": "Custom text 1",
+      "customKey2": "Custom text 2"
+    }
+  }
+}
+```
+
+**Reserved keys** (handled automatically by build.js, do NOT use as `{{tool.xxx}}` in templates):
+`name`, `title`, `metaDescription`, `keywords`, `description`, `searchTerms`, `howToUseText`
+
+**Custom keys**: Any other key you add (like `customKey1`) becomes available as `{{tool.customKey1}}` in the HTML template. Add as many as needed for your tool's UI labels.
+
+**searchTerms tips**: Include the word without "ال", slang/colloquial variants, common misspellings (مئوية/مئويه), and English equivalents.
+
+### Step 2: Register in `src/data/tools.json`
+
+```json
+{
+  "id": "my-tool",
+  "category": "calculators",
+  "icon": "🔢",
+  "popular": true,
+  "new": true,
+  "related": ["percentage", "other-tool"]
+}
+```
+
+Available categories: `calculators`, `converters`, `text`, `datetime`, `generators`, `image`, `developers`, `everyday`
+
+### Step 3: Create HTML template `src/tools/my-tool.html`
+
+The template gets wrapped automatically by `build.js` inside the full page layout. You only write the tool content.
+
+```html
+<!-- Tool card with header -->
+<div class="tool-card">
+  <div class="tool-header">
+    <div class="tool-icon">🔢</div>
+    <div>
+      <h1 class="tool-title">{{tool.name}}</h1>
+      <p class="tool-description">{{tool.description}}</p>
+    </div>
+  </div>
+
+  <!-- Your tool UI here -->
+</div>
+
+<!-- How to Use section -->
+<div class="how-to-use">
+  <h3>📖 {{ui.howToUse}}</h3>
+  <p>{{tool.howToUseText}}</p>
+</div>
+
+<!-- Scoped styles -->
+<style>
+/* Your tool-specific CSS */
+</style>
+
+<!-- Scoped script -->
+<script>
+// Your tool-specific JS
+</script>
+```
+
+### Step 4: Build and verify
+
+```bash
+npm run build
+npm run serve
+# Check both http://localhost:3000/ar/tools/my-tool.html
+# and   http://localhost:3000/en/tools/my-tool.html
+```
 
 ## Adding a Sub-Calculator to `percentage`
 
@@ -63,37 +166,128 @@ The percentage tool uses a numbered calculator pattern (`calc1` through `calc13`
    - Add `case N` in the `calculate()` switch
 4. Run `npm run build`
 
-## Adding a New Tool
+## Template Placeholder System
 
-1. Create an HTML template in `src/tools/<tool-name>.html`
-2. Register the tool in `src/data/tools.json`
-3. Add translations (both AR and EN) in `src/data/i18n.json`
-4. Run `npm run build` to generate pages
-5. Do NOT add `ad-inline` inside tool templates — ads are handled by the layout in `build.js`
+Placeholders use `{{key}}` syntax and are replaced at build time.
+
+| Placeholder | Source | Example |
+|---|---|---|
+| `{{tool.name}}` | `i18n.json → tools.{id}.{lang}.name` | حاسبة النسبة المئوية |
+| `{{tool.description}}` | `i18n.json → tools.{id}.{lang}.description` | احسب النسبة بسهولة |
+| `{{tool.howToUseText}}` | `i18n.json → tools.{id}.{lang}.howToUseText` | أدخل الأرقام... |
+| `{{tool.customKey}}` | `i18n.json → tools.{id}.{lang}.customKey` | أي نص مخصص |
+| `{{ui.calculate}}` | `i18n.json → ui.{lang}.calculate` | احسب |
+| `{{ui.result}}` | `i18n.json → ui.{lang}.result` | النتيجة |
+| `{{ui.howToUse}}` | `i18n.json → ui.{lang}.howToUse` | كيفية الاستخدام |
+| `{{validationMsg}}` | Hardcoded in build.js | أدخل أرقاماً صحيحة |
+
+Language detection at runtime:
+
+```js
+const lang = App.state.lang; // 'ar' or 'en'
+const isArabic = lang === 'ar';
+```
+
+Toast messages:
+
+```js
+App.showToast(App.state.lang === 'ar' ? 'تم النسخ!' : 'Copied!');
+```
+
+## CSS Architecture
+
+### Theme colors (use these CSS variables, never hardcode colors)
+
+```css
+var(--bg-primary)         /* Page background */
+var(--bg-secondary)       /* Cards, inputs */
+var(--bg-tertiary)        /* Alternate sections */
+var(--text-primary)       /* Main text */
+var(--text-secondary)     /* Secondary text */
+var(--text-muted)         /* Placeholders, hints */
+var(--accent-primary)     /* Primary brand color (indigo) */
+var(--accent-secondary)   /* Secondary accent */
+var(--accent-gradient)    /* Gradient for buttons/results */
+var(--border-color)       /* Borders */
+var(--border-radius)      /* Standard radius */
+var(--border-radius-lg)   /* Large radius */
+var(--transition-fast)    /* Fast transition */
+```
+
+### RTL support
+
+```css
+/* Use logical properties */
+margin-inline-start: 8px;   /* NOT margin-left */
+padding-inline-end: 12px;   /* NOT padding-right */
+
+/* For directional overrides */
+[dir="rtl"] .my-element { /* RTL-specific */ }
+```
+
+### Key UI classes
+
+- `.tool-card` — Main tool container (no border/background/shadow — tools render directly on page background)
+- `.tool-header` — Icon + title + description row
+- `.tool-icon` — Emoji icon container
+- `.tool-title` — H1 tool name
+- `.how-to-use` — Usage instructions section
+
+### Responsive breakpoints
+
+| Breakpoint | Changes |
+|---|---|
+| ≤1024px | Sidebar hidden, bottom sticky ad shown |
+| ≤768px | Reduced padding, smaller hero, compact layouts |
+| ≤480px | Compact search bar, smaller header, 2-col categories |
+
+## JavaScript Patterns
+
+### Global App object (defined in `src/assets/js/app.js`)
+
+```js
+App.state.lang      // Current language: 'ar' | 'en'
+App.state.theme     // Current theme: 'light' | 'dark' | 'auto'
+App.showToast(msg)  // Show temporary notification
+```
+
+### Calculator pattern (used in percentage tool)
+
+Each calculator row follows this structure:
+1. Inputs with `oninput="calculate(n)"` for instant results
+2. Result displayed in `<span class="calc-result" id="resultN">`
+3. Precision controls (+/−) and copy button
+4. Results update in real-time, no submit button needed
+
+### Clipboard
+
+```js
+navigator.clipboard.writeText(text).then(() => {
+  App.showToast(App.state.lang === 'ar' ? 'تم النسخ!' : 'Copied!');
+});
+```
 
 ## Page Layout Architecture
 
-The site uses different layouts depending on page type (controlled by `isHome`/`isCategory` flags in `build.js`):
+Controlled by `isHome`/`isCategory` flags in `build.js` → `buildPageHTML()`:
 
 ### Homepage & Category Pages (full-width)
-- No sidebar — content takes full width (`.page-content--full`)
-- Horizontal ad banner (728×90 Leaderboard) between hero and categories
+- No sidebar — `.page-content--full`
+- Horizontal ad banner (728×90) between hero and categories
 - Mobile: banner scales to 320×100
 
 ### Tool Pages (with sidebar)
-- Content + sidebar layout via `.content-wrapper` (flexbox)
-- Sidebar (`.ad-sidebar`): two 300×250 ad units, sticky, centered
-- Sidebar hidden on screens ≤1024px
+- Content + sidebar via `.content-wrapper` (flexbox)
+- Sidebar (`.ad-sidebar`): two 300×250 ad units, sticky
+- Sidebar hidden on ≤1024px
 - No inline ads inside tool content
 
 ### All Pages
-- Mobile bottom sticky ad (320×50) — fixed at bottom, visible only ≤1024px
+- Mobile bottom sticky ad (320×50), visible only ≤1024px
 - `body` has `padding-bottom: 58px` on mobile to prevent content overlap
-- Footer with privacy policy & terms of service links
+- Footer with links to about, contact, privacy, terms, disclaimer
 
-## Ad Placements & Sizes (Google AdSense)
-
-Standard AdSense sizes are used throughout:
+## Ad Placements (Google AdSense)
 
 | Placement | Size | Class | Visibility |
 |---|---|---|---|
@@ -107,22 +301,16 @@ Standard AdSense sizes are used throughout:
 
 ## Header Structure
 
-- Only one button in header: Settings (gear icon)
-- Favorite and Share buttons are inside the Settings panel, not the header
-- Search bar is visible on all screen sizes (compact on mobile ≤480px)
-
-## Responsive Breakpoints
-
-| Breakpoint | Changes |
-|---|---|
-| ≤1024px | Sidebar hidden, bottom sticky ad shown, search bar narrower |
-| ≤768px | Reduced padding, smaller hero, compact ad sizes |
-| ≤480px | Compact search bar (140px), smaller header padding, 2-col categories |
+- One button: Settings (gear icon)
+- Favorite and Share are inside Settings panel
+- Search bar visible on all screen sizes
 
 ## Build Output
 
 `build.js` generates under `dist/`:
 - `ar/` and `en/` — full site in both languages
+- `ar/tools/` and `en/tools/` — individual tool pages
+- `ar/category/` and `en/category/` — category listing pages
 - `sitemap.xml` and `robots.txt` — SEO files
 - `index.html` — language-detection redirect
 
@@ -130,11 +318,12 @@ Standard AdSense sizes are used throughout:
 
 GitHub Actions (`.github/workflows/deploy.yml`) auto-deploys `dist/` to GitHub Pages on push to `main`.
 
-## Important Notes
+## General Preferences
 
-- `dist/` is auto-generated — always edit files in `src/` and `build.js`
-- **Layout changes go in `build.js`**, not in `src/layouts/base.html`
-- Every tool must support both Arabic and English
-- The site supports dark/light/auto themes via `data-theme` attribute
-- `.tool-card` has no visual styling (no border/background/shadow) — tools render directly on page background
-- Base URL: `https://udda.tools`
+These reflect the current style of the project. They're guidelines, not hard rules — use your judgment and adapt as the project grows:
+
+- Prefer instant results (`oninput`) over submit buttons where it makes sense
+- Prefer vanilla JS; use external libraries only when genuinely needed
+- Keep calculators in a math-sentence style when they fit that pattern
+- Use `{{tool.xxx}}` placeholders instead of hardcoding text
+- Ads are handled by the layout in `build.js`, not inside tool templates
