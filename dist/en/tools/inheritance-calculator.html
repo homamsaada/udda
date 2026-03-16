@@ -2154,6 +2154,25 @@
     var gfSpecial = null;
     for (var i = 0; i < fard.length; i++) { if (fard[i].special === 'gfWithSiblings') { gfSpecial = fard[i]; break; } }
 
+    // ── Al-Akdariyyah early detection ──
+    // husband + mother + grandfather + (one full/paternal sister), no descendants, no father, non-Hanafi
+    // In this case, GF gets 1/6 as regular fard (not gfSpecial), so awl happens naturally
+    var isAkdariyyah = false;
+    if (gfSpecial && !hasDesc && !hasFather
+        && (a.husband||0) > 0 && (a.mother||0) > 0
+        && madhab !== 'hanafi'
+        && ((a.fullSisters||0) === 1 || (a.paternalSisters||0) === 1)
+        && (a.fullBrothers||0) === 0 && (a.paternalBrothers||0) === 0) {
+      isAkdariyyah = true;
+      // Convert gfSpecial to regular 1/6 fard so awl occurs
+      gfSpecial.num = 1;
+      gfSpecial.den = 6;
+      gfSpecial.type = 'fard';
+      gfSpecial.special = null;
+      gfSpecial.reasonKey = 'reasonGrandfatherSixth';
+      gfSpecial = null; // No longer special
+    }
+
     // Collect fard shares that have actual fractions (for base calculation)
     // We need to first calculate without gf+siblings, then determine gf share
 
@@ -2163,33 +2182,41 @@
       if (fard[i].den > 0 && !fard[i].special) dens.push(fard[i].den);
       else if (fard[i].special === 'umariyyatan' && fard[i].den > 0) dens.push(fard[i].den);
     }
-    // Handle maternal siblings sharing
-    // If both maternalBrothers and maternalSisters exist with shared, they share 1/3
-    // The 1/3 is counted once, not twice
-    var maternalShared = false;
-    for (var i = 0; i < fard.length; i++) {
-      if (fard[i].shared && !maternalShared) { maternalShared = true; }
-      else if (fard[i].shared && maternalShared) { fard[i].den = 0; fard[i].num = 0; fard[i]._skip = true; }
-    }
-
-    // Recollect dens
+    // Handle shared entries (maternal siblings sharing 1/3, or 1/6 for single)
+    // Collect denominators — count shared fraction only once
+    var sharedDenCounted = false;
     dens = [];
     for (var i = 0; i < fard.length; i++) {
-      if (fard[i].den > 0 && fard[i].special !== 'gfWithSiblings' && fard[i].special !== 'gfAsaba' && fard[i].special !== 'fatherAsaba') dens.push(fard[i].den);
+      var f = fard[i];
+      if (f.den <= 0) continue;
+      if (f.special === 'gfWithSiblings' || f.special === 'gfAsaba' || f.special === 'fatherAsaba') continue;
+      if (f.shared) {
+        if (!sharedDenCounted) { dens.push(f.den); sharedDenCounted = true; }
+      } else {
+        dens.push(f.den);
+      }
     }
     if (dens.length === 0) dens = [1];
     var base = lcmArr(dens);
 
     // Convert to parts
     var totalFardParts = 0;
+    var sharedPoolParts = 0;
+    var sharedPoolCounted = false;
     for (var i = 0; i < fard.length; i++) {
       var f = fard[i];
-      if (f._skip) { f.parts = 0; continue; }
-      if (f.den > 0 && f.special !== 'gfWithSiblings' && f.special !== 'gfAsaba' && f.special !== 'fatherAsaba') {
+      if (f.den > 0 && f.shared && f.shared > 0) {
+        // Shared entries (maternal siblings sharing 1/3): compute pool once, distribute proportionally
+        if (!sharedPoolCounted) {
+          sharedPoolParts = (base / f.den) * f.num;
+          totalFardParts += sharedPoolParts;
+          sharedPoolCounted = true;
+        }
+        f.parts = sharedPoolParts * f.count / f.shared;
+      } else if (f.den > 0 && f.special !== 'gfWithSiblings' && f.special !== 'gfAsaba' && f.special !== 'fatherAsaba') {
         f.parts = (base / f.den) * f.num;
         totalFardParts += f.parts;
       } else if (f.special === 'fatherAsaba' || f.special === 'gfAsaba') {
-        // Father/GF with female desc: 1/6 fard already counted, gets remainder too
         f.parts = (base / f.den) * f.num;
         totalFardParts += f.parts;
       } else {
@@ -2292,30 +2319,34 @@
       if ((a.fullBrothers||0) > 0) fard.push({ heirId:'fullBrothers', count:a.fullBrothers, num:1, den:3, type:'fard', reasonKey:'reasonMushtaraka', shared:allSharing });
       if ((a.fullSisters||0) > 0) fard.push({ heirId:'fullSisters', count:a.fullSisters, num:1, den:3, type:'fard', reasonKey:'reasonMushtaraka', shared:allSharing });
 
-      // Recalculate base and parts
+      // Recalculate base and parts — count shared den only once
       dens = [];
+      var mushDenCounted = false;
       for (var i = 0; i < fard.length; i++) {
-        if (fard[i].den > 0 && !fard[i]._skip) dens.push(fard[i].den);
+        var f = fard[i];
+        if (f.den <= 0) continue;
+        if (f.shared) {
+          if (!mushDenCounted) { dens.push(f.den); mushDenCounted = true; }
+        } else {
+          dens.push(f.den);
+        }
       }
       if (dens.length === 0) dens = [1];
       base = lcmArr(dens);
       totalFardParts = 0;
-      // Handle shared entries — count 1/3 only once
-      var mushShareCounted = false;
+      // Handle shared entries — mushtaraka shares 1/3, distributed proportionally by count
+      var mushThirdParts = 0;
       for (var i = 0; i < fard.length; i++) {
         var f = fard[i];
-        if (f._skip) { f.parts = 0; continue; }
         if (f.den > 0) {
           if (f.shared && f.reasonKey === 'reasonMushtaraka') {
-            if (!mushShareCounted) {
-              f.parts = (base / f.den) * f.num;
-              totalFardParts += f.parts;
-              mushShareCounted = true;
-            } else {
-              f.parts = 0;
+            if (mushThirdParts === 0) {
+              mushThirdParts = (base / f.den) * f.num;
+              totalFardParts += mushThirdParts;
             }
+            f.parts = mushThirdParts * f.count / f.shared;
           } else if (f.shared && f.reasonKey === 'reasonMaternalSiblingsThird') {
-            // skip — replaced by mushtaraka
+            // Replaced by mushtaraka entries
             f.parts = 0;
           } else {
             f.parts = (base / f.den) * f.num;
@@ -2377,13 +2408,9 @@
     }
 
     // ── Al-Akdariyyah ──
-    // husband + mother + grandfather + (one full/paternal sister), no descendants, no father, non-Hanafi
     // After awl: combine GF's and sister's shares, redistribute 2:1 (male:female)
     var akdariyyahInfo = null;
-    if (awlInfo && hasGF && !hasFather && !hasDesc
-        && (a.husband||0) > 0 && (a.mother||0) > 0
-        && madhab !== 'hanafi'
-        && ((a.fullSisters||0) === 1 || (a.paternalSisters||0) === 1)) {
+    if (isAkdariyyah && awlInfo) {
       var sisterKey = (a.fullSisters||0) === 1 ? 'fullSisters' : 'paternalSisters';
       var akdGfId = activeGfLayer === 1 ? 'paternalGrandfather' : 'dynGf' + activeGfLayer;
       var gfEntry = null, sisterEntry = null;
