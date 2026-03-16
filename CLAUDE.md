@@ -52,6 +52,7 @@ build.js                    Build script — contains the actual HTML layout tem
 | `family-tree` | everyday | Interactive family tree builder (SVG) |
 | `zakat-calculator` | calculators | Zakat calculation (gold, silver, cash, stocks, debt, real estate, trade) |
 | `inheritance-calculator` | calculators | Islamic inheritance (faraid) calculator with 4 madhabs, awl, radd, hajb |
+| `kaffara-calculator` | calculators | Kaffara & fidya calculator for 8 types of Islamic expiations |
 
 ## Adding a New Tool — Step by Step
 
