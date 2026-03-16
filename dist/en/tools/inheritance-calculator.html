@@ -690,7 +690,7 @@
         </div>
         <div class="inh-alert-banner warning" id="inh-baytmal-alert">
           <span class="inh-alert-icon">🏛️</span>
-          <div><strong>Remainder goes to Bayt al-Mal</strong><br>Not all of the estate was distributed to the heirs. The remainder goes to the Muslim public treasury (Bayt al-Mal).</div>
+          <div><strong>No fixed-share or residuary heirs found</strong><br>According to Hanafi and Hanbali schools, the estate goes to distant relatives (dhawu al-arham) such as daughter's children, maternal uncles, and paternal aunts. According to Maliki and Shafi'i schools, it goes to the Muslim public treasury (Bayt al-Mal). Consult a qualified scholar to determine the rightful heirs.</div>
         </div>
         <div class="inh-results-table-wrapper">
           <table class="inh-results-table">
@@ -716,7 +716,7 @@
         </div>
         <div class="inh-action-buttons">
           <button class="inh-action-btn primary" onclick="inhCopyResults()">📋 Copy Results</button>
-          <button class="inh-action-btn secondary" onclick="window.print()">🖨️ Print Results</button>
+          <button class="inh-action-btn secondary" onclick="inhExportExcel()">📊 Export Excel</button>
           <button class="inh-action-btn danger" onclick="inhResetAll()">🗑️ Clear All</button>
         </div>
       </div>
@@ -741,6 +741,7 @@
   <p>Enter the estate amount, debts, and bequests, then select the deceased's gender, then choose the existing heirs and their numbers. Results will appear automatically showing each heir's share and its Sharia basis.</p>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
 <script>
 (function() {
   var lang = document.documentElement.lang || 'ar';
@@ -774,38 +775,38 @@
   };
 
   var reasonTexts = {
-    reasonHusbandHalf: 'Half — no inheriting descendants', reasonHusbandQuarter: 'Quarter — inheriting descendants exist',
-    reasonWifeQuarter: 'Quarter — no inheriting descendants', reasonWifeEighth: 'Eighth — inheriting descendants exist',
-    reasonDaughterHalf: 'Half — sole daughter with no son', reasonDaughtersTwoThirds: 'Two-thirds — multiple daughters with no son',
-    reasonDaughtersWithSons: 'Residuary with son — male gets twice the female share',
-    reasonSonDaughterSixth: 'Sixth — completing two-thirds', reasonSonDaughterHalf: 'Half — sole son's daughter with no co-sharer',
-    reasonSonDaughtersTwoThirds: 'Two-thirds — multiple son's daughters',
-    reasonSonDaughtersWithSonsSons: 'Residuary with son's son — male gets twice female share',
-    reasonSonSonDaughterSixth: 'Sixth — completing two-thirds',
-    reasonSonSonDaughterHalf: 'Half — sole son's son's daughter with no co-sharer',
-    reasonSonSonDaughtersTwoThirds: 'Two-thirds — multiple son's son's daughters',
-    reasonSonSonDaughtersWithSonSonSons: 'Residuary with son's son's son — male gets twice female share',
-    reasonFatherSixth: 'Sixth — male descendant exists', reasonFatherSixthPlusRemainder: 'Sixth (fard) + remainder — only female descendants',
-    reasonFatherRemainder: 'Remainder as residuary — no descendants',
-    reasonMotherSixth: 'Sixth — descendants or multiple siblings exist', reasonMotherThird: 'Third — no descendants or multiple siblings',
-    reasonMotherThirdRemainder: 'Third of remainder after spouse's share (Umariyyatan)',
-    reasonGrandmotherSixth: 'Sixth',
-    reasonFullSisterHalf: 'Half — sole full sister', reasonFullSistersTwoThirds: 'Two-thirds — multiple full sisters',
-    reasonFullSistersWithBrothers: 'Residuary with full brother — male gets twice female share',
-    reasonFullSistersAsabaWithGhayr: 'Residuary with others (daughters/son's daughters)',
-    reasonPaternalSisterSixth: 'Sixth — completing two-thirds with full sister',
-    reasonPaternalSisterHalf: 'Half — sole paternal sister',
-    reasonPaternalSistersTwoThirds: 'Two-thirds — multiple paternal sisters',
-    reasonPaternalSistersWithBrothers: 'Residuary with paternal brother — male gets twice female share',
-    reasonPaternalSistersAsabaWithGhayr: 'Residuary with others',
-    reasonMaternalSiblingSixth: 'Sixth — sole maternal sibling',
-    reasonMaternalSiblingsThird: 'Third — shared equally among maternal siblings',
-    reasonAsaba: 'Remainder as residuary',
-    reasonGrandfatherSixth: 'Sixth as fixed share',
-    reasonGrandfatherSixthPlusRemainder: 'Sixth + remainder',
-    reasonGrandfatherRemainder: 'Remainder as residuary',
-    reasonGrandfatherWithSiblings: 'Best of: sharing, one-third of remainder, or one-sixth',
-    reasonMushtaraka: 'Full siblings share with maternal siblings in one-third (al-Mushtaraka)'
+    reasonHusbandHalf: 'Half as fixed share (fard) — no inheriting descendants exist for the deceased wife (no sons, daughters, or son's sons)', reasonHusbandQuarter: 'Quarter as fixed share (fard) — inheriting descendants exist for the deceased wife (son, daughter, or son's son)',
+    reasonWifeQuarter: 'Quarter as fixed share (fard) — no inheriting descendants exist for the deceased husband', reasonWifeEighth: 'Eighth as fixed share (fard) — inheriting descendants exist for the deceased husband',
+    reasonDaughterHalf: 'Half as fixed share — sole daughter with no son to make her residuary (if a son existed, she would take by ta'sib: male gets twice the female share)', reasonDaughtersTwoThirds: 'Two-thirds as fixed share — two or more daughters with no son to make them residuary',
+    reasonDaughtersWithSons: 'Residuary with son — male gets twice the female share. The son shifts daughters from fixed share to residuary',
+    reasonSonDaughterSixth: 'Sixth as fixed share — completing the two-thirds with the direct daughter. The daughter took half, and son's daughter takes sixth to complete two-thirds', reasonSonDaughterHalf: 'Half as fixed share — sole son's daughter with no male at her level to make her residuary and no direct daughter above her',
+    reasonSonDaughtersTwoThirds: 'Two-thirds as fixed share — two or more son's daughters with no male at their level and no direct daughter above',
+    reasonSonDaughtersWithSonsSons: 'Residuary with son's son — male gets twice the female share. Son's son shifts her from fixed share to residuary',
+    reasonSonSonDaughterSixth: 'Sixth as fixed share — completing two-thirds. Daughters or son's daughters above took their share, and she gets sixth to complete',
+    reasonSonSonDaughterHalf: 'Half as fixed share — sole great-granddaughter with no male at her level and no females above who exhausted two-thirds',
+    reasonSonSonDaughtersTwoThirds: 'Two-thirds as fixed share — multiple great-granddaughters with no male at their level',
+    reasonSonSonDaughtersWithSonSonSons: 'Residuary with son's son's son — male gets twice the female share',
+    reasonFatherSixth: 'Sixth as fixed share — a male descendant exists (son or son's son). The male descendant blocks the father from residuary, leaving him with fard only', reasonFatherSixthPlusRemainder: 'Sixth as fixed share + remainder as residuary — only female descendants exist (daughters without sons). He takes sixth as fard then remainder as closest male agnate',
+    reasonFatherRemainder: 'Remainder as residuary — no descendants exist. The father is the closest agnate in the absence of children',
+    reasonMotherSixth: 'Sixth as fixed share — descendants or multiple siblings exist (two or more). Siblings reduce her from third to sixth even if they themselves are blocked by the father', reasonMotherThird: 'Third as fixed share — no inheriting descendants and fewer than two siblings',
+    reasonMotherThirdRemainder: 'Third of remainder after spouse's share (al-Umariyyatan) — she takes one-third of remainder, not one-third of estate, so she doesn't receive more than the father. This is the ruling of Umar ibn al-Khattab',
+    reasonGrandmotherSixth: 'Sixth as fixed share — the grandmother's established share when the mother is absent',
+    reasonFullSisterHalf: 'Half as fixed share — sole full sister with no full brother to make her residuary, no male descendant, and no father', reasonFullSistersTwoThirds: 'Two-thirds as fixed share — two or more full sisters with no full brother to make them residuary',
+    reasonFullSistersWithBrothers: 'Residuary with full brother — male gets twice the female share. The brother shifts sisters from fixed share to residuary',
+    reasonFullSistersAsabaWithGhayr: 'Residuary with others — the full sister becomes residuary alongside daughters or son's daughters and takes the role of a full brother in blocking and residuary rights',
+    reasonPaternalSisterSixth: 'Sixth as fixed share — completing two-thirds with the full sister. The full sister took half, and paternal sister takes sixth to complete',
+    reasonPaternalSisterHalf: 'Half as fixed share — sole paternal sister with no paternal brother to make her residuary, and no full siblings',
+    reasonPaternalSistersTwoThirds: 'Two-thirds as fixed share — two or more paternal sisters with no paternal brother and no full siblings',
+    reasonPaternalSistersWithBrothers: 'Residuary with paternal brother — male gets twice the female share',
+    reasonPaternalSistersAsabaWithGhayr: 'Residuary with others — paternal sister becomes residuary alongside daughters or son's daughters when no full siblings exist',
+    reasonMaternalSiblingSixth: 'Sixth as fixed share — sole maternal sibling. A single maternal brother or sister takes one-sixth',
+    reasonMaternalSiblingsThird: 'Third as fixed share — shared equally among maternal siblings. Males and females inherit equally among maternal siblings (unlike other heirs)',
+    reasonAsaba: 'Remainder as residuary — takes whatever remains of the estate after fixed-share holders as the closest male agnate',
+    reasonGrandfatherSixth: 'Sixth as fixed share — like the father when a male descendant exists',
+    reasonGrandfatherSixthPlusRemainder: 'Sixth as fixed share + remainder as residuary — like the father when only female descendants exist',
+    reasonGrandfatherRemainder: 'Remainder as residuary — like the father when no descendants exist, but unlike the father, he does not block siblings according to the majority',
+    reasonGrandfatherWithSiblings: 'Takes the best of three options: sharing as a brother (treated as a brother dividing with siblings), one-third of the remainder after fixed shares, or one-sixth of the total estate',
+    reasonMushtaraka: 'Al-Mushtaraka (the shared case) — full siblings share with maternal siblings equally in one-third. Called 'al-Himariyyah' because full siblings argued: suppose our father were a donkey, are we not from the same mother?'
   };
 
   var typeTexts = { fard: 'Fixed Share (Fard)', tasib: 'Residuary (Ta'sib)', fardAndTasib: 'Fard + Ta'sib' };
@@ -993,7 +994,26 @@
     // Active = non-blocked
     var a = {};
     for (var id in h) { if (!blocked[id]) a[id] = h[id]; }
-    if (Object.keys(a).length === 0) { hideResults(); return; }
+    if (Object.keys(a).length === 0) {
+      // All heirs are blocked — show bayt al-mal / dhawu al-arham note
+      hideResults();
+      var section = document.getElementById('inh-results-section');
+      section.classList.add('show');
+      document.getElementById('inh-no-results').style.display = 'none';
+      document.getElementById('inh-baytmal-alert').classList.add('show');
+      // Show blocked heirs
+      var blockedSection = document.getElementById('inh-blocked-section');
+      var blockedList = document.getElementById('inh-blocked-list');
+      blockedSection.classList.add('show');
+      blockedList.innerHTML = '';
+      for (var bk in blocked) {
+        var li = document.createElement('li');
+        li.textContent = (heirNames[bk] || bk) + ' — ' + (blockTexts[blocked[bk]] || blocked[bk]);
+        blockedList.appendChild(li);
+      }
+      document.getElementById('inh-step4').classList.add('active');
+      return;
+    }
 
     // Assign shares (pass h for hajb nuqsan checks like mother's sibling count)
     var shares = assignShares(a, state.madhab, blocked, h);
@@ -1784,6 +1804,77 @@
     navigator.clipboard.writeText(text).then(function() {
       App.showToast(isArabic ? 'تم النسخ!' : 'Copied!');
     });
+  };
+
+  window.inhExportExcel = async function() {
+    var table = document.querySelector('.inh-results-table');
+    if (!table) return;
+
+    var workbook = new ExcelJS.Workbook();
+    var ws = workbook.addWorksheet(isArabic ? 'تقسيم الميراث' : 'Inheritance Division');
+    if (isArabic) ws.views = [{ rightToLeft: true }];
+
+    // Title
+    ws.mergeCells('A1:E1');
+    var titleCell = ws.getCell('A1');
+    titleCell.value = isArabic ? 'حاسبة المواريث الشرعية — نتائج التقسيم' : 'Islamic Inheritance Calculator — Results';
+    titleCell.font = { size: 16, bold: true, color: { argb: 'FF6366F1' } };
+    titleCell.alignment = { horizontal: 'center' };
+
+    // Estate summary
+    var net = document.getElementById('inh-net-value').textContent;
+    ws.getCell('A3').value = isArabic ? 'صافي التركة:' : 'Net Estate:';
+    ws.getCell('A3').font = { bold: true };
+    ws.getCell('B3').value = net;
+
+    // Headers
+    var headers = table.querySelectorAll('th');
+    var headerTexts = [];
+    headers.forEach(function(h) { headerTexts.push(h.textContent.trim()); });
+    var hRow = ws.getRow(5);
+    headerTexts.forEach(function(h, i) {
+      var cell = hRow.getCell(i + 1);
+      cell.value = h;
+      cell.font = { bold: true, color: { argb: 'FFFFFFFF' } };
+      cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF6366F1' } };
+      cell.alignment = { horizontal: 'center' };
+    });
+
+    // Data rows
+    var dataRows = table.querySelectorAll('tbody tr');
+    dataRows.forEach(function(row, idx) {
+      var cells = row.querySelectorAll('td');
+      var r = ws.getRow(6 + idx);
+      cells.forEach(function(c, i) {
+        var cell = r.getCell(i + 1);
+        cell.value = c.textContent.trim().replace(/\s+/g, ' ');
+        if (i === 2) cell.font = { bold: true, color: { argb: 'FF6366F1' } };
+        if (i === 4) cell.alignment = { wrapText: true };
+      });
+      if (idx % 2 === 0) {
+        for (var c = 1; c <= headerTexts.length; c++) {
+          r.getCell(c).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF9FAFB' } };
+        }
+      }
+    });
+
+    // Total row
+    var totalRowNum = 6 + dataRows.length;
+    var totalRow = ws.getRow(totalRowNum);
+    totalRow.getCell(1).value = isArabic ? 'الإجمالي' : 'Total';
+    totalRow.getCell(1).font = { bold: true };
+    totalRow.getCell(3).value = document.getElementById('inh-total-value').textContent;
+    totalRow.getCell(3).font = { bold: true, color: { argb: 'FF6366F1' } };
+
+    ws.columns = [{ width: 22 }, { width: 14 }, { width: 18 }, { width: 18 }, { width: 40 }];
+
+    var buffer = await workbook.xlsx.writeBuffer();
+    var blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    var link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = isArabic ? 'تقسيم_الميراث.xlsx' : 'inheritance_division.xlsx';
+    link.click();
+    App.showToast(isArabic ? 'تم التصدير!' : 'Exported!');
   };
 
   window.inhResetAll = function() {
