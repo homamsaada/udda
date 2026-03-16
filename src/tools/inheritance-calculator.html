@@ -1,0 +1,1467 @@
+<style>
+@keyframes inhFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.inh-madhab-selector { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+.inh-madhab-btn {
+  flex: 1; min-width: 80px; padding: 10px 14px; border: 2px solid var(--border-color);
+  border-radius: 12px; background: var(--bg-secondary); color: var(--text-secondary);
+  font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all var(--transition-fast);
+  text-align: center; font-family: inherit;
+}
+.inh-madhab-btn:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+.inh-madhab-btn.active { background: var(--accent-primary); border-color: var(--accent-primary); color: white; }
+
+.inh-wizard-step {
+  position: relative; border-inline-start: 3px solid var(--border-color);
+  padding: 20px 24px; margin-bottom: 24px; background: var(--bg-secondary);
+  border-radius: var(--border-radius-lg); transition: all var(--transition-fast);
+}
+.inh-wizard-step.active { border-inline-start-color: var(--accent-primary); }
+.inh-wizard-step.locked { opacity: 0.5; pointer-events: none; }
+
+.inh-step-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.inh-step-number {
+  display: flex; align-items: center; justify-content: center; width: 32px; height: 32px;
+  min-width: 32px; border-radius: 50%; background: var(--accent-gradient); color: white;
+  font-size: 0.9rem; font-weight: 700;
+}
+.locked .inh-step-number { background: var(--border-color); color: var(--text-muted); }
+.inh-step-title { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin: 0; }
+.inh-step-content { padding-inline-start: 44px; }
+
+.inh-form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 16px; }
+.inh-form-group { display: flex; flex-direction: column; gap: 8px; }
+.inh-form-group label { font-weight: 600; color: var(--text-primary); font-size: 0.9rem; }
+.inh-form-group input, .inh-form-group select {
+  padding: 12px 16px; border: 2px solid var(--border-color); border-radius: 10px;
+  background: var(--bg-primary); color: var(--text-primary); font-size: 1rem;
+  font-family: inherit; transition: border-color var(--transition-fast);
+}
+.inh-form-group input:focus, .inh-form-group select:focus { outline: none; border-color: var(--accent-primary); }
+.inh-field-hint { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
+
+.inh-gender-selector { display: flex; gap: 8px; }
+.inh-gender-btn {
+  flex: 1; padding: 14px 20px; border: 2px solid var(--border-color); border-radius: 12px;
+  background: var(--bg-primary); color: var(--text-secondary); font-size: 1rem; font-weight: 600;
+  cursor: pointer; transition: all var(--transition-fast); text-align: center; font-family: inherit;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.inh-gender-btn:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+.inh-gender-btn.active { background: var(--accent-primary); border-color: var(--accent-primary); color: white; }
+
+.inh-net-estate {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px; background: rgba(99,102,241,0.08); border: 2px solid rgba(99,102,241,0.2);
+  border-radius: 12px; margin-top: 16px;
+}
+.inh-net-label { font-weight: 600; font-size: 0.95rem; color: var(--text-primary); }
+.inh-net-value { font-size: 1.4rem; font-weight: 800; color: var(--accent-primary); }
+
+.inh-heir-category { border: 1px solid var(--border-color); border-radius: 12px; margin-bottom: 12px; overflow: hidden; background: var(--bg-primary); }
+.inh-heir-category-header {
+  display: flex; align-items: center; justify-content: space-between; padding: 14px 16px;
+  background: var(--bg-tertiary); cursor: pointer; user-select: none; font-weight: 600;
+  font-size: 0.95rem; color: var(--text-primary); border: none; width: 100%;
+  font-family: inherit; text-align: inherit; transition: background var(--transition-fast);
+}
+.inh-heir-category-header:hover { background: var(--border-color); }
+.inh-chevron { transition: transform var(--transition-fast); font-size: 0.8rem; color: var(--text-muted); }
+.inh-heir-category.open .inh-chevron { transform: rotate(180deg); }
+.inh-heir-category-body { display: none; padding: 12px 16px; }
+.inh-heir-category.open .inh-heir-category-body { display: block; }
+
+.inh-heir-row {
+  display: flex; align-items: center; gap: 12px; padding: 10px 0;
+  border-bottom: 1px solid var(--border-color); transition: opacity var(--transition-fast);
+}
+.inh-heir-row:last-child { border-bottom: none; }
+.inh-heir-row.disabled { opacity: 0.4; cursor: not-allowed; }
+.inh-heir-row.disabled * { pointer-events: none; }
+.inh-heir-checkbox { width: 20px; height: 20px; accent-color: var(--accent-primary); cursor: pointer; flex-shrink: 0; }
+.inh-heir-name { flex: 1; font-weight: 500; font-size: 0.95rem; color: var(--text-primary); }
+.inh-heir-tooltip { font-size: 0.75rem; color: var(--text-muted); font-style: italic; display: none; }
+.inh-heir-row.disabled .inh-heir-tooltip { display: inline; }
+
+.inh-counter {
+  display: flex; align-items: center; border: 2px solid var(--border-color);
+  border-radius: 8px; overflow: hidden; flex-shrink: 0;
+}
+.inh-counter button {
+  width: 32px; height: 32px; border: none; background: var(--bg-tertiary);
+  color: var(--text-primary); font-size: 1rem; font-weight: 700; cursor: pointer;
+  transition: background var(--transition-fast); display: flex; align-items: center;
+  justify-content: center; font-family: inherit;
+}
+.inh-counter button:hover { background: var(--accent-primary); color: white; }
+.inh-counter-value {
+  width: 36px; text-align: center; font-weight: 600; font-size: 0.95rem;
+  color: var(--text-primary); background: var(--bg-primary); border: none;
+  border-inline-start: 1px solid var(--border-color); border-inline-end: 1px solid var(--border-color);
+  padding: 4px 0; height: 32px; font-family: inherit;
+}
+
+.inh-results-section { display: none; }
+.inh-results-section.show { display: block; animation: inhFadeIn 0.3s ease; }
+
+.inh-results-table-wrapper { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 16px; }
+.inh-results-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.inh-results-table th { background: var(--accent-primary); color: white; padding: 12px 16px; text-align: center; font-weight: 600; white-space: nowrap; }
+.inh-results-table td { padding: 10px 16px; text-align: center; border-bottom: 1px solid var(--border-color); color: var(--text-primary); }
+.inh-results-table tr:nth-child(even) { background: var(--bg-tertiary); }
+.inh-results-table .inh-share-amount { font-weight: 700; color: var(--accent-primary); }
+
+.inh-alert-banner {
+  display: none; align-items: flex-start; gap: 10px; padding: 14px 18px; border-radius: 12px;
+  margin-bottom: 16px; font-size: 0.9rem; line-height: 1.6; font-weight: 500;
+}
+.inh-alert-banner.show { display: flex; }
+.inh-alert-banner.warning { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.25); color: var(--text-secondary); }
+.inh-alert-banner.info { background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.2); color: var(--text-secondary); }
+.inh-alert-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+
+.inh-blocked-section { background: var(--bg-tertiary); border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; display: none; }
+.inh-blocked-section.show { display: block; }
+.inh-blocked-section h4 { margin: 0 0 10px; font-size: 0.95rem; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
+.inh-blocked-section ul { margin: 0; padding-inline-start: 20px; list-style: disc; }
+.inh-blocked-section li { padding: 4px 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
+
+.inh-total-row { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; background: rgba(99,102,241,0.08); border: 2px solid rgba(99,102,241,0.2); border-radius: 12px; margin-bottom: 16px; }
+.inh-total-label { font-weight: 600; font-size: 0.95rem; color: var(--text-primary); }
+.inh-total-value { font-size: 1.3rem; font-weight: 800; color: var(--accent-primary); }
+
+.inh-action-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+.inh-action-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 20px; border: none; border-radius: 10px; font-size: 0.95rem;
+  font-weight: 600; cursor: pointer; transition: all var(--transition-fast);
+  font-family: inherit; flex: 1; min-width: 120px;
+}
+.inh-action-btn:hover { transform: translateY(-2px); }
+.inh-action-btn.primary { background: var(--accent-gradient); color: white; }
+.inh-action-btn.primary:hover { box-shadow: 0 6px 15px rgba(99,102,241,0.3); }
+.inh-action-btn.secondary { background: var(--bg-secondary); color: var(--text-secondary); border: 2px solid var(--border-color); }
+.inh-action-btn.secondary:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+.inh-action-btn.danger { background: var(--bg-secondary); color: var(--text-secondary); border: 2px solid var(--border-color); }
+.inh-action-btn.danger:hover { border-color: #ef4444; color: #ef4444; }
+
+.inh-disclaimer-box {
+  margin-top: 24px; padding: 20px; background: rgba(245,158,11,0.06);
+  border: 1px solid rgba(245,158,11,0.2); border-radius: 12px;
+}
+.inh-disclaimer-box h4 { margin: 0 0 12px; color: var(--text-primary); font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+.inh-disclaimer-box li { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; padding: 4px 0; }
+.inh-disclaimer-box ul { margin: 8px 0 0; padding-inline-start: 20px; }
+
+.inh-no-results { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.95rem; }
+
+@media (max-width: 768px) {
+  .inh-madhab-selector { gap: 6px; }
+  .inh-madhab-btn { min-width: 0; padding: 8px 6px; font-size: 0.75rem; }
+  .inh-wizard-step { padding: 16px; }
+  .inh-step-content { padding-inline-start: 0; }
+  .inh-form-row { grid-template-columns: 1fr; }
+  .inh-gender-selector { flex-direction: column; }
+  .inh-net-estate { flex-direction: column; text-align: center; gap: 8px; }
+  .inh-heir-row { flex-wrap: wrap; }
+  .inh-results-table { font-size: 0.8rem; }
+  .inh-results-table th, .inh-results-table td { padding: 8px 10px; }
+  .inh-action-buttons { flex-direction: column; }
+  .inh-action-btn { min-width: 100%; }
+}
+</style>
+
+<div class="tool-card">
+  <div class="tool-header">
+    <div class="tool-icon">⚖️</div>
+    <div>
+      <h1 class="tool-title">{{tool.name}}</h1>
+      <p class="tool-description">{{tool.description}}</p>
+    </div>
+  </div>
+
+  <!-- Madhab Selector -->
+  <div class="inh-madhab-selector">
+    <button class="inh-madhab-btn active" data-madhab="jumhur" onclick="inhSetMadhab(this)">{{tool.jumhur}}</button>
+    <button class="inh-madhab-btn" data-madhab="hanafi" onclick="inhSetMadhab(this)">{{tool.hanafi}}</button>
+    <button class="inh-madhab-btn" data-madhab="maliki" onclick="inhSetMadhab(this)">{{tool.maliki}}</button>
+    <button class="inh-madhab-btn" data-madhab="shafii" onclick="inhSetMadhab(this)">{{tool.shafii}}</button>
+    <button class="inh-madhab-btn" data-madhab="hanbali" onclick="inhSetMadhab(this)">{{tool.hanbali}}</button>
+  </div>
+  <p class="inh-field-hint" style="margin-top:-16px;margin-bottom:20px;">{{tool.madhabNote}}</p>
+
+  <!-- Step 1: Estate Data -->
+  <div class="inh-wizard-step active" id="inh-step1">
+    <div class="inh-step-header">
+      <span class="inh-step-number">1</span>
+      <h2 class="inh-step-title">{{tool.step1Title}}</h2>
+    </div>
+    <div class="inh-step-content">
+      <div class="inh-form-row">
+        <div class="inh-form-group">
+          <label>{{tool.estateAmount}}</label>
+          <input type="number" id="inh-estate" min="0" placeholder="{{tool.enterAmount}}" oninput="inhRecalculate()">
+        </div>
+        <div class="inh-form-group">
+          <label>{{tool.debts}}</label>
+          <input type="number" id="inh-debts" min="0" placeholder="0" oninput="inhRecalculate()">
+        </div>
+        <div class="inh-form-group">
+          <label>{{tool.wasiyya}}</label>
+          <input type="number" id="inh-wasiyya" min="0" placeholder="0" oninput="inhRecalculate()">
+          <span class="inh-field-hint">{{tool.wasiyyaNote}}</span>
+        </div>
+      </div>
+      <div class="inh-net-estate">
+        <span class="inh-net-label">{{tool.netEstate}}</span>
+        <span class="inh-net-value" id="inh-net-value">0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 2: Deceased Gender -->
+  <div class="inh-wizard-step" id="inh-step2">
+    <div class="inh-step-header">
+      <span class="inh-step-number">2</span>
+      <h2 class="inh-step-title">{{tool.step2Title}}</h2>
+    </div>
+    <div class="inh-step-content">
+      <div class="inh-gender-selector">
+        <button class="inh-gender-btn" onclick="inhSetGender('male',this)">
+          <span>👨</span> {{tool.male}}
+        </button>
+        <button class="inh-gender-btn" onclick="inhSetGender('female',this)">
+          <span>👩</span> {{tool.female}}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 3: Select Heirs -->
+  <div class="inh-wizard-step locked" id="inh-step3">
+    <div class="inh-step-header">
+      <span class="inh-step-number">3</span>
+      <h2 class="inh-step-title">{{tool.step3Title}}</h2>
+    </div>
+    <div class="inh-step-content">
+      <p class="inh-field-hint" id="inh-select-gender-msg">{{tool.selectGenderFirst}}</p>
+      <div id="inh-heirs-container">
+
+        <!-- Spouses -->
+        <div class="inh-heir-category open" id="inh-cat-spouses">
+          <button class="inh-heir-category-header" onclick="inhToggleCat(this)">
+            <span>{{tool.spouses}}</span><span class="inh-chevron">▼</span>
+          </button>
+          <div class="inh-heir-category-body">
+            <div class="inh-heir-row" data-heir="husband" data-onlyif="female">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('husband',this)">
+              <span class="inh-heir-name">{{tool.husband}}</span>
+              <span class="inh-heir-tooltip"></span>
+            </div>
+            <div class="inh-heir-row" data-heir="wife" data-onlyif="male" data-max="4">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('wife',this)">
+              <span class="inh-heir-name">{{tool.wife}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('wife',-1)">−</button>
+                <span class="inh-counter-value" data-heir="wife">1</span>
+                <button onclick="inhChangeCount('wife',1)">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Descendants -->
+        <div class="inh-heir-category open" id="inh-cat-descendants">
+          <button class="inh-heir-category-header" onclick="inhToggleCat(this)">
+            <span>{{tool.descendants}}</span><span class="inh-chevron">▼</span>
+          </button>
+          <div class="inh-heir-category-body">
+            <div class="inh-heir-row" data-heir="sons" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('sons',this)">
+              <span class="inh-heir-name">{{tool.sons}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('sons',-1)">−</button>
+                <span class="inh-counter-value" data-heir="sons">1</span>
+                <button onclick="inhChangeCount('sons',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="daughters" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('daughters',this)">
+              <span class="inh-heir-name">{{tool.daughters}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('daughters',-1)">−</button>
+                <span class="inh-counter-value" data-heir="daughters">1</span>
+                <button onclick="inhChangeCount('daughters',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="sonsSons" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('sonsSons',this)">
+              <span class="inh-heir-name">{{tool.sonsSons}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('sonsSons',-1)">−</button>
+                <span class="inh-counter-value" data-heir="sonsSons">1</span>
+                <button onclick="inhChangeCount('sonsSons',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="sonsDaughters" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('sonsDaughters',this)">
+              <span class="inh-heir-name">{{tool.sonsDaughters}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('sonsDaughters',-1)">−</button>
+                <span class="inh-counter-value" data-heir="sonsDaughters">1</span>
+                <button onclick="inhChangeCount('sonsDaughters',1)">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ascendants -->
+        <div class="inh-heir-category open" id="inh-cat-ascendants">
+          <button class="inh-heir-category-header" onclick="inhToggleCat(this)">
+            <span>{{tool.ascendants}}</span><span class="inh-chevron">▼</span>
+          </button>
+          <div class="inh-heir-category-body">
+            <div class="inh-heir-row" data-heir="father">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('father',this)">
+              <span class="inh-heir-name">{{tool.father}}</span>
+              <span class="inh-heir-tooltip"></span>
+            </div>
+            <div class="inh-heir-row" data-heir="mother">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('mother',this)">
+              <span class="inh-heir-name">{{tool.mother}}</span>
+              <span class="inh-heir-tooltip"></span>
+            </div>
+            <div class="inh-heir-row" data-heir="paternalGrandfather">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('paternalGrandfather',this)">
+              <span class="inh-heir-name">{{tool.paternalGrandfather}}</span>
+              <span class="inh-heir-tooltip"></span>
+            </div>
+            <div class="inh-heir-row" data-heir="paternalGrandmother">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('paternalGrandmother',this)">
+              <span class="inh-heir-name">{{tool.paternalGrandmother}}</span>
+              <span class="inh-heir-tooltip"></span>
+            </div>
+            <div class="inh-heir-row" data-heir="maternalGrandmother">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('maternalGrandmother',this)">
+              <span class="inh-heir-name">{{tool.maternalGrandmother}}</span>
+              <span class="inh-heir-tooltip"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Siblings -->
+        <div class="inh-heir-category" id="inh-cat-siblings">
+          <button class="inh-heir-category-header" onclick="inhToggleCat(this)">
+            <span>{{tool.siblings}}</span><span class="inh-chevron">▼</span>
+          </button>
+          <div class="inh-heir-category-body">
+            <div class="inh-heir-row" data-heir="fullBrothers" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('fullBrothers',this)">
+              <span class="inh-heir-name">{{tool.fullBrothers}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('fullBrothers',-1)">−</button>
+                <span class="inh-counter-value" data-heir="fullBrothers">1</span>
+                <button onclick="inhChangeCount('fullBrothers',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="fullSisters" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('fullSisters',this)">
+              <span class="inh-heir-name">{{tool.fullSisters}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('fullSisters',-1)">−</button>
+                <span class="inh-counter-value" data-heir="fullSisters">1</span>
+                <button onclick="inhChangeCount('fullSisters',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="paternalBrothers" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('paternalBrothers',this)">
+              <span class="inh-heir-name">{{tool.paternalBrothers}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('paternalBrothers',-1)">−</button>
+                <span class="inh-counter-value" data-heir="paternalBrothers">1</span>
+                <button onclick="inhChangeCount('paternalBrothers',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="paternalSisters" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('paternalSisters',this)">
+              <span class="inh-heir-name">{{tool.paternalSisters}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('paternalSisters',-1)">−</button>
+                <span class="inh-counter-value" data-heir="paternalSisters">1</span>
+                <button onclick="inhChangeCount('paternalSisters',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="maternalBrothers" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('maternalBrothers',this)">
+              <span class="inh-heir-name">{{tool.maternalBrothers}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('maternalBrothers',-1)">−</button>
+                <span class="inh-counter-value" data-heir="maternalBrothers">1</span>
+                <button onclick="inhChangeCount('maternalBrothers',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="maternalSisters" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('maternalSisters',this)">
+              <span class="inh-heir-name">{{tool.maternalSisters}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('maternalSisters',-1)">−</button>
+                <span class="inh-counter-value" data-heir="maternalSisters">1</span>
+                <button onclick="inhChangeCount('maternalSisters',1)">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Extended Agnates -->
+        <div class="inh-heir-category" id="inh-cat-extended">
+          <button class="inh-heir-category-header" onclick="inhToggleCat(this)">
+            <span>{{tool.extended}}</span><span class="inh-chevron">▼</span>
+          </button>
+          <div class="inh-heir-category-body">
+            <div class="inh-heir-row" data-heir="fullBrothersSons" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('fullBrothersSons',this)">
+              <span class="inh-heir-name">{{tool.fullBrothersSons}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('fullBrothersSons',-1)">−</button>
+                <span class="inh-counter-value" data-heir="fullBrothersSons">1</span>
+                <button onclick="inhChangeCount('fullBrothersSons',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="paternalBrothersSons" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('paternalBrothersSons',this)">
+              <span class="inh-heir-name">{{tool.paternalBrothersSons}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('paternalBrothersSons',-1)">−</button>
+                <span class="inh-counter-value" data-heir="paternalBrothersSons">1</span>
+                <button onclick="inhChangeCount('paternalBrothersSons',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="fullPaternalUncles" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('fullPaternalUncles',this)">
+              <span class="inh-heir-name">{{tool.fullPaternalUncles}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('fullPaternalUncles',-1)">−</button>
+                <span class="inh-counter-value" data-heir="fullPaternalUncles">1</span>
+                <button onclick="inhChangeCount('fullPaternalUncles',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="paternalUnclesFromFather" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('paternalUnclesFromFather',this)">
+              <span class="inh-heir-name">{{tool.paternalUnclesFromFather}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('paternalUnclesFromFather',-1)">−</button>
+                <span class="inh-counter-value" data-heir="paternalUnclesFromFather">1</span>
+                <button onclick="inhChangeCount('paternalUnclesFromFather',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="fullPaternalUnclesSons" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('fullPaternalUnclesSons',this)">
+              <span class="inh-heir-name">{{tool.fullPaternalUnclesSons}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('fullPaternalUnclesSons',-1)">−</button>
+                <span class="inh-counter-value" data-heir="fullPaternalUnclesSons">1</span>
+                <button onclick="inhChangeCount('fullPaternalUnclesSons',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="paternalUnclesSonsFromFather" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('paternalUnclesSonsFromFather',this)">
+              <span class="inh-heir-name">{{tool.paternalUnclesSonsFromFather}}</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('paternalUnclesSonsFromFather',-1)">−</button>
+                <span class="inh-counter-value" data-heir="paternalUnclesSonsFromFather">1</span>
+                <button onclick="inhChangeCount('paternalUnclesSonsFromFather',1)">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 4: Results -->
+  <div class="inh-wizard-step" id="inh-step4">
+    <div class="inh-step-header">
+      <span class="inh-step-number">4</span>
+      <h2 class="inh-step-title">{{tool.step4Title}}</h2>
+    </div>
+    <div class="inh-step-content">
+      <div class="inh-results-section" id="inh-results-section">
+        <div class="inh-alert-banner warning" id="inh-awl-alert">
+          <span class="inh-alert-icon">⚠️</span>
+          <div><strong>{{tool.awlAlert}}</strong><br>{{tool.awlExplanation}}<br><span id="inh-awl-detail"></span></div>
+        </div>
+        <div class="inh-alert-banner info" id="inh-radd-alert">
+          <span class="inh-alert-icon">ℹ️</span>
+          <div><strong>{{tool.raddAlert}}</strong><br>{{tool.raddExplanation}}</div>
+        </div>
+        <div class="inh-results-table-wrapper">
+          <table class="inh-results-table">
+            <thead>
+              <tr>
+                <th>{{tool.heirName}}</th>
+                <th>{{tool.shareFraction}}</th>
+                <th>{{tool.shareAmount}}</th>
+                <th>{{tool.inheritanceType}}</th>
+                <th>{{tool.explanation}}</th>
+              </tr>
+            </thead>
+            <tbody id="inh-results-body"></tbody>
+          </table>
+        </div>
+        <div class="inh-blocked-section" id="inh-blocked-section">
+          <h4>🚫 {{tool.blockedHeirs}}</h4>
+          <ul id="inh-blocked-list"></ul>
+        </div>
+        <div class="inh-total-row">
+          <span class="inh-total-label">{{tool.totalDistributed}}</span>
+          <span class="inh-total-value" id="inh-total-value">0</span>
+        </div>
+        <div class="inh-action-buttons">
+          <button class="inh-action-btn primary" onclick="inhCopyResults()">📋 {{tool.copyResults}}</button>
+          <button class="inh-action-btn secondary" onclick="window.print()">🖨️ {{tool.printResults}}</button>
+          <button class="inh-action-btn danger" onclick="inhResetAll()">🗑️ {{tool.resetAll}}</button>
+        </div>
+      </div>
+      <div class="inh-no-results" id="inh-no-results">{{tool.noHeirsSelected}}</div>
+    </div>
+  </div>
+
+  <!-- Disclaimers -->
+  <div class="inh-disclaimer-box">
+    <h4>⚠️ {{tool.disclaimerTitle}}</h4>
+    <ul>
+      <li>{{tool.disclaimer1}}</li>
+      <li>{{tool.disclaimer2}}</li>
+      <li>{{tool.disclaimer3}}</li>
+    </ul>
+  </div>
+</div>
+
+<div class="how-to-use">
+  <h3>📖 {{ui.howToUse}}</h3>
+  <p>{{tool.howToUseText}}</p>
+</div>
+
+<script>
+(function() {
+  var lang = document.documentElement.lang || 'ar';
+  var isArabic = lang === 'ar';
+
+  var state = {
+    madhab: 'jumhur',
+    deceasedGender: null,
+    estate: { amount: 0, debts: 0, wasiyya: 0 },
+    heirs: {}
+  };
+
+  var heirNames = {
+    husband: '{{tool.husband}}', wife: '{{tool.wife}}',
+    sons: '{{tool.sons}}', daughters: '{{tool.daughters}}',
+    sonsSons: '{{tool.sonsSons}}', sonsDaughters: '{{tool.sonsDaughters}}',
+    father: '{{tool.father}}', mother: '{{tool.mother}}',
+    paternalGrandfather: '{{tool.paternalGrandfather}}',
+    paternalGrandmother: '{{tool.paternalGrandmother}}',
+    maternalGrandmother: '{{tool.maternalGrandmother}}',
+    fullBrothers: '{{tool.fullBrothers}}', fullSisters: '{{tool.fullSisters}}',
+    paternalBrothers: '{{tool.paternalBrothers}}', paternalSisters: '{{tool.paternalSisters}}',
+    maternalBrothers: '{{tool.maternalBrothers}}', maternalSisters: '{{tool.maternalSisters}}',
+    fullBrothersSons: '{{tool.fullBrothersSons}}', paternalBrothersSons: '{{tool.paternalBrothersSons}}',
+    fullPaternalUncles: '{{tool.fullPaternalUncles}}', paternalUnclesFromFather: '{{tool.paternalUnclesFromFather}}',
+    fullPaternalUnclesSons: '{{tool.fullPaternalUnclesSons}}', paternalUnclesSonsFromFather: '{{tool.paternalUnclesSonsFromFather}}'
+  };
+
+  var reasonTexts = {
+    reasonHusbandHalf: '{{tool.reasonHusbandHalf}}', reasonHusbandQuarter: '{{tool.reasonHusbandQuarter}}',
+    reasonWifeQuarter: '{{tool.reasonWifeQuarter}}', reasonWifeEighth: '{{tool.reasonWifeEighth}}',
+    reasonDaughterHalf: '{{tool.reasonDaughterHalf}}', reasonDaughtersTwoThirds: '{{tool.reasonDaughtersTwoThirds}}',
+    reasonDaughtersWithSons: '{{tool.reasonDaughtersWithSons}}',
+    reasonSonDaughterSixth: '{{tool.reasonSonDaughterSixth}}', reasonSonDaughterHalf: '{{tool.reasonSonDaughterHalf}}',
+    reasonSonDaughtersTwoThirds: '{{tool.reasonSonDaughtersTwoThirds}}',
+    reasonSonDaughtersWithSonsSons: '{{tool.reasonSonDaughtersWithSonsSons}}',
+    reasonFatherSixth: '{{tool.reasonFatherSixth}}', reasonFatherSixthPlusRemainder: '{{tool.reasonFatherSixthPlusRemainder}}',
+    reasonFatherRemainder: '{{tool.reasonFatherRemainder}}',
+    reasonMotherSixth: '{{tool.reasonMotherSixth}}', reasonMotherThird: '{{tool.reasonMotherThird}}',
+    reasonMotherThirdRemainder: '{{tool.reasonMotherThirdRemainder}}',
+    reasonGrandmotherSixth: '{{tool.reasonGrandmotherSixth}}',
+    reasonFullSisterHalf: '{{tool.reasonFullSisterHalf}}', reasonFullSistersTwoThirds: '{{tool.reasonFullSistersTwoThirds}}',
+    reasonFullSistersWithBrothers: '{{tool.reasonFullSistersWithBrothers}}',
+    reasonFullSistersAsabaWithGhayr: '{{tool.reasonFullSistersAsabaWithGhayr}}',
+    reasonPaternalSisterSixth: '{{tool.reasonPaternalSisterSixth}}',
+    reasonPaternalSisterHalf: '{{tool.reasonPaternalSisterHalf}}',
+    reasonPaternalSistersTwoThirds: '{{tool.reasonPaternalSistersTwoThirds}}',
+    reasonPaternalSistersWithBrothers: '{{tool.reasonPaternalSistersWithBrothers}}',
+    reasonPaternalSistersAsabaWithGhayr: '{{tool.reasonPaternalSistersAsabaWithGhayr}}',
+    reasonMaternalSiblingSixth: '{{tool.reasonMaternalSiblingSixth}}',
+    reasonMaternalSiblingsThird: '{{tool.reasonMaternalSiblingsThird}}',
+    reasonAsaba: '{{tool.reasonAsaba}}',
+    reasonGrandfatherSixth: '{{tool.reasonGrandfatherSixth}}',
+    reasonGrandfatherSixthPlusRemainder: '{{tool.reasonGrandfatherSixthPlusRemainder}}',
+    reasonGrandfatherRemainder: '{{tool.reasonGrandfatherRemainder}}',
+    reasonGrandfatherWithSiblings: '{{tool.reasonGrandfatherWithSiblings}}',
+    reasonMushtaraka: '{{tool.reasonMushtaraka}}'
+  };
+
+  var typeTexts = { fard: '{{tool.fard}}', tasib: '{{tool.tasib}}', fardAndTasib: '{{tool.fardAndTasib}}' };
+  var blockTexts = {
+    blockedByFather: '{{tool.blockedByFather}}', blockedByMother: '{{tool.blockedByMother}}',
+    blockedBySon: '{{tool.blockedBySon}}', blockedByDescendant: '{{tool.blockedByDescendant}}',
+    blockedByFullBrother: '{{tool.blockedByFullBrother}}', blockedByCloserAsaba: '{{tool.blockedByCloserAsaba}}',
+    blockedByTwoDaughters: '{{tool.blockedByTwoDaughters}}', blockedByTwoFullSisters: '{{tool.blockedByTwoFullSisters}}'
+  };
+
+  /* ── Fraction utilities ── */
+  function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { var t = b; b = a % b; a = t; } return a; }
+  function lcm(a, b) { return a && b ? Math.abs(a * b) / gcd(a, b) : 0; }
+  function lcmArr(arr) { var r = arr[0]; for (var i = 1; i < arr.length; i++) r = lcm(r, arr[i]); return r; }
+
+  /* ── Blocking rules ── */
+  function getBlockReason(id, h, madhab) {
+    var hasSon = (h.sons || 0) > 0;
+    var hasSonsSon = (h.sonsSons || 0) > 0;
+    var hasFather = (h.father || 0) > 0;
+    var hasGF = (h.paternalGrandfather || 0) > 0;
+    var hasMaleDesc = hasSon || hasSonsSon;
+    var hasDesc = hasMaleDesc || (h.daughters || 0) > 0 || (h.sonsDaughters || 0) > 0;
+
+    switch (id) {
+      case 'sonsSons': return hasSon ? 'blockedBySon' : null;
+      case 'sonsDaughters':
+        if (hasSon) return 'blockedBySon';
+        if ((h.daughters || 0) >= 2 && !hasSonsSon) return 'blockedByTwoDaughters';
+        return null;
+      case 'paternalGrandfather': return hasFather ? 'blockedByFather' : null;
+      case 'paternalGrandmother':
+        if ((h.mother || 0) > 0) return 'blockedByMother';
+        if (hasFather) return 'blockedByFather';
+        return null;
+      case 'maternalGrandmother': return (h.mother || 0) > 0 ? 'blockedByMother' : null;
+      case 'fullBrothers': case 'fullSisters':
+        if (hasFather) return 'blockedByFather';
+        if (hasMaleDesc) return 'blockedByDescendant';
+        if (madhab === 'hanafi' && hasGF) return 'blockedByCloserAsaba';
+        return null;
+      case 'paternalBrothers':
+        if (hasFather) return 'blockedByFather';
+        if (hasMaleDesc) return 'blockedByDescendant';
+        if (madhab === 'hanafi' && hasGF) return 'blockedByCloserAsaba';
+        if ((h.fullBrothers || 0) > 0) return 'blockedByFullBrother';
+        return null;
+      case 'paternalSisters':
+        if (hasFather) return 'blockedByFather';
+        if (hasMaleDesc) return 'blockedByDescendant';
+        if (madhab === 'hanafi' && hasGF) return 'blockedByCloserAsaba';
+        if ((h.fullBrothers || 0) > 0) return 'blockedByFullBrother';
+        if ((h.fullSisters || 0) >= 2 && !((h.paternalBrothers || 0) > 0)) return 'blockedByTwoFullSisters';
+        return null;
+      case 'maternalBrothers': case 'maternalSisters':
+        if (hasFather) return 'blockedByFather';
+        if (hasGF) return 'blockedByCloserAsaba';
+        if (hasDesc) return 'blockedByDescendant';
+        return null;
+      case 'fullBrothersSons':
+        if (hasFather) return 'blockedByFather';
+        if (hasMaleDesc) return 'blockedByDescendant';
+        if (hasGF) return 'blockedByCloserAsaba';
+        if ((h.fullBrothers || 0) > 0) return 'blockedByCloserAsaba';
+        if ((h.paternalBrothers || 0) > 0) return 'blockedByCloserAsaba';
+        return null;
+      case 'paternalBrothersSons':
+        if (hasFather) return 'blockedByFather';
+        if (hasMaleDesc) return 'blockedByDescendant';
+        if (hasGF) return 'blockedByCloserAsaba';
+        if ((h.fullBrothers || 0) > 0 || (h.paternalBrothers || 0) > 0 || (h.fullBrothersSons || 0) > 0) return 'blockedByCloserAsaba';
+        return null;
+      case 'fullPaternalUncles':
+        if (hasFather) return 'blockedByFather';
+        if (hasMaleDesc) return 'blockedByDescendant';
+        if (hasGF) return 'blockedByCloserAsaba';
+        if ((h.fullBrothers||0)>0||(h.paternalBrothers||0)>0||(h.fullBrothersSons||0)>0||(h.paternalBrothersSons||0)>0) return 'blockedByCloserAsaba';
+        return null;
+      case 'paternalUnclesFromFather':
+        if (hasFather) return 'blockedByFather';
+        if (hasMaleDesc) return 'blockedByDescendant';
+        if (hasGF) return 'blockedByCloserAsaba';
+        if ((h.fullBrothers||0)>0||(h.paternalBrothers||0)>0||(h.fullBrothersSons||0)>0||(h.paternalBrothersSons||0)>0||(h.fullPaternalUncles||0)>0) return 'blockedByCloserAsaba';
+        return null;
+      case 'fullPaternalUnclesSons':
+        if (hasFather) return 'blockedByFather';
+        if (hasMaleDesc) return 'blockedByDescendant';
+        if (hasGF) return 'blockedByCloserAsaba';
+        if ((h.fullBrothers||0)>0||(h.paternalBrothers||0)>0||(h.fullBrothersSons||0)>0||(h.paternalBrothersSons||0)>0||(h.fullPaternalUncles||0)>0||(h.paternalUnclesFromFather||0)>0) return 'blockedByCloserAsaba';
+        return null;
+      case 'paternalUnclesSonsFromFather':
+        if (hasFather) return 'blockedByFather';
+        if (hasMaleDesc) return 'blockedByDescendant';
+        if (hasGF) return 'blockedByCloserAsaba';
+        if ((h.fullBrothers||0)>0||(h.paternalBrothers||0)>0||(h.fullBrothersSons||0)>0||(h.paternalBrothersSons||0)>0||(h.fullPaternalUncles||0)>0||(h.paternalUnclesFromFather||0)>0||(h.fullPaternalUnclesSons||0)>0) return 'blockedByCloserAsaba';
+        return null;
+    }
+    return null;
+  }
+
+  /* ── Main calculation ── */
+  function inhCalculate() {
+    var amount = state.estate.amount || 0;
+    var debts = state.estate.debts || 0;
+    var wasiyya = state.estate.wasiyya || 0;
+    var afterDebt = amount - debts;
+    if (afterDebt < 0) afterDebt = 0;
+    var maxWasiyya = afterDebt / 3;
+    if (wasiyya > maxWasiyya) wasiyya = maxWasiyya;
+    if (wasiyya < 0) wasiyya = 0;
+    var net = afterDebt - wasiyya;
+
+    document.getElementById('inh-net-value').textContent = formatNum(net);
+
+    if (net <= 0 || !state.deceasedGender) { hideResults(); return; }
+
+    // Collect active heirs
+    var h = {};
+    for (var id in state.heirs) {
+      if (state.heirs[id] > 0) h[id] = state.heirs[id];
+    }
+    if (Object.keys(h).length === 0) { hideResults(); return; }
+
+    // Determine blocked
+    var blocked = {};
+    for (var id in h) {
+      var reason = getBlockReason(id, h, state.madhab);
+      if (reason) blocked[id] = reason;
+    }
+
+    // Active = non-blocked
+    var a = {};
+    for (var id in h) { if (!blocked[id]) a[id] = h[id]; }
+    if (Object.keys(a).length === 0) { hideResults(); return; }
+
+    // Assign shares
+    var shares = assignShares(a, state.madhab, blocked);
+
+    // Render
+    showResults(shares.results, blocked, shares.awl, shares.radd, net);
+  }
+
+  function assignShares(a, madhab, blocked) {
+    var hasSon = (a.sons||0) > 0;
+    var hasSonsSon = (a.sonsSons||0) > 0;
+    var hasMaleDesc = hasSon || hasSonsSon;
+    var hasDaughter = (a.daughters||0) > 0;
+    var hasSonsDaughter = (a.sonsDaughters||0) > 0;
+    var hasFemaleDesc = hasDaughter || hasSonsDaughter;
+    var hasDesc = hasMaleDesc || hasFemaleDesc;
+    var hasFather = (a.father||0) > 0;
+    var hasMother = (a.mother||0) > 0;
+    var hasGF = (a.paternalGrandfather||0) > 0;
+    var totalSib = (a.fullBrothers||0)+(a.fullSisters||0)+(a.paternalBrothers||0)+(a.paternalSisters||0)+(a.maternalBrothers||0)+(a.maternalSisters||0);
+    var totalMaternal = (a.maternalBrothers||0)+(a.maternalSisters||0);
+
+    var fard = []; // {heirId, count, num, den, reasonKey, type, special}
+    var asaba = []; // {heirId, count, reasonKey, withFemale, femaleCount}
+
+    // ── HUSBAND ──
+    if (a.husband) fard.push({ heirId:'husband', count:1, num: hasDesc?1:1, den: hasDesc?4:2, type:'fard', reasonKey: hasDesc?'reasonHusbandQuarter':'reasonHusbandHalf' });
+
+    // ── WIFE ──
+    if (a.wife) fard.push({ heirId:'wife', count:a.wife, num:1, den: hasDesc?8:4, type:'fard', reasonKey: hasDesc?'reasonWifeEighth':'reasonWifeQuarter' });
+
+    // ── DAUGHTERS ──
+    if ((a.daughters||0) > 0) {
+      if (hasSon) { /* asaba with sons below */ }
+      else if (a.daughters === 1) fard.push({ heirId:'daughters', count:1, num:1, den:2, type:'fard', reasonKey:'reasonDaughterHalf' });
+      else fard.push({ heirId:'daughters', count:a.daughters, num:2, den:3, type:'fard', reasonKey:'reasonDaughtersTwoThirds' });
+    }
+
+    // ── SON'S DAUGHTERS ──
+    if ((a.sonsDaughters||0) > 0 && !hasSon) {
+      if (hasSonsSon) { /* asaba with son's sons below */ }
+      else if (!hasDaughter) {
+        if (a.sonsDaughters === 1) fard.push({ heirId:'sonsDaughters', count:1, num:1, den:2, type:'fard', reasonKey:'reasonSonDaughterHalf' });
+        else fard.push({ heirId:'sonsDaughters', count:a.sonsDaughters, num:2, den:3, type:'fard', reasonKey:'reasonSonDaughtersTwoThirds' });
+      } else if (a.daughters === 1) {
+        fard.push({ heirId:'sonsDaughters', count:a.sonsDaughters, num:1, den:6, type:'fard', reasonKey:'reasonSonDaughterSixth' });
+      }
+    }
+
+    // ── FATHER ──
+    if (hasFather) {
+      if (hasMaleDesc) fard.push({ heirId:'father', count:1, num:1, den:6, type:'fard', reasonKey:'reasonFatherSixth' });
+      else if (hasFemaleDesc) fard.push({ heirId:'father', count:1, num:1, den:6, type:'fardAndTasib', reasonKey:'reasonFatherSixthPlusRemainder', special:'fatherAsaba' });
+      else asaba.push({ heirId:'father', count:1, reasonKey:'reasonFatherRemainder' });
+    }
+
+    // ── MOTHER ──
+    if (hasMother) {
+      if (hasDesc || totalSib >= 2) {
+        fard.push({ heirId:'mother', count:1, num:1, den:6, type:'fard', reasonKey:'reasonMotherSixth' });
+      } else if ((a.husband||0) > 0 || (a.wife||0) > 0) {
+        if (hasFather) {
+          // Umariyyatan
+          fard.push({ heirId:'mother', count:1, num:0, den:0, type:'fard', reasonKey:'reasonMotherThirdRemainder', special:'umariyyatan' });
+        } else {
+          fard.push({ heirId:'mother', count:1, num:1, den:3, type:'fard', reasonKey:'reasonMotherThird' });
+        }
+      } else {
+        fard.push({ heirId:'mother', count:1, num:1, den:3, type:'fard', reasonKey:'reasonMotherThird' });
+      }
+    }
+
+    // ── GRANDMOTHERS ──
+    var hasPGM = (a.paternalGrandmother||0)>0;
+    var hasMGM = (a.maternalGrandmother||0)>0;
+    if (hasPGM && hasMGM) {
+      // Share 1/6 — each gets 1/12
+      fard.push({ heirId:'paternalGrandmother', count:1, num:1, den:12, type:'fard', reasonKey:'reasonGrandmotherSixth' });
+      fard.push({ heirId:'maternalGrandmother', count:1, num:1, den:12, type:'fard', reasonKey:'reasonGrandmotherSixth' });
+    } else if (hasPGM) {
+      fard.push({ heirId:'paternalGrandmother', count:1, num:1, den:6, type:'fard', reasonKey:'reasonGrandmotherSixth' });
+    } else if (hasMGM) {
+      fard.push({ heirId:'maternalGrandmother', count:1, num:1, den:6, type:'fard', reasonKey:'reasonGrandmotherSixth' });
+    }
+
+    // ── GRANDFATHER ──
+    if (hasGF && !hasFather) {
+      var sibForGF = (a.fullBrothers||0)+(a.fullSisters||0)+(a.paternalBrothers||0)+(a.paternalSisters||0);
+      if (madhab === 'hanafi' || sibForGF === 0) {
+        // Treat like father
+        if (hasMaleDesc) fard.push({ heirId:'paternalGrandfather', count:1, num:1, den:6, type:'fard', reasonKey:'reasonGrandfatherSixth' });
+        else if (hasFemaleDesc) fard.push({ heirId:'paternalGrandfather', count:1, num:1, den:6, type:'fardAndTasib', reasonKey:'reasonGrandfatherSixthPlusRemainder', special:'gfAsaba' });
+        else asaba.push({ heirId:'paternalGrandfather', count:1, reasonKey:'reasonGrandfatherRemainder' });
+      } else {
+        // Non-Hanafi with siblings — special handling
+        if (hasMaleDesc) {
+          fard.push({ heirId:'paternalGrandfather', count:1, num:1, den:6, type:'fard', reasonKey:'reasonGrandfatherSixth' });
+        } else {
+          fard.push({ heirId:'paternalGrandfather', count:1, num:0, den:0, type:'fardAndTasib', reasonKey:'reasonGrandfatherWithSiblings', special:'gfWithSiblings' });
+        }
+      }
+    }
+
+    // ── FULL SISTERS ──
+    if ((a.fullSisters||0) > 0 && !hasMaleDesc) {
+      if ((a.fullBrothers||0) > 0) { /* asaba with brothers below */ }
+      else if (hasFemaleDesc) {
+        asaba.push({ heirId:'fullSisters', count:a.fullSisters, reasonKey:'reasonFullSistersAsabaWithGhayr' });
+      } else {
+        if (a.fullSisters === 1) fard.push({ heirId:'fullSisters', count:1, num:1, den:2, type:'fard', reasonKey:'reasonFullSisterHalf' });
+        else fard.push({ heirId:'fullSisters', count:a.fullSisters, num:2, den:3, type:'fard', reasonKey:'reasonFullSistersTwoThirds' });
+      }
+    }
+
+    // ── PATERNAL SISTERS ──
+    if ((a.paternalSisters||0) > 0 && !hasMaleDesc && !(a.fullBrothers||0)) {
+      if ((a.paternalBrothers||0) > 0) { /* asaba with brothers below */ }
+      else if (hasFemaleDesc && !(a.fullSisters||0)) {
+        asaba.push({ heirId:'paternalSisters', count:a.paternalSisters, reasonKey:'reasonPaternalSistersAsabaWithGhayr' });
+      } else if (!hasDesc) {
+        if ((a.fullSisters||0) === 1) {
+          fard.push({ heirId:'paternalSisters', count:a.paternalSisters, num:1, den:6, type:'fard', reasonKey:'reasonPaternalSisterSixth' });
+        } else if (!(a.fullSisters||0)) {
+          if (a.paternalSisters === 1) fard.push({ heirId:'paternalSisters', count:1, num:1, den:2, type:'fard', reasonKey:'reasonPaternalSisterHalf' });
+          else fard.push({ heirId:'paternalSisters', count:a.paternalSisters, num:2, den:3, type:'fard', reasonKey:'reasonPaternalSistersTwoThirds' });
+        }
+      }
+    }
+
+    // ── MATERNAL SIBLINGS ──
+    if (totalMaternal > 0) {
+      if (totalMaternal === 1) {
+        var mId = (a.maternalBrothers||0) > 0 ? 'maternalBrothers' : 'maternalSisters';
+        fard.push({ heirId:mId, count:1, num:1, den:6, type:'fard', reasonKey:'reasonMaternalSiblingSixth' });
+      } else {
+        if ((a.maternalBrothers||0) > 0) fard.push({ heirId:'maternalBrothers', count:a.maternalBrothers, num:1, den:3, type:'fard', reasonKey:'reasonMaternalSiblingsThird', shared:totalMaternal });
+        if ((a.maternalSisters||0) > 0) fard.push({ heirId:'maternalSisters', count:a.maternalSisters, num:1, den:3, type:'fard', reasonKey:'reasonMaternalSiblingsThird', shared:totalMaternal });
+      }
+    }
+
+    // ── ASABA heirs ──
+    if (hasSon) {
+      if ((a.daughters||0) > 0) asaba.push({ heirId:'sons', count:a.sons, reasonKey:'reasonDaughtersWithSons', withFemale:'daughters', femaleCount:a.daughters });
+      else asaba.push({ heirId:'sons', count:a.sons, reasonKey:'reasonAsaba' });
+    }
+    if (hasSonsSon && !hasSon) {
+      if ((a.sonsDaughters||0) > 0) asaba.push({ heirId:'sonsSons', count:a.sonsSons, reasonKey:'reasonSonDaughtersWithSonsSons', withFemale:'sonsDaughters', femaleCount:a.sonsDaughters });
+      else asaba.push({ heirId:'sonsSons', count:a.sonsSons, reasonKey:'reasonAsaba' });
+    }
+    if ((a.fullBrothers||0) > 0 && !hasMaleDesc) {
+      if ((a.fullSisters||0) > 0) asaba.push({ heirId:'fullBrothers', count:a.fullBrothers, reasonKey:'reasonFullSistersWithBrothers', withFemale:'fullSisters', femaleCount:a.fullSisters });
+      else asaba.push({ heirId:'fullBrothers', count:a.fullBrothers, reasonKey:'reasonAsaba' });
+    }
+    if ((a.paternalBrothers||0) > 0 && !hasMaleDesc && !(a.fullBrothers||0)) {
+      if ((a.paternalSisters||0) > 0) asaba.push({ heirId:'paternalBrothers', count:a.paternalBrothers, reasonKey:'reasonPaternalSistersWithBrothers', withFemale:'paternalSisters', femaleCount:a.paternalSisters });
+      else asaba.push({ heirId:'paternalBrothers', count:a.paternalBrothers, reasonKey:'reasonAsaba' });
+    }
+
+    // Extended agnates — only closest
+    var extOrder = ['fullBrothersSons','paternalBrothersSons','fullPaternalUncles','paternalUnclesFromFather','fullPaternalUnclesSons','paternalUnclesSonsFromFather'];
+    for (var i = 0; i < extOrder.length; i++) {
+      var eid = extOrder[i];
+      if ((a[eid]||0) > 0) {
+        asaba.push({ heirId:eid, count:a[eid], reasonKey:'reasonAsaba' });
+        break;
+      }
+    }
+
+    // ── Mushtaraka check ──
+    var isMushtaraka = false;
+    if ((a.husband||0) > 0 && (hasMother || hasPGM || hasMGM) && totalMaternal >= 2
+        && ((a.fullBrothers||0) > 0 || (a.fullSisters||0) > 0)
+        && !hasDesc && !hasFather && !hasGF
+        && (madhab === 'maliki' || madhab === 'shafii' || madhab === 'jumhur')) {
+      isMushtaraka = true;
+    }
+
+    // ── Now compute with fractions ──
+    // First handle special cases that need rewriting
+
+    // Handle Umariyyatan
+    var umarEntry = null;
+    for (var i = 0; i < fard.length; i++) { if (fard[i].special === 'umariyyatan') { umarEntry = fard[i]; break; } }
+    if (umarEntry) {
+      var spouseEntry = null;
+      for (var i = 0; i < fard.length; i++) { if (fard[i].heirId === 'husband' || fard[i].heirId === 'wife') { spouseEntry = fard[i]; break; } }
+      if (spouseEntry) {
+        // Remainder after spouse = (den - num) / den
+        var remNum = spouseEntry.den - spouseEntry.num;
+        var remDen = spouseEntry.den;
+        // Mother gets 1/3 of remainder
+        umarEntry.num = remNum;
+        umarEntry.den = remDen * 3;
+        var g = gcd(umarEntry.num, umarEntry.den);
+        umarEntry.num /= g; umarEntry.den /= g;
+        // Father gets 2/3 of remainder — remove father from asaba, add to fard
+        var fatherAsaba = null;
+        for (var i = 0; i < asaba.length; i++) { if (asaba[i].heirId === 'father') { fatherAsaba = asaba.splice(i, 1)[0]; break; } }
+        if (fatherAsaba) {
+          var fNum = remNum * 2;
+          var fDen = remDen * 3;
+          var g2 = gcd(fNum, fDen);
+          fard.push({ heirId:'father', count:1, num:fNum/g2, den:fDen/g2, type:'tasib', reasonKey:'reasonFatherRemainder' });
+        }
+      }
+    }
+
+    // Handle grandfather with siblings (non-Hanafi)
+    var gfSpecial = null;
+    for (var i = 0; i < fard.length; i++) { if (fard[i].special === 'gfWithSiblings') { gfSpecial = fard[i]; break; } }
+
+    // Collect fard shares that have actual fractions (for base calculation)
+    // We need to first calculate without gf+siblings, then determine gf share
+
+    // Compute base denominator from all fard entries with den > 0
+    var dens = [];
+    for (var i = 0; i < fard.length; i++) {
+      if (fard[i].den > 0 && !fard[i].special) dens.push(fard[i].den);
+      else if (fard[i].special === 'umariyyatan' && fard[i].den > 0) dens.push(fard[i].den);
+    }
+    // Handle maternal siblings sharing
+    // If both maternalBrothers and maternalSisters exist with shared, they share 1/3
+    // The 1/3 is counted once, not twice
+    var maternalShared = false;
+    for (var i = 0; i < fard.length; i++) {
+      if (fard[i].shared && !maternalShared) { maternalShared = true; }
+      else if (fard[i].shared && maternalShared) { fard[i].den = 0; fard[i].num = 0; fard[i]._skip = true; }
+    }
+
+    // Recollect dens
+    dens = [];
+    for (var i = 0; i < fard.length; i++) {
+      if (fard[i].den > 0 && fard[i].special !== 'gfWithSiblings' && fard[i].special !== 'gfAsaba' && fard[i].special !== 'fatherAsaba') dens.push(fard[i].den);
+    }
+    if (dens.length === 0) dens = [1];
+    var base = lcmArr(dens);
+
+    // Convert to parts
+    var totalFardParts = 0;
+    for (var i = 0; i < fard.length; i++) {
+      var f = fard[i];
+      if (f._skip) { f.parts = 0; continue; }
+      if (f.den > 0 && f.special !== 'gfWithSiblings' && f.special !== 'gfAsaba' && f.special !== 'fatherAsaba') {
+        f.parts = (base / f.den) * f.num;
+        totalFardParts += f.parts;
+      } else if (f.special === 'fatherAsaba' || f.special === 'gfAsaba') {
+        // Father/GF with female desc: 1/6 fard already counted, gets remainder too
+        f.parts = (base / f.den) * f.num;
+        totalFardParts += f.parts;
+      } else {
+        f.parts = 0;
+      }
+    }
+
+    // Handle grandfather with siblings
+    if (gfSpecial) {
+      var sibCount = (a.fullBrothers||0)*2 + (a.fullSisters||0) + (a.paternalBrothers||0)*2 + (a.paternalSisters||0);
+      var gfAsCount = 2; // GF counts as a brother (gets 2 shares like a male)
+      var totalMuq = gfAsCount + sibCount;
+
+      // Option 1: Muqasama — GF treated as brother
+      var remainderForGFSib = base - totalFardParts;
+      var muqGFParts = remainderForGFSib * gfAsCount / totalMuq;
+
+      // Option 2: 1/3 of remainder
+      var thirdRemainder = remainderForGFSib / 3;
+
+      // Option 3: 1/6 of total
+      var sixthTotal = base / 6;
+
+      // Best for grandfather
+      var gfParts = Math.max(muqGFParts, thirdRemainder, sixthTotal);
+
+      // Ensure GF gets at least 1/6
+      if (gfParts < sixthTotal) gfParts = sixthTotal;
+
+      gfSpecial.parts = gfParts;
+
+      // Remaining for siblings
+      var sibRemainder = remainderForGFSib - gfParts;
+      if (sibRemainder < 0) sibRemainder = 0;
+
+      // Distribute to siblings (full brothers/sisters first, then paternal)
+      // Full siblings have priority over paternal
+      var fullSibCount = (a.fullBrothers||0)*2 + (a.fullSisters||0);
+      var patSibCount = (a.paternalBrothers||0)*2 + (a.paternalSisters||0);
+
+      if (fullSibCount > 0) {
+        // Full siblings take from remainder
+        if ((a.fullBrothers||0) > 0) {
+          var fbParts = sibRemainder * ((a.fullBrothers)*2) / (fullSibCount + patSibCount);
+          fard.push({ heirId:'fullBrothers', count:a.fullBrothers, num:0, den:0, parts:fbParts, type:'tasib', reasonKey:'reasonFullSistersWithBrothers' });
+        }
+        if ((a.fullSisters||0) > 0) {
+          var fsParts = sibRemainder * (a.fullSisters) / (fullSibCount + patSibCount);
+          fard.push({ heirId:'fullSisters', count:a.fullSisters, num:0, den:0, parts:fsParts, type:'tasib', reasonKey:'reasonFullSistersWithBrothers' });
+        }
+        if (patSibCount > 0) {
+          if ((a.paternalBrothers||0)>0) {
+            var pbParts = sibRemainder * ((a.paternalBrothers)*2) / (fullSibCount + patSibCount);
+            fard.push({ heirId:'paternalBrothers', count:a.paternalBrothers, num:0, den:0, parts:pbParts, type:'tasib', reasonKey:'reasonPaternalSistersWithBrothers' });
+          }
+          if ((a.paternalSisters||0)>0) {
+            var psParts = sibRemainder * (a.paternalSisters) / (fullSibCount + patSibCount);
+            fard.push({ heirId:'paternalSisters', count:a.paternalSisters, num:0, den:0, parts:psParts, type:'tasib', reasonKey:'reasonPaternalSistersWithBrothers' });
+          }
+        }
+      } else if (patSibCount > 0) {
+        if ((a.paternalBrothers||0)>0) {
+          var pbParts = sibRemainder * ((a.paternalBrothers)*2) / patSibCount;
+          fard.push({ heirId:'paternalBrothers', count:a.paternalBrothers, num:0, den:0, parts:pbParts, type:'tasib', reasonKey:'reasonPaternalSistersWithBrothers' });
+        }
+        if ((a.paternalSisters||0)>0) {
+          var psParts = sibRemainder * (a.paternalSisters) / patSibCount;
+          fard.push({ heirId:'paternalSisters', count:a.paternalSisters, num:0, den:0, parts:psParts, type:'tasib', reasonKey:'reasonPaternalSistersWithBrothers' });
+        }
+      }
+
+      // Remove siblings from asaba list (already handled above)
+      asaba = asaba.filter(function(x) {
+        return x.heirId !== 'fullBrothers' && x.heirId !== 'fullSisters' && x.heirId !== 'paternalBrothers' && x.heirId !== 'paternalSisters';
+      });
+
+      totalFardParts += gfParts + sibRemainder;
+    }
+
+    // Father/GF as asaba with fard (1/6 + remainder)
+    var fatherAsabaEntry = null;
+    for (var i = 0; i < fard.length; i++) {
+      if (fard[i].special === 'fatherAsaba' || fard[i].special === 'gfAsaba') { fatherAsabaEntry = fard[i]; break; }
+    }
+
+    // Handle Mushtaraka
+    if (isMushtaraka) {
+      // Full siblings share with maternal siblings in 1/3 equally
+      // Remove full siblings from asaba
+      asaba = asaba.filter(function(x) { return x.heirId !== 'fullBrothers' && x.heirId !== 'fullSisters'; });
+      // Also remove any fard entry for full sisters that might exist
+      fard = fard.filter(function(x) { return x.heirId !== 'fullSisters' && x.heirId !== 'fullBrothers'; });
+      // Recalculate: maternal + full siblings all share 1/3 equally
+      var allSharing = (a.maternalBrothers||0) + (a.maternalSisters||0) + (a.fullBrothers||0) + (a.fullSisters||0);
+      // Remove existing maternal entries
+      fard = fard.filter(function(x) { return x.heirId !== 'maternalBrothers' && x.heirId !== 'maternalSisters'; });
+      // Add combined entry per heir
+      if ((a.maternalBrothers||0) > 0) fard.push({ heirId:'maternalBrothers', count:a.maternalBrothers, num:1, den:3, type:'fard', reasonKey:'reasonMushtaraka', shared:allSharing });
+      if ((a.maternalSisters||0) > 0) fard.push({ heirId:'maternalSisters', count:a.maternalSisters, num:1, den:3, type:'fard', reasonKey:'reasonMushtaraka', shared:allSharing });
+      if ((a.fullBrothers||0) > 0) fard.push({ heirId:'fullBrothers', count:a.fullBrothers, num:1, den:3, type:'fard', reasonKey:'reasonMushtaraka', shared:allSharing });
+      if ((a.fullSisters||0) > 0) fard.push({ heirId:'fullSisters', count:a.fullSisters, num:1, den:3, type:'fard', reasonKey:'reasonMushtaraka', shared:allSharing });
+
+      // Recalculate base and parts
+      dens = [];
+      for (var i = 0; i < fard.length; i++) {
+        if (fard[i].den > 0 && !fard[i]._skip) dens.push(fard[i].den);
+      }
+      if (dens.length === 0) dens = [1];
+      base = lcmArr(dens);
+      totalFardParts = 0;
+      // Handle shared entries — count 1/3 only once
+      var mushShareCounted = false;
+      for (var i = 0; i < fard.length; i++) {
+        var f = fard[i];
+        if (f._skip) { f.parts = 0; continue; }
+        if (f.den > 0) {
+          if (f.shared && f.reasonKey === 'reasonMushtaraka') {
+            if (!mushShareCounted) {
+              f.parts = (base / f.den) * f.num;
+              totalFardParts += f.parts;
+              mushShareCounted = true;
+            } else {
+              f.parts = 0;
+            }
+          } else if (f.shared && f.reasonKey === 'reasonMaternalSiblingsThird') {
+            // skip — replaced by mushtaraka
+            f.parts = 0;
+          } else {
+            f.parts = (base / f.den) * f.num;
+            totalFardParts += f.parts;
+          }
+        } else { f.parts = 0; }
+      }
+    }
+
+    // Now handle asaba distribution
+    var remainder = base - totalFardParts;
+    var awlInfo = null;
+    var raddInfo = null;
+
+    if (fatherAsabaEntry && !gfSpecial) {
+      // Father/GF gets remainder after own 1/6 fard
+      if (remainder > 0 && asaba.length === 0) {
+        fatherAsabaEntry.parts += remainder;
+        remainder = 0;
+      }
+    }
+
+    if (asaba.length > 0 && remainder > 0) {
+      // Distribute to asaba — first group only (highest priority)
+      var first = asaba[0];
+      if (first.withFemale) {
+        var maleShares = first.count * 2;
+        var femaleShares = first.femaleCount;
+        var totalShares = maleShares + femaleShares;
+        var perShare = remainder / totalShares;
+        first.parts = maleShares * perShare;
+        first.type = 'tasib';
+        fard.push(first);
+        fard.push({ heirId: first.withFemale, count: first.femaleCount, num:0, den:0, parts: femaleShares * perShare, type:'tasib', reasonKey: first.reasonKey });
+      } else {
+        first.parts = remainder;
+        first.type = 'tasib';
+        fard.push(first);
+      }
+      remainder = 0;
+    } else if (asaba.length > 0 && remainder <= 0) {
+      // Asaba gets nothing
+    }
+
+    // Check for Awl (only when no asaba consumed remainder)
+    if (totalFardParts > base && !gfSpecial) {
+      awlInfo = { original: base, actual: totalFardParts };
+      base = totalFardParts;
+    }
+
+    // Check for Radd (remainder > 0 and no asaba)
+    if (remainder > 0 && asaba.length === 0 && !fatherAsabaEntry) {
+      raddInfo = {};
+      // Radd to all fard heirs except spouse (in jumhur/hanafi/maliki/shafii)
+      // Hanbali: include spouse
+      var raddEligible = [];
+      var spouseEntries = [];
+      for (var i = 0; i < fard.length; i++) {
+        var f = fard[i];
+        if (f._skip || f.parts <= 0) continue;
+        if (f.heirId === 'husband' || f.heirId === 'wife') { spouseEntries.push(f); continue; }
+        raddEligible.push(f);
+      }
+      if (raddEligible.length > 0) {
+        var eligibleTotal = 0;
+        for (var i = 0; i < raddEligible.length; i++) eligibleTotal += raddEligible[i].parts;
+        for (var i = 0; i < raddEligible.length; i++) {
+          raddEligible[i].parts += (raddEligible[i].parts / eligibleTotal) * remainder;
+        }
+      }
+    }
+
+    // Build final results
+    var results = [];
+    var seen = {};
+    for (var i = 0; i < fard.length; i++) {
+      var f = fard[i];
+      if (f._skip || seen[f.heirId]) continue;
+      if (f.parts <= 0 && f.den <= 0) continue;
+      seen[f.heirId] = true;
+
+      var fraction = f.parts / base;
+      var displayFrac = '';
+      if (f.num > 0 && f.den > 0 && f.type !== 'tasib') {
+        var g = gcd(f.num, f.den);
+        displayFrac = (f.num/g) + '/' + (f.den/g);
+      } else if (f.type === 'tasib') {
+        displayFrac = isArabic ? 'عصبة' : 'Residuary';
+      } else if (f.special === 'umariyyatan') {
+        displayFrac = isArabic ? 'ثلث الباقي' : '1/3 remainder';
+      }
+
+      // Per-person amount for shared heirs
+      var totalCount = f.count;
+      if (f.shared) totalCount = f.shared;
+
+      results.push({
+        heirId: f.heirId,
+        count: f.count,
+        fraction: displayFrac,
+        amount: fraction,
+        type: f.type || 'fard',
+        reasonKey: f.reasonKey,
+        shared: f.shared || 0
+      });
+    }
+
+    return { results: results, awl: awlInfo, radd: raddInfo };
+  }
+
+  /* ── Display ── */
+  function showResults(results, blocked, awl, radd, net) {
+    var section = document.getElementById('inh-results-section');
+    var noResults = document.getElementById('inh-no-results');
+    section.classList.add('show');
+    noResults.style.display = 'none';
+
+    // Awl alert
+    var awlEl = document.getElementById('inh-awl-alert');
+    if (awl) {
+      awlEl.classList.add('show');
+      document.getElementById('inh-awl-detail').textContent = (isArabic ? 'أصل المسألة: ' : 'Base: ') + awl.original + (isArabic ? ' ← عالت إلى: ' : ' → Increased to: ') + awl.actual;
+    } else { awlEl.classList.remove('show'); }
+
+    // Radd alert
+    var raddEl = document.getElementById('inh-radd-alert');
+    if (radd) raddEl.classList.add('show');
+    else raddEl.classList.remove('show');
+
+    // Results table
+    var tbody = document.getElementById('inh-results-body');
+    tbody.innerHTML = '';
+    var totalAmt = 0;
+
+    for (var i = 0; i < results.length; i++) {
+      var r = results[i];
+      var amt = r.amount * net;
+      totalAmt += amt;
+
+      var perPerson = amt;
+      var countDisplay = '';
+      if (r.shared > 0) {
+        perPerson = amt / r.shared;
+        countDisplay = ' (' + r.count + ')';
+      } else if (r.count > 1) {
+        perPerson = amt / r.count;
+        countDisplay = ' (' + r.count + ')';
+      }
+
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + (heirNames[r.heirId] || r.heirId) + countDisplay + '</td>'
+        + '<td>' + r.fraction + '</td>'
+        + '<td class="inh-share-amount">' + formatNum(amt) + (r.count > 1 ? '<br><small>(' + formatNum(perPerson) + ' ' + (isArabic ? 'لكل فرد' : 'each') + ')</small>' : '') + '</td>'
+        + '<td>' + (typeTexts[r.type] || r.type) + '</td>'
+        + '<td style="text-align:start;font-size:0.85rem">' + (reasonTexts[r.reasonKey] || '') + '</td>';
+      tbody.appendChild(tr);
+    }
+
+    // Total
+    document.getElementById('inh-total-value').textContent = formatNum(totalAmt);
+
+    // Blocked heirs
+    var blockedSection = document.getElementById('inh-blocked-section');
+    var blockedList = document.getElementById('inh-blocked-list');
+    var blockedKeys = Object.keys(blocked);
+    if (blockedKeys.length > 0) {
+      blockedSection.classList.add('show');
+      blockedList.innerHTML = '';
+      for (var i = 0; i < blockedKeys.length; i++) {
+        var bk = blockedKeys[i];
+        var li = document.createElement('li');
+        li.textContent = (heirNames[bk] || bk) + ' — ' + (blockTexts[blocked[bk]] || blocked[bk]);
+        blockedList.appendChild(li);
+      }
+    } else { blockedSection.classList.remove('show'); }
+
+    document.getElementById('inh-step4').classList.add('active');
+  }
+
+  function hideResults() {
+    document.getElementById('inh-results-section').classList.remove('show');
+    document.getElementById('inh-no-results').style.display = 'block';
+    document.getElementById('inh-awl-alert').classList.remove('show');
+    document.getElementById('inh-radd-alert').classList.remove('show');
+    document.getElementById('inh-blocked-section').classList.remove('show');
+  }
+
+  function formatNum(n) {
+    if (!n || isNaN(n)) return '0';
+    return n.toLocaleString(isArabic ? 'ar-SA' : 'en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+  }
+
+  /* ── UI Functions ── */
+  window.inhSetMadhab = function(btn) {
+    state.madhab = btn.getAttribute('data-madhab');
+    document.querySelectorAll('.inh-madhab-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    updateHeirStates();
+    inhCalculate();
+  };
+
+  window.inhSetGender = function(gender, btn) {
+    state.deceasedGender = gender;
+    document.querySelectorAll('.inh-gender-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById('inh-step2').classList.add('active');
+
+    // Unlock step 3
+    var step3 = document.getElementById('inh-step3');
+    step3.classList.remove('locked');
+    step3.classList.add('active');
+    document.getElementById('inh-select-gender-msg').style.display = 'none';
+
+    // Show/hide spouse heirs based on gender
+    document.querySelectorAll('[data-onlyif]').forEach(function(row) {
+      var onlyIf = row.getAttribute('data-onlyif');
+      if (onlyIf !== gender) {
+        row.style.display = 'none';
+        var cb = row.querySelector('.inh-heir-checkbox');
+        if (cb && cb.checked) { cb.checked = false; delete state.heirs[row.getAttribute('data-heir')]; }
+      } else {
+        row.style.display = '';
+      }
+    });
+
+    updateHeirStates();
+    inhCalculate();
+  };
+
+  window.inhToggleCat = function(btn) {
+    btn.parentElement.classList.toggle('open');
+  };
+
+  window.inhToggleHeir = function(heirId, cb) {
+    if (cb.checked) {
+      state.heirs[heirId] = 1;
+      var counter = cb.closest('.inh-heir-row').querySelector('.inh-counter');
+      if (counter) { counter.style.display = 'flex'; }
+    } else {
+      delete state.heirs[heirId];
+      var counter = cb.closest('.inh-heir-row').querySelector('.inh-counter');
+      if (counter) { counter.style.display = 'none'; var cv = counter.querySelector('.inh-counter-value'); if (cv) cv.textContent = '1'; }
+    }
+    updateHeirStates();
+    inhCalculate();
+  };
+
+  window.inhChangeCount = function(heirId, delta) {
+    var current = state.heirs[heirId] || 1;
+    var row = document.querySelector('[data-heir="' + heirId + '"]');
+    var max = parseInt(row.getAttribute('data-max')) || 1;
+    var newVal = Math.max(1, Math.min(max, current + delta));
+    state.heirs[heirId] = newVal;
+    row.querySelector('.inh-counter-value').textContent = newVal;
+    inhCalculate();
+  };
+
+  window.inhRecalculate = function() {
+    state.estate.amount = parseFloat(document.getElementById('inh-estate').value) || 0;
+    state.estate.debts = parseFloat(document.getElementById('inh-debts').value) || 0;
+    state.estate.wasiyya = parseFloat(document.getElementById('inh-wasiyya').value) || 0;
+    document.getElementById('inh-step1').classList.add('active');
+    inhCalculate();
+  };
+
+  function updateHeirStates() {
+    // Check blocking for each heir and disable/enable rows
+    var allRows = document.querySelectorAll('.inh-heir-row');
+    allRows.forEach(function(row) {
+      var heirId = row.getAttribute('data-heir');
+      if (!heirId) return;
+      var onlyIf = row.getAttribute('data-onlyif');
+      if (onlyIf && onlyIf !== state.deceasedGender) return;
+
+      var reason = getBlockReason(heirId, state.heirs, state.madhab);
+      var tooltip = row.querySelector('.inh-heir-tooltip');
+      var cb = row.querySelector('.inh-heir-checkbox');
+
+      if (reason && !cb.checked) {
+        row.classList.add('disabled');
+        if (tooltip) { tooltip.textContent = blockTexts[reason] || reason; tooltip.style.display = 'inline'; }
+      } else {
+        row.classList.remove('disabled');
+        if (tooltip) tooltip.style.display = 'none';
+      }
+    });
+  }
+
+  window.inhCopyResults = function() {
+    var table = document.querySelector('.inh-results-table');
+    if (!table) return;
+    var text = '';
+    var rows = table.querySelectorAll('tr');
+    rows.forEach(function(row) {
+      var cells = row.querySelectorAll('th, td');
+      var line = [];
+      cells.forEach(function(c) { line.push(c.textContent.trim()); });
+      text += line.join('\t') + '\n';
+    });
+    navigator.clipboard.writeText(text).then(function() {
+      App.showToast(isArabic ? 'تم النسخ!' : 'Copied!');
+    });
+  };
+
+  window.inhResetAll = function() {
+    state.heirs = {};
+    state.deceasedGender = null;
+    state.estate = { amount: 0, debts: 0, wasiyya: 0 };
+    state.madhab = 'jumhur';
+
+    document.getElementById('inh-estate').value = '';
+    document.getElementById('inh-debts').value = '';
+    document.getElementById('inh-wasiyya').value = '';
+    document.getElementById('inh-net-value').textContent = '0';
+
+    document.querySelectorAll('.inh-gender-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.inh-madhab-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelector('[data-madhab="jumhur"]').classList.add('active');
+
+    document.querySelectorAll('.inh-heir-checkbox').forEach(function(cb) { cb.checked = false; });
+    document.querySelectorAll('.inh-counter').forEach(function(c) { c.style.display = 'none'; });
+    document.querySelectorAll('.inh-counter-value').forEach(function(v) { v.textContent = '1'; });
+    document.querySelectorAll('.inh-heir-row').forEach(function(r) { r.classList.remove('disabled'); r.style.display = ''; });
+    document.querySelectorAll('.inh-heir-tooltip').forEach(function(t) { t.style.display = 'none'; });
+
+    document.getElementById('inh-step2').classList.remove('active');
+    document.getElementById('inh-step3').classList.add('locked');
+    document.getElementById('inh-step3').classList.remove('active');
+    document.getElementById('inh-step4').classList.remove('active');
+    document.getElementById('inh-select-gender-msg').style.display = '';
+
+    hideResults();
+  };
+
+  // Initial state
+  hideResults();
+})();
+</script>
