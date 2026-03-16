@@ -43,12 +43,25 @@ build.js                    Build script (Node.js) — contains the actual HTML 
 
 ## Current Tools
 
-- `percentage` — Percentage calculator
+- `percentage` — Percentage calculator (13 sub-calculators)
 - `interest-calculator` — Simple & compound interest calculator
 - `loan-calculator` — Loan payment & amortization calculator
 - `body-calculator` — BMI, BMR, ideal weight, body fat calculators
 - `age-calculator` — Age, date difference, add/subtract dates
 - `family-tree` — Interactive family tree builder (SVG/Canvas)
+
+## Adding a Sub-Calculator to `percentage`
+
+The percentage tool uses a numbered calculator pattern (`calc1` through `calc13`). To add a new one:
+
+1. Add HTML block in `src/tools/percentage.html` following the `calc-row-inline` pattern with `id="calcN-*"` inputs and `id="resultN"`
+2. Add translations in `src/data/i18n.json` under `percentage.ar` and `percentage.en` (at minimum `calcNTitle`)
+3. Update the JS in the same file:
+   - Increase the loop bound: `for (let i = 1; i <= N; i++)`
+   - Add `N` to the `isPercent` array if the result is a percentage
+   - Add `N` to the `signed` array if the result can be negative (shows +/− and color)
+   - Add `case N` in the `calculate()` switch
+4. Run `npm run build`
 
 ## Adding a New Tool
 
