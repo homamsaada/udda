@@ -579,6 +579,275 @@
           </div>
         </div>
 
+        <!-- Dhawu al-Arham (distant relatives) — hidden by default, shown dynamically -->
+        <div id="inh-arham-wrapper" style="display:none">
+          <div class="inh-alert-banner info show" style="margin-bottom:12px">
+            <span class="inh-alert-icon">ℹ️</span>
+            <div>{{tool.arhamNote}}</div>
+          </div>
+
+          <!-- Class 1: Descendants not inheriting -->
+          <div class="inh-heir-category" id="inh-cat-arham1">
+            <button class="inh-heir-category-header" onclick="inhToggleCat(this)">
+              <span>{{tool.arhamClass1}}</span><span class="inh-chevron">▼</span>
+            </button>
+            <div class="inh-heir-category-body">
+              <div class="inh-heir-row" data-heir="daughtersSons" data-max="20" data-arham="1">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('daughtersSons',this)">
+                <span class="inh-heir-name">{{tool.daughtersSons}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('daughtersSons',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="daughtersSons">1</span>
+                  <button onclick="inhChangeCount('daughtersSons',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="daughtersDaughters" data-max="20" data-arham="1">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('daughtersDaughters',this)">
+                <span class="inh-heir-name">{{tool.daughtersDaughters}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('daughtersDaughters',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="daughtersDaughters">1</span>
+                  <button onclick="inhChangeCount('daughtersDaughters',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="sonsDaughtersSons" data-max="20" data-arham="1">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('sonsDaughtersSons',this)">
+                <span class="inh-heir-name">{{tool.sonsDaughtersSons}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('sonsDaughtersSons',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="sonsDaughtersSons">1</span>
+                  <button onclick="inhChangeCount('sonsDaughtersSons',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="sonsDaughtersDaughters" data-max="20" data-arham="1">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('sonsDaughtersDaughters',this)">
+                <span class="inh-heir-name">{{tool.sonsDaughtersDaughters}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('sonsDaughtersDaughters',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="sonsDaughtersDaughters">1</span>
+                  <button onclick="inhChangeCount('sonsDaughtersDaughters',1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Class 2: Non-inheriting ascendants -->
+          <div class="inh-heir-category" id="inh-cat-arham2">
+            <button class="inh-heir-category-header" onclick="inhToggleCat(this)">
+              <span>{{tool.arhamClass2}}</span><span class="inh-chevron">▼</span>
+            </button>
+            <div class="inh-heir-category-body">
+              <div class="inh-heir-row" data-heir="maternalGrandfather" data-arham="2">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('maternalGrandfather',this)">
+                <span class="inh-heir-name">{{tool.maternalGrandfather}}</span>
+                <span class="inh-heir-tooltip"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Class 3: Descendants of parents not inheriting -->
+          <div class="inh-heir-category" id="inh-cat-arham3">
+            <button class="inh-heir-category-header" onclick="inhToggleCat(this)">
+              <span>{{tool.arhamClass3}}</span><span class="inh-chevron">▼</span>
+            </button>
+            <div class="inh-heir-category-body">
+              <div class="inh-heir-row" data-heir="fullBrothersDaughters" data-max="20" data-arham="3">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('fullBrothersDaughters',this)">
+                <span class="inh-heir-name">{{tool.fullBrothersDaughters}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('fullBrothersDaughters',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="fullBrothersDaughters">1</span>
+                  <button onclick="inhChangeCount('fullBrothersDaughters',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="paternalBrothersDaughters" data-max="20" data-arham="3">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('paternalBrothersDaughters',this)">
+                <span class="inh-heir-name">{{tool.paternalBrothersDaughters}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('paternalBrothersDaughters',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="paternalBrothersDaughters">1</span>
+                  <button onclick="inhChangeCount('paternalBrothersDaughters',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="fullSistersSons" data-max="20" data-arham="3">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('fullSistersSons',this)">
+                <span class="inh-heir-name">{{tool.fullSistersSons}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('fullSistersSons',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="fullSistersSons">1</span>
+                  <button onclick="inhChangeCount('fullSistersSons',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="fullSistersDaughters" data-max="20" data-arham="3">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('fullSistersDaughters',this)">
+                <span class="inh-heir-name">{{tool.fullSistersDaughters}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('fullSistersDaughters',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="fullSistersDaughters">1</span>
+                  <button onclick="inhChangeCount('fullSistersDaughters',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="paternalSistersSons" data-max="20" data-arham="3">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('paternalSistersSons',this)">
+                <span class="inh-heir-name">{{tool.paternalSistersSons}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('paternalSistersSons',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="paternalSistersSons">1</span>
+                  <button onclick="inhChangeCount('paternalSistersSons',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="paternalSistersDaughters" data-max="20" data-arham="3">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('paternalSistersDaughters',this)">
+                <span class="inh-heir-name">{{tool.paternalSistersDaughters}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('paternalSistersDaughters',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="paternalSistersDaughters">1</span>
+                  <button onclick="inhChangeCount('paternalSistersDaughters',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="maternalBrothersSons" data-max="20" data-arham="3">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('maternalBrothersSons',this)">
+                <span class="inh-heir-name">{{tool.maternalBrothersSons}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('maternalBrothersSons',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="maternalBrothersSons">1</span>
+                  <button onclick="inhChangeCount('maternalBrothersSons',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="maternalBrothersDaughters" data-max="20" data-arham="3">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('maternalBrothersDaughters',this)">
+                <span class="inh-heir-name">{{tool.maternalBrothersDaughters}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('maternalBrothersDaughters',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="maternalBrothersDaughters">1</span>
+                  <button onclick="inhChangeCount('maternalBrothersDaughters',1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Class 4: Descendants of grandparents not inheriting -->
+          <div class="inh-heir-category" id="inh-cat-arham4">
+            <button class="inh-heir-category-header" onclick="inhToggleCat(this)">
+              <span>{{tool.arhamClass4}}</span><span class="inh-chevron">▼</span>
+            </button>
+            <div class="inh-heir-category-body">
+              <div class="inh-heir-row" data-heir="fullPaternalAunts" data-max="20" data-arham="4">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('fullPaternalAunts',this)">
+                <span class="inh-heir-name">{{tool.fullPaternalAunts}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('fullPaternalAunts',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="fullPaternalAunts">1</span>
+                  <button onclick="inhChangeCount('fullPaternalAunts',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="paternalAuntsFromFather" data-max="20" data-arham="4">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('paternalAuntsFromFather',this)">
+                <span class="inh-heir-name">{{tool.paternalAuntsFromFather}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('paternalAuntsFromFather',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="paternalAuntsFromFather">1</span>
+                  <button onclick="inhChangeCount('paternalAuntsFromFather',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="paternalAuntsFromMother" data-max="20" data-arham="4">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('paternalAuntsFromMother',this)">
+                <span class="inh-heir-name">{{tool.paternalAuntsFromMother}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('paternalAuntsFromMother',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="paternalAuntsFromMother">1</span>
+                  <button onclick="inhChangeCount('paternalAuntsFromMother',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="fullMaternalUncles" data-max="20" data-arham="4">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('fullMaternalUncles',this)">
+                <span class="inh-heir-name">{{tool.fullMaternalUncles}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('fullMaternalUncles',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="fullMaternalUncles">1</span>
+                  <button onclick="inhChangeCount('fullMaternalUncles',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="maternalUnclesFromFather" data-max="20" data-arham="4">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('maternalUnclesFromFather',this)">
+                <span class="inh-heir-name">{{tool.maternalUnclesFromFather}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('maternalUnclesFromFather',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="maternalUnclesFromFather">1</span>
+                  <button onclick="inhChangeCount('maternalUnclesFromFather',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="maternalUnclesFromMother" data-max="20" data-arham="4">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('maternalUnclesFromMother',this)">
+                <span class="inh-heir-name">{{tool.maternalUnclesFromMother}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('maternalUnclesFromMother',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="maternalUnclesFromMother">1</span>
+                  <button onclick="inhChangeCount('maternalUnclesFromMother',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="fullMaternalAunts" data-max="20" data-arham="4">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('fullMaternalAunts',this)">
+                <span class="inh-heir-name">{{tool.fullMaternalAunts}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('fullMaternalAunts',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="fullMaternalAunts">1</span>
+                  <button onclick="inhChangeCount('fullMaternalAunts',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="maternalAuntsFromFather" data-max="20" data-arham="4">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('maternalAuntsFromFather',this)">
+                <span class="inh-heir-name">{{tool.maternalAuntsFromFather}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('maternalAuntsFromFather',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="maternalAuntsFromFather">1</span>
+                  <button onclick="inhChangeCount('maternalAuntsFromFather',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="maternalAuntsFromMother" data-max="20" data-arham="4">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('maternalAuntsFromMother',this)">
+                <span class="inh-heir-name">{{tool.maternalAuntsFromMother}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('maternalAuntsFromMother',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="maternalAuntsFromMother">1</span>
+                  <button onclick="inhChangeCount('maternalAuntsFromMother',1)">+</button>
+                </div>
+              </div>
+              <div class="inh-heir-row" data-heir="paternalUnclesDaughters" data-max="20" data-arham="4">
+                <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('paternalUnclesDaughters',this)">
+                <span class="inh-heir-name">{{tool.paternalUnclesDaughters}}</span>
+                <span class="inh-heir-tooltip"></span>
+                <div class="inh-counter" style="display:none">
+                  <button onclick="inhChangeCount('paternalUnclesDaughters',-1)">−</button>
+                  <span class="inh-counter-value" data-heir="paternalUnclesDaughters">1</span>
+                  <button onclick="inhChangeCount('paternalUnclesDaughters',1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -606,6 +875,10 @@
         <div class="inh-alert-banner warning" id="inh-baytmal-alert">
           <span class="inh-alert-icon">🏛️</span>
           <div><strong>{{tool.baytMalAlert}}</strong><br>{{tool.baytMalExplanation}}</div>
+        </div>
+        <div class="inh-alert-banner info" id="inh-arham-alert">
+          <span class="inh-alert-icon">👨‍👩‍👧‍👦</span>
+          <div><strong>{{tool.arhamType}}</strong><br>{{tool.arhamTanzilNote}}</div>
         </div>
         <div class="inh-results-table-wrapper">
           <table class="inh-results-table">
@@ -686,7 +959,22 @@
     fullPaternalUnclesSons: '{{tool.fullPaternalUnclesSons}}', paternalUnclesSonsFromFather: '{{tool.paternalUnclesSonsFromFather}}',
     fullBrothersSonsSons: '{{tool.fullBrothersSonsSons}}', paternalBrothersSonsSons: '{{tool.paternalBrothersSonsSons}}',
     fatherFullUncles: '{{tool.fatherFullUncles}}', fatherPaternalUncles: '{{tool.fatherPaternalUncles}}',
-    fatherFullUnclesSons: '{{tool.fatherFullUnclesSons}}', fatherPaternalUnclesSons: '{{tool.fatherPaternalUnclesSons}}'
+    fatherFullUnclesSons: '{{tool.fatherFullUnclesSons}}', fatherPaternalUnclesSons: '{{tool.fatherPaternalUnclesSons}}',
+    // Dhawu al-Arham
+    daughtersSons: '{{tool.daughtersSons}}', daughtersDaughters: '{{tool.daughtersDaughters}}',
+    sonsDaughtersSons: '{{tool.sonsDaughtersSons}}', sonsDaughtersDaughters: '{{tool.sonsDaughtersDaughters}}',
+    maternalGrandfather: '{{tool.maternalGrandfather}}',
+    fullBrothersDaughters: '{{tool.fullBrothersDaughters}}', paternalBrothersDaughters: '{{tool.paternalBrothersDaughters}}',
+    fullSistersSons: '{{tool.fullSistersSons}}', fullSistersDaughters: '{{tool.fullSistersDaughters}}',
+    paternalSistersSons: '{{tool.paternalSistersSons}}', paternalSistersDaughters: '{{tool.paternalSistersDaughters}}',
+    maternalBrothersSons: '{{tool.maternalBrothersSons}}', maternalBrothersDaughters: '{{tool.maternalBrothersDaughters}}',
+    fullPaternalAunts: '{{tool.fullPaternalAunts}}', paternalAuntsFromFather: '{{tool.paternalAuntsFromFather}}',
+    paternalAuntsFromMother: '{{tool.paternalAuntsFromMother}}',
+    fullMaternalUncles: '{{tool.fullMaternalUncles}}', maternalUnclesFromFather: '{{tool.maternalUnclesFromFather}}',
+    maternalUnclesFromMother: '{{tool.maternalUnclesFromMother}}',
+    fullMaternalAunts: '{{tool.fullMaternalAunts}}', maternalAuntsFromFather: '{{tool.maternalAuntsFromFather}}',
+    maternalAuntsFromMother: '{{tool.maternalAuntsFromMother}}',
+    paternalUnclesDaughters: '{{tool.paternalUnclesDaughters}}'
   };
 
   var reasonTexts = {
@@ -724,7 +1012,51 @@
     reasonMushtaraka: '{{tool.reasonMushtaraka}}'
   };
 
-  var typeTexts = { fard: '{{tool.fard}}', tasib: '{{tool.tasib}}', fardAndTasib: '{{tool.fardAndTasib}}' };
+  var typeTexts = { fard: '{{tool.fard}}', tasib: '{{tool.tasib}}', fardAndTasib: '{{tool.fardAndTasib}}', arham: '{{tool.arhamType}}' };
+
+  // Dhawu al-Arham heir IDs
+  var ARHAM_IDS = ['daughtersSons','daughtersDaughters','sonsDaughtersSons','sonsDaughtersDaughters',
+    'maternalGrandfather',
+    'fullBrothersDaughters','paternalBrothersDaughters','fullSistersSons','fullSistersDaughters',
+    'paternalSistersSons','paternalSistersDaughters','maternalBrothersSons','maternalBrothersDaughters',
+    'fullPaternalAunts','paternalAuntsFromFather','paternalAuntsFromMother',
+    'fullMaternalUncles','maternalUnclesFromFather','maternalUnclesFromMother',
+    'fullMaternalAunts','maternalAuntsFromFather','maternalAuntsFromMother',
+    'paternalUnclesDaughters'];
+
+  // Tanzil mapping: each arham heir → the fard/asaba heir they represent
+  // The arham heir "steps into the shoes" of this person for share calculation
+  var TANZIL_MAP = {
+    // Class 1: Descendants not inheriting → represent daughters/sonsDaughters
+    daughtersSons: { represents: 'daughters', gender: 'male' },
+    daughtersDaughters: { represents: 'daughters', gender: 'female' },
+    sonsDaughtersSons: { represents: 'sonsDaughters', gender: 'male' },
+    sonsDaughtersDaughters: { represents: 'sonsDaughters', gender: 'female' },
+    // Class 2: Non-inheriting ascendants
+    maternalGrandfather: { represents: 'mother', gender: 'male' },
+    // Class 3: Descendants of parents not inheriting → represent siblings
+    fullBrothersDaughters: { represents: 'fullBrothers', gender: 'female' },
+    paternalBrothersDaughters: { represents: 'paternalBrothers', gender: 'female' },
+    fullSistersSons: { represents: 'fullSisters', gender: 'male' },
+    fullSistersDaughters: { represents: 'fullSisters', gender: 'female' },
+    paternalSistersSons: { represents: 'paternalSisters', gender: 'male' },
+    paternalSistersDaughters: { represents: 'paternalSisters', gender: 'female' },
+    maternalBrothersSons: { represents: 'maternalBrothers', gender: 'male' },
+    maternalBrothersDaughters: { represents: 'maternalBrothers', gender: 'female' },
+    // Class 4: Descendants of grandparents not inheriting → represent uncles/aunts who aren't asaba
+    fullPaternalAunts: { represents: 'father', gender: 'female' },
+    paternalAuntsFromFather: { represents: 'father', gender: 'female' },
+    paternalAuntsFromMother: { represents: 'father', gender: 'female' },
+    fullMaternalUncles: { represents: 'mother', gender: 'male' },
+    maternalUnclesFromFather: { represents: 'mother', gender: 'male' },
+    maternalUnclesFromMother: { represents: 'mother', gender: 'male' },
+    fullMaternalAunts: { represents: 'mother', gender: 'female' },
+    maternalAuntsFromFather: { represents: 'mother', gender: 'female' },
+    maternalAuntsFromMother: { represents: 'mother', gender: 'female' },
+    paternalUnclesDaughters: { represents: 'fullPaternalUncles', gender: 'female' }
+  };
+
+  function isArham(id) { return ARHAM_IDS.indexOf(id) >= 0; }
   var blockTexts = {
     blockedByFather: '{{tool.blockedByFather}}', blockedByMother: '{{tool.blockedByMother}}',
     blockedBySon: '{{tool.blockedBySon}}', blockedByDescendant: '{{tool.blockedByDescendant}}',
@@ -872,6 +1204,76 @@
     return null;
   }
 
+  /* ── Dhawu al-Arham calculation (Tanzil method) ── */
+  // Groups arham heirs by who they represent, builds a virtual heir set,
+  // calculates shares as if virtual heirs exist, then maps back.
+  function calculateArham(arhamHeirs, spouseHeirs, madhab, net) {
+    // arhamHeirs: { heirId: count } — only arham heirs
+    // spouseHeirs: { husband: n } or { wife: n } — spouse fard results from main calc
+    // Returns array of { heirId, count, fraction, amount, type, reasonKey }
+
+    // Step 1: Group arham heirs by the person they represent
+    var virtualHeirs = {}; // representedId → [{arhamId, count, gender}]
+    for (var id in arhamHeirs) {
+      var mapping = TANZIL_MAP[id];
+      if (!mapping) continue;
+      var rep = mapping.represents;
+      if (!virtualHeirs[rep]) virtualHeirs[rep] = [];
+      virtualHeirs[rep].push({ arhamId: id, count: arhamHeirs[id], gender: mapping.gender });
+    }
+
+    // Step 2: Build virtual heir set — pretend the "represented" heirs exist
+    var vh = {};
+    for (var rep in virtualHeirs) {
+      vh[rep] = 1; // each represented person counts as 1 for fard calculation
+    }
+
+    // Step 3: Calculate shares using the standard engine on virtual heirs
+    // We need to figure out the share each "represented" person would get
+    var blocked = {};
+    for (var id in vh) {
+      var reason = getBlockReason(id, vh, madhab);
+      if (reason) blocked[id] = reason;
+    }
+    var active = {};
+    for (var id in vh) { if (!blocked[id]) active[id] = vh[id]; }
+
+    if (Object.keys(active).length === 0) return [];
+
+    var shares = assignShares(active, madhab, blocked, vh);
+    if (!shares || !shares.results) return [];
+
+    // Step 4: Map virtual results back to actual arham heirs
+    var results = [];
+    for (var i = 0; i < shares.results.length; i++) {
+      var r = shares.results[i];
+      var repId = r.heirId;
+      var arhamGroup = virtualHeirs[repId];
+      if (!arhamGroup) continue;
+
+      // The share for this "represented" person goes to all arham heirs who represent them
+      // If multiple arham heirs map to the same person, they share equally
+      var totalArhamCount = 0;
+      for (var j = 0; j < arhamGroup.length; j++) totalArhamCount += arhamGroup[j].count;
+
+      for (var j = 0; j < arhamGroup.length; j++) {
+        var ah = arhamGroup[j];
+        var portion = r.amount * ah.count / totalArhamCount;
+        results.push({
+          heirId: ah.arhamId,
+          count: ah.count,
+          fraction: isArabic ? 'تنزيل' : 'Tanzil',
+          amount: portion,
+          type: 'arham',
+          reasonKey: null,
+          tanzilAs: repId
+        });
+      }
+    }
+
+    return results;
+  }
+
   /* ── Main calculation ── */
   function inhCalculate() {
     var amount = state.estate.amount || 0;
@@ -892,24 +1294,41 @@
 
     if (net <= 0 || !state.deceasedGender) { hideResults(); return; }
 
-    // Collect active heirs
+    // Separate regular heirs from dhawu al-arham
     var h = {};
+    var arhamH = {};
     for (var id in state.heirs) {
-      if (state.heirs[id] > 0) h[id] = state.heirs[id];
+      if (state.heirs[id] > 0) {
+        if (isArham(id)) arhamH[id] = state.heirs[id];
+        else h[id] = state.heirs[id];
+      }
     }
-    if (Object.keys(h).length === 0) { hideResults(); return; }
+    if (Object.keys(h).length === 0 && Object.keys(arhamH).length === 0) { hideResults(); return; }
 
-    // Determine blocked
+    // Determine blocked (regular heirs only)
     var blocked = {};
     for (var id in h) {
       var reason = getBlockReason(id, h, state.madhab);
       if (reason) blocked[id] = reason;
     }
 
-    // Active = non-blocked
+    // Active = non-blocked regular heirs
     var a = {};
     for (var id in h) { if (!blocked[id]) a[id] = h[id]; }
-    if (Object.keys(a).length === 0) {
+
+    // Check if only spouse heirs are active (no fard/asaba non-spouse heirs)
+    var hasNonSpouseActive = false;
+    for (var id in a) {
+      if (id !== 'husband' && id !== 'wife') { hasNonSpouseActive = true; break; }
+    }
+
+    // If arham heirs selected and conditions met, calculate arham
+    var arhamResults = [];
+    var hasArhamHeirs = Object.keys(arhamH).length > 0;
+    var arhamApplicable = !hasNonSpouseActive && hasArhamHeirs
+      && state.madhab !== 'maliki' && state.madhab !== 'shafii';
+
+    if (Object.keys(a).length === 0 && !hasArhamHeirs) {
       // All heirs are blocked — show bayt al-mal / dhawu al-arham note
       hideResults();
       var section = document.getElementById('inh-results-section');
@@ -926,6 +1345,45 @@
         li.textContent = (heirNames[bk] || bk) + ' — ' + (blockTexts[blocked[bk]] || blocked[bk]);
         blockedList.appendChild(li);
       }
+      document.getElementById('inh-step4').classList.add('active');
+      return;
+    }
+
+    if (arhamApplicable) {
+      // Calculate spouse shares first if any
+      var spouseResults = [];
+      var spouseBlocked = {};
+      if (Object.keys(a).length > 0) {
+        var spouseShares = assignShares(a, state.madhab, spouseBlocked, h);
+        spouseResults = spouseShares.results || [];
+      }
+
+      // Net after spouse: remainder goes to arham heirs
+      var spouseTotal = 0;
+      for (var i = 0; i < spouseResults.length; i++) spouseTotal += spouseResults[i].amount;
+      var arhamNet = net * (1 - spouseTotal);
+
+      // Calculate arham shares via tanzil
+      arhamResults = calculateArham(arhamH, a, state.madhab, arhamNet);
+
+      // Scale arham results to be fractions of total net
+      for (var i = 0; i < arhamResults.length; i++) {
+        arhamResults[i].amount = arhamResults[i].amount * (1 - spouseTotal);
+      }
+
+      // Combine spouse + arham results
+      var allResults = spouseResults.concat(arhamResults);
+      showResults(allResults, blocked, null, null, net, null, hasArhamHeirs);
+      return;
+    }
+
+    if (Object.keys(a).length === 0) {
+      // Only arham heirs but madhab doesn't support them
+      hideResults();
+      var section = document.getElementById('inh-results-section');
+      section.classList.add('show');
+      document.getElementById('inh-no-results').style.display = 'none';
+      document.getElementById('inh-baytmal-alert').classList.add('show');
       document.getElementById('inh-step4').classList.add('active');
       return;
     }
@@ -1512,7 +1970,7 @@
   }
 
   /* ── Display ── */
-  function showResults(results, blocked, awl, radd, net, akdariyyah) {
+  function showResults(results, blocked, awl, radd, net, akdariyyah, hasArham) {
     var section = document.getElementById('inh-results-section');
     var noResults = document.getElementById('inh-no-results');
     section.classList.add('show');
@@ -1539,6 +1997,11 @@
     var baytmalEl = document.getElementById('inh-baytmal-alert');
     baytmalEl.classList.remove('show');
 
+    // Arham alert
+    var arhamEl = document.getElementById('inh-arham-alert');
+    if (hasArham) arhamEl.classList.add('show');
+    else arhamEl.classList.remove('show');
+
     // Results table
     var tbody = document.getElementById('inh-results-body');
     tbody.innerHTML = '';
@@ -1559,12 +2022,20 @@
         countDisplay = ' (' + r.count + ')';
       }
 
+      // Build explanation text
+      var explText = '';
+      if (r.tanzilAs) {
+        explText = (isArabic ? 'يرث بالتنزيل منزلة: ' : 'Inherits by Tanzil in position of: ') + (heirNames[r.tanzilAs] || r.tanzilAs);
+      } else {
+        explText = reasonTexts[r.reasonKey] || '';
+      }
+
       var tr = document.createElement('tr');
       tr.innerHTML = '<td>' + (heirNames[r.heirId] || r.heirId) + countDisplay + '</td>'
         + '<td>' + r.fraction + '</td>'
         + '<td class="inh-share-amount">' + formatNum(amt) + (r.count > 1 ? '<br><small>(' + formatNum(perPerson) + ' ' + (isArabic ? 'لكل فرد' : 'each') + ')</small>' : '') + '</td>'
         + '<td>' + (typeTexts[r.type] || r.type) + '</td>'
-        + '<td style="text-align:start;font-size:0.85rem">' + (reasonTexts[r.reasonKey] || '') + '</td>';
+        + '<td style="text-align:start;font-size:0.85rem">' + explText + '</td>';
       tbody.appendChild(tr);
     }
 
@@ -1601,6 +2072,7 @@
     document.getElementById('inh-radd-alert').classList.remove('show');
     document.getElementById('inh-akdariyyah-alert').classList.remove('show');
     document.getElementById('inh-baytmal-alert').classList.remove('show');
+    document.getElementById('inh-arham-alert').classList.remove('show');
     document.getElementById('inh-blocked-section').classList.remove('show');
   }
 
@@ -1688,6 +2160,7 @@
     allRows.forEach(function(row) {
       var heirId = row.getAttribute('data-heir');
       if (!heirId) return;
+      if (isArham(heirId)) return; // Skip arham — handled below
       var onlyIf = row.getAttribute('data-onlyif');
       if (onlyIf && onlyIf !== state.deceasedGender) return;
 
@@ -1703,6 +2176,40 @@
         if (tooltip) tooltip.style.display = 'none';
       }
     });
+
+    // Show/hide dhawu al-arham wrapper
+    var arhamWrapper = document.getElementById('inh-arham-wrapper');
+    if (arhamWrapper) {
+      // Check if any non-spouse regular heirs are active (non-blocked)
+      var hasNonSpouseRegular = false;
+      for (var id in state.heirs) {
+        if (isArham(id) || id === 'husband' || id === 'wife') continue;
+        if (state.heirs[id] > 0) {
+          var reason = getBlockReason(id, state.heirs, state.madhab);
+          if (!reason) { hasNonSpouseRegular = true; break; }
+        }
+      }
+      // Show arham section only when no non-spouse fard/asaba heirs AND madhab supports it
+      var madhabSupports = state.madhab !== 'maliki' && state.madhab !== 'shafii';
+      if (!hasNonSpouseRegular && madhabSupports && state.deceasedGender) {
+        arhamWrapper.style.display = '';
+      } else {
+        arhamWrapper.style.display = 'none';
+        // Uncheck any arham heirs if section is hidden
+        ARHAM_IDS.forEach(function(aid) {
+          if (state.heirs[aid]) {
+            delete state.heirs[aid];
+            var row = document.querySelector('[data-heir="' + aid + '"]');
+            if (row) {
+              var cb = row.querySelector('.inh-heir-checkbox');
+              if (cb) cb.checked = false;
+              var counter = row.querySelector('.inh-counter');
+              if (counter) { counter.style.display = 'none'; var cv = counter.querySelector('.inh-counter-value'); if (cv) cv.textContent = '1'; }
+            }
+          }
+        });
+      }
+    }
   }
 
   window.inhCopyResults = function() {
@@ -1820,6 +2327,8 @@
     document.getElementById('inh-select-gender-msg').style.display = '';
 
     document.getElementById('inh-wasiyya-alert').classList.remove('show');
+    var arhamWrapper = document.getElementById('inh-arham-wrapper');
+    if (arhamWrapper) arhamWrapper.style.display = 'none';
     hideResults();
   };
 
