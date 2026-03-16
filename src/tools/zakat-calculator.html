@@ -1,0 +1,841 @@
+<style>
+/* Zakat Calculator Styles */
+.zakat-calculator {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: inherit;
+}
+
+.zakat-calculator * {
+  font-family: inherit;
+}
+
+.calc-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.calc-tab {
+  flex: 1;
+  min-width: 80px;
+  padding: 10px 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.calc-tab:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.calc-tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.calc-section {
+  display: none;
+}
+
+.calc-section.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.input-form {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-row:last-child {
+  margin-bottom: 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.form-group input, .form-group select {
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.optional-badge {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* Nisab Status */
+.nisab-status {
+  text-align: center;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.nisab-status.reached {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.nisab-status.not-reached {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.stat-card {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+}
+
+.stat-card.highlight {
+  border: 2px solid var(--primary);
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.stat-card .value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-card.highlight .value {
+  color: var(--primary);
+}
+
+.stat-card .label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Result Box */
+.result-box {
+  display: none;
+  margin-top: 24px;
+}
+
+.result-box.show {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Stock Type Toggle */
+.stock-type-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.stock-type-btn {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+  font-family: inherit;
+}
+
+.stock-type-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+/* Info Note */
+.info-note {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Disclaimer */
+.zakat-disclaimer {
+  margin-top: 24px;
+  padding: 20px;
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 12px;
+}
+
+.disclaimer-item {
+  padding: 6px 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+/* Fitr result */
+.fitr-main-result {
+  text-align: center;
+  padding: 24px;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.fitr-main-result .result-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.fitr-main-result .result-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .calc-tab {
+    min-width: 60px;
+    font-size: 0.75rem;
+    padding: 8px 6px;
+  }
+
+  .input-form {
+    padding: 16px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-card .value {
+    font-size: 1.1rem;
+  }
+
+  .fitr-main-result .result-number {
+    font-size: 2rem;
+  }
+}
+</style>
+
+<div class="zakat-calculator">
+  <!-- Tabs -->
+  <div class="calc-tabs">
+    <button class="calc-tab active" onclick="switchTab('comprehensive')">{{tool.comprehensiveTab}}</button>
+    <button class="calc-tab" onclick="switchTab('money')">{{tool.moneyTab}}</button>
+    <button class="calc-tab" onclick="switchTab('gold')">{{tool.goldTab}}</button>
+    <button class="calc-tab" onclick="switchTab('silver')">{{tool.silverTab}}</button>
+    <button class="calc-tab" onclick="switchTab('trade')">{{tool.tradeTab}}</button>
+    <button class="calc-tab" onclick="switchTab('stocks')">{{tool.stocksTab}}</button>
+    <button class="calc-tab" onclick="switchTab('fitr')">{{tool.fitrTab}}</button>
+  </div>
+
+  <!-- Tab 1: Comprehensive -->
+  <div class="calc-section active" id="comprehensive-section">
+    <div class="input-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.cashSavings}}</label>
+          <input type="number" id="comp-cash" placeholder="0" oninput="calculateComprehensive()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.goldValue}} <span class="optional-badge">({{tool.optional}})</span></label>
+          <input type="number" id="comp-gold" placeholder="0" oninput="calculateComprehensive()">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.silverValue}} <span class="optional-badge">({{tool.optional}})</span></label>
+          <input type="number" id="comp-silver" placeholder="0" oninput="calculateComprehensive()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.tradeGoodsValue}} <span class="optional-badge">({{tool.optional}})</span></label>
+          <input type="number" id="comp-trade" placeholder="0" oninput="calculateComprehensive()">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.stocksValue}} <span class="optional-badge">({{tool.optional}})</span></label>
+          <input type="number" id="comp-stocks" placeholder="0" oninput="calculateComprehensive()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.debtsOwed}} <span class="optional-badge">({{tool.optional}})</span></label>
+          <input type="number" id="comp-debts" placeholder="0" oninput="calculateComprehensive()">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.goldPricePerGram}}</label>
+          <input type="number" id="comp-gold-price" placeholder="250" oninput="calculateComprehensive()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="comp-result">
+      <div class="nisab-status" id="comp-nisab-status"></div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="value" id="comp-total-wealth">—</div>
+          <div class="label">{{tool.totalWealth}}</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="comp-nisab-value">—</div>
+          <div class="label">{{tool.nisabValue}}</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="value" id="comp-zakat-amount">—</div>
+          <div class="label">{{tool.zakatAmount}}</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="comp-remaining">—</div>
+          <div class="label">{{tool.remainingWealth}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 2: Money -->
+  <div class="calc-section" id="money-section">
+    <div class="input-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.totalCash}}</label>
+          <input type="number" id="money-cash" placeholder="0" oninput="calculateMoney()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.goldPricePerGram}}</label>
+          <input type="number" id="money-gold-price" placeholder="250" oninput="calculateMoney()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="money-result">
+      <div class="nisab-status" id="money-nisab-status"></div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="value" id="money-nisab-value">—</div>
+          <div class="label">{{tool.nisabValue}}</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="value" id="money-zakat-amount">—</div>
+          <div class="label">{{tool.zakatAmount}}</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="money-remaining">—</div>
+          <div class="label">{{tool.remainingWealth}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 3: Gold -->
+  <div class="calc-section" id="gold-section">
+    <div class="input-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.goldWeightGrams}}</label>
+          <input type="number" id="gold-weight" placeholder="100" oninput="calculateGold()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.goldKarat}}</label>
+          <select id="gold-karat" onchange="calculateGold()">
+            <option value="24">24K</option>
+            <option value="22">22K</option>
+            <option value="21" selected>21K</option>
+            <option value="18">18K</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.goldPricePerGram}} <span class="optional-badge">({{tool.optional}})</span></label>
+          <input type="number" id="gold-price" placeholder="250" oninput="calculateGold()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="gold-result">
+      <div class="nisab-status" id="gold-nisab-status"></div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="value" id="gold-pure-weight">—</div>
+          <div class="label">{{tool.pureGoldWeight}}</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="gold-nisab-display">85</div>
+          <div class="label">{{tool.goldNisab}}</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="value" id="gold-zakat-grams">—</div>
+          <div class="label">{{tool.zakatInGrams}}</div>
+        </div>
+        <div class="stat-card" id="gold-money-card" style="display:none">
+          <div class="value" id="gold-zakat-money">—</div>
+          <div class="label">{{tool.zakatInMoney}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 4: Silver -->
+  <div class="calc-section" id="silver-section">
+    <div class="input-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.silverWeightGrams}}</label>
+          <input type="number" id="silver-weight" placeholder="600" oninput="calculateSilver()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.silverPricePerGram}} <span class="optional-badge">({{tool.optional}})</span></label>
+          <input type="number" id="silver-price" placeholder="3" oninput="calculateSilver()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="silver-result">
+      <div class="nisab-status" id="silver-nisab-status"></div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="value" id="silver-nisab-display">595</div>
+          <div class="label">{{tool.silverNisab}}</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="value" id="silver-zakat-grams">—</div>
+          <div class="label">{{tool.zakatInGrams}}</div>
+        </div>
+        <div class="stat-card" id="silver-money-card" style="display:none">
+          <div class="value" id="silver-zakat-money">—</div>
+          <div class="label">{{tool.zakatInMoney}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 5: Trade Goods -->
+  <div class="calc-section" id="trade-section">
+    <div class="input-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.marketValueGoods}}</label>
+          <input type="number" id="trade-goods" placeholder="0" oninput="calculateTrade()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.cashSavings}}</label>
+          <input type="number" id="trade-cash" placeholder="0" oninput="calculateTrade()">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.goldPricePerGram}}</label>
+          <input type="number" id="trade-gold-price" placeholder="250" oninput="calculateTrade()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="trade-result">
+      <div class="nisab-status" id="trade-nisab-status"></div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="value" id="trade-total">—</div>
+          <div class="label">{{tool.totalWealth}}</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="trade-nisab-value">—</div>
+          <div class="label">{{tool.nisabValue}}</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="value" id="trade-zakat-amount">—</div>
+          <div class="label">{{tool.zakatAmount}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 6: Stocks -->
+  <div class="calc-section" id="stocks-section">
+    <div class="input-form">
+      <div class="form-group" style="margin-bottom:16px">
+        <label>{{tool.stockType}}</label>
+        <div class="stock-type-toggle">
+          <button class="stock-type-btn active" data-type="trading" onclick="setStockType('trading', this)">{{tool.tradingStocks}}</button>
+          <button class="stock-type-btn" data-type="investment" onclick="setStockType('investment', this)">{{tool.investmentStocks}}</button>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.stocksValue}}</label>
+          <input type="number" id="stocks-value" placeholder="0" oninput="calculateStocks()">
+        </div>
+        <div class="form-group" id="dividends-group" style="display:none">
+          <label>{{tool.dividendsAmount}}</label>
+          <input type="number" id="stocks-dividends" placeholder="0" oninput="calculateStocks()">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.goldPricePerGram}}</label>
+          <input type="number" id="stocks-gold-price" placeholder="250" oninput="calculateStocks()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="stocks-result">
+      <div class="nisab-status" id="stocks-nisab-status"></div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="value" id="stocks-nisab-value">—</div>
+          <div class="label">{{tool.nisabValue}}</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="value" id="stocks-zakat-amount">—</div>
+          <div class="label">{{tool.zakatAmount}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-note">{{tool.stocksNote}}</div>
+  </div>
+
+  <!-- Tab 7: Zakat al-Fitr -->
+  <div class="calc-section" id="fitr-section">
+    <div class="input-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{tool.familyMembers}}</label>
+          <input type="number" id="fitr-members" placeholder="5" min="1" oninput="calculateFitr()">
+        </div>
+        <div class="form-group">
+          <label>{{tool.pricePerKg}}</label>
+          <input type="number" id="fitr-price" placeholder="10" oninput="calculateFitr()">
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" id="fitr-result">
+      <div class="fitr-main-result">
+        <div class="result-number" id="fitr-total-cost">—</div>
+        <div class="result-label">{{tool.totalCost}}</div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="value" id="fitr-total-kg">—</div>
+          <div class="label">{{tool.totalKg}}</div>
+        </div>
+        <div class="stat-card">
+          <div class="value" id="fitr-per-person">≈ 3</div>
+          <div class="label">{{tool.perPerson}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-note">{{tool.fitrNote}}</div>
+  </div>
+</div>
+
+<!-- Sharia Disclaimers -->
+<div class="zakat-disclaimer">
+  <div class="disclaimer-item">⚠️ {{tool.disclaimer1}}</div>
+  <div class="disclaimer-item">📅 {{tool.disclaimer2}}</div>
+  <div class="disclaimer-item">🏠 {{tool.disclaimer3}}</div>
+</div>
+
+<!-- How to Use -->
+<div class="how-to-use">
+  <h3>📖 {{ui.howToUse}}</h3>
+  <p>{{tool.howToUseText}}</p>
+</div>
+
+<script>
+// Shared gold price across tabs
+let goldPriceGlobal = 0;
+
+// Tab switching
+function switchTab(tab) {
+  document.querySelectorAll('.zakat-calculator .calc-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.zakat-calculator .calc-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.zakat-calculator .calc-tab').forEach(t => {
+    if (t.getAttribute('onclick')?.includes("'" + tab + "'")) t.classList.add('active');
+  });
+  document.getElementById(tab + '-section').classList.add('active');
+}
+
+// Format number
+function fmt(num) {
+  if (num === null || isNaN(num)) return '—';
+  const lang = App.state?.lang || 'ar';
+  return num.toLocaleString(lang === 'ar' ? 'ar-SA' : 'en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+}
+
+// Format grams
+function fmtG(num) {
+  if (num === null || isNaN(num)) return '—';
+  const lang = App.state?.lang || 'ar';
+  const formatted = num.toLocaleString(lang === 'ar' ? 'ar-SA' : 'en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+  return formatted + ' ' + (lang === 'ar' ? 'جرام' : 'g');
+}
+
+// Show nisab status
+function showNisabStatus(elementId, reached) {
+  const el = document.getElementById(elementId);
+  const lang = App.state?.lang || 'ar';
+  if (reached) {
+    el.className = 'nisab-status reached';
+    el.textContent = '✅ ' + (lang === 'ar' ? 'بلغت النصاب — تجب الزكاة' : 'Nisab Reached — Zakat is Due');
+  } else {
+    el.className = 'nisab-status not-reached';
+    el.textContent = '⛔ ' + (lang === 'ar' ? 'لم تبلغ النصاب — لا تجب الزكاة' : 'Nisab Not Reached — No Zakat Due');
+  }
+}
+
+// Show result box
+function showResult(id) {
+  document.getElementById(id).classList.add('show');
+}
+
+// === Tab 1: Comprehensive ===
+function calculateComprehensive() {
+  const cash = parseFloat(document.getElementById('comp-cash').value) || 0;
+  const gold = parseFloat(document.getElementById('comp-gold').value) || 0;
+  const silver = parseFloat(document.getElementById('comp-silver').value) || 0;
+  const trade = parseFloat(document.getElementById('comp-trade').value) || 0;
+  const stocks = parseFloat(document.getElementById('comp-stocks').value) || 0;
+  const debts = parseFloat(document.getElementById('comp-debts').value) || 0;
+  const goldPrice = parseFloat(document.getElementById('comp-gold-price').value) || 0;
+
+  if (goldPrice > 0) goldPriceGlobal = goldPrice;
+
+  const totalWealth = cash + gold + silver + trade + stocks - debts;
+  const nisab = 85 * goldPrice;
+
+  if (goldPrice <= 0) return;
+
+  const reached = totalWealth >= nisab;
+  const zakatAmount = reached ? totalWealth * 0.025 : 0;
+  const remaining = totalWealth - zakatAmount;
+
+  showNisabStatus('comp-nisab-status', reached);
+  document.getElementById('comp-total-wealth').textContent = fmt(totalWealth);
+  document.getElementById('comp-nisab-value').textContent = fmt(nisab);
+  document.getElementById('comp-zakat-amount').textContent = fmt(zakatAmount);
+  document.getElementById('comp-remaining').textContent = fmt(remaining);
+  showResult('comp-result');
+}
+
+// === Tab 2: Money ===
+function calculateMoney() {
+  const cash = parseFloat(document.getElementById('money-cash').value) || 0;
+  const goldPrice = parseFloat(document.getElementById('money-gold-price').value) || goldPriceGlobal;
+
+  if (goldPrice <= 0 || cash <= 0) return;
+  if (goldPrice > 0) goldPriceGlobal = goldPrice;
+
+  const nisab = 85 * goldPrice;
+  const reached = cash >= nisab;
+  const zakatAmount = reached ? cash * 0.025 : 0;
+  const remaining = cash - zakatAmount;
+
+  showNisabStatus('money-nisab-status', reached);
+  document.getElementById('money-nisab-value').textContent = fmt(nisab);
+  document.getElementById('money-zakat-amount').textContent = fmt(zakatAmount);
+  document.getElementById('money-remaining').textContent = fmt(remaining);
+  showResult('money-result');
+}
+
+// === Tab 3: Gold ===
+function calculateGold() {
+  const weight = parseFloat(document.getElementById('gold-weight').value) || 0;
+  const karat = parseInt(document.getElementById('gold-karat').value) || 24;
+  const price = parseFloat(document.getElementById('gold-price').value) || 0;
+
+  if (weight <= 0) return;
+
+  const pureWeight = weight * (karat / 24);
+  const reached = pureWeight >= 85;
+  const zakatGrams = reached ? pureWeight * 0.025 : 0;
+
+  showNisabStatus('gold-nisab-status', reached);
+  document.getElementById('gold-pure-weight').textContent = fmtG(pureWeight);
+  document.getElementById('gold-zakat-grams').textContent = fmtG(zakatGrams);
+
+  const moneyCard = document.getElementById('gold-money-card');
+  if (price > 0) {
+    moneyCard.style.display = '';
+    document.getElementById('gold-zakat-money').textContent = fmt(zakatGrams * price);
+  } else {
+    moneyCard.style.display = 'none';
+  }
+
+  showResult('gold-result');
+}
+
+// === Tab 4: Silver ===
+function calculateSilver() {
+  const weight = parseFloat(document.getElementById('silver-weight').value) || 0;
+  const price = parseFloat(document.getElementById('silver-price').value) || 0;
+
+  if (weight <= 0) return;
+
+  const reached = weight >= 595;
+  const zakatGrams = reached ? weight * 0.025 : 0;
+
+  showNisabStatus('silver-nisab-status', reached);
+  document.getElementById('silver-zakat-grams').textContent = fmtG(zakatGrams);
+
+  const moneyCard = document.getElementById('silver-money-card');
+  if (price > 0) {
+    moneyCard.style.display = '';
+    document.getElementById('silver-zakat-money').textContent = fmt(zakatGrams * price);
+  } else {
+    moneyCard.style.display = 'none';
+  }
+
+  showResult('silver-result');
+}
+
+// === Tab 5: Trade ===
+function calculateTrade() {
+  const goods = parseFloat(document.getElementById('trade-goods').value) || 0;
+  const cash = parseFloat(document.getElementById('trade-cash').value) || 0;
+  const goldPrice = parseFloat(document.getElementById('trade-gold-price').value) || goldPriceGlobal;
+
+  if (goldPrice <= 0) return;
+  if (goldPrice > 0) goldPriceGlobal = goldPrice;
+
+  const total = goods + cash;
+  const nisab = 85 * goldPrice;
+  const reached = total >= nisab;
+  const zakatAmount = reached ? total * 0.025 : 0;
+
+  showNisabStatus('trade-nisab-status', reached);
+  document.getElementById('trade-total').textContent = fmt(total);
+  document.getElementById('trade-nisab-value').textContent = fmt(nisab);
+  document.getElementById('trade-zakat-amount').textContent = fmt(zakatAmount);
+  showResult('trade-result');
+}
+
+// === Tab 6: Stocks ===
+function calculateStocks() {
+  const marketValue = parseFloat(document.getElementById('stocks-value').value) || 0;
+  const stockType = document.querySelector('.stock-type-btn.active')?.dataset.type || 'trading';
+  const dividends = parseFloat(document.getElementById('stocks-dividends').value) || 0;
+  const goldPrice = parseFloat(document.getElementById('stocks-gold-price').value) || goldPriceGlobal;
+
+  if (goldPrice <= 0) return;
+  if (goldPrice > 0) goldPriceGlobal = goldPrice;
+
+  const zakatBase = stockType === 'trading' ? marketValue : dividends;
+  const nisab = 85 * goldPrice;
+  const reached = zakatBase >= nisab;
+  const zakatAmount = reached ? zakatBase * 0.025 : 0;
+
+  showNisabStatus('stocks-nisab-status', reached);
+  document.getElementById('stocks-nisab-value').textContent = fmt(nisab);
+  document.getElementById('stocks-zakat-amount').textContent = fmt(zakatAmount);
+  showResult('stocks-result');
+}
+
+function setStockType(type, btn) {
+  document.querySelectorAll('.stock-type-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('dividends-group').style.display = type === 'investment' ? 'flex' : 'none';
+  calculateStocks();
+}
+
+// === Tab 7: Fitr ===
+function calculateFitr() {
+  const members = parseInt(document.getElementById('fitr-members').value) || 0;
+  const pricePerKg = parseFloat(document.getElementById('fitr-price').value) || 0;
+
+  if (members <= 0 || pricePerKg <= 0) return;
+
+  const totalKg = members * 3;
+  const totalCost = totalKg * pricePerKg;
+
+  document.getElementById('fitr-total-cost').textContent = fmt(totalCost);
+  document.getElementById('fitr-total-kg').textContent = totalKg + ' ' + (App.state?.lang === 'ar' ? 'كغ' : 'Kg');
+  showResult('fitr-result');
+}
+</script>
