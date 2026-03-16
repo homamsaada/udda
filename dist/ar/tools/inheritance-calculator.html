@@ -690,7 +690,7 @@
         </div>
         <div class="inh-alert-banner warning" id="inh-baytmal-alert">
           <span class="inh-alert-icon">🏛️</span>
-          <div><strong>الباقي يذهب لبيت مال المسلمين</strong><br>لم يُوزَّع كامل التركة على الورثة. الباقي يذهب لبيت مال المسلمين (الخزينة العامة).</div>
+          <div><strong>لا يوجد وارث من أصحاب الفروض أو العصبات</strong><br>عند الحنفية والحنابلة تذهب التركة لذوي الأرحام (كأبناء البنات، والأخوال، والعمات)، وعند المالكية والشافعية تذهب لبيت مال المسلمين. راجع عالماً شرعياً لتحديد المستحقين.</div>
         </div>
         <div class="inh-results-table-wrapper">
           <table class="inh-results-table">
@@ -716,7 +716,7 @@
         </div>
         <div class="inh-action-buttons">
           <button class="inh-action-btn primary" onclick="inhCopyResults()">📋 نسخ النتائج</button>
-          <button class="inh-action-btn secondary" onclick="window.print()">🖨️ طباعة النتائج</button>
+          <button class="inh-action-btn secondary" onclick="inhExportExcel()">📊 تصدير Excel</button>
           <button class="inh-action-btn danger" onclick="inhResetAll()">🗑️ مسح الكل</button>
         </div>
       </div>
@@ -741,6 +741,7 @@
   <p>أدخل مبلغ التركة والديون والوصية، ثم حدد جنس المتوفى، ثم اختر الورثة الموجودين وأعدادهم. ستظهر النتائج تلقائياً مع توضيح نصيب كل وارث وسببه الشرعي.</p>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
 <script>
 (function() {
   var lang = document.documentElement.lang || 'ar';
@@ -774,38 +775,38 @@
   };
 
   var reasonTexts = {
-    reasonHusbandHalf: 'النصف لعدم وجود فرع وارث', reasonHusbandQuarter: 'الربع لوجود فرع وارث',
-    reasonWifeQuarter: 'الربع لعدم وجود فرع وارث', reasonWifeEighth: 'الثمن لوجود فرع وارث',
-    reasonDaughterHalf: 'النصف لانفرادها وعدم وجود ابن يعصّبها', reasonDaughtersTwoThirds: 'الثلثان لتعددهن وعدم وجود ابن يعصّبهن',
-    reasonDaughtersWithSons: 'تعصيب بالابن — للذكر مثل حظ الأنثيين',
-    reasonSonDaughterSixth: 'السدس تكملة الثلثين', reasonSonDaughterHalf: 'النصف لانفرادها وعدم المعصّب',
-    reasonSonDaughtersTwoThirds: 'الثلثان لتعددهن وعدم المعصّب',
-    reasonSonDaughtersWithSonsSons: 'تعصيب بابن الابن — للذكر مثل حظ الأنثيين',
-    reasonSonSonDaughterSixth: 'السدس تكملة الثلثين',
-    reasonSonSonDaughterHalf: 'النصف لانفرادها وعدم المعصّب',
-    reasonSonSonDaughtersTwoThirds: 'الثلثان لتعددهن وعدم المعصّب',
+    reasonHusbandHalf: 'النصف فرضاً — لعدم وجود فرع وارث للمتوفاة (لا أبناء ولا بنات ولا أبناء ابن)', reasonHusbandQuarter: 'الربع فرضاً — لوجود فرع وارث للمتوفاة (ابن أو بنت أو ابن ابن)',
+    reasonWifeQuarter: 'الربع فرضاً — لعدم وجود فرع وارث للمتوفى (لا أبناء ولا بنات ولا أبناء ابن)', reasonWifeEighth: 'الثمن فرضاً — لوجود فرع وارث للمتوفى (ابن أو بنت أو ابن ابن)',
+    reasonDaughterHalf: 'النصف فرضاً — لانفرادها وعدم وجود ابن يعصّبها (لو كان معها ابن لأخذت بالتعصيب للذكر مثل حظ الأنثيين)', reasonDaughtersTwoThirds: 'الثلثان فرضاً — لتعددهن (بنتان فأكثر) وعدم وجود ابن يعصّبهن',
+    reasonDaughtersWithSons: 'تعصيب بالابن — للذكر مثل حظ الأنثيين. الابن ينقل البنات من الفرض إلى التعصيب',
+    reasonSonDaughterSixth: 'السدس فرضاً — تكملة للثلثين مع البنت الصلبية. البنت أخذت النصف، وبنت الابن تأخذ السدس ليكتمل الثلثان', reasonSonDaughterHalf: 'النصف فرضاً — لانفرادها وعدم وجود معصّب (ابن ابن) في طبقتها، ولا بنت صلبية فوقها',
+    reasonSonDaughtersTwoThirds: 'الثلثان فرضاً — لتعددهن وعدم وجود معصّب في طبقتهن ولا بنت صلبية فوقهن',
+    reasonSonDaughtersWithSonsSons: 'تعصيب بابن الابن — للذكر مثل حظ الأنثيين. ابن الابن ينقلها من الفرض إلى التعصيب',
+    reasonSonSonDaughterSixth: 'السدس فرضاً — تكملة للثلثين. البنات أو بنات الابن فوقها أخذن نصيبهن، وهي تأخذ السدس تكملة',
+    reasonSonSonDaughterHalf: 'النصف فرضاً — لانفرادها وعدم وجود معصّب في طبقتها ولا بنات فوقها استنفدن الثلثين',
+    reasonSonSonDaughtersTwoThirds: 'الثلثان فرضاً — لتعددهن وعدم وجود معصّب في طبقتهن',
     reasonSonSonDaughtersWithSonSonSons: 'تعصيب بابن ابن الابن — للذكر مثل حظ الأنثيين',
-    reasonFatherSixth: 'السدس فرضاً لوجود فرع وارث ذكر', reasonFatherSixthPlusRemainder: 'السدس فرضاً والباقي تعصيباً لوجود فرع وارث أنثى فقط',
-    reasonFatherRemainder: 'الباقي تعصيباً لعدم وجود فرع وارث',
-    reasonMotherSixth: 'السدس لوجود فرع وارث أو جمع من الإخوة', reasonMotherThird: 'الثلث لعدم وجود فرع وارث أو جمع من الإخوة',
-    reasonMotherThirdRemainder: 'ثلث الباقي بعد نصيب الزوج/ة (العمرية)',
-    reasonGrandmotherSixth: 'السدس',
-    reasonFullSisterHalf: 'النصف لانفرادها', reasonFullSistersTwoThirds: 'الثلثان لتعددهن',
-    reasonFullSistersWithBrothers: 'تعصيب بالأخ الشقيق — للذكر مثل حظ الأنثيين',
-    reasonFullSistersAsabaWithGhayr: 'عصبة مع الغير (البنات/بنات الابن)',
-    reasonPaternalSisterSixth: 'السدس تكملة الثلثين مع الأخت الشقيقة',
-    reasonPaternalSisterHalf: 'النصف لانفرادها',
-    reasonPaternalSistersTwoThirds: 'الثلثان لتعددهن',
+    reasonFatherSixth: 'السدس فرضاً — لوجود فرع وارث ذكر (ابن أو ابن ابن). الفرع الذكر يحجبه عن التعصيب ويبقيه على الفرض فقط', reasonFatherSixthPlusRemainder: 'السدس فرضاً + الباقي تعصيباً — لوجود فرع وارث أنثى فقط (بنات بدون أبناء). يأخذ السدس كفرض ثم الباقي كعاصب',
+    reasonFatherRemainder: 'الباقي تعصيباً — لعدم وجود فرع وارث. الأب أقرب عاصب في غياب الأبناء والبنات',
+    reasonMotherSixth: 'السدس فرضاً — لوجود فرع وارث أو جمع من الإخوة (اثنان فأكثر). الإخوة يحجبونها حجب نقصان من الثلث إلى السدس حتى لو كانوا هم محجوبين بالأب', reasonMotherThird: 'الثلث فرضاً — لعدم وجود فرع وارث ولا جمع من الإخوة (أقل من اثنين)',
+    reasonMotherThirdRemainder: 'ثلث الباقي بعد نصيب الزوج/ة (المسألة العمرية) — تأخذ ثلث الباقي وليس ثلث التركة حتى لا تأخذ أكثر من الأب. هذا قول عمر بن الخطاب رضي الله عنه',
+    reasonGrandmotherSixth: 'السدس فرضاً — نصيب الجدة الثابت عند عدم وجود الأم',
+    reasonFullSisterHalf: 'النصف فرضاً — لانفرادها وعدم وجود أخ شقيق يعصّبها ولا فرع وارث ذكر ولا أب', reasonFullSistersTwoThirds: 'الثلثان فرضاً — لتعددهن (أختان شقيقتان فأكثر) وعدم وجود أخ شقيق يعصّبهن',
+    reasonFullSistersWithBrothers: 'تعصيب بالأخ الشقيق — للذكر مثل حظ الأنثيين. الأخ ينقل الأخوات من الفرض إلى التعصيب',
+    reasonFullSistersAsabaWithGhayr: 'عصبة مع الغير — الأخت الشقيقة تصبح عصبة مع البنات أو بنات الابن وتأخذ حكم الأخ الشقيق في الحجب والتعصيب',
+    reasonPaternalSisterSixth: 'السدس فرضاً — تكملة للثلثين مع الأخت الشقيقة. الأخت الشقيقة أخذت النصف، والأخت لأب تأخذ السدس تكملة',
+    reasonPaternalSisterHalf: 'النصف فرضاً — لانفرادها وعدم وجود أخ لأب يعصّبها ولا أخت شقيقة ولا أخ شقيق',
+    reasonPaternalSistersTwoThirds: 'الثلثان فرضاً — لتعددهن وعدم وجود أخ لأب يعصّبهن ولا إخوة أشقاء',
     reasonPaternalSistersWithBrothers: 'تعصيب بالأخ لأب — للذكر مثل حظ الأنثيين',
-    reasonPaternalSistersAsabaWithGhayr: 'عصبة مع الغير',
-    reasonMaternalSiblingSixth: 'السدس لانفراده/ها',
-    reasonMaternalSiblingsThird: 'الثلث يقتسمونه بالتساوي (ذكوراً وإناثاً)',
-    reasonAsaba: 'الباقي تعصيباً',
-    reasonGrandfatherSixth: 'السدس فرضاً',
-    reasonGrandfatherSixthPlusRemainder: 'السدس + الباقي',
-    reasonGrandfatherRemainder: 'الباقي تعصيباً',
-    reasonGrandfatherWithSiblings: 'الأفضل من المقاسمة أو ثلث الباقي أو السدس',
-    reasonMushtaraka: 'مشاركة الإخوة الأشقاء مع الإخوة لأم في الثلث (المشرّكة)'
+    reasonPaternalSistersAsabaWithGhayr: 'عصبة مع الغير — الأخت لأب تصبح عصبة مع البنات أو بنات الابن عند عدم وجود إخوة أشقاء',
+    reasonMaternalSiblingSixth: 'السدس فرضاً — لانفراده/ها. الأخ أو الأخت لأم الواحد/ة يأخذ السدس',
+    reasonMaternalSiblingsThird: 'الثلث فرضاً — يقتسمونه بالتساوي (الذكر والأنثى سواء). الإخوة لأم يتساوون في الميراث ذكوراً وإناثاً',
+    reasonAsaba: 'الباقي تعصيباً — يأخذ ما تبقى من التركة بعد أصحاب الفروض بصفته أقرب عاصب',
+    reasonGrandfatherSixth: 'السدس فرضاً — كالأب عند وجود فرع وارث ذكر',
+    reasonGrandfatherSixthPlusRemainder: 'السدس فرضاً + الباقي تعصيباً — كالأب عند وجود فرع وارث أنثى فقط',
+    reasonGrandfatherRemainder: 'الباقي تعصيباً — كالأب عند عدم وجود فرع وارث، لكنه لا يحجب الإخوة عند الجمهور',
+    reasonGrandfatherWithSiblings: 'يأخذ الأفضل من ثلاثة خيارات: المقاسمة كأخ (يعامل كأخ ويقسم مع الإخوة)، أو ثلث الباقي بعد أصحاب الفروض، أو سدس التركة كاملة',
+    reasonMushtaraka: 'المسألة المشتركة (الحمارية) — الإخوة الأشقاء يشاركون الإخوة لأم في الثلث بالتساوي. سُمّيت بذلك لأن الأشقاء قالوا: هَبْ أن أبانا كان حماراً، ألسنا من أم واحدة؟'
   };
 
   var typeTexts = { fard: 'فرض', tasib: 'تعصيب', fardAndTasib: 'فرض + تعصيب' };
@@ -993,7 +994,26 @@
     // Active = non-blocked
     var a = {};
     for (var id in h) { if (!blocked[id]) a[id] = h[id]; }
-    if (Object.keys(a).length === 0) { hideResults(); return; }
+    if (Object.keys(a).length === 0) {
+      // All heirs are blocked — show bayt al-mal / dhawu al-arham note
+      hideResults();
+      var section = document.getElementById('inh-results-section');
+      section.classList.add('show');
+      document.getElementById('inh-no-results').style.display = 'none';
+      document.getElementById('inh-baytmal-alert').classList.add('show');
+      // Show blocked heirs
+      var blockedSection = document.getElementById('inh-blocked-section');
+      var blockedList = document.getElementById('inh-blocked-list');
+      blockedSection.classList.add('show');
+      blockedList.innerHTML = '';
+      for (var bk in blocked) {
+        var li = document.createElement('li');
+        li.textContent = (heirNames[bk] || bk) + ' — ' + (blockTexts[blocked[bk]] || blocked[bk]);
+        blockedList.appendChild(li);
+      }
+      document.getElementById('inh-step4').classList.add('active');
+      return;
+    }
 
     // Assign shares (pass h for hajb nuqsan checks like mother's sibling count)
     var shares = assignShares(a, state.madhab, blocked, h);
@@ -1784,6 +1804,77 @@
     navigator.clipboard.writeText(text).then(function() {
       App.showToast(isArabic ? 'تم النسخ!' : 'Copied!');
     });
+  };
+
+  window.inhExportExcel = async function() {
+    var table = document.querySelector('.inh-results-table');
+    if (!table) return;
+
+    var workbook = new ExcelJS.Workbook();
+    var ws = workbook.addWorksheet(isArabic ? 'تقسيم الميراث' : 'Inheritance Division');
+    if (isArabic) ws.views = [{ rightToLeft: true }];
+
+    // Title
+    ws.mergeCells('A1:E1');
+    var titleCell = ws.getCell('A1');
+    titleCell.value = isArabic ? 'حاسبة المواريث الشرعية — نتائج التقسيم' : 'Islamic Inheritance Calculator — Results';
+    titleCell.font = { size: 16, bold: true, color: { argb: 'FF6366F1' } };
+    titleCell.alignment = { horizontal: 'center' };
+
+    // Estate summary
+    var net = document.getElementById('inh-net-value').textContent;
+    ws.getCell('A3').value = isArabic ? 'صافي التركة:' : 'Net Estate:';
+    ws.getCell('A3').font = { bold: true };
+    ws.getCell('B3').value = net;
+
+    // Headers
+    var headers = table.querySelectorAll('th');
+    var headerTexts = [];
+    headers.forEach(function(h) { headerTexts.push(h.textContent.trim()); });
+    var hRow = ws.getRow(5);
+    headerTexts.forEach(function(h, i) {
+      var cell = hRow.getCell(i + 1);
+      cell.value = h;
+      cell.font = { bold: true, color: { argb: 'FFFFFFFF' } };
+      cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF6366F1' } };
+      cell.alignment = { horizontal: 'center' };
+    });
+
+    // Data rows
+    var dataRows = table.querySelectorAll('tbody tr');
+    dataRows.forEach(function(row, idx) {
+      var cells = row.querySelectorAll('td');
+      var r = ws.getRow(6 + idx);
+      cells.forEach(function(c, i) {
+        var cell = r.getCell(i + 1);
+        cell.value = c.textContent.trim().replace(/\s+/g, ' ');
+        if (i === 2) cell.font = { bold: true, color: { argb: 'FF6366F1' } };
+        if (i === 4) cell.alignment = { wrapText: true };
+      });
+      if (idx % 2 === 0) {
+        for (var c = 1; c <= headerTexts.length; c++) {
+          r.getCell(c).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF9FAFB' } };
+        }
+      }
+    });
+
+    // Total row
+    var totalRowNum = 6 + dataRows.length;
+    var totalRow = ws.getRow(totalRowNum);
+    totalRow.getCell(1).value = isArabic ? 'الإجمالي' : 'Total';
+    totalRow.getCell(1).font = { bold: true };
+    totalRow.getCell(3).value = document.getElementById('inh-total-value').textContent;
+    totalRow.getCell(3).font = { bold: true, color: { argb: 'FF6366F1' } };
+
+    ws.columns = [{ width: 22 }, { width: 14 }, { width: 18 }, { width: 18 }, { width: 40 }];
+
+    var buffer = await workbook.xlsx.writeBuffer();
+    var blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    var link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = isArabic ? 'تقسيم_الميراث.xlsx' : 'inheritance_division.xlsx';
+    link.click();
+    App.showToast(isArabic ? 'تم التصدير!' : 'Exported!');
   };
 
   window.inhResetAll = function() {

@@ -631,7 +631,7 @@
         </div>
         <div class="inh-action-buttons">
           <button class="inh-action-btn primary" onclick="inhCopyResults()">📋 {{tool.copyResults}}</button>
-          <button class="inh-action-btn secondary" onclick="window.print()">🖨️ {{tool.printResults}}</button>
+          <button class="inh-action-btn secondary" onclick="inhExportExcel()">📊 {{tool.exportExcel}}</button>
           <button class="inh-action-btn danger" onclick="inhResetAll()">🗑️ {{tool.resetAll}}</button>
         </div>
       </div>
@@ -656,6 +656,7 @@
   <p>{{tool.howToUseText}}</p>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
 <script>
 (function() {
   var lang = document.documentElement.lang || 'ar';
@@ -908,7 +909,26 @@
     // Active = non-blocked
     var a = {};
     for (var id in h) { if (!blocked[id]) a[id] = h[id]; }
-    if (Object.keys(a).length === 0) { hideResults(); return; }
+    if (Object.keys(a).length === 0) {
+      // All heirs are blocked — show bayt al-mal / dhawu al-arham note
+      hideResults();
+      var section = document.getElementById('inh-results-section');
+      section.classList.add('show');
+      document.getElementById('inh-no-results').style.display = 'none';
+      document.getElementById('inh-baytmal-alert').classList.add('show');
+      // Show blocked heirs
+      var blockedSection = document.getElementById('inh-blocked-section');
+      var blockedList = document.getElementById('inh-blocked-list');
+      blockedSection.classList.add('show');
+      blockedList.innerHTML = '';
+      for (var bk in blocked) {
+        var li = document.createElement('li');
+        li.textContent = (heirNames[bk] || bk) + ' — ' + (blockTexts[blocked[bk]] || blocked[bk]);
+        blockedList.appendChild(li);
+      }
+      document.getElementById('inh-step4').classList.add('active');
+      return;
+    }
 
     // Assign shares (pass h for hajb nuqsan checks like mother's sibling count)
     var shares = assignShares(a, state.madhab, blocked, h);
@@ -1699,6 +1719,77 @@
     navigator.clipboard.writeText(text).then(function() {
       App.showToast(isArabic ? 'تم النسخ!' : 'Copied!');
     });
+  };
+
+  window.inhExportExcel = async function() {
+    var table = document.querySelector('.inh-results-table');
+    if (!table) return;
+
+    var workbook = new ExcelJS.Workbook();
+    var ws = workbook.addWorksheet(isArabic ? 'تقسيم الميراث' : 'Inheritance Division');
+    if (isArabic) ws.views = [{ rightToLeft: true }];
+
+    // Title
+    ws.mergeCells('A1:E1');
+    var titleCell = ws.getCell('A1');
+    titleCell.value = isArabic ? 'حاسبة المواريث الشرعية — نتائج التقسيم' : 'Islamic Inheritance Calculator — Results';
+    titleCell.font = { size: 16, bold: true, color: { argb: 'FF6366F1' } };
+    titleCell.alignment = { horizontal: 'center' };
+
+    // Estate summary
+    var net = document.getElementById('inh-net-value').textContent;
+    ws.getCell('A3').value = isArabic ? 'صافي التركة:' : 'Net Estate:';
+    ws.getCell('A3').font = { bold: true };
+    ws.getCell('B3').value = net;
+
+    // Headers
+    var headers = table.querySelectorAll('th');
+    var headerTexts = [];
+    headers.forEach(function(h) { headerTexts.push(h.textContent.trim()); });
+    var hRow = ws.getRow(5);
+    headerTexts.forEach(function(h, i) {
+      var cell = hRow.getCell(i + 1);
+      cell.value = h;
+      cell.font = { bold: true, color: { argb: 'FFFFFFFF' } };
+      cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF6366F1' } };
+      cell.alignment = { horizontal: 'center' };
+    });
+
+    // Data rows
+    var dataRows = table.querySelectorAll('tbody tr');
+    dataRows.forEach(function(row, idx) {
+      var cells = row.querySelectorAll('td');
+      var r = ws.getRow(6 + idx);
+      cells.forEach(function(c, i) {
+        var cell = r.getCell(i + 1);
+        cell.value = c.textContent.trim().replace(/\s+/g, ' ');
+        if (i === 2) cell.font = { bold: true, color: { argb: 'FF6366F1' } };
+        if (i === 4) cell.alignment = { wrapText: true };
+      });
+      if (idx % 2 === 0) {
+        for (var c = 1; c <= headerTexts.length; c++) {
+          r.getCell(c).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF9FAFB' } };
+        }
+      }
+    });
+
+    // Total row
+    var totalRowNum = 6 + dataRows.length;
+    var totalRow = ws.getRow(totalRowNum);
+    totalRow.getCell(1).value = isArabic ? 'الإجمالي' : 'Total';
+    totalRow.getCell(1).font = { bold: true };
+    totalRow.getCell(3).value = document.getElementById('inh-total-value').textContent;
+    totalRow.getCell(3).font = { bold: true, color: { argb: 'FF6366F1' } };
+
+    ws.columns = [{ width: 22 }, { width: 14 }, { width: 18 }, { width: 18 }, { width: 40 }];
+
+    var buffer = await workbook.xlsx.writeBuffer();
+    var blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    var link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = isArabic ? 'تقسيم_الميراث.xlsx' : 'inheritance_division.xlsx';
+    link.click();
+    App.showToast(isArabic ? 'تم التصدير!' : 'Exported!');
   };
 
   window.inhResetAll = function() {
