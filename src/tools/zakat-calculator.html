@@ -55,14 +55,21 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Price bars row */
+.price-bars-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
 /* Price bars (gold & silver) */
 .price-bar {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 20px;
+  gap: 10px;
+  padding: 12px 14px;
   border-radius: 14px;
-  margin-bottom: 10px;
   flex-wrap: wrap;
 }
 
@@ -74,7 +81,6 @@
 .price-bar.silver {
   background: linear-gradient(135deg, rgba(148, 163, 184, 0.1), rgba(203, 213, 225, 0.15));
   border: 1px solid rgba(148, 163, 184, 0.3);
-  margin-bottom: 16px;
 }
 
 .price-bar .bar-icon {
@@ -451,11 +457,18 @@
   color: white;
 }
 
-.nisab-note {
+.nisab-label-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nisab-label-hint {
   font-size: 0.8rem;
   color: var(--text-muted);
+  font-weight: 400;
   font-style: italic;
-  margin-bottom: 16px;
 }
 
 /* Field note */
@@ -525,8 +538,8 @@
     flex-direction: column;
   }
 
-  .price-bar {
-    padding: 12px 14px;
+  .price-bars-row {
+    grid-template-columns: 1fr;
   }
 
   .price-bar .bar-input-wrap input {
@@ -544,40 +557,42 @@
 
   <!-- Tab 1: Comprehensive Zakat -->
   <div class="calc-section active" id="comprehensive-section">
-    <!-- Gold price input -->
-    <div class="price-bar gold">
-      <span class="bar-icon">🥇</span>
-      <div class="bar-input-wrap">
-        <label>{{tool.goldPricePerGram}}</label>
-        <input type="number" id="gold-price-global" placeholder="0" step="0.01" oninput="calculateComprehensive()">
+    <!-- Gold & Silver price inputs side by side -->
+    <div class="price-bars-row">
+      <div class="price-bar gold">
+        <span class="bar-icon">🥇</span>
+        <div class="bar-input-wrap">
+          <label>{{tool.goldPricePerGram}}</label>
+          <input type="number" id="gold-price-global" placeholder="0" step="0.01" oninput="calculateComprehensive()">
+        </div>
+        <a class="bar-link" href="https://www.goldprice.org" target="_blank" rel="noopener noreferrer">{{tool.checkGoldPrice}} ↗</a>
       </div>
-      <a class="bar-link" href="https://www.goldprice.org" target="_blank" rel="noopener noreferrer">{{tool.checkGoldPrice}} ↗</a>
+      <div class="price-bar silver">
+        <span class="bar-icon">🥈</span>
+        <div class="bar-input-wrap">
+          <label>{{tool.silverPricePerGram}}</label>
+          <input type="number" id="silver-price-global" placeholder="0" step="0.01" oninput="calculateComprehensive()">
+        </div>
+        <a class="bar-link" href="https://www.silverprice.org" target="_blank" rel="noopener noreferrer">{{tool.checkSilverPrice}} ↗</a>
+      </div>
     </div>
 
-    <!-- Silver price input -->
-    <div class="price-bar silver">
-      <span class="bar-icon">🥈</span>
-      <div class="bar-input-wrap">
-        <label>{{tool.silverPricePerGram}}</label>
-        <input type="number" id="silver-price-global" placeholder="0" step="0.01" oninput="calculateComprehensive()">
+    <!-- Nisab standard selector -->
+    <div class="form-group" style="margin-bottom: 4px">
+      <div class="nisab-label-row">
+        <label>{{tool.nisabStandard}}</label>
+        <span class="nisab-label-hint" id="nisab-hint">— {{tool.nisabSilverNote}}</span>
       </div>
-      <a class="bar-link" href="https://www.silverprice.org" target="_blank" rel="noopener noreferrer">{{tool.checkSilverPrice}} ↗</a>
+      <div class="nisab-toggle">
+        <button class="nisab-btn active" onclick="setNisabStandard('gold', this)">🥇 {{tool.nisabGold}}</button>
+        <button class="nisab-btn" onclick="setNisabStandard('silver', this)">🥈 {{tool.nisabSilver}}</button>
+      </div>
     </div>
 
     <!-- Currency note -->
     <div class="currency-note">
       <span class="icon">💱</span>
       <span>{{tool.currencyNote}}</span>
-    </div>
-
-    <!-- Nisab standard selector -->
-    <div class="form-group" style="margin-bottom: 4px">
-      <label>{{tool.nisabStandard}}</label>
-      <div class="nisab-toggle">
-        <button class="nisab-btn active" onclick="setNisabStandard('gold', this)">🥇 {{tool.nisabGold}}</button>
-        <button class="nisab-btn" onclick="setNisabStandard('silver', this)">🥈 {{tool.nisabSilver}}</button>
-      </div>
-      <div class="nisab-note" id="nisab-note">{{tool.nisabSilverNote}}</div>
     </div>
 
     <!-- Gold price warning -->
@@ -775,13 +790,8 @@
   };
 
   function updateNisabNote() {
-    var el = document.getElementById('nisab-note');
-    if (nisabStandard === 'silver') {
-      el.style.display = 'block';
-      el.textContent = isArabic ? 'نصاب الفضة أقل وهو الأحوط' : 'Silver nisab is lower and more cautious';
-    } else {
-      el.style.display = 'none';
-    }
+    var el = document.getElementById('nisab-hint');
+    el.style.display = nisabStandard === 'gold' ? '' : 'none';
   }
 
   // Tab switching
