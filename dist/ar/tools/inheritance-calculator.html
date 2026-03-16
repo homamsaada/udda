@@ -300,6 +300,10 @@
           <span class="inh-field-hint">الوصية لا تتجاوز ثلث التركة للأجانب (غير الورثة)</span>
         </div>
       </div>
+      <div class="inh-alert-banner warning" id="inh-wasiyya-alert" style="margin-top:12px">
+        <span class="inh-alert-icon">⚠️</span>
+        <div>تنبيه: الوصية المُدخلة تتجاوز ثلث التركة بعد الديون. تم تقليصها تلقائياً إلى الثلث كحد أقصى شرعي.</div>
+      </div>
       <div class="inh-net-estate">
         <span class="inh-net-label">صافي التركة</span>
         <span class="inh-net-value" id="inh-net-value">0</span>
@@ -639,6 +643,7 @@
       <li>هذه الحاسبة للاسترشاد فقط وليست فتوى شرعية.</li>
       <li>يُنصح بمراجعة عالم شرعي أو محكمة شرعية مختصة.</li>
       <li>لا يرث القاتل عمداً ولا المختلف في الدين.</li>
+      <li>الفروق المذهبية المطبقة حالياً: الجد مع الإخوة (الحنفية)، المشرّكة (المالكية والشافعية)، حجب الجدة لأب بالأب (الحنفية). لفروق مذهبية أخرى راجع عالماً شرعياً.</li>
     </ul>
   </div>
 </div>
@@ -727,7 +732,11 @@
     var hasFather = (h.father || 0) > 0;
     var hasGF = (h.paternalGrandfather || 0) > 0;
     var hasMaleDesc = hasSon || hasSonsSon;
-    var hasDesc = hasMaleDesc || (h.daughters || 0) > 0 || (h.sonsDaughters || 0) > 0;
+    var hasFemaleDesc = (h.daughters || 0) > 0 || (h.sonsDaughters || 0) > 0;
+    var hasDesc = hasMaleDesc || hasFemaleDesc;
+    // Full sisters become asaba with daughters/son's daughters (asaba ma'a al-ghayr),
+    // and in that role they block like full brothers
+    var fullSistersAsAsaba = (h.fullSisters || 0) > 0 && hasFemaleDesc && !hasMaleDesc && !(h.fullBrothers || 0);
 
     switch (id) {
       case 'sonsSons': return hasSon ? 'blockedBySon' : null;
@@ -738,7 +747,8 @@
       case 'paternalGrandfather': return hasFather ? 'blockedByFather' : null;
       case 'paternalGrandmother':
         if ((h.mother || 0) > 0) return 'blockedByMother';
-        if (hasFather) return 'blockedByFather';
+        // Only Hanafi blocks paternal grandmother by father; majority say father doesn't block his own mother
+        if (hasFather && madhab === 'hanafi') return 'blockedByFather';
         return null;
       case 'maternalGrandmother': return (h.mother || 0) > 0 ? 'blockedByMother' : null;
       case 'fullBrothers': case 'fullSisters':
@@ -751,12 +761,14 @@
         if (hasMaleDesc) return 'blockedByDescendant';
         if (madhab === 'hanafi' && hasGF) return 'blockedByCloserAsaba';
         if ((h.fullBrothers || 0) > 0) return 'blockedByFullBrother';
+        if (fullSistersAsAsaba) return 'blockedByFullBrother';
         return null;
       case 'paternalSisters':
         if (hasFather) return 'blockedByFather';
         if (hasMaleDesc) return 'blockedByDescendant';
         if (madhab === 'hanafi' && hasGF) return 'blockedByCloserAsaba';
         if ((h.fullBrothers || 0) > 0) return 'blockedByFullBrother';
+        if (fullSistersAsAsaba) return 'blockedByFullBrother';
         if ((h.fullSisters || 0) >= 2 && !((h.paternalBrothers || 0) > 0)) return 'blockedByTwoFullSisters';
         return null;
       case 'maternalBrothers': case 'maternalSisters':
@@ -769,37 +781,38 @@
         if (hasMaleDesc) return 'blockedByDescendant';
         if (hasGF) return 'blockedByCloserAsaba';
         if ((h.fullBrothers || 0) > 0) return 'blockedByCloserAsaba';
+        if (fullSistersAsAsaba) return 'blockedByCloserAsaba';
         if ((h.paternalBrothers || 0) > 0) return 'blockedByCloserAsaba';
         return null;
       case 'paternalBrothersSons':
         if (hasFather) return 'blockedByFather';
         if (hasMaleDesc) return 'blockedByDescendant';
         if (hasGF) return 'blockedByCloserAsaba';
-        if ((h.fullBrothers || 0) > 0 || (h.paternalBrothers || 0) > 0 || (h.fullBrothersSons || 0) > 0) return 'blockedByCloserAsaba';
+        if ((h.fullBrothers || 0) > 0 || fullSistersAsAsaba || (h.paternalBrothers || 0) > 0 || (h.fullBrothersSons || 0) > 0) return 'blockedByCloserAsaba';
         return null;
       case 'fullPaternalUncles':
         if (hasFather) return 'blockedByFather';
         if (hasMaleDesc) return 'blockedByDescendant';
         if (hasGF) return 'blockedByCloserAsaba';
-        if ((h.fullBrothers||0)>0||(h.paternalBrothers||0)>0||(h.fullBrothersSons||0)>0||(h.paternalBrothersSons||0)>0) return 'blockedByCloserAsaba';
+        if ((h.fullBrothers||0)>0||fullSistersAsAsaba||(h.paternalBrothers||0)>0||(h.fullBrothersSons||0)>0||(h.paternalBrothersSons||0)>0) return 'blockedByCloserAsaba';
         return null;
       case 'paternalUnclesFromFather':
         if (hasFather) return 'blockedByFather';
         if (hasMaleDesc) return 'blockedByDescendant';
         if (hasGF) return 'blockedByCloserAsaba';
-        if ((h.fullBrothers||0)>0||(h.paternalBrothers||0)>0||(h.fullBrothersSons||0)>0||(h.paternalBrothersSons||0)>0||(h.fullPaternalUncles||0)>0) return 'blockedByCloserAsaba';
+        if ((h.fullBrothers||0)>0||fullSistersAsAsaba||(h.paternalBrothers||0)>0||(h.fullBrothersSons||0)>0||(h.paternalBrothersSons||0)>0||(h.fullPaternalUncles||0)>0) return 'blockedByCloserAsaba';
         return null;
       case 'fullPaternalUnclesSons':
         if (hasFather) return 'blockedByFather';
         if (hasMaleDesc) return 'blockedByDescendant';
         if (hasGF) return 'blockedByCloserAsaba';
-        if ((h.fullBrothers||0)>0||(h.paternalBrothers||0)>0||(h.fullBrothersSons||0)>0||(h.paternalBrothersSons||0)>0||(h.fullPaternalUncles||0)>0||(h.paternalUnclesFromFather||0)>0) return 'blockedByCloserAsaba';
+        if ((h.fullBrothers||0)>0||fullSistersAsAsaba||(h.paternalBrothers||0)>0||(h.fullBrothersSons||0)>0||(h.paternalBrothersSons||0)>0||(h.fullPaternalUncles||0)>0||(h.paternalUnclesFromFather||0)>0) return 'blockedByCloserAsaba';
         return null;
       case 'paternalUnclesSonsFromFather':
         if (hasFather) return 'blockedByFather';
         if (hasMaleDesc) return 'blockedByDescendant';
         if (hasGF) return 'blockedByCloserAsaba';
-        if ((h.fullBrothers||0)>0||(h.paternalBrothers||0)>0||(h.fullBrothersSons||0)>0||(h.paternalBrothersSons||0)>0||(h.fullPaternalUncles||0)>0||(h.paternalUnclesFromFather||0)>0||(h.fullPaternalUnclesSons||0)>0) return 'blockedByCloserAsaba';
+        if ((h.fullBrothers||0)>0||fullSistersAsAsaba||(h.paternalBrothers||0)>0||(h.fullBrothersSons||0)>0||(h.paternalBrothersSons||0)>0||(h.fullPaternalUncles||0)>0||(h.paternalUnclesFromFather||0)>0||(h.fullPaternalUnclesSons||0)>0) return 'blockedByCloserAsaba';
         return null;
     }
     return null;
@@ -813,11 +826,15 @@
     var afterDebt = amount - debts;
     if (afterDebt < 0) afterDebt = 0;
     var maxWasiyya = afterDebt / 3;
+    var wasiyyaExceeded = wasiyya > maxWasiyya && wasiyya > 0;
     if (wasiyya > maxWasiyya) wasiyya = maxWasiyya;
     if (wasiyya < 0) wasiyya = 0;
     var net = afterDebt - wasiyya;
 
     document.getElementById('inh-net-value').textContent = formatNum(net);
+    var wasiyyaAlert = document.getElementById('inh-wasiyya-alert');
+    if (wasiyyaExceeded) wasiyyaAlert.classList.add('show');
+    else wasiyyaAlert.classList.remove('show');
 
     if (net <= 0 || !state.deceasedGender) { hideResults(); return; }
 
@@ -840,14 +857,14 @@
     for (var id in h) { if (!blocked[id]) a[id] = h[id]; }
     if (Object.keys(a).length === 0) { hideResults(); return; }
 
-    // Assign shares
-    var shares = assignShares(a, state.madhab, blocked);
+    // Assign shares (pass h for hajb nuqsan checks like mother's sibling count)
+    var shares = assignShares(a, state.madhab, blocked, h);
 
     // Render
     showResults(shares.results, blocked, shares.awl, shares.radd, net);
   }
 
-  function assignShares(a, madhab, blocked) {
+  function assignShares(a, madhab, blocked, originalHeirs) {
     var hasSon = (a.sons||0) > 0;
     var hasSonsSon = (a.sonsSons||0) > 0;
     var hasMaleDesc = hasSon || hasSonsSon;
@@ -858,6 +875,10 @@
     var hasFather = (a.father||0) > 0;
     var hasMother = (a.mother||0) > 0;
     var hasGF = (a.paternalGrandfather||0) > 0;
+    // Use ORIGINAL heirs (before blocking) for mother's hajb nuqsan —
+    // siblings block mother from 1/3 to 1/6 even if they themselves are blocked by father
+    var oh = originalHeirs || a;
+    var totalSibOriginal = (oh.fullBrothers||0)+(oh.fullSisters||0)+(oh.paternalBrothers||0)+(oh.paternalSisters||0)+(oh.maternalBrothers||0)+(oh.maternalSisters||0);
     var totalSib = (a.fullBrothers||0)+(a.fullSisters||0)+(a.paternalBrothers||0)+(a.paternalSisters||0)+(a.maternalBrothers||0)+(a.maternalSisters||0);
     var totalMaternal = (a.maternalBrothers||0)+(a.maternalSisters||0);
 
@@ -897,7 +918,8 @@
 
     // ── MOTHER ──
     if (hasMother) {
-      if (hasDesc || totalSib >= 2) {
+      // Use totalSibOriginal: siblings cause hajb nuqsan for mother even if blocked by father
+      if (hasDesc || totalSibOriginal >= 2) {
         fard.push({ heirId:'mother', count:1, num:1, den:6, type:'fard', reasonKey:'reasonMotherSixth' });
       } else if ((a.husband||0) > 0 || (a.wife||0) > 0) {
         if (hasFather) {
@@ -1401,7 +1423,7 @@
 
   function formatNum(n) {
     if (!n || isNaN(n)) return '0';
-    return n.toLocaleString(isArabic ? 'ar-SA' : 'en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+    return n.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
   }
 
   /* ── UI Functions ── */
@@ -1543,6 +1565,7 @@
     document.getElementById('inh-step4').classList.remove('active');
     document.getElementById('inh-select-gender-msg').style.display = '';
 
+    document.getElementById('inh-wasiyya-alert').classList.remove('show');
     hideResults();
   };
 
