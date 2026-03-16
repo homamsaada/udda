@@ -16,6 +16,7 @@ No test or lint commands are configured.
 src/                        Source files (edit here)
   assets/css/main.css       Main stylesheet (CSS variables, RTL/LTR, themes)
   assets/js/app.js          Main application JS (global App object)
+  assets/images/ads/        Ad placeholder images (replace with real ads later)
   data/i18n.json            All translations (AR/EN)
   data/tools.json           Tools registry and category order
   layouts/                  LEGACY — NOT used by build (see Critical Notes)
@@ -49,6 +50,7 @@ build.js                    Build script — contains the actual HTML layout tem
 | `body-calculator` | calculators | BMI, BMR, ideal weight, body fat |
 | `age-calculator` | calculators | Age, date difference, date math |
 | `family-tree` | everyday | Interactive family tree builder (SVG) |
+| `zakat-calculator` | calculators | Zakat calculation (gold, silver, cash, stocks, debt, real estate, trade) |
 
 ## Adding a New Tool — Step by Step
 
@@ -214,6 +216,8 @@ var(--border-radius-lg)   /* Large radius */
 var(--transition-fast)    /* Fast transition */
 ```
 
+**Dark mode note:** The dark theme does NOT override `--accent-primary`, `--accent-secondary`, or `--accent-gradient` — it inherits them from the light theme. Only backgrounds, text colors, borders, and shadows are overridden.
+
 ### RTL support
 
 ```css
@@ -295,9 +299,12 @@ Controlled by `isHome`/`isCategory` flags in `build.js` → `buildPageHTML()`:
 | Homepage banner | 728×90 | `.ad-banner` | All devices |
 | Mobile bottom sticky | 320×50 | `.ad-bottom-sticky` | ≤1024px only |
 
-- All ad containers have `border-radius: 0` (square corners, matching AdSense default)
-- AdSense Publisher ID placeholder: `ca-pub-XXXXXXXXXXXXXXXX` — must be replaced with real ID
-- Each `data-ad-slot` placeholder: `XXXXXXXXXX` — must be replaced per ad unit
+- All ad containers have `border-radius: 0` (square corners)
+- Ads currently use placeholder images from `src/assets/images/ads/`:
+  - `ad-sidebar-300x250.png` — sidebar ad (desktop)
+  - `ad-banner-728x90.png` — homepage banner
+  - `ad-mobile-320x50.png` — mobile bottom sticky
+- Replace these with real ad creatives or AdSense code when ready
 
 ## Header Structure
 
