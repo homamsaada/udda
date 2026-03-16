@@ -10,6 +10,7 @@
   
   <!-- Calculator 1: What is X% of Y? -->
   <div class="calc-row-inline">
+    <div class="calc-title">{{tool.calc1Title}}:</div>
     <span class="calc-label">{{tool.whatIsPercent}}</span>
     <input type="number" class="calc-input-sm" id="calc1-percent" placeholder="10" oninput="calculate(1)">
     <span class="calc-label">{{tool.percentOf}}</span>
@@ -25,6 +26,7 @@
   
   <!-- Calculator 2: X is what % of Y? -->
   <div class="calc-row-inline">
+    <div class="calc-title">{{tool.calc2Title}}:</div>
     <input type="number" class="calc-input-sm" id="calc2-part" placeholder="25" oninput="calculate(2)">
     <span class="calc-label">{{tool.isWhatPercent}}</span>
     <input type="number" class="calc-input-sm" id="calc2-whole" placeholder="200" oninput="calculate(2)">
@@ -39,6 +41,7 @@
   
   <!-- Calculator 3: Percentage Change -->
   <div class="calc-row-inline">
+    <div class="calc-title">{{tool.calc3Title}}:</div>
     <span class="calc-label">{{tool.percentChange}} {{tool.from}}</span>
     <input type="number" class="calc-input-sm" id="calc3-from" placeholder="100" oninput="calculate(3)">
     <span class="calc-label">{{tool.to}}</span>
@@ -54,6 +57,7 @@
   
   <!-- Calculator 4: Discount -->
   <div class="calc-row-inline">
+    <div class="calc-title">{{tool.calc4Title}}:</div>
     <span class="calc-label">{{tool.originalPrice}}</span>
     <input type="number" class="calc-input-sm" id="calc4-price" placeholder="500" oninput="calculate(4)">
     <span class="calc-label">− {{tool.discount}}</span>
@@ -69,6 +73,7 @@
   
   <!-- Calculator 5: Add percentage to number -->
   <div class="calc-row-inline">
+    <div class="calc-title">{{tool.calc5Title}}:</div>
     <input type="number" class="calc-input-sm" id="calc5-number" placeholder="200" oninput="calculate(5)">
     <span class="calc-label">+</span>
     <input type="number" class="calc-input-sm" id="calc5-percent" placeholder="15" oninput="calculate(5)">
@@ -83,6 +88,7 @@
   
   <!-- Calculator 6: Original price before discount -->
   <div class="calc-row-inline">
+    <div class="calc-title">{{tool.calc6Title}}:</div>
     <span class="calc-label">{{tool.afterDiscount}}</span>
     <input type="number" class="calc-input-sm" id="calc6-discount" placeholder="20" oninput="calculate(6)">
     <span class="calc-label">% {{tool.priceBecame}}</span>
@@ -98,6 +104,7 @@
   
   <!-- Calculator 7: Profit/Loss percentage -->
   <div class="calc-row-inline">
+    <div class="calc-title">{{tool.calc7Title}}:</div>
     <span class="calc-label">{{tool.buyPrice}}</span>
     <input type="number" class="calc-input-sm" id="calc7-buy" placeholder="100" oninput="calculate(7)">
     <span class="calc-label">{{tool.sellPrice}}</span>
@@ -113,6 +120,7 @@
   
   <!-- Calculator 8: Fraction to Percentage -->
   <div class="calc-row-inline">
+    <div class="calc-title">{{tool.calc8Title}}:</div>
     <input type="number" class="calc-input-sm" id="calc8-num" placeholder="3" oninput="calculate(8)">
     <span class="calc-label">÷</span>
     <input type="number" class="calc-input-sm" id="calc8-den" placeholder="4" oninput="calculate(8)">
@@ -127,6 +135,7 @@
   
   <!-- Calculator 9: Add Tax -->
   <div class="calc-row-inline">
+    <div class="calc-title">{{tool.calc9Title}}:</div>
     <span class="calc-label">{{tool.priceBeforeTax}}</span>
     <input type="number" class="calc-input-sm" id="calc9-price" placeholder="100" oninput="calculate(9)">
     <span class="calc-label">+ {{tool.tax}}</span>
@@ -142,6 +151,7 @@
   
   <!-- Calculator 10: Price Before Tax -->
   <div class="calc-row-inline">
+    <div class="calc-title">{{tool.calc10Title}}:</div>
     <span class="calc-label">{{tool.priceWithTax}}</span>
     <input type="number" class="calc-input-sm" id="calc10-total" placeholder="118" oninput="calculate(10)">
     <span class="calc-label">{{tool.includesTax}}</span>
@@ -157,6 +167,7 @@
   
   <!-- Calculator 11: Profit Margin -->
   <div class="calc-row-inline">
+    <div class="calc-title">{{tool.calc11Title}}:</div>
     <span class="calc-label">{{tool.cost}}</span>
     <input type="number" class="calc-input-sm" id="calc11-cost" placeholder="80" oninput="calculate(11)">
     <span class="calc-label">{{tool.soldFor}}</span>
@@ -172,6 +183,7 @@
   
   <!-- Calculator 12: Part of Total -->
   <div class="calc-row-inline">
+    <div class="calc-title">{{tool.calc12Title}}:</div>
     <input type="number" class="calc-input-sm" id="calc12-part" placeholder="30" oninput="calculate(12)">
     <span class="calc-label">{{tool.outOf}} (</span>
     <input type="number" class="calc-input-sm" id="calc12-part2" placeholder="70" oninput="calculate(12)">
@@ -204,6 +216,14 @@
   font-size: 1.15rem;
   line-height: 2.2;
   width: 100%;
+}
+
+.calc-title {
+  width: 100%;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-bottom: -4px;
 }
 
 .calc-label {
