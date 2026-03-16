@@ -409,6 +409,26 @@
                 <button onclick="inhChangeCount('sonsDaughters',1)">+</button>
               </div>
             </div>
+            <div class="inh-heir-row" data-heir="sonsSonsSons" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('sonsSonsSons',this)">
+              <span class="inh-heir-name">أبناء ابن الابن (ذكور)</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('sonsSonsSons',-1)">−</button>
+                <span class="inh-counter-value" data-heir="sonsSonsSons">1</span>
+                <button onclick="inhChangeCount('sonsSonsSons',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="sonsSonsDaughters" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('sonsSonsDaughters',this)">
+              <span class="inh-heir-name">بنات ابن الابن</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('sonsSonsDaughters',-1)">−</button>
+                <span class="inh-counter-value" data-heir="sonsSonsDaughters">1</span>
+                <button onclick="inhChangeCount('sonsSonsDaughters',1)">+</button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -581,6 +601,66 @@
                 <button onclick="inhChangeCount('paternalUnclesSonsFromFather',1)">+</button>
               </div>
             </div>
+            <div class="inh-heir-row" data-heir="fullBrothersSonsSons" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('fullBrothersSonsSons',this)">
+              <span class="inh-heir-name">أبناء ابن الأخ الشقيق</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('fullBrothersSonsSons',-1)">−</button>
+                <span class="inh-counter-value" data-heir="fullBrothersSonsSons">1</span>
+                <button onclick="inhChangeCount('fullBrothersSonsSons',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="paternalBrothersSonsSons" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('paternalBrothersSonsSons',this)">
+              <span class="inh-heir-name">أبناء ابن الأخ لأب</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('paternalBrothersSonsSons',-1)">−</button>
+                <span class="inh-counter-value" data-heir="paternalBrothersSonsSons">1</span>
+                <button onclick="inhChangeCount('paternalBrothersSonsSons',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="fatherFullUncles" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('fatherFullUncles',this)">
+              <span class="inh-heir-name">أعمام الأب الأشقاء</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('fatherFullUncles',-1)">−</button>
+                <span class="inh-counter-value" data-heir="fatherFullUncles">1</span>
+                <button onclick="inhChangeCount('fatherFullUncles',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="fatherPaternalUncles" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('fatherPaternalUncles',this)">
+              <span class="inh-heir-name">أعمام الأب لأب</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('fatherPaternalUncles',-1)">−</button>
+                <span class="inh-counter-value" data-heir="fatherPaternalUncles">1</span>
+                <button onclick="inhChangeCount('fatherPaternalUncles',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="fatherFullUnclesSons" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('fatherFullUnclesSons',this)">
+              <span class="inh-heir-name">أبناء عم الأب الشقيق</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('fatherFullUnclesSons',-1)">−</button>
+                <span class="inh-counter-value" data-heir="fatherFullUnclesSons">1</span>
+                <button onclick="inhChangeCount('fatherFullUnclesSons',1)">+</button>
+              </div>
+            </div>
+            <div class="inh-heir-row" data-heir="fatherPaternalUnclesSons" data-max="20">
+              <input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir('fatherPaternalUnclesSons',this)">
+              <span class="inh-heir-name">أبناء عم الأب لأب</span>
+              <span class="inh-heir-tooltip"></span>
+              <div class="inh-counter" style="display:none">
+                <button onclick="inhChangeCount('fatherPaternalUnclesSons',-1)">−</button>
+                <span class="inh-counter-value" data-heir="fatherPaternalUnclesSons">1</span>
+                <button onclick="inhChangeCount('fatherPaternalUnclesSons',1)">+</button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -603,6 +683,14 @@
         <div class="inh-alert-banner info" id="inh-radd-alert">
           <span class="inh-alert-icon">ℹ️</span>
           <div><strong>تنبيه: حدث ردّ في هذه المسألة</strong><br>الردّ يعني أن مجموع الفروض لم يستغرق التركة ولا يوجد عاصب، فيُرد الباقي على أصحاب الفروض بنسبة أنصبتهم.</div>
+        </div>
+        <div class="inh-alert-banner info" id="inh-akdariyyah-alert">
+          <span class="inh-alert-icon">📚</span>
+          <div><strong>هذه مسألة الأكدرية</strong><br>مسألة مشهورة في الفرائض: يُجمع نصيب الجد والأخت بعد العول ثم يُقسم بينهما للذكر مثل حظ الأنثيين.</div>
+        </div>
+        <div class="inh-alert-banner warning" id="inh-baytmal-alert">
+          <span class="inh-alert-icon">🏛️</span>
+          <div><strong>الباقي يذهب لبيت مال المسلمين</strong><br>لم يُوزَّع كامل التركة على الورثة. الباقي يذهب لبيت مال المسلمين (الخزينة العامة).</div>
         </div>
         <div class="inh-results-table-wrapper">
           <table class="inh-results-table">
@@ -643,7 +731,7 @@
       <li>هذه الحاسبة للاسترشاد فقط وليست فتوى شرعية.</li>
       <li>يُنصح بمراجعة عالم شرعي أو محكمة شرعية مختصة.</li>
       <li>لا يرث القاتل عمداً ولا المختلف في الدين.</li>
-      <li>الفروق المذهبية المطبقة حالياً: الجد مع الإخوة (الحنفية)، المشرّكة (المالكية والشافعية)، حجب الجدة لأب بالأب (الحنفية). لفروق مذهبية أخرى راجع عالماً شرعياً.</li>
+      <li>الفروق المذهبية المطبقة حالياً: الجد مع الإخوة (الحنفية)، المشرّكة (المالكية والشافعية)، حجب الجدة لأب بالأب (الحنفية)، الأكدرية (غير الحنفية). لفروق مذهبية أخرى راجع عالماً شرعياً.</li>
     </ul>
   </div>
 </div>
@@ -669,6 +757,7 @@
     husband: 'الزوج', wife: 'الزوجة',
     sons: 'الأبناء (ذكور)', daughters: 'البنات',
     sonsSons: 'أبناء الابن', sonsDaughters: 'بنات الابن',
+    sonsSonsSons: 'أبناء ابن الابن (ذكور)', sonsSonsDaughters: 'بنات ابن الابن',
     father: 'الأب', mother: 'الأم',
     paternalGrandfather: 'الجد (أبو الأب)',
     paternalGrandmother: 'الجدة (أم الأب)',
@@ -678,7 +767,10 @@
     maternalBrothers: 'الإخوة لأم', maternalSisters: 'الأخوات لأم',
     fullBrothersSons: 'أبناء الأخ الشقيق', paternalBrothersSons: 'أبناء الأخ لأب',
     fullPaternalUncles: 'الأعمام الأشقاء', paternalUnclesFromFather: 'الأعمام لأب',
-    fullPaternalUnclesSons: 'أبناء العم الشقيق', paternalUnclesSonsFromFather: 'أبناء العم لأب'
+    fullPaternalUnclesSons: 'أبناء العم الشقيق', paternalUnclesSonsFromFather: 'أبناء العم لأب',
+    fullBrothersSonsSons: 'أبناء ابن الأخ الشقيق', paternalBrothersSonsSons: 'أبناء ابن الأخ لأب',
+    fatherFullUncles: 'أعمام الأب الأشقاء', fatherPaternalUncles: 'أعمام الأب لأب',
+    fatherFullUnclesSons: 'أبناء عم الأب الشقيق', fatherPaternalUnclesSons: 'أبناء عم الأب لأب'
   };
 
   var reasonTexts = {
@@ -689,6 +781,10 @@
     reasonSonDaughterSixth: 'السدس تكملة الثلثين', reasonSonDaughterHalf: 'النصف لانفرادها وعدم المعصّب',
     reasonSonDaughtersTwoThirds: 'الثلثان لتعددهن وعدم المعصّب',
     reasonSonDaughtersWithSonsSons: 'تعصيب بابن الابن — للذكر مثل حظ الأنثيين',
+    reasonSonSonDaughterSixth: 'السدس تكملة الثلثين',
+    reasonSonSonDaughterHalf: 'النصف لانفرادها وعدم المعصّب',
+    reasonSonSonDaughtersTwoThirds: 'الثلثان لتعددهن وعدم المعصّب',
+    reasonSonSonDaughtersWithSonSonSons: 'تعصيب بابن ابن الابن — للذكر مثل حظ الأنثيين',
     reasonFatherSixth: 'السدس فرضاً لوجود فرع وارث ذكر', reasonFatherSixthPlusRemainder: 'السدس فرضاً والباقي تعصيباً لوجود فرع وارث أنثى فقط',
     reasonFatherRemainder: 'الباقي تعصيباً لعدم وجود فرع وارث',
     reasonMotherSixth: 'السدس لوجود فرع وارث أو جمع من الإخوة', reasonMotherThird: 'الثلث لعدم وجود فرع وارث أو جمع من الإخوة',
@@ -729,20 +825,39 @@
   function getBlockReason(id, h, madhab) {
     var hasSon = (h.sons || 0) > 0;
     var hasSonsSon = (h.sonsSons || 0) > 0;
+    var hasSonsSonsSon = (h.sonsSonsSons || 0) > 0;
     var hasFather = (h.father || 0) > 0;
     var hasGF = (h.paternalGrandfather || 0) > 0;
-    var hasMaleDesc = hasSon || hasSonsSon;
-    var hasFemaleDesc = (h.daughters || 0) > 0 || (h.sonsDaughters || 0) > 0;
+    var hasMaleDesc = hasSon || hasSonsSon || hasSonsSonsSon;
+    var hasFemaleDesc = (h.daughters || 0) > 0 || (h.sonsDaughters || 0) > 0 || (h.sonsSonsDaughters || 0) > 0;
     var hasDesc = hasMaleDesc || hasFemaleDesc;
-    // Full sisters become asaba with daughters/son's daughters (asaba ma'a al-ghayr),
+    // Full sisters become asaba with female descendants (asaba ma'a al-ghayr),
     // and in that role they block like full brothers
     var fullSistersAsAsaba = (h.fullSisters || 0) > 0 && hasFemaleDesc && !hasMaleDesc && !(h.fullBrothers || 0);
+
+    // Helper: is there any closer asaba before the given extended agnate?
+    function hasCloserExt(list) {
+      for (var i = 0; i < list.length; i++) { if ((h[list[i]] || 0) > 0) return true; if (list[i] === '_fsa' && fullSistersAsAsaba) return true; }
+      return false;
+    }
 
     switch (id) {
       case 'sonsSons': return hasSon ? 'blockedBySon' : null;
       case 'sonsDaughters':
         if (hasSon) return 'blockedBySon';
         if ((h.daughters || 0) >= 2 && !hasSonsSon) return 'blockedByTwoDaughters';
+        return null;
+      case 'sonsSonsSons':
+        if (hasSon) return 'blockedBySon';
+        if (hasSonsSon) return 'blockedByCloserAsaba';
+        return null;
+      case 'sonsSonsDaughters':
+        if (hasSon) return 'blockedBySon';
+        if (hasSonsSon) return 'blockedByCloserAsaba';
+        // Blocked if 2/3 already filled from above without a male at this level
+        if ((h.daughters || 0) >= 2 && !hasSonsSon && !hasSonsSonsSon) return 'blockedByTwoDaughters';
+        if ((h.daughters || 0) >= 1 && (h.sonsDaughters || 0) >= 1 && !hasSonsSonsSon) return 'blockedByTwoDaughters';
+        if ((h.sonsDaughters || 0) >= 2 && !hasSonsSonsSon) return 'blockedByTwoDaughters';
         return null;
       case 'paternalGrandfather': return hasFather ? 'blockedByFather' : null;
       case 'paternalGrandmother':
@@ -776,43 +891,66 @@
         if (hasGF) return 'blockedByCloserAsaba';
         if (hasDesc) return 'blockedByDescendant';
         return null;
+      // Extended agnates — each blocked by all closer agnates
       case 'fullBrothersSons':
         if (hasFather) return 'blockedByFather';
         if (hasMaleDesc) return 'blockedByDescendant';
-        if (hasGF) return 'blockedByCloserAsaba';
-        if ((h.fullBrothers || 0) > 0) return 'blockedByCloserAsaba';
-        if (fullSistersAsAsaba) return 'blockedByCloserAsaba';
-        if ((h.paternalBrothers || 0) > 0) return 'blockedByCloserAsaba';
+        if (hasCloserExt(['paternalGrandfather','fullBrothers','_fsa','paternalBrothers'])) return 'blockedByCloserAsaba';
         return null;
       case 'paternalBrothersSons':
         if (hasFather) return 'blockedByFather';
         if (hasMaleDesc) return 'blockedByDescendant';
-        if (hasGF) return 'blockedByCloserAsaba';
-        if ((h.fullBrothers || 0) > 0 || fullSistersAsAsaba || (h.paternalBrothers || 0) > 0 || (h.fullBrothersSons || 0) > 0) return 'blockedByCloserAsaba';
+        if (hasCloserExt(['paternalGrandfather','fullBrothers','_fsa','paternalBrothers','fullBrothersSons'])) return 'blockedByCloserAsaba';
+        return null;
+      case 'fullBrothersSonsSons':
+        if (hasFather) return 'blockedByFather';
+        if (hasMaleDesc) return 'blockedByDescendant';
+        if (hasCloserExt(['paternalGrandfather','fullBrothers','_fsa','paternalBrothers','fullBrothersSons','paternalBrothersSons'])) return 'blockedByCloserAsaba';
+        return null;
+      case 'paternalBrothersSonsSons':
+        if (hasFather) return 'blockedByFather';
+        if (hasMaleDesc) return 'blockedByDescendant';
+        if (hasCloserExt(['paternalGrandfather','fullBrothers','_fsa','paternalBrothers','fullBrothersSons','paternalBrothersSons','fullBrothersSonsSons'])) return 'blockedByCloserAsaba';
         return null;
       case 'fullPaternalUncles':
         if (hasFather) return 'blockedByFather';
         if (hasMaleDesc) return 'blockedByDescendant';
-        if (hasGF) return 'blockedByCloserAsaba';
-        if ((h.fullBrothers||0)>0||fullSistersAsAsaba||(h.paternalBrothers||0)>0||(h.fullBrothersSons||0)>0||(h.paternalBrothersSons||0)>0) return 'blockedByCloserAsaba';
+        if (hasCloserExt(['paternalGrandfather','fullBrothers','_fsa','paternalBrothers','fullBrothersSons','paternalBrothersSons','fullBrothersSonsSons','paternalBrothersSonsSons'])) return 'blockedByCloserAsaba';
         return null;
       case 'paternalUnclesFromFather':
         if (hasFather) return 'blockedByFather';
         if (hasMaleDesc) return 'blockedByDescendant';
-        if (hasGF) return 'blockedByCloserAsaba';
-        if ((h.fullBrothers||0)>0||fullSistersAsAsaba||(h.paternalBrothers||0)>0||(h.fullBrothersSons||0)>0||(h.paternalBrothersSons||0)>0||(h.fullPaternalUncles||0)>0) return 'blockedByCloserAsaba';
+        if (hasCloserExt(['paternalGrandfather','fullBrothers','_fsa','paternalBrothers','fullBrothersSons','paternalBrothersSons','fullBrothersSonsSons','paternalBrothersSonsSons','fullPaternalUncles'])) return 'blockedByCloserAsaba';
         return null;
       case 'fullPaternalUnclesSons':
         if (hasFather) return 'blockedByFather';
         if (hasMaleDesc) return 'blockedByDescendant';
-        if (hasGF) return 'blockedByCloserAsaba';
-        if ((h.fullBrothers||0)>0||fullSistersAsAsaba||(h.paternalBrothers||0)>0||(h.fullBrothersSons||0)>0||(h.paternalBrothersSons||0)>0||(h.fullPaternalUncles||0)>0||(h.paternalUnclesFromFather||0)>0) return 'blockedByCloserAsaba';
+        if (hasCloserExt(['paternalGrandfather','fullBrothers','_fsa','paternalBrothers','fullBrothersSons','paternalBrothersSons','fullBrothersSonsSons','paternalBrothersSonsSons','fullPaternalUncles','paternalUnclesFromFather'])) return 'blockedByCloserAsaba';
         return null;
       case 'paternalUnclesSonsFromFather':
         if (hasFather) return 'blockedByFather';
         if (hasMaleDesc) return 'blockedByDescendant';
-        if (hasGF) return 'blockedByCloserAsaba';
-        if ((h.fullBrothers||0)>0||fullSistersAsAsaba||(h.paternalBrothers||0)>0||(h.fullBrothersSons||0)>0||(h.paternalBrothersSons||0)>0||(h.fullPaternalUncles||0)>0||(h.paternalUnclesFromFather||0)>0||(h.fullPaternalUnclesSons||0)>0) return 'blockedByCloserAsaba';
+        if (hasCloserExt(['paternalGrandfather','fullBrothers','_fsa','paternalBrothers','fullBrothersSons','paternalBrothersSons','fullBrothersSonsSons','paternalBrothersSonsSons','fullPaternalUncles','paternalUnclesFromFather','fullPaternalUnclesSons'])) return 'blockedByCloserAsaba';
+        return null;
+      case 'fatherFullUncles':
+        if (hasFather) return 'blockedByFather';
+        if (hasMaleDesc) return 'blockedByDescendant';
+        if (hasCloserExt(['paternalGrandfather','fullBrothers','_fsa','paternalBrothers','fullBrothersSons','paternalBrothersSons','fullBrothersSonsSons','paternalBrothersSonsSons','fullPaternalUncles','paternalUnclesFromFather','fullPaternalUnclesSons','paternalUnclesSonsFromFather'])) return 'blockedByCloserAsaba';
+        return null;
+      case 'fatherPaternalUncles':
+        if (hasFather) return 'blockedByFather';
+        if (hasMaleDesc) return 'blockedByDescendant';
+        if (hasCloserExt(['paternalGrandfather','fullBrothers','_fsa','paternalBrothers','fullBrothersSons','paternalBrothersSons','fullBrothersSonsSons','paternalBrothersSonsSons','fullPaternalUncles','paternalUnclesFromFather','fullPaternalUnclesSons','paternalUnclesSonsFromFather','fatherFullUncles'])) return 'blockedByCloserAsaba';
+        return null;
+      case 'fatherFullUnclesSons':
+        if (hasFather) return 'blockedByFather';
+        if (hasMaleDesc) return 'blockedByDescendant';
+        if (hasCloserExt(['paternalGrandfather','fullBrothers','_fsa','paternalBrothers','fullBrothersSons','paternalBrothersSons','fullBrothersSonsSons','paternalBrothersSonsSons','fullPaternalUncles','paternalUnclesFromFather','fullPaternalUnclesSons','paternalUnclesSonsFromFather','fatherFullUncles','fatherPaternalUncles'])) return 'blockedByCloserAsaba';
+        return null;
+      case 'fatherPaternalUnclesSons':
+        if (hasFather) return 'blockedByFather';
+        if (hasMaleDesc) return 'blockedByDescendant';
+        if (hasCloserExt(['paternalGrandfather','fullBrothers','_fsa','paternalBrothers','fullBrothersSons','paternalBrothersSons','fullBrothersSonsSons','paternalBrothersSonsSons','fullPaternalUncles','paternalUnclesFromFather','fullPaternalUnclesSons','paternalUnclesSonsFromFather','fatherFullUncles','fatherPaternalUncles','fatherFullUnclesSons'])) return 'blockedByCloserAsaba';
         return null;
     }
     return null;
@@ -861,16 +999,18 @@
     var shares = assignShares(a, state.madhab, blocked, h);
 
     // Render
-    showResults(shares.results, blocked, shares.awl, shares.radd, net);
+    showResults(shares.results, blocked, shares.awl, shares.radd, net, shares.akdariyyah);
   }
 
   function assignShares(a, madhab, blocked, originalHeirs) {
     var hasSon = (a.sons||0) > 0;
     var hasSonsSon = (a.sonsSons||0) > 0;
-    var hasMaleDesc = hasSon || hasSonsSon;
+    var hasSonsSonsSon = (a.sonsSonsSons||0) > 0;
+    var hasMaleDesc = hasSon || hasSonsSon || hasSonsSonsSon;
     var hasDaughter = (a.daughters||0) > 0;
     var hasSonsDaughter = (a.sonsDaughters||0) > 0;
-    var hasFemaleDesc = hasDaughter || hasSonsDaughter;
+    var hasSonsSonsDaughter = (a.sonsSonsDaughters||0) > 0;
+    var hasFemaleDesc = hasDaughter || hasSonsDaughter || hasSonsSonsDaughter;
     var hasDesc = hasMaleDesc || hasFemaleDesc;
     var hasFather = (a.father||0) > 0;
     var hasMother = (a.mother||0) > 0;
@@ -901,11 +1041,38 @@
     // ── SON'S DAUGHTERS ──
     if ((a.sonsDaughters||0) > 0 && !hasSon) {
       if (hasSonsSon) { /* asaba with son's sons below */ }
+      else if (hasSonsSonsSon) { /* asaba with son's son's son (lower male makes her asaba) below */ }
       else if (!hasDaughter) {
         if (a.sonsDaughters === 1) fard.push({ heirId:'sonsDaughters', count:1, num:1, den:2, type:'fard', reasonKey:'reasonSonDaughterHalf' });
         else fard.push({ heirId:'sonsDaughters', count:a.sonsDaughters, num:2, den:3, type:'fard', reasonKey:'reasonSonDaughtersTwoThirds' });
       } else if (a.daughters === 1) {
         fard.push({ heirId:'sonsDaughters', count:a.sonsDaughters, num:1, den:6, type:'fard', reasonKey:'reasonSonDaughterSixth' });
+      }
+      // else: 2+ daughters filled 2/3, sonsDaughters get nothing (blocked)
+    }
+
+    // ── SON'S SON'S DAUGHTERS ──
+    // They are already filtered by blocking rules. If they're in `a`, they weren't blocked.
+    if ((a.sonsSonsDaughters||0) > 0 && !hasSon && !hasSonsSon) {
+      if (hasSonsSonsSon) { /* asaba with son's son's sons below */ }
+      else {
+        // Count how many female-descendant 2/3 slots are used above
+        var twoThirdsFilled = false;
+        var dCount = (a.daughters||0);
+        var sdCount = (a.sonsDaughters||0);
+        if (dCount >= 2) twoThirdsFilled = true;
+        else if (dCount === 1 && sdCount >= 1) twoThirdsFilled = true;
+        else if (sdCount >= 2) twoThirdsFilled = true;
+
+        if (!twoThirdsFilled && !hasDaughter && !hasSonsDaughter) {
+          // No females above — get 1/2 or 2/3
+          if (a.sonsSonsDaughters === 1) fard.push({ heirId:'sonsSonsDaughters', count:1, num:1, den:2, type:'fard', reasonKey:'reasonSonSonDaughterHalf' });
+          else fard.push({ heirId:'sonsSonsDaughters', count:a.sonsSonsDaughters, num:2, den:3, type:'fard', reasonKey:'reasonSonSonDaughtersTwoThirds' });
+        } else if (!twoThirdsFilled) {
+          // Some females above but 2/3 not filled — get 1/6 completion
+          fard.push({ heirId:'sonsSonsDaughters', count:a.sonsSonsDaughters, num:1, den:6, type:'fard', reasonKey:'reasonSonSonDaughterSixth' });
+        }
+        // else: 2/3 filled, they get nothing (should have been blocked, but safety check)
       }
     }
 
@@ -1007,8 +1174,30 @@
       else asaba.push({ heirId:'sons', count:a.sons, reasonKey:'reasonAsaba' });
     }
     if (hasSonsSon && !hasSon) {
-      if ((a.sonsDaughters||0) > 0) asaba.push({ heirId:'sonsSons', count:a.sonsSons, reasonKey:'reasonSonDaughtersWithSonsSons', withFemale:'sonsDaughters', femaleCount:a.sonsDaughters });
+      // Son's son also makes son's daughters asaba if they exist
+      var ssFemale = (a.sonsDaughters||0);
+      if (ssFemale > 0) asaba.push({ heirId:'sonsSons', count:a.sonsSons, reasonKey:'reasonSonDaughtersWithSonsSons', withFemale:'sonsDaughters', femaleCount:ssFemale });
       else asaba.push({ heirId:'sonsSons', count:a.sonsSons, reasonKey:'reasonAsaba' });
+    }
+    if (hasSonsSonsSon && !hasSon && !hasSonsSon) {
+      // Son's son's son makes females at his level AND above (sonsDaughters, sonsSonsDaughters) asaba
+      var sssFemaleSame = (a.sonsSonsDaughters||0);
+      // Also makes sonsDaughters asaba if they didn't get fard (i.e., 2/3 was filled or they were waiting for a male)
+      var sssFemaleAbove = (a.sonsDaughters||0);
+      var totalFemaleWithSSS = sssFemaleSame + sssFemaleAbove;
+      if (totalFemaleWithSSS > 0) {
+        // Group all females being made asaba with the male
+        asaba.push({ heirId:'sonsSonsSons', count:a.sonsSonsSons, reasonKey:'reasonSonSonDaughtersWithSonSonSons', withFemale: sssFemaleAbove > 0 ? 'sonsDaughters' : 'sonsSonsDaughters', femaleCount: totalFemaleWithSSS, extraFemales: sssFemaleAbove > 0 && sssFemaleSame > 0 ? [{heirId:'sonsSonsDaughters',count:sssFemaleSame}] : (sssFemaleAbove > 0 ? [] : []) });
+      } else {
+        asaba.push({ heirId:'sonsSonsSons', count:a.sonsSonsSons, reasonKey:'reasonAsaba' });
+      }
+      // Remove son's daughters from fard if they were added (the male below makes them asaba instead)
+      if (sssFemaleAbove > 0) {
+        fard = fard.filter(function(f) { return f.heirId !== 'sonsDaughters'; });
+      }
+      if (sssFemaleSame > 0) {
+        fard = fard.filter(function(f) { return f.heirId !== 'sonsSonsDaughters'; });
+      }
     }
     if ((a.fullBrothers||0) > 0 && !hasMaleDesc) {
       if ((a.fullSisters||0) > 0) asaba.push({ heirId:'fullBrothers', count:a.fullBrothers, reasonKey:'reasonFullSistersWithBrothers', withFemale:'fullSisters', femaleCount:a.fullSisters });
@@ -1020,7 +1209,7 @@
     }
 
     // Extended agnates — only closest
-    var extOrder = ['fullBrothersSons','paternalBrothersSons','fullPaternalUncles','paternalUnclesFromFather','fullPaternalUnclesSons','paternalUnclesSonsFromFather'];
+    var extOrder = ['fullBrothersSons','paternalBrothersSons','fullBrothersSonsSons','paternalBrothersSonsSons','fullPaternalUncles','paternalUnclesFromFather','fullPaternalUnclesSons','paternalUnclesSonsFromFather','fatherFullUncles','fatherPaternalUncles','fatherFullUnclesSons','fatherPaternalUnclesSons'];
     for (var i = 0; i < extOrder.length; i++) {
       var eid = extOrder[i];
       if ((a[eid]||0) > 0) {
@@ -1262,12 +1451,22 @@
       if (first.withFemale) {
         var maleShares = first.count * 2;
         var femaleShares = first.femaleCount;
+        // Handle extraFemales (e.g., sonsSonsSons making both sonsDaughters + sonsSonsDaughters asaba)
+        var extraF = first.extraFemales || [];
+        for (var ef = 0; ef < extraF.length; ef++) femaleShares += extraF[ef].count;
         var totalShares = maleShares + femaleShares;
         var perShare = remainder / totalShares;
         first.parts = maleShares * perShare;
         first.type = 'tasib';
         fard.push(first);
-        fard.push({ heirId: first.withFemale, count: first.femaleCount, num:0, den:0, parts: femaleShares * perShare, type:'tasib', reasonKey: first.reasonKey });
+        // Primary female group
+        var primaryFemaleCount = first.femaleCount;
+        for (var ef = 0; ef < extraF.length; ef++) primaryFemaleCount -= extraF[ef].count;
+        fard.push({ heirId: first.withFemale, count: primaryFemaleCount, num:0, den:0, parts: primaryFemaleCount * perShare, type:'tasib', reasonKey: first.reasonKey });
+        // Extra female groups
+        for (var ef = 0; ef < extraF.length; ef++) {
+          fard.push({ heirId: extraF[ef].heirId, count: extraF[ef].count, num:0, den:0, parts: extraF[ef].count * perShare, type:'tasib', reasonKey: first.reasonKey });
+        }
       } else {
         first.parts = remainder;
         first.type = 'tasib';
@@ -1282,6 +1481,39 @@
     if (totalFardParts > base && !gfSpecial) {
       awlInfo = { original: base, actual: totalFardParts };
       base = totalFardParts;
+    }
+
+    // ── Al-Akdariyyah ──
+    // husband + mother + grandfather + (one full/paternal sister), no descendants, no father, non-Hanafi
+    // After awl: combine GF's and sister's shares, redistribute 2:1 (male:female)
+    var akdariyyahInfo = null;
+    if (awlInfo && hasGF && !hasFather && !hasDesc
+        && (a.husband||0) > 0 && (a.mother||0) > 0
+        && madhab !== 'hanafi'
+        && ((a.fullSisters||0) === 1 || (a.paternalSisters||0) === 1)) {
+      var sisterKey = (a.fullSisters||0) === 1 ? 'fullSisters' : 'paternalSisters';
+      var gfEntry = null, sisterEntry = null;
+      for (var i = 0; i < fard.length; i++) {
+        if (fard[i].heirId === 'paternalGrandfather') gfEntry = fard[i];
+        if (fard[i].heirId === sisterKey) sisterEntry = fard[i];
+      }
+      if (gfEntry && sisterEntry && gfEntry.parts > 0 && sisterEntry.parts > 0) {
+        akdariyyahInfo = {};
+        var combinedParts = gfEntry.parts + sisterEntry.parts;
+        // Redistribute 2:1 — but we need to make sure base accommodates this
+        // GF gets 2/3 of combined, sister gets 1/3
+        // Multiply base by 3 if needed to avoid fractions
+        if (combinedParts % 3 !== 0) {
+          var mult = 3;
+          base *= mult;
+          for (var i = 0; i < fard.length; i++) fard[i].parts *= mult;
+          combinedParts = gfEntry.parts + sisterEntry.parts;
+        }
+        gfEntry.parts = Math.round(combinedParts * 2 / 3);
+        sisterEntry.parts = combinedParts - gfEntry.parts;
+        gfEntry.type = 'fardAndTasib';
+        gfEntry.reasonKey = 'reasonGrandfatherWithSiblings';
+      }
     }
 
     // Check for Radd (remainder > 0 and no asaba)
@@ -1341,11 +1573,11 @@
       });
     }
 
-    return { results: results, awl: awlInfo, radd: raddInfo };
+    return { results: results, awl: awlInfo, radd: raddInfo, akdariyyah: akdariyyahInfo };
   }
 
   /* ── Display ── */
-  function showResults(results, blocked, awl, radd, net) {
+  function showResults(results, blocked, awl, radd, net, akdariyyah) {
     var section = document.getElementById('inh-results-section');
     var noResults = document.getElementById('inh-no-results');
     section.classList.add('show');
@@ -1362,6 +1594,15 @@
     var raddEl = document.getElementById('inh-radd-alert');
     if (radd) raddEl.classList.add('show');
     else raddEl.classList.remove('show');
+
+    // Akdariyyah alert
+    var akdEl = document.getElementById('inh-akdariyyah-alert');
+    if (akdariyyah) akdEl.classList.add('show');
+    else akdEl.classList.remove('show');
+
+    // Bayt al-mal alert — show if there's remainder that went to no one
+    var baytmalEl = document.getElementById('inh-baytmal-alert');
+    baytmalEl.classList.remove('show');
 
     // Results table
     var tbody = document.getElementById('inh-results-body');
@@ -1395,6 +1636,11 @@
     // Total
     document.getElementById('inh-total-value').textContent = formatNum(totalAmt);
 
+    // Show bayt al-mal if distributed less than net (remainder with no asaba, after radd)
+    if (net > 0 && totalAmt > 0 && Math.abs(totalAmt - net) > 0.01 && totalAmt < net) {
+      baytmalEl.classList.add('show');
+    }
+
     // Blocked heirs
     var blockedSection = document.getElementById('inh-blocked-section');
     var blockedList = document.getElementById('inh-blocked-list');
@@ -1418,6 +1664,8 @@
     document.getElementById('inh-no-results').style.display = 'block';
     document.getElementById('inh-awl-alert').classList.remove('show');
     document.getElementById('inh-radd-alert').classList.remove('show');
+    document.getElementById('inh-akdariyyah-alert').classList.remove('show');
+    document.getElementById('inh-baytmal-alert').classList.remove('show');
     document.getElementById('inh-blocked-section').classList.remove('show');
   }
 
