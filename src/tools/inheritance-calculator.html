@@ -601,6 +601,10 @@
             <span class="inh-alert-icon">ℹ️</span>
             <div>{{tool.arhamNote}}</div>
           </div>
+          <div class="inh-alert-banner warning show" id="inh-arham-hanafi-note" style="display:none;margin-bottom:12px">
+            <span class="inh-alert-icon">⚠️</span>
+            <div>{{tool.arhamHanafiNote}}</div>
+          </div>
 
           <!-- Class 1: Descendants not inheriting -->
           <div class="inh-heir-category" id="inh-cat-arham1">
@@ -920,7 +924,7 @@
         </div>
         <div class="inh-action-buttons">
           <button class="inh-action-btn primary" onclick="inhCopyResults()">📋 {{tool.copyResults}}</button>
-          <button class="inh-action-btn secondary" onclick="inhExportExcel()">📊 {{tool.exportExcel}}</button>
+          <button class="inh-action-btn secondary" onclick="inhExportCsv()">📊 {{tool.exportCsv}}</button>
           <button class="inh-action-btn danger" onclick="inhResetAll()">🗑️ {{tool.resetAll}}</button>
         </div>
       </div>
@@ -945,7 +949,6 @@
   <p>{{tool.howToUseText}}</p>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
 <script>
 (function() {
   var lang = document.documentElement.lang || 'ar';
@@ -2632,7 +2635,14 @@
       var tooltip = row.querySelector('.inh-heir-tooltip');
       var cb = row.querySelector('.inh-heir-checkbox');
 
-      if (reason && !cb.checked) {
+      if (reason) {
+        // Auto-uncheck if currently checked and now blocked
+        if (cb.checked) {
+          cb.checked = false;
+          delete state.heirs[heirId];
+          var counter = row.querySelector('.inh-counter');
+          if (counter) { counter.style.display = 'none'; var cv = counter.querySelector('.inh-counter-value'); if (cv) cv.textContent = '1'; }
+        }
         row.classList.add('disabled');
         if (tooltip) { tooltip.textContent = blockTexts[reason] || reason; tooltip.style.display = 'inline'; }
       } else {
@@ -2657,6 +2667,9 @@
       var madhabSupports = state.madhab !== 'maliki' && state.madhab !== 'shafii';
       if (!hasNonSpouseRegular && madhabSupports && state.deceasedGender) {
         arhamWrapper.style.display = '';
+        // Show Hanafi disclaimer when Hanafi madhab is selected
+        var hanafiNote = document.getElementById('inh-arham-hanafi-note');
+        if (hanafiNote) hanafiNote.style.display = state.madhab === 'hanafi' ? '' : 'none';
       } else {
         arhamWrapper.style.display = 'none';
         // Uncheck any arham heirs if section is hidden
@@ -2692,73 +2705,51 @@
     });
   };
 
-  window.inhExportExcel = async function() {
+  window.inhExportCsv = function() {
     var table = document.querySelector('.inh-results-table');
     if (!table) return;
 
-    var workbook = new ExcelJS.Workbook();
-    var ws = workbook.addWorksheet(isArabic ? 'تقسيم الميراث' : 'Inheritance Division');
-    if (isArabic) ws.views = [{ rightToLeft: true }];
+    function csvEscape(val) {
+      var s = (val || '').replace(/\s+/g, ' ').trim();
+      if (s.indexOf(',') >= 0 || s.indexOf('"') >= 0 || s.indexOf('\n') >= 0) {
+        return '"' + s.replace(/"/g, '""') + '"';
+      }
+      return s;
+    }
 
+    var rows = [];
     // Title
-    ws.mergeCells('A1:E1');
-    var titleCell = ws.getCell('A1');
-    titleCell.value = isArabic ? 'حاسبة المواريث الشرعية — نتائج التقسيم' : 'Islamic Inheritance Calculator — Results';
-    titleCell.font = { size: 16, bold: true, color: { argb: 'FF6366F1' } };
-    titleCell.alignment = { horizontal: 'center' };
-
+    rows.push(csvEscape(isArabic ? 'حاسبة المواريث الشرعية — نتائج التقسيم' : 'Islamic Inheritance Calculator — Results'));
     // Estate summary
     var net = document.getElementById('inh-net-value').textContent;
-    ws.getCell('A3').value = isArabic ? 'صافي التركة:' : 'Net Estate:';
-    ws.getCell('A3').font = { bold: true };
-    ws.getCell('B3').value = net;
+    rows.push(csvEscape(isArabic ? 'صافي التركة' : 'Net Estate') + ',' + csvEscape(net));
+    rows.push(''); // empty line
 
     // Headers
     var headers = table.querySelectorAll('th');
-    var headerTexts = [];
-    headers.forEach(function(h) { headerTexts.push(h.textContent.trim()); });
-    var hRow = ws.getRow(5);
-    headerTexts.forEach(function(h, i) {
-      var cell = hRow.getCell(i + 1);
-      cell.value = h;
-      cell.font = { bold: true, color: { argb: 'FFFFFFFF' } };
-      cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF6366F1' } };
-      cell.alignment = { horizontal: 'center' };
-    });
+    var hArr = [];
+    headers.forEach(function(h) { hArr.push(csvEscape(h.textContent.trim())); });
+    rows.push(hArr.join(','));
 
     // Data rows
     var dataRows = table.querySelectorAll('tbody tr');
-    dataRows.forEach(function(row, idx) {
+    dataRows.forEach(function(row) {
       var cells = row.querySelectorAll('td');
-      var r = ws.getRow(6 + idx);
-      cells.forEach(function(c, i) {
-        var cell = r.getCell(i + 1);
-        cell.value = c.textContent.trim().replace(/\s+/g, ' ');
-        if (i === 2) cell.font = { bold: true, color: { argb: 'FF6366F1' } };
-        if (i === 4) cell.alignment = { wrapText: true };
-      });
-      if (idx % 2 === 0) {
-        for (var c = 1; c <= headerTexts.length; c++) {
-          r.getCell(c).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF9FAFB' } };
-        }
-      }
+      var cArr = [];
+      cells.forEach(function(c) { cArr.push(csvEscape(c.textContent)); });
+      rows.push(cArr.join(','));
     });
 
-    // Total row
-    var totalRowNum = 6 + dataRows.length;
-    var totalRow = ws.getRow(totalRowNum);
-    totalRow.getCell(1).value = isArabic ? 'الإجمالي' : 'Total';
-    totalRow.getCell(1).font = { bold: true };
-    totalRow.getCell(3).value = document.getElementById('inh-total-value').textContent;
-    totalRow.getCell(3).font = { bold: true, color: { argb: 'FF6366F1' } };
+    // Total
+    var totalVal = document.getElementById('inh-total-value').textContent;
+    rows.push(csvEscape(isArabic ? 'الإجمالي' : 'Total') + ',,' + csvEscape(totalVal));
 
-    ws.columns = [{ width: 22 }, { width: 14 }, { width: 18 }, { width: 18 }, { width: 40 }];
-
-    var buffer = await workbook.xlsx.writeBuffer();
-    var blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    // BOM for Arabic support in Excel + CSV content
+    var csvContent = '\uFEFF' + rows.join('\n');
+    var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     var link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = isArabic ? 'تقسيم_الميراث.xlsx' : 'inheritance_division.xlsx';
+    link.download = isArabic ? 'تقسيم_الميراث.csv' : 'inheritance_division.csv';
     link.click();
     App.showToast(isArabic ? 'تم التصدير!' : 'Exported!');
   };
