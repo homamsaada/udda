@@ -307,7 +307,7 @@
         <div class="inh-form-group">
           <label>الوصية</label>
           <input type="number" id="inh-wasiyya" min="0" placeholder="0" oninput="inhRecalculate()">
-          <span class="inh-field-hint">الوصية لا تتجاوز ثلث التركة للأجانب (غير الورثة)</span>
+          <span class="inh-field-hint">الوصية لا تتجاوز ثلث التركة، ولا تجوز لوارث إلا بإجازة بقية الورثة</span>
         </div>
       </div>
       <div class="inh-alert-banner warning" id="inh-wasiyya-alert" style="margin-top:12px">
@@ -1533,7 +1533,9 @@
     if (isDynGm(id)) {
       var gmInfo = getGmInfo(id);
       if ((h.mother || 0) > 0) return 'blockedByMother';
-      if (gmInfo.line === 'p' && hasFather && madhab === 'hanafi') return 'blockedByFather';
+      // Paternal grandmothers layer 2+ (أم أب الأب وأعلى): blocked by father in ALL madhabs
+      // because father blocks grandfather, severing the chain
+      if (gmInfo.line === 'p' && hasFather) return 'blockedByFather';
       // Blocked by closer grandmother in same line
       for (var gl = 1; gl < gmInfo.layer; gl++) {
         var closerGm = gl === 1 ? (gmInfo.line === 'p' ? 'paternalGrandmother' : 'maternalGrandmother') : 'dynGm' + gmInfo.line.toUpperCase() + gl;
@@ -1659,7 +1661,20 @@
         else h[id] = state.heirs[id];
       }
     }
-    if (Object.keys(h).length === 0 && Object.keys(arhamH).length === 0) { hideResults(); return; }
+    if (Object.keys(h).length === 0 && Object.keys(arhamH).length === 0) {
+      // No heirs at all — show bayt al-mal if estate exists
+      if (net > 0) {
+        hideResults();
+        var section = document.getElementById('inh-results-section');
+        section.classList.add('show');
+        document.getElementById('inh-no-results').style.display = 'none';
+        document.getElementById('inh-baytmal-alert').classList.add('show');
+        document.getElementById('inh-step4').classList.add('active');
+      } else {
+        hideResults();
+      }
+      return;
+    }
 
     // Determine blocked (regular heirs only)
     var blocked = {};
@@ -2397,22 +2412,34 @@
 
     // Check for Radd (remainder > 0 and no asaba)
     if (remainder > 0 && asaba.length === 0 && !fatherAsabaEntry) {
-      raddInfo = {};
-      // Radd to all fard heirs except spouse (in jumhur/hanafi/maliki/shafii)
-      // Hanbali: include spouse
-      var raddEligible = [];
-      var spouseEntries = [];
-      for (var i = 0; i < fard.length; i++) {
-        var f = fard[i];
-        if (f._skip || f.parts <= 0) continue;
-        if (f.heirId === 'husband' || f.heirId === 'wife') { spouseEntries.push(f); continue; }
-        raddEligible.push(f);
-      }
-      if (raddEligible.length > 0) {
-        var eligibleTotal = 0;
-        for (var i = 0; i < raddEligible.length; i++) eligibleTotal += raddEligible[i].parts;
-        for (var i = 0; i < raddEligible.length; i++) {
-          raddEligible[i].parts += (raddEligible[i].parts / eligibleTotal) * remainder;
+      // Shafi'i: no radd at all — remainder goes to bayt al-mal
+      if (madhab === 'shafii') {
+        // No radd — remainder stays undistributed (bayt al-mal)
+        raddInfo = null;
+      } else {
+        raddInfo = {};
+        var raddEligible = [];
+        var spouseEntries = [];
+        for (var i = 0; i < fard.length; i++) {
+          var f = fard[i];
+          if (f._skip || f.parts <= 0) continue;
+          if (f.heirId === 'husband' || f.heirId === 'wife') { spouseEntries.push(f); continue; }
+          raddEligible.push(f);
+        }
+        if (raddEligible.length > 0) {
+          // Hanafi/Maliki/Jumhur: radd to non-spouse fard heirs only
+          var eligibleTotal = 0;
+          for (var i = 0; i < raddEligible.length; i++) eligibleTotal += raddEligible[i].parts;
+          for (var i = 0; i < raddEligible.length; i++) {
+            raddEligible[i].parts += (raddEligible[i].parts / eligibleTotal) * remainder;
+          }
+        } else if (spouseEntries.length > 0 && madhab === 'hanbali') {
+          // Hanbali: radd to spouse when no other fard heirs exist
+          var spouseTotal = 0;
+          for (var i = 0; i < spouseEntries.length; i++) spouseTotal += spouseEntries[i].parts;
+          for (var i = 0; i < spouseEntries.length; i++) {
+            spouseEntries[i].parts += (spouseEntries[i].parts / spouseTotal) * remainder;
+          }
         }
       }
     }
