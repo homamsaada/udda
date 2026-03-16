@@ -33,13 +33,13 @@
 }
 
 .calc-tab:hover {
-  border-color: var(--primary);
-  color: var(--primary);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
 .calc-tab.active {
-  background: var(--primary);
-  border-color: var(--primary);
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
   color: white;
 }
 
@@ -96,7 +96,7 @@
 
 .form-group input:focus, .form-group select:focus {
   outline: none;
-  border-color: var(--primary);
+  border-color: var(--accent-primary);
 }
 
 .unit-toggle {
@@ -119,8 +119,8 @@
 }
 
 .unit-btn.active {
-  background: var(--primary);
-  border-color: var(--primary);
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
   color: white;
 }
 
@@ -146,9 +146,9 @@
 }
 
 .gender-btn.active {
-  border-color: var(--primary);
+  border-color: var(--accent-primary);
   background: rgba(99, 102, 241, 0.1);
-  color: var(--primary);
+  color: var(--accent-primary);
 }
 
 .gender-btn .icon {
@@ -177,7 +177,7 @@
 .result-number {
   font-size: 3.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--primary), #8b5cf6);
+  background: linear-gradient(135deg, var(--accent-primary), #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -271,7 +271,7 @@
 }
 
 .stat-card.highlight {
-  border: 2px solid var(--primary);
+  border: 2px solid var(--accent-primary);
   background: rgba(99, 102, 241, 0.05);
 }
 
@@ -282,7 +282,7 @@
 }
 
 .stat-card.highlight .value {
-  color: var(--primary);
+  color: var(--accent-primary);
 }
 
 .stat-card .label {
@@ -325,7 +325,7 @@
 .goal-item .number {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--accent-primary);
 }
 
 .goal-item .text {
@@ -362,13 +362,13 @@
 }
 
 .duration-btn:hover {
-  border-color: var(--primary);
+  border-color: var(--accent-primary);
 }
 
 .duration-btn.active {
-  border-color: var(--primary);
+  border-color: var(--accent-primary);
   background: rgba(99, 102, 241, 0.1);
-  color: var(--primary);
+  color: var(--accent-primary);
 }
 
 .duration-btn .dur-num {
@@ -453,7 +453,7 @@
 
 .exercise-card .ex-duration {
   font-size: 0.8rem;
-  color: var(--primary);
+  color: var(--accent-primary);
   font-weight: 600;
 }
 
@@ -545,7 +545,7 @@
 .info-card .value {
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--accent-primary);
   margin-bottom: 4px;
 }
 
@@ -614,13 +614,13 @@
 }
 
 .activity-btn:hover {
-  border-color: var(--primary);
+  border-color: var(--accent-primary);
 }
 
 .activity-btn.active {
-  border-color: var(--primary);
+  border-color: var(--accent-primary);
   background: rgba(99, 102, 241, 0.1);
-  color: var(--primary);
+  color: var(--accent-primary);
 }
 
 .activity-btn .level {
@@ -837,7 +837,7 @@
           <div class="value" id="bmr-value">0</div>
           <p id="bmr-desc"></p>
         </div>
-        <div class="info-card" style="border: 2px solid var(--primary);">
+        <div class="info-card" style="border: 2px solid var(--accent-primary);">
           <h5>⚡ TDEE</h5>
           <div class="value" id="tdee-value">0</div>
           <p id="tdee-desc"></p>
@@ -1333,7 +1333,7 @@ function drawInteractiveChart(current, target, isGain, weeks) {
     pathD += `${i === 0 ? 'M' : 'L'} ${x} ${y}`;
     
     // Add interactive circles
-    circles += `<circle cx="${x}" cy="${y}" r="5" fill="var(--primary)" 
+    circles += `<circle cx="${x}" cy="${y}" r="5" fill="var(--accent-primary)" 
       style="cursor:pointer" 
       onmouseenter="showTooltip(event, ${point.week}, ${point.weight.toFixed(1)})"
       onmouseleave="hideTooltip()"/>`;
@@ -1345,12 +1345,12 @@ function drawInteractiveChart(current, target, isGain, weeks) {
   svg.innerHTML = `
     <defs>
       <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" style="stop-color:var(--primary)"/>
+        <stop offset="0%" style="stop-color:var(--accent-primary)"/>
         <stop offset="100%" style="stop-color:#22c55e"/>
       </linearGradient>
       <linearGradient id="areaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:var(--primary);stop-opacity:0.3"/>
-        <stop offset="100%" style="stop-color:var(--primary);stop-opacity:0"/>
+        <stop offset="0%" style="stop-color:var(--accent-primary);stop-opacity:0.3"/>
+        <stop offset="100%" style="stop-color:var(--accent-primary);stop-opacity:0"/>
       </linearGradient>
     </defs>
     
