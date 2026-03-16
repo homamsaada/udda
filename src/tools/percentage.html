@@ -195,6 +195,22 @@
       <button class="ctrl-btn" onclick="copyResult(12)">📋</button>
     </div>
   </div>
+
+  <!-- Calculator 13: Sequential Discount -->
+  <div class="calc-row-inline">
+    <div class="calc-title">{{tool.calc13Title}}:</div>
+    <span class="calc-label">{{tool.firstDiscount}}</span>
+    <input type="number" class="calc-input-sm" id="calc13-d1" placeholder="20" oninput="calculate(13)">
+    <span class="calc-label">% + {{tool.secondDiscount}}</span>
+    <input type="number" class="calc-input-sm" id="calc13-d2" placeholder="10" oninput="calculate(13)">
+    <span class="calc-label">% = {{tool.totalDiscount}}</span>
+    <span class="calc-result" id="result13">—</span>
+    <div class="result-controls">
+      <button class="ctrl-btn" onclick="adjustPrecision(13, -1)">−</button>
+      <button class="ctrl-btn" onclick="adjustPrecision(13, 1)">+</button>
+      <button class="ctrl-btn" onclick="copyResult(13)">📋</button>
+    </div>
+  </div>
 </div>
 
 <!-- How to Use -->
@@ -342,11 +358,11 @@
 <script>
 // Store raw results and precision for each calculator
 const calcData = {};
-for (let i = 1; i <= 12; i++) {
+for (let i = 1; i <= 13; i++) {
   calcData[i] = { raw: null, precision: null, maxPrecision: 10, isPercent: false, signed: false };
 }
 // Set percent flags
-[2, 3, 7, 8, 11, 12].forEach(i => calcData[i].isPercent = true);
+[2, 3, 7, 8, 11, 12, 13].forEach(i => calcData[i].isPercent = true);
 // Set signed flags
 [3, 7].forEach(i => calcData[i].signed = true);
 
@@ -524,6 +540,14 @@ function calculate(calcId) {
       const part2 = parseFloat(document.getElementById('calc12-part2').value);
       if (!isNaN(part1) && !isNaN(part2) && (part1 + part2) !== 0) {
         result = (part1 / (part1 + part2)) * 100;
+      }
+      break;
+    }
+    case 13: { // Sequential discount
+      const d1 = parseFloat(document.getElementById('calc13-d1').value);
+      const d2 = parseFloat(document.getElementById('calc13-d2').value);
+      if (!isNaN(d1) && !isNaN(d2)) {
+        result = (1 - (1 - d1 / 100) * (1 - d2 / 100)) * 100;
       }
       break;
     }
