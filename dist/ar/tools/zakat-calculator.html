@@ -144,25 +144,34 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Gold price bar */
-.gold-price-bar {
+/* Price bars (gold & silver) */
+.price-bar {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 14px 20px;
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(234, 179, 8, 0.12));
-  border: 1px solid rgba(245, 158, 11, 0.25);
   border-radius: 14px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   flex-wrap: wrap;
 }
 
-.gold-price-bar .gold-icon {
+.price-bar.gold {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(234, 179, 8, 0.12));
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.price-bar.silver {
+  background: linear-gradient(135deg, rgba(148, 163, 184, 0.1), rgba(203, 213, 225, 0.15));
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  margin-bottom: 16px;
+}
+
+.price-bar .bar-icon {
   font-size: 1.3rem;
   flex-shrink: 0;
 }
 
-.gold-price-bar .gold-input-wrap {
+.price-bar .bar-input-wrap {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -170,16 +179,16 @@
   min-width: 200px;
 }
 
-.gold-price-bar .gold-input-wrap label {
+.price-bar .bar-input-wrap label {
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--text-primary);
   white-space: nowrap;
 }
 
-.gold-price-bar .gold-input-wrap input {
+.price-bar .bar-input-wrap input {
   padding: 8px 12px;
-  border: 2px solid rgba(245, 158, 11, 0.3);
+  border: 2px solid var(--border-color);
   border-radius: 8px;
   background: var(--bg-primary);
   color: var(--text-primary);
@@ -189,12 +198,25 @@
   transition: border-color var(--transition-fast);
 }
 
-.gold-price-bar .gold-input-wrap input:focus {
+.price-bar.gold .bar-input-wrap input {
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.price-bar.gold .bar-input-wrap input:focus {
   outline: none;
   border-color: #f59e0b;
 }
 
-.gold-price-bar .gold-link {
+.price-bar.silver .bar-input-wrap input {
+  border-color: rgba(148, 163, 184, 0.4);
+}
+
+.price-bar.silver .bar-input-wrap input:focus {
+  outline: none;
+  border-color: #94a3b8;
+}
+
+.price-bar .bar-link {
   font-size: 0.8rem;
   color: var(--primary);
   text-decoration: none;
@@ -206,7 +228,7 @@
   transition: opacity var(--transition-fast);
 }
 
-.gold-price-bar .gold-link:hover {
+.price-bar .bar-link:hover {
   opacity: 0.8;
   text-decoration: underline;
 }
@@ -503,11 +525,11 @@
     flex-direction: column;
   }
 
-  .gold-price-bar {
+  .price-bar {
     padding: 12px 14px;
   }
 
-  .gold-price-bar .gold-input-wrap input {
+  .price-bar .bar-input-wrap input {
     width: 100px;
   }
 }
@@ -515,13 +537,23 @@
 
 <div class="zakat-calculator">
   <!-- Gold price input -->
-  <div class="gold-price-bar">
-    <span class="gold-icon">🥇</span>
-    <div class="gold-input-wrap">
+  <div class="price-bar gold">
+    <span class="bar-icon">🥇</span>
+    <div class="bar-input-wrap">
       <label>سعر جرام الذهب عيار 24</label>
       <input type="number" id="gold-price-global" placeholder="0" step="0.01" oninput="calculateComprehensive()">
     </div>
-    <a class="gold-link" href="https://www.goldprice.org" target="_blank" rel="noopener noreferrer">سعر الذهب اليوم ↗</a>
+    <a class="bar-link" href="https://www.goldprice.org" target="_blank" rel="noopener noreferrer">سعر الذهب اليوم ↗</a>
+  </div>
+
+  <!-- Silver price input -->
+  <div class="price-bar silver">
+    <span class="bar-icon">🥈</span>
+    <div class="bar-input-wrap">
+      <label>سعر جرام الفضة عيار 999</label>
+      <input type="number" id="silver-price-global" placeholder="0" step="0.01" oninput="calculateComprehensive()">
+    </div>
+    <a class="bar-link" href="https://www.silverprice.org" target="_blank" rel="noopener noreferrer">سعر الفضة اليوم ↗</a>
   </div>
 
   <!-- Currency note -->
@@ -558,9 +590,9 @@
         <div class="form-group">
           <label>العيار</label>
           <select id="comp-gold-karat" onchange="calculateComprehensive()">
-            <option value="24">24K</option>
+            <option value="24" selected>24K</option>
             <option value="22">22K</option>
-            <option value="21" selected>21K</option>
+            <option value="21">21K</option>
             <option value="18">18K</option>
           </select>
         </div>
@@ -574,8 +606,13 @@
           <input type="number" id="comp-silver-weight" placeholder="0" oninput="calculateComprehensive()">
         </div>
         <div class="form-group">
-          <label>سعر جرام الفضة <span class="optional-badge">(اختياري)</span></label>
-          <input type="number" id="comp-silver-price" placeholder="0" step="0.01" oninput="calculateComprehensive()">
+          <label>العيار</label>
+          <select id="comp-silver-karat" onchange="calculateComprehensive()">
+            <option value="999" selected>999 (فضة خالصة)</option>
+            <option value="925">925 (Sterling)</option>
+            <option value="900">900</option>
+            <option value="800">800</option>
+          </select>
         </div>
       </div>
 
@@ -762,7 +799,8 @@
     var goldWeight = parseFloat(document.getElementById('comp-gold-weight').value) || 0;
     var goldKarat = parseInt(document.getElementById('comp-gold-karat').value) || 24;
     var silverWeight = parseFloat(document.getElementById('comp-silver-weight').value) || 0;
-    var silverPrice = parseFloat(document.getElementById('comp-silver-price').value) || 0;
+    var silverKarat = parseInt(document.getElementById('comp-silver-karat').value) || 999;
+    var silverPrice = parseFloat(document.getElementById('silver-price-global').value) || 0;
     var tradeGoods = parseFloat(document.getElementById('comp-trade').value) || 0;
     var stocksValue = parseFloat(document.getElementById('comp-stocks').value) || 0;
     var dividends = parseFloat(document.getElementById('comp-dividends').value) || 0;
@@ -776,7 +814,8 @@
     var goldValue = pureGoldWeight * goldPrice;
 
     // Calculate silver value in money
-    var silverValue = silverWeight * silverPrice;
+    var pureSilverWeight = silverWeight * (silverKarat / 999);
+    var silverValue = pureSilverWeight * silverPrice;
 
     // Calculate stocks zakatable amount based on type
     var stocksZakatable;
