@@ -191,9 +191,7 @@ function buildPageHTML(lang, options) {
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${basePath}assets/css/main.css">
 
-  <!-- Google AdSense -->
-  <!-- TODO: Replace ca-pub-XXXXXXXXXXXXXXXX with your AdSense Publisher ID -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <!-- Ad Placeholders (replace with Google AdSense when ready) -->
   
   <script type="application/ld+json">
   {
@@ -251,18 +249,10 @@ function buildPageHTML(lang, options) {
         <aside class="ad-sidebar">
           <div class="ad-sticky">
             <div class="ad-unit">
-              <ins class="adsbygoogle"
-                style="display:inline-block;width:300px;height:250px"
-                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                data-ad-slot="XXXXXXXXXX"></ins>
-              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+              <img src="${basePath}assets/images/ads/ad-sidebar-300x250.png" width="300" height="250" alt="Ad" style="display:block;border-radius:0;">
             </div>
             <div class="ad-unit">
-              <ins class="adsbygoogle"
-                style="display:inline-block;width:300px;height:250px"
-                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                data-ad-slot="XXXXXXXXXX"></ins>
-              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+              <img src="${basePath}assets/images/ads/ad-sidebar-300x250.png" width="300" height="250" alt="Ad" style="display:block;border-radius:0;">
             </div>
           </div>
         </aside>
@@ -327,11 +317,7 @@ function buildPageHTML(lang, options) {
   <!-- Mobile Bottom Sticky Ad - 320x50 Mobile Banner -->
   <div class="ad-bottom-sticky">
     <div class="ad-bottom-unit">
-      <ins class="adsbygoogle"
-        style="display:inline-block;width:320px;height:50px"
-        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-        data-ad-slot="XXXXXXXXXX"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      <img src="${basePath}assets/images/ads/ad-mobile-320x50.png" width="320" height="50" alt="Ad" style="display:block;border-radius:0;">
     </div>
   </div>
 
@@ -379,14 +365,7 @@ function buildHomepage(lang) {
   
   const adBannerHTML = `
     <div class="ad-banner">
-      <!-- TODO: Replace data-ad-client and data-ad-slot with your values -->
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-        data-ad-slot="XXXXXXXXXX"
-        data-ad-format="horizontal"
-        data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      <img src="${basePath}assets/images/ads/ad-banner-728x90.png" width="728" height="90" alt="Ad" style="display:block;max-width:100%;height:auto;margin:0 auto;border-radius:0;">
     </div>`;
 
   const content = `
