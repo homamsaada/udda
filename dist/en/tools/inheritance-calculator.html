@@ -164,6 +164,16 @@
   border-bottom: 1px solid var(--border-color); transition: opacity var(--transition-fast);
 }
 .inh-heir-row:last-child { border-bottom: none; }
+.inh-add-layer-btn {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  width: 100%; padding: 10px; margin-top: 8px; border: 2px dashed var(--border-color);
+  border-radius: 10px; background: transparent; color: var(--text-secondary);
+  font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all var(--transition-fast);
+  font-family: inherit;
+}
+.inh-add-layer-btn:hover { border-color: var(--accent-primary); color: var(--accent-primary); background: rgba(99,102,241,0.04); }
+.inh-add-layer-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.inh-add-layer-btn:disabled:hover { border-color: var(--border-color); color: var(--text-muted); background: transparent; }
 .inh-heir-row.disabled { opacity: 0.4; cursor: not-allowed; }
 .inh-heir-row.disabled * { pointer-events: none; }
 .inh-heir-checkbox { width: 20px; height: 20px; accent-color: var(--accent-primary); cursor: pointer; flex-shrink: 0; }
@@ -429,6 +439,8 @@
                 <button onclick="inhChangeCount('sonsSonsDaughters',1)">+</button>
               </div>
             </div>
+            <div id="inh-dyn-desc-anchor"></div>
+            <button class="inh-add-layer-btn" id="inh-add-desc-layer" onclick="inhAddLayer('descendants')">➕ Add deeper layer</button>
           </div>
         </div>
 
@@ -463,6 +475,8 @@
               <span class="inh-heir-name">Maternal Grandmother</span>
               <span class="inh-heir-tooltip"></span>
             </div>
+            <div id="inh-dyn-asc-anchor"></div>
+            <button class="inh-add-layer-btn" id="inh-add-asc-layer" onclick="inhAddLayer('ascendants')">➕ Add deeper layer</button>
           </div>
         </div>
 
@@ -661,6 +675,8 @@
                 <button onclick="inhChangeCount('fatherPaternalUnclesSons',1)">+</button>
               </div>
             </div>
+            <div id="inh-dyn-ext-anchor"></div>
+            <button class="inh-add-layer-btn" id="inh-add-ext-layer" onclick="inhAddLayer('extended')">➕ Add deeper layer</button>
           </div>
         </div>
 
@@ -1142,6 +1158,175 @@
   };
 
   function isArham(id) { return ARHAM_IDS.indexOf(id) >= 0; }
+
+  /* ── Dynamic Layers ── */
+  var MAX_LAYERS = 7;
+  var dynState = {
+    descDepth: 2,  // layers 0,1,2 exist (sons=0, sonsSons=1, sonsSonsSons=2)
+    gfDepth: 1,    // layer 1 = paternalGrandfather
+    gmPDepth: 1,   // paternal grandmother layer 1
+    gmMDepth: 1,   // maternal grandmother layer 1
+    extStage: 0    // how many extra ext pairs added
+  };
+
+  // Map existing heir IDs to their layer info
+  function getDescInfo(id) {
+    switch(id) {
+      case 'sons': return { layer:0, gender:'m' };
+      case 'daughters': return { layer:0, gender:'f' };
+      case 'sonsSons': return { layer:1, gender:'m' };
+      case 'sonsDaughters': return { layer:1, gender:'f' };
+      case 'sonsSonsSons': return { layer:2, gender:'m' };
+      case 'sonsSonsDaughters': return { layer:2, gender:'f' };
+    }
+    if (id.indexOf('dynDescM') === 0) return { layer: parseInt(id.slice(8)), gender:'m' };
+    if (id.indexOf('dynDescF') === 0) return { layer: parseInt(id.slice(8)), gender:'f' };
+    return null;
+  }
+
+  function getGfLayer(id) {
+    if (id === 'father') return 0;
+    if (id === 'paternalGrandfather') return 1;
+    if (id.indexOf('dynGf') === 0) return parseInt(id.slice(5));
+    return -1;
+  }
+
+  function getGmInfo(id) {
+    if (id === 'paternalGrandmother') return { layer:1, line:'p' };
+    if (id === 'maternalGrandmother') return { layer:1, line:'m' };
+    if (id.indexOf('dynGmP') === 0) return { layer: parseInt(id.slice(6)), line:'p' };
+    if (id.indexOf('dynGmM') === 0) return { layer: parseInt(id.slice(6)), line:'m' };
+    return null;
+  }
+
+  function isDynDesc(id) { return id.indexOf('dynDesc') === 0; }
+  function isDynGf(id) { return id.indexOf('dynGf') === 0; }
+  function isDynGm(id) { return id.indexOf('dynGm') === 0; }
+  function isDynExt(id) { return id.indexOf('dynExt') === 0; }
+  function isDynamic(id) { return isDynDesc(id) || isDynGf(id) || isDynGm(id) || isDynExt(id); }
+
+  // Dynamic extended agnate order (appended to static extOrder)
+  var dynExtOrder = [];
+
+  // Name generators
+  function genDescName(layer, gender) {
+    if (isArabic) {
+      var prefix = gender === 'm' ? 'أبناء' : 'بنات';
+      if (layer === 0) return gender === 'm' ? 'الأبناء (ذكور)' : 'البنات';
+      var mid = '';
+      for (var i = 1; i < layer; i++) mid += ' ابن';
+      return prefix + mid + ' الابن';
+    } else {
+      if (layer === 0) return gender === 'm' ? 'Sons' : 'Daughters';
+      var chain = '';
+      for (var i = 0; i < layer; i++) chain += "Son's ";
+      return chain + (gender === 'm' ? 'Sons' : 'Daughters');
+    }
+  }
+
+  function genGfName(layer) {
+    if (isArabic) {
+      if (layer === 1) return 'الجد (أبو الأب)';
+      // layer 2: أبو الجد, layer 3: أبو أبو الجد
+      var s = 'الجد';
+      for (var i = 1; i < layer; i++) s = 'أبو ' + s;
+      return s;
+    } else {
+      if (layer === 1) return 'Paternal Grandfather';
+      var prefix = '';
+      for (var i = 2; i < layer; i++) prefix += 'Great-';
+      return prefix + 'Great-Grandfather';
+    }
+  }
+
+  function genGmName(layer, line) {
+    if (isArabic) {
+      if (line === 'p') {
+        // paternal line: أم أب الأب (layer 2), أم أب أب الأب (layer 3)
+        var s = 'أم';
+        for (var i = 1; i < layer; i++) s += ' أب';
+        return s + ' الأب';
+      } else {
+        // maternal line: أم أم الأم (layer 2), أم أم أم الأم (layer 3)
+        var s = 'أم';
+        for (var i = 1; i < layer; i++) s += ' أم';
+        return s + ' الأم';
+      }
+    } else {
+      if (line === 'p') {
+        var prefix = '';
+        for (var i = 2; i < layer; i++) prefix += 'Great-';
+        return prefix + 'Great-Grandmother (paternal)';
+      } else {
+        var prefix = '';
+        for (var i = 2; i < layer; i++) prefix += 'Great-';
+        return prefix + 'Great-Grandmother (maternal)';
+      }
+    }
+  }
+
+  // Extended agnate generation stages
+  // Each stage adds a full+paternal pair. Stages continue the priority order.
+  // Stage 0: gfFullUncles (grandfather's full uncles) + gfPatUncles
+  // Stage 1: gfFullUnclesSons + gfPatUnclesSons
+  // Stage 2: ggfFullUncles (great-grandfather) + ggfPatUncles
+  // Stage 3: ggfFullUnclesSons + ggfPatUnclesSons
+  // Pattern: ancestorLevel starts at 3 (grandfather=level 2 already exists),
+  //   each level has 2 stages: uncles, then uncle's sons
+  function genExtNames(stage) {
+    // stage 0,1 → grandfather level (ancestor layer 2)
+    // stage 2,3 → great-grandfather level (ancestor layer 3)
+    // stage 4,5 → great-great-grandfather (ancestor layer 4)
+    var ancestorLayer = 2 + Math.floor(stage / 2);
+    var isSons = stage % 2 === 1;
+    if (isArabic) {
+      var ancestor = 'الجد';
+      for (var i = 2; i < ancestorLayer; i++) ancestor = 'أبو ' + ancestor;
+      if (isSons) {
+        return {
+          full: 'أبناء عم ' + ancestor + ' الشقيق',
+          pat: 'أبناء عم ' + ancestor + ' لأب'
+        };
+      } else {
+        return {
+          full: 'أعمام ' + ancestor + ' الأشقاء',
+          pat: 'أعمام ' + ancestor + ' لأب'
+        };
+      }
+    } else {
+      var ancestor = 'Grandfather';
+      for (var i = 2; i < ancestorLayer; i++) ancestor = 'Great-' + ancestor;
+      if (isSons) {
+        return {
+          full: ancestor + "'s Full Uncle's Sons",
+          pat: ancestor + "'s Paternal Uncle's Sons"
+        };
+      } else {
+        return {
+          full: ancestor + "'s Full Uncles",
+          pat: ancestor + "'s Paternal Uncles"
+        };
+      }
+    }
+  }
+
+  // Create an heir row HTML element
+  function createHeirRow(heirId, name, maxCount) {
+    var row = document.createElement('div');
+    row.className = 'inh-heir-row';
+    row.setAttribute('data-heir', heirId);
+    if (maxCount > 1) row.setAttribute('data-max', maxCount);
+    var hasCounter = maxCount > 1;
+    row.innerHTML = '<input type="checkbox" class="inh-heir-checkbox" onchange="inhToggleHeir(\'' + heirId + '\',this)">'
+      + '<span class="inh-heir-name">' + name + '</span>'
+      + '<span class="inh-heir-tooltip"></span>'
+      + (hasCounter ? '<div class="inh-counter" style="display:none">'
+        + '<button onclick="inhChangeCount(\'' + heirId + '\',-1)">−</button>'
+        + '<span class="inh-counter-value" data-heir="' + heirId + '">1</span>'
+        + '<button onclick="inhChangeCount(\'' + heirId + '\',1)">+</button>'
+        + '</div>' : '');
+    return row;
+  }
   var blockTexts = {
     blockedByFather: 'Blocked by father', blockedByMother: 'Blocked by mother',
     blockedBySon: 'Blocked by son', blockedByDescendant: 'Blocked by inheriting descendant',
@@ -1163,6 +1348,14 @@
     var hasGF = (h.paternalGrandfather || 0) > 0;
     var hasMaleDesc = hasSon || hasSonsSon || hasSonsSonsSon;
     var hasFemaleDesc = (h.daughters || 0) > 0 || (h.sonsDaughters || 0) > 0 || (h.sonsSonsDaughters || 0) > 0;
+    // Check dynamic layers
+    for (var dl = 3; dl <= dynState.descDepth; dl++) {
+      if ((h['dynDescM' + dl] || 0) > 0) hasMaleDesc = true;
+      if ((h['dynDescF' + dl] || 0) > 0) hasFemaleDesc = true;
+    }
+    for (var gl = 2; gl <= dynState.gfDepth; gl++) {
+      if ((h['dynGf' + gl] || 0) > 0) hasGF = true;
+    }
     var hasDesc = hasMaleDesc || hasFemaleDesc;
     // Full sisters become asaba with female descendants (asaba ma'a al-ghayr),
     // and in that role they block like full brothers
@@ -1286,6 +1479,81 @@
         if (hasCloserExt(['paternalGrandfather','fullBrothers','_fsa','paternalBrothers','fullBrothersSons','paternalBrothersSons','fullBrothersSonsSons','paternalBrothersSonsSons','fullPaternalUncles','paternalUnclesFromFather','fullPaternalUnclesSons','paternalUnclesSonsFromFather','fatherFullUncles','fatherPaternalUncles','fatherFullUnclesSons'])) return 'blockedByCloserAsaba';
         return null;
     }
+
+    // Dynamic descendants — generic layer-based blocking
+    var descInfo = getDescInfo(id);
+    if (descInfo && descInfo.layer >= 3) {
+      var layer = descInfo.layer;
+      // Male at this layer: blocked by any male at layer < this
+      // Female at this layer: blocked by any male at layer < this,
+      //   OR blocked if 2/3 filled from above and no male at this layer or below
+      for (var dl = 0; dl < layer; dl++) {
+        var mIdAtLayer = dl === 0 ? 'sons' : (dl === 1 ? 'sonsSons' : (dl === 2 ? 'sonsSonsSons' : 'dynDescM' + dl));
+        if ((h[mIdAtLayer] || 0) > 0) {
+          return dl === 0 ? 'blockedBySon' : 'blockedByCloserAsaba';
+        }
+      }
+      if (descInfo.gender === 'f') {
+        // Check if 2/3 is filled from above
+        var hasMaleAtOrBelow = false;
+        for (var dl = layer; dl <= dynState.descDepth; dl++) {
+          var mIdCheck = dl === 0 ? 'sons' : (dl === 1 ? 'sonsSons' : (dl === 2 ? 'sonsSonsSons' : 'dynDescM' + dl));
+          if ((h[mIdCheck] || 0) > 0) { hasMaleAtOrBelow = true; break; }
+        }
+        if (!hasMaleAtOrBelow) {
+          // Count female slots used above
+          var femaleSlots = 0;
+          for (var dl = 0; dl < layer; dl++) {
+            var fIdAbove = dl === 0 ? 'daughters' : (dl === 1 ? 'sonsDaughters' : (dl === 2 ? 'sonsSonsDaughters' : 'dynDescF' + dl));
+            if ((h[fIdAbove] || 0) >= 2) { femaleSlots = 2; break; }
+            if ((h[fIdAbove] || 0) >= 1) femaleSlots++;
+          }
+          if (femaleSlots >= 2) return 'blockedByTwoDaughters';
+        }
+      }
+      return null;
+    }
+
+    // Dynamic grandfathers — blocked by closer grandfather
+    if (isDynGf(id)) {
+      var gfLayer = getGfLayer(id);
+      if (hasFather) return 'blockedByFather';
+      // Blocked by closer grandfather
+      for (var gl = 1; gl < gfLayer; gl++) {
+        var closerGf = gl === 1 ? 'paternalGrandfather' : 'dynGf' + gl;
+        if ((h[closerGf] || 0) > 0) return 'blockedByCloserAsaba';
+      }
+      return null;
+    }
+
+    // Dynamic grandmothers — blocked by mother or closer grandmother in same line
+    if (isDynGm(id)) {
+      var gmInfo = getGmInfo(id);
+      if ((h.mother || 0) > 0) return 'blockedByMother';
+      if (gmInfo.line === 'p' && hasFather && madhab === 'hanafi') return 'blockedByFather';
+      // Blocked by closer grandmother in same line
+      for (var gl = 1; gl < gmInfo.layer; gl++) {
+        var closerGm = gl === 1 ? (gmInfo.line === 'p' ? 'paternalGrandmother' : 'maternalGrandmother') : 'dynGm' + gmInfo.line.toUpperCase() + gl;
+        if ((h[closerGm] || 0) > 0) return 'blockedByCloserAsaba';
+      }
+      return null;
+    }
+
+    // Dynamic extended agnates — blocked by all preceding ext in order
+    if (isDynExt(id)) {
+      if (hasFather) return 'blockedByFather';
+      if (hasMaleDesc) return 'blockedByDescendant';
+      // Check static extOrder first
+      var staticExt = ['paternalGrandfather','fullBrothers','_fsa','paternalBrothers','fullBrothersSons','paternalBrothersSons','fullBrothersSonsSons','paternalBrothersSonsSons','fullPaternalUncles','paternalUnclesFromFather','fullPaternalUnclesSons','paternalUnclesSonsFromFather','fatherFullUncles','fatherPaternalUncles','fatherFullUnclesSons','fatherPaternalUnclesSons'];
+      if (hasCloserExt(staticExt)) return 'blockedByCloserAsaba';
+      // Check dynamic ext order before this one
+      for (var di = 0; di < dynExtOrder.length; di++) {
+        if (dynExtOrder[di] === id) break;
+        if ((h[dynExtOrder[di]] || 0) > 0) return 'blockedByCloserAsaba';
+      }
+      return null;
+    }
+
     return null;
   }
 
@@ -1480,6 +1748,11 @@
     showResults(shares.results, blocked, shares.awl, shares.radd, net, shares.akdariyyah);
   }
 
+  // Helper to get male/female descendant IDs at a given layer
+  function descMId(layer) { return layer === 0 ? 'sons' : layer === 1 ? 'sonsSons' : layer === 2 ? 'sonsSonsSons' : 'dynDescM' + layer; }
+  function descFId(layer) { return layer === 0 ? 'daughters' : layer === 1 ? 'sonsDaughters' : layer === 2 ? 'sonsSonsDaughters' : 'dynDescF' + layer; }
+  function gfId(layer) { return layer === 0 ? 'father' : layer === 1 ? 'paternalGrandfather' : 'dynGf' + layer; }
+
   function assignShares(a, madhab, blocked, originalHeirs) {
     var hasSon = (a.sons||0) > 0;
     var hasSonsSon = (a.sonsSons||0) > 0;
@@ -1489,10 +1762,27 @@
     var hasSonsDaughter = (a.sonsDaughters||0) > 0;
     var hasSonsSonsDaughter = (a.sonsSonsDaughters||0) > 0;
     var hasFemaleDesc = hasDaughter || hasSonsDaughter || hasSonsSonsDaughter;
+    // Check dynamic descendant layers too
+    for (var dl = 3; dl <= dynState.descDepth; dl++) {
+      if ((a['dynDescM' + dl] || 0) > 0) hasMaleDesc = true;
+      if ((a['dynDescF' + dl] || 0) > 0) hasFemaleDesc = true;
+    }
     var hasDesc = hasMaleDesc || hasFemaleDesc;
     var hasFather = (a.father||0) > 0;
     var hasMother = (a.mother||0) > 0;
     var hasGF = (a.paternalGrandfather||0) > 0;
+    // Check dynamic grandfathers too
+    for (var gl = 2; gl <= dynState.gfDepth; gl++) {
+      if ((a['dynGf' + gl] || 0) > 0) hasGF = true;
+    }
+    // Find the active (lowest-layer, closest) grandfather
+    var activeGfLayer = -1;
+    if ((a.paternalGrandfather || 0) > 0) activeGfLayer = 1;
+    else {
+      for (var gl = 2; gl <= dynState.gfDepth; gl++) {
+        if ((a['dynGf' + gl] || 0) > 0) { activeGfLayer = gl; break; }
+      }
+    }
     // Use ORIGINAL heirs (before blocking) for mother's hajb nuqsan —
     // siblings block mother from 1/3 to 1/6 even if they themselves are blocked by father
     var oh = originalHeirs || a;
@@ -1554,6 +1844,56 @@
       }
     }
 
+    // ── DYNAMIC DESCENDANT LAYERS (3+) ──
+    for (var dl = 3; dl <= dynState.descDepth; dl++) {
+      var dMId = 'dynDescM' + dl;
+      var dFId = 'dynDescF' + dl;
+      var hasMaleHere = (a[dMId] || 0) > 0;
+      var hasFemaleHere = (a[dFId] || 0) > 0;
+      if (!hasMaleHere && !hasFemaleHere) continue;
+
+      // Check if there's a male at any layer below (that could make this female asaba)
+      var hasMaleBelow = false;
+      for (var bl = dl + 1; bl <= dynState.descDepth; bl++) {
+        if ((a['dynDescM' + bl] || 0) > 0) { hasMaleBelow = true; break; }
+      }
+
+      // Check if male at ANY layer above
+      var hasMaleAbove = false;
+      for (var al = 0; al < dl; al++) {
+        if ((a[descMId(al)] || 0) > 0) { hasMaleAbove = true; break; }
+      }
+      if (hasMaleAbove) continue; // blocked — shouldn't be in 'a' but safety
+
+      if (hasMaleHere) {
+        // Male at this layer: asaba. Handle with asaba section below.
+        // (will be picked up by the dynamic asaba loop)
+      } else if (hasFemaleHere) {
+        if (hasMaleBelow) {
+          // Will become asaba with lower male — handled in asaba section
+        } else {
+          // Count 2/3 usage from above
+          var aboveFemaleSlots = 0;
+          var anyFemaleAbove = false;
+          for (var al = 0; al < dl; al++) {
+            var fAbove = (a[descFId(al)] || 0);
+            if (fAbove >= 2) { aboveFemaleSlots = 2; break; }
+            if (fAbove >= 1) { aboveFemaleSlots++; anyFemaleAbove = true; }
+          }
+          if (aboveFemaleSlots >= 2) {
+            // 2/3 filled, nothing (should be blocked)
+          } else if (!anyFemaleAbove) {
+            // No females above — sole or multiple
+            var rk = a[dFId] === 1 ? 'reasonSonDaughterHalf' : 'reasonSonDaughtersTwoThirds';
+            fard.push({ heirId: dFId, count: a[dFId], num: a[dFId] === 1 ? 1 : 2, den: a[dFId] === 1 ? 2 : 3, type:'fard', reasonKey: rk });
+          } else {
+            // Some females above, 2/3 not filled — 1/6 completion
+            fard.push({ heirId: dFId, count: a[dFId], num: 1, den: 6, type:'fard', reasonKey:'reasonSonDaughterSixth' });
+          }
+        }
+      }
+    }
+
     // ── FATHER ──
     if (hasFather) {
       if (hasMaleDesc) fard.push({ heirId:'father', count:1, num:1, den:6, type:'fard', reasonKey:'reasonFatherSixth' });
@@ -1578,33 +1918,37 @@
       }
     }
 
-    // ── GRANDMOTHERS ──
-    var hasPGM = (a.paternalGrandmother||0)>0;
-    var hasMGM = (a.maternalGrandmother||0)>0;
-    if (hasPGM && hasMGM) {
-      // Share 1/6 — each gets 1/12
-      fard.push({ heirId:'paternalGrandmother', count:1, num:1, den:12, type:'fard', reasonKey:'reasonGrandmotherSixth' });
-      fard.push({ heirId:'maternalGrandmother', count:1, num:1, den:12, type:'fard', reasonKey:'reasonGrandmotherSixth' });
-    } else if (hasPGM) {
-      fard.push({ heirId:'paternalGrandmother', count:1, num:1, den:6, type:'fard', reasonKey:'reasonGrandmotherSixth' });
-    } else if (hasMGM) {
-      fard.push({ heirId:'maternalGrandmother', count:1, num:1, den:6, type:'fard', reasonKey:'reasonGrandmotherSixth' });
+    // ── GRANDMOTHERS (including dynamic layers) ──
+    // Collect all active grandmothers — they all share 1/6
+    var activeGrandmothers = [];
+    if ((a.paternalGrandmother||0) > 0) activeGrandmothers.push('paternalGrandmother');
+    if ((a.maternalGrandmother||0) > 0) activeGrandmothers.push('maternalGrandmother');
+    for (var gl = 2; gl <= Math.max(dynState.gmPDepth, dynState.gmMDepth); gl++) {
+      if ((a['dynGmP' + gl] || 0) > 0) activeGrandmothers.push('dynGmP' + gl);
+      if ((a['dynGmM' + gl] || 0) > 0) activeGrandmothers.push('dynGmM' + gl);
+    }
+    if (activeGrandmothers.length === 1) {
+      fard.push({ heirId:activeGrandmothers[0], count:1, num:1, den:6, type:'fard', reasonKey:'reasonGrandmotherSixth' });
+    } else if (activeGrandmothers.length > 1) {
+      var gmDen = 6 * activeGrandmothers.length;
+      for (var gi = 0; gi < activeGrandmothers.length; gi++) {
+        fard.push({ heirId:activeGrandmothers[gi], count:1, num:1, den:gmDen, type:'fard', reasonKey:'reasonGrandmotherSixth' });
+      }
     }
 
-    // ── GRANDFATHER ──
+    // ── GRANDFATHER (static or dynamic — use closest active) ──
     if (hasGF && !hasFather) {
+      var activeGfId = activeGfLayer === 1 ? 'paternalGrandfather' : 'dynGf' + activeGfLayer;
       var sibForGF = (a.fullBrothers||0)+(a.fullSisters||0)+(a.paternalBrothers||0)+(a.paternalSisters||0);
       if (madhab === 'hanafi' || sibForGF === 0) {
-        // Treat like father
-        if (hasMaleDesc) fard.push({ heirId:'paternalGrandfather', count:1, num:1, den:6, type:'fard', reasonKey:'reasonGrandfatherSixth' });
-        else if (hasFemaleDesc) fard.push({ heirId:'paternalGrandfather', count:1, num:1, den:6, type:'fardAndTasib', reasonKey:'reasonGrandfatherSixthPlusRemainder', special:'gfAsaba' });
-        else asaba.push({ heirId:'paternalGrandfather', count:1, reasonKey:'reasonGrandfatherRemainder' });
+        if (hasMaleDesc) fard.push({ heirId:activeGfId, count:1, num:1, den:6, type:'fard', reasonKey:'reasonGrandfatherSixth' });
+        else if (hasFemaleDesc) fard.push({ heirId:activeGfId, count:1, num:1, den:6, type:'fardAndTasib', reasonKey:'reasonGrandfatherSixthPlusRemainder', special:'gfAsaba' });
+        else asaba.push({ heirId:activeGfId, count:1, reasonKey:'reasonGrandfatherRemainder' });
       } else {
-        // Non-Hanafi with siblings — special handling
         if (hasMaleDesc) {
-          fard.push({ heirId:'paternalGrandfather', count:1, num:1, den:6, type:'fard', reasonKey:'reasonGrandfatherSixth' });
+          fard.push({ heirId:activeGfId, count:1, num:1, den:6, type:'fard', reasonKey:'reasonGrandfatherSixth' });
         } else {
-          fard.push({ heirId:'paternalGrandfather', count:1, num:0, den:0, type:'fardAndTasib', reasonKey:'reasonGrandfatherWithSiblings', special:'gfWithSiblings' });
+          fard.push({ heirId:activeGfId, count:1, num:0, den:0, type:'fardAndTasib', reasonKey:'reasonGrandfatherWithSiblings', special:'gfWithSiblings' });
         }
       }
     }
@@ -1660,16 +2004,13 @@
     if (hasSonsSonsSon && !hasSon && !hasSonsSon) {
       // Son's son's son makes females at his level AND above (sonsDaughters, sonsSonsDaughters) asaba
       var sssFemaleSame = (a.sonsSonsDaughters||0);
-      // Also makes sonsDaughters asaba if they didn't get fard (i.e., 2/3 was filled or they were waiting for a male)
       var sssFemaleAbove = (a.sonsDaughters||0);
       var totalFemaleWithSSS = sssFemaleSame + sssFemaleAbove;
       if (totalFemaleWithSSS > 0) {
-        // Group all females being made asaba with the male
         asaba.push({ heirId:'sonsSonsSons', count:a.sonsSonsSons, reasonKey:'reasonSonSonDaughtersWithSonSonSons', withFemale: sssFemaleAbove > 0 ? 'sonsDaughters' : 'sonsSonsDaughters', femaleCount: totalFemaleWithSSS, extraFemales: sssFemaleAbove > 0 && sssFemaleSame > 0 ? [{heirId:'sonsSonsDaughters',count:sssFemaleSame}] : (sssFemaleAbove > 0 ? [] : []) });
       } else {
         asaba.push({ heirId:'sonsSonsSons', count:a.sonsSonsSons, reasonKey:'reasonAsaba' });
       }
-      // Remove son's daughters from fard if they were added (the male below makes them asaba instead)
       if (sssFemaleAbove > 0) {
         fard = fard.filter(function(f) { return f.heirId !== 'sonsDaughters'; });
       }
@@ -1677,6 +2018,59 @@
         fard = fard.filter(function(f) { return f.heirId !== 'sonsSonsDaughters'; });
       }
     }
+
+    // ── DYNAMIC DESCENDANT ASABA (layer 3+) ──
+    // Find the first (closest) dynamic male descendant layer with no male above
+    for (var dl = 3; dl <= dynState.descDepth; dl++) {
+      var dMId = 'dynDescM' + dl;
+      var dFId = 'dynDescF' + dl;
+      if ((a[dMId] || 0) <= 0) continue;
+      // Ensure no male above this layer
+      var maleAbove = false;
+      for (var al = 0; al < dl; al++) {
+        if ((a[descMId(al)] || 0) > 0) { maleAbove = true; break; }
+      }
+      if (maleAbove) break; // higher male takes everything
+
+      // This is the active male descendant — collects females at and above him
+      var femalesSame = (a[dFId] || 0);
+      var extraFemales = [];
+      var totalF = femalesSame;
+      // Check layers above for females waiting to become asaba
+      for (var fl = dl - 1; fl >= 0; fl--) {
+        var fAbove = (a[descFId(fl)] || 0);
+        if (fAbove > 0) {
+          // Check if this female was added to fard — if so, remove and make asaba
+          var fAboveId = descFId(fl);
+          fard = fard.filter(function(f) { return f.heirId !== fAboveId; });
+          if (fl < dl - 1 || femalesSame === 0) {
+            extraFemales.push({ heirId: fAboveId, count: fAbove });
+          }
+          totalF += fAbove;
+        }
+      }
+      if (femalesSame > 0) {
+        fard = fard.filter(function(f) { return f.heirId !== dFId; });
+      }
+
+      if (totalF > 0) {
+        var primaryFemaleId = femalesSame > 0 ? dFId : (extraFemales.length > 0 ? extraFemales.shift().heirId : dFId);
+        var primaryFemaleCount = femalesSame > 0 ? femalesSame : 0;
+        // Recalculate
+        if (femalesSame > 0) {
+          asaba.push({ heirId:dMId, count:a[dMId], reasonKey:'reasonDaughtersWithSons', withFemale:dFId, femaleCount:totalF, extraFemales:extraFemales });
+        } else if (extraFemales.length > 0) {
+          var first = extraFemales.shift();
+          asaba.push({ heirId:dMId, count:a[dMId], reasonKey:'reasonDaughtersWithSons', withFemale:first.heirId, femaleCount:totalF, extraFemales:extraFemales });
+        } else {
+          asaba.push({ heirId:dMId, count:a[dMId], reasonKey:'reasonAsaba' });
+        }
+      } else {
+        asaba.push({ heirId:dMId, count:a[dMId], reasonKey:'reasonAsaba' });
+      }
+      break; // Only the closest male descendant gets asaba
+    }
+
     if ((a.fullBrothers||0) > 0 && !hasMaleDesc) {
       if ((a.fullSisters||0) > 0) asaba.push({ heirId:'fullBrothers', count:a.fullBrothers, reasonKey:'reasonFullSistersWithBrothers', withFemale:'fullSisters', femaleCount:a.fullSisters });
       else asaba.push({ heirId:'fullBrothers', count:a.fullBrothers, reasonKey:'reasonAsaba' });
@@ -1686,19 +2080,22 @@
       else asaba.push({ heirId:'paternalBrothers', count:a.paternalBrothers, reasonKey:'reasonAsaba' });
     }
 
-    // Extended agnates — only closest
+    // Extended agnates — only closest (static + dynamic)
     var extOrder = ['fullBrothersSons','paternalBrothersSons','fullBrothersSonsSons','paternalBrothersSonsSons','fullPaternalUncles','paternalUnclesFromFather','fullPaternalUnclesSons','paternalUnclesSonsFromFather','fatherFullUncles','fatherPaternalUncles','fatherFullUnclesSons','fatherPaternalUnclesSons'];
-    for (var i = 0; i < extOrder.length; i++) {
-      var eid = extOrder[i];
+    var fullExtOrder = extOrder.concat(dynExtOrder);
+    var extFound = false;
+    for (var i = 0; i < fullExtOrder.length; i++) {
+      var eid = fullExtOrder[i];
       if ((a[eid]||0) > 0) {
         asaba.push({ heirId:eid, count:a[eid], reasonKey:'reasonAsaba' });
+        extFound = true;
         break;
       }
     }
 
     // ── Mushtaraka check ──
     var isMushtaraka = false;
-    if ((a.husband||0) > 0 && (hasMother || hasPGM || hasMGM) && totalMaternal >= 2
+    if ((a.husband||0) > 0 && (hasMother || activeGrandmothers.length > 0) && totalMaternal >= 2
         && ((a.fullBrothers||0) > 0 || (a.fullSisters||0) > 0)
         && !hasDesc && !hasFather && !hasGF
         && (madhab === 'maliki' || madhab === 'shafii' || madhab === 'jumhur')) {
@@ -1970,9 +2367,10 @@
         && madhab !== 'hanafi'
         && ((a.fullSisters||0) === 1 || (a.paternalSisters||0) === 1)) {
       var sisterKey = (a.fullSisters||0) === 1 ? 'fullSisters' : 'paternalSisters';
+      var akdGfId = activeGfLayer === 1 ? 'paternalGrandfather' : 'dynGf' + activeGfLayer;
       var gfEntry = null, sisterEntry = null;
       for (var i = 0; i < fard.length; i++) {
-        if (fard[i].heirId === 'paternalGrandfather') gfEntry = fard[i];
+        if (fard[i].heirId === akdGfId) gfEntry = fard[i];
         if (fard[i].heirId === sisterKey) sisterEntry = fard[i];
       }
       if (gfEntry && sisterEntry && gfEntry.parts > 0 && sisterEntry.parts > 0) {
@@ -2239,6 +2637,72 @@
     inhCalculate();
   };
 
+  window.inhAddLayer = function(category) {
+    switch(category) {
+      case 'descendants': {
+        if (dynState.descDepth >= MAX_LAYERS) return;
+        dynState.descDepth++;
+        var layer = dynState.descDepth;
+        var mId = 'dynDescM' + layer;
+        var fId = 'dynDescF' + layer;
+        heirNames[mId] = genDescName(layer, 'm');
+        heirNames[fId] = genDescName(layer, 'f');
+        var anchor = document.getElementById('inh-dyn-desc-anchor');
+        anchor.parentNode.insertBefore(createHeirRow(mId, heirNames[mId], 20), anchor);
+        anchor.parentNode.insertBefore(createHeirRow(fId, heirNames[fId], 20), anchor);
+        if (dynState.descDepth >= MAX_LAYERS) {
+          document.getElementById('inh-add-desc-layer').disabled = true;
+        }
+        break;
+      }
+      case 'ascendants': {
+        var maxAsc = Math.max(dynState.gfDepth, dynState.gmPDepth, dynState.gmMDepth);
+        if (maxAsc >= MAX_LAYERS) return;
+        var nextLayer = maxAsc + 1;
+        var anchor = document.getElementById('inh-dyn-asc-anchor');
+        // Add higher grandfather
+        var gfId = 'dynGf' + nextLayer;
+        heirNames[gfId] = genGfName(nextLayer);
+        anchor.parentNode.insertBefore(createHeirRow(gfId, heirNames[gfId], 1), anchor);
+        dynState.gfDepth = nextLayer;
+        // Add higher paternal grandmother
+        var gmPId = 'dynGmP' + nextLayer;
+        heirNames[gmPId] = genGmName(nextLayer, 'p');
+        anchor.parentNode.insertBefore(createHeirRow(gmPId, heirNames[gmPId], 1), anchor);
+        dynState.gmPDepth = nextLayer;
+        // Add higher maternal grandmother
+        var gmMId = 'dynGmM' + nextLayer;
+        heirNames[gmMId] = genGmName(nextLayer, 'm');
+        anchor.parentNode.insertBefore(createHeirRow(gmMId, heirNames[gmMId], 1), anchor);
+        dynState.gmMDepth = nextLayer;
+        if (nextLayer >= MAX_LAYERS) {
+          document.getElementById('inh-add-asc-layer').disabled = true;
+        }
+        break;
+      }
+      case 'extended': {
+        if (dynState.extStage >= (MAX_LAYERS - 2) * 2) return;
+        var stage = dynState.extStage;
+        var names = genExtNames(stage);
+        var fullId = 'dynExtFull' + stage;
+        var patId = 'dynExtPat' + stage;
+        heirNames[fullId] = names.full;
+        heirNames[patId] = names.pat;
+        // Add to dynamic ext order
+        dynExtOrder.push(fullId, patId);
+        var anchor = document.getElementById('inh-dyn-ext-anchor');
+        anchor.parentNode.insertBefore(createHeirRow(fullId, names.full, 20), anchor);
+        anchor.parentNode.insertBefore(createHeirRow(patId, names.pat, 20), anchor);
+        dynState.extStage++;
+        if (dynState.extStage >= (MAX_LAYERS - 2) * 2) {
+          document.getElementById('inh-add-ext-layer').disabled = true;
+        }
+        break;
+      }
+    }
+    updateHeirStates();
+  };
+
   function updateHeirStates() {
     // Check blocking for each heir and disable/enable rows
     var allRows = document.querySelectorAll('.inh-heir-row');
@@ -2389,6 +2853,20 @@
     state.deceasedGender = null;
     state.estate = { amount: 0, debts: 0, wasiyya: 0 };
     state.madhab = 'jumhur';
+
+    // Remove dynamically added heir rows
+    document.querySelectorAll('[data-heir^="dynDesc"], [data-heir^="dynGf"], [data-heir^="dynGm"], [data-heir^="dynExt"]').forEach(function(r) { r.remove(); });
+    dynState.descDepth = 2;
+    dynState.gfDepth = 1;
+    dynState.gmPDepth = 1;
+    dynState.gmMDepth = 1;
+    dynState.extStage = 0;
+    dynExtOrder = [];
+    // Re-enable add layer buttons
+    var addBtns = document.querySelectorAll('.inh-add-layer-btn');
+    addBtns.forEach(function(b) { b.disabled = false; });
+    // Clean up dynamic names from heirNames
+    for (var k in heirNames) { if (isDynamic(k)) delete heirNames[k]; }
 
     document.getElementById('inh-estate').value = '';
     document.getElementById('inh-debts').value = '';
