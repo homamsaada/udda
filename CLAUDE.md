@@ -19,6 +19,8 @@ src/                        Source files (edit here)
   assets/images/ads/        Ad placeholder images (replace with real ads later)
   data/i18n.json            All translations (AR/EN)
   data/tools.json           Tools registry and category order
+  blog/ar/                  Arabic blog posts (Markdown with frontmatter)
+  blog/en/                  English blog posts (Markdown with frontmatter)
   layouts/                  LEGACY — NOT used by build (see Critical Notes)
   tools/                    Individual tool HTML templates
 dist/                       Generated output — do NOT edit directly
@@ -30,7 +32,7 @@ build.js                    Build script — contains the actual HTML layout tem
 
 - Vanilla HTML/CSS/JS — no frameworks or runtime dependencies
 - Node.js for the build system only (`build.js`)
-- No external npm dependencies
+- `markdown-it` — the only npm dependency, used to convert blog Markdown to HTML
 
 ## Critical Notes
 
@@ -156,6 +158,58 @@ npm run serve
 # Check both http://localhost:3000/ar/tools/my-tool.html
 # and   http://localhost:3000/en/tools/my-tool.html
 ```
+
+## Adding a Blog Post — Step by Step
+
+### Step 1: Create a Markdown file
+
+Create a file at `src/blog/{lang}/my-post-slug.md` (e.g., `src/blog/ar/how-to-calculate-zakat.md`).
+
+Each post file starts with YAML frontmatter:
+
+```markdown
+---
+title: "كيف تحسب زكاة المال"
+description: "شرح مبسط لطريقة حساب زكاة المال مع أمثلة عملية"
+date: "2026-03-20"
+category: "seo"
+keywords: "حساب الزكاة، زكاة المال، نصاب الزكاة"
+relatedTool: "zakat-calculator"
+---
+
+محتوى المقال هنا بصيغة Markdown...
+
+## عنوان فرعي
+
+نص الفقرة...
+```
+
+**Frontmatter fields:**
+
+| Field | Required | Description |
+|---|---|---|
+| `title` | Yes | Article title (used as h1 and title tag) |
+| `description` | Yes | Short description (meta description + index card) |
+| `date` | Yes | Publish date in YYYY-MM-DD format |
+| `category` | Yes | `seo` (articles) or `news` (updates) |
+| `keywords` | Yes | Comma-separated keywords for SEO |
+| `relatedTool` | No | Tool ID from tools.json — shows a link card at article end |
+
+### Step 2: Build and verify
+
+```bash
+npm run build
+npm run serve
+# Check both http://localhost:3000/ar/blog/my-post-slug.html
+# and   http://localhost:3000/en/blog/my-post-slug.html (if English version exists)
+# Also check the blog index at http://localhost:3000/ar/blog/
+```
+
+**Notes:**
+- Each language is independent — a post in `src/blog/ar/` doesn't need a matching file in `src/blog/en/`
+- Posts are sorted by date (newest first) on the blog index page
+- The homepage automatically shows the latest 3 posts (if any exist)
+- Blog posts are automatically added to sitemap.xml
 
 ## Adding a Sub-Calculator to `percentage`
 
@@ -366,6 +420,7 @@ Controlled by `isHome`/`isCategory` flags in `build.js` → `buildPageHTML()`:
 - `ar/` and `en/` — full site in both languages
 - `ar/tools/` and `en/tools/` — individual tool pages
 - `ar/category/` and `en/category/` — category listing pages
+- `ar/blog/` and `en/blog/` — blog index and article pages
 - `sitemap.xml` and `robots.txt` — SEO files
 - `index.html` — language-detection redirect
 

@@ -5,6 +5,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const markdownIt = require('markdown-it');
 
 // ========================================
 // Configuration
@@ -22,6 +23,7 @@ const config = {
 // ========================================
 const i18n = JSON.parse(fs.readFileSync(path.join(config.srcDir, 'data/i18n.json'), 'utf8'));
 const toolsData = JSON.parse(fs.readFileSync(path.join(config.srcDir, 'data/tools.json'), 'utf8'));
+const md = markdownIt({ html: true, linkify: true, typographer: true });
 
 // ========================================
 // Helpers
@@ -227,6 +229,12 @@ function buildPageHTML(lang, options) {
         </div>
 
         <div class="header-actions">
+          <a href="${basePath}${lang}/blog/" class="header-btn" aria-label="${ui.blog}" title="${ui.blog}" style="text-decoration:none;">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </a>
           <button class="header-btn" data-open-settings aria-label="${ui.settings}">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="3"></circle>
@@ -267,6 +275,7 @@ function buildPageHTML(lang, options) {
           <a href="${basePath}${lang}/pages/privacy.html" class="footer-link">${isArabic ? 'سياسة الخصوصية' : 'Privacy Policy'}</a>
           <a href="${basePath}${lang}/pages/terms.html" class="footer-link">${isArabic ? 'شروط الاستخدام' : 'Terms of Service'}</a>
           <a href="${basePath}${lang}/pages/disclaimer.html" class="footer-link">${isArabic ? 'إخلاء المسؤولية' : 'Disclaimer'}</a>
+          <a href="${basePath}${lang}/blog/" class="footer-link">${ui.blog}</a>
         </div>
       </footer>
     </div>
@@ -368,6 +377,35 @@ function buildHomepage(lang) {
       <img src="${basePath}assets/images/ads/ad-banner-728x90.png" width="728" height="90" alt="Ad" style="display:block;max-width:100%;height:auto;margin:0 auto;border-radius:0;">
     </div>`;
 
+  // Latest blog posts (show only if posts exist)
+  const blogPosts = loadBlogPosts(lang);
+  let latestPostsHTML = '';
+  if (blogPosts.length > 0) {
+    const latestPosts = blogPosts.slice(0, 3);
+    latestPostsHTML = `
+    <div class="latest-posts-section">
+      <div class="section-header">
+        <h2 class="section-title">${ui.latestPosts}</h2>
+        <a href="${basePath}${lang}/blog/" class="section-link">${ui.readMore} &rarr;</a>
+      </div>
+      <div class="latest-posts-grid">
+        ${latestPosts.map(post => {
+          const categoryLabel = post.category === 'news' ? ui.categoryNews : ui.categoryArticles;
+          return `
+          <a href="${basePath}${lang}/blog/${post.slug}.html" class="blog-post-card">
+            <div class="blog-post-meta">
+              <span class="blog-post-category-badge ${post.category}">${categoryLabel}</span>
+              <span>${post.date}</span>
+            </div>
+            <h3 class="blog-post-card-title">${post.title}</h3>
+            <p class="blog-post-card-description">${post.description}</p>
+            <span class="blog-post-read-more">${ui.readMore} &rarr;</span>
+          </a>`;
+        }).join('')}
+      </div>
+    </div>`;
+  }
+
   const content = `
     <div class="hero">
       <h1 class="hero-title">${meta.siteName}</h1>
@@ -379,6 +417,8 @@ function buildHomepage(lang) {
     <div class="categories-grid">
       ${categoriesHTML}
     </div>
+
+    ${latestPostsHTML}
 
     <script>
       window.toolsData = ${JSON.stringify(allToolsData)};
@@ -486,11 +526,244 @@ function buildToolPage(toolId, lang) {
 }
 
 // ========================================
+// Blog: Parse Frontmatter
+// ========================================
+function parseFrontmatter(content) {
+  const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+  if (!match) return { meta: {}, body: content };
+
+  const meta = {};
+  match[1].split('\n').forEach(line => {
+    const m = line.match(/^(\w+):\s*"?(.*?)"?\s*$/);
+    if (m) meta[m[1]] = m[2];
+  });
+  return { meta, body: match[2] };
+}
+
+// ========================================
+// Blog: Load All Posts for a Language
+// ========================================
+function loadBlogPosts(lang) {
+  const blogDir = path.join(config.srcDir, 'blog', lang);
+  if (!fs.existsSync(blogDir)) return [];
+
+  return fs.readdirSync(blogDir)
+    .filter(f => f.endsWith('.md'))
+    .map(f => {
+      const raw = fs.readFileSync(path.join(blogDir, f), 'utf8');
+      const { meta, body } = parseFrontmatter(raw);
+      return {
+        slug: f.replace(/\.md$/, ''),
+        title: meta.title || '',
+        description: meta.description || '',
+        date: meta.date || '',
+        category: meta.category || 'seo',
+        keywords: meta.keywords || '',
+        relatedTool: meta.relatedTool || '',
+        body
+      };
+    })
+    .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+}
+
+// ========================================
+// Blog: Build Article Page
+// ========================================
+function buildBlogPostPage(post, lang) {
+  const isArabic = lang === 'ar';
+  const meta = i18n.meta[lang];
+  const ui = i18n.ui[lang];
+  const categories = i18n.categories[lang];
+  const basePath = '../../'; // blog posts at /ar/blog/slug.html
+
+  const htmlContent = md.render(post.body);
+
+  // Related tool card
+  let relatedToolHTML = '';
+  if (post.relatedTool) {
+    const relTool = toolsData.tools.find(t => t.id === post.relatedTool);
+    const relI18n = i18n.tools[post.relatedTool]?.[lang];
+    if (relTool && relI18n) {
+      relatedToolHTML = `
+        <div class="blog-related-tool">
+          <h3>${ui.relatedToolLabel}</h3>
+          <a href="${basePath}${lang}/tools/${post.relatedTool}.html" class="blog-related-tool-card">
+            <div class="blog-related-tool-icon">${relTool.icon}</div>
+            <div class="blog-related-tool-info">
+              <h4>${relI18n.name}</h4>
+              <p>${relI18n.description}</p>
+            </div>
+          </a>
+        </div>`;
+    }
+  }
+
+  const categoryLabel = post.category === 'news' ? ui.categoryNews : ui.categoryArticles;
+
+  // Build tools data for search
+  const allToolsData = toolsData.tools.map(t => ({
+    id: t.id,
+    icon: t.icon,
+    name: i18n.tools[t.id]?.[lang]?.name || t.id,
+    keywords: i18n.tools[t.id]?.[lang]?.keywords || '',
+    searchTerms: i18n.tools[t.id]?.[lang]?.searchTerms || '',
+    category: t.category,
+    categoryName: categories[t.category]?.name || '',
+    url: `${basePath}${lang}/tools/${t.id}.html`
+  }));
+
+  const content = `
+    <article class="blog-article">
+      <div class="blog-article-header">
+        <h1 class="blog-article-title">${post.title}</h1>
+        <div class="blog-article-meta">
+          <span class="blog-post-category-badge ${post.category}">${categoryLabel}</span>
+          <span>${ui.publishedOn} ${post.date}</span>
+        </div>
+      </div>
+      <div class="blog-article-content">
+        ${htmlContent}
+      </div>
+      ${relatedToolHTML}
+    </article>
+
+    <script>
+      window.toolsData = ${JSON.stringify(allToolsData)};
+    </script>
+  `;
+
+  // Schema.org Article structured data
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.description,
+    "datePublished": post.date,
+    "author": { "@type": "Organization", "name": meta.siteName },
+    "publisher": { "@type": "Organization", "name": meta.siteName },
+    "mainEntityOfPage": `${config.baseUrl}/${lang}/blog/${post.slug}.html`
+  };
+
+  const pageHTML = buildPageHTML(lang, {
+    title: `${post.title} | ${meta.siteName}`,
+    metaDescription: post.description,
+    keywords: post.keywords,
+    canonicalPath: `/blog/${post.slug}.html`,
+    toolId: null,
+    toolName: null,
+    categoryId: null,
+    categoryName: ui.blog,
+    content,
+    isHome: false,
+    isCategory: false
+  });
+
+  // Inject Article schema before closing </head>
+  const schemaTag = `<script type="application/ld+json">\n  ${JSON.stringify(articleSchema)}\n  </script>\n</head>`;
+  return pageHTML.replace('</head>', schemaTag);
+}
+
+// ========================================
+// Blog: Build Index Page
+// ========================================
+function buildBlogIndexPage(lang, posts) {
+  const isArabic = lang === 'ar';
+  const meta = i18n.meta[lang];
+  const ui = i18n.ui[lang];
+  const categories = i18n.categories[lang];
+  const basePath = '../../'; // blog index at /ar/blog/index.html
+
+  // Build tools data for search
+  const allToolsData = toolsData.tools.map(t => ({
+    id: t.id,
+    icon: t.icon,
+    name: i18n.tools[t.id]?.[lang]?.name || t.id,
+    keywords: i18n.tools[t.id]?.[lang]?.keywords || '',
+    searchTerms: i18n.tools[t.id]?.[lang]?.searchTerms || '',
+    category: t.category,
+    categoryName: categories[t.category]?.name || '',
+    url: `${basePath}${lang}/tools/${t.id}.html`
+  }));
+
+  let postsHTML;
+  if (posts.length === 0) {
+    postsHTML = `
+      <div class="blog-empty">
+        <div class="blog-empty-icon">📝</div>
+        <p>${ui.noPosts}</p>
+      </div>`;
+  } else {
+    postsHTML = `
+      <div class="blog-filters">
+        <button class="blog-filter-btn active" onclick="filterPosts('all')">${ui.allPosts}</button>
+        <button class="blog-filter-btn" onclick="filterPosts('seo')">${ui.categoryArticles}</button>
+        <button class="blog-filter-btn" onclick="filterPosts('news')">${ui.categoryNews}</button>
+      </div>
+      <div class="blog-posts-grid">
+        ${posts.map(post => {
+          const categoryLabel = post.category === 'news' ? ui.categoryNews : ui.categoryArticles;
+          return `
+          <a href="${basePath}${lang}/blog/${post.slug}.html" class="blog-post-card" data-category="${post.category}">
+            <div class="blog-post-meta">
+              <span class="blog-post-category-badge ${post.category}">${categoryLabel}</span>
+              <span>${post.date}</span>
+            </div>
+            <h3 class="blog-post-card-title">${post.title}</h3>
+            <p class="blog-post-card-description">${post.description}</p>
+            <span class="blog-post-read-more">${ui.readMore} &rarr;</span>
+          </a>`;
+        }).join('')}
+      </div>`;
+  }
+
+  const filterScript = posts.length > 0 ? `
+    <script>
+    (function() {
+      window.filterPosts = function(cat) {
+        var cards = document.querySelectorAll('.blog-post-card');
+        var btns = document.querySelectorAll('.blog-filter-btn');
+        btns.forEach(function(b) { b.classList.remove('active'); });
+        event.target.classList.add('active');
+        cards.forEach(function(c) {
+          c.style.display = (cat === 'all' || c.dataset.category === cat) ? '' : 'none';
+        });
+      };
+    })();
+    </script>` : '';
+
+  const content = `
+    <div class="blog-header">
+      <h1 class="blog-header-title">${ui.blog}</h1>
+      <p class="blog-header-description">${ui.blogDescription}</p>
+    </div>
+    ${postsHTML}
+    ${filterScript}
+    <script>
+      window.toolsData = ${JSON.stringify(allToolsData)};
+    </script>
+  `;
+
+  return buildPageHTML(lang, {
+    title: `${ui.blog} - ${meta.siteName}`,
+    metaDescription: ui.blogDescription,
+    keywords: isArabic ? 'مدونة، مقالات، أدوات، حاسبات' : 'blog, articles, tools, calculators',
+    canonicalPath: '/blog/',
+    toolId: null,
+    toolName: null,
+    categoryId: null,
+    categoryName: null,
+    content,
+    isHome: false,
+    isCategory: true
+  });
+}
+
+// ========================================
 // Build Sitemap
 // ========================================
 function buildSitemap() {
   let urls = [];
-  
+
   config.languages.forEach(lang => {
     urls.push(`${config.baseUrl}/${lang}/`);
     toolsData.tools.forEach(tool => {
@@ -499,6 +772,14 @@ function buildSitemap() {
     staticPages.forEach(page => {
       urls.push(`${config.baseUrl}/${lang}/pages/${page.id}.html`);
     });
+    // Blog pages
+    const posts = loadBlogPosts(lang);
+    if (posts.length > 0) {
+      urls.push(`${config.baseUrl}/${lang}/blog/`);
+      posts.forEach(post => {
+        urls.push(`${config.baseUrl}/${lang}/blog/${post.slug}.html`);
+      });
+    }
   });
   
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -705,6 +986,21 @@ function build() {
         fs.writeFileSync(path.join(pagesDir, `${page.id}.html`), html);
         console.log(`  ✓ Page: ${page.id}`);
       }
+    });
+
+    // Blog
+    const blogDir = path.join(langDir, 'blog');
+    ensureDir(blogDir);
+    const blogPosts = loadBlogPosts(lang);
+
+    // Blog index page
+    fs.writeFileSync(path.join(blogDir, 'index.html'), buildBlogIndexPage(lang, blogPosts));
+    console.log(`  ✓ Blog index (${blogPosts.length} posts)`);
+
+    // Individual blog posts
+    blogPosts.forEach(post => {
+      fs.writeFileSync(path.join(blogDir, `${post.slug}.html`), buildBlogPostPage(post, lang));
+      console.log(`  ✓ Blog: ${post.slug}`);
     });
   });
   
