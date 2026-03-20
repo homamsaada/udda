@@ -576,7 +576,10 @@ function buildBlogPostPage(post, lang) {
   const categories = i18n.categories[lang];
   const basePath = '../../'; // blog posts at /ar/blog/slug.html
 
-  const htmlContent = md.render(post.body);
+  let htmlContent = md.render(post.body);
+  // Fix absolute paths so links work regardless of deploy base path
+  htmlContent = htmlContent.replace(/href="\/ar\//g, 'href="' + basePath + 'ar/');
+  htmlContent = htmlContent.replace(/href="\/en\//g, 'href="' + basePath + 'en/');
 
   // Related tool card
   let relatedToolHTML = '';
