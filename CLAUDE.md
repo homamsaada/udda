@@ -139,6 +139,12 @@ The template gets wrapped automatically by `build.js` inside the full page layou
   <p>{{tool.howToUseText}}</p>
 </div>
 
+<!-- Disclaimer (if needed) — must be last section before related tools -->
+<div class="tool-disclaimer">
+  <h4>⚠️ {{tool.disclaimerTitle}}</h4>
+  <div class="tool-disclaimer-item"><span>📌</span> {{tool.disclaimer1}}</div>
+</div>
+
 <!-- Scoped styles -->
 <style>
 /* Your tool-specific CSS */
@@ -461,12 +467,19 @@ These patterns are already used in zakat-calculator and kaffara-calculator. Reus
 
 ### Disclaimer section
 
+Use the shared `.tool-disclaimer` class from `main.css` (styled like `.how-to-use` with consistent background and border). Place the disclaimer as the **last section** in the tool template, after how-to-use — it will appear right before "Related Tools" which is appended by `build.js`.
+
+Add `disclaimerTitle`, `disclaimer1`–`disclaimerN` keys to the tool's i18n translations (both `ar` and `en`).
+
 ```html
-<div class="zakat-disclaimer">
-  <div class="disclaimer-item"><span>📌</span> First note</div>
-  <div class="disclaimer-item"><span>📋</span> Second note</div>
+<div class="tool-disclaimer">
+  <h4>⚠️ {{tool.disclaimerTitle}}</h4>
+  <div class="tool-disclaimer-item"><span>📌</span> {{tool.disclaimer1}}</div>
+  <div class="tool-disclaimer-item"><span>📋</span> {{tool.disclaimer2}}</div>
 </div>
 ```
+
+**Note:** The older `.zakat-disclaimer` class (amber-tinted, defined inside `zakat-calculator.html`) is used by zakat, inheritance, and kaffara calculators. For new tools, use `.tool-disclaimer` instead for consistent styling.
 
 ### Result display patterns
 
@@ -512,4 +525,8 @@ These reflect the current style of the project. They're guidelines, not hard rul
 - Use `{{tool.xxx}}` placeholders instead of hardcoding text — never hardcode Arabic or English strings in HTML
 - Ads are handled by the layout in `build.js`, not inside tool templates
 - Islamic tools must include a "this is not a fatwa" disclaimer
+- Financial tools involving interest/riba must include a disclaimer noting the Islamic prohibition
+- Medical/health tools must include a "consult a professional" disclaimer
+- Disclaimers use `.tool-disclaimer` class and are placed as the last section in the template (after how-to-use, before related tools)
+- Tool page section order: tool content → how-to-use → disclaimer → related tools (auto-appended by build.js)
 - Islamic terminology must be accurate — use proper fiqh terms with transliteration in English (e.g., "Kaffarat al-Yamin" not just "oath penalty")

@@ -736,6 +736,39 @@ body {
   line-height: 1.8;
 }
 
+/* Tool Disclaimer Section */
+.tool-disclaimer {
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius-xl);
+  padding: 24px;
+  margin-top: 32px;
+  border: 1px solid var(--border-color);
+}
+
+.tool-disclaimer h4 {
+  margin: 0 0 12px 0;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-disclaimer-item {
+  padding: 6px 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.tool-disclaimer-item span {
+  flex-shrink: 0;
+}
+
 /* Similar Tools */
 .similar-tools {
   margin-top: 32px;
