@@ -1722,6 +1722,15 @@ body {
   margin: 0;
 }
 
+/* Blog CTA */
+.blog-cta { background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); padding: 20px 24px; margin: 24px 0; display: flex; align-items: center; gap: 16px; }
+.blog-cta .blog-cta-icon { font-size: 2rem; flex-shrink: 0; }
+.blog-cta .blog-cta-body { flex: 1; }
+.blog-cta .blog-cta-body p { margin: 0 0 8px; font-weight: 600; color: var(--text-primary); }
+.blog-cta .blog-cta-body a { display: inline-block; background: var(--accent-gradient); color: #fff; padding: 8px 20px; border-radius: var(--border-radius); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: opacity var(--transition-fast); }
+.blog-cta .blog-cta-body a:hover { opacity: 0.9; text-decoration: none; }
+@media (max-width: 480px) { .blog-cta { flex-direction: column; text-align: center; } }
+
 /* Homepage Latest Posts Section */
 .latest-posts-section {
   margin-top: 24px;
