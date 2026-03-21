@@ -818,7 +818,23 @@ function buildCategoryPage(categoryId, lang) {
   
   // Get tools in this category
   const catTools = toolsData.tools.filter(t => t.category === categoryId);
-  
+
+  // Split main tools and subcategory tools
+  const mainTools = catTools.filter(t => !t.subcategory);
+  const otherTools = catTools.filter(t => t.subcategory === 'other');
+
+  const renderToolsGrid = (tools) => tools.map(tool => {
+    const toolI18n = i18n.tools[tool.id]?.[lang];
+    return `
+          <a href="${basePath}${lang}/tools/${tool.id}.html" class="tool-grid-card">
+            <div class="tool-grid-icon">${tool.icon}</div>
+            <div class="tool-grid-info">
+              <h3>${toolI18n?.name || tool.id}</h3>
+              <p>${toolI18n?.description || ''}</p>
+            </div>
+          </a>`;
+  }).join('');
+
   let toolsHTML;
   if (catTools.length === 0) {
     toolsHTML = `
@@ -830,19 +846,21 @@ function buildCategoryPage(categoryId, lang) {
   } else {
     toolsHTML = `
       <div class="tools-grid">
-        ${catTools.map(tool => {
-          const toolI18n = i18n.tools[tool.id]?.[lang];
-          return `
-          <a href="${basePath}${lang}/tools/${tool.id}.html" class="tool-grid-card">
-            <div class="tool-grid-icon">${tool.icon}</div>
-            <div class="tool-grid-info">
-              <h3>${toolI18n?.name || tool.id}</h3>
-              <p>${toolI18n?.description || ''}</p>
-            </div>
-          </a>`;
-        }).join('')}
+        ${renderToolsGrid(mainTools.length > 0 ? mainTools : catTools)}
       </div>
     `;
+
+    // Add "Other Calculators" sub-section if there are subcategory tools
+    if (otherTools.length > 0 && mainTools.length > 0) {
+      toolsHTML += `
+      <div class="subcategory-section">
+        <h2 class="subcategory-title">${ui.otherCalculators || (isArabic ? 'حاسبات أخرى' : 'Other Calculators')}</h2>
+        <div class="tools-grid">
+          ${renderToolsGrid(otherTools)}
+        </div>
+      </div>
+      `;
+    }
   }
   
   const content = `
