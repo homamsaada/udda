@@ -51,7 +51,7 @@
         </div>
         <div class="gpa-stat-card">
           <div class="gpa-stat-value" id="sem-points-val">0</div>
-          <div class="gpa-stat-label">{{tool.totalPoints}}</div>
+          <div class="gpa-stat-label" id="sem-points-label">{{tool.totalPoints}}</div>
         </div>
       </div>
 
@@ -66,7 +66,7 @@
             <div class="gpa-whatif-label">{{tool.originalGpa}}</div>
             <div class="gpa-whatif-val" id="whatif-original">—</div>
           </div>
-          <div class="gpa-whatif-arrow">→</div>
+          <div class="gpa-whatif-arrow" id="whatif-arrow">→</div>
           <div class="gpa-whatif-item">
             <div class="gpa-whatif-label">{{tool.newGpa}}</div>
             <div class="gpa-whatif-val" id="whatif-new">—</div>
@@ -203,6 +203,9 @@
           <div class="gpa-stat-value" id="conv-class-val">—</div>
           <div class="gpa-stat-label">{{tool.equivalentGrade}}</div>
         </div>
+      </div>
+      <div class="gpa-conv-note" id="conv-note" style="display:none">
+        <span>📌</span> {{tool.conversionNote}}
       </div>
     </div>
   </div>
@@ -747,6 +750,18 @@
 }
 
 /* Reference tables */
+.gpa-calculator .gpa-conv-note {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: var(--bg-tertiary);
+  border-radius: var(--border-radius);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
 .gpa-calculator .gpa-ref-section {
   margin-bottom: 24px;
 }
@@ -904,6 +919,10 @@
   font-weight: 700;
 }
 
+[dir="rtl"] .gpa-calculator .gpa-whatif-arrow {
+  transform: scaleX(-1);
+}
+
 .gpa-calculator .gpa-whatif-diff {
   font-size: 0.95rem;
   font-weight: 700;
@@ -1044,7 +1063,7 @@
         { label: 'C',  value: 3.00 },
         { label: 'D+', value: 2.50 },
         { label: 'D',  value: 2.00 },
-        { label: 'F',  value: 1.00 }
+        { label: 'F',  value: 0.00 }
       ],
       classifications: [
         { min: 4.75, ar: 'ممتاز مرتفع', en: 'Excellent+' },
@@ -1053,8 +1072,7 @@
         { min: 3.50, ar: 'جيد جداً', en: 'Very Good' },
         { min: 3.00, ar: 'جيد مرتفع', en: 'Good+' },
         { min: 2.50, ar: 'جيد', en: 'Good' },
-        { min: 2.00, ar: 'مقبول مرتفع', en: 'Pass+' },
-        { min: 1.00, ar: 'مقبول', en: 'Pass' },
+        { min: 2.00, ar: 'مقبول', en: 'Pass' },
         { min: 0,    ar: 'راسب', en: 'Fail' }
       ]
     },
@@ -1090,7 +1108,9 @@
     removeSemester: '{{tool.removeSemester}}',
     whatIfLabel: '{{tool.whatIf}}',
     originalGpa: '{{tool.originalGpa}}',
-    newGpaLabel: '{{tool.newGpa}}'
+    newGpaLabel: '{{tool.newGpa}}',
+    totalPoints: '{{tool.totalPoints}}',
+    weightedTotal: '{{tool.weightedTotal}}'
   };
 
   var whatIfActive = false;
@@ -1319,6 +1339,47 @@
     }
   }
 
+  // Grade-bracket conversion table: maps classification boundaries between systems
+  // Each entry: [4.0 value, 5.0 value, 100% value]
+  var conversionTable = [
+    [4.00, 5.00, 100],  // A+ top
+    [3.75, 4.75,  95],  // A+ / Excellent+ boundary
+    [3.50, 4.50,  90],  // A  / Excellent boundary
+    [3.00, 4.00,  85],  // B+
+    [2.50, 3.50,  80],  // B  / Very Good boundary
+    [2.00, 3.00,  70],  // C+ / Good boundary
+    [1.50, 2.50,  65],  // C
+    [1.00, 2.00,  60],  // D  / Pass boundary
+    [0.00, 0.00,   0]   // F  / Fail
+  ];
+
+  var sysColIndex = { '4': 0, '5': 1, '100': 2 };
+
+  function convertGpa(inputVal, fromSys, toSys) {
+    var fromCol = sysColIndex[fromSys];
+    var toCol = sysColIndex[toSys];
+
+    // Clamp input
+    var fromMax = gradeSystems[fromSys].max;
+    if (inputVal > fromMax) inputVal = fromMax;
+    if (inputVal < 0) inputVal = 0;
+
+    // Find the bracket the input falls into
+    for (var i = 0; i < conversionTable.length - 1; i++) {
+      var hi = conversionTable[i][fromCol];
+      var lo = conversionTable[i + 1][fromCol];
+      if (inputVal >= lo) {
+        // Linear interpolation within this bracket
+        var range = hi - lo;
+        var t = range > 0 ? (inputVal - lo) / range : 1;
+        var toHi = conversionTable[i][toCol];
+        var toLo = conversionTable[i + 1][toCol];
+        return toLo + t * (toHi - toLo);
+      }
+    }
+    return 0;
+  }
+
   function calcConvert() {
     var fromSys = document.getElementById('conv-from').value;
     var toSys = document.getElementById('conv-to').value;
@@ -1326,24 +1387,33 @@
 
     var resultEl = document.getElementById('conv-result-val');
     var classEl = document.getElementById('conv-class-val');
+    var noteEl = document.getElementById('conv-note');
 
     updateConverterMax();
 
     if (isNaN(inputVal) || inputVal < 0) {
       resultEl.textContent = '—';
       classEl.textContent = '—';
+      if (noteEl) noteEl.style.display = 'none';
       return;
     }
 
-    var fromMax = gradeSystems[fromSys].max;
-    var toMax = gradeSystems[toSys].max;
+    if (fromSys === toSys) {
+      resultEl.textContent = inputVal.toFixed(2);
+      var cls = gradeSystems[toSys].classifications;
+      var classText = '';
+      for (var i = 0; i < cls.length; i++) {
+        if (inputVal >= cls[i].min) {
+          classText = isArabic ? cls[i].ar : cls[i].en;
+          break;
+        }
+      }
+      classEl.textContent = classText || '—';
+      if (noteEl) noteEl.style.display = 'none';
+      return;
+    }
 
-    // Clamp input to valid range
-    if (inputVal > fromMax) inputVal = fromMax;
-
-    // Convert: normalize to ratio [0,1] then scale to target
-    var ratio = inputVal / fromMax;
-    var converted = ratio * toMax;
+    var converted = convertGpa(inputVal, fromSys, toSys);
 
     resultEl.textContent = converted.toFixed(2);
 
@@ -1357,6 +1427,7 @@
       }
     }
     classEl.textContent = classText || '—';
+    if (noteEl) noteEl.style.display = 'block';
   }
 
   function initSemesters() {
@@ -1465,18 +1536,28 @@
       gradesTable.style.display = 'none';
     }
 
-    // Classifications table
+    // Classifications table — show exclusive ranges to avoid overlap
     var classBody = document.getElementById('ref-class-body');
     var cls = sys.classifications;
+    var sysMax = gradeSystems[currentSystem].max;
+    var isPercent = currentSystem === '100';
+    var dp = isPercent ? 0 : 2;
     var html = '';
     for (var i = 0; i < cls.length; i++) {
       var label = isArabic ? cls[i].ar : cls[i].en;
-      var rangeMax = i === 0 ? gradeSystems[currentSystem].max : cls[i - 1].min;
       var rangeStr;
       if (cls[i].min === 0) {
-        rangeStr = '< ' + (i > 0 ? cls[i - 1].min.toFixed(2) : gradeSystems[currentSystem].max.toFixed(2));
+        // Fail: < previous min
+        var upperBound = i > 0 ? cls[i - 1].min : sysMax;
+        rangeStr = '< ' + upperBound.toFixed(dp);
+      } else if (i === 0) {
+        // Highest tier: min – max
+        rangeStr = cls[i].min.toFixed(dp) + ' – ' + sysMax.toFixed(dp);
       } else {
-        rangeStr = cls[i].min.toFixed(2) + ' – ' + rangeMax.toFixed(2);
+        // Middle tiers: show exclusive upper bound (prev.min - step)
+        var step = isPercent ? 1 : 0.01;
+        var exclusiveMax = (cls[i - 1].min - step);
+        rangeStr = cls[i].min.toFixed(dp) + ' – ' + exclusiveMax.toFixed(dp);
       }
       html += '<tr><td>' + label + '</td><td>' + rangeStr + '</td></tr>';
     }
@@ -1505,6 +1586,12 @@
       btns[i].classList.remove('active');
     }
     document.getElementById('sys-btn-' + sys).classList.add('active');
+
+    // Update points label for 100% system
+    var pointsLabel = document.getElementById('sem-points-label');
+    if (pointsLabel) {
+      pointsLabel.textContent = sys === '100' ? labels.weightedTotal : labels.totalPoints;
+    }
 
     // Reset grade selections since options changed
     for (var i = 0; i < courses.length; i++) {
