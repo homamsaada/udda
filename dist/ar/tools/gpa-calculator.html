@@ -145,6 +145,26 @@
           <div class="gpa-stat-label">إجمالي النقاط</div>
         </div>
       </div>
+
+      <!-- What If -->
+      <div class="gpa-whatif-toggle">
+        <button class="gpa-whatif-btn" id="whatif-btn" onclick="gpaToggleWhatIf()">🔮 ماذا لو؟</button>
+        <button class="gpa-whatif-reset" id="whatif-reset-btn" onclick="gpaResetWhatIf()" style="display:none">↺ إعادة تعيين</button>
+      </div>
+      <div class="gpa-whatif-compare" id="whatif-compare" style="display:none">
+        <div class="gpa-whatif-row">
+          <div class="gpa-whatif-item">
+            <div class="gpa-whatif-label">المعدل الأصلي</div>
+            <div class="gpa-whatif-val" id="whatif-original">—</div>
+          </div>
+          <div class="gpa-whatif-arrow">→</div>
+          <div class="gpa-whatif-item">
+            <div class="gpa-whatif-label">المعدل الجديد</div>
+            <div class="gpa-whatif-val" id="whatif-new">—</div>
+          </div>
+          <div class="gpa-whatif-diff" id="whatif-diff"></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -890,6 +910,132 @@
   border-radius: 0 0 0 var(--border-radius);
 }
 
+/* What If */
+.gpa-calculator .gpa-whatif-toggle {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.gpa-calculator .gpa-whatif-btn {
+  padding: 10px 20px;
+  border: 2px solid var(--accent-secondary);
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--accent-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.gpa-calculator .gpa-whatif-btn:hover {
+  background: var(--accent-secondary);
+  color: white;
+}
+
+.gpa-calculator .gpa-whatif-btn.active {
+  background: var(--accent-secondary);
+  color: white;
+}
+
+.gpa-calculator .gpa-whatif-reset {
+  padding: 10px 20px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.gpa-calculator .gpa-whatif-reset:hover {
+  border-color: var(--text-secondary);
+}
+
+.gpa-calculator .gpa-whatif-compare {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.gpa-calculator .gpa-whatif-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.gpa-calculator .gpa-whatif-item {
+  text-align: center;
+}
+
+.gpa-calculator .gpa-whatif-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.gpa-calculator .gpa-whatif-val {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.gpa-calculator .gpa-whatif-arrow {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.gpa-calculator .gpa-whatif-diff {
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.gpa-calculator .gpa-whatif-diff.up {
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.gpa-calculator .gpa-whatif-diff.down {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.gpa-calculator .gpa-whatif-diff.same {
+  color: var(--text-muted);
+  background: var(--bg-tertiary);
+}
+
+/* What-if alt grade in course row */
+.gpa-calculator .gpa-course-row.whatif-mode {
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
+}
+
+.gpa-calculator .gpa-course-row .gpa-alt-grade {
+  position: relative;
+}
+
+.gpa-calculator .gpa-course-row .gpa-alt-grade select,
+.gpa-calculator .gpa-course-row .gpa-alt-grade input {
+  border-color: var(--accent-secondary);
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.gpa-calculator .gpa-course-header.whatif-mode {
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .gpa-calculator .gpa-form-row {
@@ -906,7 +1052,8 @@
 }
 
 @media (max-width: 480px) {
-  .gpa-calculator .gpa-course-row {
+  .gpa-calculator .gpa-course-row,
+  .gpa-calculator .gpa-course-row.whatif-mode {
     grid-template-columns: 1fr 1fr;
     gap: 6px;
   }
@@ -916,8 +1063,13 @@
   }
 
   .gpa-calculator .gpa-course-row select,
-  .gpa-calculator .gpa-course-row .gpa-grade-input {
+  .gpa-calculator .gpa-course-row .gpa-grade-input,
+  .gpa-calculator .gpa-course-row .gpa-alt-grade {
     grid-column: span 1;
+  }
+
+  .gpa-calculator .gpa-course-header.whatif-mode {
+    display: none;
   }
 
   .gpa-calculator .gpa-course-header {
@@ -1022,9 +1174,13 @@
     semestersNeeded: 'عدد الفصول اللازمة تقريباً',
     semesterNum: 'الفصل',
     semesterGpaLabel: 'المعدل',
-    removeSemester: 'حذف'
+    removeSemester: 'حذف',
+    whatIfLabel: 'ماذا لو؟',
+    originalGpa: 'المعدل الأصلي',
+    newGpaLabel: 'المعدل الجديد'
   };
 
+  var whatIfActive = false;
   var semesters = [];
   var INITIAL_SEMESTERS = 3;
 
@@ -1049,12 +1205,14 @@
     var container = document.getElementById('courses-container');
     var html = '';
     var is100 = currentSystem === '100';
+    var wif = whatIfActive;
 
     // Header row
-    html += '<div class="gpa-course-header">';
+    html += '<div class="gpa-course-header' + (wif ? ' whatif-mode' : '') + '">';
     html += '<span>' + labels.courseName + '</span>';
     html += '<span>' + labels.creditHours + '</span>';
     html += '<span>' + labels.grade + '</span>';
+    if (wif) html += '<span>' + labels.whatIfLabel + '</span>';
     html += '<span></span>';
     html += '</div>';
 
@@ -1062,7 +1220,7 @@
 
     for (var i = 0; i < courses.length; i++) {
       var c = courses[i];
-      html += '<div class="gpa-course-row">';
+      html += '<div class="gpa-course-row' + (wif ? ' whatif-mode' : '') + '">';
       html += '<input type="text" placeholder="' + labels.courseName + '" value="' + (c.name || '') + '" oninput="gpaUpdateCourse(' + i + ',\'name\',this.value)">';
       html += '<input type="number" min="1" max="12" placeholder="3" value="' + (c.credits || '') + '" oninput="gpaUpdateCourse(' + i + ',\'credits\',this.value)">';
       if (is100) {
@@ -1070,6 +1228,18 @@
       } else {
         var sel = gradeOpts.replace('value="' + c.gradeIndex + '"', 'value="' + c.gradeIndex + '" selected');
         html += '<select onchange="gpaUpdateCourse(' + i + ',\'gradeIndex\',this.value)">' + sel + '</select>';
+      }
+      if (wif) {
+        html += '<div class="gpa-alt-grade">';
+        if (is100) {
+          var altVal = c.altGradeValue !== undefined && c.altGradeValue !== '' ? c.altGradeValue : (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '');
+          html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100" value="' + altVal + '" oninput="gpaUpdateAlt(' + i + ',\'altGradeValue\',this.value)">';
+        } else {
+          var altIdx = c.altGradeIndex !== undefined ? c.altGradeIndex : c.gradeIndex;
+          var altSel = gradeOpts.replace('value="' + altIdx + '"', 'value="' + altIdx + '" selected');
+          html += '<select onchange="gpaUpdateAlt(' + i + ',\'altGradeIndex\',this.value)">' + altSel + '</select>';
+        }
+        html += '</div>';
       }
       html += '<button class="gpa-del-btn" onclick="gpaRemoveCourse(' + i + ')" title="' + labels.removeCourse + '"' + (courses.length <= 1 ? ' style="visibility:hidden"' : '') + '>&times;</button>';
       html += '</div>';
@@ -1464,6 +1634,112 @@
   window.gpaCalcCumulative = calcCumulative;
   window.gpaCalcTarget = calcTarget;
   window.gpaCalcConvert = calcConvert;
+
+  function calcWhatIf() {
+    var sys = gradeSystems[currentSystem];
+    var is100 = currentSystem === '100';
+    var origCredits = 0, origPoints = 0;
+    var altCredits = 0, altPoints = 0;
+    var hasValid = false;
+
+    for (var i = 0; i < courses.length; i++) {
+      var c = courses[i];
+      var cr = parseFloat(c.credits);
+      if (!(cr > 0)) continue;
+
+      var origVal = 0, altVal = 0, validOrig = false;
+
+      if (is100) {
+        var gv = parseFloat(c.gradeValue);
+        if (!isNaN(gv) && gv >= 0 && gv <= 100) {
+          origVal = gv;
+          validOrig = true;
+        }
+        var av = parseFloat(c.altGradeValue !== undefined && c.altGradeValue !== '' ? c.altGradeValue : c.gradeValue);
+        altVal = (!isNaN(av) && av >= 0 && av <= 100) ? av : origVal;
+      } else {
+        var gi = parseInt(c.gradeIndex);
+        if (gi >= 0 && gi < sys.grades.length) {
+          origVal = sys.grades[gi].value;
+          validOrig = true;
+        }
+        var ai = parseInt(c.altGradeIndex !== undefined ? c.altGradeIndex : c.gradeIndex);
+        altVal = (ai >= 0 && ai < sys.grades.length) ? sys.grades[ai].value : origVal;
+      }
+
+      if (validOrig) {
+        origCredits += cr;
+        origPoints += cr * origVal;
+        altCredits += cr;
+        altPoints += cr * altVal;
+        hasValid = true;
+      }
+    }
+
+    var compareEl = document.getElementById('whatif-compare');
+    if (!hasValid) {
+      compareEl.style.display = 'none';
+      return;
+    }
+
+    var origGpa = origPoints / origCredits;
+    var altGpa = altPoints / altCredits;
+    var diff = altGpa - origGpa;
+
+    compareEl.style.display = 'block';
+    document.getElementById('whatif-original').textContent = origGpa.toFixed(2);
+    document.getElementById('whatif-new').textContent = altGpa.toFixed(2);
+
+    var diffEl = document.getElementById('whatif-diff');
+    if (Math.abs(diff) < 0.005) {
+      diffEl.textContent = '0.00';
+      diffEl.className = 'gpa-whatif-diff same';
+    } else if (diff > 0) {
+      diffEl.textContent = '▲ +' + diff.toFixed(2);
+      diffEl.className = 'gpa-whatif-diff up';
+    } else {
+      diffEl.textContent = '▼ ' + diff.toFixed(2);
+      diffEl.className = 'gpa-whatif-diff down';
+    }
+  }
+
+  window.gpaToggleWhatIf = function() {
+    whatIfActive = !whatIfActive;
+    var btn = document.getElementById('whatif-btn');
+    var resetBtn = document.getElementById('whatif-reset-btn');
+    var compareEl = document.getElementById('whatif-compare');
+
+    btn.classList.toggle('active', whatIfActive);
+    resetBtn.style.display = whatIfActive ? '' : 'none';
+
+    if (!whatIfActive) {
+      compareEl.style.display = 'none';
+      for (var i = 0; i < courses.length; i++) {
+        delete courses[i].altGradeIndex;
+        delete courses[i].altGradeValue;
+      }
+    }
+    renderCourses();
+    if (whatIfActive) calcWhatIf();
+  };
+
+  window.gpaResetWhatIf = function() {
+    for (var i = 0; i < courses.length; i++) {
+      courses[i].altGradeIndex = courses[i].gradeIndex;
+      courses[i].altGradeValue = courses[i].gradeValue;
+    }
+    renderCourses();
+    calcWhatIf();
+  };
+
+  window.gpaUpdateAlt = function(index, field, value) {
+    if (field === 'altGradeIndex') {
+      courses[index].altGradeIndex = parseInt(value);
+    } else {
+      courses[index].altGradeValue = value;
+    }
+    calcWhatIf();
+  };
 
   window.gpaAddSemester = function() {
     semesters.push({ gpa: '', credits: '' });
