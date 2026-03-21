@@ -1,0 +1,781 @@
+<div class="gpa-calculator">
+
+<!-- Tool card with header -->
+<div class="tool-card">
+  <div class="tool-header">
+    <div class="tool-icon">🎓</div>
+    <div>
+      <h1 class="tool-title">{{tool.name}}</h1>
+      <p class="tool-description">{{tool.description}}</p>
+    </div>
+  </div>
+
+  <!-- Grading System Selector -->
+  <div class="gpa-system-bar">
+    <label class="gpa-system-label">{{tool.gradingSystem}}</label>
+    <div class="gpa-system-btns">
+      <button class="gpa-sys-btn active" onclick="gpaSetSystem('4')" id="sys-btn-4">{{tool.system40}}</button>
+      <button class="gpa-sys-btn" onclick="gpaSetSystem('5')" id="sys-btn-5">{{tool.system50}}</button>
+      <button class="gpa-sys-btn" onclick="gpaSetSystem('100')" id="sys-btn-100">{{tool.system100}}</button>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="calc-tabs">
+    <button class="calc-tab active" onclick="gpaSwitchTab('semester', this)">{{tool.tabSemester}}</button>
+    <button class="calc-tab" onclick="gpaSwitchTab('cumulative', this)">{{tool.tabCumulative}}</button>
+  </div>
+
+  <!-- Tab 1: Semester GPA -->
+  <div class="calc-section active" id="semester-section">
+    <div id="courses-container"></div>
+    <button class="gpa-add-btn" onclick="gpaAddCourse()">+ {{tool.addCourse}}</button>
+
+    <div class="gpa-results" id="semester-results">
+      <div class="gpa-stats">
+        <div class="gpa-stat-card primary">
+          <div class="gpa-stat-value" id="sem-gpa-val">—</div>
+          <div class="gpa-stat-label">{{tool.semesterGpa}}</div>
+        </div>
+        <div class="gpa-stat-card">
+          <div class="gpa-stat-value" id="sem-class-val">—</div>
+          <div class="gpa-stat-label">{{tool.classification}}</div>
+        </div>
+        <div class="gpa-stat-card">
+          <div class="gpa-stat-value" id="sem-credits-val">0</div>
+          <div class="gpa-stat-label">{{tool.totalCredits}}</div>
+        </div>
+        <div class="gpa-stat-card">
+          <div class="gpa-stat-value" id="sem-points-val">0</div>
+          <div class="gpa-stat-label">{{tool.totalPoints}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 2: Cumulative GPA -->
+  <div class="calc-section" id="cumulative-section">
+    <div class="gpa-cum-form">
+      <div class="gpa-form-row">
+        <div class="gpa-form-group">
+          <label>{{tool.currentCumulativeGpa}}</label>
+          <input type="number" id="cum-prev-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcCumulative()">
+        </div>
+        <div class="gpa-form-group">
+          <label>{{tool.previousCredits}}</label>
+          <input type="number" id="cum-prev-credits" min="0" placeholder="0" oninput="gpaCalcCumulative()">
+        </div>
+      </div>
+      <div class="gpa-form-row">
+        <div class="gpa-form-group">
+          <label>{{tool.newSemesterGpa}}</label>
+          <input type="number" id="cum-new-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcCumulative()">
+        </div>
+        <div class="gpa-form-group">
+          <label>{{tool.newSemesterCredits}}</label>
+          <input type="number" id="cum-new-credits" min="0" placeholder="0" oninput="gpaCalcCumulative()">
+        </div>
+      </div>
+      <button class="gpa-use-semester-btn" onclick="gpaUseFromSemester()">📋 {{tool.useFromTab1}}</button>
+    </div>
+
+    <div class="gpa-results" id="cumulative-results">
+      <div class="gpa-stats">
+        <div class="gpa-stat-card primary">
+          <div class="gpa-stat-value" id="cum-gpa-val">—</div>
+          <div class="gpa-stat-label">{{tool.newCumulativeGpa}}</div>
+        </div>
+        <div class="gpa-stat-card">
+          <div class="gpa-stat-value" id="cum-class-val">—</div>
+          <div class="gpa-stat-label">{{tool.classification}}</div>
+        </div>
+        <div class="gpa-stat-card">
+          <div class="gpa-stat-value" id="cum-change-val">—</div>
+          <div class="gpa-stat-label">{{tool.gpaChange}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- How to Use -->
+<div class="how-to-use">
+  <h3>📖 {{ui.howToUse}}</h3>
+  <p>{{tool.howToUseText}}</p>
+</div>
+
+<!-- Disclaimer -->
+<div class="tool-disclaimer">
+  <h4>⚠️ {{tool.disclaimerTitle}}</h4>
+  <div class="tool-disclaimer-item"><span>📌</span> {{tool.disclaimer1}}</div>
+</div>
+
+</div>
+
+<style>
+/* GPA Calculator Styles */
+.gpa-calculator {
+  font-family: inherit;
+}
+
+.gpa-calculator * {
+  font-family: inherit;
+}
+
+/* System Selector Bar */
+.gpa-calculator .gpa-system-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.gpa-calculator .gpa-system-label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.gpa-calculator .gpa-system-btns {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.gpa-calculator .gpa-sys-btn {
+  padding: 8px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.gpa-calculator .gpa-sys-btn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-sys-btn.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+}
+
+/* Tabs */
+.gpa-calculator .calc-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.gpa-calculator .calc-tab {
+  flex: 1;
+  min-width: 120px;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.gpa-calculator .calc-tab:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.gpa-calculator .calc-tab.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+}
+
+.gpa-calculator .calc-section {
+  display: none;
+}
+
+.gpa-calculator .calc-section.active {
+  display: block;
+  animation: gpaFadeIn 0.3s ease;
+}
+
+@keyframes gpaFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Course Rows */
+.gpa-calculator .gpa-course-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr auto;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.gpa-calculator .gpa-course-row input,
+.gpa-calculator .gpa-course-row select {
+  padding: 10px 12px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  transition: border-color var(--transition-fast);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gpa-calculator .gpa-course-row input:focus,
+.gpa-calculator .gpa-course-row select:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-course-row input::placeholder {
+  color: var(--text-muted);
+}
+
+.gpa-calculator .gpa-del-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gpa-calculator .gpa-del-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.gpa-calculator .gpa-course-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr auto;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 0 0 4px;
+}
+
+.gpa-calculator .gpa-course-header span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.gpa-calculator .gpa-course-header span:last-child {
+  width: 36px;
+}
+
+/* Add Course Button */
+.gpa-calculator .gpa-add-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 4px;
+  border: 2px dashed var(--border-color);
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--accent-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.gpa-calculator .gpa-add-btn:hover {
+  border-color: var(--accent-primary);
+  background: rgba(99, 102, 241, 0.05);
+}
+
+/* Results */
+.gpa-calculator .gpa-results {
+  margin-top: 24px;
+}
+
+.gpa-calculator .gpa-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.gpa-calculator .gpa-stat-card {
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius-lg);
+  padding: 20px 16px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.gpa-calculator .gpa-stat-card.primary {
+  background: var(--accent-gradient);
+  border: none;
+}
+
+.gpa-calculator .gpa-stat-card.primary .gpa-stat-value,
+.gpa-calculator .gpa-stat-card.primary .gpa-stat-label {
+  color: white;
+}
+
+.gpa-calculator .gpa-stat-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.gpa-calculator .gpa-stat-label {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* Cumulative Form */
+.gpa-calculator .gpa-cum-form {
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius-lg);
+  padding: 24px;
+  margin-bottom: 8px;
+}
+
+.gpa-calculator .gpa-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.gpa-calculator .gpa-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gpa-calculator .gpa-form-group label {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+}
+
+.gpa-calculator .gpa-form-group input {
+  padding: 10px 12px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-fast);
+}
+
+.gpa-calculator .gpa-form-group input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-form-group input::placeholder {
+  color: var(--text-muted);
+}
+
+.gpa-calculator .gpa-use-semester-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border: 2px solid var(--accent-primary);
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--accent-primary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.gpa-calculator .gpa-use-semester-btn:hover {
+  background: var(--accent-primary);
+  color: white;
+}
+
+/* Change indicator */
+.gpa-calculator .gpa-change-up {
+  color: #22c55e;
+}
+
+.gpa-calculator .gpa-change-down {
+  color: #ef4444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gpa-calculator .gpa-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .gpa-calculator .gpa-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .gpa-calculator .gpa-cum-form {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gpa-calculator .gpa-course-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .gpa-calculator .gpa-course-row input[type="text"] {
+    grid-column: 1 / -1;
+  }
+
+  .gpa-calculator .gpa-course-row select {
+    grid-column: span 1;
+  }
+
+  .gpa-calculator .gpa-course-header {
+    display: none;
+  }
+
+  .gpa-calculator .gpa-del-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .gpa-calculator .gpa-sys-btn {
+    padding: 6px 12px;
+    font-size: 0.82rem;
+  }
+}
+</style>
+
+<script>
+(function() {
+  var lang = document.documentElement.lang || 'ar';
+  var isArabic = lang === 'ar';
+
+  // Grade systems data
+  var gradeSystems = {
+    '4': {
+      max: 4,
+      grades: [
+        { label: 'A+', labelAr: 'أ+', value: 4.00 },
+        { label: 'A',  labelAr: 'أ',  value: 3.75 },
+        { label: 'B+', labelAr: 'ب+', value: 3.50 },
+        { label: 'B',  labelAr: 'ب',  value: 3.00 },
+        { label: 'C+', labelAr: 'ج+', value: 2.50 },
+        { label: 'C',  labelAr: 'ج',  value: 2.00 },
+        { label: 'D+', labelAr: 'د+', value: 1.50 },
+        { label: 'D',  labelAr: 'د',  value: 1.00 },
+        { label: 'F',  labelAr: 'هـ', value: 0.00 }
+      ],
+      classifications: [
+        { min: 3.75, ar: 'ممتاز مرتفع', en: 'Excellent+' },
+        { min: 3.50, ar: 'ممتاز', en: 'Excellent' },
+        { min: 3.25, ar: 'جيد جداً مرتفع', en: 'Very Good+' },
+        { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 2.75, ar: 'جيد مرتفع', en: 'Good+' },
+        { min: 2.50, ar: 'جيد', en: 'Good' },
+        { min: 2.25, ar: 'مقبول مرتفع', en: 'Pass+' },
+        { min: 2.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0,    ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    '5': {
+      max: 5,
+      grades: [
+        { label: 'A+', labelAr: 'أ+', value: 5.00 },
+        { label: 'A',  labelAr: 'أ',  value: 4.75 },
+        { label: 'B+', labelAr: 'ب+', value: 4.50 },
+        { label: 'B',  labelAr: 'ب',  value: 4.00 },
+        { label: 'C+', labelAr: 'ج+', value: 3.50 },
+        { label: 'C',  labelAr: 'ج',  value: 3.00 },
+        { label: 'D+', labelAr: 'د+', value: 2.50 },
+        { label: 'D',  labelAr: 'د',  value: 2.00 },
+        { label: 'F',  labelAr: 'هـ', value: 1.00 }
+      ],
+      classifications: [
+        { min: 4.75, ar: 'ممتاز مرتفع', en: 'Excellent+' },
+        { min: 4.50, ar: 'ممتاز', en: 'Excellent' },
+        { min: 4.00, ar: 'جيد جداً مرتفع', en: 'Very Good+' },
+        { min: 3.50, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 3.00, ar: 'جيد مرتفع', en: 'Good+' },
+        { min: 2.50, ar: 'جيد', en: 'Good' },
+        { min: 2.00, ar: 'مقبول مرتفع', en: 'Pass+' },
+        { min: 1.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0,    ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    '100': {
+      max: 100,
+      grades: [
+        { label: '95-100', labelAr: '95-100', value: 97.5 },
+        { label: '90-94',  labelAr: '90-94',  value: 92 },
+        { label: '85-89',  labelAr: '85-89',  value: 87 },
+        { label: '80-84',  labelAr: '80-84',  value: 82 },
+        { label: '75-79',  labelAr: '75-79',  value: 77 },
+        { label: '70-74',  labelAr: '70-74',  value: 72 },
+        { label: '65-69',  labelAr: '65-69',  value: 67 },
+        { label: '60-64',  labelAr: '60-64',  value: 62 },
+        { label: '<60',    labelAr: '<60',    value: 30 }
+      ],
+      classifications: [
+        { min: 90, ar: 'ممتاز', en: 'Excellent' },
+        { min: 80, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 70, ar: 'جيد', en: 'Good' },
+        { min: 60, ar: 'مقبول', en: 'Pass' },
+        { min: 0,  ar: 'راسب', en: 'Fail' }
+      ]
+    }
+  };
+
+  var currentSystem = '4';
+  var courses = [];
+  var INITIAL_COURSES = 5;
+
+  // i18n labels (from template placeholders — set by build)
+  var labels = {
+    courseName: '{{tool.courseName}}',
+    creditHours: '{{tool.creditHours}}',
+    grade: '{{tool.grade}}',
+    removeCourse: '{{tool.removeCourse}}',
+    noCoursesMsg: '{{tool.noCoursesMsg}}',
+    increased: '{{tool.increased}}',
+    decreased: '{{tool.decreased}}'
+  };
+
+  function init() {
+    for (var i = 0; i < INITIAL_COURSES; i++) {
+      courses.push({ name: '', credits: '', gradeIndex: -1 });
+    }
+    renderCourses();
+  }
+
+  function getGradeOptions() {
+    var sys = gradeSystems[currentSystem];
+    var html = '<option value="-1">' + labels.grade + '</option>';
+    for (var i = 0; i < sys.grades.length; i++) {
+      var g = sys.grades[i];
+      var display = isArabic ? g.labelAr : g.label;
+      if (currentSystem !== '100') {
+        display += ' (' + g.value.toFixed(2) + ')';
+      }
+      html += '<option value="' + i + '">' + display + '</option>';
+    }
+    return html;
+  }
+
+  function renderCourses() {
+    var container = document.getElementById('courses-container');
+    var html = '';
+
+    // Header row
+    html += '<div class="gpa-course-header">';
+    html += '<span>' + labels.courseName + '</span>';
+    html += '<span>' + labels.creditHours + '</span>';
+    html += '<span>' + labels.grade + '</span>';
+    html += '<span></span>';
+    html += '</div>';
+
+    var gradeOpts = getGradeOptions();
+
+    for (var i = 0; i < courses.length; i++) {
+      var c = courses[i];
+      html += '<div class="gpa-course-row">';
+      html += '<input type="text" placeholder="' + labels.courseName + '" value="' + (c.name || '') + '" oninput="gpaUpdateCourse(' + i + ',\'name\',this.value)">';
+      html += '<input type="number" min="1" max="12" placeholder="3" value="' + (c.credits || '') + '" oninput="gpaUpdateCourse(' + i + ',\'credits\',this.value)">';
+      var sel = gradeOpts.replace('value="' + c.gradeIndex + '"', 'value="' + c.gradeIndex + '" selected');
+      html += '<select onchange="gpaUpdateCourse(' + i + ',\'gradeIndex\',this.value)">' + sel + '</select>';
+      html += '<button class="gpa-del-btn" onclick="gpaRemoveCourse(' + i + ')" title="' + labels.removeCourse + '"' + (courses.length <= 1 ? ' style="visibility:hidden"' : '') + '>&times;</button>';
+      html += '</div>';
+    }
+
+    container.innerHTML = html;
+  }
+
+  function calcSemester() {
+    var sys = gradeSystems[currentSystem];
+    var totalCredits = 0;
+    var totalPoints = 0;
+    var hasValidCourse = false;
+
+    for (var i = 0; i < courses.length; i++) {
+      var c = courses[i];
+      var cr = parseFloat(c.credits);
+      var gi = parseInt(c.gradeIndex);
+      if (cr > 0 && gi >= 0 && gi < sys.grades.length) {
+        totalCredits += cr;
+        totalPoints += cr * sys.grades[gi].value;
+        hasValidCourse = true;
+      }
+    }
+
+    var gpa = totalCredits > 0 ? totalPoints / totalCredits : 0;
+
+    document.getElementById('sem-gpa-val').textContent = hasValidCourse ? gpa.toFixed(2) : '—';
+    document.getElementById('sem-class-val').textContent = hasValidCourse ? getClassification(gpa) : '—';
+    document.getElementById('sem-credits-val').textContent = totalCredits || '0';
+    document.getElementById('sem-points-val').textContent = hasValidCourse ? totalPoints.toFixed(2) : '0';
+  }
+
+  function getClassification(gpa) {
+    var cls = gradeSystems[currentSystem].classifications;
+    for (var i = 0; i < cls.length; i++) {
+      if (gpa >= cls[i].min) {
+        return isArabic ? cls[i].ar : cls[i].en;
+      }
+    }
+    return isArabic ? cls[cls.length - 1].ar : cls[cls.length - 1].en;
+  }
+
+  function calcCumulative() {
+    var prevGpa = parseFloat(document.getElementById('cum-prev-gpa').value);
+    var prevCredits = parseFloat(document.getElementById('cum-prev-credits').value);
+    var newGpa = parseFloat(document.getElementById('cum-new-gpa').value);
+    var newCredits = parseFloat(document.getElementById('cum-new-credits').value);
+
+    if (isNaN(prevGpa) || isNaN(prevCredits) || isNaN(newGpa) || isNaN(newCredits) ||
+        prevCredits <= 0 || newCredits <= 0) {
+      document.getElementById('cum-gpa-val').textContent = '—';
+      document.getElementById('cum-class-val').textContent = '—';
+      document.getElementById('cum-change-val').textContent = '—';
+      return;
+    }
+
+    var totalCredits = prevCredits + newCredits;
+    var cumGpa = (prevGpa * prevCredits + newGpa * newCredits) / totalCredits;
+
+    document.getElementById('cum-gpa-val').textContent = cumGpa.toFixed(2);
+    document.getElementById('cum-class-val').textContent = getClassification(cumGpa);
+
+    var diff = cumGpa - prevGpa;
+    var changeEl = document.getElementById('cum-change-val');
+    if (Math.abs(diff) < 0.005) {
+      changeEl.textContent = '0.00';
+      changeEl.className = 'gpa-stat-value';
+    } else if (diff > 0) {
+      changeEl.innerHTML = '<span class="gpa-change-up">▲ ' + labels.increased + ' ' + diff.toFixed(2) + '</span>';
+    } else {
+      changeEl.innerHTML = '<span class="gpa-change-down">▼ ' + labels.decreased + ' ' + Math.abs(diff).toFixed(2) + '</span>';
+    }
+  }
+
+  function updateMaxInputs() {
+    var max = gradeSystems[currentSystem].max;
+    var prevGpaInput = document.getElementById('cum-prev-gpa');
+    var newGpaInput = document.getElementById('cum-new-gpa');
+    if (prevGpaInput) {
+      prevGpaInput.max = max;
+      prevGpaInput.placeholder = '0.00';
+    }
+    if (newGpaInput) {
+      newGpaInput.max = max;
+      newGpaInput.placeholder = '0.00';
+    }
+  }
+
+  // Public functions
+  window.gpaSwitchTab = function(tab, btn) {
+    var sections = document.querySelectorAll('.gpa-calculator .calc-section');
+    var tabs = document.querySelectorAll('.gpa-calculator .calc-tab');
+    for (var i = 0; i < sections.length; i++) {
+      sections[i].classList.remove('active');
+    }
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].classList.remove('active');
+    }
+    document.getElementById(tab + '-section').classList.add('active');
+    btn.classList.add('active');
+  };
+
+  window.gpaSetSystem = function(sys) {
+    currentSystem = sys;
+    var btns = document.querySelectorAll('.gpa-calculator .gpa-sys-btn');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.remove('active');
+    }
+    document.getElementById('sys-btn-' + sys).classList.add('active');
+
+    // Reset grade selections since options changed
+    for (var i = 0; i < courses.length; i++) {
+      courses[i].gradeIndex = -1;
+    }
+    renderCourses();
+    calcSemester();
+    updateMaxInputs();
+    calcCumulative();
+  };
+
+  window.gpaAddCourse = function() {
+    courses.push({ name: '', credits: '', gradeIndex: -1 });
+    renderCourses();
+  };
+
+  window.gpaRemoveCourse = function(index) {
+    if (courses.length <= 1) return;
+    courses.splice(index, 1);
+    renderCourses();
+    calcSemester();
+  };
+
+  window.gpaUpdateCourse = function(index, field, value) {
+    if (field === 'gradeIndex') {
+      courses[index][field] = parseInt(value);
+    } else {
+      courses[index][field] = value;
+    }
+    calcSemester();
+  };
+
+  window.gpaCalcCumulative = calcCumulative;
+
+  window.gpaUseFromSemester = function() {
+    var sys = gradeSystems[currentSystem];
+    var totalCredits = 0;
+    var totalPoints = 0;
+
+    for (var i = 0; i < courses.length; i++) {
+      var c = courses[i];
+      var cr = parseFloat(c.credits);
+      var gi = parseInt(c.gradeIndex);
+      if (cr > 0 && gi >= 0 && gi < sys.grades.length) {
+        totalCredits += cr;
+        totalPoints += cr * sys.grades[gi].value;
+      }
+    }
+
+    if (totalCredits > 0) {
+      var semGpa = totalPoints / totalCredits;
+      document.getElementById('cum-new-gpa').value = semGpa.toFixed(2);
+      document.getElementById('cum-new-credits').value = totalCredits;
+      calcCumulative();
+      App.showToast(isArabic ? 'تم نقل بيانات الفصل!' : 'Semester data transferred!');
+    }
+  };
+
+  // Initialize
+  init();
+  updateMaxInputs();
+})();
+</script>
