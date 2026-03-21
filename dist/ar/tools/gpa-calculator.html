@@ -115,6 +115,8 @@
   <div class="calc-tabs">
     <button class="calc-tab active" onclick="gpaSwitchTab('semester', this)">المعدل الفصلي</button>
     <button class="calc-tab" onclick="gpaSwitchTab('cumulative', this)">المعدل التراكمي</button>
+    <button class="calc-tab" onclick="gpaSwitchTab('target', this)">المعدل المطلوب</button>
+    <button class="calc-tab" onclick="gpaSwitchTab('converter', this)">تحويل المعدلات</button>
   </div>
 
   <!-- Tab 1: Semester GPA -->
@@ -183,6 +185,92 @@
         <div class="gpa-stat-card">
           <div class="gpa-stat-value" id="cum-change-val">—</div>
           <div class="gpa-stat-label">التغيير</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 3: Target GPA -->
+  <div class="calc-section" id="target-section">
+    <div class="gpa-cum-form">
+      <div class="gpa-form-row">
+        <div class="gpa-form-group">
+          <label>المعدل التراكمي الحالي</label>
+          <input type="number" id="tgt-cur-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcTarget()">
+        </div>
+        <div class="gpa-form-group">
+          <label>الساعات المكتسبة سابقاً</label>
+          <input type="number" id="tgt-cur-credits" min="0" placeholder="0" oninput="gpaCalcTarget()">
+        </div>
+      </div>
+      <div class="gpa-form-row">
+        <div class="gpa-form-group">
+          <label>المعدل المستهدف</label>
+          <input type="number" id="tgt-goal-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcTarget()">
+        </div>
+        <div class="gpa-form-group">
+          <label>ساعات الفصل القادم</label>
+          <input type="number" id="tgt-next-credits" min="1" placeholder="0" oninput="gpaCalcTarget()">
+        </div>
+      </div>
+    </div>
+
+    <div class="gpa-results" id="target-results">
+      <div class="gpa-stats">
+        <div class="gpa-stat-card primary">
+          <div class="gpa-stat-value" id="tgt-required-val">—</div>
+          <div class="gpa-stat-label">المعدل المطلوب تحقيقه</div>
+        </div>
+        <div class="gpa-stat-card">
+          <div class="gpa-stat-value" id="tgt-class-val">—</div>
+          <div class="gpa-stat-label">التقدير</div>
+        </div>
+      </div>
+      <div class="gpa-impossible-msg" id="tgt-impossible" style="display:none">
+        <div class="gpa-impossible-text" id="tgt-impossible-text"></div>
+        <div class="gpa-semesters-info" id="tgt-semesters-info"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 4: GPA Converter -->
+  <div class="calc-section" id="converter-section">
+    <div class="gpa-cum-form">
+      <div class="gpa-form-row">
+        <div class="gpa-form-group">
+          <label>تحويل من</label>
+          <select id="conv-from" onchange="gpaCalcConvert()">
+            <option value="4">نظام 4.0</option>
+            <option value="5">نظام 5.0</option>
+            <option value="100">نظام 100%</option>
+          </select>
+        </div>
+        <div class="gpa-form-group">
+          <label>إلى</label>
+          <select id="conv-to" onchange="gpaCalcConvert()">
+            <option value="4">نظام 4.0</option>
+            <option value="5" selected>نظام 5.0</option>
+            <option value="100">نظام 100%</option>
+          </select>
+        </div>
+      </div>
+      <div class="gpa-form-row">
+        <div class="gpa-form-group" style="grid-column: 1 / -1">
+          <label>أدخل المعدل</label>
+          <input type="number" id="conv-input" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcConvert()">
+        </div>
+      </div>
+    </div>
+
+    <div class="gpa-results" id="converter-results">
+      <div class="gpa-stats">
+        <div class="gpa-stat-card primary">
+          <div class="gpa-stat-value" id="conv-result-val">—</div>
+          <div class="gpa-stat-label">المعدل المحوّل</div>
+        </div>
+        <div class="gpa-stat-card">
+          <div class="gpa-stat-value" id="conv-class-val">—</div>
+          <div class="gpa-stat-label">التقدير المكافئ</div>
         </div>
       </div>
     </div>
@@ -516,6 +604,44 @@
   color: #ef4444;
 }
 
+/* Impossible message (target tab) */
+.gpa-calculator .gpa-impossible-msg {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--border-radius-lg);
+  text-align: center;
+}
+
+.gpa-calculator .gpa-impossible-text {
+  color: #ef4444;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.gpa-calculator .gpa-semesters-info {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+/* Converter select */
+.gpa-calculator .gpa-form-group select {
+  padding: 10px 12px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-fast);
+}
+
+.gpa-calculator .gpa-form-group select:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .gpa-calculator .gpa-form-row {
@@ -643,7 +769,9 @@
     removeCourse: 'حذف',
     noCoursesMsg: 'أضف مواد واختر الدرجات لحساب المعدل',
     increased: 'ارتفع',
-    decreased: 'انخفض'
+    decreased: 'انخفض',
+    impossibleMsg: 'لا يمكن تحقيق هذا المعدل في فصل واحد',
+    semestersNeeded: 'عدد الفصول اللازمة تقريباً'
   };
 
   function init() {
@@ -775,16 +903,123 @@
 
   function updateMaxInputs() {
     var max = gradeSystems[currentSystem].max;
-    var prevGpaInput = document.getElementById('cum-prev-gpa');
-    var newGpaInput = document.getElementById('cum-new-gpa');
-    if (prevGpaInput) {
-      prevGpaInput.max = max;
-      prevGpaInput.placeholder = '0.00';
+    var ids = ['cum-prev-gpa', 'cum-new-gpa', 'tgt-cur-gpa', 'tgt-goal-gpa'];
+    for (var i = 0; i < ids.length; i++) {
+      var el = document.getElementById(ids[i]);
+      if (el) {
+        el.max = max;
+        el.placeholder = '0.00';
+      }
     }
-    if (newGpaInput) {
-      newGpaInput.max = max;
-      newGpaInput.placeholder = '0.00';
+    // Update converter input max based on its "from" system
+    updateConverterMax();
+  }
+
+  function updateConverterMax() {
+    var fromSys = document.getElementById('conv-from');
+    var convInput = document.getElementById('conv-input');
+    if (fromSys && convInput) {
+      convInput.max = gradeSystems[fromSys.value].max;
+      convInput.placeholder = '0.00';
     }
+  }
+
+  function calcTarget() {
+    var curGpa = parseFloat(document.getElementById('tgt-cur-gpa').value);
+    var curCredits = parseFloat(document.getElementById('tgt-cur-credits').value);
+    var goalGpa = parseFloat(document.getElementById('tgt-goal-gpa').value);
+    var nextCredits = parseFloat(document.getElementById('tgt-next-credits').value);
+
+    var resultEl = document.getElementById('tgt-required-val');
+    var classEl = document.getElementById('tgt-class-val');
+    var impossibleEl = document.getElementById('tgt-impossible');
+    var impossibleText = document.getElementById('tgt-impossible-text');
+    var semestersInfo = document.getElementById('tgt-semesters-info');
+
+    impossibleEl.style.display = 'none';
+
+    if (isNaN(curGpa) || isNaN(curCredits) || isNaN(goalGpa) || isNaN(nextCredits) ||
+        curCredits <= 0 || nextCredits <= 0) {
+      resultEl.textContent = '—';
+      classEl.textContent = '—';
+      return;
+    }
+
+    var max = gradeSystems[currentSystem].max;
+    // requiredGpa = (goalGpa * (curCredits + nextCredits) - curGpa * curCredits) / nextCredits
+    var totalNeeded = goalGpa * (curCredits + nextCredits);
+    var alreadyHave = curGpa * curCredits;
+    var requiredGpa = (totalNeeded - alreadyHave) / nextCredits;
+
+    if (requiredGpa > max) {
+      resultEl.textContent = '—';
+      classEl.textContent = '—';
+      impossibleEl.style.display = 'block';
+      impossibleText.textContent = labels.impossibleMsg;
+
+      // Estimate semesters needed at max GPA per semester
+      var semCount = 0;
+      var simCredits = curCredits;
+      var simPoints = curGpa * curCredits;
+      while (semCount < 50) {
+        simCredits += nextCredits;
+        simPoints += max * nextCredits;
+        semCount++;
+        if (simPoints / simCredits >= goalGpa) break;
+      }
+      if (semCount < 50) {
+        semestersInfo.textContent = labels.semestersNeeded + ': ' + semCount;
+      } else {
+        semestersInfo.textContent = '';
+      }
+    } else if (requiredGpa < 0) {
+      // Already exceeds target, any GPA works
+      resultEl.textContent = '0.00';
+      classEl.textContent = getClassification(0);
+    } else {
+      resultEl.textContent = requiredGpa.toFixed(2);
+      classEl.textContent = getClassification(requiredGpa);
+    }
+  }
+
+  function calcConvert() {
+    var fromSys = document.getElementById('conv-from').value;
+    var toSys = document.getElementById('conv-to').value;
+    var inputVal = parseFloat(document.getElementById('conv-input').value);
+
+    var resultEl = document.getElementById('conv-result-val');
+    var classEl = document.getElementById('conv-class-val');
+
+    updateConverterMax();
+
+    if (isNaN(inputVal) || inputVal < 0) {
+      resultEl.textContent = '—';
+      classEl.textContent = '—';
+      return;
+    }
+
+    var fromMax = gradeSystems[fromSys].max;
+    var toMax = gradeSystems[toSys].max;
+
+    // Clamp input to valid range
+    if (inputVal > fromMax) inputVal = fromMax;
+
+    // Convert: normalize to ratio [0,1] then scale to target
+    var ratio = inputVal / fromMax;
+    var converted = ratio * toMax;
+
+    resultEl.textContent = converted.toFixed(2);
+
+    // Get classification in the target system
+    var cls = gradeSystems[toSys].classifications;
+    var classText = '';
+    for (var i = 0; i < cls.length; i++) {
+      if (converted >= cls[i].min) {
+        classText = isArabic ? cls[i].ar : cls[i].en;
+        break;
+      }
+    }
+    classEl.textContent = classText || '—';
   }
 
   // Public functions
@@ -818,6 +1053,7 @@
     calcSemester();
     updateMaxInputs();
     calcCumulative();
+    calcTarget();
   };
 
   window.gpaAddCourse = function() {
@@ -844,6 +1080,8 @@
   };
 
   window.gpaCalcCumulative = calcCumulative;
+  window.gpaCalcTarget = calcTarget;
+  window.gpaCalcConvert = calcConvert;
 
   window.gpaUseFromSemester = function() {
     var sys = gradeSystems[currentSystem];
