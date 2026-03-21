@@ -373,10 +373,13 @@
 /* GPA Calculator Styles */
 .gpa-calculator {
   font-family: inherit;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .gpa-calculator * {
   font-family: inherit;
+  box-sizing: border-box;
 }
 
 /* System Selector Bar */
@@ -495,6 +498,7 @@
   font-size: 0.9rem;
   transition: border-color var(--transition-fast);
   width: 100%;
+  min-width: 0;
   box-sizing: border-box;
 }
 
@@ -751,6 +755,7 @@
   font-size: 0.9rem;
   transition: border-color var(--transition-fast);
   width: 100%;
+  min-width: 0;
   box-sizing: border-box;
 }
 
@@ -1066,23 +1071,98 @@
   }
 
   .gpa-calculator .gpa-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .gpa-calculator .gpa-cum-form {
     padding: 16px;
   }
-}
 
-@media (max-width: 480px) {
-  .gpa-calculator .gpa-course-row,
+  .gpa-calculator .calc-tab {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .gpa-calculator .gpa-course-row {
+    grid-template-columns: 1fr 60px 1fr 32px;
+    gap: 6px;
+  }
+
   .gpa-calculator .gpa-course-row.whatif-mode {
     grid-template-columns: 1fr 1fr;
     gap: 6px;
   }
 
+  .gpa-calculator .gpa-course-row.whatif-mode input[type="text"] {
+    grid-column: 1 / -1;
+  }
+
+  .gpa-calculator .gpa-course-header.whatif-mode {
+    display: none;
+  }
+
+  .gpa-calculator .gpa-sem-row {
+    grid-template-columns: 28px 1fr 1fr 32px;
+  }
+
+  .gpa-calculator .gpa-sem-header {
+    grid-template-columns: 28px 1fr 1fr 32px;
+  }
+
+  .gpa-calculator .gpa-whatif-val {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gpa-calculator .calc-tab {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .gpa-calculator .gpa-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .gpa-calculator .gpa-stat-card {
+    padding: 12px 8px;
+  }
+
+  .gpa-calculator .gpa-stat-value {
+    font-size: 1.1rem;
+  }
+
+  .gpa-calculator .gpa-course-header {
+    display: none;
+  }
+
+  .gpa-calculator .gpa-course-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    padding: 10px;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+  }
+
   .gpa-calculator .gpa-course-row input[type="text"] {
     grid-column: 1 / -1;
+  }
+
+  .gpa-calculator .gpa-course-row .gpa-del-btn {
+    position: absolute;
+    top: 6px;
+    inset-inline-end: 6px;
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .gpa-calculator .gpa-course-row {
+    position: relative;
+    padding-top: 14px;
   }
 
   .gpa-calculator .gpa-course-row select,
@@ -1091,22 +1171,83 @@
     grid-column: span 1;
   }
 
-  .gpa-calculator .gpa-course-header.whatif-mode {
-    display: none;
+  .gpa-calculator .gpa-course-row.whatif-mode {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    padding: 10px;
+    padding-top: 14px;
+    position: relative;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
   }
 
-  .gpa-calculator .gpa-course-header {
-    display: none;
-  }
-
-  .gpa-calculator .gpa-del-btn {
-    width: 32px;
-    height: 32px;
+  .gpa-calculator .gpa-course-row.whatif-mode input[type="text"] {
+    grid-column: 1 / -1;
   }
 
   .gpa-calculator .gpa-sys-btn {
     padding: 6px 12px;
     font-size: 0.82rem;
+  }
+
+  .gpa-calculator .gpa-system-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .gpa-calculator .gpa-cum-form {
+    padding: 12px;
+  }
+
+  .gpa-calculator .gpa-form-group label {
+    font-size: 0.82rem;
+  }
+
+  .gpa-calculator .gpa-form-group input,
+  .gpa-calculator .gpa-form-group select {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  .gpa-calculator .gpa-sem-row {
+    grid-template-columns: 24px 1fr 1fr 28px;
+    gap: 6px;
+  }
+
+  .gpa-calculator .gpa-sem-header {
+    grid-template-columns: 24px 1fr 1fr 28px;
+    gap: 6px;
+  }
+
+  .gpa-calculator .gpa-sem-row input {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  .gpa-calculator .gpa-ref-table th,
+  .gpa-calculator .gpa-ref-table td {
+    padding: 8px 10px;
+    font-size: 0.82rem;
+  }
+
+  .gpa-calculator .gpa-whatif-compare {
+    padding: 12px;
+  }
+
+  .gpa-calculator .gpa-whatif-val {
+    font-size: 1.1rem;
+  }
+
+  .gpa-calculator .gpa-whatif-row {
+    gap: 10px;
+  }
+
+  .gpa-calculator .gpa-chart {
+    gap: 6px;
+    padding: 12px 8px;
   }
 }
 </style>
