@@ -117,6 +117,8 @@
     <button class="calc-tab" onclick="gpaSwitchTab('cumulative', this)">المعدل التراكمي</button>
     <button class="calc-tab" onclick="gpaSwitchTab('target', this)">المعدل المطلوب</button>
     <button class="calc-tab" onclick="gpaSwitchTab('converter', this)">تحويل المعدلات</button>
+    <button class="calc-tab" onclick="gpaSwitchTab('multi', this)">فصول متعددة</button>
+    <button class="calc-tab" onclick="gpaSwitchTab('reference', this)">جدول التقديرات</button>
   </div>
 
   <!-- Tab 1: Semester GPA -->
@@ -275,6 +277,59 @@
       </div>
     </div>
   </div>
+
+  <!-- Tab 5: Multi-Semester -->
+  <div class="calc-section" id="multi-section">
+    <div id="multi-semesters-container"></div>
+    <button class="gpa-add-btn" onclick="gpaAddSemester()">+ إضافة فصل</button>
+
+    <div class="gpa-results" id="multi-results">
+      <div class="gpa-stats">
+        <div class="gpa-stat-card primary">
+          <div class="gpa-stat-value" id="multi-gpa-val">—</div>
+          <div class="gpa-stat-label">المعدل التراكمي الإجمالي</div>
+        </div>
+        <div class="gpa-stat-card">
+          <div class="gpa-stat-value" id="multi-class-val">—</div>
+          <div class="gpa-stat-label">التقدير</div>
+        </div>
+        <div class="gpa-stat-card">
+          <div class="gpa-stat-value" id="multi-best-val">—</div>
+          <div class="gpa-stat-label">أفضل فصل</div>
+        </div>
+        <div class="gpa-stat-card">
+          <div class="gpa-stat-value" id="multi-worst-val">—</div>
+          <div class="gpa-stat-label">أسوأ فصل</div>
+        </div>
+      </div>
+      <div class="gpa-chart-section" id="multi-chart-section" style="display:none">
+        <h4 class="gpa-chart-title">تطور المعدل</h4>
+        <div class="gpa-chart" id="multi-chart"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 6: Grade Reference -->
+  <div class="calc-section" id="reference-section">
+    <div class="gpa-ref-section">
+      <h3 class="gpa-ref-title">جدول الدرجات والنقاط</h3>
+      <div class="gpa-ref-table-wrap">
+        <table class="gpa-ref-table" id="ref-grades-table">
+          <thead><tr><th>الدرجة الحرفية</th><th>القيمة النقطية</th></tr></thead>
+          <tbody id="ref-grades-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="gpa-ref-section">
+      <h3 class="gpa-ref-title">جدول التقديرات اللفظية</h3>
+      <div class="gpa-ref-table-wrap">
+        <table class="gpa-ref-table" id="ref-class-table">
+          <thead><tr><th>التقدير اللفظي</th><th>نطاق المعدل</th></tr></thead>
+          <tbody id="ref-class-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- How to Use -->
@@ -345,17 +400,22 @@
   color: white;
 }
 
-/* Tabs */
+/* Tabs (scrollable for 6+ tabs) */
 .gpa-calculator .calc-tabs {
   display: flex;
   gap: 8px;
   margin-bottom: 24px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  padding-bottom: 4px;
 }
 
 .gpa-calculator .calc-tab {
-  flex: 1;
-  min-width: 120px;
+  flex: 0 0 auto;
+  min-width: auto;
+  white-space: nowrap;
   padding: 12px 16px;
   border: 2px solid var(--border-color);
   border-radius: 12px;
@@ -642,6 +702,194 @@
   border-color: var(--accent-primary);
 }
 
+/* Multi-semester rows */
+.gpa-calculator .gpa-sem-row {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr auto;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.gpa-calculator .gpa-sem-row .gpa-sem-num {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--accent-primary);
+  min-width: 24px;
+  text-align: center;
+}
+
+.gpa-calculator .gpa-sem-row input {
+  padding: 10px 12px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  transition: border-color var(--transition-fast);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gpa-calculator .gpa-sem-row input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-sem-row input::placeholder {
+  color: var(--text-muted);
+}
+
+.gpa-calculator .gpa-sem-header {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr auto;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 0 0 4px;
+}
+
+.gpa-calculator .gpa-sem-header span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.gpa-calculator .gpa-sem-header span:first-child {
+  min-width: 24px;
+}
+
+.gpa-calculator .gpa-sem-header span:last-child {
+  width: 36px;
+}
+
+/* Chart */
+.gpa-calculator .gpa-chart-section {
+  margin-top: 24px;
+}
+
+.gpa-calculator .gpa-chart-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.gpa-calculator .gpa-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 160px;
+  padding: 16px 8px 8px;
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.gpa-calculator .gpa-chart-bar-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.gpa-calculator .gpa-chart-val {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.gpa-calculator .gpa-chart-bar {
+  width: 100%;
+  max-width: 48px;
+  border-radius: 6px 6px 0 0;
+  background: var(--accent-gradient);
+  transition: height 0.3s ease;
+  min-height: 4px;
+}
+
+.gpa-calculator .gpa-chart-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+/* Reference tables */
+.gpa-calculator .gpa-ref-section {
+  margin-bottom: 24px;
+}
+
+.gpa-calculator .gpa-ref-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.gpa-calculator .gpa-ref-table-wrap {
+  overflow-x: auto;
+}
+
+.gpa-calculator .gpa-ref-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.gpa-calculator .gpa-ref-table th {
+  background: var(--accent-primary);
+  color: white;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.gpa-calculator .gpa-ref-table th:first-child {
+  border-radius: var(--border-radius) 0 0 0;
+}
+
+[dir="rtl"] .gpa-calculator .gpa-ref-table th:first-child {
+  border-radius: 0 var(--border-radius) 0 0;
+}
+
+.gpa-calculator .gpa-ref-table th:last-child {
+  border-radius: 0 var(--border-radius) 0 0;
+}
+
+[dir="rtl"] .gpa-calculator .gpa-ref-table th:last-child {
+  border-radius: var(--border-radius) 0 0 0;
+}
+
+.gpa-calculator .gpa-ref-table td {
+  padding: 10px 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.gpa-calculator .gpa-ref-table tr:nth-child(even) td {
+  background: var(--bg-secondary);
+}
+
+.gpa-calculator .gpa-ref-table tr:last-child td:first-child {
+  border-radius: 0 0 0 var(--border-radius);
+}
+
+[dir="rtl"] .gpa-calculator .gpa-ref-table tr:last-child td:first-child {
+  border-radius: 0 0 var(--border-radius) 0;
+}
+
+.gpa-calculator .gpa-ref-table tr:last-child td:last-child {
+  border-radius: 0 0 var(--border-radius) 0;
+}
+
+[dir="rtl"] .gpa-calculator .gpa-ref-table tr:last-child td:last-child {
+  border-radius: 0 0 0 var(--border-radius);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .gpa-calculator .gpa-form-row {
@@ -771,8 +1019,14 @@
     increased: 'ارتفع',
     decreased: 'انخفض',
     impossibleMsg: 'لا يمكن تحقيق هذا المعدل في فصل واحد',
-    semestersNeeded: 'عدد الفصول اللازمة تقريباً'
+    semestersNeeded: 'عدد الفصول اللازمة تقريباً',
+    semesterNum: 'الفصل',
+    semesterGpaLabel: 'المعدل',
+    removeSemester: 'حذف'
   };
+
+  var semesters = [];
+  var INITIAL_SEMESTERS = 3;
 
   function init() {
     for (var i = 0; i < INITIAL_COURSES; i++) {
@@ -1022,8 +1276,133 @@
     classEl.textContent = classText || '—';
   }
 
+  function initSemesters() {
+    for (var i = 0; i < INITIAL_SEMESTERS; i++) {
+      semesters.push({ gpa: '', credits: '' });
+    }
+    renderSemesters();
+  }
+
+  function renderSemesters() {
+    var container = document.getElementById('multi-semesters-container');
+    var max = gradeSystems[currentSystem].max;
+    var html = '';
+
+    html += '<div class="gpa-sem-header">';
+    html += '<span>#</span>';
+    html += '<span>' + labels.semesterGpaLabel + '</span>';
+    html += '<span>' + labels.creditHours + '</span>';
+    html += '<span></span>';
+    html += '</div>';
+
+    for (var i = 0; i < semesters.length; i++) {
+      var s = semesters[i];
+      html += '<div class="gpa-sem-row">';
+      html += '<span class="gpa-sem-num">' + (i + 1) + '</span>';
+      html += '<input type="number" step="0.01" min="0" max="' + max + '" placeholder="' + labels.semesterGpaLabel + '" value="' + (s.gpa || '') + '" oninput="gpaUpdateSemester(' + i + ',\'gpa\',this.value)">';
+      html += '<input type="number" min="1" placeholder="' + labels.creditHours + '" value="' + (s.credits || '') + '" oninput="gpaUpdateSemester(' + i + ',\'credits\',this.value)">';
+      html += '<button class="gpa-del-btn" onclick="gpaRemoveSemester(' + i + ')" title="' + labels.removeSemester + '"' + (semesters.length <= 1 ? ' style="visibility:hidden"' : '') + '>&times;</button>';
+      html += '</div>';
+    }
+
+    container.innerHTML = html;
+  }
+
+  function calcMulti() {
+    var totalCredits = 0;
+    var totalPoints = 0;
+    var validSemesters = [];
+
+    for (var i = 0; i < semesters.length; i++) {
+      var s = semesters[i];
+      var gpa = parseFloat(s.gpa);
+      var cr = parseFloat(s.credits);
+      if (!isNaN(gpa) && !isNaN(cr) && cr > 0 && gpa >= 0) {
+        totalCredits += cr;
+        totalPoints += gpa * cr;
+        validSemesters.push({ index: i + 1, gpa: gpa, credits: cr });
+      }
+    }
+
+    var overallGpa = totalCredits > 0 ? totalPoints / totalCredits : 0;
+
+    document.getElementById('multi-gpa-val').textContent = validSemesters.length > 0 ? overallGpa.toFixed(2) : '—';
+    document.getElementById('multi-class-val').textContent = validSemesters.length > 0 ? getClassification(overallGpa) : '—';
+
+    if (validSemesters.length > 0) {
+      var best = validSemesters[0], worst = validSemesters[0];
+      for (var i = 1; i < validSemesters.length; i++) {
+        if (validSemesters[i].gpa > best.gpa) best = validSemesters[i];
+        if (validSemesters[i].gpa < worst.gpa) worst = validSemesters[i];
+      }
+      document.getElementById('multi-best-val').textContent = labels.semesterNum + ' ' + best.index + ' (' + best.gpa.toFixed(2) + ')';
+      document.getElementById('multi-worst-val').textContent = labels.semesterNum + ' ' + worst.index + ' (' + worst.gpa.toFixed(2) + ')';
+    } else {
+      document.getElementById('multi-best-val').textContent = '—';
+      document.getElementById('multi-worst-val').textContent = '—';
+    }
+
+    // Chart
+    var chartSection = document.getElementById('multi-chart-section');
+    var chartEl = document.getElementById('multi-chart');
+    if (validSemesters.length >= 2) {
+      chartSection.style.display = 'block';
+      var max = gradeSystems[currentSystem].max;
+      var html = '';
+      for (var i = 0; i < validSemesters.length; i++) {
+        var pct = (validSemesters[i].gpa / max) * 100;
+        if (pct < 3) pct = 3;
+        html += '<div class="gpa-chart-bar-wrap">';
+        html += '<div class="gpa-chart-val">' + validSemesters[i].gpa.toFixed(2) + '</div>';
+        html += '<div class="gpa-chart-bar" style="height:' + pct + '%"></div>';
+        html += '<div class="gpa-chart-label">' + validSemesters[i].index + '</div>';
+        html += '</div>';
+      }
+      chartEl.innerHTML = html;
+    } else {
+      chartSection.style.display = 'none';
+    }
+  }
+
+  function renderRefTables() {
+    var sys = gradeSystems[currentSystem];
+
+    // Grades table (only for 4.0 and 5.0)
+    var gradesBody = document.getElementById('ref-grades-body');
+    var gradesTable = document.getElementById('ref-grades-table');
+    if (sys.grades) {
+      gradesTable.style.display = '';
+      var html = '';
+      for (var i = 0; i < sys.grades.length; i++) {
+        var g = sys.grades[i];
+        html += '<tr><td>' + g.label + '</td><td>' + g.value.toFixed(2) + '</td></tr>';
+      }
+      gradesBody.innerHTML = html;
+    } else {
+      gradesTable.style.display = 'none';
+    }
+
+    // Classifications table
+    var classBody = document.getElementById('ref-class-body');
+    var cls = sys.classifications;
+    var html = '';
+    for (var i = 0; i < cls.length; i++) {
+      var label = isArabic ? cls[i].ar : cls[i].en;
+      var rangeMax = i === 0 ? gradeSystems[currentSystem].max : cls[i - 1].min;
+      var rangeStr;
+      if (cls[i].min === 0) {
+        rangeStr = '< ' + (i > 0 ? cls[i - 1].min.toFixed(2) : gradeSystems[currentSystem].max.toFixed(2));
+      } else {
+        rangeStr = cls[i].min.toFixed(2) + ' – ' + rangeMax.toFixed(2);
+      }
+      html += '<tr><td>' + label + '</td><td>' + rangeStr + '</td></tr>';
+    }
+    classBody.innerHTML = html;
+  }
+
   // Public functions
   window.gpaSwitchTab = function(tab, btn) {
+    if (tab === 'reference') renderRefTables();
     var sections = document.querySelectorAll('.gpa-calculator .calc-section');
     var tabs = document.querySelectorAll('.gpa-calculator .calc-tab');
     for (var i = 0; i < sections.length; i++) {
@@ -1054,6 +1433,9 @@
     updateMaxInputs();
     calcCumulative();
     calcTarget();
+    renderSemesters();
+    calcMulti();
+    renderRefTables();
   };
 
   window.gpaAddCourse = function() {
@@ -1082,6 +1464,23 @@
   window.gpaCalcCumulative = calcCumulative;
   window.gpaCalcTarget = calcTarget;
   window.gpaCalcConvert = calcConvert;
+
+  window.gpaAddSemester = function() {
+    semesters.push({ gpa: '', credits: '' });
+    renderSemesters();
+  };
+
+  window.gpaRemoveSemester = function(index) {
+    if (semesters.length <= 1) return;
+    semesters.splice(index, 1);
+    renderSemesters();
+    calcMulti();
+  };
+
+  window.gpaUpdateSemester = function(index, field, value) {
+    semesters[index][field] = value;
+    calcMulti();
+  };
 
   window.gpaUseFromSemester = function() {
     var sys = gradeSystems[currentSystem];
@@ -1118,6 +1517,7 @@
 
   // Initialize
   init();
+  initSemesters();
   updateMaxInputs();
 })();
 </script>
