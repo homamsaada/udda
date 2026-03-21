@@ -12,7 +12,7 @@ relatedTool: "zakat-calculator"
 في هذا الدليل نشرح لك حساب زكاة المال بشكل مبسّط وعملي، مع أمثلة واضحة تساعدك على معرفة المبلغ المستحق عليك بدقة.
 
 <div class="blog-cta">
-  <div class="blog-cta-icon">🧮</div>
+  <div class="blog-cta-icon">🕌</div>
   <div class="blog-cta-body">
     <p>هل تريد الحساب مباشرة؟ إذا كنت تعرف الأساسيات وتريد حساب زكاتك الآن:</p>
     <a href="/ar/tools/zakat-calculator.html">احسب زكاتك الآن ←</a>
@@ -83,7 +83,7 @@ relatedTool: "zakat-calculator"
 **الزكاة المستحقة:** 53,000 × 2.5% = **1,325 ريالاً**
 
 <div class="blog-cta">
-  <div class="blog-cta-icon">📊</div>
+  <div class="blog-cta-icon">🕌</div>
   <div class="blog-cta-body">
     <p>أدخل أرقامك واحصل على النتيجة فوراً — الحاسبة تدعم النقود والذهب والأسهم والديون:</p>
     <a href="/ar/tools/zakat-calculator.html">جرّب حاسبة الزكاة ←</a>
