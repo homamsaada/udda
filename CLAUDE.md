@@ -216,6 +216,18 @@ npm run serve
 - Posts are sorted by date (newest first) on the blog index page
 - The homepage automatically shows the latest 3 posts (if any exist)
 - Blog posts are automatically added to sitemap.xml
+- Links inside blog content using absolute paths (`/ar/...` or `/en/...`) are automatically converted to relative paths at build time, so always write them in absolute form
+- Use the `.blog-cta` class to add a prominent CTA block linking to a related tool. The CTA icon should match the tool's icon from `tools.json`. Ideal count: **two CTAs per article** (intro + mid-article), since the `relatedTool` card auto-appended at the end covers the closing CTA:
+
+```html
+<div class="blog-cta">
+  <div class="blog-cta-icon">🕌</div>
+  <div class="blog-cta-body">
+    <p>CTA text here</p>
+    <a href="/ar/tools/tool-id.html">Button label ←</a>
+  </div>
+</div>
+```
 
 ## Adding a Sub-Calculator to `percentage`
 
