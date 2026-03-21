@@ -387,13 +387,17 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Course Rows */
+/* Course Header (desktop only) */
 .gpa-calculator .gpa-course-header {
   display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr auto;
+  grid-template-columns: 2fr 1fr 1.5fr 36px;
   gap: 8px;
   margin-bottom: 8px;
   padding: 0 0 4px;
+}
+
+.gpa-calculator .gpa-course-header.whatif-mode {
+  grid-template-columns: 2fr 1fr 1.5fr 1fr 36px;
 }
 
 .gpa-calculator .gpa-course-header span {
@@ -402,20 +406,50 @@
   color: var(--text-muted);
 }
 
-.gpa-calculator .gpa-course-header span:last-child {
-  width: 36px;
-}
-
-.gpa-calculator .gpa-course-row {
+/* Course Card — desktop: single-line grid row */
+.gpa-calculator .gpa-course-card {
   display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr auto;
+  grid-template-columns: 2fr 1fr 1.5fr 36px;
   gap: 8px;
   margin-bottom: 8px;
   align-items: center;
 }
 
-.gpa-calculator .gpa-course-row input,
-.gpa-calculator .gpa-course-row select {
+.gpa-calculator .gpa-course-card.whatif-mode {
+  grid-template-columns: 2fr 1fr 1.5fr 1fr 36px;
+}
+
+/* Desktop: labels hidden (header serves as labels), form-group is transparent */
+.gpa-calculator .gpa-course-card .gpa-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.gpa-calculator .gpa-course-card .gpa-form-group label {
+  display: none;
+}
+
+/* Desktop: field-name takes one column, field-pair spans two columns inline */
+.gpa-calculator .gpa-course-card .gpa-field-name {
+  grid-column: 1;
+}
+
+.gpa-calculator .gpa-course-card .gpa-field-pair {
+  display: contents;
+}
+
+.gpa-calculator .gpa-course-card .gpa-field-whatif {
+  display: contents;
+}
+
+.gpa-calculator .gpa-course-card .gpa-del-btn {
+  order: 10;
+}
+
+/* Inputs inside course cards */
+.gpa-calculator .gpa-course-card input,
+.gpa-calculator .gpa-course-card select {
   padding: 12px 16px;
   border: 2px solid var(--border-color);
   border-radius: 10px;
@@ -428,16 +462,17 @@
   min-width: 0;
 }
 
-.gpa-calculator .gpa-course-row input:focus,
-.gpa-calculator .gpa-course-row select:focus {
+.gpa-calculator .gpa-course-card input:focus,
+.gpa-calculator .gpa-course-card select:focus {
   outline: none;
   border-color: var(--accent-primary);
 }
 
-.gpa-calculator .gpa-course-row input::placeholder {
+.gpa-calculator .gpa-course-card input::placeholder {
   color: var(--text-muted);
 }
 
+/* Delete button */
 .gpa-calculator .gpa-del-btn {
   width: 36px;
   height: 36px;
@@ -458,6 +493,13 @@
 .gpa-calculator .gpa-del-btn:hover {
   background: rgba(239, 68, 68, 0.1);
   color: #ef4444;
+}
+
+/* What-if alt grade color */
+.gpa-calculator .gpa-field-whatif input,
+.gpa-calculator .gpa-field-whatif select {
+  border-color: var(--accent-secondary);
+  background: rgba(139, 92, 246, 0.05);
 }
 
 /* Add Course Button */
@@ -917,29 +959,6 @@
   background: var(--bg-tertiary);
 }
 
-/* What-if alt grade in course row */
-.gpa-calculator .gpa-course-row.whatif-mode {
-  grid-template-columns: 2fr 1fr 1fr 1fr auto;
-}
-
-.gpa-calculator .gpa-course-row .gpa-alt-grade {
-  position: relative;
-  display: flex;
-  min-width: 0;
-}
-
-.gpa-calculator .gpa-course-row .gpa-alt-grade select,
-.gpa-calculator .gpa-course-row .gpa-alt-grade input {
-  border-color: var(--accent-secondary);
-  background: rgba(139, 92, 246, 0.05);
-  flex: 1;
-  min-width: 0;
-}
-
-.gpa-calculator .gpa-course-header.whatif-mode {
-  grid-template-columns: 2fr 1fr 1fr 1fr auto;
-}
-
 /* Responsive — single breakpoint like zakat */
 @media (max-width: 768px) {
   .gpa-calculator .calc-tab {
@@ -952,40 +971,79 @@
     padding: 16px;
   }
 
-  .gpa-calculator .gpa-form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .gpa-calculator .gpa-stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .gpa-calculator .gpa-stat-card .gpa-stat-value {
     font-size: 1.1rem;
   }
 
-  .gpa-calculator .gpa-course-header {
-    display: none;
-  }
-
+  /* Course header hidden on mobile — labels inside cards instead */
+  .gpa-calculator .gpa-course-header,
   .gpa-calculator .gpa-course-header.whatif-mode {
     display: none;
   }
 
-  .gpa-calculator .gpa-course-row,
-  .gpa-calculator .gpa-course-row.whatif-mode {
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
+  /* Course card becomes a zakat-style card */
+  .gpa-calculator .gpa-course-card,
+  .gpa-calculator .gpa-course-card.whatif-mode {
+    display: block;
+    position: relative;
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    padding: 20px;
+    padding-top: 16px;
+    margin-bottom: 12px;
   }
 
-  .gpa-calculator .gpa-course-row input[type="text"] {
-    grid-column: 1 / -1;
+  /* Show labels on mobile */
+  .gpa-calculator .gpa-course-card .gpa-form-group {
+    gap: 8px;
+    margin-bottom: 16px;
   }
 
-  .gpa-calculator .gpa-course-row.whatif-mode input[type="text"] {
-    grid-column: 1 / -1;
+  .gpa-calculator .gpa-course-card .gpa-form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
   }
 
+  /* field-pair: 2-column grid like zakat form-row */
+  .gpa-calculator .gpa-course-card .gpa-field-pair {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 16px;
+    margin-bottom: 0;
+  }
+
+  .gpa-calculator .gpa-course-card .gpa-field-pair .gpa-form-group {
+    margin-bottom: 0;
+  }
+
+  /* what-if row */
+  .gpa-calculator .gpa-course-card .gpa-field-whatif {
+    display: block;
+    margin-top: 16px;
+  }
+
+  .gpa-calculator .gpa-course-card .gpa-field-whatif .gpa-form-group {
+    margin-bottom: 0;
+  }
+
+  .gpa-calculator .gpa-course-card .gpa-field-whatif input,
+  .gpa-calculator .gpa-course-card .gpa-field-whatif select {
+    border-color: var(--accent-secondary);
+    background: rgba(139, 92, 246, 0.05);
+  }
+
+  /* Delete button in top corner */
+  .gpa-calculator .gpa-course-card > .gpa-del-btn {
+    position: absolute;
+    top: 8px;
+    inset-inline-end: 8px;
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Semester rows */
   .gpa-calculator .gpa-sem-row {
     grid-template-columns: 28px 1fr 1fr 32px;
   }
@@ -1129,7 +1187,7 @@
     var is100 = currentSystem === '100';
     var wif = whatIfActive;
 
-    // Header row
+    // Header row (desktop only — hidden on mobile via CSS)
     html += '<div class="gpa-course-header' + (wif ? ' whatif-mode' : '') + '">';
     html += '<span>' + labels.courseName + '</span>';
     html += '<span>' + labels.creditHours + '</span>';
@@ -1142,17 +1200,39 @@
 
     for (var i = 0; i < courses.length; i++) {
       var c = courses[i];
-      html += '<div class="gpa-course-row' + (wif ? ' whatif-mode' : '') + '">';
+      html += '<div class="gpa-course-card' + (wif ? ' whatif-mode' : '') + '">';
+
+      // Delete button (top-end corner on mobile, inline on desktop)
+      html += '<button class="gpa-del-btn" onclick="gpaRemoveCourse(' + i + ')" title="' + labels.removeCourse + '"' + (courses.length <= 1 ? ' style="visibility:hidden"' : '') + '>&times;</button>';
+
+      // Course name — full width
+      html += '<div class="gpa-form-group gpa-field-name">';
+      html += '<label>' + labels.courseName + '</label>';
       html += '<input type="text" placeholder="' + labels.courseName + '" value="' + (c.name || '') + '" oninput="gpaUpdateCourse(' + i + ',\'name\',this.value)">';
+      html += '</div>';
+
+      // Credits + Grade side by side
+      html += '<div class="gpa-form-row gpa-field-pair">';
+      html += '<div class="gpa-form-group">';
+      html += '<label>' + labels.creditHours + '</label>';
       html += '<input type="number" min="1" max="12" placeholder="3" value="' + (c.credits || '') + '" oninput="gpaUpdateCourse(' + i + ',\'credits\',this.value)">';
+      html += '</div>';
+      html += '<div class="gpa-form-group">';
+      html += '<label>' + labels.grade + '</label>';
       if (is100) {
         html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100" class="gpa-grade-input" value="' + (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '') + '" oninput="gpaUpdateCourse(' + i + ',\'gradeValue\',this.value)">';
       } else {
         var sel = gradeOpts.replace('value="' + c.gradeIndex + '"', 'value="' + c.gradeIndex + '" selected');
         html += '<select onchange="gpaUpdateCourse(' + i + ',\'gradeIndex\',this.value)">' + sel + '</select>';
       }
+      html += '</div>';
+      html += '</div>';
+
+      // What-if alt grade
       if (wif) {
-        html += '<div class="gpa-alt-grade">';
+        html += '<div class="gpa-form-row gpa-field-whatif">';
+        html += '<div class="gpa-form-group">';
+        html += '<label>' + labels.whatIfLabel + '</label>';
         if (is100) {
           var altVal = c.altGradeValue !== undefined && c.altGradeValue !== '' ? c.altGradeValue : (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '');
           html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100" value="' + altVal + '" oninput="gpaUpdateAlt(' + i + ',\'altGradeValue\',this.value)">';
@@ -1162,8 +1242,9 @@
           html += '<select onchange="gpaUpdateAlt(' + i + ',\'altGradeIndex\',this.value)">' + altSel + '</select>';
         }
         html += '</div>';
+        html += '</div>';
       }
-      html += '<button class="gpa-del-btn" onclick="gpaRemoveCourse(' + i + ')" title="' + labels.removeCourse + '"' + (courses.length <= 1 ? ' style="visibility:hidden"' : '') + '>&times;</button>';
+
       html += '</div>';
     }
 
