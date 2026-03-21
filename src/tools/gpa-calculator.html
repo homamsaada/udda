@@ -279,16 +279,13 @@
 </div>
 
 <style>
-/* GPA Calculator Styles */
+/* GPA Calculator Styles — matched to zakat/inheritance patterns */
 .gpa-calculator {
   font-family: inherit;
-  max-width: 100%;
-  overflow: hidden;
 }
 
 .gpa-calculator * {
   font-family: inherit;
-  box-sizing: border-box;
 }
 
 /* System Selector Bar */
@@ -313,15 +310,16 @@
 }
 
 .gpa-calculator .gpa-sys-btn {
-  padding: 8px 16px;
+  padding: 10px 14px;
   border: 2px solid var(--border-color);
-  border-radius: 10px;
+  border-radius: 12px;
   background: var(--bg-secondary);
   color: var(--text-secondary);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-fast);
+  font-family: inherit;
 }
 
 .gpa-calculator .gpa-sys-btn:hover {
@@ -335,7 +333,7 @@
   color: white;
 }
 
-/* Tabs (scrollable for 6+ tabs) */
+/* Tabs — scrollable like kaffara (6+ tabs) */
 .gpa-calculator .calc-tabs {
   display: flex;
   gap: 8px;
@@ -361,6 +359,7 @@
   cursor: pointer;
   transition: all var(--transition-fast);
   text-align: center;
+  font-family: inherit;
 }
 
 .gpa-calculator .calc-tab:hover {
@@ -389,6 +388,24 @@
 }
 
 /* Course Rows */
+.gpa-calculator .gpa-course-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr auto;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 0 0 4px;
+}
+
+.gpa-calculator .gpa-course-header span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.gpa-calculator .gpa-course-header span:last-child {
+  width: 36px;
+}
+
 .gpa-calculator .gpa-course-row {
   display: grid;
   grid-template-columns: 2fr 1fr 1.5fr auto;
@@ -399,16 +416,16 @@
 
 .gpa-calculator .gpa-course-row input,
 .gpa-calculator .gpa-course-row select {
-  padding: 10px 12px;
-  border: 1.5px solid var(--border-color);
-  border-radius: var(--border-radius);
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
   background: var(--bg-secondary);
   color: var(--text-primary);
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-family: inherit;
   transition: border-color var(--transition-fast);
   width: 100%;
   min-width: 0;
-  box-sizing: border-box;
 }
 
 .gpa-calculator .gpa-course-row input:focus,
@@ -435,6 +452,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  font-family: inherit;
 }
 
 .gpa-calculator .gpa-del-btn:hover {
@@ -442,44 +460,29 @@
   color: #ef4444;
 }
 
-.gpa-calculator .gpa-course-header {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr auto;
-  gap: 8px;
-  margin-bottom: 8px;
-  padding: 0 0 4px;
-}
-
-.gpa-calculator .gpa-course-header span {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-}
-
-.gpa-calculator .gpa-course-header span:last-child {
-  width: 36px;
-}
-
 /* Add Course Button */
 .gpa-calculator .gpa-add-btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   width: 100%;
-  padding: 12px;
-  margin-top: 4px;
+  padding: 10px;
+  margin-top: 8px;
   border: 2px dashed var(--border-color);
-  border-radius: var(--border-radius);
+  border-radius: 10px;
   background: transparent;
   color: var(--accent-primary);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-fast);
+  font-family: inherit;
 }
 
 .gpa-calculator .gpa-add-btn:hover {
   border-color: var(--accent-primary);
-  background: rgba(99, 102, 241, 0.05);
+  background: rgba(99, 102, 241, 0.04);
 }
 
 /* Results */
@@ -489,19 +492,15 @@
 
 .gpa-calculator .gpa-stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 12px;
 }
 
 .gpa-calculator .gpa-stat-card {
   background: var(--bg-secondary);
-  border-radius: var(--border-radius-lg);
-  padding: 20px 16px;
+  border-radius: 12px;
+  padding: 14px;
   text-align: center;
-  border: 1px solid var(--border-color);
-  min-width: 0;
-  overflow: hidden;
-  word-break: break-word;
 }
 
 .gpa-calculator .gpa-stat-card.primary {
@@ -515,59 +514,58 @@
 }
 
 .gpa-calculator .gpa-stat-value {
-  font-size: 1.8rem;
-  font-weight: 800;
+  font-size: 1.3rem;
+  font-weight: 700;
   color: var(--text-primary);
-  line-height: 1.2;
-  overflow-wrap: break-word;
 }
 
 .gpa-calculator .gpa-stat-label {
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  margin-top: 6px;
-  font-weight: 500;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
 }
 
-/* Cumulative Form */
+/* Form sections (cumulative, target, converter) — matches zakat .input-form */
 .gpa-calculator .gpa-cum-form {
   background: var(--bg-secondary);
-  border-radius: var(--border-radius-lg);
+  border-radius: 16px;
   padding: 24px;
   margin-bottom: 8px;
-  overflow: hidden;
 }
 
 .gpa-calculator .gpa-form-row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
   margin-bottom: 16px;
+}
+
+.gpa-calculator .gpa-form-row:last-child {
+  margin-bottom: 0;
 }
 
 .gpa-calculator .gpa-form-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .gpa-calculator .gpa-form-group label {
   font-weight: 600;
-  font-size: 0.88rem;
   color: var(--text-primary);
+  font-size: 0.9rem;
 }
 
 .gpa-calculator .gpa-form-group input,
 .gpa-calculator .gpa-form-group select {
-  padding: 10px 12px;
-  border: 1.5px solid var(--border-color);
-  border-radius: var(--border-radius);
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-family: inherit;
   transition: border-color var(--transition-fast);
-  width: 100%;
-  min-width: 0;
 }
 
 .gpa-calculator .gpa-form-group input:focus,
@@ -586,13 +584,14 @@
   gap: 6px;
   padding: 10px 18px;
   border: 2px solid var(--accent-primary);
-  border-radius: var(--border-radius);
+  border-radius: 10px;
   background: transparent;
   color: var(--accent-primary);
   font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-fast);
+  font-family: inherit;
 }
 
 .gpa-calculator .gpa-use-semester-btn:hover {
@@ -615,7 +614,7 @@
   padding: 16px 20px;
   background: rgba(239, 68, 68, 0.08);
   border: 1px solid rgba(239, 68, 68, 0.2);
-  border-radius: var(--border-radius-lg);
+  border-radius: 12px;
   text-align: center;
 }
 
@@ -631,61 +630,7 @@
   font-size: 0.88rem;
 }
 
-/* Converter select */
-.gpa-calculator .gpa-form-group select {
-  padding: 10px 12px;
-  border: 1.5px solid var(--border-color);
-  border-radius: var(--border-radius);
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  font-size: 0.95rem;
-  transition: border-color var(--transition-fast);
-}
-
-.gpa-calculator .gpa-form-group select:focus {
-  outline: none;
-  border-color: var(--accent-primary);
-}
-
 /* Multi-semester rows */
-.gpa-calculator .gpa-sem-row {
-  display: grid;
-  grid-template-columns: auto 1fr 1fr auto;
-  gap: 8px;
-  margin-bottom: 8px;
-  align-items: center;
-}
-
-.gpa-calculator .gpa-sem-row .gpa-sem-num {
-  font-weight: 700;
-  font-size: 0.88rem;
-  color: var(--accent-primary);
-  min-width: 24px;
-  text-align: center;
-}
-
-.gpa-calculator .gpa-sem-row input {
-  padding: 10px 12px;
-  border: 1.5px solid var(--border-color);
-  border-radius: var(--border-radius);
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-  font-size: 0.9rem;
-  transition: border-color var(--transition-fast);
-  width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-}
-
-.gpa-calculator .gpa-sem-row input:focus {
-  outline: none;
-  border-color: var(--accent-primary);
-}
-
-.gpa-calculator .gpa-sem-row input::placeholder {
-  color: var(--text-muted);
-}
-
 .gpa-calculator .gpa-sem-header {
   display: grid;
   grid-template-columns: auto 1fr 1fr auto;
@@ -708,6 +653,44 @@
   width: 36px;
 }
 
+.gpa-calculator .gpa-sem-row {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr auto;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.gpa-calculator .gpa-sem-row .gpa-sem-num {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--accent-primary);
+  min-width: 24px;
+  text-align: center;
+}
+
+.gpa-calculator .gpa-sem-row input {
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+  width: 100%;
+  min-width: 0;
+}
+
+.gpa-calculator .gpa-sem-row input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-sem-row input::placeholder {
+  color: var(--text-muted);
+}
+
 /* Chart */
 .gpa-calculator .gpa-chart-section {
   margin-top: 24px;
@@ -727,7 +710,7 @@
   height: 160px;
   padding: 16px 8px 8px;
   background: var(--bg-secondary);
-  border-radius: var(--border-radius-lg);
+  border-radius: 12px;
   border: 1px solid var(--border-color);
 }
 
@@ -738,6 +721,7 @@
   align-items: center;
   height: 100%;
   justify-content: flex-end;
+  min-width: 0;
 }
 
 .gpa-calculator .gpa-chart-val {
@@ -763,12 +747,12 @@
   font-weight: 600;
 }
 
-/* Reference tables */
+/* Converter note */
 .gpa-calculator .gpa-conv-note {
   margin-top: 12px;
   padding: 10px 14px;
   background: var(--bg-tertiary);
-  border-radius: var(--border-radius);
+  border-radius: 10px;
   font-size: 0.85rem;
   color: var(--text-secondary);
   display: flex;
@@ -776,6 +760,7 @@
   gap: 6px;
 }
 
+/* Reference tables */
 .gpa-calculator .gpa-ref-section {
   margin-bottom: 24px;
 }
@@ -789,6 +774,8 @@
 
 .gpa-calculator .gpa-ref-table-wrap {
   overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
 }
 
 .gpa-calculator .gpa-ref-table {
@@ -800,25 +787,10 @@
 .gpa-calculator .gpa-ref-table th {
   background: var(--accent-primary);
   color: white;
-  padding: 10px 16px;
+  padding: 12px 16px;
   text-align: center;
   font-weight: 600;
-}
-
-.gpa-calculator .gpa-ref-table th:first-child {
-  border-radius: var(--border-radius) 0 0 0;
-}
-
-[dir="rtl"] .gpa-calculator .gpa-ref-table th:first-child {
-  border-radius: 0 var(--border-radius) 0 0;
-}
-
-.gpa-calculator .gpa-ref-table th:last-child {
-  border-radius: 0 var(--border-radius) 0 0;
-}
-
-[dir="rtl"] .gpa-calculator .gpa-ref-table th:last-child {
-  border-radius: var(--border-radius) 0 0 0;
+  white-space: nowrap;
 }
 
 .gpa-calculator .gpa-ref-table td {
@@ -828,24 +800,8 @@
   color: var(--text-primary);
 }
 
-.gpa-calculator .gpa-ref-table tr:nth-child(even) td {
-  background: var(--bg-secondary);
-}
-
-.gpa-calculator .gpa-ref-table tr:last-child td:first-child {
-  border-radius: 0 0 0 var(--border-radius);
-}
-
-[dir="rtl"] .gpa-calculator .gpa-ref-table tr:last-child td:first-child {
-  border-radius: 0 0 var(--border-radius) 0;
-}
-
-.gpa-calculator .gpa-ref-table tr:last-child td:last-child {
-  border-radius: 0 0 var(--border-radius) 0;
-}
-
-[dir="rtl"] .gpa-calculator .gpa-ref-table tr:last-child td:last-child {
-  border-radius: 0 0 0 var(--border-radius);
+.gpa-calculator .gpa-ref-table tr:nth-child(even) {
+  background: var(--bg-tertiary);
 }
 
 /* What If */
@@ -859,13 +815,14 @@
 .gpa-calculator .gpa-whatif-btn {
   padding: 10px 20px;
   border: 2px solid var(--accent-secondary);
-  border-radius: var(--border-radius);
+  border-radius: 10px;
   background: transparent;
   color: var(--accent-secondary);
   font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-fast);
+  font-family: inherit;
 }
 
 .gpa-calculator .gpa-whatif-btn:hover {
@@ -881,13 +838,14 @@
 .gpa-calculator .gpa-whatif-reset {
   padding: 10px 20px;
   border: 2px solid var(--border-color);
-  border-radius: var(--border-radius);
+  border-radius: 10px;
   background: transparent;
   color: var(--text-secondary);
   font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-fast);
+  font-family: inherit;
 }
 
 .gpa-calculator .gpa-whatif-reset:hover {
@@ -898,7 +856,7 @@
   margin-top: 16px;
   padding: 16px 20px;
   background: var(--bg-secondary);
-  border-radius: var(--border-radius-lg);
+  border-radius: 12px;
   border: 1px solid var(--border-color);
 }
 
@@ -982,8 +940,18 @@
   grid-template-columns: 2fr 1fr 1fr 1fr auto;
 }
 
-/* Responsive */
+/* Responsive — single breakpoint like zakat */
 @media (max-width: 768px) {
+  .gpa-calculator .calc-tab {
+    min-width: 100px;
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
+
+  .gpa-calculator .gpa-cum-form {
+    padding: 16px;
+  }
+
   .gpa-calculator .gpa-form-row {
     grid-template-columns: 1fr;
   }
@@ -992,31 +960,30 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .gpa-calculator .gpa-cum-form {
-    padding: 16px;
+  .gpa-calculator .gpa-stat-card .gpa-stat-value {
+    font-size: 1.1rem;
   }
 
-  .gpa-calculator .calc-tab {
-    padding: 10px 12px;
-    font-size: 0.85rem;
+  .gpa-calculator .gpa-course-header {
+    display: none;
   }
 
-  .gpa-calculator .gpa-course-row {
-    grid-template-columns: 1fr 60px 1fr 32px;
-    gap: 6px;
+  .gpa-calculator .gpa-course-header.whatif-mode {
+    display: none;
   }
 
+  .gpa-calculator .gpa-course-row,
   .gpa-calculator .gpa-course-row.whatif-mode {
     grid-template-columns: 1fr 1fr;
     gap: 6px;
   }
 
-  .gpa-calculator .gpa-course-row.whatif-mode input[type="text"] {
+  .gpa-calculator .gpa-course-row input[type="text"] {
     grid-column: 1 / -1;
   }
 
-  .gpa-calculator .gpa-course-header.whatif-mode {
-    display: none;
+  .gpa-calculator .gpa-course-row.whatif-mode input[type="text"] {
+    grid-column: 1 / -1;
   }
 
   .gpa-calculator .gpa-sem-row {
@@ -1030,142 +997,14 @@
   .gpa-calculator .gpa-whatif-val {
     font-size: 1.2rem;
   }
-}
 
-@media (max-width: 480px) {
-  .gpa-calculator .calc-tab {
-    padding: 8px 10px;
+  .gpa-calculator .gpa-ref-table {
     font-size: 0.8rem;
-  }
-
-  .gpa-calculator .gpa-stats {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-
-  .gpa-calculator .gpa-stat-card {
-    padding: 12px 8px;
-  }
-
-  .gpa-calculator .gpa-stat-value {
-    font-size: 1.1rem;
-  }
-
-  .gpa-calculator .gpa-course-header {
-    display: none;
-  }
-
-  .gpa-calculator .gpa-course-row {
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-    padding: 10px;
-    background: var(--bg-secondary);
-    border-radius: var(--border-radius);
-    margin-bottom: 10px;
-    border: 1px solid var(--border-color);
-  }
-
-  .gpa-calculator .gpa-course-row input[type="text"] {
-    grid-column: 1 / -1;
-  }
-
-  .gpa-calculator .gpa-course-row .gpa-del-btn {
-    position: absolute;
-    top: 6px;
-    inset-inline-end: 6px;
-    width: 28px;
-    height: 28px;
-    font-size: 1rem;
-  }
-
-  .gpa-calculator .gpa-course-row {
-    position: relative;
-    padding-top: 14px;
-  }
-
-  .gpa-calculator .gpa-course-row select,
-  .gpa-calculator .gpa-course-row .gpa-grade-input,
-  .gpa-calculator .gpa-course-row .gpa-alt-grade {
-    grid-column: span 1;
-  }
-
-  .gpa-calculator .gpa-course-row.whatif-mode {
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-    padding: 10px;
-    padding-top: 14px;
-    position: relative;
-    background: var(--bg-secondary);
-    border-radius: var(--border-radius);
-    margin-bottom: 10px;
-    border: 1px solid var(--border-color);
-  }
-
-  .gpa-calculator .gpa-course-row.whatif-mode input[type="text"] {
-    grid-column: 1 / -1;
-  }
-
-  .gpa-calculator .gpa-sys-btn {
-    padding: 6px 12px;
-    font-size: 0.82rem;
-  }
-
-  .gpa-calculator .gpa-system-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .gpa-calculator .gpa-cum-form {
-    padding: 12px;
-  }
-
-  .gpa-calculator .gpa-form-group label {
-    font-size: 0.82rem;
-  }
-
-  .gpa-calculator .gpa-form-group input,
-  .gpa-calculator .gpa-form-group select {
-    padding: 8px 10px;
-    font-size: 0.85rem;
-  }
-
-  .gpa-calculator .gpa-sem-row {
-    grid-template-columns: 24px 1fr 1fr 28px;
-    gap: 6px;
-  }
-
-  .gpa-calculator .gpa-sem-header {
-    grid-template-columns: 24px 1fr 1fr 28px;
-    gap: 6px;
-  }
-
-  .gpa-calculator .gpa-sem-row input {
-    padding: 8px 10px;
-    font-size: 0.85rem;
   }
 
   .gpa-calculator .gpa-ref-table th,
   .gpa-calculator .gpa-ref-table td {
     padding: 8px 10px;
-    font-size: 0.82rem;
-  }
-
-  .gpa-calculator .gpa-whatif-compare {
-    padding: 12px;
-  }
-
-  .gpa-calculator .gpa-whatif-val {
-    font-size: 1.1rem;
-  }
-
-  .gpa-calculator .gpa-whatif-row {
-    gap: 10px;
-  }
-
-  .gpa-calculator .gpa-chart {
-    gap: 6px;
-    padding: 12px 8px;
   }
 }
 </style>
