@@ -541,7 +541,8 @@
     grid-column: 1 / -1;
   }
 
-  .gpa-calculator .gpa-course-row select {
+  .gpa-calculator .gpa-course-row select,
+  .gpa-calculator .gpa-course-row .gpa-grade-input {
     grid-column: span 1;
   }
 
@@ -571,15 +572,15 @@
     '4': {
       max: 4,
       grades: [
-        { label: 'A+', labelAr: 'أ+', value: 4.00 },
-        { label: 'A',  labelAr: 'أ',  value: 3.75 },
-        { label: 'B+', labelAr: 'ب+', value: 3.50 },
-        { label: 'B',  labelAr: 'ب',  value: 3.00 },
-        { label: 'C+', labelAr: 'ج+', value: 2.50 },
-        { label: 'C',  labelAr: 'ج',  value: 2.00 },
-        { label: 'D+', labelAr: 'د+', value: 1.50 },
-        { label: 'D',  labelAr: 'د',  value: 1.00 },
-        { label: 'F',  labelAr: 'هـ', value: 0.00 }
+        { label: 'A+', value: 4.00 },
+        { label: 'A',  value: 3.75 },
+        { label: 'B+', value: 3.50 },
+        { label: 'B',  value: 3.00 },
+        { label: 'C+', value: 2.50 },
+        { label: 'C',  value: 2.00 },
+        { label: 'D+', value: 1.50 },
+        { label: 'D',  value: 1.00 },
+        { label: 'F',  value: 0.00 }
       ],
       classifications: [
         { min: 3.75, ar: 'ممتاز مرتفع', en: 'Excellent+' },
@@ -596,15 +597,15 @@
     '5': {
       max: 5,
       grades: [
-        { label: 'A+', labelAr: 'أ+', value: 5.00 },
-        { label: 'A',  labelAr: 'أ',  value: 4.75 },
-        { label: 'B+', labelAr: 'ب+', value: 4.50 },
-        { label: 'B',  labelAr: 'ب',  value: 4.00 },
-        { label: 'C+', labelAr: 'ج+', value: 3.50 },
-        { label: 'C',  labelAr: 'ج',  value: 3.00 },
-        { label: 'D+', labelAr: 'د+', value: 2.50 },
-        { label: 'D',  labelAr: 'د',  value: 2.00 },
-        { label: 'F',  labelAr: 'هـ', value: 1.00 }
+        { label: 'A+', value: 5.00 },
+        { label: 'A',  value: 4.75 },
+        { label: 'B+', value: 4.50 },
+        { label: 'B',  value: 4.00 },
+        { label: 'C+', value: 3.50 },
+        { label: 'C',  value: 3.00 },
+        { label: 'D+', value: 2.50 },
+        { label: 'D',  value: 2.00 },
+        { label: 'F',  value: 1.00 }
       ],
       classifications: [
         { min: 4.75, ar: 'ممتاز مرتفع', en: 'Excellent+' },
@@ -620,17 +621,6 @@
     },
     '100': {
       max: 100,
-      grades: [
-        { label: '95-100', labelAr: '95-100', value: 97.5 },
-        { label: '90-94',  labelAr: '90-94',  value: 92 },
-        { label: '85-89',  labelAr: '85-89',  value: 87 },
-        { label: '80-84',  labelAr: '80-84',  value: 82 },
-        { label: '75-79',  labelAr: '75-79',  value: 77 },
-        { label: '70-74',  labelAr: '70-74',  value: 72 },
-        { label: '65-69',  labelAr: '65-69',  value: 67 },
-        { label: '60-64',  labelAr: '60-64',  value: 62 },
-        { label: '<60',    labelAr: '<60',    value: 30 }
-      ],
       classifications: [
         { min: 90, ar: 'ممتاز', en: 'Excellent' },
         { min: 80, ar: 'جيد جداً', en: 'Very Good' },
@@ -658,7 +648,7 @@
 
   function init() {
     for (var i = 0; i < INITIAL_COURSES; i++) {
-      courses.push({ name: '', credits: '', gradeIndex: -1 });
+      courses.push({ name: '', credits: '', gradeIndex: -1, gradeValue: '' });
     }
     renderCourses();
   }
@@ -668,11 +658,7 @@
     var html = '<option value="-1">' + labels.grade + '</option>';
     for (var i = 0; i < sys.grades.length; i++) {
       var g = sys.grades[i];
-      var display = isArabic ? g.labelAr : g.label;
-      if (currentSystem !== '100') {
-        display += ' (' + g.value.toFixed(2) + ')';
-      }
-      html += '<option value="' + i + '">' + display + '</option>';
+      html += '<option value="' + i + '">' + g.label + ' (' + g.value.toFixed(2) + ')</option>';
     }
     return html;
   }
@@ -680,6 +666,7 @@
   function renderCourses() {
     var container = document.getElementById('courses-container');
     var html = '';
+    var is100 = currentSystem === '100';
 
     // Header row
     html += '<div class="gpa-course-header">';
@@ -689,15 +676,19 @@
     html += '<span></span>';
     html += '</div>';
 
-    var gradeOpts = getGradeOptions();
+    var gradeOpts = is100 ? '' : getGradeOptions();
 
     for (var i = 0; i < courses.length; i++) {
       var c = courses[i];
       html += '<div class="gpa-course-row">';
       html += '<input type="text" placeholder="' + labels.courseName + '" value="' + (c.name || '') + '" oninput="gpaUpdateCourse(' + i + ',\'name\',this.value)">';
       html += '<input type="number" min="1" max="12" placeholder="3" value="' + (c.credits || '') + '" oninput="gpaUpdateCourse(' + i + ',\'credits\',this.value)">';
-      var sel = gradeOpts.replace('value="' + c.gradeIndex + '"', 'value="' + c.gradeIndex + '" selected');
-      html += '<select onchange="gpaUpdateCourse(' + i + ',\'gradeIndex\',this.value)">' + sel + '</select>';
+      if (is100) {
+        html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100" class="gpa-grade-input" value="' + (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '') + '" oninput="gpaUpdateCourse(' + i + ',\'gradeValue\',this.value)">';
+      } else {
+        var sel = gradeOpts.replace('value="' + c.gradeIndex + '"', 'value="' + c.gradeIndex + '" selected');
+        html += '<select onchange="gpaUpdateCourse(' + i + ',\'gradeIndex\',this.value)">' + sel + '</select>';
+      }
       html += '<button class="gpa-del-btn" onclick="gpaRemoveCourse(' + i + ')" title="' + labels.removeCourse + '"' + (courses.length <= 1 ? ' style="visibility:hidden"' : '') + '>&times;</button>';
       html += '</div>';
     }
@@ -707,6 +698,7 @@
 
   function calcSemester() {
     var sys = gradeSystems[currentSystem];
+    var is100 = currentSystem === '100';
     var totalCredits = 0;
     var totalPoints = 0;
     var hasValidCourse = false;
@@ -714,11 +706,20 @@
     for (var i = 0; i < courses.length; i++) {
       var c = courses[i];
       var cr = parseFloat(c.credits);
-      var gi = parseInt(c.gradeIndex);
-      if (cr > 0 && gi >= 0 && gi < sys.grades.length) {
-        totalCredits += cr;
-        totalPoints += cr * sys.grades[gi].value;
-        hasValidCourse = true;
+      if (is100) {
+        var gv = parseFloat(c.gradeValue);
+        if (cr > 0 && !isNaN(gv) && gv >= 0 && gv <= 100) {
+          totalCredits += cr;
+          totalPoints += cr * gv;
+          hasValidCourse = true;
+        }
+      } else {
+        var gi = parseInt(c.gradeIndex);
+        if (cr > 0 && gi >= 0 && gi < sys.grades.length) {
+          totalCredits += cr;
+          totalPoints += cr * sys.grades[gi].value;
+          hasValidCourse = true;
+        }
       }
     }
 
@@ -811,6 +812,7 @@
     // Reset grade selections since options changed
     for (var i = 0; i < courses.length; i++) {
       courses[i].gradeIndex = -1;
+      courses[i].gradeValue = '';
     }
     renderCourses();
     calcSemester();
@@ -819,7 +821,7 @@
   };
 
   window.gpaAddCourse = function() {
-    courses.push({ name: '', credits: '', gradeIndex: -1 });
+    courses.push({ name: '', credits: '', gradeIndex: -1, gradeValue: '' });
     renderCourses();
   };
 
@@ -833,6 +835,8 @@
   window.gpaUpdateCourse = function(index, field, value) {
     if (field === 'gradeIndex') {
       courses[index][field] = parseInt(value);
+    } else if (field === 'gradeValue') {
+      courses[index][field] = value;
     } else {
       courses[index][field] = value;
     }
@@ -843,16 +847,25 @@
 
   window.gpaUseFromSemester = function() {
     var sys = gradeSystems[currentSystem];
+    var is100 = currentSystem === '100';
     var totalCredits = 0;
     var totalPoints = 0;
 
     for (var i = 0; i < courses.length; i++) {
       var c = courses[i];
       var cr = parseFloat(c.credits);
-      var gi = parseInt(c.gradeIndex);
-      if (cr > 0 && gi >= 0 && gi < sys.grades.length) {
-        totalCredits += cr;
-        totalPoints += cr * sys.grades[gi].value;
+      if (is100) {
+        var gv = parseFloat(c.gradeValue);
+        if (cr > 0 && !isNaN(gv) && gv >= 0 && gv <= 100) {
+          totalCredits += cr;
+          totalPoints += cr * gv;
+        }
+      } else {
+        var gi = parseInt(c.gradeIndex);
+        if (cr > 0 && gi >= 0 && gi < sys.grades.length) {
+          totalCredits += cr;
+          totalPoints += cr * sys.grades[gi].value;
+        }
       }
     }
 
