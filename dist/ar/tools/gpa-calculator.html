@@ -1079,13 +1079,20 @@
     position: relative;
     background: var(--bg-secondary);
     border-radius: 16px;
-    padding: 20px;
-    padding-top: 16px;
+    padding: 16px 20px 20px;
     margin-bottom: 12px;
+  }
+
+  /* Inputs inside cards: bg-primary for contrast against card's bg-secondary */
+  .gpa-calculator .gpa-course-card input,
+  .gpa-calculator .gpa-course-card select {
+    background: var(--bg-primary);
   }
 
   /* Show labels on mobile */
   .gpa-calculator .gpa-course-card .gpa-form-group {
+    display: flex;
+    flex-direction: column;
     gap: 8px;
     margin-bottom: 16px;
   }
@@ -1095,6 +1102,11 @@
     font-weight: 600;
     color: var(--text-primary);
     font-size: 0.9rem;
+  }
+
+  /* field-name: full width, no bottom margin on last group */
+  .gpa-calculator .gpa-course-card .gpa-field-name {
+    grid-column: unset;
   }
 
   /* field-pair: 2-column grid like zakat form-row */
@@ -1125,13 +1137,15 @@
     background: rgba(139, 92, 246, 0.05);
   }
 
-  /* Delete button in top corner */
+  /* Delete button: absolute top-end corner */
   .gpa-calculator .gpa-course-card > .gpa-del-btn {
     position: absolute;
-    top: 8px;
-    inset-inline-end: 8px;
-    width: 32px;
-    height: 32px;
+    top: 10px;
+    inset-inline-end: 10px;
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+    z-index: 1;
   }
 
   /* Semester rows */
