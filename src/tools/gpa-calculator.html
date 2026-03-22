@@ -166,6 +166,35 @@
         </div>
       </div>
     </div>
+
+    <!-- Section 3: Highest possible GPA -->
+    <div class="gpa-cum-sub">
+      <h4 class="gpa-cum-sub-title">{{tool.cumSectionMax}}</h4>
+      <div class="gpa-cum-form">
+        <div class="gpa-form-row">
+          <div class="gpa-form-group" style="grid-column: 1 / -1">
+            <label>{{tool.totalGradCredits}}</label>
+            <input type="number" id="max-grad-credits" min="1" placeholder="132" oninput="gpaCalcMaxGpa()">
+          </div>
+        </div>
+      </div>
+
+      <div class="gpa-results" id="max-gpa-results">
+        <div class="gpa-stats">
+          <div class="gpa-stat-card primary">
+            <div class="gpa-stat-value" id="max-gpa-val">—</div>
+            <div class="gpa-stat-label">{{tool.maxPossibleGpa}}</div>
+          </div>
+          <div class="gpa-stat-card">
+            <div class="gpa-stat-value" id="max-gpa-class-val">—</div>
+            <div class="gpa-stat-label">{{tool.classification}}</div>
+          </div>
+        </div>
+        <div class="gpa-impossible-msg" id="max-gpa-completed" style="display:none">
+          <div class="gpa-impossible-text" id="max-gpa-completed-text"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Tab 3: Multi-Semester -->
@@ -1202,7 +1231,8 @@
     originalGpa: '{{tool.originalGpa}}',
     newGpaLabel: '{{tool.newGpa}}',
     totalPoints: '{{tool.totalPoints}}',
-    weightedTotal: '{{tool.weightedTotal}}'
+    weightedTotal: '{{tool.weightedTotal}}',
+    allCreditsCompleted: '{{tool.allCreditsCompleted}}'
   };
 
   var whatIfActive = false;
@@ -1442,6 +1472,41 @@
       classEl.textContent = getClassification(requiredGpa);
       approxNote.style.display = 'block';
     }
+  }
+
+  function calcMaxGpa() {
+    var curGpa = parseFloat(document.getElementById('cum-prev-gpa').value);
+    var curCredits = parseFloat(document.getElementById('cum-prev-credits').value);
+    var gradCredits = parseFloat(document.getElementById('max-grad-credits').value);
+
+    var resultEl = document.getElementById('max-gpa-val');
+    var classEl = document.getElementById('max-gpa-class-val');
+    var completedEl = document.getElementById('max-gpa-completed');
+    var completedText = document.getElementById('max-gpa-completed-text');
+
+    completedEl.style.display = 'none';
+
+    if (isNaN(curGpa) || isNaN(curCredits) || isNaN(gradCredits) ||
+        curCredits <= 0 || gradCredits <= 0) {
+      resultEl.textContent = '—';
+      classEl.textContent = '—';
+      return;
+    }
+
+    if (curCredits >= gradCredits) {
+      resultEl.textContent = curGpa.toFixed(2);
+      classEl.textContent = getClassification(curGpa);
+      completedEl.style.display = 'block';
+      completedText.textContent = labels.allCreditsCompleted;
+      return;
+    }
+
+    var max = gradeSystems[currentSystem].max;
+    var remainingCredits = gradCredits - curCredits;
+    var maxGpa = (curGpa * curCredits + max * remainingCredits) / gradCredits;
+
+    resultEl.textContent = maxGpa.toFixed(2);
+    classEl.textContent = getClassification(maxGpa);
   }
 
   // Grade-bracket conversion table: maps classification boundaries between systems
@@ -1722,6 +1787,7 @@
     updateMaxInputs();
     calcCumulative();
     calcTarget();
+    calcMaxGpa();
     renderSemesters();
     calcMulti();
     renderRefTables();
@@ -1752,7 +1818,8 @@
 
   window.gpaCalcCumulative = calcCumulative;
   window.gpaCalcTarget = calcTarget;
-  window.gpaCalcCumBoth = function() { calcCumulative(); calcTarget(); };
+  window.gpaCalcMaxGpa = calcMaxGpa;
+  window.gpaCalcCumBoth = function() { calcCumulative(); calcTarget(); calcMaxGpa(); };
   window.gpaCalcConvert = calcConvert;
 
   function calcWhatIf() {
