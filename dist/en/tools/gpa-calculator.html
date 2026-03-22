@@ -223,12 +223,18 @@
       <div class="gpa-cum-form">
         <div class="gpa-form-row">
           <div class="gpa-form-group">
-            <label>Target GPA</label>
+            <label>Target Cumulative GPA</label>
             <input type="number" id="tgt-goal-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcTarget()">
           </div>
           <div class="gpa-form-group">
-            <label>Next Semester Credits</label>
-            <input type="number" id="tgt-next-credits" min="1" placeholder="0" oninput="gpaCalcTarget()">
+            <label>Remaining Semesters</label>
+            <input type="number" id="tgt-rem-semesters" min="1" value="1" placeholder="1" oninput="gpaCalcTarget()">
+          </div>
+        </div>
+        <div class="gpa-form-row">
+          <div class="gpa-form-group" style="grid-column: 1 / -1">
+            <label>Credits per Semester (avg)</label>
+            <input type="number" id="tgt-avg-credits" min="1" placeholder="15" oninput="gpaCalcTarget()">
           </div>
         </div>
       </div>
@@ -237,7 +243,7 @@
         <div class="gpa-stats">
           <div class="gpa-stat-card primary">
             <div class="gpa-stat-value" id="tgt-required-val">—</div>
-            <div class="gpa-stat-label">Required Semester GPA</div>
+            <div class="gpa-stat-label">Required GPA Each Semester</div>
           </div>
           <div class="gpa-stat-card">
             <div class="gpa-stat-value" id="tgt-class-val">—</div>
@@ -246,7 +252,9 @@
         </div>
         <div class="gpa-impossible-msg" id="tgt-impossible" style="display:none">
           <div class="gpa-impossible-text" id="tgt-impossible-text"></div>
-          <div class="gpa-semesters-info" id="tgt-semesters-info"></div>
+        </div>
+        <div class="gpa-approx-note" id="tgt-approx-note" style="display:none">
+          <span>📌</span> This is an approximation assuming equal credit hours per semester
         </div>
       </div>
     </div>
@@ -884,7 +892,8 @@
 }
 
 /* Converter note */
-.gpa-calculator .gpa-conv-note {
+.gpa-calculator .gpa-conv-note,
+.gpa-calculator .gpa-approx-note {
   margin-top: 12px;
   padding: 10px 14px;
   background: var(--bg-tertiary);
@@ -1267,8 +1276,7 @@
     noCoursesMsg: 'Add courses and select grades to calculate GPA',
     increased: 'Increased',
     decreased: 'Decreased',
-    impossibleMsg: 'Cannot achieve this GPA in one semester',
-    semestersNeeded: 'Approximate semesters needed',
+    impossibleMsg: 'Cannot achieve this GPA with the remaining semesters',
     semesterNum: 'Semester',
     semesterGpaLabel: 'GPA',
     removeSemester: 'Remove',
@@ -1474,57 +1482,47 @@
     var curGpa = parseFloat(document.getElementById('cum-prev-gpa').value);
     var curCredits = parseFloat(document.getElementById('cum-prev-credits').value);
     var goalGpa = parseFloat(document.getElementById('tgt-goal-gpa').value);
-    var nextCredits = parseFloat(document.getElementById('tgt-next-credits').value);
+    var remSemesters = parseInt(document.getElementById('tgt-rem-semesters').value) || 1;
+    var avgCredits = parseFloat(document.getElementById('tgt-avg-credits').value);
 
     var resultEl = document.getElementById('tgt-required-val');
     var classEl = document.getElementById('tgt-class-val');
     var impossibleEl = document.getElementById('tgt-impossible');
     var impossibleText = document.getElementById('tgt-impossible-text');
-    var semestersInfo = document.getElementById('tgt-semesters-info');
+    var approxNote = document.getElementById('tgt-approx-note');
 
     impossibleEl.style.display = 'none';
+    approxNote.style.display = 'none';
 
-    if (isNaN(curGpa) || isNaN(curCredits) || isNaN(goalGpa) || isNaN(nextCredits) ||
-        curCredits <= 0 || nextCredits <= 0) {
+    if (isNaN(curGpa) || isNaN(curCredits) || isNaN(goalGpa) || isNaN(avgCredits) ||
+        curCredits <= 0 || avgCredits <= 0 || remSemesters <= 0) {
       resultEl.textContent = '—';
       classEl.textContent = '—';
       return;
     }
 
     var max = gradeSystems[currentSystem].max;
-    // requiredGpa = (goalGpa * (curCredits + nextCredits) - curGpa * curCredits) / nextCredits
-    var totalNeeded = goalGpa * (curCredits + nextCredits);
+    // Total future credits across all remaining semesters
+    var totalFutureCredits = remSemesters * avgCredits;
+    // Required average GPA per semester:
+    // goalGpa * (curCredits + totalFutureCredits) = curGpa * curCredits + requiredGpa * totalFutureCredits
+    var totalNeeded = goalGpa * (curCredits + totalFutureCredits);
     var alreadyHave = curGpa * curCredits;
-    var requiredGpa = (totalNeeded - alreadyHave) / nextCredits;
+    var requiredGpa = (totalNeeded - alreadyHave) / totalFutureCredits;
 
     if (requiredGpa > max) {
       resultEl.textContent = '—';
       classEl.textContent = '—';
       impossibleEl.style.display = 'block';
       impossibleText.textContent = labels.impossibleMsg;
-
-      // Estimate semesters needed at max GPA per semester
-      var semCount = 0;
-      var simCredits = curCredits;
-      var simPoints = curGpa * curCredits;
-      while (semCount < 50) {
-        simCredits += nextCredits;
-        simPoints += max * nextCredits;
-        semCount++;
-        if (simPoints / simCredits >= goalGpa) break;
-      }
-      if (semCount < 50) {
-        semestersInfo.textContent = labels.semestersNeeded + ': ' + semCount;
-      } else {
-        semestersInfo.textContent = '';
-      }
     } else if (requiredGpa < 0) {
-      // Already exceeds target, any GPA works
       resultEl.textContent = '0.00';
       classEl.textContent = getClassification(0);
+      approxNote.style.display = 'block';
     } else {
       resultEl.textContent = requiredGpa.toFixed(2);
       classEl.textContent = getClassification(requiredGpa);
+      approxNote.style.display = 'block';
     }
   }
 
