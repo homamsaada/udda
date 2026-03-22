@@ -325,7 +325,7 @@
       <div class="gpa-form-row">
         <div class="gpa-form-group">
           <label>Convert From</label>
-          <select id="conv-from" onchange="gpaCalcConvert()">
+          <select id="conv-from" onchange="gpaConvSync('from')">
             <option value="4">4.0 Scale</option>
             <option value="5">5.0 Scale</option>
             <option value="100">Percentage (100%)</option>
@@ -333,7 +333,7 @@
         </div>
         <div class="gpa-form-group">
           <label>To</label>
-          <select id="conv-to" onchange="gpaCalcConvert()">
+          <select id="conv-to" onchange="gpaConvSync('to')">
             <option value="4">4.0 Scale</option>
             <option value="5" selected>5.0 Scale</option>
             <option value="100">Percentage (100%)</option>
@@ -361,9 +361,6 @@
       </div>
       <div class="gpa-conv-note" id="conv-note" style="display:none">
         <span>📌</span> This conversion is approximate and based on grade classification equivalences. It may differ from your university's official conversion system
-      </div>
-      <div class="gpa-conv-note" id="conv-same-msg" style="display:none">
-        <span>⚠️</span> Choose two different systems
       </div>
     </div>
   </div>
@@ -1520,6 +1517,39 @@
     }
   }
 
+  function syncConverterDropdowns(changed) {
+    var fromEl = document.getElementById('conv-from');
+    var toEl = document.getElementById('conv-to');
+    var fromVal = fromEl.value;
+    var toVal = toEl.value;
+
+    // Show all options first
+    var fromOpts = fromEl.options;
+    var toOpts = toEl.options;
+    for (var i = 0; i < fromOpts.length; i++) fromOpts[i].hidden = false;
+    for (var i = 0; i < toOpts.length; i++) toOpts[i].hidden = false;
+
+    // Hide selected value from the other dropdown
+    for (var i = 0; i < toOpts.length; i++) {
+      if (toOpts[i].value === fromVal) toOpts[i].hidden = true;
+    }
+    for (var i = 0; i < fromOpts.length; i++) {
+      if (fromOpts[i].value === toVal) fromOpts[i].hidden = true;
+    }
+
+    // If both ended up the same (shouldn't happen, but safety), pick next available
+    if (fromVal === toVal) {
+      for (var i = 0; i < toOpts.length; i++) {
+        if (toOpts[i].value !== fromVal) {
+          toEl.value = toOpts[i].value;
+          break;
+        }
+      }
+      // Re-sync after fix
+      syncConverterDropdowns(changed);
+    }
+  }
+
   function calcTarget() {
     var curGpa = parseFloat(document.getElementById('cum-prev-gpa').value);
     var curCredits = parseFloat(document.getElementById('cum-prev-credits').value);
@@ -1655,21 +1685,10 @@
 
     updateConverterMax();
 
-    var sameMsgEl = document.getElementById('conv-same-msg');
-    if (sameMsgEl) sameMsgEl.style.display = 'none';
-
     if (isNaN(inputVal) || inputVal < 0) {
       resultEl.textContent = '—';
       classEl.textContent = '—';
       if (noteEl) noteEl.style.display = 'none';
-      return;
-    }
-
-    if (fromSys === toSys) {
-      resultEl.textContent = '—';
-      classEl.textContent = '—';
-      if (noteEl) noteEl.style.display = 'none';
-      if (sameMsgEl) sameMsgEl.style.display = 'flex';
       return;
     }
 
@@ -1911,6 +1930,10 @@
   window.gpaCalcMaxGpa = calcMaxGpa;
   window.gpaCalcCumBoth = function() { calcCumulative(); calcTarget(); calcMaxGpa(); };
   window.gpaCalcConvert = calcConvert;
+  window.gpaConvSync = function(changed) {
+    syncConverterDropdowns(changed);
+    calcConvert();
+  };
 
   function calcWhatIf() {
     var sys = gradeSystems[currentSystem];
@@ -2072,6 +2095,7 @@
   init();
   initSemesters();
   updateMaxInputs();
+  syncConverterDropdowns();
   renderRefTables();
 })();
 </script>
