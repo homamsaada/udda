@@ -461,8 +461,9 @@ These patterns are already used in zakat-calculator and kaffara-calculator. Reus
 <div class="calc-section" id="tab2-section">...</div>
 ```
 
-- Use `.calc-tabs` (flex-wrap) for ≤5 tabs
-- Use scrollable container (`overflow-x: auto; flex-wrap: nowrap`) for 6+ tabs
+- التبويبات دائماً تلتف (flex-wrap: wrap) ولا تستخدم scroll أبداً
+- على الموبايل التبويبات تنضغط وتصغر وتنتقل لأسطر متعددة
+- انظر أزرار المذاهب في حاسبة المواريث كمرجع
 
 ### Shared price/input bar
 
