@@ -362,6 +362,9 @@
       <div class="gpa-conv-note" id="conv-note" style="display:none">
         <span>📌</span> This conversion is approximate and based on grade classification equivalences. It may differ from your university's official conversion system
       </div>
+      <div class="gpa-conv-note" id="conv-same-msg" style="display:none">
+        <span>⚠️</span> Choose two different systems
+      </div>
     </div>
   </div>
 
@@ -1652,6 +1655,9 @@
 
     updateConverterMax();
 
+    var sameMsgEl = document.getElementById('conv-same-msg');
+    if (sameMsgEl) sameMsgEl.style.display = 'none';
+
     if (isNaN(inputVal) || inputVal < 0) {
       resultEl.textContent = '—';
       classEl.textContent = '—';
@@ -1660,17 +1666,10 @@
     }
 
     if (fromSys === toSys) {
-      resultEl.textContent = inputVal.toFixed(2);
-      var cls = gradeSystems[toSys].classifications;
-      var classText = '';
-      for (var i = 0; i < cls.length; i++) {
-        if (inputVal >= cls[i].min) {
-          classText = isArabic ? cls[i].ar : cls[i].en;
-          break;
-        }
-      }
-      classEl.textContent = classText || '—';
+      resultEl.textContent = '—';
+      classEl.textContent = '—';
       if (noteEl) noteEl.style.display = 'none';
+      if (sameMsgEl) sameMsgEl.style.display = 'flex';
       return;
     }
 
