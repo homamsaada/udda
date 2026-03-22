@@ -115,7 +115,6 @@
   <div class="calc-tabs">
     <button class="calc-tab active" onclick="gpaSwitchTab('semester', this)">المعدل الفصلي</button>
     <button class="calc-tab" onclick="gpaSwitchTab('cumulative', this)">المعدل التراكمي</button>
-    <button class="calc-tab" onclick="gpaSwitchTab('target', this)">المعدل المطلوب</button>
     <button class="calc-tab" onclick="gpaSwitchTab('converter', this)">تحويل المعدلات</button>
     <button class="calc-tab" onclick="gpaSwitchTab('multi', this)">فصول متعددة</button>
   </div>
@@ -167,89 +166,88 @@
     </div>
   </div>
 
-  <!-- Tab 2: Cumulative GPA -->
+  <!-- Tab 2: Cumulative GPA (merged with Target) -->
   <div class="calc-section" id="cumulative-section">
+    <!-- Shared fields: current GPA + earned credits -->
     <div class="gpa-cum-form">
       <div class="gpa-form-row">
         <div class="gpa-form-group">
           <label>المعدل التراكمي الحالي</label>
-          <input type="number" id="cum-prev-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcCumulative()">
+          <input type="number" id="cum-prev-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcCumBoth()">
         </div>
         <div class="gpa-form-group">
           <label>الساعات المكتسبة سابقاً</label>
-          <input type="number" id="cum-prev-credits" min="0" placeholder="0" oninput="gpaCalcCumulative()">
-        </div>
-      </div>
-      <div class="gpa-form-row">
-        <div class="gpa-form-group">
-          <label>معدل الفصل الجديد</label>
-          <input type="number" id="cum-new-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcCumulative()">
-        </div>
-        <div class="gpa-form-group">
-          <label>ساعات الفصل الجديد</label>
-          <input type="number" id="cum-new-credits" min="0" placeholder="0" oninput="gpaCalcCumulative()">
-        </div>
-      </div>
-      <button class="gpa-use-semester-btn" onclick="gpaUseFromSemester()">📋 استخدم من الفصلي</button>
-    </div>
-
-    <div class="gpa-results" id="cumulative-results">
-      <div class="gpa-stats">
-        <div class="gpa-stat-card primary">
-          <div class="gpa-stat-value" id="cum-gpa-val">—</div>
-          <div class="gpa-stat-label">المعدل التراكمي الجديد</div>
-        </div>
-        <div class="gpa-stat-card">
-          <div class="gpa-stat-value" id="cum-class-val">—</div>
-          <div class="gpa-stat-label">التقدير</div>
-        </div>
-        <div class="gpa-stat-card">
-          <div class="gpa-stat-value" id="cum-change-val">—</div>
-          <div class="gpa-stat-label">التغيير</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Tab 3: Target GPA -->
-  <div class="calc-section" id="target-section">
-    <div class="gpa-cum-form">
-      <div class="gpa-form-row">
-        <div class="gpa-form-group">
-          <label>المعدل التراكمي الحالي</label>
-          <input type="number" id="tgt-cur-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcTarget()">
-        </div>
-        <div class="gpa-form-group">
-          <label>الساعات المكتسبة سابقاً</label>
-          <input type="number" id="tgt-cur-credits" min="0" placeholder="0" oninput="gpaCalcTarget()">
-        </div>
-      </div>
-      <div class="gpa-form-row">
-        <div class="gpa-form-group">
-          <label>المعدل المستهدف</label>
-          <input type="number" id="tgt-goal-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcTarget()">
-        </div>
-        <div class="gpa-form-group">
-          <label>ساعات الفصل القادم</label>
-          <input type="number" id="tgt-next-credits" min="1" placeholder="0" oninput="gpaCalcTarget()">
+          <input type="number" id="cum-prev-credits" min="0" placeholder="0" oninput="gpaCalcCumBoth()">
         </div>
       </div>
     </div>
 
-    <div class="gpa-results" id="target-results">
-      <div class="gpa-stats">
-        <div class="gpa-stat-card primary">
-          <div class="gpa-stat-value" id="tgt-required-val">—</div>
-          <div class="gpa-stat-label">المعدل المطلوب تحقيقه</div>
+    <!-- Section 1: Calculate new cumulative GPA -->
+    <div class="gpa-cum-sub">
+      <h4 class="gpa-cum-sub-title">حساب المعدل التراكمي الجديد</h4>
+      <div class="gpa-cum-form">
+        <div class="gpa-form-row">
+          <div class="gpa-form-group">
+            <label>معدل الفصل الجديد</label>
+            <input type="number" id="cum-new-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcCumulative()">
+          </div>
+          <div class="gpa-form-group">
+            <label>ساعات الفصل الجديد</label>
+            <input type="number" id="cum-new-credits" min="0" placeholder="0" oninput="gpaCalcCumulative()">
+          </div>
         </div>
-        <div class="gpa-stat-card">
-          <div class="gpa-stat-value" id="tgt-class-val">—</div>
-          <div class="gpa-stat-label">التقدير</div>
+        <button class="gpa-use-semester-btn" onclick="gpaUseFromSemester()">📋 استخدم من الفصلي</button>
+      </div>
+
+      <div class="gpa-results" id="cumulative-results">
+        <div class="gpa-stats">
+          <div class="gpa-stat-card primary">
+            <div class="gpa-stat-value" id="cum-gpa-val">—</div>
+            <div class="gpa-stat-label">المعدل التراكمي الجديد</div>
+          </div>
+          <div class="gpa-stat-card">
+            <div class="gpa-stat-value" id="cum-class-val">—</div>
+            <div class="gpa-stat-label">التقدير</div>
+          </div>
+          <div class="gpa-stat-card">
+            <div class="gpa-stat-value" id="cum-change-val">—</div>
+            <div class="gpa-stat-label">التغيير</div>
+          </div>
         </div>
       </div>
-      <div class="gpa-impossible-msg" id="tgt-impossible" style="display:none">
-        <div class="gpa-impossible-text" id="tgt-impossible-text"></div>
-        <div class="gpa-semesters-info" id="tgt-semesters-info"></div>
+    </div>
+
+    <!-- Section 2: What GPA do I need? -->
+    <div class="gpa-cum-sub">
+      <h4 class="gpa-cum-sub-title">ما المعدل الذي أحتاجه؟</h4>
+      <div class="gpa-cum-form">
+        <div class="gpa-form-row">
+          <div class="gpa-form-group">
+            <label>المعدل المستهدف</label>
+            <input type="number" id="tgt-goal-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcTarget()">
+          </div>
+          <div class="gpa-form-group">
+            <label>ساعات الفصل القادم</label>
+            <input type="number" id="tgt-next-credits" min="1" placeholder="0" oninput="gpaCalcTarget()">
+          </div>
+        </div>
+      </div>
+
+      <div class="gpa-results" id="target-results">
+        <div class="gpa-stats">
+          <div class="gpa-stat-card primary">
+            <div class="gpa-stat-value" id="tgt-required-val">—</div>
+            <div class="gpa-stat-label">المعدل المطلوب تحقيقه</div>
+          </div>
+          <div class="gpa-stat-card">
+            <div class="gpa-stat-value" id="tgt-class-val">—</div>
+            <div class="gpa-stat-label">التقدير</div>
+          </div>
+        </div>
+        <div class="gpa-impossible-msg" id="tgt-impossible" style="display:none">
+          <div class="gpa-impossible-text" id="tgt-impossible-text"></div>
+          <div class="gpa-semesters-info" id="tgt-semesters-info"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -647,6 +645,20 @@
   font-size: 0.75rem;
   color: var(--text-muted);
   margin-top: 4px;
+}
+
+/* Sub-sections within merged cumulative tab */
+.gpa-calculator .gpa-cum-sub {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.gpa-calculator .gpa-cum-sub-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
 }
 
 /* Form sections (cumulative, target, converter) — matches zakat .input-form */
@@ -1437,7 +1449,7 @@
 
   function updateMaxInputs() {
     var max = gradeSystems[currentSystem].max;
-    var ids = ['cum-prev-gpa', 'cum-new-gpa', 'tgt-cur-gpa', 'tgt-goal-gpa'];
+    var ids = ['cum-prev-gpa', 'cum-new-gpa', 'tgt-goal-gpa'];
     for (var i = 0; i < ids.length; i++) {
       var el = document.getElementById(ids[i]);
       if (el) {
@@ -1459,8 +1471,8 @@
   }
 
   function calcTarget() {
-    var curGpa = parseFloat(document.getElementById('tgt-cur-gpa').value);
-    var curCredits = parseFloat(document.getElementById('tgt-cur-credits').value);
+    var curGpa = parseFloat(document.getElementById('cum-prev-gpa').value);
+    var curCredits = parseFloat(document.getElementById('cum-prev-credits').value);
     var goalGpa = parseFloat(document.getElementById('tgt-goal-gpa').value);
     var nextCredits = parseFloat(document.getElementById('tgt-next-credits').value);
 
@@ -1823,6 +1835,7 @@
 
   window.gpaCalcCumulative = calcCumulative;
   window.gpaCalcTarget = calcTarget;
+  window.gpaCalcCumBoth = function() { calcCumulative(); calcTarget(); };
   window.gpaCalcConvert = calcConvert;
 
   function calcWhatIf() {
