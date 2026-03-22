@@ -27,7 +27,6 @@
     <button class="calc-tab" onclick="gpaSwitchTab('target', this)">{{tool.tabTarget}}</button>
     <button class="calc-tab" onclick="gpaSwitchTab('converter', this)">{{tool.tabConverter}}</button>
     <button class="calc-tab" onclick="gpaSwitchTab('multi', this)">{{tool.tabMulti}}</button>
-    <button class="calc-tab" onclick="gpaSwitchTab('reference', this)">{{tool.tabReference}}</button>
   </div>
 
   <!-- Tab 1: Semester GPA -->
@@ -241,26 +240,23 @@
     </div>
   </div>
 
-  <!-- Tab 6: Grade Reference -->
-  <div class="calc-section" id="reference-section">
-    <div class="gpa-ref-section">
-      <h3 class="gpa-ref-title">{{tool.gradeTableTitle}}</h3>
-      <div class="gpa-ref-table-wrap">
-        <table class="gpa-ref-table" id="ref-grades-table">
-          <thead><tr><th>{{tool.letterGrade}}</th><th>{{tool.pointValue}}</th></tr></thead>
-          <tbody id="ref-grades-body"></tbody>
-        </table>
-      </div>
-    </div>
-    <div class="gpa-ref-section">
-      <h3 class="gpa-ref-title">{{tool.classTableTitle}}</h3>
-      <div class="gpa-ref-table-wrap">
-        <table class="gpa-ref-table" id="ref-class-table">
-          <thead><tr><th>{{tool.verbalClass}}</th><th>{{tool.gpaRange}}</th></tr></thead>
-          <tbody id="ref-class-body"></tbody>
-        </table>
-      </div>
-    </div>
+</div>
+
+<!-- Grade Reference — standalone block, updates with system change -->
+<div class="gpa-ref-block">
+  <h3 class="gpa-ref-title">{{tool.gradeTableTitle}}</h3>
+  <div class="gpa-ref-table-wrap">
+    <table class="gpa-ref-table" id="ref-grades-table">
+      <thead><tr><th>{{tool.letterGrade}}</th><th>{{tool.pointValue}}</th></tr></thead>
+      <tbody id="ref-grades-body"></tbody>
+    </table>
+  </div>
+  <h3 class="gpa-ref-title" style="margin-top:24px">{{tool.classTableTitle}}</h3>
+  <div class="gpa-ref-table-wrap">
+    <table class="gpa-ref-table" id="ref-class-table">
+      <thead><tr><th>{{tool.verbalClass}}</th><th>{{tool.gpaRange}}</th></tr></thead>
+      <tbody id="ref-class-body"></tbody>
+    </table>
   </div>
 </div>
 
@@ -797,9 +793,12 @@
   gap: 6px;
 }
 
-/* Reference tables */
-.gpa-calculator .gpa-ref-section {
-  margin-bottom: 24px;
+/* Reference block — standalone section below calculator */
+.gpa-calculator .gpa-ref-block {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 24px;
 }
 
 .gpa-calculator .gpa-ref-title {
@@ -1067,6 +1066,10 @@
 
   .gpa-calculator .gpa-whatif-val {
     font-size: 1.2rem;
+  }
+
+  .gpa-calculator .gpa-ref-block {
+    padding: 16px;
   }
 
   .gpa-calculator .gpa-ref-table {
@@ -1649,7 +1652,6 @@
 
   // Public functions
   window.gpaSwitchTab = function(tab, btn) {
-    if (tab === 'reference') renderRefTables();
     var sections = document.querySelectorAll('.gpa-calculator .calc-section');
     var tabs = document.querySelectorAll('.gpa-calculator .calc-tab');
     for (var i = 0; i < sections.length; i++) {
@@ -1878,5 +1880,6 @@
   init();
   initSemesters();
   updateMaxInputs();
+  renderRefTables();
 })();
 </script>
