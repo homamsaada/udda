@@ -1457,11 +1457,37 @@
     }
   }
 
+  // Compute effective earned credits and GPA (shared by target & max sections)
+  // If new semester data is entered in section 1, include it
+  function getEffectiveEarned() {
+    var prevGpa = parseFloat(document.getElementById('cum-prev-gpa').value);
+    var prevCredits = parseFloat(document.getElementById('cum-prev-credits').value);
+    var newSemGpa = parseFloat(document.getElementById('cum-new-gpa').value);
+    var newSemCredits = parseFloat(document.getElementById('cum-new-credits').value);
+
+    var earnedCredits = 0;
+    var earnedPoints = 0;
+
+    // Previous data (may be empty for first-semester students)
+    if (!isNaN(prevGpa) && !isNaN(prevCredits) && prevCredits > 0) {
+      earnedCredits = prevCredits;
+      earnedPoints = prevGpa * prevCredits;
+    }
+
+    // Add new semester if entered
+    if (!isNaN(newSemGpa) && !isNaN(newSemCredits) && newSemCredits > 0 && newSemGpa >= 0) {
+      earnedCredits += newSemCredits;
+      earnedPoints += newSemGpa * newSemCredits;
+    }
+
+    var effectiveGpa = earnedCredits > 0 ? earnedPoints / earnedCredits : 0;
+    return { credits: earnedCredits, points: earnedPoints, gpa: effectiveGpa };
+  }
+
   function calcTarget() {
-    var curGpa = parseFloat(document.getElementById('cum-prev-gpa').value);
-    var curCredits = parseFloat(document.getElementById('cum-prev-credits').value);
     var goalGpa = parseFloat(document.getElementById('tgt-goal-gpa').value);
     var gradCredits = parseFloat(document.getElementById('max-grad-credits').value);
+    var eff = getEffectiveEarned();
 
     var resultEl = document.getElementById('tgt-required-val');
     var classEl = document.getElementById('tgt-class-val');
@@ -1470,17 +1496,15 @@
 
     impossibleEl.style.display = 'none';
 
-    if (isNaN(curGpa) || isNaN(curCredits) || isNaN(goalGpa) || isNaN(gradCredits) ||
-        curCredits <= 0 || gradCredits <= 0 || gradCredits <= curCredits) {
+    if (isNaN(goalGpa) || isNaN(gradCredits) || gradCredits <= 0 || eff.credits <= 0 || gradCredits <= eff.credits) {
       resultEl.textContent = '—';
       classEl.textContent = '—';
       return;
     }
 
     var max = gradeSystems[currentSystem].max;
-    var remainingCredits = gradCredits - curCredits;
-    // requiredGpa = (target × gradCredits − current × earned) / remaining
-    var requiredGpa = (goalGpa * gradCredits - curGpa * curCredits) / remainingCredits;
+    var remainingCredits = gradCredits - eff.credits;
+    var requiredGpa = (goalGpa * gradCredits - eff.points) / remainingCredits;
 
     if (requiredGpa > max) {
       resultEl.textContent = '—';
@@ -1497,13 +1521,8 @@
   }
 
   function calcMaxGpa() {
-    var curGpa = parseFloat(document.getElementById('cum-prev-gpa').value);
-    var curCredits = parseFloat(document.getElementById('cum-prev-credits').value);
     var gradCredits = parseFloat(document.getElementById('max-grad-credits').value);
-
-    // Include new semester data if entered in section 1
-    var newSemGpa = parseFloat(document.getElementById('cum-new-gpa').value);
-    var newSemCredits = parseFloat(document.getElementById('cum-new-credits').value);
+    var eff = getEffectiveEarned();
 
     var resultEl = document.getElementById('max-gpa-val');
     var classEl = document.getElementById('max-gpa-class-val');
@@ -1512,23 +1531,14 @@
 
     completedEl.style.display = 'none';
 
-    if (isNaN(curGpa) || isNaN(curCredits) || isNaN(gradCredits) ||
-        curCredits <= 0 || gradCredits <= 0) {
+    if (isNaN(gradCredits) || gradCredits <= 0 || eff.credits <= 0) {
       resultEl.textContent = '—';
       classEl.textContent = '—';
       return;
     }
 
-    // Effective earned = previous + new semester (if valid)
-    var earnedCredits = curCredits;
-    var earnedPoints = curGpa * curCredits;
-    if (!isNaN(newSemGpa) && !isNaN(newSemCredits) && newSemCredits > 0 && newSemGpa >= 0) {
-      earnedCredits += newSemCredits;
-      earnedPoints += newSemGpa * newSemCredits;
-    }
-
-    if (earnedCredits >= gradCredits) {
-      var actualGpa = earnedPoints / earnedCredits;
+    if (eff.credits >= gradCredits) {
+      var actualGpa = eff.points / eff.credits;
       resultEl.textContent = actualGpa.toFixed(2);
       classEl.textContent = getClassification(actualGpa);
       completedEl.style.display = 'block';
@@ -1537,8 +1547,8 @@
     }
 
     var max = gradeSystems[currentSystem].max;
-    var remainingCredits = gradCredits - earnedCredits;
-    var maxGpa = (earnedPoints + max * remainingCredits) / gradCredits;
+    var remainingCredits = gradCredits - eff.credits;
+    var maxGpa = (eff.points + max * remainingCredits) / gradCredits;
 
     resultEl.textContent = maxGpa.toFixed(2);
     classEl.textContent = getClassification(maxGpa);
@@ -1900,7 +1910,7 @@
     calcSemester();
   };
 
-  window.gpaCalcCumulative = function() { calcCumulative(); calcMaxGpa(); };
+  window.gpaCalcCumulative = function() { calcCumulative(); calcTarget(); calcMaxGpa(); };
   window.gpaCalcTarget = calcTarget;
   window.gpaCalcMaxGpa = calcMaxGpa;
   window.gpaCalcGradBoth = function() { calcTarget(); calcMaxGpa(); };
