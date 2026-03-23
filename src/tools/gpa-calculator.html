@@ -30,6 +30,7 @@
       <button class="gpa-sys-btn" onclick="gpaSetRetakePolicy('average')" id="retake-btn-average">{{tool.retakeAverage}}</button>
     </div>
   </div>
+  <div class="gpa-retake-policy-desc" id="retake-policy-desc">{{tool.retakePolicyDesc_replace}}</div>
 
   <!-- Tabs -->
   <div class="calc-tabs">
@@ -106,11 +107,11 @@
         <div class="gpa-form-row">
           <div class="gpa-form-group">
             <label>{{tool.newSemesterGpa}}</label>
-            <input type="number" id="cum-new-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcCumBoth()">
+            <input type="number" id="cum-new-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaNewSemEdit()">
           </div>
           <div class="gpa-form-group">
             <label>{{tool.newSemesterCredits}}</label>
-            <input type="number" id="cum-new-credits" min="0" placeholder="0" oninput="gpaCalcCumBoth()">
+            <input type="number" id="cum-new-credits" min="0" placeholder="0" oninput="gpaNewSemEdit()">
           </div>
         </div>
         <button class="gpa-use-semester-btn" onclick="gpaUseFromSemester()">📋 {{tool.useFromTab1}}</button>
@@ -289,6 +290,11 @@
         </table>
       </div>
     </div>
+  </div>
+
+  <!-- Reset All Button -->
+  <div class="gpa-reset-wrap">
+    <button class="gpa-reset-btn" onclick="gpaResetAll()">↺ {{tool.resetAll}}</button>
   </div>
 
 </div>
@@ -1057,6 +1063,39 @@
   gap: 4px;
 }
 
+/* Retake policy description */
+.gpa-calculator .gpa-retake-policy-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: -12px;
+  margin-bottom: 20px;
+  padding-inline-start: 4px;
+}
+
+/* Reset All Button */
+.gpa-calculator .gpa-reset-wrap {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.gpa-calculator .gpa-reset-btn {
+  padding: 10px 24px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.gpa-calculator .gpa-reset-btn:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+}
 
 /* Responsive — single breakpoint like zakat */
 @media (max-width: 768px) {
@@ -1296,10 +1335,21 @@
     allCreditsCompleted: '{{tool.allCreditsCompleted}}',
     confirmSystemChange: '{{tool.confirmSystemChange}}',
     retakenCourse: '{{tool.retakenCourse}}',
-    oldGrade: '{{tool.oldGrade}}'
+    oldGrade: '{{tool.oldGrade}}',
+    confirmReset: '{{tool.confirmReset}}',
+    retakePolicyDescs: {
+      replace: '{{tool.retakePolicyDesc_replace}}',
+      higher: '{{tool.retakePolicyDesc_higher}}',
+      countAll: '{{tool.retakePolicyDesc_countAll}}',
+      average: '{{tool.retakePolicyDesc_average}}'
+    }
   };
 
   var retakePolicy = 'replace';
+  // Stored retake adjustments from "Use from Semester" button.
+  // These are subtracted from prev cumulative when computing effective earned.
+  // Cleared when user manually edits new-semester fields.
+  var retakeAdj = { credits: 0, points: 0 };
   var semesters = [];
   var INITIAL_SEMESTERS = 3;
 
@@ -1482,8 +1532,13 @@
       return;
     }
 
-    var totalCredits = prevCredits + newCredits;
-    var cumGpa = (prevGpa * prevCredits + newGpa * newCredits) / totalCredits;
+    // Apply retake adjustments: subtract old courses from previous
+    var adjPrevCredits = prevCredits - retakeAdj.credits;
+    var adjPrevPoints = prevGpa * prevCredits - retakeAdj.points;
+    if (adjPrevCredits < 0) adjPrevCredits = 0;
+
+    var totalCredits = adjPrevCredits + newCredits;
+    var cumGpa = totalCredits > 0 ? (adjPrevPoints + newGpa * newCredits) / totalCredits : 0;
 
     document.getElementById('cum-gpa-val').textContent = cumGpa.toFixed(2);
     document.getElementById('cum-class-val').textContent = getClassification(cumGpa);
@@ -1524,7 +1579,8 @@
   }
 
   // Compute effective earned credits and GPA (shared by target & max sections)
-  // If new semester data is entered in section 1, include it
+  // If new semester data is entered in section 1, include it.
+  // Accounts for retake adjustments stored by "Use from Semester".
   function getEffectiveEarned() {
     var prevGpa = parseFloat(document.getElementById('cum-prev-gpa').value);
     var prevCredits = parseFloat(document.getElementById('cum-prev-credits').value);
@@ -1538,6 +1594,10 @@
     if (!isNaN(prevGpa) && !isNaN(prevCredits) && prevCredits > 0) {
       earnedCredits = prevCredits;
       earnedPoints = prevGpa * prevCredits;
+      // Subtract retake old courses from previous (they are replaced by new semester)
+      earnedCredits -= retakeAdj.credits;
+      earnedPoints -= retakeAdj.points;
+      if (earnedCredits < 0) earnedCredits = 0;
     }
 
     // Add new semester if entered
@@ -1562,7 +1622,7 @@
 
     impossibleEl.style.display = 'none';
 
-    if (isNaN(goalGpa) || isNaN(gradCredits) || gradCredits <= 0 || eff.credits <= 0 || gradCredits <= eff.credits) {
+    if (isNaN(goalGpa) || goalGpa < 0 || isNaN(gradCredits) || gradCredits <= 0 || eff.credits <= 0 || gradCredits <= eff.credits) {
       resultEl.textContent = '—';
       classEl.textContent = '—';
       return;
@@ -1885,6 +1945,8 @@
     for (var i = 0; i < INITIAL_COURSES; i++) {
       courses.push({ name: '', credits: '', gradeIndex: -1, gradeValue: '' });
     }
+    // Reset retake adjustments
+    retakeAdj = { credits: 0, points: 0 };
     // Reset what-if compare
     var wifCompare = document.getElementById('whatif-compare');
     if (wifCompare) wifCompare.style.display = 'none';
@@ -1985,6 +2047,15 @@
       btns[i].classList.remove('active');
     }
     document.getElementById('retake-btn-' + policy).classList.add('active');
+    // Update description text
+    var descEl = document.getElementById('retake-policy-desc');
+    if (descEl) descEl.textContent = labels.retakePolicyDescs[policy] || '';
+  };
+
+  // When user manually edits new-semester fields, clear retake adjustments
+  window.gpaNewSemEdit = function() {
+    retakeAdj = { credits: 0, points: 0 };
+    calcCumulative(); calcTarget(); calcMaxGpa();
   };
 
   window.gpaCalcCumulative = function() { calcCumulative(); calcTarget(); calcMaxGpa(); };
@@ -2129,15 +2200,11 @@
   }
 
   window.gpaUseFromSemester = function() {
-    var sys = gradeSystems[currentSystem];
-    var is100 = currentSystem === '100';
-
-    // Compute plain semester totals (for display in cum-new-gpa/credits)
+    // Compute semester totals with retake policy applied
     var semCredits = 0;
     var semPoints = 0;
-    // Track retake adjustments (applied only in cumulative calc, not written to fields)
-    var retakeOldCredits = 0;
-    var retakeOldPoints = 0;
+    var oldCredits = 0;
+    var oldPoints = 0;
 
     for (var i = 0; i < courses.length; i++) {
       var c = courses[i];
@@ -2152,23 +2219,22 @@
         if (retakePolicy === 'replace') {
           semCredits += cr;
           semPoints += cr * newGrade;
-          retakeOldCredits += cr;
-          retakeOldPoints += cr * oldGrade;
+          oldCredits += cr;
+          oldPoints += cr * oldGrade;
         } else if (retakePolicy === 'higher') {
-          var effective = Math.max(oldGrade, newGrade);
           semCredits += cr;
-          semPoints += cr * effective;
-          retakeOldCredits += cr;
-          retakeOldPoints += cr * oldGrade;
+          semPoints += cr * Math.max(oldGrade, newGrade);
+          oldCredits += cr;
+          oldPoints += cr * oldGrade;
         } else if (retakePolicy === 'countAll') {
+          // Both count — old stays in previous, new is additional
           semCredits += cr;
           semPoints += cr * newGrade;
         } else if (retakePolicy === 'average') {
-          var avg = (oldGrade + newGrade) / 2;
           semCredits += cr;
-          semPoints += cr * avg;
-          retakeOldCredits += cr;
-          retakeOldPoints += cr * oldGrade;
+          semPoints += cr * ((oldGrade + newGrade) / 2);
+          oldCredits += cr;
+          oldPoints += cr * oldGrade;
         }
       } else {
         semCredits += cr;
@@ -2178,46 +2244,27 @@
 
     if (semCredits <= 0) return;
 
-    // Write plain semester GPA and credits to form fields (never touch prev fields)
+    // Store retake adjustment at IIFE level (used by calcCumulative & getEffectiveEarned)
+    retakeAdj = { credits: oldCredits, points: oldPoints };
+
+    // Write semester data to form fields (never touch prev fields)
     var semGpa = semPoints / semCredits;
     document.getElementById('cum-new-gpa').value = semGpa.toFixed(2);
     document.getElementById('cum-new-credits').value = semCredits;
 
-    // Compute cumulative GPA accounting for retake adjustments (in variables only)
-    var prevGpa = parseFloat(document.getElementById('cum-prev-gpa').value);
-    var prevCredits = parseFloat(document.getElementById('cum-prev-credits').value);
-
-    if (!isNaN(prevGpa) && !isNaN(prevCredits) && prevCredits > 0) {
-      var prevPoints = prevGpa * prevCredits;
-      // Adjusted previous = original previous minus retake old courses
-      var adjPrevPoints = prevPoints - retakeOldPoints;
-      var adjPrevCredits = prevCredits - retakeOldCredits;
-      if (adjPrevCredits < 0) adjPrevCredits = 0;
-
-      var totalCredits = adjPrevCredits + semCredits;
-      var cumGpa = totalCredits > 0 ? (adjPrevPoints + semPoints) / totalCredits : 0;
-
-      document.getElementById('cum-gpa-val').textContent = cumGpa.toFixed(2);
-      document.getElementById('cum-class-val').textContent = getClassification(cumGpa);
-
-      var diff = cumGpa - prevGpa;
-      var changeEl = document.getElementById('cum-change-val');
-      if (Math.abs(diff) < 0.005) {
-        changeEl.textContent = '0.00';
-        changeEl.className = 'gpa-stat-value';
-      } else if (diff > 0) {
-        changeEl.innerHTML = '<span class="gpa-change-up">▲ ' + labels.increased + ' ' + diff.toFixed(2) + '</span>';
-      } else {
-        changeEl.innerHTML = '<span class="gpa-change-down">▼ ' + labels.decreased + ' ' + Math.abs(diff).toFixed(2) + '</span>';
-      }
-    } else {
-      // No previous data — just use semester as cumulative
-      calcCumulative();
-    }
-
+    // calcCumulative now uses retakeAdj automatically
+    calcCumulative();
     calcTarget();
     calcMaxGpa();
     App.showToast(isArabic ? 'تم نقل بيانات الفصل!' : 'Semester data transferred!');
+  };
+
+  window.gpaResetAll = function() {
+    if (!hasAnyData()) return;
+    if (!confirm(labels.confirmReset)) return;
+    clearAllData();
+    renderCourses();
+    renderSemesters();
   };
 
   // Initialize
