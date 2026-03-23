@@ -46,6 +46,7 @@ build.js                    Build script — contains the actual HTML layout tem
 
 | ID | Category | Description |
 |---|---|---|
+| `gpa-calculator` | calculators (other) | GPA calculator: semester, cumulative, target, max, converter, multi-semester |
 | `percentage` | calculators | 13 inline percentage calculators |
 | `interest-calculator` | calculators | Simple & compound interest |
 | `loan-calculator` | calculators | Loan payments & amortization |
@@ -365,6 +366,42 @@ Each calculator row follows this structure:
 3. Precision controls (+/−) and copy button
 4. Results update in real-time, no submit button needed
 
+### Shared computation pattern (used in GPA calculator)
+
+When multiple sections depend on the same derived values, extract a shared helper function and call it from all sections. Never let sections compute the same values independently — this causes contradictions.
+
+```js
+// GOOD: Single source of truth
+function getEffectiveEarned() {
+  // Compute once, return object
+  return { credits: earnedCredits, points: earnedPoints, gpa: effectiveGpa };
+}
+function calcTarget() { var eff = getEffectiveEarned(); /* use eff */ }
+function calcMaxGpa() { var eff = getEffectiveEarned(); /* use eff */ }
+
+// BAD: Each section reads inputs and computes independently
+function calcTarget() { var credits = parseFloat($('#credits').value); /* ... */ }
+function calcMaxGpa() { var credits = parseFloat($('#credits').value); /* different logic */ }
+```
+
+### Input → recalc wiring
+
+When an input affects multiple sections, its `oninput` must trigger ALL dependent calculations, not just the nearest one. Use a combined handler:
+
+```js
+// Shared inputs trigger everything they affect
+window.gpaCalcCumBoth = function() { calcCumulative(); calcTarget(); calcMaxGpa(); };
+// In HTML: oninput="gpaCalcCumBoth()"
+```
+
+### Converter dropdowns — show all options
+
+Never hide options from `<select>` dropdowns to prevent selecting the same value in both. Instead, show all options in both dropdowns. If the user selects the same value in "from" and "to", return the input as-is without error messages:
+
+```js
+var converted = (fromSys === toSys) ? inputVal : convertGpa(inputVal, fromSys, toSys);
+```
+
 ### Clipboard
 
 ```js
@@ -528,6 +565,37 @@ When multiple entries share a single fard fraction (e.g., maternal siblings shar
 entry.parts = sharedPoolParts * entry.count / entry.shared;
 ```
 
+## GPA Calculator Architecture
+
+The GPA calculator (`src/tools/gpa-calculator.html`) has 5 tabs and a shared grading system selector. Key architectural notes:
+
+### Tabs
+1. **Semester GPA** — per-course grade entry with what-if analysis
+2. **Cumulative** — combines 3 sub-sections sharing common inputs:
+   - Section 1: New cumulative GPA (previous + new semester)
+   - Section 2: Target GPA required (needs graduation credits)
+   - Section 3: Highest possible GPA (needs graduation credits)
+3. **Multi-Semester** — track GPA across multiple semesters with chart
+4. **Converter** — convert between 4.0, 5.0, and 100% systems
+5. **Reference** — grade tables for each system
+
+### Shared inputs in Cumulative tab
+- "Current GPA" and "Earned credits" are shared across all 3 sections
+- "Total graduation credits" is shared between sections 2 and 3
+- `getEffectiveEarned()` computes effective earned credits/points once, accounting for new semester data from section 1 if entered
+- Both `calcTarget()` and `calcMaxGpa()` call `getEffectiveEarned()` — this prevents contradictions
+
+### Grading system switching
+- `currentSystem` tracks active system ('4', '5', '100')
+- `gradeSystems` object defines max value and classification brackets per system
+- Switching system updates input max attributes and recalculates all sections
+
+### Converter
+- Uses piecewise linear interpolation via `conversionTable` (grade-bracket boundaries across systems)
+- All 3 systems visible in both "from" and "to" dropdowns (no hiding)
+- Same-system selection returns input value as-is
+- Separate short i18n keys (`convSystem40`, `convSystem50`, `convSystem100`) for dropdown labels without "نظام"/"Scale"
+
 ## General Preferences
 
 These reflect the current style of the project. They're guidelines, not hard rules — use your judgment and adapt as the project grows:
@@ -543,3 +611,6 @@ These reflect the current style of the project. They're guidelines, not hard rul
 - Disclaimers use `.tool-disclaimer` class and are placed as the last section in the template (after how-to-use, before related tools)
 - Tool page section order: tool content → how-to-use → disclaimer → related tools (auto-appended by build.js)
 - Islamic terminology must be accurate — use proper fiqh terms with transliteration in English (e.g., "Kaffarat al-Yamin" not just "oath penalty")
+- Place related fields on the same row (`.gpa-form-row` with 2 columns) to reduce vertical space — e.g., "graduation credits" and "target GPA" side by side
+- Use short labels in dropdowns (e.g., "4.0" not "نظام 4.0") — add separate i18n keys if the full label is needed elsewhere
+- When a tool has multiple sections that share inputs, place shared inputs above the sections, not duplicated inside each one
