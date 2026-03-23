@@ -1262,7 +1262,8 @@
     newGpaLabel: '{{tool.newGpa}}',
     totalPoints: '{{tool.totalPoints}}',
     weightedTotal: '{{tool.weightedTotal}}',
-    allCreditsCompleted: '{{tool.allCreditsCompleted}}'
+    allCreditsCompleted: '{{tool.allCreditsCompleted}}',
+    confirmSystemChange: '{{tool.confirmSystemChange}}'
   };
 
   var whatIfActive = false;
@@ -1815,7 +1816,80 @@
     btn.classList.add('active');
   };
 
+  function hasAnyData() {
+    // Check courses
+    for (var i = 0; i < courses.length; i++) {
+      if (courses[i].name || courses[i].credits || courses[i].gradeIndex >= 0 || courses[i].gradeValue) return true;
+    }
+    // Check semesters
+    for (var i = 0; i < semesters.length; i++) {
+      if (semesters[i].gpa || semesters[i].credits) return true;
+    }
+    // Check cumulative/target/max inputs
+    var ids = ['cum-prev-gpa', 'cum-prev-credits', 'cum-new-gpa', 'cum-new-credits',
+               'tgt-goal-gpa', 'max-grad-credits', 'conv-input'];
+    for (var i = 0; i < ids.length; i++) {
+      var el = document.getElementById(ids[i]);
+      if (el && el.value) return true;
+    }
+    return false;
+  }
+
+  function clearAllData() {
+    // Reset courses
+    courses.length = 0;
+    for (var i = 0; i < INITIAL_COURSES; i++) {
+      courses.push({ name: '', credits: '', gradeIndex: -1, gradeValue: '' });
+    }
+    // Reset what-if
+    whatIfActive = false;
+    var wifBtn = document.getElementById('whatif-btn');
+    var wifResetBtn = document.getElementById('whatif-reset-btn');
+    var wifCompare = document.getElementById('whatif-compare');
+    if (wifBtn) wifBtn.style.display = '';
+    if (wifResetBtn) wifResetBtn.style.display = 'none';
+    if (wifCompare) wifCompare.style.display = 'none';
+    // Reset semesters
+    semesters.length = 0;
+    for (var i = 0; i < INITIAL_SEMESTERS; i++) {
+      semesters.push({ gpa: '', credits: '' });
+    }
+    // Clear input fields
+    var ids = ['cum-prev-gpa', 'cum-prev-credits', 'cum-new-gpa', 'cum-new-credits',
+               'tgt-goal-gpa', 'max-grad-credits', 'conv-input'];
+    for (var i = 0; i < ids.length; i++) {
+      var el = document.getElementById(ids[i]);
+      if (el) el.value = '';
+    }
+    // Reset result displays
+    var resultIds = ['sem-gpa-val', 'sem-class-val', 'sem-credits-val', 'sem-points-val',
+                     'cum-gpa-val', 'cum-class-val', 'cum-change-val',
+                     'tgt-required-val', 'tgt-class-val',
+                     'max-gpa-val', 'max-gpa-class-val',
+                     'multi-gpa-val', 'multi-class-val', 'multi-best-val', 'multi-worst-val',
+                     'conv-result-val', 'conv-class-val'];
+    for (var i = 0; i < resultIds.length; i++) {
+      var el = document.getElementById(resultIds[i]);
+      if (el) el.textContent = '—';
+    }
+    document.getElementById('sem-credits-val').textContent = '0';
+    document.getElementById('sem-points-val').textContent = '0';
+    // Hide conditional elements
+    var hideIds = ['tgt-impossible', 'max-gpa-completed', 'conv-note', 'multi-chart-section'];
+    for (var i = 0; i < hideIds.length; i++) {
+      var el = document.getElementById(hideIds[i]);
+      if (el) el.style.display = 'none';
+    }
+  }
+
   window.gpaSetSystem = function(sys) {
+    if (sys === currentSystem) return;
+
+    if (hasAnyData()) {
+      if (!confirm(labels.confirmSystemChange)) return;
+      clearAllData();
+    }
+
     currentSystem = sys;
     var btns = document.querySelectorAll('.gpa-calculator .gpa-sys-btn');
     for (var i = 0; i < btns.length; i++) {
@@ -1829,19 +1903,9 @@
       pointsLabel.textContent = sys === '100' ? labels.weightedTotal : labels.totalPoints;
     }
 
-    // Reset grade selections since options changed
-    for (var i = 0; i < courses.length; i++) {
-      courses[i].gradeIndex = -1;
-      courses[i].gradeValue = '';
-    }
-    renderCourses();
-    calcSemester();
     updateMaxInputs();
-    calcCumulative();
-    calcTarget();
-    calcMaxGpa();
+    renderCourses();
     renderSemesters();
-    calcMulti();
     renderRefTables();
   };
 
