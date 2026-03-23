@@ -221,18 +221,18 @@
         <div class="gpa-form-group">
           <label>{{tool.convertFrom}}</label>
           <select id="conv-from" onchange="gpaCalcConvert()">
-            <option value="4">{{tool.system40}}</option>
-            <option value="5">{{tool.system50}}</option>
-            <option value="100">{{tool.system100}}</option>
+            <option value="4">{{tool.convSystem40}}</option>
+            <option value="5">{{tool.convSystem50}}</option>
+            <option value="100">{{tool.convSystem100}}</option>
           </select>
         </div>
         <button class="gpa-conv-swap" onclick="gpaConvSwap()" type="button">⇄</button>
         <div class="gpa-form-group">
           <label>{{tool.convertTo}}</label>
           <select id="conv-to" onchange="gpaCalcConvert()">
-            <option value="4">{{tool.system40}}</option>
-            <option value="5" selected>{{tool.system50}}</option>
-            <option value="100">{{tool.system100}}</option>
+            <option value="4">{{tool.convSystem40}}</option>
+            <option value="5" selected>{{tool.convSystem50}}</option>
+            <option value="100">{{tool.convSystem100}}</option>
           </select>
         </div>
       </div>
