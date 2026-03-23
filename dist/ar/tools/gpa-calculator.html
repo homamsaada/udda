@@ -190,11 +190,11 @@
         <div class="gpa-form-row">
           <div class="gpa-form-group">
             <label>معدل الفصل الجديد</label>
-            <input type="number" id="cum-new-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcCumulative()">
+            <input type="number" id="cum-new-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcCumBoth()">
           </div>
           <div class="gpa-form-group">
             <label>ساعات الفصل الجديد</label>
-            <input type="number" id="cum-new-credits" min="0" placeholder="0" oninput="gpaCalcCumulative()">
+            <input type="number" id="cum-new-credits" min="0" placeholder="0" oninput="gpaCalcCumBoth()">
           </div>
         </div>
         <button class="gpa-use-semester-btn" onclick="gpaUseFromSemester()">📋 استخدم من الفصلي</button>
