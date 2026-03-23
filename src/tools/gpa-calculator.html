@@ -2052,7 +2052,7 @@
 
   window.gpaSetRetakePolicy = function(policy) {
     retakePolicy = policy;
-    var btns = document.querySelectorAll('.gpa-calculator .gpa-retake-bar .gpa-sys-btn');
+    var btns = document.querySelectorAll('#retake-btn-replace, #retake-btn-higher, #retake-btn-countAll, #retake-btn-average');
     for (var i = 0; i < btns.length; i++) {
       btns[i].classList.remove('active');
     }
