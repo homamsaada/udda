@@ -1401,9 +1401,12 @@
     renderCourses();
   }
 
-  function getGradeOptions() {
+  function getGradeOptions(includePlaceholder) {
     var sys = gradeSystems[currentSystem];
-    var html = '<option value="-1">' + labels.grade + '</option>';
+    var html = '';
+    if (includePlaceholder) {
+      html += '<option value="-1">' + labels.grade + '</option>';
+    }
     for (var i = 0; i < sys.grades.length; i++) {
       var g = sys.grades[i];
       html += '<option value="' + i + '">' + g.label + ' (' + g.value.toFixed(2) + ')</option>';
@@ -1427,7 +1430,8 @@
     html += '<span></span>';
     html += '</div>';
 
-    var gradeOpts = is100 ? '' : getGradeOptions();
+    var gradeOpts = is100 ? '' : getGradeOptions(true);  // with placeholder for main grade
+    var gradeOptsNoPlaceholder = is100 ? '' : getGradeOptions(false);  // no placeholder for old grade & what-if
 
     for (var i = 0; i < courses.length; i++) {
       var c = courses[i];
@@ -1468,28 +1472,32 @@
       html += '</div>';
 
       // Col 5: Old grade (always present, disabled when not retake)
+      // Default: F (lowest grade = last index) when retake enabled
       // On mobile: wrapped in gpa-field-extras with whatif
       html += '<div class="gpa-field-extras">';
       html += '<div class="gpa-form-group gpa-field-oldgrade">';
       html += '<label>' + labels.oldGrade + '</label>';
       if (is100) {
-        html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100"' + (!isRetake ? ' disabled' : '') + ' value="' + (c.oldGradeValue !== '' && c.oldGradeValue !== undefined ? c.oldGradeValue : '') + '" oninput="gpaUpdateCourse(' + i + ',\'oldGradeValue\',this.value)">';
+        var oldVal100 = c.oldGradeValue !== undefined && c.oldGradeValue !== '' ? c.oldGradeValue : '0';
+        html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100"' + (!isRetake ? ' disabled' : '') + ' value="' + oldVal100 + '" oninput="gpaUpdateCourse(' + i + ',\'oldGradeValue\',this.value)">';
       } else {
-        var oldIdx = c.oldGradeIndex !== undefined ? c.oldGradeIndex : -1;
-        var oldSel = gradeOpts.replace('value="' + oldIdx + '"', 'value="' + oldIdx + '" selected');
+        var lastGradeIdx = gradeSystems[currentSystem].grades.length - 1;
+        var oldIdx = c.oldGradeIndex !== undefined && c.oldGradeIndex >= 0 ? c.oldGradeIndex : lastGradeIdx;
+        var oldSel = gradeOptsNoPlaceholder.replace('value="' + oldIdx + '"', 'value="' + oldIdx + '" selected');
         html += '<select' + (!isRetake ? ' disabled' : '') + ' onchange="gpaUpdateCourse(' + i + ',\'oldGradeIndex\',this.value)">' + oldSel + '</select>';
       }
       html += '</div>';
 
       // Col 6: What-if alt grade (always present)
+      // Default: A+ (highest grade = index 0)
       html += '<div class="gpa-form-group gpa-field-whatif">';
       html += '<label>' + labels.whatIfLabel + '</label>';
       if (is100) {
-        var altVal = c.altGradeValue !== undefined && c.altGradeValue !== '' ? c.altGradeValue : '';
+        var altVal = c.altGradeValue !== undefined && c.altGradeValue !== '' ? c.altGradeValue : '100';
         html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100" value="' + altVal + '" oninput="gpaUpdateAlt(' + i + ',\'altGradeValue\',this.value)">';
       } else {
-        var altIdx = c.altGradeIndex !== undefined ? c.altGradeIndex : -1;
-        var altSel = gradeOpts.replace('value="' + altIdx + '"', 'value="' + altIdx + '" selected');
+        var altIdx = c.altGradeIndex !== undefined && c.altGradeIndex >= 0 ? c.altGradeIndex : 0;
+        var altSel = gradeOptsNoPlaceholder.replace('value="' + altIdx + '"', 'value="' + altIdx + '" selected');
         html += '<select onchange="gpaUpdateAlt(' + i + ',\'altGradeIndex\',this.value)">' + altSel + '</select>';
       }
       html += '</div>';
@@ -2093,7 +2101,7 @@
     var origCredits = 0, origPoints = 0;
     var altCredits = 0, altPoints = 0;
     var hasValid = false;
-    var hasAnyAlt = false;
+    var hasDiff = false;
 
     for (var i = 0; i < courses.length; i++) {
       var c = courses[i];
@@ -2108,24 +2116,21 @@
           origVal = gv;
           validOrig = true;
         }
-        // Check if alt grade was explicitly entered
-        var hasExplicitAlt = c.altGradeValue !== undefined && c.altGradeValue !== '';
-        if (hasExplicitAlt) hasAnyAlt = true;
-        var av = parseFloat(hasExplicitAlt ? c.altGradeValue : c.gradeValue);
-        altVal = (!isNaN(av) && av >= 0 && av <= 100) ? av : origVal;
+        var altRaw = c.altGradeValue !== undefined && c.altGradeValue !== '' ? c.altGradeValue : '100';
+        var av = parseFloat(altRaw);
+        altVal = (!isNaN(av) && av >= 0 && av <= 100) ? av : 100;
       } else {
         var gi = parseInt(c.gradeIndex);
         if (gi >= 0 && gi < sys.grades.length) {
           origVal = sys.grades[gi].value;
           validOrig = true;
         }
-        var hasExplicitAlt = c.altGradeIndex !== undefined && c.altGradeIndex >= 0;
-        if (hasExplicitAlt) hasAnyAlt = true;
-        var ai = parseInt(hasExplicitAlt ? c.altGradeIndex : c.gradeIndex);
-        altVal = (ai >= 0 && ai < sys.grades.length) ? sys.grades[ai].value : origVal;
+        var ai = c.altGradeIndex !== undefined && c.altGradeIndex >= 0 ? c.altGradeIndex : 0;
+        altVal = (ai >= 0 && ai < sys.grades.length) ? sys.grades[ai].value : sys.grades[0].value;
       }
 
       if (validOrig) {
+        if (Math.abs(origVal - altVal) > 0.001) hasDiff = true;
         origCredits += cr;
         origPoints += cr * origVal;
         altCredits += cr;
@@ -2135,8 +2140,8 @@
     }
 
     var compareEl = document.getElementById('whatif-compare');
-    // Only show compare when at least one alt grade has been explicitly set
-    if (!hasValid || !hasAnyAlt) {
+    // Show compare when there are valid courses and at least one grade differs
+    if (!hasValid || !hasDiff) {
       compareEl.style.display = 'none';
       return;
     }
