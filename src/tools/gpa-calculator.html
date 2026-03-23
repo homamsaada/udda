@@ -127,25 +127,17 @@
       </div>
     </div>
 
-    <!-- Shared field: total program credits (used by sections 2 & 3) -->
-    <div class="gpa-cum-sub">
-      <div class="gpa-cum-form">
-        <div class="gpa-form-row">
-          <div class="gpa-form-group" style="grid-column: 1 / -1">
-            <label>{{tool.totalGradCredits}}</label>
-            <input type="number" id="max-grad-credits" min="1" placeholder="132" oninput="gpaCalcGradBoth()">
-            <span class="gpa-field-hint">{{tool.totalGradCreditsHint}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Section 2: What GPA do I need? -->
     <div class="gpa-cum-sub">
       <h4 class="gpa-cum-sub-title">{{tool.cumSectionTarget}}</h4>
       <div class="gpa-cum-form">
         <div class="gpa-form-row">
-          <div class="gpa-form-group" style="grid-column: 1 / -1">
+          <div class="gpa-form-group">
+            <label>{{tool.totalGradCredits}}</label>
+            <input type="number" id="max-grad-credits" min="1" placeholder="132" oninput="gpaCalcGradBoth()">
+            <span class="gpa-field-hint">{{tool.totalGradCreditsHint}}</span>
+          </div>
+          <div class="gpa-form-group">
             <label>{{tool.targetGpa}}</label>
             <input type="number" id="tgt-goal-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcTarget()">
           </div>
