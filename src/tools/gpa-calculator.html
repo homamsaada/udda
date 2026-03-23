@@ -11,26 +11,30 @@
   </div>
 
   <!-- Grading System Selector -->
-  <div class="gpa-system-bar">
-    <label class="gpa-system-label">{{tool.gradingSystem}}</label>
-    <div class="gpa-system-btns">
-      <button class="gpa-sys-btn active" onclick="gpaSetSystem('4')" id="sys-btn-4">{{tool.system40}}</button>
-      <button class="gpa-sys-btn" onclick="gpaSetSystem('5')" id="sys-btn-5">{{tool.system50}}</button>
-      <button class="gpa-sys-btn" onclick="gpaSetSystem('100')" id="sys-btn-100">{{tool.system100}}</button>
+  <div class="gpa-settings-card">
+    <div class="gpa-system-bar">
+      <label class="gpa-system-label">{{tool.gradingSystem}}</label>
+      <div class="gpa-system-btns">
+        <button class="gpa-sys-btn active" onclick="gpaSetSystem('4')" id="sys-btn-4">{{tool.system40}}</button>
+        <button class="gpa-sys-btn" onclick="gpaSetSystem('5')" id="sys-btn-5">{{tool.system50}}</button>
+        <button class="gpa-sys-btn" onclick="gpaSetSystem('100')" id="sys-btn-100">{{tool.system100}}</button>
+      </div>
     </div>
   </div>
 
   <!-- Retake Policy Selector -->
-  <div class="gpa-system-bar gpa-retake-bar">
-    <label class="gpa-system-label">{{tool.retakePolicy}}</label>
-    <div class="gpa-system-btns">
-      <button class="gpa-sys-btn active" onclick="gpaSetRetakePolicy('replace')" id="retake-btn-replace">{{tool.retakeReplace}}</button>
-      <button class="gpa-sys-btn" onclick="gpaSetRetakePolicy('higher')" id="retake-btn-higher">{{tool.retakeHigher}}</button>
-      <button class="gpa-sys-btn" onclick="gpaSetRetakePolicy('countAll')" id="retake-btn-countAll">{{tool.retakeCountAll}}</button>
-      <button class="gpa-sys-btn" onclick="gpaSetRetakePolicy('average')" id="retake-btn-average">{{tool.retakeAverage}}</button>
+  <div class="gpa-settings-card">
+    <div class="gpa-system-bar">
+      <label class="gpa-system-label">{{tool.retakePolicy}}</label>
+      <div class="gpa-system-btns">
+        <button class="gpa-sys-btn active" onclick="gpaSetRetakePolicy('replace')" id="retake-btn-replace">{{tool.retakeReplace}}</button>
+        <button class="gpa-sys-btn" onclick="gpaSetRetakePolicy('higher')" id="retake-btn-higher">{{tool.retakeHigher}}</button>
+        <button class="gpa-sys-btn" onclick="gpaSetRetakePolicy('countAll')" id="retake-btn-countAll">{{tool.retakeCountAll}}</button>
+        <button class="gpa-sys-btn" onclick="gpaSetRetakePolicy('average')" id="retake-btn-average">{{tool.retakeAverage}}</button>
+      </div>
     </div>
+    <div class="gpa-retake-policy-desc" id="retake-policy-desc">{{tool.retakePolicyDesc_replace}}</div>
   </div>
-  <div class="gpa-retake-policy-desc" id="retake-policy-desc">{{tool.retakePolicyDesc_replace}}</div>
 
   <!-- Tabs -->
   <div class="calc-tabs">
@@ -323,12 +327,20 @@
   font-family: inherit;
 }
 
+/* Settings Card */
+.gpa-calculator .gpa-settings-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
 /* System Selector Bar */
 .gpa-calculator .gpa-system-bar {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
@@ -1067,9 +1079,7 @@
 .gpa-calculator .gpa-retake-policy-desc {
   font-size: 0.82rem;
   color: var(--text-muted);
-  margin-top: -12px;
-  margin-bottom: 20px;
-  padding-inline-start: 4px;
+  margin-top: 10px;
 }
 
 /* Reset All Button */
