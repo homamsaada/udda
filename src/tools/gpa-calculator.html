@@ -20,6 +20,17 @@
     </div>
   </div>
 
+  <!-- Retake Policy Selector -->
+  <div class="gpa-system-bar gpa-retake-bar">
+    <label class="gpa-system-label">{{tool.retakePolicy}}</label>
+    <div class="gpa-system-btns">
+      <button class="gpa-sys-btn active" onclick="gpaSetRetakePolicy('replace')" id="retake-btn-replace">{{tool.retakeReplace}}</button>
+      <button class="gpa-sys-btn" onclick="gpaSetRetakePolicy('higher')" id="retake-btn-higher">{{tool.retakeHigher}}</button>
+      <button class="gpa-sys-btn" onclick="gpaSetRetakePolicy('countAll')" id="retake-btn-countAll">{{tool.retakeCountAll}}</button>
+      <button class="gpa-sys-btn" onclick="gpaSetRetakePolicy('average')" id="retake-btn-average">{{tool.retakeAverage}}</button>
+    </div>
+  </div>
+
   <!-- Tabs -->
   <div class="calc-tabs">
     <button class="calc-tab active" onclick="gpaSwitchTab('semester', this)">{{tool.tabSemester}}</button>
@@ -107,6 +118,7 @@
           </div>
         </div>
         <button class="gpa-use-semester-btn" onclick="gpaUseFromSemester()">📋 {{tool.useFromTab1}}</button>
+        <div class="gpa-retake-note">📌 {{tool.retakeNote}}</div>
       </div>
 
       <div class="gpa-results" id="cumulative-results">
@@ -1037,6 +1049,59 @@
   background: var(--bg-tertiary);
 }
 
+/* Retake note under "Use from Semester" button */
+.gpa-calculator .gpa-retake-note {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+/* Retake toggle inside course card */
+.gpa-calculator .gpa-retake-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.gpa-calculator .gpa-retake-toggle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.gpa-calculator .gpa-retake-toggle label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  cursor: pointer;
+}
+
+/* Old grade field — spans full row on desktop grid */
+.gpa-calculator .gpa-course-card .gpa-field-oldgrade {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.5fr 2.5fr;
+  gap: 8px;
+  align-items: end;
+}
+
+.gpa-calculator .gpa-field-oldgrade input,
+.gpa-calculator .gpa-field-oldgrade select {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
+}
+
+/* Retake toggle — spans full row on desktop grid */
+.gpa-calculator .gpa-course-card .gpa-retake-toggle {
+  grid-column: 1 / -1;
+}
+
 /* Responsive — single breakpoint like zakat */
 @media (max-width: 768px) {
   .gpa-calculator .calc-tabs {
@@ -1127,6 +1192,22 @@
   .gpa-calculator .gpa-course-card .gpa-field-whatif select {
     border-color: var(--accent-secondary);
     background: rgba(139, 92, 246, 0.05);
+  }
+
+  /* old-grade row on mobile */
+  .gpa-calculator .gpa-course-card .gpa-field-oldgrade {
+    display: block;
+    margin-top: 16px;
+  }
+
+  .gpa-calculator .gpa-course-card .gpa-field-oldgrade .gpa-form-group {
+    margin-bottom: 0;
+  }
+
+  .gpa-calculator .gpa-course-card .gpa-field-oldgrade input,
+  .gpa-calculator .gpa-course-card .gpa-field-oldgrade select {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.05);
   }
 
   /* Delete button: absolute top-end corner */
@@ -1255,9 +1336,12 @@
     totalPoints: '{{tool.totalPoints}}',
     weightedTotal: '{{tool.weightedTotal}}',
     allCreditsCompleted: '{{tool.allCreditsCompleted}}',
-    confirmSystemChange: '{{tool.confirmSystemChange}}'
+    confirmSystemChange: '{{tool.confirmSystemChange}}',
+    retakenCourse: '{{tool.retakenCourse}}',
+    oldGrade: '{{tool.oldGrade}}'
   };
 
+  var retakePolicy = 'replace';
   var whatIfActive = false;
   var semesters = [];
   var INITIAL_SEMESTERS = 3;
@@ -1309,6 +1393,12 @@
       html += '<input type="text" placeholder="' + labels.courseName + '" value="' + (c.name || '') + '" oninput="gpaUpdateCourse(' + i + ',\'name\',this.value)">';
       html += '</div>';
 
+      // Retake toggle
+      html += '<div class="gpa-retake-toggle">';
+      html += '<input type="checkbox" id="retake-chk-' + i + '"' + (c.isRetake ? ' checked' : '') + ' onchange="gpaUpdateCourse(' + i + ',\'isRetake\',this.checked)">';
+      html += '<label for="retake-chk-' + i + '">' + labels.retakenCourse + '</label>';
+      html += '</div>';
+
       // Credits + Grade side by side
       html += '<div class="gpa-form-row gpa-field-pair">';
       html += '<div class="gpa-form-group">';
@@ -1325,6 +1415,21 @@
       }
       html += '</div>';
       html += '</div>';
+
+      // Old grade (shown only if retake is enabled)
+      if (c.isRetake) {
+        html += '<div class="gpa-form-row gpa-field-oldgrade">';
+        html += '<div class="gpa-form-group">';
+        html += '<label>' + labels.oldGrade + '</label>';
+        if (is100) {
+          html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100" value="' + (c.oldGradeValue !== '' && c.oldGradeValue !== undefined ? c.oldGradeValue : '') + '" oninput="gpaUpdateCourse(' + i + ',\'oldGradeValue\',this.value)">';
+        } else {
+          var oldSel = gradeOpts.replace('value="' + (c.oldGradeIndex !== undefined ? c.oldGradeIndex : -1) + '"', 'value="' + (c.oldGradeIndex !== undefined ? c.oldGradeIndex : -1) + '" selected');
+          html += '<select onchange="gpaUpdateCourse(' + i + ',\'oldGradeIndex\',this.value)">' + oldSel + '</select>';
+        }
+        html += '</div>';
+        html += '</div>';
+      }
 
       // What-if alt grade
       if (wif) {
@@ -1892,14 +1997,28 @@
   };
 
   window.gpaUpdateCourse = function(index, field, value) {
-    if (field === 'gradeIndex') {
+    if (field === 'gradeIndex' || field === 'oldGradeIndex') {
       courses[index][field] = parseInt(value);
-    } else if (field === 'gradeValue') {
-      courses[index][field] = value;
+    } else if (field === 'isRetake') {
+      courses[index].isRetake = value;
+      if (!value) {
+        delete courses[index].oldGradeIndex;
+        delete courses[index].oldGradeValue;
+      }
+      renderCourses();
     } else {
       courses[index][field] = value;
     }
     calcSemester();
+  };
+
+  window.gpaSetRetakePolicy = function(policy) {
+    retakePolicy = policy;
+    var btns = document.querySelectorAll('.gpa-calculator .gpa-retake-bar .gpa-sys-btn');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.remove('active');
+    }
+    document.getElementById('retake-btn-' + policy).classList.add('active');
   };
 
   window.gpaCalcCumulative = function() { calcCumulative(); calcTarget(); calcMaxGpa(); };
@@ -2042,27 +2161,76 @@
     calcMulti();
   };
 
-  window.gpaUseFromSemester = function() {
+  // Get the grade value for a course (handles both 100% and letter-grade systems)
+  function getCourseGradeVal(course) {
     var sys = gradeSystems[currentSystem];
     var is100 = currentSystem === '100';
+    if (is100) {
+      var gv = parseFloat(course.gradeValue);
+      return (!isNaN(gv) && gv >= 0 && gv <= 100) ? gv : null;
+    } else {
+      var gi = parseInt(course.gradeIndex);
+      return (gi >= 0 && gi < sys.grades.length) ? sys.grades[gi].value : null;
+    }
+  }
+
+  function getCourseOldGradeVal(course) {
+    var sys = gradeSystems[currentSystem];
+    var is100 = currentSystem === '100';
+    if (is100) {
+      var gv = parseFloat(course.oldGradeValue);
+      return (!isNaN(gv) && gv >= 0 && gv <= 100) ? gv : null;
+    } else {
+      var gi = parseInt(course.oldGradeIndex);
+      return (gi >= 0 && gi < sys.grades.length) ? sys.grades[gi].value : null;
+    }
+  }
+
+  window.gpaUseFromSemester = function() {
     var totalCredits = 0;
     var totalPoints = 0;
+    // Track retake adjustments to apply to previous cumulative
+    var retakeOldCredits = 0;
+    var retakeOldPoints = 0;
 
     for (var i = 0; i < courses.length; i++) {
       var c = courses[i];
       var cr = parseFloat(c.credits);
-      if (is100) {
-        var gv = parseFloat(c.gradeValue);
-        if (cr > 0 && !isNaN(gv) && gv >= 0 && gv <= 100) {
+      var newGrade = getCourseGradeVal(c);
+      if (!(cr > 0) || newGrade === null) continue;
+
+      if (c.isRetake) {
+        var oldGrade = getCourseOldGradeVal(c);
+        if (oldGrade === null) oldGrade = 0;
+
+        if (retakePolicy === 'replace') {
+          // New grade replaces old: add new to semester, subtract old from previous
           totalCredits += cr;
-          totalPoints += cr * gv;
+          totalPoints += cr * newGrade;
+          retakeOldCredits += cr;
+          retakeOldPoints += cr * oldGrade;
+        } else if (retakePolicy === 'higher') {
+          // Higher of old/new: add effective to semester, subtract old from previous
+          var effective = Math.max(oldGrade, newGrade);
+          totalCredits += cr;
+          totalPoints += cr * effective;
+          retakeOldCredits += cr;
+          retakeOldPoints += cr * oldGrade;
+        } else if (retakePolicy === 'countAll') {
+          // Both count: new is additional credits (old stays in previous)
+          totalCredits += cr;
+          totalPoints += cr * newGrade;
+        } else if (retakePolicy === 'average') {
+          // Average of both: subtract old, add averaged
+          var avg = (oldGrade + newGrade) / 2;
+          totalCredits += cr;
+          totalPoints += cr * avg;
+          retakeOldCredits += cr;
+          retakeOldPoints += cr * oldGrade;
         }
       } else {
-        var gi = parseInt(c.gradeIndex);
-        if (cr > 0 && gi >= 0 && gi < sys.grades.length) {
-          totalCredits += cr;
-          totalPoints += cr * sys.grades[gi].value;
-        }
+        totalCredits += cr;
+        totalPoints += cr * newGrade;
       }
     }
 
@@ -2070,7 +2238,27 @@
       var semGpa = totalPoints / totalCredits;
       document.getElementById('cum-new-gpa').value = semGpa.toFixed(2);
       document.getElementById('cum-new-credits').value = totalCredits;
+
+      // Adjust previous cumulative for retake policies that replace old grades
+      if (retakeOldCredits > 0 && retakePolicy !== 'countAll') {
+        var prevGpa = parseFloat(document.getElementById('cum-prev-gpa').value);
+        var prevCredits = parseFloat(document.getElementById('cum-prev-credits').value);
+        if (!isNaN(prevGpa) && !isNaN(prevCredits) && prevCredits > 0) {
+          var prevPoints = prevGpa * prevCredits;
+          // Remove old retake courses from previous
+          var adjustedPoints = prevPoints - retakeOldPoints;
+          var adjustedCredits = prevCredits - retakeOldCredits;
+          if (adjustedCredits > 0) {
+            var adjustedGpa = adjustedPoints / adjustedCredits;
+            document.getElementById('cum-prev-gpa').value = adjustedGpa.toFixed(2);
+            document.getElementById('cum-prev-credits').value = adjustedCredits;
+          }
+        }
+      }
+
       calcCumulative();
+      calcTarget();
+      calcMaxGpa();
       App.showToast(isArabic ? 'تم نقل بيانات الفصل!' : 'Semester data transferred!');
     }
   };
