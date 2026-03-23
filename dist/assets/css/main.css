@@ -503,6 +503,12 @@ body {
   padding-right: 32px;
 }
 
+/* Ensure select options are readable in both light and dark themes */
+select option {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
 .form-textarea {
   resize: vertical;
   min-height: 120px;
