@@ -156,11 +156,7 @@
         </div>
       </div>
 
-      <!-- What If -->
-      <div class="gpa-whatif-toggle">
-        <button class="gpa-whatif-btn" id="whatif-btn" onclick="gpaToggleWhatIf()">🔮 ماذا لو؟</button>
-        <button class="gpa-whatif-reset" id="whatif-reset-btn" onclick="gpaResetWhatIf()" style="display:none">↺ إعادة تعيين</button>
-      </div>
+      <!-- What If Comparison (always visible, updates automatically) -->
       <div class="gpa-whatif-compare" id="whatif-compare" style="display:none">
         <div class="gpa-whatif-row">
           <div class="gpa-whatif-item">
@@ -506,25 +502,18 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Course Header (desktop only) */
-.gpa-calculator .gpa-course-header {
+/* Fixed 7-column grid: name | credits | grade | retake-toggle | old-grade | whatif | delete */
+.gpa-calculator .gpa-course-header,
+.gpa-calculator .gpa-course-card {
   display: grid;
-  grid-template-columns: 2fr 80px 130px 36px;
+  grid-template-columns: 2fr 70px 120px 40px 120px 120px 36px;
   gap: 8px;
   margin-bottom: 8px;
+  align-items: center;
+}
+
+.gpa-calculator .gpa-course-header {
   padding: 0 0 4px;
-}
-
-.gpa-calculator .gpa-course-header.retake-mode {
-  grid-template-columns: 2fr 80px 130px 130px 36px;
-}
-
-.gpa-calculator .gpa-course-header.whatif-mode {
-  grid-template-columns: 2fr 80px 130px 1fr 36px;
-}
-
-.gpa-calculator .gpa-course-header.retake-mode.whatif-mode {
-  grid-template-columns: 2fr 80px 130px 130px 1fr 36px;
 }
 
 .gpa-calculator .gpa-course-header span {
@@ -533,28 +522,7 @@
   color: var(--text-muted);
 }
 
-/* Course Card — desktop: single-line grid row */
-.gpa-calculator .gpa-course-card {
-  display: grid;
-  grid-template-columns: 2fr 80px 130px 36px;
-  gap: 8px;
-  margin-bottom: 8px;
-  align-items: center;
-}
-
-.gpa-calculator .gpa-course-card.retake-mode {
-  grid-template-columns: 2fr 80px 130px 130px 36px;
-}
-
-.gpa-calculator .gpa-course-card.whatif-mode {
-  grid-template-columns: 2fr 80px 130px 1fr 36px;
-}
-
-.gpa-calculator .gpa-course-card.retake-mode.whatif-mode {
-  grid-template-columns: 2fr 80px 130px 130px 1fr 36px;
-}
-
-/* Desktop: labels hidden (header serves as labels), form-group is transparent */
+/* Desktop: labels hidden (header serves as labels) */
 .gpa-calculator .gpa-course-card .gpa-form-group {
   display: flex;
   flex-direction: column;
@@ -565,44 +533,80 @@
   display: none;
 }
 
-/* Desktop: field-name takes one column */
-.gpa-calculator .gpa-course-card .gpa-field-name {
-  grid-column: 1;
-}
-
-/* Desktop: field-pair, field-oldgrade, field-whatif use display:contents */
-.gpa-calculator .gpa-course-card .gpa-field-pair {
+/* Desktop: wrappers distribute children into grid columns */
+.gpa-calculator .gpa-course-card .gpa-field-pair,
+.gpa-calculator .gpa-course-card .gpa-field-extras {
   display: contents;
 }
 
-.gpa-calculator .gpa-course-card .gpa-field-oldgrade {
-  display: contents;
-}
-
-.gpa-calculator .gpa-course-card .gpa-field-whatif {
-  display: contents;
+/* Desktop: hide retake label (header shows it) */
+.gpa-calculator .gpa-retake-cell .gpa-retake-label {
+  display: none;
 }
 
 .gpa-calculator .gpa-course-card .gpa-del-btn {
   order: 10;
 }
 
-/* Desktop: retake toggle inline inside name cell */
-.gpa-calculator .gpa-course-card .gpa-retake-toggle {
-  margin-top: 4px;
+/* Retake toggle — centered small switch */
+.gpa-calculator .gpa-retake-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Inputs inside course cards (exclude checkboxes) */
+.gpa-calculator .gpa-retake-switch {
+  position: relative;
+  width: 34px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.gpa-calculator .gpa-retake-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.gpa-calculator .gpa-retake-switch .gpa-switch-track {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--border-color);
+  border-radius: 9px;
+  transition: background var(--transition-fast);
+}
+
+.gpa-calculator .gpa-retake-switch .gpa-switch-thumb {
+  position: absolute;
+  top: 2px;
+  inset-inline-start: 2px;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  transition: all var(--transition-fast);
+}
+
+.gpa-calculator .gpa-retake-switch input:checked + .gpa-switch-track {
+  background: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-retake-switch input:checked + .gpa-switch-track .gpa-switch-thumb {
+  inset-inline-start: 18px;
+}
+
+/* Inputs inside course cards (exclude hidden checkbox) */
 .gpa-calculator .gpa-course-card input:not([type="checkbox"]),
 .gpa-calculator .gpa-course-card select {
-  padding: 12px 16px;
+  padding: 10px 8px;
   border: 2px solid var(--border-color);
   border-radius: 10px;
   background: var(--bg-secondary);
   color: var(--text-primary);
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: inherit;
-  transition: border-color var(--transition-fast);
+  transition: all var(--transition-fast);
   width: 100%;
   min-width: 0;
 }
@@ -615,6 +619,14 @@
 
 .gpa-calculator .gpa-course-card input::placeholder {
   color: var(--text-muted);
+}
+
+/* Disabled state for old grade when retake is off */
+.gpa-calculator .gpa-course-card input:disabled,
+.gpa-calculator .gpa-course-card select:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  background: var(--bg-tertiary);
 }
 
 /* Delete button */
@@ -641,10 +653,17 @@
 }
 
 /* What-if alt grade color */
-.gpa-calculator .gpa-field-whatif input,
-.gpa-calculator .gpa-field-whatif select {
+.gpa-calculator .gpa-course-card .gpa-field-whatif input:not(:disabled),
+.gpa-calculator .gpa-course-card .gpa-field-whatif select:not(:disabled) {
   border-color: var(--accent-secondary);
   background: rgba(139, 92, 246, 0.05);
+}
+
+/* Old grade enabled color */
+.gpa-calculator .gpa-course-card .gpa-field-oldgrade input:not(:disabled),
+.gpa-calculator .gpa-course-card .gpa-field-oldgrade select:not(:disabled) {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
 }
 
 /* Add Course Button */
@@ -1053,54 +1072,7 @@
   background: var(--bg-tertiary);
 }
 
-/* What If */
-.gpa-calculator .gpa-whatif-toggle {
-  display: flex;
-  gap: 8px;
-  margin-top: 16px;
-  flex-wrap: wrap;
-}
-
-.gpa-calculator .gpa-whatif-btn {
-  padding: 10px 20px;
-  border: 2px solid var(--accent-secondary);
-  border-radius: 10px;
-  background: transparent;
-  color: var(--accent-secondary);
-  font-size: 0.88rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  font-family: inherit;
-}
-
-.gpa-calculator .gpa-whatif-btn:hover {
-  background: var(--accent-secondary);
-  color: white;
-}
-
-.gpa-calculator .gpa-whatif-btn.active {
-  background: var(--accent-secondary);
-  color: white;
-}
-
-.gpa-calculator .gpa-whatif-reset {
-  padding: 10px 20px;
-  border: 2px solid var(--border-color);
-  border-radius: 10px;
-  background: transparent;
-  color: var(--text-secondary);
-  font-size: 0.88rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  font-family: inherit;
-}
-
-.gpa-calculator .gpa-whatif-reset:hover {
-  border-color: var(--text-secondary);
-}
-
+/* What If comparison */
 .gpa-calculator .gpa-whatif-compare {
   margin-top: 16px;
   padding: 16px 20px;
@@ -1176,35 +1148,6 @@
   gap: 4px;
 }
 
-/* Retake toggle inside name cell */
-.gpa-calculator .gpa-retake-toggle {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.gpa-calculator .gpa-retake-toggle input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  accent-color: var(--accent-primary);
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.gpa-calculator .gpa-retake-toggle label {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--accent-primary);
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-/* Old grade field styling */
-.gpa-calculator .gpa-field-oldgrade input,
-.gpa-calculator .gpa-field-oldgrade select {
-  border-color: #f59e0b;
-  background: rgba(245, 158, 11, 0.05);
-}
 
 /* Responsive — single breakpoint like zakat */
 @media (max-width: 768px) {
@@ -1228,18 +1171,12 @@
   }
 
   /* Course header hidden on mobile — labels inside cards instead */
-  .gpa-calculator .gpa-course-header,
-  .gpa-calculator .gpa-course-header.whatif-mode,
-  .gpa-calculator .gpa-course-header.retake-mode,
-  .gpa-calculator .gpa-course-header.retake-mode.whatif-mode {
+  .gpa-calculator .gpa-course-header {
     display: none;
   }
 
-  /* Course card becomes a zakat-style card */
-  .gpa-calculator .gpa-course-card,
-  .gpa-calculator .gpa-course-card.whatif-mode,
-  .gpa-calculator .gpa-course-card.retake-mode,
-  .gpa-calculator .gpa-course-card.retake-mode.whatif-mode {
+  /* Course card: block layout on mobile */
+  .gpa-calculator .gpa-course-card {
     display: block;
     position: relative;
     background: var(--bg-secondary);
@@ -1248,10 +1185,12 @@
     margin-bottom: 12px;
   }
 
-  /* Inputs inside cards: bg-primary for contrast against card's bg-secondary */
+  /* Inputs: bg-primary for contrast against card's bg-secondary */
   .gpa-calculator .gpa-course-card input:not([type="checkbox"]),
   .gpa-calculator .gpa-course-card select {
     background: var(--bg-primary);
+    padding: 12px 16px;
+    font-size: 1rem;
   }
 
   /* Show labels on mobile */
@@ -1262,22 +1201,32 @@
     margin-bottom: 16px;
   }
 
-  .gpa-calculator .gpa-course-card .gpa-form-group label {
+  .gpa-calculator .gpa-course-card .gpa-form-group > label {
     display: block;
     font-weight: 600;
     color: var(--text-primary);
     font-size: 0.9rem;
   }
 
-  /* field-name: full width, no bottom margin on last group */
-  .gpa-calculator .gpa-course-card .gpa-field-name {
-    grid-column: unset;
+  /* Retake cell: inline with label on mobile */
+  .gpa-calculator .gpa-course-card .gpa-retake-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
   }
 
-  /* field-pair: 2-column grid on mobile — override display:contents */
+  .gpa-calculator .gpa-course-card .gpa-retake-cell .gpa-retake-label {
+    display: inline;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+  }
+
+  /* Credits + Grade: 2-col grid on mobile */
   .gpa-calculator .gpa-course-card .gpa-field-pair {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
     margin-bottom: 0;
   }
@@ -1286,51 +1235,28 @@
     margin-bottom: 0;
   }
 
-  /* what-if row */
-  .gpa-calculator .gpa-course-card .gpa-field-whatif {
-    display: block;
+  /* Old grade + what-if: 2-col grid on mobile */
+  .gpa-calculator .gpa-course-card .gpa-field-extras {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
     margin-top: 16px;
   }
 
-  .gpa-calculator .gpa-course-card .gpa-field-whatif .gpa-form-group {
+  .gpa-calculator .gpa-course-card .gpa-field-extras .gpa-form-group {
     margin-bottom: 0;
   }
 
-  .gpa-calculator .gpa-course-card .gpa-field-whatif input,
-  .gpa-calculator .gpa-course-card .gpa-field-whatif select {
-    border-color: var(--accent-secondary);
-    background: rgba(139, 92, 246, 0.05);
-  }
-
-  /* old-grade row on mobile — override display:contents */
-  .gpa-calculator .gpa-course-card .gpa-field-oldgrade {
-    display: block;
-    margin-top: 16px;
-  }
-
-  .gpa-calculator .gpa-course-card .gpa-field-oldgrade .gpa-form-group {
-    margin-bottom: 0;
-  }
-
-  .gpa-calculator .gpa-course-card .gpa-field-oldgrade input,
-  .gpa-calculator .gpa-course-card .gpa-field-oldgrade select {
+  .gpa-calculator .gpa-course-card .gpa-field-extras .gpa-field-oldgrade input:not(:disabled),
+  .gpa-calculator .gpa-course-card .gpa-field-extras .gpa-field-oldgrade select:not(:disabled) {
     border-color: #f59e0b;
     background: rgba(245, 158, 11, 0.05);
   }
 
-  /* Retake toggle on mobile — larger touch target */
-  .gpa-calculator .gpa-retake-toggle {
-    margin-top: 8px;
-    margin-bottom: 4px;
-  }
-
-  .gpa-calculator .gpa-retake-toggle input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-  }
-
-  .gpa-calculator .gpa-retake-toggle label {
-    font-size: 0.85rem;
+  .gpa-calculator .gpa-course-card .gpa-field-extras .gpa-field-whatif input:not(:disabled),
+  .gpa-calculator .gpa-course-card .gpa-field-extras .gpa-field-whatif select:not(:disabled) {
+    border-color: var(--accent-secondary);
+    background: rgba(139, 92, 246, 0.05);
   }
 
   /* Delete button: absolute top-end corner */
@@ -1465,7 +1391,6 @@
   };
 
   var retakePolicy = 'replace';
-  var whatIfActive = false;
   var semesters = [];
   var INITIAL_SEMESTERS = 3;
 
@@ -1490,27 +1415,15 @@
     var container = document.getElementById('courses-container');
     var html = '';
     var is100 = currentSystem === '100';
-    var wif = whatIfActive;
 
-    // Check if any course has retake enabled (for grid layout)
-    var hasRetake = false;
-    for (var i = 0; i < courses.length; i++) {
-      if (courses[i].isRetake) { hasRetake = true; break; }
-    }
-
-    // Build mode class string
-    var modeClass = '';
-    if (hasRetake && wif) modeClass = ' retake-mode whatif-mode';
-    else if (hasRetake) modeClass = ' retake-mode';
-    else if (wif) modeClass = ' whatif-mode';
-
-    // Header row (desktop only — hidden on mobile via CSS)
-    html += '<div class="gpa-course-header' + modeClass + '">';
+    // Fixed header row (desktop only — hidden on mobile via CSS)
+    html += '<div class="gpa-course-header">';
     html += '<span>' + labels.courseName + '</span>';
     html += '<span>' + labels.creditHours + '</span>';
     html += '<span>' + labels.grade + '</span>';
-    if (hasRetake) html += '<span>' + labels.oldGrade + '</span>';
-    if (wif) html += '<span>' + labels.whatIfLabel + '</span>';
+    html += '<span>' + labels.retakenCourse + '</span>';
+    html += '<span>' + labels.oldGrade + '</span>';
+    html += '<span>' + labels.whatIfLabel + '</span>';
     html += '<span></span>';
     html += '</div>';
 
@@ -1518,22 +1431,17 @@
 
     for (var i = 0; i < courses.length; i++) {
       var c = courses[i];
-      html += '<div class="gpa-course-card' + modeClass + '">';
+      var isRetake = !!c.isRetake;
 
-      // Delete button (top-end corner on mobile, inline on desktop)
-      html += '<button class="gpa-del-btn" onclick="gpaRemoveCourse(' + i + ')" title="' + labels.removeCourse + '"' + (courses.length <= 1 ? ' style="visibility:hidden"' : '') + '>&times;</button>';
+      html += '<div class="gpa-course-card">';
 
-      // Course name + retake toggle inline
+      // Col 1: Course name
       html += '<div class="gpa-form-group gpa-field-name">';
       html += '<label>' + labels.courseName + '</label>';
       html += '<input type="text" placeholder="' + labels.courseName + '" value="' + (c.name || '') + '" oninput="gpaUpdateCourse(' + i + ',\'name\',this.value)">';
-      html += '<div class="gpa-retake-toggle">';
-      html += '<input type="checkbox" id="retake-chk-' + i + '"' + (c.isRetake ? ' checked' : '') + ' onchange="gpaUpdateCourse(' + i + ',\'isRetake\',this.checked)">';
-      html += '<label for="retake-chk-' + i + '">' + labels.retakenCourse + '</label>';
-      html += '</div>';
       html += '</div>';
 
-      // Credits + Grade — use display:contents on desktop
+      // Col 2+3: Credits + Grade (wrapped for mobile 2-col layout)
       html += '<div class="gpa-field-pair">';
       html += '<div class="gpa-form-group">';
       html += '<label>' + labels.creditHours + '</label>';
@@ -1542,7 +1450,7 @@
       html += '<div class="gpa-form-group">';
       html += '<label>' + labels.grade + '</label>';
       if (is100) {
-        html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100" class="gpa-grade-input" value="' + (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '') + '" oninput="gpaUpdateCourse(' + i + ',\'gradeValue\',this.value)">';
+        html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100" value="' + (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '') + '" oninput="gpaUpdateCourse(' + i + ',\'gradeValue\',this.value)">';
       } else {
         var sel = gradeOpts.replace('value="' + c.gradeIndex + '"', 'value="' + c.gradeIndex + '" selected');
         html += '<select onchange="gpaUpdateCourse(' + i + ',\'gradeIndex\',this.value)">' + sel + '</select>';
@@ -1550,44 +1458,52 @@
       html += '</div>';
       html += '</div>';
 
-      // Old grade column (always present in retake-mode for grid alignment)
-      if (hasRetake) {
-        html += '<div class="gpa-field-oldgrade">';
-        if (c.isRetake) {
-          html += '<div class="gpa-form-group">';
-          html += '<label>' + labels.oldGrade + '</label>';
-          if (is100) {
-            html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100" value="' + (c.oldGradeValue !== '' && c.oldGradeValue !== undefined ? c.oldGradeValue : '') + '" oninput="gpaUpdateCourse(' + i + ',\'oldGradeValue\',this.value)">';
-          } else {
-            var oldSel = gradeOpts.replace('value="' + (c.oldGradeIndex !== undefined ? c.oldGradeIndex : -1) + '"', 'value="' + (c.oldGradeIndex !== undefined ? c.oldGradeIndex : -1) + '" selected');
-            html += '<select onchange="gpaUpdateCourse(' + i + ',\'oldGradeIndex\',this.value)">' + oldSel + '</select>';
-          }
-          html += '</div>';
-        }
-        html += '</div>';
-      }
+      // Col 4: Retake toggle (small switch, no text on desktop)
+      html += '<div class="gpa-retake-cell">';
+      html += '<span class="gpa-retake-label">' + labels.retakenCourse + '</span>';
+      html += '<label class="gpa-retake-switch">';
+      html += '<input type="checkbox"' + (isRetake ? ' checked' : '') + ' onchange="gpaUpdateCourse(' + i + ',\'isRetake\',this.checked)">';
+      html += '<span class="gpa-switch-track"><span class="gpa-switch-thumb"></span></span>';
+      html += '</label>';
+      html += '</div>';
 
-      // What-if alt grade
-      if (wif) {
-        html += '<div class="gpa-field-whatif">';
-        html += '<div class="gpa-form-group">';
-        html += '<label>' + labels.whatIfLabel + '</label>';
-        if (is100) {
-          var altVal = c.altGradeValue !== undefined && c.altGradeValue !== '' ? c.altGradeValue : (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '');
-          html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100" value="' + altVal + '" oninput="gpaUpdateAlt(' + i + ',\'altGradeValue\',this.value)">';
-        } else {
-          var altIdx = c.altGradeIndex !== undefined ? c.altGradeIndex : c.gradeIndex;
-          var altSel = gradeOpts.replace('value="' + altIdx + '"', 'value="' + altIdx + '" selected');
-          html += '<select onchange="gpaUpdateAlt(' + i + ',\'altGradeIndex\',this.value)">' + altSel + '</select>';
-        }
-        html += '</div>';
-        html += '</div>';
+      // Col 5: Old grade (always present, disabled when not retake)
+      // On mobile: wrapped in gpa-field-extras with whatif
+      html += '<div class="gpa-field-extras">';
+      html += '<div class="gpa-form-group gpa-field-oldgrade">';
+      html += '<label>' + labels.oldGrade + '</label>';
+      if (is100) {
+        html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100"' + (!isRetake ? ' disabled' : '') + ' value="' + (c.oldGradeValue !== '' && c.oldGradeValue !== undefined ? c.oldGradeValue : '') + '" oninput="gpaUpdateCourse(' + i + ',\'oldGradeValue\',this.value)">';
+      } else {
+        var oldIdx = c.oldGradeIndex !== undefined ? c.oldGradeIndex : -1;
+        var oldSel = gradeOpts.replace('value="' + oldIdx + '"', 'value="' + oldIdx + '" selected');
+        html += '<select' + (!isRetake ? ' disabled' : '') + ' onchange="gpaUpdateCourse(' + i + ',\'oldGradeIndex\',this.value)">' + oldSel + '</select>';
       }
+      html += '</div>';
+
+      // Col 6: What-if alt grade (always present)
+      html += '<div class="gpa-form-group gpa-field-whatif">';
+      html += '<label>' + labels.whatIfLabel + '</label>';
+      if (is100) {
+        var altVal = c.altGradeValue !== undefined && c.altGradeValue !== '' ? c.altGradeValue : '';
+        html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100" value="' + altVal + '" oninput="gpaUpdateAlt(' + i + ',\'altGradeValue\',this.value)">';
+      } else {
+        var altIdx = c.altGradeIndex !== undefined ? c.altGradeIndex : -1;
+        var altSel = gradeOpts.replace('value="' + altIdx + '"', 'value="' + altIdx + '" selected');
+        html += '<select onchange="gpaUpdateAlt(' + i + ',\'altGradeIndex\',this.value)">' + altSel + '</select>';
+      }
+      html += '</div>';
+      html += '</div>'; // end gpa-field-extras
+
+      // Col 7: Delete button
+      html += '<button class="gpa-del-btn" onclick="gpaRemoveCourse(' + i + ')" title="' + labels.removeCourse + '"' + (courses.length <= 1 ? ' style="visibility:hidden"' : '') + '>&times;</button>';
 
       html += '</div>';
     }
 
     container.innerHTML = html;
+    calcSemester();
+    calcWhatIf();
   }
 
   function calcSemester() {
@@ -2052,13 +1968,8 @@
     for (var i = 0; i < INITIAL_COURSES; i++) {
       courses.push({ name: '', credits: '', gradeIndex: -1, gradeValue: '' });
     }
-    // Reset what-if
-    whatIfActive = false;
-    var wifBtn = document.getElementById('whatif-btn');
-    var wifResetBtn = document.getElementById('whatif-reset-btn');
+    // Reset what-if compare
     var wifCompare = document.getElementById('whatif-compare');
-    if (wifBtn) wifBtn.style.display = '';
-    if (wifResetBtn) wifResetBtn.style.display = 'none';
     if (wifCompare) wifCompare.style.display = 'none';
     // Reset semesters
     semesters.length = 0;
@@ -2130,7 +2041,7 @@
     courses.splice(index, 1);
     renderCourses();
     calcSemester();
-  };
+  }; // renderCourses already calls calcWhatIf
 
   window.gpaUpdateCourse = function(index, field, value) {
     if (field === 'gradeIndex' || field === 'oldGradeIndex') {
@@ -2142,10 +2053,12 @@
         delete courses[index].oldGradeValue;
       }
       renderCourses();
+      return; // renderCourses calls calcSemester+calcWhatIf
     } else {
       courses[index][field] = value;
     }
     calcSemester();
+    calcWhatIf();
   };
 
   window.gpaSetRetakePolicy = function(policy) {
@@ -2180,6 +2093,7 @@
     var origCredits = 0, origPoints = 0;
     var altCredits = 0, altPoints = 0;
     var hasValid = false;
+    var hasAnyAlt = false;
 
     for (var i = 0; i < courses.length; i++) {
       var c = courses[i];
@@ -2194,7 +2108,10 @@
           origVal = gv;
           validOrig = true;
         }
-        var av = parseFloat(c.altGradeValue !== undefined && c.altGradeValue !== '' ? c.altGradeValue : c.gradeValue);
+        // Check if alt grade was explicitly entered
+        var hasExplicitAlt = c.altGradeValue !== undefined && c.altGradeValue !== '';
+        if (hasExplicitAlt) hasAnyAlt = true;
+        var av = parseFloat(hasExplicitAlt ? c.altGradeValue : c.gradeValue);
         altVal = (!isNaN(av) && av >= 0 && av <= 100) ? av : origVal;
       } else {
         var gi = parseInt(c.gradeIndex);
@@ -2202,7 +2119,9 @@
           origVal = sys.grades[gi].value;
           validOrig = true;
         }
-        var ai = parseInt(c.altGradeIndex !== undefined ? c.altGradeIndex : c.gradeIndex);
+        var hasExplicitAlt = c.altGradeIndex !== undefined && c.altGradeIndex >= 0;
+        if (hasExplicitAlt) hasAnyAlt = true;
+        var ai = parseInt(hasExplicitAlt ? c.altGradeIndex : c.gradeIndex);
         altVal = (ai >= 0 && ai < sys.grades.length) ? sys.grades[ai].value : origVal;
       }
 
@@ -2216,7 +2135,8 @@
     }
 
     var compareEl = document.getElementById('whatif-compare');
-    if (!hasValid) {
+    // Only show compare when at least one alt grade has been explicitly set
+    if (!hasValid || !hasAnyAlt) {
       compareEl.style.display = 'none';
       return;
     }
@@ -2242,34 +2162,6 @@
     }
   }
 
-  window.gpaToggleWhatIf = function() {
-    whatIfActive = !whatIfActive;
-    var btn = document.getElementById('whatif-btn');
-    var resetBtn = document.getElementById('whatif-reset-btn');
-    var compareEl = document.getElementById('whatif-compare');
-
-    btn.classList.toggle('active', whatIfActive);
-    resetBtn.style.display = whatIfActive ? '' : 'none';
-
-    if (!whatIfActive) {
-      compareEl.style.display = 'none';
-      for (var i = 0; i < courses.length; i++) {
-        delete courses[i].altGradeIndex;
-        delete courses[i].altGradeValue;
-      }
-    }
-    renderCourses();
-    if (whatIfActive) calcWhatIf();
-  };
-
-  window.gpaResetWhatIf = function() {
-    for (var i = 0; i < courses.length; i++) {
-      courses[i].altGradeIndex = courses[i].gradeIndex;
-      courses[i].altGradeValue = courses[i].gradeValue;
-    }
-    renderCourses();
-    calcWhatIf();
-  };
 
   window.gpaUpdateAlt = function(index, field, value) {
     if (field === 'altGradeIndex') {
