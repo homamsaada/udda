@@ -173,11 +173,11 @@
     <div class="gpa-cum-form">
       <div class="gpa-form-row">
         <div class="gpa-form-group">
-          <label>المعدل التراكمي الحالي</label>
+          <label>معدلك التراكمي (قبل الفصل الجديد)</label>
           <input type="number" id="cum-prev-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcCumBoth()">
         </div>
         <div class="gpa-form-group">
-          <label>الساعات المكتسبة سابقاً</label>
+          <label>الساعات المكتسبة (قبل الفصل الجديد)</label>
           <input type="number" id="cum-prev-credits" min="0" placeholder="0" oninput="gpaCalcCumBoth()">
         </div>
       </div>
@@ -264,8 +264,9 @@
       <div class="gpa-cum-form">
         <div class="gpa-form-row">
           <div class="gpa-form-group" style="grid-column: 1 / -1">
-            <label>إجمالي ساعات التخرج</label>
+            <label>إجمالي ساعات البرنامج الدراسي</label>
             <input type="number" id="max-grad-credits" min="1" placeholder="132" oninput="gpaCalcMaxGpa()">
+            <span class="gpa-field-hint">العدد الكلي لساعات التخرج في خطتك الدراسية</span>
           </div>
         </div>
       </div>
@@ -735,6 +736,12 @@
   font-weight: 600;
   color: var(--text-primary);
   font-size: 0.9rem;
+}
+
+.gpa-calculator .gpa-field-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: -4px;
 }
 
 .gpa-calculator .gpa-form-group input,
@@ -1603,6 +1610,10 @@
     var curCredits = parseFloat(document.getElementById('cum-prev-credits').value);
     var gradCredits = parseFloat(document.getElementById('max-grad-credits').value);
 
+    // Include new semester data if entered in section 1
+    var newSemGpa = parseFloat(document.getElementById('cum-new-gpa').value);
+    var newSemCredits = parseFloat(document.getElementById('cum-new-credits').value);
+
     var resultEl = document.getElementById('max-gpa-val');
     var classEl = document.getElementById('max-gpa-class-val');
     var completedEl = document.getElementById('max-gpa-completed');
@@ -1617,17 +1628,26 @@
       return;
     }
 
-    if (curCredits >= gradCredits) {
-      resultEl.textContent = curGpa.toFixed(2);
-      classEl.textContent = getClassification(curGpa);
+    // Effective earned = previous + new semester (if valid)
+    var earnedCredits = curCredits;
+    var earnedPoints = curGpa * curCredits;
+    if (!isNaN(newSemGpa) && !isNaN(newSemCredits) && newSemCredits > 0 && newSemGpa >= 0) {
+      earnedCredits += newSemCredits;
+      earnedPoints += newSemGpa * newSemCredits;
+    }
+
+    if (earnedCredits >= gradCredits) {
+      var actualGpa = earnedPoints / earnedCredits;
+      resultEl.textContent = actualGpa.toFixed(2);
+      classEl.textContent = getClassification(actualGpa);
       completedEl.style.display = 'block';
       completedText.textContent = labels.allCreditsCompleted;
       return;
     }
 
     var max = gradeSystems[currentSystem].max;
-    var remainingCredits = gradCredits - curCredits;
-    var maxGpa = (curGpa * curCredits + max * remainingCredits) / gradCredits;
+    var remainingCredits = gradCredits - earnedCredits;
+    var maxGpa = (earnedPoints + max * remainingCredits) / gradCredits;
 
     resultEl.textContent = maxGpa.toFixed(2);
     classEl.textContent = getClassification(maxGpa);
@@ -1925,7 +1945,7 @@
     calcSemester();
   };
 
-  window.gpaCalcCumulative = calcCumulative;
+  window.gpaCalcCumulative = function() { calcCumulative(); calcMaxGpa(); };
   window.gpaCalcTarget = calcTarget;
   window.gpaCalcMaxGpa = calcMaxGpa;
   window.gpaCalcCumBoth = function() { calcCumulative(); calcTarget(); calcMaxGpa(); };
