@@ -218,22 +218,27 @@
       </div>
     </div>
 
+    <!-- Shared field: total program credits (used by sections 2 & 3) -->
+    <div class="gpa-cum-sub">
+      <div class="gpa-cum-form">
+        <div class="gpa-form-row">
+          <div class="gpa-form-group" style="grid-column: 1 / -1">
+            <label>Total Program Credits</label>
+            <input type="number" id="max-grad-credits" min="1" placeholder="132" oninput="gpaCalcGradBoth()">
+            <span class="gpa-field-hint">Total credit hours required to graduate in your program</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Section 2: What GPA do I need? -->
     <div class="gpa-cum-sub">
       <h4 class="gpa-cum-sub-title">What GPA Do I Need?</h4>
       <div class="gpa-cum-form">
-        <div class="gpa-form-row gpa-target-row">
-          <div class="gpa-form-group">
+        <div class="gpa-form-row">
+          <div class="gpa-form-group" style="grid-column: 1 / -1">
             <label>Target Cumulative GPA</label>
             <input type="number" id="tgt-goal-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcTarget()">
-          </div>
-          <div class="gpa-form-group">
-            <label>Remaining Semesters</label>
-            <input type="number" id="tgt-rem-semesters" min="1" value="1" placeholder="1" oninput="gpaCalcTarget()">
-          </div>
-          <div class="gpa-form-group">
-            <label>Credits per Semester (avg)</label>
-            <input type="number" id="tgt-avg-credits" min="1" placeholder="15" oninput="gpaCalcTarget()">
           </div>
         </div>
       </div>
@@ -242,7 +247,7 @@
         <div class="gpa-stats">
           <div class="gpa-stat-card primary">
             <div class="gpa-stat-value" id="tgt-required-val">—</div>
-            <div class="gpa-stat-label">Required GPA Each Semester</div>
+            <div class="gpa-stat-label">Required GPA in Remaining Courses</div>
           </div>
           <div class="gpa-stat-card">
             <div class="gpa-stat-value" id="tgt-class-val">—</div>
@@ -252,24 +257,12 @@
         <div class="gpa-impossible-msg" id="tgt-impossible" style="display:none">
           <div class="gpa-impossible-text" id="tgt-impossible-text"></div>
         </div>
-        <div class="gpa-approx-note" id="tgt-approx-note" style="display:none">
-          <span>📌</span> This is an approximation assuming equal credit hours per semester
-        </div>
       </div>
     </div>
 
     <!-- Section 3: Highest possible GPA -->
     <div class="gpa-cum-sub">
       <h4 class="gpa-cum-sub-title">Highest Possible GPA</h4>
-      <div class="gpa-cum-form">
-        <div class="gpa-form-row">
-          <div class="gpa-form-group" style="grid-column: 1 / -1">
-            <label>Total Program Credits</label>
-            <input type="number" id="max-grad-credits" min="1" placeholder="132" oninput="gpaCalcMaxGpa()">
-            <span class="gpa-field-hint">Total credit hours required to graduate in your program</span>
-          </div>
-        </div>
-      </div>
 
       <div class="gpa-results" id="max-gpa-results">
         <div class="gpa-stats">
@@ -721,11 +714,6 @@
   margin-bottom: 0;
 }
 
-/* 3-column row for target fields — wraps to 2+1 on mobile */
-.gpa-calculator .gpa-target-row {
-  grid-template-columns: repeat(3, 1fr);
-}
-
 .gpa-calculator .gpa-form-group {
   display: flex;
   flex-direction: column;
@@ -936,8 +924,7 @@
 }
 
 /* Converter note */
-.gpa-calculator .gpa-conv-note,
-.gpa-calculator .gpa-approx-note {
+.gpa-calculator .gpa-conv-note {
   margin-top: 12px;
   padding: 10px 14px;
   background: var(--bg-tertiary);
@@ -1122,9 +1109,6 @@
     font-size: 0.75rem;
   }
 
-  .gpa-calculator .gpa-target-row {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
 
   .gpa-calculator .gpa-cum-form {
     padding: 16px;
@@ -1321,7 +1305,7 @@
     noCoursesMsg: 'Add courses and select grades to calculate GPA',
     increased: 'Increased',
     decreased: 'Decreased',
-    impossibleMsg: 'Cannot achieve this GPA with the remaining semesters',
+    impossibleMsg: 'Cannot achieve this GPA',
     semesterNum: 'Semester',
     semesterGpaLabel: 'GPA',
     removeSemester: 'Remove',
@@ -1561,33 +1545,26 @@
     var curGpa = parseFloat(document.getElementById('cum-prev-gpa').value);
     var curCredits = parseFloat(document.getElementById('cum-prev-credits').value);
     var goalGpa = parseFloat(document.getElementById('tgt-goal-gpa').value);
-    var remSemesters = parseInt(document.getElementById('tgt-rem-semesters').value) || 1;
-    var avgCredits = parseFloat(document.getElementById('tgt-avg-credits').value);
+    var gradCredits = parseFloat(document.getElementById('max-grad-credits').value);
 
     var resultEl = document.getElementById('tgt-required-val');
     var classEl = document.getElementById('tgt-class-val');
     var impossibleEl = document.getElementById('tgt-impossible');
     var impossibleText = document.getElementById('tgt-impossible-text');
-    var approxNote = document.getElementById('tgt-approx-note');
 
     impossibleEl.style.display = 'none';
-    approxNote.style.display = 'none';
 
-    if (isNaN(curGpa) || isNaN(curCredits) || isNaN(goalGpa) || isNaN(avgCredits) ||
-        curCredits <= 0 || avgCredits <= 0 || remSemesters <= 0) {
+    if (isNaN(curGpa) || isNaN(curCredits) || isNaN(goalGpa) || isNaN(gradCredits) ||
+        curCredits <= 0 || gradCredits <= 0 || gradCredits <= curCredits) {
       resultEl.textContent = '—';
       classEl.textContent = '—';
       return;
     }
 
     var max = gradeSystems[currentSystem].max;
-    // Total future credits across all remaining semesters
-    var totalFutureCredits = remSemesters * avgCredits;
-    // Required average GPA per semester:
-    // goalGpa * (curCredits + totalFutureCredits) = curGpa * curCredits + requiredGpa * totalFutureCredits
-    var totalNeeded = goalGpa * (curCredits + totalFutureCredits);
-    var alreadyHave = curGpa * curCredits;
-    var requiredGpa = (totalNeeded - alreadyHave) / totalFutureCredits;
+    var remainingCredits = gradCredits - curCredits;
+    // requiredGpa = (target × gradCredits − current × earned) / remaining
+    var requiredGpa = (goalGpa * gradCredits - curGpa * curCredits) / remainingCredits;
 
     if (requiredGpa > max) {
       resultEl.textContent = '—';
@@ -1597,11 +1574,9 @@
     } else if (requiredGpa < 0) {
       resultEl.textContent = '0.00';
       classEl.textContent = getClassification(0);
-      approxNote.style.display = 'block';
     } else {
       resultEl.textContent = requiredGpa.toFixed(2);
       classEl.textContent = getClassification(requiredGpa);
-      approxNote.style.display = 'block';
     }
   }
 
@@ -1948,6 +1923,7 @@
   window.gpaCalcCumulative = function() { calcCumulative(); calcMaxGpa(); };
   window.gpaCalcTarget = calcTarget;
   window.gpaCalcMaxGpa = calcMaxGpa;
+  window.gpaCalcGradBoth = function() { calcTarget(); calcMaxGpa(); };
   window.gpaCalcCumBoth = function() { calcCumulative(); calcTarget(); calcMaxGpa(); };
   window.gpaCalcConvert = calcConvert;
   window.gpaConvSync = function(changed) {
