@@ -2,7 +2,7 @@
 title: "How to Calculate Zakat: A Complete Guide with Practical Examples"
 description: "Learn how to calculate Zakat step by step: conditions, Nisab thresholds, Zakat rates, and practical examples for cash, gold, and stocks"
 date: "2026-03-20"
-category: "seo"
+topic: "zakat-calculator"
 keywords: "how to calculate zakat, zakat calculation, nisab, zakat on gold, zakat on stocks, zakat percentage, zakat calculator"
 relatedTool: "zakat-calculator"
 ---

@@ -2,7 +2,7 @@
 title: "Is Zakat Due on Gold Jewelry You Wear? Scholarly Views Explained"
 description: "Is Zakat required on gold jewelry worn for personal adornment? Learn the different scholarly opinions, the strongest view, and how to calculate Zakat on gold jewelry"
 date: "2026-03-21"
-category: "seo"
+topic: "zakat-calculator"
 keywords: "zakat on gold jewelry, zakat on worn gold, zakat on jewellery, do I pay zakat on my gold, zakat on personal gold"
 relatedTool: "zakat-calculator"
 ---

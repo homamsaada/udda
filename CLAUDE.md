@@ -179,7 +179,7 @@ Each post file starts with YAML frontmatter:
 title: "كيف تحسب زكاة المال"
 description: "شرح مبسط لطريقة حساب زكاة المال مع أمثلة عملية"
 date: "2026-03-20"
-category: "seo"
+topic: "zakat-calculator"
 keywords: "حساب الزكاة، زكاة المال، نصاب الزكاة"
 relatedTool: "zakat-calculator"
 ---
@@ -198,9 +198,25 @@ relatedTool: "zakat-calculator"
 | `title` | Yes | Article title (used as h1 and title tag) |
 | `description` | Yes | Short description (meta description + index card) |
 | `date` | Yes | Publish date in YYYY-MM-DD format |
-| `category` | Yes | `seo` (articles) or `news` (updates) |
+| `topic` | Yes | Tool ID from `tools.json` (e.g. `zakat-calculator`, `inheritance-calculator`) or `"news"` for site news/updates. The build system auto-resolves the main category from `tools.json`. |
 | `keywords` | Yes | Comma-separated keywords for SEO |
 | `relatedTool` | No | Tool ID from tools.json — shows a link card at article end |
+
+**Available `topic` values:**
+- Any tool ID from `tools.json`: `zakat-calculator`, `inheritance-calculator`, `kaffara-calculator`, `percentage`, `interest-calculator`, `loan-calculator`, `gpa-calculator`, `body-calculator`, `age-calculator`, `family-tree`
+- `"news"` — for site updates/announcements not tied to a specific tool
+- Legacy `category` field (`"seo"`, `"news"`) still works as fallback if `topic` is not set
+
+**Blog URL structure:**
+
+```
+/{lang}/blog/                                    ← Main index (all posts)
+/{lang}/blog/{category}/                         ← Main category page (e.g. calculators)
+/{lang}/blog/{category}/{tool-id}/               ← Tool topic page (e.g. calculators/zakat-calculator)
+/{lang}/blog/{slug}.html                         ← Article page (unchanged)
+```
+
+Category and subcategory pages are auto-generated only when posts exist for them.
 
 ### Step 2: Build and verify
 
@@ -210,13 +226,15 @@ npm run serve
 # Check both http://localhost:3000/ar/blog/my-post-slug.html
 # and   http://localhost:3000/en/blog/my-post-slug.html (if English version exists)
 # Also check the blog index at http://localhost:3000/ar/blog/
+# Check category page at http://localhost:3000/ar/blog/calculators/
+# Check topic page at http://localhost:3000/ar/blog/calculators/zakat-calculator/
 ```
 
 **Notes:**
 - Each language is independent — a post in `src/blog/ar/` doesn't need a matching file in `src/blog/en/`
 - Posts are sorted by date (newest first) on the blog index page
 - The homepage automatically shows the latest 3 posts (if any exist)
-- Blog posts are automatically added to sitemap.xml
+- Blog posts are automatically added to sitemap.xml (including category/topic pages)
 - Links inside blog content using absolute paths (`/ar/...` or `/en/...`) are automatically converted to relative paths at build time, so always write them in absolute form
 - Use the `.blog-cta` class to add a prominent CTA block linking to a related tool. The CTA icon should match the tool's icon from `tools.json`. Ideal count: **two CTAs per article** (intro + mid-article), since the `relatedTool` card auto-appended at the end covers the closing CTA:
 

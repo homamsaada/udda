@@ -2,7 +2,7 @@
 title: "Can You Give Zakat to Relatives? Rules and Guidelines"
 description: "Can you pay Zakat to your brother, sister, uncle, or aunt? Learn which relatives you can and cannot give Zakat to, with clear Islamic guidelines"
 date: "2026-03-21"
-category: "seo"
+topic: "zakat-calculator"
 keywords: "zakat to relatives, can I give zakat to family, zakat to brother, zakat to parents, zakat to siblings"
 relatedTool: "zakat-calculator"
 ---

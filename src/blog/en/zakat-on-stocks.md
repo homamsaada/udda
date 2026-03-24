@@ -2,7 +2,7 @@
 title: "Zakat on Stocks and Investment Funds: A Detailed Guide"
 description: "How to calculate Zakat on stocks and investment funds? Learn the difference between trading and long-term investing, with practical calculation examples"
 date: "2026-03-21"
-category: "seo"
+topic: "zakat-calculator"
 keywords: "zakat on stocks, zakat on shares, zakat on investment funds, zakat on ETF, zakat on portfolio, zakat on dividends"
 relatedTool: "zakat-calculator"
 ---

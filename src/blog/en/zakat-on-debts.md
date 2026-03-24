@@ -2,7 +2,7 @@
 title: "Zakat on Debts: Do I Pay Zakat on Money I've Lent to Others?"
 description: "Is Zakat due on money you've loaned to someone? Can you deduct debts you owe from your Zakat? A detailed guide on Zakat and debts with practical examples"
 date: "2026-03-21"
-category: "seo"
+topic: "zakat-calculator"
 keywords: "zakat on debt, zakat on loan, zakat on money lent, deduct debt from zakat, zakat and loans"
 relatedTool: "zakat-calculator"
 ---

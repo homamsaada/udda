@@ -2,7 +2,7 @@
 title: "Zakat on Salary: Is It Required and How to Calculate It?"
 description: "Is Zakat due on your monthly salary? Learn the ruling on salary Zakat, two practical methods to calculate it, and the easiest approach recommended by scholars"
 date: "2026-03-21"
-category: "seo"
+topic: "zakat-calculator"
 keywords: "zakat on salary, zakat on income, zakat on monthly salary, how to calculate zakat on salary, zakat on savings from salary"
 relatedTool: "zakat-calculator"
 ---
