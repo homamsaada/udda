@@ -114,6 +114,18 @@
     </div>
   </div>
 
+  <!-- Retake Policy Selector -->
+  <div class="gpa-system-bar gpa-retake-bar">
+    <label class="gpa-system-label">Course Retake Policy</label>
+    <div class="gpa-retake-btns" id="gpa-retake-btns">
+      <button class="gpa-retake-btn active" onclick="gpaSetRetakePolicy('replace', this)">Full Replace</button>
+      <button class="gpa-retake-btn" onclick="gpaSetRetakePolicy('best', this)">Best Only</button>
+      <button class="gpa-retake-btn" onclick="gpaSetRetakePolicy('countAll', this)">Count All</button>
+      <button class="gpa-retake-btn" onclick="gpaSetRetakePolicy('average', this)">Average</button>
+    </div>
+    <div class="gpa-retake-desc" id="gpa-retake-desc">New grade fully replaces the old one</div>
+  </div>
+
   <!-- Save/Load bar -->
   <div class="gpa-data-bar">
     <button class="gpa-data-btn" onclick="gpaSaveData()">💾 Save Data</button>
@@ -155,11 +167,7 @@
         </div>
       </div>
 
-      <!-- What If -->
-      <div class="gpa-whatif-toggle">
-        <button class="gpa-whatif-btn" id="whatif-btn" onclick="gpaToggleWhatIf()">🔮 What If?</button>
-        <button class="gpa-whatif-reset" id="whatif-reset-btn" onclick="gpaResetWhatIf()" style="display:none">↺ Reset</button>
-      </div>
+      <!-- What If comparison (auto-shown when grades differ) -->
       <div class="gpa-whatif-compare" id="whatif-compare" style="display:none">
         <div class="gpa-whatif-row">
           <div class="gpa-whatif-item">
@@ -208,6 +216,7 @@
           </div>
         </div>
         <button class="gpa-use-semester-btn" onclick="gpaUseFromSemester()">📋 Use from Semester tab</button>
+        <div class="gpa-retake-note">📌 Retaken courses affect cumulative GPA based on the retake policy selected above</div>
       </div>
 
       <div class="gpa-results" id="cumulative-results">
@@ -602,6 +611,102 @@
   margin-top: 4px;
 }
 
+/* Retake Policy Bar */
+.gpa-calculator .gpa-retake-bar {
+  margin-top: -8px;
+}
+
+.gpa-calculator .gpa-retake-btns {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  flex: 1;
+  min-width: 0;
+}
+
+.gpa-calculator .gpa-retake-btn {
+  padding: 8px 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all var(--transition-fast);
+}
+
+.gpa-calculator .gpa-retake-btn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-retake-btn.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+}
+
+.gpa-calculator .gpa-retake-desc {
+  width: 100%;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.gpa-calculator .gpa-retake-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* Toggle switch for retake column */
+.gpa-calculator .gpa-toggle {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.gpa-calculator .gpa-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.gpa-calculator .gpa-toggle-track {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.gpa-calculator .gpa-toggle-track::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  inset-inline-start: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.gpa-calculator .gpa-toggle input:checked + .gpa-toggle-track {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-toggle input:checked + .gpa-toggle-track::after {
+  background: white;
+  inset-inline-start: 18px;
+}
+
 /* Save/Load data bar */
 .gpa-calculator .gpa-data-bar {
   display: flex;
@@ -676,39 +781,37 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Course Header (desktop only) */
+/* Course Header (desktop only) — 7 fixed columns */
 .gpa-calculator .gpa-course-header {
   display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr 36px;
+  grid-template-columns: 2fr 0.8fr 1.2fr 44px 1.2fr 1.2fr 36px;
   gap: 8px;
   margin-bottom: 8px;
   padding: 0 0 4px;
-}
-
-.gpa-calculator .gpa-course-header.whatif-mode {
-  grid-template-columns: 2fr 1fr 1.5fr 1fr 36px;
+  align-items: end;
 }
 
 .gpa-calculator .gpa-course-header span {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--text-muted);
+  text-align: center;
 }
 
-/* Course Card — desktop: single-line grid row */
+.gpa-calculator .gpa-course-header span:first-child {
+  text-align: start;
+}
+
+/* Course Card — desktop: 7 fixed columns */
 .gpa-calculator .gpa-course-card {
   display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr 36px;
+  grid-template-columns: 2fr 0.8fr 1.2fr 44px 1.2fr 1.2fr 36px;
   gap: 8px;
   margin-bottom: 8px;
   align-items: center;
 }
 
-.gpa-calculator .gpa-course-card.whatif-mode {
-  grid-template-columns: 2fr 1fr 1.5fr 1fr 36px;
-}
-
-/* Desktop: labels hidden (header serves as labels), form-group is transparent */
+/* Desktop: labels hidden (header serves as labels) */
 .gpa-calculator .gpa-course-card .gpa-form-group {
   display: flex;
   flex-direction: column;
@@ -719,17 +822,25 @@
   display: none;
 }
 
-/* Desktop: field-name takes one column, field-pair spans two columns inline */
-.gpa-calculator .gpa-course-card .gpa-field-name {
-  grid-column: 1;
+/* Toggle column centering */
+.gpa-calculator .gpa-course-card .gpa-col-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.gpa-calculator .gpa-course-card .gpa-field-pair {
-  display: contents;
+/* Disabled old grade styling */
+.gpa-calculator .gpa-course-card .gpa-field-disabled input,
+.gpa-calculator .gpa-course-card .gpa-field-disabled select {
+  opacity: 0.35;
+  pointer-events: none;
 }
 
-.gpa-calculator .gpa-course-card .gpa-field-whatif {
-  display: contents;
+/* What-if column accent */
+.gpa-calculator .gpa-course-card .gpa-field-whatif input,
+.gpa-calculator .gpa-course-card .gpa-field-whatif select {
+  border-color: var(--accent-secondary);
+  background: rgba(139, 92, 246, 0.05);
 }
 
 .gpa-calculator .gpa-course-card .gpa-del-btn {
@@ -1197,54 +1308,7 @@
   background: var(--bg-tertiary);
 }
 
-/* What If */
-.gpa-calculator .gpa-whatif-toggle {
-  display: flex;
-  gap: 8px;
-  margin-top: 16px;
-  flex-wrap: wrap;
-}
-
-.gpa-calculator .gpa-whatif-btn {
-  padding: 10px 20px;
-  border: 2px solid var(--accent-secondary);
-  border-radius: 10px;
-  background: transparent;
-  color: var(--accent-secondary);
-  font-size: 0.88rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  font-family: inherit;
-}
-
-.gpa-calculator .gpa-whatif-btn:hover {
-  background: var(--accent-secondary);
-  color: white;
-}
-
-.gpa-calculator .gpa-whatif-btn.active {
-  background: var(--accent-secondary);
-  color: white;
-}
-
-.gpa-calculator .gpa-whatif-reset {
-  padding: 10px 20px;
-  border: 2px solid var(--border-color);
-  border-radius: 10px;
-  background: transparent;
-  color: var(--text-secondary);
-  font-size: 0.88rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  font-family: inherit;
-}
-
-.gpa-calculator .gpa-whatif-reset:hover {
-  border-color: var(--text-secondary);
-}
-
+/* What If comparison */
 .gpa-calculator .gpa-whatif-compare {
   margin-top: 16px;
   padding: 16px 20px;
@@ -1356,14 +1420,12 @@
   }
 
   /* Course header hidden on mobile — labels inside cards instead */
-  .gpa-calculator .gpa-course-header,
-  .gpa-calculator .gpa-course-header.whatif-mode {
+  .gpa-calculator .gpa-course-header {
     display: none;
   }
 
   /* Course card becomes a zakat-style card */
-  .gpa-calculator .gpa-course-card,
-  .gpa-calculator .gpa-course-card.whatif-mode {
+  .gpa-calculator .gpa-course-card {
     display: block;
     position: relative;
     background: var(--bg-secondary);
@@ -1372,7 +1434,6 @@
     margin-bottom: 12px;
   }
 
-  /* Inputs inside cards: bg-primary for contrast against card's bg-secondary */
   .gpa-calculator .gpa-course-card input,
   .gpa-calculator .gpa-course-card select {
     background: var(--bg-primary);
@@ -1393,15 +1454,10 @@
     font-size: 0.9rem;
   }
 
-  /* field-name: full width, no bottom margin on last group */
-  .gpa-calculator .gpa-course-card .gpa-field-name {
-    grid-column: unset;
-  }
-
-  /* field-pair: 2-column grid like zakat form-row */
+  /* Name full-width, credits+grade 2-column */
   .gpa-calculator .gpa-course-card .gpa-field-pair {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
     margin-bottom: 0;
   }
@@ -1410,20 +1466,32 @@
     margin-bottom: 0;
   }
 
-  /* what-if row */
+  /* Retake + old grade: 2-column row */
+  .gpa-calculator .gpa-course-card .gpa-field-retake-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: end;
+    margin-bottom: 16px;
+  }
+
+  .gpa-calculator .gpa-course-card .gpa-field-retake-row .gpa-form-group {
+    margin-bottom: 0;
+  }
+
+  /* What-if row */
   .gpa-calculator .gpa-course-card .gpa-field-whatif {
     display: block;
-    margin-top: 16px;
   }
 
   .gpa-calculator .gpa-course-card .gpa-field-whatif .gpa-form-group {
     margin-bottom: 0;
   }
 
-  .gpa-calculator .gpa-course-card .gpa-field-whatif input,
-  .gpa-calculator .gpa-course-card .gpa-field-whatif select {
-    border-color: var(--accent-secondary);
-    background: rgba(139, 92, 246, 0.05);
+  /* Retake policy buttons */
+  .gpa-calculator .gpa-retake-btn {
+    font-size: 0.75rem;
+    padding: 6px 8px;
   }
 
   /* Delete button: absolute top-end corner */
@@ -1933,16 +2001,38 @@
     exportSystem: 'Export System',
     importSystem: 'Import System',
     saveData: 'Save Data',
-    loadData: 'Load Data'
+    loadData: 'Load Data',
+    retakeCol: 'Retake',
+    oldGradeCol: 'Old Grade',
+    whatIfCol: 'What If?',
+    retakeReplaceDesc: 'New grade fully replaces the old one',
+    retakeBestDesc: 'The higher grade between old and new is used',
+    retakeCountAllDesc: 'The course counts twice with its credit hours',
+    retakeAverageDesc: 'The average of both grades is used'
   };
 
-  var whatIfActive = false;
+  var retakePolicy = 'replace';
+  var retakeAdj = { credits: 0, points: 0 };
   var semesters = [];
   var INITIAL_SEMESTERS = 3;
 
+  function getLowestGradeIndex() {
+    var sys = getActiveTemplate();
+    if (!sys.grades || sys.grades.length === 0) return -1;
+    return sys.grades.length - 1;
+  }
+
+  function getHighestGradeIndex() {
+    return 0;
+  }
+
+  function newCourse() {
+    return { name: '', credits: '', gradeIndex: -1, gradeValue: '', isRetake: false, oldGradeIndex: -1, oldGradeValue: '', altGradeIndex: 0, altGradeValue: '' };
+  }
+
   function init() {
     for (var i = 0; i < INITIAL_COURSES; i++) {
-      courses.push({ name: '', credits: '', gradeIndex: -1, gradeValue: '' });
+      courses.push(newCourse());
     }
     renderCourses();
   }
@@ -1961,33 +2051,35 @@
     var container = document.getElementById('courses-container');
     var html = '';
     var is100 = isPercentSystem();
-    var wif = whatIfActive;
+    var sysMax = getActiveTemplate().max;
+    var gradeOpts = is100 ? '' : getGradeOptions();
 
-    // Header row (desktop only — hidden on mobile via CSS)
-    html += '<div class="gpa-course-header' + (wif ? ' whatif-mode' : '') + '">';
+    // Header row (desktop only — 7 columns)
+    html += '<div class="gpa-course-header">';
     html += '<span>' + labels.courseName + '</span>';
     html += '<span>' + labels.creditHours + '</span>';
     html += '<span>' + labels.grade + '</span>';
-    if (wif) html += '<span>' + labels.whatIfLabel + '</span>';
+    html += '<span>' + labels.retakeCol + '</span>';
+    html += '<span>' + labels.oldGradeCol + '</span>';
+    html += '<span>' + labels.whatIfCol + '</span>';
     html += '<span></span>';
     html += '</div>';
 
-    var gradeOpts = is100 ? '' : getGradeOptions();
-
     for (var i = 0; i < courses.length; i++) {
       var c = courses[i];
-      html += '<div class="gpa-course-card' + (wif ? ' whatif-mode' : '') + '">';
+      var isRetake = !!c.isRetake;
+      html += '<div class="gpa-course-card">';
 
-      // Delete button (top-end corner on mobile, inline on desktop)
+      // Delete button
       html += '<button class="gpa-del-btn" onclick="gpaRemoveCourse(' + i + ')" title="' + labels.removeCourse + '"' + (courses.length <= 1 ? ' style="visibility:hidden"' : '') + '>&times;</button>';
 
-      // Course name — full width
+      // 1. Course name
       html += '<div class="gpa-form-group gpa-field-name">';
       html += '<label>' + labels.courseName + '</label>';
       html += '<input type="text" placeholder="' + labels.courseName + '" value="' + (c.name || '') + '" oninput="gpaUpdateCourse(' + i + ',\'name\',this.value)">';
       html += '</div>';
 
-      // Credits + Grade side by side
+      // 2+3. Credits + Grade (mobile: side by side)
       html += '<div class="gpa-form-row gpa-field-pair">';
       html += '<div class="gpa-form-group">';
       html += '<label>' + labels.creditHours + '</label>';
@@ -1996,8 +2088,7 @@
       html += '<div class="gpa-form-group">';
       html += '<label>' + labels.grade + '</label>';
       if (is100) {
-        var sysMax = getActiveTemplate().max;
-        html += '<input type="number" min="0" max="' + sysMax + '" step="0.1" placeholder="0-' + sysMax + '" class="gpa-grade-input" value="' + (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '') + '" oninput="gpaUpdateCourse(' + i + ',\'gradeValue\',this.value)">';
+        html += '<input type="number" min="0" max="' + sysMax + '" step="0.1" placeholder="0-' + sysMax + '" value="' + (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '') + '" oninput="gpaUpdateCourse(' + i + ',\'gradeValue\',this.value)">';
       } else {
         var sel = gradeOpts.replace('value="' + c.gradeIndex + '"', 'value="' + c.gradeIndex + '" selected');
         html += '<select onchange="gpaUpdateCourse(' + i + ',\'gradeIndex\',this.value)">' + sel + '</select>';
@@ -2005,27 +2096,43 @@
       html += '</div>';
       html += '</div>';
 
-      // What-if alt grade
-      if (wif) {
-        html += '<div class="gpa-form-row gpa-field-whatif">';
-        html += '<div class="gpa-form-group">';
-        html += '<label>' + labels.whatIfLabel + '</label>';
-        if (is100) {
-          var altVal = c.altGradeValue !== undefined && c.altGradeValue !== '' ? c.altGradeValue : (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '');
-          html += '<input type="number" min="0" max="' + sysMax + '" step="0.1" placeholder="0-' + sysMax + '" value="' + altVal + '" oninput="gpaUpdateAlt(' + i + ',\'altGradeValue\',this.value)">';
-        } else {
-          var altIdx = c.altGradeIndex !== undefined ? c.altGradeIndex : c.gradeIndex;
-          var altSel = gradeOpts.replace('value="' + altIdx + '"', 'value="' + altIdx + '" selected');
-          html += '<select onchange="gpaUpdateAlt(' + i + ',\'altGradeIndex\',this.value)">' + altSel + '</select>';
-        }
-        html += '</div>';
-        html += '</div>';
+      // 4+5. Retake toggle + Old grade (mobile: side by side row)
+      html += '<div class="gpa-field-retake-row">';
+      html += '<div class="gpa-form-group gpa-col-toggle">';
+      html += '<label>' + labels.retakeCol + '</label>';
+      html += '<label class="gpa-toggle"><input type="checkbox"' + (isRetake ? ' checked' : '') + ' onchange="gpaUpdateCourse(' + i + ',\'isRetake\',this.checked)"><span class="gpa-toggle-track"></span></label>';
+      html += '</div>';
+      html += '<div class="gpa-form-group' + (isRetake ? '' : ' gpa-field-disabled') + '">';
+      html += '<label>' + labels.oldGradeCol + '</label>';
+      if (is100) {
+        var oldVal = c.oldGradeValue !== '' && c.oldGradeValue !== undefined ? c.oldGradeValue : '';
+        html += '<input type="number" min="0" max="' + sysMax + '" step="0.1" placeholder="0-' + sysMax + '" value="' + oldVal + '" oninput="gpaUpdateCourse(' + i + ',\'oldGradeValue\',this.value)">';
+      } else {
+        var oldIdx = c.oldGradeIndex !== undefined && c.oldGradeIndex >= 0 ? c.oldGradeIndex : getLowestGradeIndex();
+        var oldSel = gradeOpts.replace('value="' + oldIdx + '"', 'value="' + oldIdx + '" selected');
+        html += '<select onchange="gpaUpdateCourse(' + i + ',\'oldGradeIndex\',this.value)">' + oldSel + '</select>';
       }
+      html += '</div>';
+      html += '</div>';
+
+      // 6. What-if (always visible)
+      html += '<div class="gpa-form-group gpa-field-whatif">';
+      html += '<label>' + labels.whatIfCol + '</label>';
+      if (is100) {
+        var altVal = c.altGradeValue !== '' && c.altGradeValue !== undefined ? c.altGradeValue : '';
+        html += '<input type="number" min="0" max="' + sysMax + '" step="0.1" placeholder="0-' + sysMax + '" value="' + altVal + '" oninput="gpaUpdateAlt(' + i + ',\'altGradeValue\',this.value)">';
+      } else {
+        var altIdx = c.altGradeIndex !== undefined && c.altGradeIndex >= 0 ? c.altGradeIndex : getHighestGradeIndex();
+        var altSel = gradeOpts.replace('value="' + altIdx + '"', 'value="' + altIdx + '" selected');
+        html += '<select onchange="gpaUpdateAlt(' + i + ',\'altGradeIndex\',this.value)">' + altSel + '</select>';
+      }
+      html += '</div>';
 
       html += '</div>';
     }
 
     container.innerHTML = html;
+    calcWhatIf();
   }
 
   function calcSemester() {
@@ -2142,10 +2249,10 @@
     var earnedCredits = 0;
     var earnedPoints = 0;
 
-    // Previous data (may be empty for first-semester students)
+    // Previous data — apply retake adjustment (subtract old grades from previous)
     if (!isNaN(prevGpa) && !isNaN(prevCredits) && prevCredits > 0) {
-      earnedCredits = prevCredits;
-      earnedPoints = prevGpa * prevCredits;
+      earnedCredits = prevCredits + retakeAdj.credits;
+      earnedPoints = prevGpa * prevCredits - retakeAdj.points;
     }
 
     // Add new semester if entered
@@ -2583,15 +2690,11 @@
     // Reset courses
     courses.length = 0;
     for (var i = 0; i < INITIAL_COURSES; i++) {
-      courses.push({ name: '', credits: '', gradeIndex: -1, gradeValue: '' });
+      courses.push(newCourse());
     }
-    // Reset what-if
-    whatIfActive = false;
-    var wifBtn = document.getElementById('whatif-btn');
-    var wifResetBtn = document.getElementById('whatif-reset-btn');
+    // Reset retake adjustment
+    retakeAdj = { credits: 0, points: 0 };
     var wifCompare = document.getElementById('whatif-compare');
-    if (wifBtn) wifBtn.style.display = '';
-    if (wifResetBtn) wifResetBtn.style.display = 'none';
     if (wifCompare) wifCompare.style.display = 'none';
     // Reset semesters
     semesters.length = 0;
@@ -2805,12 +2908,14 @@
       version: 1,
       currentTemplate: currentTemplate,
       customization: customizations[currentTemplate] || null,
-      whatIfActive: whatIfActive,
+      retakePolicy: retakePolicy,
       courses: courses.map(function(c) {
-        var o = { name: c.name, credits: c.credits, gradeIndex: c.gradeIndex, gradeValue: c.gradeValue };
-        if (c.altGradeIndex !== undefined) o.altGradeIndex = c.altGradeIndex;
-        if (c.altGradeValue !== undefined) o.altGradeValue = c.altGradeValue;
-        return o;
+        return {
+          name: c.name, credits: c.credits,
+          gradeIndex: c.gradeIndex, gradeValue: c.gradeValue,
+          isRetake: c.isRetake, oldGradeIndex: c.oldGradeIndex, oldGradeValue: c.oldGradeValue,
+          altGradeIndex: c.altGradeIndex, altGradeValue: c.altGradeValue
+        };
       }),
       semesters: semesters.slice(),
       cumulative: {
@@ -2866,12 +2971,16 @@
         }
         updateMaxInputs();
 
-        // 3. Restore what-if state
-        whatIfActive = !!data.whatIfActive;
-        var wifBtn = document.getElementById('whatif-btn');
-        var wifResetBtn = document.getElementById('whatif-reset-btn');
-        if (wifBtn) wifBtn.classList.toggle('active', whatIfActive);
-        if (wifResetBtn) wifResetBtn.style.display = whatIfActive ? '' : 'none';
+        // 3. Restore retake policy
+        if (data.retakePolicy) {
+          retakePolicy = data.retakePolicy;
+          var rpBtns = document.querySelectorAll('.gpa-retake-btn');
+          var rpPolicies = ['replace', 'best', 'countAll', 'average'];
+          for (var r = 0; r < rpBtns.length; r++) {
+            rpBtns[r].classList.toggle('active', rpPolicies[r] === retakePolicy);
+          }
+          gpaSetRetakePolicy(retakePolicy);
+        }
 
         // 4. Restore courses
         if (data.courses && data.courses.length > 0) {
@@ -2880,9 +2989,9 @@
             courses.push(data.courses[i]);
           }
         }
+        retakeAdj = { credits: 0, points: 0 };
         renderCourses();
         calcSemester();
-        if (whatIfActive) calcWhatIf();
 
         // 5. Restore semesters
         if (data.semesters && data.semesters.length > 0) {
@@ -2955,7 +3064,7 @@
   };
 
   window.gpaAddCourse = function() {
-    courses.push({ name: '', credits: '', gradeIndex: -1, gradeValue: '' });
+    courses.push(newCourse());
     renderCourses();
   };
 
@@ -2967,10 +3076,15 @@
   };
 
   window.gpaUpdateCourse = function(index, field, value) {
-    if (field === 'gradeIndex') {
+    if (field === 'gradeIndex' || field === 'oldGradeIndex') {
       courses[index][field] = parseInt(value);
-    } else if (field === 'gradeValue') {
-      courses[index][field] = value;
+    } else if (field === 'isRetake') {
+      courses[index].isRetake = !!value;
+      if (value && courses[index].oldGradeIndex < 0) {
+        courses[index].oldGradeIndex = getLowestGradeIndex();
+      }
+      renderCourses();
+      return;
     } else {
       courses[index][field] = value;
     }
@@ -2981,7 +3095,7 @@
   window.gpaCalcTarget = calcTarget;
   window.gpaCalcMaxGpa = calcMaxGpa;
   window.gpaCalcGradBoth = function() { calcTarget(); calcMaxGpa(); };
-  window.gpaCalcCumBoth = function() { calcCumulative(); calcTarget(); calcMaxGpa(); };
+  window.gpaCalcCumBoth = function() { retakeAdj = { credits: 0, points: 0 }; calcCumulative(); calcTarget(); calcMaxGpa(); };
   window.gpaCalcConvert = calcConvert;
 
   window.gpaConvSwap = function() {
@@ -3044,6 +3158,11 @@
     var altGpa = altPoints / altCredits;
     var diff = altGpa - origGpa;
 
+    // Auto-show only when grades differ
+    if (Math.abs(diff) < 0.005) {
+      compareEl.style.display = 'none';
+      return;
+    }
     compareEl.style.display = 'block';
     document.getElementById('whatif-original').textContent = origGpa.toFixed(2);
     document.getElementById('whatif-new').textContent = altGpa.toFixed(2);
@@ -3066,33 +3185,16 @@
     }
   }
 
-  window.gpaToggleWhatIf = function() {
-    whatIfActive = !whatIfActive;
-    var btn = document.getElementById('whatif-btn');
-    var resetBtn = document.getElementById('whatif-reset-btn');
-    var compareEl = document.getElementById('whatif-compare');
-
-    btn.classList.toggle('active', whatIfActive);
-    resetBtn.style.display = whatIfActive ? '' : 'none';
-
-    if (!whatIfActive) {
-      compareEl.style.display = 'none';
-      for (var i = 0; i < courses.length; i++) {
-        delete courses[i].altGradeIndex;
-        delete courses[i].altGradeValue;
-      }
+  window.gpaSetRetakePolicy = function(policy, btn) {
+    retakePolicy = policy;
+    var btns = document.querySelectorAll('.gpa-retake-btn');
+    for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');
+    if (btn) btn.classList.add('active');
+    var descEl = document.getElementById('gpa-retake-desc');
+    if (descEl) {
+      var descs = { replace: labels.retakeReplaceDesc, best: labels.retakeBestDesc, countAll: labels.retakeCountAllDesc, average: labels.retakeAverageDesc };
+      descEl.textContent = descs[policy] || '';
     }
-    renderCourses();
-    if (whatIfActive) calcWhatIf();
-  };
-
-  window.gpaResetWhatIf = function() {
-    for (var i = 0; i < courses.length; i++) {
-      courses[i].altGradeIndex = courses[i].gradeIndex;
-      courses[i].altGradeValue = courses[i].gradeValue;
-    }
-    renderCourses();
-    calcWhatIf();
   };
 
   window.gpaUpdateAlt = function(index, field, value) {
@@ -3124,32 +3226,64 @@
   window.gpaUseFromSemester = function() {
     var sys = getActiveTemplate();
     var is100 = isPercentSystem();
+    var inv = isInverted();
     var totalCredits = 0;
     var totalPoints = 0;
+    var adjCredits = 0;
+    var adjPoints = 0;
 
     for (var i = 0; i < courses.length; i++) {
       var c = courses[i];
       var cr = parseFloat(c.credits);
+      if (!(cr > 0)) continue;
+
+      var newVal = NaN;
       if (is100) {
-        var gv = parseFloat(c.gradeValue);
-        if (cr > 0 && !isNaN(gv) && gv >= 0 && gv <= sys.max) {
-          totalCredits += cr;
-          totalPoints += cr * gv;
-        }
+        newVal = parseFloat(c.gradeValue);
+        if (isNaN(newVal) || newVal < 0 || newVal > sys.max) continue;
       } else {
         var gi = parseInt(c.gradeIndex);
-        if (cr > 0 && gi >= 0 && gi < sys.grades.length) {
-          totalCredits += cr;
-          totalPoints += cr * sys.grades[gi].value;
+        if (gi < 0 || gi >= sys.grades.length) continue;
+        newVal = sys.grades[gi].value;
+      }
+
+      totalCredits += cr;
+      totalPoints += cr * newVal;
+
+      // Retake adjustment
+      if (c.isRetake) {
+        var oldVal = 0;
+        if (is100) {
+          oldVal = parseFloat(c.oldGradeValue) || 0;
+        } else {
+          var oi = parseInt(c.oldGradeIndex);
+          oldVal = (oi >= 0 && oi < sys.grades.length) ? sys.grades[oi].value : 0;
+        }
+        if (retakePolicy === 'replace') {
+          adjCredits += 0;
+          adjPoints += cr * oldVal;
+        } else if (retakePolicy === 'best') {
+          var isBetter = inv ? (newVal < oldVal) : (newVal > oldVal);
+          if (isBetter) {
+            adjPoints += cr * oldVal;
+          } else {
+            adjPoints += cr * newVal;
+          }
+        } else if (retakePolicy === 'countAll') {
+          adjCredits -= cr;
+          adjPoints += 0;
+        } else if (retakePolicy === 'average') {
+          adjPoints += cr * (oldVal - (oldVal + newVal) / 2);
         }
       }
     }
 
     if (totalCredits > 0) {
+      retakeAdj = { credits: adjCredits, points: adjPoints };
       var semGpa = totalPoints / totalCredits;
       document.getElementById('cum-new-gpa').value = semGpa.toFixed(2);
       document.getElementById('cum-new-credits').value = totalCredits;
-      calcCumulative();
+      gpaCalcCumBoth();
       App.showToast(isArabic ? 'تم نقل بيانات الفصل!' : 'Semester data transferred!');
     }
   };
