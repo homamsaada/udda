@@ -752,82 +752,42 @@ function buildBlogIndexPage(lang, posts) {
         <p>${ui.noPosts}</p>
       </div>`;
   } else {
-    // --- Section 1: Hero Article (latest post) ---
-    const heroPost = posts[0];
-    let heroBadgeHTML;
-    if (heroPost.topic === 'news') {
-      heroBadgeHTML = `<span class="blog-post-category-badge news">${ui.blogTopicNews}</span>`;
-    } else if (heroPost.mainCategory) {
-      const heroToolInfo = toolsData.tools.find(t => t.id === heroPost.topic);
-      const heroToolI18n = i18n.tools[heroPost.topic]?.[lang];
-      const heroShortName = heroToolI18n?.shortName || heroToolI18n?.name || heroPost.topic;
-      heroBadgeHTML = `<span class="blog-post-category-badge topic">${heroToolInfo?.icon || ''} ${heroShortName}</span>`;
-    } else {
-      heroBadgeHTML = `<span class="blog-post-category-badge seo">${ui.categoryArticles}</span>`;
-    }
-
-    const heroHTML = `
-      <a href="${basePath}${lang}/blog/${heroPost.slug}.html" class="blog-hero-card">
-        <div class="blog-hero-meta">
-          ${heroBadgeHTML}
-          <span>${heroPost.date}</span>
-        </div>
-        <h2 class="blog-hero-title">${heroPost.title}</h2>
-        <p class="blog-hero-description">${heroPost.description}</p>
-        <span class="blog-hero-cta">${ui.blogReadArticle} &rarr;</span>
-      </a>`;
-
-    // --- Section 2: Browse by Topic ---
-    const topicGroups = new Map();
+    // Build topic/category data for dropdowns
+    const topicGroups = new Map(); // topicId -> { count, mainCategory }
+    const catGroups = new Map();   // mainCategory -> Set of topicIds
     posts.forEach(post => {
       if (post.topic && post.topic !== 'news' && post.mainCategory) {
         if (!topicGroups.has(post.topic)) {
           topicGroups.set(post.topic, { count: 0, mainCategory: post.mainCategory });
         }
         topicGroups.get(post.topic).count++;
+        if (!catGroups.has(post.mainCategory)) {
+          catGroups.set(post.mainCategory, new Set());
+        }
+        catGroups.get(post.mainCategory).add(post.topic);
       }
     });
 
-    let browseByTopicHTML = '';
-    if (topicGroups.size > 1) {
-      // Sort by count descending
-      const sortedTopics = [...topicGroups.entries()].sort((a, b) => b[1].count - a[1].count);
-      const topicCards = sortedTopics.map(([topicId, info]) => {
-        const toolInfo = toolsData.tools.find(t => t.id === topicId);
-        const toolI18n = i18n.tools[topicId]?.[lang];
-        const shortName = toolI18n?.shortName || toolI18n?.name || topicId;
-        return `
-          <a href="${basePath}${lang}/blog/${info.mainCategory}/${topicId}/" class="blog-topic-card">
-            <div class="blog-topic-icon">${toolInfo?.icon || ''}</div>
-            <div class="blog-topic-name">${shortName}</div>
-            <div class="blog-topic-count">${info.count} ${ui.blogArticlesCount}</div>
-          </a>`;
-      }).join('');
+    // Category dropdown options
+    let catOptions = `<option value="all">${ui.allPosts}</option>`;
+    toolsData.categoryOrder.forEach(catId => {
+      if (catGroups.has(catId)) {
+        const catInfo = categories[catId];
+        catOptions += `<option value="${catId}">${catInfo?.icon || ''} ${catInfo?.name || catId}</option>`;
+      }
+    });
 
-      browseByTopicHTML = `
-        <div class="blog-section">
-          <h2 class="blog-section-title">${ui.blogBrowseByTopic}</h2>
-          <div class="blog-topic-grid">
-            ${topicCards}
-          </div>
-        </div>`;
-    }
-
-    // --- Section 3: All Articles with tool-level filters ---
-    // Build filter buttons by tool (topic)
-    let filterBtns = `<button class="blog-filter-btn active" onclick="filterPosts('all')">${ui.allPosts}</button>`;
-    const sortedFilterTopics = [...topicGroups.entries()].sort((a, b) => b[1].count - a[1].count);
-    sortedFilterTopics.forEach(([topicId]) => {
+    // Topic dropdown options (all topics, with data-category for dynamic filtering)
+    let topicOptions = `<option value="all">${ui.allPosts}</option>`;
+    const sortedTopics = [...topicGroups.entries()].sort((a, b) => b[1].count - a[1].count);
+    sortedTopics.forEach(([topicId, info]) => {
       const toolInfo = toolsData.tools.find(t => t.id === topicId);
       const toolI18n = i18n.tools[topicId]?.[lang];
       const shortName = toolI18n?.shortName || toolI18n?.name || topicId;
-      filterBtns += `<button class="blog-filter-btn" onclick="filterPosts('${topicId}')">${toolInfo?.icon || ''} ${shortName}</button>`;
+      topicOptions += `<option value="${topicId}" data-category="${info.mainCategory}">${toolInfo?.icon || ''} ${shortName}</option>`;
     });
-    const hasNews = posts.some(p => p.mainCategory === 'news');
-    if (hasNews) {
-      filterBtns += `<button class="blog-filter-btn" onclick="filterPosts('news')">📢 ${ui.blogTopicNews}</button>`;
-    }
 
+    // Post cards
     const allPostsHTML = posts.map(post => {
       let badgeHTML;
       if (post.topic === 'news') {
@@ -853,29 +813,51 @@ function buildBlogIndexPage(lang, posts) {
     }).join('');
 
     contentSections = `
-      ${heroHTML}
-      ${browseByTopicHTML}
-      <div class="blog-section">
-        <h2 class="blog-section-title">${ui.blogAllArticles}</h2>
-        <div class="blog-filters">
-          ${filterBtns}
+      <div class="blog-dropdown-bar">
+        <div class="blog-dropdown-group">
+          <label for="blog-cat-select">${ui.blogFilterCategory}</label>
+          <select id="blog-cat-select" onchange="blogFilter()">
+            ${catOptions}
+          </select>
         </div>
-        <div class="blog-posts-grid">
-          ${allPostsHTML}
+        <div class="blog-dropdown-group">
+          <label for="blog-topic-select">${ui.blogFilterTopic}</label>
+          <select id="blog-topic-select" onchange="blogFilter()">
+            ${topicOptions}
+          </select>
         </div>
+      </div>
+      <div class="blog-posts-grid">
+        ${allPostsHTML}
       </div>`;
   }
 
   const filterScript = posts.length > 0 ? `
     <script>
     (function() {
-      window.filterPosts = function(cat) {
+      window.blogFilter = function() {
+        var catVal = document.getElementById('blog-cat-select').value;
+        var topicSel = document.getElementById('blog-topic-select');
+        var topicVal = topicSel.value;
+        // Update topic dropdown options based on category
+        var opts = topicSel.querySelectorAll('option[data-category]');
+        opts.forEach(function(o) {
+          o.style.display = (catVal === 'all' || o.dataset.category === catVal) ? '' : 'none';
+        });
+        // Reset topic to "all" if current selection is hidden
+        if (topicVal !== 'all') {
+          var selected = topicSel.querySelector('option[value="' + topicVal + '"]');
+          if (selected && selected.style.display === 'none') {
+            topicSel.value = 'all';
+            topicVal = 'all';
+          }
+        }
+        // Filter cards
         var cards = document.querySelectorAll('.blog-post-card');
-        var btns = document.querySelectorAll('.blog-filter-btn');
-        btns.forEach(function(b) { b.classList.remove('active'); });
-        event.target.classList.add('active');
         cards.forEach(function(c) {
-          c.style.display = (cat === 'all' || c.dataset.topic === cat || c.dataset.category === cat) ? '' : 'none';
+          var matchCat = (catVal === 'all' || c.dataset.category === catVal);
+          var matchTopic = (topicVal === 'all' || c.dataset.topic === topicVal);
+          c.style.display = (matchCat && matchTopic) ? '' : 'none';
         });
       };
     })();
