@@ -137,7 +137,7 @@ function buildPageHTML(lang, options) {
   
   // Calculate base path for relative URLs
   const depth = (canonicalPath.match(/\//g) || []).length;
-  const basePath = depth <= 1 ? '../' : '../../';
+  const basePath = '../'.repeat(depth);
   
   // Breadcrumb
   let breadcrumbHTML = `<a href="${basePath}${lang}/" class="breadcrumb-link">${ui.home}</a>`;
