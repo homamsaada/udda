@@ -1924,7 +1924,9 @@
     systemMax: 'System Maximum',
     resetTemplate: 'Reset to Original',
     gradeSymbol: 'Symbol',
-    gradeValue: 'Value'
+    gradeValue: 'Value',
+    exportSystem: 'Export System',
+    importSystem: 'Import System'
   };
 
   var whatIfActive = false;
@@ -2589,6 +2591,9 @@
       html += '<button onclick="gpaCustAddGrade()">+ ' + labels.addGrade + '</button>';
     }
     html += '<button onclick="gpaCustReset()">↺ ' + labels.resetTemplate + '</button>';
+    html += '<button onclick="gpaCustExport()">↓ ' + labels.exportSystem + '</button>';
+    html += '<button onclick="document.getElementById(\'gpa-import-file\').click()">↑ ' + labels.importSystem + '</button>';
+    html += '<input type="file" id="gpa-import-file" accept=".json" style="display:none" onchange="gpaCustImport(this)">';
     html += '<div class="gpa-cust-max">';
     html += '<label>' + labels.systemMax + '</label>';
     html += '<input type="number" step="0.01" min="0" value="' + active.max + '" oninput="gpaCustUpdateMax(this.value)">';
@@ -2680,6 +2685,53 @@
     renderRefTables();
     renderCustomizePanel();
     App.showToast(isArabic ? 'تم إعادة التعيين!' : 'Reset to original!');
+  };
+
+  window.gpaCustExport = function() {
+    var active = getActiveTemplate();
+    var data = {
+      templateId: currentTemplate,
+      templateName: isArabic ? active.nameAr : active.nameEn,
+      max: active.max,
+      inverted: !!active.inverted
+    };
+    if (active.grades) {
+      data.grades = active.grades.map(function(g) { return { label: g.label, value: g.value }; });
+    }
+    var json = JSON.stringify(data, null, 2);
+    var blob = new Blob([json], { type: 'application/json' });
+    var name = isArabic ? active.nameAr : active.nameEn;
+    if (isCustomized()) name += isArabic ? '-مخصص' : '-custom';
+    var filename = 'GPA-system-' + name.replace(/[\/\\:*?"<>|]/g, '-') + '.json';
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
+  };
+
+  window.gpaCustImport = function(input) {
+    var file = input.files && input.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      try {
+        var data = JSON.parse(e.target.result);
+        if (!data.max || typeof data.max !== 'number') throw 'invalid';
+        var cust = { max: data.max };
+        if (data.grades && Array.isArray(data.grades) && data.grades.length > 0) {
+          cust.grades = data.grades.map(function(g) {
+            return { label: String(g.label || '?'), value: parseFloat(g.value) || 0 };
+          });
+        }
+        customizations[currentTemplate] = cust;
+        onCustomizationChanged();
+        App.showToast(isArabic ? 'تم استيراد النظام!' : 'System imported!');
+      } catch (err) {
+        App.showToast(isArabic ? 'ملف غير صالح' : 'Invalid file');
+      }
+    };
+    reader.readAsText(file);
+    input.value = '';
   };
 
   window.gpaChangeTemplate = function(tmplId) {
