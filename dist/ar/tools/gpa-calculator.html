@@ -321,20 +321,12 @@
       <div class="gpa-conv-row">
         <div class="gpa-form-group">
           <label>تحويل من</label>
-          <select id="conv-from" onchange="gpaCalcConvert()">
-            <option value="4">4.0</option>
-            <option value="5">5.0</option>
-            <option value="100">100%</option>
-          </select>
+          <select id="conv-from" onchange="gpaCalcConvert()"></select>
         </div>
         <button class="gpa-conv-swap" onclick="gpaConvSwap()" type="button">⇄</button>
         <div class="gpa-form-group">
           <label>إلى</label>
-          <select id="conv-to" onchange="gpaCalcConvert()">
-            <option value="4">4.0</option>
-            <option value="5" selected>5.0</option>
-            <option value="100">100%</option>
-          </select>
+          <select id="conv-to" onchange="gpaCalcConvert()"></select>
         </div>
       </div>
       <div class="gpa-form-row">
@@ -356,8 +348,8 @@
           <div class="gpa-stat-label">التقدير المكافئ</div>
         </div>
       </div>
-      <div class="gpa-conv-note" id="conv-note" style="display:none">
-        <span>📌</span> التحويل تقريبي ويعتمد على تقابل التقديرات. قد يختلف عن نظام التحويل المعتمد في جامعتك
+      <div class="gpa-conv-note" id="conv-note">
+        <span>📌</span> التحويل تقريبي واسترشادي — الأنظمة غير متكافئة ونطاقات الدرجات تختلف بين الجامعات. للتقييم الرسمي راجع جامعتك أو مؤسسة معتمدة مثل WES.
       </div>
     </div>
   </div>
@@ -1822,25 +1814,6 @@
     { nameAr: 'الأنظمة الدولية', nameEn: 'International Systems', ids: ['us4','us433','canada433','turkey4','uk','german','french20','india10','korea45','australia7','percent100'] }
   ];
 
-  // Converter scales (independent of main template)
-  var converterScales = {
-    '4': { max: 4, classifications: [
-      { min: 3.70, ar: 'ممتاز', en: 'Excellent' }, { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
-      { min: 2.00, ar: 'جيد', en: 'Good' }, { min: 1.00, ar: 'مقبول', en: 'Pass' },
-      { min: 0, ar: 'راسب', en: 'Fail' }
-    ]},
-    '5': { max: 5, classifications: [
-      { min: 4.50, ar: 'ممتاز', en: 'Excellent' }, { min: 3.50, ar: 'جيد جداً', en: 'Very Good' },
-      { min: 2.50, ar: 'جيد', en: 'Good' }, { min: 2.00, ar: 'مقبول', en: 'Pass' },
-      { min: 0, ar: 'راسب', en: 'Fail' }
-    ]},
-    '100': { max: 100, classifications: [
-      { min: 90, ar: 'ممتاز', en: 'Excellent' }, { min: 80, ar: 'جيد جداً', en: 'Very Good' },
-      { min: 70, ar: 'جيد', en: 'Good' }, { min: 60, ar: 'مقبول', en: 'Pass' },
-      { min: 0, ar: 'راسب', en: 'Fail' }
-    ]}
-  };
-
   var currentTemplate = 'saudi5';
   var courses = [];
   var INITIAL_COURSES = 5;
@@ -2152,7 +2125,8 @@
     var fromSys = document.getElementById('conv-from');
     var convInput = document.getElementById('conv-input');
     if (fromSys && convInput) {
-      convInput.max = converterScales[fromSys.value].max;
+      var fromTmpl = getActiveTemplate(fromSys.value);
+      convInput.max = fromTmpl.max;
       convInput.placeholder = '0.00';
     }
   }
@@ -2263,81 +2237,138 @@
     classEl.textContent = getClassification(maxGpa);
   }
 
-  // Grade-bracket conversion table: maps classification boundaries between systems
-  // Each entry: [4.0 value, 5.0 value, 100% value]
-  var conversionTable = [
-    [4.00, 5.00, 100],  // A+ top
-    [3.75, 4.75,  95],  // A+ / Excellent+ boundary
-    [3.50, 4.50,  90],  // A  / Excellent boundary
-    [3.00, 4.00,  85],  // B+
-    [2.50, 3.50,  80],  // B  / Very Good boundary
-    [2.00, 3.00,  70],  // C+ / Good boundary
-    [1.50, 2.50,  65],  // C
-    [1.00, 2.00,  60],  // D  / Pass boundary
-    [0.00, 0.00,   0]   // F  / Fail
-  ];
+  // ===== Converter: percentage-based interpolation =====
+  // Build a map of [gradeValue, percentEquivalent] pairs for a template, sorted high-to-low
+  function getPercentMap(tmplId) {
+    var tmpl = getActiveTemplate(tmplId);
+    var inv = !!(templates[tmplId].inverted);
 
-  var sysColIndex = { '4': 0, '5': 1, '100': 2 };
+    // Percentage-based systems: identity map
+    if (!tmpl.grades || tmpl.grades.length === 0) {
+      // Scale linearly to 0-100
+      return [[tmpl.max, 100], [0, 0]];
+    }
 
-  function convertGpa(inputVal, fromSys, toSys) {
-    var fromCol = sysColIndex[fromSys];
-    var toCol = sysColIndex[toSys];
+    var grades = tmpl.grades.slice();
+    // Sort by value descending (highest first) for normal, ascending for inverted
+    grades.sort(function(a, b) { return inv ? a.value - b.value : b.value - a.value; });
 
-    // Clamp input
-    var fromMax = converterScales[fromSys].max;
-    if (inputVal > fromMax) inputVal = fromMax;
-    if (inputVal < 0) inputVal = 0;
+    var map = [];
+    var n = grades.length;
+    for (var i = 0; i < n; i++) {
+      // Distribute evenly: best grade = 100%, worst = 0% (or near 0)
+      var pct = n > 1 ? 100 * (1 - i / (n - 1)) : 100;
+      map.push([grades[i].value, pct]);
+    }
+    return map;
+  }
 
-    // Find the bracket the input falls into
-    for (var i = 0; i < conversionTable.length - 1; i++) {
-      var hi = conversionTable[i][fromCol];
-      var lo = conversionTable[i + 1][fromCol];
-      if (inputVal >= lo) {
-        // Linear interpolation within this bracket
-        var range = hi - lo;
-        var t = range > 0 ? (inputVal - lo) / range : 1;
-        var toHi = conversionTable[i][toCol];
-        var toLo = conversionTable[i + 1][toCol];
-        return toLo + t * (toHi - toLo);
+  function toPercent(val, tmplId) {
+    var map = getPercentMap(tmplId);
+    var inv = !!(templates[tmplId].inverted);
+    var tmpl = getActiveTemplate(tmplId);
+
+    if (inv) {
+      if (val <= map[0][0]) return map[0][1];
+      if (val >= map[map.length - 1][0]) return map[map.length - 1][1];
+      for (var i = 0; i < map.length - 1; i++) {
+        if (val >= map[i][0] && val <= map[i + 1][0]) {
+          var range = map[i + 1][0] - map[i][0];
+          var t = range > 0 ? (val - map[i][0]) / range : 0;
+          return map[i][1] + t * (map[i + 1][1] - map[i][1]);
+        }
+      }
+    } else {
+      if (val >= map[0][0]) return map[0][1];
+      if (val <= map[map.length - 1][0]) return map[map.length - 1][1];
+      for (var i = 0; i < map.length - 1; i++) {
+        if (val <= map[i][0] && val >= map[i + 1][0]) {
+          var range = map[i][0] - map[i + 1][0];
+          var t = range > 0 ? (map[i][0] - val) / range : 0;
+          return map[i][1] + t * (map[i + 1][1] - map[i][1]);
+        }
       }
     }
     return 0;
   }
 
+  function fromPercent(pct, tmplId) {
+    var map = getPercentMap(tmplId);
+    if (pct >= map[0][1]) return map[0][0];
+    if (pct <= map[map.length - 1][1]) return map[map.length - 1][0];
+    for (var i = 0; i < map.length - 1; i++) {
+      if (pct <= map[i][1] && pct >= map[i + 1][1]) {
+        var range = map[i][1] - map[i + 1][1];
+        var t = range > 0 ? (map[i][1] - pct) / range : 0;
+        return map[i][0] + t * (map[i + 1][0] - map[i][0]);
+      }
+    }
+    return 0;
+  }
+
+  function populateConverterDropdowns() {
+    var fromEl = document.getElementById('conv-from');
+    var toEl = document.getElementById('conv-to');
+    if (!fromEl || !toEl) return;
+    var html = '';
+    for (var g = 0; g < templateGroups.length; g++) {
+      var grp = templateGroups[g];
+      html += '<optgroup label="' + (isArabic ? grp.nameAr : grp.nameEn) + '">';
+      for (var t = 0; t < grp.ids.length; t++) {
+        var id = grp.ids[t];
+        var tmpl = templates[id];
+        html += '<option value="' + id + '">' + (isArabic ? tmpl.nameAr : tmpl.nameEn) + '</option>';
+      }
+      html += '</optgroup>';
+    }
+    fromEl.innerHTML = html;
+    toEl.innerHTML = html;
+    fromEl.value = 'saudi5';
+    toEl.value = 'us4';
+  }
+
   function calcConvert() {
-    var fromSys = document.getElementById('conv-from').value;
-    var toSys = document.getElementById('conv-to').value;
+    var fromId = document.getElementById('conv-from').value;
+    var toId = document.getElementById('conv-to').value;
     var inputVal = parseFloat(document.getElementById('conv-input').value);
 
     var resultEl = document.getElementById('conv-result-val');
     var classEl = document.getElementById('conv-class-val');
-    var noteEl = document.getElementById('conv-note');
 
     updateConverterMax();
 
     if (isNaN(inputVal) || inputVal < 0) {
       resultEl.textContent = '—';
       classEl.textContent = '—';
-      if (noteEl) noteEl.style.display = 'none';
       return;
     }
 
-    var converted = (fromSys === toSys) ? inputVal : convertGpa(inputVal, fromSys, toSys);
-    var dp = toSys === '100' ? 0 : 2;
+    var converted;
+    if (fromId === toId) {
+      converted = inputVal;
+    } else {
+      var pct = toPercent(inputVal, fromId);
+      converted = fromPercent(pct, toId);
+    }
+
+    var toTmpl = getActiveTemplate(toId);
+    var isPct = !toTmpl.grades || toTmpl.grades.length === 0;
+    var dp = isPct ? 0 : 2;
 
     resultEl.textContent = converted.toFixed(dp);
 
-    // Get classification in the target system
-    var cls = converterScales[toSys].classifications;
+    // Classification in target system
+    var cls = toTmpl.classifications;
     var classText = '';
-    for (var i = 0; i < cls.length; i++) {
-      if (converted >= cls[i].min) {
-        classText = isArabic ? cls[i].ar : cls[i].en;
-        break;
+    if (cls) {
+      for (var i = 0; i < cls.length; i++) {
+        if (converted >= cls[i].min) {
+          classText = isArabic ? cls[i].ar : cls[i].en;
+          break;
+        }
       }
     }
     classEl.textContent = classText || '—';
-    if (noteEl) noteEl.style.display = (fromSys === toSys) ? 'none' : 'block';
   }
 
   function initSemesters() {
@@ -2588,7 +2619,7 @@
     document.getElementById('sem-credits-val').textContent = '0';
     document.getElementById('sem-points-val').textContent = '0';
     // Hide conditional elements
-    var hideIds = ['tgt-impossible', 'max-gpa-completed', 'conv-note', 'multi-chart-section'];
+    var hideIds = ['tgt-impossible', 'max-gpa-completed', 'multi-chart-section'];
     for (var i = 0; i < hideIds.length; i++) {
       var el = document.getElementById(hideIds[i]);
       if (el) el.style.display = 'none';
@@ -2877,8 +2908,8 @@
 
         // 7. Restore converter
         if (data.converter) {
-          document.getElementById('conv-from').value = data.converter.from || '4';
-          document.getElementById('conv-to').value = data.converter.to || '5';
+          document.getElementById('conv-from').value = data.converter.from || 'saudi5';
+          document.getElementById('conv-to').value = data.converter.to || 'us4';
           document.getElementById('conv-input').value = data.converter.input || '';
           calcConvert();
         }
@@ -2959,7 +2990,6 @@
     var tmp = fromEl.value;
     fromEl.value = toEl.value;
     toEl.value = tmp;
-    updateConverterMax();
     calcConvert();
   };
 
@@ -3127,6 +3157,7 @@
   // Initialize
   loadCustomizations();
   populateTemplateDropdown();
+  populateConverterDropdowns();
   init();
   initSemesters();
   updateMaxInputs();
