@@ -13,10 +13,9 @@
   <!-- Grading System Selector -->
   <div class="gpa-system-bar">
     <label class="gpa-system-label">{{tool.gradingSystem}}</label>
-    <div class="gpa-system-btns">
-      <button class="gpa-sys-btn active" onclick="gpaSetSystem('4')" id="sys-btn-4">{{tool.system40}}</button>
-      <button class="gpa-sys-btn" onclick="gpaSetSystem('5')" id="sys-btn-5">{{tool.system50}}</button>
-      <button class="gpa-sys-btn" onclick="gpaSetSystem('100')" id="sys-btn-100">{{tool.system100}}</button>
+    <div class="gpa-system-controls">
+      <select id="gpa-template-select" class="gpa-template-select" onchange="gpaChangeTemplate(this.value)"></select>
+      <button class="gpa-customize-btn" disabled>{{tool.customizeBtn}}</button>
     </div>
   </div>
 
@@ -324,34 +323,45 @@
   color: var(--text-primary);
 }
 
-.gpa-calculator .gpa-system-btns {
+.gpa-calculator .gpa-system-controls {
   display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
 }
 
-.gpa-calculator .gpa-sys-btn {
+.gpa-calculator .gpa-template-select {
+  flex: 1;
+  min-width: 0;
   padding: 10px 14px;
   border: 2px solid var(--border-color);
   border-radius: 12px;
   background: var(--bg-secondary);
-  color: var(--text-secondary);
+  color: var(--text-primary);
   font-size: 0.85rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-fast);
   font-family: inherit;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
 }
 
-.gpa-calculator .gpa-sys-btn:hover {
+.gpa-calculator .gpa-template-select:focus {
+  outline: none;
   border-color: var(--accent-primary);
-  color: var(--accent-primary);
 }
 
-.gpa-calculator .gpa-sys-btn.active {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
-  color: white;
+.gpa-calculator .gpa-customize-btn {
+  padding: 10px 14px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: not-allowed;
+  opacity: 0.6;
+  white-space: nowrap;
 }
 
 /* Tabs — wrapping like inheritance madhab buttons */
@@ -1050,6 +1060,21 @@
   }
 
 
+  .gpa-calculator .gpa-system-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gpa-calculator .gpa-template-select {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+  }
+
+  .gpa-calculator .gpa-customize-btn {
+    font-size: 0.75rem;
+    padding: 8px 10px;
+  }
+
   .gpa-calculator .gpa-cum-form {
     padding: 16px;
   }
@@ -1169,20 +1194,36 @@
   var lang = document.documentElement.lang || 'ar';
   var isArabic = lang === 'ar';
 
-  // Grade systems data
-  var gradeSystems = {
-    '4': {
-      max: 4,
+  // Grading system templates
+  var templates = {
+    'saudi5': {
+      nameAr: 'السعودية - نظام 5.0', nameEn: 'Saudi Arabia - 5.0 Scale', max: 5,
       grades: [
-        { label: 'A+', value: 4.00 },
-        { label: 'A',  value: 3.75 },
-        { label: 'B+', value: 3.50 },
-        { label: 'B',  value: 3.00 },
-        { label: 'C+', value: 2.50 },
-        { label: 'C',  value: 2.00 },
-        { label: 'D+', value: 1.50 },
-        { label: 'D',  value: 1.00 },
-        { label: 'F',  value: 0.00 }
+        { label: 'A+', value: 5.00 }, { label: 'A', value: 4.75 },
+        { label: 'B+', value: 4.50 }, { label: 'B', value: 4.00 },
+        { label: 'C+', value: 3.50 }, { label: 'C', value: 3.00 },
+        { label: 'D+', value: 2.50 }, { label: 'D', value: 2.00 },
+        { label: 'F', value: 1.00 }
+      ],
+      classifications: [
+        { min: 4.75, ar: 'ممتاز مرتفع', en: 'Excellent+' },
+        { min: 4.50, ar: 'ممتاز', en: 'Excellent' },
+        { min: 4.00, ar: 'جيد جداً مرتفع', en: 'Very Good+' },
+        { min: 3.50, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 3.00, ar: 'جيد مرتفع', en: 'Good+' },
+        { min: 2.50, ar: 'جيد', en: 'Good' },
+        { min: 2.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'saudi4': {
+      nameAr: 'السعودية - نظام 4.0', nameEn: 'Saudi Arabia - 4.0 Scale', max: 4,
+      grades: [
+        { label: 'A+', value: 4.00 }, { label: 'A', value: 3.75 },
+        { label: 'B+', value: 3.50 }, { label: 'B', value: 3.00 },
+        { label: 'C+', value: 2.50 }, { label: 'C', value: 2.00 },
+        { label: 'D+', value: 1.50 }, { label: 'D', value: 1.00 },
+        { label: 'F', value: 0.00 }
       ],
       classifications: [
         { min: 3.75, ar: 'ممتاز مرتفع', en: 'Excellent+' },
@@ -1193,48 +1234,319 @@
         { min: 2.50, ar: 'جيد', en: 'Good' },
         { min: 2.25, ar: 'مقبول مرتفع', en: 'Pass+' },
         { min: 2.00, ar: 'مقبول', en: 'Pass' },
-        { min: 0,    ar: 'راسب', en: 'Fail' }
+        { min: 0, ar: 'راسب', en: 'Fail' }
       ]
     },
-    '5': {
-      max: 5,
+    'gulf4': {
+      nameAr: 'الخليج - نظام 4.0 (±)', nameEn: 'Gulf - 4.0 Scale (±)', max: 4,
       grades: [
-        { label: 'A+', value: 5.00 },
-        { label: 'A',  value: 4.75 },
-        { label: 'B+', value: 4.50 },
-        { label: 'B',  value: 4.00 },
-        { label: 'C+', value: 3.50 },
-        { label: 'C',  value: 3.00 },
-        { label: 'D+', value: 2.50 },
-        { label: 'D',  value: 2.00 },
-        { label: 'F',  value: 0.00 }
+        { label: 'A+', value: 4.00 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.70 },
+        { label: 'B+', value: 3.30 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.70 },
+        { label: 'C+', value: 2.30 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.70 },
+        { label: 'D+', value: 1.30 }, { label: 'D', value: 1.00 }, { label: 'D-', value: 0.70 },
+        { label: 'F', value: 0.00 }
       ],
       classifications: [
-        { min: 4.75, ar: 'ممتاز مرتفع', en: 'Excellent+' },
-        { min: 4.50, ar: 'ممتاز', en: 'Excellent' },
-        { min: 4.00, ar: 'جيد جداً مرتفع', en: 'Very Good+' },
-        { min: 3.50, ar: 'جيد جداً', en: 'Very Good' },
-        { min: 3.00, ar: 'جيد مرتفع', en: 'Good+' },
-        { min: 2.50, ar: 'جيد', en: 'Good' },
-        { min: 2.00, ar: 'مقبول', en: 'Pass' },
-        { min: 0,    ar: 'راسب', en: 'Fail' }
+        { min: 3.70, ar: 'ممتاز', en: 'Excellent' },
+        { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 2.00, ar: 'جيد', en: 'Good' },
+        { min: 1.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
       ]
     },
-    '100': {
-      max: 100,
+    'jordan4': {
+      nameAr: 'الأردن - نظام 4.0', nameEn: 'Jordan - 4.0 Scale', max: 4,
+      grades: [
+        { label: 'A', value: 4.00 }, { label: 'A-', value: 3.70 },
+        { label: 'B+', value: 3.30 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.70 },
+        { label: 'C+', value: 2.30 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.70 },
+        { label: 'D+', value: 1.30 }, { label: 'D', value: 1.00 },
+        { label: 'F', value: 0.00 }
+      ],
+      classifications: [
+        { min: 3.70, ar: 'ممتاز', en: 'Excellent' },
+        { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 2.00, ar: 'جيد', en: 'Good' },
+        { min: 1.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'egypt100': {
+      nameAr: 'مصر - نسبة مئوية', nameEn: 'Egypt - Percentage', max: 100,
+      classifications: [
+        { min: 85, ar: 'امتياز', en: 'Excellent' },
+        { min: 75, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 65, ar: 'جيد', en: 'Good' },
+        { min: 50, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'iraq100': {
+      nameAr: 'العراق - نسبة مئوية', nameEn: 'Iraq - Percentage', max: 100,
+      classifications: [
+        { min: 90, ar: 'امتياز', en: 'Excellent' },
+        { min: 80, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 70, ar: 'جيد', en: 'Good' },
+        { min: 60, ar: 'متوسط', en: 'Average' },
+        { min: 50, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'syria100': {
+      nameAr: 'سوريا - نسبة مئوية', nameEn: 'Syria - Percentage', max: 100,
+      classifications: [
+        { min: 90, ar: 'امتياز', en: 'Excellent' },
+        { min: 80, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 70, ar: 'جيد', en: 'Good' },
+        { min: 60, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'lebanon4': {
+      nameAr: 'لبنان - نظام 4.0 (±)', nameEn: 'Lebanon - 4.0 Scale (±)', max: 4,
+      grades: [
+        { label: 'A+', value: 4.00 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.70 },
+        { label: 'B+', value: 3.30 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.70 },
+        { label: 'C+', value: 2.30 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.70 },
+        { label: 'D+', value: 1.30 }, { label: 'D', value: 1.00 }, { label: 'D-', value: 0.70 },
+        { label: 'F', value: 0.00 }
+      ],
+      classifications: [
+        { min: 3.70, ar: 'ممتاز', en: 'Excellent' },
+        { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 2.00, ar: 'جيد', en: 'Good' },
+        { min: 1.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'maghreb20': {
+      nameAr: 'المغرب العربي - نظام 20', nameEn: 'Maghreb - /20 Scale', max: 20,
+      classifications: [
+        { min: 16, ar: 'حسن جداً (Très Bien)', en: 'Très Bien (Very Good)' },
+        { min: 14, ar: 'حسن (Bien)', en: 'Bien (Good)' },
+        { min: 12, ar: 'مستحسن (Assez Bien)', en: 'Assez Bien (Fairly Good)' },
+        { min: 10, ar: 'مقبول (Passable)', en: 'Passable (Pass)' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'us4': {
+      nameAr: 'أمريكا - نظام 4.0 (±)', nameEn: 'USA - 4.0 Scale (±)', max: 4,
+      grades: [
+        { label: 'A+', value: 4.00 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.70 },
+        { label: 'B+', value: 3.30 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.70 },
+        { label: 'C+', value: 2.30 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.70 },
+        { label: 'D+', value: 1.30 }, { label: 'D', value: 1.00 }, { label: 'D-', value: 0.70 },
+        { label: 'F', value: 0.00 }
+      ],
+      classifications: [
+        { min: 3.70, ar: 'ممتاز', en: "Dean's List" },
+        { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 2.00, ar: 'جيد', en: 'Good' },
+        { min: 1.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'us433': {
+      nameAr: 'أمريكا - نظام 4.33 (±)', nameEn: 'USA - 4.33 Scale (±)', max: 4.33,
+      grades: [
+        { label: 'A+', value: 4.33 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.67 },
+        { label: 'B+', value: 3.33 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.67 },
+        { label: 'C+', value: 2.33 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.67 },
+        { label: 'D+', value: 1.33 }, { label: 'D', value: 1.00 }, { label: 'D-', value: 0.67 },
+        { label: 'F', value: 0.00 }
+      ],
+      classifications: [
+        { min: 3.70, ar: 'ممتاز', en: "Dean's List" },
+        { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 2.00, ar: 'جيد', en: 'Good' },
+        { min: 1.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'canada433': {
+      nameAr: 'كندا - نظام 4.33 (±)', nameEn: 'Canada - 4.33 Scale (±)', max: 4.33,
+      grades: [
+        { label: 'A+', value: 4.33 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.67 },
+        { label: 'B+', value: 3.33 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.67 },
+        { label: 'C+', value: 2.33 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.67 },
+        { label: 'D+', value: 1.33 }, { label: 'D', value: 1.00 }, { label: 'D-', value: 0.67 },
+        { label: 'F', value: 0.00 }
+      ],
+      classifications: [
+        { min: 3.70, ar: 'ممتاز', en: "Dean's List" },
+        { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 2.00, ar: 'جيد', en: 'Good' },
+        { min: 1.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'turkey4': {
+      nameAr: 'تركيا - نظام 4.0', nameEn: 'Turkey - 4.0 Scale', max: 4,
+      grades: [
+        { label: 'AA', value: 4.00 }, { label: 'BA', value: 3.50 },
+        { label: 'BB', value: 3.00 }, { label: 'CB', value: 2.50 },
+        { label: 'CC', value: 2.00 }, { label: 'DC', value: 1.50 },
+        { label: 'DD', value: 1.00 }, { label: 'FD', value: 0.50 },
+        { label: 'FF', value: 0.00 }
+      ],
+      classifications: [
+        { min: 3.50, ar: 'شرف', en: 'Honour' },
+        { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 2.50, ar: 'جيد', en: 'Good' },
+        { min: 2.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'uk': {
+      nameAr: 'بريطانيا - نسبة مئوية', nameEn: 'UK - Percentage', max: 100,
+      classifications: [
+        { min: 70, ar: 'مرتبة الشرف الأولى', en: 'First Class Honours' },
+        { min: 60, ar: 'مرتبة الشرف الثانية العليا', en: 'Upper Second (2:1)' },
+        { min: 50, ar: 'مرتبة الشرف الثانية الدنيا', en: 'Lower Second (2:2)' },
+        { min: 40, ar: 'مرتبة الشرف الثالثة', en: 'Third Class' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'german': {
+      nameAr: 'ألمانيا - نظام 5.0 (مقلوب)', nameEn: 'Germany - 5.0 Scale (Inverted)', max: 5, inverted: true,
+      grades: [
+        { label: '1.0', value: 1.00 }, { label: '1.3', value: 1.30 },
+        { label: '1.7', value: 1.70 }, { label: '2.0', value: 2.00 },
+        { label: '2.3', value: 2.30 }, { label: '2.7', value: 2.70 },
+        { label: '3.0', value: 3.00 }, { label: '3.3', value: 3.30 },
+        { label: '3.7', value: 3.70 }, { label: '4.0', value: 4.00 },
+        { label: '5.0', value: 5.00 }
+      ],
+      classifications: [
+        { min: 4.10, ar: 'راسب', en: 'Nicht Bestanden (Fail)' },
+        { min: 3.60, ar: 'مقبول', en: 'Ausreichend (Sufficient)' },
+        { min: 2.60, ar: 'جيد', en: 'Befriedigend (Satisfactory)' },
+        { min: 1.60, ar: 'جيد جداً', en: 'Gut (Good)' },
+        { min: 0, ar: 'ممتاز', en: 'Sehr Gut (Very Good)' }
+      ]
+    },
+    'french20': {
+      nameAr: 'فرنسا - نظام 20', nameEn: 'France - /20 Scale', max: 20,
+      classifications: [
+        { min: 16, ar: 'حسن جداً', en: 'Très Bien (Very Good)' },
+        { min: 14, ar: 'حسن', en: 'Bien (Good)' },
+        { min: 12, ar: 'مستحسن', en: 'Assez Bien (Fairly Good)' },
+        { min: 10, ar: 'مقبول', en: 'Passable (Pass)' },
+        { min: 0, ar: 'راسب', en: 'Insuffisant (Fail)' }
+      ]
+    },
+    'india10': {
+      nameAr: 'الهند - نظام 10.0', nameEn: 'India - 10.0 Scale (CGPA)', max: 10,
+      grades: [
+        { label: 'O', value: 10.00 }, { label: 'A+', value: 9.00 },
+        { label: 'A', value: 8.00 }, { label: 'B+', value: 7.00 },
+        { label: 'B', value: 6.00 }, { label: 'C', value: 5.00 },
+        { label: 'P', value: 4.00 }, { label: 'F', value: 0.00 }
+      ],
+      classifications: [
+        { min: 9.00, ar: 'ممتاز', en: 'Outstanding' },
+        { min: 8.00, ar: 'جيد جداً', en: 'Excellent' },
+        { min: 7.00, ar: 'جيد', en: 'Very Good' },
+        { min: 6.00, ar: 'فوق المتوسط', en: 'Good' },
+        { min: 5.00, ar: 'متوسط', en: 'Average' },
+        { min: 4.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'korea45': {
+      nameAr: 'كوريا الجنوبية - نظام 4.5', nameEn: 'South Korea - 4.5 Scale', max: 4.5,
+      grades: [
+        { label: 'A+', value: 4.50 }, { label: 'A0', value: 4.00 },
+        { label: 'B+', value: 3.50 }, { label: 'B0', value: 3.00 },
+        { label: 'C+', value: 2.50 }, { label: 'C0', value: 2.00 },
+        { label: 'D+', value: 1.50 }, { label: 'D0', value: 1.00 },
+        { label: 'F', value: 0.00 }
+      ],
+      classifications: [
+        { min: 4.00, ar: 'ممتاز', en: 'Excellent' },
+        { min: 3.50, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 3.00, ar: 'جيد', en: 'Good' },
+        { min: 2.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'australia7': {
+      nameAr: 'أستراليا - نظام 7.0', nameEn: 'Australia - 7.0 Scale', max: 7,
+      grades: [
+        { label: 'HD', value: 7.00 }, { label: 'D', value: 6.00 },
+        { label: 'CR', value: 5.00 }, { label: 'P', value: 4.00 },
+        { label: 'F', value: 0.00 }
+      ],
+      classifications: [
+        { min: 6.50, ar: 'ممتاز مرتفع', en: 'High Distinction' },
+        { min: 5.50, ar: 'ممتاز', en: 'Distinction' },
+        { min: 4.50, ar: 'جيد', en: 'Credit' },
+        { min: 3.50, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'percent100': {
+      nameAr: 'نسبة مئوية عامة (100%)', nameEn: 'Generic Percentage (100%)', max: 100,
       classifications: [
         { min: 90, ar: 'ممتاز', en: 'Excellent' },
         { min: 80, ar: 'جيد جداً', en: 'Very Good' },
         { min: 70, ar: 'جيد', en: 'Good' },
         { min: 60, ar: 'مقبول', en: 'Pass' },
-        { min: 0,  ar: 'راسب', en: 'Fail' }
+        { min: 0, ar: 'راسب', en: 'Fail' }
       ]
     }
   };
 
-  var currentSystem = '4';
+  var templateGroups = [
+    { nameAr: 'العالم العربي', nameEn: 'Arab World', ids: ['saudi5','saudi4','gulf4','jordan4','egypt100','iraq100','syria100','lebanon4','maghreb20'] },
+    { nameAr: 'الأنظمة الدولية', nameEn: 'International Systems', ids: ['us4','us433','canada433','turkey4','uk','german','french20','india10','korea45','australia7','percent100'] }
+  ];
+
+  // Converter scales (independent of main template)
+  var converterScales = {
+    '4': { max: 4, classifications: [
+      { min: 3.70, ar: 'ممتاز', en: 'Excellent' }, { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
+      { min: 2.00, ar: 'جيد', en: 'Good' }, { min: 1.00, ar: 'مقبول', en: 'Pass' },
+      { min: 0, ar: 'راسب', en: 'Fail' }
+    ]},
+    '5': { max: 5, classifications: [
+      { min: 4.50, ar: 'ممتاز', en: 'Excellent' }, { min: 3.50, ar: 'جيد جداً', en: 'Very Good' },
+      { min: 2.50, ar: 'جيد', en: 'Good' }, { min: 2.00, ar: 'مقبول', en: 'Pass' },
+      { min: 0, ar: 'راسب', en: 'Fail' }
+    ]},
+    '100': { max: 100, classifications: [
+      { min: 90, ar: 'ممتاز', en: 'Excellent' }, { min: 80, ar: 'جيد جداً', en: 'Very Good' },
+      { min: 70, ar: 'جيد', en: 'Good' }, { min: 60, ar: 'مقبول', en: 'Pass' },
+      { min: 0, ar: 'راسب', en: 'Fail' }
+    ]}
+  };
+
+  var currentTemplate = 'saudi5';
   var courses = [];
   var INITIAL_COURSES = 5;
+
+  function isPercentSystem(templateId) {
+    var t = templates[templateId || currentTemplate];
+    return !t.grades || t.grades.length === 0;
+  }
+
+  function populateTemplateDropdown() {
+    var sel = document.getElementById('gpa-template-select');
+    if (!sel) return;
+    var html = '';
+    for (var g = 0; g < templateGroups.length; g++) {
+      var grp = templateGroups[g];
+      html += '<optgroup label="' + (isArabic ? grp.nameAr : grp.nameEn) + '">';
+      for (var t = 0; t < grp.ids.length; t++) {
+        var id = grp.ids[t];
+        var tmpl = templates[id];
+        var name = isArabic ? tmpl.nameAr : tmpl.nameEn;
+        html += '<option value="' + id + '"' + (id === currentTemplate ? ' selected' : '') + '>' + name + '</option>';
+      }
+      html += '</optgroup>';
+    }
+    sel.innerHTML = html;
+  }
 
   // i18n labels (from template placeholders — set by build)
   var labels = {
@@ -1270,7 +1582,7 @@
   }
 
   function getGradeOptions() {
-    var sys = gradeSystems[currentSystem];
+    var sys = templates[currentTemplate];
     var html = '<option value="-1">' + labels.grade + '</option>';
     for (var i = 0; i < sys.grades.length; i++) {
       var g = sys.grades[i];
@@ -1282,7 +1594,7 @@
   function renderCourses() {
     var container = document.getElementById('courses-container');
     var html = '';
-    var is100 = currentSystem === '100';
+    var is100 = isPercentSystem();
     var wif = whatIfActive;
 
     // Header row (desktop only — hidden on mobile via CSS)
@@ -1318,7 +1630,8 @@
       html += '<div class="gpa-form-group">';
       html += '<label>' + labels.grade + '</label>';
       if (is100) {
-        html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100" class="gpa-grade-input" value="' + (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '') + '" oninput="gpaUpdateCourse(' + i + ',\'gradeValue\',this.value)">';
+        var sysMax = templates[currentTemplate].max;
+        html += '<input type="number" min="0" max="' + sysMax + '" step="0.1" placeholder="0-' + sysMax + '" class="gpa-grade-input" value="' + (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '') + '" oninput="gpaUpdateCourse(' + i + ',\'gradeValue\',this.value)">';
       } else {
         var sel = gradeOpts.replace('value="' + c.gradeIndex + '"', 'value="' + c.gradeIndex + '" selected');
         html += '<select onchange="gpaUpdateCourse(' + i + ',\'gradeIndex\',this.value)">' + sel + '</select>';
@@ -1333,7 +1646,7 @@
         html += '<label>' + labels.whatIfLabel + '</label>';
         if (is100) {
           var altVal = c.altGradeValue !== undefined && c.altGradeValue !== '' ? c.altGradeValue : (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '');
-          html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100" value="' + altVal + '" oninput="gpaUpdateAlt(' + i + ',\'altGradeValue\',this.value)">';
+          html += '<input type="number" min="0" max="' + sysMax + '" step="0.1" placeholder="0-' + sysMax + '" value="' + altVal + '" oninput="gpaUpdateAlt(' + i + ',\'altGradeValue\',this.value)">';
         } else {
           var altIdx = c.altGradeIndex !== undefined ? c.altGradeIndex : c.gradeIndex;
           var altSel = gradeOpts.replace('value="' + altIdx + '"', 'value="' + altIdx + '" selected');
@@ -1350,8 +1663,8 @@
   }
 
   function calcSemester() {
-    var sys = gradeSystems[currentSystem];
-    var is100 = currentSystem === '100';
+    var sys = templates[currentTemplate];
+    var is100 = isPercentSystem();
     var totalCredits = 0;
     var totalPoints = 0;
     var hasValidCourse = false;
@@ -1361,7 +1674,7 @@
       var cr = parseFloat(c.credits);
       if (is100) {
         var gv = parseFloat(c.gradeValue);
-        if (cr > 0 && !isNaN(gv) && gv >= 0 && gv <= 100) {
+        if (cr > 0 && !isNaN(gv) && gv >= 0 && gv <= sys.max) {
           totalCredits += cr;
           totalPoints += cr * gv;
           hasValidCourse = true;
@@ -1385,7 +1698,7 @@
   }
 
   function getClassification(gpa) {
-    var cls = gradeSystems[currentSystem].classifications;
+    var cls = templates[currentTemplate].classifications;
     for (var i = 0; i < cls.length; i++) {
       if (gpa >= cls[i].min) {
         return isArabic ? cls[i].ar : cls[i].en;
@@ -1427,7 +1740,7 @@
   }
 
   function updateMaxInputs() {
-    var max = gradeSystems[currentSystem].max;
+    var max = templates[currentTemplate].max;
     var ids = ['cum-prev-gpa', 'cum-new-gpa', 'tgt-goal-gpa'];
     for (var i = 0; i < ids.length; i++) {
       var el = document.getElementById(ids[i]);
@@ -1444,7 +1757,7 @@
     var fromSys = document.getElementById('conv-from');
     var convInput = document.getElementById('conv-input');
     if (fromSys && convInput) {
-      convInput.max = gradeSystems[fromSys.value].max;
+      convInput.max = converterScales[fromSys.value].max;
       convInput.placeholder = '0.00';
     }
   }
@@ -1494,7 +1807,7 @@
       return;
     }
 
-    var max = gradeSystems[currentSystem].max;
+    var max = templates[currentTemplate].max;
     var remainingCredits = gradCredits - eff.credits;
     var requiredGpa = (goalGpa * gradCredits - eff.points) / remainingCredits;
 
@@ -1538,7 +1851,7 @@
       return;
     }
 
-    var max = gradeSystems[currentSystem].max;
+    var max = templates[currentTemplate].max;
     var remainingCredits = gradCredits - eff.credits;
     var maxGpa = (eff.points + max * remainingCredits) / gradCredits;
 
@@ -1567,7 +1880,7 @@
     var toCol = sysColIndex[toSys];
 
     // Clamp input
-    var fromMax = gradeSystems[fromSys].max;
+    var fromMax = converterScales[fromSys].max;
     if (inputVal > fromMax) inputVal = fromMax;
     if (inputVal < 0) inputVal = 0;
 
@@ -1611,7 +1924,7 @@
     resultEl.textContent = converted.toFixed(dp);
 
     // Get classification in the target system
-    var cls = gradeSystems[toSys].classifications;
+    var cls = converterScales[toSys].classifications;
     var classText = '';
     for (var i = 0; i < cls.length; i++) {
       if (converted >= cls[i].min) {
@@ -1632,7 +1945,7 @@
 
   function renderSemesters() {
     var container = document.getElementById('multi-semesters-container');
-    var max = gradeSystems[currentSystem].max;
+    var max = templates[currentTemplate].max;
     var html = '';
 
     html += '<div class="gpa-sem-header">';
@@ -1644,7 +1957,7 @@
 
     for (var i = 0; i < semesters.length; i++) {
       var s = semesters[i];
-      var rangePlaceholder = currentSystem === '100' ? '0 - 100' : '0 - ' + max.toFixed(2);
+      var rangePlaceholder = isPercentSystem() ? '0 - ' + max : '0 - ' + max.toFixed(2);
       html += '<div class="gpa-sem-row">';
       html += '<span class="gpa-sem-num">' + (i + 1) + '</span>';
       html += '<input type="number" step="0.01" min="0" max="' + max + '" placeholder="' + rangePlaceholder + '" value="' + (s.gpa || '') + '" oninput="gpaUpdateSemester(' + i + ',\'gpa\',this.value)">';
@@ -1661,7 +1974,7 @@
     var totalPoints = 0;
     var validSemesters = [];
 
-    var sysMax = gradeSystems[currentSystem].max;
+    var sysMax = templates[currentTemplate].max;
     for (var i = 0; i < semesters.length; i++) {
       var s = semesters[i];
       var gpa = parseFloat(s.gpa);
@@ -1712,7 +2025,7 @@
       for (var i = 0; i < validSemesters.length; i++) {
         var pct = ((validSemesters[i].gpa - chartMin) / chartRange) * 100;
         if (pct < 5) pct = 5;
-        var dp = currentSystem === '100' ? 0 : 2;
+        var dp = isPercentSystem() ? 0 : 2;
         html += '<div class="gpa-chart-bar-wrap">';
         html += '<div class="gpa-chart-val">' + validSemesters[i].gpa.toFixed(dp) + '</div>';
         html += '<div class="gpa-chart-bar" style="height:' + pct + '%"></div>';
@@ -1726,7 +2039,7 @@
   }
 
   function renderRefTables() {
-    var sys = gradeSystems[currentSystem];
+    var sys = templates[currentTemplate];
 
     // Grades table (only for 4.0 and 5.0)
     var gradesBody = document.getElementById('ref-grades-body');
@@ -1746,8 +2059,8 @@
     // Classifications table — show exclusive ranges to avoid overlap
     var classBody = document.getElementById('ref-class-body');
     var cls = sys.classifications;
-    var sysMax = gradeSystems[currentSystem].max;
-    var isPercent = currentSystem === '100';
+    var sysMax = templates[currentTemplate].max;
+    var isPercent = isPercentSystem();
     var dp = isPercent ? 0 : 2;
     var html = '';
     for (var i = 0; i < cls.length; i++) {
@@ -1852,25 +2165,23 @@
     }
   }
 
-  window.gpaSetSystem = function(sys) {
-    if (sys === currentSystem) return;
+  window.gpaChangeTemplate = function(tmplId) {
+    if (tmplId === currentTemplate) return;
 
     if (hasAnyData()) {
-      if (!confirm(labels.confirmSystemChange)) return;
+      if (!confirm(labels.confirmSystemChange)) {
+        document.getElementById('gpa-template-select').value = currentTemplate;
+        return;
+      }
       clearAllData();
     }
 
-    currentSystem = sys;
-    var btns = document.querySelectorAll('.gpa-calculator .gpa-sys-btn');
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].classList.remove('active');
-    }
-    document.getElementById('sys-btn-' + sys).classList.add('active');
+    currentTemplate = tmplId;
 
-    // Update points label for 100% system
+    // Update points label for percentage systems
     var pointsLabel = document.getElementById('sem-points-label');
     if (pointsLabel) {
-      pointsLabel.textContent = sys === '100' ? labels.weightedTotal : labels.totalPoints;
+      pointsLabel.textContent = isPercentSystem() ? labels.weightedTotal : labels.totalPoints;
     }
 
     updateMaxInputs();
@@ -1920,8 +2231,8 @@
   };
 
   function calcWhatIf() {
-    var sys = gradeSystems[currentSystem];
-    var is100 = currentSystem === '100';
+    var sys = templates[currentTemplate];
+    var is100 = isPercentSystem();
     var origCredits = 0, origPoints = 0;
     var altCredits = 0, altPoints = 0;
     var hasValid = false;
@@ -1935,12 +2246,12 @@
 
       if (is100) {
         var gv = parseFloat(c.gradeValue);
-        if (!isNaN(gv) && gv >= 0 && gv <= 100) {
+        if (!isNaN(gv) && gv >= 0 && gv <= sys.max) {
           origVal = gv;
           validOrig = true;
         }
         var av = parseFloat(c.altGradeValue !== undefined && c.altGradeValue !== '' ? c.altGradeValue : c.gradeValue);
-        altVal = (!isNaN(av) && av >= 0 && av <= 100) ? av : origVal;
+        altVal = (!isNaN(av) && av >= 0 && av <= sys.max) ? av : origVal;
       } else {
         var gi = parseInt(c.gradeIndex);
         if (gi >= 0 && gi < sys.grades.length) {
@@ -2043,8 +2354,8 @@
   };
 
   window.gpaUseFromSemester = function() {
-    var sys = gradeSystems[currentSystem];
-    var is100 = currentSystem === '100';
+    var sys = templates[currentTemplate];
+    var is100 = isPercentSystem();
     var totalCredits = 0;
     var totalPoints = 0;
 
@@ -2053,7 +2364,7 @@
       var cr = parseFloat(c.credits);
       if (is100) {
         var gv = parseFloat(c.gradeValue);
-        if (cr > 0 && !isNaN(gv) && gv >= 0 && gv <= 100) {
+        if (cr > 0 && !isNaN(gv) && gv >= 0 && gv <= sys.max) {
           totalCredits += cr;
           totalPoints += cr * gv;
         }
@@ -2076,6 +2387,7 @@
   };
 
   // Initialize
+  populateTemplateDropdown();
   init();
   initSemesters();
   updateMaxInputs();
