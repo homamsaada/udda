@@ -14,12 +14,12 @@
   <div class="gpa-settings-card">
     <div class="gpa-system-bar">
       <label class="gpa-system-label">{{tool.gradingSystem}}</label>
-      <div class="gpa-system-btns">
-        <button class="gpa-sys-btn active" onclick="gpaSetSystem('4')" id="sys-btn-4">{{tool.system40}}</button>
-        <button class="gpa-sys-btn" onclick="gpaSetSystem('5')" id="sys-btn-5">{{tool.system50}}</button>
-        <button class="gpa-sys-btn" onclick="gpaSetSystem('100')" id="sys-btn-100">{{tool.system100}}</button>
+      <div class="gpa-template-row">
+        <select id="gpa-template-select" class="gpa-template-select" onchange="gpaSetTemplate(this.value)"></select>
+        <button class="gpa-customize-btn" disabled title="{{tool.customizeBtnHint}}">⚙ {{tool.customizeBtn}}</button>
       </div>
     </div>
+    <div class="gpa-template-desc" id="gpa-template-desc"></div>
   </div>
 
   <!-- Retake Policy Selector -->
@@ -233,20 +233,12 @@
       <div class="gpa-conv-row">
         <div class="gpa-form-group">
           <label>{{tool.convertFrom}}</label>
-          <select id="conv-from" onchange="gpaCalcConvert()">
-            <option value="4">{{tool.convSystem40}}</option>
-            <option value="5">{{tool.convSystem50}}</option>
-            <option value="100">{{tool.convSystem100}}</option>
-          </select>
+          <select id="conv-from" onchange="gpaCalcConvert()"></select>
         </div>
         <button class="gpa-conv-swap" onclick="gpaConvSwap()" type="button">⇄</button>
         <div class="gpa-form-group">
           <label>{{tool.convertTo}}</label>
-          <select id="conv-to" onchange="gpaCalcConvert()">
-            <option value="4">{{tool.convSystem40}}</option>
-            <option value="5" selected>{{tool.convSystem50}}</option>
-            <option value="100">{{tool.convSystem100}}</option>
-          </select>
+          <select id="conv-to" onchange="gpaCalcConvert()"></select>
         </div>
       </div>
       <div class="gpa-form-row">
@@ -378,6 +370,67 @@
   background: var(--accent-primary);
   border-color: var(--accent-primary);
   color: white;
+}
+
+/* Template dropdown row */
+.gpa-calculator .gpa-template-row {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+}
+
+.gpa-calculator .gpa-template-select {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.gpa-calculator .gpa-template-select:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-customize-btn {
+  padding: 10px 14px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.gpa-calculator .gpa-customize-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.gpa-calculator .gpa-customize-btn:not(:disabled):hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* Template description */
+.gpa-calculator .gpa-template-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 10px;
+  line-height: 1.6;
 }
 
 /* Tabs — wrapping like inheritance madhab buttons */
@@ -1248,6 +1301,20 @@
   .gpa-calculator .gpa-ref-table th,
   .gpa-calculator .gpa-ref-table td {
     padding: 8px 10px;
+  }
+
+  .gpa-calculator .gpa-system-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gpa-calculator .gpa-template-row {
+    flex-direction: column;
+  }
+
+  .gpa-calculator .gpa-customize-btn {
+    width: 100%;
+    text-align: center;
   }
 }
 </style>
