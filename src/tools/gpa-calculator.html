@@ -17,6 +17,7 @@
       <select id="gpa-template-select" class="gpa-template-select" onchange="gpaChangeTemplate(this.value)"></select>
       <button class="gpa-customize-btn" disabled>{{tool.customizeBtn}}</button>
     </div>
+    <div class="gpa-template-desc" id="gpa-template-desc"></div>
   </div>
 
   <!-- Tabs -->
@@ -362,6 +363,17 @@
   cursor: not-allowed;
   opacity: 0.6;
   white-space: nowrap;
+}
+
+.gpa-calculator .gpa-template-desc {
+  width: 100%;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  padding: 10px 14px;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  margin-top: 4px;
 }
 
 /* Tabs — wrapping like inheritance madhab buttons */
@@ -1198,6 +1210,8 @@
   var templates = {
     'saudi5': {
       nameAr: 'السعودية - نظام 5.0', nameEn: 'Saudi Arabia - 5.0 Scale', max: 5,
+      descAr: 'نظام 5 نقاط — المعتمد في أغلب الجامعات السعودية (جامعة الملك سعود، أم القرى، الملك عبدالعزيز، الإمام، الملك فيصل). A+=5.00، أدنى نجاح D=2.00، رسوب F=1.00.',
+      descEn: '5-point scale — used by most Saudi universities (King Saud, Umm Al-Qura, King Abdulaziz, Imam, King Faisal). A+=5.00, minimum pass D=2.00, fail F=1.00.',
       grades: [
         { label: 'A+', value: 5.00 }, { label: 'A', value: 4.75 },
         { label: 'B+', value: 4.50 }, { label: 'B', value: 4.00 },
@@ -1218,6 +1232,8 @@
     },
     'saudi4': {
       nameAr: 'السعودية - نظام 4.0', nameEn: 'Saudi Arabia - 4.0 Scale', max: 4,
+      descAr: 'نظام 4 نقاط — جامعة الملك فهد للبترول والمعادن (KFUPM) وجامعة الفيصل. A+=4.00، رسوب F=0.00.',
+      descEn: '4-point scale — King Fahd University of Petroleum and Minerals (KFUPM) and Alfaisal University. A+=4.00, fail F=0.00.',
       grades: [
         { label: 'A+', value: 4.00 }, { label: 'A', value: 3.75 },
         { label: 'B+', value: 3.50 }, { label: 'B', value: 3.00 },
@@ -1239,6 +1255,8 @@
     },
     'gulf4': {
       nameAr: 'الخليج - نظام 4.0 (±)', nameEn: 'Gulf - 4.0 Scale (±)', max: 4,
+      descAr: 'نظام 4 نقاط أمريكي الطابع — الإمارات (جامعة الإمارات، خليفة، زايد)، الكويت، قطر، البحرين، عمان. A و A+ كلاهما = 4.00 مع ±0.3.',
+      descEn: 'American-style 4-point scale — UAE (UAEU, Khalifa, Zayed), Kuwait, Qatar, Bahrain, Oman. Both A and A+ = 4.00 with ±0.3.',
       grades: [
         { label: 'A+', value: 4.00 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.70 },
         { label: 'B+', value: 3.30 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.70 },
@@ -1256,6 +1274,8 @@
     },
     'jordan4': {
       nameAr: 'الأردن - نظام 4.0', nameEn: 'Jordan - 4.0 Scale', max: 4,
+      descAr: 'الجامعة الأردنية وأغلب الجامعات الأردنية. لا يوجد A+، أعلى درجة A=4.00 عند 90%+. النجاح من D=1.00 عند 55%.',
+      descEn: 'University of Jordan and most Jordanian universities. No A+, highest grade A=4.00 at 90%+. Pass from D=1.00 at 55%.',
       grades: [
         { label: 'A', value: 4.00 }, { label: 'A-', value: 3.70 },
         { label: 'B+', value: 3.30 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.70 },
@@ -1273,6 +1293,8 @@
     },
     'egypt100': {
       nameAr: 'مصر - نسبة مئوية', nameEn: 'Egypt - Percentage', max: 100,
+      descAr: 'الجامعات الحكومية المصرية (القاهرة، عين شمس، الإسكندرية). نسبة مئوية مباشرة. امتياز ≥85%، نجاح من 50%. بعض كليات الطب والهندسة تضع الامتياز عند 90%.',
+      descEn: 'Egyptian public universities (Cairo, Ain Shams, Alexandria). Direct percentage. Excellent ≥85%, pass from 50%. Some medical and engineering faculties set Excellent at 90%.',
       classifications: [
         { min: 85, ar: 'امتياز', en: 'Excellent' },
         { min: 75, ar: 'جيد جداً', en: 'Very Good' },
@@ -1283,6 +1305,8 @@
     },
     'iraq100': {
       nameAr: 'العراق - نسبة مئوية', nameEn: 'Iraq - Percentage', max: 100,
+      descAr: 'الجامعات العراقية. نسبة مئوية. امتياز ≥90%، نجاح من 50%. يتميز بترجيح السنوات: الأولى 10%، الثانية 20%، الثالثة 30%، الرابعة 40%.',
+      descEn: 'Iraqi universities. Percentage. Excellent ≥90%, pass from 50%. Features year weighting: 1st year 10%, 2nd 20%, 3rd 30%, 4th 40%.',
       classifications: [
         { min: 90, ar: 'امتياز', en: 'Excellent' },
         { min: 80, ar: 'جيد جداً', en: 'Very Good' },
@@ -1294,6 +1318,8 @@
     },
     'syria100': {
       nameAr: 'سوريا - نسبة مئوية', nameEn: 'Syria - Percentage', max: 100,
+      descAr: 'نسبة مئوية. امتياز ≥90%، نجاح من 60%.',
+      descEn: 'Percentage. Excellent ≥90%, pass from 60%.',
       classifications: [
         { min: 90, ar: 'امتياز', en: 'Excellent' },
         { min: 80, ar: 'جيد جداً', en: 'Very Good' },
@@ -1304,6 +1330,8 @@
     },
     'lebanon4': {
       nameAr: 'لبنان - نظام 4.0 (±)', nameEn: 'Lebanon - 4.0 Scale (±)', max: 4,
+      descAr: 'الجامعة الأمريكية في بيروت (AUB) وLAU. نظام 4 نقاط أمريكي الطابع. ملاحظة: الجامعة اللبنانية الحكومية تستخدم نظام /20 الفرنسي.',
+      descEn: 'American University of Beirut (AUB) and LAU. American-style 4-point scale. Note: The Lebanese University uses the French /20 system.',
       grades: [
         { label: 'A+', value: 4.00 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.70 },
         { label: 'B+', value: 3.30 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.70 },
@@ -1321,6 +1349,8 @@
     },
     'maghreb20': {
       nameAr: 'المغرب العربي - نظام 20', nameEn: 'Maghreb - /20 Scale', max: 20,
+      descAr: 'المغرب وتونس والجزائر. سلّم من 20. النجاح من 10/20. Très Bien ≥16. درجات 18–20 نادرة جداً.',
+      descEn: 'Morocco, Tunisia, and Algeria. /20 scale. Pass from 10/20. Très Bien ≥16. Scores of 18–20 are very rare.',
       classifications: [
         { min: 16, ar: 'حسن جداً (Très Bien)', en: 'Très Bien (Very Good)' },
         { min: 14, ar: 'حسن (Bien)', en: 'Bien (Good)' },
@@ -1331,6 +1361,8 @@
     },
     'us4': {
       nameAr: 'أمريكا - نظام 4.0 (±)', nameEn: 'USA - 4.0 Scale (±)', max: 4,
+      descAr: 'الأكثر شيوعاً عالمياً — هارفارد، Yale، Princeton، UCLA. A+ و A كلاهما = 4.00 مع ±0.3.',
+      descEn: 'Most common worldwide — Harvard, Yale, Princeton, UCLA. Both A+ and A = 4.00 with ±0.3.',
       grades: [
         { label: 'A+', value: 4.00 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.70 },
         { label: 'B+', value: 3.30 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.70 },
@@ -1348,6 +1380,8 @@
     },
     'us433': {
       nameAr: 'أمريكا - نظام 4.33 (±)', nameEn: 'USA - 4.33 Scale (±)', max: 4.33,
+      descAr: 'ستانفورد، كورنيل، كولومبيا. A+=4.33. المعدل الأقصى 4.33 وليس 4.00.',
+      descEn: 'Stanford, Cornell, Columbia. A+=4.33. Maximum GPA is 4.33, not 4.00.',
       grades: [
         { label: 'A+', value: 4.33 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.67 },
         { label: 'B+', value: 3.33 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.67 },
@@ -1365,6 +1399,8 @@
     },
     'canada433': {
       nameAr: 'كندا - نظام 4.33 (±)', nameEn: 'Canada - 4.33 Scale (±)', max: 4.33,
+      descAr: 'أغلب الجامعات الكندية (UBC، تورنتو، مونتريال). A+=4.33 مع ±0.33.',
+      descEn: 'Most Canadian universities (UBC, Toronto, Montreal). A+=4.33 with ±0.33.',
       grades: [
         { label: 'A+', value: 4.33 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.67 },
         { label: 'B+', value: 3.33 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.67 },
@@ -1382,6 +1418,8 @@
     },
     'turkey4': {
       nameAr: 'تركيا - نظام 4.0', nameEn: 'Turkey - 4.0 Scale', max: 4,
+      descAr: 'METU، Boğaziçi، ITU. أحرف مزدوجة: AA=4.0, BA=3.5, BB=3.0. فواصل ±0.5 منتظمة. النجاح من DD=1.0 عند 60%.',
+      descEn: 'METU, Boğaziçi, ITU. Double letters: AA=4.0, BA=3.5, BB=3.0. Regular ±0.5 intervals. Pass from DD=1.0 at 60%.',
       grades: [
         { label: 'AA', value: 4.00 }, { label: 'BA', value: 3.50 },
         { label: 'BB', value: 3.00 }, { label: 'CB', value: 2.50 },
@@ -1399,6 +1437,8 @@
     },
     'uk': {
       nameAr: 'بريطانيا - نسبة مئوية', nameEn: 'UK - Percentage', max: 100,
+      descAr: 'المملكة المتحدة. تصنيفات: First Class ≥70%، Upper Second (2:1) ≥60%، Lower Second (2:2) ≥50%، Third ≥40%. ملاحظة: 70% بريطانية = امتياز.',
+      descEn: 'United Kingdom. Classifications: First Class ≥70%, Upper Second (2:1) ≥60%, Lower Second (2:2) ≥50%, Third ≥40%. Note: 70% UK = Excellent.',
       classifications: [
         { min: 70, ar: 'مرتبة الشرف الأولى', en: 'First Class Honours' },
         { min: 60, ar: 'مرتبة الشرف الثانية العليا', en: 'Upper Second (2:1)' },
@@ -1409,6 +1449,8 @@
     },
     'german': {
       nameAr: 'ألمانيا - نظام 5.0 (مقلوب)', nameEn: 'Germany - 5.0 Scale (Inverted)', max: 5, inverted: true,
+      descAr: 'ألمانيا والنمسا وسويسرا. نظام مقلوب — 1.0 أفضل درجة و5.0 رسوب. بفواصل 0.3. Sehr gut ≤1.5، Gut ≤2.5.',
+      descEn: 'Germany, Austria, and Switzerland. Inverted scale — 1.0 is the best grade and 5.0 is fail. In 0.3 increments. Sehr gut ≤1.5, Gut ≤2.5.',
       grades: [
         { label: '1.0', value: 1.00 }, { label: '1.3', value: 1.30 },
         { label: '1.7', value: 1.70 }, { label: '2.0', value: 2.00 },
@@ -1427,6 +1469,8 @@
     },
     'french20': {
       nameAr: 'فرنسا - نظام 20', nameEn: 'France - /20 Scale', max: 20,
+      descAr: 'فرنسا وبلجيكا. سلّم من 20. درجات 18–20 شبه مستحيلة — أقل من 1% يحصلون عليها.',
+      descEn: 'France and Belgium. /20 scale. Scores of 18–20 are nearly impossible — less than 1% achieve them.',
       classifications: [
         { min: 16, ar: 'حسن جداً', en: 'Très Bien (Very Good)' },
         { min: 14, ar: 'حسن', en: 'Bien (Good)' },
@@ -1437,6 +1481,8 @@
     },
     'india10': {
       nameAr: 'الهند - نظام 10.0', nameEn: 'India - 10.0 Scale (CGPA)', max: 10,
+      descAr: 'الجامعات الهندية الحديثة. O=10, A+=9. النسبة المئوية ≈ CGPA × 9.5 تقريبياً. ملاحظة: IITs تستخدم نظاماً نسبياً مختلفاً.',
+      descEn: 'Modern Indian universities. O=10, A+=9. Percentage ≈ CGPA × 9.5 approximately. Note: IITs use a different relative system.',
       grades: [
         { label: 'O', value: 10.00 }, { label: 'A+', value: 9.00 },
         { label: 'A', value: 8.00 }, { label: 'B+', value: 7.00 },
@@ -1455,6 +1501,8 @@
     },
     'korea45': {
       nameAr: 'كوريا الجنوبية - نظام 4.5', nameEn: 'South Korea - 4.5 Scale', max: 4.5,
+      descAr: 'أغلب الجامعات الكورية. A+=4.5, A0=4.0 (الصفر يعني بدون plus وليس صفراً). بعض الجامعات تستخدم 4.3 أو 4.0.',
+      descEn: 'Most Korean universities. A+=4.5, A0=4.0 (zero means no plus, not zero). Some universities use 4.3 or 4.0.',
       grades: [
         { label: 'A+', value: 4.50 }, { label: 'A0', value: 4.00 },
         { label: 'B+', value: 3.50 }, { label: 'B0', value: 3.00 },
@@ -1472,6 +1520,8 @@
     },
     'australia7': {
       nameAr: 'أستراليا - نظام 7.0', nameEn: 'Australia - 7.0 Scale', max: 7,
+      descAr: 'الجامعات الأسترالية. HD (High Distinction)=7 عند 80–85%+. النجاح P=4 عند 50%.',
+      descEn: 'Australian universities. HD (High Distinction)=7 at 80–85%+. Pass P=4 at 50%.',
       grades: [
         { label: 'HD', value: 7.00 }, { label: 'D', value: 6.00 },
         { label: 'CR', value: 5.00 }, { label: 'P', value: 4.00 },
@@ -1487,6 +1537,8 @@
     },
     'percent100': {
       nameAr: 'نسبة مئوية عامة (100%)', nameEn: 'Generic Percentage (100%)', max: 100,
+      descAr: 'نسبة مئوية مباشرة 0–100% بدون درجات حرفية. مناسب لأي نظام مئوي لم يُذكر أعلاه.',
+      descEn: 'Direct percentage 0–100% without letter grades. Suitable for any percentage system not listed above.',
       classifications: [
         { min: 90, ar: 'ممتاز', en: 'Excellent' },
         { min: 80, ar: 'جيد جداً', en: 'Very Good' },
@@ -1530,6 +1582,17 @@
     return !t.grades || t.grades.length === 0;
   }
 
+  function isInverted(templateId) {
+    return !!(templates[templateId || currentTemplate].inverted);
+  }
+
+  function updateTemplateDescription() {
+    var el = document.getElementById('gpa-template-desc');
+    if (!el) return;
+    var tmpl = templates[currentTemplate];
+    el.textContent = isArabic ? tmpl.descAr : tmpl.descEn;
+  }
+
   function populateTemplateDropdown() {
     var sel = document.getElementById('gpa-template-select');
     if (!sel) return;
@@ -1546,6 +1609,7 @@
       html += '</optgroup>';
     }
     sel.innerHTML = html;
+    updateTemplateDescription();
   }
 
   // i18n labels (from template placeholders — set by build)
@@ -1729,11 +1793,13 @@
 
     var diff = cumGpa - prevGpa;
     var changeEl = document.getElementById('cum-change-val');
+    var inv = isInverted();
     if (Math.abs(diff) < 0.005) {
       changeEl.textContent = '0.00';
       changeEl.className = 'gpa-stat-value';
-    } else if (diff > 0) {
-      changeEl.innerHTML = '<span class="gpa-change-up">▲ ' + labels.increased + ' ' + diff.toFixed(2) + '</span>';
+    } else if ((!inv && diff > 0) || (inv && diff < 0)) {
+      // Normal: higher is better. Inverted: lower is better.
+      changeEl.innerHTML = '<span class="gpa-change-up">▲ ' + labels.increased + ' ' + Math.abs(diff).toFixed(2) + '</span>';
     } else {
       changeEl.innerHTML = '<span class="gpa-change-down">▼ ' + labels.decreased + ' ' + Math.abs(diff).toFixed(2) + '</span>';
     }
@@ -1808,17 +1874,24 @@
     }
 
     var max = templates[currentTemplate].max;
+    var inv = isInverted();
     var remainingCredits = gradCredits - eff.credits;
     var requiredGpa = (goalGpa * gradCredits - eff.points) / remainingCredits;
 
-    if (requiredGpa > max) {
+    // For inverted systems (German): best possible is lowest grade value (1.0), impossible if required < 1.0
+    // For normal systems: best possible is max, impossible if required > max
+    var impossible = inv ? (requiredGpa < 1.0) : (requiredGpa > max);
+    var tooEasy = inv ? (requiredGpa > max) : (requiredGpa < 0);
+
+    if (impossible) {
       resultEl.textContent = '—';
       classEl.textContent = '—';
       impossibleEl.style.display = 'block';
       impossibleText.textContent = labels.impossibleMsg;
-    } else if (requiredGpa < 0) {
-      resultEl.textContent = '0.00';
-      classEl.textContent = getClassification(0);
+    } else if (tooEasy) {
+      var easyVal = inv ? max : 0;
+      resultEl.textContent = easyVal.toFixed(2);
+      classEl.textContent = getClassification(easyVal);
     } else {
       resultEl.textContent = requiredGpa.toFixed(2);
       classEl.textContent = getClassification(requiredGpa);
@@ -1852,8 +1925,10 @@
     }
 
     var max = templates[currentTemplate].max;
+    var inv = isInverted();
+    var bestPossible = inv ? 1.0 : max;
     var remainingCredits = gradCredits - eff.credits;
-    var maxGpa = (eff.points + max * remainingCredits) / gradCredits;
+    var maxGpa = (eff.points + bestPossible * remainingCredits) / gradCredits;
 
     resultEl.textContent = maxGpa.toFixed(2);
     classEl.textContent = getClassification(maxGpa);
@@ -1993,10 +2068,11 @@
     document.getElementById('multi-class-val').textContent = validSemesters.length > 0 ? getClassification(overallGpa) : '—';
 
     if (validSemesters.length > 0) {
+      var inv = isInverted();
       var best = validSemesters[0], worst = validSemesters[0];
       for (var i = 1; i < validSemesters.length; i++) {
-        if (validSemesters[i].gpa > best.gpa) best = validSemesters[i];
-        if (validSemesters[i].gpa < worst.gpa) worst = validSemesters[i];
+        if (inv ? (validSemesters[i].gpa < best.gpa) : (validSemesters[i].gpa > best.gpa)) best = validSemesters[i];
+        if (inv ? (validSemesters[i].gpa > worst.gpa) : (validSemesters[i].gpa < worst.gpa)) worst = validSemesters[i];
       }
       document.getElementById('multi-best-val').textContent = labels.semesterNum + ' ' + best.index + ' (' + best.gpa.toFixed(2) + ')';
       document.getElementById('multi-worst-val').textContent = labels.semesterNum + ' ' + worst.index + ' (' + worst.gpa.toFixed(2) + ')';
@@ -2021,9 +2097,11 @@
       var chartMax = Math.min(sysMax, maxGpa + margin);
       var chartRange = chartMax - chartMin;
       if (chartRange === 0) chartRange = 1;
+      var invChart = isInverted();
       var html = '';
       for (var i = 0; i < validSemesters.length; i++) {
         var pct = ((validSemesters[i].gpa - chartMin) / chartRange) * 100;
+        if (invChart) pct = 100 - pct;
         if (pct < 5) pct = 5;
         var dp = isPercentSystem() ? 0 : 2;
         html += '<div class="gpa-chart-bar-wrap">';
@@ -2061,25 +2139,48 @@
     var cls = sys.classifications;
     var sysMax = templates[currentTemplate].max;
     var isPercent = isPercentSystem();
+    var inv = isInverted();
     var dp = isPercent ? 0 : 2;
+    var step = isPercent ? 1 : 0.01;
     var html = '';
-    for (var i = 0; i < cls.length; i++) {
-      var label = isArabic ? cls[i].ar : cls[i].en;
-      var rangeStr;
-      if (cls[i].min === 0) {
-        // Fail: < previous min
-        var upperBound = i > 0 ? cls[i - 1].min : sysMax;
-        rangeStr = '< ' + upperBound.toFixed(dp);
-      } else if (i === 0) {
-        // Highest tier: min – max
-        rangeStr = cls[i].min.toFixed(dp) + ' – ' + sysMax.toFixed(dp);
-      } else {
-        // Middle tiers: show exclusive upper bound (prev.min - step)
-        var step = isPercent ? 1 : 0.01;
-        var exclusiveMax = (cls[i - 1].min - step);
-        rangeStr = cls[i].min.toFixed(dp) + ' – ' + exclusiveMax.toFixed(dp);
+
+    if (inv) {
+      // Inverted system (German): highest min = worst, min=0 = best
+      // Grades: 1.0 (best) to 5.0 (fail). classifications sorted descending by min.
+      for (var i = 0; i < cls.length; i++) {
+        var label = isArabic ? cls[i].ar : cls[i].en;
+        var rangeStr;
+        if (i === 0) {
+          // Worst tier (highest min): min – max
+          rangeStr = cls[i].min.toFixed(dp) + ' – ' + sysMax.toFixed(dp);
+        } else if (cls[i].min === 0) {
+          // Best tier (min=0): show from 1.0 to prev.min - step
+          var bestMin = sys.grades ? sys.grades[0].value : 1.0;
+          var upperBound = (cls[i - 1].min - step);
+          rangeStr = bestMin.toFixed(dp) + ' – ' + upperBound.toFixed(dp);
+        } else {
+          // Middle tiers
+          var upperBound = (cls[i - 1].min - step);
+          rangeStr = cls[i].min.toFixed(dp) + ' – ' + upperBound.toFixed(dp);
+        }
+        html += '<tr><td>' + label + '</td><td>' + rangeStr + '</td></tr>';
       }
-      html += '<tr><td>' + label + '</td><td>' + rangeStr + '</td></tr>';
+    } else {
+      // Normal system: highest min = best
+      for (var i = 0; i < cls.length; i++) {
+        var label = isArabic ? cls[i].ar : cls[i].en;
+        var rangeStr;
+        if (cls[i].min === 0) {
+          var upperBound = i > 0 ? cls[i - 1].min : sysMax;
+          rangeStr = '< ' + upperBound.toFixed(dp);
+        } else if (i === 0) {
+          rangeStr = cls[i].min.toFixed(dp) + ' – ' + sysMax.toFixed(dp);
+        } else {
+          var exclusiveMax = (cls[i - 1].min - step);
+          rangeStr = cls[i].min.toFixed(dp) + ' – ' + exclusiveMax.toFixed(dp);
+        }
+        html += '<tr><td>' + label + '</td><td>' + rangeStr + '</td></tr>';
+      }
     }
     classBody.innerHTML = html;
   }
@@ -2184,6 +2285,7 @@
       pointsLabel.textContent = isPercentSystem() ? labels.weightedTotal : labels.totalPoints;
     }
 
+    updateTemplateDescription();
     updateMaxInputs();
     renderCourses();
     renderSemesters();
@@ -2286,14 +2388,19 @@
     document.getElementById('whatif-new').textContent = altGpa.toFixed(2);
 
     var diffEl = document.getElementById('whatif-diff');
-    if (Math.abs(diff) < 0.005) {
+    var inv = isInverted();
+    var absDiff = Math.abs(diff).toFixed(2);
+    // For inverted: lower is better, so negative diff = improvement
+    var improved = inv ? (diff < -0.005) : (diff > 0.005);
+    var worsened = inv ? (diff > 0.005) : (diff < -0.005);
+    if (!improved && !worsened) {
       diffEl.textContent = '0.00';
       diffEl.className = 'gpa-whatif-diff same';
-    } else if (diff > 0) {
-      diffEl.textContent = '▲ +' + diff.toFixed(2);
+    } else if (improved) {
+      diffEl.textContent = '▲ +' + absDiff;
       diffEl.className = 'gpa-whatif-diff up';
     } else {
-      diffEl.textContent = '▼ ' + diff.toFixed(2);
+      diffEl.textContent = '▼ −' + absDiff;
       diffEl.className = 'gpa-whatif-diff down';
     }
   }
