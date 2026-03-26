@@ -661,52 +661,6 @@
   margin-top: 8px;
 }
 
-/* Toggle switch for retake column */
-.gpa-calculator .gpa-toggle {
-  position: relative;
-  width: 36px;
-  height: 20px;
-  flex-shrink: 0;
-}
-
-.gpa-calculator .gpa-toggle input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.gpa-calculator .gpa-toggle-track {
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  background: var(--bg-tertiary);
-  border: 2px solid var(--border-color);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.gpa-calculator .gpa-toggle-track::after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  inset-inline-start: 2px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--text-muted);
-  transition: all var(--transition-fast);
-}
-
-.gpa-calculator .gpa-toggle input:checked + .gpa-toggle-track {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
-}
-
-.gpa-calculator .gpa-toggle input:checked + .gpa-toggle-track::after {
-  background: white;
-  inset-inline-start: 18px;
-}
-
 /* Save/Load data bar */
 .gpa-calculator .gpa-data-bar {
   display: flex;
@@ -784,7 +738,7 @@
 /* Course Header (desktop only) — 7 fixed columns */
 .gpa-calculator .gpa-course-header {
   display: grid;
-  grid-template-columns: 2fr 0.8fr 1.2fr 44px 1.2fr 1.2fr 36px;
+  grid-template-columns: 1fr 70px 140px 50px 140px 140px 30px;
   gap: 8px;
   margin-bottom: 8px;
   padding: 0 0 4px;
@@ -802,10 +756,10 @@
   text-align: start;
 }
 
-/* Course Card — desktop: 7 fixed columns */
+/* Course Card — desktop: 7 fixed columns, flat grid */
 .gpa-calculator .gpa-course-card {
   display: grid;
-  grid-template-columns: 2fr 0.8fr 1.2fr 44px 1.2fr 1.2fr 36px;
+  grid-template-columns: 1fr 70px 140px 50px 140px 140px 30px;
   gap: 8px;
   margin-bottom: 8px;
   align-items: center;
@@ -820,6 +774,13 @@
 
 .gpa-calculator .gpa-course-card .gpa-form-group label {
   display: none;
+}
+
+/* Wrapper divs become transparent on desktop — children participate in parent grid */
+.gpa-calculator .gpa-course-card .gpa-field-pair,
+.gpa-calculator .gpa-course-card .gpa-field-retake-row,
+.gpa-calculator .gpa-course-card .gpa-field-whatif {
+  display: contents;
 }
 
 /* Toggle column centering */
@@ -844,22 +805,71 @@
 }
 
 .gpa-calculator .gpa-course-card .gpa-del-btn {
-  order: 10;
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+}
+
+/* Retake toggle switch */
+.gpa-calculator .gpa-retake-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.gpa-calculator .gpa-retake-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.gpa-calculator .gpa-switch-track {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  border-radius: 20px;
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border-color);
+  transition: all var(--transition-fast);
+}
+
+.gpa-calculator .gpa-switch-thumb {
+  position: absolute;
+  top: 2px;
+  inset-inline-start: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.gpa-calculator .gpa-retake-switch input:checked + .gpa-switch-track {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-retake-switch input:checked + .gpa-switch-track .gpa-switch-thumb {
+  background: white;
+  inset-inline-start: 18px;
 }
 
 /* Inputs inside course cards */
 .gpa-calculator .gpa-course-card input,
 .gpa-calculator .gpa-course-card select {
-  padding: 12px 16px;
+  padding: 8px 10px;
   border: 2px solid var(--border-color);
-  border-radius: 10px;
+  border-radius: 8px;
   background: var(--bg-secondary);
   color: var(--text-primary);
-  font-size: 1rem;
+  font-size: 0.88rem;
   font-family: inherit;
   transition: border-color var(--transition-fast);
   width: 100%;
   min-width: 0;
+  box-sizing: border-box;
 }
 
 .gpa-calculator .gpa-course-card input:focus,
@@ -1454,7 +1464,7 @@
     font-size: 0.9rem;
   }
 
-  /* Name full-width, credits+grade 2-column */
+  /* Override display:contents back to block/grid on mobile */
   .gpa-calculator .gpa-course-card .gpa-field-pair {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1466,7 +1476,6 @@
     margin-bottom: 0;
   }
 
-  /* Retake + old grade: 2-column row */
   .gpa-calculator .gpa-course-card .gpa-field-retake-row {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -1479,13 +1488,18 @@
     margin-bottom: 0;
   }
 
-  /* What-if row */
   .gpa-calculator .gpa-course-card .gpa-field-whatif {
     display: block;
   }
 
   .gpa-calculator .gpa-course-card .gpa-field-whatif .gpa-form-group {
     margin-bottom: 0;
+  }
+
+  .gpa-calculator .gpa-course-card .gpa-field-whatif input,
+  .gpa-calculator .gpa-course-card .gpa-field-whatif select {
+    border-color: var(--accent-secondary);
+    background: rgba(139, 92, 246, 0.05);
   }
 
   /* Retake policy buttons */
@@ -2096,11 +2110,11 @@
       html += '</div>';
       html += '</div>';
 
-      // 4+5. Retake toggle + Old grade (mobile: side by side row)
+      // 4+5. Retake toggle + Old grade
       html += '<div class="gpa-field-retake-row">';
       html += '<div class="gpa-form-group gpa-col-toggle">';
       html += '<label>' + labels.retakeCol + '</label>';
-      html += '<label class="gpa-toggle"><input type="checkbox"' + (isRetake ? ' checked' : '') + ' onchange="gpaUpdateCourse(' + i + ',\'isRetake\',this.checked)"><span class="gpa-toggle-track"></span></label>';
+      html += '<label class="gpa-retake-switch"><input type="checkbox"' + (isRetake ? ' checked' : '') + ' onchange="gpaUpdateCourse(' + i + ',\'isRetake\',this.checked)"><span class="gpa-switch-track"><span class="gpa-switch-thumb"></span></span></label>';
       html += '</div>';
       html += '<div class="gpa-form-group' + (isRetake ? '' : ' gpa-field-disabled') + '">';
       html += '<label>' + labels.oldGradeCol + '</label>';
