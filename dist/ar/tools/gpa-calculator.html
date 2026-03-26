@@ -102,29 +102,23 @@
   </div>
 
   <!-- Grading System Selector -->
-  <div class="gpa-settings-card">
-    <div class="gpa-system-bar">
-      <label class="gpa-system-label">نظام التقييم</label>
-      <div class="gpa-system-btns">
-        <button class="gpa-sys-btn active" onclick="gpaSetSystem('4')" id="sys-btn-4">نظام 4.0</button>
-        <button class="gpa-sys-btn" onclick="gpaSetSystem('5')" id="sys-btn-5">نظام 5.0</button>
-        <button class="gpa-sys-btn" onclick="gpaSetSystem('100')" id="sys-btn-100">نظام 100%</button>
-      </div>
+  <div class="gpa-system-bar">
+    <label class="gpa-system-label">نظام التقييم</label>
+    <div class="gpa-system-controls">
+      <select id="gpa-template-select" class="gpa-template-select" onchange="gpaChangeTemplate(this.value)"></select>
+      <button class="gpa-customize-btn" id="gpa-customize-btn" onclick="gpaToggleCustomize()">تخصيص</button>
+    </div>
+    <div class="gpa-template-desc" id="gpa-template-desc"></div>
+    <div class="gpa-customize-panel" id="gpa-customize-panel">
+      <div class="gpa-customize-inner" id="gpa-customize-inner"></div>
     </div>
   </div>
 
-  <!-- Retake Policy Selector -->
-  <div class="gpa-settings-card">
-    <div class="gpa-system-bar">
-      <label class="gpa-system-label">سياسة إعادة المواد</label>
-      <div class="gpa-system-btns">
-        <button class="gpa-sys-btn active" onclick="gpaSetRetakePolicy('replace')" id="retake-btn-replace">الاستبدال الكامل</button>
-        <button class="gpa-sys-btn" onclick="gpaSetRetakePolicy('higher')" id="retake-btn-higher">الأعلى فقط</button>
-        <button class="gpa-sys-btn" onclick="gpaSetRetakePolicy('countAll')" id="retake-btn-countAll">احتساب الكل</button>
-        <button class="gpa-sys-btn" onclick="gpaSetRetakePolicy('average')" id="retake-btn-average">المتوسط</button>
-      </div>
-    </div>
-    <div class="gpa-retake-policy-desc" id="retake-policy-desc">الدرجة الجديدة تحل محل القديمة تماماً — كأن المحاولة الأولى لم تحصل</div>
+  <!-- Save/Load bar -->
+  <div class="gpa-data-bar">
+    <button class="gpa-data-btn" onclick="gpaSaveData()">💾 حفظ البيانات</button>
+    <button class="gpa-data-btn" onclick="document.getElementById('gpa-load-file').click()">📂 استعادة البيانات</button>
+    <input type="file" id="gpa-load-file" accept=".json" style="display:none" onchange="gpaLoadData(this)">
   </div>
 
   <!-- Tabs -->
@@ -161,7 +155,11 @@
         </div>
       </div>
 
-      <!-- What If Comparison (always visible, updates automatically) -->
+      <!-- What If -->
+      <div class="gpa-whatif-toggle">
+        <button class="gpa-whatif-btn" id="whatif-btn" onclick="gpaToggleWhatIf()">🔮 ماذا لو؟</button>
+        <button class="gpa-whatif-reset" id="whatif-reset-btn" onclick="gpaResetWhatIf()" style="display:none">↺ إعادة تعيين</button>
+      </div>
       <div class="gpa-whatif-compare" id="whatif-compare" style="display:none">
         <div class="gpa-whatif-row">
           <div class="gpa-whatif-item">
@@ -202,15 +200,14 @@
         <div class="gpa-form-row">
           <div class="gpa-form-group">
             <label>معدل الفصل الجديد</label>
-            <input type="number" id="cum-new-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaNewSemEdit()">
+            <input type="number" id="cum-new-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcCumBoth()">
           </div>
           <div class="gpa-form-group">
             <label>ساعات الفصل الجديد</label>
-            <input type="number" id="cum-new-credits" min="0" placeholder="0" oninput="gpaNewSemEdit()">
+            <input type="number" id="cum-new-credits" min="0" placeholder="0" oninput="gpaCalcCumBoth()">
           </div>
         </div>
         <button class="gpa-use-semester-btn" onclick="gpaUseFromSemester()">📋 استخدم من الفصلي</button>
-        <div class="gpa-retake-note">📌 المواد المُعادة يُحسب تأثيرها على التراكمي حسب سياسة الإعادة المختارة أعلاه</div>
       </div>
 
       <div class="gpa-results" id="cumulative-results">
@@ -324,20 +321,12 @@
       <div class="gpa-conv-row">
         <div class="gpa-form-group">
           <label>تحويل من</label>
-          <select id="conv-from" onchange="gpaCalcConvert()">
-            <option value="4">4.0</option>
-            <option value="5">5.0</option>
-            <option value="100">100%</option>
-          </select>
+          <select id="conv-from" onchange="gpaCalcConvert()"></select>
         </div>
         <button class="gpa-conv-swap" onclick="gpaConvSwap()" type="button">⇄</button>
         <div class="gpa-form-group">
           <label>إلى</label>
-          <select id="conv-to" onchange="gpaCalcConvert()">
-            <option value="4">4.0</option>
-            <option value="5" selected>5.0</option>
-            <option value="100">100%</option>
-          </select>
+          <select id="conv-to" onchange="gpaCalcConvert()"></select>
         </div>
       </div>
       <div class="gpa-form-row">
@@ -359,8 +348,8 @@
           <div class="gpa-stat-label">التقدير المكافئ</div>
         </div>
       </div>
-      <div class="gpa-conv-note" id="conv-note" style="display:none">
-        <span>📌</span> التحويل تقريبي ويعتمد على تقابل التقديرات. قد يختلف عن نظام التحويل المعتمد في جامعتك
+      <div class="gpa-conv-note" id="conv-note">
+        <span>📌</span> التحويل تقريبي واسترشادي — الأنظمة غير متكافئة ونطاقات الدرجات تختلف بين الجامعات. للتقييم الرسمي راجع جامعتك أو مؤسسة معتمدة مثل WES.
       </div>
     </div>
   </div>
@@ -385,11 +374,6 @@
         </table>
       </div>
     </div>
-  </div>
-
-  <!-- Reset All Button -->
-  <div class="gpa-reset-wrap">
-    <button class="gpa-reset-btn" onclick="gpaResetAll()">↺ مسح الكل</button>
   </div>
 
 </div>
@@ -418,20 +402,12 @@
   font-family: inherit;
 }
 
-/* Settings Card */
-.gpa-calculator .gpa-settings-card {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-lg);
-  padding: 16px 20px;
-  margin-bottom: 16px;
-}
-
 /* System Selector Bar */
 .gpa-calculator .gpa-system-bar {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
@@ -441,13 +417,34 @@
   color: var(--text-primary);
 }
 
-.gpa-calculator .gpa-system-btns {
+.gpa-calculator .gpa-system-controls {
   display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
 }
 
-.gpa-calculator .gpa-sys-btn {
+.gpa-calculator .gpa-template-select {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.gpa-calculator .gpa-template-select:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-customize-btn {
   padding: 10px 14px;
   border: 2px solid var(--border-color);
   border-radius: 12px;
@@ -455,20 +452,179 @@
   color: var(--text-secondary);
   font-size: 0.85rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-fast);
   font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
 }
 
-.gpa-calculator .gpa-sys-btn:hover {
+.gpa-calculator .gpa-customize-btn:hover {
   border-color: var(--accent-primary);
   color: var(--accent-primary);
 }
 
-.gpa-calculator .gpa-sys-btn.active {
+.gpa-calculator .gpa-customize-btn.active {
   background: var(--accent-primary);
   border-color: var(--accent-primary);
   color: white;
+}
+
+/* Customization panel — slide animation */
+.gpa-calculator .gpa-customize-panel {
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease;
+}
+
+.gpa-calculator .gpa-customize-panel.open {
+  max-height: 600px;
+}
+
+.gpa-calculator .gpa-customize-inner {
+  padding-top: 12px;
+}
+
+.gpa-calculator .gpa-cust-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.gpa-calculator .gpa-cust-table th {
+  text-align: start;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0 8px 6px;
+}
+
+.gpa-calculator .gpa-cust-table td {
+  padding: 4px 4px;
+}
+
+.gpa-calculator .gpa-cust-table input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+  min-width: 0;
+}
+
+.gpa-calculator .gpa-cust-table input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-cust-del {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gpa-calculator .gpa-cust-del:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.gpa-calculator .gpa-cust-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.gpa-calculator .gpa-cust-actions button {
+  padding: 8px 14px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all var(--transition-fast);
+}
+
+.gpa-calculator .gpa-cust-actions button:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-cust-max {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-inline-start: auto;
+}
+
+.gpa-calculator .gpa-cust-max label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.gpa-calculator .gpa-cust-max input {
+  width: 80px;
+  padding: 8px 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  font-family: inherit;
+}
+
+.gpa-calculator .gpa-template-desc {
+  width: 100%;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  padding: 10px 14px;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  margin-top: 4px;
+}
+
+/* Save/Load data bar */
+.gpa-calculator .gpa-data-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.gpa-calculator .gpa-data-btn {
+  padding: 8px 14px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all var(--transition-fast);
+}
+
+.gpa-calculator .gpa-data-btn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
 /* Tabs — wrapping like inheritance madhab buttons */
@@ -520,18 +676,17 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Fixed 7-column grid: name | credits | grade | retake-toggle | old-grade | whatif | delete */
-.gpa-calculator .gpa-course-header,
-.gpa-calculator .gpa-course-card {
+/* Course Header (desktop only) */
+.gpa-calculator .gpa-course-header {
   display: grid;
-  grid-template-columns: 2fr 70px 120px 40px 120px 120px 36px;
+  grid-template-columns: 2fr 1fr 1.5fr 36px;
   gap: 8px;
   margin-bottom: 8px;
-  align-items: center;
+  padding: 0 0 4px;
 }
 
-.gpa-calculator .gpa-course-header {
-  padding: 0 0 4px;
+.gpa-calculator .gpa-course-header.whatif-mode {
+  grid-template-columns: 2fr 1fr 1.5fr 1fr 36px;
 }
 
 .gpa-calculator .gpa-course-header span {
@@ -540,96 +695,63 @@
   color: var(--text-muted);
 }
 
-/* Desktop: labels hidden (header serves as labels) */
+/* Course Card — desktop: single-line grid row */
+.gpa-calculator .gpa-course-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr 36px;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.gpa-calculator .gpa-course-card.whatif-mode {
+  grid-template-columns: 2fr 1fr 1.5fr 1fr 36px;
+}
+
+/* Desktop: labels hidden (header serves as labels), form-group is transparent */
 .gpa-calculator .gpa-course-card .gpa-form-group {
   display: flex;
   flex-direction: column;
   gap: 0;
 }
 
-.gpa-calculator .gpa-course-card .gpa-form-group > label {
+.gpa-calculator .gpa-course-card .gpa-form-group label {
   display: none;
 }
 
-/* Desktop: wrappers distribute children into grid columns */
-.gpa-calculator .gpa-course-card .gpa-field-pair,
-.gpa-calculator .gpa-course-card .gpa-field-extras {
+/* Desktop: field-name takes one column, field-pair spans two columns inline */
+.gpa-calculator .gpa-course-card .gpa-field-name {
+  grid-column: 1;
+}
+
+.gpa-calculator .gpa-course-card .gpa-field-pair {
   display: contents;
 }
 
-/* Desktop: hide retake label (header shows it) */
-.gpa-calculator .gpa-retake-cell .gpa-retake-label {
-  display: none;
+.gpa-calculator .gpa-course-card .gpa-field-whatif {
+  display: contents;
 }
 
 .gpa-calculator .gpa-course-card .gpa-del-btn {
   order: 10;
 }
 
-/* Retake toggle — centered small switch */
-.gpa-calculator .gpa-retake-cell {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.gpa-calculator .gpa-retake-switch {
-  position: relative;
-  width: 34px;
-  height: 18px;
-  cursor: pointer;
-}
-
-.gpa-calculator .gpa-retake-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-  position: absolute;
-}
-
-.gpa-calculator .gpa-retake-switch .gpa-switch-track {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: var(--text-muted);
-  border-radius: 9px;
-  transition: background var(--transition-fast);
-}
-
-.gpa-calculator .gpa-retake-switch .gpa-switch-thumb {
-  position: absolute;
-  top: 2px;
-  inset-inline-start: 2px;
-  width: 14px;
-  height: 14px;
-  background: white;
-  border-radius: 50%;
-  transition: all var(--transition-fast);
-}
-
-.gpa-calculator .gpa-retake-switch input:checked + .gpa-switch-track {
-  background: var(--accent-primary);
-}
-
-.gpa-calculator .gpa-retake-switch input:checked + .gpa-switch-track .gpa-switch-thumb {
-  inset-inline-start: 18px;
-}
-
-/* Inputs inside course cards (exclude hidden checkbox) */
-.gpa-calculator .gpa-course-card input:not([type="checkbox"]),
+/* Inputs inside course cards */
+.gpa-calculator .gpa-course-card input,
 .gpa-calculator .gpa-course-card select {
-  padding: 10px 8px;
+  padding: 12px 16px;
   border: 2px solid var(--border-color);
   border-radius: 10px;
   background: var(--bg-secondary);
   color: var(--text-primary);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: inherit;
-  transition: all var(--transition-fast);
+  transition: border-color var(--transition-fast);
   width: 100%;
   min-width: 0;
 }
 
-.gpa-calculator .gpa-course-card input:not([type="checkbox"]):focus,
+.gpa-calculator .gpa-course-card input:focus,
 .gpa-calculator .gpa-course-card select:focus {
   outline: none;
   border-color: var(--accent-primary);
@@ -637,14 +759,6 @@
 
 .gpa-calculator .gpa-course-card input::placeholder {
   color: var(--text-muted);
-}
-
-/* Disabled state for old grade when retake is off */
-.gpa-calculator .gpa-course-card input:disabled,
-.gpa-calculator .gpa-course-card select:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-  background: var(--bg-tertiary);
 }
 
 /* Delete button */
@@ -671,17 +785,10 @@
 }
 
 /* What-if alt grade color */
-.gpa-calculator .gpa-course-card .gpa-field-whatif input:not(:disabled),
-.gpa-calculator .gpa-course-card .gpa-field-whatif select:not(:disabled) {
+.gpa-calculator .gpa-field-whatif input,
+.gpa-calculator .gpa-field-whatif select {
   border-color: var(--accent-secondary);
   background: rgba(139, 92, 246, 0.05);
-}
-
-/* Old grade enabled color */
-.gpa-calculator .gpa-course-card .gpa-field-oldgrade input:not(:disabled),
-.gpa-calculator .gpa-course-card .gpa-field-oldgrade select:not(:disabled) {
-  border-color: #f59e0b;
-  background: rgba(245, 158, 11, 0.05);
 }
 
 /* Add Course Button */
@@ -1090,7 +1197,54 @@
   background: var(--bg-tertiary);
 }
 
-/* What If comparison */
+/* What If */
+.gpa-calculator .gpa-whatif-toggle {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.gpa-calculator .gpa-whatif-btn {
+  padding: 10px 20px;
+  border: 2px solid var(--accent-secondary);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--accent-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.gpa-calculator .gpa-whatif-btn:hover {
+  background: var(--accent-secondary);
+  color: white;
+}
+
+.gpa-calculator .gpa-whatif-btn.active {
+  background: var(--accent-secondary);
+  color: white;
+}
+
+.gpa-calculator .gpa-whatif-reset {
+  padding: 10px 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.gpa-calculator .gpa-whatif-reset:hover {
+  border-color: var(--text-secondary);
+}
+
 .gpa-calculator .gpa-whatif-compare {
   margin-top: 16px;
   padding: 16px 20px;
@@ -1156,48 +1310,6 @@
   background: var(--bg-tertiary);
 }
 
-/* Retake note under "Use from Semester" button */
-.gpa-calculator .gpa-retake-note {
-  margin-top: 10px;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  display: flex;
-  align-items: flex-start;
-  gap: 4px;
-}
-
-/* Retake policy description */
-.gpa-calculator .gpa-retake-policy-desc {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  margin-top: 10px;
-}
-
-/* Reset All Button */
-.gpa-calculator .gpa-reset-wrap {
-  margin-top: 24px;
-  text-align: center;
-}
-
-.gpa-calculator .gpa-reset-btn {
-  padding: 10px 24px;
-  border: 2px solid var(--border-color);
-  border-radius: 10px;
-  background: transparent;
-  color: var(--text-secondary);
-  font-size: 0.88rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  font-family: inherit;
-}
-
-.gpa-calculator .gpa-reset-btn:hover {
-  border-color: #ef4444;
-  color: #ef4444;
-  background: rgba(239, 68, 68, 0.05);
-}
-
 /* Responsive — single breakpoint like zakat */
 @media (max-width: 768px) {
   .gpa-calculator .calc-tabs {
@@ -1211,6 +1323,30 @@
   }
 
 
+  .gpa-calculator .gpa-system-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gpa-calculator .gpa-template-select {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+  }
+
+  .gpa-calculator .gpa-customize-btn {
+    font-size: 0.75rem;
+    padding: 8px 10px;
+  }
+
+  .gpa-calculator .gpa-cust-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gpa-calculator .gpa-cust-max {
+    margin-inline-start: 0;
+  }
+
   .gpa-calculator .gpa-cum-form {
     padding: 16px;
   }
@@ -1220,12 +1356,14 @@
   }
 
   /* Course header hidden on mobile — labels inside cards instead */
-  .gpa-calculator .gpa-course-header {
+  .gpa-calculator .gpa-course-header,
+  .gpa-calculator .gpa-course-header.whatif-mode {
     display: none;
   }
 
-  /* Course card: block layout on mobile */
-  .gpa-calculator .gpa-course-card {
+  /* Course card becomes a zakat-style card */
+  .gpa-calculator .gpa-course-card,
+  .gpa-calculator .gpa-course-card.whatif-mode {
     display: block;
     position: relative;
     background: var(--bg-secondary);
@@ -1234,12 +1372,10 @@
     margin-bottom: 12px;
   }
 
-  /* Inputs: bg-primary for contrast against card's bg-secondary */
-  .gpa-calculator .gpa-course-card input:not([type="checkbox"]),
+  /* Inputs inside cards: bg-primary for contrast against card's bg-secondary */
+  .gpa-calculator .gpa-course-card input,
   .gpa-calculator .gpa-course-card select {
     background: var(--bg-primary);
-    padding: 12px 16px;
-    font-size: 1rem;
   }
 
   /* Show labels on mobile */
@@ -1250,32 +1386,22 @@
     margin-bottom: 16px;
   }
 
-  .gpa-calculator .gpa-course-card .gpa-form-group > label {
+  .gpa-calculator .gpa-course-card .gpa-form-group label {
     display: block;
     font-weight: 600;
     color: var(--text-primary);
     font-size: 0.9rem;
   }
 
-  /* Retake cell: inline with label on mobile */
-  .gpa-calculator .gpa-course-card .gpa-retake-cell {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 16px;
+  /* field-name: full width, no bottom margin on last group */
+  .gpa-calculator .gpa-course-card .gpa-field-name {
+    grid-column: unset;
   }
 
-  .gpa-calculator .gpa-course-card .gpa-retake-cell .gpa-retake-label {
-    display: inline;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--accent-primary);
-  }
-
-  /* Credits + Grade: 2-col grid on mobile */
+  /* field-pair: 2-column grid like zakat form-row */
   .gpa-calculator .gpa-course-card .gpa-field-pair {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 16px;
     margin-bottom: 0;
   }
@@ -1284,26 +1410,18 @@
     margin-bottom: 0;
   }
 
-  /* Old grade + what-if: 2-col grid on mobile */
-  .gpa-calculator .gpa-course-card .gpa-field-extras {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+  /* what-if row */
+  .gpa-calculator .gpa-course-card .gpa-field-whatif {
+    display: block;
     margin-top: 16px;
   }
 
-  .gpa-calculator .gpa-course-card .gpa-field-extras .gpa-form-group {
+  .gpa-calculator .gpa-course-card .gpa-field-whatif .gpa-form-group {
     margin-bottom: 0;
   }
 
-  .gpa-calculator .gpa-course-card .gpa-field-extras .gpa-field-oldgrade input:not(:disabled),
-  .gpa-calculator .gpa-course-card .gpa-field-extras .gpa-field-oldgrade select:not(:disabled) {
-    border-color: #f59e0b;
-    background: rgba(245, 158, 11, 0.05);
-  }
-
-  .gpa-calculator .gpa-course-card .gpa-field-extras .gpa-field-whatif input:not(:disabled),
-  .gpa-calculator .gpa-course-card .gpa-field-extras .gpa-field-whatif select:not(:disabled) {
+  .gpa-calculator .gpa-course-card .gpa-field-whatif input,
+  .gpa-calculator .gpa-course-card .gpa-field-whatif select {
     border-color: var(--accent-secondary);
     background: rgba(139, 92, 246, 0.05);
   }
@@ -1348,20 +1466,40 @@
   var lang = document.documentElement.lang || 'ar';
   var isArabic = lang === 'ar';
 
-  // Grade systems data
-  var gradeSystems = {
-    '4': {
-      max: 4,
+  // Grading system templates
+  var templates = {
+    'saudi5': {
+      nameAr: 'السعودية - نظام 5.0', nameEn: 'Saudi Arabia - 5.0 Scale', max: 5,
+      descAr: 'نظام 5 نقاط — المعتمد في أغلب الجامعات السعودية (جامعة الملك سعود، أم القرى، الملك عبدالعزيز، الإمام، الملك فيصل). A+=5.00، أدنى نجاح D=2.00، رسوب F=1.00.',
+      descEn: '5-point scale — used by most Saudi universities (King Saud, Umm Al-Qura, King Abdulaziz, Imam, King Faisal). A+=5.00, minimum pass D=2.00, fail F=1.00.',
       grades: [
-        { label: 'A+', value: 4.00 },
-        { label: 'A',  value: 3.75 },
-        { label: 'B+', value: 3.50 },
-        { label: 'B',  value: 3.00 },
-        { label: 'C+', value: 2.50 },
-        { label: 'C',  value: 2.00 },
-        { label: 'D+', value: 1.50 },
-        { label: 'D',  value: 1.00 },
-        { label: 'F',  value: 0.00 }
+        { label: 'A+', value: 5.00 }, { label: 'A', value: 4.75 },
+        { label: 'B+', value: 4.50 }, { label: 'B', value: 4.00 },
+        { label: 'C+', value: 3.50 }, { label: 'C', value: 3.00 },
+        { label: 'D+', value: 2.50 }, { label: 'D', value: 2.00 },
+        { label: 'F', value: 1.00 }
+      ],
+      classifications: [
+        { min: 4.75, ar: 'ممتاز مرتفع', en: 'Excellent+' },
+        { min: 4.50, ar: 'ممتاز', en: 'Excellent' },
+        { min: 4.00, ar: 'جيد جداً مرتفع', en: 'Very Good+' },
+        { min: 3.50, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 3.00, ar: 'جيد مرتفع', en: 'Good+' },
+        { min: 2.50, ar: 'جيد', en: 'Good' },
+        { min: 2.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'saudi4': {
+      nameAr: 'السعودية - نظام 4.0', nameEn: 'Saudi Arabia - 4.0 Scale', max: 4,
+      descAr: 'نظام 4 نقاط — جامعة الملك فهد للبترول والمعادن (KFUPM) وجامعة الفيصل. A+=4.00، رسوب F=0.00.',
+      descEn: '4-point scale — King Fahd University of Petroleum and Minerals (KFUPM) and Alfaisal University. A+=4.00, fail F=0.00.',
+      grades: [
+        { label: 'A+', value: 4.00 }, { label: 'A', value: 3.75 },
+        { label: 'B+', value: 3.50 }, { label: 'B', value: 3.00 },
+        { label: 'C+', value: 2.50 }, { label: 'C', value: 2.00 },
+        { label: 'D+', value: 1.50 }, { label: 'D', value: 1.00 },
+        { label: 'F', value: 0.00 }
       ],
       classifications: [
         { min: 3.75, ar: 'ممتاز مرتفع', en: 'Excellent+' },
@@ -1372,48 +1510,399 @@
         { min: 2.50, ar: 'جيد', en: 'Good' },
         { min: 2.25, ar: 'مقبول مرتفع', en: 'Pass+' },
         { min: 2.00, ar: 'مقبول', en: 'Pass' },
-        { min: 0,    ar: 'راسب', en: 'Fail' }
+        { min: 0, ar: 'راسب', en: 'Fail' }
       ]
     },
-    '5': {
-      max: 5,
+    'gulf4': {
+      nameAr: 'الخليج - نظام 4.0 (±)', nameEn: 'Gulf - 4.0 Scale (±)', max: 4,
+      descAr: 'نظام 4 نقاط أمريكي الطابع — الإمارات (جامعة الإمارات، خليفة، زايد)، الكويت، قطر، البحرين، عمان. A و A+ كلاهما = 4.00 مع ±0.3.',
+      descEn: 'American-style 4-point scale — UAE (UAEU, Khalifa, Zayed), Kuwait, Qatar, Bahrain, Oman. Both A and A+ = 4.00 with ±0.3.',
       grades: [
-        { label: 'A+', value: 5.00 },
-        { label: 'A',  value: 4.75 },
-        { label: 'B+', value: 4.50 },
-        { label: 'B',  value: 4.00 },
-        { label: 'C+', value: 3.50 },
-        { label: 'C',  value: 3.00 },
-        { label: 'D+', value: 2.50 },
-        { label: 'D',  value: 2.00 },
-        { label: 'F',  value: 0.00 }
+        { label: 'A+', value: 4.00 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.70 },
+        { label: 'B+', value: 3.30 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.70 },
+        { label: 'C+', value: 2.30 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.70 },
+        { label: 'D+', value: 1.30 }, { label: 'D', value: 1.00 }, { label: 'D-', value: 0.70 },
+        { label: 'F', value: 0.00 }
       ],
       classifications: [
-        { min: 4.75, ar: 'ممتاز مرتفع', en: 'Excellent+' },
-        { min: 4.50, ar: 'ممتاز', en: 'Excellent' },
-        { min: 4.00, ar: 'جيد جداً مرتفع', en: 'Very Good+' },
-        { min: 3.50, ar: 'جيد جداً', en: 'Very Good' },
-        { min: 3.00, ar: 'جيد مرتفع', en: 'Good+' },
-        { min: 2.50, ar: 'جيد', en: 'Good' },
-        { min: 2.00, ar: 'مقبول', en: 'Pass' },
-        { min: 0,    ar: 'راسب', en: 'Fail' }
+        { min: 3.70, ar: 'ممتاز', en: 'Excellent' },
+        { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 2.00, ar: 'جيد', en: 'Good' },
+        { min: 1.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
       ]
     },
-    '100': {
-      max: 100,
+    'jordan4': {
+      nameAr: 'الأردن - نظام 4.0', nameEn: 'Jordan - 4.0 Scale', max: 4,
+      descAr: 'الجامعة الأردنية وأغلب الجامعات الأردنية. لا يوجد A+، أعلى درجة A=4.00 عند 90%+. النجاح من D=1.00 عند 55%.',
+      descEn: 'University of Jordan and most Jordanian universities. No A+, highest grade A=4.00 at 90%+. Pass from D=1.00 at 55%.',
+      grades: [
+        { label: 'A', value: 4.00 }, { label: 'A-', value: 3.70 },
+        { label: 'B+', value: 3.30 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.70 },
+        { label: 'C+', value: 2.30 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.70 },
+        { label: 'D+', value: 1.30 }, { label: 'D', value: 1.00 },
+        { label: 'F', value: 0.00 }
+      ],
+      classifications: [
+        { min: 3.70, ar: 'ممتاز', en: 'Excellent' },
+        { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 2.00, ar: 'جيد', en: 'Good' },
+        { min: 1.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'egypt100': {
+      nameAr: 'مصر - نسبة مئوية', nameEn: 'Egypt - Percentage', max: 100,
+      descAr: 'الجامعات الحكومية المصرية (القاهرة، عين شمس، الإسكندرية). نسبة مئوية مباشرة. امتياز ≥85%، نجاح من 50%. بعض كليات الطب والهندسة تضع الامتياز عند 90%.',
+      descEn: 'Egyptian public universities (Cairo, Ain Shams, Alexandria). Direct percentage. Excellent ≥85%, pass from 50%. Some medical and engineering faculties set Excellent at 90%.',
+      classifications: [
+        { min: 85, ar: 'امتياز', en: 'Excellent' },
+        { min: 75, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 65, ar: 'جيد', en: 'Good' },
+        { min: 50, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'iraq100': {
+      nameAr: 'العراق - نسبة مئوية', nameEn: 'Iraq - Percentage', max: 100,
+      descAr: 'الجامعات العراقية. نسبة مئوية. امتياز ≥90%، نجاح من 50%. يتميز بترجيح السنوات: الأولى 10%، الثانية 20%، الثالثة 30%، الرابعة 40%.',
+      descEn: 'Iraqi universities. Percentage. Excellent ≥90%, pass from 50%. Features year weighting: 1st year 10%, 2nd 20%, 3rd 30%, 4th 40%.',
+      classifications: [
+        { min: 90, ar: 'امتياز', en: 'Excellent' },
+        { min: 80, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 70, ar: 'جيد', en: 'Good' },
+        { min: 60, ar: 'متوسط', en: 'Average' },
+        { min: 50, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'syria100': {
+      nameAr: 'سوريا - نسبة مئوية', nameEn: 'Syria - Percentage', max: 100,
+      descAr: 'نسبة مئوية. امتياز ≥90%، نجاح من 60%.',
+      descEn: 'Percentage. Excellent ≥90%, pass from 60%.',
+      classifications: [
+        { min: 90, ar: 'امتياز', en: 'Excellent' },
+        { min: 80, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 70, ar: 'جيد', en: 'Good' },
+        { min: 60, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'lebanon4': {
+      nameAr: 'لبنان - نظام 4.0 (±)', nameEn: 'Lebanon - 4.0 Scale (±)', max: 4,
+      descAr: 'الجامعة الأمريكية في بيروت (AUB) وLAU. نظام 4 نقاط أمريكي الطابع. ملاحظة: الجامعة اللبنانية الحكومية تستخدم نظام /20 الفرنسي.',
+      descEn: 'American University of Beirut (AUB) and LAU. American-style 4-point scale. Note: The Lebanese University uses the French /20 system.',
+      grades: [
+        { label: 'A+', value: 4.00 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.70 },
+        { label: 'B+', value: 3.30 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.70 },
+        { label: 'C+', value: 2.30 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.70 },
+        { label: 'D+', value: 1.30 }, { label: 'D', value: 1.00 }, { label: 'D-', value: 0.70 },
+        { label: 'F', value: 0.00 }
+      ],
+      classifications: [
+        { min: 3.70, ar: 'ممتاز', en: 'Excellent' },
+        { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 2.00, ar: 'جيد', en: 'Good' },
+        { min: 1.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'maghreb20': {
+      nameAr: 'المغرب العربي - نظام 20', nameEn: 'Maghreb - /20 Scale', max: 20,
+      descAr: 'المغرب وتونس والجزائر. سلّم من 20. النجاح من 10/20. Très Bien ≥16. درجات 18–20 نادرة جداً.',
+      descEn: 'Morocco, Tunisia, and Algeria. /20 scale. Pass from 10/20. Très Bien ≥16. Scores of 18–20 are very rare.',
+      classifications: [
+        { min: 16, ar: 'حسن جداً (Très Bien)', en: 'Très Bien (Very Good)' },
+        { min: 14, ar: 'حسن (Bien)', en: 'Bien (Good)' },
+        { min: 12, ar: 'مستحسن (Assez Bien)', en: 'Assez Bien (Fairly Good)' },
+        { min: 10, ar: 'مقبول (Passable)', en: 'Passable (Pass)' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'us4': {
+      nameAr: 'أمريكا - نظام 4.0 (±)', nameEn: 'USA - 4.0 Scale (±)', max: 4,
+      descAr: 'الأكثر شيوعاً عالمياً — هارفارد، Yale، Princeton، UCLA. A+ و A كلاهما = 4.00 مع ±0.3.',
+      descEn: 'Most common worldwide — Harvard, Yale, Princeton, UCLA. Both A+ and A = 4.00 with ±0.3.',
+      grades: [
+        { label: 'A+', value: 4.00 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.70 },
+        { label: 'B+', value: 3.30 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.70 },
+        { label: 'C+', value: 2.30 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.70 },
+        { label: 'D+', value: 1.30 }, { label: 'D', value: 1.00 }, { label: 'D-', value: 0.70 },
+        { label: 'F', value: 0.00 }
+      ],
+      classifications: [
+        { min: 3.70, ar: 'ممتاز', en: "Dean's List" },
+        { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 2.00, ar: 'جيد', en: 'Good' },
+        { min: 1.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'us433': {
+      nameAr: 'أمريكا - نظام 4.33 (±)', nameEn: 'USA - 4.33 Scale (±)', max: 4.33,
+      descAr: 'ستانفورد، كورنيل، كولومبيا. A+=4.33. المعدل الأقصى 4.33 وليس 4.00.',
+      descEn: 'Stanford, Cornell, Columbia. A+=4.33. Maximum GPA is 4.33, not 4.00.',
+      grades: [
+        { label: 'A+', value: 4.33 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.67 },
+        { label: 'B+', value: 3.33 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.67 },
+        { label: 'C+', value: 2.33 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.67 },
+        { label: 'D+', value: 1.33 }, { label: 'D', value: 1.00 }, { label: 'D-', value: 0.67 },
+        { label: 'F', value: 0.00 }
+      ],
+      classifications: [
+        { min: 3.70, ar: 'ممتاز', en: "Dean's List" },
+        { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 2.00, ar: 'جيد', en: 'Good' },
+        { min: 1.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'canada433': {
+      nameAr: 'كندا - نظام 4.33 (±)', nameEn: 'Canada - 4.33 Scale (±)', max: 4.33,
+      descAr: 'أغلب الجامعات الكندية (UBC، تورنتو، مونتريال). A+=4.33 مع ±0.33.',
+      descEn: 'Most Canadian universities (UBC, Toronto, Montreal). A+=4.33 with ±0.33.',
+      grades: [
+        { label: 'A+', value: 4.33 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.67 },
+        { label: 'B+', value: 3.33 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.67 },
+        { label: 'C+', value: 2.33 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.67 },
+        { label: 'D+', value: 1.33 }, { label: 'D', value: 1.00 }, { label: 'D-', value: 0.67 },
+        { label: 'F', value: 0.00 }
+      ],
+      classifications: [
+        { min: 3.70, ar: 'ممتاز', en: "Dean's List" },
+        { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 2.00, ar: 'جيد', en: 'Good' },
+        { min: 1.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'turkey4': {
+      nameAr: 'تركيا - نظام 4.0', nameEn: 'Turkey - 4.0 Scale', max: 4,
+      descAr: 'METU، Boğaziçi، ITU. أحرف مزدوجة: AA=4.0, BA=3.5, BB=3.0. فواصل ±0.5 منتظمة. النجاح من DD=1.0 عند 60%.',
+      descEn: 'METU, Boğaziçi, ITU. Double letters: AA=4.0, BA=3.5, BB=3.0. Regular ±0.5 intervals. Pass from DD=1.0 at 60%.',
+      grades: [
+        { label: 'AA', value: 4.00 }, { label: 'BA', value: 3.50 },
+        { label: 'BB', value: 3.00 }, { label: 'CB', value: 2.50 },
+        { label: 'CC', value: 2.00 }, { label: 'DC', value: 1.50 },
+        { label: 'DD', value: 1.00 }, { label: 'FD', value: 0.50 },
+        { label: 'FF', value: 0.00 }
+      ],
+      classifications: [
+        { min: 3.50, ar: 'شرف', en: 'Honour' },
+        { min: 3.00, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 2.50, ar: 'جيد', en: 'Good' },
+        { min: 2.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'uk': {
+      nameAr: 'بريطانيا - نسبة مئوية', nameEn: 'UK - Percentage', max: 100,
+      descAr: 'المملكة المتحدة. تصنيفات: First Class ≥70%، Upper Second (2:1) ≥60%، Lower Second (2:2) ≥50%، Third ≥40%. ملاحظة: 70% بريطانية = امتياز.',
+      descEn: 'United Kingdom. Classifications: First Class ≥70%, Upper Second (2:1) ≥60%, Lower Second (2:2) ≥50%, Third ≥40%. Note: 70% UK = Excellent.',
+      classifications: [
+        { min: 70, ar: 'مرتبة الشرف الأولى', en: 'First Class Honours' },
+        { min: 60, ar: 'مرتبة الشرف الثانية العليا', en: 'Upper Second (2:1)' },
+        { min: 50, ar: 'مرتبة الشرف الثانية الدنيا', en: 'Lower Second (2:2)' },
+        { min: 40, ar: 'مرتبة الشرف الثالثة', en: 'Third Class' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'german': {
+      nameAr: 'ألمانيا - نظام 5.0 (مقلوب)', nameEn: 'Germany - 5.0 Scale (Inverted)', max: 5, inverted: true,
+      descAr: 'ألمانيا والنمسا وسويسرا. نظام مقلوب — 1.0 أفضل درجة و5.0 رسوب. بفواصل 0.3. Sehr gut ≤1.5، Gut ≤2.5.',
+      descEn: 'Germany, Austria, and Switzerland. Inverted scale — 1.0 is the best grade and 5.0 is fail. In 0.3 increments. Sehr gut ≤1.5, Gut ≤2.5.',
+      grades: [
+        { label: '1.0', value: 1.00 }, { label: '1.3', value: 1.30 },
+        { label: '1.7', value: 1.70 }, { label: '2.0', value: 2.00 },
+        { label: '2.3', value: 2.30 }, { label: '2.7', value: 2.70 },
+        { label: '3.0', value: 3.00 }, { label: '3.3', value: 3.30 },
+        { label: '3.7', value: 3.70 }, { label: '4.0', value: 4.00 },
+        { label: '5.0', value: 5.00 }
+      ],
+      classifications: [
+        { min: 4.10, ar: 'راسب', en: 'Nicht Bestanden (Fail)' },
+        { min: 3.60, ar: 'مقبول', en: 'Ausreichend (Sufficient)' },
+        { min: 2.60, ar: 'جيد', en: 'Befriedigend (Satisfactory)' },
+        { min: 1.60, ar: 'جيد جداً', en: 'Gut (Good)' },
+        { min: 0, ar: 'ممتاز', en: 'Sehr Gut (Very Good)' }
+      ]
+    },
+    'french20': {
+      nameAr: 'فرنسا - نظام 20', nameEn: 'France - /20 Scale', max: 20,
+      descAr: 'فرنسا وبلجيكا. سلّم من 20. درجات 18–20 شبه مستحيلة — أقل من 1% يحصلون عليها.',
+      descEn: 'France and Belgium. /20 scale. Scores of 18–20 are nearly impossible — less than 1% achieve them.',
+      classifications: [
+        { min: 16, ar: 'حسن جداً', en: 'Très Bien (Very Good)' },
+        { min: 14, ar: 'حسن', en: 'Bien (Good)' },
+        { min: 12, ar: 'مستحسن', en: 'Assez Bien (Fairly Good)' },
+        { min: 10, ar: 'مقبول', en: 'Passable (Pass)' },
+        { min: 0, ar: 'راسب', en: 'Insuffisant (Fail)' }
+      ]
+    },
+    'india10': {
+      nameAr: 'الهند - نظام 10.0', nameEn: 'India - 10.0 Scale (CGPA)', max: 10,
+      descAr: 'الجامعات الهندية الحديثة. O=10, A+=9. النسبة المئوية ≈ CGPA × 9.5 تقريبياً. ملاحظة: IITs تستخدم نظاماً نسبياً مختلفاً.',
+      descEn: 'Modern Indian universities. O=10, A+=9. Percentage ≈ CGPA × 9.5 approximately. Note: IITs use a different relative system.',
+      grades: [
+        { label: 'O', value: 10.00 }, { label: 'A+', value: 9.00 },
+        { label: 'A', value: 8.00 }, { label: 'B+', value: 7.00 },
+        { label: 'B', value: 6.00 }, { label: 'C', value: 5.00 },
+        { label: 'P', value: 4.00 }, { label: 'F', value: 0.00 }
+      ],
+      classifications: [
+        { min: 9.00, ar: 'ممتاز', en: 'Outstanding' },
+        { min: 8.00, ar: 'جيد جداً', en: 'Excellent' },
+        { min: 7.00, ar: 'جيد', en: 'Very Good' },
+        { min: 6.00, ar: 'فوق المتوسط', en: 'Good' },
+        { min: 5.00, ar: 'متوسط', en: 'Average' },
+        { min: 4.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'korea45': {
+      nameAr: 'كوريا الجنوبية - نظام 4.5', nameEn: 'South Korea - 4.5 Scale', max: 4.5,
+      descAr: 'أغلب الجامعات الكورية. A+=4.5, A0=4.0 (الصفر يعني بدون plus وليس صفراً). بعض الجامعات تستخدم 4.3 أو 4.0.',
+      descEn: 'Most Korean universities. A+=4.5, A0=4.0 (zero means no plus, not zero). Some universities use 4.3 or 4.0.',
+      grades: [
+        { label: 'A+', value: 4.50 }, { label: 'A0', value: 4.00 },
+        { label: 'B+', value: 3.50 }, { label: 'B0', value: 3.00 },
+        { label: 'C+', value: 2.50 }, { label: 'C0', value: 2.00 },
+        { label: 'D+', value: 1.50 }, { label: 'D0', value: 1.00 },
+        { label: 'F', value: 0.00 }
+      ],
+      classifications: [
+        { min: 4.00, ar: 'ممتاز', en: 'Excellent' },
+        { min: 3.50, ar: 'جيد جداً', en: 'Very Good' },
+        { min: 3.00, ar: 'جيد', en: 'Good' },
+        { min: 2.00, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'australia7': {
+      nameAr: 'أستراليا - نظام 7.0', nameEn: 'Australia - 7.0 Scale', max: 7,
+      descAr: 'الجامعات الأسترالية. HD (High Distinction)=7 عند 80–85%+. النجاح P=4 عند 50%.',
+      descEn: 'Australian universities. HD (High Distinction)=7 at 80–85%+. Pass P=4 at 50%.',
+      grades: [
+        { label: 'HD', value: 7.00 }, { label: 'D', value: 6.00 },
+        { label: 'CR', value: 5.00 }, { label: 'P', value: 4.00 },
+        { label: 'F', value: 0.00 }
+      ],
+      classifications: [
+        { min: 6.50, ar: 'ممتاز مرتفع', en: 'High Distinction' },
+        { min: 5.50, ar: 'ممتاز', en: 'Distinction' },
+        { min: 4.50, ar: 'جيد', en: 'Credit' },
+        { min: 3.50, ar: 'مقبول', en: 'Pass' },
+        { min: 0, ar: 'راسب', en: 'Fail' }
+      ]
+    },
+    'percent100': {
+      nameAr: 'نسبة مئوية عامة (100%)', nameEn: 'Generic Percentage (100%)', max: 100,
+      descAr: 'نسبة مئوية مباشرة 0–100% بدون درجات حرفية. مناسب لأي نظام مئوي لم يُذكر أعلاه.',
+      descEn: 'Direct percentage 0–100% without letter grades. Suitable for any percentage system not listed above.',
       classifications: [
         { min: 90, ar: 'ممتاز', en: 'Excellent' },
         { min: 80, ar: 'جيد جداً', en: 'Very Good' },
         { min: 70, ar: 'جيد', en: 'Good' },
         { min: 60, ar: 'مقبول', en: 'Pass' },
-        { min: 0,  ar: 'راسب', en: 'Fail' }
+        { min: 0, ar: 'راسب', en: 'Fail' }
       ]
     }
   };
 
-  var currentSystem = '4';
+  var templateGroups = [
+    { nameAr: 'العالم العربي', nameEn: 'Arab World', ids: ['saudi5','saudi4','gulf4','jordan4','egypt100','iraq100','syria100','lebanon4','maghreb20'] },
+    { nameAr: 'الأنظمة الدولية', nameEn: 'International Systems', ids: ['us4','us433','canada433','turkey4','uk','german','french20','india10','korea45','australia7','percent100'] }
+  ];
+
+  var currentTemplate = 'saudi5';
   var courses = [];
   var INITIAL_COURSES = 5;
+
+  // Customizations stored per template: { templateId: { max, grades: [{label,value}] } }
+  var customizations = {};
+  var customizeOpen = false;
+
+  function loadCustomizations() {
+    try {
+      var raw = localStorage.getItem('gpa-customizations');
+      if (raw) customizations = JSON.parse(raw);
+    } catch (e) { customizations = {}; }
+  }
+
+  function saveCustomizations() {
+    try { localStorage.setItem('gpa-customizations', JSON.stringify(customizations)); } catch (e) {}
+  }
+
+  function isCustomized(templateId) {
+    return !!(customizations[templateId || currentTemplate]);
+  }
+
+  // Returns the effective template (original or customized)
+  function getActiveTemplate(templateId) {
+    var id = templateId || currentTemplate;
+    var base = templates[id];
+    var cust = customizations[id];
+    if (!cust) return base;
+    return {
+      nameAr: base.nameAr, nameEn: base.nameEn,
+      descAr: base.descAr, descEn: base.descEn,
+      inverted: base.inverted,
+      max: cust.max !== undefined ? cust.max : base.max,
+      grades: cust.grades || base.grades,
+      classifications: base.classifications
+    };
+  }
+
+  function isPercentSystem(templateId) {
+    var t = getActiveTemplate(templateId);
+    return !t.grades || t.grades.length === 0;
+  }
+
+  function isInverted(templateId) {
+    return !!(templates[templateId || currentTemplate].inverted);
+  }
+
+  function updateTemplateDescription() {
+    var el = document.getElementById('gpa-template-desc');
+    if (!el) return;
+    var tmpl = templates[currentTemplate];
+    el.textContent = isArabic ? tmpl.descAr : tmpl.descEn;
+  }
+
+  function updateDropdownLabel() {
+    var sel = document.getElementById('gpa-template-select');
+    if (!sel) return;
+    var opt = sel.querySelector('option[value="' + currentTemplate + '"]');
+    if (!opt) return;
+    var tmpl = templates[currentTemplate];
+    var name = isArabic ? tmpl.nameAr : tmpl.nameEn;
+    if (isCustomized()) {
+      var suffix = isArabic ? labels.customized : labels.customized;
+      opt.textContent = name + ' / ' + suffix;
+    } else {
+      opt.textContent = name;
+    }
+  }
+
+  function populateTemplateDropdown() {
+    var sel = document.getElementById('gpa-template-select');
+    if (!sel) return;
+    var html = '';
+    for (var g = 0; g < templateGroups.length; g++) {
+      var grp = templateGroups[g];
+      html += '<optgroup label="' + (isArabic ? grp.nameAr : grp.nameEn) + '">';
+      for (var t = 0; t < grp.ids.length; t++) {
+        var id = grp.ids[t];
+        var tmpl = templates[id];
+        var name = isArabic ? tmpl.nameAr : tmpl.nameEn;
+        if (customizations[id]) name += ' / ' + (isArabic ? labels.customized : labels.customized);
+        html += '<option value="' + id + '"' + (id === currentTemplate ? ' selected' : '') + '>' + name + '</option>';
+      }
+      html += '</optgroup>';
+    }
+    sel.innerHTML = html;
+    updateTemplateDescription();
+  }
 
   // i18n labels (from template placeholders — set by build)
   var labels = {
@@ -1435,22 +1924,19 @@
     weightedTotal: 'مجموع الدرجات المرجّحة',
     allCreditsCompleted: 'أنت أتممت جميع الساعات المطلوبة',
     confirmSystemChange: 'تغيير النظام سيمسح جميع البيانات المُدخلة. متأكد؟',
-    retakenCourse: 'مادة مُعادة',
-    oldGrade: 'الدرجة القديمة',
-    confirmReset: 'سيتم مسح جميع البيانات. متأكد؟',
-    retakePolicyDescs: {
-      replace: 'الدرجة الجديدة تحل محل القديمة تماماً — كأن المحاولة الأولى لم تحصل',
-      higher: 'تُقارن الدرجتان ويُحتسب الأعلى بينهما فقط',
-      countAll: 'المادة تُحسب مرتين في المعدل — المحاولة القديمة والجديدة كلاهما يُحتسب بساعاته',
-      average: 'يُحسب متوسط الدرجتين (القديمة والجديدة) ويُحتسب كدرجة واحدة'
-    }
+    customized: 'مخصص',
+    addGrade: 'إضافة درجة جديدة',
+    systemMax: 'الحد الأقصى للنظام',
+    resetTemplate: 'إعادة تعيين للقالب الأصلي',
+    gradeSymbol: 'الرمز',
+    gradeValue: 'القيمة',
+    exportSystem: 'تصدير النظام',
+    importSystem: 'استيراد نظام',
+    saveData: 'حفظ البيانات',
+    loadData: 'استعادة البيانات'
   };
 
-  var retakePolicy = 'replace';
-  // Stored retake adjustments from "Use from Semester" button.
-  // These are subtracted from prev cumulative when computing effective earned.
-  // Cleared when user manually edits new-semester fields.
-  var retakeAdj = { credits: 0, points: 0 };
+  var whatIfActive = false;
   var semesters = [];
   var INITIAL_SEMESTERS = 3;
 
@@ -1461,12 +1947,9 @@
     renderCourses();
   }
 
-  function getGradeOptions(includePlaceholder) {
-    var sys = gradeSystems[currentSystem];
-    var html = '';
-    if (includePlaceholder) {
-      html += '<option value="-1">' + labels.grade + '</option>';
-    }
+  function getGradeOptions() {
+    var sys = getActiveTemplate();
+    var html = '<option value="-1">' + labels.grade + '</option>';
     for (var i = 0; i < sys.grades.length; i++) {
       var g = sys.grades[i];
       html += '<option value="' + i + '">' + g.label + ' (' + g.value.toFixed(2) + ')</option>';
@@ -1477,36 +1960,35 @@
   function renderCourses() {
     var container = document.getElementById('courses-container');
     var html = '';
-    var is100 = currentSystem === '100';
+    var is100 = isPercentSystem();
+    var wif = whatIfActive;
 
-    // Fixed header row (desktop only — hidden on mobile via CSS)
-    html += '<div class="gpa-course-header">';
+    // Header row (desktop only — hidden on mobile via CSS)
+    html += '<div class="gpa-course-header' + (wif ? ' whatif-mode' : '') + '">';
     html += '<span>' + labels.courseName + '</span>';
     html += '<span>' + labels.creditHours + '</span>';
     html += '<span>' + labels.grade + '</span>';
-    html += '<span>' + labels.retakenCourse + '</span>';
-    html += '<span>' + labels.oldGrade + '</span>';
-    html += '<span>' + labels.whatIfLabel + '</span>';
+    if (wif) html += '<span>' + labels.whatIfLabel + '</span>';
     html += '<span></span>';
     html += '</div>';
 
-    var gradeOpts = is100 ? '' : getGradeOptions(true);  // with placeholder for main grade
-    var gradeOptsNoPlaceholder = is100 ? '' : getGradeOptions(false);  // no placeholder for old grade & what-if
+    var gradeOpts = is100 ? '' : getGradeOptions();
 
     for (var i = 0; i < courses.length; i++) {
       var c = courses[i];
-      var isRetake = !!c.isRetake;
+      html += '<div class="gpa-course-card' + (wif ? ' whatif-mode' : '') + '">';
 
-      html += '<div class="gpa-course-card">';
+      // Delete button (top-end corner on mobile, inline on desktop)
+      html += '<button class="gpa-del-btn" onclick="gpaRemoveCourse(' + i + ')" title="' + labels.removeCourse + '"' + (courses.length <= 1 ? ' style="visibility:hidden"' : '') + '>&times;</button>';
 
-      // Col 1: Course name
+      // Course name — full width
       html += '<div class="gpa-form-group gpa-field-name">';
       html += '<label>' + labels.courseName + '</label>';
       html += '<input type="text" placeholder="' + labels.courseName + '" value="' + (c.name || '') + '" oninput="gpaUpdateCourse(' + i + ',\'name\',this.value)">';
       html += '</div>';
 
-      // Col 2+3: Credits + Grade (wrapped for mobile 2-col layout)
-      html += '<div class="gpa-field-pair">';
+      // Credits + Grade side by side
+      html += '<div class="gpa-form-row gpa-field-pair">';
       html += '<div class="gpa-form-group">';
       html += '<label>' + labels.creditHours + '</label>';
       html += '<input type="number" min="1" max="12" placeholder="3" value="' + (c.credits || '') + '" oninput="gpaUpdateCourse(' + i + ',\'credits\',this.value)">';
@@ -1514,7 +1996,8 @@
       html += '<div class="gpa-form-group">';
       html += '<label>' + labels.grade + '</label>';
       if (is100) {
-        html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100" value="' + (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '') + '" oninput="gpaUpdateCourse(' + i + ',\'gradeValue\',this.value)">';
+        var sysMax = getActiveTemplate().max;
+        html += '<input type="number" min="0" max="' + sysMax + '" step="0.1" placeholder="0-' + sysMax + '" class="gpa-grade-input" value="' + (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '') + '" oninput="gpaUpdateCourse(' + i + ',\'gradeValue\',this.value)">';
       } else {
         var sel = gradeOpts.replace('value="' + c.gradeIndex + '"', 'value="' + c.gradeIndex + '" selected');
         html += '<select onchange="gpaUpdateCourse(' + i + ',\'gradeIndex\',this.value)">' + sel + '</select>';
@@ -1522,61 +2005,32 @@
       html += '</div>';
       html += '</div>';
 
-      // Col 4: Retake toggle (small switch, no text on desktop)
-      html += '<div class="gpa-retake-cell">';
-      html += '<span class="gpa-retake-label">' + labels.retakenCourse + '</span>';
-      html += '<label class="gpa-retake-switch">';
-      html += '<input type="checkbox"' + (isRetake ? ' checked' : '') + ' onchange="gpaUpdateCourse(' + i + ',\'isRetake\',this.checked)">';
-      html += '<span class="gpa-switch-track"><span class="gpa-switch-thumb"></span></span>';
-      html += '</label>';
-      html += '</div>';
-
-      // Col 5: Old grade (always present, disabled when not retake)
-      // Default: F (lowest grade = last index) when retake enabled
-      // On mobile: wrapped in gpa-field-extras with whatif
-      html += '<div class="gpa-field-extras">';
-      html += '<div class="gpa-form-group gpa-field-oldgrade">';
-      html += '<label>' + labels.oldGrade + '</label>';
-      if (is100) {
-        var oldVal100 = c.oldGradeValue !== undefined && c.oldGradeValue !== '' ? c.oldGradeValue : '0';
-        html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100"' + (!isRetake ? ' disabled' : '') + ' value="' + oldVal100 + '" oninput="gpaUpdateCourse(' + i + ',\'oldGradeValue\',this.value)">';
-      } else {
-        var lastGradeIdx = gradeSystems[currentSystem].grades.length - 1;
-        var oldIdx = c.oldGradeIndex !== undefined && c.oldGradeIndex >= 0 ? c.oldGradeIndex : lastGradeIdx;
-        var oldSel = gradeOptsNoPlaceholder.replace('value="' + oldIdx + '"', 'value="' + oldIdx + '" selected');
-        html += '<select' + (!isRetake ? ' disabled' : '') + ' onchange="gpaUpdateCourse(' + i + ',\'oldGradeIndex\',this.value)">' + oldSel + '</select>';
+      // What-if alt grade
+      if (wif) {
+        html += '<div class="gpa-form-row gpa-field-whatif">';
+        html += '<div class="gpa-form-group">';
+        html += '<label>' + labels.whatIfLabel + '</label>';
+        if (is100) {
+          var altVal = c.altGradeValue !== undefined && c.altGradeValue !== '' ? c.altGradeValue : (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '');
+          html += '<input type="number" min="0" max="' + sysMax + '" step="0.1" placeholder="0-' + sysMax + '" value="' + altVal + '" oninput="gpaUpdateAlt(' + i + ',\'altGradeValue\',this.value)">';
+        } else {
+          var altIdx = c.altGradeIndex !== undefined ? c.altGradeIndex : c.gradeIndex;
+          var altSel = gradeOpts.replace('value="' + altIdx + '"', 'value="' + altIdx + '" selected');
+          html += '<select onchange="gpaUpdateAlt(' + i + ',\'altGradeIndex\',this.value)">' + altSel + '</select>';
+        }
+        html += '</div>';
+        html += '</div>';
       }
-      html += '</div>';
-
-      // Col 6: What-if alt grade (always present)
-      // Default: A+ (highest grade = index 0)
-      html += '<div class="gpa-form-group gpa-field-whatif">';
-      html += '<label>' + labels.whatIfLabel + '</label>';
-      if (is100) {
-        var altVal = c.altGradeValue !== undefined && c.altGradeValue !== '' ? c.altGradeValue : '100';
-        html += '<input type="number" min="0" max="100" step="0.1" placeholder="0-100" value="' + altVal + '" oninput="gpaUpdateAlt(' + i + ',\'altGradeValue\',this.value)">';
-      } else {
-        var altIdx = c.altGradeIndex !== undefined && c.altGradeIndex >= 0 ? c.altGradeIndex : 0;
-        var altSel = gradeOptsNoPlaceholder.replace('value="' + altIdx + '"', 'value="' + altIdx + '" selected');
-        html += '<select onchange="gpaUpdateAlt(' + i + ',\'altGradeIndex\',this.value)">' + altSel + '</select>';
-      }
-      html += '</div>';
-      html += '</div>'; // end gpa-field-extras
-
-      // Col 7: Delete button
-      html += '<button class="gpa-del-btn" onclick="gpaRemoveCourse(' + i + ')" title="' + labels.removeCourse + '"' + (courses.length <= 1 ? ' style="visibility:hidden"' : '') + '>&times;</button>';
 
       html += '</div>';
     }
 
     container.innerHTML = html;
-    calcSemester();
-    calcWhatIf();
   }
 
   function calcSemester() {
-    var sys = gradeSystems[currentSystem];
-    var is100 = currentSystem === '100';
+    var sys = getActiveTemplate();
+    var is100 = isPercentSystem();
     var totalCredits = 0;
     var totalPoints = 0;
     var hasValidCourse = false;
@@ -1586,7 +2040,7 @@
       var cr = parseFloat(c.credits);
       if (is100) {
         var gv = parseFloat(c.gradeValue);
-        if (cr > 0 && !isNaN(gv) && gv >= 0 && gv <= 100) {
+        if (cr > 0 && !isNaN(gv) && gv >= 0 && gv <= sys.max) {
           totalCredits += cr;
           totalPoints += cr * gv;
           hasValidCourse = true;
@@ -1610,7 +2064,7 @@
   }
 
   function getClassification(gpa) {
-    var cls = gradeSystems[currentSystem].classifications;
+    var cls = getActiveTemplate().classifications;
     for (var i = 0; i < cls.length; i++) {
       if (gpa >= cls[i].min) {
         return isArabic ? cls[i].ar : cls[i].en;
@@ -1633,31 +2087,28 @@
       return;
     }
 
-    // Apply retake adjustments: subtract old courses from previous
-    var adjPrevCredits = prevCredits - retakeAdj.credits;
-    var adjPrevPoints = prevGpa * prevCredits - retakeAdj.points;
-    if (adjPrevCredits < 0) adjPrevCredits = 0;
-
-    var totalCredits = adjPrevCredits + newCredits;
-    var cumGpa = totalCredits > 0 ? (adjPrevPoints + newGpa * newCredits) / totalCredits : 0;
+    var totalCredits = prevCredits + newCredits;
+    var cumGpa = (prevGpa * prevCredits + newGpa * newCredits) / totalCredits;
 
     document.getElementById('cum-gpa-val').textContent = cumGpa.toFixed(2);
     document.getElementById('cum-class-val').textContent = getClassification(cumGpa);
 
     var diff = cumGpa - prevGpa;
     var changeEl = document.getElementById('cum-change-val');
+    var inv = isInverted();
     if (Math.abs(diff) < 0.005) {
       changeEl.textContent = '0.00';
       changeEl.className = 'gpa-stat-value';
-    } else if (diff > 0) {
-      changeEl.innerHTML = '<span class="gpa-change-up">▲ ' + labels.increased + ' ' + diff.toFixed(2) + '</span>';
+    } else if ((!inv && diff > 0) || (inv && diff < 0)) {
+      // Normal: higher is better. Inverted: lower is better.
+      changeEl.innerHTML = '<span class="gpa-change-up">▲ ' + labels.increased + ' ' + Math.abs(diff).toFixed(2) + '</span>';
     } else {
       changeEl.innerHTML = '<span class="gpa-change-down">▼ ' + labels.decreased + ' ' + Math.abs(diff).toFixed(2) + '</span>';
     }
   }
 
   function updateMaxInputs() {
-    var max = gradeSystems[currentSystem].max;
+    var max = getActiveTemplate().max;
     var ids = ['cum-prev-gpa', 'cum-new-gpa', 'tgt-goal-gpa'];
     for (var i = 0; i < ids.length; i++) {
       var el = document.getElementById(ids[i]);
@@ -1674,14 +2125,14 @@
     var fromSys = document.getElementById('conv-from');
     var convInput = document.getElementById('conv-input');
     if (fromSys && convInput) {
-      convInput.max = gradeSystems[fromSys.value].max;
+      var fromTmpl = getActiveTemplate(fromSys.value);
+      convInput.max = fromTmpl.max;
       convInput.placeholder = '0.00';
     }
   }
 
   // Compute effective earned credits and GPA (shared by target & max sections)
-  // If new semester data is entered in section 1, include it.
-  // Accounts for retake adjustments stored by "Use from Semester".
+  // If new semester data is entered in section 1, include it
   function getEffectiveEarned() {
     var prevGpa = parseFloat(document.getElementById('cum-prev-gpa').value);
     var prevCredits = parseFloat(document.getElementById('cum-prev-credits').value);
@@ -1695,10 +2146,6 @@
     if (!isNaN(prevGpa) && !isNaN(prevCredits) && prevCredits > 0) {
       earnedCredits = prevCredits;
       earnedPoints = prevGpa * prevCredits;
-      // Subtract retake old courses from previous (they are replaced by new semester)
-      earnedCredits -= retakeAdj.credits;
-      earnedPoints -= retakeAdj.points;
-      if (earnedCredits < 0) earnedCredits = 0;
     }
 
     // Add new semester if entered
@@ -1723,24 +2170,31 @@
 
     impossibleEl.style.display = 'none';
 
-    if (isNaN(goalGpa) || goalGpa < 0 || isNaN(gradCredits) || gradCredits <= 0 || eff.credits <= 0 || gradCredits <= eff.credits) {
+    if (isNaN(goalGpa) || isNaN(gradCredits) || gradCredits <= 0 || eff.credits <= 0 || gradCredits <= eff.credits) {
       resultEl.textContent = '—';
       classEl.textContent = '—';
       return;
     }
 
-    var max = gradeSystems[currentSystem].max;
+    var max = getActiveTemplate().max;
+    var inv = isInverted();
     var remainingCredits = gradCredits - eff.credits;
     var requiredGpa = (goalGpa * gradCredits - eff.points) / remainingCredits;
 
-    if (requiredGpa > max) {
+    // For inverted systems (German): best possible is lowest grade value (1.0), impossible if required < 1.0
+    // For normal systems: best possible is max, impossible if required > max
+    var impossible = inv ? (requiredGpa < 1.0) : (requiredGpa > max);
+    var tooEasy = inv ? (requiredGpa > max) : (requiredGpa < 0);
+
+    if (impossible) {
       resultEl.textContent = '—';
       classEl.textContent = '—';
       impossibleEl.style.display = 'block';
       impossibleText.textContent = labels.impossibleMsg;
-    } else if (requiredGpa < 0) {
-      resultEl.textContent = '0.00';
-      classEl.textContent = getClassification(0);
+    } else if (tooEasy) {
+      var easyVal = inv ? max : 0;
+      resultEl.textContent = easyVal.toFixed(2);
+      classEl.textContent = getClassification(easyVal);
     } else {
       resultEl.textContent = requiredGpa.toFixed(2);
       classEl.textContent = getClassification(requiredGpa);
@@ -1773,89 +2227,148 @@
       return;
     }
 
-    var max = gradeSystems[currentSystem].max;
+    var max = getActiveTemplate().max;
+    var inv = isInverted();
+    var bestPossible = inv ? 1.0 : max;
     var remainingCredits = gradCredits - eff.credits;
-    var maxGpa = (eff.points + max * remainingCredits) / gradCredits;
+    var maxGpa = (eff.points + bestPossible * remainingCredits) / gradCredits;
 
     resultEl.textContent = maxGpa.toFixed(2);
     classEl.textContent = getClassification(maxGpa);
   }
 
-  // Grade-bracket conversion table: maps classification boundaries between systems
-  // Each entry: [4.0 value, 5.0 value, 100% value]
-  var conversionTable = [
-    [4.00, 5.00, 100],  // A+ top
-    [3.75, 4.75,  95],  // A+ / Excellent+ boundary
-    [3.50, 4.50,  90],  // A  / Excellent boundary
-    [3.00, 4.00,  85],  // B+
-    [2.50, 3.50,  80],  // B  / Very Good boundary
-    [2.00, 3.00,  70],  // C+ / Good boundary
-    [1.50, 2.50,  65],  // C
-    [1.00, 2.00,  60],  // D  / Pass boundary
-    [0.00, 0.00,   0]   // F  / Fail
-  ];
+  // ===== Converter: percentage-based interpolation =====
+  // Build a map of [gradeValue, percentEquivalent] pairs for a template, sorted high-to-low
+  function getPercentMap(tmplId) {
+    var tmpl = getActiveTemplate(tmplId);
+    var inv = !!(templates[tmplId].inverted);
 
-  var sysColIndex = { '4': 0, '5': 1, '100': 2 };
+    // Percentage-based systems: identity map
+    if (!tmpl.grades || tmpl.grades.length === 0) {
+      // Scale linearly to 0-100
+      return [[tmpl.max, 100], [0, 0]];
+    }
 
-  function convertGpa(inputVal, fromSys, toSys) {
-    var fromCol = sysColIndex[fromSys];
-    var toCol = sysColIndex[toSys];
+    var grades = tmpl.grades.slice();
+    // Sort by value descending (highest first) for normal, ascending for inverted
+    grades.sort(function(a, b) { return inv ? a.value - b.value : b.value - a.value; });
 
-    // Clamp input
-    var fromMax = gradeSystems[fromSys].max;
-    if (inputVal > fromMax) inputVal = fromMax;
-    if (inputVal < 0) inputVal = 0;
+    var map = [];
+    var n = grades.length;
+    for (var i = 0; i < n; i++) {
+      // Distribute evenly: best grade = 100%, worst = 0% (or near 0)
+      var pct = n > 1 ? 100 * (1 - i / (n - 1)) : 100;
+      map.push([grades[i].value, pct]);
+    }
+    return map;
+  }
 
-    // Find the bracket the input falls into
-    for (var i = 0; i < conversionTable.length - 1; i++) {
-      var hi = conversionTable[i][fromCol];
-      var lo = conversionTable[i + 1][fromCol];
-      if (inputVal >= lo) {
-        // Linear interpolation within this bracket
-        var range = hi - lo;
-        var t = range > 0 ? (inputVal - lo) / range : 1;
-        var toHi = conversionTable[i][toCol];
-        var toLo = conversionTable[i + 1][toCol];
-        return toLo + t * (toHi - toLo);
+  function toPercent(val, tmplId) {
+    var map = getPercentMap(tmplId);
+    var inv = !!(templates[tmplId].inverted);
+    var tmpl = getActiveTemplate(tmplId);
+
+    if (inv) {
+      if (val <= map[0][0]) return map[0][1];
+      if (val >= map[map.length - 1][0]) return map[map.length - 1][1];
+      for (var i = 0; i < map.length - 1; i++) {
+        if (val >= map[i][0] && val <= map[i + 1][0]) {
+          var range = map[i + 1][0] - map[i][0];
+          var t = range > 0 ? (val - map[i][0]) / range : 0;
+          return map[i][1] + t * (map[i + 1][1] - map[i][1]);
+        }
+      }
+    } else {
+      if (val >= map[0][0]) return map[0][1];
+      if (val <= map[map.length - 1][0]) return map[map.length - 1][1];
+      for (var i = 0; i < map.length - 1; i++) {
+        if (val <= map[i][0] && val >= map[i + 1][0]) {
+          var range = map[i][0] - map[i + 1][0];
+          var t = range > 0 ? (map[i][0] - val) / range : 0;
+          return map[i][1] + t * (map[i + 1][1] - map[i][1]);
+        }
       }
     }
     return 0;
   }
 
+  function fromPercent(pct, tmplId) {
+    var map = getPercentMap(tmplId);
+    if (pct >= map[0][1]) return map[0][0];
+    if (pct <= map[map.length - 1][1]) return map[map.length - 1][0];
+    for (var i = 0; i < map.length - 1; i++) {
+      if (pct <= map[i][1] && pct >= map[i + 1][1]) {
+        var range = map[i][1] - map[i + 1][1];
+        var t = range > 0 ? (map[i][1] - pct) / range : 0;
+        return map[i][0] + t * (map[i + 1][0] - map[i][0]);
+      }
+    }
+    return 0;
+  }
+
+  function populateConverterDropdowns() {
+    var fromEl = document.getElementById('conv-from');
+    var toEl = document.getElementById('conv-to');
+    if (!fromEl || !toEl) return;
+    var html = '';
+    for (var g = 0; g < templateGroups.length; g++) {
+      var grp = templateGroups[g];
+      html += '<optgroup label="' + (isArabic ? grp.nameAr : grp.nameEn) + '">';
+      for (var t = 0; t < grp.ids.length; t++) {
+        var id = grp.ids[t];
+        var tmpl = templates[id];
+        html += '<option value="' + id + '">' + (isArabic ? tmpl.nameAr : tmpl.nameEn) + '</option>';
+      }
+      html += '</optgroup>';
+    }
+    fromEl.innerHTML = html;
+    toEl.innerHTML = html;
+    fromEl.value = 'saudi5';
+    toEl.value = 'us4';
+  }
+
   function calcConvert() {
-    var fromSys = document.getElementById('conv-from').value;
-    var toSys = document.getElementById('conv-to').value;
+    var fromId = document.getElementById('conv-from').value;
+    var toId = document.getElementById('conv-to').value;
     var inputVal = parseFloat(document.getElementById('conv-input').value);
 
     var resultEl = document.getElementById('conv-result-val');
     var classEl = document.getElementById('conv-class-val');
-    var noteEl = document.getElementById('conv-note');
 
     updateConverterMax();
 
     if (isNaN(inputVal) || inputVal < 0) {
       resultEl.textContent = '—';
       classEl.textContent = '—';
-      if (noteEl) noteEl.style.display = 'none';
       return;
     }
 
-    var converted = (fromSys === toSys) ? inputVal : convertGpa(inputVal, fromSys, toSys);
-    var dp = toSys === '100' ? 0 : 2;
+    var converted;
+    if (fromId === toId) {
+      converted = inputVal;
+    } else {
+      var pct = toPercent(inputVal, fromId);
+      converted = fromPercent(pct, toId);
+    }
+
+    var toTmpl = getActiveTemplate(toId);
+    var isPct = !toTmpl.grades || toTmpl.grades.length === 0;
+    var dp = isPct ? 0 : 2;
 
     resultEl.textContent = converted.toFixed(dp);
 
-    // Get classification in the target system
-    var cls = gradeSystems[toSys].classifications;
+    // Classification in target system
+    var cls = toTmpl.classifications;
     var classText = '';
-    for (var i = 0; i < cls.length; i++) {
-      if (converted >= cls[i].min) {
-        classText = isArabic ? cls[i].ar : cls[i].en;
-        break;
+    if (cls) {
+      for (var i = 0; i < cls.length; i++) {
+        if (converted >= cls[i].min) {
+          classText = isArabic ? cls[i].ar : cls[i].en;
+          break;
+        }
       }
     }
     classEl.textContent = classText || '—';
-    if (noteEl) noteEl.style.display = (fromSys === toSys) ? 'none' : 'block';
   }
 
   function initSemesters() {
@@ -1867,7 +2380,7 @@
 
   function renderSemesters() {
     var container = document.getElementById('multi-semesters-container');
-    var max = gradeSystems[currentSystem].max;
+    var max = getActiveTemplate().max;
     var html = '';
 
     html += '<div class="gpa-sem-header">';
@@ -1879,7 +2392,7 @@
 
     for (var i = 0; i < semesters.length; i++) {
       var s = semesters[i];
-      var rangePlaceholder = currentSystem === '100' ? '0 - 100' : '0 - ' + max.toFixed(2);
+      var rangePlaceholder = isPercentSystem() ? '0 - ' + max : '0 - ' + max.toFixed(2);
       html += '<div class="gpa-sem-row">';
       html += '<span class="gpa-sem-num">' + (i + 1) + '</span>';
       html += '<input type="number" step="0.01" min="0" max="' + max + '" placeholder="' + rangePlaceholder + '" value="' + (s.gpa || '') + '" oninput="gpaUpdateSemester(' + i + ',\'gpa\',this.value)">';
@@ -1896,7 +2409,7 @@
     var totalPoints = 0;
     var validSemesters = [];
 
-    var sysMax = gradeSystems[currentSystem].max;
+    var sysMax = getActiveTemplate().max;
     for (var i = 0; i < semesters.length; i++) {
       var s = semesters[i];
       var gpa = parseFloat(s.gpa);
@@ -1915,10 +2428,11 @@
     document.getElementById('multi-class-val').textContent = validSemesters.length > 0 ? getClassification(overallGpa) : '—';
 
     if (validSemesters.length > 0) {
+      var inv = isInverted();
       var best = validSemesters[0], worst = validSemesters[0];
       for (var i = 1; i < validSemesters.length; i++) {
-        if (validSemesters[i].gpa > best.gpa) best = validSemesters[i];
-        if (validSemesters[i].gpa < worst.gpa) worst = validSemesters[i];
+        if (inv ? (validSemesters[i].gpa < best.gpa) : (validSemesters[i].gpa > best.gpa)) best = validSemesters[i];
+        if (inv ? (validSemesters[i].gpa > worst.gpa) : (validSemesters[i].gpa < worst.gpa)) worst = validSemesters[i];
       }
       document.getElementById('multi-best-val').textContent = labels.semesterNum + ' ' + best.index + ' (' + best.gpa.toFixed(2) + ')';
       document.getElementById('multi-worst-val').textContent = labels.semesterNum + ' ' + worst.index + ' (' + worst.gpa.toFixed(2) + ')';
@@ -1943,11 +2457,13 @@
       var chartMax = Math.min(sysMax, maxGpa + margin);
       var chartRange = chartMax - chartMin;
       if (chartRange === 0) chartRange = 1;
+      var invChart = isInverted();
       var html = '';
       for (var i = 0; i < validSemesters.length; i++) {
         var pct = ((validSemesters[i].gpa - chartMin) / chartRange) * 100;
+        if (invChart) pct = 100 - pct;
         if (pct < 5) pct = 5;
-        var dp = currentSystem === '100' ? 0 : 2;
+        var dp = isPercentSystem() ? 0 : 2;
         html += '<div class="gpa-chart-bar-wrap">';
         html += '<div class="gpa-chart-val">' + validSemesters[i].gpa.toFixed(dp) + '</div>';
         html += '<div class="gpa-chart-bar" style="height:' + pct + '%"></div>';
@@ -1961,7 +2477,7 @@
   }
 
   function renderRefTables() {
-    var sys = gradeSystems[currentSystem];
+    var sys = getActiveTemplate();
 
     // Grades table (only for 4.0 and 5.0)
     var gradesBody = document.getElementById('ref-grades-body');
@@ -1981,27 +2497,50 @@
     // Classifications table — show exclusive ranges to avoid overlap
     var classBody = document.getElementById('ref-class-body');
     var cls = sys.classifications;
-    var sysMax = gradeSystems[currentSystem].max;
-    var isPercent = currentSystem === '100';
+    var sysMax = getActiveTemplate().max;
+    var isPercent = isPercentSystem();
+    var inv = isInverted();
     var dp = isPercent ? 0 : 2;
+    var step = isPercent ? 1 : 0.01;
     var html = '';
-    for (var i = 0; i < cls.length; i++) {
-      var label = isArabic ? cls[i].ar : cls[i].en;
-      var rangeStr;
-      if (cls[i].min === 0) {
-        // Fail: < previous min
-        var upperBound = i > 0 ? cls[i - 1].min : sysMax;
-        rangeStr = '< ' + upperBound.toFixed(dp);
-      } else if (i === 0) {
-        // Highest tier: min – max
-        rangeStr = cls[i].min.toFixed(dp) + ' – ' + sysMax.toFixed(dp);
-      } else {
-        // Middle tiers: show exclusive upper bound (prev.min - step)
-        var step = isPercent ? 1 : 0.01;
-        var exclusiveMax = (cls[i - 1].min - step);
-        rangeStr = cls[i].min.toFixed(dp) + ' – ' + exclusiveMax.toFixed(dp);
+
+    if (inv) {
+      // Inverted system (German): highest min = worst, min=0 = best
+      // Grades: 1.0 (best) to 5.0 (fail). classifications sorted descending by min.
+      for (var i = 0; i < cls.length; i++) {
+        var label = isArabic ? cls[i].ar : cls[i].en;
+        var rangeStr;
+        if (i === 0) {
+          // Worst tier (highest min): min – max
+          rangeStr = cls[i].min.toFixed(dp) + ' – ' + sysMax.toFixed(dp);
+        } else if (cls[i].min === 0) {
+          // Best tier (min=0): show from 1.0 to prev.min - step
+          var bestMin = sys.grades ? sys.grades[0].value : 1.0;
+          var upperBound = (cls[i - 1].min - step);
+          rangeStr = bestMin.toFixed(dp) + ' – ' + upperBound.toFixed(dp);
+        } else {
+          // Middle tiers
+          var upperBound = (cls[i - 1].min - step);
+          rangeStr = cls[i].min.toFixed(dp) + ' – ' + upperBound.toFixed(dp);
+        }
+        html += '<tr><td>' + label + '</td><td>' + rangeStr + '</td></tr>';
       }
-      html += '<tr><td>' + label + '</td><td>' + rangeStr + '</td></tr>';
+    } else {
+      // Normal system: highest min = best
+      for (var i = 0; i < cls.length; i++) {
+        var label = isArabic ? cls[i].ar : cls[i].en;
+        var rangeStr;
+        if (cls[i].min === 0) {
+          var upperBound = i > 0 ? cls[i - 1].min : sysMax;
+          rangeStr = '< ' + upperBound.toFixed(dp);
+        } else if (i === 0) {
+          rangeStr = cls[i].min.toFixed(dp) + ' – ' + sysMax.toFixed(dp);
+        } else {
+          var exclusiveMax = (cls[i - 1].min - step);
+          rangeStr = cls[i].min.toFixed(dp) + ' – ' + exclusiveMax.toFixed(dp);
+        }
+        html += '<tr><td>' + label + '</td><td>' + rangeStr + '</td></tr>';
+      }
     }
     classBody.innerHTML = html;
   }
@@ -2046,10 +2585,13 @@
     for (var i = 0; i < INITIAL_COURSES; i++) {
       courses.push({ name: '', credits: '', gradeIndex: -1, gradeValue: '' });
     }
-    // Reset retake adjustments
-    retakeAdj = { credits: 0, points: 0 };
-    // Reset what-if compare
+    // Reset what-if
+    whatIfActive = false;
+    var wifBtn = document.getElementById('whatif-btn');
+    var wifResetBtn = document.getElementById('whatif-reset-btn');
     var wifCompare = document.getElementById('whatif-compare');
+    if (wifBtn) wifBtn.style.display = '';
+    if (wifResetBtn) wifResetBtn.style.display = 'none';
     if (wifCompare) wifCompare.style.display = 'none';
     // Reset semesters
     semesters.length = 0;
@@ -2077,34 +2619,335 @@
     document.getElementById('sem-credits-val').textContent = '0';
     document.getElementById('sem-points-val').textContent = '0';
     // Hide conditional elements
-    var hideIds = ['tgt-impossible', 'max-gpa-completed', 'conv-note', 'multi-chart-section'];
+    var hideIds = ['tgt-impossible', 'max-gpa-completed', 'multi-chart-section'];
     for (var i = 0; i < hideIds.length; i++) {
       var el = document.getElementById(hideIds[i]);
       if (el) el.style.display = 'none';
     }
   }
 
-  window.gpaSetSystem = function(sys) {
-    if (sys === currentSystem) return;
+  // ===== Customization panel =====
+  function renderCustomizePanel() {
+    var inner = document.getElementById('gpa-customize-inner');
+    if (!inner) return;
+    var active = getActiveTemplate();
+    var hasGrades = active.grades && active.grades.length > 0;
+    var html = '';
+
+    if (hasGrades) {
+      html += '<table class="gpa-cust-table"><thead><tr>';
+      html += '<th>' + labels.gradeSymbol + '</th>';
+      html += '<th>' + labels.gradeValue + '</th>';
+      html += '<th></th>';
+      html += '</tr></thead><tbody>';
+      for (var i = 0; i < active.grades.length; i++) {
+        var g = active.grades[i];
+        html += '<tr>';
+        html += '<td><input type="text" value="' + g.label + '" oninput="gpaCustUpdateGrade(' + i + ',\'label\',this.value)"></td>';
+        html += '<td><input type="number" step="0.01" min="0" value="' + g.value.toFixed(2) + '" oninput="gpaCustUpdateGrade(' + i + ',\'value\',this.value)"></td>';
+        html += '<td><button class="gpa-cust-del" onclick="gpaCustDeleteGrade(' + i + ')">&times;</button></td>';
+        html += '</tr>';
+      }
+      html += '</tbody></table>';
+    }
+
+    html += '<div class="gpa-cust-actions">';
+    if (hasGrades) {
+      html += '<button onclick="gpaCustAddGrade()">+ ' + labels.addGrade + '</button>';
+    }
+    html += '<button onclick="gpaCustReset()">↺ ' + labels.resetTemplate + '</button>';
+    html += '<button onclick="gpaCustExport()">↓ ' + labels.exportSystem + '</button>';
+    html += '<button onclick="document.getElementById(\'gpa-import-file\').click()">↑ ' + labels.importSystem + '</button>';
+    html += '<input type="file" id="gpa-import-file" accept=".json" style="display:none" onchange="gpaCustImport(this)">';
+    html += '<div class="gpa-cust-max">';
+    html += '<label>' + labels.systemMax + '</label>';
+    html += '<input type="number" step="0.01" min="0" value="' + active.max + '" oninput="gpaCustUpdateMax(this.value)">';
+    html += '</div>';
+    html += '</div>';
+
+    inner.innerHTML = html;
+  }
+
+  function ensureCustomization() {
+    if (!customizations[currentTemplate]) {
+      var base = templates[currentTemplate];
+      customizations[currentTemplate] = {
+        max: base.max,
+        grades: base.grades ? base.grades.map(function(g) { return { label: g.label, value: g.value }; }) : null
+      };
+    }
+    return customizations[currentTemplate];
+  }
+
+  function onCustomizationChanged() {
+    saveCustomizations();
+    updateDropdownLabel();
+    updateMaxInputs();
+    renderCourses();
+    renderSemesters();
+    renderRefTables();
+    renderCustomizePanel();
+  }
+
+  window.gpaToggleCustomize = function() {
+    customizeOpen = !customizeOpen;
+    var panel = document.getElementById('gpa-customize-panel');
+    var btn = document.getElementById('gpa-customize-btn');
+    if (customizeOpen) {
+      renderCustomizePanel();
+      panel.classList.add('open');
+      btn.classList.add('active');
+    } else {
+      panel.classList.remove('open');
+      btn.classList.remove('active');
+    }
+  };
+
+  window.gpaCustUpdateGrade = function(index, field, value) {
+    var cust = ensureCustomization();
+    if (!cust.grades) return;
+    if (field === 'value') {
+      cust.grades[index].value = parseFloat(value) || 0;
+    } else {
+      cust.grades[index].label = value;
+    }
+    onCustomizationChanged();
+  };
+
+  window.gpaCustDeleteGrade = function(index) {
+    var cust = ensureCustomization();
+    if (!cust.grades || cust.grades.length <= 1) return;
+    cust.grades.splice(index, 1);
+    // Reset course gradeIndex values that reference deleted or shifted indices
+    for (var i = 0; i < courses.length; i++) {
+      if (courses[i].gradeIndex >= cust.grades.length) {
+        courses[i].gradeIndex = -1;
+      }
+    }
+    onCustomizationChanged();
+  };
+
+  window.gpaCustAddGrade = function() {
+    var cust = ensureCustomization();
+    if (!cust.grades) return;
+    cust.grades.push({ label: '?', value: 0 });
+    onCustomizationChanged();
+  };
+
+  window.gpaCustUpdateMax = function(value) {
+    var cust = ensureCustomization();
+    cust.max = parseFloat(value) || 0;
+    onCustomizationChanged();
+  };
+
+  window.gpaCustReset = function() {
+    delete customizations[currentTemplate];
+    saveCustomizations();
+    updateDropdownLabel();
+    updateMaxInputs();
+    renderCourses();
+    renderSemesters();
+    renderRefTables();
+    renderCustomizePanel();
+    App.showToast(isArabic ? 'تم إعادة التعيين!' : 'Reset to original!');
+  };
+
+  window.gpaCustExport = function() {
+    var active = getActiveTemplate();
+    var data = {
+      templateId: currentTemplate,
+      templateName: isArabic ? active.nameAr : active.nameEn,
+      max: active.max,
+      inverted: !!active.inverted
+    };
+    if (active.grades) {
+      data.grades = active.grades.map(function(g) { return { label: g.label, value: g.value }; });
+    }
+    var json = JSON.stringify(data, null, 2);
+    var blob = new Blob([json], { type: 'application/json' });
+    var name = isArabic ? active.nameAr : active.nameEn;
+    if (isCustomized()) name += isArabic ? '-مخصص' : '-custom';
+    var filename = 'GPA-system-' + name.replace(/[\/\\:*?"<>|]/g, '-') + '.json';
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
+  };
+
+  window.gpaCustImport = function(input) {
+    var file = input.files && input.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      try {
+        var data = JSON.parse(e.target.result);
+        if (!data.max || typeof data.max !== 'number') throw 'invalid';
+        var cust = { max: data.max };
+        if (data.grades && Array.isArray(data.grades) && data.grades.length > 0) {
+          cust.grades = data.grades.map(function(g) {
+            return { label: String(g.label || '?'), value: parseFloat(g.value) || 0 };
+          });
+        }
+        customizations[currentTemplate] = cust;
+        onCustomizationChanged();
+        App.showToast(isArabic ? 'تم استيراد النظام!' : 'System imported!');
+      } catch (err) {
+        App.showToast(isArabic ? 'ملف غير صالح' : 'Invalid file');
+      }
+    };
+    reader.readAsText(file);
+    input.value = '';
+  };
+
+  // ===== Save / Load all data =====
+  window.gpaSaveData = function() {
+    var data = {
+      version: 1,
+      currentTemplate: currentTemplate,
+      customization: customizations[currentTemplate] || null,
+      whatIfActive: whatIfActive,
+      courses: courses.map(function(c) {
+        var o = { name: c.name, credits: c.credits, gradeIndex: c.gradeIndex, gradeValue: c.gradeValue };
+        if (c.altGradeIndex !== undefined) o.altGradeIndex = c.altGradeIndex;
+        if (c.altGradeValue !== undefined) o.altGradeValue = c.altGradeValue;
+        return o;
+      }),
+      semesters: semesters.slice(),
+      cumulative: {
+        prevGpa: document.getElementById('cum-prev-gpa').value,
+        prevCredits: document.getElementById('cum-prev-credits').value,
+        newGpa: document.getElementById('cum-new-gpa').value,
+        newCredits: document.getElementById('cum-new-credits').value,
+        gradCredits: document.getElementById('max-grad-credits').value,
+        goalGpa: document.getElementById('tgt-goal-gpa').value
+      },
+      converter: {
+        from: document.getElementById('conv-from').value,
+        to: document.getElementById('conv-to').value,
+        input: document.getElementById('conv-input').value
+      }
+    };
+    var json = JSON.stringify(data, null, 2);
+    var blob = new Blob([json], { type: 'application/json' });
+    var active = getActiveTemplate();
+    var name = isArabic ? active.nameAr : active.nameEn;
+    var date = new Date().toISOString().slice(0, 10);
+    var filename = 'GPA-' + name.replace(/[\/\\:*?"<>|]/g, '-') + '-' + date + '.json';
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
+  };
+
+  window.gpaLoadData = function(input) {
+    var file = input.files && input.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      try {
+        var data = JSON.parse(e.target.result);
+        if (!data.currentTemplate || !templates[data.currentTemplate]) throw 'invalid';
+
+        // 1. Apply template
+        currentTemplate = data.currentTemplate;
+        if (data.customization) {
+          customizations[currentTemplate] = data.customization;
+        } else {
+          delete customizations[currentTemplate];
+        }
+        saveCustomizations();
+        populateTemplateDropdown();
+        document.getElementById('gpa-template-select').value = currentTemplate;
+
+        // 2. Update points label
+        var pointsLabel = document.getElementById('sem-points-label');
+        if (pointsLabel) {
+          pointsLabel.textContent = isPercentSystem() ? labels.weightedTotal : labels.totalPoints;
+        }
+        updateMaxInputs();
+
+        // 3. Restore what-if state
+        whatIfActive = !!data.whatIfActive;
+        var wifBtn = document.getElementById('whatif-btn');
+        var wifResetBtn = document.getElementById('whatif-reset-btn');
+        if (wifBtn) wifBtn.classList.toggle('active', whatIfActive);
+        if (wifResetBtn) wifResetBtn.style.display = whatIfActive ? '' : 'none';
+
+        // 4. Restore courses
+        if (data.courses && data.courses.length > 0) {
+          courses.length = 0;
+          for (var i = 0; i < data.courses.length; i++) {
+            courses.push(data.courses[i]);
+          }
+        }
+        renderCourses();
+        calcSemester();
+        if (whatIfActive) calcWhatIf();
+
+        // 5. Restore semesters
+        if (data.semesters && data.semesters.length > 0) {
+          semesters.length = 0;
+          for (var i = 0; i < data.semesters.length; i++) {
+            semesters.push(data.semesters[i]);
+          }
+        }
+        renderSemesters();
+        calcMulti();
+
+        // 6. Restore cumulative fields
+        if (data.cumulative) {
+          var c = data.cumulative;
+          document.getElementById('cum-prev-gpa').value = c.prevGpa || '';
+          document.getElementById('cum-prev-credits').value = c.prevCredits || '';
+          document.getElementById('cum-new-gpa').value = c.newGpa || '';
+          document.getElementById('cum-new-credits').value = c.newCredits || '';
+          document.getElementById('max-grad-credits').value = c.gradCredits || '';
+          document.getElementById('tgt-goal-gpa').value = c.goalGpa || '';
+          calcCumulative(); calcTarget(); calcMaxGpa();
+        }
+
+        // 7. Restore converter
+        if (data.converter) {
+          document.getElementById('conv-from').value = data.converter.from || 'saudi5';
+          document.getElementById('conv-to').value = data.converter.to || 'us4';
+          document.getElementById('conv-input').value = data.converter.input || '';
+          calcConvert();
+        }
+
+        // 8. Update customize panel if open
+        if (customizeOpen) renderCustomizePanel();
+        renderRefTables();
+
+        App.showToast(isArabic ? 'تم استعادة البيانات!' : 'Data loaded!');
+      } catch (err) {
+        App.showToast(isArabic ? 'ملف غير صالح' : 'Invalid file');
+      }
+    };
+    reader.readAsText(file);
+    input.value = '';
+  };
+
+  window.gpaChangeTemplate = function(tmplId) {
+    if (tmplId === currentTemplate) return;
 
     if (hasAnyData()) {
-      if (!confirm(labels.confirmSystemChange)) return;
+      if (!confirm(labels.confirmSystemChange)) {
+        document.getElementById('gpa-template-select').value = currentTemplate;
+        return;
+      }
       clearAllData();
     }
 
-    currentSystem = sys;
-    var btns = document.querySelectorAll('.gpa-calculator .gpa-sys-btn');
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].classList.remove('active');
-    }
-    document.getElementById('sys-btn-' + sys).classList.add('active');
+    currentTemplate = tmplId;
 
-    // Update points label for 100% system
+    // Update points label for percentage systems
     var pointsLabel = document.getElementById('sem-points-label');
     if (pointsLabel) {
-      pointsLabel.textContent = sys === '100' ? labels.weightedTotal : labels.totalPoints;
+      pointsLabel.textContent = isPercentSystem() ? labels.weightedTotal : labels.totalPoints;
     }
 
+    updateTemplateDescription();
+    if (customizeOpen) renderCustomizePanel();
     updateMaxInputs();
     renderCourses();
     renderSemesters();
@@ -2121,42 +2964,17 @@
     courses.splice(index, 1);
     renderCourses();
     calcSemester();
-  }; // renderCourses already calls calcWhatIf
+  };
 
   window.gpaUpdateCourse = function(index, field, value) {
-    if (field === 'gradeIndex' || field === 'oldGradeIndex') {
+    if (field === 'gradeIndex') {
       courses[index][field] = parseInt(value);
-    } else if (field === 'isRetake') {
-      courses[index].isRetake = value;
-      if (!value) {
-        delete courses[index].oldGradeIndex;
-        delete courses[index].oldGradeValue;
-      }
-      renderCourses();
-      return; // renderCourses calls calcSemester+calcWhatIf
+    } else if (field === 'gradeValue') {
+      courses[index][field] = value;
     } else {
       courses[index][field] = value;
     }
     calcSemester();
-    calcWhatIf();
-  };
-
-  window.gpaSetRetakePolicy = function(policy) {
-    retakePolicy = policy;
-    var btns = document.querySelectorAll('#retake-btn-replace, #retake-btn-higher, #retake-btn-countAll, #retake-btn-average');
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].classList.remove('active');
-    }
-    document.getElementById('retake-btn-' + policy).classList.add('active');
-    // Update description text
-    var descEl = document.getElementById('retake-policy-desc');
-    if (descEl) descEl.textContent = labels.retakePolicyDescs[policy] || '';
-  };
-
-  // When user manually edits new-semester fields, clear retake adjustments
-  window.gpaNewSemEdit = function() {
-    retakeAdj = { credits: 0, points: 0 };
-    calcCumulative(); calcTarget(); calcMaxGpa();
   };
 
   window.gpaCalcCumulative = function() { calcCumulative(); calcTarget(); calcMaxGpa(); };
@@ -2172,17 +2990,15 @@
     var tmp = fromEl.value;
     fromEl.value = toEl.value;
     toEl.value = tmp;
-    updateConverterMax();
     calcConvert();
   };
 
   function calcWhatIf() {
-    var sys = gradeSystems[currentSystem];
-    var is100 = currentSystem === '100';
+    var sys = getActiveTemplate();
+    var is100 = isPercentSystem();
     var origCredits = 0, origPoints = 0;
     var altCredits = 0, altPoints = 0;
     var hasValid = false;
-    var hasDiff = false;
 
     for (var i = 0; i < courses.length; i++) {
       var c = courses[i];
@@ -2193,25 +3009,23 @@
 
       if (is100) {
         var gv = parseFloat(c.gradeValue);
-        if (!isNaN(gv) && gv >= 0 && gv <= 100) {
+        if (!isNaN(gv) && gv >= 0 && gv <= sys.max) {
           origVal = gv;
           validOrig = true;
         }
-        var altRaw = c.altGradeValue !== undefined && c.altGradeValue !== '' ? c.altGradeValue : '100';
-        var av = parseFloat(altRaw);
-        altVal = (!isNaN(av) && av >= 0 && av <= 100) ? av : 100;
+        var av = parseFloat(c.altGradeValue !== undefined && c.altGradeValue !== '' ? c.altGradeValue : c.gradeValue);
+        altVal = (!isNaN(av) && av >= 0 && av <= sys.max) ? av : origVal;
       } else {
         var gi = parseInt(c.gradeIndex);
         if (gi >= 0 && gi < sys.grades.length) {
           origVal = sys.grades[gi].value;
           validOrig = true;
         }
-        var ai = c.altGradeIndex !== undefined && c.altGradeIndex >= 0 ? c.altGradeIndex : 0;
-        altVal = (ai >= 0 && ai < sys.grades.length) ? sys.grades[ai].value : sys.grades[0].value;
+        var ai = parseInt(c.altGradeIndex !== undefined ? c.altGradeIndex : c.gradeIndex);
+        altVal = (ai >= 0 && ai < sys.grades.length) ? sys.grades[ai].value : origVal;
       }
 
       if (validOrig) {
-        if (Math.abs(origVal - altVal) > 0.001) hasDiff = true;
         origCredits += cr;
         origPoints += cr * origVal;
         altCredits += cr;
@@ -2221,8 +3035,7 @@
     }
 
     var compareEl = document.getElementById('whatif-compare');
-    // Show compare when there are valid courses and at least one grade differs
-    if (!hasValid || !hasDiff) {
+    if (!hasValid) {
       compareEl.style.display = 'none';
       return;
     }
@@ -2236,18 +3049,51 @@
     document.getElementById('whatif-new').textContent = altGpa.toFixed(2);
 
     var diffEl = document.getElementById('whatif-diff');
-    if (Math.abs(diff) < 0.005) {
+    var inv = isInverted();
+    var absDiff = Math.abs(diff).toFixed(2);
+    // For inverted: lower is better, so negative diff = improvement
+    var improved = inv ? (diff < -0.005) : (diff > 0.005);
+    var worsened = inv ? (diff > 0.005) : (diff < -0.005);
+    if (!improved && !worsened) {
       diffEl.textContent = '0.00';
       diffEl.className = 'gpa-whatif-diff same';
-    } else if (diff > 0) {
-      diffEl.textContent = '▲ +' + diff.toFixed(2);
+    } else if (improved) {
+      diffEl.textContent = '▲ +' + absDiff;
       diffEl.className = 'gpa-whatif-diff up';
     } else {
-      diffEl.textContent = '▼ ' + diff.toFixed(2);
+      diffEl.textContent = '▼ −' + absDiff;
       diffEl.className = 'gpa-whatif-diff down';
     }
   }
 
+  window.gpaToggleWhatIf = function() {
+    whatIfActive = !whatIfActive;
+    var btn = document.getElementById('whatif-btn');
+    var resetBtn = document.getElementById('whatif-reset-btn');
+    var compareEl = document.getElementById('whatif-compare');
+
+    btn.classList.toggle('active', whatIfActive);
+    resetBtn.style.display = whatIfActive ? '' : 'none';
+
+    if (!whatIfActive) {
+      compareEl.style.display = 'none';
+      for (var i = 0; i < courses.length; i++) {
+        delete courses[i].altGradeIndex;
+        delete courses[i].altGradeValue;
+      }
+    }
+    renderCourses();
+    if (whatIfActive) calcWhatIf();
+  };
+
+  window.gpaResetWhatIf = function() {
+    for (var i = 0; i < courses.length; i++) {
+      courses[i].altGradeIndex = courses[i].gradeIndex;
+      courses[i].altGradeValue = courses[i].gradeValue;
+    }
+    renderCourses();
+    calcWhatIf();
+  };
 
   window.gpaUpdateAlt = function(index, field, value) {
     if (field === 'altGradeIndex') {
@@ -2275,100 +3121,43 @@
     calcMulti();
   };
 
-  // Get the grade value for a course (handles both 100% and letter-grade systems)
-  function getCourseGradeVal(course) {
-    var sys = gradeSystems[currentSystem];
-    var is100 = currentSystem === '100';
-    if (is100) {
-      var gv = parseFloat(course.gradeValue);
-      return (!isNaN(gv) && gv >= 0 && gv <= 100) ? gv : null;
-    } else {
-      var gi = parseInt(course.gradeIndex);
-      return (gi >= 0 && gi < sys.grades.length) ? sys.grades[gi].value : null;
-    }
-  }
-
-  function getCourseOldGradeVal(course) {
-    var sys = gradeSystems[currentSystem];
-    var is100 = currentSystem === '100';
-    if (is100) {
-      var gv = parseFloat(course.oldGradeValue);
-      return (!isNaN(gv) && gv >= 0 && gv <= 100) ? gv : null;
-    } else {
-      var gi = parseInt(course.oldGradeIndex);
-      return (gi >= 0 && gi < sys.grades.length) ? sys.grades[gi].value : null;
-    }
-  }
-
   window.gpaUseFromSemester = function() {
-    // Compute semester totals with retake policy applied
-    var semCredits = 0;
-    var semPoints = 0;
-    var oldCredits = 0;
-    var oldPoints = 0;
+    var sys = getActiveTemplate();
+    var is100 = isPercentSystem();
+    var totalCredits = 0;
+    var totalPoints = 0;
 
     for (var i = 0; i < courses.length; i++) {
       var c = courses[i];
       var cr = parseFloat(c.credits);
-      var newGrade = getCourseGradeVal(c);
-      if (!(cr > 0) || newGrade === null) continue;
-
-      if (c.isRetake) {
-        var oldGrade = getCourseOldGradeVal(c);
-        if (oldGrade === null) oldGrade = 0;
-
-        if (retakePolicy === 'replace') {
-          semCredits += cr;
-          semPoints += cr * newGrade;
-          oldCredits += cr;
-          oldPoints += cr * oldGrade;
-        } else if (retakePolicy === 'higher') {
-          semCredits += cr;
-          semPoints += cr * Math.max(oldGrade, newGrade);
-          oldCredits += cr;
-          oldPoints += cr * oldGrade;
-        } else if (retakePolicy === 'countAll') {
-          // Both count — old stays in previous, new is additional
-          semCredits += cr;
-          semPoints += cr * newGrade;
-        } else if (retakePolicy === 'average') {
-          semCredits += cr;
-          semPoints += cr * ((oldGrade + newGrade) / 2);
-          oldCredits += cr;
-          oldPoints += cr * oldGrade;
+      if (is100) {
+        var gv = parseFloat(c.gradeValue);
+        if (cr > 0 && !isNaN(gv) && gv >= 0 && gv <= sys.max) {
+          totalCredits += cr;
+          totalPoints += cr * gv;
         }
       } else {
-        semCredits += cr;
-        semPoints += cr * newGrade;
+        var gi = parseInt(c.gradeIndex);
+        if (cr > 0 && gi >= 0 && gi < sys.grades.length) {
+          totalCredits += cr;
+          totalPoints += cr * sys.grades[gi].value;
+        }
       }
     }
 
-    if (semCredits <= 0) return;
-
-    // Store retake adjustment at IIFE level (used by calcCumulative & getEffectiveEarned)
-    retakeAdj = { credits: oldCredits, points: oldPoints };
-
-    // Write semester data to form fields (never touch prev fields)
-    var semGpa = semPoints / semCredits;
-    document.getElementById('cum-new-gpa').value = semGpa.toFixed(2);
-    document.getElementById('cum-new-credits').value = semCredits;
-
-    // calcCumulative now uses retakeAdj automatically
-    calcCumulative();
-    calcTarget();
-    calcMaxGpa();
-    App.showToast(isArabic ? 'تم نقل بيانات الفصل!' : 'Semester data transferred!');
-  };
-
-  window.gpaResetAll = function() {
-    if (!hasAnyData()) return;
-    if (!confirm(labels.confirmReset)) return;
-    clearAllData();
-    renderCourses();
-    renderSemesters();
+    if (totalCredits > 0) {
+      var semGpa = totalPoints / totalCredits;
+      document.getElementById('cum-new-gpa').value = semGpa.toFixed(2);
+      document.getElementById('cum-new-credits').value = totalCredits;
+      calcCumulative();
+      App.showToast(isArabic ? 'تم نقل بيانات الفصل!' : 'Semester data transferred!');
+    }
   };
 
   // Initialize
+  loadCustomizations();
+  populateTemplateDropdown();
+  populateConverterDropdowns();
   init();
   initSemesters();
   updateMaxInputs();
