@@ -15,9 +15,12 @@
     <label class="gpa-system-label">{{tool.gradingSystem}}</label>
     <div class="gpa-system-controls">
       <select id="gpa-template-select" class="gpa-template-select" onchange="gpaChangeTemplate(this.value)"></select>
-      <button class="gpa-customize-btn" disabled>{{tool.customizeBtn}}</button>
+      <button class="gpa-customize-btn" id="gpa-customize-btn" onclick="gpaToggleCustomize()">{{tool.customizeBtn}}</button>
     </div>
     <div class="gpa-template-desc" id="gpa-template-desc"></div>
+    <div class="gpa-customize-panel" id="gpa-customize-panel">
+      <div class="gpa-customize-inner" id="gpa-customize-inner"></div>
+    </div>
   </div>
 
   <!-- Tabs -->
@@ -356,13 +359,146 @@
   border: 2px solid var(--border-color);
   border-radius: 12px;
   background: var(--bg-secondary);
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   font-weight: 600;
   font-family: inherit;
-  cursor: not-allowed;
-  opacity: 0.6;
+  cursor: pointer;
   white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.gpa-calculator .gpa-customize-btn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-customize-btn.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+}
+
+/* Customization panel — slide animation */
+.gpa-calculator .gpa-customize-panel {
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease;
+}
+
+.gpa-calculator .gpa-customize-panel.open {
+  max-height: 600px;
+}
+
+.gpa-calculator .gpa-customize-inner {
+  padding-top: 12px;
+}
+
+.gpa-calculator .gpa-cust-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.gpa-calculator .gpa-cust-table th {
+  text-align: start;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0 8px 6px;
+}
+
+.gpa-calculator .gpa-cust-table td {
+  padding: 4px 4px;
+}
+
+.gpa-calculator .gpa-cust-table input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+  min-width: 0;
+}
+
+.gpa-calculator .gpa-cust-table input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-cust-del {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gpa-calculator .gpa-cust-del:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.gpa-calculator .gpa-cust-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.gpa-calculator .gpa-cust-actions button {
+  padding: 8px 14px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all var(--transition-fast);
+}
+
+.gpa-calculator .gpa-cust-actions button:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-cust-max {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-inline-start: auto;
+}
+
+.gpa-calculator .gpa-cust-max label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.gpa-calculator .gpa-cust-max input {
+  width: 80px;
+  padding: 8px 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  font-family: inherit;
 }
 
 .gpa-calculator .gpa-template-desc {
@@ -1087,6 +1223,15 @@
     padding: 8px 10px;
   }
 
+  .gpa-calculator .gpa-cust-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gpa-calculator .gpa-cust-max {
+    margin-inline-start: 0;
+  }
+
   .gpa-calculator .gpa-cum-form {
     padding: 16px;
   }
@@ -1577,8 +1722,43 @@
   var courses = [];
   var INITIAL_COURSES = 5;
 
+  // Customizations stored per template: { templateId: { max, grades: [{label,value}] } }
+  var customizations = {};
+  var customizeOpen = false;
+
+  function loadCustomizations() {
+    try {
+      var raw = localStorage.getItem('gpa-customizations');
+      if (raw) customizations = JSON.parse(raw);
+    } catch (e) { customizations = {}; }
+  }
+
+  function saveCustomizations() {
+    try { localStorage.setItem('gpa-customizations', JSON.stringify(customizations)); } catch (e) {}
+  }
+
+  function isCustomized(templateId) {
+    return !!(customizations[templateId || currentTemplate]);
+  }
+
+  // Returns the effective template (original or customized)
+  function getActiveTemplate(templateId) {
+    var id = templateId || currentTemplate;
+    var base = templates[id];
+    var cust = customizations[id];
+    if (!cust) return base;
+    return {
+      nameAr: base.nameAr, nameEn: base.nameEn,
+      descAr: base.descAr, descEn: base.descEn,
+      inverted: base.inverted,
+      max: cust.max !== undefined ? cust.max : base.max,
+      grades: cust.grades || base.grades,
+      classifications: base.classifications
+    };
+  }
+
   function isPercentSystem(templateId) {
-    var t = templates[templateId || currentTemplate];
+    var t = getActiveTemplate(templateId);
     return !t.grades || t.grades.length === 0;
   }
 
@@ -1593,6 +1773,21 @@
     el.textContent = isArabic ? tmpl.descAr : tmpl.descEn;
   }
 
+  function updateDropdownLabel() {
+    var sel = document.getElementById('gpa-template-select');
+    if (!sel) return;
+    var opt = sel.querySelector('option[value="' + currentTemplate + '"]');
+    if (!opt) return;
+    var tmpl = templates[currentTemplate];
+    var name = isArabic ? tmpl.nameAr : tmpl.nameEn;
+    if (isCustomized()) {
+      var suffix = isArabic ? labels.customized : labels.customized;
+      opt.textContent = name + ' / ' + suffix;
+    } else {
+      opt.textContent = name;
+    }
+  }
+
   function populateTemplateDropdown() {
     var sel = document.getElementById('gpa-template-select');
     if (!sel) return;
@@ -1604,6 +1799,7 @@
         var id = grp.ids[t];
         var tmpl = templates[id];
         var name = isArabic ? tmpl.nameAr : tmpl.nameEn;
+        if (customizations[id]) name += ' / ' + (isArabic ? labels.customized : labels.customized);
         html += '<option value="' + id + '"' + (id === currentTemplate ? ' selected' : '') + '>' + name + '</option>';
       }
       html += '</optgroup>';
@@ -1631,7 +1827,13 @@
     totalPoints: '{{tool.totalPoints}}',
     weightedTotal: '{{tool.weightedTotal}}',
     allCreditsCompleted: '{{tool.allCreditsCompleted}}',
-    confirmSystemChange: '{{tool.confirmSystemChange}}'
+    confirmSystemChange: '{{tool.confirmSystemChange}}',
+    customized: '{{tool.customized}}',
+    addGrade: '{{tool.addGrade}}',
+    systemMax: '{{tool.systemMax}}',
+    resetTemplate: '{{tool.resetTemplate}}',
+    gradeSymbol: '{{tool.gradeSymbol}}',
+    gradeValue: '{{tool.gradeValue}}'
   };
 
   var whatIfActive = false;
@@ -1646,7 +1848,7 @@
   }
 
   function getGradeOptions() {
-    var sys = templates[currentTemplate];
+    var sys = getActiveTemplate();
     var html = '<option value="-1">' + labels.grade + '</option>';
     for (var i = 0; i < sys.grades.length; i++) {
       var g = sys.grades[i];
@@ -1694,7 +1896,7 @@
       html += '<div class="gpa-form-group">';
       html += '<label>' + labels.grade + '</label>';
       if (is100) {
-        var sysMax = templates[currentTemplate].max;
+        var sysMax = getActiveTemplate().max;
         html += '<input type="number" min="0" max="' + sysMax + '" step="0.1" placeholder="0-' + sysMax + '" class="gpa-grade-input" value="' + (c.gradeValue !== '' && c.gradeValue !== undefined ? c.gradeValue : '') + '" oninput="gpaUpdateCourse(' + i + ',\'gradeValue\',this.value)">';
       } else {
         var sel = gradeOpts.replace('value="' + c.gradeIndex + '"', 'value="' + c.gradeIndex + '" selected');
@@ -1727,7 +1929,7 @@
   }
 
   function calcSemester() {
-    var sys = templates[currentTemplate];
+    var sys = getActiveTemplate();
     var is100 = isPercentSystem();
     var totalCredits = 0;
     var totalPoints = 0;
@@ -1762,7 +1964,7 @@
   }
 
   function getClassification(gpa) {
-    var cls = templates[currentTemplate].classifications;
+    var cls = getActiveTemplate().classifications;
     for (var i = 0; i < cls.length; i++) {
       if (gpa >= cls[i].min) {
         return isArabic ? cls[i].ar : cls[i].en;
@@ -1806,7 +2008,7 @@
   }
 
   function updateMaxInputs() {
-    var max = templates[currentTemplate].max;
+    var max = getActiveTemplate().max;
     var ids = ['cum-prev-gpa', 'cum-new-gpa', 'tgt-goal-gpa'];
     for (var i = 0; i < ids.length; i++) {
       var el = document.getElementById(ids[i]);
@@ -1873,7 +2075,7 @@
       return;
     }
 
-    var max = templates[currentTemplate].max;
+    var max = getActiveTemplate().max;
     var inv = isInverted();
     var remainingCredits = gradCredits - eff.credits;
     var requiredGpa = (goalGpa * gradCredits - eff.points) / remainingCredits;
@@ -1924,7 +2126,7 @@
       return;
     }
 
-    var max = templates[currentTemplate].max;
+    var max = getActiveTemplate().max;
     var inv = isInverted();
     var bestPossible = inv ? 1.0 : max;
     var remainingCredits = gradCredits - eff.credits;
@@ -2020,7 +2222,7 @@
 
   function renderSemesters() {
     var container = document.getElementById('multi-semesters-container');
-    var max = templates[currentTemplate].max;
+    var max = getActiveTemplate().max;
     var html = '';
 
     html += '<div class="gpa-sem-header">';
@@ -2049,7 +2251,7 @@
     var totalPoints = 0;
     var validSemesters = [];
 
-    var sysMax = templates[currentTemplate].max;
+    var sysMax = getActiveTemplate().max;
     for (var i = 0; i < semesters.length; i++) {
       var s = semesters[i];
       var gpa = parseFloat(s.gpa);
@@ -2117,7 +2319,7 @@
   }
 
   function renderRefTables() {
-    var sys = templates[currentTemplate];
+    var sys = getActiveTemplate();
 
     // Grades table (only for 4.0 and 5.0)
     var gradesBody = document.getElementById('ref-grades-body');
@@ -2137,7 +2339,7 @@
     // Classifications table — show exclusive ranges to avoid overlap
     var classBody = document.getElementById('ref-class-body');
     var cls = sys.classifications;
-    var sysMax = templates[currentTemplate].max;
+    var sysMax = getActiveTemplate().max;
     var isPercent = isPercentSystem();
     var inv = isInverted();
     var dp = isPercent ? 0 : 2;
@@ -2266,6 +2468,129 @@
     }
   }
 
+  // ===== Customization panel =====
+  function renderCustomizePanel() {
+    var inner = document.getElementById('gpa-customize-inner');
+    if (!inner) return;
+    var active = getActiveTemplate();
+    var hasGrades = active.grades && active.grades.length > 0;
+    var html = '';
+
+    if (hasGrades) {
+      html += '<table class="gpa-cust-table"><thead><tr>';
+      html += '<th>' + labels.gradeSymbol + '</th>';
+      html += '<th>' + labels.gradeValue + '</th>';
+      html += '<th></th>';
+      html += '</tr></thead><tbody>';
+      for (var i = 0; i < active.grades.length; i++) {
+        var g = active.grades[i];
+        html += '<tr>';
+        html += '<td><input type="text" value="' + g.label + '" oninput="gpaCustUpdateGrade(' + i + ',\'label\',this.value)"></td>';
+        html += '<td><input type="number" step="0.01" min="0" value="' + g.value.toFixed(2) + '" oninput="gpaCustUpdateGrade(' + i + ',\'value\',this.value)"></td>';
+        html += '<td><button class="gpa-cust-del" onclick="gpaCustDeleteGrade(' + i + ')">&times;</button></td>';
+        html += '</tr>';
+      }
+      html += '</tbody></table>';
+    }
+
+    html += '<div class="gpa-cust-actions">';
+    if (hasGrades) {
+      html += '<button onclick="gpaCustAddGrade()">+ ' + labels.addGrade + '</button>';
+    }
+    html += '<button onclick="gpaCustReset()">↺ ' + labels.resetTemplate + '</button>';
+    html += '<div class="gpa-cust-max">';
+    html += '<label>' + labels.systemMax + '</label>';
+    html += '<input type="number" step="0.01" min="0" value="' + active.max + '" oninput="gpaCustUpdateMax(this.value)">';
+    html += '</div>';
+    html += '</div>';
+
+    inner.innerHTML = html;
+  }
+
+  function ensureCustomization() {
+    if (!customizations[currentTemplate]) {
+      var base = templates[currentTemplate];
+      customizations[currentTemplate] = {
+        max: base.max,
+        grades: base.grades ? base.grades.map(function(g) { return { label: g.label, value: g.value }; }) : null
+      };
+    }
+    return customizations[currentTemplate];
+  }
+
+  function onCustomizationChanged() {
+    saveCustomizations();
+    updateDropdownLabel();
+    updateMaxInputs();
+    renderCourses();
+    renderSemesters();
+    renderRefTables();
+    renderCustomizePanel();
+  }
+
+  window.gpaToggleCustomize = function() {
+    customizeOpen = !customizeOpen;
+    var panel = document.getElementById('gpa-customize-panel');
+    var btn = document.getElementById('gpa-customize-btn');
+    if (customizeOpen) {
+      renderCustomizePanel();
+      panel.classList.add('open');
+      btn.classList.add('active');
+    } else {
+      panel.classList.remove('open');
+      btn.classList.remove('active');
+    }
+  };
+
+  window.gpaCustUpdateGrade = function(index, field, value) {
+    var cust = ensureCustomization();
+    if (!cust.grades) return;
+    if (field === 'value') {
+      cust.grades[index].value = parseFloat(value) || 0;
+    } else {
+      cust.grades[index].label = value;
+    }
+    onCustomizationChanged();
+  };
+
+  window.gpaCustDeleteGrade = function(index) {
+    var cust = ensureCustomization();
+    if (!cust.grades || cust.grades.length <= 1) return;
+    cust.grades.splice(index, 1);
+    // Reset course gradeIndex values that reference deleted or shifted indices
+    for (var i = 0; i < courses.length; i++) {
+      if (courses[i].gradeIndex >= cust.grades.length) {
+        courses[i].gradeIndex = -1;
+      }
+    }
+    onCustomizationChanged();
+  };
+
+  window.gpaCustAddGrade = function() {
+    var cust = ensureCustomization();
+    if (!cust.grades) return;
+    cust.grades.push({ label: '?', value: 0 });
+    onCustomizationChanged();
+  };
+
+  window.gpaCustUpdateMax = function(value) {
+    var cust = ensureCustomization();
+    cust.max = parseFloat(value) || 0;
+    onCustomizationChanged();
+  };
+
+  window.gpaCustReset = function() {
+    delete customizations[currentTemplate];
+    saveCustomizations();
+    updateDropdownLabel();
+    updateMaxInputs();
+    renderCourses();
+    renderSemesters();
+    renderRefTables();
+    renderCustomizePanel();
+    App.showToast(isArabic ? 'تم إعادة التعيين!' : 'Reset to original!');
+  };
+
   window.gpaChangeTemplate = function(tmplId) {
     if (tmplId === currentTemplate) return;
 
@@ -2286,6 +2611,7 @@
     }
 
     updateTemplateDescription();
+    if (customizeOpen) renderCustomizePanel();
     updateMaxInputs();
     renderCourses();
     renderSemesters();
@@ -2333,7 +2659,7 @@
   };
 
   function calcWhatIf() {
-    var sys = templates[currentTemplate];
+    var sys = getActiveTemplate();
     var is100 = isPercentSystem();
     var origCredits = 0, origPoints = 0;
     var altCredits = 0, altPoints = 0;
@@ -2461,7 +2787,7 @@
   };
 
   window.gpaUseFromSemester = function() {
-    var sys = templates[currentTemplate];
+    var sys = getActiveTemplate();
     var is100 = isPercentSystem();
     var totalCredits = 0;
     var totalPoints = 0;
@@ -2494,6 +2820,7 @@
   };
 
   // Initialize
+  loadCustomizations();
   populateTemplateDropdown();
   init();
   initSemesters();
