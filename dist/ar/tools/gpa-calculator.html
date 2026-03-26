@@ -114,6 +114,13 @@
     </div>
   </div>
 
+  <!-- Save/Load bar -->
+  <div class="gpa-data-bar">
+    <button class="gpa-data-btn" onclick="gpaSaveData()">💾 حفظ البيانات</button>
+    <button class="gpa-data-btn" onclick="document.getElementById('gpa-load-file').click()">📂 استعادة البيانات</button>
+    <input type="file" id="gpa-load-file" accept=".json" style="display:none" onchange="gpaLoadData(this)">
+  </div>
+
   <!-- Tabs -->
   <div class="calc-tabs">
     <button class="calc-tab active" onclick="gpaSwitchTab('semester', this)">المعدل الفصلي</button>
@@ -601,6 +608,31 @@
   background: var(--bg-secondary);
   border-radius: 10px;
   margin-top: 4px;
+}
+
+/* Save/Load data bar */
+.gpa-calculator .gpa-data-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.gpa-calculator .gpa-data-btn {
+  padding: 8px 14px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all var(--transition-fast);
+}
+
+.gpa-calculator .gpa-data-btn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
 /* Tabs — wrapping like inheritance madhab buttons */
@@ -1926,7 +1958,9 @@
     gradeSymbol: 'الرمز',
     gradeValue: 'القيمة',
     exportSystem: 'تصدير النظام',
-    importSystem: 'استيراد نظام'
+    importSystem: 'استيراد نظام',
+    saveData: 'حفظ البيانات',
+    loadData: 'استعادة البيانات'
   };
 
   var whatIfActive = false;
@@ -2726,6 +2760,134 @@
         customizations[currentTemplate] = cust;
         onCustomizationChanged();
         App.showToast(isArabic ? 'تم استيراد النظام!' : 'System imported!');
+      } catch (err) {
+        App.showToast(isArabic ? 'ملف غير صالح' : 'Invalid file');
+      }
+    };
+    reader.readAsText(file);
+    input.value = '';
+  };
+
+  // ===== Save / Load all data =====
+  window.gpaSaveData = function() {
+    var data = {
+      version: 1,
+      currentTemplate: currentTemplate,
+      customization: customizations[currentTemplate] || null,
+      whatIfActive: whatIfActive,
+      courses: courses.map(function(c) {
+        var o = { name: c.name, credits: c.credits, gradeIndex: c.gradeIndex, gradeValue: c.gradeValue };
+        if (c.altGradeIndex !== undefined) o.altGradeIndex = c.altGradeIndex;
+        if (c.altGradeValue !== undefined) o.altGradeValue = c.altGradeValue;
+        return o;
+      }),
+      semesters: semesters.slice(),
+      cumulative: {
+        prevGpa: document.getElementById('cum-prev-gpa').value,
+        prevCredits: document.getElementById('cum-prev-credits').value,
+        newGpa: document.getElementById('cum-new-gpa').value,
+        newCredits: document.getElementById('cum-new-credits').value,
+        gradCredits: document.getElementById('max-grad-credits').value,
+        goalGpa: document.getElementById('tgt-goal-gpa').value
+      },
+      converter: {
+        from: document.getElementById('conv-from').value,
+        to: document.getElementById('conv-to').value,
+        input: document.getElementById('conv-input').value
+      }
+    };
+    var json = JSON.stringify(data, null, 2);
+    var blob = new Blob([json], { type: 'application/json' });
+    var active = getActiveTemplate();
+    var name = isArabic ? active.nameAr : active.nameEn;
+    var date = new Date().toISOString().slice(0, 10);
+    var filename = 'GPA-' + name.replace(/[\/\\:*?"<>|]/g, '-') + '-' + date + '.json';
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
+  };
+
+  window.gpaLoadData = function(input) {
+    var file = input.files && input.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      try {
+        var data = JSON.parse(e.target.result);
+        if (!data.currentTemplate || !templates[data.currentTemplate]) throw 'invalid';
+
+        // 1. Apply template
+        currentTemplate = data.currentTemplate;
+        if (data.customization) {
+          customizations[currentTemplate] = data.customization;
+        } else {
+          delete customizations[currentTemplate];
+        }
+        saveCustomizations();
+        populateTemplateDropdown();
+        document.getElementById('gpa-template-select').value = currentTemplate;
+
+        // 2. Update points label
+        var pointsLabel = document.getElementById('sem-points-label');
+        if (pointsLabel) {
+          pointsLabel.textContent = isPercentSystem() ? labels.weightedTotal : labels.totalPoints;
+        }
+        updateMaxInputs();
+
+        // 3. Restore what-if state
+        whatIfActive = !!data.whatIfActive;
+        var wifBtn = document.getElementById('whatif-btn');
+        var wifResetBtn = document.getElementById('whatif-reset-btn');
+        if (wifBtn) wifBtn.classList.toggle('active', whatIfActive);
+        if (wifResetBtn) wifResetBtn.style.display = whatIfActive ? '' : 'none';
+
+        // 4. Restore courses
+        if (data.courses && data.courses.length > 0) {
+          courses.length = 0;
+          for (var i = 0; i < data.courses.length; i++) {
+            courses.push(data.courses[i]);
+          }
+        }
+        renderCourses();
+        calcSemester();
+        if (whatIfActive) calcWhatIf();
+
+        // 5. Restore semesters
+        if (data.semesters && data.semesters.length > 0) {
+          semesters.length = 0;
+          for (var i = 0; i < data.semesters.length; i++) {
+            semesters.push(data.semesters[i]);
+          }
+        }
+        renderSemesters();
+        calcMulti();
+
+        // 6. Restore cumulative fields
+        if (data.cumulative) {
+          var c = data.cumulative;
+          document.getElementById('cum-prev-gpa').value = c.prevGpa || '';
+          document.getElementById('cum-prev-credits').value = c.prevCredits || '';
+          document.getElementById('cum-new-gpa').value = c.newGpa || '';
+          document.getElementById('cum-new-credits').value = c.newCredits || '';
+          document.getElementById('max-grad-credits').value = c.gradCredits || '';
+          document.getElementById('tgt-goal-gpa').value = c.goalGpa || '';
+          calcCumulative(); calcTarget(); calcMaxGpa();
+        }
+
+        // 7. Restore converter
+        if (data.converter) {
+          document.getElementById('conv-from').value = data.converter.from || '4';
+          document.getElementById('conv-to').value = data.converter.to || '5';
+          document.getElementById('conv-input').value = data.converter.input || '';
+          calcConvert();
+        }
+
+        // 8. Update customize panel if open
+        if (customizeOpen) renderCustomizePanel();
+        renderRefTables();
+
+        App.showToast(isArabic ? 'تم استعادة البيانات!' : 'Data loaded!');
       } catch (err) {
         App.showToast(isArabic ? 'ملف غير صالح' : 'Invalid file');
       }
