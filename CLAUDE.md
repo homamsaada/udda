@@ -230,6 +230,14 @@ npm run serve
 # Check topic page at http://localhost:3000/ar/blog/calculators/zakat-calculator/
 ```
 
+**Blog index page structure (`/{lang}/blog/`):**
+1. **Hero article** — the latest post displayed as a prominent full-width card
+2. **Browse by Topic** — grid of topic cards (tool icon, shortName, article count), only shown when 2+ topics exist. Sorted by article count descending. Links to subcategory pages.
+3. **All Articles** — full post grid with tool-level filter buttons (using shortName). Filters use `data-topic` attribute.
+
+**`shortName` field in i18n.json:**
+Tools with blog posts should have a `shortName` field (e.g., "الزكاة" instead of "حاسبة الزكاة") used in blog filters, topic cards, and subcategory page titles. Falls back to `name` if not set.
+
 **Notes:**
 - Each language is independent — a post in `src/blog/ar/` doesn't need a matching file in `src/blog/en/`
 - Posts are sorted by date (newest first) on the blog index page

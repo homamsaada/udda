@@ -396,7 +396,8 @@ function buildHomepage(lang) {
           } else if (post.mainCategory) {
             const toolInfo = toolsData.tools.find(t => t.id === post.topic);
             const toolI18n = i18n.tools[post.topic]?.[lang];
-            badgeHTML = `<span class="blog-post-category-badge topic">${toolInfo?.icon || ''} ${toolI18n?.name || post.topic}</span>`;
+            const shortName = toolI18n?.shortName || toolI18n?.name || post.topic;
+            badgeHTML = `<span class="blog-post-category-badge topic">${toolInfo?.icon || ''} ${shortName}</span>`;
           } else {
             badgeHTML = `<span class="blog-post-category-badge seo">${ui.categoryArticles}</span>`;
           }
@@ -743,66 +744,125 @@ function buildBlogIndexPage(lang, posts) {
     url: `${basePath}${lang}/tools/${t.id}.html`
   }));
 
-  let postsHTML;
+  let contentSections = '';
   if (posts.length === 0) {
-    postsHTML = `
+    contentSections = `
       <div class="blog-empty">
         <div class="blog-empty-icon">📝</div>
         <p>${ui.noPosts}</p>
       </div>`;
   } else {
-    // Build filter buttons from main categories that have posts
-    const mainCatsWithPosts = new Map();
+    // --- Section 1: Hero Article (latest post) ---
+    const heroPost = posts[0];
+    let heroBadgeHTML;
+    if (heroPost.topic === 'news') {
+      heroBadgeHTML = `<span class="blog-post-category-badge news">${ui.blogTopicNews}</span>`;
+    } else if (heroPost.mainCategory) {
+      const heroToolInfo = toolsData.tools.find(t => t.id === heroPost.topic);
+      const heroToolI18n = i18n.tools[heroPost.topic]?.[lang];
+      const heroShortName = heroToolI18n?.shortName || heroToolI18n?.name || heroPost.topic;
+      heroBadgeHTML = `<span class="blog-post-category-badge topic">${heroToolInfo?.icon || ''} ${heroShortName}</span>`;
+    } else {
+      heroBadgeHTML = `<span class="blog-post-category-badge seo">${ui.categoryArticles}</span>`;
+    }
+
+    const heroHTML = `
+      <a href="${basePath}${lang}/blog/${heroPost.slug}.html" class="blog-hero-card">
+        <div class="blog-hero-meta">
+          ${heroBadgeHTML}
+          <span>${heroPost.date}</span>
+        </div>
+        <h2 class="blog-hero-title">${heroPost.title}</h2>
+        <p class="blog-hero-description">${heroPost.description}</p>
+        <span class="blog-hero-cta">${ui.blogReadArticle} &rarr;</span>
+      </a>`;
+
+    // --- Section 2: Browse by Topic ---
+    const topicGroups = new Map();
     posts.forEach(post => {
-      if (post.mainCategory && post.mainCategory !== 'news') {
-        if (!mainCatsWithPosts.has(post.mainCategory)) {
-          mainCatsWithPosts.set(post.mainCategory, 0);
+      if (post.topic && post.topic !== 'news' && post.mainCategory) {
+        if (!topicGroups.has(post.topic)) {
+          topicGroups.set(post.topic, { count: 0, mainCategory: post.mainCategory });
         }
-        mainCatsWithPosts.set(post.mainCategory, mainCatsWithPosts.get(post.mainCategory) + 1);
+        topicGroups.get(post.topic).count++;
       }
+    });
+
+    let browseByTopicHTML = '';
+    if (topicGroups.size > 1) {
+      // Sort by count descending
+      const sortedTopics = [...topicGroups.entries()].sort((a, b) => b[1].count - a[1].count);
+      const topicCards = sortedTopics.map(([topicId, info]) => {
+        const toolInfo = toolsData.tools.find(t => t.id === topicId);
+        const toolI18n = i18n.tools[topicId]?.[lang];
+        const shortName = toolI18n?.shortName || toolI18n?.name || topicId;
+        return `
+          <a href="${basePath}${lang}/blog/${info.mainCategory}/${topicId}/" class="blog-topic-card">
+            <div class="blog-topic-icon">${toolInfo?.icon || ''}</div>
+            <div class="blog-topic-name">${shortName}</div>
+            <div class="blog-topic-count">${info.count} ${ui.blogArticlesCount}</div>
+          </a>`;
+      }).join('');
+
+      browseByTopicHTML = `
+        <div class="blog-section">
+          <h2 class="blog-section-title">${ui.blogBrowseByTopic}</h2>
+          <div class="blog-topic-grid">
+            ${topicCards}
+          </div>
+        </div>`;
+    }
+
+    // --- Section 3: All Articles with tool-level filters ---
+    // Build filter buttons by tool (topic)
+    let filterBtns = `<button class="blog-filter-btn active" onclick="filterPosts('all')">${ui.allPosts}</button>`;
+    const sortedFilterTopics = [...topicGroups.entries()].sort((a, b) => b[1].count - a[1].count);
+    sortedFilterTopics.forEach(([topicId]) => {
+      const toolInfo = toolsData.tools.find(t => t.id === topicId);
+      const toolI18n = i18n.tools[topicId]?.[lang];
+      const shortName = toolI18n?.shortName || toolI18n?.name || topicId;
+      filterBtns += `<button class="blog-filter-btn" onclick="filterPosts('${topicId}')">${toolInfo?.icon || ''} ${shortName}</button>`;
     });
     const hasNews = posts.some(p => p.mainCategory === 'news');
-
-    let filterBtns = `<button class="blog-filter-btn active" onclick="filterPosts('all')">${ui.allPosts}</button>`;
-    // Add category filters in categoryOrder
-    toolsData.categoryOrder.forEach(catId => {
-      if (mainCatsWithPosts.has(catId)) {
-        const catInfo = categories[catId];
-        filterBtns += `<button class="blog-filter-btn" onclick="filterPosts('${catId}')">${catInfo?.icon || ''} ${catInfo?.name || catId}</button>`;
-      }
-    });
     if (hasNews) {
       filterBtns += `<button class="blog-filter-btn" onclick="filterPosts('news')">📢 ${ui.blogTopicNews}</button>`;
     }
 
-    postsHTML = `
-      <div class="blog-filters">
-        ${filterBtns}
-      </div>
-      <div class="blog-posts-grid">
-        ${posts.map(post => {
-          // Badge: show tool icon + name for topic posts, "News" for news
-          let badgeHTML;
-          if (post.topic === 'news') {
-            badgeHTML = `<span class="blog-post-category-badge news">${ui.blogTopicNews}</span>`;
-          } else if (post.mainCategory) {
-            const toolInfo = toolsData.tools.find(t => t.id === post.topic);
-            const toolI18n = i18n.tools[post.topic]?.[lang];
-            badgeHTML = `<span class="blog-post-category-badge topic">${toolInfo?.icon || ''} ${toolI18n?.name || post.topic}</span>`;
-          } else {
-            badgeHTML = `<span class="blog-post-category-badge seo">${ui.categoryArticles}</span>`;
-          }
-          return `
-          <a href="${basePath}${lang}/blog/${post.slug}.html" class="blog-post-card" data-category="${post.mainCategory || post.topic}">
-            <div class="blog-post-meta">
-              ${badgeHTML}
-              <span>${post.date}</span>
-            </div>
-            <h3 class="blog-post-card-title">${post.title}</h3>
-            <p class="blog-post-card-description">${post.description}</p>
-            <span class="blog-post-read-more">${ui.readMore} &rarr;</span>
-          </a>`;
-        }).join('')}
+    const allPostsHTML = posts.map(post => {
+      let badgeHTML;
+      if (post.topic === 'news') {
+        badgeHTML = `<span class="blog-post-category-badge news">${ui.blogTopicNews}</span>`;
+      } else if (post.mainCategory) {
+        const toolInfo = toolsData.tools.find(t => t.id === post.topic);
+        const toolI18n = i18n.tools[post.topic]?.[lang];
+        const shortName = toolI18n?.shortName || toolI18n?.name || post.topic;
+        badgeHTML = `<span class="blog-post-category-badge topic">${toolInfo?.icon || ''} ${shortName}</span>`;
+      } else {
+        badgeHTML = `<span class="blog-post-category-badge seo">${ui.categoryArticles}</span>`;
+      }
+      return `
+        <a href="${basePath}${lang}/blog/${post.slug}.html" class="blog-post-card" data-topic="${post.topic || ''}" data-category="${post.mainCategory || post.topic}">
+          <div class="blog-post-meta">
+            ${badgeHTML}
+            <span>${post.date}</span>
+          </div>
+          <h3 class="blog-post-card-title">${post.title}</h3>
+          <p class="blog-post-card-description">${post.description}</p>
+          <span class="blog-post-read-more">${ui.readMore} &rarr;</span>
+        </a>`;
+    }).join('');
+
+    contentSections = `
+      ${heroHTML}
+      ${browseByTopicHTML}
+      <div class="blog-section">
+        <h2 class="blog-section-title">${ui.blogAllArticles}</h2>
+        <div class="blog-filters">
+          ${filterBtns}
+        </div>
+        <div class="blog-posts-grid">
+          ${allPostsHTML}
+        </div>
       </div>`;
   }
 
@@ -815,7 +875,7 @@ function buildBlogIndexPage(lang, posts) {
         btns.forEach(function(b) { b.classList.remove('active'); });
         event.target.classList.add('active');
         cards.forEach(function(c) {
-          c.style.display = (cat === 'all' || c.dataset.category === cat) ? '' : 'none';
+          c.style.display = (cat === 'all' || c.dataset.topic === cat || c.dataset.category === cat) ? '' : 'none';
         });
       };
     })();
@@ -826,7 +886,7 @@ function buildBlogIndexPage(lang, posts) {
       <h1 class="blog-header-title">${ui.blog}</h1>
       <p class="blog-header-description">${ui.blogDescription}</p>
     </div>
-    ${postsHTML}
+    ${contentSections}
     ${filterScript}
     <script>
       window.toolsData = ${JSON.stringify(allToolsData)};
@@ -888,11 +948,12 @@ function buildBlogCategoryPage(categoryId, lang, posts) {
     const toolInfo = toolsData.tools.find(t => t.id === toolId);
     const toolI18n = i18n.tools[toolId]?.[lang];
     if (!toolInfo || !toolI18n) return;
+    const shortName = toolI18n.shortName || toolI18n.name;
     subcatCards.push(`
       <a href="${basePath}${lang}/blog/${categoryId}/${toolId}/" class="blog-subcat-card">
         <div class="blog-subcat-icon">${toolInfo.icon}</div>
         <div class="blog-subcat-info">
-          <h3>${toolI18n.name}</h3>
+          <h3>${shortName}</h3>
           <p>${toolPosts.length} ${ui.blogArticlesCount}</p>
         </div>
       </a>`);
@@ -962,10 +1023,12 @@ function buildBlogSubcategoryPage(categoryId, toolId, lang, posts) {
     url: `${basePath}${lang}/tools/${t.id}.html`
   }));
 
+  const toolShortName = toolI18n.shortName || toolI18n.name;
+
   const postsHTML = posts.map(post => `
     <a href="${basePath}${lang}/blog/${post.slug}.html" class="blog-post-card">
       <div class="blog-post-meta">
-        <span class="blog-post-category-badge topic">${toolInfo.icon} ${toolI18n.name}</span>
+        <span class="blog-post-category-badge topic">${toolInfo.icon} ${toolShortName}</span>
         <span>${post.date}</span>
       </div>
       <h3 class="blog-post-card-title">${post.title}</h3>
@@ -980,11 +1043,17 @@ function buildBlogSubcategoryPage(categoryId, toolId, lang, posts) {
         <span class="blog-breadcrumb-sep">/</span>
         <a href="${basePath}${lang}/blog/${categoryId}/">${catInfo.icon} ${catInfo.name}</a>
         <span class="blog-breadcrumb-sep">/</span>
-        <span>${toolInfo.icon} ${toolI18n.name}</span>
+        <span>${toolInfo.icon} ${toolShortName}</span>
       </nav>
-      <h1 class="blog-header-title">${toolInfo.icon} ${toolI18n.name}</h1>
+      <h1 class="blog-header-title">${toolInfo.icon} ${toolShortName}</h1>
       <p class="blog-header-description">${toolI18n.description}</p>
-      <a href="${basePath}${lang}/tools/${toolId}.html" class="blog-tool-cta-btn">${ui.blogTryTool} ${isArabic ? '←' : '→'}</a>
+      <div class="blog-cta">
+        <div class="blog-cta-icon">${toolInfo.icon}</div>
+        <div class="blog-cta-body">
+          <p>${toolI18n.description}</p>
+          <a href="${basePath}${lang}/tools/${toolId}.html">${ui.blogTryTool} ${isArabic ? '←' : '→'}</a>
+        </div>
+      </div>
     </div>
     <div class="blog-posts-grid">
       ${postsHTML}
@@ -995,7 +1064,7 @@ function buildBlogSubcategoryPage(categoryId, toolId, lang, posts) {
   `;
 
   const titleText = isArabic
-    ? `${ui.blogTopicArticles} ${toolI18n.name} | ${meta.siteName}`
+    ? `${ui.blogTopicArticles} ${toolShortName} | ${meta.siteName}`
     : `${toolI18n.name} Articles | ${meta.siteName}`;
 
   return buildPageHTML(lang, {
