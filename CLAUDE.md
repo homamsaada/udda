@@ -231,12 +231,12 @@ npm run serve
 ```
 
 **Blog index page structure (`/{lang}/blog/`):**
-1. **Hero article** — the latest post displayed as a prominent full-width card
-2. **Browse by Topic** — grid of topic cards (tool icon, shortName, article count), only shown when 2+ topics exist. Sorted by article count descending. Links to subcategory pages.
-3. **All Articles** — full post grid with tool-level filter buttons (using shortName). Filters use `data-topic` attribute.
+1. **Header** — blog title and description
+2. **Dropdown filter bar** — two `<select>` dropdowns side by side: Category (main categories with icons) and Topic (tools with shortName). Category dropdown dynamically updates Topic dropdown options. Filtering is client-side JS, no page reload.
+3. **All Articles** — full post grid sorted by date (newest first)
 
 **`shortName` field in i18n.json:**
-Tools with blog posts should have a `shortName` field (e.g., "الزكاة" instead of "حاسبة الزكاة") used in blog filters, topic cards, and subcategory page titles. Falls back to `name` if not set.
+Tools with blog posts should have a `shortName` field (e.g., "الزكاة" instead of "حاسبة الزكاة") used in blog dropdowns, topic badges, and subcategory page titles. Falls back to `name` if not set.
 
 **Notes:**
 - Each language is independent — a post in `src/blog/ar/` doesn't need a matching file in `src/blog/en/`

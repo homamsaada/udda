@@ -90,52 +90,70 @@
       <p class="blog-header-description">مقالات ونصائح وأخبار من عُدّة</p>
     </div>
     
-      
-      <a href="../../ar/blog/how-islamic-inheritance-works.html" class="blog-hero-card">
-        <div class="blog-hero-meta">
-          <span class="blog-post-category-badge topic">⚖️ حاسبة المواريث</span>
-          <span>2026-03-22</span>
+      <div class="blog-dropdown-bar">
+        <div class="blog-dropdown-group">
+          <label for="blog-cat-select">التصنيف</label>
+          <select id="blog-cat-select" onchange="blogFilter()">
+            <option value="all">الكل</option><option value="calculators">🧮 حاسبات</option>
+          </select>
         </div>
-        <h2 class="blog-hero-title">كيف يُقسّم الميراث في الإسلام؟ دليل مبسّط لعلم الفرائض</h2>
-        <p class="blog-hero-description">شرح مبسّط لطريقة تقسيم الميراث في الإسلام: من يرث ومن لا يرث، الفروض المقدّرة، التعصيب، الحجب، والعول، مع أمثلة عملية</p>
-        <span class="blog-hero-cta">undefined &rarr;</span>
-      </a>
-      
-        <div class="blog-section">
-          <h2 class="blog-section-title">undefined</h2>
-          <div class="blog-topic-grid">
-            
-          <a href="../../ar/blog/calculators/zakat-calculator/" class="blog-topic-card">
-            <div class="blog-topic-icon">🕌</div>
-            <div class="blog-topic-name">حاسبة الزكاة</div>
-            <div class="blog-topic-count">8 undefined</div>
-          </a>
-          <a href="../../ar/blog/calculators/inheritance-calculator/" class="blog-topic-card">
-            <div class="blog-topic-icon">⚖️</div>
-            <div class="blog-topic-name">حاسبة المواريث</div>
-            <div class="blog-topic-count">1 undefined</div>
-          </a>
+        <div class="blog-dropdown-group">
+          <label for="blog-topic-select">الموضوع</label>
+          <select id="blog-topic-select" onchange="blogFilter()">
+            <option value="all">الكل</option><option value="zakat-calculator" data-category="calculators">🕌 الزكاة</option><option value="inheritance-calculator" data-category="calculators">⚖️ المواريث</option>
+          </select>
+        </div>
+      </div>
+      <div class="blog-posts-grid">
+        
+        <a href="../../ar/blog/inheritance-madhab-differences.html" class="blog-post-card" data-topic="inheritance-calculator" data-category="calculators">
+          <div class="blog-post-meta">
+            <span class="blog-post-category-badge topic">⚖️ المواريث</span>
+            <span>2026-03-24</span>
           </div>
-        </div>
-      <div class="blog-section">
-        <h2 class="blog-section-title">undefined</h2>
-        <div class="blog-filters">
-          <button class="blog-filter-btn active" onclick="filterPosts('all')">الكل</button><button class="blog-filter-btn" onclick="filterPosts('zakat-calculator')">🕌 حاسبة الزكاة</button><button class="blog-filter-btn" onclick="filterPosts('inheritance-calculator')">⚖️ حاسبة المواريث</button>
-        </div>
-        <div class="blog-posts-grid">
-          
+          <h3 class="blog-post-card-title">الفرق بين المذاهب الأربعة في المواريث: أبرز نقاط الخلاف</h3>
+          <p class="blog-post-card-description">تعرّف على أهم الفروق بين المذاهب الحنفي والمالكي والشافعي والحنبلي في تقسيم الميراث مع أمثلة عملية لكل خلاف</p>
+          <span class="blog-post-read-more">اقرأ المزيد &rarr;</span>
+        </a>
+        <a href="../../ar/blog/grandchildren-inheritance.html" class="blog-post-card" data-topic="inheritance-calculator" data-category="calculators">
+          <div class="blog-post-meta">
+            <span class="blog-post-category-badge topic">⚖️ المواريث</span>
+            <span>2026-03-23</span>
+          </div>
+          <h3 class="blog-post-card-title">ميراث الأحفاد: هل يرثون إذا مات أبوهم قبل جدهم؟</h3>
+          <p class="blog-post-card-description">هل يرث الأحفاد من جدهم إذا توفي أبوهم قبله؟ تعرّف على حكم الشرع والوصية الواجبة وما يحدث فعلاً مع أمثلة عملية</p>
+          <span class="blog-post-read-more">اقرأ المزيد &rarr;</span>
+        </a>
+        <a href="../../ar/blog/when-siblings-blocked-inheritance.html" class="blog-post-card" data-topic="inheritance-calculator" data-category="calculators">
+          <div class="blog-post-meta">
+            <span class="blog-post-category-badge topic">⚖️ المواريث</span>
+            <span>2026-03-23</span>
+          </div>
+          <h3 class="blog-post-card-title">متى يُحجب الإخوة من الميراث؟ أحكام الحجب بالتفصيل</h3>
+          <p class="blog-post-card-description">متى يُمنع الأخ أو الأخت من الميراث؟ تعرّف على قواعد الحجب في المواريث: من يحجب من، والفرق بين حجب الحرمان وحجب النقصان</p>
+          <span class="blog-post-read-more">اقرأ المزيد &rarr;</span>
+        </a>
         <a href="../../ar/blog/how-islamic-inheritance-works.html" class="blog-post-card" data-topic="inheritance-calculator" data-category="calculators">
           <div class="blog-post-meta">
-            <span class="blog-post-category-badge topic">⚖️ حاسبة المواريث</span>
+            <span class="blog-post-category-badge topic">⚖️ المواريث</span>
             <span>2026-03-22</span>
           </div>
           <h3 class="blog-post-card-title">كيف يُقسّم الميراث في الإسلام؟ دليل مبسّط لعلم الفرائض</h3>
           <p class="blog-post-card-description">شرح مبسّط لطريقة تقسيم الميراث في الإسلام: من يرث ومن لا يرث، الفروض المقدّرة، التعصيب، الحجب، والعول، مع أمثلة عملية</p>
           <span class="blog-post-read-more">اقرأ المزيد &rarr;</span>
         </a>
+        <a href="../../ar/blog/wife-inheritance-share.html" class="blog-post-card" data-topic="inheritance-calculator" data-category="calculators">
+          <div class="blog-post-meta">
+            <span class="blog-post-category-badge topic">⚖️ المواريث</span>
+            <span>2026-03-22</span>
+          </div>
+          <h3 class="blog-post-card-title">نصيب الزوجة من ميراث زوجها: الأحكام والحالات بالتفصيل</h3>
+          <p class="blog-post-card-description">كم ترث الزوجة من زوجها المتوفى؟ تعرّف على نصيب الزوجة الشرعي مع أمثلة عملية لكل الحالات، وحكم تعدد الزوجات في الميراث</p>
+          <span class="blog-post-read-more">اقرأ المزيد &rarr;</span>
+        </a>
         <a href="../../ar/blog/zakat-on-cryptocurrency.html" class="blog-post-card" data-topic="zakat-calculator" data-category="calculators">
           <div class="blog-post-meta">
-            <span class="blog-post-category-badge topic">🕌 حاسبة الزكاة</span>
+            <span class="blog-post-category-badge topic">🕌 الزكاة</span>
             <span>2026-03-21</span>
           </div>
           <h3 class="blog-post-card-title">زكاة العملات الرقمية (البيتكوين): هل تجب وكيف تُحسب؟</h3>
@@ -144,7 +162,7 @@
         </a>
         <a href="../../ar/blog/zakat-on-debts.html" class="blog-post-card" data-topic="zakat-calculator" data-category="calculators">
           <div class="blog-post-meta">
-            <span class="blog-post-category-badge topic">🕌 حاسبة الزكاة</span>
+            <span class="blog-post-category-badge topic">🕌 الزكاة</span>
             <span>2026-03-21</span>
           </div>
           <h3 class="blog-post-card-title">زكاة الديون: هل أزكّي مالاً أقرضته لغيري؟</h3>
@@ -153,7 +171,7 @@
         </a>
         <a href="../../ar/blog/zakat-on-gold-jewelry.html" class="blog-post-card" data-topic="zakat-calculator" data-category="calculators">
           <div class="blog-post-meta">
-            <span class="blog-post-category-badge topic">🕌 حاسبة الزكاة</span>
+            <span class="blog-post-category-badge topic">🕌 الزكاة</span>
             <span>2026-03-21</span>
           </div>
           <h3 class="blog-post-card-title">هل تجب الزكاة على الذهب الملبوس؟ خلاف العلماء والراجح</h3>
@@ -162,7 +180,7 @@
         </a>
         <a href="../../ar/blog/zakat-on-real-estate.html" class="blog-post-card" data-topic="zakat-calculator" data-category="calculators">
           <div class="blog-post-meta">
-            <span class="blog-post-category-badge topic">🕌 حاسبة الزكاة</span>
+            <span class="blog-post-category-badge topic">🕌 الزكاة</span>
             <span>2026-03-21</span>
           </div>
           <h3 class="blog-post-card-title">زكاة العقارات: متى تجب ومتى لا تجب؟</h3>
@@ -171,7 +189,7 @@
         </a>
         <a href="../../ar/blog/zakat-on-salary.html" class="blog-post-card" data-topic="zakat-calculator" data-category="calculators">
           <div class="blog-post-meta">
-            <span class="blog-post-category-badge topic">🕌 حاسبة الزكاة</span>
+            <span class="blog-post-category-badge topic">🕌 الزكاة</span>
             <span>2026-03-21</span>
           </div>
           <h3 class="blog-post-card-title">زكاة الراتب الشهري: هل تجب وكيف تُحسب؟</h3>
@@ -180,7 +198,7 @@
         </a>
         <a href="../../ar/blog/zakat-on-stocks.html" class="blog-post-card" data-topic="zakat-calculator" data-category="calculators">
           <div class="blog-post-meta">
-            <span class="blog-post-category-badge topic">🕌 حاسبة الزكاة</span>
+            <span class="blog-post-category-badge topic">🕌 الزكاة</span>
             <span>2026-03-21</span>
           </div>
           <h3 class="blog-post-card-title">زكاة الأسهم والصناديق الاستثمارية: دليل تفصيلي</h3>
@@ -189,7 +207,7 @@
         </a>
         <a href="../../ar/blog/zakat-to-relatives.html" class="blog-post-card" data-topic="zakat-calculator" data-category="calculators">
           <div class="blog-post-meta">
-            <span class="blog-post-category-badge topic">🕌 حاسبة الزكاة</span>
+            <span class="blog-post-category-badge topic">🕌 الزكاة</span>
             <span>2026-03-21</span>
           </div>
           <h3 class="blog-post-card-title">هل يجوز إعطاء الزكاة للأقارب؟ الأحكام والضوابط</h3>
@@ -198,25 +216,40 @@
         </a>
         <a href="../../ar/blog/how-to-calculate-zakat.html" class="blog-post-card" data-topic="zakat-calculator" data-category="calculators">
           <div class="blog-post-meta">
-            <span class="blog-post-category-badge topic">🕌 حاسبة الزكاة</span>
+            <span class="blog-post-category-badge topic">🕌 الزكاة</span>
             <span>2026-03-20</span>
           </div>
           <h3 class="blog-post-card-title">كيف تحسب زكاة المال؟ دليل شامل مع أمثلة عملية</h3>
           <p class="blog-post-card-description">تعرّف على طريقة حساب زكاة المال خطوة بخطوة: شروط وجوبها، النصاب، نسبة الزكاة، وأمثلة عملية على زكاة النقود والذهب والأسهم</p>
           <span class="blog-post-read-more">اقرأ المزيد &rarr;</span>
         </a>
-        </div>
       </div>
     
     <script>
     (function() {
-      window.filterPosts = function(cat) {
+      window.blogFilter = function() {
+        var catVal = document.getElementById('blog-cat-select').value;
+        var topicSel = document.getElementById('blog-topic-select');
+        var topicVal = topicSel.value;
+        // Update topic dropdown options based on category
+        var opts = topicSel.querySelectorAll('option[data-category]');
+        opts.forEach(function(o) {
+          o.style.display = (catVal === 'all' || o.dataset.category === catVal) ? '' : 'none';
+        });
+        // Reset topic to "all" if current selection is hidden
+        if (topicVal !== 'all') {
+          var selected = topicSel.querySelector('option[value="' + topicVal + '"]');
+          if (selected && selected.style.display === 'none') {
+            topicSel.value = 'all';
+            topicVal = 'all';
+          }
+        }
+        // Filter cards
         var cards = document.querySelectorAll('.blog-post-card');
-        var btns = document.querySelectorAll('.blog-filter-btn');
-        btns.forEach(function(b) { b.classList.remove('active'); });
-        event.target.classList.add('active');
         cards.forEach(function(c) {
-          c.style.display = (cat === 'all' || c.dataset.topic === cat || c.dataset.category === cat) ? '' : 'none';
+          var matchCat = (catVal === 'all' || c.dataset.category === catVal);
+          var matchTopic = (topicVal === 'all' || c.dataset.topic === topicVal);
+          c.style.display = (matchCat && matchTopic) ? '' : 'none';
         });
       };
     })();
