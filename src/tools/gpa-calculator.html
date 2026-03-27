@@ -237,12 +237,24 @@
       <div class="gpa-conv-row">
         <div class="gpa-form-group">
           <label>{{tool.convertFrom}}</label>
-          <select id="conv-from" onchange="gpaCalcConvert()"></select>
+          <div class="gpa-conv-select-row">
+            <select id="conv-from" onchange="gpaCalcConvert()"></select>
+            <button class="gpa-customize-btn gpa-conv-cust-btn" id="conv-cust-from-btn" onclick="gpaConvToggleCust('from')">{{tool.customizeBtn}}</button>
+          </div>
+          <div class="gpa-customize-panel" id="conv-cust-from-panel">
+            <div class="gpa-customize-inner" id="conv-cust-from-inner"></div>
+          </div>
         </div>
         <button class="gpa-conv-swap" onclick="gpaConvSwap()" type="button">⇄</button>
         <div class="gpa-form-group">
           <label>{{tool.convertTo}}</label>
-          <select id="conv-to" onchange="gpaCalcConvert()"></select>
+          <div class="gpa-conv-select-row">
+            <select id="conv-to" onchange="gpaCalcConvert()"></select>
+            <button class="gpa-customize-btn gpa-conv-cust-btn" id="conv-cust-to-btn" onclick="gpaConvToggleCust('to')">{{tool.customizeBtn}}</button>
+          </div>
+          <div class="gpa-customize-panel" id="conv-cust-to-panel">
+            <div class="gpa-customize-inner" id="conv-cust-to-inner"></div>
+          </div>
         </div>
       </div>
       <div class="gpa-form-row">
@@ -1084,6 +1096,24 @@
   font-weight: 600;
 }
 
+/* Converter select + customize button row */
+.gpa-calculator .gpa-conv-select-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.gpa-calculator .gpa-conv-select-row select {
+  flex: 1;
+  min-width: 0;
+}
+
+.gpa-calculator .gpa-conv-cust-btn {
+  padding: 6px 10px !important;
+  font-size: 0.78rem !important;
+  flex-shrink: 0;
+}
+
 /* Converter row with swap button */
 .gpa-calculator .gpa-conv-row {
   display: flex;
@@ -1825,16 +1855,41 @@
   // Customizations stored per template: { templateId: { max, grades: [{label,value}] } }
   var customizations = {};
   var customizeOpen = false;
+  var convCustomizations = {};  // Separate customizations for converter from/to
+  var convCustOpen = { from: false, to: false };
 
   function loadCustomizations() {
     try {
       var raw = localStorage.getItem('gpa-customizations');
       if (raw) customizations = JSON.parse(raw);
     } catch (e) { customizations = {}; }
+    try {
+      var raw2 = localStorage.getItem('gpa-conv-customizations');
+      if (raw2) convCustomizations = JSON.parse(raw2);
+    } catch (e) { convCustomizations = {}; }
   }
 
   function saveCustomizations() {
     try { localStorage.setItem('gpa-customizations', JSON.stringify(customizations)); } catch (e) {}
+  }
+
+  function saveConvCustomizations() {
+    try { localStorage.setItem('gpa-conv-customizations', JSON.stringify(convCustomizations)); } catch (e) {}
+  }
+
+  // Returns template with converter-specific customization applied
+  function getConvTemplate(tmplId) {
+    var base = templates[tmplId];
+    var cust = convCustomizations[tmplId];
+    if (!cust) return base;
+    return {
+      nameAr: base.nameAr, nameEn: base.nameEn,
+      descAr: base.descAr, descEn: base.descEn,
+      inverted: base.inverted,
+      max: cust.max !== undefined ? cust.max : base.max,
+      grades: cust.grades || base.grades,
+      classifications: base.classifications
+    };
   }
 
   function isCustomized(templateId) {
@@ -2162,7 +2217,7 @@
     var fromSys = document.getElementById('conv-from');
     var convInput = document.getElementById('conv-input');
     if (fromSys && convInput) {
-      var fromTmpl = getActiveTemplate(fromSys.value);
+      var fromTmpl = getConvTemplate(fromSys.value);
       convInput.max = fromTmpl.max;
       convInput.placeholder = '0.00';
     }
@@ -2277,7 +2332,7 @@
   // ===== Converter: percentage-based interpolation =====
   // Build a map of [gradeValue, percentEquivalent] pairs for a template, sorted high-to-low
   function getPercentMap(tmplId) {
-    var tmpl = getActiveTemplate(tmplId);
+    var tmpl = getConvTemplate(tmplId);
     var inv = !!(templates[tmplId].inverted);
 
     // Percentage-based systems: identity map
@@ -2303,7 +2358,7 @@
   function toPercent(val, tmplId) {
     var map = getPercentMap(tmplId);
     var inv = !!(templates[tmplId].inverted);
-    var tmpl = getActiveTemplate(tmplId);
+    var tmpl = getConvTemplate(tmplId);
 
     if (inv) {
       if (val <= map[0][0]) return map[0][1];
@@ -2388,7 +2443,7 @@
       converted = fromPercent(pct, toId);
     }
 
-    var toTmpl = getActiveTemplate(toId);
+    var toTmpl = getConvTemplate(toId);
     var isPct = !toTmpl.grades || toTmpl.grades.length === 0;
     var dp = isPct ? 0 : 2;
 
@@ -3029,6 +3084,160 @@
     fromEl.value = toEl.value;
     toEl.value = tmp;
     calcConvert();
+  };
+
+  // ===== Converter customization =====
+  function convGetTmplId(side) {
+    return document.getElementById('conv-' + side).value;
+  }
+
+  function convEnsureCust(tmplId) {
+    if (!convCustomizations[tmplId]) {
+      var base = templates[tmplId];
+      convCustomizations[tmplId] = {
+        max: base.max,
+        grades: base.grades ? base.grades.map(function(g) { return { label: g.label, value: g.value }; }) : null
+      };
+    }
+    return convCustomizations[tmplId];
+  }
+
+  function convRenderPanel(side) {
+    var inner = document.getElementById('conv-cust-' + side + '-inner');
+    if (!inner) return;
+    var tmplId = convGetTmplId(side);
+    var tmpl = getConvTemplate(tmplId);
+    var hasGrades = tmpl.grades && tmpl.grades.length > 0;
+    var s = JSON.stringify(side);
+    var html = '';
+
+    if (hasGrades) {
+      html += '<table class="gpa-cust-table"><thead><tr>';
+      html += '<th>' + labels.gradeSymbol + '</th>';
+      html += '<th>' + labels.gradeValue + '</th>';
+      html += '<th></th>';
+      html += '</tr></thead><tbody>';
+      for (var i = 0; i < tmpl.grades.length; i++) {
+        var g = tmpl.grades[i];
+        html += '<tr>';
+        html += '<td><input type="text" value="' + g.label + '" oninput="gpaConvCustUpdate(' + s + ',' + i + ',\'label\',this.value)"></td>';
+        html += '<td><input type="number" step="0.01" min="0" value="' + g.value.toFixed(2) + '" oninput="gpaConvCustUpdate(' + s + ',' + i + ',\'value\',this.value)"></td>';
+        html += '<td><button class="gpa-cust-del" onclick="gpaConvCustDelete(' + s + ',' + i + ')">&times;</button></td>';
+        html += '</tr>';
+      }
+      html += '</tbody></table>';
+    }
+
+    html += '<div class="gpa-cust-actions">';
+    if (hasGrades) html += '<button onclick="gpaConvCustAdd(' + s + ')">+ ' + labels.addGrade + '</button>';
+    html += '<button onclick="gpaConvCustReset(' + s + ')">↺ ' + labels.resetTemplate + '</button>';
+    html += '<button onclick="gpaConvCustExport(' + s + ')">↓ ' + labels.exportSystem + '</button>';
+    html += '<button onclick="document.getElementById(\'conv-import-' + side + '\').click()">↑ ' + labels.importSystem + '</button>';
+    html += '<input type="file" id="conv-import-' + side + '" accept=".json" style="display:none" onchange="gpaConvCustImport(\'' + side + '\',this)">';
+    html += '<div class="gpa-cust-max"><label>' + labels.systemMax + '</label>';
+    html += '<input type="number" step="0.01" min="0" value="' + tmpl.max + '" oninput="gpaConvCustUpdateMax(' + s + ',this.value)">';
+    html += '</div></div>';
+
+    inner.innerHTML = html;
+  }
+
+  function convOnChanged(side) {
+    saveConvCustomizations();
+    convRenderPanel(side);
+    calcConvert();
+  }
+
+  window.gpaConvToggleCust = function(side) {
+    convCustOpen[side] = !convCustOpen[side];
+    var panel = document.getElementById('conv-cust-' + side + '-panel');
+    var btn = document.getElementById('conv-cust-' + side + '-btn');
+    if (convCustOpen[side]) {
+      convRenderPanel(side);
+      panel.classList.add('open');
+      btn.classList.add('active');
+    } else {
+      panel.classList.remove('open');
+      btn.classList.remove('active');
+    }
+  };
+
+  window.gpaConvCustUpdate = function(side, index, field, value) {
+    var tmplId = convGetTmplId(side);
+    var cust = convEnsureCust(tmplId);
+    if (!cust.grades) return;
+    cust.grades[index][field === 'value' ? 'value' : 'label'] = field === 'value' ? (parseFloat(value) || 0) : value;
+    convOnChanged(side);
+  };
+
+  window.gpaConvCustDelete = function(side, index) {
+    var tmplId = convGetTmplId(side);
+    var cust = convEnsureCust(tmplId);
+    if (!cust.grades || cust.grades.length <= 1) return;
+    cust.grades.splice(index, 1);
+    convOnChanged(side);
+  };
+
+  window.gpaConvCustAdd = function(side) {
+    var tmplId = convGetTmplId(side);
+    var cust = convEnsureCust(tmplId);
+    if (!cust.grades) return;
+    cust.grades.push({ label: '?', value: 0 });
+    convOnChanged(side);
+  };
+
+  window.gpaConvCustUpdateMax = function(side, value) {
+    var tmplId = convGetTmplId(side);
+    var cust = convEnsureCust(tmplId);
+    cust.max = parseFloat(value) || 0;
+    convOnChanged(side);
+  };
+
+  window.gpaConvCustReset = function(side) {
+    var tmplId = convGetTmplId(side);
+    delete convCustomizations[tmplId];
+    saveConvCustomizations();
+    convRenderPanel(side);
+    calcConvert();
+    App.showToast(isArabic ? 'تم إعادة التعيين!' : 'Reset to original!');
+  };
+
+  window.gpaConvCustExport = function(side) {
+    var tmplId = convGetTmplId(side);
+    var tmpl = getConvTemplate(tmplId);
+    var data = { templateId: tmplId, templateName: isArabic ? tmpl.nameAr : tmpl.nameEn, max: tmpl.max, inverted: !!tmpl.inverted };
+    if (tmpl.grades) data.grades = tmpl.grades.map(function(g) { return { label: g.label, value: g.value }; });
+    var json = JSON.stringify(data, null, 2);
+    var blob = new Blob([json], { type: 'application/json' });
+    var name = isArabic ? tmpl.nameAr : tmpl.nameEn;
+    if (convCustomizations[tmplId]) name += isArabic ? '-مخصص' : '-custom';
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'GPA-conv-' + name.replace(/[\/\\:*?"<>|]/g, '-') + '.json';
+    a.click();
+  };
+
+  window.gpaConvCustImport = function(side, input) {
+    var file = input.files && input.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      try {
+        var data = JSON.parse(e.target.result);
+        if (!data.max || typeof data.max !== 'number') throw 'invalid';
+        var tmplId = convGetTmplId(side);
+        var cust = { max: data.max };
+        if (data.grades && Array.isArray(data.grades) && data.grades.length > 0) {
+          cust.grades = data.grades.map(function(g) { return { label: String(g.label || '?'), value: parseFloat(g.value) || 0 }; });
+        }
+        convCustomizations[tmplId] = cust;
+        convOnChanged(side);
+        App.showToast(isArabic ? 'تم استيراد النظام!' : 'System imported!');
+      } catch (err) {
+        App.showToast(isArabic ? 'ملف غير صالح' : 'Invalid file');
+      }
+    };
+    reader.readAsText(file);
+    input.value = '';
   };
 
   function calcWhatIf() {
