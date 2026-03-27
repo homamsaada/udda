@@ -206,11 +206,11 @@
         <div class="gpa-form-row">
           <div class="gpa-form-group">
             <label>معدل الفصل الجديد</label>
-            <input type="number" id="cum-new-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcCumBoth()">
+            <input type="number" id="cum-new-gpa" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaNewSemEdit()">
           </div>
           <div class="gpa-form-group">
             <label>ساعات الفصل الجديد</label>
-            <input type="number" id="cum-new-credits" min="0" placeholder="0" oninput="gpaCalcCumBoth()">
+            <input type="number" id="cum-new-credits" min="0" placeholder="0" oninput="gpaNewSemEdit()">
           </div>
         </div>
         <button class="gpa-use-semester-btn" onclick="gpaUseFromSemester()">📋 استخدم من الفصلي</button>
@@ -2294,8 +2294,11 @@
       return;
     }
 
-    var totalCredits = prevCredits + newCredits;
-    var cumGpa = (prevGpa * prevCredits + newGpa * newCredits) / totalCredits;
+    var adjPrevCredits = prevCredits + retakeAdj.credits;
+    var adjPrevPoints = prevGpa * prevCredits - retakeAdj.points;
+
+    var totalCredits = adjPrevCredits + newCredits;
+    var cumGpa = totalCredits > 0 ? (adjPrevPoints + newGpa * newCredits) / totalCredits : 0;
 
     document.getElementById('cum-gpa-val').textContent = cumGpa.toFixed(2);
     document.getElementById('cum-class-val').textContent = getClassification(cumGpa);
@@ -3192,7 +3195,8 @@
   window.gpaCalcTarget = calcTarget;
   window.gpaCalcMaxGpa = calcMaxGpa;
   window.gpaCalcGradBoth = function() { calcTarget(); calcMaxGpa(); };
-  window.gpaCalcCumBoth = function() { retakeAdj = { credits: 0, points: 0 }; calcCumulative(); calcTarget(); calcMaxGpa(); };
+  window.gpaCalcCumBoth = function() { calcCumulative(); calcTarget(); calcMaxGpa(); };
+  window.gpaNewSemEdit = function() { retakeAdj = { credits: 0, points: 0 }; calcCumulative(); calcTarget(); calcMaxGpa(); };
   window.gpaCalcConvert = calcConvert;
 
   window.gpaConvSwap = function() {
@@ -3527,9 +3531,10 @@
           oldVal = (oi >= 0 && oi < sys.grades.length) ? sys.grades[oi].value : 0;
         }
         if (retakePolicy === 'replace') {
-          adjCredits += 0;
+          adjCredits -= cr;
           adjPoints += cr * oldVal;
         } else if (retakePolicy === 'best') {
+          adjCredits -= cr;
           var isBetter = inv ? (newVal < oldVal) : (newVal > oldVal);
           if (isBetter) {
             adjPoints += cr * oldVal;
@@ -3537,10 +3542,10 @@
             adjPoints += cr * newVal;
           }
         } else if (retakePolicy === 'countAll') {
-          adjCredits -= cr;
-          adjPoints += 0;
+          // Both attempts count — no adjustment needed
         } else if (retakePolicy === 'average') {
-          adjPoints += cr * (oldVal - (oldVal + newVal) / 2);
+          adjCredits -= cr;
+          adjPoints += cr * (oldVal + newVal) / 2;
         }
       }
     }
