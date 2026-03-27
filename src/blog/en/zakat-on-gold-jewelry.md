@@ -1,9 +1,9 @@
 ---
 title: "Is Zakat Due on Gold Jewelry You Wear? Scholarly Views Explained"
-description: "Is Zakat required on gold jewelry worn for personal adornment? Learn the different scholarly opinions, the strongest view, and how to calculate Zakat on gold jewelry"
+description: "Is Zakat due on gold jewelry you wear? The four schools' views and the strongest opinion, with how to calculate Zakat on jewelry"
 date: "2026-03-21"
 topic: "zakat-calculator"
-keywords: "zakat on gold jewelry, zakat on worn gold, zakat on jewellery, do I pay zakat on my gold, zakat on personal gold"
+keywords: "zakat on gold jewelry, is gold jewelry zakatable, zakat on ornaments, zakat on women gold, gold nisab, 85 grams gold, zakat on jewellery"
 relatedTool: "zakat-calculator"
 ---
 
@@ -76,6 +76,8 @@ If her total pure gold were 100 grams at $65 per gram (24k):
     <a href="/en/tools/zakat-calculator.html">Try the Zakat Calculator ←</a>
   </div>
 </div>
+
+For a complete overview of Zakat basics, see [The Complete Guide to Calculating Zakat](/en/blog/how-to-calculate-zakat.html). If you also hold other investments besides gold, check out [Zakat on Stocks and Investment Funds](/en/blog/zakat-on-stocks.html).
 
 ## Cases Where Zakat Is Due by Consensus
 

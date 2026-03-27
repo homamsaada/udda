@@ -1,9 +1,9 @@
 ---
 title: "How Islamic Inheritance Works: A Simplified Guide to Faraid"
-description: "A clear guide to Islamic inheritance: who inherits, fixed shares, residuary heirs, blocking rules, Awl, and Radd — with practical examples"
+description: "How is inheritance divided in Islam? A simplified guide to fixed shares, residuary heirs, blocking, and Awl with examples"
 date: "2026-03-22"
 topic: "inheritance-calculator"
-keywords: "islamic inheritance, faraid, how to divide inheritance in islam, islamic inheritance shares, who inherits in islam"
+keywords: "islamic inheritance, how to divide inheritance islam, faraid, inheritance shares, who inherits in islam, estate division, fixed shares inheritance, inheritance calculator"
 relatedTool: "inheritance-calculator"
 ---
 
@@ -25,6 +25,8 @@ Before dividing the estate among heirs, four things are taken out in order:
 2. **Debt repayment**: All debts owed by the deceased are settled first.
 3. **Executing the will**: If the deceased left a bequest for a non-heir, it is honored up to one-third of the estate.
 4. **Distribution**: The remainder is divided among heirs according to Islamic rules.
+
+To learn how debts affect Zakat as well, see [Zakat on Debts](/en/blog/zakat-on-debts.html).
 
 ## Who Inherits? Categories of Heirs
 
@@ -104,6 +106,15 @@ Yes, in certain cases the four schools (Hanafi, Maliki, Shafi'i, Hanbali) reach 
 - **The shared case (Mushtaraka)**: A special scenario where scholars disagree.
 
 The inheritance calculator supports all four schools and shows how results differ for each.
+
+## Detailed Inheritance Topics
+
+Each inheritance topic deserves its own in-depth treatment. Explore these specialized articles:
+
+- [Wife's Share of Husband's Inheritance](/en/blog/wife-inheritance-share.html) — One-quarter, one-eighth, and multiple wives
+- [When Are Siblings Blocked from Inheritance?](/en/blog/when-siblings-blocked-inheritance.html) — Blocking rules in detail
+- [Grandchildren's Inheritance](/en/blog/grandchildren-inheritance.html) — Do they inherit if their parent predeceased the grandparent
+- [Differences Between the Four Schools](/en/blog/inheritance-madhab-differences.html) — Key points of disagreement
 
 ## Frequently Asked Questions
 

@@ -1,9 +1,9 @@
 ---
 title: "Zakat on Cryptocurrency (Bitcoin): Is It Due and How to Calculate?"
-description: "Is Zakat required on Bitcoin and cryptocurrency? Learn the ruling, classification, and step-by-step calculation method with practical examples"
+description: "Is Zakat due on Bitcoin? The ruling on crypto Zakat and how to calculate it despite price volatility"
 date: "2026-03-21"
 topic: "zakat-calculator"
-keywords: "zakat on bitcoin, zakat on cryptocurrency, zakat on crypto, is zakat due on bitcoin, zakat on digital currency, zakat on ethereum"
+keywords: "zakat on bitcoin, zakat on cryptocurrency, zakat on crypto, is bitcoin zakatable, zakat on digital currency, zakat on ethereum, zakat on mining, zakat on NFT"
 relatedTool: "zakat-calculator"
 ---
 
@@ -68,6 +68,8 @@ Zakatable amount: $51,100 - $800 = **$50,300**
     <a href="/en/tools/zakat-calculator.html">Try the Zakat Calculator ←</a>
   </div>
 </div>
+
+For the complete basics on Zakat and Nisab, see [The Complete Guide to Calculating Zakat](/en/blog/how-to-calculate-zakat.html). If you also invest in stocks, the logic is similar — see [Zakat on Stocks and Investment Funds](/en/blog/zakat-on-stocks.html).
 
 ## What About Price Volatility?
 

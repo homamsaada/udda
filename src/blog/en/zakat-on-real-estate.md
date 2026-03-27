@@ -1,9 +1,9 @@
 ---
 title: "Zakat on Real Estate: When Is It Due and When Is It Not?"
-description: "Is Zakat due on property? Learn the rulings based on your intention: personal use, rental income, or property held for sale, with practical examples"
+description: "Is Zakat due on property? The ruling differs for personal use, rental, and resale — find your case with examples"
 date: "2026-03-21"
 topic: "zakat-calculator"
-keywords: "zakat on real estate, zakat on property, zakat on land, zakat on rental income, zakat on house, is zakat due on property"
+keywords: "zakat on real estate, zakat on property, is property zakatable, zakat on land, zakat on rental income, zakat on house, zakat on apartment, zakat on land for sale"
 relatedTool: "zakat-calculator"
 ---
 
@@ -50,6 +50,8 @@ Sarah owns an apartment rented at $800/month, collecting $9,600 annually. She sp
 
 This $6,400 joins her bank balance in her Zakat calculation. If her total cash reaches the Nisab and a year has passed, she pays 2.5%.
 
+For Zakat calculation basics, see [The Complete Guide to Calculating Zakat](/en/blog/how-to-calculate-zakat.html). If you have other investments, see [Zakat on Stocks and Funds](/en/blog/zakat-on-stocks.html).
+
 ## Case 4: Real Estate Developer — Zakat Is Due
 
 If you buy land, build on it, and sell units, you are a property trader. You pay Zakat on the value of properties held for sale + raw materials + cash in the project.
@@ -61,6 +63,10 @@ If you buy land, build on it, and sell units, you are a property trader. You pay
     <a href="/en/tools/zakat-calculator.html">Try the Zakat Calculator ←</a>
   </div>
 </div>
+
+## Tips for Property Owners
+
+Valuing property at market price can be difficult since it doesn't have a live ticker like stocks. The practical solution is to use a reasonable market estimate — ask a real estate agent or look at comparable properties in your area. Perfect precision isn't required, just a reasonable estimate. If you're a property developer, calculate the value of unsold land + current construction costs + stored materials + cash in the project account. Remember that tools and equipment you use for construction but don't sell are not trade goods, so no Zakat is due on them.
 
 ## Quick Summary
 

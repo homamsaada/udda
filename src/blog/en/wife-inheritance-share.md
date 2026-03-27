@@ -1,9 +1,9 @@
 ---
 title: "Wife's Share of Husband's Inheritance: Rules and Cases Explained"
-description: "How much does a wife inherit from her deceased husband? Learn the wife's exact share under Islamic law with practical examples for every scenario"
+description: "How much does a wife inherit? One-quarter or one-eighth? Every case explained with examples and multiple wives ruling"
 date: "2026-03-22"
 topic: "inheritance-calculator"
-keywords: "wife inheritance share islam, how much wife inherits, wife share of husband estate, widow inheritance rights islam"
+keywords: "wife inheritance share islam, how much wife inherits, wife share husband estate, widow inheritance, wife quarter or eighth, wife inheritance with children"
 relatedTool: "inheritance-calculator"
 ---
 
@@ -70,6 +70,8 @@ Estate: $150,000.
   </div>
 </div>
 
+For a complete understanding of Islamic inheritance, see [How Islamic Inheritance Works](/en/blog/how-islamic-inheritance-works.html). Blocking rules may affect other heirs' shares — read [When Are Siblings Blocked](/en/blog/when-siblings-blocked-inheritance.html). For how schools differ on some of these cases, see [Differences Between the Four Schools](/en/blog/inheritance-madhab-differences.html).
+
 ## Multiple Wives and Inheritance
 
 If a man dies with more than one wife (two, three, or four), the wife's share (1/4 or 1/8) is divided equally among them.
@@ -91,6 +93,10 @@ Estate: $240,000.
 **Wife after irrevocable divorce (Talaq Ba'in)**: She does not inherit, as the marriage has ended. However, if the husband divorced her during his final illness to prevent her from inheriting, some schools rule that she still inherits.
 
 **Non-Muslim wife**: A non-Muslim wife does not inherit from a Muslim husband, and vice versa.
+
+## The Wife's Other Financial Rights in the Estate
+
+Besides her inheritance share, the wife may have other financial rights that take priority before distribution. If she has a deferred dowry (Mahr Mu'ajjal), it is a debt on the estate that must be paid before division — meaning she receives it first, then takes her share of the remainder. Similarly, any personal funds of hers that were mixed with her husband's assets are separated first. Many people confuse the wife's money with the husband's — for example, if she works and her salary goes into a joint account, her portion of that account is not part of the estate at all.
 
 ## Can a Wife Demand Her Share?
 
