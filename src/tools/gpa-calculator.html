@@ -2737,8 +2737,8 @@
       for (var i = 0; i < active.grades.length; i++) {
         var g = active.grades[i];
         html += '<tr>';
-        html += '<td><input type="text" value="' + g.label + '" oninput="gpaCustUpdateGrade(' + i + ',\'label\',this.value)"></td>';
-        html += '<td><input type="number" step="0.01" min="0" value="' + g.value.toFixed(2) + '" oninput="gpaCustUpdateGrade(' + i + ',\'value\',this.value)"></td>';
+        html += '<td><input type="text" value="' + g.label + '" oninput="gpaCustUpdateGrade(' + i + ',\'label\',this.value)" onblur="gpaCustRefresh()"></td>';
+        html += '<td><input type="number" step="0.01" min="0" value="' + g.value.toFixed(2) + '" oninput="gpaCustUpdateGrade(' + i + ',\'value\',this.value)" onblur="gpaCustRefresh()"></td>';
         html += '<td><button class="gpa-cust-del" onclick="gpaCustDeleteGrade(' + i + ')">&times;</button></td>';
         html += '</tr>';
       }
@@ -2755,12 +2755,16 @@
     html += '<input type="file" id="gpa-import-file" accept=".json" style="display:none" onchange="gpaCustImport(this)">';
     html += '<div class="gpa-cust-max">';
     html += '<label>' + labels.systemMax + '</label>';
-    html += '<input type="number" step="0.01" min="0" value="' + active.max + '" oninput="gpaCustUpdateMax(this.value)">';
+    html += '<input type="number" step="0.01" min="0" value="' + active.max + '" oninput="gpaCustUpdateMax(this.value)" onblur="gpaCustRefresh()">';
     html += '</div>';
     html += '</div>';
 
     inner.innerHTML = html;
   }
+
+  window.gpaCustRefresh = function() {
+    renderCustomizePanel();
+  };
 
   function ensureCustomization() {
     if (!customizations[currentTemplate]) {
@@ -2780,7 +2784,7 @@
     renderCourses();
     renderSemesters();
     renderRefTables();
-    renderCustomizePanel();
+  }
   }
 
   window.gpaToggleCustomize = function() {
@@ -3126,8 +3130,8 @@
       for (var i = 0; i < tmpl.grades.length; i++) {
         var g = tmpl.grades[i];
         html += '<tr>';
-        html += '<td><input type="text" value="' + g.label + '" oninput="gpaConvCustUpdate(' + s + ',' + i + ',\'label\',this.value)"></td>';
-        html += '<td><input type="number" step="0.01" min="0" value="' + g.value.toFixed(2) + '" oninput="gpaConvCustUpdate(' + s + ',' + i + ',\'value\',this.value)"></td>';
+        html += '<td><input type="text" value="' + g.label + '" oninput="gpaConvCustUpdate(' + s + ',' + i + ',\'label\',this.value)" onblur="gpaConvCustRefresh(' + s + ')"></td>';
+        html += '<td><input type="number" step="0.01" min="0" value="' + g.value.toFixed(2) + '" oninput="gpaConvCustUpdate(' + s + ',' + i + ',\'value\',this.value)" onblur="gpaConvCustRefresh(' + s + ')"></td>';
         html += '<td><button class="gpa-cust-del" onclick="gpaConvCustDelete(' + s + ',' + i + ')">&times;</button></td>';
         html += '</tr>';
       }
@@ -3141,11 +3145,15 @@
     html += '<button onclick="document.getElementById(\'conv-import-' + side + '\').click()">↑ ' + labels.importSystem + '</button>';
     html += '<input type="file" id="conv-import-' + side + '" accept=".json" style="display:none" onchange="gpaConvCustImport(\'' + side + '\',this)">';
     html += '<div class="gpa-cust-max"><label>' + labels.systemMax + '</label>';
-    html += '<input type="number" step="0.01" min="0" value="' + tmpl.max + '" oninput="gpaConvCustUpdateMax(' + s + ',this.value)">';
+    html += '<input type="number" step="0.01" min="0" value="' + tmpl.max + '" oninput="gpaConvCustUpdateMax(' + s + ',this.value)" onblur="gpaConvCustRefresh(' + s + ')">';
     html += '</div></div>';
 
     inner.innerHTML = html;
   }
+
+  window.gpaConvCustRefresh = function(side) {
+    convRenderPanel(side);
+  };
 
   function updateConvDropdownLabel(side) {
     var sel = document.getElementById('conv-' + side);
@@ -3162,7 +3170,6 @@
   function convOnChanged(side) {
     saveConvCustomizations();
     updateConvDropdownLabel(side);
-    convRenderPanel(side);
     calcConvert();
   }
 
