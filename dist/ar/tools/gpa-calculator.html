@@ -329,28 +329,28 @@
         <label>أدخل المعدل</label>
         <input type="number" id="conv-input" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcConvert()">
       </div>
-      <div class="gpa-conv-system-block">
-        <label>تحويل من</label>
-        <div class="gpa-conv-select-row">
-          <select id="conv-from" class="gpa-template-select" onchange="gpaCalcConvert()"></select>
-          <button class="gpa-customize-btn gpa-conv-cust-btn" id="conv-cust-from-btn" onclick="gpaConvToggleCust('from')">تخصيص</button>
+      <div class="gpa-conv-row">
+        <div class="gpa-conv-system-block">
+          <label>تحويل من</label>
+          <div class="gpa-conv-select-row">
+            <select id="conv-from" class="gpa-template-select" onchange="gpaCalcConvert()"></select>
+            <button class="gpa-customize-btn gpa-conv-cust-btn" id="conv-cust-from-btn" onclick="gpaConvToggleCust('from')">تخصيص</button>
+          </div>
         </div>
-        <div class="gpa-customize-panel" id="conv-cust-from-panel">
-          <div class="gpa-customize-inner" id="conv-cust-from-inner"></div>
-        </div>
-      </div>
-      <div style="text-align: center; margin: 8px 0">
         <button class="gpa-conv-swap" onclick="gpaConvSwap()" type="button">⇄</button>
+        <div class="gpa-conv-system-block">
+          <label>إلى</label>
+          <div class="gpa-conv-select-row">
+            <select id="conv-to" class="gpa-template-select" onchange="gpaCalcConvert()"></select>
+            <button class="gpa-customize-btn gpa-conv-cust-btn" id="conv-cust-to-btn" onclick="gpaConvToggleCust('to')">تخصيص</button>
+          </div>
+        </div>
       </div>
-      <div class="gpa-conv-system-block">
-        <label>إلى</label>
-        <div class="gpa-conv-select-row">
-          <select id="conv-to" class="gpa-template-select" onchange="gpaCalcConvert()"></select>
-          <button class="gpa-customize-btn gpa-conv-cust-btn" id="conv-cust-to-btn" onclick="gpaConvToggleCust('to')">تخصيص</button>
-        </div>
-        <div class="gpa-customize-panel" id="conv-cust-to-panel">
-          <div class="gpa-customize-inner" id="conv-cust-to-inner"></div>
-        </div>
+      <div class="gpa-customize-panel" id="conv-cust-from-panel">
+        <div class="gpa-customize-inner" id="conv-cust-from-inner"></div>
+      </div>
+      <div class="gpa-customize-panel" id="conv-cust-to-panel">
+        <div class="gpa-customize-inner" id="conv-cust-to-inner"></div>
       </div>
     </div>
 
@@ -1203,8 +1203,17 @@
 }
 
 /* Converter systems container — each block independent */
+.gpa-calculator .gpa-conv-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
 .gpa-calculator .gpa-conv-system-block {
-  margin-bottom: 0;
+  flex: 1;
+  min-width: 120px;
 }
 
 .gpa-calculator .gpa-conv-system-block > label {
