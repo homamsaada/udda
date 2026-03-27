@@ -1450,10 +1450,17 @@
     margin-bottom: 0;
   }
 
-  /* Row 1: name — full row */
+  /* Row 1: delete button + name — same line */
+  .gpa-calculator .gpa-course-card > .gpa-del-btn {
+    order: -1;
+    position: static;
+    flex: 0 0 auto;
+    align-self: center;
+  }
+
   .gpa-calculator .gpa-col-name {
-    flex-basis: 100%;
-    padding-inline-end: 36px;
+    flex: 1 1 80%;
+    min-width: 0;
   }
 
   .gpa-calculator .gpa-col-name > input {
@@ -1555,13 +1562,6 @@
   .gpa-calculator .gpa-col-whatif > select {
     flex: 1;
     min-width: 0;
-  }
-
-  /* Delete button: absolute corner */
-  .gpa-calculator .gpa-course-card > .gpa-del-btn {
-    position: absolute;
-    top: 10px;
-    inset-inline-end: 10px;
   }
 
   /* Retake policy buttons */
