@@ -1,9 +1,9 @@
 ---
 title: "Zakat on Debts: Do I Pay Zakat on Money I've Lent to Others?"
-description: "Is Zakat due on money you've loaned to someone? Can you deduct debts you owe from your Zakat? A detailed guide on Zakat and debts with practical examples"
+description: "Do you pay Zakat on money you lent? Can you deduct debts from Zakat? Debt rules in Zakat with examples"
 date: "2026-03-21"
 topic: "zakat-calculator"
-keywords: "zakat on debt, zakat on loan, zakat on money lent, deduct debt from zakat, zakat and loans"
+keywords: "zakat on debts, zakat on loans, do I pay zakat on money lent, deducting debt from zakat, zakat on borrowed money, does debt reduce zakat"
 relatedTool: "zakat-calculator"
 ---
 
@@ -85,6 +85,8 @@ Zakatable amount: $24,000 - $550 = **$23,450**
     <a href="/en/tools/zakat-calculator.html">Try the Zakat Calculator ←</a>
   </div>
 </div>
+
+For the complete basics, see [The Complete Guide to Calculating Zakat](/en/blog/how-to-calculate-zakat.html). If your income comes from a monthly salary, also read [Zakat on Monthly Salary](/en/blog/zakat-on-salary.html).
 
 ## Quick Summary
 

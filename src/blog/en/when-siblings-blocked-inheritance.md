@@ -1,9 +1,9 @@
 ---
 title: "When Are Siblings Blocked from Inheritance? Hajb Rules Explained"
-description: "When does a brother or sister lose their inheritance share? Learn the blocking rules in Islamic inheritance: who blocks whom, with clear examples"
+description: "When does a brother lose his inheritance? Sibling blocking rules: who blocks whom and why, with examples"
 date: "2026-03-23"
 topic: "inheritance-calculator"
-keywords: "siblings blocked inheritance, hajb inheritance, who blocks brother inheritance, blocking rules islamic inheritance"
+keywords: "siblings blocked inheritance, when brother doesn't inherit, hajb inheritance, who blocks brother, total blocking, partial blocking, brother blocked by son"
 relatedTool: "inheritance-calculator"
 ---
 
@@ -90,6 +90,8 @@ This is a special case: a full sister is normally blocked by a son, but when the
   </div>
 </div>
 
+For the complete picture of inheritance, start with [How Islamic Inheritance Works](/en/blog/how-islamic-inheritance-works.html). You may also wonder about the wife's share in these cases — see [Wife's Share of Husband's Inheritance](/en/blog/wife-inheritance-share.html). Grandchildren have a special blocking situation — see [Do Grandchildren Inherit?](/en/blog/grandchildren-inheritance.html).
+
 ## Partial Blocking — When Shares Are Reduced
 
 Not all blocking means exclusion. Sometimes the share is merely reduced:
@@ -98,6 +100,10 @@ Not all blocking means exclusion. Sometimes the share is merely reduced:
 - **Husband**: Moves from 1/2 to 1/4 when descendants exist.
 - **Wife**: Moves from 1/4 to 1/8 when descendants exist.
 - **Daughter**: Moves from 1/2 to a portion of 2/3 when another daughter exists.
+
+## Why Does the Blocking System Exist?
+
+Blocking isn't injustice — it's a fair system built on clear wisdom: the closer relative has greater claim to the deceased's wealth. A son is closer than a brother, a father is closer than a grandfather, and a full brother is closer than a paternal brother. The closer relative also bears greater responsibility toward the deceased's family — the son will support his mother and younger siblings, which is why he receives the larger share while more distant relatives are blocked. This logic repeats in every blocking rule, and understanding it helps you make sense of results that may seem surprising at first.
 
 ## Frequently Asked Questions
 

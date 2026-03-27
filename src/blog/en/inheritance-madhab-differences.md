@@ -1,9 +1,9 @@
 ---
 title: "Differences Between the Four Islamic Schools in Inheritance: Key Disputes"
-description: "Learn the main differences between Hanafi, Maliki, Shafi'i, and Hanbali schools in dividing inheritance, with practical examples for each disagreement"
+description: "Key differences between the four schools in inheritance: grandfather with siblings, Radd, the shared case, with examples"
 date: "2026-03-24"
 topic: "inheritance-calculator"
-keywords: "four schools inheritance differences, hanafi inheritance, shafii inheritance, madhab differences faraid, islamic inheritance schools"
+keywords: "four schools inheritance differences, hanafi inheritance, shafii inheritance, madhab differences faraid, grandfather siblings inheritance, mushtaraka case, radd inheritance"
 relatedTool: "inheritance-calculator"
 ---
 
@@ -79,6 +79,8 @@ A woman dies leaving: husband, mother, two maternal brothers, two full brothers.
     <a href="/en/tools/inheritance-calculator.html">Try the Inheritance Calculator ←</a>
   </div>
 </div>
+
+For the agreed-upon basics first, start with [How Islamic Inheritance Works](/en/blog/how-islamic-inheritance-works.html). The grandfather-siblings dispute is directly tied to blocking rules — see [When Are Siblings Blocked](/en/blog/when-siblings-blocked-inheritance.html). The Radd-to-spouses issue connects to [Wife's Share of Inheritance](/en/blog/wife-inheritance-share.html).
 
 ## 4. The Umariyyatan (Two Omari Cases)
 

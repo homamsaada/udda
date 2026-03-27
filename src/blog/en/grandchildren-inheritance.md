@@ -1,9 +1,9 @@
 ---
 title: "Do Grandchildren Inherit If Their Parent Died Before the Grandparent?"
-description: "Can grandchildren inherit from their grandparent when their parent predeceased them? Learn the Islamic ruling, the obligatory bequest, and practical solutions"
+description: "Do grandchildren inherit if their parent died before the grandparent? The Sharia ruling and obligatory bequest explained"
 date: "2026-03-23"
 topic: "inheritance-calculator"
-keywords: "grandchildren inheritance islam, do grandchildren inherit, grandson inheritance, obligatory bequest, wasiyya wajiba"
+keywords: "grandchildren inheritance islam, do grandchildren inherit, grandson inheritance, obligatory bequest, wasiyya wajiba, grandchild rights, orphan inheritance from grandfather"
 relatedTool: "inheritance-calculator"
 ---
 
@@ -72,6 +72,8 @@ This is the painful scenario people commonly ask about.
     <a href="/en/tools/inheritance-calculator.html">Try the Inheritance Calculator ←</a>
   </div>
 </div>
+
+For inheritance fundamentals, see [How Islamic Inheritance Works](/en/blog/how-islamic-inheritance-works.html). Grandchildren's inheritance is closely tied to blocking rules — see [When Are Siblings Blocked](/en/blog/when-siblings-blocked-inheritance.html) to understand the logic. School differences affect some of these cases — see [Differences Between the Four Schools](/en/blog/inheritance-madhab-differences.html).
 
 ## The Obligatory Bequest (Wasiyya Wajiba) — A Legal Solution
 

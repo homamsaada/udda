@@ -1,9 +1,9 @@
 ---
 title: "Zakat on Stocks and Investment Funds: A Detailed Guide"
-description: "How to calculate Zakat on stocks and investment funds? Learn the difference between trading and long-term investing, with practical calculation examples"
+description: "How to pay Zakat on stocks: the difference between investor and trader, with calculation methods for stocks and funds"
 date: "2026-03-21"
 topic: "zakat-calculator"
-keywords: "zakat on stocks, zakat on shares, zakat on investment funds, zakat on ETF, zakat on portfolio, zakat on dividends"
+keywords: "zakat on stocks, zakat on investment funds, how to calculate zakat on shares, zakat on portfolio, zakat on investments, zakat on dividends, zakat on trading, zakat on ETFs"
 relatedTool: "zakat-calculator"
 ---
 
@@ -58,6 +58,8 @@ Investment funds follow the same logic:
 - **Trading funds and ETFs**: If you actively buy and sell units, pay Zakat on the full market value.
 - **Income/distribution funds**: If you hold for dividends only, pay Zakat on distributed profits.
 - **REITs (Real Estate Investment Trusts)**: Treated based on your intention — trading or long-term income.
+
+For Zakat fundamentals and Nisab, see [The Complete Guide to Calculating Zakat](/en/blog/how-to-calculate-zakat.html). If you also trade cryptocurrency, check out [Zakat on Cryptocurrency](/en/blog/zakat-on-cryptocurrency.html). For those who invest in real estate alongside stocks, see [Zakat on Real Estate](/en/blog/zakat-on-real-estate.html).
 
 ## What If My Intentions Are Mixed?
 
