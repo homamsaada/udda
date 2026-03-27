@@ -2295,6 +2295,7 @@
     }
 
     var adjPrevCredits = prevCredits + retakeAdj.credits;
+    if (adjPrevCredits < 0) adjPrevCredits = 0;
     var adjPrevPoints = prevGpa * prevCredits - retakeAdj.points;
 
     var totalCredits = adjPrevCredits + newCredits;
@@ -2355,6 +2356,7 @@
     // Previous data — apply retake adjustment (subtract old grades from previous)
     if (!isNaN(prevGpa) && !isNaN(prevCredits) && prevCredits > 0) {
       earnedCredits = prevCredits + retakeAdj.credits;
+      if (earnedCredits < 0) earnedCredits = 0;
       earnedPoints = prevGpa * prevCredits - retakeAdj.points;
     }
 
@@ -2463,12 +2465,19 @@
     // Sort by value descending (highest first) for normal, ascending for inverted
     grades.sort(function(a, b) { return inv ? a.value - b.value : b.value - a.value; });
 
+    // Deduplicate same-value grades (e.g. A+=4.00 and A=4.00) — keep first (higher pct)
+    var unique = [grades[0]];
+    for (var i = 1; i < grades.length; i++) {
+      if (grades[i].value !== unique[unique.length - 1].value) {
+        unique.push(grades[i]);
+      }
+    }
+
     var map = [];
-    var n = grades.length;
+    var n = unique.length;
     for (var i = 0; i < n; i++) {
-      // Distribute evenly: best grade = 100%, worst = 0% (or near 0)
       var pct = n > 1 ? 100 * (1 - i / (n - 1)) : 100;
-      map.push([grades[i].value, pct]);
+      map.push([unique[i].value, pct]);
     }
     return map;
   }
