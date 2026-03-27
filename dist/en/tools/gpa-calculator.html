@@ -336,6 +336,9 @@
             <select id="conv-from" class="gpa-template-select" onchange="gpaCalcConvert()"></select>
             <button class="gpa-customize-btn gpa-conv-cust-btn" id="conv-cust-from-btn" onclick="gpaConvToggleCust('from')">Customize</button>
           </div>
+          <div class="gpa-customize-panel" id="conv-cust-from-panel">
+            <div class="gpa-customize-inner" id="conv-cust-from-inner"></div>
+          </div>
         </div>
         <button class="gpa-conv-swap" onclick="gpaConvSwap()" type="button">⇄</button>
         <div class="gpa-conv-system-block">
@@ -344,13 +347,10 @@
             <select id="conv-to" class="gpa-template-select" onchange="gpaCalcConvert()"></select>
             <button class="gpa-customize-btn gpa-conv-cust-btn" id="conv-cust-to-btn" onclick="gpaConvToggleCust('to')">Customize</button>
           </div>
+          <div class="gpa-customize-panel" id="conv-cust-to-panel">
+            <div class="gpa-customize-inner" id="conv-cust-to-inner"></div>
+          </div>
         </div>
-      </div>
-      <div class="gpa-customize-panel" id="conv-cust-from-panel">
-        <div class="gpa-customize-inner" id="conv-cust-from-inner"></div>
-      </div>
-      <div class="gpa-customize-panel" id="conv-cust-to-panel">
-        <div class="gpa-customize-inner" id="conv-cust-to-inner"></div>
       </div>
     </div>
 
