@@ -1477,6 +1477,36 @@
     min-width: 0;
   }
 
+  /* Converter: label inline with select on mobile */
+  .gpa-calculator .gpa-conv-system-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    flex-basis: 100%;
+  }
+
+  .gpa-calculator .gpa-conv-system-block > label {
+    margin-bottom: 0;
+    font-size: 0.82rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .gpa-calculator .gpa-conv-system-block > .gpa-conv-select-row {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .gpa-calculator .gpa-conv-system-block > .gpa-customize-panel {
+    flex-basis: 100%;
+  }
+
+  .gpa-calculator .gpa-conv-swap {
+    align-self: center !important;
+    margin-bottom: 0 !important;
+  }
+
   /* Semester rows */
   .gpa-calculator .gpa-sem-row {
     grid-template-columns: 28px 1fr 1fr 32px;
