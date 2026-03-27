@@ -1,9 +1,9 @@
 ---
 title: "Can You Give Zakat to Relatives? Rules and Guidelines"
-description: "Can you pay Zakat to your brother, sister, uncle, or aunt? Learn which relatives you can and cannot give Zakat to, with clear Islamic guidelines"
+description: "Can you give Zakat to siblings, uncles, or cousins? Who qualifies and who doesn't, with Sharia guidelines"
 date: "2026-03-21"
 topic: "zakat-calculator"
-keywords: "zakat to relatives, can I give zakat to family, zakat to brother, zakat to parents, zakat to siblings"
+keywords: "zakat to relatives, can I give zakat to brother, zakat to family, paying zakat to siblings, zakat to parents, zakat to uncle, zakat to cousin"
 relatedTool: "zakat-calculator"
 ---
 
@@ -75,6 +75,8 @@ Your father-in-law, mother-in-law, or your spouse's relatives — Zakat may be g
 | Uncle / Aunt | Yes |
 | Nephew / Niece | Yes |
 
+To calculate your Zakat amount first, see [How to Calculate Zakat](/en/blog/how-to-calculate-zakat.html). If you're also wondering about relatives' rights in inheritance, you may find [How Islamic Inheritance Works](/en/blog/how-islamic-inheritance-works.html) helpful.
+
 ## Conditions That Must Be Met
 
 For Zakat to a permitted relative to be valid:
@@ -83,6 +85,10 @@ For Zakat to a permitted relative to be valid:
 - **You must not be obligated to support them**: As explained above.
 - **No hidden benefit**: For example, giving your brother Zakat so he repays a debt he owes you is not valid.
 - **Intention**: You must intend the payment as Zakat at the time of giving.
+
+## Priority in Distributing Zakat
+
+Giving Zakat to qualifying relatives isn't just permissible — it's actually preferable to giving it to non-relatives. The Prophet ﷺ said: "Charity to a needy person is charity, and to a relative it is two things: charity and maintaining family ties." The reason is you achieve two goals with one act: fulfilling the Zakat obligation and strengthening family bonds. So look first among your relatives for those who qualify — siblings, uncles, or cousins in need — before turning to others. And remember, you may give them Zakat without telling them it's Zakat, to preserve their dignity.
 
 ## Frequently Asked Questions
 

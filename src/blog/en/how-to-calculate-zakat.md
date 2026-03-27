@@ -1,9 +1,9 @@
 ---
 title: "How to Calculate Zakat: A Complete Guide with Practical Examples"
-description: "Learn how to calculate Zakat step by step: conditions, Nisab thresholds, Zakat rates, and practical examples for cash, gold, and stocks"
+description: "How to calculate Zakat accurately: conditions, Nisab threshold, the 2.5% rate, and practical examples for cash, gold, and stocks"
 date: "2026-03-20"
 topic: "zakat-calculator"
-keywords: "how to calculate zakat, zakat calculation, nisab, zakat on gold, zakat on stocks, zakat percentage, zakat calculator"
+keywords: "how to calculate zakat, zakat calculator, nisab, zakat on money, zakat percentage, how much zakat to pay, zakat calculation method, zakat amount"
 relatedTool: "zakat-calculator"
 ---
 
@@ -138,6 +138,20 @@ Many Muslims make errors when calculating Zakat. The most common ones include:
 ## The Eight Categories of Zakat Recipients
 
 The Quran specifies eight groups eligible to receive Zakat: **the poor**, **the needy**, **Zakat administrators**, **those whose hearts are to be reconciled**, **freeing captives**, **debtors**, **in the cause of Allah**, and **the stranded traveler**. Zakat may not be given to anyone outside these categories.
+
+For more on heirs' rights to wealth after death — a related topic — see [How Islamic Inheritance Works](/en/blog/how-islamic-inheritance-works.html).
+
+## Related Zakat Topics
+
+Looking for specific Zakat scenarios? We've prepared detailed articles for each case:
+
+- [Is Zakat Due on Gold Jewelry?](/en/blog/zakat-on-gold-jewelry.html) — Scholarly views and how to calculate
+- [Zakat on Monthly Salary](/en/blog/zakat-on-salary.html) — Is it required and the easiest calculation method
+- [Zakat on Debts](/en/blog/zakat-on-debts.html) — Money you lent and debts you owe
+- [Can You Give Zakat to Relatives?](/en/blog/zakat-to-relatives.html) — Who qualifies and who doesn't
+- [Zakat on Stocks and Funds](/en/blog/zakat-on-stocks.html) — Trader vs. investor calculation
+- [Zakat on Real Estate](/en/blog/zakat-on-real-estate.html) — Personal use, rental, and resale
+- [Zakat on Cryptocurrency](/en/blog/zakat-on-cryptocurrency.html) — Bitcoin and beyond
 
 ## Frequently Asked Questions
 
