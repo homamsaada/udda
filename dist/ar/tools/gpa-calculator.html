@@ -1479,27 +1479,23 @@
     margin-inline-end: 12px;
   }
 
-  /* Row 3: toggle + old grade side by side */
+  /* Row 3: toggle (label + switch inline) + old grade side by side */
   .gpa-calculator .gpa-col-toggle {
     display: inline-flex !important;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
     width: calc(50% - 6px);
     margin-inline-end: 12px;
-    vertical-align: top;
+    vertical-align: bottom;
+    padding-top: 26px;
   }
 
-  /* Label "مُعادة" on its own line, switch below it centered with old grade input */
   .gpa-calculator .gpa-col-toggle > label:not(.gpa-retake-switch) {
     font-weight: 600;
     color: var(--text-primary);
     font-size: 0.85rem;
     margin-bottom: 0;
-  }
-
-  .gpa-calculator .gpa-col-toggle > .gpa-retake-switch {
-    margin-top: 2px;
   }
 
   .gpa-calculator .gpa-col-oldgrade {
@@ -1508,10 +1504,25 @@
     vertical-align: top;
   }
 
-  /* Row 4: what-if full width */
+  /* Row 4: what-if — label + field inline in one row */
   .gpa-calculator .gpa-col-whatif {
-    display: block !important;
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
     width: 100%;
+  }
+
+  .gpa-calculator .gpa-col-whatif > label {
+    margin-bottom: 0 !important;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .gpa-calculator .gpa-col-whatif > input,
+  .gpa-calculator .gpa-col-whatif > select {
+    flex: 1;
+    min-width: 0;
   }
 
   /* Delete button: absolute corner */
