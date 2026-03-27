@@ -46,7 +46,7 @@ build.js                    Build script — contains the actual HTML layout tem
 
 | ID | Category | Description |
 |---|---|---|
-| `gpa-calculator` | calculators (other) | GPA calculator: semester, cumulative, target, max, converter, multi-semester |
+| `gpa-calculator` | calculators (other) | GPA calculator: 20 grading templates, retake policies, semester/cumulative/multi/converter/reference |
 | `percentage` | calculators | 13 inline percentage calculators |
 | `interest-calculator` | calculators | Simple & compound interest |
 | `loan-calculator` | calculators | Loan payments & amortization |
@@ -593,34 +593,67 @@ entry.parts = sharedPoolParts * entry.count / entry.shared;
 
 ## GPA Calculator Architecture
 
-The GPA calculator (`src/tools/gpa-calculator.html`) has 5 tabs and a shared grading system selector. Key architectural notes:
+The GPA calculator (`src/tools/gpa-calculator.html`) is a large tool (~3200 lines). Key architectural notes:
 
-### Tabs
-1. **Semester GPA** — per-course grade entry with what-if analysis
-2. **Cumulative** — combines 3 sub-sections sharing common inputs:
-   - Section 1: New cumulative GPA (previous + new semester)
-   - Section 2: Target GPA required (needs graduation credits)
-   - Section 3: Highest possible GPA (needs graduation credits)
-3. **Multi-Semester** — track GPA across multiple semesters with chart
-4. **Converter** — convert between 4.0, 5.0, and 100% systems
-5. **Reference** — grade tables for each system
+### Layout structure
+- **Settings Card 1**: Grading system dropdown (20 templates) + Customize button + description
+- **Settings Card 2**: Retake policy dropdown + description
+- **5 Tabs**: Semester GPA, Cumulative, Multi-Semester, Converter, Reference
+- **Save/Load bar**: Inside semester tab, small inline card above courses
+
+### 20 Grading Templates
+Stored in JS `templates` object, grouped in `templateGroups` (Arab World + International). Each template: `{ nameAr, nameEn, descAr, descEn, max, grades: [{label, value}], classifications: [{min, ar, en}], inverted? }`.
+
+Templates: saudi5 (default), saudi4, gulf4, jordan4, egypt100, iraq100, syria100, lebanon4, maghreb20, us4, us433, canada433, turkey4, uk, german (inverted), french20, india10, korea45, australia7, percent100.
+
+### Active template pattern
+`getActiveTemplate(templateId)` returns the original or customized template. ALL calculations and UI use this — never read `templates[currentTemplate]` directly in functions (except `updateTemplateDescription` and `updateDropdownLabel` which need the original name).
+
+### Customization system
+- `customizations` object stores per-template overrides `{ max, grades }` in localStorage
+- `ensureCustomization()` copies base template on first edit
+- Customize panel: editable grade table + add/delete/reset + max field + export/import JSON
+- Dropdown shows "Template / مخصص" when customized
+
+### Percentage vs grade systems
+`isPercentSystem(templateId)` — templates without `grades` array use numeric input instead of dropdown.
+
+### Inverted system (German)
+`isInverted(templateId)` — 1.0 is best, 5.0 is fail. Affects:
+- `calcMaxGpa`: best possible = 1.0 (not max)
+- `calcTarget`: impossible if required < 1.0
+- `calcMulti`: best/worst semester inverted, chart bars inverted
+- `calcCumulative`/`calcWhatIf`: change indicator colors swapped
+- `renderRefTables`: classification ranges inverted
+
+### Course structure (7 columns)
+Each course: `{ name, credits, gradeIndex, gradeValue, isRetake, oldGradeIndex, oldGradeValue, altGradeIndex, altGradeValue }`.
+
+Desktop: 7-column CSS grid `1fr 70px 140px 50px 140px 140px 30px` — name, credits, grade, retake toggle, old grade, what-if, delete. Each is a flat `div.gpa-col` direct child.
+
+Mobile (≤768px): `display: flex; flex-wrap: wrap` — row 1: ×+name, row 2: credits+grade, row 3: retake+oldgrade, row 4: what-if. Labels shown inline on mobile, hidden on desktop (header suffices).
+
+### What-if (always-on)
+No toggle button — what-if column always visible. Default: highest grade. Comparison auto-shows when any what-if grade differs from original.
+
+### Retake policy
+`retakePolicy` variable: 'replace' | 'best' | 'countAll' | 'average'. Retake toggle per course enables old grade input. `retakeAdj` stores adjustment (credits/points) computed by `gpaUseFromSemester`. `getEffectiveEarned` subtracts old grades from previous cumulative. Manual cumulative input resets `retakeAdj`.
 
 ### Shared inputs in Cumulative tab
-- "Current GPA" and "Earned credits" are shared across all 3 sections
-- "Total graduation credits" is shared between sections 2 and 3
-- `getEffectiveEarned()` computes effective earned credits/points once, accounting for new semester data from section 1 if entered
-- Both `calcTarget()` and `calcMaxGpa()` call `getEffectiveEarned()` — this prevents contradictions
-
-### Grading system switching
-- `currentSystem` tracks active system ('4', '5', '100')
-- `gradeSystems` object defines max value and classification brackets per system
-- Switching system updates input max attributes and recalculates all sections
+- "Current GPA" and "Earned credits" shared across all 3 sections
+- "Total graduation credits" shared between sections 2 and 3
+- `getEffectiveEarned()` computes once, applying `retakeAdj`
+- Both `calcTarget()` and `calcMaxGpa()` call `getEffectiveEarned()`
 
 ### Converter
-- Uses piecewise linear interpolation via `conversionTable` (grade-bracket boundaries across systems)
-- All 3 systems visible in both "from" and "to" dropdowns (no hiding)
-- Same-system selection returns input value as-is
-- Separate short i18n keys (`convSystem40`, `convSystem50`, `convSystem100`) for dropdown labels without "نظام"/"Scale"
+- All 20 templates available in from/to dropdowns with optgroup
+- Converts via percentage intermediate: `toPercent(val, fromId)` → `fromPercent(pct, toId)`
+- Piecewise linear interpolation on grade boundaries
+- Handles inverted German system (1.0 = 100%)
+- Note always visible with WES reference
+
+### Save/Load
+`gpaSaveData()` exports JSON with: template, customization, retakePolicy, courses (all fields), semesters, cumulative inputs, converter state. `gpaLoadData()` restores everything and recalculates.
 
 ## General Preferences
 
