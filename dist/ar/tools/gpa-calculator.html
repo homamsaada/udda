@@ -1423,9 +1423,11 @@
     display: none;
   }
 
-  /* Course card: block layout on mobile */
+  /* Course card: flex-wrap on mobile — rows controlled by flex-basis */
   .gpa-calculator .gpa-course-card {
-    display: block;
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 10px;
     position: relative;
     background: var(--bg-secondary);
     border-radius: 16px;
@@ -1436,30 +1438,21 @@
   .gpa-calculator .gpa-course-card input,
   .gpa-calculator .gpa-course-card select {
     background: var(--bg-primary);
-    width: 100%;
     box-sizing: border-box;
   }
 
-  /* Hide all labels by default on mobile — we show specific ones inline */
+  /* Hide all labels by default */
   .gpa-calculator .gpa-col label:not(.gpa-retake-switch) {
     display: none;
   }
 
-  /* Each col becomes a block with spacing */
   .gpa-calculator .gpa-col {
-    display: block;
-    margin-bottom: 12px;
-  }
-
-  .gpa-calculator .gpa-col:last-of-type {
     margin-bottom: 0;
   }
 
-  /* Row 1: name — full width with space for delete */
+  /* Row 1: name — full row */
   .gpa-calculator .gpa-col-name {
-    display: block !important;
-    width: 100%;
-    box-sizing: border-box;
+    flex-basis: 100%;
     padding-inline-end: 36px;
   }
 
@@ -1471,14 +1464,16 @@
     margin-bottom: 6px;
   }
 
-  /* Row 2: "الساعات" label+input inline, then grade dropdown (no label) */
+  .gpa-calculator .gpa-col-name > input {
+    width: 100%;
+  }
+
+  /* Row 2: "الساعات"+input inline, then grade fills rest */
   .gpa-calculator .gpa-col-credits {
-    display: inline-flex !important;
+    display: flex !important;
     align-items: center;
     gap: 6px;
-    vertical-align: top;
-    margin-inline-end: 12px;
-    margin-bottom: 12px;
+    flex-shrink: 0;
   }
 
   .gpa-calculator .gpa-col-credits > label {
@@ -1488,35 +1483,28 @@
     font-size: 0.82rem;
     margin-bottom: 0;
     white-space: nowrap;
-    flex-shrink: 0;
   }
 
   .gpa-calculator .gpa-col-credits > input {
-    width: 70px !important;
-    flex-shrink: 0;
+    width: 60px !important;
   }
 
   .gpa-calculator .gpa-col-grade {
-    display: inline-block !important;
-    width: auto;
-    vertical-align: top;
     flex: 1;
+    min-width: 0;
   }
 
   .gpa-calculator .gpa-col-grade > select,
   .gpa-calculator .gpa-col-grade > input {
-    width: auto !important;
-    min-width: 120px;
+    width: 100%;
   }
 
-  /* Row 3: "مُعادة؟" [toggle] "الدرجة القديمة" [dropdown] — all one line, vertically centered */
+  /* Row 3: "مُعادة" [toggle] + "الدرجة القديمة" [dropdown] — ONE line */
   .gpa-calculator .gpa-col-toggle {
-    display: inline-flex !important;
-    flex-direction: row;
+    display: flex !important;
     align-items: center;
     gap: 6px;
-    vertical-align: middle;
-    margin-bottom: 0 !important;
+    flex-shrink: 0;
   }
 
   .gpa-calculator .gpa-col-toggle > label:not(.gpa-retake-switch) {
@@ -1529,11 +1517,11 @@
   }
 
   .gpa-calculator .gpa-col-oldgrade {
-    display: inline-flex !important;
+    display: flex !important;
     align-items: center;
     gap: 6px;
-    vertical-align: middle;
-    margin-inline-start: 8px;
+    flex: 1;
+    min-width: 0;
   }
 
   .gpa-calculator .gpa-col-oldgrade > label {
@@ -1548,18 +1536,17 @@
 
   .gpa-calculator .gpa-col-oldgrade > select,
   .gpa-calculator .gpa-col-oldgrade > input {
-    width: auto !important;
-    min-width: 0;
     flex: 1;
+    min-width: 0;
+    width: auto !important;
   }
 
-  /* Row 4: "ماذا لو؟" [dropdown] — one line */
+  /* Row 4: "ماذا لو؟" [dropdown] — full row */
   .gpa-calculator .gpa-col-whatif {
     display: flex !important;
-    flex-direction: row;
     align-items: center;
     gap: 8px;
-    width: 100%;
+    flex-basis: 100%;
   }
 
   .gpa-calculator .gpa-col-whatif > label {
