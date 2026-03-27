@@ -1360,6 +1360,7 @@
 
   /* Each col becomes a block with spacing */
   .gpa-calculator .gpa-col {
+    display: block;
     margin-bottom: 12px;
   }
 
@@ -1373,29 +1374,26 @@
   }
 
   /* Row 2: credits + grade side by side */
-  .gpa-calculator .gpa-col-credits {
-    display: inline-block;
-    width: calc(50% - 6px);
-    margin-inline-end: 12px;
-    vertical-align: top;
-  }
-
+  .gpa-calculator .gpa-col-credits,
   .gpa-calculator .gpa-col-grade {
     display: inline-block;
     width: calc(50% - 6px);
     vertical-align: top;
   }
 
-  /* Row 3: toggle + old grade side by side */
+  .gpa-calculator .gpa-col-credits {
+    margin-inline-end: 12px;
+  }
+
+  /* Row 3: toggle (label above, switch below) + old grade side by side */
   .gpa-calculator .gpa-col-toggle {
     display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
     width: calc(50% - 6px);
     margin-inline-end: 12px;
-    vertical-align: bottom;
-    padding-top: 22px;
+    vertical-align: top;
   }
 
   .gpa-calculator .gpa-col-toggle > label:not(.gpa-retake-switch) {
