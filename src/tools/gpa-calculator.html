@@ -26,12 +26,12 @@
   <!-- Card 2: Retake Policy -->
   <div class="gpa-settings-card">
     <label class="gpa-settings-title">{{tool.retakePolicy}}</label>
-    <div class="gpa-retake-btns" id="gpa-retake-btns">
-      <button class="gpa-retake-btn active" onclick="gpaSetRetakePolicy('replace', this)">{{tool.retakeReplace}}</button>
-      <button class="gpa-retake-btn" onclick="gpaSetRetakePolicy('best', this)">{{tool.retakeBest}}</button>
-      <button class="gpa-retake-btn" onclick="gpaSetRetakePolicy('countAll', this)">{{tool.retakeCountAll}}</button>
-      <button class="gpa-retake-btn" onclick="gpaSetRetakePolicy('average', this)">{{tool.retakeAverage}}</button>
-    </div>
+    <select class="gpa-template-select" id="gpa-retake-select" onchange="gpaSetRetakePolicy(this.value)">
+      <option value="replace">{{tool.retakeReplaceLong}}</option>
+      <option value="best">{{tool.retakeBestLong}}</option>
+      <option value="countAll">{{tool.retakeCountAllLong}}</option>
+      <option value="average">{{tool.retakeAverageLong}}</option>
+    </select>
     <div class="gpa-retake-desc" id="gpa-retake-desc">{{tool.retakeReplaceDesc}}</div>
   </div>
 
@@ -517,38 +517,6 @@
   line-height: 1.6;
   color: var(--text-secondary);
   padding: 8px 0 0;
-}
-
-.gpa-calculator .gpa-retake-btns {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  flex: 1;
-  min-width: 0;
-}
-
-.gpa-calculator .gpa-retake-btn {
-  padding: 8px 12px;
-  border: 2px solid var(--border-color);
-  border-radius: 10px;
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: inherit;
-  transition: all var(--transition-fast);
-}
-
-.gpa-calculator .gpa-retake-btn:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-}
-
-.gpa-calculator .gpa-retake-btn.active {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
-  color: white;
 }
 
 .gpa-calculator .gpa-retake-desc {
@@ -1471,12 +1439,6 @@
   .gpa-calculator .gpa-col-whatif > select {
     flex: 1;
     min-width: 0;
-  }
-
-  /* Retake policy buttons */
-  .gpa-calculator .gpa-retake-btn {
-    font-size: 0.75rem;
-    padding: 6px 8px;
   }
 
   /* Semester rows */
@@ -2941,13 +2903,7 @@
 
         // 3. Restore retake policy
         if (data.retakePolicy) {
-          retakePolicy = data.retakePolicy;
-          var rpBtns = document.querySelectorAll('.gpa-retake-btn');
-          var rpPolicies = ['replace', 'best', 'countAll', 'average'];
-          for (var r = 0; r < rpBtns.length; r++) {
-            rpBtns[r].classList.toggle('active', rpPolicies[r] === retakePolicy);
-          }
-          gpaSetRetakePolicy(retakePolicy);
+          gpaSetRetakePolicy(data.retakePolicy);
         }
 
         // 4. Restore courses
@@ -3153,11 +3109,10 @@
     }
   }
 
-  window.gpaSetRetakePolicy = function(policy, btn) {
+  window.gpaSetRetakePolicy = function(policy) {
     retakePolicy = policy;
-    var btns = document.querySelectorAll('.gpa-retake-btn');
-    for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');
-    if (btn) btn.classList.add('active');
+    var sel = document.getElementById('gpa-retake-select');
+    if (sel) sel.value = policy;
     var descEl = document.getElementById('gpa-retake-desc');
     if (descEl) {
       var descs = { replace: labels.retakeReplaceDesc, best: labels.retakeBestDesc, countAll: labels.retakeCountAllDesc, average: labels.retakeAverageDesc };
