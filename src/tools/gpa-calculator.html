@@ -3114,7 +3114,7 @@
     var tmplId = convGetTmplId(side);
     var tmpl = getConvTemplate(tmplId);
     var hasGrades = tmpl.grades && tmpl.grades.length > 0;
-    var s = JSON.stringify(side);
+    var s = "\\'" + side + "\\'";
     var html = '';
 
     if (hasGrades) {
