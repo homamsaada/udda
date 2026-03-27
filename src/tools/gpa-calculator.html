@@ -234,8 +234,8 @@
   <!-- Tab 4: GPA Converter -->
   <div class="calc-section" id="converter-section">
     <div class="gpa-cum-form">
-      <div class="gpa-conv-row">
-        <div class="gpa-form-group">
+      <div class="gpa-conv-systems">
+        <div class="gpa-conv-system-block">
           <label>{{tool.convertFrom}}</label>
           <div class="gpa-conv-select-row">
             <select id="conv-from" onchange="gpaCalcConvert()"></select>
@@ -246,7 +246,7 @@
           </div>
         </div>
         <button class="gpa-conv-swap" onclick="gpaConvSwap()" type="button">⇄</button>
-        <div class="gpa-form-group">
+        <div class="gpa-conv-system-block">
           <label>{{tool.convertTo}}</label>
           <div class="gpa-conv-select-row">
             <select id="conv-to" onchange="gpaCalcConvert()"></select>
@@ -1100,7 +1100,7 @@
 .gpa-calculator .gpa-conv-select-row {
   display: flex;
   gap: 6px;
-  align-items: center;
+  align-items: stretch;
 }
 
 .gpa-calculator .gpa-conv-select-row select {
@@ -1109,22 +1109,29 @@
 }
 
 .gpa-calculator .gpa-conv-cust-btn {
-  padding: 6px 10px !important;
   font-size: 0.78rem !important;
   flex-shrink: 0;
 }
 
-/* Converter row with swap button */
-.gpa-calculator .gpa-conv-row {
+/* Converter systems container — each block independent */
+.gpa-calculator .gpa-conv-systems {
   display: flex;
   gap: 12px;
-  align-items: flex-end;
+  align-items: flex-start;
   margin-bottom: 16px;
 }
 
-.gpa-calculator .gpa-conv-row .gpa-form-group {
+.gpa-calculator .gpa-conv-system-block {
   flex: 1;
   min-width: 0;
+}
+
+.gpa-calculator .gpa-conv-system-block > label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
 }
 
 /* Converter swap button */
