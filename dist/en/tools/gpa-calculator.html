@@ -1447,17 +1447,29 @@
     margin-bottom: 6px;
   }
 
-  /* Row 1: name spans full width */
+  /* Row 1: name spans full width with space for delete button */
   .gpa-calculator .gpa-col-name {
     grid-column: 1 / -1;
+    padding-inline-end: 36px;
   }
 
   /* Row 2: credits + grade — each takes 1 col (already 2-col grid) */
 
-  /* Row 3: toggle + old grade */
+  /* Row 3: toggle shows label + switch inline, old grade beside it */
   .gpa-calculator .gpa-col-toggle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
     justify-content: flex-start;
-    align-items: end;
+  }
+
+  .gpa-calculator .gpa-col-toggle > label:not(.gpa-retake-switch) {
+    display: block;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    margin-bottom: 0;
   }
 
   /* Row 4: what-if spans full width */
