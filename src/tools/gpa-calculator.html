@@ -10,9 +10,9 @@
     </div>
   </div>
 
-  <!-- Grading System Selector -->
-  <div class="gpa-system-bar">
-    <label class="gpa-system-label">{{tool.gradingSystem}}</label>
+  <!-- Card 1: Grading System -->
+  <div class="gpa-settings-card">
+    <label class="gpa-settings-title">{{tool.gradingSystem}}</label>
     <div class="gpa-system-controls">
       <select id="gpa-template-select" class="gpa-template-select" onchange="gpaChangeTemplate(this.value)"></select>
       <button class="gpa-customize-btn" id="gpa-customize-btn" onclick="gpaToggleCustomize()">{{tool.customizeBtn}}</button>
@@ -23,9 +23,9 @@
     </div>
   </div>
 
-  <!-- Retake Policy Selector -->
-  <div class="gpa-system-bar gpa-retake-bar">
-    <label class="gpa-system-label">{{tool.retakePolicy}}</label>
+  <!-- Card 2: Retake Policy -->
+  <div class="gpa-settings-card">
+    <label class="gpa-settings-title">{{tool.retakePolicy}}</label>
     <div class="gpa-retake-btns" id="gpa-retake-btns">
       <button class="gpa-retake-btn active" onclick="gpaSetRetakePolicy('replace', this)">{{tool.retakeReplace}}</button>
       <button class="gpa-retake-btn" onclick="gpaSetRetakePolicy('best', this)">{{tool.retakeBest}}</button>
@@ -33,13 +33,6 @@
       <button class="gpa-retake-btn" onclick="gpaSetRetakePolicy('average', this)">{{tool.retakeAverage}}</button>
     </div>
     <div class="gpa-retake-desc" id="gpa-retake-desc">{{tool.retakeReplaceDesc}}</div>
-  </div>
-
-  <!-- Save/Load bar -->
-  <div class="gpa-data-bar">
-    <button class="gpa-data-btn" onclick="gpaSaveData()">💾 {{tool.saveData}}</button>
-    <button class="gpa-data-btn" onclick="document.getElementById('gpa-load-file').click()">📂 {{tool.loadData}}</button>
-    <input type="file" id="gpa-load-file" accept=".json" style="display:none" onchange="gpaLoadData(this)">
   </div>
 
   <!-- Tabs -->
@@ -53,6 +46,11 @@
 
   <!-- Tab 1: Semester GPA -->
   <div class="calc-section active" id="semester-section">
+    <div class="gpa-data-bar">
+      <button class="gpa-data-btn" onclick="gpaSaveData()">💾 {{tool.saveData}}</button>
+      <button class="gpa-data-btn" onclick="document.getElementById('gpa-load-file').click()">📂 {{tool.loadData}}</button>
+      <input type="file" id="gpa-load-file" accept=".json" style="display:none" onchange="gpaLoadData(this)">
+    </div>
     <div id="courses-container"></div>
     <button class="gpa-add-btn" onclick="gpaAddCourse()">+ {{tool.addCourse}}</button>
 
@@ -320,16 +318,20 @@
   font-family: inherit;
 }
 
-/* System Selector Bar */
-.gpa-calculator .gpa-system-bar {
+/* Settings Cards */
+.gpa-calculator .gpa-settings-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
 }
 
-.gpa-calculator .gpa-system-label {
+.gpa-calculator .gpa-settings-title {
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--text-primary);
@@ -514,15 +516,7 @@
   font-size: 0.82rem;
   line-height: 1.6;
   color: var(--text-secondary);
-  padding: 10px 14px;
-  background: var(--bg-secondary);
-  border-radius: 10px;
-  margin-top: 4px;
-}
-
-/* Retake Policy Bar */
-.gpa-calculator .gpa-retake-bar {
-  margin-top: -8px;
+  padding: 8px 0 0;
 }
 
 .gpa-calculator .gpa-retake-btns {
@@ -570,20 +564,24 @@
   margin-top: 8px;
 }
 
-/* Save/Load data bar */
+/* Save/Load data bar — small inline card inside semester tab */
 .gpa-calculator .gpa-data-bar {
   display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: 6px;
+  margin-bottom: 14px;
+  padding: 10px 14px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
 }
 
 .gpa-calculator .gpa-data-btn {
-  padding: 8px 14px;
-  border: 2px solid var(--border-color);
-  border-radius: 10px;
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
-  font-size: 0.82rem;
+  padding: 6px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.78rem;
   font-weight: 600;
   cursor: pointer;
   font-family: inherit;
@@ -1296,9 +1294,8 @@
   }
 
 
-  .gpa-calculator .gpa-system-bar {
-    flex-direction: column;
-    align-items: stretch;
+  .gpa-calculator .gpa-settings-card {
+    padding: 12px 14px;
   }
 
   .gpa-calculator .gpa-template-select {
