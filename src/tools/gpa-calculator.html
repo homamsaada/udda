@@ -1332,11 +1332,9 @@
     display: none;
   }
 
-  /* Course card: switch from 7-col grid to wrapped rows */
+  /* Course card: block layout on mobile */
   .gpa-calculator .gpa-course-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    display: block;
     position: relative;
     background: var(--bg-secondary);
     border-radius: 16px;
@@ -1347,6 +1345,8 @@
   .gpa-calculator .gpa-course-card input,
   .gpa-calculator .gpa-course-card select {
     background: var(--bg-primary);
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* Show labels on mobile */
@@ -1358,24 +1358,44 @@
     margin-bottom: 6px;
   }
 
-  /* Row 1: name spans full width with space for delete button */
-  .gpa-calculator .gpa-col-name {
-    grid-column: 1 / -1;
-    padding-inline-end: 36px;
-    width: 100%;
-    box-sizing: border-box;
+  /* Each col becomes a block with spacing */
+  .gpa-calculator .gpa-col {
+    margin-bottom: 12px;
   }
 
-  /* Row 2: credits + grade — each takes 1 col (already 2-col grid) */
+  .gpa-calculator .gpa-col:last-of-type {
+    margin-bottom: 0;
+  }
 
-  /* Row 3: toggle + old grade aligned vertically */
+  /* Row 1: name — full width with space for delete */
+  .gpa-calculator .gpa-col-name {
+    padding-inline-end: 36px;
+  }
+
+  /* Row 2: credits + grade side by side */
+  .gpa-calculator .gpa-col-credits {
+    display: inline-block;
+    width: calc(50% - 6px);
+    margin-inline-end: 12px;
+    vertical-align: top;
+  }
+
+  .gpa-calculator .gpa-col-grade {
+    display: inline-block;
+    width: calc(50% - 6px);
+    vertical-align: top;
+  }
+
+  /* Row 3: toggle + old grade side by side */
   .gpa-calculator .gpa-col-toggle {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     gap: 8px;
-    justify-content: flex-start;
-    padding-bottom: 6px;
+    width: calc(50% - 6px);
+    margin-inline-end: 12px;
+    vertical-align: bottom;
+    padding-top: 22px;
   }
 
   .gpa-calculator .gpa-col-toggle > label:not(.gpa-retake-switch) {
@@ -1385,9 +1405,10 @@
     margin-bottom: 0;
   }
 
-  /* Row 4: what-if spans full width */
-  .gpa-calculator .gpa-col-whatif {
-    grid-column: 1 / -1;
+  .gpa-calculator .gpa-col-oldgrade {
+    display: inline-block;
+    width: calc(50% - 6px);
+    vertical-align: top;
   }
 
   /* Delete button: absolute corner */
@@ -1395,7 +1416,6 @@
     position: absolute;
     top: 10px;
     inset-inline-end: 10px;
-    grid-column: unset;
   }
 
   /* Retake policy buttons */
