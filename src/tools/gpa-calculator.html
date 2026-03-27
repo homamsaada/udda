@@ -3114,7 +3114,7 @@
     var tmplId = convGetTmplId(side);
     var tmpl = getConvTemplate(tmplId);
     var hasGrades = tmpl.grades && tmpl.grades.length > 0;
-    var s = "\\'" + side + "\\'";
+    var s = "'" + side + "'";
     var html = '';
 
     if (hasGrades) {
@@ -3147,8 +3147,21 @@
     inner.innerHTML = html;
   }
 
+  function updateConvDropdownLabel(side) {
+    var sel = document.getElementById('conv-' + side);
+    if (!sel) return;
+    var tmplId = sel.value;
+    var opt = sel.querySelector('option[value="' + tmplId + '"]');
+    if (!opt) return;
+    var tmpl = templates[tmplId];
+    var name = isArabic ? tmpl.nameAr : tmpl.nameEn;
+    if (convCustomizations[tmplId]) name += ' / ' + labels.customized;
+    opt.textContent = name;
+  }
+
   function convOnChanged(side) {
     saveConvCustomizations();
+    updateConvDropdownLabel(side);
     convRenderPanel(side);
     calcConvert();
   }
@@ -3202,6 +3215,7 @@
     var tmplId = convGetTmplId(side);
     delete convCustomizations[tmplId];
     saveConvCustomizations();
+    updateConvDropdownLabel(side);
     convRenderPanel(side);
     calcConvert();
     App.showToast(isArabic ? 'تم إعادة التعيين!' : 'Reset to original!');
