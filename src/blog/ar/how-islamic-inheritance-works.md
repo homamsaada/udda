@@ -115,6 +115,11 @@ relatedTool: "inheritance-calculator"
 - [متى يُحجب الإخوة من الميراث؟](/ar/blog/when-siblings-blocked-inheritance.html) — قواعد الحجب بالتفصيل
 - [ميراث الأحفاد](/ar/blog/grandchildren-inheritance.html) — هل يرثون إذا مات أبوهم قبل جدهم
 - [الفرق بين المذاهب الأربعة في المواريث](/ar/blog/inheritance-madhab-differences.html) — أبرز نقاط الخلاف
+- [نصيب الأبناء والبنات من الميراث](/ar/blog/children-inheritance-shares.html) — للذكر مثل حظ الأنثيين وحالات أخرى
+- [نصيب الزوج من ميراث زوجته](/ar/blog/husband-inheritance-share.html) — النصف أم الربع
+- [ما هو العول في المواريث؟](/ar/blog/what-is-awl-inheritance.html) — شرح بأمثلة عددية
+- [الوصية في الإسلام](/ar/blog/islamic-will-wasiyyah.html) — شروطها وحدودها وعلاقتها بالميراث
+- [تأخير تقسيم التركة](/ar/blog/inheritance-delayed-division.html) — الحكم والمخاطر والحلول
 
 ## أسئلة شائعة
 

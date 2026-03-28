@@ -152,6 +152,8 @@ relatedTool: "zakat-calculator"
 - [زكاة الأسهم والصناديق](/ar/blog/zakat-on-stocks.html) — الفرق بين المضارب والمستثمر
 - [زكاة العقارات](/ar/blog/zakat-on-real-estate.html) — السكن والإيجار والبيع
 - [زكاة العملات الرقمية](/ar/blog/zakat-on-cryptocurrency.html) — البيتكوين وغيرها
+- [الفرق بين زكاة المال وزكاة الفطر](/ar/blog/zakat-vs-zakat-alfitr.html) — مقارنة شاملة
+- [هل تجب الزكاة على مال ادّخرته لشراء بيت؟](/ar/blog/zakat-on-savings-for-house.html) — الحكم الواضح
 
 ## أسئلة شائعة
 

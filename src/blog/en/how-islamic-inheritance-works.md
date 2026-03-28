@@ -115,6 +115,11 @@ Each inheritance topic deserves its own in-depth treatment. Explore these specia
 - [When Are Siblings Blocked from Inheritance?](/en/blog/when-siblings-blocked-inheritance.html) — Blocking rules in detail
 - [Grandchildren's Inheritance](/en/blog/grandchildren-inheritance.html) — Do they inherit if their parent predeceased the grandparent
 - [Differences Between the Four Schools](/en/blog/inheritance-madhab-differences.html) — Key points of disagreement
+- [Children's Inheritance Shares](/en/blog/children-inheritance-shares.html) — Males get double and other cases
+- [Husband's Share of Wife's Inheritance](/en/blog/husband-inheritance-share.html) — Half or quarter
+- [What Is Awl in Inheritance?](/en/blog/what-is-awl-inheritance.html) — Explained with numerical examples
+- [The Islamic Will (Wasiyyah)](/en/blog/islamic-will-wasiyyah.html) — Rules, limits, and relationship to inheritance
+- [Delaying Estate Division](/en/blog/inheritance-delayed-division.html) — The ruling, risks, and solutions
 
 ## Frequently Asked Questions
 
