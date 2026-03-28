@@ -50,6 +50,7 @@
       <button class="gpa-data-btn" onclick="gpaSaveData()">💾 {{tool.saveData}}</button>
       <button class="gpa-data-btn" onclick="document.getElementById('gpa-load-file').click()">📂 {{tool.loadData}}</button>
       <input type="file" id="gpa-load-file" accept=".json" style="display:none" onchange="gpaLoadData(this)">
+      <button class="gpa-data-btn gpa-reset-btn" onclick="gpaResetAll()">🗑 {{tool.resetAll}}</button>
     </div>
     <div id="courses-container"></div>
     <button class="gpa-add-btn" onclick="gpaAddCourse()">+ {{tool.addCourse}}</button>
@@ -237,6 +238,7 @@
       <div class="gpa-form-group" style="margin-bottom: 16px">
         <label>{{tool.enterGpa}}</label>
         <input type="number" id="conv-input" step="0.01" min="0" max="4" placeholder="0.00" oninput="gpaCalcConvert()">
+        <div class="gpa-conv-warning" id="conv-warning" style="display:none"></div>
       </div>
       <div class="gpa-conv-row">
         <div class="gpa-conv-system-block">
@@ -569,6 +571,25 @@
 .gpa-calculator .gpa-data-btn:hover {
   border-color: var(--accent-primary);
   color: var(--accent-primary);
+}
+
+.gpa-calculator .gpa-reset-btn {
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.3);
+  margin-inline-start: auto;
+}
+
+.gpa-calculator .gpa-reset-btn:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+/* Converter validation warning */
+.gpa-calculator .gpa-conv-warning {
+  color: #ef4444;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 6px;
 }
 
 /* Tabs — wrapping like inheritance madhab buttons */
@@ -1647,7 +1668,7 @@
       ]
     },
     'lebanon4': {
-      nameAr: 'لبنان - نظام 4.0 (±)', nameEn: 'Lebanon - 4.0 Scale (±)', max: 4.3,
+      nameAr: 'لبنان - نظام 4.3 (AUB)', nameEn: 'Lebanon - 4.3 Scale (AUB)', max: 4.3,
       descAr: 'نظام 4 نقاط أمريكي الطابع — يُستخدم في الجامعة الأمريكية في بيروت (AUB) والجامعة اللبنانية الأمريكية (LAU). يتضمن 13 درجة من A+ إلى F مع plus/minus بفارق ±0.30. النجاح من D- = 0.70. ملاحظة مهمة: الجامعة اللبنانية (الحكومية) تستخدم نظاماً مختلفاً تماماً — سلّم من 20 على الطريقة الفرنسية.',
       descEn: 'American-style 4-point scale — used at American University of Beirut (AUB) and Lebanese American University (LAU). Includes 13 grades from A+ to F with plus/minus at ±0.30. Pass from D- = 0.70. Important note: The Lebanese University (public) uses a completely different system — the French /20 scale.',
       grades: [
@@ -2465,14 +2486,29 @@
 
     var resultEl = document.getElementById('conv-result-val');
     var classEl = document.getElementById('conv-class-val');
+    var warnEl = document.getElementById('conv-warning');
 
     updateConverterMax();
 
     if (isNaN(inputVal) || inputVal < 0) {
       resultEl.textContent = '—';
       classEl.textContent = '—';
+      if (warnEl) warnEl.style.display = 'none';
       return;
     }
+
+    // Validate input against source system max
+    var fromTmpl = getConvTemplate(fromId);
+    if (inputVal > fromTmpl.max) {
+      resultEl.textContent = '—';
+      classEl.textContent = '—';
+      if (warnEl) {
+        warnEl.textContent = isArabic ? 'القيمة تتجاوز الحد الأقصى للنظام (' + fromTmpl.max + ')' : 'Value exceeds system maximum (' + fromTmpl.max + ')';
+        warnEl.style.display = 'block';
+      }
+      return;
+    }
+    if (warnEl) warnEl.style.display = 'none';
 
     var converted;
     if (fromId === toId) {
@@ -2936,6 +2972,16 @@
   };
 
   // ===== Save / Load all data =====
+  window.gpaResetAll = function() {
+    var msg = isArabic ? 'هل تريد مسح جميع البيانات؟' : 'Clear all data?';
+    if (!confirm(msg)) return;
+    clearAllData();
+    renderCourses();
+    renderSemesters();
+    calcSemester();
+    App.showToast(isArabic ? 'تم مسح جميع البيانات' : 'All data cleared');
+  };
+
   window.gpaSaveData = function() {
     var data = {
       version: 1,
