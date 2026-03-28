@@ -152,6 +152,8 @@ Looking for specific Zakat scenarios? We've prepared detailed articles for each 
 - [Zakat on Stocks and Funds](/en/blog/zakat-on-stocks.html) — Trader vs. investor calculation
 - [Zakat on Real Estate](/en/blog/zakat-on-real-estate.html) — Personal use, rental, and resale
 - [Zakat on Cryptocurrency](/en/blog/zakat-on-cryptocurrency.html) — Bitcoin and beyond
+- [Zakat al-Mal vs Zakat al-Fitr](/en/blog/zakat-vs-zakat-alfitr.html) — A complete comparison
+- [Is Zakat Due on Savings for a House?](/en/blog/zakat-on-savings-for-house.html) — The clear ruling
 
 ## Frequently Asked Questions
 
