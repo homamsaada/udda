@@ -247,9 +247,6 @@
             <select id="conv-from" class="gpa-template-select" onchange="gpaCalcConvert()"></select>
             <button class="gpa-customize-btn gpa-conv-cust-btn" id="conv-cust-from-btn" onclick="gpaConvToggleCust('from')">{{tool.customizeBtn}}</button>
           </div>
-          <div class="gpa-customize-panel" id="conv-cust-from-panel">
-            <div class="gpa-customize-inner" id="conv-cust-from-inner"></div>
-          </div>
         </div>
         <button class="gpa-conv-swap" onclick="gpaConvSwap()" type="button">⇄</button>
         <div class="gpa-conv-system-block">
@@ -258,10 +255,13 @@
             <select id="conv-to" class="gpa-template-select" onchange="gpaCalcConvert()"></select>
             <button class="gpa-customize-btn gpa-conv-cust-btn" id="conv-cust-to-btn" onclick="gpaConvToggleCust('to')">{{tool.customizeBtn}}</button>
           </div>
-          <div class="gpa-customize-panel" id="conv-cust-to-panel">
-            <div class="gpa-customize-inner" id="conv-cust-to-inner"></div>
-          </div>
         </div>
+      </div>
+      <div class="gpa-customize-panel" id="conv-cust-from-panel">
+        <div class="gpa-customize-inner" id="conv-cust-from-inner"></div>
+      </div>
+      <div class="gpa-customize-panel" id="conv-cust-to-panel">
+        <div class="gpa-customize-inner" id="conv-cust-to-inner"></div>
       </div>
     </div>
 
@@ -2847,7 +2847,17 @@
         grades: base.grades ? base.grades.map(function(g) { var o = { label: g.label, value: g.value }; if (g.minPct !== undefined) { o.minPct = g.minPct; o.maxPct = g.maxPct; } return o; }) : null
       };
     }
-    return customizations[currentTemplate];
+    var cust = customizations[currentTemplate];
+    var base = templates[currentTemplate];
+    if (cust.grades && base.grades) {
+      for (var i = 0; i < cust.grades.length && i < base.grades.length; i++) {
+        if (cust.grades[i].minPct === undefined && base.grades[i].minPct !== undefined) {
+          cust.grades[i].minPct = base.grades[i].minPct;
+          cust.grades[i].maxPct = base.grades[i].maxPct;
+        }
+      }
+    }
+    return cust;
   }
 
   function onCustomizationChanged() {
@@ -3194,7 +3204,17 @@
         grades: base.grades ? base.grades.map(function(g) { var o = { label: g.label, value: g.value }; if (g.minPct !== undefined) { o.minPct = g.minPct; o.maxPct = g.maxPct; } return o; }) : null
       };
     }
-    return convCustomizations[tmplId];
+    var cust = convCustomizations[tmplId];
+    var base = templates[tmplId];
+    if (cust.grades && base.grades) {
+      for (var i = 0; i < cust.grades.length && i < base.grades.length; i++) {
+        if (cust.grades[i].minPct === undefined && base.grades[i].minPct !== undefined) {
+          cust.grades[i].minPct = base.grades[i].minPct;
+          cust.grades[i].maxPct = base.grades[i].maxPct;
+        }
+      }
+    }
+    return cust;
   }
 
   function convRenderPanel(side) {
