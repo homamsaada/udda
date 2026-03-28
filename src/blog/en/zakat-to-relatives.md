@@ -1,7 +1,7 @@
 ---
 title: "Can You Give Zakat to Relatives? Rules and Guidelines"
 description: "Can you give Zakat to siblings, uncles, or cousins? Who qualifies and who doesn't, with Sharia guidelines"
-date: "2026-03-19"
+date: "2025-12-03"
 topic: "zakat-calculator"
 keywords: "zakat to relatives, can I give zakat to brother, zakat to family, paying zakat to siblings, zakat to parents, zakat to uncle, zakat to cousin"
 relatedTool: "zakat-calculator"

@@ -1,7 +1,7 @@
 ---
 title: "Do Grandchildren Inherit If Their Parent Died Before the Grandparent?"
 description: "Do grandchildren inherit if their parent died before the grandparent? The Sharia ruling and obligatory bequest explained"
-date: "2026-03-27"
+date: "2026-03-16"
 topic: "inheritance-calculator"
 keywords: "grandchildren inheritance islam, do grandchildren inherit, grandson inheritance, obligatory bequest, wasiyya wajiba, grandchild rights, orphan inheritance from grandfather"
 relatedTool: "inheritance-calculator"
