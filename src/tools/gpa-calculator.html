@@ -1927,6 +1927,14 @@
     var base = templates[tmplId];
     var cust = convCustomizations[tmplId];
     if (!cust) return base;
+    if (cust.grades && base.grades) {
+      for (var i = 0; i < cust.grades.length && i < base.grades.length; i++) {
+        if (cust.grades[i].minPct === undefined && base.grades[i].minPct !== undefined) {
+          cust.grades[i].minPct = base.grades[i].minPct;
+          cust.grades[i].maxPct = base.grades[i].maxPct;
+        }
+      }
+    }
     return {
       nameAr: base.nameAr, nameEn: base.nameEn,
       descAr: base.descAr, descEn: base.descEn,
@@ -1947,6 +1955,14 @@
     var base = templates[id];
     var cust = customizations[id];
     if (!cust) return base;
+    if (cust.grades && base.grades) {
+      for (var i = 0; i < cust.grades.length && i < base.grades.length; i++) {
+        if (cust.grades[i].minPct === undefined && base.grades[i].minPct !== undefined) {
+          cust.grades[i].minPct = base.grades[i].minPct;
+          cust.grades[i].maxPct = base.grades[i].maxPct;
+        }
+      }
+    }
     return {
       nameAr: base.nameAr, nameEn: base.nameEn,
       descAr: base.descAr, descEn: base.descEn,
@@ -2847,16 +2863,6 @@
         grades: base.grades ? base.grades.map(function(g) { var o = { label: g.label, value: g.value }; if (g.minPct !== undefined) { o.minPct = g.minPct; o.maxPct = g.maxPct; } return o; }) : null
       };
     }
-    var cust = customizations[currentTemplate];
-    var base = templates[currentTemplate];
-    if (cust.grades && base.grades) {
-      for (var i = 0; i < cust.grades.length && i < base.grades.length; i++) {
-        if (cust.grades[i].minPct === undefined && base.grades[i].minPct !== undefined) {
-          cust.grades[i].minPct = base.grades[i].minPct;
-          cust.grades[i].maxPct = base.grades[i].maxPct;
-        }
-      }
-    }
     return cust;
   }
 
@@ -3203,16 +3209,6 @@
         max: base.max,
         grades: base.grades ? base.grades.map(function(g) { var o = { label: g.label, value: g.value }; if (g.minPct !== undefined) { o.minPct = g.minPct; o.maxPct = g.maxPct; } return o; }) : null
       };
-    }
-    var cust = convCustomizations[tmplId];
-    var base = templates[tmplId];
-    if (cust.grades && base.grades) {
-      for (var i = 0; i < cust.grades.length && i < base.grades.length; i++) {
-        if (cust.grades[i].minPct === undefined && base.grades[i].minPct !== undefined) {
-          cust.grades[i].minPct = base.grades[i].minPct;
-          cust.grades[i].maxPct = base.grades[i].maxPct;
-        }
-      }
     }
     return cust;
   }
