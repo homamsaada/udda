@@ -286,7 +286,7 @@
       <h3 class="gpa-ref-title">{{tool.gradeTableTitle}}</h3>
       <div class="gpa-ref-table-wrap">
         <table class="gpa-ref-table" id="ref-grades-table">
-          <thead><tr><th>{{tool.letterGrade}}</th><th>{{tool.pointValue}}</th></tr></thead>
+          <thead><tr><th>{{tool.letterGrade}}</th><th>{{tool.pointValue}}</th><th>{{tool.percentRange}}</th></tr></thead>
           <tbody id="ref-grades-body"></tbody>
         </table>
       </div>
@@ -1531,11 +1531,11 @@
       descAr: 'نظام 5 نقاط — المعتمد في أغلب الجامعات السعودية الحكومية مثل جامعة الملك سعود، أم القرى، الملك عبدالعزيز، الإمام محمد بن سعود، والملك فيصل. أعلى درجة A+ = 5.00 وأدنى نجاح D = 2.00. درجة الرسوب F = 1.00 وليس صفراً. الفواصل بين الدرجات غير منتظمة (تتراوح بين 0.25 و 0.50). التقديرات: ممتاز مرتفع ≥ 4.50، ممتاز ≥ 4.00، جيد جداً ≥ 3.50، جيد ≥ 2.50، مقبول ≥ 2.00. مرتبة الشرف الأولى تتطلب ≥ 4.75 عند التخرج.',
       descEn: '5-point scale — used by most Saudi public universities such as King Saud, Umm Al-Qura, King Abdulaziz, Imam Muhammad ibn Saud, and King Faisal. Top grade A+ = 5.00, minimum pass D = 2.00. Fail grade F = 1.00 (not zero). Intervals between grades are irregular (ranging 0.25–0.50). Classifications: Excellent+ ≥ 4.50, Excellent ≥ 4.00, Very Good ≥ 3.50, Good ≥ 2.50, Pass ≥ 2.00. First Honors requires ≥ 4.75 at graduation.',
       grades: [
-        { label: 'A+', value: 5.00 }, { label: 'A', value: 4.75 },
-        { label: 'B+', value: 4.50 }, { label: 'B', value: 4.00 },
-        { label: 'C+', value: 3.50 }, { label: 'C', value: 3.00 },
-        { label: 'D+', value: 2.50 }, { label: 'D', value: 2.00 },
-        { label: 'F', value: 1.00 }
+        { label: 'A+', value: 5.00, minPct: 95, maxPct: 100 }, { label: 'A', value: 4.75, minPct: 90, maxPct: 94 },
+        { label: 'B+', value: 4.50, minPct: 85, maxPct: 89 }, { label: 'B', value: 4.00, minPct: 80, maxPct: 84 },
+        { label: 'C+', value: 3.50, minPct: 75, maxPct: 79 }, { label: 'C', value: 3.00, minPct: 70, maxPct: 74 },
+        { label: 'D+', value: 2.50, minPct: 65, maxPct: 69 }, { label: 'D', value: 2.00, minPct: 60, maxPct: 64 },
+        { label: 'F', value: 1.00, minPct: 0, maxPct: 59 }
       ],
       classifications: [
         { min: 4.75, ar: 'ممتاز مرتفع', en: 'Excellent+' },
@@ -1553,11 +1553,11 @@
       descAr: 'نظام 4 نقاط — يُستخدم في جامعة الملك فهد للبترول والمعادن (KFUPM) وجامعة الفيصل (خاصة). أعلى درجة A+ = 4.00 وأدنى نجاح D = 1.00. درجة الرسوب F = 0.00. الفواصل ±0.50 بين الدرجات الأساسية. مرتبة الشرف الأولى تتطلب ≥ 3.75 عند التخرج.',
       descEn: '4-point scale — used at King Fahd University of Petroleum and Minerals (KFUPM) and Alfaisal University (private). Top grade A+ = 4.00, minimum pass D = 1.00. Fail F = 0.00. Intervals ±0.50 between main grades. First Honors requires ≥ 3.75 at graduation.',
       grades: [
-        { label: 'A+', value: 4.00 }, { label: 'A', value: 3.75 },
-        { label: 'B+', value: 3.50 }, { label: 'B', value: 3.00 },
-        { label: 'C+', value: 2.50 }, { label: 'C', value: 2.00 },
-        { label: 'D+', value: 1.50 }, { label: 'D', value: 1.00 },
-        { label: 'F', value: 0.00 }
+        { label: 'A+', value: 4.00, minPct: 95, maxPct: 100 }, { label: 'A', value: 3.75, minPct: 90, maxPct: 94 },
+        { label: 'B+', value: 3.50, minPct: 85, maxPct: 89 }, { label: 'B', value: 3.00, minPct: 80, maxPct: 84 },
+        { label: 'C+', value: 2.50, minPct: 75, maxPct: 79 }, { label: 'C', value: 2.00, minPct: 70, maxPct: 74 },
+        { label: 'D+', value: 1.50, minPct: 65, maxPct: 69 }, { label: 'D', value: 1.00, minPct: 60, maxPct: 64 },
+        { label: 'F', value: 0.00, minPct: 0, maxPct: 59 }
       ],
       classifications: [
         { min: 3.75, ar: 'ممتاز مرتفع', en: 'Excellent+' },
@@ -1576,11 +1576,11 @@
       descAr: 'نظام 4 نقاط أمريكي الطابع — يُستخدم في جامعات الإمارات (جامعة الإمارات، خليفة، زايد)، الكويت (جامعة الكويت)، قطر (جامعة قطر)، البحرين (جامعة البحرين)، وعُمان (جامعة السلطان قابوس). A و A+ كلاهما = 4.00 مع نظام plus/minus بفارق ±0.30. يتضمن 13 درجة من A+ إلى F. النجاح من D = 1.00 عند حوالي 60%.',
       descEn: 'American-style 4-point scale — used at UAE universities (UAEU, Khalifa, Zayed), Kuwait University, Qatar University, University of Bahrain, and Sultan Qaboos University (Oman). Both A and A+ = 4.00 with plus/minus at ±0.30 intervals. Includes 13 grades from A+ to F. Pass from D = 1.00 at approximately 60%.',
       grades: [
-        { label: 'A+', value: 4.00 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.70 },
-        { label: 'B+', value: 3.30 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.70 },
-        { label: 'C+', value: 2.30 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.70 },
-        { label: 'D+', value: 1.30 }, { label: 'D', value: 1.00 }, { label: 'D-', value: 0.70 },
-        { label: 'F', value: 0.00 }
+        { label: 'A+', value: 4.00, minPct: 93, maxPct: 100 }, { label: 'A', value: 4.00, minPct: 90, maxPct: 92 }, { label: 'A-', value: 3.70, minPct: 87, maxPct: 89 },
+        { label: 'B+', value: 3.30, minPct: 84, maxPct: 86 }, { label: 'B', value: 3.00, minPct: 80, maxPct: 83 }, { label: 'B-', value: 2.70, minPct: 77, maxPct: 79 },
+        { label: 'C+', value: 2.30, minPct: 74, maxPct: 76 }, { label: 'C', value: 2.00, minPct: 70, maxPct: 73 }, { label: 'C-', value: 1.70, minPct: 67, maxPct: 69 },
+        { label: 'D+', value: 1.30, minPct: 64, maxPct: 66 }, { label: 'D', value: 1.00, minPct: 60, maxPct: 63 }, { label: 'D-', value: 0.70, minPct: 57, maxPct: 59 },
+        { label: 'F', value: 0.00, minPct: 0, maxPct: 56 }
       ],
       classifications: [
         { min: 3.70, ar: 'ممتاز', en: 'Excellent' },
@@ -1595,11 +1595,11 @@
       descAr: 'نظام 4 نقاط — يُستخدم في الجامعة الأردنية وجامعة العلوم والتكنولوجيا الأردنية وأغلب الجامعات الأردنية الحكومية والخاصة. لا يوجد A+ — أعلى درجة A = 4.00 عند 90% فأعلى. الفواصل ±0.30. النجاح من D = 1.00 عند 55%. التقديرات: ممتاز ≥ 3.65، جيد جداً ≥ 3.00، جيد ≥ 2.34، مقبول ≥ 2.00.',
       descEn: '4-point scale — used at University of Jordan, Jordan University of Science and Technology, and most Jordanian public and private universities. No A+ — highest grade A = 4.00 at 90%+. Intervals ±0.30. Pass from D = 1.00 at 55%. Classifications: Excellent ≥ 3.65, Very Good ≥ 3.00, Good ≥ 2.34, Pass ≥ 2.00.',
       grades: [
-        { label: 'A', value: 4.00 }, { label: 'A-', value: 3.70 },
-        { label: 'B+', value: 3.30 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.70 },
-        { label: 'C+', value: 2.30 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.70 },
-        { label: 'D+', value: 1.30 }, { label: 'D', value: 1.00 },
-        { label: 'F', value: 0.00 }
+        { label: 'A', value: 4.00, minPct: 90, maxPct: 100 }, { label: 'A-', value: 3.70, minPct: 85, maxPct: 89 },
+        { label: 'B+', value: 3.30, minPct: 80, maxPct: 84 }, { label: 'B', value: 3.00, minPct: 76, maxPct: 79 }, { label: 'B-', value: 2.70, minPct: 73, maxPct: 75 },
+        { label: 'C+', value: 2.30, minPct: 70, maxPct: 72 }, { label: 'C', value: 2.00, minPct: 66, maxPct: 69 }, { label: 'C-', value: 1.70, minPct: 63, maxPct: 65 },
+        { label: 'D+', value: 1.30, minPct: 59, maxPct: 62 }, { label: 'D', value: 1.00, minPct: 55, maxPct: 58 },
+        { label: 'F', value: 0.00, minPct: 0, maxPct: 54 }
       ],
       classifications: [
         { min: 3.70, ar: 'ممتاز', en: 'Excellent' },
@@ -1647,15 +1647,15 @@
       ]
     },
     'lebanon4': {
-      nameAr: 'لبنان - نظام 4.0 (±)', nameEn: 'Lebanon - 4.0 Scale (±)', max: 4,
+      nameAr: 'لبنان - نظام 4.0 (±)', nameEn: 'Lebanon - 4.0 Scale (±)', max: 4.3,
       descAr: 'نظام 4 نقاط أمريكي الطابع — يُستخدم في الجامعة الأمريكية في بيروت (AUB) والجامعة اللبنانية الأمريكية (LAU). يتضمن 13 درجة من A+ إلى F مع plus/minus بفارق ±0.30. النجاح من D- = 0.70. ملاحظة مهمة: الجامعة اللبنانية (الحكومية) تستخدم نظاماً مختلفاً تماماً — سلّم من 20 على الطريقة الفرنسية.',
       descEn: 'American-style 4-point scale — used at American University of Beirut (AUB) and Lebanese American University (LAU). Includes 13 grades from A+ to F with plus/minus at ±0.30. Pass from D- = 0.70. Important note: The Lebanese University (public) uses a completely different system — the French /20 scale.',
       grades: [
-        { label: 'A+', value: 4.00 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.70 },
-        { label: 'B+', value: 3.30 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.70 },
-        { label: 'C+', value: 2.30 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.70 },
-        { label: 'D+', value: 1.30 }, { label: 'D', value: 1.00 }, { label: 'D-', value: 0.70 },
-        { label: 'F', value: 0.00 }
+        { label: 'A+', value: 4.30, minPct: 93, maxPct: 100 }, { label: 'A', value: 4.00, minPct: 87, maxPct: 92 }, { label: 'A-', value: 3.70, minPct: 83, maxPct: 86 },
+        { label: 'B+', value: 3.30, minPct: 79, maxPct: 82 }, { label: 'B', value: 3.00, minPct: 75, maxPct: 78 }, { label: 'B-', value: 2.70, minPct: 72, maxPct: 74 },
+        { label: 'C+', value: 2.30, minPct: 69, maxPct: 71 }, { label: 'C', value: 2.00, minPct: 66, maxPct: 68 }, { label: 'C-', value: 1.70, minPct: 63, maxPct: 65 },
+        { label: 'D+', value: 1.30, minPct: 61, maxPct: 62 }, { label: 'D', value: 1.00, minPct: 60, maxPct: 60 },
+        { label: 'F', value: 0.00, minPct: 0, maxPct: 59 }
       ],
       classifications: [
         { min: 3.70, ar: 'ممتاز', en: 'Excellent' },
@@ -1682,11 +1682,11 @@
       descAr: 'النظام الأكثر شيوعاً في العالم — يُستخدم في أغلب الجامعات الأمريكية مثل هارفارد، Yale، Princeton، UCLA، NYU، وجامعة شيكاغو. A+ و A كلاهما = 4.00 (المعدل الأقصى 4.00). نظام plus/minus بفارق ±0.30. يتضمن 13 درجة من A+ إلى F. النجاح عادة من D = 1.00 للمواد العامة، لكن C أو C- مطلوبة للمواد التخصصية.',
       descEn: 'The most common system worldwide — used at most American universities such as Harvard, Yale, Princeton, UCLA, NYU, and University of Chicago. Both A+ and A = 4.00 (max GPA 4.00). Plus/minus system at ±0.30. Includes 13 grades from A+ to F. Pass usually from D = 1.00 for general courses, but C or C- required for major courses.',
       grades: [
-        { label: 'A+', value: 4.00 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.70 },
-        { label: 'B+', value: 3.30 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.70 },
-        { label: 'C+', value: 2.30 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.70 },
-        { label: 'D+', value: 1.30 }, { label: 'D', value: 1.00 }, { label: 'D-', value: 0.70 },
-        { label: 'F', value: 0.00 }
+        { label: 'A+', value: 4.00, minPct: 97, maxPct: 100 }, { label: 'A', value: 4.00, minPct: 93, maxPct: 96 }, { label: 'A-', value: 3.70, minPct: 90, maxPct: 92 },
+        { label: 'B+', value: 3.30, minPct: 87, maxPct: 89 }, { label: 'B', value: 3.00, minPct: 83, maxPct: 86 }, { label: 'B-', value: 2.70, minPct: 80, maxPct: 82 },
+        { label: 'C+', value: 2.30, minPct: 77, maxPct: 79 }, { label: 'C', value: 2.00, minPct: 73, maxPct: 76 }, { label: 'C-', value: 1.70, minPct: 70, maxPct: 72 },
+        { label: 'D+', value: 1.30, minPct: 67, maxPct: 69 }, { label: 'D', value: 1.00, minPct: 63, maxPct: 66 }, { label: 'D-', value: 0.70, minPct: 60, maxPct: 62 },
+        { label: 'F', value: 0.00, minPct: 0, maxPct: 59 }
       ],
       classifications: [
         { min: 3.70, ar: 'ممتاز', en: "Dean's List" },
@@ -1701,11 +1701,11 @@
       descAr: 'مثل النظام الأمريكي القياسي لكن A+ = 4.33 بدلاً من 4.00 — يُستخدم في ستانفورد، كورنيل، كولومبيا، وجامعة نبراسكا. الفواصل ±0.33 بدلاً من ±0.30. المعدل الأقصى 4.33 وليس 4.00. بعض الجامعات مثل أريزونا تسمح بـ A+ = 4.33 لكن تسقف المعدل التراكمي عند 4.00.',
       descEn: 'Like the standard US system but A+ = 4.33 instead of 4.00 — used at Stanford, Cornell, Columbia, and University of Nebraska. Intervals ±0.33 instead of ±0.30. Maximum GPA is 4.33, not 4.00. Some universities like Arizona allow A+ = 4.33 but cap cumulative GPA at 4.00.',
       grades: [
-        { label: 'A+', value: 4.33 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.67 },
-        { label: 'B+', value: 3.33 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.67 },
-        { label: 'C+', value: 2.33 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.67 },
-        { label: 'D+', value: 1.33 }, { label: 'D', value: 1.00 }, { label: 'D-', value: 0.67 },
-        { label: 'F', value: 0.00 }
+        { label: 'A+', value: 4.33, minPct: 97, maxPct: 100 }, { label: 'A', value: 4.00, minPct: 93, maxPct: 96 }, { label: 'A-', value: 3.67, minPct: 90, maxPct: 92 },
+        { label: 'B+', value: 3.33, minPct: 87, maxPct: 89 }, { label: 'B', value: 3.00, minPct: 83, maxPct: 86 }, { label: 'B-', value: 2.67, minPct: 80, maxPct: 82 },
+        { label: 'C+', value: 2.33, minPct: 77, maxPct: 79 }, { label: 'C', value: 2.00, minPct: 73, maxPct: 76 }, { label: 'C-', value: 1.67, minPct: 70, maxPct: 72 },
+        { label: 'D+', value: 1.33, minPct: 67, maxPct: 69 }, { label: 'D', value: 1.00, minPct: 63, maxPct: 66 }, { label: 'D-', value: 0.67, minPct: 60, maxPct: 62 },
+        { label: 'F', value: 0.00, minPct: 0, maxPct: 59 }
       ],
       classifications: [
         { min: 3.70, ar: 'ممتاز', en: "Dean's List" },
@@ -1720,11 +1720,11 @@
       descAr: 'نظام 4.33 نقطة — يُستخدم في أغلب الجامعات الكندية مثل UBC (بريتش كولومبيا)، تورنتو، ومونتريال. A+ = 4.33 مع plus/minus بفارق ±0.33. مشابه جداً للنظام الأمريكي 4.33 لكن نطاقات النسب المئوية قد تختلف. بعض المقاطعات الكندية تستخدم أنظمة مختلفة قليلاً.',
       descEn: '4.33-point scale — used at most Canadian universities such as UBC (British Columbia), Toronto, and Montreal. A+ = 4.33 with plus/minus at ±0.33. Very similar to the US 4.33 system but percentage ranges may differ. Some Canadian provinces use slightly different systems.',
       grades: [
-        { label: 'A+', value: 4.33 }, { label: 'A', value: 4.00 }, { label: 'A-', value: 3.67 },
-        { label: 'B+', value: 3.33 }, { label: 'B', value: 3.00 }, { label: 'B-', value: 2.67 },
-        { label: 'C+', value: 2.33 }, { label: 'C', value: 2.00 }, { label: 'C-', value: 1.67 },
-        { label: 'D+', value: 1.33 }, { label: 'D', value: 1.00 }, { label: 'D-', value: 0.67 },
-        { label: 'F', value: 0.00 }
+        { label: 'A+', value: 4.33, minPct: 90, maxPct: 100 }, { label: 'A', value: 4.00, minPct: 85, maxPct: 89 }, { label: 'A-', value: 3.67, minPct: 80, maxPct: 84 },
+        { label: 'B+', value: 3.33, minPct: 76, maxPct: 79 }, { label: 'B', value: 3.00, minPct: 72, maxPct: 75 }, { label: 'B-', value: 2.67, minPct: 68, maxPct: 71 },
+        { label: 'C+', value: 2.33, minPct: 64, maxPct: 67 }, { label: 'C', value: 2.00, minPct: 60, maxPct: 63 }, { label: 'C-', value: 1.67, minPct: 55, maxPct: 59 },
+        { label: 'D', value: 1.00, minPct: 50, maxPct: 54 },
+        { label: 'F', value: 0.00, minPct: 0, maxPct: 49 }
       ],
       classifications: [
         { min: 3.70, ar: 'ممتاز', en: "Dean's List" },
@@ -1739,11 +1739,11 @@
       descAr: 'نظام 4 نقاط بالأحرف المزدوجة — يُستخدم في أغلب الجامعات التركية مثل METU (الشرق الأوسط التقنية)، Boğaziçi، وITU. الدرجات: AA = 4.00، BA = 3.50، BB = 3.00، CB = 2.50، CC = 2.00، DC = 1.50، DD = 1.00. الفواصل ±0.50 منتظمة تماماً — أبسط من النظام الأمريكي. النجاح من DD = 1.00 عند 60%. درجة DC = 1.50 تُعتبر نجاحاً مشروطاً.',
       descEn: '4-point scale with double letters — used at most Turkish universities such as METU (Middle East Technical), Boğaziçi, and ITU. Grades: AA = 4.00, BA = 3.50, BB = 3.00, CB = 2.50, CC = 2.00, DC = 1.50, DD = 1.00. Regular ±0.50 intervals — simpler than the US system. Pass from DD = 1.00 at 60%. DC = 1.50 is a conditional pass.',
       grades: [
-        { label: 'AA', value: 4.00 }, { label: 'BA', value: 3.50 },
-        { label: 'BB', value: 3.00 }, { label: 'CB', value: 2.50 },
-        { label: 'CC', value: 2.00 }, { label: 'DC', value: 1.50 },
-        { label: 'DD', value: 1.00 }, { label: 'FD', value: 0.50 },
-        { label: 'FF', value: 0.00 }
+        { label: 'AA', value: 4.00, minPct: 90, maxPct: 100 }, { label: 'BA', value: 3.50, minPct: 85, maxPct: 89 },
+        { label: 'BB', value: 3.00, minPct: 80, maxPct: 84 }, { label: 'CB', value: 2.50, minPct: 75, maxPct: 79 },
+        { label: 'CC', value: 2.00, minPct: 70, maxPct: 74 }, { label: 'DC', value: 1.50, minPct: 65, maxPct: 69 },
+        { label: 'DD', value: 1.00, minPct: 60, maxPct: 64 }, { label: 'FD', value: 0.50, minPct: 50, maxPct: 59 },
+        { label: 'FF', value: 0.00, minPct: 0, maxPct: 49 }
       ],
       classifications: [
         { min: 3.50, ar: 'شرف', en: 'Honour' },
@@ -1770,12 +1770,12 @@
       descAr: 'نظام مقلوب — 1.0 هي أفضل درجة و 5.0 رسوب (عكس كل الأنظمة الأخرى). يُستخدم في ألمانيا والنمسا وسويسرا. الدرجات بفواصل 0.3 (1.0، 1.3، 1.7، 2.0...). التقديرات: ممتاز جداً (Sehr gut) ≤ 1.5، جيد (Gut) ≤ 2.5، مرضٍ (Befriedigend) ≤ 3.5، كافٍ (Ausreichend) ≤ 4.0. معدلات الرسوب 20–40% طبيعية في الجامعات الألمانية.',
       descEn: 'Inverted scale — 1.0 is the best grade and 5.0 is fail (opposite of all other systems). Used in Germany, Austria, and Switzerland. Grades in 0.3 increments (1.0, 1.3, 1.7, 2.0...). Classifications: Sehr gut (Very Good) ≤ 1.5, Gut (Good) ≤ 2.5, Befriedigend (Satisfactory) ≤ 3.5, Ausreichend (Sufficient) ≤ 4.0. Failure rates of 20–40% are normal at German universities.',
       grades: [
-        { label: '1.0', value: 1.00 }, { label: '1.3', value: 1.30 },
-        { label: '1.7', value: 1.70 }, { label: '2.0', value: 2.00 },
-        { label: '2.3', value: 2.30 }, { label: '2.7', value: 2.70 },
-        { label: '3.0', value: 3.00 }, { label: '3.3', value: 3.30 },
-        { label: '3.7', value: 3.70 }, { label: '4.0', value: 4.00 },
-        { label: '5.0', value: 5.00 }
+        { label: '1.0', value: 1.00, minPct: 95, maxPct: 100 }, { label: '1.3', value: 1.30, minPct: 90, maxPct: 94 },
+        { label: '1.7', value: 1.70, minPct: 85, maxPct: 89 }, { label: '2.0', value: 2.00, minPct: 80, maxPct: 84 },
+        { label: '2.3', value: 2.30, minPct: 75, maxPct: 79 }, { label: '2.7', value: 2.70, minPct: 70, maxPct: 74 },
+        { label: '3.0', value: 3.00, minPct: 65, maxPct: 69 }, { label: '3.3', value: 3.30, minPct: 60, maxPct: 64 },
+        { label: '3.7', value: 3.70, minPct: 55, maxPct: 59 }, { label: '4.0', value: 4.00, minPct: 50, maxPct: 54 },
+        { label: '5.0', value: 5.00, minPct: 0, maxPct: 49 }
       ],
       classifications: [
         { min: 4.10, ar: 'راسب', en: 'Nicht Bestanden (Fail)' },
@@ -1802,10 +1802,10 @@
       descAr: 'نظام 10 نقاط — يُستخدم في الجامعات الهندية الحديثة التي اعتمدت نظام CBCS. الدرجات: O (Outstanding) = 10، A+ = 9، A = 8، B+ = 7، B = 6، C = 5، P (Pass) = 4. التحويل التقريبي للنسبة المئوية: CGPA × 9.5. ملاحظة: معاهد IIT تستخدم نظاماً نسبياً مختلفاً (منحنى) ولا يُنصح بتحويله مباشرة.',
       descEn: '10-point scale — used at modern Indian universities that adopted the CBCS system. Grades: O (Outstanding) = 10, A+ = 9, A = 8, B+ = 7, B = 6, C = 5, P (Pass) = 4. Approximate percentage conversion: CGPA × 9.5. Note: IITs use a different relative (curve) system and direct conversion is not recommended.',
       grades: [
-        { label: 'O', value: 10.00 }, { label: 'A+', value: 9.00 },
-        { label: 'A', value: 8.00 }, { label: 'B+', value: 7.00 },
-        { label: 'B', value: 6.00 }, { label: 'C', value: 5.00 },
-        { label: 'P', value: 4.00 }, { label: 'F', value: 0.00 }
+        { label: 'O', value: 10.00, minPct: 90, maxPct: 100 }, { label: 'A+', value: 9.00, minPct: 80, maxPct: 89 },
+        { label: 'A', value: 8.00, minPct: 70, maxPct: 79 }, { label: 'B+', value: 7.00, minPct: 60, maxPct: 69 },
+        { label: 'B', value: 6.00, minPct: 55, maxPct: 59 }, { label: 'C', value: 5.00, minPct: 50, maxPct: 54 },
+        { label: 'P', value: 4.00, minPct: 40, maxPct: 49 }, { label: 'F', value: 0.00, minPct: 0, maxPct: 39 }
       ],
       classifications: [
         { min: 9.00, ar: 'ممتاز', en: 'Outstanding' },
@@ -1822,11 +1822,11 @@
       descAr: 'نظام 4.5 نقاط — يُستخدم في أغلب الجامعات الكورية الجنوبية. A+ = 4.50، A0 = 4.00 (الصفر يعني بدون plus وليس صفراً رقمياً). الفواصل ±0.50 منتظمة. النجاح من D0 = 1.00. بعض الجامعات الكورية تستخدم سلّم 4.3 أو 4.0 بدلاً من 4.5.',
       descEn: '4.5-point scale — used at most South Korean universities. A+ = 4.50, A0 = 4.00 (zero means no plus, not a numeric zero). Regular ±0.50 intervals. Pass from D0 = 1.00. Some Korean universities use a 4.3 or 4.0 scale instead of 4.5.',
       grades: [
-        { label: 'A+', value: 4.50 }, { label: 'A0', value: 4.00 },
-        { label: 'B+', value: 3.50 }, { label: 'B0', value: 3.00 },
-        { label: 'C+', value: 2.50 }, { label: 'C0', value: 2.00 },
-        { label: 'D+', value: 1.50 }, { label: 'D0', value: 1.00 },
-        { label: 'F', value: 0.00 }
+        { label: 'A+', value: 4.50, minPct: 95, maxPct: 100 }, { label: 'A0', value: 4.00, minPct: 90, maxPct: 94 },
+        { label: 'B+', value: 3.50, minPct: 85, maxPct: 89 }, { label: 'B0', value: 3.00, minPct: 80, maxPct: 84 },
+        { label: 'C+', value: 2.50, minPct: 75, maxPct: 79 }, { label: 'C0', value: 2.00, minPct: 70, maxPct: 74 },
+        { label: 'D+', value: 1.50, minPct: 65, maxPct: 69 }, { label: 'D0', value: 1.00, minPct: 60, maxPct: 64 },
+        { label: 'F', value: 0.00, minPct: 0, maxPct: 59 }
       ],
       classifications: [
         { min: 4.00, ar: 'ممتاز', en: 'Excellent' },
@@ -1841,9 +1841,9 @@
       descAr: 'نظام 7 نقاط — يُستخدم في الجامعات الأسترالية. HD (High Distinction) = 7 عند 85%+، D (Distinction) = 6 عند 75%+، CR (Credit) = 5 عند 65%+، P (Pass) = 4 عند 50%+. بعض الجامعات مثل سيدني وUNSW تضع عتبة HD عند 85% (أصعب). جامعة ملبورن تستخدم رموزاً مختلفة (H1, H2A, H2B).',
       descEn: '7-point scale — used at Australian universities. HD (High Distinction) = 7 at 85%+, D (Distinction) = 6 at 75%+, CR (Credit) = 5 at 65%+, P (Pass) = 4 at 50%+. Some universities like Sydney and UNSW set HD threshold at 85% (harder). University of Melbourne uses different symbols (H1, H2A, H2B).',
       grades: [
-        { label: 'HD', value: 7.00 }, { label: 'D', value: 6.00 },
-        { label: 'CR', value: 5.00 }, { label: 'P', value: 4.00 },
-        { label: 'F', value: 0.00 }
+        { label: 'HD', value: 7.00, minPct: 85, maxPct: 100 }, { label: 'D', value: 6.00, minPct: 75, maxPct: 84 },
+        { label: 'CR', value: 5.00, minPct: 65, maxPct: 74 }, { label: 'P', value: 4.00, minPct: 50, maxPct: 64 },
+        { label: 'F', value: 0.00, minPct: 0, maxPct: 49 }
       ],
       classifications: [
         { min: 6.50, ar: 'ممتاز مرتفع', en: 'High Distinction' },
@@ -2370,23 +2370,26 @@
       return [[tmpl.max, 100], [0, 0]];
     }
 
-    var grades = tmpl.grades.slice();
-    // Sort by value descending (highest first) for normal, ascending for inverted
-    grades.sort(function(a, b) { return inv ? a.value - b.value : b.value - a.value; });
-
-    // Deduplicate same-value grades (e.g. A+=4.00 and A=4.00) — keep first (higher pct)
-    var unique = [grades[0]];
-    for (var i = 1; i < grades.length; i++) {
-      if (grades[i].value !== unique[unique.length - 1].value) {
-        unique.push(grades[i]);
-      }
+    // Use minPct/maxPct midpoints if available
+    var raw = [];
+    for (var i = 0; i < tmpl.grades.length; i++) {
+      var g = tmpl.grades[i];
+      var midPct = (g.minPct !== undefined && g.maxPct !== undefined)
+        ? (g.minPct + g.maxPct) / 2 : null;
+      raw.push([g.value, midPct]);
     }
-
-    var map = [];
-    var n = unique.length;
-    for (var i = 0; i < n; i++) {
-      var pct = n > 1 ? 100 * (1 - i / (n - 1)) : 100;
-      map.push([unique[i].value, pct]);
+    // Sort: descending for normal, ascending for inverted
+    raw.sort(function(a, b) { return inv ? a[0] - b[0] : b[0] - a[0]; });
+    // Deduplicate same-value entries
+    var map = [raw[0]];
+    for (var i = 1; i < raw.length; i++) {
+      if (raw[i][0] !== map[map.length - 1][0]) map.push(raw[i]);
+    }
+    // Fallback if no minPct/maxPct
+    if (map[0][1] === null) {
+      for (var i = 0; i < map.length; i++) {
+        map[i][1] = map.length > 1 ? 100 * (1 - i / (map.length - 1)) : 100;
+      }
     }
     return map;
   }
@@ -2615,7 +2618,8 @@
       var html = '';
       for (var i = 0; i < sys.grades.length; i++) {
         var g = sys.grades[i];
-        html += '<tr><td>' + g.label + '</td><td>' + g.value.toFixed(2) + '</td></tr>';
+        var pctStr = (g.minPct !== undefined && g.maxPct !== undefined) ? g.minPct + '% – ' + g.maxPct + '%' : '—';
+        html += '<tr><td>' + g.label + '</td><td>' + g.value.toFixed(2) + '</td><td>' + pctStr + '</td></tr>';
       }
       gradesBody.innerHTML = html;
     } else {
@@ -2762,6 +2766,7 @@
       html += '<table class="gpa-cust-table"><thead><tr>';
       html += '<th>' + labels.gradeSymbol + '</th>';
       html += '<th>' + labels.gradeValue + '</th>';
+      html += '<th>Min%</th><th>Max%</th>';
       html += '<th></th>';
       html += '</tr></thead><tbody>';
       for (var i = 0; i < active.grades.length; i++) {
@@ -2769,6 +2774,8 @@
         html += '<tr>';
         html += '<td><input type="text" value="' + g.label + '" oninput="gpaCustUpdateGrade(' + i + ',\'label\',this.value)" onblur="gpaCustRefresh()"></td>';
         html += '<td><input type="number" step="0.01" min="0" value="' + g.value.toFixed(2) + '" oninput="gpaCustUpdateGrade(' + i + ',\'value\',this.value)" onblur="gpaCustRefresh()"></td>';
+        html += '<td><input type="number" min="0" max="100" value="' + (g.minPct !== undefined ? g.minPct : '') + '" oninput="gpaCustUpdateGrade(' + i + ',\'minPct\',this.value)" onblur="gpaCustRefresh()"></td>';
+        html += '<td><input type="number" min="0" max="100" value="' + (g.maxPct !== undefined ? g.maxPct : '') + '" oninput="gpaCustUpdateGrade(' + i + ',\'maxPct\',this.value)" onblur="gpaCustRefresh()"></td>';
         html += '<td><button class="gpa-cust-del" onclick="gpaCustDeleteGrade(' + i + ')">&times;</button></td>';
         html += '</tr>';
       }
@@ -2801,7 +2808,7 @@
       var base = templates[currentTemplate];
       customizations[currentTemplate] = {
         max: base.max,
-        grades: base.grades ? base.grades.map(function(g) { return { label: g.label, value: g.value }; }) : null
+        grades: base.grades ? base.grades.map(function(g) { var o = { label: g.label, value: g.value }; if (g.minPct !== undefined) { o.minPct = g.minPct; o.maxPct = g.maxPct; } return o; }) : null
       };
     }
     return customizations[currentTemplate];
@@ -2835,6 +2842,8 @@
     if (!cust.grades) return;
     if (field === 'value') {
       cust.grades[index].value = parseFloat(value) || 0;
+    } else if (field === 'minPct' || field === 'maxPct') {
+      cust.grades[index][field] = parseInt(value) || 0;
     } else {
       cust.grades[index].label = value;
     }
@@ -2857,7 +2866,7 @@
   window.gpaCustAddGrade = function() {
     var cust = ensureCustomization();
     if (!cust.grades) return;
-    cust.grades.push({ label: '?', value: 0 });
+    cust.grades.push({ label: '?', value: 0, minPct: 0, maxPct: 0 });
     onCustomizationChanged();
   };
 
@@ -2888,7 +2897,7 @@
       inverted: !!active.inverted
     };
     if (active.grades) {
-      data.grades = active.grades.map(function(g) { return { label: g.label, value: g.value }; });
+      data.grades = active.grades.map(function(g) { var o = { label: g.label, value: g.value }; if (g.minPct !== undefined) { o.minPct = g.minPct; o.maxPct = g.maxPct; } return o; });
     }
     var json = JSON.stringify(data, null, 2);
     var blob = new Blob([json], { type: 'application/json' });
@@ -3136,7 +3145,7 @@
       var base = templates[tmplId];
       convCustomizations[tmplId] = {
         max: base.max,
-        grades: base.grades ? base.grades.map(function(g) { return { label: g.label, value: g.value }; }) : null
+        grades: base.grades ? base.grades.map(function(g) { var o = { label: g.label, value: g.value }; if (g.minPct !== undefined) { o.minPct = g.minPct; o.maxPct = g.maxPct; } return o; }) : null
       };
     }
     return convCustomizations[tmplId];
@@ -3155,6 +3164,7 @@
       html += '<table class="gpa-cust-table"><thead><tr>';
       html += '<th>' + labels.gradeSymbol + '</th>';
       html += '<th>' + labels.gradeValue + '</th>';
+      html += '<th>Min%</th><th>Max%</th>';
       html += '<th></th>';
       html += '</tr></thead><tbody>';
       for (var i = 0; i < tmpl.grades.length; i++) {
@@ -3162,6 +3172,8 @@
         html += '<tr>';
         html += '<td><input type="text" value="' + g.label + '" oninput="gpaConvCustUpdate(' + s + ',' + i + ',\'label\',this.value)" onblur="gpaConvCustRefresh(' + s + ')"></td>';
         html += '<td><input type="number" step="0.01" min="0" value="' + g.value.toFixed(2) + '" oninput="gpaConvCustUpdate(' + s + ',' + i + ',\'value\',this.value)" onblur="gpaConvCustRefresh(' + s + ')"></td>';
+        html += '<td><input type="number" min="0" max="100" value="' + (g.minPct !== undefined ? g.minPct : '') + '" oninput="gpaConvCustUpdate(' + s + ',' + i + ',\'minPct\',this.value)" onblur="gpaConvCustRefresh(' + s + ')"></td>';
+        html += '<td><input type="number" min="0" max="100" value="' + (g.maxPct !== undefined ? g.maxPct : '') + '" oninput="gpaConvCustUpdate(' + s + ',' + i + ',\'maxPct\',this.value)" onblur="gpaConvCustRefresh(' + s + ')"></td>';
         html += '<td><button class="gpa-cust-del" onclick="gpaConvCustDelete(' + s + ',' + i + ')">&times;</button></td>';
         html += '</tr>';
       }
@@ -3221,7 +3233,9 @@
     var tmplId = convGetTmplId(side);
     var cust = convEnsureCust(tmplId);
     if (!cust.grades) return;
-    cust.grades[index][field === 'value' ? 'value' : 'label'] = field === 'value' ? (parseFloat(value) || 0) : value;
+    if (field === 'value') { cust.grades[index].value = parseFloat(value) || 0; }
+    else if (field === 'minPct' || field === 'maxPct') { cust.grades[index][field] = parseInt(value) || 0; }
+    else { cust.grades[index].label = value; }
     convOnChanged(side);
   };
 
@@ -3237,7 +3251,7 @@
     var tmplId = convGetTmplId(side);
     var cust = convEnsureCust(tmplId);
     if (!cust.grades) return;
-    cust.grades.push({ label: '?', value: 0 });
+    cust.grades.push({ label: '?', value: 0, minPct: 0, maxPct: 0 });
     convOnChanged(side);
   };
 
@@ -3284,7 +3298,7 @@
         var tmplId = convGetTmplId(side);
         var cust = { max: data.max };
         if (data.grades && Array.isArray(data.grades) && data.grades.length > 0) {
-          cust.grades = data.grades.map(function(g) { return { label: String(g.label || '?'), value: parseFloat(g.value) || 0 }; });
+          cust.grades = data.grades.map(function(g) { var o = { label: String(g.label || '?'), value: parseFloat(g.value) || 0 }; if (g.minPct !== undefined) { o.minPct = parseInt(g.minPct) || 0; o.maxPct = parseInt(g.maxPct) || 100; } return o; });
         }
         convCustomizations[tmplId] = cust;
         convOnChanged(side);
