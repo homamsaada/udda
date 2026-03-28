@@ -1,7 +1,7 @@
 ---
 title: "Zakat on Stocks and Investment Funds: A Detailed Guide"
 description: "How to pay Zakat on stocks: the difference between investor and trader, with calculation methods for stocks and funds"
-date: "2026-03-21"
+date: "2026-03-20"
 topic: "zakat-calculator"
 keywords: "zakat on stocks, zakat on investment funds, how to calculate zakat on shares, zakat on portfolio, zakat on investments, zakat on dividends, zakat on trading, zakat on ETFs"
 relatedTool: "zakat-calculator"

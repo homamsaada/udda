@@ -1,7 +1,7 @@
 ---
 title: "Zakat on Real Estate: When Is It Due and When Is It Not?"
 description: "Is Zakat due on property? The ruling differs for personal use, rental, and resale — find your case with examples"
-date: "2026-03-21"
+date: "2026-03-22"
 topic: "zakat-calculator"
 keywords: "zakat on real estate, zakat on property, is property zakatable, zakat on land, zakat on rental income, zakat on house, zakat on apartment, zakat on land for sale"
 relatedTool: "zakat-calculator"

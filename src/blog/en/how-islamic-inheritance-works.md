@@ -1,7 +1,7 @@
 ---
 title: "How Islamic Inheritance Works: A Simplified Guide to Faraid"
 description: "How is inheritance divided in Islam? A simplified guide to fixed shares, residuary heirs, blocking, and Awl with examples"
-date: "2026-03-22"
+date: "2026-03-24"
 topic: "inheritance-calculator"
 keywords: "islamic inheritance, how to divide inheritance islam, faraid, inheritance shares, who inherits in islam, estate division, fixed shares inheritance, inheritance calculator"
 relatedTool: "inheritance-calculator"
