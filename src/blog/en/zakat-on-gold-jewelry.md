@@ -1,7 +1,7 @@
 ---
 title: "Is Zakat Due on Gold Jewelry You Wear? Scholarly Views Explained"
 description: "Is Zakat due on gold jewelry you wear? The four schools' views and the strongest opinion, with how to calculate Zakat on jewelry"
-date: "2026-03-21"
+date: "2025-10-19"
 topic: "zakat-calculator"
 keywords: "zakat on gold jewelry, is gold jewelry zakatable, zakat on ornaments, zakat on women gold, gold nisab, 85 grams gold, zakat on jewellery"
 relatedTool: "zakat-calculator"

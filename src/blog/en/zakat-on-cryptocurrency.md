@@ -1,7 +1,7 @@
 ---
 title: "Zakat on Cryptocurrency (Bitcoin): Is It Due and How to Calculate?"
 description: "Is Zakat due on Bitcoin? The ruling on crypto Zakat and how to calculate it despite price volatility"
-date: "2026-03-21"
+date: "2026-01-25"
 topic: "zakat-calculator"
 keywords: "zakat on bitcoin, zakat on cryptocurrency, zakat on crypto, is bitcoin zakatable, zakat on digital currency, zakat on ethereum, zakat on mining, zakat on NFT"
 relatedTool: "zakat-calculator"

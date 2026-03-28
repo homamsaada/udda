@@ -1,7 +1,7 @@
 ---
 title: "When Are Siblings Blocked from Inheritance? Hajb Rules Explained"
 description: "When does a brother lose his inheritance? Sibling blocking rules: who blocks whom and why, with examples"
-date: "2026-03-23"
+date: "2026-03-05"
 topic: "inheritance-calculator"
 keywords: "siblings blocked inheritance, when brother doesn't inherit, hajb inheritance, who blocks brother, total blocking, partial blocking, brother blocked by son"
 relatedTool: "inheritance-calculator"
