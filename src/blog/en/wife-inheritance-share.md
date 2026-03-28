@@ -1,7 +1,7 @@
 ---
 title: "Wife's Share of Husband's Inheritance: Rules and Cases Explained"
 description: "How much does a wife inherit? One-quarter or one-eighth? Every case explained with examples and multiple wives ruling"
-date: "2026-03-22"
+date: "2026-03-25"
 topic: "inheritance-calculator"
 keywords: "wife inheritance share islam, how much wife inherits, wife share husband estate, widow inheritance, wife quarter or eighth, wife inheritance with children"
 relatedTool: "inheritance-calculator"
