@@ -1,7 +1,7 @@
 ---
 title: "Differences Between the Four Islamic Schools in Inheritance: Key Disputes"
 description: "Key differences between the four schools in inheritance: grandfather with siblings, Radd, the shared case, with examples"
-date: "2026-03-28"
+date: "2026-03-26"
 topic: "inheritance-calculator"
 keywords: "four schools inheritance differences, hanafi inheritance, shafii inheritance, madhab differences faraid, grandfather siblings inheritance, mushtaraka case, radd inheritance"
 relatedTool: "inheritance-calculator"
