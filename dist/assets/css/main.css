@@ -65,11 +65,11 @@
   --accent-line: linear-gradient(90deg, #6366f1, #8b5cf6, #06b6d4);
 
   /* Ambient Glow */
-  --glow-1: rgba(99, 102, 241, 0.65);
-  --glow-2: rgba(139, 92, 246, 0.55);
+  --glow-1: rgba(56, 189, 248, 0.65);
+  --glow-2: rgba(45, 212, 191, 0.55);
   --glow-3: rgba(6, 182, 212, 0.65);
   --glow-4: rgba(16, 185, 129, 0.55);
-  --glow-5: rgba(244, 114, 182, 0.55);
+  --glow-5: rgba(132, 204, 22, 0.50);
 }
 
 /* Dark Theme */
@@ -116,11 +116,11 @@
   --accent-line: linear-gradient(90deg, #6366f1, #8b5cf6, #06b6d4);
 
   /* Ambient Glow */
-  --glow-1: rgba(99, 102, 241, 0.60);
-  --glow-2: rgba(139, 92, 246, 0.50);
+  --glow-1: rgba(56, 189, 248, 0.60);
+  --glow-2: rgba(45, 212, 191, 0.50);
   --glow-3: rgba(6, 182, 212, 0.60);
   --glow-4: rgba(16, 185, 129, 0.50);
-  --glow-5: rgba(244, 114, 182, 0.45);
+  --glow-5: rgba(132, 204, 22, 0.45);
 }
 
 /* Reset */
@@ -2209,17 +2209,17 @@ a.blog-post-category-badge.topic:hover {
 
 @media (max-width: 768px) {
   :root {
-    --glow-1: rgba(99, 102, 241, 0.25);
-    --glow-2: rgba(139, 92, 246, 0.20);
+    --glow-1: rgba(56, 189, 248, 0.25);
+    --glow-2: rgba(45, 212, 191, 0.20);
     --glow-3: rgba(6, 182, 212, 0.25);
     --glow-4: rgba(16, 185, 129, 0.20);
-    --glow-5: rgba(244, 114, 182, 0.20);
+    --glow-5: rgba(132, 204, 22, 0.18);
   }
   [data-theme="dark"] {
-    --glow-1: rgba(99, 102, 241, 0.22);
-    --glow-2: rgba(139, 92, 246, 0.18);
+    --glow-1: rgba(56, 189, 248, 0.22);
+    --glow-2: rgba(45, 212, 191, 0.18);
     --glow-3: rgba(6, 182, 212, 0.22);
     --glow-4: rgba(16, 185, 129, 0.18);
-    --glow-5: rgba(244, 114, 182, 0.15);
+    --glow-5: rgba(132, 204, 22, 0.15);
   }
 }
