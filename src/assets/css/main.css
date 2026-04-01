@@ -1897,7 +1897,7 @@ a.blog-post-category-badge.topic:hover {
 }
 .blog-subcat-card {
   background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  border: var(--card-border);
   border-radius: var(--border-radius-lg);
   padding: 20px;
   text-decoration: none;
@@ -1906,11 +1906,21 @@ a.blog-post-category-badge.topic:hover {
   align-items: center;
   gap: 16px;
   transition: all var(--transition-fast);
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+.blog-subcat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; left: 0;
+  height: 3px;
+  background: var(--accent-line);
 }
 .blog-subcat-card:hover {
-  border-color: var(--accent-primary);
+  border-color: rgba(99, 102, 241, 0.35);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--card-shadow-hover);
 }
 .blog-subcat-icon {
   width: 48px;
