@@ -135,35 +135,14 @@ html {
 body {
   font-family: 'Tajawal', 'Segoe UI', system-ui, sans-serif;
   background-color: var(--bg-primary);
+  background-image:
+    radial-gradient(circle 600px at top right, var(--glow-1), transparent 70%),
+    radial-gradient(circle 500px at bottom left, var(--glow-3), transparent 70%),
+    radial-gradient(circle 400px at 30% 40%, var(--glow-2), transparent 70%);
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
   transition: background-color var(--transition-normal), color var(--transition-normal);
-}
-
-body::before,
-body::after {
-  content: '';
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
-}
-
-body::before {
-  width: 600px;
-  height: 600px;
-  top: -200px;
-  right: -100px;
-  background: radial-gradient(circle, var(--glow-1), transparent 70%);
-}
-
-body::after {
-  width: 500px;
-  height: 500px;
-  bottom: 20%;
-  left: -150px;
-  background: radial-gradient(circle, var(--glow-3), transparent 70%);
 }
 
 /* RTL Support */
@@ -182,19 +161,6 @@ body::after {
 .app-container {
   display: flex;
   min-height: 100vh;
-}
-
-.app-container::before {
-  content: '';
-  position: fixed;
-  width: 400px;
-  height: 400px;
-  top: 40%;
-  right: 30%;
-  background: radial-gradient(circle, var(--glow-2), transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
 }
 
 /* Search */
