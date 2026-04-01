@@ -33,6 +33,14 @@
   --transition-fast: 0.15s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
+
+  /* Glow & Depth Effects */
+  --card-border: 1px solid rgba(99, 102, 241, 0.15);
+  --card-shadow: 0 4px 20px rgba(99, 102, 241, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 8px 30px rgba(99, 102, 241, 0.15), 0 2px 6px rgba(0, 0, 0, 0.06);
+  --btn-glow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  --btn-glow-hover: 0 6px 20px rgba(99, 102, 241, 0.4);
+  --accent-line: linear-gradient(90deg, #6366f1, #8b5cf6, #06b6d4);
 }
 
 /* Dark Theme */
@@ -48,6 +56,14 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+
+  /* Glow & Depth Effects */
+  --card-border: 1px solid rgba(99, 102, 241, 0.2);
+  --card-shadow: 0 4px 30px rgba(99, 102, 241, 0.12), 0 0 60px rgba(99, 102, 241, 0.05);
+  --card-shadow-hover: 0 8px 40px rgba(99, 102, 241, 0.2), 0 0 80px rgba(99, 102, 241, 0.08);
+  --btn-glow: 0 4px 20px rgba(99, 102, 241, 0.4);
+  --btn-glow-hover: 0 6px 25px rgba(99, 102, 241, 0.5);
+  --accent-line: linear-gradient(90deg, #6366f1, #8b5cf6, #06b6d4);
 }
 
 /* Reset */
@@ -601,9 +617,11 @@ select option {
 /* Calculator Sections */
 .calc-section {
   background: var(--bg-tertiary);
+  border: var(--card-border);
   border-radius: var(--border-radius-lg);
   padding: 24px;
   margin-bottom: 20px;
+  box-shadow: var(--card-shadow);
 }
 
 .calc-section-title {
@@ -666,11 +684,12 @@ select option {
   display: flex;
   align-items: center;
   gap: 8px;
+  box-shadow: var(--btn-glow);
 }
 
 .calc-btn:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--btn-glow-hover);
 }
 
 .calc-btn:active {
@@ -696,6 +715,7 @@ select option {
   padding: 24px;
   text-align: center;
   margin-top: 20px;
+  box-shadow: 0 4px 25px rgba(99, 102, 241, 0.12);
 }
 
 .result-label {
@@ -794,7 +814,7 @@ select option {
 
 .similar-tool-card {
   background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  border: var(--card-border);
   border-radius: var(--border-radius);
   padding: 16px;
   text-decoration: none;
@@ -803,12 +823,23 @@ select option {
   align-items: center;
   gap: 12px;
   transition: all var(--transition-fast);
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.similar-tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; left: 0;
+  height: 3px;
+  background: var(--accent-line);
 }
 
 .similar-tool-card:hover {
-  border-color: var(--accent-primary);
+  border-color: rgba(99, 102, 241, 0.35);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--card-shadow-hover);
 }
 
 .similar-tool-icon {
@@ -1034,7 +1065,7 @@ select option {
 
 .tool-grid-card {
   background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  border: var(--card-border);
   border-radius: var(--border-radius-lg);
   padding: 24px;
   text-decoration: none;
@@ -1043,12 +1074,23 @@ select option {
   display: flex;
   align-items: flex-start;
   gap: 16px;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-grid-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; left: 0;
+  height: 3px;
+  background: var(--accent-line);
 }
 
 .tool-grid-card:hover {
-  border-color: var(--accent-primary);
+  border-color: rgba(99, 102, 241, 0.35);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--card-shadow-hover);
 }
 
 .tool-grid-icon {
@@ -1251,19 +1293,30 @@ select option {
 
 .category-card {
   background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  border: var(--card-border);
   border-radius: var(--border-radius-lg);
   padding: 24px;
   text-decoration: none;
   color: var(--text-primary);
   text-align: center;
   transition: all var(--transition-fast);
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; left: 0;
+  height: 3px;
+  background: var(--accent-line);
 }
 
 .category-card:hover {
-  border-color: var(--accent-primary);
+  border-color: rgba(99, 102, 241, 0.35);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--card-shadow-hover);
 }
 
 .category-icon {
@@ -1498,7 +1551,7 @@ select option {
 
 .blog-post-card {
   background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  border: var(--card-border);
   border-radius: var(--border-radius-lg);
   padding: 24px;
   text-decoration: none;
@@ -1507,12 +1560,23 @@ select option {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-post-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; left: 0;
+  height: 3px;
+  background: var(--accent-line);
 }
 
 .blog-post-card:hover {
-  border-color: var(--accent-primary);
+  border-color: rgba(99, 102, 241, 0.35);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--card-shadow-hover);
 }
 
 .blog-post-meta {
@@ -1726,7 +1790,7 @@ select option {
 
 .blog-related-tool-card {
   background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  border: var(--card-border);
   border-radius: var(--border-radius-lg);
   padding: 20px;
   text-decoration: none;
@@ -1735,12 +1799,23 @@ select option {
   align-items: center;
   gap: 16px;
   transition: all var(--transition-fast);
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-related-tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; left: 0;
+  height: 3px;
+  background: var(--accent-line);
 }
 
 .blog-related-tool-card:hover {
-  border-color: var(--accent-primary);
+  border-color: rgba(99, 102, 241, 0.35);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--card-shadow-hover);
 }
 
 .blog-related-tool-icon {
