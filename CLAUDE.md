@@ -317,7 +317,97 @@ var(--border-radius-lg)   /* Large radius */
 var(--transition-fast)    /* Fast transition */
 ```
 
+### Extended color palette
+
+Semantic color variables for tool UIs. Use these instead of hardcoding hex values:
+
+```css
+/* Status colors (same in light & dark — used on colored backgrounds) */
+var(--success)            /* #22c55e — positive, normal, gain */
+var(--success-dark)       /* #16a34a */
+var(--warning)            /* #f59e0b — caution, moderate */
+var(--warning-dark)       /* #d97706 */
+var(--warning-deeper)     /* #b45309 */
+var(--error)              /* #ef4444 — negative, danger, loss */
+var(--error-dark)         /* #dc2626 */
+var(--error-deeper)       /* #991b1b — severe (e.g. severe obesity) */
+var(--info)               /* #3b82f6 light / #60a5fa dark — informational */
+
+/* Accent colors (change between light & dark for readability) */
+var(--accent-dark)        /* #7c3aed */
+var(--pink)               /* #ec4899 light / #f472b6 dark */
+var(--pink-dark)          /* #831843 */
+var(--pink-light)         /* #fce7f3 light / rgba(236,72,153,0.15) dark */
+var(--teal)               /* #059669 light / #34d399 dark */
+var(--teal-dark)          /* #047857 light / #059669 dark */
+```
+
+### Chart colors
+
+For JS-generated charts (SVG/Canvas). These invert between themes:
+
+```css
+var(--chart-text)           /* #374151 light / #E5E7EB dark */
+var(--chart-grid)           /* #E5E7EB light / #374151 dark */
+var(--chart-bg)             /* #FFFFFF light / #1F2937 dark */
+var(--chart-text-secondary) /* #4b5563 light / #94a3b8 dark */
+var(--chart-muted)          /* #6b7280 — same in both */
+```
+
+### Card glow & depth effects
+
+All cards use glow variables instead of plain borders/shadows:
+
+```css
+var(--card-border)        /* Subtle indigo border */
+var(--card-shadow)        /* Indigo-tinted shadow */
+var(--card-shadow-hover)  /* Stronger shadow on hover */
+var(--btn-glow)           /* Button glow */
+var(--btn-glow-hover)     /* Button glow on hover */
+var(--accent-line)        /* Gradient for top accent stripe (indigo → violet → cyan) */
+```
+
+Card pattern (applied to `.tool-grid-card`, `.category-card`, `.similar-tool-card`, `.blog-post-card`, `.blog-related-tool-card`, `.blog-subcat-card`):
+- `border: var(--card-border)` + `box-shadow: var(--card-shadow)`
+- `position: relative; overflow: hidden;` + `::before` pseudo-element for 3px top accent stripe
+- Hover: `box-shadow: var(--card-shadow-hover)` + `border-color: rgba(99, 102, 241, 0.35)`
+
+`.calc-section` uses card-border + card-shadow but **no** `::before` stripe.
+
+### Ambient glow background
+
+The page background uses 5 radial gradient spots on `body` via `background-image`. Colors are all from the blue/cyan family:
+
+```css
+--glow-1  /* Sky blue (#38bdf8) — top right, 900px */
+--glow-2  /* Teal (#2dd4bf) — center left, 700px */
+--glow-3  /* Dark cyan (#06b6d4) — bottom left, 800px */
+--glow-4  /* Soft blue (#63b3ed) — far bottom left, 400px */
+--glow-5  /* Turquoise (#38e0d0) — top left, 500px */
+```
+
+Opacity levels: desktop light 0.50–0.65, desktop dark 0.45–0.60, mobile (≤768px) 0.15–0.25. Defined in `:root`, `[data-theme="dark"]`, and `@media (max-width: 768px)`.
+
 **Dark mode note:** The dark theme does NOT override `--accent-primary`, `--accent-secondary`, or `--accent-gradient` — it inherits them from the light theme. Only backgrounds, text colors, borders, and shadows are overridden.
+
+### Hardcoded colors — migration rule
+
+Never hardcode hex colors in tool HTML files. Use the CSS variables above. When working on a tool that still has hardcoded colors, replace them:
+
+| Hardcoded hex | Replace with |
+|---|---|
+| `#3b82f6` | `var(--info)` |
+| `#22c55e` | `var(--success)` |
+| `#f59e0b` | `var(--warning)` |
+| `#ef4444` | `var(--error)` |
+| `#991b1b` | `var(--error-deeper)` |
+| `#dc2626` | `var(--error-dark)` |
+| `#16a34a` | `var(--success-dark)` |
+| `#d97706` | `var(--warning-dark)` |
+| `#ec4899` | `var(--pink)` |
+| `#059669` | `var(--teal)` |
+
+Also move inline `style="color: #xxx"` to CSS classes.
 
 ### RTL support
 
