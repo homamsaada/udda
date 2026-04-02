@@ -256,6 +256,13 @@ Tools with blog posts should have a `shortName` field (e.g., "الزكاة" inst
 </div>
 ```
 
+**SEO conventions for blog posts:**
+- `description` must be 150-160 characters (Arabic) or 150-160 characters (English) — shorter is better for search snippets
+- `keywords` should include colloquial search phrases, question forms ("هل الذهب عليه زكاة"), and common misspellings
+- Each topic cluster has a **pillar article** (e.g., `how-to-calculate-zakat.md`) with a "مواضيع ذات صلة" section linking to all sub-articles
+- Each **sub-article** links back to the pillar article and to 1-2 related sub-articles, placed mid-article in natural context (not at the end)
+- Cross-topic links are encouraged where relevant (e.g., zakat article linking to inheritance article when discussing "what happens to wealth after death")
+
 ## Adding a Sub-Calculator to `percentage`
 
 The percentage tool uses a numbered calculator pattern (`calc1` through `calc13`). To add a new one:
@@ -508,6 +515,12 @@ Controlled by `isHome`/`isCategory` flags in `build.js` → `buildPageHTML()`:
 ## Deployment
 
 GitHub Actions (`.github/workflows/deploy.yml`) auto-deploys `dist/` to GitHub Pages on push to `main`.
+
+**Important**: Changes on feature branches do NOT appear on the live site. To deploy:
+1. Push to the feature branch
+2. Create a PR to `main` (use `mcp__github__create_pull_request`)
+3. Merge the PR (use `mcp__github__merge_pull_request` with `squash` method)
+4. After squash-merge, the feature branch falls behind `main` — rebase before the next PR: `git fetch origin main && git rebase origin/main`
 
 ## Reusable UI Patterns
 
