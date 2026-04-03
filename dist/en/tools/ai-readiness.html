@@ -990,11 +990,16 @@
 }
 
 .air-specialty-check {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-  pointer-events: none;
+  position: absolute !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
 }
 
 .air-specialty-card .air-specialty-indicator {
@@ -1152,6 +1157,28 @@
   margin: 0 auto;
 }
 
+.air-summary-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.air-summary-info {
+  text-align: start;
+}
+
+.air-summary-gauge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.air-summary-gauge .air-gauge-wrap {
+  margin: 0;
+}
+
 /* -- Report Sections -- */
 .air-report-section {
   background: var(--bg-secondary);
@@ -1168,6 +1195,14 @@
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+/* -- Axes Layout (Radar + Legend side by side) -- */
+.air-axes-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
 }
 
 /* -- Radar Chart -- */
@@ -1215,18 +1250,21 @@
 }
 
 .air-radar-legend {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 0;
 }
 
 .air-radar-legend-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.82rem;
+  gap: 10px;
+  font-size: 0.9rem;
   color: var(--text-secondary);
+  padding: 10px 14px;
+  background: var(--bg-primary);
+  border-radius: 10px;
 }
 
 .air-radar-legend-dot {
@@ -1241,114 +1279,102 @@
   margin-inline-start: auto;
 }
 
-/* -- Formula Display -- */
-.air-formula-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
-}
-
-.air-formula-block {
-  text-align: center;
-  padding: 12px 16px;
-  background: var(--bg-primary);
-  border-radius: 10px;
-  min-width: 80px;
-}
-
-.air-formula-block .formula-value {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--accent-primary);
-}
-
-.air-formula-block .formula-label {
-  font-size: 0.7rem;
-  color: var(--text-muted);
-  margin-top: 2px;
-}
-
-.air-formula-operator {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--text-muted);
-}
-
-.air-formula-result {
-  text-align: center;
-  padding: 12px 20px;
-  background: var(--accent-gradient);
-  border-radius: 10px;
-  min-width: 80px;
-}
-
-.air-formula-result .formula-value {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: white;
-}
-
-.air-formula-result .formula-label {
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-top: 2px;
-}
-
-.air-formula-note {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  text-align: center;
-}
-
-/* -- Horizontal Bars (Axis breakdown) -- */
-.air-bars {
+/* -- Formula Section (Bar Breakdown) -- */
+.air-formula-bars {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
-.air-bar-row {
+.air-formula-bar-row {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
-.air-bar-label {
+.air-formula-bar-header {
   display: flex;
   justify-content: space-between;
-  font-size: 0.85rem;
+  align-items: center;
+  font-size: 0.88rem;
 }
 
-.air-bar-label .name {
-  color: var(--text-primary);
+.air-formula-bar-name {
   font-weight: 600;
+  color: var(--text-primary);
 }
 
-.air-bar-label .score {
-  color: var(--text-muted);
+.air-formula-bar-pct {
   font-weight: 700;
+  font-size: 0.9rem;
 }
 
-.air-bar-track {
-  height: 10px;
+.air-formula-bar-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.air-formula-bar-track {
+  height: 12px;
   background: var(--bg-tertiary);
-  border-radius: 5px;
+  border-radius: 6px;
   overflow: hidden;
 }
 
-.air-bar-fill {
+.air-formula-bar-fill {
   height: 100%;
-  border-radius: 5px;
+  border-radius: 6px;
   transition: width 1s ease;
 }
 
-.air-bar-fill.strong { background: var(--success); }
-.air-bar-fill.medium { background: var(--warning); }
-.air-bar-fill.weak { background: var(--error); }
+.air-formula-bar-fill.strong { background: var(--success); }
+.air-formula-bar-fill.medium { background: var(--warning); }
+.air-formula-bar-fill.weak { background: var(--error); }
+
+.air-formula-divider {
+  border: none;
+  border-top: 2px dashed var(--border-color);
+  margin: 4px 0;
+}
+
+.air-formula-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.air-formula-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  padding: 4px 0;
+}
+
+.air-formula-summary-row .label {
+  font-weight: 600;
+}
+
+.air-formula-summary-row .value {
+  font-weight: 700;
+}
+
+.air-formula-summary-row.total {
+  font-size: 1.1rem;
+  padding: 12px 16px;
+  background: var(--accent-gradient);
+  border-radius: 10px;
+  color: white;
+  margin-top: 4px;
+}
+
+.air-formula-summary-row.total .label,
+.air-formula-summary-row.total .value {
+  color: white;
+}
 
 /* -- Recommendations -- */
 .air-recs {
@@ -1389,166 +1415,6 @@
   color: var(--text-secondary);
   line-height: 1.6;
   margin: 0;
-}
-
-/* -- Collapsible Section -- */
-.air-collapsible-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  user-select: none;
-}
-
-.air-collapsible-header .air-chevron {
-  transition: transform 0.3s;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-.air-collapsible-header.open .air-chevron {
-  transform: rotate(180deg);
-}
-
-.air-collapsible-body {
-  display: none;
-  padding-top: 16px;
-}
-
-.air-collapsible-body.open {
-  display: block;
-  animation: airFadeIn 0.3s ease;
-}
-
-/* -- Comparison -- */
-.air-comparison {
-  text-align: center;
-  padding: 20px;
-}
-
-.air-comparison-text {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-}
-
-.air-comparison-note {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-.air-comparison-bar {
-  position: relative;
-  height: 28px;
-  background: var(--bg-tertiary);
-  border-radius: 14px;
-  overflow: hidden;
-  margin-top: 12px;
-}
-
-.air-comparison-bar-fill {
-  height: 100%;
-  background: var(--accent-gradient);
-  border-radius: 14px;
-  transition: width 1.5s ease;
-}
-
-.air-comparison-bar-label {
-  position: absolute;
-  top: 50%;
-  inset-inline-end: 12px;
-  transform: translateY(-50%);
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-/* -- Answer Details -- */
-.air-answer-item {
-  padding: 14px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.air-answer-item:last-child {
-  border-bottom: none;
-}
-
-.air-answer-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 6px;
-  flex-wrap: wrap;
-}
-
-.air-answer-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--bg-tertiary);
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-}
-
-.air-answer-status {
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 6px;
-}
-
-.air-answer-status.correct {
-  background: rgba(34, 197, 94, 0.12);
-  color: var(--success);
-}
-
-.air-answer-status.incorrect {
-  background: rgba(239, 68, 68, 0.12);
-  color: var(--error);
-}
-
-.air-answer-status.timeout {
-  background: rgba(245, 158, 11, 0.12);
-  color: var(--warning);
-}
-
-.air-answer-status.neutral {
-  background: var(--bg-tertiary);
-  color: var(--text-muted);
-}
-
-.air-answer-points {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  margin-inline-start: auto;
-}
-
-.air-answer-question {
-  font-size: 0.85rem;
-  color: var(--text-primary);
-  line-height: 1.6;
-  margin: 0 0 4px;
-}
-
-.air-answer-hint {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  margin: 6px 0 0;
-  padding: 8px 12px;
-  background: var(--bg-tertiary);
-  border-radius: 8px;
-}
-
-.air-collapsible-chevron {
-  transition: transform 0.3s;
-  font-size: 0.8rem;
-  color: var(--text-muted);
 }
 
 /* -- Share & Restart Buttons -- */
@@ -1609,6 +1475,26 @@
 @media (max-width: 768px) {
   .ai-readiness {
     padding: 0 4px;
+  }
+
+  .air-summary-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .air-summary-info {
+    text-align: center;
+    order: 2;
+  }
+
+  .air-summary-gauge {
+    order: 1;
+  }
+
+  .air-axes-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .air-duration-cards {
@@ -2018,25 +1904,29 @@
       <h2 class="air-report-title">Readiness Report</h2>
       <p class="air-report-subtitle" id="report-subtitle">Your AI readiness assessment performance summary</p>
 
-      <!-- Gauge -->
-      <div class="air-gauge-wrap" id="gauge-wrap">
-        <svg class="air-gauge-svg" viewBox="0 0 200 120" id="gauge-svg">
-          <path class="air-gauge-bg" d="M20,100 A80,80 0 0,1 180,100" />
-          <path class="air-gauge-fill" d="M20,100 A80,80 0 0,1 180,100" id="gauge-fill" />
-        </svg>
-        <div class="air-gauge-score">
-          <span class="air-gauge-number" id="gauge-number">0</span>
-          <span class="air-gauge-max">of <span id="gauge-max">100</span></span>
+      <div class="air-summary-layout">
+        <!-- النص والتصنيف -->
+        <div class="air-summary-info">
+          <div class="air-level-badge" id="level-badge"></div>
+          <div class="air-personal-summary" id="personal-summary">
+            <h3>Personal Summary</h3>
+            <p id="summary-text"></p>
+          </div>
         </div>
-      </div>
 
-      <!-- تصنيف المستوى -->
-      <div class="air-level-badge" id="level-badge"></div>
-
-      <!-- ملخص شخصي -->
-      <div class="air-personal-summary" id="personal-summary">
-        <h3>Personal Summary</h3>
-        <p id="summary-text"></p>
+        <!-- Gauge -->
+        <div class="air-summary-gauge">
+          <div class="air-gauge-wrap" id="gauge-wrap">
+            <svg class="air-gauge-svg" viewBox="0 0 200 120" id="gauge-svg">
+              <path class="air-gauge-bg" d="M20,100 A80,80 0 0,1 180,100" />
+              <path class="air-gauge-fill" d="M20,100 A80,80 0 0,1 180,100" id="gauge-fill" />
+            </svg>
+            <div class="air-gauge-score">
+              <span class="air-gauge-number" id="gauge-number">0</span>
+              <span class="air-gauge-max">of <span id="gauge-max">100</span></span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -2044,32 +1934,36 @@
     <div class="air-report-section" id="report-axes">
       <h3 class="air-section-title">Axis Breakdown</h3>
 
-      <div class="air-radar-wrap">
-        <svg class="air-radar-svg" viewBox="0 0 300 300" id="radar-svg">
-          <!-- شبكة الرادار — تُرسم ديناميكياً -->
-        </svg>
-      </div>
+      <div class="air-axes-layout">
+        <!-- الرادار -->
+        <div class="air-radar-wrap">
+          <svg class="air-radar-svg" viewBox="0 0 300 300" id="radar-svg">
+            <!-- شبكة الرادار — تُرسم ديناميكياً -->
+          </svg>
+        </div>
 
-      <div class="air-radar-legend" id="radar-legend">
-        <div class="air-radar-legend-item">
-          <span class="air-radar-legend-color" style="background:var(--info)"></span>
-          <span>Knowledge</span>
-          <span class="air-radar-legend-value" id="axis-knowledge-val">0%</span>
-        </div>
-        <div class="air-radar-legend-item">
-          <span class="air-radar-legend-color" style="background:var(--success)"></span>
-          <span>Practice</span>
-          <span class="air-radar-legend-value" id="axis-practice-val">0%</span>
-        </div>
-        <div class="air-radar-legend-item">
-          <span class="air-radar-legend-color" style="background:var(--warning)"></span>
-          <span>Flexibility</span>
-          <span class="air-radar-legend-value" id="axis-flexibility-val">0%</span>
-        </div>
-        <div class="air-radar-legend-item" id="axis-specialty-item" style="display:none">
-          <span class="air-radar-legend-color" style="background:var(--pink)"></span>
-          <span>Specialty</span>
-          <span class="air-radar-legend-value" id="axis-specialty-val">0%</span>
+        <!-- قائمة المحاور -->
+        <div class="air-radar-legend" id="radar-legend">
+          <div class="air-radar-legend-item">
+            <span class="air-radar-legend-color" style="background:var(--info)"></span>
+            <span>Knowledge</span>
+            <span class="air-radar-legend-value" id="axis-knowledge-val">0%</span>
+          </div>
+          <div class="air-radar-legend-item">
+            <span class="air-radar-legend-color" style="background:var(--success)"></span>
+            <span>Practice</span>
+            <span class="air-radar-legend-value" id="axis-practice-val">0%</span>
+          </div>
+          <div class="air-radar-legend-item">
+            <span class="air-radar-legend-color" style="background:var(--warning)"></span>
+            <span>Flexibility</span>
+            <span class="air-radar-legend-value" id="axis-flexibility-val">0%</span>
+          </div>
+          <div class="air-radar-legend-item" id="axis-specialty-item" style="display:none">
+            <span class="air-radar-legend-color" style="background:var(--pink)"></span>
+            <span>Specialty</span>
+            <span class="air-radar-legend-value" id="axis-specialty-val">0%</span>
+          </div>
         </div>
       </div>
     </div>
@@ -2078,65 +1972,14 @@
     <div class="air-report-section" id="report-formula">
       <h3 class="air-section-title">How was your score calculated?</h3>
 
-      <div class="air-formula-visual" id="formula-visual">
-        <div class="air-formula-block" data-type="core">
-          <span class="air-formula-label">Core</span>
-          <span class="air-formula-value" id="formula-core">0</span>
-        </div>
-        <span class="air-formula-operator">+</span>
-        <div class="air-formula-block" data-type="cultural">
-          <span class="air-formula-label">Cultural</span>
-          <span class="air-formula-value" id="formula-cultural">0</span>
-        </div>
-        <span class="air-formula-operator">+</span>
-        <div class="air-formula-block" data-type="self">
-          <span class="air-formula-label">Self-Assessment</span>
-          <span class="air-formula-value" id="formula-self">0</span>
-        </div>
-        <span class="air-formula-operator">+</span>
-        <div class="air-formula-block" data-type="specialty">
-          <span class="air-formula-label">Specialty</span>
-          <span class="air-formula-value" id="formula-specialty">0</span>
-        </div>
-        <span class="air-formula-operator">=</span>
-        <div class="air-formula-block air-formula-result" data-type="total">
-          <span class="air-formula-label">Total</span>
-          <span class="air-formula-value" id="formula-total">0</span>
-        </div>
+      <!-- أعمدة أفقية لكل محور -->
+      <div class="air-formula-bars" id="formula-bars">
+        <!-- تُملأ ديناميكياً -->
       </div>
 
-      <p class="air-formula-explanation">Score = Core questions + Cultural + (Self-assessment × Flexibility multiplier) + Specialty</p>
-
-      <!-- أعمدة أفقية لكل محور -->
-      <div class="air-bars" id="formula-bars">
-        <div class="air-bar-row">
-          <span class="air-bar-label">Knowledge</span>
-          <div class="air-bar-track">
-            <div class="air-bar-fill" id="bar-knowledge" style="width:0%"></div>
-          </div>
-          <span class="air-bar-value" id="bar-knowledge-val">0%</span>
-        </div>
-        <div class="air-bar-row">
-          <span class="air-bar-label">Practice</span>
-          <div class="air-bar-track">
-            <div class="air-bar-fill" id="bar-practice" style="width:0%"></div>
-          </div>
-          <span class="air-bar-value" id="bar-practice-val">0%</span>
-        </div>
-        <div class="air-bar-row">
-          <span class="air-bar-label">Flexibility</span>
-          <div class="air-bar-track">
-            <div class="air-bar-fill" id="bar-flexibility" style="width:0%"></div>
-          </div>
-          <span class="air-bar-value" id="bar-flexibility-val">0%</span>
-        </div>
-        <div class="air-bar-row" id="bar-specialty-row" style="display:none">
-          <span class="air-bar-label">Specialty</span>
-          <div class="air-bar-track">
-            <div class="air-bar-fill" id="bar-specialty" style="width:0%"></div>
-          </div>
-          <span class="air-bar-value" id="bar-specialty-val">0%</span>
-        </div>
+      <!-- الخلاصة -->
+      <div class="air-formula-summary" id="formula-summary">
+        <!-- تُملأ ديناميكياً -->
       </div>
     </div>
 
@@ -2151,15 +1994,6 @@
     <!-- ad slot 2 -->
     <div id="ad-slot-report-mid" class="air-ad-slot"></div>
 
-    <!-- القسم 5: مقارنة -->
-    <div class="air-report-section" id="report-comparison">
-      <h3 class="air-section-title">How do you compare?</h3>
-      <p class="air-comparison-text" id="comparison-text">Your performance compared to others who completed this assessment</p>
-      <div class="air-comparison-chart" id="comparison-chart">
-        <!-- رسم بياني يُملأ ديناميكياً -->
-      </div>
-    </div>
-
     <!-- أزرار الإجراءات -->
     <div class="air-report-actions">
       <button class="air-btn-share" id="btn-share">
@@ -2170,18 +2004,6 @@
         <span class="air-btn-icon">🔄</span>
         Retake Assessment
       </button>
-    </div>
-
-    <!-- القسم 6: تفاصيل الإجابات (قابل للطي) -->
-    <div class="air-report-section" id="report-answers">
-      <div class="air-collapsible-header" id="answers-toggle">
-        <h3 class="air-section-title">Answer Details</h3>
-        <span class="air-collapsible-chevron" id="answers-chevron">▼</span>
-      </div>
-      <div class="air-collapsible-body" id="answers-body" style="display:none">
-        <!-- تفاصيل الإجابات تُملأ ديناميكياً -->
-        <div id="answers-list"></div>
-      </div>
     </div>
 
     <!-- ad slot 3 -->
@@ -2244,7 +2066,7 @@
     if (target) {
       target.style.display = '';
       target.classList.add('active');
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
   }
 
@@ -2635,6 +2457,8 @@
       onPhaseEnd();
       return;
     }
+
+    window.scrollTo({ top: 0, behavior: 'instant' });
 
     var q = quizQuestions[currentQuestionIndex];
     currentAnswer = null;
@@ -3589,21 +3413,14 @@
     // القسم 2: Radar chart
     renderRadar(r.axes, r.selectedSpecialties.length > 0);
 
-    // القسم 3: المعادلة + الأعمدة
+    // القسم 3: المعادلة
     renderFormula(r);
-    renderBars(r.axes, r.selectedSpecialties.length > 0);
 
     // القسم 4: التوصيات
     renderRecommendations(r);
 
-    // القسم 5: المقارنة
-    renderComparison(r.finalScore);
-
-    // القسم 6: إعادة + مشاركة
+    // القسم 5: إعادة + مشاركة
     initReportActions(r);
-
-    // القسم 7: تفاصيل الإجابات
-    renderAnswerDetails(r.answers);
   }
 
   // ─── Gauge SVG ───
@@ -3807,52 +3624,81 @@
     }
   }
 
-  // ─── المعادلة ───
+  // ─── المعادلة (أعمدة أفقية) ───
 
   function renderFormula(r) {
-    $('formula-core').textContent = r.coreEarned + '/' + r.coreMax;
-    $('formula-cultural').textContent = r.culturalEarned + '/' + r.culturalMax;
-    $('formula-self').textContent = '×' + r.multiplier;
-    $('formula-specialty').textContent = r.axes.specialty + '%';
-    $('formula-total').textContent = r.finalScore;
+    var barsContainer = $('formula-bars');
+    var summaryContainer = $('formula-summary');
+    if (!barsContainer || !summaryContainer) return;
+    barsContainer.innerHTML = '';
+    summaryContainer.innerHTML = '';
 
-    // جملة توضيحية
-    var explain = $('report-formula').querySelector('.air-formula-explanation');
-    if (explain) {
-      if (r.multiplier > 1) {
-        var tmpl = LANG === 'ar' ? 'Your flexibility (×{{m}}) boosted your readiness from {{from}} to {{to}}' : 'Your flexibility (×{{m}}) boosted your readiness from {{from}} to {{to}}';
-        explain.textContent = tmpl.replace('{{m}}', r.multiplier).replace('{{from}}', r.rawScore).replace('{{to}}', r.finalScore);
-      } else if (r.multiplier < 1) {
-        var tmpl2 = LANG === 'ar' ? 'Your resistance to change (×{{m}}) lowered your readiness from {{from}} to {{to}}' : 'Your resistance to change (×{{m}}) lowered your readiness from {{from}} to {{to}}';
-        explain.textContent = tmpl2.replace('{{m}}', r.multiplier).replace('{{from}}', r.rawScore).replace('{{to}}', r.finalScore);
-      } else {
-        explain.textContent = LANG === 'ar' ? 'Your flexibility is average — it didn't affect your score' : 'Your flexibility is average — it didn't affect your score';
-      }
-    }
-  }
+    var hasSpecialty = r.selectedSpecialties && r.selectedSpecialties.length > 0;
 
-  // ─── أعمدة أفقية ───
+    // بيانات المحاور
+    var barData = [
+      { name: LANG === 'ar' ? 'المعرفة الأساسية' : 'Core Knowledge', pct: Math.round(r.axes.knowledge), note: '' },
+      { name: LANG === 'ar' ? 'الممارسة الفعلية' : 'Practical Skills', pct: Math.round(r.axes.practice), note: '' },
+      { name: LANG === 'ar' ? 'الثقافة العامة' : 'Cultural Awareness', pct: Math.round(r.culturalEarned && r.culturalMax ? Math.round(r.culturalEarned / r.culturalMax * 100) : 0),
+        note: LANG === 'ar' ? '(وزن مخفّض)' : '(lower weight)' }
+    ];
 
-  function renderBars(axes, hasSpecialty) {
-    setBar('bar-knowledge', 'bar-knowledge-val', axes.knowledge);
-    setBar('bar-practice', 'bar-practice-val', axes.practice);
-    setBar('bar-flexibility', 'bar-flexibility-val', axes.flexibility);
     if (hasSpecialty) {
-      $('bar-specialty-row').style.display = '';
-      setBar('bar-specialty', 'bar-specialty-val', axes.specialty);
+      barData.push({
+        name: LANG === 'ar' ? 'الوعي التخصصي' : 'Specialty Awareness',
+        pct: Math.round(r.axes.specialty),
+        note: ''
+      });
+    } else {
+      barData.push({
+        name: LANG === 'ar' ? 'الوعي التخصصي' : 'Specialty Awareness',
+        pct: 0,
+        note: LANG === 'ar' ? '(لم تُختر أسئلة تخصصية)' : '(no specialty selected)'
+      });
     }
-  }
 
-  function setBar(fillId, valId, pct) {
-    var fill = $(fillId);
-    var val = $(valId);
-    if (fill) {
-      fill.style.width = pct + '%';
-      if (pct >= 70) fill.className = 'air-bar-fill strong';
-      else if (pct >= 40) fill.className = 'air-bar-fill medium';
-      else fill.className = 'air-bar-fill weak';
+    // بناء الأعمدة
+    for (var i = 0; i < barData.length; i++) {
+      var d = barData[i];
+      var fillClass = d.pct >= 70 ? 'strong' : (d.pct >= 40 ? 'medium' : 'weak');
+      var colorClass = d.pct >= 70 ? 'var(--success)' : (d.pct >= 40 ? 'var(--warning)' : 'var(--error)');
+
+      var row = document.createElement('div');
+      row.className = 'air-formula-bar-row';
+      row.innerHTML = '<div class="air-formula-bar-header">'
+        + '<span class="air-formula-bar-name">' + d.name
+        + (d.note ? ' <span class="air-formula-bar-note">' + d.note + '</span>' : '')
+        + '</span>'
+        + '<span class="air-formula-bar-pct" style="color:' + colorClass + '">' + d.pct + '%</span>'
+        + '</div>'
+        + '<div class="air-formula-bar-track">'
+        + '<div class="air-formula-bar-fill ' + fillClass + '" style="width:' + d.pct + '%"></div>'
+        + '</div>';
+      barsContainer.appendChild(row);
     }
-    if (val) val.textContent = pct + '%';
+
+    // خط فاصل
+    var divider = document.createElement('hr');
+    divider.className = 'air-formula-divider';
+    summaryContainer.appendChild(divider);
+
+    // المعرفة والمهارات (rawScore)
+    var rawLabel = LANG === 'ar' ? 'المعرفة والمهارات' : 'Knowledge & Skills';
+    summaryContainer.innerHTML += '<div class="air-formula-summary-row">'
+      + '<span class="label">' + rawLabel + '</span>'
+      + '<span class="value">' + Math.round(r.rawScore) + '%</span></div>';
+
+    // معامل المرونة
+    var flexLabel = LANG === 'ar' ? 'معامل المرونة' : 'Flexibility Multiplier';
+    summaryContainer.innerHTML += '<div class="air-formula-summary-row">'
+      + '<span class="label">× ' + flexLabel + '</span>'
+      + '<span class="value">×' + r.multiplier + '</span></div>';
+
+    // الناتج النهائي
+    var totalLabel = LANG === 'ar' ? 'الجاهزية الكلية' : 'Overall Readiness';
+    summaryContainer.innerHTML += '<div class="air-formula-summary-row total">'
+      + '<span class="label">= ' + totalLabel + '</span>'
+      + '<span class="value">' + r.finalScore + '</span></div>';
   }
 
   // ─── التوصيات ───
@@ -3923,38 +3769,6 @@
     }
   }
 
-  // ─── المقارنة ───
-
-  function renderComparison(score) {
-    // توزيع طبيعي تقديري: mean=55, std=15
-    var z = (score - 55) / 15;
-    // تقريب CDF
-    var pct = Math.round(normalCDF(z) * 100);
-    pct = Math.max(1, Math.min(99, pct));
-
-    var text = $('comparison-text');
-    if (text) {
-      var tmpl = LANG === 'ar' ? 'You scored better than {{pct}}% of people who completed this assessment' : 'You scored better than {{pct}}% of people who completed this assessment';
-      text.textContent = tmpl.replace('{{pct}}', pct);
-    }
-
-    // شريط بصري بسيط
-    var chart = $('comparison-chart');
-    if (chart) {
-      chart.innerHTML = '<div class="air-comparison-bar"><div class="air-comparison-bar-fill" style="width:' + pct + '%"></div><span class="air-comparison-bar-label">' + pct + '%</span></div>';
-    }
-  }
-
-  function normalCDF(z) {
-    var a1 = 0.254829592, a2 = -0.284496736, a3 = 1.421413741;
-    var a4 = -1.453152027, a5 = 1.061405429, p = 0.3275911;
-    var sign = z < 0 ? -1 : 1;
-    z = Math.abs(z) / Math.sqrt(2);
-    var t2 = 1.0 / (1.0 + p * z);
-    var y = 1.0 - (((((a5 * t2 + a4) * t2) + a3) * t2 + a2) * t2 + a1) * t2 * Math.exp(-z * z);
-    return 0.5 * (1.0 + sign * y);
-  }
-
   // ─── إجراءات التقرير ───
 
   function initReportActions(r) {
@@ -3985,71 +3799,6 @@
       });
     }
 
-    // طي/فتح تفاصيل الإجابات
-    var toggle = $('answers-toggle');
-    if (toggle) {
-      toggle.addEventListener('click', function() {
-        var body = $('answers-body');
-        var chevron = $('answers-chevron');
-        if (body.style.display === 'none') {
-          body.style.display = '';
-          if (chevron) chevron.style.transform = 'rotate(180deg)';
-        } else {
-          body.style.display = 'none';
-          if (chevron) chevron.style.transform = '';
-        }
-      });
-    }
-  }
-
-  // ─── تفاصيل الإجابات ───
-
-  function renderAnswerDetails(answers) {
-    var container = $('answers-list');
-    if (!container) return;
-    container.innerHTML = '';
-
-    for (var i = 0; i < answers.length; i++) {
-      var a = answers[i];
-      var item = document.createElement('div');
-      item.className = 'air-answer-item';
-
-      var statusClass = '';
-      var statusText = '';
-      if (a.type === 'self_assessment') {
-        statusClass = 'neutral';
-        statusText = '—';
-      } else if (a.timed_out) {
-        statusClass = 'timeout';
-        statusText = LANG === 'ar' ? '⏰ انتهى الوقت' : '⏰ Time up';
-      } else if (a.is_correct) {
-        statusClass = 'correct';
-        statusText = LANG === 'ar' ? '✓ صحيح' : '✓ Correct';
-      } else {
-        statusClass = 'incorrect';
-        statusText = LANG === 'ar' ? '✗ خاطئ' : '✗ Incorrect';
-      }
-
-      var pointsText = a.type !== 'self_assessment'
-        ? (LANG === 'ar' ? '{{earned}} of {{max}} points' : '{{earned}} of {{max}} points')
-            .replace('{{earned}}', Math.round(a.earned * 10) / 10)
-            .replace('{{max}}', a.max)
-        : '';
-
-      var html = '<div class="air-answer-header">'
-        + '<span class="air-answer-num">' + (i + 1) + '</span>'
-        + '<span class="air-answer-status ' + statusClass + '">' + statusText + '</span>'
-        + (pointsText ? '<span class="air-answer-points">' + pointsText + '</span>' : '')
-        + '</div>'
-        + '<p class="air-answer-question">' + a.text + '</p>';
-
-      if (a.hint) {
-        html += '<p class="air-answer-hint">💡 ' + a.hint + '</p>';
-      }
-
-      item.innerHTML = html;
-      container.appendChild(item);
-    }
   }
 
   var selectedSpecialties = [];
