@@ -1512,6 +1512,395 @@
 }
 </style>
 
-<!-- HTML سيُضاف في الخطوة التالية -->
+<!-- Tool card with header -->
+<div class="tool-card">
+  <div class="tool-header">
+    <div class="tool-icon">🤖</div>
+    <div>
+      <h1 class="tool-title">{{tool.name}}</h1>
+      <p class="tool-description">{{tool.description}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="ai-readiness" id="assessment-container">
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- شاشة الترحيب (المرحلة 0)                                 -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div class="air-screen active" id="screen-welcome">
+
+    <div class="air-welcome-header">
+      <h2 class="air-welcome-title">{{tool.welcomeTitle}}</h2>
+      <p class="air-welcome-desc">{{tool.welcomeDesc}}</p>
+      <p class="air-welcome-note">{{tool.welcomeNote}}</p>
+    </div>
+
+    <!-- حقل الاسم -->
+    <div class="air-name-field">
+      <label for="user-name">{{tool.nameField}}</label>
+      <input type="text" id="user-name" placeholder="{{tool.namePlaceholder}}" maxlength="50">
+    </div>
+
+    <!-- اختيار المدة -->
+    <h3 class="air-duration-title">{{tool.durationTitle}}</h3>
+    <div class="air-duration-cards">
+
+      <div class="air-duration-card" data-duration="5" id="dur-5">
+        <span class="air-dur-icon">⚡</span>
+        <span class="air-dur-label">{{tool.dur5}}</span>
+        <span class="air-dur-time">{{tool.dur5time}}</span>
+        <span class="air-dur-desc">{{tool.durDesc5}}</span>
+      </div>
+
+      <div class="air-duration-card" data-duration="10" id="dur-10">
+        <span class="air-dur-icon">📝</span>
+        <span class="air-dur-label">{{tool.dur10}}</span>
+        <span class="air-dur-time">{{tool.dur10time}}</span>
+        <span class="air-dur-desc">{{tool.durDesc10}}</span>
+      </div>
+
+      <div class="air-duration-card selected" data-duration="15" id="dur-15">
+        <span class="air-dur-icon">⭐</span>
+        <span class="air-dur-label">{{tool.dur15}}</span>
+        <span class="air-dur-time">{{tool.dur15time}}</span>
+        <span class="air-dur-desc">{{tool.durDesc15}}</span>
+        <span class="air-dur-recommended">{{tool.durRecommended}}</span>
+      </div>
+
+      <div class="air-duration-card" data-duration="20" id="dur-20">
+        <span class="air-dur-icon">🔍</span>
+        <span class="air-dur-label">{{tool.dur20}}</span>
+        <span class="air-dur-time">{{tool.dur20time}}</span>
+        <span class="air-dur-desc">{{tool.durDesc20}}</span>
+      </div>
+
+      <div class="air-duration-card" data-duration="30" id="dur-30">
+        <span class="air-dur-icon">🎯</span>
+        <span class="air-dur-label">{{tool.dur30}}</span>
+        <span class="air-dur-time">{{tool.dur30time}}</span>
+        <span class="air-dur-desc">{{tool.durDesc30}}</span>
+      </div>
+
+    </div>
+
+    <!-- زر البدء -->
+    <button class="air-btn-start" id="btn-start">{{tool.startBtn}}</button>
+
+    <!-- ad slot 1 -->
+    <div id="ad-slot-welcome" class="air-ad-slot"></div>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- شاشة الاختبار (المرحلة 1 و 2)                            -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div class="air-screen" id="screen-quiz" style="display:none">
+
+    <!-- شريط علوي -->
+    <div class="air-quiz-topbar">
+      <div class="air-quiz-topbar-start">
+        <span class="air-badge" id="quiz-phase-badge">{{tool.phaseGeneral}}</span>
+        <span class="air-question-counter" id="question-counter">{{tool.questionOf}}</span>
+      </div>
+      <div class="air-quiz-topbar-end">
+        <span class="air-timer-global" id="timer-global">00:00</span>
+      </div>
+    </div>
+
+    <!-- شريط التقدم -->
+    <div class="air-progress-bar">
+      <div class="air-progress-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+
+    <!-- مؤقت السؤال الفردي -->
+    <div class="air-timer-question" id="timer-question-bar">
+      <div class="air-timer-question-fill" id="timer-question-fill"></div>
+    </div>
+
+    <!-- حاوية السؤال -->
+    <div id="question-container">
+
+      <!-- بطاقة السؤال — يتم تعبئتها ديناميكياً -->
+      <div class="air-question-card" id="question-card">
+
+        <div class="air-question-text" id="question-text"></div>
+
+        <!-- MCQ -->
+        <div class="air-options" id="options-mcq" style="display:none"></div>
+
+        <!-- True/False -->
+        <div class="air-tf-buttons" id="options-tf" style="display:none">
+          <button class="air-tf-btn" data-value="true" id="tf-true">{{tool.trueLabel}}</button>
+          <button class="air-tf-btn" data-value="false" id="tf-false">{{tool.falseLabel}}</button>
+        </div>
+
+        <!-- Fill in the blank -->
+        <div class="air-fill-wrap" id="options-fill" style="display:none">
+          <p class="air-fill-text" id="fill-text"></p>
+        </div>
+
+        <!-- Matching -->
+        <div class="air-matching-wrap" id="options-matching" style="display:none">
+          <p class="air-match-instruction">{{tool.matchInstruction}}</p>
+          <div class="air-matching-area">
+            <div class="air-matching-col" id="matching-left"></div>
+            <div class="air-matching-lines">
+              <svg class="air-matching-svg" id="matching-svg"></svg>
+            </div>
+            <div class="air-matching-col" id="matching-right"></div>
+          </div>
+        </div>
+
+        <!-- Sorting -->
+        <div class="air-sorting-wrap" id="options-sorting" style="display:none">
+          <p class="air-sort-instruction">{{tool.sortInstruction}}</p>
+          <div class="air-sorting-list" id="sorting-list"></div>
+        </div>
+
+        <!-- Self-assessment -->
+        <div class="air-self-wrap" id="options-self" style="display:none">
+          <div class="air-self-options" id="self-options"></div>
+        </div>
+
+        <!-- رسالة انتهاء الوقت -->
+        <div class="air-timeup-overlay" id="timeup-overlay" style="display:none">
+          <span class="air-timeup-icon">⏰</span>
+          <span class="air-timeup-text">{{tool.timeUp}}</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- تحذير إعادة التحميل -->
+    <p class="air-refresh-warning" id="refresh-warning">{{tool.refreshWarning}}</p>
+
+    <!-- زر التالي -->
+    <button class="air-btn-next" id="btn-next" disabled>{{tool.nextBtn}}</button>
+
+    <!-- حالة التحميل -->
+    <div class="air-loading" id="quiz-loading" style="display:none">
+      <span class="air-loading-spinner"></span>
+      <span>{{tool.loadingQuestions}}</span>
+    </div>
+
+    <!-- رسالة خطأ -->
+    <div class="air-error" id="quiz-error" style="display:none">
+      <span>{{tool.errorLoading}}</span>
+    </div>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- شاشة اختيار التخصص (المرحلة 1.5)                         -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div class="air-screen" id="screen-specialty" style="display:none">
+
+    <h2 class="air-specialty-title">{{tool.specialtyTitle}}</h2>
+    <p class="air-specialty-note">{{tool.specialtyNote}}</p>
+
+    <!-- مجموعات التخصصات — تُملأ ديناميكياً من questions-index.json -->
+    <div id="specialties-list"></div>
+
+    <!-- أزرار -->
+    <div class="air-specialty-actions">
+      <button class="air-btn-start" id="btn-continue-specialty">{{tool.continueBtn}}</button>
+      <button class="air-btn-skip" id="btn-skip-specialty">{{tool.skipBtn}}</button>
+    </div>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- شاشة التقرير                                              -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div class="air-screen" id="screen-report" style="display:none">
+
+    <!-- القسم 1: ملخص النتيجة -->
+    <div class="air-report-section" id="report-summary">
+      <h2 class="air-report-title">{{tool.reportTitle}}</h2>
+      <p class="air-report-subtitle" id="report-subtitle">{{tool.reportSubtitle}}</p>
+
+      <!-- Gauge -->
+      <div class="air-gauge-wrap" id="gauge-wrap">
+        <svg class="air-gauge-svg" viewBox="0 0 200 120" id="gauge-svg">
+          <path class="air-gauge-bg" d="M20,100 A80,80 0 0,1 180,100" />
+          <path class="air-gauge-fill" d="M20,100 A80,80 0 0,1 180,100" id="gauge-fill" />
+        </svg>
+        <div class="air-gauge-score">
+          <span class="air-gauge-number" id="gauge-number">0</span>
+          <span class="air-gauge-max">{{tool.scoreOf}} <span id="gauge-max">100</span></span>
+        </div>
+      </div>
+
+      <!-- تصنيف المستوى -->
+      <div class="air-level-badge" id="level-badge"></div>
+
+      <!-- ملخص شخصي -->
+      <div class="air-personal-summary" id="personal-summary">
+        <h3>{{tool.personalSummary}}</h3>
+        <p id="summary-text"></p>
+      </div>
+    </div>
+
+    <!-- القسم 2: تفصيل المحاور (Radar Chart) -->
+    <div class="air-report-section" id="report-axes">
+      <h3 class="air-section-title">{{tool.axesTitle}}</h3>
+
+      <div class="air-radar-wrap">
+        <svg class="air-radar-svg" viewBox="0 0 300 300" id="radar-svg">
+          <!-- شبكة الرادار — تُرسم ديناميكياً -->
+        </svg>
+      </div>
+
+      <div class="air-radar-legend" id="radar-legend">
+        <div class="air-radar-legend-item">
+          <span class="air-radar-legend-color" style="background:var(--info)"></span>
+          <span>{{tool.axisKnowledge}}</span>
+          <span class="air-radar-legend-value" id="axis-knowledge-val">0%</span>
+        </div>
+        <div class="air-radar-legend-item">
+          <span class="air-radar-legend-color" style="background:var(--success)"></span>
+          <span>{{tool.axisPractice}}</span>
+          <span class="air-radar-legend-value" id="axis-practice-val">0%</span>
+        </div>
+        <div class="air-radar-legend-item">
+          <span class="air-radar-legend-color" style="background:var(--warning)"></span>
+          <span>{{tool.axisFlexibility}}</span>
+          <span class="air-radar-legend-value" id="axis-flexibility-val">0%</span>
+        </div>
+        <div class="air-radar-legend-item" id="axis-specialty-item" style="display:none">
+          <span class="air-radar-legend-color" style="background:var(--pink)"></span>
+          <span>{{tool.axisSpecialty}}</span>
+          <span class="air-radar-legend-value" id="axis-specialty-val">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- القسم 3: كشف المعادلة -->
+    <div class="air-report-section" id="report-formula">
+      <h3 class="air-section-title">{{tool.formulaTitle}}</h3>
+
+      <div class="air-formula-visual" id="formula-visual">
+        <div class="air-formula-block" data-type="core">
+          <span class="air-formula-label">{{tool.formulaCore}}</span>
+          <span class="air-formula-value" id="formula-core">0</span>
+        </div>
+        <span class="air-formula-operator">+</span>
+        <div class="air-formula-block" data-type="cultural">
+          <span class="air-formula-label">{{tool.formulaCultural}}</span>
+          <span class="air-formula-value" id="formula-cultural">0</span>
+        </div>
+        <span class="air-formula-operator">+</span>
+        <div class="air-formula-block" data-type="self">
+          <span class="air-formula-label">{{tool.formulaSelf}}</span>
+          <span class="air-formula-value" id="formula-self">0</span>
+        </div>
+        <span class="air-formula-operator">+</span>
+        <div class="air-formula-block" data-type="specialty">
+          <span class="air-formula-label">{{tool.formulaSpecialty}}</span>
+          <span class="air-formula-value" id="formula-specialty">0</span>
+        </div>
+        <span class="air-formula-operator">=</span>
+        <div class="air-formula-block air-formula-result" data-type="total">
+          <span class="air-formula-label">{{tool.formulaTotal}}</span>
+          <span class="air-formula-value" id="formula-total">0</span>
+        </div>
+      </div>
+
+      <p class="air-formula-explanation">{{tool.formulaExplanation}}</p>
+
+      <!-- أعمدة أفقية لكل محور -->
+      <div class="air-bars" id="formula-bars">
+        <div class="air-bar-row">
+          <span class="air-bar-label">{{tool.axisKnowledge}}</span>
+          <div class="air-bar-track">
+            <div class="air-bar-fill" id="bar-knowledge" style="width:0%"></div>
+          </div>
+          <span class="air-bar-value" id="bar-knowledge-val">0%</span>
+        </div>
+        <div class="air-bar-row">
+          <span class="air-bar-label">{{tool.axisPractice}}</span>
+          <div class="air-bar-track">
+            <div class="air-bar-fill" id="bar-practice" style="width:0%"></div>
+          </div>
+          <span class="air-bar-value" id="bar-practice-val">0%</span>
+        </div>
+        <div class="air-bar-row">
+          <span class="air-bar-label">{{tool.axisFlexibility}}</span>
+          <div class="air-bar-track">
+            <div class="air-bar-fill" id="bar-flexibility" style="width:0%"></div>
+          </div>
+          <span class="air-bar-value" id="bar-flexibility-val">0%</span>
+        </div>
+        <div class="air-bar-row" id="bar-specialty-row" style="display:none">
+          <span class="air-bar-label">{{tool.axisSpecialty}}</span>
+          <div class="air-bar-track">
+            <div class="air-bar-fill" id="bar-specialty" style="width:0%"></div>
+          </div>
+          <span class="air-bar-value" id="bar-specialty-val">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- القسم 4: توصيات -->
+    <div class="air-report-section" id="report-recommendations">
+      <h3 class="air-section-title">{{tool.recTitle}}</h3>
+      <div class="air-rec-cards" id="rec-cards">
+        <!-- تُملأ ديناميكياً -->
+      </div>
+    </div>
+
+    <!-- ad slot 2 -->
+    <div id="ad-slot-report-mid" class="air-ad-slot"></div>
+
+    <!-- القسم 5: مقارنة -->
+    <div class="air-report-section" id="report-comparison">
+      <h3 class="air-section-title">{{tool.comparisonTitle}}</h3>
+      <p class="air-comparison-text" id="comparison-text">{{tool.comparisonText}}</p>
+      <div class="air-comparison-chart" id="comparison-chart">
+        <!-- رسم بياني يُملأ ديناميكياً -->
+      </div>
+    </div>
+
+    <!-- أزرار الإجراءات -->
+    <div class="air-report-actions">
+      <button class="air-btn-share" id="btn-share">
+        <span class="air-btn-icon">📤</span>
+        {{tool.shareBtn}}
+      </button>
+      <button class="air-btn-restart" id="btn-restart">
+        <span class="air-btn-icon">🔄</span>
+        {{tool.restartBtn}}
+      </button>
+    </div>
+
+    <!-- القسم 6: تفاصيل الإجابات (قابل للطي) -->
+    <div class="air-report-section" id="report-answers">
+      <div class="air-collapsible-header" id="answers-toggle">
+        <h3 class="air-section-title">{{tool.answersTitle}}</h3>
+        <span class="air-collapsible-chevron" id="answers-chevron">▼</span>
+      </div>
+      <div class="air-collapsible-body" id="answers-body" style="display:none">
+        <!-- تفاصيل الإجابات تُملأ ديناميكياً -->
+        <div id="answers-list"></div>
+      </div>
+    </div>
+
+    <!-- ad slot 3 -->
+    <div id="ad-slot-report-bottom" class="air-ad-slot"></div>
+
+  </div>
+
+</div>
+
+<!-- How to Use section -->
+<div class="how-to-use">
+  <h3>📖 {{ui.howToUse}}</h3>
+  <p>{{tool.howToUseText}}</p>
+</div>
 
 <script>// سيُضاف لاحقاً</script>
