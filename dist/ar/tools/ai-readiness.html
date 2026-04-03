@@ -379,40 +379,18 @@
 
 /* -- Top bar: progress + timers -- */
 .air-quiz-topbar {
-  margin-bottom: 24px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-.air-progress-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-  font-size: 0.8rem;
+.air-progress-info {
+  font-size: 0.78rem;
   color: var(--text-muted);
+  margin-bottom: 6px;
+  text-align: center;
 }
 
 .air-progress-bar {
-  height: 6px;
-  background: var(--bg-tertiary);
-  border-radius: 3px;
-  overflow: hidden;
-  margin-bottom: 12px;
-}
-
-.air-progress-fill {
-  height: 100%;
-  background: var(--accent-gradient);
-  border-radius: 3px;
-  transition: width 0.4s ease;
-}
-
-.air-timers {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.air-timer-global {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -427,13 +405,41 @@
   min-width: 70px;
   text-align: center;
   z-index: 1;
+  margin-bottom: 8px;
+}
+
+.air-progress-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  inset-inline-start: 0;
+  border-radius: inherit;
+  z-index: -1;
+  transition: width 0.4s ease, background-color 0.5s;
+}
+
+.air-timer-global {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-tertiary);
+  text-align: center;
+  z-index: 1;
+  margin-bottom: 8px;
 }
 
 .air-timer-global-fill {
   position: absolute;
   top: 0;
   bottom: 0;
-  inset-inline-end: 0;
+  inset-inline-start: 0;
   border-radius: inherit;
   z-index: -1;
   transition: width 1s linear, background-color 0.5s;
@@ -833,6 +839,12 @@
   background: var(--error, #ef4444);
   padding: 12px 32px;
   border-radius: 12px;
+}
+
+.air-timeup-sub {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
 }
 
 /* -- Refresh Warning -- */
@@ -1843,19 +1855,21 @@
 
     <!-- شريط علوي -->
     <div class="air-quiz-topbar">
-      <div class="air-quiz-topbar-start">
-        <span class="air-badge" id="quiz-phase-badge">المرحلة العامة</span>
-        <span class="air-question-counter" id="question-counter">سؤال {{current}} من {{total}}</span>
-      </div>
-      <div class="air-quiz-topbar-end">
-        <span class="air-timer-global" id="timer-global"><span class="air-timer-global-fill" id="timer-global-fill"></span><span id="timer-global-text">00:00</span></span>
-      </div>
+      <span class="air-badge" id="quiz-phase-badge">المرحلة العامة</span>
     </div>
 
-    <!-- شريط التقدم -->
-    <div class="air-progress-bar">
+    <!-- مؤشر التقدم -->
+    <div class="air-progress-info" id="progress-info"></div>
+    <div class="air-progress-bar" id="progress-bar">
       <div class="air-progress-fill" id="progress-fill" style="width:0%"></div>
+      <span id="progress-pct">0%</span>
     </div>
+
+    <!-- مؤقت إجمالي -->
+    <span class="air-timer-global" id="timer-global">
+      <span class="air-timer-global-fill" id="timer-global-fill"></span>
+      <span id="timer-global-text">00:00</span>
+    </span>
 
     <!-- مؤقت السؤال الفردي -->
     <div class="air-timer-question" id="timer-question-bar">
@@ -1902,7 +1916,8 @@
         <!-- رسالة انتهاء الوقت -->
         <div class="air-timeup-overlay" id="timeup-overlay" style="display:none">
           <span class="air-timeup-icon">⏰</span>
-          <span class="air-timeup-text">انتهى الوقت!</span>
+          <span class="air-timeup-text">انتهى وقت السؤال</span>
+          <span class="air-timeup-sub">اضغط التالي</span>
         </div>
 
       </div>
@@ -2457,6 +2472,11 @@
     }
   }
 
+  function getProgressColor(ratio) {
+    // ratio: 0 (no progress) to 1 (complete) — inverted: red→teal
+    return getTimerColor(ratio);
+  }
+
   // ─── مؤقت إجمالي ───
 
   function startGlobalTimer() {
@@ -2565,17 +2585,29 @@
     currentAnswer = null;
     questionStartTime = Date.now();
 
-    // تحديث العداد
-    var counter = $('question-counter');
-    if (counter) {
-      var tmpl = LANG === 'ar' ? 'سؤال {{current}} من {{total}}' : 'Question {{current}} of {{total}}';
-      counter.textContent = tmpl.replace('{{current}}', currentQuestionIndex + 1).replace('{{total}}', quizQuestions.length);
+    // تحديث مؤشر التقدم
+    var current = currentQuestionIndex + 1;
+    var total = quizQuestions.length;
+    var remaining = total - current;
+    var ratio = total > 0 ? current / total : 0;
+    var pct = Math.round(ratio * 100);
+
+    var infoEl = $('progress-info');
+    if (infoEl) {
+      if (LANG === 'ar') {
+        infoEl.textContent = 'سؤال ' + current + ' من ' + total + ' — المتبقي: ' + remaining + ' أسئلة';
+      } else {
+        infoEl.textContent = 'Question ' + current + ' of ' + total + ' — Remaining: ' + remaining;
+      }
     }
 
-    // تحديث شريط التقدم
+    var pctEl = $('progress-pct');
+    if (pctEl) pctEl.textContent = pct + '%';
+
     var fill = $('progress-fill');
     if (fill) {
-      fill.style.width = ((currentQuestionIndex / quizQuestions.length) * 100) + '%';
+      fill.style.width = pct + '%';
+      fill.style.backgroundColor = getProgressColor(ratio);
     }
 
     // تحديث badge المرحلة
