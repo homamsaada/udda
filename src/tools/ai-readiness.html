@@ -854,8 +854,8 @@
 
 .air-specialty-card {
   display: inline-flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  gap: 8px;
   padding: 8px 14px;
   border: 2px solid var(--border-color);
   border-radius: 10px;
@@ -870,15 +870,25 @@
   overflow: hidden;
 }
 
-.air-specialty-desc {
+.air-specialty-descs {
   display: none;
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  line-height: 1.4;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
 }
 
-.air-specialty-card.selected .air-specialty-desc {
-  display: block;
+.air-specialty-descs.has-items {
+  display: flex;
+}
+
+.air-specialty-desc-item {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  padding: 6px 10px;
+  background: rgba(99, 102, 241, 0.05);
+  border-radius: 8px;
+  border-inline-start: 3px solid var(--accent-primary);
 }
 
 .air-specialty-card:hover {
@@ -4024,19 +4034,13 @@
         card.className = 'air-specialty-card';
         card.setAttribute('data-id', sec.id);
         card.setAttribute('data-selected', 'false');
+        if (sec.description) card.setAttribute('data-desc', t(sec.description));
 
         var nameSpan = document.createElement('span');
         nameSpan.className = 'air-specialty-name';
         nameSpan.textContent = t(sec.name);
 
         card.appendChild(nameSpan);
-
-        if (sec.description) {
-          var descSpan = document.createElement('span');
-          descSpan.className = 'air-specialty-desc';
-          descSpan.textContent = t(sec.description);
-          card.appendChild(descSpan);
-        }
         card.addEventListener('click', function() {
           var isSelected = this.getAttribute('data-selected') === 'true';
           this.setAttribute('data-selected', isSelected ? 'false' : 'true');
@@ -4046,11 +4050,15 @@
             this.classList.add('selected');
           }
           updateSpecialtySelection();
+          updateGroupDescs(this.closest('.air-specialty-group'));
         });
         grid.appendChild(card);
       }
 
+      var descsDiv = document.createElement('div');
+      descsDiv.className = 'air-specialty-descs';
       group.appendChild(grid);
+      group.appendChild(descsDiv);
       container.appendChild(group);
     }
 
@@ -4067,6 +4075,28 @@
     }
     var btnContinue = $('btn-continue-specialty');
     if (btnContinue) btnContinue.disabled = selectedSpecialties.length === 0;
+  }
+
+  function updateGroupDescs(group) {
+    if (!group) return;
+    var descsDiv = group.querySelector('.air-specialty-descs');
+    if (!descsDiv) return;
+    descsDiv.innerHTML = '';
+    var selected = group.querySelectorAll('.air-specialty-card[data-selected="true"]');
+    for (var i = 0; i < selected.length; i++) {
+      var desc = selected[i].getAttribute('data-desc');
+      if (!desc) continue;
+      var name = selected[i].querySelector('.air-specialty-name').textContent;
+      var item = document.createElement('div');
+      item.className = 'air-specialty-desc-item';
+      item.innerHTML = '<strong>' + name + '</strong>: ' + desc;
+      descsDiv.appendChild(item);
+    }
+    if (descsDiv.children.length > 0) {
+      descsDiv.classList.add('has-items');
+    } else {
+      descsDiv.classList.remove('has-items');
+    }
   }
 
   // ─── تحميل أسئلة التخصصات ───
