@@ -448,6 +448,7 @@
   background: var(--bg-tertiary);
   border-radius: 3px;
   overflow: hidden;
+  margin-bottom: 16px;
 }
 
 .air-timer-question-fill {
@@ -758,14 +759,17 @@
 }
 
 .air-sorting-item.dragging {
-  opacity: 0.5;
-  border-color: var(--accent-primary);
-  box-shadow: var(--shadow-lg);
+  opacity: 0.4;
+  border: 2px dashed var(--accent-primary);
 }
 
 .air-sorting-item.drag-over {
   border-color: var(--accent-primary);
   background: rgba(99, 102, 241, 0.06);
+}
+
+.air-sorting-item {
+  transition: transform 0.15s ease;
 }
 
 .air-sorting-item.disabled {
@@ -871,25 +875,38 @@
   inset-inline-start: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 16px;
-  z-index: 5;
+  z-index: 10;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .air-timeup-overlay.show {
   display: flex;
 }
 
-.air-timeup-msg {
-  background: var(--bg-secondary);
-  padding: 16px 28px;
-  border-radius: 12px;
+.air-timeup-icon {
+  font-size: 2rem;
+}
+
+.air-timeup-text {
+  font-size: 1.5rem;
   font-weight: 700;
-  font-size: 1rem;
-  color: var(--error);
-  box-shadow: var(--shadow-lg);
+  color: #fff;
+  background: var(--error, #ef4444);
+  padding: 12px 32px;
+  border-radius: 12px;
+}
+
+/* -- Refresh Warning -- */
+.air-refresh-warning {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 24px;
 }
 
 /* -- Next Button -- */
@@ -987,19 +1004,6 @@
   border-color: var(--accent-primary);
   background: rgba(99, 102, 241, 0.1);
   color: var(--accent-primary);
-}
-
-.air-specialty-check {
-  position: absolute !important;
-  opacity: 0 !important;
-  width: 0 !important;
-  height: 0 !important;
-  pointer-events: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  appearance: none !important;
-  -webkit-appearance: none !important;
 }
 
 .air-specialty-card .air-specialty-indicator {
@@ -2347,7 +2351,7 @@
   // matching state
   var matchSelectedLeft = null;
   var matchPairs = [];
-  var matchColors = ['#6366f1', '#22c55e', '#f59e0b', '#ef4444', '#ec4899', '#06b6d4', '#8b5cf6', '#f97316'];
+  var matchColors = ['#ff3b30', '#34c759', '#007aff', '#ff9500', '#af52de', '#00c7be', '#ff2d55', '#5856d6'];
 
   // sorting state
   var dragSrcIndex = null;
@@ -2926,14 +2930,16 @@
     if (lEl) {
       lEl.classList.add('matched');
       lEl.style.borderColor = color;
-      lEl.style.backgroundColor = color + '18';
+      lEl.style.borderWidth = '3px';
+      lEl.style.backgroundColor = color + '40';
       removeBadge(lEl);
       lEl.appendChild(createBadge(pairNum, color));
     }
     if (rEl) {
       rEl.classList.add('matched');
       rEl.style.borderColor = color;
-      rEl.style.backgroundColor = color + '18';
+      rEl.style.borderWidth = '3px';
+      rEl.style.backgroundColor = color + '40';
       removeBadge(rEl);
       rEl.appendChild(createBadge(pairNum, color));
     }
@@ -2942,8 +2948,8 @@
   function clearMatchHighlight(leftId, rightId) {
     var lEl = $('matching-left').querySelector('[data-id="' + leftId + '"]');
     var rEl = $('matching-right').querySelector('[data-id="' + rightId + '"]');
-    if (lEl) { lEl.classList.remove('matched'); lEl.style.borderColor = ''; lEl.style.backgroundColor = ''; removeBadge(lEl); }
-    if (rEl) { rEl.classList.remove('matched'); rEl.style.borderColor = ''; rEl.style.backgroundColor = ''; removeBadge(rEl); }
+    if (lEl) { lEl.classList.remove('matched'); lEl.style.borderColor = ''; lEl.style.borderWidth = ''; lEl.style.backgroundColor = ''; removeBadge(lEl); }
+    if (rEl) { rEl.classList.remove('matched'); rEl.style.borderColor = ''; rEl.style.borderWidth = ''; rEl.style.backgroundColor = ''; removeBadge(rEl); }
     refreshAllBadges();
   }
 
@@ -3049,19 +3055,23 @@
   function onDragOver(e) {
     e.preventDefault();
     e.dataTransfer.dropEffect = 'move';
+    var target = e.currentTarget;
     var list = $('sorting-list');
-    var items = list.querySelectorAll('.air-sorting-item');
-    for (var i = 0; i < items.length; i++) items[i].classList.remove('drag-over');
-    this.classList.add('drag-over');
+    var dragging = list.querySelector('.dragging');
+    if (!dragging || target === dragging) return;
+
+    var targetRect = target.getBoundingClientRect();
+    var midY = targetRect.top + targetRect.height / 2;
+    if (e.clientY < midY) {
+      list.insertBefore(dragging, target);
+    } else {
+      list.insertBefore(dragging, target.nextSibling);
+    }
+    updateSortNumbers();
   }
 
   function onDrop(e) {
     e.preventDefault();
-    var targetIndex = getSortIndex(this);
-    if (dragSrcIndex !== null && dragSrcIndex !== targetIndex) {
-      moveSortItem(dragSrcIndex, targetIndex);
-    }
-    this.classList.remove('drag-over');
   }
 
   function onDragEnd() {
@@ -3105,21 +3115,29 @@
   }
 
   function onTouchMove(e) {
-    if (!touchClone) return;
+    if (!touchClone || !touchDragEl) return;
     e.preventDefault();
 
     var y = e.touches[0].clientY;
+    var x = e.touches[0].clientX;
     touchClone.style.top = (y - 25) + 'px';
 
-    // تحديد العنصر الذي يقف فوقه
-    var list = $('sorting-list');
-    var items = list.querySelectorAll('.air-sorting-item');
-    for (var i = 0; i < items.length; i++) {
-      items[i].classList.remove('drag-over');
-      var rect = items[i].getBoundingClientRect();
-      if (y > rect.top && y < rect.bottom && items[i] !== touchDragEl) {
-        items[i].classList.add('drag-over');
+    // Find element under finger (hide clone temporarily)
+    touchClone.style.display = 'none';
+    var elUnder = document.elementFromPoint(x, y);
+    touchClone.style.display = '';
+
+    var target = elUnder ? elUnder.closest('.air-sorting-item') : null;
+    if (target && target !== touchDragEl) {
+      var list = $('sorting-list');
+      var targetRect = target.getBoundingClientRect();
+      var midY = targetRect.top + targetRect.height / 2;
+      if (y < midY) {
+        list.insertBefore(touchDragEl, target);
+      } else {
+        list.insertBefore(touchDragEl, target.nextSibling);
       }
+      updateSortNumbers();
     }
   }
 
@@ -3132,26 +3150,8 @@
       touchClone = null;
     }
 
-    if (!touchDragEl) return;
-
-    // أجد العنصر المستهدف
-    var y = e.changedTouches[0].clientY;
-    var list = $('sorting-list');
-    var items = list.querySelectorAll('.air-sorting-item');
-    var targetIndex = -1;
-
-    for (var i = 0; i < items.length; i++) {
-      items[i].classList.remove('drag-over');
-      var rect = items[i].getBoundingClientRect();
-      if (y > rect.top && y < rect.bottom) {
-        targetIndex = i;
-      }
-    }
-
-    touchDragEl.classList.remove('dragging');
-
-    if (targetIndex !== -1 && dragSrcIndex !== targetIndex) {
-      moveSortItem(dragSrcIndex, targetIndex);
+    if (touchDragEl) {
+      touchDragEl.classList.remove('dragging');
     }
 
     touchDragEl = null;
@@ -3207,7 +3207,7 @@
       var btn = document.createElement('button');
       btn.className = 'air-self-option';
       btn.setAttribute('data-id', opt.id);
-      btn.textContent = t(opt.text);
+      btn.innerHTML = '<span class="air-option-marker">' + opt.id.toUpperCase() + '</span><span>' + t(opt.text) + '</span>';
       btn.addEventListener('click', (function(optId) {
         return function() {
           currentAnswer = optId;
@@ -4130,15 +4130,10 @@
       var secs = categories[cat];
       for (var s = 0; s < secs.length; s++) {
         var sec = secs[s];
-        var card = document.createElement('label');
+        var card = document.createElement('div');
         card.className = 'air-specialty-card';
         card.setAttribute('data-id', sec.id);
-
-        var cb = document.createElement('input');
-        cb.type = 'checkbox';
-        cb.className = 'air-specialty-check';
-        cb.value = sec.id;
-        cb.addEventListener('change', onSpecialtyChange);
+        card.setAttribute('data-selected', 'false');
 
         var indicator = document.createElement('span');
         indicator.className = 'air-specialty-indicator';
@@ -4148,9 +4143,18 @@
         nameSpan.className = 'air-specialty-name';
         nameSpan.textContent = t(sec.name);
 
-        card.appendChild(cb);
         card.appendChild(indicator);
         card.appendChild(nameSpan);
+        card.addEventListener('click', function() {
+          var isSelected = this.getAttribute('data-selected') === 'true';
+          this.setAttribute('data-selected', isSelected ? 'false' : 'true');
+          if (isSelected) {
+            this.classList.remove('selected');
+          } else {
+            this.classList.add('selected');
+          }
+          updateSpecialtySelection();
+        });
         grid.appendChild(card);
       }
 
@@ -4163,21 +4167,12 @@
     if (btnContinue) btnContinue.disabled = true;
   }
 
-  function onSpecialtyChange() {
-    var checkboxes = document.querySelectorAll('.air-specialty-check');
+  function updateSpecialtySelection() {
+    var cards = document.querySelectorAll('.air-specialty-card[data-selected="true"]');
     selectedSpecialties = [];
-    for (var i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i].checked) {
-        selectedSpecialties.push(checkboxes[i].value);
-      }
-      // تلوين البطاقة
-      var card = checkboxes[i].closest('.air-specialty-card');
-      if (card) {
-        if (checkboxes[i].checked) card.classList.add('selected');
-        else card.classList.remove('selected');
-      }
+    for (var i = 0; i < cards.length; i++) {
+      selectedSpecialties.push(cards[i].getAttribute('data-id'));
     }
-
     var btnContinue = $('btn-continue-specialty');
     if (btnContinue) btnContinue.disabled = selectedSpecialties.length === 0;
   }
