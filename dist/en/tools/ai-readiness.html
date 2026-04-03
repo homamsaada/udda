@@ -1108,11 +1108,18 @@
   padding: 32px;
 }
 
-.air-report-summary.level-pioneer { background: linear-gradient(135deg, rgba(34,197,94,0.12), rgba(34,197,94,0.03)); border: 1px solid rgba(34,197,94,0.2); }
-.air-report-summary.level-advanced { background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(59,130,246,0.03)); border: 1px solid rgba(59,130,246,0.2); }
-.air-report-summary.level-aware { background: linear-gradient(135deg, rgba(245,158,11,0.12), rgba(245,158,11,0.03)); border: 1px solid rgba(245,158,11,0.2); }
-.air-report-summary.level-beginner { background: linear-gradient(135deg, rgba(217,119,6,0.12), rgba(217,119,6,0.03)); border: 1px solid rgba(217,119,6,0.2); }
-.air-report-summary.level-at-risk { background: linear-gradient(135deg, rgba(239,68,68,0.12), rgba(239,68,68,0.03)); border: 1px solid rgba(239,68,68,0.2); }
+.air-report-summary.level-pioneer { background: linear-gradient(135deg, rgba(6,182,212,0.12), rgba(34,197,94,0.08)); border: 1px solid rgba(34,197,94,0.2); }
+.air-report-summary.level-advanced { background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(6,182,212,0.06)); border: 1px solid rgba(59,130,246,0.2); }
+.air-report-summary.level-aware { background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.06)); border: 1px solid rgba(99,102,241,0.2); }
+.air-report-summary.level-beginner { background: linear-gradient(135deg, rgba(245,158,11,0.12), rgba(239,68,68,0.05)); border: 1px solid rgba(245,158,11,0.2); }
+.air-report-summary.level-at-risk { background: linear-gradient(135deg, rgba(185,28,28,0.12), rgba(239,68,68,0.06)); border: 1px solid rgba(239,68,68,0.25); }
+
+/* Same gradients for axes section */
+.air-report-axes.level-pioneer { background: linear-gradient(135deg, rgba(6,182,212,0.08), rgba(34,197,94,0.04)); border: 1px solid rgba(34,197,94,0.15); }
+.air-report-axes.level-advanced { background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(6,182,212,0.04)); border: 1px solid rgba(59,130,246,0.15); }
+.air-report-axes.level-aware { background: linear-gradient(135deg, rgba(59,130,246,0.07), rgba(139,92,246,0.03)); border: 1px solid rgba(99,102,241,0.15); }
+.air-report-axes.level-beginner { background: linear-gradient(135deg, rgba(245,158,11,0.08), rgba(239,68,68,0.03)); border: 1px solid rgba(245,158,11,0.15); }
+.air-report-axes.level-at-risk { background: linear-gradient(135deg, rgba(185,28,28,0.08), rgba(239,68,68,0.04)); border: 1px solid rgba(239,68,68,0.18); }
 
 .air-report-user-name {
   font-size: 1.2rem;
@@ -1381,112 +1388,70 @@
   line-height: 1.4;
 }
 
-/* -- Formula Section (Bar Breakdown) -- */
-.air-formula-bars {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.air-formula-bar-row {
-  background: var(--bg-primary);
-  border-radius: 12px;
-  padding: 14px 16px;
-}
-
-.air-formula-bar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.88rem;
-  margin-bottom: 8px;
-}
-
-.air-formula-bar-name {
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.air-formula-bar-pct {
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.air-formula-bar-note {
-  font-size: 0.73rem;
-  color: var(--text-muted);
-  font-weight: 400;
-}
-
-.air-formula-bar-track {
-  height: 10px;
-  background: var(--bg-tertiary);
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.air-formula-bar-fill {
-  height: 100%;
-  border-radius: 5px;
-  transition: width 1s ease;
-}
-
-.air-formula-bar-fill.strong { background: var(--success); }
-.air-formula-bar-fill.medium { background: var(--warning); }
-.air-formula-bar-fill.weak { background: var(--error); }
-
-.air-formula-divider {
-  border: none;
-  border-top: 2px dashed var(--border-color);
-  margin: 4px 0;
-}
-
-.air-formula-summary {
-  display: flex;
-  flex-direction: column;
+/* -- Formula Section (3 Inline Cards) -- */
+.air-formula-cards {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
   gap: 8px;
+  align-items: stretch;
 }
 
-.air-formula-summary-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.9rem;
-  color: var(--text-primary);
-  padding: 10px 16px;
+.air-formula-card {
   background: var(--bg-primary);
-  border-radius: 10px;
-}
-
-.air-formula-summary-row .label {
-  font-weight: 600;
-}
-
-.air-formula-summary-row .value {
-  font-weight: 700;
-}
-
-.air-formula-summary-row.raw {
-  font-weight: 700;
-}
-
-.air-formula-summary-row.flex-boost .value { color: var(--success); }
-.air-formula-summary-row.flex-drop .value { color: var(--error); }
-.air-formula-summary-row.flex-neutral .value { color: var(--text-muted); }
-
-.air-formula-summary-row.total {
-  font-size: 1.15rem;
-  padding: 14px 20px;
-  background: var(--accent-gradient);
   border-radius: 12px;
-  color: white;
+  padding: 16px 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.air-formula-card .fc-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.air-formula-card .fc-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.air-formula-card .fc-bar {
+  height: 6px;
+  background: var(--bg-tertiary);
+  border-radius: 3px;
+  overflow: hidden;
   margin-top: 4px;
 }
 
-.air-formula-summary-row.total .label,
-.air-formula-summary-row.total .value {
+.air-formula-card .fc-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 1s ease;
+}
+
+.air-formula-card.card-total {
+  background: var(--accent-gradient);
+}
+
+.air-formula-card.card-total .fc-label {
+  color: rgba(255,255,255,0.8);
+}
+
+.air-formula-card.card-total .fc-value {
   color: white;
+}
+
+.air-formula-operator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-muted);
 }
 
 /* -- Recommendations -- */
@@ -1703,8 +1668,14 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .air-report-actions {
-    flex-direction: column;
+  .air-formula-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .air-formula-operator {
+    font-size: 1.1rem;
+    padding: 2px 0;
   }
 
   .air-report-section {
@@ -2131,7 +2102,7 @@
       <div class="air-axes-layout">
         <!-- الرادار -->
         <div class="air-radar-wrap">
-          <svg class="air-radar-svg" viewBox="0 0 300 300" id="radar-svg">
+          <svg class="air-radar-svg" viewBox="-30 -20 360 340" id="radar-svg">
             <!-- تُرسم ديناميكياً -->
           </svg>
         </div>
@@ -2143,15 +2114,10 @@
       </div>
     </div>
 
-    <!-- القسم 3: كشف المعادلة -->
+    <!-- القسم 3: كشف المعادلة — 3 بطاقات -->
     <div class="air-report-section" id="report-formula">
       <h3 class="air-section-title">How was your score calculated?</h3>
-
-      <div class="air-formula-bars" id="formula-bars">
-        <!-- تُملأ ديناميكياً -->
-      </div>
-
-      <div class="air-formula-summary" id="formula-summary">
+      <div class="air-formula-cards" id="formula-cards">
         <!-- تُملأ ديناميكياً -->
       </div>
     </div>
@@ -2175,21 +2141,19 @@
       </div>
     </div>
 
-    <!-- أزرار المشاركة -->
-    <div class="air-report-actions">
-      <button class="air-btn-share" id="btn-share">
-        <span class="air-btn-icon">📤</span>
-        Share Your Result
-      </button>
-    </div>
-
-    <!-- قسم إعادة الاختبار -->
+    <!-- قسم إعادة الاختبار + مشاركة -->
     <div class="air-restart-section" id="report-restart">
       <p class="air-restart-motivational" id="restart-motivational"></p>
-      <button class="air-btn-restart" id="btn-restart" style="margin:0 auto">
-        <span class="air-btn-icon">🔄</span>
-        Retake Assessment
-      </button>
+      <div class="air-report-actions">
+        <button class="air-btn-share" id="btn-share">
+          <span class="air-btn-icon">📤</span>
+          Share Your Result
+        </button>
+        <button class="air-btn-restart" id="btn-restart">
+          <span class="air-btn-icon">🔄</span>
+          Retake Assessment
+        </button>
+      </div>
     </div>
 
     <!-- ad slot 3 -->
@@ -3611,6 +3575,10 @@
     renderPersonalSummary(r);
     renderQuickStats(r);
 
+    // تدرج لوني لقسم المحاور
+    var axesEl = $('report-axes');
+    if (axesEl) axesEl.className = 'air-report-section air-report-axes level-' + r.classification.level;
+
     // القسم 2: Radar chart + بطاقات المحاور
     renderRadar(r.axes, r.selectedSpecialties.length > 0);
     renderAxisCards(r.axes, r.selectedSpecialties.length > 0);
@@ -3618,11 +3586,11 @@
     // القسم 3: المعادلة
     renderFormula(r);
 
-    // القسم 4: التوصيات
-    renderRecommendations(r);
+    // القسم 4: التوصيات — تحميل من JSON خارجي
+    loadAndRenderRecommendations(r);
 
-    // القسم 5: هل تعلم؟
-    renderFacts(r.classification.level);
+    // القسم 5: هل تعلم؟ — تحميل من JSON خارجي
+    loadAndRenderFacts(r.classification.level);
 
     // القسم 6: إعادة + مشاركة
     initReportActions(r);
@@ -3704,7 +3672,7 @@
     var answeredQ = 0;
     var correctQ = 0;
     for (var i = 0; i < totalQ; i++) {
-      if (r.answers[i].answer !== null && r.answers[i].answer !== undefined) answeredQ++;
+      if (r.answers[i].user_answer !== null && r.answers[i].user_answer !== undefined) answeredQ++;
       if (r.answers[i].is_correct) correctQ++;
     }
 
@@ -3919,175 +3887,106 @@
   // ─── المعادلة (أعمدة أفقية) ───
 
   function renderFormula(r) {
-    var barsContainer = $('formula-bars');
-    var summaryContainer = $('formula-summary');
-    if (!barsContainer || !summaryContainer) return;
-    barsContainer.innerHTML = '';
-    summaryContainer.innerHTML = '';
+    var container = $('formula-cards');
+    if (!container) return;
+    container.innerHTML = '';
 
-    var hasSpecialty = r.selectedSpecialties && r.selectedSpecialties.length > 0;
+    var rawPct = Math.round(r.rawScore);
+    var rawColor = rawPct >= 70 ? 'var(--success)' : (rawPct >= 40 ? 'var(--warning)' : 'var(--error)');
+    var rawFillClass = rawPct >= 70 ? 'strong' : (rawPct >= 40 ? 'medium' : 'weak');
+    var flexColor = r.multiplier > 1 ? 'var(--success)' : (r.multiplier < 1 ? 'var(--error)' : 'var(--text-muted)');
 
-    // بيانات المحاور
-    var barData = [
-      { name: LANG === 'ar' ? 'المعرفة الأساسية' : 'Core Knowledge', pct: Math.round(r.axes.knowledge), note: '' },
-      { name: LANG === 'ar' ? 'الممارسة الفعلية' : 'Practical Skills', pct: Math.round(r.axes.practice), note: '' },
-      { name: LANG === 'ar' ? 'الثقافة العامة' : 'Cultural Awareness', pct: Math.round(r.culturalEarned && r.culturalMax ? Math.round(r.culturalEarned / r.culturalMax * 100) : 0),
-        note: LANG === 'ar' ? '(وزن مخفّض)' : '(lower weight)' }
-    ];
+    // بطاقة 1: المعرفة والمهارات
+    var card1 = document.createElement('div');
+    card1.className = 'air-formula-card';
+    card1.innerHTML = '<span class="fc-label">' + (LANG === 'ar' ? 'المعرفة والمهارات' : 'Knowledge & Skills') + '</span>'
+      + '<span class="fc-value" style="color:' + rawColor + '">' + rawPct + '%</span>'
+      + '<div class="fc-bar"><div class="fc-bar-fill ' + rawFillClass + '" style="width:' + rawPct + '%"></div></div>';
+    container.appendChild(card1);
 
-    if (hasSpecialty) {
-      barData.push({
-        name: LANG === 'ar' ? 'الوعي التخصصي' : 'Specialty Awareness',
-        pct: Math.round(r.axes.specialty),
-        note: ''
-      });
-    } else {
-      barData.push({
-        name: LANG === 'ar' ? 'الوعي التخصصي' : 'Specialty Awareness',
-        pct: 0,
-        note: LANG === 'ar' ? '(لم تُختر أسئلة تخصصية)' : '(no specialty selected)'
-      });
-    }
+    // عامل ×
+    var op1 = document.createElement('span');
+    op1.className = 'air-formula-operator';
+    op1.textContent = '×';
+    container.appendChild(op1);
 
-    // بناء الأعمدة
-    for (var i = 0; i < barData.length; i++) {
-      var d = barData[i];
-      var fillClass = d.pct >= 70 ? 'strong' : (d.pct >= 40 ? 'medium' : 'weak');
-      var colorClass = d.pct >= 70 ? 'var(--success)' : (d.pct >= 40 ? 'var(--warning)' : 'var(--error)');
+    // بطاقة 2: معامل المرونة
+    var card2 = document.createElement('div');
+    card2.className = 'air-formula-card';
+    card2.innerHTML = '<span class="fc-label">' + (LANG === 'ar' ? 'معامل المرونة' : 'Flexibility Multiplier') + '</span>'
+      + '<span class="fc-value" style="color:' + flexColor + '">' + r.multiplier + 'x</span>';
+    container.appendChild(card2);
 
-      var row = document.createElement('div');
-      row.className = 'air-formula-bar-row';
-      row.innerHTML = '<div class="air-formula-bar-header">'
-        + '<span class="air-formula-bar-name">' + d.name
-        + (d.note ? ' <span class="air-formula-bar-note">' + d.note + '</span>' : '')
-        + '</span>'
-        + '<span class="air-formula-bar-pct" style="color:' + colorClass + '">' + d.pct + '%</span>'
-        + '</div>'
-        + '<div class="air-formula-bar-track">'
-        + '<div class="air-formula-bar-fill ' + fillClass + '" style="width:' + d.pct + '%"></div>'
-        + '</div>';
-      barsContainer.appendChild(row);
-    }
+    // عامل =
+    var op2 = document.createElement('span');
+    op2.className = 'air-formula-operator';
+    op2.textContent = '=';
+    container.appendChild(op2);
 
-    // خط فاصل
-    var divider = document.createElement('hr');
-    divider.className = 'air-formula-divider';
-    summaryContainer.appendChild(divider);
-
-    // المعرفة والمهارات (rawScore)
-    var rawLabel = LANG === 'ar' ? 'المعرفة والمهارات' : 'Knowledge & Skills';
-    summaryContainer.innerHTML += '<div class="air-formula-summary-row">'
-      + '<span class="label">' + rawLabel + '</span>'
-      + '<span class="value">' + Math.round(r.rawScore) + '%</span></div>';
-
-    // معامل المرونة
-    var flexLabel = LANG === 'ar' ? 'معامل المرونة' : 'Flexibility Multiplier';
-    var flexClass = r.multiplier > 1 ? ' flex-boost' : (r.multiplier < 1 ? ' flex-drop' : ' flex-neutral');
-    summaryContainer.innerHTML += '<div class="air-formula-summary-row' + flexClass + '">'
-      + '<span class="label">× ' + flexLabel + '</span>'
-      + '<span class="value">×' + r.multiplier + '</span></div>';
-
-    // الناتج النهائي
-    var totalLabel = LANG === 'ar' ? 'الجاهزية الكلية' : 'Overall Readiness';
-    summaryContainer.innerHTML += '<div class="air-formula-summary-row total">'
-      + '<span class="label">= ' + totalLabel + '</span>'
-      + '<span class="value">' + r.finalScore + '</span></div>';
+    // بطاقة 3: الجاهزية الكلية
+    var card3 = document.createElement('div');
+    card3.className = 'air-formula-card card-total';
+    card3.innerHTML = '<span class="fc-label">' + (LANG === 'ar' ? 'الجاهزية الكلية' : 'Overall Readiness') + '</span>'
+      + '<span class="fc-value">' + r.finalScore + '</span>';
+    container.appendChild(card3);
   }
 
   // ─── التوصيات ───
 
-  function renderRecommendations(r) {
+  async function loadAndRenderRecommendations(r) {
     var container = $('rec-cards');
     if (!container) return;
     container.innerHTML = '';
 
-    var recIcons = { knowledge: '📚', practice: '🔧', flexibility: '🧠', specialty: '🎯' };
-    var recs = [];
+    var data = await loadJSON('recommendations.json');
+    if (!data) return;
 
-    if (r.axes.knowledge < 50) {
-      recs.push({ type: 'knowledge',
-        title: LANG === 'ar' ? 'تعلّم الأساسيات' : 'Learn the Basics',
-        text: LANG === 'ar'
-          ? 'ابدأ بفهم مبادئ الذكاء الاصطناعي والتعلم الآلي. جرّب دورات مجانية على Coursera أو YouTube.'
-          : 'Start by understanding AI and machine learning principles. Try free courses on Coursera or YouTube.'
-      });
-    }
+    var colorMap = { blue: 'knowledge', green: 'practice', purple: 'flexibility', orange: 'specialty', gold: 'knowledge' };
+    var keys = [];
 
-    if (r.axes.practice < 50) {
-      recs.push({ type: 'practice',
-        title: LANG === 'ar' ? 'جرّب الأدوات عملياً' : 'Try Tools Hands-on',
-        text: LANG === 'ar'
-          ? 'استخدم ChatGPT أو Claude في مهمة عمل حقيقية هذا الأسبوع. التعلم بالممارسة أسرع من القراءة.'
-          : 'Use ChatGPT or Claude for a real work task this week. Learning by doing is faster than reading.'
-      });
-    }
+    if (r.axes.knowledge < 50) keys.push('knowledge_low');
+    if (r.axes.practice < 50) keys.push('practice_low');
+    if (r.multiplier < 1) keys.push('flexibility_low');
+    if (r.axes.specialty < 50 && r.selectedSpecialties.length > 0) keys.push('specialty_low');
+    if (keys.length === 0) keys.push('all_high');
 
-    if (r.multiplier < 1) {
-      recs.push({ type: 'flexibility',
-        title: LANG === 'ar' ? 'انفتح على التغيير' : 'Embrace Change',
-        text: LANG === 'ar'
-          ? 'المقاومة طبيعية لكنها مكلفة. جرّب أداة AI واحدة لمدة أسبوع بذهن مفتوح — النتائج ستفاجئك.'
-          : 'Resistance is natural but costly. Try one AI tool for a week with an open mind — the results will surprise you.'
-      });
-    }
+    for (var k = 0; k < keys.length; k++) {
+      var rec = data[keys[k]];
+      if (!rec) continue;
+      var items = rec.items[LANG] || rec.items['ar'] || [];
+      // اختر 2 عشوائياً
+      var picked = pickRandom(items, 2);
+      var cardType = colorMap[rec.color] || 'knowledge';
 
-    if (r.axes.specialty < 50 && r.selectedSpecialties.length > 0) {
-      recs.push({ type: 'specialty',
-        title: LANG === 'ar' ? 'استكشف AI في تخصصك' : 'Explore AI in Your Field',
-        text: LANG === 'ar'
-          ? 'ابحث عن أدوات ذكاء اصطناعي مصممة لتخصصك. الفرص متزايدة والمتخصصون الذين يتبنون AI مبكراً يتفوقون.'
-          : 'Look for AI tools designed for your specialty. Opportunities are growing and early AI adopters in your field gain a competitive edge.'
-      });
-    }
-
-    if (recs.length === 0) {
-      recs.push({ type: 'knowledge',
-        title: LANG === 'ar' ? 'شارك وقُد' : 'Lead & Share',
-        text: LANG === 'ar'
-          ? 'أنت في موقع ممتاز! شارك معرفتك مع زملائك وساعد فريقك في تبني الذكاء الاصطناعي.'
-          : 'You\'re in an excellent position! Share your knowledge with colleagues and help your team adopt AI.'
-      });
-    }
-
-    for (var i = 0; i < recs.length; i++) {
-      var rc = recs[i];
       var card = document.createElement('div');
-      card.className = 'air-rec-card ' + rc.type;
-      card.innerHTML = '<div class="air-rec-icon">' + (recIcons[rc.type] || '📋') + '</div>'
-        + '<div class="air-rec-content"><h4>' + rc.title + '</h4><p>' + rc.text + '</p></div>';
+      card.className = 'air-rec-card ' + cardType;
+      var itemsHtml = picked.map(function(txt) { return '<li>' + txt + '</li>'; }).join('');
+      card.innerHTML = '<div class="air-rec-icon">' + rec.icon + '</div>'
+        + '<div class="air-rec-content"><h4>' + t(rec.title) + '</h4><ul style="margin:4px 0 0;padding-inline-start:16px;font-size:0.83rem;color:var(--text-secondary);line-height:1.7">' + itemsHtml + '</ul></div>';
       container.appendChild(card);
     }
   }
 
   // ─── هل تعلم؟ ───
 
-  function renderFacts(level) {
+  async function loadAndRenderFacts(level) {
     var container = $('facts-cards');
     if (!container) return;
     container.innerHTML = '';
 
-    var facts = [];
-    if (level === 'beginner' || level === 'at-risk') {
-      facts = [
-        { ar: '80% من الوظائف ستتغير بسبب AI خلال 10 سنوات — لكن أغلبها سيتطور وليس يختفي.', en: '80% of jobs will change because of AI in the next 10 years — but most will evolve, not disappear.' },
-        { ar: 'تعلّم أساسيات AI يحتاج 20 دقيقة يومياً فقط لمدة شهر.', en: 'Learning AI basics only takes 20 minutes a day for a month.' }
-      ];
-    } else if (level === 'aware' || level === 'advanced') {
-      facts = [
-        { ar: 'الشركات التي تتبنى AI تحقق إنتاجية أعلى بـ 40% في المتوسط.', en: 'Companies adopting AI achieve 40% higher productivity on average.' },
-        { ar: 'مهارة هندسة الأوامر (Prompt Engineering) من أسرع المهارات نمواً في سوق العمل.', en: 'Prompt Engineering is one of the fastest-growing skills in the job market.' }
-      ];
-    } else {
-      facts = [
-        { ar: '5% فقط من المهنيين وصلوا لهذا المستوى — أنت في موقع لقيادة التحول في مؤسستك.', en: 'Only 5% of professionals reach this level — you\'re positioned to lead the transformation in your organization.' },
-        { ar: 'الخطوة التالية: شارك معرفتك مع فريقك. القائد الحقيقي يرفع مستوى من حوله.', en: 'Next step: share your knowledge with your team. A true leader elevates those around them.' }
-      ];
-    }
+    var data = await loadJSON('tips.json');
+    if (!data) return;
 
-    for (var i = 0; i < facts.length; i++) {
+    var tips = data[level];
+    if (!tips) tips = data['beginner'];
+
+    var items = tips[LANG] || tips['ar'] || [];
+    var picked = pickRandom(items, 3);
+
+    for (var i = 0; i < picked.length; i++) {
       var card = document.createElement('div');
       card.className = 'air-fact-card';
-      card.innerHTML = '<span class="air-fact-icon">💡</span><span class="air-fact-text">' + facts[i][LANG] + '</span>';
+      card.innerHTML = '<span class="air-fact-icon">💡</span><span class="air-fact-text">' + picked[i] + '</span>';
       container.appendChild(card);
     }
   }
