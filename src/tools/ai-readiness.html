@@ -348,6 +348,10 @@
   overflow: hidden;
 }
 
+.air-question-card.time-warning {
+  animation: airPulse 1s ease infinite;
+}
+
 .air-question-card.time-up {
   animation: airFlash 0.5s ease 2;
 }
@@ -2059,9 +2063,10 @@
       allAnswers = [];
       currentQuestionIndex = 0;
       showScreen('screen-quiz');
+      startGlobalTimer();
       renderCurrentQuestion();
 
-      console.log('[AI Readiness] Phase 1 started — General questions');
+      console.log('[AI Readiness] Phase 1 started — General questions (' + selectedDuration + ' min)');
 
     } catch (e) {
       console.error('[AI Readiness] Error:', e);
@@ -2080,6 +2085,7 @@
   var currentQuestionIndex = 0;
   var currentAnswer = null;
   var questionStartTime = 0;
+  var questionTimedOut = false;
 
   // matching state
   var matchSelectedLeft = null;
@@ -2088,6 +2094,232 @@
 
   // sorting state
   var dragSrcIndex = null;
+
+  // ─── نظام التوقيت ───
+
+  var QUESTION_TIME = {
+    mcq: 30,
+    true_false: 30,
+    fill_blank: 25,
+    matching: 45,
+    sorting: 45,
+    self_assessment: 0
+  };
+
+  // مؤقت السؤال الفردي
+  var questionTimerInterval = null;
+  var questionTimeLeft = 0;
+  var questionTimeTotal = 0;
+
+  // مؤقت إجمالي
+  var globalTimerInterval = null;
+  var globalTimeLeft = 0; // بالثواني
+  var globalTimerPaused = false;
+
+  function startQuestionTimer(seconds) {
+    stopQuestionTimer();
+    if (!seconds || seconds <= 0) {
+      // self_assessment — إخفاء شريط المؤقت
+      var bar = $('timer-question-bar');
+      if (bar) bar.style.display = 'none';
+      return;
+    }
+
+    questionTimeLeft = seconds;
+    questionTimeTotal = seconds;
+    questionTimedOut = false;
+
+    var bar = $('timer-question-bar');
+    var fill = $('timer-question-fill');
+    if (bar) bar.style.display = '';
+    if (fill) {
+      fill.style.width = '100%';
+      fill.classList.remove('warning', 'danger');
+      fill.style.transition = 'none';
+      // Force reflow then set transition
+      fill.offsetWidth;
+      fill.style.transition = 'width 1s linear, background 0.3s';
+    }
+
+    questionTimerInterval = setInterval(function() {
+      questionTimeLeft--;
+
+      // تحديث الشريط
+      if (fill) {
+        var pct = (questionTimeLeft / questionTimeTotal) * 100;
+        fill.style.width = pct + '%';
+
+        // آخر 5 ثوانٍ — تحذير
+        if (questionTimeLeft <= 5 && questionTimeLeft > 0) {
+          fill.classList.add('warning');
+          var card = $('question-card');
+          if (card) card.classList.add('time-warning');
+        }
+      }
+
+      if (questionTimeLeft <= 0) {
+        onQuestionTimeUp();
+      }
+    }, 1000);
+  }
+
+  function stopQuestionTimer() {
+    if (questionTimerInterval) {
+      clearInterval(questionTimerInterval);
+      questionTimerInterval = null;
+    }
+    var card = $('question-card');
+    if (card) card.classList.remove('time-warning');
+    var fill = $('timer-question-fill');
+    if (fill) fill.classList.remove('warning', 'danger');
+  }
+
+  function onQuestionTimeUp() {
+    stopQuestionTimer();
+    questionTimedOut = true;
+
+    // صفّر الشريط
+    var fill = $('timer-question-fill');
+    if (fill) {
+      fill.style.width = '0%';
+      fill.classList.add('danger');
+    }
+
+    // تأثير بصري على البطاقة
+    var card = $('question-card');
+    if (card) card.classList.add('time-up');
+
+    // إظهار رسالة انتهاء الوقت
+    var overlay = $('timeup-overlay');
+    if (overlay) overlay.style.display = '';
+
+    // تعطيل عناصر الإجابة
+    disableAnswerInputs();
+
+    // تفعيل زر التالي
+    enableNext();
+
+    console.log('[AI Readiness] Time up for question', quizQuestions[currentQuestionIndex].id);
+  }
+
+  function disableAnswerInputs() {
+    var container = $('question-container');
+    if (!container) return;
+
+    // تعطيل الأزرار
+    var buttons = container.querySelectorAll('button:not(#btn-next)');
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].disabled = true;
+      buttons[i].style.pointerEvents = 'none';
+    }
+
+    // تعطيل select
+    var selects = container.querySelectorAll('select');
+    for (var j = 0; j < selects.length; j++) {
+      selects[j].disabled = true;
+    }
+
+    // تعطيل السحب
+    var sortItems = container.querySelectorAll('.air-sorting-item');
+    for (var k = 0; k < sortItems.length; k++) {
+      sortItems[k].setAttribute('draggable', 'false');
+      sortItems[k].style.pointerEvents = 'none';
+    }
+
+    // تعطيل عناصر التوصيل
+    var matchItems = container.querySelectorAll('.air-matching-item');
+    for (var m = 0; m < matchItems.length; m++) {
+      matchItems[m].style.pointerEvents = 'none';
+    }
+  }
+
+  // ─── مؤقت إجمالي ───
+
+  function startGlobalTimer() {
+    stopGlobalTimer();
+    globalTimeLeft = selectedDuration * 60;
+    globalTimerPaused = false;
+    updateGlobalTimerDisplay();
+
+    globalTimerInterval = setInterval(function() {
+      if (globalTimerPaused) return;
+
+      globalTimeLeft--;
+      updateGlobalTimerDisplay();
+
+      if (globalTimeLeft <= 0) {
+        onGlobalTimeUp();
+      }
+    }, 1000);
+  }
+
+  function stopGlobalTimer() {
+    if (globalTimerInterval) {
+      clearInterval(globalTimerInterval);
+      globalTimerInterval = null;
+    }
+  }
+
+  function pauseGlobalTimer() {
+    globalTimerPaused = true;
+  }
+
+  function resumeGlobalTimer() {
+    globalTimerPaused = false;
+  }
+
+  function updateGlobalTimerDisplay() {
+    var el = $('timer-global');
+    if (!el) return;
+    var mins = Math.floor(Math.max(0, globalTimeLeft) / 60);
+    var secs = Math.max(0, globalTimeLeft) % 60;
+    el.textContent = (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
+
+    // تحذير بصري عندما يقل الوقت عن 60 ثانية
+    if (globalTimeLeft <= 60 && globalTimeLeft > 0) {
+      el.classList.add('warning');
+    } else if (globalTimeLeft <= 0) {
+      el.classList.add('danger');
+    } else {
+      el.classList.remove('warning', 'danger');
+    }
+  }
+
+  function onGlobalTimeUp() {
+    stopGlobalTimer();
+    stopQuestionTimer();
+
+    console.log('[AI Readiness] Global time up — ending assessment');
+
+    // سجّل السؤال الحالي كـ timed_out إذا لم يُجَب
+    if (currentPhase === 1 || currentPhase === 2) {
+      if (currentQuestionIndex < quizQuestions.length) {
+        var q = quizQuestions[currentQuestionIndex];
+        allAnswers.push({
+          question_id: q.id,
+          type: q.type,
+          user_answer: getAnswer(q),
+          time_taken: Math.round((Date.now() - questionStartTime) / 1000),
+          timed_out: true
+        });
+      }
+    }
+
+    // انتقل مباشرة للتقرير
+    currentPhase = 3;
+    showScreen('screen-report');
+    console.log('[AI Readiness] Total answers:', allAnswers.length);
+    // TODO: حساب النتائج وعرض التقرير
+  }
+
+  // ─── حماية الرفرش ───
+
+  window.addEventListener('beforeunload', function(e) {
+    if (currentPhase >= 1 && currentPhase < 3) {
+      e.preventDefault();
+      e.returnValue = '';
+    }
+  });
 
   // ─── عرض السؤال الحالي ───
 
@@ -2158,7 +2390,11 @@
       case 'self_assessment': renderSelfAssessment(q); break;
     }
 
-    console.log('[AI Readiness] Showing Q' + (currentQuestionIndex + 1) + ':', q.id, '(' + q.type + ')');
+    // بدء مؤقت السؤال
+    var timeLimit = QUESTION_TIME[q.type] || 0;
+    startQuestionTimer(timeLimit);
+
+    console.log('[AI Readiness] Showing Q' + (currentQuestionIndex + 1) + ':', q.id, '(' + q.type + ')', timeLimit > 0 ? timeLimit + 's' : 'no timer');
   }
 
   // ─── تفعيل زر التالي ───
@@ -2665,21 +2901,24 @@
     var answer = getAnswer(q);
     var timeTaken = Math.round((Date.now() - questionStartTime) / 1000);
 
+    // إيقاف المؤقت الفردي
+    stopQuestionTimer();
+
     // تخزين الإجابة
     allAnswers.push({
       question_id: q.id,
       type: q.type,
       user_answer: answer,
       time_taken: timeTaken,
-      timed_out: false
+      timed_out: questionTimedOut
     });
 
-    console.log('[AI Readiness] Answer saved:', q.id, '→', answer, '(' + timeTaken + 's)');
+    console.log('[AI Readiness] Answer saved:', q.id, '→', answer, '(' + timeTaken + 's' + (questionTimedOut ? ', TIMED OUT' : '') + ')');
 
+    questionTimedOut = false;
     currentQuestionIndex++;
 
     if (currentQuestionIndex < quizQuestions.length) {
-      // السؤال التالي
       renderCurrentQuestion();
     } else {
       onPhaseEnd();
@@ -2689,15 +2928,19 @@
   // ─── انتهاء المرحلة ───
 
   function onPhaseEnd() {
+    stopQuestionTimer();
+
     if (currentPhase === 1) {
       // انتهت الأسئلة العامة → شاشة اختيار التخصص
       console.log('[AI Readiness] Phase 1 complete — moving to specialty selection');
       currentPhase = 1.5;
+      pauseGlobalTimer();
       showScreen('screen-specialty');
     } else if (currentPhase === 2) {
       // انتهت الأسئلة التخصصية → التقرير
       console.log('[AI Readiness] Phase 2 complete — generating report');
       console.log('[AI Readiness] Total answers:', allAnswers.length);
+      stopGlobalTimer();
       currentPhase = 3;
       showScreen('screen-report');
       // TODO: حساب النتائج وعرض التقرير
