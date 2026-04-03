@@ -991,79 +991,44 @@
 
 /* === Report Screen === */
 
-/* -- Gauge (Circular Score) -- */
-.air-report-header {
-  text-align: center;
-  margin-bottom: 32px;
+/* -- Report Sections -- */
+.air-report-section {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 20px;
 }
 
-.air-gauge-wrap {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 16px;
-}
-
-.air-gauge-svg {
-  width: 200px;
-  height: 120px;
-}
-
-.air-gauge-bg {
-  fill: none;
-  stroke: var(--bg-tertiary);
-  stroke-width: 10;
-}
-
-.air-gauge-fill {
-  fill: none;
-  stroke-width: 10;
-  stroke-linecap: round;
-  transition: stroke-dashoffset 1.5s ease, stroke 0.5s ease;
-}
-
-.air-gauge-score {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.air-gauge-number {
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  line-height: 1;
-}
-
-.air-gauge-max {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-.air-level-badge {
-  display: inline-block;
-  padding: 6px 20px;
-  border-radius: 20px;
+.air-report-section h3 {
+  font-size: 1.1rem;
   font-weight: 700;
-  font-size: 0.95rem;
-  color: white;
-  margin-bottom: 12px;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.air-level-badge.pioneer { background: var(--level-pioneer); }
-.air-level-badge.advanced { background: var(--level-advanced); }
-.air-level-badge.aware { background: var(--level-aware); }
-.air-level-badge.beginner { background: var(--level-beginner); }
-.air-level-badge.at-risk { background: var(--level-at-risk); }
+/* -- Summary Section (Hero) -- */
+.air-report-summary {
+  border: none;
+  position: relative;
+  overflow: hidden;
+  padding: 32px;
+}
 
-.air-summary-text {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  max-width: 600px;
-  margin: 0 auto;
+.air-report-summary.level-pioneer { background: linear-gradient(135deg, rgba(34,197,94,0.12), rgba(34,197,94,0.03)); border: 1px solid rgba(34,197,94,0.2); }
+.air-report-summary.level-advanced { background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(59,130,246,0.03)); border: 1px solid rgba(59,130,246,0.2); }
+.air-report-summary.level-aware { background: linear-gradient(135deg, rgba(245,158,11,0.12), rgba(245,158,11,0.03)); border: 1px solid rgba(245,158,11,0.2); }
+.air-report-summary.level-beginner { background: linear-gradient(135deg, rgba(217,119,6,0.12), rgba(217,119,6,0.03)); border: 1px solid rgba(217,119,6,0.2); }
+.air-report-summary.level-at-risk { background: linear-gradient(135deg, rgba(239,68,68,0.12), rgba(239,68,68,0.03)); border: 1px solid rgba(239,68,68,0.2); }
+
+.air-report-user-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .air-summary-layout {
@@ -1071,7 +1036,6 @@
   grid-template-columns: 1fr 1fr;
   gap: 32px;
   align-items: center;
-  margin-top: 20px;
 }
 
 .air-summary-info {
@@ -1080,30 +1044,128 @@
 
 .air-summary-gauge {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 8px;
 }
 
-.air-summary-gauge .air-gauge-wrap {
+/* -- Gauge (Circular Score) -- */
+.air-gauge-wrap {
+  position: relative;
+  width: 220px;
+  height: 140px;
   margin: 0;
 }
 
-/* -- Report Sections -- */
-.air-report-section {
-  background: var(--bg-secondary);
-  border-radius: 16px;
-  padding: 24px;
-  margin-bottom: 20px;
+.air-gauge-svg {
+  width: 220px;
+  height: 130px;
 }
 
-.air-report-section h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 16px;
-  display: flex;
+.air-gauge-bg {
+  fill: none;
+  stroke: var(--bg-tertiary);
+  stroke-width: 14;
+}
+
+.air-gauge-fill {
+  fill: none;
+  stroke-width: 14;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.5s ease, stroke 0.5s ease;
+}
+
+.air-gauge-tick {
+  stroke: var(--text-muted);
+  stroke-width: 1.5;
+}
+
+.air-gauge-tick-label {
+  font-size: 8px;
+  fill: var(--text-muted);
+  font-family: inherit;
+}
+
+.air-gauge-score {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.air-gauge-number {
+  font-size: 3.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-primary), #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.air-gauge-max {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+/* -- Level Badge -- */
+.air-level-badge {
+  display: inline-flex;
   align-items: center;
   gap: 8px;
+  padding: 10px 24px;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.air-level-badge.pioneer { background: var(--level-pioneer); }
+.air-level-badge.advanced { background: var(--level-advanced); }
+.air-level-badge.aware { background: var(--level-aware); }
+.air-level-badge.beginner { background: var(--level-beginner); }
+.air-level-badge.at-risk { background: var(--level-at-risk); }
+
+.air-personal-summary p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* -- Quick Stats -- */
+.air-quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.air-stat-card {
+  background: var(--bg-primary);
+  border-radius: 12px;
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.air-stat-card .stat-icon {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+
+.air-stat-card .stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  line-height: 1.2;
+}
+
+.air-stat-card .stat-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 2px;
 }
 
 /* -- Axes Layout (Radar + Legend side by side) -- */
@@ -1142,7 +1204,7 @@
 .air-radar-svg .air-radar-area {
   fill: rgba(99, 102, 241, 0.2);
   stroke: var(--accent-primary);
-  stroke-width: 2;
+  stroke-width: 2.5;
   transition: all 0.5s ease;
 }
 
@@ -1158,48 +1220,88 @@
   fill: var(--chart-text);
 }
 
+/* -- Axis Legend Cards -- */
 .air-radar-legend {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-top: 0;
+  gap: 12px;
 }
 
-.air-radar-legend-item {
+.air-axis-card {
+  background: var(--bg-primary);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-inline-start: 4px solid var(--border-color);
+}
+
+.air-axis-card.knowledge { border-inline-start-color: var(--info); }
+.air-axis-card.practice { border-inline-start-color: var(--success); }
+.air-axis-card.flexibility { border-inline-start-color: var(--warning); }
+.air-axis-card.specialty { border-inline-start-color: var(--pink); }
+
+.air-axis-card-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  padding: 10px 14px;
-  background: var(--bg-primary);
-  border-radius: 10px;
+  justify-content: space-between;
+  gap: 8px;
 }
 
-.air-radar-legend-dot {
-  width: 10px;
-  height: 10px;
-  min-width: 10px;
-  border-radius: 50%;
+.air-axis-card-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
-.air-radar-legend-score {
-  font-weight: 700;
-  margin-inline-start: auto;
+.air-axis-card-icon {
+  font-size: 1rem;
+}
+
+.air-axis-card-pct {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.air-axis-card-bar {
+  height: 8px;
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.air-axis-card-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+.air-axis-card-bar-fill.strong { background: var(--success); }
+.air-axis-card-bar-fill.medium { background: var(--warning); }
+.air-axis-card-bar-fill.weak { background: var(--error); }
+
+.air-axis-card-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
 }
 
 /* -- Formula Section (Bar Breakdown) -- */
 .air-formula-bars {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   margin-bottom: 20px;
 }
 
 .air-formula-bar-row {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  padding: 14px 16px;
 }
 
 .air-formula-bar-header {
@@ -1207,6 +1309,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.88rem;
+  margin-bottom: 8px;
 }
 
 .air-formula-bar-name {
@@ -1216,25 +1319,25 @@
 
 .air-formula-bar-pct {
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .air-formula-bar-note {
-  font-size: 0.75rem;
+  font-size: 0.73rem;
   color: var(--text-muted);
   font-weight: 400;
 }
 
 .air-formula-bar-track {
-  height: 12px;
+  height: 10px;
   background: var(--bg-tertiary);
-  border-radius: 6px;
+  border-radius: 5px;
   overflow: hidden;
 }
 
 .air-formula-bar-fill {
   height: 100%;
-  border-radius: 6px;
+  border-radius: 5px;
   transition: width 1s ease;
 }
 
@@ -1251,7 +1354,7 @@
 .air-formula-summary {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .air-formula-summary-row {
@@ -1260,7 +1363,9 @@
   align-items: center;
   font-size: 0.9rem;
   color: var(--text-primary);
-  padding: 4px 0;
+  padding: 10px 16px;
+  background: var(--bg-primary);
+  border-radius: 10px;
 }
 
 .air-formula-summary-row .label {
@@ -1271,11 +1376,19 @@
   font-weight: 700;
 }
 
+.air-formula-summary-row.raw {
+  font-weight: 700;
+}
+
+.air-formula-summary-row.flex-boost .value { color: var(--success); }
+.air-formula-summary-row.flex-drop .value { color: var(--error); }
+.air-formula-summary-row.flex-neutral .value { color: var(--text-muted); }
+
 .air-formula-summary-row.total {
-  font-size: 1.1rem;
-  padding: 12px 16px;
+  font-size: 1.15rem;
+  padding: 14px 20px;
   background: var(--accent-gradient);
-  border-radius: 10px;
+  border-radius: 12px;
   color: white;
   margin-top: 4px;
 }
@@ -1286,7 +1399,7 @@
 }
 
 /* -- Recommendations -- */
-.air-recs {
+.air-rec-cards {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -1295,28 +1408,30 @@
 .air-rec-card {
   display: flex;
   gap: 14px;
-  padding: 16px;
+  padding: 18px;
   background: var(--bg-primary);
   border-radius: 12px;
   border-inline-start: 4px solid var(--accent-primary);
+  align-items: flex-start;
 }
 
 .air-rec-card.knowledge { border-inline-start-color: var(--info); }
 .air-rec-card.practice { border-inline-start-color: var(--success); }
-.air-rec-card.flexibility { border-inline-start-color: var(--accent-secondary); }
+.air-rec-card.flexibility { border-inline-start-color: var(--accent-dark); }
 .air-rec-card.specialty { border-inline-start-color: var(--warning); }
 
 .air-rec-icon {
-  font-size: 1.5rem;
-  min-width: 32px;
+  font-size: 1.6rem;
+  min-width: 36px;
   text-align: center;
+  line-height: 1;
 }
 
 .air-rec-content h4 {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .air-rec-content p {
@@ -1326,21 +1441,72 @@
   margin: 0;
 }
 
+/* -- Did You Know Section -- */
+.air-facts-section {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 20px;
+}
+
+.air-fact-card {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  align-items: flex-start;
+}
+
+.air-fact-card:last-child {
+  margin-bottom: 0;
+}
+
+.air-fact-icon {
+  font-size: 1.3rem;
+  min-width: 28px;
+  text-align: center;
+}
+
+.air-fact-text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* -- Restart Section -- */
+.air-restart-section {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.air-restart-section .air-restart-motivational {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto 20px;
+}
+
 /* -- Share & Restart Buttons -- */
 .air-report-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 12px;
-  margin-top: 8px;
+  margin-bottom: 20px;
 }
 
 .air-btn-share {
-  padding: 14px;
+  flex: 1;
+  padding: 16px;
   border: none;
   border-radius: 12px;
   background: var(--accent-gradient);
   color: white;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -1349,21 +1515,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .air-btn-share:hover {
   box-shadow: var(--btn-glow-hover);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+}
+
+.air-btn-share .air-btn-icon {
+  font-size: 1.2rem;
 }
 
 .air-btn-restart {
-  padding: 14px;
+  padding: 16px 28px;
   border: 2px solid var(--border-color);
   border-radius: 12px;
   background: var(--bg-primary);
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -1399,6 +1569,11 @@
 
   .air-summary-gauge {
     order: 1;
+  }
+
+  .air-quick-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
   }
 
   .air-axes-layout {
@@ -1437,41 +1612,30 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .air-radar-legend {
-    grid-template-columns: 1fr;
-  }
-
-  .air-formula-visual {
-    gap: 8px;
-  }
-
-  .air-formula-block,
-  .air-formula-result {
-    padding: 10px 12px;
-    min-width: 60px;
-  }
-
-  .air-formula-block .formula-value,
-  .air-formula-result .formula-value {
-    font-size: 1.1rem;
-  }
-
   .air-report-actions {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .air-report-section {
+    padding: 20px 16px;
+  }
+
+  .air-report-summary {
+    padding: 24px 16px;
   }
 
   .air-gauge-wrap {
-    width: 170px;
-    height: 170px;
+    width: 190px;
+    height: 120px;
   }
 
   .air-gauge-svg {
-    width: 170px;
-    height: 170px;
+    width: 190px;
+    height: 110px;
   }
 
   .air-gauge-number {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
   }
 }
 
@@ -1561,40 +1725,51 @@
   }
 
   .air-report-section {
-    padding: 18px 14px;
+    padding: 16px 12px;
+  }
+
+  .air-report-summary {
+    padding: 20px 12px;
+  }
+
+  .air-quick-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .air-stat-card {
+    padding: 10px 6px;
+  }
+
+  .air-stat-card .stat-value {
+    font-size: 1.1rem;
+  }
+
+  .air-stat-card .stat-label {
+    font-size: 0.65rem;
   }
 
   .air-rec-card {
-    flex-direction: column;
-    gap: 8px;
     padding: 14px;
   }
 
   .air-gauge-wrap {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 110px;
   }
 
   .air-gauge-svg {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 100px;
   }
 
   .air-gauge-number {
-    font-size: 2rem;
-  }
-
-  .air-formula-operator {
-    font-size: 1rem;
+    font-size: 2.2rem;
   }
 
   .air-self-option {
     padding: 12px 14px;
     font-size: 0.88rem;
-  }
-
-  .air-comparison-text {
-    font-size: 0.95rem;
   }
 
   .air-btn-next {
@@ -1809,9 +1984,8 @@
   <div class="air-screen" id="screen-report" style="display:none">
 
     <!-- القسم 1: ملخص النتيجة -->
-    <div class="air-report-section" id="report-summary">
-      <h2 class="air-report-title">{{tool.reportTitle}}</h2>
-      <p class="air-report-subtitle" id="report-subtitle">{{tool.reportSubtitle}}</p>
+    <div class="air-report-section air-report-summary" id="report-summary">
+      <h2 class="air-report-user-name" id="report-user-name" style="display:none"></h2>
 
       <div class="air-summary-layout">
         <!-- النص والتصنيف -->
@@ -1826,15 +2000,35 @@
         <!-- Gauge -->
         <div class="air-summary-gauge">
           <div class="air-gauge-wrap" id="gauge-wrap">
-            <svg class="air-gauge-svg" viewBox="0 0 200 120" id="gauge-svg">
-              <path class="air-gauge-bg" d="M20,100 A80,80 0 0,1 180,100" />
-              <path class="air-gauge-fill" d="M20,100 A80,80 0 0,1 180,100" id="gauge-fill" />
+            <svg class="air-gauge-svg" viewBox="0 0 220 130" id="gauge-svg">
+              <!-- Tick marks will be added by JS -->
+              <path class="air-gauge-bg" d="M20,110 A90,90 0 0,1 200,110" />
+              <path class="air-gauge-fill" d="M20,110 A90,90 0 0,1 200,110" id="gauge-fill" />
             </svg>
             <div class="air-gauge-score">
               <span class="air-gauge-number" id="gauge-number">0</span>
-              <span class="air-gauge-max">{{tool.scoreOf}} <span id="gauge-max">100</span></span>
+              <span class="air-gauge-max">/ 100</span>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- إحصائيات سريعة -->
+      <div class="air-quick-stats" id="quick-stats">
+        <div class="air-stat-card">
+          <div class="stat-icon">📝</div>
+          <div class="stat-value" id="stat-answered">0</div>
+          <div class="stat-label" id="stat-answered-label"></div>
+        </div>
+        <div class="air-stat-card">
+          <div class="stat-icon">⏱️</div>
+          <div class="stat-value" id="stat-time">0</div>
+          <div class="stat-label" id="stat-time-label"></div>
+        </div>
+        <div class="air-stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-value" id="stat-correct">0%</div>
+          <div class="stat-label" id="stat-correct-label"></div>
         </div>
       </div>
     </div>
@@ -1847,32 +2041,13 @@
         <!-- الرادار -->
         <div class="air-radar-wrap">
           <svg class="air-radar-svg" viewBox="0 0 300 300" id="radar-svg">
-            <!-- شبكة الرادار — تُرسم ديناميكياً -->
+            <!-- تُرسم ديناميكياً -->
           </svg>
         </div>
 
-        <!-- قائمة المحاور -->
+        <!-- بطاقات المحاور -->
         <div class="air-radar-legend" id="radar-legend">
-          <div class="air-radar-legend-item">
-            <span class="air-radar-legend-color" style="background:var(--info)"></span>
-            <span>{{tool.axisKnowledge}}</span>
-            <span class="air-radar-legend-value" id="axis-knowledge-val">0%</span>
-          </div>
-          <div class="air-radar-legend-item">
-            <span class="air-radar-legend-color" style="background:var(--success)"></span>
-            <span>{{tool.axisPractice}}</span>
-            <span class="air-radar-legend-value" id="axis-practice-val">0%</span>
-          </div>
-          <div class="air-radar-legend-item">
-            <span class="air-radar-legend-color" style="background:var(--warning)"></span>
-            <span>{{tool.axisFlexibility}}</span>
-            <span class="air-radar-legend-value" id="axis-flexibility-val">0%</span>
-          </div>
-          <div class="air-radar-legend-item" id="axis-specialty-item" style="display:none">
-            <span class="air-radar-legend-color" style="background:var(--pink)"></span>
-            <span>{{tool.axisSpecialty}}</span>
-            <span class="air-radar-legend-value" id="axis-specialty-val">0%</span>
-          </div>
+          <!-- تُملأ ديناميكياً -->
         </div>
       </div>
     </div>
@@ -1881,12 +2056,10 @@
     <div class="air-report-section" id="report-formula">
       <h3 class="air-section-title">{{tool.formulaTitle}}</h3>
 
-      <!-- أعمدة أفقية لكل محور -->
       <div class="air-formula-bars" id="formula-bars">
         <!-- تُملأ ديناميكياً -->
       </div>
 
-      <!-- الخلاصة -->
       <div class="air-formula-summary" id="formula-summary">
         <!-- تُملأ ديناميكياً -->
       </div>
@@ -1903,13 +2076,26 @@
     <!-- ad slot 2 -->
     <div id="ad-slot-report-mid" class="air-ad-slot"></div>
 
-    <!-- أزرار الإجراءات -->
+    <!-- القسم 5: هل تعلم؟ -->
+    <div class="air-facts-section" id="report-facts">
+      <h3 class="air-section-title">{{tool.factsTitle}}</h3>
+      <div id="facts-cards">
+        <!-- تُملأ ديناميكياً -->
+      </div>
+    </div>
+
+    <!-- أزرار المشاركة -->
     <div class="air-report-actions">
       <button class="air-btn-share" id="btn-share">
         <span class="air-btn-icon">📤</span>
         {{tool.shareBtn}}
       </button>
-      <button class="air-btn-restart" id="btn-restart">
+    </div>
+
+    <!-- قسم إعادة الاختبار -->
+    <div class="air-restart-section" id="report-restart">
+      <p class="air-restart-motivational" id="restart-motivational"></p>
+      <button class="air-btn-restart" id="btn-restart" style="margin:0 auto">
         <span class="air-btn-icon">🔄</span>
         {{tool.restartBtn}}
       </button>
@@ -3310,17 +3496,33 @@
   // ─── عرض التقرير ───
 
   function renderReport(r) {
-    // القسم 1: Gauge + التصنيف + الملخص
+    // خلفية متدرجة حسب التصنيف
+    var summaryEl = $('report-summary');
+    if (summaryEl) summaryEl.className = 'air-report-section air-report-summary level-' + r.classification.level;
+
+    // اسم المستخدم
+    var nameEl = $('report-user-name');
+    if (nameEl && r.userName) {
+      nameEl.textContent = LANG === 'ar'
+        ? 'تقرير جاهزية ' + r.userName
+        : r.userName + "'s Readiness Report";
+      nameEl.style.display = '';
+    }
+
+    // القسم 1: Gauge + التصنيف + الملخص + الإحصائيات
     renderGauge(r.finalScore, r.classification.level);
+    var levelIcons = { pioneer: '🚀', advanced: '⭐', aware: '💡', beginner: '📘', 'at-risk': '⚠️' };
     var badge = $('level-badge');
     if (badge) {
-      badge.textContent = r.classification[LANG];
+      badge.innerHTML = '<span>' + (levelIcons[r.classification.level] || '') + '</span> ' + r.classification[LANG];
       badge.className = 'air-level-badge ' + r.classification.level;
     }
     renderPersonalSummary(r);
+    renderQuickStats(r);
 
-    // القسم 2: Radar chart
+    // القسم 2: Radar chart + بطاقات المحاور
     renderRadar(r.axes, r.selectedSpecialties.length > 0);
+    renderAxisCards(r.axes, r.selectedSpecialties.length > 0);
 
     // القسم 3: المعادلة
     renderFormula(r);
@@ -3328,7 +3530,10 @@
     // القسم 4: التوصيات
     renderRecommendations(r);
 
-    // القسم 5: إعادة + مشاركة
+    // القسم 5: هل تعلم؟
+    renderFacts(r.classification.level);
+
+    // القسم 6: إعادة + مشاركة
     initReportActions(r);
   }
 
@@ -3338,8 +3543,9 @@
     var gaugeNum = $('gauge-number');
     if (gaugeNum) gaugeNum.textContent = score;
 
+    var svg = $('gauge-svg');
     var fill = $('gauge-fill');
-    if (!fill) return;
+    if (!fill || !svg) return;
 
     var colors = {
       'pioneer': 'var(--success)',
@@ -3350,23 +3556,85 @@
     };
     fill.style.stroke = colors[level] || 'var(--info)';
 
-    // حساب طول القوس: المسار هو نصف دائرة بنصف قطر 80
-    var totalLen = Math.PI * 80;
+    // Tick marks at 0, 25, 50, 75, 100
+    var cx = 110, cy = 110, r = 90;
+    var ticks = [0, 25, 50, 75, 100];
+    for (var i = 0; i < ticks.length; i++) {
+      var pct = ticks[i] / 100;
+      var angle = Math.PI * (1 - pct);
+      var x1 = cx + (r - 8) * Math.cos(angle);
+      var y1 = cy - (r - 8) * Math.sin(angle);
+      var x2 = cx + (r + 4) * Math.cos(angle);
+      var y2 = cy - (r + 4) * Math.sin(angle);
+      var tick = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      tick.setAttribute('x1', Math.round(x1));
+      tick.setAttribute('y1', Math.round(y1));
+      tick.setAttribute('x2', Math.round(x2));
+      tick.setAttribute('y2', Math.round(y2));
+      tick.setAttribute('class', 'air-gauge-tick');
+      svg.insertBefore(tick, svg.firstChild);
+      // Label
+      var lx = cx + (r + 14) * Math.cos(angle);
+      var ly = cy - (r + 14) * Math.sin(angle);
+      var label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      label.setAttribute('x', Math.round(lx));
+      label.setAttribute('y', Math.round(ly));
+      label.setAttribute('text-anchor', 'middle');
+      label.setAttribute('dominant-baseline', 'middle');
+      label.setAttribute('class', 'air-gauge-tick-label');
+      label.textContent = ticks[i];
+      svg.insertBefore(label, svg.firstChild);
+    }
+
+    // Arc calculation: radius 90
+    var totalLen = Math.PI * r;
     var fillLen = (score / 100) * totalLen;
     fill.style.strokeDasharray = totalLen;
     fill.style.strokeDashoffset = totalLen - fillLen;
-    fill.style.strokeWidth = '12';
+    fill.style.strokeWidth = '14';
     fill.style.strokeLinecap = 'round';
     fill.style.fill = 'none';
     fill.style.transition = 'stroke-dashoffset 1.5s ease';
 
     var bg = fill.previousElementSibling;
-    if (bg) {
+    if (bg && bg.tagName === 'path') {
       bg.style.stroke = 'var(--border-color)';
-      bg.style.strokeWidth = '12';
+      bg.style.strokeWidth = '14';
       bg.style.fill = 'none';
       bg.style.strokeLinecap = 'round';
     }
+  }
+
+  // ─── إحصائيات سريعة ───
+
+  function renderQuickStats(r) {
+    // عدد الأسئلة المُجابة
+    var totalQ = r.answers ? r.answers.length : 0;
+    var answeredQ = 0;
+    var correctQ = 0;
+    for (var i = 0; i < totalQ; i++) {
+      if (r.answers[i].answer !== null && r.answers[i].answer !== undefined) answeredQ++;
+      if (r.answers[i].is_correct) correctQ++;
+    }
+
+    $('stat-answered').textContent = answeredQ + '/' + totalQ;
+    $('stat-answered-label').textContent = LANG === 'ar' ? 'أسئلة مُجابة' : 'Questions Answered';
+
+    // الوقت المستغرق
+    var totalSec = selectedDuration * 60;
+    var usedSec = totalSec - globalTimeLeft;
+    var usedMin = Math.max(1, Math.round(usedSec / 60));
+    $('stat-time').textContent = usedMin + (LANG === 'ar' ? ' د' : ' min');
+    $('stat-time-label').textContent = LANG === 'ar' ? 'الوقت المستغرق' : 'Time Used';
+
+    // نسبة الصحيحة
+    var scorableQ = 0;
+    for (var j = 0; j < totalQ; j++) {
+      if (r.answers[j].type !== 'self_assessment') scorableQ++;
+    }
+    var correctPct = scorableQ > 0 ? Math.round((correctQ / scorableQ) * 100) : 0;
+    $('stat-correct').textContent = correctPct + '%';
+    $('stat-correct-label').textContent = LANG === 'ar' ? 'إجابات صحيحة' : 'Correct Answers';
   }
 
   // ─── ملخص شخصي ───
@@ -3383,7 +3651,6 @@
       specialty: LANG === 'ar' ? 'التخصص' : 'Specialty'
     };
 
-    // أعلى وأدنى محور
     var best = 'knowledge', worst = 'knowledge';
     var checkAxes = ['knowledge', 'practice', 'flexibility'];
     if (r.selectedSpecialties.length > 0) checkAxes.push('specialty');
@@ -3395,11 +3662,6 @@
     }
 
     var parts = [];
-    if (r.userName) {
-      parts.push(LANG === 'ar' ? r.userName + '،' : r.userName + ',');
-    }
-
-    // جملة المستوى
     if (r.finalScore >= 75) {
       parts.push(LANG === 'ar' ? 'أداؤك ممتاز!' : 'Excellent performance!');
     } else if (r.finalScore >= 60) {
@@ -3410,7 +3672,6 @@
       parts.push(LANG === 'ar' ? 'هناك فرصة كبيرة للتطور.' : 'There is great room for improvement.');
     }
 
-    // أقوى محور
     parts.push(LANG === 'ar'
       ? 'نقطة قوتك هي ' + axisNames[best] + ' (' + axes[best] + '%).'
       : 'Your strength is ' + axisNames[best] + ' (' + axes[best] + '%).');
@@ -3421,7 +3682,6 @@
         : 'You can improve ' + axisNames[worst] + ' (' + axes[worst] + '%).');
     }
 
-    // تعليق المرونة
     if (r.multiplier > 1) {
       parts.push(LANG === 'ar' ? 'مرونتك العالية ميزة حقيقية!' : 'Your high flexibility is a real advantage!');
     } else if (r.multiplier < 1) {
@@ -3429,6 +3689,54 @@
     }
 
     el.textContent = parts.join(' ');
+  }
+
+  // ─── بطاقات المحاور ───
+
+  function renderAxisCards(axes, hasSpecialty) {
+    var container = $('radar-legend');
+    if (!container) return;
+    container.innerHTML = '';
+
+    var axisData = [
+      { key: 'knowledge', icon: '🧠', color: 'var(--info)', cls: 'knowledge',
+        name: LANG === 'ar' ? 'المعرفة الأساسية' : 'Core Knowledge' },
+      { key: 'practice', icon: '🛠️', color: 'var(--success)', cls: 'practice',
+        name: LANG === 'ar' ? 'الممارسة الفعلية' : 'Practical Skills' },
+      { key: 'flexibility', icon: '🔄', color: 'var(--warning)', cls: 'flexibility',
+        name: LANG === 'ar' ? 'المرونة والانفتاح' : 'Flexibility & Openness' }
+    ];
+    if (hasSpecialty) {
+      axisData.push({ key: 'specialty', icon: '🎯', color: 'var(--pink)', cls: 'specialty',
+        name: LANG === 'ar' ? 'الوعي التخصصي' : 'Specialty Awareness' });
+    }
+
+    for (var i = 0; i < axisData.length; i++) {
+      var d = axisData[i];
+      var pct = Math.round(axes[d.key] || 0);
+      var fillClass = pct >= 70 ? 'strong' : (pct >= 40 ? 'medium' : 'weak');
+      var colorVar = pct >= 70 ? 'var(--success)' : (pct >= 40 ? 'var(--warning)' : 'var(--error)');
+
+      // وصف حسب المستوى
+      var desc;
+      if (pct >= 70) {
+        desc = LANG === 'ar' ? 'أداء قوي في هذا المحور' : 'Strong performance in this area';
+      } else if (pct >= 40) {
+        desc = LANG === 'ar' ? 'مستوى معقول مع مجال للتحسين' : 'Reasonable level with room to improve';
+      } else {
+        desc = LANG === 'ar' ? 'يحتاج اهتماماً عاجلاً' : 'Needs urgent attention';
+      }
+
+      var card = document.createElement('div');
+      card.className = 'air-axis-card ' + d.cls;
+      card.innerHTML = '<div class="air-axis-card-header">'
+        + '<span class="air-axis-card-name"><span class="air-axis-card-icon">' + d.icon + '</span> ' + d.name + '</span>'
+        + '<span class="air-axis-card-pct" style="color:' + colorVar + '">' + pct + '%</span>'
+        + '</div>'
+        + '<div class="air-axis-card-bar"><div class="air-axis-card-bar-fill ' + fillClass + '" style="width:' + pct + '%"></div></div>'
+        + '<div class="air-axis-card-desc">' + desc + '</div>';
+      container.appendChild(card);
+    }
   }
 
   // ─── Radar Chart SVG ───
@@ -3514,23 +3822,7 @@
       svg.appendChild(text);
     }
 
-    // Legend values
-    $('axis-knowledge-val').textContent = axes.knowledge + '%';
-    $('axis-practice-val').textContent = axes.practice + '%';
-    $('axis-flexibility-val').textContent = axes.flexibility + '%';
-    if (hasSpecialty) {
-      $('axis-specialty-item').style.display = '';
-      $('axis-specialty-val').textContent = axes.specialty + '%';
-    }
-
-    // ألوان حسب المستوى
-    var legendItems = $('radar-legend').querySelectorAll('.air-radar-legend-value');
-    for (var lv = 0; lv < legendItems.length; lv++) {
-      var val2 = parseInt(legendItems[lv].textContent);
-      if (val2 >= 70) legendItems[lv].style.color = 'var(--success)';
-      else if (val2 >= 40) legendItems[lv].style.color = 'var(--warning)';
-      else legendItems[lv].style.color = 'var(--error)';
-    }
+    // Legend values now handled by renderAxisCards()
   }
 
   // ─── المعادلة (أعمدة أفقية) ───
@@ -3599,7 +3891,8 @@
 
     // معامل المرونة
     var flexLabel = LANG === 'ar' ? 'معامل المرونة' : 'Flexibility Multiplier';
-    summaryContainer.innerHTML += '<div class="air-formula-summary-row">'
+    var flexClass = r.multiplier > 1 ? ' flex-boost' : (r.multiplier < 1 ? ' flex-drop' : ' flex-neutral');
+    summaryContainer.innerHTML += '<div class="air-formula-summary-row' + flexClass + '">'
       + '<span class="label">× ' + flexLabel + '</span>'
       + '<span class="value">×' + r.multiplier + '</span></div>';
 
@@ -3617,11 +3910,11 @@
     if (!container) return;
     container.innerHTML = '';
 
+    var recIcons = { knowledge: '📚', practice: '🔧', flexibility: '🧠', specialty: '🎯' };
     var recs = [];
 
     if (r.axes.knowledge < 50) {
-      recs.push({
-        type: 'knowledge',
+      recs.push({ type: 'knowledge',
         title: LANG === 'ar' ? 'تعلّم الأساسيات' : 'Learn the Basics',
         text: LANG === 'ar'
           ? 'ابدأ بفهم مبادئ الذكاء الاصطناعي والتعلم الآلي. جرّب دورات مجانية على Coursera أو YouTube.'
@@ -3630,8 +3923,7 @@
     }
 
     if (r.axes.practice < 50) {
-      recs.push({
-        type: 'practice',
+      recs.push({ type: 'practice',
         title: LANG === 'ar' ? 'جرّب الأدوات عملياً' : 'Try Tools Hands-on',
         text: LANG === 'ar'
           ? 'استخدم ChatGPT أو Claude في مهمة عمل حقيقية هذا الأسبوع. التعلم بالممارسة أسرع من القراءة.'
@@ -3640,8 +3932,7 @@
     }
 
     if (r.multiplier < 1) {
-      recs.push({
-        type: 'flexibility',
+      recs.push({ type: 'flexibility',
         title: LANG === 'ar' ? 'انفتح على التغيير' : 'Embrace Change',
         text: LANG === 'ar'
           ? 'المقاومة طبيعية لكنها مكلفة. جرّب أداة AI واحدة لمدة أسبوع بذهن مفتوح — النتائج ستفاجئك.'
@@ -3650,8 +3941,7 @@
     }
 
     if (r.axes.specialty < 50 && r.selectedSpecialties.length > 0) {
-      recs.push({
-        type: 'specialty',
+      recs.push({ type: 'specialty',
         title: LANG === 'ar' ? 'استكشف AI في تخصصك' : 'Explore AI in Your Field',
         text: LANG === 'ar'
           ? 'ابحث عن أدوات ذكاء اصطناعي مصممة لتخصصك. الفرص متزايدة والمتخصصون الذين يتبنون AI مبكراً يتفوقون.'
@@ -3659,10 +3949,8 @@
       });
     }
 
-    // إذا كل شيء مرتفع
     if (recs.length === 0) {
-      recs.push({
-        type: 'knowledge',
+      recs.push({ type: 'knowledge',
         title: LANG === 'ar' ? 'شارك وقُد' : 'Lead & Share',
         text: LANG === 'ar'
           ? 'أنت في موقع ممتاز! شارك معرفتك مع زملائك وساعد فريقك في تبني الذكاء الاصطناعي.'
@@ -3671,9 +3959,44 @@
     }
 
     for (var i = 0; i < recs.length; i++) {
+      var rc = recs[i];
       var card = document.createElement('div');
-      card.className = 'air-rec-card ' + recs[i].type;
-      card.innerHTML = '<h4>' + recs[i].title + '</h4><p>' + recs[i].text + '</p>';
+      card.className = 'air-rec-card ' + rc.type;
+      card.innerHTML = '<div class="air-rec-icon">' + (recIcons[rc.type] || '📋') + '</div>'
+        + '<div class="air-rec-content"><h4>' + rc.title + '</h4><p>' + rc.text + '</p></div>';
+      container.appendChild(card);
+    }
+  }
+
+  // ─── هل تعلم؟ ───
+
+  function renderFacts(level) {
+    var container = $('facts-cards');
+    if (!container) return;
+    container.innerHTML = '';
+
+    var facts = [];
+    if (level === 'beginner' || level === 'at-risk') {
+      facts = [
+        { ar: '80% من الوظائف ستتغير بسبب AI خلال 10 سنوات — لكن أغلبها سيتطور وليس يختفي.', en: '80% of jobs will change because of AI in the next 10 years — but most will evolve, not disappear.' },
+        { ar: 'تعلّم أساسيات AI يحتاج 20 دقيقة يومياً فقط لمدة شهر.', en: 'Learning AI basics only takes 20 minutes a day for a month.' }
+      ];
+    } else if (level === 'aware' || level === 'advanced') {
+      facts = [
+        { ar: 'الشركات التي تتبنى AI تحقق إنتاجية أعلى بـ 40% في المتوسط.', en: 'Companies adopting AI achieve 40% higher productivity on average.' },
+        { ar: 'مهارة هندسة الأوامر (Prompt Engineering) من أسرع المهارات نمواً في سوق العمل.', en: 'Prompt Engineering is one of the fastest-growing skills in the job market.' }
+      ];
+    } else {
+      facts = [
+        { ar: '5% فقط من المهنيين وصلوا لهذا المستوى — أنت في موقع لقيادة التحول في مؤسستك.', en: 'Only 5% of professionals reach this level — you\'re positioned to lead the transformation in your organization.' },
+        { ar: 'الخطوة التالية: شارك معرفتك مع فريقك. القائد الحقيقي يرفع مستوى من حوله.', en: 'Next step: share your knowledge with your team. A true leader elevates those around them.' }
+      ];
+    }
+
+    for (var i = 0; i < facts.length; i++) {
+      var card = document.createElement('div');
+      card.className = 'air-fact-card';
+      card.innerHTML = '<span class="air-fact-icon">💡</span><span class="air-fact-text">' + facts[i][LANG] + '</span>';
       container.appendChild(card);
     }
   }
@@ -3681,6 +4004,14 @@
   // ─── إجراءات التقرير ───
 
   function initReportActions(r) {
+    // نص تحفيزي لإعادة الاختبار
+    var motivEl = $('restart-motivational');
+    if (motivEl) {
+      motivEl.textContent = LANG === 'ar'
+        ? 'الجاهزية ليست ثابتة — طوّر مهاراتك وأعد الاختبار بعد شهر لترى تطوّرك!'
+        : "Readiness isn't fixed — develop your skills and retake the test in a month to see your progress!";
+    }
+
     // إعادة الاختبار
     var btnRestart = $('btn-restart');
     if (btnRestart) {
@@ -3689,21 +4020,78 @@
       });
     }
 
-    // مشاركة
+    // مشاركة (توليد صورة + نص)
     var btnShare = $('btn-share');
     if (btnShare) {
       btnShare.addEventListener('click', function() {
+        var levelIcons = { pioneer: '🚀', advanced: '⭐', aware: '💡', beginner: '📘', 'at-risk': '⚠️' };
+        var icon = levelIcons[r.classification.level] || '';
         var shareText = (LANG === 'ar'
-          ? 'حصلت على ' + r.finalScore + '/100 في تقييم الجاهزية للذكاء الاصطناعي — ' + r.classification.ar + '!'
-          : 'I scored ' + r.finalScore + '/100 on the AI Readiness Assessment — ' + r.classification.en + '!')
+          ? icon + ' حصلت على ' + r.finalScore + '/100 في تقييم الجاهزية للذكاء الاصطناعي — ' + r.classification.ar + '!'
+          : icon + ' I scored ' + r.finalScore + '/100 on the AI Readiness Assessment — ' + r.classification.en + '!')
           + '\n' + window.location.href.split('?')[0];
 
-        if (navigator.share) {
-          navigator.share({ title: r.classification[LANG], text: shareText }).catch(function() {});
-        } else {
-          navigator.clipboard.writeText(shareText).then(function() {
-            App.showToast(LANG === 'ar' ? 'تم النسخ!' : 'Copied!');
-          });
+        // محاولة توليد صورة
+        try {
+          var canvas = document.createElement('canvas');
+          canvas.width = 600;
+          canvas.height = 320;
+          var ctx = canvas.getContext('2d');
+
+          // خلفية
+          var grad = ctx.createLinearGradient(0, 0, 600, 320);
+          grad.addColorStop(0, '#4f46e5');
+          grad.addColorStop(1, '#7c3aed');
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, 600, 320);
+
+          // نص
+          ctx.fillStyle = '#fff';
+          ctx.textAlign = 'center';
+
+          if (r.userName) {
+            ctx.font = '600 20px sans-serif';
+            ctx.fillText(r.userName, 300, 50);
+          }
+
+          ctx.font = '800 72px sans-serif';
+          ctx.fillText(r.finalScore + '/100', 300, 140);
+
+          ctx.font = '700 28px sans-serif';
+          ctx.fillText(r.classification[LANG], 300, 190);
+
+          ctx.font = '400 16px sans-serif';
+          ctx.fillStyle = 'rgba(255,255,255,0.7)';
+          ctx.fillText(LANG === 'ar' ? 'تقييم الجاهزية للذكاء الاصطناعي' : 'AI Readiness Assessment', 300, 250);
+          ctx.fillText('udda.tools', 300, 280);
+
+          canvas.toBlob(function(blob) {
+            if (blob && navigator.share && navigator.canShare) {
+              var file = new File([blob], 'ai-readiness.png', { type: 'image/png' });
+              var shareData = { text: shareText, files: [file] };
+              if (navigator.canShare(shareData)) {
+                navigator.share(shareData).catch(function() {});
+                return;
+              }
+            }
+            // Fallback
+            if (navigator.share) {
+              navigator.share({ title: r.classification[LANG], text: shareText }).catch(function() {});
+            } else {
+              navigator.clipboard.writeText(shareText).then(function() {
+                App.showToast(LANG === 'ar' ? 'تم النسخ!' : 'Copied!');
+              });
+            }
+          }, 'image/png');
+        } catch (e) {
+          // Fallback for canvas errors
+          if (navigator.share) {
+            navigator.share({ title: r.classification[LANG], text: shareText }).catch(function() {});
+          } else {
+            navigator.clipboard.writeText(shareText).then(function() {
+              App.showToast(LANG === 'ar' ? 'تم النسخ!' : 'Copied!');
+            });
+          }
         }
       });
     }
