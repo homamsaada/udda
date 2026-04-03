@@ -854,8 +854,8 @@
 
 .air-specialty-card {
   display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  gap: 4px;
   padding: 8px 14px;
   border: 2px solid var(--border-color);
   border-radius: 10px;
@@ -868,6 +868,17 @@
   width: fit-content;
   position: relative;
   overflow: hidden;
+}
+
+.air-specialty-desc {
+  display: none;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.air-specialty-card.selected .air-specialty-desc {
+  display: block;
 }
 
 .air-specialty-card:hover {
@@ -4019,6 +4030,13 @@
         nameSpan.textContent = t(sec.name);
 
         card.appendChild(nameSpan);
+
+        if (sec.description) {
+          var descSpan = document.createElement('span');
+          descSpan.className = 'air-specialty-desc';
+          descSpan.textContent = t(sec.description);
+          card.appendChild(descSpan);
+        }
         card.addEventListener('click', function() {
           var isSelected = this.getAttribute('data-selected') === 'true';
           this.setAttribute('data-selected', isSelected ? 'false' : 'true');
