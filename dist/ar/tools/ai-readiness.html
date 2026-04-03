@@ -138,9 +138,6 @@
   --timer-bar: var(--accent-primary);
   --timer-warning: var(--warning);
   --timer-danger: var(--error);
-  --self-bg: rgba(139, 92, 246, 0.06);
-  --self-border: rgba(139, 92, 246, 0.2);
-  --self-accent: var(--accent-secondary);
   --matching-left: rgba(99, 102, 241, 0.08);
   --matching-right: rgba(34, 197, 94, 0.08);
   --matching-line: var(--accent-primary);
@@ -803,68 +800,6 @@
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--text-muted);
-}
-
-/* -- Self Assessment (Softer Design) -- */
-.air-question-card.self-assessment {
-  background: var(--self-bg);
-  border: 1px solid var(--self-border);
-}
-
-.air-question-card.self-assessment .air-question-text {
-  color: var(--text-primary);
-}
-
-.air-self-label {
-  font-size: 0.75rem;
-  color: var(--self-accent);
-  font-weight: 600;
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.air-self-options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.air-self-option {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 16px;
-  border: 1.5px solid var(--self-border);
-  border-radius: 12px;
-  background: var(--bg-secondary);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  font-size: 0.95rem;
-  color: var(--text-primary);
-  line-height: 1.5;
-}
-
-.air-self-option:hover {
-  border-color: var(--self-accent);
-  background: rgba(139, 92, 246, 0.06);
-}
-
-.air-self-option.selected {
-  border-color: var(--self-accent);
-  background: rgba(139, 92, 246, 0.12);
-  color: var(--accent-secondary);
-}
-
-.air-self-option .air-option-marker {
-  border-color: var(--self-border);
-}
-
-.air-self-option.selected .air-option-marker {
-  background: var(--self-accent);
-  border-color: var(--self-accent);
-  color: white;
 }
 
 /* -- Time Up Overlay -- */
@@ -1833,10 +1768,6 @@
     font-size: 2.2rem;
   }
 
-  .air-self-option {
-    padding: 12px 14px;
-    font-size: 0.88rem;
-  }
 
   .air-btn-next {
     padding: 12px 24px;
@@ -1987,11 +1918,6 @@
         <div class="air-sorting-wrap" id="options-sorting" style="display:none">
           <p class="air-sort-instruction">اسحب العناصر لترتيبها من الأعلى للأسفل</p>
           <div class="air-sorting-list" id="sorting-list"></div>
-        </div>
-
-        <!-- Self-assessment -->
-        <div class="air-self-wrap" id="options-self" style="display:none">
-          <div class="air-self-options" id="self-options"></div>
         </div>
 
         <!-- رسالة انتهاء الوقت -->
@@ -2666,11 +2592,10 @@
     var card = $('question-card');
     if (card) {
       card.className = 'air-question-card';
-      if (q.type === 'self_assessment') card.classList.add('self-assessment');
     }
 
     // إخفاء كل حاويات الأنواع
-    var typeContainers = ['options-mcq', 'options-tf', 'options-fill', 'options-matching', 'options-sorting', 'options-self'];
+    var typeContainers = ['options-mcq', 'options-tf', 'options-fill', 'options-matching', 'options-sorting'];
     for (var i = 0; i < typeContainers.length; i++) {
       var el = $(typeContainers[i]);
       if (el) el.style.display = 'none';
@@ -2683,7 +2608,7 @@
       case 'fill_blank': renderFillBlank(q); break;
       case 'matching': renderMatching(q); break;
       case 'sorting': renderSorting(q); break;
-      case 'self_assessment': renderSelfAssessment(q); break;
+      case 'self_assessment': renderMCQ(q); break;
     }
 
     // بدء مؤقت السؤال
@@ -3192,34 +3117,6 @@
     currentAnswer = [];
     for (var i = 0; i < items.length; i++) {
       currentAnswer.push(items[i].getAttribute('data-id'));
-    }
-  }
-
-  // ─── Self Assessment ───
-
-  function renderSelfAssessment(q) {
-    var container = $('options-self');
-    container.style.display = '';
-    container.innerHTML = '';
-
-    for (var i = 0; i < q.options.length; i++) {
-      var opt = q.options[i];
-      var btn = document.createElement('button');
-      btn.className = 'air-self-option';
-      btn.setAttribute('data-id', opt.id);
-      btn.innerHTML = '<span class="air-option-marker">' + opt.id.toUpperCase() + '</span><span>' + t(opt.text) + '</span>';
-      btn.addEventListener('click', (function(optId) {
-        return function() {
-          currentAnswer = optId;
-          var all = container.querySelectorAll('.air-self-option');
-          for (var j = 0; j < all.length; j++) {
-            all[j].classList.remove('selected');
-          }
-          this.classList.add('selected');
-          enableNext();
-        };
-      })(opt.id));
-      container.appendChild(btn);
     }
   }
 
