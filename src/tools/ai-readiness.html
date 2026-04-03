@@ -2941,16 +2941,277 @@
 
   // ─── إنهاء الاختبار ───
 
+  var assessmentResults = null;
+
   function finishAssessment() {
     stopGlobalTimer();
     stopQuestionTimer();
     currentPhase = 3;
 
+    // جمع كل الأسئلة المستخدمة (عامة + تخصصية)
+    var allUsedQuestions = generalQuestions.concat(specialtyQuestions);
+
+    assessmentResults = calculateResults(allAnswers, allUsedQuestions);
+
     console.log('[AI Readiness] Total answers:', allAnswers.length);
-    console.log('[AI Readiness] All answers:', JSON.parse(JSON.stringify(allAnswers)));
+    console.log('[AI Readiness] Results:', JSON.parse(JSON.stringify(assessmentResults)));
 
     showScreen('screen-report');
-    // TODO: حساب النتائج وعرض التقرير
+    // TODO: عرض التقرير بصرياً
+  }
+
+  // ─── محرك حساب الدرجات ───
+
+  function calculateResults(answers, questions) {
+    // بناء خريطة الأسئلة بالـ id
+    var qMap = {};
+    for (var i = 0; i < questions.length; i++) {
+      qMap[questions[i].id] = questions[i];
+    }
+
+    // حساب نقاط كل إجابة
+    var detailed = [];
+    var coreEarned = 0, coreMax = 0;
+    var culturalEarned = 0, culturalMax = 0;
+    var flexScores = [];
+
+    // حسب المحور
+    var axisEarned = { knowledge: 0, practice: 0 };
+    var axisMax = { knowledge: 0, practice: 0 };
+    var specEarned = 0, specMax = 0;
+
+    for (var a = 0; a < answers.length; a++) {
+      var ans = answers[a];
+      var q = qMap[ans.question_id];
+      if (!q) continue;
+
+      var earned = 0;
+      var maxPts = q.points || 0;
+      var isCorrect = null;
+      var correctAnswer = null;
+
+      if (ans.timed_out && q.type !== 'self_assessment') {
+        earned = 0;
+        isCorrect = false;
+      } else {
+        switch (q.type) {
+          case 'mcq':
+            earned = scoreMCQ(q, ans.user_answer);
+            // الإجابة الصحيحة = الخيار ذو أعلى درجة
+            var bestOpt = q.options.reduce(function(b, o) { return o.score > b.score ? o : b; }, q.options[0]);
+            correctAnswer = bestOpt.id;
+            isCorrect = earned >= maxPts;
+            break;
+
+          case 'true_false':
+            earned = scoreTrueFalse(q, ans.user_answer);
+            correctAnswer = q.correct_answer;
+            isCorrect = earned > 0;
+            break;
+
+          case 'fill_blank':
+            earned = scoreFillBlank(q, ans.user_answer);
+            correctAnswer = {};
+            if (q.blanks) {
+              for (var b = 0; b < q.blanks.length; b++) {
+                correctAnswer[q.blanks[b].id] = t(q.blanks[b].correct);
+              }
+            }
+            isCorrect = earned >= maxPts;
+            break;
+
+          case 'matching':
+            earned = scoreMatching(q, ans.user_answer);
+            correctAnswer = q.correct_pairs;
+            isCorrect = earned >= maxPts;
+            break;
+
+          case 'sorting':
+            earned = scoreSorting(q, ans.user_answer);
+            correctAnswer = q.correct_order;
+            isCorrect = earned >= maxPts;
+            break;
+
+          case 'self_assessment':
+            var flexScore = scoreSelfAssessment(q, ans.user_answer);
+            flexScores.push(flexScore);
+            earned = 0;
+            maxPts = 0;
+            isCorrect = null; // ليس صح/خطأ
+            break;
+        }
+      }
+
+      // تصنيف حسب الغرض
+      if (q.purpose === 'core') {
+        coreEarned += earned;
+        coreMax += maxPts;
+        // حسب المحور
+        if (q.axis === 'knowledge' || q.axis === 'practice') {
+          axisEarned[q.axis] = (axisEarned[q.axis] || 0) + earned;
+          axisMax[q.axis] = (axisMax[q.axis] || 0) + maxPts;
+        }
+      } else if (q.purpose === 'cultural') {
+        culturalEarned += earned;
+        culturalMax += maxPts;
+      }
+
+      // تخصصية (ليست من general)
+      if (q.id && q.id.indexOf('gen-') !== 0 && q.purpose === 'core') {
+        specEarned += earned;
+        specMax += maxPts;
+      }
+
+      detailed.push({
+        question_id: q.id,
+        type: q.type,
+        purpose: q.purpose,
+        axis: q.axis,
+        text: t(q.text),
+        user_answer: ans.user_answer,
+        correct_answer: correctAnswer,
+        earned: earned,
+        max: maxPts,
+        is_correct: isCorrect,
+        timed_out: ans.timed_out,
+        time_taken: ans.time_taken,
+        hint: t(q.hint_after)
+      });
+    }
+
+    // درجة المعرفة والمهارات (core %)
+    var rawScore = coreMax > 0 ? (coreEarned / coreMax) * 100 : 0;
+
+    // درجة الثقافة
+    var culturalScore = culturalMax > 0 ? (culturalEarned / culturalMax) * 100 : 0;
+
+    // معامل المرونة
+    var avgFlexScore = 3; // default neutral
+    if (flexScores.length > 0) {
+      var flexSum = 0;
+      for (var f = 0; f < flexScores.length; f++) flexSum += flexScores[f];
+      avgFlexScore = flexSum / flexScores.length;
+    }
+    var multiplier = getFlexibilityMultiplier(avgFlexScore);
+
+    // النتيجة النهائية
+    var finalScore = Math.min(100, Math.round(rawScore * multiplier));
+
+    // المحاور
+    var knowledgePct = axisMax.knowledge > 0 ? Math.round((axisEarned.knowledge / axisMax.knowledge) * 100) : 0;
+    var practicePct = axisMax.practice > 0 ? Math.round((axisEarned.practice / axisMax.practice) * 100) : 0;
+    var flexibilityPct = Math.round(((avgFlexScore - 1) / 4) * 100); // 1-5 → 0-100%
+    var specialtyPct = specMax > 0 ? Math.round((specEarned / specMax) * 100) : 0;
+
+    // التصنيف
+    var classification = getClassification(finalScore);
+
+    return {
+      finalScore: finalScore,
+      classification: classification,
+      multiplier: multiplier,
+      rawScore: Math.round(rawScore),
+      culturalScore: Math.round(culturalScore),
+      avgFlexScore: Math.round(avgFlexScore * 10) / 10,
+      coreEarned: coreEarned,
+      coreMax: coreMax,
+      culturalEarned: culturalEarned,
+      culturalMax: culturalMax,
+      axes: {
+        knowledge: knowledgePct,
+        practice: practicePct,
+        flexibility: flexibilityPct,
+        specialty: specialtyPct
+      },
+      userName: userName,
+      selectedSpecialties: selectedSpecialties,
+      answers: detailed
+    };
+  }
+
+  // ─── حساب نقاط كل نوع ───
+
+  function scoreMCQ(q, answer) {
+    if (!answer) return 0;
+    for (var i = 0; i < q.options.length; i++) {
+      if (q.options[i].id === answer) return q.options[i].score || 0;
+    }
+    return 0;
+  }
+
+  function scoreTrueFalse(q, answer) {
+    if (answer === null || answer === undefined) return 0;
+    return answer === q.correct_answer ? (q.points || 0) : 0;
+  }
+
+  function scoreFillBlank(q, answer) {
+    if (!answer || !q.blanks) return 0;
+    var total = q.blanks.length;
+    var correct = 0;
+    for (var i = 0; i < q.blanks.length; i++) {
+      var blank = q.blanks[i];
+      var userVal = answer[blank.id];
+      var correctVal = t(blank.correct);
+      if (userVal && userVal === correctVal) correct++;
+    }
+    return total > 0 ? (correct / total) * (q.points || 0) : 0;
+  }
+
+  function scoreMatching(q, answer) {
+    if (!answer || !q.correct_pairs) return 0;
+    var correct = 0;
+    for (var i = 0; i < q.correct_pairs.length; i++) {
+      var cp = q.correct_pairs[i];
+      for (var j = 0; j < answer.length; j++) {
+        if (answer[j].left === cp.left && answer[j].right === cp.right) {
+          correct++;
+          break;
+        }
+      }
+    }
+    var total = q.correct_pairs.length;
+    return total > 0 ? (correct / total) * (q.points || 0) : 0;
+  }
+
+  function scoreSorting(q, answer) {
+    if (!answer || !q.correct_order) return 0;
+    // عدد الأزواج المتجاورة الصحيحة
+    var pairs = 0;
+    var maxPairs = q.correct_order.length - 1;
+    for (var i = 0; i < answer.length - 1; i++) {
+      var posA = q.correct_order.indexOf(answer[i]);
+      var posB = q.correct_order.indexOf(answer[i + 1]);
+      if (posA !== -1 && posB !== -1 && posA < posB) pairs++;
+    }
+    return maxPairs > 0 ? (pairs / maxPairs) * (q.points || 0) : 0;
+  }
+
+  function scoreSelfAssessment(q, answer) {
+    if (!answer) return 3; // neutral default
+    for (var i = 0; i < q.options.length; i++) {
+      if (q.options[i].id === answer) return q.options[i].flexibility_score || 3;
+    }
+    return 3;
+  }
+
+  // ─── معامل المرونة ───
+
+  function getFlexibilityMultiplier(avgScore) {
+    if (avgScore <= 1.5) return 0.7;
+    if (avgScore <= 2.5) return 0.85;
+    if (avgScore <= 3.5) return 1.0;
+    if (avgScore <= 4.5) return 1.15;
+    return 1.3;
+  }
+
+  // ─── التصنيف ───
+
+  function getClassification(score) {
+    if (score >= 90) return { level: 'pioneer', ar: 'رائد رقمي', en: 'Digital Pioneer' };
+    if (score >= 75) return { level: 'advanced', ar: 'متقدم', en: 'Advanced' };
+    if (score >= 60) return { level: 'aware', ar: 'واعٍ', en: 'Aware' };
+    if (score >= 40) return { level: 'beginner', ar: 'مبتدئ', en: 'Beginner' };
+    return { level: 'at-risk', ar: 'في خطر', en: 'At Risk' };
   }
 
   // ─── شاشة اختيار التخصص ───
@@ -3103,6 +3364,9 @@
       var picked = pickRandom(allSpecQuestions[k].questions, count);
       specQuiz = specQuiz.concat(picked);
     }
+
+    // حفظ الأسئلة التخصصية للحساب لاحقاً
+    specialtyQuestions = specQuiz;
 
     // دمج بعض الأسئلة العامة المتبقية لكسر الرتابة
     var usedGeneralIds = {};
