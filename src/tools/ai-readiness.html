@@ -205,7 +205,7 @@
   border-color: var(--accent-primary);
 }
 
-.air-duration-card.active {
+.air-duration-card.selected {
   border-color: var(--accent-primary);
   background: rgba(99, 102, 241, 0.1);
   color: var(--accent-primary);
@@ -571,6 +571,7 @@
   grid-template-columns: 1fr auto 1fr;
   gap: 16px;
   align-items: start;
+  position: relative;
 }
 
 .air-matching-col {
@@ -627,11 +628,12 @@
 }
 
 .air-matching-lines svg {
-  width: 100%;
-  height: 100%;
   position: absolute;
   top: 0;
-  inset-inline-start: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: visible;
 }
 
 .air-matching-lines svg line {
@@ -866,24 +868,25 @@
 }
 
 .air-specialty-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .air-specialty-card {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
+  gap: 8px;
+  padding: 8px 14px;
   border: 2px solid var(--border-color);
   border-radius: 10px;
   background: var(--bg-primary);
   cursor: pointer;
   transition: all var(--transition-fast);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
   user-select: none;
+  width: fit-content;
 }
 
 .air-specialty-card:hover {
@@ -897,22 +900,59 @@
 }
 
 .air-specialty-check {
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.air-specialty-card .air-specialty-indicator {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
   border-radius: 6px;
   border: 2px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all var(--transition-fast);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: transparent;
 }
 
-.air-specialty-card.selected .air-specialty-check {
+.air-specialty-card.selected .air-specialty-indicator {
   background: var(--accent-primary);
   border-color: var(--accent-primary);
+  color: white;
+}
+
+.air-specialty-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.air-specialty-actions .air-btn-start {
+  flex: 1;
+}
+
+.air-btn-skip {
+  flex: 1;
+  padding: 14px;
+  border: 2px solid var(--error);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--error);
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.air-btn-skip:hover {
+  background: var(--error);
   color: white;
 }
 
@@ -2340,7 +2380,7 @@
 
     // إظهار رسالة انتهاء الوقت
     var overlay = $('timeup-overlay');
-    if (overlay) overlay.style.display = '';
+    if (overlay) overlay.style.display = 'flex';
 
     // تعطيل عناصر الإجابة
     disableAnswerInputs();
@@ -2378,6 +2418,33 @@
     var matchItems = container.querySelectorAll('.air-matching-item');
     for (var m = 0; m < matchItems.length; m++) {
       matchItems[m].style.pointerEvents = 'none';
+    }
+  }
+
+  function enableAnswerInputs() {
+    var container = $('question-container');
+    if (!container) return;
+
+    var buttons = container.querySelectorAll('button:not(#btn-next)');
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].disabled = false;
+      buttons[i].style.pointerEvents = '';
+    }
+
+    var selects = container.querySelectorAll('select');
+    for (var j = 0; j < selects.length; j++) {
+      selects[j].disabled = false;
+    }
+
+    var sortItems = container.querySelectorAll('.air-sorting-item');
+    for (var k = 0; k < sortItems.length; k++) {
+      sortItems[k].setAttribute('draggable', 'true');
+      sortItems[k].style.pointerEvents = '';
+    }
+
+    var matchItems = container.querySelectorAll('.air-matching-item');
+    for (var m = 0; m < matchItems.length; m++) {
+      matchItems[m].style.pointerEvents = '';
     }
   }
 
@@ -2506,9 +2573,20 @@
     var timeup = $('timeup-overlay');
     if (timeup) timeup.style.display = 'none';
 
-    // عرض نص السؤال
+    // إعادة تفعيل عناصر الإجابة (بعد timeout سابق)
+    enableAnswerInputs();
+
+    // عرض نص السؤال (إلا fill_blank يُعرض في حاويته)
     var questionText = $('question-text');
-    if (questionText) questionText.textContent = t(q.text);
+    if (questionText) {
+      if (q.type === 'fill_blank') {
+        questionText.style.display = 'none';
+        questionText.textContent = '';
+      } else {
+        questionText.style.display = '';
+        questionText.textContent = t(q.text);
+      }
+    }
 
     // تصنيف بطاقة السؤال
     var card = $('question-card');
@@ -2772,6 +2850,7 @@
     var rEl = $('matching-right').querySelector('[data-id="' + rightId + '"]');
     if (lEl) { lEl.classList.add('matched'); lEl.style.borderColor = color; lEl.style.backgroundColor = color + '18'; }
     if (rEl) { rEl.classList.add('matched'); rEl.style.borderColor = color; rEl.style.backgroundColor = color + '18'; }
+    drawMatchLines();
   }
 
   function clearMatchHighlight(leftId, rightId) {
@@ -2779,6 +2858,55 @@
     var rEl = $('matching-right').querySelector('[data-id="' + rightId + '"]');
     if (lEl) { lEl.classList.remove('matched'); lEl.style.borderColor = ''; lEl.style.backgroundColor = ''; }
     if (rEl) { rEl.classList.remove('matched'); rEl.style.borderColor = ''; rEl.style.backgroundColor = ''; }
+    drawMatchLines();
+  }
+
+  function drawMatchLines() {
+    var svg = $('matching-svg');
+    if (!svg) return;
+    svg.innerHTML = '';
+
+    var area = svg.closest('.air-matching-area');
+    if (!area) return;
+    var areaRect = area.getBoundingClientRect();
+
+    for (var i = 0; i < matchPairs.length; i++) {
+      var pair = matchPairs[i];
+      var lEl = $('matching-left').querySelector('[data-id="' + pair.left + '"]');
+      var rEl = $('matching-right').querySelector('[data-id="' + pair.right + '"]');
+      if (!lEl || !rEl) continue;
+
+      var lRect = lEl.getBoundingClientRect();
+      var rRect = rEl.getBoundingClientRect();
+
+      var isRTL = document.documentElement.dir === 'rtl' || LANG === 'ar';
+      var x1, x2;
+      if (isRTL) {
+        x1 = lRect.left - areaRect.left;
+        x2 = rRect.right - areaRect.left;
+      } else {
+        x1 = lRect.right - areaRect.left;
+        x2 = rRect.left - areaRect.left;
+      }
+      var y1 = lRect.top + lRect.height / 2 - areaRect.top;
+      var y2 = rRect.top + rRect.height / 2 - areaRect.top;
+
+      var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', x1);
+      line.setAttribute('y1', y1);
+      line.setAttribute('x2', x2);
+      line.setAttribute('y2', y2);
+      line.setAttribute('stroke', pair.color);
+      line.setAttribute('stroke-width', '2.5');
+      line.setAttribute('stroke-linecap', 'round');
+      svg.appendChild(line);
+    }
+
+    // تحديث حجم SVG
+    svg.setAttribute('width', area.offsetWidth);
+    svg.setAttribute('height', area.offsetHeight);
+    svg.style.width = area.offsetWidth + 'px';
+    svg.style.height = area.offsetHeight + 'px';
   }
 
   function updateMatchAnswer() {
@@ -2851,6 +2979,7 @@
     dragSrcIndex = getSortIndex(this);
     this.classList.add('dragging');
     e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', '');
   }
 
   function onDragOver(e) {
@@ -3885,11 +4014,16 @@
         cb.value = sec.id;
         cb.addEventListener('change', onSpecialtyChange);
 
+        var indicator = document.createElement('span');
+        indicator.className = 'air-specialty-indicator';
+        indicator.textContent = '✓';
+
         var nameSpan = document.createElement('span');
         nameSpan.className = 'air-specialty-name';
         nameSpan.textContent = t(sec.name);
 
         card.appendChild(cb);
+        card.appendChild(indicator);
         card.appendChild(nameSpan);
         grid.appendChild(card);
       }
