@@ -2397,10 +2397,7 @@
     }
 
     // انتقل مباشرة للتقرير
-    currentPhase = 3;
-    showScreen('screen-report');
-    console.log('[AI Readiness] Total answers:', allAnswers.length);
-    // TODO: حساب النتائج وعرض التقرير
+    finishAssessment();
   }
 
   // ─── حماية الرفرش ───
@@ -3022,28 +3019,240 @@
     stopQuestionTimer();
 
     if (currentPhase === 1) {
-      // انتهت الأسئلة العامة → شاشة اختيار التخصص
       console.log('[AI Readiness] Phase 1 complete — moving to specialty selection');
       currentPhase = 1.5;
       pauseGlobalTimer();
+      populateSpecialties();
       showScreen('screen-specialty');
     } else if (currentPhase === 2) {
-      // انتهت الأسئلة التخصصية → التقرير
       console.log('[AI Readiness] Phase 2 complete — generating report');
-      console.log('[AI Readiness] Total answers:', allAnswers.length);
-      stopGlobalTimer();
-      currentPhase = 3;
-      showScreen('screen-report');
-      // TODO: حساب النتائج وعرض التقرير
+      finishAssessment();
     }
   }
 
-  // ─── ربط زر التالي ───
+  // ─── إنهاء الاختبار ───
+
+  function finishAssessment() {
+    stopGlobalTimer();
+    stopQuestionTimer();
+    currentPhase = 3;
+
+    console.log('[AI Readiness] Total answers:', allAnswers.length);
+    console.log('[AI Readiness] All answers:', JSON.parse(JSON.stringify(allAnswers)));
+
+    showScreen('screen-report');
+    // TODO: حساب النتائج وعرض التقرير
+  }
+
+  // ─── شاشة اختيار التخصص ───
+
+  var selectedSpecialties = [];
+
+  function populateSpecialties() {
+    var container = $('specialties-list');
+    if (!container || !questionsIndex) return;
+    container.innerHTML = '';
+    selectedSpecialties = [];
+
+    // تجميع حسب الفئة
+    var categories = {};
+    var categoryOrder = [];
+    var sections = questionsIndex.sections || [];
+
+    for (var i = 0; i < sections.length; i++) {
+      var sec = sections[i];
+      if (sec.always_load || sec.id === 'general') continue;
+
+      var catName = t(sec.category) || (LANG === 'ar' ? 'أخرى' : 'Other');
+      if (!categories[catName]) {
+        categories[catName] = [];
+        categoryOrder.push(catName);
+      }
+      categories[catName].push(sec);
+    }
+
+    // بناء DOM
+    for (var c = 0; c < categoryOrder.length; c++) {
+      var cat = categoryOrder[c];
+      var group = document.createElement('div');
+      group.className = 'air-specialty-group';
+
+      var title = document.createElement('h3');
+      title.className = 'air-specialty-group-title';
+      title.textContent = cat;
+      group.appendChild(title);
+
+      var grid = document.createElement('div');
+      grid.className = 'air-specialty-grid';
+
+      var secs = categories[cat];
+      for (var s = 0; s < secs.length; s++) {
+        var sec = secs[s];
+        var card = document.createElement('label');
+        card.className = 'air-specialty-card';
+        card.setAttribute('data-id', sec.id);
+
+        var cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.className = 'air-specialty-check';
+        cb.value = sec.id;
+        cb.addEventListener('change', onSpecialtyChange);
+
+        var nameSpan = document.createElement('span');
+        nameSpan.className = 'air-specialty-name';
+        nameSpan.textContent = t(sec.name);
+
+        card.appendChild(cb);
+        card.appendChild(nameSpan);
+        grid.appendChild(card);
+      }
+
+      group.appendChild(grid);
+      container.appendChild(group);
+    }
+
+    // تعطيل زر الاستمرار مبدئياً
+    var btnContinue = $('btn-continue-specialty');
+    if (btnContinue) btnContinue.disabled = true;
+  }
+
+  function onSpecialtyChange() {
+    var checkboxes = document.querySelectorAll('.air-specialty-check');
+    selectedSpecialties = [];
+    for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked) {
+        selectedSpecialties.push(checkboxes[i].value);
+      }
+      // تلوين البطاقة
+      var card = checkboxes[i].closest('.air-specialty-card');
+      if (card) {
+        if (checkboxes[i].checked) card.classList.add('selected');
+        else card.classList.remove('selected');
+      }
+    }
+
+    var btnContinue = $('btn-continue-specialty');
+    if (btnContinue) btnContinue.disabled = selectedSpecialties.length === 0;
+  }
+
+  // ─── تحميل أسئلة التخصصات ───
+
+  async function loadSpecialtyQuestions() {
+    var btnContinue = $('btn-continue-specialty');
+    if (btnContinue) {
+      btnContinue.disabled = true;
+      btnContinue.textContent = LANG === 'ar' ? 'جارٍ التحميل...' : 'Loading...';
+    }
+
+    var sections = questionsIndex.sections || [];
+    var loadPromises = [];
+    var selectedSections = [];
+
+    for (var i = 0; i < sections.length; i++) {
+      if (selectedSpecialties.indexOf(sections[i].id) !== -1) {
+        selectedSections.push(sections[i]);
+        loadPromises.push(loadJSON(sections[i].file));
+      }
+    }
+
+    var results = await Promise.all(loadPromises);
+
+    // جمع الأسئلة الناجحة
+    var allSpecQuestions = [];
+    var loadedSections = [];
+    for (var j = 0; j < results.length; j++) {
+      if (results[j] && results[j].questions && results[j].questions.length > 0) {
+        allSpecQuestions.push({
+          section: selectedSections[j],
+          questions: results[j].questions
+        });
+        loadedSections.push(selectedSections[j].id);
+      }
+    }
+
+    console.log('[AI Readiness] Loaded specialty sections:', loadedSections);
+
+    if (allSpecQuestions.length === 0) {
+      // كل الملفات فشلت
+      console.log('[AI Readiness] No specialty questions available — skipping to report');
+      App.showToast(LANG === 'ar' ? 'أسئلة هذا التخصص قيد الإعداد — تم احتساب نتيجتك من الأسئلة العامة' : 'أسئلة هذا التخصص قيد الإعداد — تم احتساب نتيجتك من الأسئلة العامة');
+      finishAssessment();
+      return;
+    }
+
+    // حساب عدد الأسئلة التخصصية
+    var config = DURATION_CONFIG[selectedDuration] || DURATION_CONFIG[15];
+    var specCount = Math.round(config.total * 0.65);
+
+    // توزيع بالتساوي
+    var perSection = Math.floor(specCount / allSpecQuestions.length);
+    var remainder = specCount % allSpecQuestions.length;
+    var specQuiz = [];
+
+    for (var k = 0; k < allSpecQuestions.length; k++) {
+      var count = perSection + (k < remainder ? 1 : 0);
+      var picked = pickRandom(allSpecQuestions[k].questions, count);
+      specQuiz = specQuiz.concat(picked);
+    }
+
+    // دمج بعض الأسئلة العامة المتبقية لكسر الرتابة
+    var usedGeneralIds = {};
+    for (var a = 0; a < quizQuestions.length; a++) {
+      usedGeneralIds[quizQuestions[a].id] = true;
+    }
+    var remainingGeneral = generalQuestions.filter(function(q) {
+      return !usedGeneralIds[q.id];
+    });
+    var extraGeneralCount = Math.min(Math.floor(specQuiz.length * 0.15), remainingGeneral.length);
+    var extraGeneral = pickRandom(remainingGeneral, extraGeneralCount);
+
+    // دمج وخلط
+    var phase2Questions = specQuiz.concat(extraGeneral);
+    // خلط عشوائي
+    for (var m = phase2Questions.length - 1; m > 0; m--) {
+      var r = Math.floor(Math.random() * (m + 1));
+      var tmp = phase2Questions[m];
+      phase2Questions[m] = phase2Questions[r];
+      phase2Questions[r] = tmp;
+    }
+
+    console.log('[AI Readiness] Phase 2 questions:', phase2Questions.length, '(specialty:', specQuiz.length, '+ general:', extraGeneral.length, ')');
+
+    // بدء المرحلة 2
+    quizQuestions = phase2Questions;
+    currentQuestionIndex = 0;
+    currentPhase = 2;
+
+    showScreen('screen-quiz');
+    resumeGlobalTimer();
+    renderCurrentQuestion();
+
+    console.log('[AI Readiness] Phase 2 started — Specialty questions');
+  }
+
+  // ─── تخطي التخصصات ───
+
+  function skipSpecialties() {
+    console.log('[AI Readiness] Specialties skipped — going to report');
+    finishAssessment();
+  }
+
+  // ─── ربط زر التالي + التخصصات ───
 
   function initQuiz() {
     var btnNext = $('btn-next');
     if (btnNext) {
       btnNext.addEventListener('click', onNextClick);
+    }
+
+    var btnContinue = $('btn-continue-specialty');
+    if (btnContinue) {
+      btnContinue.addEventListener('click', loadSpecialtyQuestions);
+    }
+
+    var btnSkip = $('btn-skip-specialty');
+    if (btnSkip) {
+      btnSkip.addEventListener('click', skipSpecialties);
     }
   }
 
