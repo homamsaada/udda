@@ -1903,4 +1903,185 @@
   <p>{{tool.howToUseText}}</p>
 </div>
 
-<script>// سيُضاف لاحقاً</script>
+<script>
+(function() {
+  // ─── متغيرات عامة ───
+  var LANG = document.documentElement.lang || 'ar';
+  var DATA_PATH = '../../assets/data/ai-readiness/';
+
+  var userName = '';
+  var selectedDuration = 15;
+  var questionsIndex = null;
+  var generalQuestions = [];
+  var specialtyQuestions = [];
+  var allAnswers = [];
+  var currentPhase = 0; // 0=ترحيب، 1=عام، 1.5=تخصص، 2=تخصصي، 3=تقرير
+  var quizQuestions = []; // الأسئلة المختارة للاختبار الحالي
+
+  var DURATION_CONFIG = {
+    5:  { total: 10 },
+    10: { total: 18 },
+    15: { total: 25 },
+    20: { total: 32 },
+    30: { total: 45 }
+  };
+
+  // ─── دوال مساعدة ───
+
+  function t(obj) {
+    if (!obj) return '';
+    if (typeof obj === 'string') return obj;
+    return obj[LANG] || obj['ar'] || '';
+  }
+
+  function $(id) {
+    return document.getElementById(id);
+  }
+
+  // ─── تبديل الشاشات ───
+
+  function showScreen(screenId) {
+    var screens = document.querySelectorAll('.air-screen');
+    for (var i = 0; i < screens.length; i++) {
+      screens[i].classList.remove('active');
+      screens[i].style.display = 'none';
+    }
+    var target = $(screenId);
+    if (target) {
+      target.style.display = '';
+      target.classList.add('active');
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  // ─── تحميل JSON ───
+
+  async function loadJSON(filename) {
+    try {
+      var res = await fetch(DATA_PATH + filename);
+      if (!res.ok) return null;
+      return res.json();
+    } catch (e) {
+      console.error('Failed to load ' + filename, e);
+      return null;
+    }
+  }
+
+  // ─── اختيار أسئلة عشوائية ───
+
+  function pickRandom(arr, count) {
+    if (!arr || arr.length === 0) return [];
+    if (count >= arr.length) return arr.slice();
+    var shuffled = arr.slice();
+    for (var i = shuffled.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = shuffled[i];
+      shuffled[i] = shuffled[j];
+      shuffled[j] = tmp;
+    }
+    return shuffled.slice(0, count);
+  }
+
+  // ─── شاشة الترحيب ───
+
+  function initWelcome() {
+    // ربط اختيار المدة
+    var durationCards = document.querySelectorAll('.air-duration-card');
+    for (var i = 0; i < durationCards.length; i++) {
+      durationCards[i].addEventListener('click', function() {
+        for (var j = 0; j < durationCards.length; j++) {
+          durationCards[j].classList.remove('selected');
+        }
+        this.classList.add('selected');
+        selectedDuration = parseInt(this.getAttribute('data-duration'), 10);
+      });
+    }
+
+    // ربط حقل الاسم
+    var nameInput = $('user-name');
+    if (nameInput) {
+      nameInput.addEventListener('input', function() {
+        userName = this.value.trim();
+      });
+    }
+
+    // زر البدء
+    var btnStart = $('btn-start');
+    if (btnStart) {
+      btnStart.addEventListener('click', startAssessment);
+    }
+  }
+
+  // ─── بدء الاختبار ───
+
+  async function startAssessment() {
+    var btnStart = $('btn-start');
+    if (btnStart) {
+      btnStart.disabled = true;
+      btnStart.textContent = LANG === 'ar' ? 'جارٍ التحميل...' : 'Loading...';
+    }
+
+    // إظهار حالة التحميل
+    var loading = $('quiz-loading');
+    var errorEl = $('quiz-error');
+    if (errorEl) errorEl.style.display = 'none';
+
+    try {
+      // تحميل الفهرس والأسئلة العامة بالتوازي
+      var results = await Promise.all([
+        loadJSON('questions-index.json'),
+        loadJSON('general.json')
+      ]);
+
+      questionsIndex = results[0];
+      var generalData = results[1];
+
+      if (!questionsIndex || !generalData || !generalData.questions) {
+        throw new Error('Failed to load question data');
+      }
+
+      generalQuestions = generalData.questions;
+
+      // حساب عدد الأسئلة العامة
+      var config = DURATION_CONFIG[selectedDuration] || DURATION_CONFIG[15];
+      var generalCount = Math.round(config.total * 0.35);
+
+      // اختيار عشوائي
+      quizQuestions = pickRandom(generalQuestions, generalCount);
+
+      console.log('[AI Readiness] Duration:', selectedDuration, 'min');
+      console.log('[AI Readiness] Total questions planned:', config.total);
+      console.log('[AI Readiness] General questions selected:', quizQuestions.length, 'of', generalQuestions.length);
+      console.log('[AI Readiness] Questions:', quizQuestions.map(function(q) { return q.id; }));
+
+      // الانتقال لمرحلة الاختبار العام
+      currentPhase = 1;
+      allAnswers = [];
+      showScreen('screen-quiz');
+
+      // تحديث badge المرحلة
+      var phaseBadge = $('quiz-phase-badge');
+      if (phaseBadge) {
+        phaseBadge.textContent = LANG === 'ar' ? 'المرحلة العامة' : 'General Phase';
+      }
+
+      console.log('[AI Readiness] Phase 1 started — General questions');
+
+    } catch (e) {
+      console.error('[AI Readiness] Error:', e);
+      if (errorEl) errorEl.style.display = '';
+      if (loading) loading.style.display = 'none';
+    } finally {
+      if (btnStart) {
+        btnStart.disabled = false;
+        btnStart.textContent = '{{tool.startBtn}}';
+      }
+    }
+  }
+
+  // ─── تهيئة ───
+
+  initWelcome();
+
+})();
+</script>
