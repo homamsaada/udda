@@ -2057,13 +2057,9 @@
       // الانتقال لمرحلة الاختبار العام
       currentPhase = 1;
       allAnswers = [];
+      currentQuestionIndex = 0;
       showScreen('screen-quiz');
-
-      // تحديث badge المرحلة
-      var phaseBadge = $('quiz-phase-badge');
-      if (phaseBadge) {
-        phaseBadge.textContent = LANG === 'ar' ? 'المرحلة العامة' : 'General Phase';
-      }
+      renderCurrentQuestion();
 
       console.log('[AI Readiness] Phase 1 started — General questions');
 
@@ -2079,9 +2075,648 @@
     }
   }
 
+  // ─── حالة الاختبار ───
+
+  var currentQuestionIndex = 0;
+  var currentAnswer = null;
+  var questionStartTime = 0;
+
+  // matching state
+  var matchSelectedLeft = null;
+  var matchPairs = [];
+  var matchColors = ['#6366f1', '#22c55e', '#f59e0b', '#ef4444', '#ec4899', '#06b6d4', '#8b5cf6', '#f97316'];
+
+  // sorting state
+  var dragSrcIndex = null;
+
+  // ─── عرض السؤال الحالي ───
+
+  function renderCurrentQuestion() {
+    if (currentQuestionIndex >= quizQuestions.length) {
+      onPhaseEnd();
+      return;
+    }
+
+    var q = quizQuestions[currentQuestionIndex];
+    currentAnswer = null;
+    questionStartTime = Date.now();
+
+    // تحديث العداد
+    var counter = $('question-counter');
+    if (counter) {
+      var tmpl = LANG === 'ar' ? 'سؤال {{current}} من {{total}}' : 'Question {{current}} of {{total}}';
+      counter.textContent = tmpl.replace('{{current}}', currentQuestionIndex + 1).replace('{{total}}', quizQuestions.length);
+    }
+
+    // تحديث شريط التقدم
+    var fill = $('progress-fill');
+    if (fill) {
+      fill.style.width = ((currentQuestionIndex / quizQuestions.length) * 100) + '%';
+    }
+
+    // تحديث badge المرحلة
+    var phaseBadge = $('quiz-phase-badge');
+    if (phaseBadge) {
+      phaseBadge.textContent = currentPhase === 1
+        ? (LANG === 'ar' ? 'المرحلة العامة' : 'General Phase')
+        : (LANG === 'ar' ? 'المرحلة التخصصية' : 'Specialty Phase');
+    }
+
+    // تعطيل زر التالي
+    var btnNext = $('btn-next');
+    if (btnNext) btnNext.disabled = true;
+
+    // إخفاء overlay انتهاء الوقت
+    var timeup = $('timeup-overlay');
+    if (timeup) timeup.style.display = 'none';
+
+    // عرض نص السؤال
+    var questionText = $('question-text');
+    if (questionText) questionText.textContent = t(q.text);
+
+    // تصنيف بطاقة السؤال
+    var card = $('question-card');
+    if (card) {
+      card.className = 'air-question-card';
+      if (q.type === 'self_assessment') card.classList.add('self-assessment');
+    }
+
+    // إخفاء كل حاويات الأنواع
+    var typeContainers = ['options-mcq', 'options-tf', 'options-fill', 'options-matching', 'options-sorting', 'options-self'];
+    for (var i = 0; i < typeContainers.length; i++) {
+      var el = $(typeContainers[i]);
+      if (el) el.style.display = 'none';
+    }
+
+    // عرض حسب النوع
+    switch (q.type) {
+      case 'mcq': renderMCQ(q); break;
+      case 'true_false': renderTrueFalse(q); break;
+      case 'fill_blank': renderFillBlank(q); break;
+      case 'matching': renderMatching(q); break;
+      case 'sorting': renderSorting(q); break;
+      case 'self_assessment': renderSelfAssessment(q); break;
+    }
+
+    console.log('[AI Readiness] Showing Q' + (currentQuestionIndex + 1) + ':', q.id, '(' + q.type + ')');
+  }
+
+  // ─── تفعيل زر التالي ───
+
+  function enableNext() {
+    var btnNext = $('btn-next');
+    if (btnNext) btnNext.disabled = false;
+  }
+
+  // ─── MCQ ───
+
+  function renderMCQ(q) {
+    var container = $('options-mcq');
+    container.style.display = '';
+    container.innerHTML = '';
+
+    for (var i = 0; i < q.options.length; i++) {
+      var opt = q.options[i];
+      var btn = document.createElement('button');
+      btn.className = 'air-option';
+      btn.setAttribute('data-id', opt.id);
+      btn.innerHTML = '<span class="air-option-marker">' + opt.id.toUpperCase() + '</span><span>' + t(opt.text) + '</span>';
+      btn.addEventListener('click', (function(optId) {
+        return function() {
+          currentAnswer = optId;
+          var all = container.querySelectorAll('.air-option');
+          for (var j = 0; j < all.length; j++) {
+            all[j].classList.remove('selected');
+          }
+          this.classList.add('selected');
+          enableNext();
+        };
+      })(opt.id));
+      container.appendChild(btn);
+    }
+  }
+
+  // ─── True/False ───
+
+  function renderTrueFalse(q) {
+    var container = $('options-tf');
+    container.style.display = '';
+
+    var btnTrue = $('tf-true');
+    var btnFalse = $('tf-false');
+
+    // Reset
+    btnTrue.className = 'air-tf-btn';
+    btnFalse.className = 'air-tf-btn';
+
+    btnTrue.onclick = function() {
+      currentAnswer = true;
+      btnTrue.className = 'air-tf-btn selected-true';
+      btnFalse.className = 'air-tf-btn';
+      enableNext();
+    };
+
+    btnFalse.onclick = function() {
+      currentAnswer = false;
+      btnFalse.className = 'air-tf-btn selected-false';
+      btnTrue.className = 'air-tf-btn';
+      enableNext();
+    };
+  }
+
+  // ─── Fill in the Blank ───
+
+  function renderFillBlank(q) {
+    var container = $('options-fill');
+    container.style.display = '';
+    var fillText = $('fill-text');
+
+    var textStr = t(q.text);
+    var blanks = q.blanks || [];
+
+    // استبدال كل {{blank_N}} بـ select
+    var html = textStr;
+    for (var i = 0; i < blanks.length; i++) {
+      var blank = blanks[i];
+      var selectHtml = '<select class="air-fill-select" data-blank-id="' + blank.id + '" id="fill-select-' + blank.id + '">';
+      selectHtml += '<option value="">' + (LANG === 'ar' ? 'اختر' : 'Choose') + '</option>';
+      // خيارات عشوائية الترتيب
+      var opts = blank.options.slice();
+      for (var k = opts.length - 1; k > 0; k--) {
+        var r = Math.floor(Math.random() * (k + 1));
+        var tmp = opts[k]; opts[k] = opts[r]; opts[r] = tmp;
+      }
+      for (var j = 0; j < opts.length; j++) {
+        selectHtml += '<option value="' + t(opts[j]) + '">' + t(opts[j]) + '</option>';
+      }
+      selectHtml += '</select>';
+      html = html.replace('{{' + blank.id + '}}', selectHtml);
+    }
+
+    fillText.innerHTML = html;
+
+    // ربط التغيير
+    var selects = fillText.querySelectorAll('.air-fill-select');
+    for (var s = 0; s < selects.length; s++) {
+      selects[s].addEventListener('change', function() {
+        // تحقق أن كل الفراغات مملوءة
+        var allFilled = true;
+        var answers = {};
+        var sels = fillText.querySelectorAll('.air-fill-select');
+        for (var x = 0; x < sels.length; x++) {
+          if (!sels[x].value) { allFilled = false; break; }
+          answers[sels[x].getAttribute('data-blank-id')] = sels[x].value;
+        }
+        if (allFilled) {
+          currentAnswer = answers;
+          enableNext();
+        }
+      });
+    }
+  }
+
+  // ─── Matching ───
+
+  function renderMatching(q) {
+    var container = $('options-matching');
+    container.style.display = '';
+
+    var leftCol = $('matching-left');
+    var rightCol = $('matching-right');
+    leftCol.innerHTML = '';
+    rightCol.innerHTML = '';
+
+    matchSelectedLeft = null;
+    matchPairs = [];
+
+    // العناصر اليسرى (ثابتة الترتيب)
+    for (var i = 0; i < q.left.length; i++) {
+      var lItem = document.createElement('div');
+      lItem.className = 'air-matching-item';
+      lItem.setAttribute('data-id', q.left[i].id);
+      lItem.textContent = t(q.left[i].text);
+      lItem.addEventListener('click', (function(id) {
+        return function() { onMatchLeftClick(id, this); };
+      })(q.left[i].id));
+      leftCol.appendChild(lItem);
+    }
+
+    // العناصر اليمنى (ترتيب عشوائي)
+    var rightItems = q.right.slice();
+    for (var k = rightItems.length - 1; k > 0; k--) {
+      var r = Math.floor(Math.random() * (k + 1));
+      var tmp = rightItems[k]; rightItems[k] = rightItems[r]; rightItems[r] = tmp;
+    }
+
+    for (var j = 0; j < rightItems.length; j++) {
+      var rItem = document.createElement('div');
+      rItem.className = 'air-matching-item';
+      rItem.setAttribute('data-id', rightItems[j].id);
+      rItem.textContent = t(rightItems[j].text);
+      rItem.addEventListener('click', (function(id) {
+        return function() { onMatchRightClick(id, this); };
+      })(rightItems[j].id));
+      rightCol.appendChild(rItem);
+    }
+  }
+
+  function onMatchLeftClick(id, el) {
+    // إذا كان متصلاً بالفعل، ألغِ التوصيلة
+    var existingIdx = -1;
+    for (var i = 0; i < matchPairs.length; i++) {
+      if (matchPairs[i].left === id) { existingIdx = i; break; }
+    }
+
+    if (existingIdx !== -1) {
+      // إلغاء التوصيلة
+      var pair = matchPairs[existingIdx];
+      matchPairs.splice(existingIdx, 1);
+      clearMatchHighlight(pair.left, pair.right);
+      matchSelectedLeft = null;
+      updateMatchAnswer();
+      return;
+    }
+
+    // حدد العنصر الأيسر
+    // أزل التحديد السابق
+    var leftItems = $('matching-left').querySelectorAll('.air-matching-item');
+    for (var j = 0; j < leftItems.length; j++) {
+      leftItems[j].classList.remove('active');
+    }
+    el.classList.add('active');
+    matchSelectedLeft = id;
+  }
+
+  function onMatchRightClick(id, el) {
+    if (!matchSelectedLeft) return;
+
+    // إذا اليمين متصل بالفعل، ألغِ التوصيلة القديمة
+    for (var i = matchPairs.length - 1; i >= 0; i--) {
+      if (matchPairs[i].right === id) {
+        var oldPair = matchPairs[i];
+        matchPairs.splice(i, 1);
+        clearMatchHighlight(oldPair.left, oldPair.right);
+        break;
+      }
+    }
+
+    // أيضاً ألغِ أي توصيلة قديمة لليسار
+    for (var k = matchPairs.length - 1; k >= 0; k--) {
+      if (matchPairs[k].left === matchSelectedLeft) {
+        var oldP = matchPairs[k];
+        matchPairs.splice(k, 1);
+        clearMatchHighlight(oldP.left, oldP.right);
+        break;
+      }
+    }
+
+    // أنشئ التوصيلة الجديدة
+    var colorIdx = matchPairs.length % matchColors.length;
+    var color = matchColors[colorIdx];
+    matchPairs.push({ left: matchSelectedLeft, right: id, color: color });
+
+    // تلوين
+    setMatchHighlight(matchSelectedLeft, id, color);
+
+    // أزل التحديد
+    var leftItems = $('matching-left').querySelectorAll('.air-matching-item');
+    for (var j = 0; j < leftItems.length; j++) {
+      leftItems[j].classList.remove('active');
+    }
+    matchSelectedLeft = null;
+
+    updateMatchAnswer();
+  }
+
+  function setMatchHighlight(leftId, rightId, color) {
+    var lEl = $('matching-left').querySelector('[data-id="' + leftId + '"]');
+    var rEl = $('matching-right').querySelector('[data-id="' + rightId + '"]');
+    if (lEl) { lEl.classList.add('matched'); lEl.style.borderColor = color; lEl.style.backgroundColor = color + '18'; }
+    if (rEl) { rEl.classList.add('matched'); rEl.style.borderColor = color; rEl.style.backgroundColor = color + '18'; }
+  }
+
+  function clearMatchHighlight(leftId, rightId) {
+    var lEl = $('matching-left').querySelector('[data-id="' + leftId + '"]');
+    var rEl = $('matching-right').querySelector('[data-id="' + rightId + '"]');
+    if (lEl) { lEl.classList.remove('matched'); lEl.style.borderColor = ''; lEl.style.backgroundColor = ''; }
+    if (rEl) { rEl.classList.remove('matched'); rEl.style.borderColor = ''; rEl.style.backgroundColor = ''; }
+  }
+
+  function updateMatchAnswer() {
+    var q = quizQuestions[currentQuestionIndex];
+    if (matchPairs.length === q.left.length) {
+      currentAnswer = matchPairs.map(function(p) { return { left: p.left, right: p.right }; });
+      enableNext();
+    } else {
+      currentAnswer = null;
+      var btnNext = $('btn-next');
+      if (btnNext) btnNext.disabled = true;
+    }
+  }
+
+  // ─── Sorting (Drag & Drop — touch + mouse) ───
+
+  function renderSorting(q) {
+    var container = $('options-sorting');
+    container.style.display = '';
+    var list = $('sorting-list');
+    list.innerHTML = '';
+
+    // ترتيب عشوائي
+    var items = q.items.slice();
+    for (var k = items.length - 1; k > 0; k--) {
+      var r = Math.floor(Math.random() * (k + 1));
+      var tmp = items[k]; items[k] = items[r]; items[r] = tmp;
+    }
+
+    for (var i = 0; i < items.length; i++) {
+      var item = document.createElement('div');
+      item.className = 'air-sorting-item';
+      item.setAttribute('data-id', items[i].id);
+      item.setAttribute('draggable', 'true');
+
+      var handle = document.createElement('span');
+      handle.className = 'air-sorting-handle';
+      handle.textContent = '☰';
+
+      var num = document.createElement('span');
+      num.className = 'air-sorting-num';
+      num.textContent = (i + 1);
+
+      var text = document.createElement('span');
+      text.className = 'air-sorting-text';
+      text.textContent = t(items[i].text);
+
+      item.appendChild(handle);
+      item.appendChild(num);
+      item.appendChild(text);
+      list.appendChild(item);
+
+      // Mouse drag
+      item.addEventListener('dragstart', onDragStart);
+      item.addEventListener('dragover', onDragOver);
+      item.addEventListener('drop', onDrop);
+      item.addEventListener('dragend', onDragEnd);
+
+      // Touch drag
+      item.addEventListener('touchstart', onTouchStart, { passive: false });
+    }
+
+    // التأشير بأن الترتيب هو إجابة مبدئية (يمكن الانتقال فوراً)
+    updateSortAnswer();
+    enableNext();
+  }
+
+  // Mouse drag handlers
+  function onDragStart(e) {
+    dragSrcIndex = getSortIndex(this);
+    this.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'move';
+  }
+
+  function onDragOver(e) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    var list = $('sorting-list');
+    var items = list.querySelectorAll('.air-sorting-item');
+    for (var i = 0; i < items.length; i++) items[i].classList.remove('drag-over');
+    this.classList.add('drag-over');
+  }
+
+  function onDrop(e) {
+    e.preventDefault();
+    var targetIndex = getSortIndex(this);
+    if (dragSrcIndex !== null && dragSrcIndex !== targetIndex) {
+      moveSortItem(dragSrcIndex, targetIndex);
+    }
+    this.classList.remove('drag-over');
+  }
+
+  function onDragEnd() {
+    this.classList.remove('dragging');
+    var items = $('sorting-list').querySelectorAll('.air-sorting-item');
+    for (var i = 0; i < items.length; i++) items[i].classList.remove('drag-over');
+    dragSrcIndex = null;
+    updateSortNumbers();
+    updateSortAnswer();
+  }
+
+  // Touch drag handlers
+  var touchDragEl = null;
+  var touchClone = null;
+  var touchStartY = 0;
+
+  function onTouchStart(e) {
+    var item = e.currentTarget;
+    touchDragEl = item;
+    dragSrcIndex = getSortIndex(item);
+    touchStartY = e.touches[0].clientY;
+
+    item.classList.add('dragging');
+
+    // إنشاء نسخة مرئية
+    touchClone = item.cloneNode(true);
+    touchClone.className = 'air-sorting-item dragging';
+    touchClone.style.position = 'fixed';
+    touchClone.style.zIndex = '9999';
+    touchClone.style.width = item.offsetWidth + 'px';
+    touchClone.style.opacity = '0.85';
+    touchClone.style.pointerEvents = 'none';
+    touchClone.style.left = item.getBoundingClientRect().left + 'px';
+    touchClone.style.top = e.touches[0].clientY - 25 + 'px';
+    document.body.appendChild(touchClone);
+
+    document.addEventListener('touchmove', onTouchMove, { passive: false });
+    document.addEventListener('touchend', onTouchEnd);
+
+    e.preventDefault();
+  }
+
+  function onTouchMove(e) {
+    if (!touchClone) return;
+    e.preventDefault();
+
+    var y = e.touches[0].clientY;
+    touchClone.style.top = (y - 25) + 'px';
+
+    // تحديد العنصر الذي يقف فوقه
+    var list = $('sorting-list');
+    var items = list.querySelectorAll('.air-sorting-item');
+    for (var i = 0; i < items.length; i++) {
+      items[i].classList.remove('drag-over');
+      var rect = items[i].getBoundingClientRect();
+      if (y > rect.top && y < rect.bottom && items[i] !== touchDragEl) {
+        items[i].classList.add('drag-over');
+      }
+    }
+  }
+
+  function onTouchEnd(e) {
+    document.removeEventListener('touchmove', onTouchMove);
+    document.removeEventListener('touchend', onTouchEnd);
+
+    if (touchClone) {
+      document.body.removeChild(touchClone);
+      touchClone = null;
+    }
+
+    if (!touchDragEl) return;
+
+    // أجد العنصر المستهدف
+    var y = e.changedTouches[0].clientY;
+    var list = $('sorting-list');
+    var items = list.querySelectorAll('.air-sorting-item');
+    var targetIndex = -1;
+
+    for (var i = 0; i < items.length; i++) {
+      items[i].classList.remove('drag-over');
+      var rect = items[i].getBoundingClientRect();
+      if (y > rect.top && y < rect.bottom) {
+        targetIndex = i;
+      }
+    }
+
+    touchDragEl.classList.remove('dragging');
+
+    if (targetIndex !== -1 && dragSrcIndex !== targetIndex) {
+      moveSortItem(dragSrcIndex, targetIndex);
+    }
+
+    touchDragEl = null;
+    dragSrcIndex = null;
+    updateSortNumbers();
+    updateSortAnswer();
+  }
+
+  function getSortIndex(el) {
+    var items = $('sorting-list').querySelectorAll('.air-sorting-item');
+    for (var i = 0; i < items.length; i++) {
+      if (items[i] === el) return i;
+    }
+    return -1;
+  }
+
+  function moveSortItem(fromIndex, toIndex) {
+    var list = $('sorting-list');
+    var items = list.querySelectorAll('.air-sorting-item');
+    var movedEl = items[fromIndex];
+    if (fromIndex < toIndex) {
+      list.insertBefore(movedEl, items[toIndex].nextSibling);
+    } else {
+      list.insertBefore(movedEl, items[toIndex]);
+    }
+  }
+
+  function updateSortNumbers() {
+    var items = $('sorting-list').querySelectorAll('.air-sorting-item');
+    for (var i = 0; i < items.length; i++) {
+      var num = items[i].querySelector('.air-sorting-num');
+      if (num) num.textContent = (i + 1);
+    }
+  }
+
+  function updateSortAnswer() {
+    var items = $('sorting-list').querySelectorAll('.air-sorting-item');
+    currentAnswer = [];
+    for (var i = 0; i < items.length; i++) {
+      currentAnswer.push(items[i].getAttribute('data-id'));
+    }
+  }
+
+  // ─── Self Assessment ───
+
+  function renderSelfAssessment(q) {
+    var container = $('options-self');
+    container.style.display = '';
+    container.innerHTML = '';
+
+    for (var i = 0; i < q.options.length; i++) {
+      var opt = q.options[i];
+      var btn = document.createElement('button');
+      btn.className = 'air-self-option';
+      btn.setAttribute('data-id', opt.id);
+      btn.textContent = t(opt.text);
+      btn.addEventListener('click', (function(optId) {
+        return function() {
+          currentAnswer = optId;
+          var all = container.querySelectorAll('.air-self-option');
+          for (var j = 0; j < all.length; j++) {
+            all[j].classList.remove('selected');
+          }
+          this.classList.add('selected');
+          enableNext();
+        };
+      })(opt.id));
+      container.appendChild(btn);
+    }
+  }
+
+  // ─── قراءة الإجابة الحالية ───
+
+  function getAnswer(question) {
+    if (currentAnswer === null || currentAnswer === undefined) return null;
+    return currentAnswer;
+  }
+
+  // ─── زر التالي ───
+
+  function onNextClick() {
+    var q = quizQuestions[currentQuestionIndex];
+    var answer = getAnswer(q);
+    var timeTaken = Math.round((Date.now() - questionStartTime) / 1000);
+
+    // تخزين الإجابة
+    allAnswers.push({
+      question_id: q.id,
+      type: q.type,
+      user_answer: answer,
+      time_taken: timeTaken,
+      timed_out: false
+    });
+
+    console.log('[AI Readiness] Answer saved:', q.id, '→', answer, '(' + timeTaken + 's)');
+
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < quizQuestions.length) {
+      // السؤال التالي
+      renderCurrentQuestion();
+    } else {
+      onPhaseEnd();
+    }
+  }
+
+  // ─── انتهاء المرحلة ───
+
+  function onPhaseEnd() {
+    if (currentPhase === 1) {
+      // انتهت الأسئلة العامة → شاشة اختيار التخصص
+      console.log('[AI Readiness] Phase 1 complete — moving to specialty selection');
+      currentPhase = 1.5;
+      showScreen('screen-specialty');
+    } else if (currentPhase === 2) {
+      // انتهت الأسئلة التخصصية → التقرير
+      console.log('[AI Readiness] Phase 2 complete — generating report');
+      console.log('[AI Readiness] Total answers:', allAnswers.length);
+      currentPhase = 3;
+      showScreen('screen-report');
+      // TODO: حساب النتائج وعرض التقرير
+    }
+  }
+
+  // ─── ربط زر التالي ───
+
+  function initQuiz() {
+    var btnNext = $('btn-next');
+    if (btnNext) {
+      btnNext.addEventListener('click', onNextClick);
+    }
+  }
+
   // ─── تهيئة ───
 
   initWelcome();
+  initQuiz();
 
 })();
 </script>
