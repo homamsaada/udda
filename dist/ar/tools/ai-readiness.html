@@ -941,26 +941,6 @@
   color: var(--accent-primary);
 }
 
-.air-specialty-card .air-specialty-indicator {
-  width: 18px;
-  height: 18px;
-  min-width: 18px;
-  border-radius: 6px;
-  border: 2px solid var(--border-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--transition-fast);
-  font-size: 0.65rem;
-  color: transparent;
-}
-
-.air-specialty-card.selected .air-specialty-indicator {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
-  color: white;
-}
-
 .air-specialty-actions {
   display: flex;
   gap: 12px;
@@ -4032,15 +4012,10 @@
         card.setAttribute('data-id', sec.id);
         card.setAttribute('data-selected', 'false');
 
-        var indicator = document.createElement('span');
-        indicator.className = 'air-specialty-indicator';
-        indicator.textContent = '✓';
-
         var nameSpan = document.createElement('span');
         nameSpan.className = 'air-specialty-name';
         nameSpan.textContent = t(sec.name);
 
-        card.appendChild(indicator);
         card.appendChild(nameSpan);
         card.addEventListener('click', function() {
           var isSelected = this.getAttribute('data-selected') === 'true';
