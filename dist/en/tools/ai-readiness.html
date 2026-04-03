@@ -89,7 +89,43 @@
       
       <div class="content-wrapper">
         <main class="page-content">
-          <style>
+          <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "AI Readiness Assessment",
+  "description": "Test your AI readiness for free. An interactive assessment covering your knowledge, skills, and flexibility with an instant report and personalized recommendations.",
+  "educationalLevel": "All Levels",
+  "inLanguage": ["ar", "en"],
+  "isAccessibleForFree": true,
+  "timeRequired": "PT15M"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the AI Readiness Assessment?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A free interactive test that measures your readiness for the AI era through diverse questions covering knowledge, skills, and flexibility, with an instant report and personalized recommendations." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the assessment free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, the assessment is completely free and requires no account registration. You can retake it multiple times." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does the assessment take?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can choose the duration that suits you: 5, 10, 15, 20, or 30 minutes. The recommended standard duration is 15 minutes." }
+    }
+  ]
+}
+</script>
+
+<style>
 /* AI Readiness Assessment Tool Styles */
 
 /* === Tool-specific Variables === */
@@ -1017,8 +1053,7 @@
 
 .air-gauge-svg {
   width: 200px;
-  height: 200px;
-  transform: rotate(-90deg);
+  height: 120px;
 }
 
 .air-gauge-bg {
@@ -1115,23 +1150,29 @@
   fill: var(--chart-text);
 }
 
-.air-radar-svg .radar-grid {
+.air-radar-svg .air-radar-grid {
   fill: none;
   stroke: var(--chart-grid);
   stroke-width: 1;
 }
 
-.air-radar-svg .radar-area {
+.air-radar-svg .air-radar-area {
   fill: rgba(99, 102, 241, 0.2);
   stroke: var(--accent-primary);
   stroke-width: 2;
   transition: all 0.5s ease;
 }
 
-.air-radar-svg .radar-point {
+.air-radar-svg .air-radar-point {
   fill: var(--accent-primary);
   stroke: white;
   stroke-width: 2;
+}
+
+.air-radar-svg .air-radar-label {
+  font-family: inherit;
+  font-size: 11px;
+  fill: var(--chart-text);
 }
 
 .air-radar-legend {
@@ -1354,6 +1395,119 @@
 }
 
 .air-comparison-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.air-comparison-bar {
+  position: relative;
+  height: 28px;
+  background: var(--bg-tertiary);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.air-comparison-bar-fill {
+  height: 100%;
+  background: var(--accent-gradient);
+  border-radius: 14px;
+  transition: width 1.5s ease;
+}
+
+.air-comparison-bar-label {
+  position: absolute;
+  top: 50%;
+  inset-inline-end: 12px;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* -- Answer Details -- */
+.air-answer-item {
+  padding: 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.air-answer-item:last-child {
+  border-bottom: none;
+}
+
+.air-answer-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.air-answer-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.air-answer-status {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.air-answer-status.correct {
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--success);
+}
+
+.air-answer-status.incorrect {
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--error);
+}
+
+.air-answer-status.timeout {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--warning);
+}
+
+.air-answer-status.neutral {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+}
+
+.air-answer-points {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-inline-start: auto;
+}
+
+.air-answer-question {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin: 0 0 4px;
+}
+
+.air-answer-hint {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 6px 0 0;
+  padding: 8px 12px;
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+}
+
+.air-collapsible-chevron {
+  transition: transform 0.3s;
   font-size: 0.8rem;
   color: var(--text-muted);
 }
@@ -2144,10 +2298,6 @@
       // اختيار عشوائي
       quizQuestions = pickRandom(generalQuestions, generalCount);
 
-      console.log('[AI Readiness] Duration:', selectedDuration, 'min');
-      console.log('[AI Readiness] Total questions planned:', config.total);
-      console.log('[AI Readiness] General questions selected:', quizQuestions.length, 'of', generalQuestions.length);
-      console.log('[AI Readiness] Questions:', quizQuestions.map(function(q) { return q.id; }));
 
       // الانتقال لمرحلة الاختبار العام
       currentPhase = 1;
@@ -2157,7 +2307,6 @@
       startGlobalTimer();
       renderCurrentQuestion();
 
-      console.log('[AI Readiness] Phase 1 started — General questions (' + selectedDuration + ' min)');
 
     } catch (e) {
       console.error('[AI Readiness] Error:', e);
@@ -2290,7 +2439,6 @@
     // تفعيل زر التالي
     enableNext();
 
-    console.log('[AI Readiness] Time up for question', quizQuestions[currentQuestionIndex].id);
   }
 
   function disableAnswerInputs() {
@@ -2380,7 +2528,6 @@
     stopGlobalTimer();
     stopQuestionTimer();
 
-    console.log('[AI Readiness] Global time up — ending assessment');
 
     // سجّل السؤال الحالي كـ timed_out إذا لم يُجَب
     if (currentPhase === 1 || currentPhase === 2) {
@@ -2482,7 +2629,6 @@
     var timeLimit = QUESTION_TIME[q.type] || 0;
     startQuestionTimer(timeLimit);
 
-    console.log('[AI Readiness] Showing Q' + (currentQuestionIndex + 1) + ':', q.id, '(' + q.type + ')', timeLimit > 0 ? timeLimit + 's' : 'no timer');
   }
 
   // ─── تفعيل زر التالي ───
@@ -3001,7 +3147,6 @@
       timed_out: questionTimedOut
     });
 
-    console.log('[AI Readiness] Answer saved:', q.id, '→', answer, '(' + timeTaken + 's' + (questionTimedOut ? ', TIMED OUT' : '') + ')');
 
     questionTimedOut = false;
     currentQuestionIndex++;
@@ -3019,13 +3164,11 @@
     stopQuestionTimer();
 
     if (currentPhase === 1) {
-      console.log('[AI Readiness] Phase 1 complete — moving to specialty selection');
       currentPhase = 1.5;
       pauseGlobalTimer();
       populateSpecialties();
       showScreen('screen-specialty');
     } else if (currentPhase === 2) {
-      console.log('[AI Readiness] Phase 2 complete — generating report');
       finishAssessment();
     }
   }
@@ -3044,11 +3187,9 @@
 
     assessmentResults = calculateResults(allAnswers, allUsedQuestions);
 
-    console.log('[AI Readiness] Total answers:', allAnswers.length);
-    console.log('[AI Readiness] Results:', JSON.parse(JSON.stringify(assessmentResults)));
 
     showScreen('screen-report');
-    // TODO: عرض التقرير بصرياً
+    renderReport(assessmentResults);
   }
 
   // ─── محرك حساب الدرجات ───
@@ -3305,7 +3446,483 @@
     return { level: 'at-risk', ar: 'في خطر', en: 'At Risk' };
   }
 
-  // ─── شاشة اختيار التخصص ───
+  // ─── عرض التقرير ───
+
+  function renderReport(r) {
+    // القسم 1: Gauge + التصنيف + الملخص
+    renderGauge(r.finalScore, r.classification.level);
+    var badge = $('level-badge');
+    if (badge) {
+      badge.textContent = r.classification[LANG];
+      badge.className = 'air-level-badge ' + r.classification.level;
+    }
+    renderPersonalSummary(r);
+
+    // القسم 2: Radar chart
+    renderRadar(r.axes, r.selectedSpecialties.length > 0);
+
+    // القسم 3: المعادلة + الأعمدة
+    renderFormula(r);
+    renderBars(r.axes, r.selectedSpecialties.length > 0);
+
+    // القسم 4: التوصيات
+    renderRecommendations(r);
+
+    // القسم 5: المقارنة
+    renderComparison(r.finalScore);
+
+    // القسم 6: إعادة + مشاركة
+    initReportActions(r);
+
+    // القسم 7: تفاصيل الإجابات
+    renderAnswerDetails(r.answers);
+  }
+
+  // ─── Gauge SVG ───
+
+  function renderGauge(score, level) {
+    var gaugeNum = $('gauge-number');
+    if (gaugeNum) gaugeNum.textContent = score;
+
+    var fill = $('gauge-fill');
+    if (!fill) return;
+
+    var colors = {
+      'pioneer': 'var(--success)',
+      'advanced': 'var(--info)',
+      'aware': 'var(--warning)',
+      'beginner': 'var(--warning-dark)',
+      'at-risk': 'var(--error)'
+    };
+    fill.style.stroke = colors[level] || 'var(--info)';
+
+    // حساب طول القوس: المسار هو نصف دائرة بنصف قطر 80
+    var totalLen = Math.PI * 80;
+    var fillLen = (score / 100) * totalLen;
+    fill.style.strokeDasharray = totalLen;
+    fill.style.strokeDashoffset = totalLen - fillLen;
+    fill.style.strokeWidth = '12';
+    fill.style.strokeLinecap = 'round';
+    fill.style.fill = 'none';
+    fill.style.transition = 'stroke-dashoffset 1.5s ease';
+
+    var bg = fill.previousElementSibling;
+    if (bg) {
+      bg.style.stroke = 'var(--border-color)';
+      bg.style.strokeWidth = '12';
+      bg.style.fill = 'none';
+      bg.style.strokeLinecap = 'round';
+    }
+  }
+
+  // ─── ملخص شخصي ───
+
+  function renderPersonalSummary(r) {
+    var el = $('summary-text');
+    if (!el) return;
+
+    var axes = r.axes;
+    var axisNames = {
+      knowledge: LANG === 'ar' ? 'المعرفة' : 'Knowledge',
+      practice: LANG === 'ar' ? 'التطبيق' : 'Practice',
+      flexibility: LANG === 'ar' ? 'المرونة' : 'Flexibility',
+      specialty: LANG === 'ar' ? 'التخصص' : 'Specialty'
+    };
+
+    // أعلى وأدنى محور
+    var best = 'knowledge', worst = 'knowledge';
+    var checkAxes = ['knowledge', 'practice', 'flexibility'];
+    if (r.selectedSpecialties.length > 0) checkAxes.push('specialty');
+
+    for (var i = 0; i < checkAxes.length; i++) {
+      var ax = checkAxes[i];
+      if (axes[ax] > axes[best]) best = ax;
+      if (axes[ax] < axes[worst]) worst = ax;
+    }
+
+    var parts = [];
+    if (r.userName) {
+      parts.push(LANG === 'ar' ? r.userName + '،' : r.userName + ',');
+    }
+
+    // جملة المستوى
+    if (r.finalScore >= 75) {
+      parts.push(LANG === 'ar' ? 'أداؤك ممتاز!' : 'Excellent performance!');
+    } else if (r.finalScore >= 60) {
+      parts.push(LANG === 'ar' ? 'أداؤك جيد.' : 'Good performance.');
+    } else if (r.finalScore >= 40) {
+      parts.push(LANG === 'ar' ? 'لديك أساس يمكن البناء عليه.' : 'You have a foundation to build on.');
+    } else {
+      parts.push(LANG === 'ar' ? 'هناك فرصة كبيرة للتطور.' : 'There is great room for improvement.');
+    }
+
+    // أقوى محور
+    parts.push(LANG === 'ar'
+      ? 'نقطة قوتك هي ' + axisNames[best] + ' (' + axes[best] + '%).'
+      : 'Your strength is ' + axisNames[best] + ' (' + axes[best] + '%).');
+
+    if (best !== worst) {
+      parts.push(LANG === 'ar'
+        ? 'يمكنك تحسين ' + axisNames[worst] + ' (' + axes[worst] + '%).'
+        : 'You can improve ' + axisNames[worst] + ' (' + axes[worst] + '%).');
+    }
+
+    // تعليق المرونة
+    if (r.multiplier > 1) {
+      parts.push(LANG === 'ar' ? 'مرونتك العالية ميزة حقيقية!' : 'Your high flexibility is a real advantage!');
+    } else if (r.multiplier < 1) {
+      parts.push(LANG === 'ar' ? 'حاول أن تكون أكثر انفتاحاً على التغيير.' : 'Try to be more open to change.');
+    }
+
+    el.textContent = parts.join(' ');
+  }
+
+  // ─── Radar Chart SVG ───
+
+  function renderRadar(axes, hasSpecialty) {
+    var svg = $('radar-svg');
+    if (!svg) return;
+    svg.innerHTML = '';
+
+    var cx = 150, cy = 150, maxR = 120;
+    var labels = ['knowledge', 'practice', 'flexibility'];
+    if (hasSpecialty) labels.push('specialty');
+    var n = labels.length;
+
+    // شبكة
+    for (var ring = 1; ring <= 4; ring++) {
+      var r = (ring / 4) * maxR;
+      var pts = [];
+      for (var i = 0; i < n; i++) {
+        var angle = (Math.PI * 2 * i / n) - Math.PI / 2;
+        pts.push(Math.round(cx + r * Math.cos(angle)) + ',' + Math.round(cy + r * Math.sin(angle)));
+      }
+      var polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+      polygon.setAttribute('points', pts.join(' '));
+      polygon.setAttribute('class', 'air-radar-grid');
+      svg.appendChild(polygon);
+    }
+
+    // محاور
+    for (var j = 0; j < n; j++) {
+      var angle2 = (Math.PI * 2 * j / n) - Math.PI / 2;
+      var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', cx);
+      line.setAttribute('y1', cy);
+      line.setAttribute('x2', Math.round(cx + maxR * Math.cos(angle2)));
+      line.setAttribute('y2', Math.round(cy + maxR * Math.sin(angle2)));
+      line.setAttribute('class', 'air-radar-grid');
+      svg.appendChild(line);
+    }
+
+    // المنطقة
+    var dataPts = [];
+    for (var k = 0; k < n; k++) {
+      var val = (axes[labels[k]] || 0) / 100;
+      var angle3 = (Math.PI * 2 * k / n) - Math.PI / 2;
+      var dr = val * maxR;
+      dataPts.push(Math.round(cx + dr * Math.cos(angle3)) + ',' + Math.round(cy + dr * Math.sin(angle3)));
+    }
+    var area = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    area.setAttribute('points', dataPts.join(' '));
+    area.setAttribute('class', 'air-radar-area');
+    svg.appendChild(area);
+
+    // نقاط
+    for (var p = 0; p < n; p++) {
+      var coords = dataPts[p].split(',');
+      var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      circle.setAttribute('cx', coords[0]);
+      circle.setAttribute('cy', coords[1]);
+      circle.setAttribute('r', '5');
+      circle.setAttribute('class', 'air-radar-point');
+      svg.appendChild(circle);
+    }
+
+    // تسميات
+    var axisLabels = {
+      knowledge: LANG === 'ar' ? 'المعرفة' : 'Knowledge',
+      practice: LANG === 'ar' ? 'التطبيق' : 'Practice',
+      flexibility: LANG === 'ar' ? 'المرونة' : 'Flexibility',
+      specialty: LANG === 'ar' ? 'التخصص' : 'Specialty'
+    };
+    for (var lb = 0; lb < n; lb++) {
+      var angle4 = (Math.PI * 2 * lb / n) - Math.PI / 2;
+      var lx = cx + (maxR + 20) * Math.cos(angle4);
+      var ly = cy + (maxR + 20) * Math.sin(angle4);
+      var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      text.setAttribute('x', Math.round(lx));
+      text.setAttribute('y', Math.round(ly));
+      text.setAttribute('text-anchor', 'middle');
+      text.setAttribute('dominant-baseline', 'middle');
+      text.setAttribute('class', 'air-radar-label');
+      text.textContent = axisLabels[labels[lb]];
+      svg.appendChild(text);
+    }
+
+    // Legend values
+    $('axis-knowledge-val').textContent = axes.knowledge + '%';
+    $('axis-practice-val').textContent = axes.practice + '%';
+    $('axis-flexibility-val').textContent = axes.flexibility + '%';
+    if (hasSpecialty) {
+      $('axis-specialty-item').style.display = '';
+      $('axis-specialty-val').textContent = axes.specialty + '%';
+    }
+
+    // ألوان حسب المستوى
+    var legendItems = $('radar-legend').querySelectorAll('.air-radar-legend-value');
+    for (var lv = 0; lv < legendItems.length; lv++) {
+      var val2 = parseInt(legendItems[lv].textContent);
+      if (val2 >= 70) legendItems[lv].style.color = 'var(--success)';
+      else if (val2 >= 40) legendItems[lv].style.color = 'var(--warning)';
+      else legendItems[lv].style.color = 'var(--error)';
+    }
+  }
+
+  // ─── المعادلة ───
+
+  function renderFormula(r) {
+    $('formula-core').textContent = r.coreEarned + '/' + r.coreMax;
+    $('formula-cultural').textContent = r.culturalEarned + '/' + r.culturalMax;
+    $('formula-self').textContent = '×' + r.multiplier;
+    $('formula-specialty').textContent = r.axes.specialty + '%';
+    $('formula-total').textContent = r.finalScore;
+
+    // جملة توضيحية
+    var explain = $('report-formula').querySelector('.air-formula-explanation');
+    if (explain) {
+      if (r.multiplier > 1) {
+        var tmpl = LANG === 'ar' ? 'Your flexibility (×{{m}}) boosted your readiness from {{from}} to {{to}}' : 'Your flexibility (×{{m}}) boosted your readiness from {{from}} to {{to}}';
+        explain.textContent = tmpl.replace('{{m}}', r.multiplier).replace('{{from}}', r.rawScore).replace('{{to}}', r.finalScore);
+      } else if (r.multiplier < 1) {
+        var tmpl2 = LANG === 'ar' ? 'Your resistance to change (×{{m}}) lowered your readiness from {{from}} to {{to}}' : 'Your resistance to change (×{{m}}) lowered your readiness from {{from}} to {{to}}';
+        explain.textContent = tmpl2.replace('{{m}}', r.multiplier).replace('{{from}}', r.rawScore).replace('{{to}}', r.finalScore);
+      } else {
+        explain.textContent = LANG === 'ar' ? 'Your flexibility is average — it didn't affect your score' : 'Your flexibility is average — it didn't affect your score';
+      }
+    }
+  }
+
+  // ─── أعمدة أفقية ───
+
+  function renderBars(axes, hasSpecialty) {
+    setBar('bar-knowledge', 'bar-knowledge-val', axes.knowledge);
+    setBar('bar-practice', 'bar-practice-val', axes.practice);
+    setBar('bar-flexibility', 'bar-flexibility-val', axes.flexibility);
+    if (hasSpecialty) {
+      $('bar-specialty-row').style.display = '';
+      setBar('bar-specialty', 'bar-specialty-val', axes.specialty);
+    }
+  }
+
+  function setBar(fillId, valId, pct) {
+    var fill = $(fillId);
+    var val = $(valId);
+    if (fill) {
+      fill.style.width = pct + '%';
+      if (pct >= 70) fill.className = 'air-bar-fill strong';
+      else if (pct >= 40) fill.className = 'air-bar-fill medium';
+      else fill.className = 'air-bar-fill weak';
+    }
+    if (val) val.textContent = pct + '%';
+  }
+
+  // ─── التوصيات ───
+
+  function renderRecommendations(r) {
+    var container = $('rec-cards');
+    if (!container) return;
+    container.innerHTML = '';
+
+    var recs = [];
+
+    if (r.axes.knowledge < 50) {
+      recs.push({
+        type: 'knowledge',
+        title: LANG === 'ar' ? 'تعلّم الأساسيات' : 'Learn the Basics',
+        text: LANG === 'ar'
+          ? 'ابدأ بفهم مبادئ الذكاء الاصطناعي والتعلم الآلي. جرّب دورات مجانية على Coursera أو YouTube.'
+          : 'Start by understanding AI and machine learning principles. Try free courses on Coursera or YouTube.'
+      });
+    }
+
+    if (r.axes.practice < 50) {
+      recs.push({
+        type: 'practice',
+        title: LANG === 'ar' ? 'جرّب الأدوات عملياً' : 'Try Tools Hands-on',
+        text: LANG === 'ar'
+          ? 'استخدم ChatGPT أو Claude في مهمة عمل حقيقية هذا الأسبوع. التعلم بالممارسة أسرع من القراءة.'
+          : 'Use ChatGPT or Claude for a real work task this week. Learning by doing is faster than reading.'
+      });
+    }
+
+    if (r.multiplier < 1) {
+      recs.push({
+        type: 'flexibility',
+        title: LANG === 'ar' ? 'انفتح على التغيير' : 'Embrace Change',
+        text: LANG === 'ar'
+          ? 'المقاومة طبيعية لكنها مكلفة. جرّب أداة AI واحدة لمدة أسبوع بذهن مفتوح — النتائج ستفاجئك.'
+          : 'Resistance is natural but costly. Try one AI tool for a week with an open mind — the results will surprise you.'
+      });
+    }
+
+    if (r.axes.specialty < 50 && r.selectedSpecialties.length > 0) {
+      recs.push({
+        type: 'specialty',
+        title: LANG === 'ar' ? 'استكشف AI في تخصصك' : 'Explore AI in Your Field',
+        text: LANG === 'ar'
+          ? 'ابحث عن أدوات ذكاء اصطناعي مصممة لتخصصك. الفرص متزايدة والمتخصصون الذين يتبنون AI مبكراً يتفوقون.'
+          : 'Look for AI tools designed for your specialty. Opportunities are growing and early AI adopters in your field gain a competitive edge.'
+      });
+    }
+
+    // إذا كل شيء مرتفع
+    if (recs.length === 0) {
+      recs.push({
+        type: 'knowledge',
+        title: LANG === 'ar' ? 'شارك وقُد' : 'Lead & Share',
+        text: LANG === 'ar'
+          ? 'أنت في موقع ممتاز! شارك معرفتك مع زملائك وساعد فريقك في تبني الذكاء الاصطناعي.'
+          : 'You\'re in an excellent position! Share your knowledge with colleagues and help your team adopt AI.'
+      });
+    }
+
+    for (var i = 0; i < recs.length; i++) {
+      var card = document.createElement('div');
+      card.className = 'air-rec-card ' + recs[i].type;
+      card.innerHTML = '<h4>' + recs[i].title + '</h4><p>' + recs[i].text + '</p>';
+      container.appendChild(card);
+    }
+  }
+
+  // ─── المقارنة ───
+
+  function renderComparison(score) {
+    // توزيع طبيعي تقديري: mean=55, std=15
+    var z = (score - 55) / 15;
+    // تقريب CDF
+    var pct = Math.round(normalCDF(z) * 100);
+    pct = Math.max(1, Math.min(99, pct));
+
+    var text = $('comparison-text');
+    if (text) {
+      var tmpl = LANG === 'ar' ? 'You scored better than {{pct}}% of people who completed this assessment' : 'You scored better than {{pct}}% of people who completed this assessment';
+      text.textContent = tmpl.replace('{{pct}}', pct);
+    }
+
+    // شريط بصري بسيط
+    var chart = $('comparison-chart');
+    if (chart) {
+      chart.innerHTML = '<div class="air-comparison-bar"><div class="air-comparison-bar-fill" style="width:' + pct + '%"></div><span class="air-comparison-bar-label">' + pct + '%</span></div>';
+    }
+  }
+
+  function normalCDF(z) {
+    var a1 = 0.254829592, a2 = -0.284496736, a3 = 1.421413741;
+    var a4 = -1.453152027, a5 = 1.061405429, p = 0.3275911;
+    var sign = z < 0 ? -1 : 1;
+    z = Math.abs(z) / Math.sqrt(2);
+    var t2 = 1.0 / (1.0 + p * z);
+    var y = 1.0 - (((((a5 * t2 + a4) * t2) + a3) * t2 + a2) * t2 + a1) * t2 * Math.exp(-z * z);
+    return 0.5 * (1.0 + sign * y);
+  }
+
+  // ─── إجراءات التقرير ───
+
+  function initReportActions(r) {
+    // إعادة الاختبار
+    var btnRestart = $('btn-restart');
+    if (btnRestart) {
+      btnRestart.addEventListener('click', function() {
+        window.location.reload();
+      });
+    }
+
+    // مشاركة
+    var btnShare = $('btn-share');
+    if (btnShare) {
+      btnShare.addEventListener('click', function() {
+        var shareText = (LANG === 'ar'
+          ? 'حصلت على ' + r.finalScore + '/100 في تقييم الجاهزية للذكاء الاصطناعي — ' + r.classification.ar + '!'
+          : 'I scored ' + r.finalScore + '/100 on the AI Readiness Assessment — ' + r.classification.en + '!')
+          + '\n' + window.location.href.split('?')[0];
+
+        if (navigator.share) {
+          navigator.share({ title: r.classification[LANG], text: shareText }).catch(function() {});
+        } else {
+          navigator.clipboard.writeText(shareText).then(function() {
+            App.showToast(LANG === 'ar' ? 'تم النسخ!' : 'Copied!');
+          });
+        }
+      });
+    }
+
+    // طي/فتح تفاصيل الإجابات
+    var toggle = $('answers-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', function() {
+        var body = $('answers-body');
+        var chevron = $('answers-chevron');
+        if (body.style.display === 'none') {
+          body.style.display = '';
+          if (chevron) chevron.style.transform = 'rotate(180deg)';
+        } else {
+          body.style.display = 'none';
+          if (chevron) chevron.style.transform = '';
+        }
+      });
+    }
+  }
+
+  // ─── تفاصيل الإجابات ───
+
+  function renderAnswerDetails(answers) {
+    var container = $('answers-list');
+    if (!container) return;
+    container.innerHTML = '';
+
+    for (var i = 0; i < answers.length; i++) {
+      var a = answers[i];
+      var item = document.createElement('div');
+      item.className = 'air-answer-item';
+
+      var statusClass = '';
+      var statusText = '';
+      if (a.type === 'self_assessment') {
+        statusClass = 'neutral';
+        statusText = '—';
+      } else if (a.timed_out) {
+        statusClass = 'timeout';
+        statusText = LANG === 'ar' ? '⏰ انتهى الوقت' : '⏰ Time up';
+      } else if (a.is_correct) {
+        statusClass = 'correct';
+        statusText = LANG === 'ar' ? '✓ صحيح' : '✓ Correct';
+      } else {
+        statusClass = 'incorrect';
+        statusText = LANG === 'ar' ? '✗ خاطئ' : '✗ Incorrect';
+      }
+
+      var pointsText = a.type !== 'self_assessment'
+        ? (LANG === 'ar' ? '{{earned}} of {{max}} points' : '{{earned}} of {{max}} points')
+            .replace('{{earned}}', Math.round(a.earned * 10) / 10)
+            .replace('{{max}}', a.max)
+        : '';
+
+      var html = '<div class="air-answer-header">'
+        + '<span class="air-answer-num">' + (i + 1) + '</span>'
+        + '<span class="air-answer-status ' + statusClass + '">' + statusText + '</span>'
+        + (pointsText ? '<span class="air-answer-points">' + pointsText + '</span>' : '')
+        + '</div>'
+        + '<p class="air-answer-question">' + a.text + '</p>';
+
+      if (a.hint) {
+        html += '<p class="air-answer-hint">💡 ' + a.hint + '</p>';
+      }
+
+      item.innerHTML = html;
+      container.appendChild(item);
+    }
+  }
 
   var selectedSpecialties = [];
 
@@ -3431,11 +4048,9 @@
       }
     }
 
-    console.log('[AI Readiness] Loaded specialty sections:', loadedSections);
 
     if (allSpecQuestions.length === 0) {
       // كل الملفات فشلت
-      console.log('[AI Readiness] No specialty questions available — skipping to report');
       App.showToast(LANG === 'ar' ? 'Questions for this specialty are coming soon — your score is based on general questions' : 'Questions for this specialty are coming soon — your score is based on general questions');
       finishAssessment();
       return;
@@ -3480,7 +4095,6 @@
       phase2Questions[r] = tmp;
     }
 
-    console.log('[AI Readiness] Phase 2 questions:', phase2Questions.length, '(specialty:', specQuiz.length, '+ general:', extraGeneral.length, ')');
 
     // بدء المرحلة 2
     quizQuestions = phase2Questions;
@@ -3491,13 +4105,11 @@
     resumeGlobalTimer();
     renderCurrentQuestion();
 
-    console.log('[AI Readiness] Phase 2 started — Specialty questions');
   }
 
   // ─── تخطي التخصصات ───
 
   function skipSpecialties() {
-    console.log('[AI Readiness] Specialties skipped — going to report');
     finishAssessment();
   }
 

@@ -56,6 +56,43 @@ build.js                    Build script — contains the actual HTML layout tem
 | `zakat-calculator` | calculators | Zakat calculation (gold, silver, cash, stocks, debt, real estate, trade) |
 | `inheritance-calculator` | calculators | Islamic inheritance (faraid) calculator with 4 madhabs, awl, radd, hajb |
 | `kaffara-calculator` | calculators | Kaffara & fidya calculator for 8 types of Islamic expiations |
+| `ai-readiness` | generators | AI readiness assessment: timed quiz with 6 question types, 25 specialties, scoring engine, interactive report |
+
+## AI Readiness Assessment Architecture
+
+The AI readiness tool (`src/tools/ai-readiness.html`) is a self-contained interactive quiz. Key notes:
+
+### Question bank
+- Index: `src/assets/data/ai-readiness/questions-index.json` — lists all sections (general + 25 specialties)
+- General questions: `src/assets/data/ai-readiness/general.json`
+- Specialty questions: `src/assets/data/ai-readiness/{specialty-id}.json` (loaded on demand)
+- All text fields are bilingual `{"ar": "...", "en": "..."}`
+
+### Adding a new specialty
+1. Create `src/assets/data/ai-readiness/{id}.json` following the `general.json` structure
+2. Add an entry in `questions-index.json` under `sections[]` with `id`, `name`, `category`, `file`, `code`
+3. The specialty auto-appears in the selection screen
+
+### Adding questions to an existing section
+Add objects to the `questions[]` array in the relevant JSON file. Supported types:
+- `mcq`: options with `score` (0 to max points)
+- `true_false`: `correct_answer` (boolean)
+- `fill_blank`: `blanks[]` with `correct` and `options`
+- `matching`: `left[]`, `right[]`, `correct_pairs[]`
+- `sorting`: `items[]`, `correct_order[]`
+- `self_assessment`: options with `flexibility_score` (1-5)
+
+Each question requires: `id`, `type`, `purpose` (core/cultural/self_assessment), `axis` (knowledge/practice/flexibility), `time_seconds`, `points`, `text`, `hint_after`.
+
+### Scoring
+- Core questions: earned/max → raw score %
+- Cultural questions: tracked separately for display
+- Self-assessment: avg flexibility_score → multiplier (0.7–1.3)
+- Final: min(100, rawScore × multiplier)
+- Levels: Pioneer (90+), Advanced (75+), Aware (60+), Beginner (40+), At Risk (<40)
+
+### Data path
+Files in `src/assets/data/ai-readiness/` are copied to `dist/assets/data/ai-readiness/` automatically by the build system's `copyDirRecursive` call.
 
 ## Adding a New Tool — Step by Step
 
