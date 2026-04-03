@@ -377,17 +377,28 @@
 
 /* === Quiz Screen === */
 
-/* -- Top bar: progress + timers -- */
-.air-quiz-topbar {
+/* -- Phase badge -- */
+.air-quiz-phase {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+/* -- Progress container (question info + bar) -- */
+.air-progress-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px 16px;
   margin-bottom: 10px;
-  text-align: center;
 }
 
 .air-progress-info {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  margin-bottom: 6px;
-  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .air-progress-bar {
@@ -402,10 +413,8 @@
   position: relative;
   overflow: hidden;
   background: var(--bg-tertiary);
-  min-width: 70px;
   text-align: center;
   z-index: 1;
-  margin-bottom: 8px;
 }
 
 .air-progress-fill {
@@ -416,6 +425,18 @@
   border-radius: inherit;
   z-index: -1;
   transition: width 0.4s ease, background-color 0.5s;
+}
+
+/* -- Timers container (global + question) -- */
+.air-timers-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .air-timer-global {
@@ -432,7 +453,6 @@
   background: var(--bg-tertiary);
   text-align: center;
   z-index: 1;
-  margin-bottom: 8px;
 }
 
 .air-timer-global-fill {
@@ -1853,27 +1873,27 @@
   <!-- ══════════════════════════════════════════════════════════ -->
   <div class="air-screen" id="screen-quiz" style="display:none">
 
-    <!-- شريط علوي -->
-    <div class="air-quiz-topbar">
-      <span class="air-badge" id="quiz-phase-badge">General Phase</span>
+    <!-- المرحلة -->
+    <div class="air-quiz-phase" id="quiz-phase-badge">General Phase</div>
+
+    <!-- حاوية التقدم -->
+    <div class="air-progress-container">
+      <div class="air-progress-info" id="progress-info"></div>
+      <div class="air-progress-bar" id="progress-bar">
+        <div class="air-progress-fill" id="progress-fill" style="width:0%"></div>
+        <span id="progress-pct">0%</span>
+      </div>
     </div>
 
-    <!-- مؤشر التقدم -->
-    <div class="air-progress-info" id="progress-info"></div>
-    <div class="air-progress-bar" id="progress-bar">
-      <div class="air-progress-fill" id="progress-fill" style="width:0%"></div>
-      <span id="progress-pct">0%</span>
-    </div>
-
-    <!-- مؤقت إجمالي -->
-    <span class="air-timer-global" id="timer-global">
-      <span class="air-timer-global-fill" id="timer-global-fill"></span>
-      <span id="timer-global-text">00:00</span>
-    </span>
-
-    <!-- مؤقت السؤال الفردي -->
-    <div class="air-timer-question" id="timer-question-bar">
-      <div class="air-timer-question-fill" id="timer-question-fill"></div>
+    <!-- حاوية المؤقتات -->
+    <div class="air-timers-container">
+      <span class="air-timer-global" id="timer-global">
+        <span class="air-timer-global-fill" id="timer-global-fill"></span>
+        <span id="timer-global-text">00:00</span>
+      </span>
+      <div class="air-timer-question" id="timer-question-bar">
+        <div class="air-timer-question-fill" id="timer-question-fill"></div>
+      </div>
     </div>
 
     <!-- حاوية السؤال -->
@@ -2589,7 +2609,8 @@
     var current = currentQuestionIndex + 1;
     var total = quizQuestions.length;
     var remaining = total - current;
-    var ratio = total > 0 ? current / total : 0;
+    var answered = currentQuestionIndex; // الأسئلة المُجاب عليها فعلاً
+    var ratio = total > 0 ? answered / total : 0;
     var pct = Math.round(ratio * 100);
 
     var infoEl = $('progress-info');
