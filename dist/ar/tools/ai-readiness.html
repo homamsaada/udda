@@ -4044,215 +4044,203 @@
           canvas.width = W;
           canvas.height = H;
           var ctx = canvas.getContext('2d');
-
-          // ── خلفية متدرجة حسب المستوى ──
-          var bgGrads = {
-            'pioneer':  ['#064e3b', '#065f46', '#047857'],
-            'advanced': ['#1e3a5f', '#1e40af', '#3b82f6'],
-            'aware':    ['#312e81', '#4338ca', '#6366f1'],
-            'beginner': ['#78350f', '#92400e', '#b45309'],
-            'at-risk':  ['#450a0a', '#7f1d1d', '#991b1b']
-          };
-          var colors = bgGrads[r.classification.level] || bgGrads['aware'];
-          var grad = ctx.createLinearGradient(0, 0, W, H);
-          grad.addColorStop(0, colors[0]);
-          grad.addColorStop(0.5, colors[1]);
-          grad.addColorStop(1, colors[2]);
-          ctx.fillStyle = grad;
-          ctx.fillRect(0, 0, W, H);
-
-          // تراكب شفاف
-          ctx.fillStyle = 'rgba(0,0,0,0.15)';
-          ctx.fillRect(0, 0, W, H);
-
           var isAr = LANG === 'ar';
-          ctx.textAlign = 'center';
 
-          // ── عُدّة (أعلى) ──
-          ctx.font = '700 22px sans-serif';
-          ctx.fillStyle = 'rgba(255,255,255,0.6)';
-          ctx.fillText('udda.tools | عُدّة', W / 2, 35);
-
-          // ── اسم المستخدم ──
-          var topY = 65;
-          if (r.userName) {
-            ctx.font = '600 26px sans-serif';
-            ctx.fillStyle = 'rgba(255,255,255,0.85)';
-            ctx.fillText(r.userName, W / 2, topY);
-            topY += 10;
+          // ── helper: مستطيل بزوايا مستديرة ──
+          function roundRect(x, y, w, h, rad) {
+            ctx.beginPath();
+            ctx.moveTo(x + rad, y);
+            ctx.lineTo(x + w - rad, y);
+            ctx.quadraticCurveTo(x + w, y, x + w, y + rad);
+            ctx.lineTo(x + w, y + h - rad);
+            ctx.quadraticCurveTo(x + w, y + h, x + w - rad, y + h);
+            ctx.lineTo(x + rad, y + h);
+            ctx.quadraticCurveTo(x, y + h, x, y + h - rad);
+            ctx.lineTo(x, y + rad);
+            ctx.quadraticCurveTo(x, y, x + rad, y);
+            ctx.closePath();
           }
 
-          // ── القسم الأيسر: Gauge + Score + Badge ──
-          var gaugeX = 300, gaugeY = topY + 100, gaugeR = 80;
+          // ── خلفية: تدرج أزرق غامق ──
+          var bgGrad = ctx.createLinearGradient(0, 0, W, H);
+          bgGrad.addColorStop(0, '#0f172a');
+          bgGrad.addColorStop(0.5, '#1e293b');
+          bgGrad.addColorStop(1, '#0f172a');
+          ctx.fillStyle = bgGrad;
+          ctx.fillRect(0, 0, W, H);
 
-          // رسم gauge نصف دائري
-          ctx.lineWidth = 10;
-          ctx.lineCap = 'round';
-          // خلفية
-          ctx.strokeStyle = 'rgba(255,255,255,0.15)';
-          ctx.beginPath();
-          ctx.arc(gaugeX, gaugeY, gaugeR, Math.PI, 0);
-          ctx.stroke();
-          // تعبئة
-          var gaugeColors = {
+          // نقاط ضوئية خفيفة
+          var glows = [
+            { x: W * 0.8, y: H * 0.2, r: 300, c: 'rgba(56,189,248,0.08)' },
+            { x: W * 0.2, y: H * 0.7, r: 250, c: 'rgba(99,102,241,0.08)' }
+          ];
+          for (var gi = 0; gi < glows.length; gi++) {
+            var gl = glows[gi];
+            var rg = ctx.createRadialGradient(gl.x, gl.y, 0, gl.x, gl.y, gl.r);
+            rg.addColorStop(0, gl.c);
+            rg.addColorStop(1, 'transparent');
+            ctx.fillStyle = rg;
+            ctx.fillRect(0, 0, W, H);
+          }
+
+          var pad = 30;
+          var cardRad = 16;
+          var levelClr = {
             'pioneer': '#22c55e', 'advanced': '#06b6d4',
             'aware': '#3b82f6', 'beginner': '#f59e0b', 'at-risk': '#ef4444'
           };
-          ctx.strokeStyle = gaugeColors[r.classification.level] || '#3b82f6';
-          ctx.lineWidth = 12;
-          var scoreAngle = Math.PI * (1 - r.finalScore / 100);
-          ctx.beginPath();
-          ctx.arc(gaugeX, gaugeY, gaugeR, Math.PI, Math.PI + (Math.PI * r.finalScore / 100));
-          ctx.stroke();
+          var clr = levelClr[r.classification.level] || '#3b82f6';
 
-          // رقم الدرجة
-          ctx.font = '800 52px sans-serif';
-          ctx.fillStyle = '#fff';
-          ctx.fillText(r.finalScore, gaugeX, gaugeY + 10);
-          ctx.font = '400 18px sans-serif';
-          ctx.fillStyle = 'rgba(255,255,255,0.6)';
-          ctx.fillText('/100', gaugeX, gaugeY + 32);
+          // ══════════════════════════════════════════
+          // بطاقة 1: الهيدر (عرض كامل)
+          // ══════════════════════════════════════════
+          var h1H = 70;
+          ctx.fillStyle = 'rgba(255,255,255,0.95)';
+          roundRect(pad, pad, W - pad * 2, h1H, cardRad);
+          ctx.fill();
+          // ظل خفيف
+          ctx.shadowColor = 'rgba(0,0,0,0.1)';
+          ctx.shadowBlur = 10;
+          ctx.shadowOffsetY = 2;
+          ctx.fill();
+          ctx.shadowColor = 'transparent';
+          ctx.shadowBlur = 0;
+          ctx.shadowOffsetY = 0;
+
+          // شعار عُدّة (يمين في العربي)
+          ctx.textAlign = isAr ? 'right' : 'left';
+          ctx.font = '800 28px sans-serif';
+          ctx.fillStyle = '#4f46e5';
+          var logoX = isAr ? W - pad - 20 : pad + 20;
+          ctx.fillText('عُدّة', logoX, pad + 32);
+          ctx.font = '400 20px sans-serif';
+          ctx.fillStyle = '#94a3b8';
+          ctx.fillText('udda.tools', logoX, pad + 56);
+
+          // العنوان واسم المستخدم (الطرف الآخر)
+          ctx.textAlign = isAr ? 'left' : 'right';
+          var titleX = isAr ? pad + 20 : W - pad - 20;
+          ctx.font = '700 24px sans-serif';
+          ctx.fillStyle = '#1e293b';
+          ctx.fillText(isAr ? 'تقرير الجاهزية للذكاء الاصطناعي' : 'AI Readiness Report', titleX, pad + 35);
+          if (r.userName) {
+            ctx.font = '500 22px sans-serif';
+            ctx.fillStyle = '#64748b';
+            ctx.fillText(r.userName, titleX, pad + 58);
+          }
+
+          // ══════════════════════════════════════════
+          // بطاقة 2: الدرجة الكلية + الشارة (وسط)
+          // ══════════════════════════════════════════
+          var card2Y = pad + h1H + 16;
+          var card2H = 210;
+          var card2W = W - pad * 2;
+          ctx.fillStyle = 'rgba(255,255,255,0.95)';
+          roundRect(pad, card2Y, card2W, card2H, cardRad);
+          ctx.shadowColor = 'rgba(0,0,0,0.1)';
+          ctx.shadowBlur = 10;
+          ctx.shadowOffsetY = 2;
+          ctx.fill();
+          ctx.shadowColor = 'transparent';
+          ctx.shadowBlur = 0;
+          ctx.shadowOffsetY = 0;
+
+          // الدرجة بخط كبير جداً
+          ctx.textAlign = 'center';
+          ctx.font = '900 90px sans-serif';
+          ctx.fillStyle = clr;
+          ctx.fillText(r.finalScore, W / 2, card2Y + 95);
+          ctx.font = '400 28px sans-serif';
+          ctx.fillStyle = '#94a3b8';
+          ctx.fillText('/100', W / 2 + 70, card2Y + 95);
 
           // شارة التصنيف
-          var badgeY = gaugeY + 60;
           var badgeText = icon + ' ' + r.classification[LANG];
-          ctx.font = '700 24px sans-serif';
-          var badgeW = ctx.measureText(badgeText).width + 40;
-          // خلفية الشارة
-          ctx.fillStyle = gaugeColors[r.classification.level] || '#3b82f6';
-          var badgeRad = 16;
-          var bx = gaugeX - badgeW / 2, by = badgeY - 18;
-          ctx.beginPath();
-          ctx.moveTo(bx + badgeRad, by);
-          ctx.lineTo(bx + badgeW - badgeRad, by);
-          ctx.quadraticCurveTo(bx + badgeW, by, bx + badgeW, by + badgeRad);
-          ctx.lineTo(bx + badgeW, by + 36 - badgeRad);
-          ctx.quadraticCurveTo(bx + badgeW, by + 36, bx + badgeW - badgeRad, by + 36);
-          ctx.lineTo(bx + badgeRad, by + 36);
-          ctx.quadraticCurveTo(bx, by + 36, bx, by + 36 - badgeRad);
-          ctx.lineTo(bx, by + badgeRad);
-          ctx.quadraticCurveTo(bx, by, bx + badgeRad, by);
+          ctx.font = '700 28px sans-serif';
+          var badgeW = ctx.measureText(badgeText).width + 48;
+          var badgeCx = W / 2;
+          var badgeTop = card2Y + 120;
+          ctx.fillStyle = clr;
+          roundRect(badgeCx - badgeW / 2, badgeTop, badgeW, 44, 22);
           ctx.fill();
           ctx.fillStyle = '#fff';
-          ctx.fillText(badgeText, gaugeX, badgeY + 7);
+          ctx.textAlign = 'center';
+          ctx.fillText(badgeText, badgeCx, badgeTop + 31);
 
-          // ── القسم الأيمن: Radar ──
-          var radarX = 900, radarY = topY + 110, radarR = 85;
-          var axisKeys = ['knowledge', 'practice', 'flexibility'];
-          var hasSpec = r.selectedSpecialties.length > 0;
-          if (hasSpec) axisKeys.push('specialty');
-          var axisLabels = {
-            knowledge: isAr ? 'المعرفة' : 'Knowledge',
-            practice: isAr ? 'التطبيق' : 'Practice',
-            flexibility: isAr ? 'المرونة' : 'Flexibility',
-            specialty: isAr ? 'التخصص' : 'Specialty'
-          };
-          var nn = axisKeys.length;
-
-          // شبكة الرادار
-          ctx.lineWidth = 1;
-          ctx.strokeStyle = 'rgba(255,255,255,0.15)';
-          for (var ring = 1; ring <= 4; ring++) {
-            var rr = (ring / 4) * radarR;
-            ctx.beginPath();
-            for (var ii = 0; ii <= nn; ii++) {
-              var a = (Math.PI * 2 * (ii % nn) / nn) - Math.PI / 2;
-              var px = radarX + rr * Math.cos(a);
-              var py = radarY + rr * Math.sin(a);
-              if (ii === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
-            }
-            ctx.stroke();
-          }
-          // خطوط المحاور
-          for (var jj = 0; jj < nn; jj++) {
-            var a2 = (Math.PI * 2 * jj / nn) - Math.PI / 2;
-            ctx.beginPath();
-            ctx.moveTo(radarX, radarY);
-            ctx.lineTo(radarX + radarR * Math.cos(a2), radarY + radarR * Math.sin(a2));
-            ctx.stroke();
-          }
-
-          // منطقة البيانات
-          ctx.fillStyle = 'rgba(99,102,241,0.35)';
-          ctx.strokeStyle = 'rgba(129,140,248,0.9)';
-          ctx.lineWidth = 2.5;
+          // خط زخرفي فوق الرقم
+          ctx.strokeStyle = clr;
+          ctx.lineWidth = 3;
           ctx.beginPath();
-          for (var kk = 0; kk < nn; kk++) {
-            var val = (r.axes[axisKeys[kk]] || 0) / 100;
-            var a3 = (Math.PI * 2 * kk / nn) - Math.PI / 2;
-            var dx = radarX + val * radarR * Math.cos(a3);
-            var dy = radarY + val * radarR * Math.sin(a3);
-            if (kk === 0) ctx.moveTo(dx, dy); else ctx.lineTo(dx, dy);
-          }
-          ctx.closePath();
-          ctx.fill();
+          ctx.moveTo(W / 2 - 60, card2Y + 14);
+          ctx.lineTo(W / 2 + 60, card2Y + 14);
           ctx.stroke();
 
-          // نقاط + تسميات المحاور
-          ctx.font = '600 15px sans-serif';
-          for (var pp = 0; pp < nn; pp++) {
-            var val2 = (r.axes[axisKeys[pp]] || 0) / 100;
-            var a4 = (Math.PI * 2 * pp / nn) - Math.PI / 2;
-            // نقطة
-            var dpx = radarX + val2 * radarR * Math.cos(a4);
-            var dpy = radarY + val2 * radarR * Math.sin(a4);
-            ctx.fillStyle = '#fff';
-            ctx.beginPath();
-            ctx.arc(dpx, dpy, 4, 0, Math.PI * 2);
+          // ══════════════════════════════════════════
+          // 4 بطاقات محاور (صف واحد)
+          // ══════════════════════════════════════════
+          var axRow = card2Y + card2H + 16;
+          var axH = 120;
+          var axGap = 14;
+          var axW = (W - pad * 2 - axGap * 3) / 4;
+          var axisData = [
+            { key: 'knowledge', icon: '🧠', ar: 'المعرفة', en: 'Knowledge' },
+            { key: 'practice',  icon: '🛠️', ar: 'التطبيق', en: 'Practice' },
+            { key: 'flexibility', icon: '🔄', ar: 'المرونة', en: 'Flexibility' },
+            { key: 'specialty', icon: '🎯', ar: 'التخصص', en: 'Specialty' }
+          ];
+
+          for (var ai = 0; ai < 4; ai++) {
+            var ax = axisData[ai];
+            var axX = pad + ai * (axW + axGap);
+
+            // بطاقة
+            ctx.fillStyle = 'rgba(255,255,255,0.95)';
+            roundRect(axX, axRow, axW, axH, cardRad);
+            ctx.shadowColor = 'rgba(0,0,0,0.08)';
+            ctx.shadowBlur = 8;
+            ctx.shadowOffsetY = 2;
             ctx.fill();
-            // تسمية
-            var lx = radarX + (radarR + 22) * Math.cos(a4);
-            var ly = radarY + (radarR + 22) * Math.sin(a4);
-            ctx.fillStyle = 'rgba(255,255,255,0.85)';
+            ctx.shadowColor = 'transparent';
+            ctx.shadowBlur = 0;
+            ctx.shadowOffsetY = 0;
+
             ctx.textAlign = 'center';
-            ctx.fillText(axisLabels[axisKeys[pp]], lx, ly + 4);
-            ctx.font = '700 13px sans-serif';
-            ctx.fillStyle = gaugeColors[r.classification.level] || '#818cf8';
-            ctx.fillText(r.axes[axisKeys[pp]] + '%', lx, ly + 20);
-            ctx.font = '600 15px sans-serif';
+            var axCx = axX + axW / 2;
+
+            // أيقونة + اسم
+            ctx.font = '400 28px sans-serif';
+            ctx.fillStyle = '#1e293b';
+            ctx.fillText(ax.icon, axCx, axRow + 35);
+
+            ctx.font = '600 20px sans-serif';
+            ctx.fillStyle = '#475569';
+            ctx.fillText(isAr ? ax.ar : ax.en, axCx, axRow + 62);
+
+            // النسبة
+            var axVal = r.axes[ax.key] || 0;
+            ctx.font = '800 36px sans-serif';
+            ctx.fillStyle = clr;
+            ctx.fillText(axVal + '%', axCx, axRow + 102);
           }
 
-          // ── الملخص الشخصي (4 جمل) — أسفل النصف العلوي ──
-          var summaryEl = $('summary-text');
-          var summaryY = topY + 240;
-          if (summaryEl) {
-            var spans = summaryEl.querySelectorAll('.air-summary-line');
-            ctx.font = '500 15px sans-serif';
-            ctx.textAlign = 'center';
-            var lineY = summaryY;
-            for (var ss = 0; ss < spans.length; ss++) {
-              var txt = spans[ss].textContent;
-              // تقسيم النص الطويل لسطور
-              var maxChars = 80;
-              while (txt.length > 0) {
-                var chunk = txt.substring(0, maxChars);
-                if (txt.length > maxChars) {
-                  var lastSpace = chunk.lastIndexOf(' ');
-                  if (lastSpace > 40) chunk = chunk.substring(0, lastSpace);
-                }
-                txt = txt.substring(chunk.length).trim();
-                ctx.fillStyle = spans[ss].style.color || 'rgba(255,255,255,0.8)';
-                ctx.fillText(chunk.trim(), W / 2, lineY);
-                lineY += 20;
-                if (lineY > H - 50) break;
-              }
-              lineY += 4;
-              if (lineY > H - 50) break;
-            }
-          }
-
-          // ── المعادلة (سطر أخير) ──
-          var formulaY = H - 30;
-          ctx.font = '600 16px sans-serif';
+          // ══════════════════════════════════════════
+          // المعادلة (أسفل الصورة على الخلفية الداكنة)
+          // ══════════════════════════════════════════
+          var formulaY = axRow + axH + 42;
           ctx.textAlign = 'center';
-          ctx.fillStyle = 'rgba(255,255,255,0.7)';
+          ctx.font = '600 24px sans-serif';
+          ctx.fillStyle = 'rgba(255,255,255,0.85)';
           var formulaText = isAr
-            ? 'المعرفة والتطبيق (' + r.rawScore + '%) × المرونة (' + r.multiplier + ') = الجاهزية (' + r.finalScore + '%)'
-            : 'Knowledge & Practice (' + r.rawScore + '%) × Flexibility (' + r.multiplier + ') = Readiness (' + r.finalScore + '%)';
+            ? 'المعرفة والتطبيق (' + r.rawScore + '%)  ×  المرونة (' + r.multiplier + ')  =  الجاهزية (' + r.finalScore + '%)'
+            : 'Knowledge & Practice (' + r.rawScore + '%)  ×  Flexibility (' + r.multiplier + ')  =  Readiness (' + r.finalScore + '%)';
           ctx.fillText(formulaText, W / 2, formulaY);
 
+          // رابط الموقع
+          ctx.font = '400 20px sans-serif';
+          ctx.fillStyle = 'rgba(255,255,255,0.4)';
+          ctx.fillText('udda.tools', W / 2, H - 18);
+
           // ── تصدير JPG ──
-          var dataUrl = canvas.toDataURL('image/jpeg', 0.9);
           canvas.toBlob(function(blob) {
             if (blob && navigator.share && navigator.canShare) {
               var file = new File([blob], 'ai-readiness.jpg', { type: 'image/jpeg' });
