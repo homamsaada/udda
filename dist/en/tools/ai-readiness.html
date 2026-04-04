@@ -4235,13 +4235,157 @@
             ? 'المعرفة والتطبيق (' + r.rawScore + '%)  ×  المرونة (' + r.multiplier + ')  =  الجاهزية (' + r.finalScore + '%)'
             : 'Knowledge & Practice (' + r.rawScore + '%)  ×  Flexibility (' + r.multiplier + ')  =  Readiness (' + r.finalScore + '%)';
           ctx.fillText(formulaText, W / 2, curY + 30 * S);
+          curY += 70 * S;
+
+          // ═══════════════════════
+          // الملخص الشخصي (4 جمل ملونة)
+          // ═══════════════════════
+          var summaryEl = $('summary-text');
+          if (summaryEl) {
+            var spans = summaryEl.querySelectorAll('.air-summary-line');
+            var lineFs = 22 * S;
+            var lineH = 30 * S;
+            var gapBetween = 16 * S;
+            ctx.font = '500 ' + lineFs + 'px ' + font;
+            ctx.textAlign = 'center';
+
+            for (var si = 0; si < spans.length; si++) {
+              var stxt = spans[si].textContent;
+              var sclr = spans[si].style.color || 'rgba(226,232,240,0.8)';
+              ctx.fillStyle = sclr;
+
+              // تقسيم النص لسطور
+              var maxW = W - pad * 2 - 40 * S;
+              var words = stxt.split(' ');
+              var lines = [];
+              var curLine = '';
+              for (var wi = 0; wi < words.length; wi++) {
+                var testLine = curLine ? curLine + ' ' + words[wi] : words[wi];
+                if (ctx.measureText(testLine).width > maxW && curLine) {
+                  lines.push(curLine);
+                  curLine = words[wi];
+                } else {
+                  curLine = testLine;
+                }
+              }
+              if (curLine) lines.push(curLine);
+
+              for (var li = 0; li < lines.length; li++) {
+                ctx.fillText(lines[li], W / 2, curY);
+                curY += lineH;
+              }
+              curY += gapBetween;
+            }
+          }
+
+          curY += 20 * S;
+
+          // ═══════════════════════
+          // رسم الـ Radar Chart
+          // ═══════════════════════
+          var radarR = 140 * S;
+          var radarCx = W / 2;
+          var radarCy = curY + radarR + 30 * S;
+          var radarLabels = ['knowledge', 'practice', 'flexibility'];
+          var hasSpec = r.selectedSpecialties.length > 0;
+          if (hasSpec) radarLabels.push('specialty');
+          var radarNames = {
+            knowledge: isAr ? 'المعرفة' : 'Knowledge',
+            practice: isAr ? 'التطبيق' : 'Practice',
+            flexibility: isAr ? 'المرونة' : 'Flexibility',
+            specialty: isAr ? 'التخصص' : 'Specialty'
+          };
+          var rn = radarLabels.length;
+
+          // شبكة
+          ctx.lineWidth = 1 * S;
+          ctx.strokeStyle = 'rgba(148,163,184,0.2)';
+          for (var ring = 1; ring <= 4; ring++) {
+            var rrr = (ring / 4) * radarR;
+            ctx.beginPath();
+            for (var ri = 0; ri <= rn; ri++) {
+              var ra = (Math.PI * 2 * (ri % rn) / rn) - Math.PI / 2;
+              var rpx = radarCx + rrr * Math.cos(ra);
+              var rpy = radarCy + rrr * Math.sin(ra);
+              if (ri === 0) ctx.moveTo(rpx, rpy); else ctx.lineTo(rpx, rpy);
+            }
+            ctx.stroke();
+          }
+          // خطوط المحاور
+          for (var rj = 0; rj < rn; rj++) {
+            var ra2 = (Math.PI * 2 * rj / rn) - Math.PI / 2;
+            ctx.beginPath();
+            ctx.moveTo(radarCx, radarCy);
+            ctx.lineTo(radarCx + radarR * Math.cos(ra2), radarCy + radarR * Math.sin(ra2));
+            ctx.stroke();
+          }
+
+          // منطقة البيانات
+          ctx.fillStyle = 'rgba(99,102,241,0.3)';
+          ctx.strokeStyle = 'rgba(129,140,248,0.9)';
+          ctx.lineWidth = 3 * S;
+          ctx.beginPath();
+          for (var rk = 0; rk < rn; rk++) {
+            var rval = (r.axes[radarLabels[rk]] || 0) / 100;
+            var ra3 = (Math.PI * 2 * rk / rn) - Math.PI / 2;
+            var rdx = radarCx + rval * radarR * Math.cos(ra3);
+            var rdy = radarCy + rval * radarR * Math.sin(ra3);
+            if (rk === 0) ctx.moveTo(rdx, rdy); else ctx.lineTo(rdx, rdy);
+          }
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+
+          // نقاط + تسميات
+          for (var rp = 0; rp < rn; rp++) {
+            var rv2 = (r.axes[radarLabels[rp]] || 0) / 100;
+            var ra4 = (Math.PI * 2 * rp / rn) - Math.PI / 2;
+            // نقطة
+            var rdpx = radarCx + rv2 * radarR * Math.cos(ra4);
+            var rdpy = radarCy + rv2 * radarR * Math.sin(ra4);
+            ctx.fillStyle = '#fff';
+            ctx.beginPath();
+            ctx.arc(rdpx, rdpy, 5 * S, 0, Math.PI * 2);
+            ctx.fill();
+            // تسمية
+            var rlx = radarCx + (radarR + 30 * S) * Math.cos(ra4);
+            var rly = radarCy + (radarR + 30 * S) * Math.sin(ra4);
+            ctx.textAlign = 'center';
+            ctx.font = '600 ' + (24 * S) + 'px ' + font;
+            ctx.fillStyle = 'rgba(226,232,240,0.85)';
+            ctx.fillText(radarNames[radarLabels[rp]], rlx, rly + 4 * S);
+            ctx.font = '700 ' + (22 * S) + 'px ' + font;
+            ctx.fillStyle = clr;
+            ctx.fillText(r.axes[radarLabels[rp]] + '%', rlx, rly + 30 * S);
+          }
+
+          curY = radarCy + radarR + 80 * S;
 
           // ═══════════════════════
           // رابط الموقع في الأسفل
           // ═══════════════════════
+          var footerY = curY + 40 * S;
+
+          // تكبير canvas إذا لم تتسع
+          var neededH = footerY + 40 * S;
+          if (neededH > H) {
+            H = neededH;
+            var tmpData = ctx.getImageData(0, 0, W, canvas.height);
+            canvas.height = H;
+            // إعادة رسم الخلفية للمنطقة الجديدة
+            var bgGrad2 = ctx.createLinearGradient(0, 0, W * 0.3, H);
+            bgGrad2.addColorStop(0, '#0f172a');
+            bgGrad2.addColorStop(0.4, '#1e293b');
+            bgGrad2.addColorStop(1, '#0f172a');
+            ctx.fillStyle = bgGrad2;
+            ctx.fillRect(0, 0, W, H);
+            ctx.putImageData(tmpData, 0, 0);
+          }
+
+          ctx.textAlign = 'center';
           ctx.font = '400 ' + (28 * S) + 'px ' + font;
           ctx.fillStyle = 'rgba(148,163,184,0.5)';
-          ctx.fillText('udda.tools', W / 2, H - 40 * S);
+          ctx.fillText('udda.tools', W / 2, footerY);
 
           // ── تصدير JPG ──
           canvas.toBlob(function(blob) {
