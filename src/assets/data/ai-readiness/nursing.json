@@ -1,0 +1,377 @@
+{
+  "section_id": "nursing",
+  "section_name": { "ar": "التمريض والقبالة", "en": "Nursing & Midwifery" },
+  "version": "1.0",
+  "last_updated": "2026-04-04",
+  "questions": [
+    {
+      "id": "nrs-mcq-001",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ممرضة في قسم داخلي. نظام الإنذار المبكر بالذكاء الاصطناعي (eCART) أعطى مريضك درجة خطورة مرتفعة رغم أن علاماته الحيوية تبدو مستقرة حالياً. ما التصرف الأنسب؟",
+        "en": "You're a nurse on a medical ward. The AI early warning system (eCART) gave your patient a high-risk score despite currently stable vital signs. What's the most appropriate action?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتجاهل التنبيه — العلامات الحيوية مستقرة والنظام يُطلق إنذارات كاذبة كثيرة",
+            "en": "Ignore the alert — vitals are stable and the system generates too many false alarms"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أُكثّف المراقبة وأراجع الاتجاه العام للبيانات وأُبلّغ الطبيب المسؤول",
+            "en": "Increase monitoring frequency, review the overall data trend, and notify the attending physician"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنقل المريض فوراً للعناية المركزة دون استشارة الطبيب",
+            "en": "Transfer the patient immediately to ICU without consulting the physician"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أُعيد قياس العلامات الحيوية فقط وأنتظر التنبيه التالي",
+            "en": "Only retake vitals and wait for the next alert"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "نظام eCART يحلل عشرات المتغيرات معاً — ليس العلامات الحيوية فقط — ويكتشف أنماط تدهور قبل ظهورها سريرياً بساعات. في دراسة على 362,926 حالة، حقق eCART دقة AUROC تبلغ 0.895 وتفوّق على جميع أنظمة الإنذار الأخرى بما فيها Epic Deterioration Index.",
+        "en": "eCART analyzes dozens of variables together — not just vitals — and detects deterioration patterns hours before they become clinically apparent. In a study of 362,926 encounters, eCART achieved AUROC of 0.895 and outperformed all other warning systems including the Epic Deterioration Index."
+      }
+    },
+    {
+      "id": "nrs-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "شركة Hippocratic AI طوّرت وكلاء ذكاء اصطناعي يتصلون بالمرضى بعد الخروج من المستشفى لمتابعة حالتهم. ما الوصف الأدق لطبيعة عمل هذه التقنية؟",
+        "en": "Hippocratic AI developed AI agents that call patients after hospital discharge to follow up on their condition. What most accurately describes how this technology works?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تشخيص الأمراض ووصف العلاج تلقائياً دون تدخل بشري",
+            "en": "Diagnosing diseases and prescribing treatment automatically without human intervention"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مهام غير تشخيصية مثل متابعة الأدوية والأعراض مع تصعيد الحالات الخطرة لممرضة بشرية",
+            "en": "Non-diagnostic tasks like medication follow-up and symptom screening, escalating serious cases to a human nurse"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "استبدال الممرضات بالكامل في جميع مهام ما بعد الخروج",
+            "en": "Completely replacing nurses in all post-discharge tasks"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "إرسال رسائل نصية تلقائية فقط دون تفاعل صوتي حقيقي",
+            "en": "Sending automated text messages only without real voice interaction"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "Hippocratic AI بلغ تقييمها 3.5 مليار دولار (نوفمبر 2025) وأكملت أكثر من 115 مليون تفاعل سريري. وكلاؤها يتحدثون صوتياً بأكثر من 20 لغة ويعملون بتكلفة 9 دولارات للساعة مقابل 45-65 دولار لتكلفة الممرضة. تقييم المرضى لهم بلغ 9.0 من 10.",
+        "en": "Hippocratic AI reached a $3.5 billion valuation (November 2025) and completed over 115 million clinical interactions. Its agents speak in 20+ languages at $9/hour vs. $45–65/hour for a nurse. Patient ratings averaged 9.0 out of 10."
+      }
+    },
+    {
+      "id": "nrs-mcq-003",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ممرضة طوارئ. نظام الفرز بالذكاء الاصطناعي KATE صنّف مريضة حامل بمستوى خطورة أعلى مما حددتِه أنتِ. ماذا تفعلين؟",
+        "en": "You're an ED nurse. The KATE AI triage system classified a pregnant patient at a higher acuity level than what you assigned. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أُعيد تقييم المريضة بناءً على تنبيه النظام — خصوصاً أن فرز الحوامل معروف بنقص التصنيف",
+            "en": "Reassess the patient based on the system's alert — especially since pregnant patients are known to be under-triaged"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتجاهل التنبيه — خبرتي في الطوارئ أهم من خوارزمية",
+            "en": "Ignore the alert — my ED experience matters more than an algorithm"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفع مستوى الخطورة تلقائياً لأن النظام دائماً على حق",
+            "en": "Automatically upgrade the acuity level because the system is always right"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أُحيل المريضة لطبيب التوليد مباشرة دون إعادة تقييم",
+            "en": "Refer the patient directly to an OB doctor without reassessment"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "دراسة على 25 مستشفى وجدت أن أكثر من 80% من مريضات تسمم الحمل (preeclampsia) صُنّفن بمستوى خطورة أقل مما ينبغي. KATE حقق دقة فرز 75.7% مقابل 59.8% للممرضات. جمعية ممرضات الطوارئ الأمريكية (ENA) اعتمدت KATE كشريك رسمي للفرز بالذكاء الاصطناعي.",
+        "en": "A study across 25 hospitals found over 80% of preeclampsia patients were under-triaged. KATE achieved 75.7% triage accuracy vs. 59.8% for nurses. The Emergency Nurses Association (ENA) designated KATE as its official AI triage partner."
+      }
+    },
+    {
+      "id": "nrs-tf-001",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في مستشفى Houston Methodist، نظام التمريض الافتراضي قلّص مدة مكالمات القبول من 45 دقيقة تقليدياً إلى 13 دقيقة، وأفاد 95% من الممرضات بأنه مفيد.",
+        "en": "At Houston Methodist, the virtual nursing system reduced admission call duration from a traditional 45 minutes to 13 minutes, and 95% of nurses found it helpful."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. نُشرت هذه النتائج في دراسة في Journal of Medical Internet Research عام 2024. Houston Methodist نشرت التقنية في معظم غرف المرضى عبر كل مستشفياتها، مع كاميرات وميكروفونات في كل غرفة لدعم التمريض الافتراضي.",
+        "en": "True. These results were published in a 2024 study in the Journal of Medical Internet Research. Houston Methodist deployed the technology in virtually every patient room across its hospitals, with cameras and microphones in each room for virtual nursing support."
+      }
+    },
+    {
+      "id": "nrs-tf-002",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "نظام INFANT-Guardian للذكاء الاصطناعي يُراقب نبض الجنين أثناء الولادة ونُشر في مستشفيات بالشرق الأوسط.",
+        "en": "The INFANT-Guardian AI system monitors fetal heart rate during labor and has been deployed in Middle Eastern hospitals."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. K2 Medical Systems طوّرت INFANT-Guardian لتفسير تخطيط نبض الجنين (CTG) في الوقت الحقيقي. في مستشفى Mater Mothers ببريسبان (12,000 ولادة/سنة)، ارتبط استخدامه بانخفاض نتائج الولادة السيئة للنصف.",
+        "en": "True. K2 Medical Systems developed INFANT-Guardian for real-time CTG interpretation. At Mater Mothers' Hospital in Brisbane (12,000 births/year), its use was associated with halving poor birth outcomes."
+      }
+    },
+    {
+      "id": "nrs-fill-001",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "مساعد {{blank_1}} في مستشفى Cedars-Sinai يتيح للممرضات إملاء البيانات صوتياً في 50 حقلاً شائعاً في نظام Epic الإلكتروني، مما يقلل وقت التوثيق بشكل كبير.",
+        "en": "The {{blank_1}} assistant at Cedars-Sinai allows nurses to dictate data into 50 commonly used Epic EHR fields, significantly reducing documentation time."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": { "ar": "Aiva", "en": "Aiva" },
+          "options": [
+            { "ar": "Aiva", "en": "Aiva" },
+            { "ar": "Siri Health", "en": "Siri Health" },
+            { "ar": "DAX Copilot", "en": "DAX Copilot" },
+            { "ar": "Alexa Care", "en": "Alexa Care" }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Aiva Nurse Assistant مخصص للتمريض، بينما DAX Copilot (من Microsoft/Nuance) مصمم أساساً للأطباء. ممرضات بخبرة 40 سنة وصفن Aiva بأنه «منقذ للحياة». حالياً Epic وAbridge وMicrosoft يجرّبون التوثيق الصوتي المحيط (Ambient AI) للتمريض في 9 أنظمة صحية.",
+        "en": "Aiva Nurse Assistant is nursing-specific, while DAX Copilot (Microsoft/Nuance) is designed primarily for physicians. Even 40-year veteran nurses called Aiva 'a lifesaver.' Currently, Epic, Abridge, and Microsoft are piloting ambient AI documentation for nurses across 9 health systems."
+      }
+    },
+    {
+      "id": "nrs-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تقنية ذكاء اصطناعي بوظيفتها التمريضية الرئيسية:",
+        "en": "Match each AI technology with its primary nursing function:"
+      },
+      "left": [
+        { "id": "L1", "text": { "ar": "eCART", "en": "eCART" } },
+        { "id": "L2", "text": { "ar": "KATE AI", "en": "KATE AI" } },
+        { "id": "L3", "text": { "ar": "Hippocratic AI", "en": "Hippocratic AI" } },
+        { "id": "L4", "text": { "ar": "Emory LIDAR", "en": "Emory LIDAR" } }
+      ],
+      "right": [
+        { "id": "R1", "text": { "ar": "التنبؤ بتدهور حالة المريض قبل ساعات", "en": "Predicting patient deterioration hours in advance" } },
+        { "id": "R2", "text": { "ar": "فرز مرضى الطوارئ حسب الخطورة", "en": "Triaging ED patients by acuity level" } },
+        { "id": "R3", "text": { "ar": "متابعة المرضى هاتفياً بعد الخروج", "en": "Post-discharge patient follow-up calls" } },
+        { "id": "R4", "text": { "ar": "التنبيه قبل سقوط المريض بـ 30 ثانية", "en": "Alerting 30 seconds before a patient falls" } }
+      ],
+      "correct_pairs": [
+        { "left": "L1", "right": "R1" },
+        { "left": "L2", "right": "R2" },
+        { "left": "L3", "right": "R3" },
+        { "left": "L4", "right": "R4" }
+      ],
+      "hint_after": {
+        "ar": "أربع تقنيات مختلفة تغطي أربع مراحل من رعاية المريض: الفرز عند الوصول (KATE)، المراقبة أثناء الإقامة (eCART)، منع السقوط (LIDAR)، والمتابعة بعد الخروج (Hippocratic). Emory Healthcare وسّعت نظام LIDAR ليشمل 1,000 سرير.",
+        "en": "Four different technologies covering four stages of patient care: triage on arrival (KATE), monitoring during stay (eCART), fall prevention (LIDAR), and post-discharge follow-up (Hippocratic). Emory Healthcare expanded the LIDAR system to 1,000 beds."
+      }
+    },
+    {
+      "id": "nrs-sort-001",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب الخطوات الصحيحة للاستجابة عندما يُصدر نظام الإنذار المبكر AI تنبيهاً بتدهور محتمل لمريض:",
+        "en": "Order the correct steps for responding when an AI early warning system issues a potential deterioration alert for a patient:"
+      },
+      "items": [
+        { "id": "S1", "text": { "ar": "مراجعة اتجاه بيانات المريض (لا درجة واحدة فقط) لفهم سياق التنبيه", "en": "Review the patient's data trend (not just one score) to understand the alert context" } },
+        { "id": "S2", "text": { "ar": "تقييم سريري مباشر للمريض عند السرير", "en": "Conduct a direct bedside clinical assessment of the patient" } },
+        { "id": "S3", "text": { "ar": "إبلاغ الطبيب المسؤول بالنتائج ومناقشة خطة التدخل", "en": "Notify the attending physician with findings and discuss the intervention plan" } },
+        { "id": "S4", "text": { "ar": "توثيق التنبيه والتقييم والإجراء المتخذ في السجل الإلكتروني", "en": "Document the alert, assessment, and action taken in the electronic record" } }
+      ],
+      "correct_order": ["S1", "S2", "S3", "S4"],
+      "hint_after": {
+        "ar": "مراجعة الاتجاه أولاً تمنع «إرهاق الإنذارات» (alert fatigue) — ثم التقييم السريري يربط البيانات بالواقع. نماذج AI مُحسّنة للتمريض حققت متوسط إنذار مبكر 5.8 ساعات قبل التدهور مقابل 3.1 ساعات فقط لنظام NEWS التقليدي.",
+        "en": "Reviewing the trend first prevents alert fatigue — then the clinical assessment connects data to reality. Nursing-optimized AI models achieved an average 5.8-hour lead time before deterioration vs. only 3.1 hours for the traditional NEWS system."
+      }
+    },
+    {
+      "id": "nrs-self-001",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مستشفاك يعتزم تفعيل نظام تمريض افتراضي حيث يُكمل ممرضون عن بُعد إجراءات القبول والخروج عبر كاميرات في الغرف، بينما تركّزين أنتِ على الرعاية المباشرة. ما شعورك؟",
+        "en": "Your hospital plans to implement a virtual nursing system where remote nurses handle admission and discharge procedures via in-room cameras, while you focus on direct bedside care. How do you feel?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ممتاز — أريد التركيز على رعاية المرضى لا على الأوراق والإجراءات الإدارية",
+            "en": "Excellent — I want to focus on patient care, not paperwork and administrative procedures"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقبول بشرط أن أبقى مسؤولة عن القرارات السريرية المتعلقة بالمريض",
+            "en": "Acceptable as long as I remain responsible for clinical decisions about the patient"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلقة من الكاميرات في غرف المرضى — هناك مخاوف خصوصية حقيقية",
+            "en": "Concerned about cameras in patient rooms — there are real privacy concerns"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "القبول والخروج جزء أساسي من علاقتي بالمريض — لا أريد التخلي عنه",
+            "en": "Admission and discharge are essential parts of my patient relationship — I don't want to give them up"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "مخاوف الخصوصية مشروعة تماماً ويجب معالجتها. لكن في Houston Methodist، التمريض الافتراضي أصبح معياراً في كل المستشفيات — وأُبلغ عن تحسّن في رضا المرضى وتقييمات HCAHPS. المفتاح: الكاميرا تعمل بنظام «طَرق افتراضي» قبل التواصل مع المريض.",
+        "en": "Privacy concerns are entirely legitimate and must be addressed. But at Houston Methodist, virtual nursing became standard across all hospitals — with reported improvements in patient satisfaction and HCAHPS scores. Key: the camera uses a 'virtual knock' system before connecting with the patient."
+      }
+    },
+    {
+      "id": "nrs-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "زميلتك تقول: «أدوات الفرز بالذكاء الاصطناعي أدق منّا — يعني قريباً ما يحتاجون ممرضات طوارئ». ما ردّك؟",
+        "en": "Your colleague says: 'AI triage tools are more accurate than us — soon they won't need ED nurses.' What's your response?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI يُحسّن دقة الفرز لكنه لا يستطيع لمس المريض أو تهدئته أو تقييم ما لا تقوله الأرقام",
+            "en": "AI improves triage accuracy but can't touch, comfort, or assess what the numbers don't show"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "صحيح أنه أدق في بعض الحالات — لهذا يجب أن نتعلم التعامل معه كشريك",
+            "en": "It is more accurate in some cases — that's why we should learn to work with it as a partner"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مبالغة — لا يوجد نظام AI يفهم الفروق الدقيقة في حالة المريض مثل الممرضة",
+            "en": "An exaggeration — no AI system understands the nuances of a patient's condition like a nurse"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ربما عندها نقطة — يجب أن أبدأ بالبحث عن مهارات تمريضية جديدة لا يستطيع AI تقديمها",
+            "en": "She might have a point — I should start exploring new nursing skills that AI can't provide"
+          },
+          "flexibility_score": 4
+        }
+      ],
+      "hint_after": {
+        "ar": "دراسة أوروبية 2025 أكدت أن AI يميل للإفراط في التصنيف (over-triage) وأن الأطباء والممرضات لا زالوا أفضل في التقييم الشامل. KATE مصمم كـ«عين ثانية» تدعم الممرضة — لا تستبدلها. جمعية ممرضات الطوارئ (ENA) تؤكد: AI أداة دعم للقرار لا بديل.",
+        "en": "A 2025 European study confirmed AI tends to over-triage and that doctors and nurses are still better at comprehensive assessment. KATE is designed as a 'second set of eyes' supporting the nurse — not replacing them. The ENA affirms: AI is a decision-support tool, not a replacement."
+      }
+    }
+  ]
+}

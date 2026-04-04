@@ -1,0 +1,377 @@
+{
+  "section_id": "pharmacy",
+  "section_name": { "ar": "الصيدلة", "en": "Pharmacy" },
+  "version": "1.0",
+  "last_updated": "2026-04-04",
+  "questions": [
+    {
+      "id": "phm-mcq-001",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي سريري في مستشفى. زميلك يقول إن الذكاء الاصطناعي اكتشف دواءً جديداً تماماً — هدفه الدوائي والمركب الكيميائي كلاهما حدّدهما AI من الصفر — ووصل للتجارب السريرية في 30 شهراً فقط. هل هذا واقعي؟",
+        "en": "You're a clinical pharmacist at a hospital. A colleague claims AI discovered an entirely new drug — both the drug target and the compound were identified by AI from scratch — and it reached clinical trials in just 30 months. Is this realistic?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم — هذا دواء rentosertib من Insilico Medicine، وهو أول دواء اكتشفه AI بالكامل",
+            "en": "Yes — this is rentosertib from Insilico Medicine, the first fully AI-discovered drug"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مبالغة — AI يساعد في خطوة واحدة فقط مثل تحديد الهدف أو تصميم المركب، لا كليهما",
+            "en": "An exaggeration — AI only helps with one step like target identification or compound design, not both"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "ممكن نظرياً لكن لا يوجد أي دواء AI وصل لتجارب سريرية بعد",
+            "en": "Theoretically possible but no AI drug has reached clinical trials yet"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "نعم، وقد حصل على الموافقة النهائية من FDA بالفعل",
+            "en": "Yes, and it has already received final FDA approval"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "rentosertib (INS018_055) حقيقي تماماً. نظام PandaOmics حدّد هدف TNIK، ونظام Chemistry42 ولّد 78,000 مثبّط افتراضي بمعدل نجاح 16.7% (مقابل 0.1% تقليدياً). نتائج المرحلة IIa نُشرت في Nature Medicine يونيو 2025. لكنه لم يحصل على موافقة نهائية بعد — المتوقع 2026-2027.",
+        "en": "Rentosertib (INS018_055) is entirely real. PandaOmics identified the TNIK target, and Chemistry42 generated 78,000 virtual inhibitors with a 16.7% hit rate (vs. 0.1% traditionally). Phase IIa results were published in Nature Medicine June 2025. But it hasn't received final approval yet — projected for 2026–2027."
+      }
+    },
+    {
+      "id": "phm-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي في مستشفى يستخدم نظام DoseMeRx لتحسين جرعات الفانكوميسين بخوارزميات بايزية. المريض يعاني من قصور كلوي متغيّر. ما أهم ميزة يقدمها النظام في هذه الحالة تحديداً؟",
+        "en": "You're a hospital pharmacist using DoseMeRx for Bayesian vancomycin dosing optimization. The patient has fluctuating renal function. What's the most important advantage the system offers in this specific case?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يُلغي الحاجة لمراقبة مستويات الدواء في الدم",
+            "en": "It eliminates the need for therapeutic drug monitoring"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يُعدّل توقعات الجرعة ديناميكياً مع كل قياس جديد لوظائف الكلى ومستوى الدواء",
+            "en": "It dynamically adjusts dose predictions with each new renal function measurement and drug level"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "يصف الدواء تلقائياً بدون تدخل الصيدلي",
+            "en": "It automatically prescribes the medication without pharmacist intervention"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يستبدل الفانكوميسين بدواء بديل أقل سمية كلوية",
+            "en": "It replaces vancomycin with a less nephrotoxic alternative"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "النمذجة البايزية تتميز بقدرتها على التحديث المستمر — كل قياس جديد يُحسّن التنبؤ. مؤسسة واحدة سجّلت انخفاضاً بنسبة 70% في إصابات الكلى مع صفر أحداث دوائية ضارة عند استخدام DoseMeRx.",
+        "en": "Bayesian modeling excels at continuous updating — each new measurement improves the prediction. One institution reported a 70% decrease in kidney injury with zero adverse drug events when using DoseMeRx."
+      }
+    },
+    {
+      "id": "phm-mcq-003",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول يقظة دوائية (Pharmacovigilance) في شركة أدوية. أدوات الذكاء الاصطناعي تكتشف إشارات أمان أكثر بنسبة 40% من قاعدة بيانات FDA FAERS مقارنة بالأنظمة التقليدية. لكن ما التحدي الأساسي الذي يواجه هذه التقنية؟",
+        "en": "You're a pharmacovigilance officer at a pharmaceutical company. AI tools detect 40% more safety signals from FDA FAERS than rule-based engines. But what's the fundamental challenge facing this technology?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "معدل الإبلاغ عن التفاعلات الضارة أصلاً لا يتجاوز 6% — فالبيانات المتاحة ناقصة جذرياً",
+            "en": "The adverse reaction reporting rate is only about 6% — the available data is fundamentally incomplete"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تكلفة الأنظمة مرتفعة جداً ولا تستطيع الشركات الصغيرة تحمّلها",
+            "en": "System costs are too high for small companies to afford"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "AI يكتشف إشارات كثيرة لكنها كلها إنذارات كاذبة",
+            "en": "AI detects many signals but they're all false alarms"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الهيئات التنظيمية ترفض تماماً استخدام AI في اليقظة الدوائية",
+            "en": "Regulatory agencies completely reject using AI in pharmacovigilance"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "المتوسط العالمي لعدم الإبلاغ عن التفاعلات الدوائية الضارة يبلغ 94% — مما يعني أن أي نظام ذكاء اصطناعي يعمل على بيانات ناقصة جذرياً. لذلك تتجه الأنظمة الحديثة لتحليل مصادر متعددة: سجلات صحية إلكترونية، وسائل تواصل، ومنشورات علمية.",
+        "en": "The global median underreporting rate for adverse drug reactions is 94% — meaning any AI system works with fundamentally incomplete data. That's why modern systems analyze multiple sources: EHRs, social media, and scientific publications."
+      }
+    },
+    {
+      "id": "phm-tf-001",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "جائزة نوبل للكيمياء 2024 مُنحت لباحثين في مجال الذكاء الاصطناعي — وتحديداً عن التنبؤ ببنية البروتينات باستخدام AlphaFold.",
+        "en": "The 2024 Nobel Prize in Chemistry was awarded to AI researchers — specifically for predicting protein structures using AlphaFold."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. حصل ديميس حسابيس وجون جمبر (Google DeepMind) على نوبل الكيمياء 2024 عن AlphaFold الذي تنبّأ ببنية ~200 مليون بروتين. AlphaFold 3 (مايو 2024) حسّن دقة نمذجة ارتباط البروتين بالجزيئات بأكثر من 50%.",
+        "en": "Correct. Demis Hassabis and John Jumper (Google DeepMind) received the 2024 Nobel Prize in Chemistry for AlphaFold, which predicted structures of ~200 million proteins. AlphaFold 3 (May 2024) improved protein-ligand binding modeling accuracy by 50%+."
+      }
+    },
+    {
+      "id": "phm-tf-002",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "صيدلية روبوتية في مستشفى أمريكي صرفت 350,000 جرعة دوائية بمعدل أخطاء صفر.",
+        "en": "A robotic pharmacy at a US hospital dispensed 350,000 medication doses with a zero-error rate."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. صيدلية UCSF Medical Center الروبوتية حققت هذا الرقم. لكن الأتمتة تغطي الصرف الروتيني فقط — الاستشارات الدوائية والحالات المعقدة تبقى بشرية.",
+        "en": "True. UCSF Medical Center's robotic pharmacy achieved this figure. But automation covers routine dispensing only — medication counseling and complex cases remain human tasks."
+      }
+    },
+    {
+      "id": "phm-fill-001",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أداة {{blank_1}} التي طوّرتها FDA تختصر مراجعة الوثائق التنظيمية للأدوية من 3 أيام إلى 6 دقائق فقط.",
+        "en": "The {{blank_1}} tool developed by the FDA reduces regulatory document review from 3 days to just 6 minutes."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": { "ar": "Elsa", "en": "Elsa" },
+          "options": [
+            { "ar": "Elsa", "en": "Elsa" },
+            { "ar": "Watson", "en": "Watson" },
+            { "ar": "AlphaFold", "en": "AlphaFold" },
+            { "ar": "PandaOmics", "en": "PandaOmics" }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Elsa هي أداة AI داخلية في FDA. Watson هو نظام IBM للصحة (أُوقف جزئياً). AlphaFold للتنبؤ ببنية البروتينات. PandaOmics لاكتشاف أهداف دوائية. في ديسمبر 2025، اعتمدت FDA أيضاً أول مؤشر حيوي بتعلّم الآلة (AIM-NASH).",
+        "en": "Elsa is an internal FDA AI tool. Watson is IBM's health system (partially discontinued). AlphaFold predicts protein structures. PandaOmics discovers drug targets. In December 2025, the FDA also qualified its first ML biomarker (AIM-NASH)."
+      }
+    },
+    {
+      "id": "phm-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تقنية ذكاء اصطناعي بتطبيقها الصيدلي الرئيسي:",
+        "en": "Match each AI technology with its primary pharmaceutical application:"
+      },
+      "left": [
+        { "id": "L1", "text": { "ar": "AlphaFold 3", "en": "AlphaFold 3" } },
+        { "id": "L2", "text": { "ar": "Chemistry42", "en": "Chemistry42" } },
+        { "id": "L3", "text": { "ar": "DoseMeRx", "en": "DoseMeRx" } },
+        { "id": "L4", "text": { "ar": "أنظمة NLP في اليقظة الدوائية", "en": "NLP systems in pharmacovigilance" } }
+      ],
+      "right": [
+        { "id": "R1", "text": { "ar": "التنبؤ بارتباط البروتين بالجزيئات لتصميم أدوية", "en": "Predicting protein-ligand binding for drug design" } },
+        { "id": "R2", "text": { "ar": "توليد مركبات كيميائية افتراضية لمثبّطات جديدة", "en": "Generating virtual chemical compounds for new inhibitors" } },
+        { "id": "R3", "text": { "ar": "تحسين جرعات الأدوية بايزياً حسب حالة المريض", "en": "Bayesian dose optimization based on patient condition" } },
+        { "id": "R4", "text": { "ar": "استخراج إشارات أمان من تقارير تفاعلات دوائية ضارة", "en": "Extracting safety signals from adverse drug reaction reports" } }
+      ],
+      "correct_pairs": [
+        { "left": "L1", "right": "R1" },
+        { "left": "L2", "right": "R2" },
+        { "left": "L3", "right": "R3" },
+        { "left": "L4", "right": "R4" }
+      ],
+      "hint_after": {
+        "ar": "هذه الأدوات تمثل أربع مراحل مختلفة من سلسلة الدواء: اكتشاف الهدف (AlphaFold)، تصميم المركب (Chemistry42)، ضبط الجرعة السريرية (DoseMeRx)، ومراقبة ما بعد التسويق (NLP/اليقظة الدوائية).",
+        "en": "These tools represent four different stages of the drug lifecycle: target discovery (AlphaFold), compound design (Chemistry42), clinical dosing (DoseMeRx), and post-market surveillance (NLP/pharmacovigilance)."
+      }
+    },
+    {
+      "id": "phm-sort-001",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مراحل اكتشاف دواء بالذكاء الاصطناعي من البداية حتى الوصول للمريض:",
+        "en": "Order the stages of AI-powered drug discovery from start to reaching the patient:"
+      },
+      "items": [
+        { "id": "S1", "text": { "ar": "تحديد الهدف البيولوجي بتحليل البيانات الجينومية والبروتينية", "en": "Identify the biological target through genomic and proteomic data analysis" } },
+        { "id": "S2", "text": { "ar": "توليد وفرز آلاف المركبات الكيميائية الافتراضية", "en": "Generate and screen thousands of virtual chemical compounds" } },
+        { "id": "S3", "text": { "ar": "اختبار المركب المرشح في التجارب قبل السريرية ثم السريرية", "en": "Test the candidate compound in preclinical then clinical trials" } },
+        { "id": "S4", "text": { "ar": "تقديم ملف التسجيل للهيئة التنظيمية مع بيانات الفعالية والسلامة", "en": "Submit the regulatory filing with efficacy and safety data" } }
+      ],
+      "correct_order": ["S1", "S2", "S3", "S4"],
+      "hint_after": {
+        "ar": "دواء rentosertib اتبع هذه المراحل بالضبط: PandaOmics حدّد هدف TNIK ← Chemistry42 ولّد 78,000 مركب ← تجارب سريرية (المرحلة IIa نُشرت 2025) ← الموافقة التنظيمية المتوقعة 2026-2027. المفاجأة: الرحلة كاملة استغرقت 30 شهراً بدل 6-8 سنوات تقليدياً.",
+        "en": "Rentosertib followed exactly these stages: PandaOmics identified TNIK target → Chemistry42 generated 78,000 compounds → clinical trials (Phase IIa published 2025) → regulatory approval projected 2026–2027. The surprise: the entire journey took 30 months instead of the traditional 6–8 years."
+      }
+    },
+    {
+      "id": "phm-self-001",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت صيدلي مجتمعي. نظام ذكاء اصطناعي جديد في الصيدلية يراجع الوصفات ويكتشف تفاعلات دوائية بدقة عالية. في أول أسبوع، نبّهك لتفاعل خطير بين دوائين لم تنتبه له. كيف تتعامل مع هذا؟",
+        "en": "You're a community pharmacist. A new AI system reviews prescriptions and detects drug interactions with high accuracy. In the first week, it flagged a serious interaction between two drugs you hadn't noticed. How do you handle this?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ممتاز — أتعلّم من التنبيه وأضيف هذا التفاعل لمعرفتي، وأثق بالنظام أكثر",
+            "en": "Excellent — I learn from the alert, add this interaction to my knowledge, and trust the system more"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتحقق من المصادر المرجعية أولاً — إذا كان التنبيه صحيحاً أعتمد عليه مستقبلاً",
+            "en": "I verify with reference sources first — if the alert is correct, I'll rely on it going forward"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "التفاعلات الدوائية كثيرة جداً — لا أحد يتذكرها كلها، لكن هذا لا يعني أن البرنامج أفضل مني",
+            "en": "There are too many drug interactions — no one remembers them all, but that doesn't mean the software is better than me"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هذه الأنظمة تُطلق إنذارات كثيرة غير مهمة سريرياً — alert fatigue مشكلة حقيقية",
+            "en": "These systems trigger too many clinically insignificant alerts — alert fatigue is a real problem"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "قلق alert fatigue مشروع تماماً — لكنه ينطبق على الإنذارات منخفضة الخطورة، لا على التفاعلات الخطيرة. الصيدلي الذكي يستفيد من AI كشبكة أمان مع حفاظه على الحكم السريري. أتمتة الذكاء الاصطناعي تزيد إنتاجية الصيدلي بنسبة تصل إلى 33% وتتيح له قضاء 45% وقت أكثر مع المرضى.",
+        "en": "Alert fatigue concern is entirely valid — but it applies to low-risk alerts, not serious interactions. A smart pharmacist leverages AI as a safety net while maintaining clinical judgment. AI automation increases pharmacist productivity by up to 33% and allows 45% more time for patient-facing care."
+      }
+    },
+    {
+      "id": "phm-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "تقرير حديث يتوقع أن 70% من مهام الصرف الروتينية ستُؤتمت خلال 5-10 سنوات. كيف ترى مستقبلك المهني كصيدلي؟",
+        "en": "A recent report projects that 70% of routine dispensing tasks will be automated within 5–10 years. How do you see your professional future as a pharmacist?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة للتحوّل — أركّز على الصيدلة السريرية والاستشارات الدوائية التي لا يستطيع AI تقديمها",
+            "en": "An opportunity to pivot — I'll focus on clinical pharmacy and medication counseling that AI can't provide"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أبدأ بتطوير مهاراتي في تحليل البيانات الدوائية واستخدام أدوات AI من الآن",
+            "en": "I'll start developing my skills in pharmaceutical data analytics and AI tools now"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "70% رقم مبالغ فيه — التنظيمات والمسؤوليات القانونية ستبطئ الأتمتة كثيراً",
+            "en": "70% is exaggerated — regulations and legal liabilities will slow automation significantly"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "قلق حقيقي لكنني أفضّل الانتظار ورؤية ما سيحدث فعلاً قبل اتخاذ أي خطوة",
+            "en": "A genuine concern but I prefer to wait and see what actually happens before taking any action"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الصيدلة السريرية والاستشارية في نمو — بينما الصرف الروتيني في تراجع. الصيادلة في البيئات المؤتمتة يقضون 45% وقتاً أكثر في الرعاية المباشرة للمرضى. المفتاح: الانتقال من \"صارف أدوية\" إلى \"مستشار دوائي\" مدعوم بالبيانات.",
+        "en": "Clinical and consultative pharmacy is growing — while routine dispensing is declining. Pharmacists in automated environments spend 45% more time on direct patient care. The key: transitioning from 'drug dispenser' to data-powered 'medication consultant'."
+      }
+    }
+  ]
+}
