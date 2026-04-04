@@ -3947,43 +3947,224 @@
           : icon + ' I scored ' + r.finalScore + '/100 on the AI Readiness Assessment — ' + r.classification.en + '!')
           + '\n' + window.location.href.split('?')[0];
 
-        // محاولة توليد صورة
         try {
+          var W = 1200, H = 630;
           var canvas = document.createElement('canvas');
-          canvas.width = 600;
-          canvas.height = 320;
+          canvas.width = W;
+          canvas.height = H;
           var ctx = canvas.getContext('2d');
 
-          // خلفية
-          var grad = ctx.createLinearGradient(0, 0, 600, 320);
-          grad.addColorStop(0, '#4f46e5');
-          grad.addColorStop(1, '#7c3aed');
+          // ── خلفية متدرجة حسب المستوى ──
+          var bgGrads = {
+            'pioneer':  ['#064e3b', '#065f46', '#047857'],
+            'advanced': ['#1e3a5f', '#1e40af', '#3b82f6'],
+            'aware':    ['#312e81', '#4338ca', '#6366f1'],
+            'beginner': ['#78350f', '#92400e', '#b45309'],
+            'at-risk':  ['#450a0a', '#7f1d1d', '#991b1b']
+          };
+          var colors = bgGrads[r.classification.level] || bgGrads['aware'];
+          var grad = ctx.createLinearGradient(0, 0, W, H);
+          grad.addColorStop(0, colors[0]);
+          grad.addColorStop(0.5, colors[1]);
+          grad.addColorStop(1, colors[2]);
           ctx.fillStyle = grad;
-          ctx.fillRect(0, 0, 600, 320);
+          ctx.fillRect(0, 0, W, H);
 
-          // نص
-          ctx.fillStyle = '#fff';
+          // تراكب شفاف
+          ctx.fillStyle = 'rgba(0,0,0,0.15)';
+          ctx.fillRect(0, 0, W, H);
+
+          var isAr = LANG === 'ar';
           ctx.textAlign = 'center';
 
+          // ── عُدّة (أعلى) ──
+          ctx.font = '700 22px sans-serif';
+          ctx.fillStyle = 'rgba(255,255,255,0.6)';
+          ctx.fillText('udda.tools | عُدّة', W / 2, 35);
+
+          // ── اسم المستخدم ──
+          var topY = 65;
           if (r.userName) {
-            ctx.font = '600 20px sans-serif';
-            ctx.fillText(r.userName, 300, 50);
+            ctx.font = '600 26px sans-serif';
+            ctx.fillStyle = 'rgba(255,255,255,0.85)';
+            ctx.fillText(r.userName, W / 2, topY);
+            topY += 10;
           }
 
-          ctx.font = '800 72px sans-serif';
-          ctx.fillText(r.finalScore + '/100', 300, 140);
+          // ── القسم الأيسر: Gauge + Score + Badge ──
+          var gaugeX = 300, gaugeY = topY + 100, gaugeR = 80;
 
-          ctx.font = '700 28px sans-serif';
-          ctx.fillText(r.classification[LANG], 300, 190);
+          // رسم gauge نصف دائري
+          ctx.lineWidth = 10;
+          ctx.lineCap = 'round';
+          // خلفية
+          ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+          ctx.beginPath();
+          ctx.arc(gaugeX, gaugeY, gaugeR, Math.PI, 0);
+          ctx.stroke();
+          // تعبئة
+          var gaugeColors = {
+            'pioneer': '#22c55e', 'advanced': '#06b6d4',
+            'aware': '#3b82f6', 'beginner': '#f59e0b', 'at-risk': '#ef4444'
+          };
+          ctx.strokeStyle = gaugeColors[r.classification.level] || '#3b82f6';
+          ctx.lineWidth = 12;
+          var scoreAngle = Math.PI * (1 - r.finalScore / 100);
+          ctx.beginPath();
+          ctx.arc(gaugeX, gaugeY, gaugeR, Math.PI, Math.PI + (Math.PI * r.finalScore / 100));
+          ctx.stroke();
 
-          ctx.font = '400 16px sans-serif';
+          // رقم الدرجة
+          ctx.font = '800 52px sans-serif';
+          ctx.fillStyle = '#fff';
+          ctx.fillText(r.finalScore, gaugeX, gaugeY + 10);
+          ctx.font = '400 18px sans-serif';
+          ctx.fillStyle = 'rgba(255,255,255,0.6)';
+          ctx.fillText('/100', gaugeX, gaugeY + 32);
+
+          // شارة التصنيف
+          var badgeY = gaugeY + 60;
+          var badgeText = icon + ' ' + r.classification[LANG];
+          ctx.font = '700 24px sans-serif';
+          var badgeW = ctx.measureText(badgeText).width + 40;
+          // خلفية الشارة
+          ctx.fillStyle = gaugeColors[r.classification.level] || '#3b82f6';
+          var badgeRad = 16;
+          var bx = gaugeX - badgeW / 2, by = badgeY - 18;
+          ctx.beginPath();
+          ctx.moveTo(bx + badgeRad, by);
+          ctx.lineTo(bx + badgeW - badgeRad, by);
+          ctx.quadraticCurveTo(bx + badgeW, by, bx + badgeW, by + badgeRad);
+          ctx.lineTo(bx + badgeW, by + 36 - badgeRad);
+          ctx.quadraticCurveTo(bx + badgeW, by + 36, bx + badgeW - badgeRad, by + 36);
+          ctx.lineTo(bx + badgeRad, by + 36);
+          ctx.quadraticCurveTo(bx, by + 36, bx, by + 36 - badgeRad);
+          ctx.lineTo(bx, by + badgeRad);
+          ctx.quadraticCurveTo(bx, by, bx + badgeRad, by);
+          ctx.fill();
+          ctx.fillStyle = '#fff';
+          ctx.fillText(badgeText, gaugeX, badgeY + 7);
+
+          // ── القسم الأيمن: Radar ──
+          var radarX = 900, radarY = topY + 110, radarR = 85;
+          var axisKeys = ['knowledge', 'practice', 'flexibility'];
+          var hasSpec = r.selectedSpecialties.length > 0;
+          if (hasSpec) axisKeys.push('specialty');
+          var axisLabels = {
+            knowledge: isAr ? 'المعرفة' : 'Knowledge',
+            practice: isAr ? 'التطبيق' : 'Practice',
+            flexibility: isAr ? 'المرونة' : 'Flexibility',
+            specialty: isAr ? 'التخصص' : 'Specialty'
+          };
+          var nn = axisKeys.length;
+
+          // شبكة الرادار
+          ctx.lineWidth = 1;
+          ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+          for (var ring = 1; ring <= 4; ring++) {
+            var rr = (ring / 4) * radarR;
+            ctx.beginPath();
+            for (var ii = 0; ii <= nn; ii++) {
+              var a = (Math.PI * 2 * (ii % nn) / nn) - Math.PI / 2;
+              var px = radarX + rr * Math.cos(a);
+              var py = radarY + rr * Math.sin(a);
+              if (ii === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+            }
+            ctx.stroke();
+          }
+          // خطوط المحاور
+          for (var jj = 0; jj < nn; jj++) {
+            var a2 = (Math.PI * 2 * jj / nn) - Math.PI / 2;
+            ctx.beginPath();
+            ctx.moveTo(radarX, radarY);
+            ctx.lineTo(radarX + radarR * Math.cos(a2), radarY + radarR * Math.sin(a2));
+            ctx.stroke();
+          }
+
+          // منطقة البيانات
+          ctx.fillStyle = 'rgba(99,102,241,0.35)';
+          ctx.strokeStyle = 'rgba(129,140,248,0.9)';
+          ctx.lineWidth = 2.5;
+          ctx.beginPath();
+          for (var kk = 0; kk < nn; kk++) {
+            var val = (r.axes[axisKeys[kk]] || 0) / 100;
+            var a3 = (Math.PI * 2 * kk / nn) - Math.PI / 2;
+            var dx = radarX + val * radarR * Math.cos(a3);
+            var dy = radarY + val * radarR * Math.sin(a3);
+            if (kk === 0) ctx.moveTo(dx, dy); else ctx.lineTo(dx, dy);
+          }
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+
+          // نقاط + تسميات المحاور
+          ctx.font = '600 15px sans-serif';
+          for (var pp = 0; pp < nn; pp++) {
+            var val2 = (r.axes[axisKeys[pp]] || 0) / 100;
+            var a4 = (Math.PI * 2 * pp / nn) - Math.PI / 2;
+            // نقطة
+            var dpx = radarX + val2 * radarR * Math.cos(a4);
+            var dpy = radarY + val2 * radarR * Math.sin(a4);
+            ctx.fillStyle = '#fff';
+            ctx.beginPath();
+            ctx.arc(dpx, dpy, 4, 0, Math.PI * 2);
+            ctx.fill();
+            // تسمية
+            var lx = radarX + (radarR + 22) * Math.cos(a4);
+            var ly = radarY + (radarR + 22) * Math.sin(a4);
+            ctx.fillStyle = 'rgba(255,255,255,0.85)';
+            ctx.textAlign = 'center';
+            ctx.fillText(axisLabels[axisKeys[pp]], lx, ly + 4);
+            ctx.font = '700 13px sans-serif';
+            ctx.fillStyle = gaugeColors[r.classification.level] || '#818cf8';
+            ctx.fillText(r.axes[axisKeys[pp]] + '%', lx, ly + 20);
+            ctx.font = '600 15px sans-serif';
+          }
+
+          // ── الملخص الشخصي (4 جمل) — أسفل النصف العلوي ──
+          var summaryEl = $('summary-text');
+          var summaryY = topY + 240;
+          if (summaryEl) {
+            var spans = summaryEl.querySelectorAll('.air-summary-line');
+            ctx.font = '500 15px sans-serif';
+            ctx.textAlign = 'center';
+            var lineY = summaryY;
+            for (var ss = 0; ss < spans.length; ss++) {
+              var txt = spans[ss].textContent;
+              // تقسيم النص الطويل لسطور
+              var maxChars = 80;
+              while (txt.length > 0) {
+                var chunk = txt.substring(0, maxChars);
+                if (txt.length > maxChars) {
+                  var lastSpace = chunk.lastIndexOf(' ');
+                  if (lastSpace > 40) chunk = chunk.substring(0, lastSpace);
+                }
+                txt = txt.substring(chunk.length).trim();
+                ctx.fillStyle = spans[ss].style.color || 'rgba(255,255,255,0.8)';
+                ctx.fillText(chunk.trim(), W / 2, lineY);
+                lineY += 20;
+                if (lineY > H - 50) break;
+              }
+              lineY += 4;
+              if (lineY > H - 50) break;
+            }
+          }
+
+          // ── المعادلة (سطر أخير) ──
+          var formulaY = H - 30;
+          ctx.font = '600 16px sans-serif';
+          ctx.textAlign = 'center';
           ctx.fillStyle = 'rgba(255,255,255,0.7)';
-          ctx.fillText(LANG === 'ar' ? 'تقييم الجاهزية للذكاء الاصطناعي' : 'AI Readiness Assessment', 300, 250);
-          ctx.fillText('udda.tools', 300, 280);
+          var formulaText = isAr
+            ? 'المعرفة والتطبيق (' + r.rawScore + '%) × المرونة (' + r.multiplier + ') = الجاهزية (' + r.finalScore + '%)'
+            : 'Knowledge & Practice (' + r.rawScore + '%) × Flexibility (' + r.multiplier + ') = Readiness (' + r.finalScore + '%)';
+          ctx.fillText(formulaText, W / 2, formulaY);
 
+          // ── تصدير JPG ──
+          var dataUrl = canvas.toDataURL('image/jpeg', 0.9);
           canvas.toBlob(function(blob) {
             if (blob && navigator.share && navigator.canShare) {
-              var file = new File([blob], 'ai-readiness.png', { type: 'image/png' });
+              var file = new File([blob], 'ai-readiness.jpg', { type: 'image/jpeg' });
               var shareData = { text: shareText, files: [file] };
               if (navigator.canShare(shareData)) {
                 navigator.share(shareData).catch(function() {});
@@ -3998,7 +4179,7 @@
                 App.showToast(LANG === 'ar' ? 'تم النسخ!' : 'Copied!');
               });
             }
-          }, 'image/png');
+          }, 'image/jpeg', 0.9);
         } catch (e) {
           // Fallback for canvas errors
           if (navigator.share) {
