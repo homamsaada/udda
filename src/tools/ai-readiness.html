@@ -1112,6 +1112,10 @@
   line-height: 1.7;
 }
 
+.air-summary-line {
+  font-weight: 600;
+}
+
 /* -- Quick Stats -- */
 .air-quick-stats {
   display: grid;
@@ -3598,18 +3602,11 @@
 
   // ─── ملخص شخصي ───
 
-  function renderPersonalSummary(r) {
+  async function renderPersonalSummary(r) {
     var el = $('summary-text');
     if (!el) return;
 
     var axes = r.axes;
-    var axisNames = {
-      knowledge: LANG === 'ar' ? 'المعرفة' : 'Knowledge',
-      practice: LANG === 'ar' ? 'التطبيق' : 'Practice',
-      flexibility: LANG === 'ar' ? 'المرونة' : 'Flexibility',
-      specialty: LANG === 'ar' ? 'التخصص' : 'Specialty'
-    };
-
     var best = 'knowledge', worst = 'knowledge';
     var checkAxes = ['knowledge', 'practice', 'flexibility'];
     if (r.selectedSpecialties.length > 0) checkAxes.push('specialty');
@@ -3620,34 +3617,63 @@
       if (axes[ax] < axes[worst]) worst = ax;
     }
 
-    var parts = [];
-    if (r.finalScore >= 75) {
-      parts.push(LANG === 'ar' ? 'أداؤك ممتاز!' : 'Excellent performance!');
-    } else if (r.finalScore >= 60) {
-      parts.push(LANG === 'ar' ? 'أداؤك جيد.' : 'Good performance.');
-    } else if (r.finalScore >= 40) {
-      parts.push(LANG === 'ar' ? 'لديك أساس يمكن البناء عليه.' : 'You have a foundation to build on.');
-    } else {
-      parts.push(LANG === 'ar' ? 'هناك فرصة كبيرة للتطور.' : 'There is great room for improvement.');
+    var flexKey = r.multiplier > 1 ? 'high' : (r.multiplier < 1 ? 'low' : 'neutral');
+
+    var levelColors = {
+      'pioneer': 'var(--success)',
+      'advanced': 'var(--teal)',
+      'aware': 'var(--info)',
+      'beginner': 'var(--warning)',
+      'at-risk': 'var(--error)'
+    };
+    var flexColors = { high: 'var(--success)', neutral: 'var(--text-muted)', low: 'var(--error)' };
+
+    var data = await loadJSON('personal-summary.json');
+    if (!data) {
+      // fallback — نص بسيط بدون ملف
+      el.textContent = LANG === 'ar' ? 'تقييمك جاهز.' : 'Your assessment is ready.';
+      return;
     }
 
-    parts.push(LANG === 'ar'
-      ? 'نقطة قوتك هي ' + axisNames[best] + ' (' + axes[best] + '%).'
-      : 'Your strength is ' + axisNames[best] + ' (' + axes[best] + '%).');
+    var name = r.userName || '';
 
-    if (best !== worst) {
-      parts.push(LANG === 'ar'
-        ? 'يمكنك تحسين ' + axisNames[worst] + ' (' + axes[worst] + '%).'
-        : 'You can improve ' + axisNames[worst] + ' (' + axes[worst] + '%).');
+    function pick(arr) {
+      if (!arr || arr.length === 0) return '';
+      return arr[Math.floor(Math.random() * arr.length)];
     }
 
-    if (r.multiplier > 1) {
-      parts.push(LANG === 'ar' ? 'مرونتك العالية ميزة حقيقية!' : 'Your high flexibility is a real advantage!');
-    } else if (r.multiplier < 1) {
-      parts.push(LANG === 'ar' ? 'حاول أن تكون أكثر انفتاحاً على التغيير.' : 'Try to be more open to change.');
+    function replaceName(txt) {
+      if (!name) return txt.replace(/\s*\{\{name\}\}\s*/g, '').replace(/\s{2,}/g, ' ').trim();
+      return txt.replace(/\{\{name\}\}/g, name);
     }
 
-    el.textContent = parts.join(' ');
+    var level = r.classification.level;
+    var openingArr = data.opening && data.opening[level] ? data.opening[level][LANG] || data.opening[level]['ar'] : [];
+    var strengthArr = data.strength && data.strength[best] ? data.strength[best][LANG] || data.strength[best]['ar'] : [];
+    var weaknessArr = (best !== worst && data.weakness && data.weakness[worst]) ? data.weakness[worst][LANG] || data.weakness[worst]['ar'] : [];
+    var flexArr = data.flexibility_comment && data.flexibility_comment[flexKey] ? data.flexibility_comment[flexKey][LANG] || data.flexibility_comment[flexKey]['ar'] : [];
+
+    var parts = [
+      { text: replaceName(pick(openingArr)), color: levelColors[level] || 'var(--text-primary)' },
+      { text: replaceName(pick(strengthArr)), color: 'var(--success)' }
+    ];
+    if (weaknessArr.length > 0) {
+      parts.push({ text: replaceName(pick(weaknessArr)), color: 'var(--error)' });
+    }
+    if (flexArr.length > 0) {
+      parts.push({ text: replaceName(pick(flexArr)), color: flexColors[flexKey] });
+    }
+
+    el.innerHTML = '';
+    for (var p = 0; p < parts.length; p++) {
+      if (!parts[p].text) continue;
+      var span = document.createElement('span');
+      span.className = 'air-summary-line';
+      span.style.color = parts[p].color;
+      span.textContent = parts[p].text;
+      el.appendChild(span);
+      if (p < parts.length - 1) el.appendChild(document.createTextNode(' '));
+    }
   }
 
   // ─── بطاقات المحاور ───
