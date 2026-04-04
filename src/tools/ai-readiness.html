@@ -3183,7 +3183,7 @@
 
   var assessmentResults = null;
 
-  function finishAssessment() {
+  async function finishAssessment() {
     stopGlobalTimer();
     stopQuestionTimer();
     currentPhase = 3;
@@ -3195,7 +3195,7 @@
 
 
     showScreen('screen-report');
-    renderReport(assessmentResults);
+    await renderReport(assessmentResults);
   }
 
   // ─── محرك حساب الدرجات ───
@@ -3454,7 +3454,7 @@
 
   // ─── عرض التقرير ───
 
-  function renderReport(r) {
+  async function renderReport(r) {
     // خلفية متدرجة حسب التصنيف
     var summaryEl = $('report-summary');
     if (summaryEl) summaryEl.className = 'air-report-section air-report-summary level-' + r.classification.level;
@@ -3476,7 +3476,7 @@
       badge.innerHTML = '<span>' + (levelIcons[r.classification.level] || '') + '</span> ' + r.classification[LANG];
       badge.className = 'air-level-badge ' + r.classification.level;
     }
-    renderPersonalSummary(r);
+    await renderPersonalSummary(r);
     renderQuickStats(r);
 
     // تدرج لوني لقسم المحاور
