@@ -1,6 +1,9 @@
 {
   "section_id": "medicine",
-  "section_name": { "ar": "الطب البشري", "en": "Medicine" },
+  "section_name": {
+    "ar": "الطب البشري",
+    "en": "Medicine"
+  },
   "version": "1.0",
   "last_updated": "2026-04-04",
   "questions": [
@@ -168,19 +171,26 @@
       "options": [
         {
           "id": "true",
-          "text": { "ar": "صحيح", "en": "True" },
+          "text": {
+            "ar": "صحيح",
+            "en": "True"
+          },
           "score": 3
         },
         {
           "id": "false",
-          "text": { "ar": "خطأ", "en": "False" },
+          "text": {
+            "ar": "خطأ",
+            "en": "False"
+          },
           "score": 0
         }
       ],
       "hint_after": {
         "ar": "صحيح. نُشرت هذه الدراسة في Lancet Gastroenterology & Hepatology في أغسطس 2025 وأثارت جدلاً واسعاً. الدرس: الأطباء الذين يعتمدون كلياً على AI قد يفقدون قدراتهم التشخيصية تدريجياً — وهذا يطرح سؤالاً أخلاقياً جديداً حول كيفية تطبيق AI في الطب.",
         "en": "True. Published in Lancet Gastroenterology & Hepatology in August 2025, this study sparked wide debate. The lesson: doctors who fully rely on AI may gradually lose their diagnostic skills — raising a new ethical question about how AI should be implemented in medicine."
-      }
+      },
+      "correct_answer": true
     },
     {
       "id": "med-tf-002",
@@ -196,19 +206,26 @@
       "options": [
         {
           "id": "true",
-          "text": { "ar": "صحيح", "en": "True" },
+          "text": {
+            "ar": "صحيح",
+            "en": "True"
+          },
           "score": 1
         },
         {
           "id": "false",
-          "text": { "ar": "خطأ", "en": "False" },
+          "text": {
+            "ar": "خطأ",
+            "en": "False"
+          },
           "score": 0
         }
       ],
       "hint_after": {
         "ar": "صحيح! رغم مئات أدوات AI في الأشعة، الطلب على أطباء الأشعة يزداد. السبب: أطباء الأشعة يقضون فقط 36% من وقتهم في تفسير الصور — الباقي استشارات وإجراءات ومراقبة جودة لا يستطيع AI القيام بها.",
         "en": "True! Despite hundreds of AI radiology tools, demand for radiologists is growing. The reason: radiologists spend only 36% of their time interpreting images — the rest involves consultations, procedures, and quality oversight that AI cannot perform."
-      }
+      },
+      "correct_answer": true
     },
     {
       "id": "med-fb-001",
@@ -224,20 +241,44 @@
       "blanks": [
         {
           "id": "b1",
-          "correct": { "ar": "DAX Copilot", "en": "DAX Copilot" },
+          "correct": {
+            "ar": "DAX Copilot",
+            "en": "DAX Copilot"
+          },
           "options": [
-            { "ar": "DAX Copilot", "en": "DAX Copilot" },
-            { "ar": "Copilot Health", "en": "Copilot Health" },
-            { "ar": "Azure Medical", "en": "Azure Medical" }
+            {
+              "ar": "DAX Copilot",
+              "en": "DAX Copilot"
+            },
+            {
+              "ar": "Copilot Health",
+              "en": "Copilot Health"
+            },
+            {
+              "ar": "Azure Medical",
+              "en": "Azure Medical"
+            }
           ]
         },
         {
           "id": "b2",
-          "correct": { "ar": "Abridge", "en": "Abridge" },
+          "correct": {
+            "ar": "Abridge",
+            "en": "Abridge"
+          },
           "options": [
-            { "ar": "Abridge", "en": "Abridge" },
-            { "ar": "Nuance", "en": "Nuance" },
-            { "ar": "Dragon", "en": "Dragon" }
+            {
+              "ar": "Abridge",
+              "en": "Abridge"
+            },
+            {
+              "ar": "Nuance",
+              "en": "Nuance"
+            },
+            {
+              "ar": "Dragon",
+              "en": "Dragon"
+            }
           ]
         }
       ],
@@ -257,32 +298,88 @@
         "ar": "صِل كل أداة ذكاء اصطناعي طبية بإنجازها التاريخي:",
         "en": "Match each medical AI tool with its historic achievement:"
       },
-      "pairs": [
-        {
-          "id": "p1",
-          "left": { "ar": "Viz.ai", "en": "Viz.ai" },
-          "right": { "ar": "كشف السكتات الدماغية في 1,700+ مستشفى وتقليل وقت العلاج 31 دقيقة", "en": "Stroke detection in 1,700+ hospitals, reducing treatment time by 31 minutes" }
-        },
-        {
-          "id": "p2",
-          "left": { "ar": "Paige AI", "en": "Paige AI" },
-          "right": { "ar": "أول ترخيص FDA لتشخيص AI في علم الأمراض (حساسية 0.99)", "en": "First FDA pathology AI clearance (sensitivity 0.99)" }
-        },
-        {
-          "id": "p3",
-          "left": { "ar": "Da Vinci 5", "en": "Da Vinci 5" },
-          "right": { "ar": "روبوت جراحي بتغذية راجعة لمسية يخفض شد الخيوط 43%", "en": "Surgical robot with force feedback cutting suture tension by 43%" }
-        },
-        {
-          "id": "p4",
-          "left": { "ar": "Aidoc CARE1", "en": "Aidoc CARE1" },
-          "right": { "ar": "أول جهاز طبي بنموذج أساسي (Foundation Model) يحصل على ترخيص FDA", "en": "First foundation-model-powered clinical AI to receive FDA clearance" }
-        }
-      ],
       "hint_after": {
         "ar": "كل أداة من هذه الأدوات تمثل معلماً تاريخياً في مسيرة AI الطبي: Viz.ai في السكتات، Paige في الباثولوجي، Da Vinci 5 في الجراحة الروبوتية، وAidoc CARE1 كأول نموذج أساسي يحصل على ترخيص FDA في فبراير 2025.",
         "en": "Each of these tools represents a historic milestone in medical AI: Viz.ai in strokes, Paige in pathology, Da Vinci 5 in robotic surgery, and Aidoc CARE1 as the first foundation model to receive FDA clearance in February 2025."
-      }
+      },
+      "left": [
+        {
+          "id": "p1",
+          "text": {
+            "ar": "Viz.ai",
+            "en": "Viz.ai"
+          }
+        },
+        {
+          "id": "p2",
+          "text": {
+            "ar": "Paige AI",
+            "en": "Paige AI"
+          }
+        },
+        {
+          "id": "p3",
+          "text": {
+            "ar": "Da Vinci 5",
+            "en": "Da Vinci 5"
+          }
+        },
+        {
+          "id": "p4",
+          "text": {
+            "ar": "Aidoc CARE1",
+            "en": "Aidoc CARE1"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "p1",
+          "text": {
+            "ar": "كشف السكتات الدماغية في 1,700+ مستشفى وتقليل وقت العلاج 31 دقيقة",
+            "en": "Stroke detection in 1,700+ hospitals, reducing treatment time by 31 minutes"
+          }
+        },
+        {
+          "id": "p2",
+          "text": {
+            "ar": "أول ترخيص FDA لتشخيص AI في علم الأمراض (حساسية 0.99)",
+            "en": "First FDA pathology AI clearance (sensitivity 0.99)"
+          }
+        },
+        {
+          "id": "p3",
+          "text": {
+            "ar": "روبوت جراحي بتغذية راجعة لمسية يخفض شد الخيوط 43%",
+            "en": "Surgical robot with force feedback cutting suture tension by 43%"
+          }
+        },
+        {
+          "id": "p4",
+          "text": {
+            "ar": "أول جهاز طبي بنموذج أساسي (Foundation Model) يحصل على ترخيص FDA",
+            "en": "First foundation-model-powered clinical AI to receive FDA clearance"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "p1",
+          "right": "p1"
+        },
+        {
+          "left": "p2",
+          "right": "p2"
+        },
+        {
+          "left": "p3",
+          "right": "p3"
+        },
+        {
+          "left": "p4",
+          "right": "p4"
+        }
+      ]
     },
     {
       "id": "med-sort-001",
@@ -298,29 +395,43 @@
       "items": [
         {
           "id": "s1",
-          "text": { "ar": "التحقق من وجود ترخيص تنظيمي (FDA/CE) وبيانات تدريب متنوعة ديموغرافياً", "en": "Verify regulatory clearance (FDA/CE) and demographically diverse training data" },
-          "correct_position": 1
+          "text": {
+            "ar": "التحقق من وجود ترخيص تنظيمي (FDA/CE) وبيانات تدريب متنوعة ديموغرافياً",
+            "en": "Verify regulatory clearance (FDA/CE) and demographically diverse training data"
+          }
         },
         {
           "id": "s2",
-          "text": { "ar": "إجراء تقييم مستقل على بيانات مرضاك المحليين قبل التبني", "en": "Conduct independent validation on your local patient data before adoption" },
-          "correct_position": 2
+          "text": {
+            "ar": "إجراء تقييم مستقل على بيانات مرضاك المحليين قبل التبني",
+            "en": "Conduct independent validation on your local patient data before adoption"
+          }
         },
         {
           "id": "s3",
-          "text": { "ar": "تدريب الأطباء على استخدام AI كأداة مساعدة وليس بديلاً عن حكمهم السريري", "en": "Train physicians to use AI as a support tool, not a replacement for clinical judgment" },
-          "correct_position": 3
+          "text": {
+            "ar": "تدريب الأطباء على استخدام AI كأداة مساعدة وليس بديلاً عن حكمهم السريري",
+            "en": "Train physicians to use AI as a support tool, not a replacement for clinical judgment"
+          }
         },
         {
           "id": "s4",
-          "text": { "ar": "مراقبة أداء AI بشكل مستمر مع قياس تأثيره على مهارات الأطباء (مراقبة Deskilling)", "en": "Continuously monitor AI performance while measuring its impact on physician skills (deskilling monitoring)" },
-          "correct_position": 4
+          "text": {
+            "ar": "مراقبة أداء AI بشكل مستمر مع قياس تأثيره على مهارات الأطباء (مراقبة Deskilling)",
+            "en": "Continuously monitor AI performance while measuring its impact on physician skills (deskilling monitoring)"
+          }
         }
       ],
       "hint_after": {
         "ar": "الترتيب يعكس الدروس المستفادة من إخفاقات حقيقية: Epic Sepsis Model طُبّق على نطاق واسع دون تقييم مستقل كافٍ، ودراسة Lancet أثبتت أن تجاهل مراقبة Deskilling يضر بالمرضى فعلاً.",
         "en": "This order reflects lessons from real failures: Epic Sepsis Model was widely deployed without sufficient independent validation, and the Lancet study proved that ignoring deskilling monitoring actually harms patients."
-      }
+      },
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
     },
     {
       "id": "med-sa-001",
@@ -340,7 +451,7 @@
             "ar": "أتجاهل اقتراح AI تماماً — خبرتي السريرية لا يُستعاض عنها بخوارزمية",
             "en": "I completely ignore the AI suggestion — my clinical experience can't be replaced by an algorithm"
           },
-          "score": 1
+          "flexibility_score": 1
         },
         {
           "id": "b",
@@ -348,7 +459,7 @@
             "ar": "أعيد مراجعة الحالة بعناية مع الأخذ باقتراح AI كرأي ثانٍ يستحق التحقق",
             "en": "I carefully re-examine the case, treating the AI suggestion as a second opinion worth verifying"
           },
-          "score": 3
+          "flexibility_score": 3
         },
         {
           "id": "c",
@@ -356,7 +467,7 @@
             "ar": "أعتمد تشخيص AI — الأنظمة الحديثة أدق من الحكم البشري غالباً",
             "en": "I adopt the AI diagnosis — modern systems are usually more accurate than human judgment"
           },
-          "score": 1
+          "flexibility_score": 1
         },
         {
           "id": "d",
@@ -364,7 +475,7 @@
             "ar": "أطلب فحوصات إضافية لحسم الخلاف بين تقييمي واقتراح النظام",
             "en": "I order additional tests to settle the disagreement between my assessment and the system's suggestion"
           },
-          "score": 2
+          "flexibility_score": 2
         }
       ],
       "hint_after": {
@@ -390,7 +501,7 @@
             "ar": "أرفض الشراء حتى تُثبت الشركة تنوع بيانات التدريب وعدالة الأداء لجميع الفئات",
             "en": "I reject the purchase until the company proves training data diversity and equitable performance for all groups"
           },
-          "score": 3
+          "flexibility_score": 3
         },
         {
           "id": "b",
@@ -398,7 +509,7 @@
             "ar": "أوافق مع اشتراط مراقبة أداء النظام على فئات المرضى المختلفة بعد التطبيق",
             "en": "I approve with the condition of monitoring system performance across different patient groups post-deployment"
           },
-          "score": 2
+          "flexibility_score": 2
         },
         {
           "id": "c",
@@ -406,7 +517,7 @@
             "ar": "التحيز مشكلة نظرية — في منطقتنا التنوع العرقي محدود فالموضوع لا يؤثر علينا كثيراً",
             "en": "Bias is a theoretical problem — our region has limited racial diversity so it doesn't really affect us"
           },
-          "score": 0
+          "flexibility_score": 0
         },
         {
           "id": "d",
@@ -414,7 +525,7 @@
             "ar": "أوافق لأن أي نظام AI أفضل من عدم وجود نظام — التحيز يمكن معالجته لاحقاً",
             "en": "I approve because any AI system is better than none — bias can be addressed later"
           },
-          "score": 1
+          "flexibility_score": 1
         }
       ],
       "hint_after": {
