@@ -3643,7 +3643,7 @@
     }
 
     function replaceName(txt) {
-      if (!name) return txt.replace(/\s*\{\{name\}\}\s*/g, '').replace(/\s{2,}/g, ' ').trim();
+      if (!name) return txt.replace(/\s*\{\{name\}\}[،,]?\s*/g, '').replace(/\s{2,}/g, ' ').trim();
       return txt.replace(/\{\{name\}\}/g, name);
     }
 
