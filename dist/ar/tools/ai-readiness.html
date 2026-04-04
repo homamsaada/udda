@@ -2788,7 +2788,7 @@
     var textStr = t(q.text);
     var blanks = q.blanks || [];
 
-    // استبدال كل {{blank_N}} بـ select
+    // استبدال كل _____ أو {{blank_id}} بـ select
     var html = textStr;
     for (var i = 0; i < blanks.length; i++) {
       var blank = blanks[i];
@@ -2804,7 +2804,12 @@
         selectHtml += '<option value="' + t(opts[j]) + '">' + t(opts[j]) + '</option>';
       }
       selectHtml += '</select>';
-      html = html.replace('{{' + blank.id + '}}', selectHtml);
+      // دعم {{b1}} و _____ كنائب
+      if (html.indexOf('{{' + blank.id + '}}') !== -1) {
+        html = html.replace('{{' + blank.id + '}}', selectHtml);
+      } else {
+        html = html.replace('_____', selectHtml);
+      }
     }
 
     fillText.innerHTML = html;
