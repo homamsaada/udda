@@ -1,0 +1,377 @@
+{
+  "section_id": "dentistry",
+  "section_name": { "ar": "طب الأسنان", "en": "Dentistry" },
+  "version": "1.0",
+  "last_updated": "2026-04-04",
+  "questions": [
+    {
+      "id": "dnt-mcq-001",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب أسنان عام، وأضفتَ نظام ذكاء اصطناعي لتحليل الأشعة البانورامية في عيادتك. أثناء الفحص الروتيني، أشار النظام إلى وجود شفافية حول ذروة ضرس لم تلاحظها بصرياً. ما التصرف الأنسب؟",
+        "en": "You're a general dentist who recently added an AI system for panoramic X-ray analysis. During a routine exam, the AI flagged a periapical radiolucency around a molar root that you didn't initially notice. What's the most appropriate action?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتجاهل التنبيه — خبرتي السريرية أهم من خوارزمية",
+            "en": "Ignore the alert — my clinical experience outweighs an algorithm"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أعود لفحص الأشعة بتركيز أكبر في المنطقة المُشار إليها، وأطلب أشعة ذروية مكمّلة إذا لزم",
+            "en": "Re-examine the flagged area more carefully on the radiograph, and order a periapical X-ray if needed"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أبدأ بعلاج العصب مباشرة اعتماداً على تشخيص الذكاء الاصطناعي",
+            "en": "Start root canal treatment immediately based on the AI's diagnosis"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرسل المريض لأخصائي أشعة فقط لأن الذكاء الاصطناعي لاحظ شيئاً لم أره",
+            "en": "Refer the patient to a radiologist solely because the AI spotted something I missed"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الذكاء الاصطناعي أداة مساعدة وليس بديلاً عن الحكم السريري. Pearl's Second Opinion مثلاً حصل على ترخيص FDA لتحليل الأشعة البانورامية في ديسمبر 2025، لكنه مصمم ليُبرز النتائج المشتبهة ليراجعها الطبيب — لا ليُقرر العلاج.",
+        "en": "AI is a support tool, not a replacement for clinical judgment. Pearl's Second Opinion received FDA clearance for panoramic X-ray analysis in December 2025, but it's designed to highlight suspected findings for the dentist to review — not to determine treatment."
+      }
+    },
+    {
+      "id": "dnt-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "دراسات حديثة أظهرت أن أنظمة الذكاء الاصطناعي تتفوق على أطباء الأسنان العامين في كشف التسوس المبكر بين الأسنان (interproximal caries). لكن مراجعة منهجية حذّرت من مشكلة محتملة. ما هي؟",
+        "en": "Recent studies show AI systems outperform general dentists in detecting early interproximal caries. However, a systematic review warned of a potential problem. What is it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الإفراط في التشخيص (overdiagnosis) مما قد يؤدي لعلاجات غير ضرورية",
+            "en": "Overdiagnosis that may lead to unnecessary treatments"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تجاهل التسوس الشديد والتركيز فقط على المبكر",
+            "en": "Ignoring severe caries and focusing only on early ones"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "عدم عمل الأنظمة على أشعة الأسنان اللبنية",
+            "en": "These systems not working on primary teeth X-rays"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "بطء المعالجة مما يعطّل سير العمل في العيادة",
+            "en": "Slow processing that disrupts clinical workflow"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "وجدت تحليلات تجميعية أن الذكاء الاصطناعي يكشف التسوس بحساسية 0.85 ونوعية 0.90، لكن مراجعات المستخدمين ودراسات منهجية حذّرت من نتائج إيجابية كاذبة خصوصاً في التسوس بين الأسنان، مما قد يؤدي لعلاج مفرط.",
+        "en": "Pooled meta-analyses found AI detects caries with sensitivity of 0.85 and specificity of 0.90, but user reviews and systematic reviews warned of false positives, especially with interproximal decay, potentially leading to overtreatment."
+      }
+    },
+    {
+      "id": "dnt-tf-001",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "سوق الذكاء الاصطناعي في طب الأسنان لا يزال في مراحله التجريبية المبكرة، حيث لا يوجد أكثر من 10 أجهزة حاصلة على ترخيص FDA.",
+        "en": "The dental AI market is still in its early experimental stages, with no more than 10 FDA-cleared devices."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "هذا غير صحيح إطلاقاً. حتى ديسمبر 2025، حصل 44 جهاز ذكاء اصطناعي لطب الأسنان على ترخيص FDA، منها 18 في عام 2025 وحده — أكثر من العامين السابقين مجتمعين. السوق بلغ 421-460 مليون دولار عام 2024 وينمو بمعدل 22% سنوياً.",
+        "en": "This is entirely false. By December 2025, 44 dental AI devices had received FDA clearance, with 18 in 2025 alone — more than the previous two years combined. The market reached $421–460 million in 2024, growing at 22% CAGR."
+      }
+    },
+    {
+      "id": "dnt-tf-002",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "جمعية طب الأسنان الأمريكية (ADA) استثمرت مباشرة في شركة ذكاء اصطناعي لتحليل أشعة الأسنان.",
+        "en": "The American Dental Association (ADA) directly invested in a dental AI radiograph analysis company."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. شاركت ADA كمستثمر استراتيجي في جولة تمويل Pearl (السلسلة B) بقيمة 58 مليون دولار عام 2024 — أكبر جولة تمويل في تاريخ الذكاء الاصطناعي لطب الأسنان.",
+        "en": "True. The ADA participated as a strategic investor in Pearl's $58 million Series B funding round in 2024 — the largest venture round in dental AI history."
+      }
+    },
+    {
+      "id": "dnt-fill-001",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أول نظام روبوتي حاصل على ترخيص FDA لجراحة زراعة الأسنان هو {{blank_1}}، الذي يستخدم الذكاء الاصطناعي لتحديد مواقع الأعصاب والجيوب تلقائياً من صور الأشعة المقطعية المخروطية (CBCT).",
+        "en": "The first and only FDA-cleared robotic system for dental implant surgery is {{blank_1}}, which uses AI to automatically segment nerves and sinuses from CBCT scans."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": { "ar": "Neocis Yomi", "en": "Neocis Yomi" },
+          "options": [
+            { "ar": "Neocis Yomi", "en": "Neocis Yomi" },
+            { "ar": "Da Vinci 5", "en": "Da Vinci 5" },
+            { "ar": "Invisalign AI", "en": "Invisalign AI" },
+            { "ar": "CEREC Primemill", "en": "CEREC Primemill" }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "نظام Neocis Yomi S حصل على ترخيص FDA في نوفمبر 2025، وساعد في وضع ما يقارب 100,000 زرعة. أما Da Vinci فهو نظام جراحي عام وليس مخصصاً لطب الأسنان.",
+        "en": "The Neocis Yomi S received FDA clearance in November 2025 and has assisted in placing nearly 100,000 implants. Da Vinci is a general surgical robot, not designed for dentistry."
+      }
+    },
+    {
+      "id": "dnt-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل منصة ذكاء اصطناعي بميزتها التنافسية الرئيسية في طب الأسنان:",
+        "en": "Match each dental AI platform with its key competitive advantage:"
+      },
+      "left": [
+        { "id": "L1", "text": { "ar": "Pearl", "en": "Pearl" } },
+        { "id": "L2", "text": { "ar": "Overjet", "en": "Overjet" } },
+        { "id": "L3", "text": { "ar": "VideaHealth", "en": "VideaHealth" } },
+        { "id": "L4", "text": { "ar": "DentalMonitoring", "en": "DentalMonitoring" } }
+      ],
+      "right": [
+        { "id": "R1", "text": { "ar": "ترخيص في 120 دولة وتغطية بانورامية + CBCT", "en": "Clearance in 120 countries with panoramic + CBCT coverage" } },
+        { "id": "R2", "text": { "ar": "أول ترخيص FDA لتجزئة التسوس + 5 تراخيص", "en": "First FDA caries segmentation clearance + 5 clearances" } },
+        { "id": "R3", "text": { "ar": "تحليل أكثر من 500 مليون أشعة سنوياً عبر 60+ DSO", "en": "Analyzing 500+ million X-rays annually across 60+ DSOs" } },
+        { "id": "R4", "text": { "ar": "متابعة تقويم عن بُعد لأكثر من 2 مليون مريض", "en": "Remote orthodontic monitoring for 2+ million patients" } }
+      ],
+      "correct_pairs": [
+        { "left": "L1", "right": "R1" },
+        { "left": "L2", "right": "R2" },
+        { "left": "L3", "right": "R3" },
+        { "left": "L4", "right": "R4" }
+      ],
+      "hint_after": {
+        "ar": "Pearl وOverjet وVideaHealth تتنافس على سوق تحليل الأشعة، لكن كل واحدة تميزت بمسار مختلف. DentalMonitoring تعمل في مجال مختلف تماماً — متابعة التقويم بالكاميرا والذكاء الاصطناعي.",
+        "en": "Pearl, Overjet, and VideaHealth compete in the radiograph analysis market, but each carved a different niche. DentalMonitoring operates in a different domain entirely — camera-based AI orthodontic monitoring."
+      }
+    },
+    {
+      "id": "dnt-sort-001",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات دمج نظام ذكاء اصطناعي لتحليل الأشعة في عيادة أسنان من البداية للنهاية:",
+        "en": "Order the steps for integrating an AI radiograph analysis system into a dental practice from start to finish:"
+      },
+      "items": [
+        { "id": "S1", "text": { "ar": "التحقق من توافق النظام مع برنامج إدارة العيادة ونظام الأشعة الحالي", "en": "Verify the system's compatibility with existing practice management software and imaging system" } },
+        { "id": "S2", "text": { "ar": "تدريب الفريق على تفسير تنبيهات الذكاء الاصطناعي وحدوده (ليس بديلاً عن التشخيص)", "en": "Train the team on interpreting AI alerts and its limitations (not a replacement for diagnosis)" } },
+        { "id": "S3", "text": { "ar": "تشغيل النظام على حالات سابقة كتجربة قبل الاستخدام مع المرضى", "en": "Run the system on past cases as a pilot before using it with patients" } },
+        { "id": "S4", "text": { "ar": "مراجعة دورية لمعدلات التوافق والاختلاف بين تشخيصك وتنبيهات الذكاء الاصطناعي", "en": "Periodically review agreement and disagreement rates between your diagnoses and AI alerts" } }
+      ],
+      "correct_order": ["S1", "S2", "S3", "S4"],
+      "hint_after": {
+        "ar": "التكامل التقني أولاً، ثم التدريب البشري، ثم التجربة، ثم المراجعة المستمرة. 19% فقط من المنظمات الصحية التي نشرت AI أبلغت عن نجاح «عالٍ» — والسبب غالباً تخطّي خطوات التدريب والتجريب.",
+        "en": "Technical integration first, then human training, then piloting, then continuous review. Only 19% of health systems deploying AI report 'high' success — often because training and piloting steps were skipped."
+      }
+    },
+    {
+      "id": "dnt-mcq-003",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت أخصائي تقويم أسنان. شركة Align Technology أطلقت ClinCheck Live Plan الذي يستخدم بيانات أكثر من 21 مليون مريض Invisalign سابق لتوليد خطة علاج جاهزة خلال 15 دقيقة تقريباً — بدلاً من أيام. كيف يؤثر هذا على دورك؟",
+        "en": "You're an orthodontist. Align Technology launched ClinCheck Live Plan, which uses data from 21+ million past Invisalign patients to generate a doctor-ready treatment plan in about 15 minutes — instead of days. How does this affect your role?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يلغي الحاجة لأخصائي التقويم — الذكاء الاصطناعي يخطط كل شيء",
+            "en": "It eliminates the need for orthodontists — AI plans everything"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يحوّل وقتي من التخطيط الروتيني إلى تعديل الخطة وتقييم الحالات المعقدة",
+            "en": "It shifts my time from routine planning to modifying plans and evaluating complex cases"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا يؤثر — أفضّل التخطيط اليدوي لأنه أدق",
+            "en": "It doesn't affect me — I prefer manual planning because it's more accurate"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يعني أن أي طبيب أسنان عام يمكنه تقديم خدمات التقويم بدوني",
+            "en": "It means any general dentist can provide orthodontic services without me"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "ClinCheck Live Plan (الإطلاق العالمي بداية 2026) يسرّع التخطيط لكنه يولّد خطة «جاهزة للمراجعة» وليس «نهائية». أخصائي التقويم ينتقل من العمل الروتيني للحكم السريري المتقدم — مثلما تطوّر دور أطباء الأشعة مع AI.",
+        "en": "ClinCheck Live Plan (global rollout Q1 2026) speeds up planning but generates a 'doctor-ready' plan, not a final one. The orthodontist shifts from routine work to advanced clinical judgment — similar to how radiologists' roles evolved with AI."
+      }
+    },
+    {
+      "id": "dnt-self-001",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت طبيب أسنان بخبرة 15 سنة. نظام الذكاء الاصطناعي في عيادتك اكتشف تسوساً مبكراً في 3 حالات لم تلاحظها أنت خلال أسبوع واحد. ما شعورك؟",
+        "en": "You're a dentist with 15 years of experience. The AI system in your practice detected early caries in 3 cases you missed during a single week. How do you feel?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "هذا بالضبط لماذا استثمرت في التقنية — شبكة أمان تحمي مرضاي وتحسّن عملي",
+            "en": "This is exactly why I invested in the technology — a safety net that protects my patients and improves my work"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مفيد، لكن أحتاج أتحقق أن هذه فعلاً تسوسات وليست إنذارات كاذبة",
+            "en": "Helpful, but I need to verify these are actual caries and not false positives"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مقلق — يعني أن التقنية أصبحت أفضل مني وخبرتي لم تعد كافية",
+            "en": "Concerning — it means the technology is better than me and my experience isn't enough anymore"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أشك في دقة النظام — 15 سنة خبرة لا يتفوق عليها برنامج",
+            "en": "I doubt the system's accuracy — 15 years of experience can't be outdone by software"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "دراسة أظهرت أن أطباء الأسنان فاتهم 43% أقل من الأسنان المصابة بالتسوس عند استخدام Overjet. الذكاء الاصطناعي لا يعني أنك طبيب سيء — بل أن العين البشرية لها حدود طبيعية، خاصة مع التسوس المبكر بين الأسنان.",
+        "en": "A study showed dentists missed 43% fewer teeth with caries when using Overjet. AI doesn't mean you're a bad dentist — it means the human eye has natural limits, especially with early interproximal caries."
+      }
+    },
+    {
+      "id": "dnt-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "تطبيق DentalMonitoring يتيح متابعة مرضى التقويم عن بُعد بالذكاء الاصطناعي، مما يقلل الزيارات بنسبة 25-67%. مالك العيادة يقترح تبنّيه. ما موقفك؟",
+        "en": "The DentalMonitoring app enables AI-powered remote orthodontic monitoring, reducing in-office visits by 25–67%. The clinic owner suggests adopting it. What's your position?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة ممتازة — أوسّع قاعدة مرضاي وأركّز الزيارات الفعلية على الحالات التي تحتاجها",
+            "en": "Excellent opportunity — I can expand my patient base and focus in-person visits on cases that truly need them"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أجرّبه لكن أبدأ بحالات بسيطة وأبقي جدول الزيارات الأصلي للحالات المعقدة",
+            "en": "I'd try it but start with simple cases and keep the original visit schedule for complex ones"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق من المسؤولية القانونية — إذا فاتت الخوارزمية مشكلة من يتحمل؟",
+            "en": "Worried about legal liability — if the algorithm misses a problem, who's responsible?"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — لا شيء يعوّض الفحص السريري المباشر في كل زيارة",
+            "en": "I refuse — nothing replaces hands-on clinical examination at every visit"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "DentalMonitoring يخدم أكثر من 2 مليون مريض عالمياً وحصل على تمويل 100 مليون دولار عام 2025. سؤال المسؤولية القانونية مشروع تماماً ويجب الإجابة عليه قبل التبني، لكنه ليس سبباً للرفض المطلق.",
+        "en": "DentalMonitoring serves 2+ million patients globally and secured $100 million in 2025 funding. The legal liability question is entirely legitimate and should be answered before adoption, but it's not grounds for outright refusal."
+      }
+    }
+  ]
+}
