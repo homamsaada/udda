@@ -10,97 +10,191 @@
     {
       "id": "medicine",
       "name": { "ar": "الطب البشري", "en": "Medicine" },
-      "category": { "ar": "تخصصات صحية", "en": "Health Specialties" },
+      "description": { "ar": "الطب العام، الجراحة، الباطنية، طب الأطفال، النساء والتوليد، وجميع التخصصات السريرية", "en": "General medicine, surgery, internal medicine, pediatrics, OB/GYN, and all clinical specialties" },
+      "category": { "ar": "تخصصات صحية وطبية", "en": "Health & Medical Specialties" },
       "file": "medicine.json",
       "code": "med"
     },
     {
       "id": "dentistry",
       "name": { "ar": "طب الأسنان", "en": "Dentistry" },
-      "category": { "ar": "تخصصات صحية", "en": "Health Specialties" },
+      "description": { "ar": "طب الأسنان العام، التقويم، جراحة الفم والفكين، تجميل الأسنان", "en": "General dentistry, orthodontics, oral surgery, cosmetic dentistry" },
+      "category": { "ar": "تخصصات صحية وطبية", "en": "Health & Medical Specialties" },
       "file": "dentistry.json",
       "code": "dnt"
     },
     {
       "id": "pharmacy",
       "name": { "ar": "الصيدلة", "en": "Pharmacy" },
-      "category": { "ar": "تخصصات صحية", "en": "Health Specialties" },
+      "description": { "ar": "الصيدلة السريرية، صناعة الأدوية، الصيدلة المجتمعية، علم السموم", "en": "Clinical pharmacy, pharmaceutical industry, community pharmacy, toxicology" },
+      "category": { "ar": "تخصصات صحية وطبية", "en": "Health & Medical Specialties" },
       "file": "pharmacy.json",
       "code": "phm"
     },
     {
       "id": "nursing",
-      "name": { "ar": "التمريض والعلوم الصحية", "en": "Nursing & Health Sciences" },
-      "category": { "ar": "تخصصات صحية", "en": "Health Specialties" },
+      "name": { "ar": "التمريض والقبالة", "en": "Nursing & Midwifery" },
+      "description": { "ar": "التمريض العام، تمريض العناية المركزة، القبالة، تمريض الطوارئ", "en": "General nursing, ICU nursing, midwifery, emergency nursing" },
+      "category": { "ar": "تخصصات صحية وطبية", "en": "Health & Medical Specialties" },
       "file": "nursing.json",
       "code": "nrs"
     },
     {
+      "id": "allied-health",
+      "name": { "ar": "العلوم الصحية المساعدة", "en": "Allied Health Sciences" },
+      "description": { "ar": "العلاج الطبيعي، التغذية والحميات، المختبرات الطبية، الأشعة، السمع والنطق، البصريات", "en": "Physiotherapy, nutrition & dietetics, medical labs, radiology, audiology, optometry" },
+      "category": { "ar": "تخصصات صحية وطبية", "en": "Health & Medical Specialties" },
+      "file": "allied-health.json",
+      "code": "alh"
+    },
+    {
+      "id": "veterinary",
+      "name": { "ar": "الطب البيطري", "en": "Veterinary Medicine" },
+      "description": { "ar": "الطب البيطري، صحة الحيوان، الإنتاج الحيواني", "en": "Veterinary medicine, animal health, animal production" },
+      "category": { "ar": "تخصصات صحية وطبية", "en": "Health & Medical Specialties" },
+      "file": "veterinary.json",
+      "code": "vet"
+    },
+    {
+      "id": "public-health",
+      "name": { "ar": "الصحة العامة", "en": "Public Health" },
+      "description": { "ar": "الصحة العامة، الوبائيات، إدارة المستشفيات، سياسات الرعاية الصحية", "en": "Public health, epidemiology, hospital administration, healthcare policy" },
+      "category": { "ar": "تخصصات صحية وطبية", "en": "Health & Medical Specialties" },
+      "file": "public-health.json",
+      "code": "pbh"
+    },
+    {
       "id": "cs-data",
-      "name": { "ar": "هندسة الحاسوب وعلوم البيانات", "en": "Computer Science & Data" },
+      "name": { "ar": "هندسة الحاسوب وعلوم البيانات", "en": "Computer Engineering & Data Science" },
+      "description": { "ar": "هندسة البرمجيات، علوم الحاسوب، علم البيانات، الذكاء الاصطناعي، تطوير الويب والتطبيقات", "en": "Software engineering, computer science, data science, AI, web & app development" },
       "category": { "ar": "تخصصات هندسية وتقنية", "en": "Engineering & Technology" },
       "file": "cs-data.json",
       "code": "csd"
     },
     {
+      "id": "it-cybersecurity",
+      "name": { "ar": "تقنية المعلومات والأمن السيبراني", "en": "IT & Cybersecurity" },
+      "description": { "ar": "إدارة الشبكات، أمن المعلومات، الحوسبة السحابية، الدعم التقني، إدارة قواعد البيانات", "en": "Network admin, cybersecurity, cloud computing, IT support, database management" },
+      "category": { "ar": "تخصصات هندسية وتقنية", "en": "Engineering & Technology" },
+      "file": "it-cybersecurity.json",
+      "code": "itc"
+    },
+    {
       "id": "civil-architecture-eng",
       "name": { "ar": "الهندسة المدنية والمعمارية", "en": "Civil & Architectural Engineering" },
+      "description": { "ar": "الهندسة المدنية، الهندسة المعمارية، هندسة الإنشاءات، التخطيط العمراني، التصميم الداخلي", "en": "Civil engineering, architecture, structural engineering, urban planning, interior design" },
       "category": { "ar": "تخصصات هندسية وتقنية", "en": "Engineering & Technology" },
       "file": "civil-architecture-eng.json",
-      "code": "cva"
+      "code": "cae"
     },
     {
       "id": "electrical-mechanical-eng",
       "name": { "ar": "الهندسة الكهربائية والميكانيكية", "en": "Electrical & Mechanical Engineering" },
+      "description": { "ar": "الهندسة الكهربائية، الميكانيكية، الميكاترونكس، الطاقة المتجددة، هندسة التحكم والأتمتة", "en": "Electrical, mechanical, mechatronics, renewable energy, control & automation engineering" },
       "category": { "ar": "تخصصات هندسية وتقنية", "en": "Engineering & Technology" },
       "file": "electrical-mechanical-eng.json",
-      "code": "elm"
+      "code": "eme"
     },
     {
       "id": "chemical-environmental-eng",
       "name": { "ar": "الهندسة الكيميائية والبيئية", "en": "Chemical & Environmental Engineering" },
+      "description": { "ar": "الهندسة الكيميائية، هندسة البيئة، هندسة المياه، معالجة النفايات", "en": "Chemical engineering, environmental engineering, water engineering, waste treatment" },
       "category": { "ar": "تخصصات هندسية وتقنية", "en": "Engineering & Technology" },
       "file": "chemical-environmental-eng.json",
       "code": "che"
     },
     {
+      "id": "petroleum-energy-eng",
+      "name": { "ar": "هندسة النفط والطاقة والتعدين", "en": "Petroleum, Energy & Mining Engineering" },
+      "description": { "ar": "هندسة البترول، هندسة التعدين، هندسة الغاز، الطاقة والموارد الطبيعية", "en": "Petroleum engineering, mining, gas engineering, energy & natural resources" },
+      "category": { "ar": "تخصصات هندسية وتقنية", "en": "Engineering & Technology" },
+      "file": "petroleum-energy-eng.json",
+      "code": "pet"
+    },
+    {
+      "id": "biomedical-eng",
+      "name": { "ar": "الهندسة الطبية الحيوية", "en": "Biomedical Engineering" },
+      "description": { "ar": "الأجهزة الطبية، الهندسة الطبية، التقنيات الحيوية، المعلوماتية الصحية", "en": "Medical devices, biomedical engineering, biotechnology, health informatics" },
+      "category": { "ar": "تخصصات هندسية وتقنية", "en": "Engineering & Technology" },
+      "file": "biomedical-eng.json",
+      "code": "bme"
+    },
+    {
       "id": "accounting",
       "name": { "ar": "المحاسبة والتدقيق", "en": "Accounting & Auditing" },
+      "description": { "ar": "المحاسبة المالية، التدقيق، المحاسبة الضريبية، محاسبة التكاليف", "en": "Financial accounting, auditing, tax accounting, cost accounting" },
       "category": { "ar": "تخصصات إدارية واقتصادية", "en": "Business & Economics" },
       "file": "accounting.json",
       "code": "acc"
     },
     {
       "id": "business-hr",
-      "name": { "ar": "إدارة الأعمال والموارد البشرية", "en": "Business & HR Management" },
+      "name": { "ar": "إدارة الأعمال والموارد البشرية", "en": "Business Management & HR" },
+      "description": { "ar": "الإدارة العامة، إدارة الموارد البشرية، إدارة العمليات، التطوير التنظيمي، القيادة", "en": "General management, HR, operations management, organizational development, leadership" },
       "category": { "ar": "تخصصات إدارية واقتصادية", "en": "Business & Economics" },
       "file": "business-hr.json",
       "code": "bhr"
     },
     {
       "id": "economics-finance",
-      "name": { "ar": "الاقتصاد والتمويل", "en": "Economics & Finance" },
+      "name": { "ar": "الاقتصاد والتمويل والتأمين", "en": "Economics, Finance & Insurance" },
+      "description": { "ar": "الاقتصاد، التمويل والاستثمار، البنوك، التأمين، التحليل المالي، التمويل الإسلامي", "en": "Economics, finance & investment, banking, insurance, financial analysis, Islamic finance" },
       "category": { "ar": "تخصصات إدارية واقتصادية", "en": "Business & Economics" },
       "file": "economics-finance.json",
       "code": "ecf"
     },
     {
       "id": "digital-marketing",
-      "name": { "ar": "التسويق الرقمي", "en": "Digital Marketing" },
+      "name": { "ar": "التسويق الرقمي والمبيعات", "en": "Digital Marketing & Sales" },
+      "description": { "ar": "التسويق الرقمي، التجارة الإلكترونية، إدارة العلامات التجارية، المبيعات، تحليل السوق", "en": "Digital marketing, e-commerce, branding, sales, market analysis" },
       "category": { "ar": "تخصصات إدارية واقتصادية", "en": "Business & Economics" },
       "file": "digital-marketing.json",
       "code": "dmk"
     },
     {
+      "id": "logistics",
+      "name": { "ar": "اللوجستيات وسلاسل الإمداد", "en": "Logistics & Supply Chain" },
+      "description": { "ar": "إدارة سلاسل الإمداد، المشتريات، التخزين والتوزيع، النقل واللوجستيات، التجارة الدولية", "en": "Supply chain management, procurement, warehousing, logistics, international trade" },
+      "category": { "ar": "تخصصات إدارية واقتصادية", "en": "Business & Economics" },
+      "file": "logistics.json",
+      "code": "log"
+    },
+    {
+      "id": "public-admin",
+      "name": { "ar": "الإدارة العامة والحوكمة", "en": "Public Administration & Governance" },
+      "description": { "ar": "الإدارة العامة، العلاقات الحكومية، السياسات العامة، الحوكمة، الدبلوماسية", "en": "Public administration, government relations, public policy, governance, diplomacy" },
+      "category": { "ar": "تخصصات إدارية واقتصادية", "en": "Business & Economics" },
+      "file": "public-admin.json",
+      "code": "pad"
+    },
+    {
+      "id": "entrepreneurship",
+      "name": { "ar": "ريادة الأعمال وإدارة المشاريع", "en": "Entrepreneurship & Project Management" },
+      "description": { "ar": "ريادة الأعمال، إدارة المشاريع، الشركات الناشئة، تطوير الأعمال، الابتكار", "en": "Entrepreneurship, project management, startups, business development, innovation" },
+      "category": { "ar": "تخصصات إدارية واقتصادية", "en": "Business & Economics" },
+      "file": "entrepreneurship.json",
+      "code": "ent"
+    },
+    {
+      "id": "real-estate",
+      "name": { "ar": "العقارات وإدارة الممتلكات", "en": "Real Estate & Property Management" },
+      "description": { "ar": "التطوير العقاري، إدارة الممتلكات، التقييم العقاري، إدارة المرافق", "en": "Real estate development, property management, valuation, facilities management" },
+      "category": { "ar": "تخصصات إدارية واقتصادية", "en": "Business & Economics" },
+      "file": "real-estate.json",
+      "code": "rle"
+    },
+    {
       "id": "law-sharia",
-      "name": { "ar": "القانون والشريعة", "en": "Law & Sharia" },
+      "name": { "ar": "القانون والشريعة", "en": "Law & Islamic Sharia" },
+      "description": { "ar": "القانون المدني، القانون الجنائي، القانون التجاري، الشريعة الإسلامية، القضاء، المحاماة", "en": "Civil law, criminal law, commercial law, Islamic Sharia, judiciary, legal practice" },
       "category": { "ar": "تخصصات إنسانية واجتماعية", "en": "Humanities & Social Sciences" },
       "file": "law-sharia.json",
       "code": "law"
     },
     {
       "id": "psychology",
-      "name": { "ar": "علم النفس والإرشاد", "en": "Psychology & Counseling" },
+      "name": { "ar": "علم النفس والإرشاد والخدمة الاجتماعية", "en": "Psychology, Counseling & Social Work" },
+      "description": { "ar": "علم النفس السريري، الإرشاد النفسي، العلاج السلوكي، الخدمة الاجتماعية، علم النفس التربوي", "en": "Clinical psychology, counseling, behavioral therapy, social work, educational psychology" },
       "category": { "ar": "تخصصات إنسانية واجتماعية", "en": "Humanities & Social Sciences" },
       "file": "psychology.json",
       "code": "psy"
@@ -108,79 +202,138 @@
     {
       "id": "education",
       "name": { "ar": "التربية والتعليم", "en": "Education & Teaching" },
+      "description": { "ar": "التدريس، المناهج وطرق التدريس، الإدارة التربوية، التعليم الإلكتروني، رياض الأطفال، التربية الخاصة", "en": "Teaching, curriculum design, educational admin, e-learning, kindergarten, special education" },
       "category": { "ar": "تخصصات إنسانية واجتماعية", "en": "Humanities & Social Sciences" },
       "file": "education.json",
       "code": "edu"
     },
     {
       "id": "translation-linguistics",
-      "name": { "ar": "الترجمة واللغويات", "en": "Translation & Linguistics" },
+      "name": { "ar": "الترجمة واللغويات والأدب", "en": "Translation, Linguistics & Literature" },
+      "description": { "ar": "الترجمة التحريرية والفورية، اللسانيات، الأدب العربي والإنكليزي، تعليم اللغات", "en": "Translation & interpretation, linguistics, Arabic & English literature, language teaching" },
       "category": { "ar": "تخصصات إنسانية واجتماعية", "en": "Humanities & Social Sciences" },
       "file": "translation-linguistics.json",
-      "code": "trn"
+      "code": "trl"
     },
     {
-      "id": "social-work",
-      "name": { "ar": "الخدمة الاجتماعية", "en": "Social Work" },
+      "id": "islamic-studies",
+      "name": { "ar": "العلوم الإسلامية والدعوة", "en": "Islamic Studies & Da'wah" },
+      "description": { "ar": "الفقه وأصوله، الحديث والتفسير، الدعوة والإرشاد، الدراسات القرآنية، الاقتصاد الإسلامي", "en": "Islamic jurisprudence, Hadith & Tafsir, Da'wah, Quranic studies, Islamic economics" },
       "category": { "ar": "تخصصات إنسانية واجتماعية", "en": "Humanities & Social Sciences" },
-      "file": "social-work.json",
-      "code": "sow"
+      "file": "islamic-studies.json",
+      "code": "isl"
+    },
+    {
+      "id": "political-science",
+      "name": { "ar": "العلوم السياسية والعلاقات الدولية", "en": "Political Science & International Relations" },
+      "description": { "ar": "العلوم السياسية، العلاقات الدولية، الدراسات الاستراتيجية، حقوق الإنسان", "en": "Political science, international relations, strategic studies, human rights" },
+      "category": { "ar": "تخصصات إنسانية واجتماعية", "en": "Humanities & Social Sciences" },
+      "file": "political-science.json",
+      "code": "pol"
+    },
+    {
+      "id": "sociology-philosophy",
+      "name": { "ar": "علم الاجتماع والفلسفة والتاريخ", "en": "Sociology, Philosophy & History" },
+      "description": { "ar": "علم الاجتماع، الفلسفة، التاريخ، الآثار، الأنثروبولوجيا، الدراسات الثقافية", "en": "Sociology, philosophy, history, archaeology, anthropology, cultural studies" },
+      "category": { "ar": "تخصصات إنسانية واجتماعية", "en": "Humanities & Social Sciences" },
+      "file": "sociology-philosophy.json",
+      "code": "sph"
     },
     {
       "id": "media-journalism",
-      "name": { "ar": "الإعلام والصحافة", "en": "Media & Journalism" },
+      "name": { "ar": "الإعلام والصحافة والاتصال", "en": "Media, Journalism & Communication" },
+      "description": { "ar": "الصحافة، الإعلام الرقمي، العلاقات العامة، الاتصال المؤسسي، صناعة المحتوى", "en": "Journalism, digital media, public relations, corporate communications, content creation" },
       "category": { "ar": "تخصصات إبداعية وإعلامية", "en": "Creative & Media" },
       "file": "media-journalism.json",
-      "code": "mjr"
+      "code": "mjc"
     },
     {
       "id": "graphic-design",
       "name": { "ar": "التصميم الجرافيكي والبصري", "en": "Graphic & Visual Design" },
+      "description": { "ar": "التصميم الجرافيكي، تصميم UI/UX، تصميم الهوية البصرية، التصوير الفوتوغرافي", "en": "Graphic design, UI/UX design, visual identity, photography" },
       "category": { "ar": "تخصصات إبداعية وإعلامية", "en": "Creative & Media" },
       "file": "graphic-design.json",
       "code": "gfx"
     },
     {
       "id": "av-production",
-      "name": { "ar": "الإنتاج المرئي والسمعي", "en": "Audio & Video Production" },
+      "name": { "ar": "الإنتاج المرئي والسمعي والفنون", "en": "Audio-Visual Production & Arts" },
+      "description": { "ar": "إنتاج الأفلام والفيديو، المونتاج، الهندسة الصوتية، الموسيقى، الفنون الجميلة، المسرح", "en": "Film & video production, editing, sound engineering, music, fine arts, theater" },
       "category": { "ar": "تخصصات إبداعية وإعلامية", "en": "Creative & Media" },
       "file": "av-production.json",
       "code": "avp"
     },
     {
-      "id": "math-physics",
-      "name": { "ar": "الرياضيات والفيزياء", "en": "Mathematics & Physics" },
+      "id": "math-statistics",
+      "name": { "ar": "الرياضيات والإحصاء", "en": "Mathematics & Statistics" },
+      "description": { "ar": "الرياضيات البحتة والتطبيقية، الإحصاء، بحوث العمليات، التحليل العددي", "en": "Pure & applied mathematics, statistics, operations research, numerical analysis" },
       "category": { "ar": "تخصصات علمية بحتة", "en": "Pure Sciences" },
-      "file": "math-physics.json",
-      "code": "mph"
+      "file": "math-statistics.json",
+      "code": "mst"
+    },
+    {
+      "id": "physics-space",
+      "name": { "ar": "الفيزياء وعلوم الفضاء", "en": "Physics & Space Science" },
+      "description": { "ar": "الفيزياء النظرية والتطبيقية، الفيزياء الطبية، الفلك وعلوم الفضاء", "en": "Theoretical & applied physics, medical physics, astronomy & space science" },
+      "category": { "ar": "تخصصات علمية بحتة", "en": "Pure Sciences" },
+      "file": "physics-space.json",
+      "code": "phy"
     },
     {
       "id": "chemistry-biology",
       "name": { "ar": "الكيمياء والأحياء", "en": "Chemistry & Biology" },
+      "description": { "ar": "الكيمياء التحليلية والعضوية، الأحياء الدقيقة، الوراثة، التقنية الحيوية", "en": "Analytical & organic chemistry, microbiology, genetics, biotechnology" },
       "category": { "ar": "تخصصات علمية بحتة", "en": "Pure Sciences" },
       "file": "chemistry-biology.json",
       "code": "chb"
     },
     {
       "id": "earth-environmental-sci",
-      "name": { "ar": "علوم الأرض والبيئة", "en": "Earth & Environmental Sciences" },
+      "name": { "ar": "علوم الأرض والبيئة", "en": "Earth & Environmental Science" },
+      "description": { "ar": "الجيولوجيا، الجغرافيا، علوم البيئة، الأرصاد الجوية، علوم البحار", "en": "Geology, geography, environmental science, meteorology, marine science" },
       "category": { "ar": "تخصصات علمية بحتة", "en": "Pure Sciences" },
       "file": "earth-environmental-sci.json",
-      "code": "env"
+      "code": "ees"
     },
     {
       "id": "agriculture-food",
-      "name": { "ar": "الزراعة والأغذية", "en": "Agriculture & Food" },
-      "category": { "ar": "تخصصات أخرى", "en": "Other Specialties" },
+      "name": { "ar": "الزراعة والأغذية", "en": "Agriculture & Food Science" },
+      "description": { "ar": "الإنتاج النباتي والحيواني، علوم الأغذية، الصناعات الغذائية، الهندسة الزراعية", "en": "Crop & animal production, food science, food industry, agricultural engineering" },
+      "category": { "ar": "تخصصات خدمية ومهنية", "en": "Service & Professional" },
       "file": "agriculture-food.json",
-      "code": "agr"
+      "code": "agf"
     },
     {
-      "id": "urban-planning",
-      "name": { "ar": "العمارة والتخطيط العمراني", "en": "Architecture & Urban Planning" },
-      "category": { "ar": "تخصصات أخرى", "en": "Other Specialties" },
-      "file": "urban-planning.json",
-      "code": "urb"
+      "id": "tourism-hospitality",
+      "name": { "ar": "السياحة والضيافة والطيران", "en": "Tourism, Hospitality & Aviation" },
+      "description": { "ar": "إدارة الفنادق، السياحة والسفر، إدارة المطاعم، الطيران المدني، الضيافة", "en": "Hotel management, tourism & travel, restaurant management, civil aviation, hospitality" },
+      "category": { "ar": "تخصصات خدمية ومهنية", "en": "Service & Professional" },
+      "file": "tourism-hospitality.json",
+      "code": "trs"
+    },
+    {
+      "id": "sports-science",
+      "name": { "ar": "علوم الرياضة والتربية البدنية", "en": "Sports Science & Physical Education" },
+      "description": { "ar": "التربية البدنية، علوم الرياضة، التدريب الرياضي، الإدارة الرياضية، الطب الرياضي", "en": "Physical education, sports science, athletic coaching, sports management, sports medicine" },
+      "category": { "ar": "تخصصات خدمية ومهنية", "en": "Service & Professional" },
+      "file": "sports-science.json",
+      "code": "sps"
+    },
+    {
+      "id": "military-security",
+      "name": { "ar": "العلوم العسكرية والأمنية", "en": "Military & Security Science" },
+      "description": { "ar": "العلوم العسكرية، الأمن والسلامة، إدارة الأزمات، الدفاع المدني، الاستخبارات", "en": "Military science, security & safety, crisis management, civil defense, intelligence" },
+      "category": { "ar": "تخصصات خدمية ومهنية", "en": "Service & Professional" },
+      "file": "military-security.json",
+      "code": "mil"
+    },
+    {
+      "id": "library-info-science",
+      "name": { "ar": "المكتبات وعلوم المعلومات", "en": "Library & Information Science" },
+      "description": { "ar": "علم المكتبات، إدارة المعرفة، أرشفة المعلومات، التوثيق، المعلوماتية", "en": "Library science, knowledge management, information archiving, documentation, informatics" },
+      "category": { "ar": "تخصصات خدمية ومهنية", "en": "Service & Professional" },
+      "file": "library-info-science.json",
+      "code": "lib"
     }
   ]
 }
