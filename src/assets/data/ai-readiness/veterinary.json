@@ -1,0 +1,327 @@
+{
+  "section_id": "veterinary",
+  "section_name": { "ar": "الطب البيطري", "en": "Veterinary Medicine" },
+  "version": "1.0",
+  "last_updated": "2026-04-04",
+  "questions": [
+    {
+      "id": "vet-mcq-001",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب بيطري في عيادة صغيرة بمنطقة نائية. حيوان أليف يحتاج تفسير أشعة صدرية عاجل لكن لا يوجد أخصائي أشعة بيطري متاح. أقل من 2,000 أخصائي أشعة بيطري معتمد يخدمون كل أمريكا الشمالية وأوروبا. ما الحل الأنسب المتاح حالياً؟",
+        "en": "You're a vet in a small rural clinic. A pet needs urgent chest X-ray interpretation but no veterinary radiologist is available. Fewer than 2,000 board-certified veterinary radiologists serve all of North America and Europe. What's the best currently available solution?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "استخدام منصة SignalPET التي تحلل الأشعة بالذكاء الاصطناعي وتعطي تقريراً فورياً مع إمكانية تصعيد لأخصائي",
+            "en": "Use SignalPET's platform which analyzes X-rays with AI and gives an immediate report with escalation to a specialist if needed"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أنتظر حتى يتوفر أخصائي — لا يوجد بديل موثوق",
+            "en": "Wait until a specialist is available — there's no reliable alternative"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أستخدم ChatGPT لتحليل صورة الأشعة",
+            "en": "Use ChatGPT to analyze the X-ray image"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أعتمد على خبرتي الشخصية فقط دون أي أداة مساعدة",
+            "en": "Rely solely on my own experience without any support tool"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "SignalPET يخدم أكثر من 2,500 عيادة ويحلل ~50,000 أشعة أسبوعياً. منصة SignalPET 360° (سبتمبر 2025) توفر 3 مستويات: تقرير AI فوري يفحص 66 مرضاً، تقرير AI كامل يشبه تقرير الأخصائي، وتصعيد لأخصائي أشعة معتمد 24/7. دراسة جامعة إدنبرة أثبتت أن دقته تطابق أفضل أخصائي أشعة.",
+        "en": "SignalPET serves 2,500+ clinics analyzing ~50,000 X-rays weekly. SignalPET 360° (September 2025) offers 3 tiers: immediate AI report scanning 66 pathologies, complete AI report mirroring a radiologist's report, and 24/7 escalation to a board-certified radiologist. A University of Edinburgh study confirmed its accuracy matched the best radiologist."
+      }
+    },
+    {
+      "id": "vet-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب أورام بيطري. كلب مصاب بسرطان الغدد الليمفاوية المنتكس لم يستجب للبروتوكول القياسي (CHOP). شركة ImpriMed تقدم خدمة تختبر 13 دواءً كيميائياً على خلايا السرطان الحية للكلب بالذكاء الاصطناعي. ما النتيجة المُثبتة لهذا النهج؟",
+        "en": "You're a veterinary oncologist. A dog with relapsed B-cell lymphoma didn't respond to the standard CHOP protocol. ImpriMed offers a service testing 13 chemo drugs on the dog's live cancer cells using AI. What's the proven outcome of this approach?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "معدل استجابة كاملة أعلى 4 مرات ومتوسط بقاء أطول 3 مرات مقارنة بالعلاج غير المتوافق مع توقعات AI",
+            "en": "4× higher complete response rate and 3× longer median survival compared to treatments not matching AI predictions"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "شفاء تام مضمون بنسبة 90%",
+            "en": "Guaranteed 90% complete cure rate"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تحسن طفيف لا يستحق التكلفة الإضافية",
+            "en": "Slight improvement not worth the additional cost"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "نتائج واعدة لكنها لم تُختبر سريرياً بعد",
+            "en": "Promising results but not yet clinically tested"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "ImpriMed نشرت نتائجها في Frontiers in Oncology — ليست مجرد ادعاءات تسويقية. الشركة ساعدت أكثر من 5,000 كلب وتتوسع الآن للأورام البشرية (المايلوما المتعددة). الطب الدقيق البيطري يسبق أحياناً الطب البشري لأن التجارب أسرع وأقل تعقيداً تنظيمياً.",
+        "en": "ImpriMed published its results in Frontiers in Oncology — not just marketing claims. The company has helped 5,000+ dogs and is expanding to human oncology (multiple myeloma). Veterinary precision medicine sometimes leads human medicine because trials are faster and less regulatory complex."
+      }
+    },
+    {
+      "id": "vet-tf-001",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام RenalTech من Mars Petcare يستطيع التنبؤ بمرض الكلى المزمن في القطط قبل سنتين من ظهور الأعراض السريرية بدقة تتجاوز 95%.",
+        "en": "Mars Petcare's RenalTech system can predict chronic kidney disease in cats 2 years before clinical diagnosis with over 95% accuracy."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. RenalTech دُرّب على بيانات 150,000+ قطة و750,000 زيارة من عيادات Banfield. مرض الكلى المزمن هو السبب الأول لوفاة القطط فوق 5 سنوات. أصحاب القطط التي شُخّصت بـ RenalTech زادت زياراتهم البيطرية بنسبة 31%.",
+        "en": "True. RenalTech was trained on data from 150,000+ cats and 750,000 Banfield visits. CKD is the #1 cause of death for cats over 5. Owners of RenalTech-positive cats increased vet visits by 31%."
+      }
+    },
+    {
+      "id": "vet-tf-002",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "استطلاع Digitail-AAHA لعام 2024 وجد أن أقل من 10% من المهنيين البيطريين يستخدمون أدوات ذكاء اصطناعي.",
+        "en": "The 2024 Digitail-AAHA survey found that fewer than 10% of veterinary professionals use AI tools."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. الاستطلاع شمل 3,968 مهنياً بيطرياً ووجد أن 39.2% يستخدمون أدوات AI، و69.5% من المستخدمين يوظفونها يومياً أو أسبوعياً. سوق التشخيص البيطري بـ AI يُقدّر بـ 1.6-1.9 مليار دولار (2024-2025) بنمو 20% سنوياً.",
+        "en": "False. The survey of 3,968 vet professionals found 39.2% use AI tools, and 69.5% of users employ them daily or weekly. The veterinary AI diagnostics market is valued at $1.6–1.9 billion (2024–2025) with 20% CAGR."
+      }
+    },
+    {
+      "id": "vet-fill-001",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} من Zoetis يوفر 7 تطبيقات تشخيصية بالذكاء الاصطناعي في جهاز واحد على طاولة العيادة، بما فيها فحص الأورام الذي أُطلق في يونيو 2025.",
+        "en": "The {{blank_1}} system from Zoetis provides 7 AI diagnostic applications in a single tabletop device, including tumor screening launched in June 2025."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": { "ar": "VetScan Imagyst", "en": "VetScan Imagyst" },
+          "options": [
+            { "ar": "VetScan Imagyst", "en": "VetScan Imagyst" },
+            { "ar": "SignalPET", "en": "SignalPET" },
+            { "ar": "Vetology AI", "en": "Vetology AI" },
+            { "ar": "ImpriMed", "en": "ImpriMed" }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "VetScan Imagyst يختلف عن الأنظمة الأخرى بأنه جهاز مادي (point-of-care) وليس خدمة سحابية فقط. ميزة AI Masses (فحص الأورام) أُطلقت في يونيو 2025 للكشف المبدئي عن الكتل في العيادة. SignalPET متخصص في الأشعة، وImpriMed في سرطانات الدم.",
+        "en": "VetScan Imagyst differs from other systems by being a physical point-of-care device, not just a cloud service. The AI Masses feature (tumor screening) launched June 2025 for in-clinic mass screening. SignalPET specializes in radiology, ImpriMed in blood cancers."
+      }
+    },
+    {
+      "id": "vet-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تقنية ذكاء اصطناعي بيطرية بالحيوان أو القطاع الذي تخدمه أساساً:",
+        "en": "Match each veterinary AI technology with the animal or sector it primarily serves:"
+      },
+      "left": [
+        { "id": "L1", "text": { "ar": "CattleEye", "en": "CattleEye" } },
+        { "id": "L2", "text": { "ar": "RenalTech", "en": "RenalTech" } },
+        { "id": "L3", "text": { "ar": "Faromatics ChickenBoy", "en": "Faromatics ChickenBoy" } },
+        { "id": "L4", "text": { "ar": "Aquabyte", "en": "Aquabyte" } }
+      ],
+      "right": [
+        { "id": "R1", "text": { "ar": "مراقبة العرج وحالة الجسم في الأبقار بالكاميرات", "en": "Camera-based lameness and body condition monitoring in cattle" } },
+        { "id": "R2", "text": { "ar": "التنبؤ بأمراض الكلى في القطط قبل ظهور الأعراض", "en": "Predicting kidney disease in cats before symptoms appear" } },
+        { "id": "R3", "text": { "ar": "روبوت معلّق بالسقف لمراقبة حظائر الدواجن", "en": "Ceiling-suspended robot for monitoring poultry houses" } },
+        { "id": "R4", "text": { "ar": "تصوير تحت الماء لمراقبة قمل وكتلة أسماك السلمون", "en": "Underwater imaging for salmon lice counting and biomass estimation" } }
+      ],
+      "correct_pairs": [
+        { "left": "L1", "right": "R1" },
+        { "left": "L2", "right": "R2" },
+        { "left": "L3", "right": "R3" },
+        { "left": "L4", "right": "R4" }
+      ],
+      "hint_after": {
+        "ar": "الزراعة الدقيقة للحيوانات ليست مستقبلاً بل حاضر: CattleEye يراقب 200,000+ بقرة في 23 دولة. Connecterra IDA حققت دقة 90% في كشف 7 سلوكيات للأبقار مع ادعاء زيادة إنتاج الحليب 30% وتقليل المضادات الحيوية 50%.",
+        "en": "Precision livestock farming isn't the future — it's the present: CattleEye monitors 200,000+ cattle across 23 countries. Connecterra IDA achieves 90% accuracy detecting 7 cow behaviors, claiming 30% higher dairy productivity and 50% antibiotic reduction."
+      }
+    },
+    {
+      "id": "vet-sort-001",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات استخدام منصة أشعة بيطرية بالذكاء الاصطناعي (مثل SignalPET 360°) من التصوير حتى القرار العلاجي:",
+        "en": "Order the steps for using a veterinary AI radiology platform (like SignalPET 360°) from imaging to treatment decision:"
+      },
+      "items": [
+        { "id": "S1", "text": { "ar": "التقاط الأشعة بالجهاز الموجود في العيادة — النظام متوافق مع المعدات الحالية", "en": "Capture X-rays with the clinic's existing equipment — the system is compatible with current gear" } },
+        { "id": "S2", "text": { "ar": "AI يحلل الصور تلقائياً ويصدر تقريراً فورياً يفحص 66 مرضاً خلال دقائق", "en": "AI automatically analyzes images and issues an immediate report scanning 66 pathologies within minutes" } },
+        { "id": "S3", "text": { "ar": "مراجعة التقرير مع السياق السريري للحيوان وتقرير الحالة المرضية", "en": "Review the report with the animal's clinical context and case history" } },
+        { "id": "S4", "text": { "ar": "تصعيد للتقرير الكامل أو لأخصائي أشعة معتمد إذا كانت الحالة معقدة", "en": "Escalate to the complete report or a board-certified radiologist if the case is complex" } }
+      ],
+      "correct_order": ["S1", "S2", "S3", "S4"],
+      "hint_after": {
+        "ar": "المبدأ الأساسي: AI يعطيك «عيناً ثانية» فورية، لكن القرار السريري يبقى لك. في الحالات الطارئة، التقرير الفوري (دقائق) قد يُنقذ حياة الحيوان. في الحالات المعقدة، التصعيد لأخصائي متاح 24/7 بتقرير موقّع خلال ساعة.",
+        "en": "The core principle: AI gives you an instant 'second set of eyes,' but the clinical decision remains yours. In emergencies, the immediate report (minutes) can save the animal's life. In complex cases, escalation to a specialist is available 24/7 with a signed report within an hour."
+      }
+    },
+    {
+      "id": "vet-self-001",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت طبيب بيطري بخبرة 12 سنة. نظام AI في عيادتك اكتشف انصباباً جنبياً في أشعة قطة لم تلاحظه أنت. دقة Vetology في كشف الانصباب الجنبي 88.7% مقابل 75% للبشر. كيف تتعامل مع هذا؟",
+        "en": "You're a vet with 12 years of experience. The AI system in your clinic detected pleural effusion on a cat's X-ray that you missed. Vetology's accuracy for pleural effusion is 88.7% vs. 75% for humans. How do you handle this?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "شكراً للتقنية — عدت وفحصت الأشعة فوجدت التنبيه صحيحاً. هذا بالضبط لماذا أحتاج أداة مساعدة",
+            "en": "Thank the technology — I re-examined the X-ray and the alert was correct. This is exactly why I need a support tool"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتحقق من الأشعة مرة أخرى — إذا كان صحيحاً فهذا يعني أنني بحاجة لتطوير مهاراتي في قراءة الصدريات",
+            "en": "I double-check the X-ray — if correct, it means I need to improve my thoracic reading skills"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "88.7% ليست 100% — ربما هذه إنذار كاذب والنظام يُفرط في التشخيص",
+            "en": "88.7% isn't 100% — this could be a false alarm and the system over-diagnoses"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أشك في النظام — 12 سنة خبرة لا يتفوق عليها برنامج حاسوب",
+            "en": "I doubt the system — 12 years of experience can't be outdone by a computer program"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Vetology يفحص 83 علامة شعاعية بتوافق 92% مع أخصائيي الأشعة المعتمدين. الانصباب الجنبي في القطط حالة طارئة — اكتشافه المبكر قد يُنقذ الحيوان. AI لا يعني أنك طبيب سيء — بل أن العين البشرية لها حدود موثّقة علمياً حتى عند أفضل الأخصائيين.",
+        "en": "Vetology screens 83 radiographic findings with 92% agreement with board-certified radiologists. Pleural effusion in cats is an emergency — early detection can save the animal. AI doesn't mean you're a bad vet — the human eye has scientifically documented limits even among the best specialists."
+      }
+    },
+    {
+      "id": "vet-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مزارع كبير يريد تركيب نظام CattleEye لمراقبة 500 بقرة بالكاميرات والذكاء الاصطناعي بدلاً من الفحص اليدوي الدوري. كطبيب بيطري للقطيع، ما رأيك؟",
+        "en": "A large farmer wants to install CattleEye to monitor 500 cows with cameras and AI instead of periodic manual inspection. As the herd veterinarian, what's your opinion?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ممتاز — المراقبة المستمرة 24/7 أفضل بكثير من الفحص الدوري الذي قد يفوّت حالات بين الزيارات",
+            "en": "Excellent — continuous 24/7 monitoring is far better than periodic inspection that may miss cases between visits"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "جيد كأداة فرز — لكن أحتاج فحص الحالات المُبلّغة بنفسي قبل أي قرار علاجي",
+            "en": "Good as a screening tool — but I need to examine flagged cases myself before any treatment decision"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق من أن المزارع سيقلل زيارات الطبيب البيطري اعتماداً على التقنية",
+            "en": "Worried the farmer will reduce vet visits by relying on the technology"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الكاميرا لا تستطيع لمس الحيوان أو شم رائحته — لا بديل عن الفحص اليدوي",
+            "en": "A camera can't touch the animal or smell it — there's no substitute for hands-on examination"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "CattleEye يراقب 200,000+ بقرة في 140+ مزرعة عبر 23 دولة. يكتشف العرج مبكراً — وهو أحد أكثر المشكلات تكلفة في تربية الأبقار. القلق من تقليل الزيارات مشروع، لكن البيانات المستمرة تجعل الزيارات أكثر فعالية — الطبيب يأتي مستعداً بدل أن يفحص عشوائياً.",
+        "en": "CattleEye monitors 200,000+ cattle across 140+ farms in 23 countries. It detects lameness early — one of the costliest problems in cattle farming. The concern about reduced visits is valid, but continuous data makes visits more effective — the vet arrives prepared instead of screening randomly."
+      }
+    }
+  ]
+}
