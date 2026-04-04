@@ -1,8 +1,11 @@
 {
   "section_id": "general",
-  "section_name": { "ar": "أسئلة عامة", "en": "General Questions" },
-  "version": "1.0",
-  "last_updated": "2026-04-02",
+  "section_name": {
+    "ar": "أسئلة عامة",
+    "en": "General Questions"
+  },
+  "version": "5.0",
+  "last_updated": "2026-04-04",
   "questions": [
     {
       "id": "gen-mcq-001",
@@ -16,14 +19,342 @@
         "en": "Your colleague says: \"AI thinks exactly like humans but faster.\" What's your take?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "صحيح، هو يفكر مثلنا لكن بقدرات أعلى", "en": "True, it thinks like us but with higher capabilities" }, "score": 0 },
-        { "id": "b", "text": { "ar": "ليس تماماً، هو يحاكي أنماط التفكير لكنه لا \"يفهم\" فعلاً ما يفعله", "en": "Not exactly — it mimics thinking patterns but doesn't truly \"understand\" what it does" }, "score": 3 },
-        { "id": "c", "text": { "ar": "لا أعرف الفرق بصراحة", "en": "I honestly don't know the difference" }, "score": 0.5 },
-        { "id": "d", "text": { "ar": "الذكاء الاصطناعي مجرد برمجة تقليدية لا علاقة لها بالتفكير", "en": "AI is just traditional programming, nothing to do with thinking" }, "score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "صحيح، هو يفكر مثلنا لكن بقدرات أعلى",
+            "en": "True, it thinks like us but with higher capabilities"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ليس تماماً — هو يحاكي أنماط التفكير لكنه لا \"يفهم\" فعلاً ما يفعله",
+            "en": "Not exactly — it mimics thinking patterns but doesn't truly \"understand\" what it does"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا أعرف الفرق بصراحة",
+            "en": "I honestly don't know the difference"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الذكاء الاصطناعي مجرد برمجة تقليدية لا علاقة لها بالتفكير",
+            "en": "AI is just traditional programming, nothing to do with thinking"
+          },
+          "score": 1
+        }
       ],
       "hint_after": {
         "ar": "الذكاء الاصطناعي يحاكي أنماط اللغة والتفكير لكنه لا يملك وعياً أو فهماً حقيقياً — يعالج بيانات بناءً على احتمالات إحصائية.",
         "en": "AI mimics language and thinking patterns but has no real awareness or understanding — it processes data based on statistical probabilities."
+      }
+    },
+    {
+      "id": "gen-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "طلب منك مديرك استخدام ChatGPT لكتابة تقرير ربع سنوي. كتبت له: \"اكتب تقرير\". النتيجة كانت سطحية وعامة. ما الخطأ الأساسي؟",
+        "en": "Your manager asked you to use ChatGPT for a quarterly report. You typed: \"Write a report\". The result was shallow and generic. What's the main mistake?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ChatGPT لا يجيد كتابة التقارير أصلاً",
+            "en": "ChatGPT isn't good at writing reports"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الأمر (Prompt) كان غامضاً — يحتاج تفاصيل عن نوع التقرير والجمهور والبيانات",
+            "en": "The prompt was vague — it needs details about report type, audience, and data"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "كان يجب استخدام Gemini بدلاً منه",
+            "en": "Should've used Gemini instead"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "كان يجب نسخ تقرير قديم وتعديله يدوياً",
+            "en": "Should've copied an old report and edited manually"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "جودة مخرجات AI تعتمد مباشرة على جودة الأمر (Prompt). كلما كان أكثر تحديداً — بالسياق والهدف والجمهور والتنسيق — كانت النتيجة أفضل.",
+        "en": "AI output quality depends directly on prompt quality. The more specific you are — with context, goal, audience, and format — the better the result."
+      }
+    },
+    {
+      "id": "gen-mcq-003",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مصطلح \"هلوسة الذكاء الاصطناعي\" (AI Hallucination) يعني:",
+        "en": "The term \"AI Hallucination\" means:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أن النموذج يتوقف عن العمل بسبب ضغط البيانات",
+            "en": "The model crashes due to data overload"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أن النموذج يُنتج معلومات تبدو مقنعة لكنها مختلقة بالكامل",
+            "en": "The model generates convincing-sounding information that is completely fabricated"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أن النموذج يرفض الإجابة بدون سبب واضح",
+            "en": "The model refuses to answer without clear reason"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أن النموذج يتحيز لرأي سياسي معيّن",
+            "en": "The model is biased toward a particular political view"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "\"الهلوسة\" من أخطر مشاكل AI — قد يخترع النموذج مراجع أكاديمية أو قوانين غير موجودة بثقة تامة. في دراسة ستانفورد، هلوس AI بقضايا قانونية وهمية في 75% من الحالات!",
+        "en": "\"Hallucination\" is one of AI's most dangerous flaws — it can invent academic references or nonexistent laws with total confidence. A Stanford study found AI hallucinated fictitious court cases 75% of the time!"
+      }
+    },
+    {
+      "id": "gen-mcq-004",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "دولة عربية تصدّرت العالم في نسبة استخدام الذكاء الاصطناعي بين السكان في سن العمل عام 2025 — ما هي؟",
+        "en": "An Arab country led the world in AI usage among working-age population in 2025 — which one?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "المملكة العربية السعودية",
+            "en": "Saudi Arabia"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الإمارات العربية المتحدة",
+            "en": "United Arab Emirates"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قطر",
+            "en": "Qatar"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مصر",
+            "en": "Egypt"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الإمارات تصدّرت العالم بنسبة 64% من السكان في سن العمل يستخدمون AI. وكانت أول دولة في العالم تعيّن وزيراً للذكاء الاصطناعي عام 2017.",
+        "en": "The UAE led the world with 64% of working-age population using AI. It was also the first country to appoint an AI Minister in 2017."
+      }
+    },
+    {
+      "id": "gen-mcq-005",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما المقصود بـ \"التحيز في البيانات\" (Data Bias) في سياق الذكاء الاصطناعي؟",
+        "en": "What does \"Data Bias\" mean in the context of AI?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "بيانات غير كافية الحجم لتدريب النموذج",
+            "en": "Insufficient data volume for training"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "بيانات تعكس أنماطاً غير متوازنة تؤدي لنتائج غير عادلة",
+            "en": "Data reflecting imbalanced patterns that lead to unfair results"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "بيانات مشفّرة لا يمكن قراءتها",
+            "en": "Encrypted data that can't be read"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "بيانات قديمة لم تُحدَّث",
+            "en": "Outdated data that wasn't updated"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التحيز في البيانات يعني أن بيانات التدريب لا تمثل الواقع بعدل — مثلاً نظام توظيف تدرّب على سير ذاتية لرجال فقط سيتحيز ضد النساء تلقائياً.",
+        "en": "Data Bias means training data doesn't fairly represent reality — e.g. a hiring AI trained only on male CVs will automatically discriminate against women."
+      }
+    },
+    {
+      "id": "gen-mcq-006",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تحتاج تلخيص تقرير مالي من 50 صفحة. أي طريقة أذكى لاستخدام AI؟",
+        "en": "You need to summarize a 50-page financial report. What's the smartest way to use AI?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نسخ التقرير كاملاً ولصقه دفعة واحدة",
+            "en": "Copy the entire report and paste it in one go"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تقسيمه لأجزاء وتلخيص كل جزء مع تعليمات واضحة، ثم دمج الملخصات",
+            "en": "Split it into sections, summarize each with clear instructions, then combine summaries"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "طلب تلخيص بجملة واحدة فقط ليكون مركّزاً",
+            "en": "Ask for a single-sentence summary for maximum focus"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التلخيص يدوياً أضمن — AI لا يفهم الأرقام المالية",
+            "en": "Manual summary is safer — AI doesn't understand financial numbers"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "تقسيم المستندات الطويلة لأجزاء + إعطاء تعليمات محددة لكل جزء = أفضل استراتيجية. النسخ دفعة واحدة قد يتجاوز سعة النموذج ويفقد التفاصيل.",
+        "en": "Splitting long documents into sections + giving specific instructions per section = best strategy. Pasting everything at once may exceed context limits and lose details."
+      }
+    },
+    {
+      "id": "gen-mcq-007",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما الفرق الجوهري بين الذكاء الاصطناعي التوليدي (Generative AI) والذكاء الاصطناعي التقليدي؟",
+        "en": "What's the fundamental difference between Generative AI and traditional AI?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التوليدي يُنشئ محتوى جديداً (نص، صورة، كود)، التقليدي يصنّف ويتنبأ فقط",
+            "en": "Generative creates new content (text, image, code), traditional only classifies and predicts"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "التوليدي أسرع والتقليدي أبطأ",
+            "en": "Generative is faster, traditional is slower"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا فرق — هما مسميان لنفس الشيء",
+            "en": "No difference — they're two names for the same thing"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التقليدي يعمل بالإنترنت والتوليدي بدون إنترنت",
+            "en": "Traditional needs internet, generative works offline"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "AI التقليدي يتعرّف ويصنّف (كشف البريد المزعج، التعرف على الوجوه). AI التوليدي يُنشئ محتوى لم يكن موجوداً — وهذا ما أحدث الثورة الحالية.",
+        "en": "Traditional AI recognizes and classifies (spam detection, facial recognition). Generative AI creates entirely new content — and that's what sparked the current revolution."
       }
     },
     {
@@ -34,13 +365,47 @@
       "time_seconds": 30,
       "points": 3,
       "text": {
-        "ar": "الذكاء الاصطناعي يستطيع أن يكتب عقداً قانونياً كاملاً يُعتمد في المحكمة مباشرة.",
-        "en": "AI can write a complete legal contract that is directly accepted in court."
+        "ar": "الذكاء الاصطناعي يستطيع أن يكتب عقداً قانونياً كاملاً يُعتمد في المحكمة مباشرة بدون مراجعة بشرية.",
+        "en": "AI can write a complete legal contract that is directly accepted in court without human review."
       },
       "correct_answer": false,
       "hint_after": {
-        "ar": "AI يستطيع صياغة مسودات قانونية لكنها تحتاج مراجعة محامٍ مرخّص. لا تُقبل في المحاكم بدون توقيع وتدقيق بشري.",
-        "en": "AI can draft legal documents, but they require review by a licensed lawyer. Courts don't accept them without human verification and signatures."
+        "ar": "AI يستطيع صياغة مسودات قانونية لكنها تحتاج مراجعة محامٍ مرخّص. في 2025، فُرضت عقوبات على محامين قدّموا مراجع قانونية اختلقها AI بالكامل!",
+        "en": "AI can draft legal documents, but they require a licensed lawyer's review. In 2025, lawyers were sanctioned for submitting AI-fabricated legal citations to courts!"
+      }
+    },
+    {
+      "id": "gen-tf-002",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "إذا أعطيت نفس السؤال لـ ChatGPT مرتين متتاليتين، ستحصل على نفس الإجابة بالضبط.",
+        "en": "If you ask ChatGPT the exact same question twice in a row, you'll get the exact same answer."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "النماذج اللغوية تستخدم عنصر عشوائية (temperature) في توليد الإجابات، لذلك كل مرة تحصل على صياغة مختلفة. هذا تصميم مقصود وليس خطأ.",
+        "en": "Language models use randomness (temperature) in generating responses, so each time you get slightly different wording. This is by design, not a bug."
+      }
+    },
+    {
+      "id": "gen-tf-003",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أكثر من ثلث سكان دول منظمة التعاون الاقتصادي (OECD) استخدموا أدوات الذكاء الاصطناعي التوليدي في 2025.",
+        "en": "Over one-third of people across OECD countries used generative AI tools in 2025."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "وفقاً لبيانات OECD لعام 2025، أكثر من ثلث الأفراد استخدموا أدوات AI التوليدي. النسبة ترتفع إلى 75% بين طلاب الجامعات!",
+        "en": "According to 2025 OECD data, over one-third of individuals used generative AI tools. The rate jumps to 75% among university students!"
       }
     },
     {
@@ -51,57 +416,337 @@
       "time_seconds": 25,
       "points": 3,
       "text": {
-        "ar": "تقنية {{blank_1}} هي التي تمكّن ChatGPT من فهم السياق وتوليد نصوص متماسكة.",
-        "en": "The technology behind ChatGPT's ability to understand context and generate coherent text is {{blank_1}}."
+        "ar": "تقنية {{blank_1}} هي التي تمكّن النماذج اللغوية مثل ChatGPT من فهم السياق وتوليد نصوص متماسكة.",
+        "en": "The technology that enables language models like ChatGPT to understand context and generate coherent text is {{blank_1}}."
       },
       "blanks": [
         {
           "id": "blank_1",
-          "correct": { "ar": "التعلم العميق", "en": "Deep Learning" },
+          "correct": {
+            "ar": "التعلم العميق",
+            "en": "Deep Learning"
+          },
           "options": [
-            { "ar": "التعلم العميق", "en": "Deep Learning" },
-            { "ar": "البلوك تشين", "en": "Blockchain" },
-            { "ar": "الحوسبة السحابية", "en": "Cloud Computing" },
-            { "ar": "إنترنت الأشياء", "en": "Internet of Things" }
+            {
+              "ar": "التعلم العميق",
+              "en": "Deep Learning"
+            },
+            {
+              "ar": "البلوك تشين",
+              "en": "Blockchain"
+            },
+            {
+              "ar": "الحوسبة السحابية",
+              "en": "Cloud Computing"
+            },
+            {
+              "ar": "إنترنت الأشياء",
+              "en": "Internet of Things"
+            }
           ]
         }
       ],
       "hint_after": {
-        "ar": "ChatGPT مبني على نماذج التعلم العميق (Deep Learning)، تحديداً بنية Transformer التي تتعلم أنماط اللغة من كميات ضخمة من النصوص.",
-        "en": "ChatGPT is built on Deep Learning models, specifically the Transformer architecture that learns language patterns from massive amounts of text."
+        "ar": "ChatGPT مبني على التعلم العميق (Deep Learning)، تحديداً بنية Transformer التي تتعلم أنماط اللغة من كميات ضخمة من النصوص.",
+        "en": "ChatGPT is built on Deep Learning, specifically the Transformer architecture that learns language patterns from massive text datasets."
+      }
+    },
+    {
+      "id": "gen-fill-002",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "تقنية {{blank_1}} تربط نماذج AI بمصادر معلومات خارجية موثوقة لتقليل \"الهلوسة\" بنسبة تصل إلى 70%.",
+        "en": "The technique called {{blank_1}} connects AI models to reliable external knowledge sources, reducing \"hallucinations\" by up to 70%."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "التوليد المعزز بالاسترجاع (RAG)",
+            "en": "Retrieval-Augmented Generation (RAG)"
+          },
+          "options": [
+            {
+              "ar": "التوليد المعزز بالاسترجاع (RAG)",
+              "en": "Retrieval-Augmented Generation (RAG)"
+            },
+            {
+              "ar": "التعلم المعزز (RL)",
+              "en": "Reinforcement Learning (RL)"
+            },
+            {
+              "ar": "معالجة اللغات الطبيعية (NLP)",
+              "en": "Natural Language Processing (NLP)"
+            },
+            {
+              "ar": "الشبكات العصبية التلافيفية (CNN)",
+              "en": "Convolutional Neural Networks (CNN)"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "RAG (التوليد المعزز بالاسترجاع) يبحث في قاعدة معلومات موثوقة أولاً ثم يجيب بناءً عليها — بدل الاعتماد على \"ذاكرته\" فقط. هذا يخفض الهلوسة بنسبة تصل لـ 71%.",
+        "en": "RAG searches a trusted knowledge base first, then answers based on it — instead of relying only on 'memory'. This reduces hallucinations by up to 71%."
+      }
+    },
+    {
+      "id": "gen-fill-003",
+      "type": "fill_blank",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 1,
+      "text": {
+        "ar": "الشركة التي طوّرت ChatGPT هي {{blank_1}}، بينما الشركة التي طوّرت نموذج Gemini هي {{blank_2}}.",
+        "en": "The company behind ChatGPT is {{blank_1}}, while the company behind the Gemini model is {{blank_2}}."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "OpenAI",
+            "en": "OpenAI"
+          },
+          "options": [
+            {
+              "ar": "OpenAI",
+              "en": "OpenAI"
+            },
+            {
+              "ar": "Google",
+              "en": "Google"
+            },
+            {
+              "ar": "Meta",
+              "en": "Meta"
+            },
+            {
+              "ar": "Microsoft",
+              "en": "Microsoft"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "Google",
+            "en": "Google"
+          },
+          "options": [
+            {
+              "ar": "OpenAI",
+              "en": "OpenAI"
+            },
+            {
+              "ar": "Google",
+              "en": "Google"
+            },
+            {
+              "ar": "Apple",
+              "en": "Apple"
+            },
+            {
+              "ar": "Amazon",
+              "en": "Amazon"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "OpenAI تقف خلف ChatGPT وGPT وDALL-E، وGoogle طوّرت Gemini. Microsoft مستثمر رئيسي في OpenAI لكنه لم يطوّر ChatGPT بنفسه.",
+        "en": "OpenAI created ChatGPT, GPT, and DALL-E. Google developed Gemini. Microsoft is a major investor in OpenAI but didn't build ChatGPT itself."
       }
     },
     {
       "id": "gen-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مصطلح بتعريفه الصحيح:",
+        "en": "Match each term with its correct definition:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "التعلم الآلي (ML)",
+            "en": "Machine Learning (ML)"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "معالجة اللغة الطبيعية (NLP)",
+            "en": "Natural Language Processing (NLP)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "الرؤية الحاسوبية",
+            "en": "Computer Vision"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "الذكاء الاصطناعي التوليدي",
+            "en": "Generative AI"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تعلّم الأنماط من البيانات بدون برمجة صريحة",
+            "en": "Learning patterns from data without explicit programming"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "فهم اللغة البشرية والتفاعل معها",
+            "en": "Understanding and interacting with human language"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تحليل الصور والفيديو والتعرف على محتواها",
+            "en": "Analyzing images/video and recognizing their content"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "إنشاء محتوى جديد (نصوص، صور، أكواد)",
+            "en": "Creating new content (text, images, code)"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "التعلم الآلي هو الأساس الذي يتعلم من البيانات. NLP يتعامل مع اللغة. الرؤية الحاسوبية تفهم الصور. والتوليدي يُنشئ محتوى جديداً لم يكن موجوداً.",
+        "en": "ML is the foundation that learns from data. NLP handles language. Computer Vision understands images. Generative AI creates entirely new content."
+      }
+    },
+    {
+      "id": "gen-match-002",
       "type": "matching",
       "purpose": "cultural",
       "axis": "knowledge",
       "time_seconds": 45,
       "points": 1,
       "text": {
-        "ar": "وصّل كل أداة بالمجال الذي تتميز فيه:",
-        "en": "Match each tool with the field it specializes in:"
+        "ar": "وصّل كل أداة AI بالمجال الذي تتميز فيه:",
+        "en": "Match each AI tool with the field it specializes in:"
       },
       "left": [
-        { "id": "L1", "text": { "ar": "ChatGPT", "en": "ChatGPT" } },
-        { "id": "L2", "text": { "ar": "Midjourney", "en": "Midjourney" } },
-        { "id": "L3", "text": { "ar": "GitHub Copilot", "en": "GitHub Copilot" } },
-        { "id": "L4", "text": { "ar": "Sora", "en": "Sora" } }
+        {
+          "id": "L1",
+          "text": {
+            "ar": "ChatGPT",
+            "en": "ChatGPT"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Midjourney",
+            "en": "Midjourney"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "GitHub Copilot",
+            "en": "GitHub Copilot"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Sora",
+            "en": "Sora"
+          }
+        }
       ],
       "right": [
-        { "id": "R1", "text": { "ar": "كتابة وتحليل النصوص", "en": "Writing & text analysis" } },
-        { "id": "R2", "text": { "ar": "تصميم الصور", "en": "Image generation" } },
-        { "id": "R3", "text": { "ar": "كتابة الأكواد البرمجية", "en": "Code writing" } },
-        { "id": "R4", "text": { "ar": "تحويل النص لفيديو", "en": "Text to video" } }
+        {
+          "id": "R1",
+          "text": {
+            "ar": "كتابة وتحليل النصوص",
+            "en": "Writing & text analysis"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "تصميم الصور",
+            "en": "Image generation"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "كتابة الأكواد البرمجية",
+            "en": "Code writing"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تحويل النص لفيديو",
+            "en": "Text to video"
+          }
+        }
       ],
       "correct_pairs": [
-        { "left": "L1", "right": "R1" },
-        { "left": "L2", "right": "R2" },
-        { "left": "L3", "right": "R3" },
-        { "left": "L4", "right": "R4" }
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
       ],
       "hint_after": {
-        "ar": "ChatGPT متخصص في النصوص، Midjourney في توليد الصور، GitHub Copilot في مساعدة المبرمجين، وSora من OpenAI لتوليد الفيديو.",
+        "ar": "ChatGPT متخصص في النصوص، Midjourney في توليد الصور، GitHub Copilot في مساعدة المبرمجين، وSora من OpenAI لتوليد الفيديو من النصوص.",
         "en": "ChatGPT specializes in text, Midjourney in image generation, GitHub Copilot in helping programmers, and Sora by OpenAI generates video from text."
       }
     },
@@ -117,15 +762,96 @@
         "en": "Order the steps of using AI to solve a problem from first to last:"
       },
       "items": [
-        { "id": "S1", "text": { "ar": "تحديد المشكلة بوضوح", "en": "Define the problem clearly" } },
-        { "id": "S2", "text": { "ar": "اختيار الأداة المناسبة", "en": "Choose the right tool" } },
-        { "id": "S3", "text": { "ar": "صياغة الأمر (Prompt) بشكل دقيق", "en": "Craft a precise prompt" } },
-        { "id": "S4", "text": { "ar": "تقييم جودة النتيجة ومراجعتها", "en": "Evaluate and review the output" } }
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحديد المشكلة بوضوح",
+            "en": "Define the problem clearly"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "اختيار الأداة المناسبة",
+            "en": "Choose the right tool"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "صياغة الأمر (Prompt) بشكل دقيق",
+            "en": "Craft a precise prompt"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تقييم جودة النتيجة ومراجعتها",
+            "en": "Evaluate and review the output"
+          }
+        }
       ],
-      "correct_order": ["S1", "S2", "S3", "S4"],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
       "hint_after": {
-        "ar": "المنهجية الصحيحة: حدّد المشكلة أولاً، ثم اختر الأداة المناسبة لها، ثم صِغ أمراً دقيقاً، وأخيراً راجع النتيجة ولا تقبلها بدون تدقيق.",
-        "en": "The right methodology: define the problem first, then choose the right tool, craft a precise prompt, and finally review the output — never accept it without verification."
+        "ar": "المنهجية الصحيحة: حدّد المشكلة → اختر الأداة → صِغ أمراً دقيقاً → راجع النتيجة. أغلب الأخطاء تحدث لأن الناس يقفزون مباشرة للخطوة 3 بدون الأولى.",
+        "en": "The right flow: define the problem → pick the tool → write a precise prompt → review the output. Most errors happen when people jump straight to step 3 without step 1."
+      }
+    },
+    {
+      "id": "gen-sort-002",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب هذه التقنيات من الأقدم إلى الأحدث ظهوراً:",
+        "en": "Order these technologies from oldest to newest:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "البريد الإلكتروني",
+            "en": "Email"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "محركات البحث (Google)",
+            "en": "Search Engines (Google)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "الهواتف الذكية (iPhone)",
+            "en": "Smartphones (iPhone)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "الذكاء الاصطناعي التوليدي (ChatGPT)",
+            "en": "Generative AI (ChatGPT)"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "البريد الإلكتروني (1971) → محركات البحث (Google 1998) → الهواتف الذكية (iPhone 2007) → AI التوليدي (ChatGPT 2022). كل ثورة تقنية كانت تُقابَل بمقاومة في البداية ثم أصبحت أساسية.",
+        "en": "Email (1971) → Search Engines (Google 1998) → Smartphones (iPhone 2007) → Generative AI (ChatGPT 2022). Every tech revolution faced resistance at first, then became essential."
       }
     },
     {
@@ -133,21 +859,3920 @@
       "type": "self_assessment",
       "purpose": "self_assessment",
       "axis": "flexibility",
-      "time_seconds": null,
+      "time_seconds": 0,
       "points": 0,
       "text": {
         "ar": "مديرك أعلن أن الفريق سينتقل لاستخدام أداة ذكاء اصطناعي جديدة بدل الطريقة الحالية التي تتقنها منذ 3 سنوات. أول فكرة تخطر في بالك:",
         "en": "Your manager announced the team will switch to a new AI tool, replacing the method you've mastered for 3 years. Your first thought:"
       },
       "options": [
-        { "id": "a", "text": { "ar": "أخيراً! كنت أنتظر شيئاً يسرّع العمل", "en": "Finally! I've been waiting for something to speed things up" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "مثير للاهتمام، لكن أتمنى أن يعطونا تدريباً كافياً", "en": "Interesting, but I hope they give us proper training" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "لماذا نغيّر شيئاً يعمل بشكل جيد أصلاً؟", "en": "Why change something that already works fine?" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "هذا سيضيف عبئاً إضافياً على عملنا بدون فائدة واضحة", "en": "This will add extra burden without clear benefit" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "أخيراً! كنت أنتظر شيئاً يسرّع العمل",
+            "en": "Finally! I've been waiting for something to speed things up"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مثير للاهتمام، لكن أتمنى أن يعطونا تدريباً كافياً",
+            "en": "Interesting, but I hope they give us proper training"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لماذا نغيّر شيئاً يعمل بشكل جيد أصلاً؟",
+            "en": "Why change something that already works fine?"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هذا سيضيف عبئاً إضافياً على عملنا بدون فائدة واضحة",
+            "en": "This will add extra burden without clear benefit"
+          },
+          "flexibility_score": 1
+        }
       ],
       "hint_after": {
-        "ar": "المرونة في تبني الأدوات الجديدة هي من أهم عوامل البقاء في سوق العمل. المقاومة طبيعية لكن الاستمرار فيها هو الخطر الحقيقي.",
-        "en": "Flexibility in adopting new tools is one of the most important factors for survival in the job market. Resistance is natural, but persisting in it is the real danger."
+        "ar": "المرونة في تبني الأدوات الجديدة من أهم عوامل البقاء في سوق العمل. المقاومة طبيعية لكن الاستمرار فيها هو الخطر الحقيقي.",
+        "en": "Flexibility in adopting new tools is key to career survival. Resistance is natural, but persisting in it is the real danger."
+      }
+    },
+    {
+      "id": "gen-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "جرّبت أداة AI لإنجاز مهمة في العمل. النتيجة كانت سيئة وأخذت وقتاً أطول من الطريقة العادية. ماذا تستنتج؟",
+        "en": "You tried an AI tool for a work task. The result was poor and took longer than the usual method. What do you conclude?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أحتاج أتعلم استخدامها بشكل أفضل — ربما كان الأمر (Prompt) غير دقيق",
+            "en": "I need to learn to use it better — maybe my prompt wasn't precise enough"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ليست كل أداة تناسب كل مهمة — سأجربها في سياق مختلف",
+            "en": "Not every tool fits every task — I'll try it in a different context"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "هذا يثبت أن الطرق التقليدية أضمن في النهاية",
+            "en": "This proves traditional methods are more reliable in the end"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أدوات الذكاء الاصطناعي مبالغ فيها إعلامياً — الواقع مختلف",
+            "en": "AI tools are overhyped in the media — reality is different"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "كيف تتعامل مع الفشل يكشف مرونتك الحقيقية. الشخص المرن يرى الفشل كفرصة تعلم، بينما المقاوم يستخدمه كحجة للتوقف.",
+        "en": "How you handle failure reveals your true flexibility. Flexible people see failure as a learning opportunity, while resistant ones use it as an excuse to stop."
+      }
+    },
+    {
+      "id": "gen-self-003",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "زميل أصغر منك بعشر سنوات يقترح عليك أداة AI جديدة لتسريع عملك. تفكيرك الأول:",
+        "en": "A colleague 10 years younger suggests a new AI tool to speed up your work. Your first thought:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ممتاز — أطلب منه يعلمني ونجربها معاً",
+            "en": "Great — I'll ask them to teach me and we'll try it together"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أبحث عنها أولاً بنفسي ثم أقرر إن كانت مفيدة",
+            "en": "I'll research it myself first, then decide if it's useful"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "هذا الجيل يبالغ بحماسه لكل جديد — الخبرة أهم",
+            "en": "This generation overreacts to everything new — experience matters more"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ما يخصني — كل واحد يشتغل بطريقته",
+            "en": "Not my concern — everyone works their own way"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الاستعداد للتعلم من أي مصدر — بغض النظر عن العمر أو الرتبة — مؤشر قوي على المرونة المهنية. في عصر AI، من يتوقف عن التعلم يتوقف عن المنافسة.",
+        "en": "Willingness to learn from any source — regardless of age or rank — is a strong indicator of professional flexibility. In the AI era, those who stop learning stop competing."
+      }
+    },
+    {
+      "id": "gen-mcq-008",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما المقصود بـ \"وكيل الذكاء الاصطناعي\" (AI Agent)؟",
+        "en": "What is an \"AI Agent\"?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "روبوت مادي يتحرك في المكاتب",
+            "en": "A physical robot that moves around offices"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "نظام AI يستطيع اتخاذ قرارات وتنفيذ مهام متعددة الخطوات بشكل مستقل",
+            "en": "An AI system that can make decisions and execute multi-step tasks autonomously"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "شخص بشري يعمل كوسيط بين المستخدم والـ AI",
+            "en": "A human intermediary between the user and AI"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مسمى تسويقي آخر لـ ChatGPT",
+            "en": "Just another marketing name for ChatGPT"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "وكلاء AI هم أنظمة تتجاوز مجرد الإجابة على الأسئلة — يستطيعون التخطيط، استخدام أدوات، واتخاذ قرارات متتابعة لإنجاز مهمة كاملة. هذا هو الاتجاه الأبرز في 2025-2026.",
+        "en": "AI Agents go beyond just answering questions — they can plan, use tools, and make sequential decisions to complete entire tasks. This is the biggest trend in 2025-2026."
+      }
+    },
+    {
+      "id": "gen-mcq-009",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "نسبة قدرة البشر على كشف فيديوهات Deepfake عالية الجودة تبلغ تقريباً:",
+        "en": "The rate at which humans can detect high-quality deepfake videos is approximately:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "حوالي 80% — أغلب الناس يكتشفونها بسهولة",
+            "en": "About 80% — most people can easily spot them"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حوالي 57% — أقل بقليل من التخمين العشوائي",
+            "en": "About 57% — barely better than random guessing"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حوالي 25% فقط — الأغلبية لا تستطيع تمييزها",
+            "en": "Only about 25% — most people can't tell them apart"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "0% — لا أحد يستطيع كشفها",
+            "en": "0% — no one can detect them"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الدراسات تُظهر أن البشر يكتشفون فيديوهات Deepfake عالية الجودة بنسبة 24.5% فقط! لذلك الاعتماد على الحدس البشري وحده لم يعد كافياً — نحتاج أدوات كشف متخصصة.",
+        "en": "Studies show humans detect high-quality deepfake videos only 24.5% of the time! Relying on human intuition alone is no longer sufficient — we need specialized detection tools."
+      }
+    },
+    {
+      "id": "gen-mcq-010",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما الفرق بين نموذج AI \"مفتوح المصدر\" و\"مغلق المصدر\"؟",
+        "en": "What's the difference between an \"open-source\" and a \"closed-source\" AI model?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "المفتوح مجاني والمغلق مدفوع — لا فرق آخر",
+            "en": "Open-source is free and closed-source is paid — no other difference"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "المفتوح يتيح تحميل النموذج وتعديله وتشغيله محلياً، المغلق يُستخدم فقط عبر واجهة الشركة",
+            "en": "Open-source lets you download, modify, and run the model locally; closed-source is only usable through the company's interface"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "المفتوح أضعف دائماً من المغلق",
+            "en": "Open-source is always weaker than closed-source"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المفتوح يعني أن بيانات التدريب متاحة للجميع",
+            "en": "Open-source means the training data is available to everyone"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "النماذج المفتوحة مثل LLaMA (Meta) وFalcon (الإمارات) وMistral يمكن تحميلها وتشغيلها على حاسوبك. المغلقة مثل GPT وClaude تُستخدم فقط عبر الإنترنت. الأداء ليس مرتبطاً بالنوع.",
+        "en": "Open models like LLaMA (Meta), Falcon (UAE), and Mistral can be downloaded and run locally. Closed ones like GPT and Claude are only available online. Performance isn't tied to the type."
+      }
+    },
+    {
+      "id": "gen-mcq-011",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "زميلتك أرسلت لك مقالاً كتبته بالكامل باستخدام AI ونشرته باسمها في مجلة الشركة. ما رأيك؟",
+        "en": "Your colleague sent you an article she wrote entirely using AI and published under her name in the company magazine. What's your take?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا مشكلة — المهم النتيجة النهائية وليس طريقة الإنتاج",
+            "en": "No problem — what matters is the final result, not the production method"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقبول إذا راجعته وعدّلته وتحملت مسؤوليته، لكن يُفضّل الإفصاح عن استخدام AI",
+            "en": "Acceptable if she reviewed, edited, and takes responsibility for it, but AI use should ideally be disclosed"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "غش واضح — يجب أن يُكتب كل شيء يدوياً",
+            "en": "Clear cheating — everything should be written manually"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ذكية! سأفعل نفس الشيء ولن أخبر أحداً",
+            "en": "Smart! I'll do the same and not tell anyone"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "استخدام AI كأداة مساعدة مقبول في أغلب السياقات المهنية، لكن المراجعة البشرية وتحمّل المسؤولية عن المحتوى ضروريان. الشفافية حول استخدام AI أصبحت معياراً أخلاقياً متزايداً.",
+        "en": "Using AI as an assistive tool is acceptable in most professional contexts, but human review and accountability for the content are essential. Transparency about AI use is becoming an increasing ethical standard."
+      }
+    },
+    {
+      "id": "gen-mcq-012",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "وفقاً لتقارير 2025، ما تأثير AI على سوق العمل العالمي؟",
+        "en": "According to 2025 reports, what's AI's impact on the global job market?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "سيدمّر كل الوظائف خلال 5 سنوات",
+            "en": "It will destroy all jobs within 5 years"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "سيلغي ~85 مليون وظيفة لكنه سيخلق ~170 مليون وظيفة جديدة",
+            "en": "It will eliminate ~85 million jobs but create ~170 million new ones"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لن يؤثر على أي وظيفة — هذا مجرد تهويل إعلامي",
+            "en": "It won't affect any jobs — this is just media hype"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "سيؤثر فقط على وظائف التكنولوجيا ولا شأن لباقي القطاعات",
+            "en": "It will only affect tech jobs, other sectors are unaffected"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "المنتدى الاقتصادي العالمي يتوقع صافي ربح 78 مليون وظيفة جديدة. AI لا يلغي وظائف بالكامل — بل يغيّر طبيعة المهام داخل الوظيفة. من يتكيّف يستفيد.",
+        "en": "The World Economic Forum projects a net gain of 78 million new jobs. AI doesn't eliminate entire jobs — it changes the nature of tasks within them. Those who adapt benefit."
+      }
+    },
+    {
+      "id": "gen-mcq-013",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما المقصود بـ \"نافذة السياق\" (Context Window) في نماذج AI اللغوية؟",
+        "en": "What does \"Context Window\" mean in AI language models?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "واجهة المستخدم التي تظهر فيها المحادثة",
+            "en": "The user interface where the conversation appears"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الحد الأقصى من النص الذي يستطيع النموذج قراءته ومعالجته في المرة الواحدة",
+            "en": "The maximum amount of text the model can read and process at once"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "المدة الزمنية قبل أن ينسى النموذج المحادثة",
+            "en": "The time period before the model forgets the conversation"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "عدد المستخدمين الذين يمكنهم استخدام النموذج في نفس الوقت",
+            "en": "The number of users who can use the model simultaneously"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "نافذة السياق تُقاس بالـ \"توكنز\" (tokens). كلما كانت أكبر، زادت قدرة النموذج على معالجة مستندات طويلة. النماذج الحديثة وصلت لملايين التوكنز.",
+        "en": "Context window is measured in \"tokens\". The larger it is, the more the model can process long documents. Modern models have reached millions of tokens."
+      }
+    },
+    {
+      "id": "gen-mcq-014",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أي من هذه الاستراتيجيات أفضل للحصول على نتائج دقيقة من AI؟",
+        "en": "Which strategy is best for getting accurate results from AI?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "كتابة أمر طويل جداً بكل التفاصيل الممكنة دفعة واحدة",
+            "en": "Write an extremely long prompt with every possible detail at once"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "البدء بأمر واضح ثم التحسين التدريجي بناءً على النتائج",
+            "en": "Start with a clear prompt, then iteratively refine based on results"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "إعادة نفس السؤال عدة مرات حتى تحصل على إجابة ترضيك",
+            "en": "Repeat the same question multiple times until you get an answer you like"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "استخدام لغة رسمية جداً مع كلمات تقنية معقدة",
+            "en": "Use very formal language with complex technical terms"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "أفضل نهج هو التكرار التحسيني (Iterative Prompting): ابدأ بطلب واضح، قيّم النتيجة، ثم عدّل وأضف تفاصيل. هذا يتفوق على محاولة كتابة الأمر المثالي من أول مرة.",
+        "en": "The best approach is Iterative Prompting: start with a clear request, evaluate the output, then adjust and add details. This beats trying to write the perfect prompt on the first attempt."
+      }
+    },
+    {
+      "id": "gen-mcq-015",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "\"الذكاء الاصطناعي متعدد الوسائط\" (Multimodal AI) يعني أن النموذج يستطيع:",
+        "en": "\"Multimodal AI\" means the model can:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "العمل على عدة أجهزة في نفس الوقت",
+            "en": "Work on multiple devices simultaneously"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "فهم ومعالجة أنواع مختلفة من المدخلات: نص وصورة وصوت وفيديو",
+            "en": "Understand and process different types of input: text, image, audio, and video"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "التحدث بعدة لغات",
+            "en": "Speak multiple languages"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تشغيل عدة نماذج AI معاً",
+            "en": "Run multiple AI models together"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "النماذج متعددة الوسائط مثل GPT-4o وGemini تفهم النص والصورة والصوت معاً. يمكنك مثلاً إرسال صورة وسؤال النموذج عنها — وهذا يفتح تطبيقات هائلة.",
+        "en": "Multimodal models like GPT-4o and Gemini understand text, images, and audio together. You can send an image and ask the model about it — opening massive application possibilities."
+      }
+    },
+    {
+      "id": "gen-mcq-016",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "استخدمت AI لكتابة إيميل مهم لعميل. قبل إرساله، ما أهم خطوة؟",
+        "en": "You used AI to write an important email to a client. Before sending it, what's the most important step?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "إرساله مباشرة — AI لا يخطئ في الإيميلات",
+            "en": "Send it directly — AI doesn't make mistakes in emails"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مراجعة المحتوى والنبرة والحقائق وتعديل ما يلزم قبل الإرسال",
+            "en": "Review the content, tone, and facts, and edit as needed before sending"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "إضافة ملاحظة أن الإيميل مكتوب بالـ AI",
+            "en": "Add a note that the email was written by AI"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "طلب من AI أن يراجع نفسه",
+            "en": "Ask AI to review itself"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "المراجعة البشرية قبل الإرسال ضرورية دائماً. AI قد يخطئ في الحقائق، أو يستخدم نبرة غير مناسبة للسياق، أو يضيف تفاصيل مختلقة. أنت المسؤول النهائي عن كل ما يخرج باسمك.",
+        "en": "Human review before sending is always essential. AI may get facts wrong, use an inappropriate tone, or add fabricated details. You're ultimately responsible for everything that goes out under your name."
+      }
+    },
+    {
+      "id": "gen-mcq-017",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما المقصود بـ \"تضييق النموذج\" أو \"الضبط الدقيق\" (Fine-tuning)؟",
+        "en": "What does \"Fine-tuning\" mean in AI?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "حذف المعلومات الخاطئة من النموذج يدوياً",
+            "en": "Manually deleting incorrect information from the model"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تدريب إضافي لنموذج عام على بيانات متخصصة لتحسين أدائه في مجال محدد",
+            "en": "Additional training of a general model on specialized data to improve its performance in a specific domain"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تصغير حجم النموذج ليعمل على أجهزة أضعف",
+            "en": "Shrinking the model size to run on weaker devices"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ضبط سرعة استجابة النموذج",
+            "en": "Adjusting the model's response speed"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Fine-tuning يأخذ نموذجاً عاماً مثل GPT ويدربه إضافياً على بيانات تخصصك (طبية، قانونية، محاسبية...) فيصبح خبيراً في مجالك. هكذا تُبنى الحلول المتخصصة.",
+        "en": "Fine-tuning takes a general model like GPT and trains it further on your domain's data (medical, legal, accounting...) to make it an expert in your field. This is how specialized solutions are built."
+      }
+    },
+    {
+      "id": "gen-tf-004",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "يمكن استنساخ صوت أي شخص بدقة عالية باستخدام تسجيل مدته 60 ثانية فقط.",
+        "en": "Anyone's voice can be cloned with high accuracy using just 60 seconds of audio."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "نعم! تقنيات استنساخ الصوت الحالية تحتاج أقل من دقيقة واحدة من التسجيل. لذلك انتبه لما تشاركه من تسجيلات صوتية على الإنترنت.",
+        "en": "Yes! Current voice cloning technology needs less than one minute of recording. So be careful about audio recordings you share online."
+      }
+    },
+    {
+      "id": "gen-tf-005",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نماذج AI مثل ChatGPT تتعلم وتتطور تلقائياً من كل محادثة تجريها معها.",
+        "en": "AI models like ChatGPT automatically learn and evolve from every conversation you have with them."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ شائع! النموذج لا يتعلم من محادثاتك الفردية. تدريبه يحدث مرة واحدة (أو بتحديثات دورية) على بيانات ضخمة. ما يتغير بين الجلسات هو السياق الذي تعطيه، وليس النموذج نفسه.",
+        "en": "Common misconception! The model doesn't learn from your individual conversations. Its training happens once (or with periodic updates) on massive data. What changes between sessions is the context you provide, not the model itself."
+      }
+    },
+    {
+      "id": "gen-tf-006",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "الوظائف الأكثر عرضة لتأثير AI هي الوظائف اليدوية والحرفية مثل السباكة والبناء.",
+        "en": "The jobs most vulnerable to AI impact are manual and trade jobs like plumbing and construction."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "العكس تماماً! AI يؤثر أكثر على الوظائف المكتبية والمعرفية (محاسبة، كتابة، تحليل بيانات). 40% من خريجي الجامعات في 2025 توجهوا للحِرَف اليدوية لأنها أقل عرضة للأتمتة.",
+        "en": "The opposite! AI impacts office and knowledge work more (accounting, writing, data analysis). 40% of 2025 graduates chose trades because they're less automatable."
+      }
+    },
+    {
+      "id": "gen-tf-007",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "يمكن لأي شخص بناء تطبيق AI متخصص لمجاله بدون أن يكون مبرمجاً.",
+        "en": "Anyone can build a specialized AI application for their field without being a programmer."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح! أدوات مثل GPTs المخصصة وMicrosoft Copilot Studio وأدوات No-Code AI تسمح لأي شخص بإنشاء حلول AI متخصصة بدون كتابة سطر كود واحد.",
+        "en": "True! Tools like Custom GPTs, Microsoft Copilot Studio, and No-Code AI platforms let anyone create specialized AI solutions without writing a single line of code."
+      }
+    },
+    {
+      "id": "gen-tf-008",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "الإمارات كانت أول دولة في العالم تعيّن وزيراً مختصاً بالذكاء الاصطناعي.",
+        "en": "The UAE was the first country in the world to appoint a minister dedicated to artificial intelligence."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "نعم! عيّنت الإمارات عمر سلطان العلماء وزيراً للذكاء الاصطناعي عام 2017 — قبل أن يصبح AI موضوعاً عالمياً بسنوات.",
+        "en": "Yes! The UAE appointed Omar Sultan Al Olama as AI Minister in 2017 — years before AI became a global topic."
+      }
+    },
+    {
+      "id": "gen-fill-004",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "عندما يُنتج نموذج AI معلومات تبدو مقنعة لكنها مختلقة تماماً، تُسمى هذه الظاهرة {{blank_1}}.",
+        "en": "When an AI model generates information that sounds convincing but is completely fabricated, this phenomenon is called {{blank_1}}."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "الهلوسة (Hallucination)",
+            "en": "Hallucination"
+          },
+          "options": [
+            {
+              "ar": "الهلوسة (Hallucination)",
+              "en": "Hallucination"
+            },
+            {
+              "ar": "التحيز (Bias)",
+              "en": "Bias"
+            },
+            {
+              "ar": "الإفراط في التعلم (Overfitting)",
+              "en": "Overfitting"
+            },
+            {
+              "ar": "التسريب (Data Leakage)",
+              "en": "Data Leakage"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "\"الهلوسة\" مصطلح رسمي في مجال AI. حتى أفضل النماذج تهلوس أحياناً — خاصة في المواضيع المتخصصة. لذلك التحقق من مخرجات AI ضروري دائماً.",
+        "en": "\"Hallucination\" is an official AI term. Even the best models hallucinate sometimes — especially on specialized topics. That's why verifying AI outputs is always essential."
+      }
+    },
+    {
+      "id": "gen-fill-005",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "لكي تحصل على نتائج أفضل من AI، يمكنك إعطاءه {{blank_1}} في بداية المحادثة ليتصرف كخبير في مجال معيّن.",
+        "en": "To get better results from AI, you can give it a {{blank_1}} at the start of the conversation so it acts as an expert in a specific field."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "دوراً محدداً (Role/Persona)",
+            "en": "specific role (Role/Persona)"
+          },
+          "options": [
+            {
+              "ar": "دوراً محدداً (Role/Persona)",
+              "en": "specific role (Role/Persona)"
+            },
+            {
+              "ar": "كلمة سر (Password)",
+              "en": "password (Password)"
+            },
+            {
+              "ar": "ترخيصاً (License)",
+              "en": "license (License)"
+            },
+            {
+              "ar": "تحديثاً (Update)",
+              "en": "update (Update)"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "من أقوى تقنيات Prompt Engineering: \"أنت خبير في... \" أو \"تصرّف كـ...\". إعطاء النموذج دوراً يوجّه إجاباته نحو المستوى والأسلوب المطلوبين.",
+        "en": "One of the most powerful Prompt Engineering techniques: \"You are an expert in...\" or \"Act as...\". Giving the model a role guides its responses toward the desired level and style."
+      }
+    },
+    {
+      "id": "gen-fill-006",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "المبدأ الأخلاقي الذي يقول إن قرارات AI يجب أن تكون قابلة للتفسير والفهم من البشر يُسمى {{blank_1}}.",
+        "en": "The ethical principle stating that AI decisions should be explainable and understandable by humans is called {{blank_1}}."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "الشفافية/قابلية التفسير (Explainability)",
+            "en": "Explainability/Transparency"
+          },
+          "options": [
+            {
+              "ar": "الشفافية/قابلية التفسير (Explainability)",
+              "en": "Explainability/Transparency"
+            },
+            {
+              "ar": "الخصوصية (Privacy)",
+              "en": "Privacy"
+            },
+            {
+              "ar": "المساءلة (Accountability)",
+              "en": "Accountability"
+            },
+            {
+              "ar": "الاستدامة (Sustainability)",
+              "en": "Sustainability"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "\"الصندوق الأسود\" مشكلة حقيقية — كثير من نماذج AI تتخذ قرارات لا يفهم حتى مطوروها كيف وصلت إليها. قابلية التفسير مبدأ أساسي في الاتحاد الأوروبي وقانون AI Act.",
+        "en": "The \"black box\" problem is real — many AI models make decisions that even their developers don't fully understand. Explainability is a core principle in the EU's AI Act."
+      }
+    },
+    {
+      "id": "gen-fill-007",
+      "type": "fill_blank",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 1,
+      "text": {
+        "ar": "أكبر نموذج لغوي عربي مفتوح المصدر طُوّر في الإمارات يُسمى {{blank_1}}.",
+        "en": "The largest open-source Arabic language model developed in the UAE is called {{blank_1}}."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "جيس (Jais)",
+            "en": "Jais"
+          },
+          "options": [
+            {
+              "ar": "جيس (Jais)",
+              "en": "Jais"
+            },
+            {
+              "ar": "فالكون (Falcon)",
+              "en": "Falcon"
+            },
+            {
+              "ar": "علّام (Allam)",
+              "en": "Allam"
+            },
+            {
+              "ar": "نور (Noor)",
+              "en": "Noor"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Jais 2 طُوّر بـ 70 مليار معامل وتدرّب على 600 مليار توكن عربي — أكبر مجموعة بيانات عربية لتدريب نموذج AI على الإطلاق. Falcon نموذج إماراتي أيضاً لكنه متعدد اللغات.",
+        "en": "Jais 2 was built with 70 billion parameters trained on 600 billion Arabic tokens — the largest Arabic dataset ever used for AI training. Falcon is also Emirati but multilingual."
+      }
+    },
+    {
+      "id": "gen-match-003",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل خطر من مخاطر AI بوصفه الصحيح:",
+        "en": "Match each AI risk with its correct description:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "الهلوسة",
+            "en": "Hallucination"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "التحيز",
+            "en": "Bias"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "التزييف العميق",
+            "en": "Deepfake"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "انتهاك الخصوصية",
+            "en": "Privacy Violation"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "اختلاق معلومات غير صحيحة بثقة تامة",
+            "en": "Fabricating incorrect information with total confidence"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "نتائج غير عادلة بسبب بيانات التدريب",
+            "en": "Unfair results due to training data"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "فيديو أو صوت مزيف يبدو حقيقياً",
+            "en": "Fake video or audio that appears real"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "استخدام بيانات شخصية بدون إذن",
+            "en": "Using personal data without consent"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه المخاطر الأربعة هي أبرز تحديات AI حالياً. الوعي بها ليس رفاهية — بل ضرورة لأي شخص يستخدم AI في عمله.",
+        "en": "These four risks are AI's top current challenges. Awareness of them isn't optional — it's essential for anyone using AI at work."
+      }
+    },
+    {
+      "id": "gen-match-004",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مهمة بأنسب أداة AI لها:",
+        "en": "Match each task with the most suitable AI tool:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "تحليل بيانات مبيعات",
+            "en": "Analyzing sales data"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "تصميم شعار لشركة جديدة",
+            "en": "Designing a logo for a new company"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "تحويل اجتماع مسجّل لنص مكتوب",
+            "en": "Converting a recorded meeting to text"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "كتابة دالة برمجية وتصحيحها",
+            "en": "Writing and debugging a code function"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "أداة تحليل بيانات (مثل ChatGPT + Code Interpreter)",
+            "en": "Data analysis tool (e.g. ChatGPT + Code Interpreter)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أداة توليد صور (مثل Midjourney أو DALL-E)",
+            "en": "Image generation tool (e.g. Midjourney or DALL-E)"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "أداة تفريغ صوتي (مثل Whisper أو Otter.ai)",
+            "en": "Speech-to-text tool (e.g. Whisper or Otter.ai)"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "مساعد برمجة (مثل GitHub Copilot أو Claude Code)",
+            "en": "Coding assistant (e.g. GitHub Copilot or Claude Code)"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "اختيار الأداة المناسبة للمهمة المناسبة مهارة أساسية في عصر AI. ليست كل أداة تصلح لكل شيء — المحترف يعرف أي أداة يستخدم ومتى.",
+        "en": "Choosing the right tool for the right task is a fundamental skill in the AI era. Not every tool fits every purpose — the professional knows which tool to use and when."
+      }
+    },
+    {
+      "id": "gen-sort-003",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات التحقق من صحة معلومة أعطاك إياها AI من الأولى للأخيرة:",
+        "en": "Order the steps for verifying information given by AI from first to last:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "اسأل نفسك: هل هذه المعلومة منطقية وقابلة للتصديق؟",
+            "en": "Ask yourself: Is this information logical and believable?"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "ابحث في مصادر موثوقة مستقلة للتأكد",
+            "en": "Search independent reliable sources to verify"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تحقق من الأرقام والتواريخ والأسماء تحديداً",
+            "en": "Specifically check numbers, dates, and names"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "اعتمد المعلومة أو اطلب من AI مصادر بديلة",
+            "en": "Accept the information or ask AI for alternative sources"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "القاعدة الذهبية: لا تثق بأي رقم أو اسم أو تاريخ من AI بدون تحقق مستقل. الهلوسات غالباً تكون في التفاصيل الدقيقة وليس في المفاهيم العامة.",
+        "en": "Golden rule: Never trust any number, name, or date from AI without independent verification. Hallucinations usually appear in specific details, not general concepts."
+      }
+    },
+    {
+      "id": "gen-sort-004",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب هذه الوظائف من الأكثر عرضة لتأثير AI إلى الأقل عرضة:",
+        "en": "Order these jobs from most vulnerable to AI impact to least vulnerable:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "إدخال البيانات",
+            "en": "Data Entry"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "خدمة العملاء الأساسية",
+            "en": "Basic Customer Service"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "التدريس والتعليم",
+            "en": "Teaching & Education"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "السباكة والصيانة",
+            "en": "Plumbing & Maintenance"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "القاعدة: كلما كانت الوظيفة أكثر تكراراً ورقمية، زادت قابليتها للأتمتة. الوظائف التي تحتاج تفاعلاً بشرياً أو عملاً يدوياً أقل عرضة بكثير.",
+        "en": "The rule: the more repetitive and digital a job is, the more automatable it becomes. Jobs requiring human interaction or physical labor are far less vulnerable."
+      }
+    },
+    {
+      "id": "gen-sort-005",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مكونات الأمر (Prompt) الفعّال من الأهم إلى الأقل أهمية:",
+        "en": "Order the components of an effective prompt from most to least important:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "وصف المهمة بوضوح (ماذا تريد بالضبط؟)",
+            "en": "Clear task description (what exactly do you want?)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "السياق (لمن؟ لماذا؟ في أي مجال؟)",
+            "en": "Context (for whom? why? in what field?)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "شكل المخرج المطلوب (جدول، نقاط، فقرات...)",
+            "en": "Required output format (table, bullets, paragraphs...)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "أمثلة على المخرج الذي تريده",
+            "en": "Examples of the output you want"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "المهمة الواضحة هي الأساس، ثم السياق يوجّه النموذج، ثم الشكل يحدد البنية. الأمثلة أقوى أداة لتحسين الجودة لكنها ليست ضرورية دائماً.",
+        "en": "A clear task is the foundation, context guides the model, format defines structure. Examples are the strongest quality booster but aren't always necessary."
+      }
+    },
+    {
+      "id": "gen-self-004",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "علمت أن زميلك في نفس المنصب ينجز ضعف عملك لأنه يستخدم أدوات AI بشكل يومي. أول ردة فعل:",
+        "en": "You learn a colleague in the same role gets twice your output because they use AI tools daily. Your first reaction:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أطلب منه يعلّمني — أريد نفس الميزة",
+            "en": "I ask them to teach me — I want the same advantage"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أبدأ بتجربة بعض الأدوات بنفسي لأفهم الفرق",
+            "en": "I start trying some tools myself to understand the difference"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الجودة أهم من الكمية — أنا أفضّل العمل اليدوي المتقن",
+            "en": "Quality over quantity — I prefer careful manual work"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المقارنة غير عادلة — استخدام AI نوع من الغش",
+            "en": "The comparison is unfair — using AI is a form of cheating"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "في 2025، الموظفون الذين يستخدمون AI حققوا زيادة إنتاجية بمعدل 40%. المهارة ليست في العمل أكثر — بل في العمل بذكاء أكبر.",
+        "en": "In 2025, employees using AI achieved an average 40% productivity increase. The skill isn't working harder — it's working smarter."
+      }
+    },
+    {
+      "id": "gen-self-005",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "شركتك قررت استبدال قسم خدمة العملاء بنظام AI. أنت مدير القسم و15 موظفاً سيتأثرون. أول خطوة:",
+        "en": "Your company decided to replace the customer service department with an AI system. You manage the department and 15 employees will be affected. Your first step:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبدأ فوراً بتدريب فريقي على مهارات جديدة تكمّل الـ AI",
+            "en": "I immediately start training my team on new skills that complement AI"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقترح خطة انتقالية تجمع بين AI والموظفين في مرحلة أولى",
+            "en": "I propose a transition plan combining AI and employees in the first phase"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أقاوم القرار وأحاول إثبات أن الموظفين أفضل",
+            "en": "I resist the decision and try to prove employees are better"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أنتظر وأرى — ربما المشروع يفشل ويعودون للنظام القديم",
+            "en": "I wait and see — maybe the project fails and they'll revert to the old system"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "القيادة في عصر AI تتطلب مبادرة واستباقية. المدير الذي يساعد فريقه على التكيّف يحمي نفسه وفريقه — بينما المقاوم يخاطر بالجميع.",
+        "en": "Leadership in the AI era requires initiative and proactivity. A manager who helps their team adapt protects themselves and their team — while the resistant one puts everyone at risk."
+      }
+    },
+    {
+      "id": "gen-self-006",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "في يوم إجازتك، صادفت مقالاً طويلاً عن تقنية AI جديدة قد تغيّر مجال عملك. ماذا تفعل؟",
+        "en": "On your day off, you come across a long article about a new AI technology that could change your field. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقرأه كاملاً وأبحث عن المزيد",
+            "en": "I read it fully and look for more information"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أحفظه لأقرأه لاحقاً في وقت العمل",
+            "en": "I save it to read later during work hours"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أقرأ العنوان والملخص وأكتفي بذلك",
+            "en": "I read the headline and summary and move on"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتجاهله — الإجازة للراحة وليس للعمل",
+            "en": "I ignore it — days off are for rest, not work"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الفضول المعرفي والدافعية الذاتية للتعلم مؤشران قويان على القدرة على التكيّف. في عالم يتغير بسرعة، من يتوقف عن الاطلاع يتخلف سريعاً.",
+        "en": "Intellectual curiosity and self-motivation to learn are strong indicators of adaptability. In a fast-changing world, those who stop staying informed fall behind quickly."
+      }
+    },
+    {
+      "id": "gen-self-007",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "ابنك/ابنتك في الثانوية يسألك: \"هل أتعلم البرمجة أم صار الذكاء الاصطناعي يبرمج بدلنا؟\" ماذا تجيب؟",
+        "en": "Your teenage child asks: \"Should I learn programming or does AI code for us now?\" What do you answer?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تعلّم البرمجة + كيف تستخدم AI — الجمع بينهما هو المستقبل",
+            "en": "Learn programming + how to use AI — combining both is the future"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ركّز على التفكير النقدي وحل المشكلات — هذا أهم من أي أداة",
+            "en": "Focus on critical thinking and problem-solving — that's more important than any tool"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا فائدة من البرمجة — AI سيحل محل المبرمجين قريباً",
+            "en": "No point in programming — AI will replace programmers soon"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ادرس شيئاً لا علاقة له بالتكنولوجيا — الطب أو القانون أضمن",
+            "en": "Study something unrelated to tech — medicine or law is safer"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الجمع بين المهارات الأساسية وأدوات AI هو الصيغة الأقوى. AI لن يلغي المبرمجين — لكنه سيلغي المبرمجين الذين لا يستخدمون AI.",
+        "en": "Combining foundational skills with AI tools is the winning formula. AI won't replace programmers — but it will replace programmers who don't use AI."
+      }
+    },
+    {
+      "id": "gen-self-008",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "اكتشفت أن AI يستطيع إنجاز 60% من مهامك اليومية. شعورك الأول:",
+        "en": "You discover AI can handle 60% of your daily tasks. Your first feeling:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة! سأوفر وقتاً لمهام أعقد وأكثر قيمة",
+            "en": "Opportunity! I'll free up time for more complex and valuable tasks"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مثير ومقلق في نفس الوقت — أحتاج أفكر كيف أطوّر نفسي",
+            "en": "Exciting and concerning at the same time — I need to think about how to develop myself"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق — إذا كان AI يفعلها أرخص، لماذا سيحتاجونني؟",
+            "en": "Worried — if AI does it cheaper, why would they need me?"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هذا مبالغة — لا أحد يستطيع استبدال خبرتي",
+            "en": "This is exaggerated — no one can replace my experience"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الشخص المرن يرى أتمتة المهام الروتينية كفرصة للتركيز على العمل الإبداعي والاستراتيجي. القيمة الحقيقية للموظف ليست في المهام المتكررة — بل فيما يفعله بعد إنجازها.",
+        "en": "Flexible people see automating routine tasks as an opportunity to focus on creative and strategic work. An employee's real value isn't in repetitive tasks — it's in what they do beyond them."
+      }
+    },
+    {
+      "id": "gen-self-009",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "تلقيت رسالة صوتية من مديرك يطلب فيها تحويل مبلغ مالي عاجل. الصوت يبدو حقيقياً تماماً. ماذا تفعل؟",
+        "en": "You receive a voice message from your manager urgently requesting a money transfer. The voice sounds completely real. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتصل بمديري مباشرة عبر قناة أخرى للتأكد قبل أي إجراء",
+            "en": "I call my manager directly through a different channel to verify before taking action"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتحقق من التفاصيل — هل الرقم صحيح؟ هل الطلب منطقي؟",
+            "en": "I check the details — is the number correct? Is the request logical?"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنفّذ الطلب — صوت مديري واضح ولا مجال للشك",
+            "en": "I execute the request — my manager's voice is clear and there's no room for doubt"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتجاهل الرسالة — كل شيء مشبوه هذه الأيام",
+            "en": "I ignore the message — everything is suspicious these days"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "في 2024، خُدع موظف بتحويل 25 مليون دولار بسبب مكالمة فيديو Deepfake! التحقق عبر قناة مختلفة (اتصال مباشر مثلاً) أصبح ضرورة أمنية لا اختيارية.",
+        "en": "In 2024, an employee was tricked into transferring $25 million via a deepfake video call! Verifying through a different channel (e.g. a direct call) has become a security necessity, not optional."
+      }
+    },
+    {
+      "id": "gen-mcq-018",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أي من هذه لا يستخدم الذكاء الاصطناعي؟",
+        "en": "Which of these does NOT use artificial intelligence?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فلتر البريد المزعج (Spam) في إيميلك",
+            "en": "The spam filter in your email"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "توصيات Netflix لأفلام قد تعجبك",
+            "en": "Netflix recommendations for movies you might like"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الآلة الحاسبة العادية في هاتفك",
+            "en": "The basic calculator on your phone"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "خرائط Google التي تختار أسرع طريق لك",
+            "en": "Google Maps choosing the fastest route for you"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الآلة الحاسبة العادية تتبع قواعد رياضية ثابتة — لا تتعلم ولا تتكيف. كل الخيارات الأخرى تستخدم خوارزميات تعلم آلي تتحسن بمرور الوقت بناءً على بياناتك.",
+        "en": "A basic calculator follows fixed math rules — it doesn't learn or adapt. All other options use machine learning algorithms that improve over time based on your data."
+      }
+    },
+    {
+      "id": "gen-mcq-019",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "كل سؤال تطرحه على ChatGPT يستهلك تقريباً:",
+        "en": "Each question you ask ChatGPT consumes approximately:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "طاقة تعادل إضاءة غرفة ليوم كامل",
+            "en": "Energy equivalent to lighting a room for a full day"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "10 أضعاف طاقة بحث Google عادي + نصف لتر ماء تقريباً",
+            "en": "10x the energy of a regular Google search + about half a liter of water"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "كمية مهملة لا تُذكر",
+            "en": "A negligible, insignificant amount"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "طاقة تعادل شحن هاتفك بالكامل",
+            "en": "Energy equivalent to fully charging your phone"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "كل 100 كلمة تطلبها من AI تستهلك ~نصف لتر ماء للتبريد. يبدو قليلاً لكن مع مليارات الأسئلة يومياً، البصمة البيئية ضخمة — تعادل انبعاثات دولة مثل النرويج!",
+        "en": "Every ~100 words you request from AI uses ~half a liter of water for cooling. Seems small, but with billions of daily queries, the environmental footprint is massive — equivalent to Norway's total emissions!"
+      }
+    },
+    {
+      "id": "gen-mcq-020",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما الذي تفعله خوارزميات وسائل التواصل الاجتماعي (مثل TikTok وInstagram) بمحتواك؟",
+        "en": "What do social media algorithms (like TikTok and Instagram) do with your content?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تعرض المنشورات بترتيب زمني فقط — الأحدث أولاً",
+            "en": "Display posts in chronological order only — newest first"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تحلل سلوكك (ما تشاهده، تعجب به، تتوقف عنده) لتختار ما يُبقيك أطول وقت",
+            "en": "Analyze your behavior (what you watch, like, pause on) to choose what keeps you engaged longest"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تعرض محتوى عشوائي تماماً لكل مستخدم",
+            "en": "Show completely random content to every user"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تعرض فقط المنشورات من أصدقائك المقربين",
+            "en": "Only show posts from your close friends"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أنت لا تختار ما تشاهده — AI يختار لك! الخوارزمية تراقب كل ثانية: ماذا شاهدت؟ أين توقفت؟ ماذا تجاهلت؟ ثم تبني ملفاً دقيقاً عن اهتماماتك وحتى مزاجك.",
+        "en": "You don't choose what you watch — AI chooses for you! The algorithm tracks every second: what you watched, where you paused, what you skipped. It builds a precise profile of your interests and even your mood."
+      }
+    },
+    {
+      "id": "gen-mcq-021",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما المقصود بـ \"قانون الذكاء الاصطناعي\" الأوروبي (EU AI Act)؟",
+        "en": "What is the \"EU AI Act\"?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "قانون يمنع استخدام AI نهائياً في أوروبا",
+            "en": "A law that completely bans AI use in Europe"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أول إطار تنظيمي شامل في العالم يصنّف أنظمة AI حسب مستوى خطورتها ويفرض قواعد لكل مستوى",
+            "en": "The world's first comprehensive regulatory framework that classifies AI systems by risk level and imposes rules for each"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "اتفاقية تجارية بين شركات AI الأوروبية",
+            "en": "A trade agreement between European AI companies"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "برنامج تمويل حكومي لمشاريع AI الناشئة",
+            "en": "A government funding program for AI startups"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "EU AI Act هو أول قانون شامل للذكاء الاصطناعي في العالم. يصنّف الأنظمة لأربع فئات: مخاطر محظورة (مثل التصنيف الاجتماعي)، عالية، محدودة، ودنيا — ولكل فئة التزامات مختلفة.",
+        "en": "The EU AI Act is the world's first comprehensive AI law. It classifies systems into four categories: prohibited risk (like social scoring), high, limited, and minimal — each with different obligations."
+      }
+    },
+    {
+      "id": "gen-mcq-022",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "طالب جامعي استخدم AI لكتابة بحثه بالكامل وقدّمه كعمله الشخصي. ما المشكلة الأساسية؟",
+        "en": "A university student used AI to write their entire research paper and submitted it as their own work. What's the core problem?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أن AI لا يكتب بشكل أكاديمي جيد",
+            "en": "That AI doesn't write in good academic style"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "انتهاك النزاهة الأكاديمية — لم يتعلم شيئاً ونسب عمل غيره لنفسه",
+            "en": "Academic integrity violation — he learned nothing and took credit for someone else's work"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أن الجامعة ستكتشفه حتماً عبر أدوات الكشف",
+            "en": "That the university will inevitably catch him with detection tools"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا مشكلة — هذه هي طريقة العمل في المستقبل",
+            "en": "No problem — this is how work will be done in the future"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "AI كأداة مساعدة في البحث مقبول ومفيد (البحث عن مصادر، تحسين الصياغة). لكن تقديم مخرجات AI كعملك الشخصي بدون أي جهد فكري منك = سرقة فكرية + حرمان نفسك من التعلم.",
+        "en": "AI as a research aid is acceptable and useful (finding sources, improving writing). But submitting AI output as your own work without any intellectual effort = plagiarism + depriving yourself of learning."
+      }
+    },
+    {
+      "id": "gen-mcq-023",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما الفرق بين \"تدريب النموذج\" (Training) و\"الاستنتاج\" (Inference) في AI؟",
+        "en": "What's the difference between \"Training\" and \"Inference\" in AI?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التدريب = تعليم النموذج من البيانات (يحدث مرة). الاستنتاج = استخدام النموذج للإجابة (يحدث كل مرة تسأله)",
+            "en": "Training = teaching the model from data (happens once). Inference = using the model to answer (happens every time you ask)"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا فرق — هما نفس العملية",
+            "en": "No difference — they're the same process"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "التدريب للبشر والاستنتاج للآلات",
+            "en": "Training is for humans, inference is for machines"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التدريب مجاني والاستنتاج مدفوع",
+            "en": "Training is free and inference is paid"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "تدريب GPT-4 كلّف أكثر من 100 مليون دولار ومئات الأيام من الحوسبة. لكن كل مرة تسأله سؤالاً (استنتاج) تكلّف سنتات قليلة. معظم طاقة AI اليوم تُستهلك في الاستنتاج لأن ملايين الناس يستخدمونه.",
+        "en": "Training GPT-4 cost over $100 million and hundreds of days of computing. But each time you ask it a question (inference) costs just a few cents. Most of AI's energy today goes to inference because millions of people use it."
+      }
+    },
+    {
+      "id": "gen-mcq-024",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "وصلك إيميل يبدو من البنك يطلب تحديث بياناتك — مكتوب بلغة مثالية بدون أخطاء. هل هذا يعني أنه آمن؟",
+        "en": "You receive an email that appears to be from your bank asking to update your info — written in perfect language with no errors. Does this mean it's safe?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم — رسائل الاحتيال دائماً فيها أخطاء إملائية واضحة",
+            "en": "Yes — phishing emails always have obvious spelling mistakes"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا — AI جعل رسائل الاحتيال مثالية لغوياً. تحقق من عنوان المرسل والرابط دائماً",
+            "en": "No — AI has made phishing emails linguistically perfect. Always check the sender's address and links"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نعم — البنوك فقط تكتب بهذه الاحترافية",
+            "en": "Yes — only banks write this professionally"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أستطيع أن أعرف أبداً — سأتجاهل كل الإيميلات",
+            "en": "I can never know — I'll just ignore all emails"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "\"ابحث عن الأخطاء الإملائية\" كان نصيحة أمنية ذهبية — لكنها انتهت! AI يكتب رسائل احتيال لا تُميَّز عن الحقيقية. الحماية الآن: تحقق من عنوان المرسل، لا تضغط روابط مشبوهة، وادخل موقع البنك مباشرة.",
+        "en": "\"Look for spelling mistakes\" was golden security advice — but it's over! AI writes phishing emails indistinguishable from real ones. Protection now: check the sender address, don't click suspicious links, and go to the bank's website directly."
+      }
+    },
+    {
+      "id": "gen-mcq-025",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "عندما تطلب من AI رسم صورة أو توليد موسيقى، من يملك حقوق هذا المحتوى؟",
+        "en": "When you ask AI to generate an image or music, who owns the rights to that content?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الشركة المطوّرة للـ AI تملك كل شيء",
+            "en": "The AI developer company owns everything"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أنت المالك الكامل تلقائياً بمجرد التوليد",
+            "en": "You're automatically the full owner once it's generated"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "منطقة رمادية قانونياً — القوانين لا تزال تتشكل ويختلف الوضع بين الدول",
+            "en": "A legal gray area — laws are still evolving and differ between countries"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الـ AI نفسه يملك حقوق إبداعه",
+            "en": "The AI itself owns the rights to its creations"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "حقوق الملكية الفكرية لمخرجات AI من أعقد الأسئلة القانونية حالياً. في الولايات المتحدة، مكتب حقوق النشر قرر أن الأعمال المولّدة بالكامل بـ AI لا تحظى بحماية حقوق النشر. الموضوع يتطور باستمرار.",
+        "en": "IP rights for AI-generated content is one of the most complex legal questions today. In the US, the Copyright Office ruled that fully AI-generated works don't get copyright protection. The topic keeps evolving."
+      }
+    },
+    {
+      "id": "gen-tf-009",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "البحث عبر AI (مثل ChatGPT) سيحل محل محركات البحث التقليدية (مثل Google) بالكامل.",
+        "en": "AI-powered search (like ChatGPT) will completely replace traditional search engines (like Google)."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "كلاهما يخدم غرضاً مختلفاً. AI ممتاز للتلخيص والشرح والتحليل. محركات البحث ممتازة للوصول لمصادر أصلية ومحدّثة. المستخدم الذكي يجمع بينهما.",
+        "en": "Each serves a different purpose. AI excels at summarizing, explaining, and analyzing. Search engines excel at finding original, up-to-date sources. The smart user combines both."
+      }
+    },
+    {
+      "id": "gen-tf-010",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "عندما تتحدث مع ChatGPT، محادثتك قد تُستخدم لتحسين النموذج في التحديثات القادمة.",
+        "en": "When you chat with ChatGPT, your conversation may be used to improve the model in future updates."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "نعم، افتراضياً! أغلب أدوات AI تستخدم محادثاتك لتحسين نماذجها ما لم تُعطّل هذا الخيار. لذلك لا تشارك معلومات حساسة (كلمات مرور، بيانات مالية، أسرار تجارية) في محادثات AI.",
+        "en": "Yes, by default! Most AI tools use your conversations to improve their models unless you disable this option. So never share sensitive info (passwords, financial data, trade secrets) in AI chats."
+      }
+    },
+    {
+      "id": "gen-tf-011",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "تدريب نموذج GPT-3 استهلك كمية ماء تكفي لملء حمام سباحة أولمبي.",
+        "en": "Training the GPT-3 model consumed enough water to fill an Olympic swimming pool."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "تدريب GPT-3 وحده استهلك 700,000 لتر ماء نظيف للتبريد — أي ما يعادل حمام سباحة أولمبي تقريباً! النماذج الأحدث والأكبر تستهلك أكثر بكثير.",
+        "en": "Training GPT-3 alone consumed 700,000 liters of clean water for cooling — roughly an Olympic swimming pool! Newer, larger models consume far more."
+      }
+    },
+    {
+      "id": "gen-tf-012",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "AI يستطيع الآن تشخيص بعض الأمراض من صور الأشعة بدقة تنافس الأطباء المتخصصين.",
+        "en": "AI can now diagnose some diseases from X-ray images with accuracy that rivals specialized doctors."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح! في مجالات مثل سرطان الثدي وأمراض الشبكية واعتلال الرئة، AI يحقق دقة تشخيصية تنافس وأحياناً تتفوق على المتخصصين. لكنه مساعد للطبيب وليس بديلاً.",
+        "en": "True! In areas like breast cancer, retinal diseases, and lung conditions, AI achieves diagnostic accuracy that rivals and sometimes exceeds specialists. But it's an aid to doctors, not a replacement."
+      }
+    },
+    {
+      "id": "gen-tf-013",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "السيارات ذاتية القيادة بالكامل (بدون سائق بشري) متاحة تجارياً ومنتشرة على الطرق حول العالم.",
+        "en": "Fully autonomous self-driving cars (with no human driver) are commercially available and widespread on roads worldwide."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "لا تزال محدودة جداً! سيارات Waymo مثلاً تعمل في مدن محددة بأمريكا فقط وبشروط. القيادة الذاتية الكاملة في كل الظروف والمدن لا تزال تحدياً تقنياً وتنظيمياً كبيراً.",
+        "en": "Still very limited! Waymo cars, for example, only operate in specific US cities under strict conditions. Full autonomy in all conditions and cities remains a major technical and regulatory challenge."
+      }
+    },
+    {
+      "id": "gen-fill-008",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "عملية أخذ نموذج AI مدرّب على مهمة عامة وتكييفه لمهمة محددة بكمية قليلة من البيانات تُسمى {{blank_1}}.",
+        "en": "The process of taking an AI model trained on a general task and adapting it for a specific task with a small amount of data is called {{blank_1}}."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "التعلم بالنقل (Transfer Learning)",
+            "en": "Transfer Learning"
+          },
+          "options": [
+            {
+              "ar": "التعلم بالنقل (Transfer Learning)",
+              "en": "Transfer Learning"
+            },
+            {
+              "ar": "التعلم من الصفر (Training from Scratch)",
+              "en": "Training from Scratch"
+            },
+            {
+              "ar": "التعلم غير الموجه (Unsupervised Learning)",
+              "en": "Unsupervised Learning"
+            },
+            {
+              "ar": "التعلم التعزيزي (Reinforcement Learning)",
+              "en": "Reinforcement Learning"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "التعلم بالنقل هو سبب أن AI أصبح متاحاً للجميع. بدل تدريب نموذج من الصفر (يكلف ملايين)، تأخذ نموذجاً جاهزاً وتكيّفه لمجالك ببيانات قليلة.",
+        "en": "Transfer Learning is why AI became accessible to everyone. Instead of training from scratch (costing millions), you take a ready model and adapt it to your field with little data."
+      }
+    },
+    {
+      "id": "gen-fill-009",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "لتحسين جودة إجابة AI، يمكنك إعطاءه أمثلة على المخرج الذي تريده. هذه التقنية تُسمى {{blank_1}}.",
+        "en": "To improve AI output quality, you can give it examples of the output you want. This technique is called {{blank_1}}."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "التعلم بالأمثلة القليلة (Few-Shot Prompting)",
+            "en": "Few-Shot Prompting"
+          },
+          "options": [
+            {
+              "ar": "التعلم بالأمثلة القليلة (Few-Shot Prompting)",
+              "en": "Few-Shot Prompting"
+            },
+            {
+              "ar": "التوليد التلقائي (Auto-Generation)",
+              "en": "Auto-Generation"
+            },
+            {
+              "ar": "الضغط العصبي (Neural Compression)",
+              "en": "Neural Compression"
+            },
+            {
+              "ar": "التصفية الذكية (Smart Filtering)",
+              "en": "Smart Filtering"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Few-Shot Prompting = تعطي النموذج 2-3 أمثلة على شكل المخرج المطلوب قبل طلبك الفعلي. هذا يحسّن الجودة دراماتيكياً مقارنة بالطلب بدون أمثلة (Zero-Shot).",
+        "en": "Few-Shot Prompting = you give the model 2-3 examples of the desired output format before your actual request. This dramatically improves quality compared to requesting without examples (Zero-Shot)."
+      }
+    },
+    {
+      "id": "gen-fill-010",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "تقنية التعلم المعزز بالتغذية الراجعة البشرية التي تجعل ChatGPT يرفض الطلبات الضارة ويلتزم بالقيم الأخلاقية تُسمى {{blank_1}}.",
+        "en": "The technique that makes ChatGPT refuse harmful requests and follow ethical guidelines through human feedback is called {{blank_1}}."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "RLHF",
+            "en": "RLHF (Reinforcement Learning from Human Feedback)"
+          },
+          "options": [
+            {
+              "ar": "RLHF",
+              "en": "RLHF (Reinforcement Learning from Human Feedback)"
+            },
+            {
+              "ar": "RAG",
+              "en": "RAG (Retrieval-Augmented Generation)"
+            },
+            {
+              "ar": "GAN",
+              "en": "GAN (Generative Adversarial Network)"
+            },
+            {
+              "ar": "CNN",
+              "en": "CNN (Convolutional Neural Network)"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "RLHF هو السبب أن ChatGPT لا يجيب على أسئلة خطرة ويحاول أن يكون مفيداً — بشر حقيقيون قيّموا آلاف الإجابات وعلّموا النموذج أيها أفضل وأيها ضار.",
+        "en": "RLHF is why ChatGPT refuses dangerous questions and tries to be helpful — real humans evaluated thousands of responses and taught the model which ones are better and which are harmful."
+      }
+    },
+    {
+      "id": "gen-match-005",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تقنية AI بالمكان الذي تعمل فيه يومياً بدون أن تشعر:",
+        "en": "Match each AI technology with where it works daily without you noticing:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "التعرف على الوجوه",
+            "en": "Facial Recognition"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "معالجة اللغة الطبيعية",
+            "en": "Natural Language Processing"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "أنظمة التوصية",
+            "en": "Recommendation Systems"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "كشف الشذوذ",
+            "en": "Anomaly Detection"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "فتح قفل هاتفك بوجهك",
+            "en": "Unlocking your phone with your face"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "المساعد الصوتي (Siri/Alexa) يفهم كلامك",
+            "en": "Voice assistant (Siri/Alexa) understanding your speech"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "Netflix يقترح عليك أفلاماً",
+            "en": "Netflix suggesting movies to you"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "البنك ينبّهك لعملية مشبوهة على بطاقتك",
+            "en": "Your bank alerting you to a suspicious card transaction"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "AI يعمل في حياتك اليومية أكثر مما تتخيل: من لحظة فتح الهاتف بوجهك، مروراً بفلتر البريد المزعج، وصولاً لحماية حسابك البنكي — كلها أنظمة ذكاء اصطناعي.",
+        "en": "AI works in your daily life more than you imagine: from unlocking your phone with your face, through spam filtering, to protecting your bank account — all AI systems."
+      }
+    },
+    {
+      "id": "gen-match-006",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مستوى خطورة في قانون AI الأوروبي بمثاله:",
+        "en": "Match each EU AI Act risk level with its example:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "مخاطر محظورة",
+            "en": "Prohibited Risk"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "مخاطر عالية",
+            "en": "High Risk"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "مخاطر محدودة",
+            "en": "Limited Risk"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "مخاطر دنيا",
+            "en": "Minimal Risk"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "نظام تصنيف اجتماعي حكومي يقيّم المواطنين",
+            "en": "Government social scoring system that rates citizens"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "AI يُستخدم في قرارات التوظيف أو القروض البنكية",
+            "en": "AI used in hiring decisions or bank loans"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "Chatbot لخدمة العملاء يجب أن يُعلن أنه AI",
+            "en": "Customer service chatbot that must disclose it's AI"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "فلتر البريد المزعج أو لعبة فيديو",
+            "en": "Spam filter or video game"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "التصنيف الاجتماعي على الطريقة الصينية ممنوع تماماً. AI في التوظيف والقروض يحتاج رقابة مشددة. الـ Chatbot يحتاج فقط إفصاح. وفلتر الإيميل لا يحتاج شيئاً.",
+        "en": "Chinese-style social scoring is completely banned. AI in hiring and loans needs strict oversight. Chatbots just need disclosure. And email filters need nothing."
+      }
+    },
+    {
+      "id": "gen-sort-006",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مراحل دورة حياة مشروع AI من البداية للنهاية:",
+        "en": "Order the stages of an AI project lifecycle from start to finish:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحديد المشكلة وجمع البيانات",
+            "en": "Define the problem and collect data"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تنظيف البيانات وتجهيزها",
+            "en": "Clean and prepare the data"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تدريب النموذج واختباره",
+            "en": "Train and test the model"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "نشر النموذج ومراقبة أدائه باستمرار",
+            "en": "Deploy the model and continuously monitor performance"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "80% من وقت مشروع AI الحقيقي يُقضى في الخطوتين الأولى والثانية (تحديد المشكلة + تنظيف البيانات)، وليس في التدريب كما يظن الأغلبية!",
+        "en": "80% of a real AI project's time is spent on steps 1 and 2 (defining the problem + cleaning data), not on training as most people think!"
+      }
+    },
+    {
+      "id": "gen-sort-007",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب هذه المصادر من الأكثر موثوقية إلى الأقل عند التحقق من معلومة أعطاك إياها AI:",
+        "en": "Order these sources from most to least reliable when verifying information AI gave you:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "ورقة بحثية محكّمة أو موقع حكومي رسمي",
+            "en": "Peer-reviewed paper or official government website"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "مقال في وسيلة إعلام معروفة (BBC, Reuters)",
+            "en": "Article from a reputable news source (BBC, Reuters)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "منشور في مدونة شخصية أو منتدى",
+            "en": "Post on a personal blog or forum"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "سؤال AI نفسه \"هل أنت متأكد؟\"",
+            "en": "Asking AI itself \"Are you sure?\""
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "سؤال AI \"هل أنت متأكد؟\" هو أسوأ طريقة للتحقق — سيؤكد لك بثقة حتى لو كان مخطئاً! المصادر الرسمية والمحكّمة هي المرجع الذهبي.",
+        "en": "Asking AI \"Are you sure?\" is the worst verification method — it'll confidently confirm even when wrong! Official and peer-reviewed sources are the gold standard."
+      }
+    },
+    {
+      "id": "gen-self-010",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "قرأت خبراً أن AI يمكنه الآن ترجمة المحادثات فورياً بين 40 لغة بدقة 95%. أنت مترجم محترف منذ 10 سنوات. أول رد فعل:",
+        "en": "You read that AI can now translate conversations instantly between 40 languages with 95% accuracy. You've been a professional translator for 10 years. Your first reaction:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة! سأتخصص في الترجمة الإبداعية والثقافية التي لا يتقنها AI بعد",
+            "en": "Opportunity! I'll specialize in creative and cultural translation that AI can't master yet"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "سأتعلم استخدام أدوات AI كمساعد لتسريع عملي وزيادة إنتاجيتي",
+            "en": "I'll learn to use AI tools as an assistant to speed up my work and increase productivity"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "95% ليست 100% — العملاء سيظلون بحاجة لمترجم بشري",
+            "en": "95% isn't 100% — clients will still need a human translator"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هذا الكلام مبالغ فيه — الترجمة فن لن تتقنه الآلة أبداً",
+            "en": "This is exaggerated — translation is an art machines will never master"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "أفضل المترجمين اليوم يستخدمون AI كمساعد: يولّد المسودة الأولى بسرعة، والمترجم يضيف اللمسة الإنسانية والثقافية. من يرفض الأدوات يخسر أمام من يتقنها.",
+        "en": "The best translators today use AI as an assistant: it generates the first draft quickly, and the translator adds the human and cultural touch. Those who reject tools lose to those who master them."
+      }
+    },
+    {
+      "id": "gen-self-011",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "لاحظت أن AI يرسم أعمالاً فنية مذهلة في ثوانٍ. أنت فنان/مصمم. ماذا يعني لك هذا؟",
+        "en": "You notice AI creates stunning artwork in seconds. You're an artist/designer. What does this mean to you?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أداة جديدة ضمن أدواتي — يمكنني استخدامها لتسريع التجريب واستكشاف أفكار جديدة",
+            "en": "A new tool in my toolkit — I can use it to speed up experimentation and explore new ideas"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أحتاج أركّز على ما يميّزني: الرؤية الفنية الفريدة والتواصل مع العملاء",
+            "en": "I need to focus on what sets me apart: unique artistic vision and client communication"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "ما ينتجه AI ليس فناً حقيقياً — الناس ستفضل الإبداع البشري دائماً",
+            "en": "What AI produces isn't real art — people will always prefer human creativity"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التصميم مات — حان وقت تغيير المهنة بالكامل",
+            "en": "Design is dead — time to completely change careers"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "AI ديمقراطَ الإبداع — لم يعد الإنتاج هو الميزة، بل الرؤية والتفرد. الفنان الذكي يستخدم AI لتوليد 50 فكرة أولية في دقائق ثم يصقل الأفضل بلمسته الشخصية.",
+        "en": "AI democratized creativity — production is no longer the advantage; vision and uniqueness are. The smart artist uses AI to generate 50 initial ideas in minutes, then refines the best with their personal touch."
+      }
+    },
+    {
+      "id": "gen-self-012",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أصبح كل تطبيق تستخدمه يضيف \"ميزات AI\" — البريد، الصور، المتصفح، حتى تطبيق الملاحظات. شعورك:",
+        "en": "Every app you use now adds \"AI features\" — email, photos, browser, even the notes app. Your feeling:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ممتاز! أجرب كل ميزة جديدة وأقرر أيها يفيدني فعلاً",
+            "en": "Excellent! I try every new feature and decide which ones actually help me"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "جيد، لكن أحتاج وقت لأفهم كل ميزة قبل استخدامها",
+            "en": "Good, but I need time to understand each feature before using it"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "إرهاق تقني — لا أحتاج كل هذه الميزات وأتجاهل أغلبها",
+            "en": "Tech fatigue — I don't need all these features and ignore most of them"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مقلق — لا أريد AI في كل شيء. أين خصوصيتي؟",
+            "en": "Concerning — I don't want AI in everything. Where's my privacy?"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "القلق بشأن الخصوصية مشروع تماماً وليس مؤشراً على عدم المرونة! لكن المرونة المثلى = تجربة مدروسة + وعي بالخصوصية + اختيار ما يناسبك.",
+        "en": "Privacy concerns are completely valid and not a sign of inflexibility! But optimal flexibility = thoughtful experimentation + privacy awareness + choosing what suits you."
+      }
+    },
+    {
+      "id": "gen-self-013",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "صديقك الذي لا يعرف شيئاً عن التقنية يسألك: \"أعطني أهم نصيحة واحدة بخصوص الذكاء الاصطناعي.\" ماذا تقول؟",
+        "en": "A friend who knows nothing about technology asks: \"Give me the single most important tip about AI.\" What do you say?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "جرّبه! افتح ChatGPT الآن واسأله أي سؤال يخطر ببالك",
+            "en": "Try it! Open ChatGPT now and ask any question that comes to mind"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تعلّم الأساسيات أولاً — اقرأ مقالاً أو شاهد فيديو قصيراً",
+            "en": "Learn the basics first — read an article or watch a short video"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا تقلق — لن يؤثر على حياتك في المدى القريب",
+            "en": "Don't worry — it won't affect your life anytime soon"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "احذر منه — لا تشارك أي معلومة شخصية",
+            "en": "Be careful — don't share any personal information"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "أفضل طريقة لفهم AI هي تجربته مباشرة. الخوف من المجهول يزول بالتجربة. النصيحة المثالية: جرّب + كن واعياً بحدوده + لا تشارك بيانات حساسة.",
+        "en": "The best way to understand AI is to try it directly. Fear of the unknown fades with experience. The ideal advice: try it + be aware of its limits + don't share sensitive data."
+      }
+    },
+    {
+      "id": "gen-self-014",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "بعد إجراء هذا الاختبار، ما أول شيء ستفعله؟",
+        "en": "After taking this assessment, what's the first thing you'll do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبحث عن أدوات AI يمكنني استخدامها في عملي اليوم",
+            "en": "I'll search for AI tools I can use in my work today"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أشارك نتيجتي مع زملائي وأنصحهم بالاختبار",
+            "en": "I'll share my result with colleagues and recommend the test"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أفكر بالموضوع... ربما أبدأ لاحقاً",
+            "en": "I'll think about it... maybe start later"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا شيء — مجرد اختبار ممتع وانتهى",
+            "en": "Nothing — just a fun quiz, it's over"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا السؤال يقيس \"نية الفعل\" — الفجوة بين المعرفة والتطبيق. أفضل المتعلمين يحوّلون المعرفة لفعل فوري ولو صغير. ابدأ اليوم ولو بخطوة واحدة!",
+        "en": "This question measures \"intent to act\" — the gap between knowledge and application. The best learners convert knowledge to immediate action, even if small. Start today, even with one step!"
+      }
+    },
+    {
+      "id": "gen-mcq-026",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما المقصود بـ \"فقاعة التصفية\" (Filter Bubble) في سياق الخوارزميات؟",
+        "en": "What does \"Filter Bubble\" mean in the context of algorithms?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "خلل تقني يمنع وصول الإنترنت للمستخدم",
+            "en": "A technical glitch that blocks the user's internet access"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "بيئة رقمية تعرض لك فقط محتوى يوافق آراءك ويعزل الآراء المخالفة",
+            "en": "A digital environment that only shows you content matching your views, isolating opposing opinions"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تقنية لحماية الخصوصية على الإنترنت",
+            "en": "A technology to protect online privacy"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ميزة في المتصفح لحجب الإعلانات",
+            "en": "A browser feature that blocks ads"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "خوارزميات التوصية تعرض لك ما تحبه فقط — فتعتقد أن العالم كله يفكر مثلك! هذا يقوّي الاستقطاب وينشر المعلومات المضللة. الوعي بهذه الفقاعة خطوة أولى للخروج منها.",
+        "en": "Recommendation algorithms only show you what you like — so you think the whole world thinks like you! This strengthens polarization and spreads misinformation. Awareness of this bubble is the first step out."
+      }
+    },
+    {
+      "id": "gen-mcq-027",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "\"التملق الخوارزمي\" (AI Sycophancy) يعني أن نماذج AI تميل إلى:",
+        "en": "\"AI Sycophancy\" means that AI models tend to:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "رفض الإجابة عن الأسئلة الصعبة",
+            "en": "Refuse to answer difficult questions"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موافقة المستخدم وتأكيد آرائه حتى لو كانت خاطئة — بدل تحديه",
+            "en": "Agreeing with users and confirming their opinions even when wrong — instead of challenging them"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "استخدام لغة رسمية مبالغ فيها",
+            "en": "Using overly formal language"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تقليد أسلوب المستخدم في الكتابة",
+            "en": "Mimicking the user's writing style"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "نماذج AI مصممة لإرضاء المستخدم — فتميل لتأكيد ما تقوله بدل مواجهتك بالحقيقة. هذا خطر حقيقي: قد تعتقد أنك على حق لأن AI يوافقك، بينما هو فقط \"يجاملك\"!",
+        "en": "AI models are designed to please users — so they tend to confirm what you say instead of challenging you with the truth. This is a real danger: you might think you're right because AI agrees, when it's just 'flattering' you!"
+      }
+    },
+    {
+      "id": "gen-mcq-028",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أي من هذه المهام يجب أن تتجنب استخدام AI فيها بدون إشراف متخصص؟",
+        "en": "In which of these tasks should you avoid using AI without specialist oversight?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "كتابة مسودة إيميل للزملاء",
+            "en": "Drafting an email to colleagues"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تلخيص مقال طويل قرأته",
+            "en": "Summarizing a long article you read"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تشخيص حالتك الصحية أو اتخاذ قرار طبي بناءً على نصيحة AI",
+            "en": "Diagnosing your health condition or making a medical decision based on AI advice"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "توليد أفكار لعرض تقديمي",
+            "en": "Generating ideas for a presentation"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "AI ممتاز كمساعد في المهام الإبداعية والإنتاجية. لكن في القرارات الطبية والقانونية والمالية الحرجة — يجب أن يبقى الإنسان المتخصص هو صاحب القرار النهائي.",
+        "en": "AI is excellent as an assistant for creative and productive tasks. But for critical medical, legal, and financial decisions — a specialized human must remain the final decision-maker."
+      }
+    },
+    {
+      "id": "gen-mcq-029",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "في مجال اكتشاف الأدوية، AI ساعد في:",
+        "en": "In drug discovery, AI has helped:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "صنع أدوية بدون أي تجارب مخبرية",
+            "en": "Creating drugs without any lab experiments"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تسريع تحديد المركبات الواعدة من سنوات إلى أسابيع — مع الحاجة للتجارب البشرية لاحقاً",
+            "en": "Accelerating identification of promising compounds from years to weeks — still requiring human trials later"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "استبدال الأطباء في وصف الأدوية",
+            "en": "Replacing doctors in prescribing medication"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم يحقق أي نتائج ملموسة بعد",
+            "en": "It hasn't achieved any tangible results yet"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "AlphaFold من Google فاز بجائزة نوبل لتنبئه ببنية البروتينات — مما سرّع اكتشاف الأدوية بشكل هائل. لكن AI يحدد المرشحين فقط — التجارب السريرية على البشر لا تزال ضرورية.",
+        "en": "Google's AlphaFold won a Nobel Prize for predicting protein structures — massively accelerating drug discovery. But AI only identifies candidates — clinical trials on humans are still essential."
+      }
+    },
+    {
+      "id": "gen-mcq-030",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "كلمة العام 2025 حسب قاموس Merriam-Webster كانت مرتبطة بالذكاء الاصطناعي — ما هي؟",
+        "en": "The 2025 word of the year according to Merriam-Webster was AI-related — what is it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "Hallucination (هلوسة)",
+            "en": "Hallucination"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "Slop (محتوى رديء مولّد بـ AI)",
+            "en": "Slop (low-quality AI-generated content)"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "Prompt (أمر)",
+            "en": "Prompt"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "Token (رمز)",
+            "en": "Token"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "\"Slop\" = المحتوى الرديء المولّد بالذكاء الاصطناعي بدون رقابة: مقالات مزيفة، صور مشوّهة، كتب بلا قيمة تغرق الإنترنت. أصبحت مشكلة بيئية رقمية.",
+        "en": "\"Slop\" = low-quality AI-generated content without oversight: fake articles, distorted images, valueless books flooding the internet. It's become a digital environmental problem."
+      }
+    },
+    {
+      "id": "gen-mcq-031",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "\"اختبار تورنغ\" (Turing Test) يقيس:",
+        "en": "The \"Turing Test\" measures:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "سرعة معالجة الحاسوب",
+            "en": "Computer processing speed"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "قدرة الآلة على التصرف بذكاء لا يميّزه الإنسان عن تصرف بشري",
+            "en": "A machine's ability to behave intelligently in a way indistinguishable from a human"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "دقة النموذج في الإجابة على أسئلة الرياضيات",
+            "en": "A model's accuracy in answering math questions"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "كمية البيانات التي يمكن للنموذج تخزينها",
+            "en": "The amount of data a model can store"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "اقترحه آلان تورنغ عام 1950: إذا لم يستطع إنسان التمييز بين محادثة مع آلة ومحادثة مع بشري — فالآلة \"ذكية\". النماذج اللغوية الحالية تجتازه في كثير من السياقات.",
+        "en": "Proposed by Alan Turing in 1950: if a human can't distinguish between chatting with a machine and chatting with a human — the machine is 'intelligent'. Current language models pass it in many contexts."
+      }
+    },
+    {
+      "id": "gen-mcq-032",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما العلاقة الصحيحة بين: الذكاء الاصطناعي (AI)، التعلم الآلي (ML)، والتعلم العميق (DL)؟",
+        "en": "What's the correct relationship between: Artificial Intelligence (AI), Machine Learning (ML), and Deep Learning (DL)?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ثلاث تقنيات منفصلة لا علاقة بينها",
+            "en": "Three separate, unrelated technologies"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "دوائر متداخلة: AI هو الأوسع، ML فرع منه، DL فرع من ML",
+            "en": "Nested circles: AI is the broadest, ML is a subset, DL is a subset of ML"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مراحل تاريخية: AI ثم ML ثم DL — كل جديد ألغى السابق",
+            "en": "Historical stages: AI then ML then DL — each new one replaced the previous"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "كلها مسميات مختلفة لنفس الشيء",
+            "en": "They're all different names for the same thing"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "AI = المجال الأوسع (أي نظام يحاكي الذكاء). ML = فرع يتعلم من البيانات. DL = فرع من ML يستخدم شبكات عصبية عميقة. ChatGPT مثلاً هو DL ⊂ ML ⊂ AI.",
+        "en": "AI = the broadest field (any system mimicking intelligence). ML = a branch that learns from data. DL = an ML branch using deep neural networks. ChatGPT is DL ⊂ ML ⊂ AI."
+      }
+    },
+    {
+      "id": "gen-mcq-033",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "صديقك يقول إنه يعتمد على ChatGPT كمعالج نفسي بدلاً من زيارة متخصص. ما تعليقك الأنسب؟",
+        "en": "Your friend says they rely on ChatGPT as a therapist instead of seeing a professional. What's your most appropriate comment?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فكرة ممتازة — AI يفهم المشاعر بشكل أفضل من البشر",
+            "en": "Great idea — AI understands emotions better than humans"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "AI يمكن أن يكون مفيداً للتعبير عن مشاعرك، لكنه ليس بديلاً عن معالج متخصص — خاصة أنه يميل لتأكيد ما تقوله بدل تحديك",
+            "en": "AI can be helpful for expressing feelings, but it's no substitute for a professional — especially since it tends to confirm what you say instead of challenging you"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا تستخدم AI أبداً في أي شيء شخصي",
+            "en": "Never use AI for anything personal"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا فرق — المعالج النفسي يفعل نفس الشيء: يستمع ويرد",
+            "en": "No difference — a therapist does the same thing: listens and responds"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "دراسة من Brown University أظهرت أن AI ينتهك معايير أخلاقيات العلاج النفسي بشكل منهجي — يبالغ في التأكيد على آراء المستخدم بدل تحديها. المعالج البشري لا يمكن استبداله.",
+        "en": "A Brown University study showed AI systematically violates therapy ethics standards — over-validates users' beliefs instead of challenging them. A human therapist cannot be replaced."
+      }
+    },
+    {
+      "id": "gen-mcq-034",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "مبدأ \"الإنسان في الحلقة\" (Human-in-the-Loop) يعني:",
+        "en": "The \"Human-in-the-Loop\" principle means:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أن AI يعمل بشكل مستقل تماماً بدون تدخل بشري",
+            "en": "AI operates completely independently without human intervention"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أن الإنسان يشرف على قرارات AI ويراجعها ويتدخل عند الحاجة",
+            "en": "A human oversees AI decisions, reviews them, and intervenes when needed"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أن AI يراقب أداء الموظفين البشريين",
+            "en": "AI monitors human employee performance"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أن الإنسان يدخل البيانات والـ AI يفعل الباقي",
+            "en": "Humans input data and AI does the rest"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "\"الإنسان في الحلقة\" مبدأ أساسي في AI المسؤول: AI يساعد ويقترح، لكن الإنسان يراجع ويقرر. هذا ضروري خاصة في القرارات المؤثرة على حياة الناس (طب، قضاء، توظيف).",
+        "en": "\"Human-in-the-Loop\" is a core principle of responsible AI: AI assists and suggests, but humans review and decide. Essential especially for decisions affecting people's lives (medicine, justice, hiring)."
+      }
+    },
+    {
+      "id": "gen-tf-014",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "AI يمكنه الآن التنبؤ بالطقس بدقة تنافس النماذج المناخية التقليدية — وبجزء صغير من تكلفتها الحاسوبية.",
+        "en": "AI can now predict weather with accuracy rivaling traditional climate models — at a fraction of their computational cost."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "نموذج Aurora من Microsoft حقق دقة تنافس النماذج التقليدية في التنبؤ بالطقس — بتكلفة حاسوبية أقل بكثير. هذا قد يغيّر حياة ملايين المزارعين في الدول النامية.",
+        "en": "Microsoft's Aurora model achieved accuracy rivaling traditional models in weather prediction — at much lower computational cost. This could change the lives of millions of farmers in developing countries."
+      }
+    },
+    {
+      "id": "gen-tf-015",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "AI يُستخدم حالياً لحماية الحياة البرية — مثل رصد الصيد الجائر وتتبع الأنواع المهددة بالانقراض.",
+        "en": "AI is currently used to protect wildlife — such as detecting poaching and tracking endangered species."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "AI يحلل صور الكاميرات في المحميات لاكتشاف الصيد الجائر، ويتتبع الأنواع المهددة عبر الأقمار الصناعية، ويتنبأ بمسارات هجرة الحيوانات. التقنية في خدمة الطبيعة!",
+        "en": "AI analyzes camera footage in reserves to detect poaching, tracks endangered species via satellites, and predicts animal migration routes. Technology in service of nature!"
+      }
+    },
+    {
+      "id": "gen-tf-016",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أغلب المحتوى على الإنترنت في عام 2025 أصبح مولّداً بالذكاء الاصطناعي وليس مكتوباً بواسطة بشر.",
+        "en": "Most content on the internet in 2025 is now AI-generated rather than written by humans."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "ليس بعد — لكن الاتجاه مقلق! نسبة المحتوى المولّد بـ AI تتزايد بسرعة كبيرة. \"AI Slop\" (محتوى رديء مولّد آلياً) أصبح مشكلة حقيقية تلوّث نتائج البحث ووسائل التواصل.",
+        "en": "Not yet — but the trend is concerning! The proportion of AI-generated content is increasing rapidly. \"AI Slop\" (low-quality auto-generated content) has become a real problem polluting search results and social media."
+      }
+    },
+    {
+      "id": "gen-tf-017",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "AI يمكنه الآن تأليف موسيقى ورسم لوحات يصعب على كثير من الناس تمييزها عن الأعمال البشرية.",
+        "en": "AI can now compose music and create artwork that many people struggle to distinguish from human-made works."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "نعم! أدوات مثل Suno للموسيقى وMidjourney للصور تنتج أعمالاً مذهلة. التحدي لم يعد \"هل تستطيع الآلة أن تبدع؟\" بل \"من يملك حقوق هذا الإبداع؟\"",
+        "en": "Yes! Tools like Suno for music and Midjourney for images produce stunning works. The challenge is no longer 'Can machines create?' but 'Who owns the rights to this creation?'"
+      }
+    },
+    {
+      "id": "gen-fill-011",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "في الزراعة الحديثة، تقنية {{blank_1}} تستخدم AI لتحليل صور الأقمار الصناعية وأجهزة الاستشعار لتحديد كمية المياه والسماد المطلوبة لكل جزء من الحقل.",
+        "en": "In modern agriculture, {{blank_1}} technology uses AI to analyze satellite images and sensor data to determine the exact water and fertilizer needed for each part of a field."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "الزراعة الدقيقة (Precision Agriculture)",
+            "en": "Precision Agriculture"
+          },
+          "options": [
+            {
+              "ar": "الزراعة الدقيقة (Precision Agriculture)",
+              "en": "Precision Agriculture"
+            },
+            {
+              "ar": "الزراعة العضوية (Organic Farming)",
+              "en": "Organic Farming"
+            },
+            {
+              "ar": "الزراعة المائية (Hydroponics)",
+              "en": "Hydroponics"
+            },
+            {
+              "ar": "الزراعة التقليدية (Traditional Farming)",
+              "en": "Traditional Farming"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "الزراعة الدقيقة بالـ AI تقلل استهلاك المياه بنسبة تصل إلى 30% وتزيد المحصول — وهذا مهم جداً لمنطقتنا العربية التي تعاني من شح المياه.",
+        "en": "AI-powered Precision Agriculture reduces water consumption by up to 30% while increasing yields — extremely important for the Arab region which suffers from water scarcity."
+      }
+    },
+    {
+      "id": "gen-fill-012",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "الهجوم الذي يتلاعب بمدخلات AI لجعله يتجاوز قيوده الأمنية ويفعل أشياء غير مسموحة يُسمى {{blank_1}}.",
+        "en": "The attack that manipulates AI inputs to make it bypass its safety restrictions and do unauthorized things is called {{blank_1}}."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "حقن الأوامر (Prompt Injection)",
+            "en": "Prompt Injection"
+          },
+          "options": [
+            {
+              "ar": "حقن الأوامر (Prompt Injection)",
+              "en": "Prompt Injection"
+            },
+            {
+              "ar": "التصيد الإلكتروني (Phishing)",
+              "en": "Phishing"
+            },
+            {
+              "ar": "هجوم القوة الغاشمة (Brute Force)",
+              "en": "Brute Force Attack"
+            },
+            {
+              "ar": "حصان طروادة (Trojan)",
+              "en": "Trojan Horse"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Prompt Injection = خداع AI بأوامر مخفية داخل النص. مثلاً: إدراج تعليمات في مستند تطلب من AI تجاهل قواعده. هذا من أحدث التهديدات الأمنية في عصر AI.",
+        "en": "Prompt Injection = tricking AI with hidden instructions inside text. For example: embedding commands in a document asking AI to ignore its rules. This is one of the newest security threats in the AI era."
+      }
+    },
+    {
+      "id": "gen-fill-013",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أحد تطبيقات AI التي تساعد ذوي الاحتياجات الخاصة: تحويل {{blank_1}} للمكفوفين، وتحويل {{blank_2}} للصم.",
+        "en": "One AI application helping people with disabilities: converting {{blank_1}} for the blind, and converting {{blank_2}} for the deaf."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "الصور إلى وصف صوتي",
+            "en": "images to audio descriptions"
+          },
+          "options": [
+            {
+              "ar": "الصور إلى وصف صوتي",
+              "en": "images to audio descriptions"
+            },
+            {
+              "ar": "النص إلى ألوان",
+              "en": "text to colors"
+            },
+            {
+              "ar": "الفيديو إلى موسيقى",
+              "en": "video to music"
+            },
+            {
+              "ar": "الأرقام إلى رسوم",
+              "en": "numbers to graphics"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "الكلام إلى نص فوري",
+            "en": "speech to real-time text"
+          },
+          "options": [
+            {
+              "ar": "الكلام إلى نص فوري",
+              "en": "speech to real-time text"
+            },
+            {
+              "ar": "النص إلى ألوان",
+              "en": "text to colors"
+            },
+            {
+              "ar": "الصور إلى أصوات",
+              "en": "images to sounds"
+            },
+            {
+              "ar": "الموسيقى إلى كلمات",
+              "en": "music to words"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "AI يفتح آفاقاً هائلة لذوي الاحتياجات الخاصة: وصف الصور للمكفوفين، التفريغ الفوري للصم، التحكم بالأجهزة بالعين أو الصوت. التقنية في أجمل صورها: خدمة الإنسان.",
+        "en": "AI opens massive possibilities for people with disabilities: image description for the blind, real-time transcription for the deaf, device control via eye or voice. Technology at its finest: serving humanity."
+      }
+    },
+    {
+      "id": "gen-match-007",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل استخدام مفاجئ لـ AI بمجاله:",
+        "en": "Match each surprising AI use with its field:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "التنبؤ بالزلازل والفيضانات",
+            "en": "Predicting earthquakes and floods"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "تتبع الأنواع المهددة بالانقراض",
+            "en": "Tracking endangered species"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "التنبؤ ببنية البروتينات",
+            "en": "Predicting protein structures"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "تحديد كمية السماد لكل متر من الحقل",
+            "en": "Determining fertilizer amount per meter of field"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "إدارة الكوارث الطبيعية",
+            "en": "Natural disaster management"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "حماية الحياة البرية",
+            "en": "Wildlife conservation"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "اكتشاف الأدوية",
+            "en": "Drug discovery"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "الزراعة الدقيقة",
+            "en": "Precision agriculture"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "AI ليس فقط ChatGPT ومحادثات نصية — هو يُحدث ثورة صامتة في مجالات لا يتوقعها أغلب الناس: من إنقاذ حيوانات مهددة إلى التنبؤ بأدوية جديدة إلى إطعام العالم بكفاءة.",
+        "en": "AI isn't just ChatGPT and text chats — it's quietly revolutionizing fields most people don't expect: from saving endangered animals to predicting new drugs to feeding the world efficiently."
+      }
+    },
+    {
+      "id": "gen-match-008",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل خرافة عن AI بالحقيقة:",
+        "en": "Match each AI myth with the reality:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "\"AI سيأخذ كل الوظائف\"",
+            "en": "\"AI will take all jobs\""
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "\"AI يفهم ما يقوله\"",
+            "en": "\"AI understands what it says\""
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "\"AI محايد وعادل دائماً\"",
+            "en": "\"AI is always neutral and fair\""
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "\"AI لا يخطئ أبداً\"",
+            "en": "\"AI never makes mistakes\""
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "سيغيّر طبيعة المهام وسيخلق وظائف جديدة أكثر مما يلغي",
+            "en": "It will change task nature and create more new jobs than it eliminates"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "يعالج أنماطاً إحصائية بدون فهم حقيقي للمعنى",
+            "en": "It processes statistical patterns without truly understanding meaning"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "يعكس تحيزات بيانات التدريب وقد ينتج نتائج غير عادلة",
+            "en": "It reflects training data biases and may produce unfair results"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "يهلوس ويختلق معلومات بثقة — المراجعة البشرية ضرورية",
+            "en": "It hallucinates and fabricates info with confidence — human review is essential"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "أخطر شيء هو الثقة العمياء في AI أو الخوف الأعمى منه. الحقيقة بينهما: أداة قوية جداً لكنها محدودة، مفيدة جداً لكنها تحتاج إشراف بشري دائم.",
+        "en": "The most dangerous thing is blind trust in AI or blind fear of it. The truth is between: a very powerful but limited tool, very useful but always needing human oversight."
+      }
+    },
+    {
+      "id": "gen-sort-008",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب هذه من الأقل تعقيداً إلى الأكثر تعقيداً من حيث قدرات AI المطلوبة:",
+        "en": "Order these from least to most complex in terms of AI capabilities required:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "فلترة البريد المزعج (Spam)",
+            "en": "Spam email filtering"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "ترجمة نص بين لغتين",
+            "en": "Translating text between two languages"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "كتابة مقال كامل عن موضوع معقد",
+            "en": "Writing a complete article on a complex topic"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "اكتشاف دواء جديد لمرض نادر",
+            "en": "Discovering a new drug for a rare disease"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "فلترة Spam = تصنيف بسيط. الترجمة = فهم لغتين. كتابة مقال = توليد محتوى متماسك. اكتشاف دواء = تحليل بيانات بيولوجية معقدة + محاكاة تفاعلات كيميائية = أعلى تعقيداً.",
+        "en": "Spam filtering = simple classification. Translation = understanding two languages. Article writing = generating coherent content. Drug discovery = analyzing complex biological data + simulating chemical interactions = highest complexity."
+      }
+    },
+    {
+      "id": "gen-sort-009",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب هذه النصائح حسب أهميتها عند استخدام AI في بيئة عمل مهنية:",
+        "en": "Order these tips by importance when using AI in a professional work environment:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "لا تشارك بيانات سرية أو معلومات عملاء في محادثات AI",
+            "en": "Never share confidential data or client info in AI chats"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "راجع كل مخرج من AI قبل إرساله أو نشره",
+            "en": "Review every AI output before sending or publishing"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تعلّم أساسيات هندسة الأوامر (Prompt Engineering)",
+            "en": "Learn the basics of Prompt Engineering"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تابع آخر الأدوات والتحديثات في مجالك",
+            "en": "Keep up with the latest tools and updates in your field"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الأمان أولاً دائماً (لا بيانات سرية)، ثم المراجعة (لا تثق أعمى)، ثم المهارة (تحسين الأوامر)، ثم التطوير المستمر. هذا الترتيب يحمي شركتك ويحسّن إنتاجيتك.",
+        "en": "Security first always (no confidential data), then review (don't blindly trust), then skill (better prompts), then continuous development. This order protects your company and improves your productivity."
+      }
+    },
+    {
+      "id": "gen-self-015",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "تقرأ مقالاً يتفق تماماً مع رأيك في موضوع مثير للجدل. تكتشف لاحقاً أنه مكتوب بالكامل بواسطة AI. هل يتغير موقفك؟",
+        "en": "You read an article that perfectly agrees with your opinion on a controversial topic. You later discover it was entirely AI-written. Does your stance change?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أعيد تقييم ما قرأته — مصدر المعلومة يؤثر على مصداقيتها",
+            "en": "I re-evaluate what I read — the source affects credibility"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أبحث عن مصادر بشرية تؤكد نفس النقاط قبل أن أتبنى الرأي",
+            "en": "I look for human sources confirming the same points before adopting the opinion"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا فرق — المحتوى الجيد جيد بغض النظر عمن كتبه",
+            "en": "No difference — good content is good regardless of who wrote it"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أهتم — المهم أنه يوافق ما أعتقده",
+            "en": "I don't care — what matters is it agrees with what I believe"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "AI قد يكتب مقالات مقنعة لأي وجهة نظر — حتى المتناقضة! التفكير النقدي يعني التحقق من المصدر والبحث عن وجهات نظر مختلفة، لا الاكتفاء بما يعجبك.",
+        "en": "AI can write convincing articles for any viewpoint — even contradictory ones! Critical thinking means checking sources and seeking different perspectives, not just accepting what you like."
+      }
+    },
+    {
+      "id": "gen-self-016",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "اكتشفت أن التطبيق الذي تستخدمه يومياً يجمع بياناتك لتدريب نماذج AI. ماذا تفعل؟",
+        "en": "You discover the app you use daily collects your data to train AI models. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبحث في الإعدادات عن خيار إيقاف مشاركة البيانات — وأكمل الاستخدام بوعي",
+            "en": "I look in settings for an option to stop data sharing — and continue using it consciously"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقرأ سياسة الخصوصية وأقرر بناءً على ما أجد",
+            "en": "I read the privacy policy and decide based on what I find"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا يهم — الكل يأخذ بياناتنا وليس بيدنا شيء",
+            "en": "Doesn't matter — everyone takes our data and there's nothing we can do"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أحذف التطبيق فوراً — خصوصيتي أهم",
+            "en": "I delete the app immediately — my privacy is more important"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "الخصوصية الرقمية حق — والوعي بها علامة ذكاء وليس خوفاً. أفضل نهج: اعرف ما يُجمع عنك، عطّل ما لا تريد مشاركته، واستخدم الأدوات بوعي.",
+        "en": "Digital privacy is a right — and awareness of it is a sign of intelligence, not fear. Best approach: know what's collected about you, disable what you don't want to share, and use tools consciously."
+      }
+    },
+    {
+      "id": "gen-self-017",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "طفلك يقضي ساعات يومياً يتحدث مع AI بدل أصدقائه. ما موقفك؟",
+        "en": "Your child spends hours daily talking to AI instead of their friends. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتحدث معه عن التوازن — AI مفيد لكنه لا يعوّض التفاعل البشري الحقيقي",
+            "en": "I talk to them about balance — AI is useful but doesn't replace real human interaction"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أراقب ما يتحدث عنه مع AI وأضع حدوداً زمنية واضحة",
+            "en": "I monitor what they discuss with AI and set clear time limits"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أمنعه تماماً من استخدام AI — الأطفال لا يحتاجونه",
+            "en": "I completely ban AI use — children don't need it"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا مشكلة — هذا جيل التكنولوجيا ولن أتدخل",
+            "en": "No problem — this is the tech generation and I won't interfere"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "باحثون حذّروا من \"غرف الصدى الفردية\" حيث يصبح الـ Chatbot البديل الوحيد للتفاعل الاجتماعي — خاصة عند الأطفال. التوازن بين التكنولوجيا والتواصل البشري أساسي.",
+        "en": "Researchers warned of \"single-person echo chambers\" where the chatbot becomes the sole substitute for social interaction — especially for children. Balance between technology and human connection is essential."
+      }
+    },
+    {
+      "id": "gen-self-018",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "لاحظت أنك تقضي وقتاً أطول في التحقق من مخرجات AI وتصحيحها أكثر من لو فعلت المهمة يدوياً من البداية. ماذا تفعل؟",
+        "en": "You notice you spend more time checking and correcting AI outputs than if you had done the task manually from the start. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أحلل: هل المشكلة في الأمر (Prompt) أم أن هذه المهمة فعلاً لا تناسب AI؟",
+            "en": "I analyze: is the problem with my prompt, or is this task genuinely not suitable for AI?"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أجرب صياغة مختلفة — ربما AI يحتاج تعليمات أوضح",
+            "en": "I try a different approach — maybe AI needs clearer instructions"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أعود للطريقة اليدوية — AI لا يفيد في عملي",
+            "en": "I go back to manual methods — AI doesn't help in my work"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أكمل بنفس الطريقة — يجب أن أعتاد على AI",
+            "en": "I continue the same way — I need to get used to AI"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "ليس كل مهمة تستحق AI! المحترف الحقيقي يعرف متى يستخدم AI ومتى يعمل يدوياً. التحليل المنطقي للنتائج = أفضل من الإصرار على أداة لا تناسب.",
+        "en": "Not every task deserves AI! The true professional knows when to use AI and when to work manually. Logical analysis of results = better than insisting on a tool that doesn't fit."
+      }
+    },
+    {
+      "id": "gen-self-019",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "إذا أردت أن تلخّص تجربتك مع الذكاء الاصطناعي حتى الآن بجملة واحدة، أيها الأقرب؟",
+        "en": "If you had to summarize your experience with AI so far in one sentence, which is closest?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أداة أساسية أستخدمها يومياً وأطوّر مهاراتي فيها باستمرار",
+            "en": "An essential tool I use daily and continuously improve my skills with"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "جرّبته بعض المرات وأريد تعلم المزيد",
+            "en": "I've tried it a few times and want to learn more"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "سمعت عنه كثيراً لكن لم أجربه بعد بشكل جدي",
+            "en": "I've heard a lot about it but haven't seriously tried it yet"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا يهمني — أستطيع العمل بدونه تماماً",
+            "en": "I don't care — I can work perfectly fine without it"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "لا إجابة خاطئة هنا — لكن هذا السؤال يكشف موقعك الحالي على طيف التبني. أينما كنت، الخطوة التالية دائماً ممكنة: جرّب شيئاً واحداً جديداً هذا الأسبوع.",
+        "en": "No wrong answer here — but this question reveals your current position on the adoption spectrum. Wherever you are, the next step is always possible: try one new thing this week."
       }
     }
   ]
