@@ -1,0 +1,377 @@
+{
+  "section_id": "allied-health",
+  "section_name": { "ar": "العلوم الصحية المساعدة", "en": "Allied Health Sciences" },
+  "version": "1.0",
+  "last_updated": "2026-04-04",
+  "questions": [
+    {
+      "id": "alh-mcq-001",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت فني مختبرات طبية. مستشفاك يدرس اقتناء نظام APAS Independence لقراءة أطباق الزراعة البكتيرية تلقائياً. ما الميزة الأهم لهذا النظام من الناحية السريرية؟",
+        "en": "You're a medical lab technician. Your hospital is considering the APAS Independence system for automated bacterial culture plate reading. What's the most important clinical advantage of this system?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يقضي على الحاجة لفنيي المختبرات تماماً",
+            "en": "It completely eliminates the need for lab technicians"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يكتشف زراعات إيجابية فاتت الفنيين ويُسرّع الإبلاغ عن السلبيات بحذفها من سير العمل",
+            "en": "It catches positive cultures missed by technicians and speeds up reporting of negatives by removing them from the workflow"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "يحدد نوع البكتيريا وحساسيتها للمضادات الحيوية مباشرة",
+            "en": "It directly identifies the bacterial species and antibiotic susceptibility"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يقلل تكلفة المواد المخبرية فقط دون تأثير على الدقة",
+            "en": "It only reduces lab supply costs without affecting accuracy"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "في مستشفى Johns Hopkins، حقق APAS Independence توافقاً إيجابياً بنسبة 100% لمراقبة MRSA واكتشف 5 زراعات إيجابية فاتت الفنيين. يعالج 200 طبق في الساعة (3 أضعاف السرعة اليدوية) ويزيل تلقائياً حتى 95% من الأطباق السلبية من سير العمل.",
+        "en": "At Johns Hopkins Hospital, APAS Independence achieved 100% positive agreement for MRSA surveillance and caught 5 positive cultures missed by technicians. It processes 200 plates per hour (3× manual speed) and automatically removes up to 95% of negative plates from the workflow."
+      }
+    },
+    {
+      "id": "alh-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت أخصائي بصريات. نظام LumineticsCore (المعروف سابقاً بـ IDx-DR) يُشخّص اعتلال الشبكية السكري بشكل مستقل تماماً دون تدخل طبيب. ما الذي يجعل هذا النظام فريداً تاريخياً؟",
+        "en": "You're an optometrist. The LumineticsCore system (formerly IDx-DR) diagnoses diabetic retinopathy completely autonomously without physician input. What makes this system historically unique?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أول نظام ذكاء اصطناعي مستقل يحصل على ترخيص FDA في أي مجال طبي",
+            "en": "The first autonomous AI diagnostic system to receive FDA clearance in any medical field"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أدق نظام AI طبي على الإطلاق بدقة 100%",
+            "en": "The most accurate medical AI system ever with 100% accuracy"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أول نظام يعمل بدون كاميرا متخصصة",
+            "en": "The first system that works without a specialized camera"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرخص نظام تشخيصي متاح للعيادات الصغيرة",
+            "en": "The cheapest diagnostic system available for small clinics"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "LumineticsCore حصل على ترخيص FDA De Novo في أبريل 2018 — أول نظام AI مستقل تماماً في أي تخصص طبي. حساسيته 87.4% ونوعيته 89.5%. مُنتشر في أكثر من 1,000 عيادة. حالياً هناك 4 أنظمة FDA مرخصة لفحص اعتلال الشبكية السكري المستقل.",
+        "en": "LumineticsCore received FDA De Novo clearance in April 2018 — the first fully autonomous AI system in any medical field. Sensitivity: 87.4%, specificity: 89.5%. Deployed in 1,000+ clinics. Currently there are 4 FDA-cleared autonomous DR screening systems."
+      }
+    },
+    {
+      "id": "alh-mcq-003",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت أخصائي علاج طبيعي. شركة Hinge Health طرحت أسهمها للاكتتاب العام بإيرادات 588 مليون دولار وتقنية TrueMotion التي تتتبع حركة المريض بالكاميرا بدل أجهزة الاستشعار. كيف يؤثر هذا النموذج على دورك؟",
+        "en": "You're a physical therapist. Hinge Health went public with $588M revenue and TrueMotion technology that tracks patient movement via camera instead of sensors. How does this model affect your role?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يلغي الحاجة لأخصائيي العلاج الطبيعي — الكاميرا تكفي",
+            "en": "It eliminates the need for physical therapists — the camera is enough"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يوسّع نطاق خدماتي لعدد أكبر من المرضى مع تركيز وقتي على الحالات المعقدة",
+            "en": "It expands my reach to more patients while focusing my time on complex cases"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا يؤثر — العلاج الطبيعي الرقمي منفصل تماماً عن الممارسة التقليدية",
+            "en": "No impact — digital PT is completely separate from traditional practice"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يُخفّض أجور أخصائيي العلاج الطبيعي بسبب المنافسة",
+            "en": "It reduces PT salaries due to competition"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Hinge Health خدمت 25 مليون عقد حياة (47% أكثر في 2025) بتكاليف فريق رعاية ثابتة — أي أن AI «يُوسّع» المعالج لا «يُلغيه». TrueMotion استبدلت 95% من ساعات العلاج الطبيعي التقليدية بالرؤية الحاسوبية، مع تحقيق انخفاض 68% في الألم وتوفير 2,400 دولار لكل عضو.",
+        "en": "Hinge Health served 25 million contracted lives (47% more in 2025) with flat care team costs — AI 'scales' the therapist rather than 'replaces' them. TrueMotion replaced 95% of traditional PT hours with computer vision, while achieving 68% pain reduction and $2,400 per-member savings."
+      }
+    },
+    {
+      "id": "alh-tf-001",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام MDA-LeukoLens (2025) حقق دقة تشخيصية 100% في الكشف عن سرطان الدم النقوي الحاد (APL) — وهو نوع يتطلب علاجاً طارئاً فورياً.",
+        "en": "The MDA-LeukoLens system (2025) achieved 100% diagnostic accuracy for acute promyelocytic leukemia (APL) — a type requiring immediate emergency treatment."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. APL يحتاج علاجاً خلال ساعات وإلا قد يموت المريض. التشخيص السريع بالذكاء الاصطناعي يمكن أن يُنقذ حياة المريض حرفياً. نظام CellaVision حقق أيضاً دقة تصنيف 99.47% للخلايا اللمفاوية.",
+        "en": "True. APL needs treatment within hours or the patient may die. Rapid AI diagnosis can literally save the patient's life. The CellaVision system also achieved 99.47% lymphocyte classification accuracy."
+      }
+    },
+    {
+      "id": "alh-tf-002",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أول منصة ذكاء اصطناعي لصحة السكان في العالم أُطلقت في أبوظبي بالشراكة مع مايكروسوفت — وهي بمثابة «توأم رقمي» لمنظومة الرعاية الصحية في الإمارة.",
+        "en": "The world's first AI-powered population health intelligence platform was launched in Abu Dhabi in partnership with Microsoft — essentially a 'digital twin' of the emirate's healthcare ecosystem."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. أطلقتها دائرة الصحة في أبوظبي في أكتوبر 2025. مايكروسوفت عرضت أيضاً مساعد «حياة» الصحي بالعربية والإنجليزية. السعودية خصصت 40 مليار دولار لصندوق استثمار الذكاء الاصطناعي ضمن استراتيجية AI الوطنية 2031.",
+        "en": "True. Launched by Abu Dhabi's Department of Health in October 2025. Microsoft also showcased 'Hayat,' a health companion supporting Arabic and English. Saudi Arabia allocated $40 billion for its AI investment fund under the National AI Strategy 2031."
+      }
+    },
+    {
+      "id": "alh-fill-001",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أول أخصائي علاج طبيعي محادثاتي بالذكاء الاصطناعي اسمه {{blank_1}}، طورته شركة Sword Health، ويوجّه المرضى خلال جلسات التأهيل عبر حوار صوتي طبيعي.",
+        "en": "The first conversational AI physical therapist is called {{blank_1}}, developed by Sword Health, which guides patients through rehab sessions via natural voice conversation."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": { "ar": "Phoenix", "en": "Phoenix" },
+          "options": [
+            { "ar": "Phoenix", "en": "Phoenix" },
+            { "ar": "Robin", "en": "Robin" },
+            { "ar": "Alexa Health", "en": "Alexa Health" },
+            { "ar": "Watson Rehab", "en": "Watson Rehab" }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Phoenix (أُطلق 2024) يراقب حركة المريض ويعدّل صعوبة التمرين ومدته في الوقت الحقيقي. Robin هو مساعد Hinge Health وليس Sword. تقييم Sword Health وصل 4 مليارات دولار (يونيو 2025) مع أكثر من 7 ملايين جلسة AI.",
+        "en": "Phoenix (launched 2024) monitors patient movement and adjusts exercise difficulty and duration in real time. Robin is Hinge Health's assistant, not Sword's. Sword Health's valuation reached $4 billion (June 2025) with 7+ million AI sessions."
+      }
+    },
+    {
+      "id": "alh-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تقنية ذكاء اصطناعي بتخصصها الصحي المساعد:",
+        "en": "Match each AI technology with its allied health specialty:"
+      },
+      "left": [
+        { "id": "L1", "text": { "ar": "APAS Independence", "en": "APAS Independence" } },
+        { "id": "L2", "text": { "ar": "LumineticsCore", "en": "LumineticsCore" } },
+        { "id": "L3", "text": { "ar": "Hinge Health TrueMotion", "en": "Hinge Health TrueMotion" } },
+        { "id": "L4", "text": { "ar": "Phonak DEEPSONIC", "en": "Phonak DEEPSONIC" } }
+      ],
+      "right": [
+        { "id": "R1", "text": { "ar": "قراءة أطباق الزراعة البكتيرية آلياً", "en": "Automated bacterial culture plate reading" } },
+        { "id": "R2", "text": { "ar": "تشخيص مستقل لاعتلال الشبكية السكري", "en": "Autonomous diabetic retinopathy diagnosis" } },
+        { "id": "R3", "text": { "ar": "تتبع حركة المريض بالكاميرا للعلاج الطبيعي", "en": "Camera-based patient motion tracking for physical therapy" } },
+        { "id": "R4", "text": { "ar": "معالجة صوتية ذكية في أجهزة السمع", "en": "Smart audio processing in hearing aids" } }
+      ],
+      "correct_pairs": [
+        { "left": "L1", "right": "R1" },
+        { "left": "L2", "right": "R2" },
+        { "left": "L3", "right": "R3" },
+        { "left": "L4", "right": "R4" }
+      ],
+      "hint_after": {
+        "ar": "أربعة تخصصات صحية مساعدة مختلفة — علوم مختبرات، بصريات، علاج طبيعي، سمعيات — كلها تشهد ثورة AI. شريحة Phonak DEEPSONIC تجري 7,700 مليون عملية في الثانية (53 ضعف المعالج السابق) مدرّبة على 22 مليون عينة صوتية.",
+        "en": "Four different allied health specialties — lab sciences, optometry, PT, audiology — all experiencing an AI revolution. The Phonak DEEPSONIC chip performs 7,700 million operations per second (53× previous processor), trained on 22 million sound samples."
+      }
+    },
+    {
+      "id": "alh-sort-001",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات سير العمل الصحيح عند استخدام نظام AI للتشخيص المستقل لاعتلال الشبكية السكري في عيادة رعاية أولية:",
+        "en": "Order the correct workflow steps when using an autonomous AI system for diabetic retinopathy diagnosis in a primary care clinic:"
+      },
+      "items": [
+        { "id": "S1", "text": { "ar": "التقاط صور الشبكية بكاميرا متوافقة دون توسيع حدقة العين", "en": "Capture retinal images with a compatible camera without pupil dilation" } },
+        { "id": "S2", "text": { "ar": "الخوارزمية تحلل الصور وتصدر نتيجة تشخيصية خلال أقل من دقيقة", "en": "The algorithm analyzes images and issues a diagnostic result in under one minute" } },
+        { "id": "S3", "text": { "ar": "النتيجة السلبية تُوثّق مباشرة — الإيجابية تُحال لطبيب عيون", "en": "A negative result is documented directly — a positive result is referred to an ophthalmologist" } },
+        { "id": "S4", "text": { "ar": "متابعة دورية حسب الجدول (سنوياً للسلبيين) مع تكرار الفحص AI", "en": "Periodic follow-up per schedule (annually for negatives) with repeated AI screening" } }
+      ],
+      "correct_order": ["S1", "S2", "S3", "S4"],
+      "hint_after": {
+        "ar": "في التجربة السريرية المحورية لـ LumineticsCore، تجنّب النظام 91% من زيارات الأخصائيين غير الضرورية عبر تقديم نتيجة في نقطة الرعاية مباشرة. هذا يعني أن مرضى السكري يحصلون على فحص الشبكية أثناء زيارتهم الروتينية لطبيب الرعاية الأولية.",
+        "en": "In LumineticsCore's pivotal trial, the system avoided 91% of unnecessary specialist visits by providing a point-of-care result. This means diabetic patients get retinal screening during their routine primary care visit."
+      }
+    },
+    {
+      "id": "alh-self-001",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت فني مختبرات طبية بخبرة 10 سنوات. مديرك يُخبرك أن نظام AI الجديد سيقرأ تلقائياً الأطباق السلبية (حوالي 70% من العمل) ويُبقي لك فقط الأطباق الإيجابية المعقدة. ما شعورك؟",
+        "en": "You're a 10-year experienced medical lab technician. Your manager tells you the new AI system will automatically read negative plates (about 70% of the work) and leave you only the complex positive plates. How do you feel?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ممتاز — أخيراً سأركّز على الحالات المثيرة والمعقدة بدل الروتين المُمل",
+            "en": "Excellent — I'll finally focus on interesting, complex cases instead of boring routine work"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقبول لكن يجب أن تبقى لي صلاحية مراجعة نتائج النظام عشوائياً للتأكد من جودته",
+            "en": "Acceptable but I should retain the authority to randomly audit the system's results for quality"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق — إذا لم أتدرب على قراءة السلبيات ستتراجع مهاراتي مع الوقت",
+            "en": "Worried — if I don't practice reading negatives, my skills will degrade over time"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "رافض — قراءة الأطباق بنفسي هي جوهر عملي ولا أقبل التخلي عنها",
+            "en": "I refuse — reading plates myself is the core of my work and I won't give it up"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "قلق تراجع المهارات (deskilling) مشروع تماماً — دراسة Lancet 2025 وثّقت هذه الظاهرة في التنظير. لكن المختبرات تواجه نقصاً في الكوادر بمعدل شغور 7.2%، مما يجعل الأتمتة ضرورة وليست رفاهية. الحل: مراجعة دورية عشوائية للحفاظ على الكفاءة.",
+        "en": "The deskilling concern is entirely valid — a 2025 Lancet study documented this in endoscopy. But labs face a 7.2% vacancy rate, making automation a necessity, not a luxury. The solution: periodic random audits to maintain competency."
+      }
+    },
+    {
+      "id": "alh-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "Sword Health أطلقت Phoenix — أخصائي علاج طبيعي محادثاتي بالذكاء الاصطناعي يتحدث مع المريض ويُعدّل التمارين في الوقت الحقيقي. كأخصائي علاج طبيعي، ما رأيك؟",
+        "en": "Sword Health launched Phoenix — a conversational AI physical therapist that talks to patients and adjusts exercises in real time. As a PT, what's your take?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أداة قوية لتوسيع وصول خدماتي — أستخدمها للمتابعة المنزلية بينما أركّز حضورياً على التقييم والحالات الصعبة",
+            "en": "A powerful tool to extend my reach — I'd use it for home follow-up while focusing in-person on assessment and difficult cases"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مفيدة للحالات البسيطة لكنني لا أثق بها مع حالات ما بعد الجراحة أو المعقدة",
+            "en": "Useful for simple cases but I don't trust it with post-surgical or complex cases"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق من أن المرضى سيفضلون الراحة الرقمية على الزيارات الحضورية الضرورية",
+            "en": "Concerned patients will prefer digital convenience over necessary in-person visits"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "العلاج الطبيعي يتطلب لمساً وتقييماً يدوياً — لا يمكن استبداله بمحادثة",
+            "en": "PT requires touch and manual assessment — it can't be replaced by a conversation"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "Sword Health خدمت 700,000+ عضو بأكثر من 10 ملايين جلسة AI وادّخرت لعملائها أكثر من مليار دولار. لكن الشركة نفسها خفّضت 17% من كوادرها السريرية في أكتوبر 2024 ضمن إعادة هيكلة — مما يؤكد أن التحول ليس نظرياً بل يحدث الآن.",
+        "en": "Sword Health served 700,000+ members with 10+ million AI sessions and saved clients over $1 billion. But the company itself cut 17% of clinical staff in October 2024 during restructuring — confirming this transformation is not theoretical but happening now."
+      }
+    }
+  ]
+}
