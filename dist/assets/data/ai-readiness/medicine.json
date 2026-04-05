@@ -4,8 +4,8 @@
     "ar": "الطب البشري",
     "en": "Medicine"
   },
-  "version": "1.0",
-  "last_updated": "2026-04-04",
+  "version": "2.0",
+  "last_updated": "2026-04-06",
   "questions": [
     {
       "id": "med-mcq-001",
@@ -532,6 +532,4263 @@
         "ar": "تحيز AI الطبي ليس نظرياً: دراسة مشهورة في Science وجدت أن خوارزمية تُميّز ضد المرضى السود بشكل منهجي. أجهزة قياس الأكسجين تُخطئ قراءات المرضى ذوي البشرة الداكنة بمعدل 3 أضعاف. هذه مشكلة تمس سلامة المرضى مباشرة وليست قابلة للتأجيل.",
         "en": "Medical AI bias isn't theoretical: a famous Science study found an algorithm that systematically discriminated against Black patients. Pulse oximeters misread dark-skinned patients at 3× the rate. This is a direct patient safety issue that cannot be deferred."
       }
+    },
+    {
+      "id": "med-mcq-004",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب أشعة وتدرس اعتماد نظام AI جديد. علمت أن 76% من أجهزة AI الطبية المرخصة من FDA تتركز في تخصص واحد. ما هو هذا التخصص؟",
+        "en": "You're a radiologist evaluating a new AI system. You learn that 76% of all FDA-authorized AI medical devices are concentrated in one specialty. Which specialty is it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التصوير التشخيصي (الأشعة)",
+            "en": "Diagnostic imaging (Radiology)"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أمراض القلب",
+            "en": "Cardiology"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "علم الأمراض (الباثولوجي)",
+            "en": "Pathology"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "طب الطوارئ",
+            "en": "Emergency medicine"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "التصوير التشخيصي يستحوذ على 76% من أجهزة AI المرخصة من FDA (أكثر من 1,000 جهاز من أصل 1,300+). أمراض القلب تأتي ثانياً لكن بفارق كبير. هذا التركيز يعكس طبيعة الأشعة كتخصص يعتمد على تحليل الصور — وهو ما يتفوق فيه AI.",
+        "en": "Diagnostic imaging accounts for 76% of FDA-authorized AI devices (over 1,000 out of 1,300+). Cardiology comes second but by a wide margin. This concentration reflects radiology's image-analysis nature — where AI excels."
+      }
+    },
+    {
+      "id": "med-mcq-005",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت رئيس قسم الأشعة وتقيّم أدوات AI. نظام Aidoc حصل على إنجاز تاريخي في فبراير 2025. ما هو هذا الإنجاز؟",
+        "en": "You're a radiology department chief evaluating AI tools. Aidoc achieved a historic milestone in February 2025. What was it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أول نظام AI يحل محل طبيب أشعة بالكامل في مستشفى أمريكي",
+            "en": "First AI system to fully replace a radiologist in a U.S. hospital"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أول جهاز طبي مدعوم بنموذج أساسي (Foundation Model) يحصل على ترخيص FDA",
+            "en": "First foundation-model-powered medical device to receive FDA clearance"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أول نظام AI يحقق دقة 100% في كشف سرطان الرئة",
+            "en": "First AI system to achieve 100% accuracy in lung cancer detection"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أول نظام AI يُستخدم في 5,000 مستشفى حول العالم",
+            "en": "First AI system deployed in 5,000 hospitals worldwide"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "جهاز CARE1™ من Aidoc كان أول جهاز طبي مبني على نموذج أساسي (Foundation Model) يحصل على ترخيص FDA. النماذج الأساسية تختلف عن AI التقليدي بقدرتها على التعلم من بيانات ضخمة ومتنوعة ثم التكيف مع مهام متعددة — وهذا يمثل نقلة نوعية في AI الطبي.",
+        "en": "Aidoc's CARE1™ was the first foundation-model-powered medical device to receive FDA clearance. Foundation models differ from traditional AI in their ability to learn from massive, diverse data and adapt to multiple tasks — a paradigm shift in medical AI."
+      }
+    },
+    {
+      "id": "med-mcq-006",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب أشعة وتستخدم نظام AI لفرز الحالات الطارئة. نظام Viz.ai مُطبّق في أكثر من 1,700 مستشفى لكشف السكتات الدماغية. ما مقدار تقليل وقت العلاج الذي حققه؟",
+        "en": "You're a radiologist using an AI triage system. Viz.ai is deployed in 1,700+ hospitals for stroke detection. How much did it reduce treatment time?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "10 دقائق",
+            "en": "10 minutes"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "31 دقيقة",
+            "en": "31 minutes"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "ساعة كاملة",
+            "en": "A full hour"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم يُثبت تقليل ذو دلالة إحصائية",
+            "en": "No statistically significant reduction was proven"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Viz.ai يقلل وقت العلاج من الباب إلى التدخل بـ 31 دقيقة في السكتات الدماغية — وكل دقيقة تعني حوالي 1.9 مليون خلية عصبية. حساسية النظام لانسداد الأوعية الكبيرة تتراوح بين 82-90%.",
+        "en": "Viz.ai reduces door-to-treatment time by 31 minutes in strokes — and every minute means about 1.9 million neurons lost. The system's sensitivity for large vessel occlusion ranges from 82-90%."
+      }
+    },
+    {
+      "id": "med-mcq-007",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في يوليو 2025، حقق باحثون في جامعة جونز هوبكنز إنجازاً جراحياً غير مسبوق. ما الذي فعلوه؟",
+        "en": "In July 2025, researchers at Johns Hopkins University achieved an unprecedented surgical milestone. What did they accomplish?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "روبوت بذكاء اصطناعي أجرى استئصال مرارة كاملاً (17 مهمة) دون تدخل بشري بدقة 100%",
+            "en": "An AI robot performed a complete gallbladder removal (17 tasks) without human intervention with 100% accuracy"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أول زراعة قلب بمساعدة الروبوت بالكامل",
+            "en": "First fully robot-assisted heart transplant"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نظام AI تفوّق على كل الجراحين البشريين في اختبار البورد",
+            "en": "An AI system outperformed all human surgeons on board exams"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أول عملية جراحية عن بُعد بين قارتين مختلفتين",
+            "en": "First remote surgery between two different continents"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "روبوت SRT-H أنجز 8 عمليات استئصال مرارة في بيئة محاكاة واقعية بدقة 100%. استخدم نماذج لغوية كبيرة (مشابهة لـ ChatGPT) للتخطيط والاستجابة لأوامر صوتية. لكنه لا يزال أبطأ من الجراح البشري — تماماً كطبيب مقيم يتعلم.",
+        "en": "The SRT-H robot completed 8 gallbladder removals in a realistic simulated environment with 100% accuracy. It used large language models (similar to ChatGPT) for planning and responding to voice commands. But it's still slower than human surgeons — just like a learning resident."
+      }
+    },
+    {
+      "id": "med-mcq-008",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت جراح وتستخدم نظام Da Vinci 5 الجديد (2024). ما الميزة التي يضيفها هذا الإصدار مقارنة بالأجيال السابقة؟",
+        "en": "You're a surgeon using the new Da Vinci 5 system (2024). What feature does this version add compared to previous generations?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تغذية راجعة لمسية (Force Feedback) تقلل شد الخيوط الجراحية بنسبة 43%",
+            "en": "Force feedback that reduces peak suture tension by 43%"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "قدرة على إجراء العمليات بشكل مستقل تماماً دون جراح",
+            "en": "Ability to perform operations fully autonomously without a surgeon"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "كاميرا بدقة 16K بدلاً من 4K",
+            "en": "A 16K camera instead of 4K"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أذرع روبوتية إضافية تصل إلى 8 أذرع",
+            "en": "Additional robotic arms reaching up to 8 arms"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "Da Vinci 5 يوفر تغذية راجعة لمسية لأول مرة — يشعر الجراح بمقاومة الأنسجة فعلياً. هذا قلّل شد الخيوط 43%. شركة Intuitive Surgical تسيطر على 70-80% من سوق الجراحة الروبوتية عالمياً بأكثر من 11,100 وحدة مُركّبة وإيرادات 10.1 مليار دولار في 2025.",
+        "en": "Da Vinci 5 provides force feedback for the first time — surgeons can actually feel tissue resistance. This reduced suture tension by 43%. Intuitive Surgical controls 70-80% of the global surgical robotics market with 11,100+ installed units and $10.1 billion in 2025 revenue."
+      }
+    },
+    {
+      "id": "med-mcq-009",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "سوق الجراحة الروبوتية العالمي يُقدّر بـ 13-14 مليار دولار في 2025. ما التوقعات لعام 2035؟",
+        "en": "The global surgical robotics market is estimated at $13-14 billion in 2025. What are the projections for 2035?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "20 مليار دولار",
+            "en": "$20 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أكثر من 50 مليار دولار",
+            "en": "Over $50 billion"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "100 مليار دولار",
+            "en": "$100 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "سيتراجع بسبب المخاوف القانونية",
+            "en": "It will decline due to legal concerns"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "سوق الجراحة الروبوتية سيتجاوز 50 مليار دولار بحلول 2035. المنافسة تزداد: Medtronic Hugo حصل على ترخيص FDA لجراحات المسالك البولية (ديسمبر 2025)، وJ&J Ottava يخطط لتقديم طلب FDA في 2026.",
+        "en": "The surgical robotics market will exceed $50 billion by 2035. Competition is growing: Medtronic Hugo received FDA clearance for urological procedures (December 2025), and J&J Ottava plans FDA submission in 2026."
+      }
+    },
+    {
+      "id": "med-mcq-010",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب باطنية تعاني من إرهاق التوثيق. دراسة في JAMA Network Open (أكتوبر 2025) قيّمت تأثير أدوات التوثيق الصوتي بـ AI على 263 طبيباً في 6 أنظمة صحية. ما النتيجة؟",
+        "en": "You're an internist suffering from documentation burnout. A JAMA Network Open study (October 2025) evaluated AI ambient documentation tools across 263 clinicians in 6 health systems. What was the result?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "انخفض معدل الإرهاق المهني من 51.9% إلى 38.8%",
+            "en": "Burnout rate dropped from 51.9% to 38.8%"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لم يُلاحظ تغيير ذو دلالة في معدلات الإرهاق",
+            "en": "No significant change in burnout rates was observed"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "زاد الإرهاق لأن الأطباء قلقون من أخطاء AI",
+            "en": "Burnout increased because doctors worried about AI errors"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تحسّن التوثيق لكن رضا المرضى انخفض",
+            "en": "Documentation improved but patient satisfaction decreased"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أداة Abridge قلّصت الإرهاق من 51.9% إلى 38.8% — انخفاض 13 نقطة مئوية. سوق التوثيق الصوتي بـ AI بلغ 600 مليون دولار في 2025 (2.4 ضعف العام السابق). 100% من الأنظمة الصحية الأمريكية المُستطلعة تستخدم هذه التقنية بشكل ما.",
+        "en": "Abridge reduced burnout from 51.9% to 38.8% — a 13 percentage point drop. The ambient AI scribe market hit $600 million in 2025 (2.4× year-over-year). 100% of surveyed U.S. health systems use this technology in some form."
+      }
+    },
+    {
+      "id": "med-mcq-011",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "دراسة في NEJM AI (2025) قيّمت نظام Nuance DAX Copilot في أنظمة Providence Health. ما مقدار التوفير في وقت التوثيق خارج ساعات العمل؟",
+        "en": "A study in NEJM AI (2025) evaluated Nuance DAX Copilot at Providence Health systems. How much documentation time was saved outside working hours?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "30 دقيقة أسبوعياً",
+            "en": "30 minutes per week"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ساعة واحدة أسبوعياً",
+            "en": "One hour per week"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "2.5 ساعة أسبوعياً",
+            "en": "2.5 hours per week"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "5 ساعات أسبوعياً",
+            "en": "5 hours per week"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "DAX Copilot وفّر 2.5 ساعة أسبوعياً من التوثيق خارج ساعات العمل. النظام مُطبّق في أكثر من 150 نظاماً صحياً. في Mass General Brigham، أكثر من 3,000 طبيب يستخدمون التوثيق الصوتي بـ AI، مع انخفاض الإرهاق بـ 21.2 نقطة مئوية.",
+        "en": "DAX Copilot saved 2.5 hours per week of off-hours documentation. It's deployed in 150+ health systems. At Mass General Brigham, 3,000+ physicians use ambient AI documentation, with burnout dropping by 21.2 percentage points."
+      }
+    },
+    {
+      "id": "med-mcq-012",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب في المملكة العربية السعودية. في مايو 2025، أُطلق مشروع طبي رائد في منطقة الأحساء. ما هو؟",
+        "en": "You're a physician in Saudi Arabia. In May 2025, a pioneering medical project launched in the Al-Ahsa region. What was it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أول عيادة طبيب ذكاء اصطناعي في العالم",
+            "en": "The world's first AI-powered doctor clinic"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أول مستشفى يعمل بالكامل بدون أطباء بشريين",
+            "en": "The first hospital operating entirely without human doctors"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أول منصة تطبيب عن بُعد بالعربية حصرياً",
+            "en": "The first Arabic-exclusive telemedicine platform"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أول نظام صيدلية روبوتية في الشرق الأوسط",
+            "en": "The first robotic pharmacy system in the Middle East"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "السعودية أطلقت أول عيادة طبيب AI في العالم. سوق AI الصحي السعودي بلغ 435 مليون دولار في 2024 ويُتوقع أن يصل 8.39 مليار دولار بحلول 2033 (نمو 37% سنوياً). المستشفى الافتراضي SEHA يخدم أكثر من 255,000 مريض عبر تطبيق صحتي.",
+        "en": "Saudi Arabia launched the world's first AI doctor clinic. The Saudi healthcare AI market reached $435 million in 2024, projected to reach $8.39 billion by 2033 (37% CAGR). The SEHA Virtual Hospital serves 255,000+ patients through the Sehhaty app."
+      }
+    },
+    {
+      "id": "med-mcq-013",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام Paige AI حصل على أول ترخيص FDA في تخصص الباثولوجي. في أبريل 2025، حصل على تصنيف Breakthrough Device لأداة جديدة. ما الذي تغطيه هذه الأداة؟",
+        "en": "Paige AI received the first FDA pathology clearance. In April 2025, it earned Breakthrough Device designation for a new tool. What does this tool cover?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "كشف سرطان البروستاتا فقط بدقة أعلى",
+            "en": "Prostate cancer detection only with higher accuracy"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "كشف السرطان في 40 نوعاً من الأنسجة باستخدام نموذج Virchow الأساسي المُدرّب على 4+ مليون شريحة",
+            "en": "Cancer detection across 40 tissue types using the Virchow Foundation Model trained on 4+ million slides"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تشخيص أمراض الدم فقط من عينات الدم",
+            "en": "Blood disease diagnosis only from blood samples"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تحديد الطفرات الجينية من صور الأنسجة",
+            "en": "Identifying genetic mutations from tissue images"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "أداة PanCancer Detect من Paige تكشف السرطان في 40 نوعاً من الأنسجة — وهي مبنية على نموذج Virchow الأساسي المُدرّب على أكثر من 4 ملايين شريحة باثولوجية. أداتهم السابقة Prostate Detect حققت حساسية 0.99 وقلّصت وقت التشخيص 65.5%.",
+        "en": "Paige's PanCancer Detect covers cancer detection across 40 tissue types — built on the Virchow Foundation Model trained on 4+ million pathology slides. Their earlier Prostate Detect tool achieved 0.99 sensitivity and reduced diagnosis time by 65.5%."
+      }
+    },
+    {
+      "id": "med-mcq-014",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "دراسة شهيرة في مجلة Science كشفت أن خوارزمية صحية تُستخدم على نطاق واسع في أمريكا تُميّز ضد المرضى السود بشكل منهجي. ما كان السبب التقني لهذا التحيز؟",
+        "en": "A landmark Science study revealed that a widely-used U.S. health algorithm systematically discriminated against Black patients. What was the technical cause of this bias?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "البيانات التدريبية لم تتضمن مرضى سوداً بشكل كافٍ",
+            "en": "The training data didn't include enough Black patients"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الخوارزمية تنبأت بتكاليف الرعاية الصحية بدلاً من شدة المرض — والسود ينفقون أقل تاريخياً بسبب عدم المساواة",
+            "en": "The algorithm predicted healthcare costs instead of illness severity — and Black patients historically spend less due to inequity"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "المبرمجون أدخلوا تحيزاً عنصرياً عمداً في الكود",
+            "en": "Programmers deliberately introduced racial bias into the code"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الخوارزمية استخدمت العرق كمتغير مباشر في القرار",
+            "en": "The algorithm used race as a direct decision variable"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الخوارزمية استخدمت التكلفة الصحية كبديل عن الحاجة الطبية. لكن بسبب عدم المساواة التاريخية، ينفق السود أقل على الرعاية — فبدت حالتهم الصحية أفضل مما هي. تصحيح هذا سيرفع نسبة السود المؤهلين للمساعدة من 17.7% إلى 46.5%.",
+        "en": "The algorithm used healthcare cost as a proxy for medical need. But due to historical inequity, Black patients spend less on care — making them appear healthier than they are. Fixing this would increase Black patients eligible for help from 17.7% to 46.5%."
+      }
+    },
+    {
+      "id": "med-mcq-015",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "دراسة في JEAD (2025) حلّلت 4,000 صورة جلدية مُولّدة بالذكاء الاصطناعي. ما النسبة التي عكست بشرة داكنة؟",
+        "en": "A 2025 JEAD study analyzed 4,000 AI-generated dermatological images. What percentage reflected dark skin?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "10.2% فقط",
+            "en": "Only 10.2%"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حوالي 30%",
+            "en": "About 30%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أقل من 1%",
+            "en": "Less than 1%"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50% تقريباً — الأنظمة الحديثة عالجت مشكلة التحيز",
+            "en": "About 50% — modern systems have addressed the bias problem"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "10.2% فقط من الصور عكست بشرة داكنة، و15% فقط صوّرت الحالة الجلدية بدقة. أجهزة قياس الأكسجين تُخطئ قراءات المرضى ذوي البشرة الداكنة بمعدل 3 أضعاف. التحيز ليس مشكلة نظرية — إنه يؤثر على سلامة المرضى فعلياً.",
+        "en": "Only 10.2% of images reflected dark skin, and only 15% accurately depicted the intended condition. Pulse oximeters misread dark-skinned patients at 3× the rate. Bias isn't theoretical — it directly affects patient safety."
+      }
+    },
+    {
+      "id": "med-mcq-016",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب عناية مركزة تبحث عن نظام AI لكشف الإنتان مبكراً. نظام eCART من جامعة شيكاغو اختُبر على أكثر من 362,000 حالة. ما النتيجة الأبرز؟",
+        "en": "You're an ICU physician looking for an AI sepsis detection system. The eCART system from the University of Chicago was tested on 362,000+ encounters. What was the most notable result?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "خفّض معدل الوفيات من 13.9% إلى 8.8%",
+            "en": "Reduced mortality from 13.9% to 8.8%"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "كشف الإنتان قبل الأطباء بـ 6 ساعات",
+            "en": "Detected sepsis 6 hours before doctors"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لم يتفوق على التقييم السريري التقليدي",
+            "en": "Did not outperform traditional clinical assessment"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "نجح فقط في مستشفيات أكاديمية كبيرة",
+            "en": "Succeeded only in large academic hospitals"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "eCART حقق AUROC 0.895 وخفّض الوفيات من 13.9% إلى 8.8%. في المقابل، Epic Sepsis Model المنتشر في مئات المستشفيات سجّل AUC 0.63 فقط وفاته 67% من الحالات. الدرس: ليس كل نظام AI متساوٍ في الجودة.",
+        "en": "eCART achieved AUROC 0.895 and cut mortality from 13.9% to 8.8%. In contrast, the widely-deployed Epic Sepsis Model scored only AUC 0.63 and missed 67% of cases. The lesson: not all AI systems are equal in quality."
+      }
+    },
+    {
+      "id": "med-mcq-017",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في أبريل 2024، حققت شركة Prenosis إنجازاً تنظيمياً في مجال الإنتان. ما هو؟",
+        "en": "In April 2024, Prenosis achieved a regulatory milestone in the sepsis space. What was it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أول ترخيص FDA على الإطلاق لنظام AI لكشف الإنتان (Sepsis ImmunoScore)",
+            "en": "The first-ever FDA clearance for an AI sepsis detection system (Sepsis ImmunoScore)"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أول نظام AI يحل محل أطباء العناية المركزة",
+            "en": "The first AI system to replace ICU physicians"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أول دراسة سريرية تثبت أن AI أدق من أطباء الطوارئ",
+            "en": "The first clinical study proving AI is more accurate than ER doctors"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أول ترخيص أوروبي لنظام AI في العناية المركزة",
+            "en": "The first European clearance for an AI ICU system"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Sepsis ImmunoScore من Prenosis كان أول نظام AI يحصل على ترخيص FDA لكشف الإنتان. هذا مهم لأن Epic Sepsis Model — الأكثر انتشاراً — لم يكن مرخصاً من FDA عند نشره، وتبيّن لاحقاً ضعف أدائه الشديد في التقييم المستقل.",
+        "en": "Prenosis's Sepsis ImmunoScore was the first AI sepsis detection system to receive FDA clearance. This matters because the Epic Sepsis Model — the most widely deployed — wasn't FDA-cleared when launched, and was later shown to perform poorly in independent validation."
+      }
+    },
+    {
+      "id": "med-mcq-018",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "دراسة في npj Digital Medicine (2025) قيّمت هلوسة نماذج اللغة الكبيرة في السياق الطبي عبر 12,999 جملة راجعها أطباء. ما معدل الهلوسة الذي وجدته؟",
+        "en": "A study in npj Digital Medicine (2025) assessed LLM hallucination in medical contexts across 12,999 clinician-annotated sentences. What hallucination rate did it find?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "1.47% هلوسة و3.45% حذف معلومات",
+            "en": "1.47% hallucination and 3.45% omission"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقل من 0.1% — الأنظمة الحديثة دقيقة جداً",
+            "en": "Less than 0.1% — modern systems are very accurate"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أكثر من 15% من الجمل تضمنت معلومات خاطئة",
+            "en": "Over 15% of sentences contained false information"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "10% تماماً — نسبة ثابتة عبر كل النماذج",
+            "en": "Exactly 10% — a consistent rate across all models"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "1.47% هلوسة تبدو قليلة، لكن في أشعة AI، 5-10% من الحالات تضمنت تشخيصات خاطئة مرتبطة بالهلوسة — منها تصنيف عُقد حميدة كخبيثة في 12% من الحالات. وروبوت دردشة علاجي نصح مدمناً متعافياً بتعاطي المخدرات \"كمكافأة\".",
+        "en": "1.47% hallucination seems low, but in AI radiology, 5-10% of cases involved hallucination-linked misdiagnoses — including flagging benign nodules as malignant in 12% of cases. A therapy chatbot even told a recovering addict to use drugs 'as a treat.'"
+      }
+    },
+    {
+      "id": "med-mcq-019",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "استطلاع أمريكي (أبريل 2025) وجد أن 79% من البالغين يبحثون عن إجابات صحية عبر الإنترنت. ما النسبة التي ستتجاهل أو تؤجل زيارة الطبيب إذا قال لها AI إن أعراضها منخفضة الخطورة؟",
+        "en": "A U.S. survey (April 2025) found 79% of adults seek health answers online. What percentage would skip or delay seeing a doctor if AI characterized their symptoms as low risk?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقل من 5%",
+            "en": "Less than 5%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حوالي 15%",
+            "en": "About 15%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "واحد من كل 3 تقريباً",
+            "en": "Nearly 1 in 3"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أكثر من النصف",
+            "en": "More than half"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "واحد من كل 3 أشخاص سيتجاهل أو يؤجل الطبيب بناءً على تقييم AI. هذا خطير لأن نماذج اللغة الكبيرة تهلوس بنسبة 1.47% وتحذف معلومات بنسبة 3.45%. المريض لا يستطيع تمييز المعلومة الصحيحة من الخاطئة — وهنا يكمن الخطر الحقيقي.",
+        "en": "Nearly 1 in 3 people would skip or delay seeing a doctor based on AI assessment. This is dangerous because LLMs hallucinate at 1.47% and omit information at 3.45%. Patients can't distinguish correct from incorrect information — and that's where the real danger lies."
+      }
+    },
+    {
+      "id": "med-mcq-020",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "باحثون في UCSF طوّروا نظام AI يتنبأ بمرض الزهايمر. قبل كم سنة من ظهور الأعراض يستطيع النظام التنبؤ؟",
+        "en": "UCSF researchers developed an AI system that predicts Alzheimer's disease. How many years before symptoms appear can the system predict?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "سنة واحدة",
+            "en": "One year"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "3 سنوات",
+            "en": "3 years"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حتى 7 سنوات",
+            "en": "Up to 7 years"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "10 سنوات أو أكثر",
+            "en": "10 years or more"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "نظام UCSF يتنبأ بالزهايمر قبل 7 سنوات من الأعراض. هذا يفتح نافذة للتدخل المبكر عندما تكون العلاجات أكثر فعالية. طريقة MIGHT من جونز هوبكنز حسّنت أيضاً دقة الخزعة السائلة لكشف السرطان المبكر.",
+        "en": "The UCSF system predicts Alzheimer's up to 7 years before symptoms. This opens a window for early intervention when treatments are most effective. Johns Hopkins' MIGHT method also improved liquid biopsy reliability for early cancer detection."
+      }
+    },
+    {
+      "id": "med-mcq-021",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب أورام وتبحث عن أداة AI جديدة للتشخيص المرافق. في أبريل 2025، حصلت شركة Roche على تصنيف Breakthrough Device لأداة فريدة. ما طبيعتها؟",
+        "en": "You're an oncologist looking for a new AI companion diagnostic tool. In April 2025, Roche received Breakthrough Device designation for a unique tool. What is it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أول تشخيص مرافق بالباثولوجي الحاسوبي مدعوم بـ AI لسرطان الرئة",
+            "en": "First AI-powered computational pathology companion diagnostic for lung cancer"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أداة لكشف سرطان الثدي من صور الأشعة",
+            "en": "A tool for breast cancer detection from imaging"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نظام لتحديد جرعات العلاج الكيميائي تلقائياً",
+            "en": "A system for automatic chemotherapy dosing"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تطبيق هاتفي لمراقبة الأعراض الجانبية",
+            "en": "A mobile app for monitoring side effects"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أداة VENTANA TROP2 من Roche هي أول تشخيص مرافق بالباثولوجي الحاسوبي يحصل على Breakthrough Device. تستخدم AI لتحليل تلوين TROP2 في خلايا الورم لتحديد المرضى المستفيدين من عقار DATROWAY لسرطان الرئة غير صغير الخلايا.",
+        "en": "Roche's VENTANA TROP2 is the first computational pathology companion diagnostic to receive Breakthrough Device designation. It uses AI to analyze TROP2 staining in tumor cells to identify patients who would benefit from DATROWAY for non-small cell lung cancer."
+      }
+    },
+    {
+      "id": "med-mcq-022",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "قانون الذكاء الاصطناعي الأوروبي (EU AI Act) الذي دخل حيز التنفيذ في أغسطس 2024 يصنّف جميع أجهزة AI الطبية على أنها:",
+        "en": "The EU AI Act, which entered into force in August 2024, classifies all AI medical devices as:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "منخفضة المخاطر — لا تحتاج إشرافاً خاصاً",
+            "en": "Low-risk — requiring no special oversight"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "عالية المخاطر — مع عقوبات تصل 35 مليون يورو أو 7% من الإيرادات السنوية",
+            "en": "High-risk — with penalties up to €35 million or 7% of annual revenue"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "محظورة تماماً حتى إشعار آخر",
+            "en": "Completely prohibited until further notice"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "متوسطة المخاطر — تحتاج تقييماً ذاتياً فقط",
+            "en": "Medium-risk — requiring self-assessment only"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "EU AI Act يصنّف كل أجهزة AI الطبية كـ \"عالية المخاطر\" بعقوبات ضخمة. في أمريكا، لا يوجد قانون شامل مماثل بعد، لكن FDA أصدرت 295 ترخيصاً لأجهزة AI في 2025 وحده. التنظيم يتسارع عالمياً لمواكبة التقنية.",
+        "en": "The EU AI Act classifies all medical AI devices as 'high-risk' with massive penalties. In the U.S., there's no comparable comprehensive law yet, but the FDA issued 295 AI device clearances in 2025 alone. Regulation is accelerating globally to keep up with technology."
+      }
+    },
+    {
+      "id": "med-mcq-023",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "شركة UnitedHealth Group تواجه دعوى قضائية جماعية بسبب خوارزمية nH Predict. ما الاتهام الرئيسي؟",
+        "en": "UnitedHealth Group faces a class-action lawsuit over its nH Predict algorithm. What is the main allegation?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخوارزمية لديها معدل خطأ 90% في رفض الرعاية بعد الحادة لمرضى Medicare المسنين",
+            "en": "The algorithm has a 90% error rate in denying post-acute care to elderly Medicare patients"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الخوارزمية سرّبت بيانات طبية لملايين المرضى",
+            "en": "The algorithm leaked medical data of millions of patients"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الخوارزمية وصفت أدوية خاطئة تسببت في وفيات",
+            "en": "The algorithm prescribed wrong medications causing deaths"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الخوارزمية رفعت أسعار التأمين بشكل غير قانوني",
+            "en": "The algorithm illegally raised insurance premiums"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "خوارزمية nH Predict مُتهمة بمعدل خطأ 90% في رفض الرعاية. Cigna أيضاً اتُّهمت برفض 300,000+ مطالبة في شهرين باستخدام خوارزمية PXDX. لا يوجد حتى الآن قانون واضح للمسؤولية عن أخطاء AI الطبية — الجهة الاتحادية الأمريكية (FSMB) توصي بتحمّل الأطباء وليس الشركات.",
+        "en": "The nH Predict algorithm is accused of a 90% error rate in denying care. Cigna was also accused of denying 300,000+ claims in two months using its PXDX algorithm. There's still no clear legal framework for AI medical liability — the FSMB recommends clinicians, not AI makers, bear responsibility."
+      }
+    },
+    {
+      "id": "med-mcq-024",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "كم يبلغ عدد أجهزة AI الطبية المرخصة من FDA حتى نهاية 2025؟",
+        "en": "How many FDA-authorized AI medical devices exist as of the end of 2025?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "حوالي 200 جهاز",
+            "en": "About 200 devices"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حوالي 500 جهاز",
+            "en": "About 500 devices"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أكثر من 1,300 جهاز",
+            "en": "Over 1,300 devices"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أكثر من 5,000 جهاز",
+            "en": "Over 5,000 devices"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أكثر من 1,300 جهاز AI طبي مرخص من FDA، منها 295 جهازاً جديداً في 2025 وحده. 75% منها في التصوير الطبي. متوسط وقت الترخيص 142 يوماً — وربع الأجهزة حصلت على الترخيص في أقل من 90 يوماً.",
+        "en": "Over 1,300 FDA-authorized AI medical devices exist, with 295 new ones in 2025 alone. 75% are in medical imaging. Median clearance time is 142 days — and a quarter of devices were cleared in under 90 days."
+      }
+    },
+    {
+      "id": "med-mcq-025",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب طوارئ. مراجعة منهجية في JAMA Network Open (2025) قيّمت أدوات AI لتقليل إعادة الدخول خلال 30 يوماً. ما النسبة التي حققتها هذه الأدوات؟",
+        "en": "You're an ER physician. A JAMA Network Open systematic review (2025) evaluated AI readmission reduction tools for 30-day readmissions. What reduction did these tools achieve?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "5% فقط",
+            "en": "Only 5%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "17% في إعادة الدخول خلال 30 يوماً و28% خلال 90 يوماً",
+            "en": "17% in 30-day readmissions and 28% in 90-day readmissions"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "50% أو أكثر",
+            "en": "50% or more"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم تُظهر فعالية ذات دلالة",
+            "en": "No significant effectiveness was shown"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أدوات AI قلّصت إعادة الدخول 17% خلال 30 يوماً و28% خلال 90 يوماً. والأهم: مبادرة مستشفى Zuckerberg في سان فرانسيسكو ألغت الفجوة العرقية في إعادة الدخول بين المرضى السود والسكان عموماً. McKinsey تقدّر أن AI يمكن أن يوفّر 200-360 مليار دولار سنوياً في الرعاية الصحية الأمريكية.",
+        "en": "AI tools cut 30-day readmissions by 17% and 90-day by 28%. Crucially, Zuckerberg SF General's AI initiative eliminated racial disparity in readmission rates between Black patients and the general population. McKinsey estimates AI could save U.S. healthcare $200-360 billion annually."
+      }
+    },
+    {
+      "id": "med-mcq-026",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب في مستشفى الملك فيصل التخصصي. المستشفى أعلن عن أكثر من 85,000 تدخل بـ AI. ما النتيجة الأبرز؟",
+        "en": "You're a physician at King Faisal Specialist Hospital. The hospital reported over 85,000 AI interventions. What was the most notable outcome?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "انخفاض وقت انتظار المرضى بأكثر من 50% وانخفاض انتظار الصيدلية 27%",
+            "en": "Patient wait times reduced by over 50% and pharmacy wait times by 27%"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "زيادة عدد العمليات الجراحية بنسبة 100%",
+            "en": "Surgical volume doubled"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الاستغناء عن 30% من الموظفين الإداريين",
+            "en": "30% of administrative staff were laid off"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تحسّن رضا المرضى فقط دون تأثير على الأوقات",
+            "en": "Patient satisfaction improved only, with no impact on times"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "مستشفى الملك فيصل التخصصي حقق 85,000+ تدخل بـ AI أدت إلى تقليل أوقات الانتظار أكثر من 50% و27% للصيدلية. السعودية تستثمر بقوة: سوق AI الصحي 435 مليون دولار (2024) بنمو 37% سنوياً نحو 8.39 مليار بحلول 2033.",
+        "en": "King Faisal Specialist Hospital achieved 85,000+ AI interventions leading to 50%+ reduction in wait times and 27% for pharmacy. Saudi Arabia is investing heavily: healthcare AI market $435M (2024) growing at 37% CAGR toward $8.39B by 2033."
+      }
+    },
+    {
+      "id": "med-mcq-027",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام LeanTaaS iQueue مُطبّق في أكثر من 500 مستشفى لإدارة غرف العمليات. دراسة شملت 57 مستشفى وجدت أن كل غرفة عمليات تحقق:",
+        "en": "The LeanTaaS iQueue system is deployed in 500+ hospitals for OR management. A study of 57 hospitals found that each operating room generates:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "زيادة 6% في عدد العمليات ومتوسط 500,000 دولار إيرادات إضافية سنوياً لكل غرفة",
+            "en": "6% increase in case volume and average $500,000 additional annual revenue per OR"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "توفير 50,000 دولار سنوياً فقط من تقليل الهدر",
+            "en": "Only $50,000 annual savings from waste reduction"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تقليل 30% في أوقات التشغيل دون تأثير مالي",
+            "en": "30% reduction in operating times with no financial impact"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم يُثبت عائداً مالياً واضحاً",
+            "en": "No clear financial return was demonstrated"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "iQueue يدير 3,000+ غرفة عمليات ويحقق 500,000 دولار إيرادات إضافية لكل غرفة سنوياً. CommonSpirit Health أبلغت عن عائد 40 مليون دولار. النظام يتنبأ بتوقيت الخروج بدقة أعلى 41% ويحدد عوائق الخروج بدقة 80%+.",
+        "en": "iQueue manages 3,000+ ORs and generates $500,000 additional revenue per OR annually. CommonSpirit Health reported $40 million ROI. The system predicts discharge timing 41% more accurately and identifies discharge barriers with 80%+ accuracy."
+      }
+    },
+    {
+      "id": "med-mcq-028",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "ما نسبة الأطباء الأمريكيين الذين يستخدمون أدوات AI في 2025 مقارنة بـ 2023؟",
+        "en": "What percentage of U.S. physicians use AI tools in 2025 compared to 2023?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ارتفعت من 38% إلى 66%",
+            "en": "Rose from 38% to 66%"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ارتفعت من 10% إلى 25%",
+            "en": "Rose from 10% to 25%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "بقيت ثابتة عند حوالي 50%",
+            "en": "Remained steady at about 50%"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "انخفضت بسبب مخاوف المسؤولية القانونية",
+            "en": "Declined due to liability concerns"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "استخدام AI بين الأطباء الأمريكيين قفز من 38% في 2023 إلى 66% في 2025. سوق الرعاية الصحية بـ AI بلغ 36.67 مليار دولار في 2025 ويُتوقع أن يصل 188-614 مليار بحلول 2030-2034.",
+        "en": "AI usage among U.S. physicians jumped from 38% in 2023 to 66% in 2025. The healthcare AI market reached $36.67 billion in 2025, projected to reach $188-614 billion by 2030-2034."
+      }
+    },
+    {
+      "id": "med-mcq-029",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب أشعة. دراسة في Northwestern Medicine قيّمت تأثير AI على كفاءة كتابة تقارير الأشعة. ما النتيجة؟",
+        "en": "You're a radiologist. A Northwestern Medicine study evaluated AI's impact on radiograph report efficiency. What was the result?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تحسّن 15.5% في المتوسط، وبعض الأطباء حققوا مكاسب تصل 80% للأشعة المقطعية",
+            "en": "15.5% average improvement, with some radiologists achieving up to 80% gains for CT scans"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تحسّن 3% فقط — لا فرق ذو دلالة",
+            "en": "Only 3% improvement — no significant difference"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تراجعت الكفاءة لأن الأطباء يقضون وقتاً في مراجعة اقتراحات AI",
+            "en": "Efficiency declined because doctors spend time reviewing AI suggestions"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تحسّن 50% موحّد عبر جميع أنواع الفحوصات",
+            "en": "Uniform 50% improvement across all exam types"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "AI حسّن كفاءة تقارير الأشعة 15.5% في المتوسط، ويصل إلى 80% في بعض حالات CT. تحليل تلوي وجد أن AI يمكن أن يقلل عبء عمل أطباء الأشعة حتى 53%. لكن الأطباء يقضون فقط 36% من وقتهم في تفسير الصور — الباقي استشارات ومهام لا يستطيع AI القيام بها.",
+        "en": "AI improved radiograph report efficiency by 15.5% on average, reaching 80% for some CT cases. A meta-analysis found AI can reduce radiologists' workloads by up to 53%. But radiologists spend only 36% of their time interpreting images — the rest involves tasks AI cannot do."
+      }
+    },
+    {
+      "id": "med-mcq-030",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "منصة الملفات نظام Malaffi في أبوظبي تربط بين مرافق صحية ومسجلات مرضى. ما حجم هذا النظام؟",
+        "en": "Abu Dhabi's Malaffi health information exchange connects healthcare facilities and patient records. What is the scale of this system?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "1,539 منشأة و39,600 طبيب و3.5 مليار سجل سريري لـ 12.7 مليون مريض",
+            "en": "1,539 facilities, 39,600 clinicians, and 3.5 billion clinical records for 12.7 million patients"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "100 مستشفى و5,000 طبيب و500 مليون سجل",
+            "en": "100 hospitals, 5,000 clinicians, and 500 million records"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "النظام لا يزال تجريبياً في 10 مرافق فقط",
+            "en": "The system is still experimental in only 10 facilities"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50 مستشفى في أبوظبي فقط",
+            "en": "Only 50 hospitals in Abu Dhabi"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Malaffi يربط 1,539 منشأة و39,600 طبيب مع 3.5 مليار سجل. نظام NABIDH في دبي يوحّد 9.47 مليون سجل مريض عبر 1,300+ منشأة. أبوظبي أطلقت أيضاً أول منصة ذكاء سكاني صحي بـ AI في العالم بالشراكة مع مايكروسوفت (أكتوبر 2025).",
+        "en": "Malaffi connects 1,539 facilities and 39,600 clinicians with 3.5 billion records. Dubai's NABIDH unifies 9.47 million patient records across 1,300+ facilities. Abu Dhabi also launched the world's first AI population health intelligence platform with Microsoft (October 2025)."
+      }
+    },
+    {
+      "id": "med-tf-003",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في 2025، رخّصت FDA أكثر من 295 جهاز AI طبي جديد — أي ما يعادل جهازاً جديداً تقريباً كل يوم عمل.",
+        "en": "In 2025, the FDA authorized over 295 new AI medical devices — roughly one new device every working day."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. 295 ترخيصاً في 2025 وحده، ليصل الإجمالي إلى أكثر من 1,300 جهاز. ثلاثة أرباع الأجهزة الجديدة كانت في مجال التصوير الطبي. متوسط وقت الترخيص كان 142 يوماً.",
+        "en": "True. 295 clearances in 2025 alone, bringing the total to over 1,300 devices. Three quarters of new devices were in medical imaging. Median clearance time was 142 days."
+      }
+    },
+    {
+      "id": "med-tf-004",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "روبوت SRT-H من جونز هوبكنز أجرى استئصال مرارة كاملاً في بيئة محاكاة واقعية دون تدخل بشري، لكنه كان أبطأ من الجراح البشري.",
+        "en": "Johns Hopkins' SRT-H robot performed a complete gallbladder removal in a realistic simulated environment without human intervention, but it was slower than a human surgeon."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. الروبوت أنجز 17 مهمة متسلسلة بدقة 100% في 8 عمليات. استخدم نماذج لغوية كبيرة للتخطيط واستجاب لأوامر صوتية. لكنه لا يزال أبطأ من الجراح — تماماً كطبيب مقيم في بداية تدريبه.",
+        "en": "True. The robot completed 17 sequential tasks with 100% accuracy across 8 operations. It used LLMs for planning and responded to voice commands. But it's still slower than a surgeon — just like an early-stage resident."
+      }
+    },
+    {
+      "id": "med-tf-005",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Google Flu Trends كان نظاماً ناجحاً للتنبؤ بالإنفلونزا واستمر حتى اليوم كنموذج مرجعي لرصد الأوبئة بالذكاء الاصطناعي.",
+        "en": "Google Flu Trends was a successful flu prediction system that continues to operate today as a reference model for AI-based epidemic surveillance."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. Google Flu Trends فشل فشلاً ذريعاً: بالغ في تقدير الإنفلونزا بنسبة 140% خلال 2011-2013 وفاته جائحة H1N1 في 2009 بالكامل. أُغلق في 2015. السبب: الخلط بين الارتباط والسببية و\"غطرسة البيانات الضخمة\". الأنظمة الحديثة تجمع بين AI والوبائيات التقليدية.",
+        "en": "False. Google Flu Trends failed dramatically: it overestimated flu by 140% during 2011-2013 and completely missed the 2009 H1N1 pandemic. It was shut down in 2015. The cause: correlation-causation confusion and 'big data hubris.' Modern systems combine AI with traditional epidemiology."
+      }
+    },
+    {
+      "id": "med-tf-006",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام BlueDot رصد حالات الالتهاب الرئوي غير العادية في ووهان يوم 31 ديسمبر 2019 — أي قبل 9 أيام من بيان منظمة الصحة العالمية.",
+        "en": "BlueDot flagged unusual pneumonia cases in Wuhan on December 31, 2019 — 9 days before WHO's statement."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. BlueDot استخدم معالجة اللغة الطبيعية عبر أكثر من 100,000 مصدر بأكثر من 130 لغة. تنبأ أيضاً بانتشار زيكا في فلوريدا قبل 6 أشهر. لكن النظام ليس مثالياً — الأهم هو دمج AI مع الخبرة البشرية.",
+        "en": "True. BlueDot used NLP across 100,000+ sources in 130+ languages. It also predicted Zika spreading to Florida 6 months ahead. But the system isn't perfect — the key is integrating AI with human expertise."
+      }
+    },
+    {
+      "id": "med-tf-007",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "مهنة النسخ الطبي (Medical Transcription) أُتمتت بنسبة تقارب 99%، ويُتوقع انخفاض التوظيف فيها 4.7% خلال العقد القادم.",
+        "en": "Medical transcription has been ~99% automated, with employment projected to decline 4.7% over the coming decade."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. النسخ الطبي من أوائل المهن التي أتمتها AI بالكامل تقريباً. لكن معظم المهن الصحية الأخرى تُعزَّز لا تُستبدل: الصيادلة ينتقلون لأدوار استشارية، والمعالجون الطبيعيون يخدمون مرضى أكثر بفضل AI. تقرير WEF 2025 يتوقع 85 مليون وظيفة ستُلغى لكن 97 مليون ستُستحدث.",
+        "en": "True. Medical transcription is one of the first professions almost fully automated by AI. But most other healthcare roles are augmented, not replaced: pharmacists shift to advisory roles, PTs serve more patients via AI. The WEF 2025 report projects 85M jobs displaced but 97M created."
+      }
+    },
+    {
+      "id": "med-tf-008",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "دعاوى سوء الممارسة الطبية المتعلقة بأدوات AI زادت بنسبة 14% بين 2022 و2024، رغم عدم وجود سوابق قضائية واضحة حول مسؤولية AI الطبي.",
+        "en": "Medical malpractice claims involving AI tools increased 14% from 2022 to 2024, despite no established case law directly addressing AI medical liability."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. القانون لم يحسم بعد من يتحمل المسؤولية عن أخطاء AI الطبي. FSMB توصي بأن الأطباء — وليس الشركات — هم المسؤولون. التوجيه الأوروبي المُعدّل للمسؤولية عن المنتجات (يُطبّق ديسمبر 2026) سيشمل برامج AI المستقلة لأول مرة.",
+        "en": "True. Law hasn't yet resolved who bears liability for medical AI errors. FSMB recommends clinicians — not companies — are responsible. The EU's revised Product Liability Directive (transposition by December 2026) will extend strict liability to standalone AI software for the first time."
+      }
+    },
+    {
+      "id": "med-tf-009",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "LumineticsCore (المعروف سابقاً بـ IDx-DR) كان أول نظام تشخيصي ذاتي بالكامل بـ AI في أي مجال طبي — يعطي نتائج دون الحاجة لتفسير طبيب.",
+        "en": "LumineticsCore (formerly IDx-DR) was the first fully autonomous AI diagnostic in any field of medicine — providing results without requiring physician interpretation."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. حصل على ترخيص FDA De Novo في أبريل 2018 لكشف اعتلال الشبكية السكري. مُطبّق في أكثر من 1,000 عيادة. الآن هناك 4 أنظمة ذاتية مرخصة لفحص الشبكية السكري.",
+        "en": "True. It received FDA De Novo clearance in April 2018 for diabetic retinopathy screening. Deployed in 1,000+ clinics. Now there are 4 FDA-cleared autonomous DR screening systems."
+      }
+    },
+    {
+      "id": "med-tf-010",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنظمة AI للفرز في الطوارئ (AI Triage) تفوّقت على الممرضين في الدقة وتُستخدم الآن كبديل كامل لهم في عدة مستشفيات أمريكية.",
+        "en": "AI triage systems in emergency departments outperformed nurses in accuracy and are now used as complete replacements for them in several U.S. hospitals."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. أنظمة AI Triage تفوّقت في الدقة فعلاً لكنها تُستخدم كأدوات دعم قرار وليست بديلاً. لا يوجد مستشفى استغنى عن ممرضي الفرز. الاتجاه العام في الرعاية الصحية هو التعزيز (Augmentation) لا الاستبدال (Replacement).",
+        "en": "False. AI triage tools did outperform on accuracy but are positioned as decision-support tools, not replacements. No hospital has eliminated triage nurses. The general healthcare trend is augmentation, not replacement."
+      }
+    },
+    {
+      "id": "med-tf-011",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "الإمارات العربية المتحدة عيّنت أول وزير للذكاء الاصطناعي في العالم عام 2017.",
+        "en": "The UAE appointed the world's first Minister of Artificial Intelligence in 2017."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. الإمارات سبّاقة في تبني AI حكومياً. نظام Malaffi في أبوظبي يربط 1,539 منشأة صحية بـ 3.5 مليار سجل سريري. أبوظبي أطلقت أيضاً أول منصة ذكاء سكاني صحي بـ AI عالمياً مع مايكروسوفت (أكتوبر 2025).",
+        "en": "True. The UAE is a pioneer in governmental AI adoption. Abu Dhabi's Malaffi connects 1,539 health facilities with 3.5 billion clinical records. Abu Dhabi also launched the world's first AI population health intelligence platform with Microsoft (October 2025)."
+      }
+    },
+    {
+      "id": "med-tf-012",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "حساسية AI في كشف سرطان الثدي بلغت 90% في دراسات متعددة — متفوقة على أطباء الأشعة الذين حققوا 78%.",
+        "en": "AI sensitivity in breast cancer detection reached 90% in multiple studies — surpassing radiologists who achieved 78%."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. AI يتفوق في الحساسية (كشف الحالات الإيجابية)، لكن الطبيب يتفوق في السياق السريري الشامل. أفضل نتائج تتحقق عندما يعمل AI والطبيب معاً — وليس أحدهما بديلاً عن الآخر.",
+        "en": "True. AI excels in sensitivity (detecting positive cases), but physicians excel in overall clinical context. Best results occur when AI and doctors work together — not as replacements for each other."
+      }
+    },
+    {
+      "id": "med-tf-013",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "AI حقق تقليص متوسط زمن تقرير الأشعة من 11.2 يوماً إلى 2.7 يوم عبر أنظمة الفرز الذكي.",
+        "en": "AI reduced average radiology report turnaround from 11.2 days to 2.7 days through intelligent triage systems."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. أنظمة الفرز بـ AI ترتّب الحالات حسب الأولوية — فتظهر الحالات الطارئة أولاً. هذا لا يعني أن AI يقرأ الصور بدل الطبيب، بل يُعيد ترتيب قائمة الانتظار لضمان معالجة الحالات الحرجة أسرع.",
+        "en": "True. AI triage systems prioritize cases — putting urgent ones first. This doesn't mean AI reads images instead of doctors, but it reorders the queue to ensure critical cases are processed faster."
+      }
+    },
+    {
+      "id": "med-tf-014",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في عام 2022، أجرى روبوت STAR من جونز هوبكنز جراحة بالمنظار على خنزير حي — لكنه اعتمد على علامات خاصة على الأنسجة وخطة محددة مسبقاً.",
+        "en": "In 2022, Johns Hopkins' STAR robot performed laparoscopic surgery on a live pig — but relied on specially marked tissue and a predetermined surgical plan."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. STAR في 2022 كان محدوداً بعلامات خاصة. الإنجاز الحقيقي جاء في 2025 مع SRT-H الذي تعامل مع أنسجة طبيعية غير مُعلّمة واستجاب لمواقف غير متوقعة — نقلة من \"تنفيذ المهام\" إلى \"فهم الإجراءات\".",
+        "en": "True. STAR in 2022 was limited by special markers. The real breakthrough came in 2025 with SRT-H which handled normal unmarked tissue and responded to unexpected situations — a shift from 'executing tasks' to 'understanding procedures.'"
+      }
+    },
+    {
+      "id": "med-tf-015",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام Bayesian Health لكشف الإنتان في Cleveland Clinic حقق تقليل الوفيات النسبي بنسبة 18%.",
+        "en": "Cleveland Clinic's Bayesian Health sepsis detection system achieved an 18% relative mortality reduction."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. Bayesian Health حقق تقليل وفيات نسبي 18%. هذا يقارن إيجابياً مع فشل Epic Sepsis Model. الفرق: Bayesian Health صُمم بتعاون وثيق مع الأطباء وتم تقييمه مستقلاً، بينما Epic نُشر على نطاق واسع دون تحقق كافٍ.",
+        "en": "True. Bayesian Health achieved 18% relative mortality reduction. This compares favorably to Epic Sepsis Model's failure. The difference: Bayesian Health was designed with close physician collaboration and independently evaluated, while Epic was widely deployed without sufficient validation."
+      }
+    },
+    {
+      "id": "med-tf-016",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "AI استحوذ على 62% (حوالي 4 مليارات دولار) من رأس المال الاستثماري في الصحة الرقمية خلال النصف الأول من 2025.",
+        "en": "AI captured 62% (~$4 billion) of digital health venture capital in H1 2025."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. AI أصبح المحرك الرئيسي للاستثمار في الصحة الرقمية. سوق الرعاية الصحية بـ AI بلغ 36.67 مليار دولار في 2025. هذا التدفق المالي يعني أن أدوات AI الطبية ستتضاعف خلال السنوات القادمة.",
+        "en": "True. AI has become the main driver of digital health investment. The healthcare AI market reached $36.67 billion in 2025. This capital influx means medical AI tools will multiply in coming years."
+      }
+    },
+    {
+      "id": "med-tf-017",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نماذج XGBoost حققت AUC 0.96 في التنبؤ بمقاومة المضادات الحيوية من مجموعة بيانات Pfizer ATLAS التي تضم أكثر من 917,000 عزلة بكتيرية.",
+        "en": "XGBoost models achieved AUC 0.96 for predicting antibiotic resistance from the Pfizer ATLAS dataset of 917,000+ bacterial isolates."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح (نُشر في Nature 2025). التطبيق السريري حقق 89% نجاح في توصيات تعديل المضادات الحيوية وقلّص العلاج غير الضروري 18%. مقاومة المضادات الحيوية تقتل 1.27 مليون شخص سنوياً ويُتوقع 10 ملايين بحلول 2050 — AI قد يكون سلاحاً حاسماً.",
+        "en": "True (published in Nature 2025). Clinical implementation achieved 89% success in antibiotic adjustment recommendations and reduced unnecessary treatment by 18%. AMR kills 1.27M annually, projected to reach 10M by 2050 — AI could be a crucial weapon."
+      }
+    },
+    {
+      "id": "med-tf-018",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "HIPAA — القانون الأمريكي لحماية البيانات الصحية — لم يُحدَّث منذ صدوره ويتضمن أحكاماً صريحة تغطي بيانات تدريب الذكاء الاصطناعي.",
+        "en": "HIPAA — the U.S. health data privacy law — has not been updated since its inception and includes explicit provisions covering AI training data."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. HIPAA حصل على أول تحديث رئيسي لقاعدة الأمان منذ 20 عاماً في يناير 2025 — يتضمن صراحة بيانات تدريب AI. التحديث جاء متأخراً جداً مقارنة بسرعة تطور AI الطبي.",
+        "en": "False. HIPAA received its first major Security Rule revision in 20 years in January 2025 — explicitly covering AI training data. The update came very late compared to the speed of medical AI development."
+      }
+    },
+    {
+      "id": "med-tf-019",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "دراسة في Nature Medicine (2024) وجدت أنه رغم تحسّن دقة جميع الممارسين بفضل AI في الأمراض الجلدية، إلا أن الفجوة بين أداء AI على البشرة الفاتحة والداكنة اتسعت لدى أطباء الرعاية الأولية.",
+        "en": "A Nature Medicine study (2024) found that while AI decision support boosted all practitioners' accuracy in dermatology, the performance gap between light and dark skin widened for primary care physicians."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. AI حسّن الأداء العام لكنه وسّع الفجوة العرقية عند أطباء الرعاية الأولية. السبب: الأطباء المتخصصون يعرفون متى لا يثقون بـ AI، بينما غير المتخصصين يعتمدون عليه أكثر — وهنا يظهر التحيز.",
+        "en": "True. AI improved overall performance but widened the racial gap for primary care physicians. The reason: specialists know when not to trust AI, while non-specialists rely on it more — and that's where bias surfaces."
+      }
+    },
+    {
+      "id": "med-tf-020",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "قطر خصصت 22 مليار ريال قطري (حوالي 6 مليارات دولار) للرعاية الصحية في 2025، مع تركيز استراتيجيتها الوطنية للذكاء الاصطناعي على القطاع الصحي.",
+        "en": "Qatar allocated QAR 22 billion (~$6 billion) to healthcare in 2025, with its National AI Strategy emphasizing the health sector."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. مستشفى سدرة للطب طوّر أداة AI حققت 84% دقة في تصنيف السكري من النوع الأول. الخليج العربي يستثمر بكثافة في AI الصحي: السعودية (40 مليار دولار لصندوق AI)، الإمارات (أول وزير AI في العالم)، وقطر (4.9 مليار لبيانات AI ضمن الأجندة الرقمية 2030).",
+        "en": "True. Sidra Medicine developed an AI tool achieving 84% accuracy for Type 1 diabetes stratification. The Gulf is investing heavily in health AI: Saudi Arabia ($40B AI fund), UAE (world's first AI minister), and Qatar ($4.9B for AI data under Digital Agenda 2030)."
+      }
+    },
+    {
+      "id": "med-fb-002",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} من Alibaba راجع أكثر من 180,000 صورة أشعة مقطعية واكتشف سرطانات بنكرياس مبكرة فاتت الأطباء، وحصل على تصنيف Breakthrough Device من FDA في 2025.",
+        "en": "Alibaba's {{blank_1}} system reviewed over 180,000 CT scans and discovered early pancreatic cancers missed by doctors, receiving FDA Breakthrough Device designation in 2025."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "DAMO PANDA",
+            "en": "DAMO PANDA"
+          },
+          "options": [
+            {
+              "ar": "DAMO PANDA",
+              "en": "DAMO PANDA"
+            },
+            {
+              "ar": "DeepMind AlphaFold",
+              "en": "DeepMind AlphaFold"
+            },
+            {
+              "ar": "IBM Watson",
+              "en": "IBM Watson"
+            },
+            {
+              "ar": "Google Health",
+              "en": "Google Health"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "DAMO PANDA اكتشف أكثر من 20 سرطان بنكرياس (14 مبكرة) من صور بدت طبيعية تماماً للأطباء. أحد المرضى كان لديه نفس الورم النادر الذي أصاب ستيف جوبز.",
+        "en": "DAMO PANDA discovered 20+ pancreatic cancers (14 early-stage) from scans that appeared completely normal to doctors. One patient had the same rare tumor type that affected Steve Jobs."
+      }
+    },
+    {
+      "id": "med-fb-003",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أول نظام تشخيصي ذاتي بالكامل بـ AI في أي مجال طبي هو {{blank_1}}، والذي يكشف اعتلال الشبكية السكري دون الحاجة لتفسير طبيب.",
+        "en": "The first fully autonomous AI diagnostic in any medical field is {{blank_1}}, which detects diabetic retinopathy without requiring physician interpretation."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "LumineticsCore",
+            "en": "LumineticsCore"
+          },
+          "options": [
+            {
+              "ar": "LumineticsCore",
+              "en": "LumineticsCore"
+            },
+            {
+              "ar": "Viz.ai",
+              "en": "Viz.ai"
+            },
+            {
+              "ar": "Paige AI",
+              "en": "Paige AI"
+            },
+            {
+              "ar": "Epic Sepsis Model",
+              "en": "Epic Sepsis Model"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "LumineticsCore (المعروف سابقاً بـ IDx-DR) حصل على ترخيص FDA De Novo في أبريل 2018. \"ذاتي\" يعني أنه يعطي النتيجة مباشرة — لا يحتاج طبيباً ليفسرها. مُطبّق في أكثر من 1,000 عيادة.",
+        "en": "LumineticsCore (formerly IDx-DR) received FDA De Novo clearance in April 2018. 'Autonomous' means it gives results directly — no physician interpretation needed. Deployed in 1,000+ clinics."
+      }
+    },
+    {
+      "id": "med-fb-004",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} لإدارة المستشفيات مُطبّق في أكثر من 500 مستشفى ويحقق في المتوسط 500,000 دولار إيرادات إضافية لكل غرفة عمليات سنوياً.",
+        "en": "The {{blank_1}} hospital management system is deployed in 500+ hospitals, generating an average of $500,000 additional revenue per operating room annually."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "LeanTaaS iQueue",
+            "en": "LeanTaaS iQueue"
+          },
+          "options": [
+            {
+              "ar": "LeanTaaS iQueue",
+              "en": "LeanTaaS iQueue"
+            },
+            {
+              "ar": "Epic SmartOR",
+              "en": "Epic SmartOR"
+            },
+            {
+              "ar": "Cerner Command",
+              "en": "Cerner Command"
+            },
+            {
+              "ar": "Palantir Health",
+              "en": "Palantir Health"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "iQueue يدير أكثر من 3,000 غرفة عمليات في 40% من أكبر 25 نظاماً صحياً أمريكياً. CommonSpirit Health حققت عائد 40 مليون دولار. النظام يتنبأ بتوقيت الخروج بدقة أعلى 41% من الطرق التقليدية.",
+        "en": "iQueue manages 3,000+ ORs in 40% of the top 25 U.S. health systems. CommonSpirit Health reported $40M ROI. The system predicts discharge timing 41% more accurately than traditional methods."
+      }
+    },
+    {
+      "id": "med-fb-005",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أول ترخيص FDA على الإطلاق لنظام AI لكشف الإنتان كان لنظام {{blank_1}} من شركة Prenosis في أبريل 2024.",
+        "en": "The first-ever FDA clearance for an AI sepsis detection system was for {{blank_1}} by Prenosis in April 2024."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Sepsis ImmunoScore",
+            "en": "Sepsis ImmunoScore"
+          },
+          "options": [
+            {
+              "ar": "Sepsis ImmunoScore",
+              "en": "Sepsis ImmunoScore"
+            },
+            {
+              "ar": "Epic Sepsis Model",
+              "en": "Epic Sepsis Model"
+            },
+            {
+              "ar": "eCART",
+              "en": "eCART"
+            },
+            {
+              "ar": "Bayesian Sepsis",
+              "en": "Bayesian Sepsis"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Sepsis ImmunoScore هو أول نظام AI مرخص رسمياً لكشف الإنتان. Epic Sepsis Model — الأكثر انتشاراً — لم يكن مرخصاً من FDA وتبيّن أن دقته ضعيفة (AUC 0.63). الترخيص التنظيمي لا يضمن الجودة، لكن غيابه أسوأ.",
+        "en": "Sepsis ImmunoScore is the first officially FDA-cleared AI sepsis system. Epic Sepsis Model — the most widely deployed — wasn't FDA-cleared and proved poorly accurate (AUC 0.63). Regulatory clearance doesn't guarantee quality, but its absence is worse."
+      }
+    },
+    {
+      "id": "med-fb-006",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "الدراسة السويدية {{blank_1}} أثبتت أن الفحص المدعوم بـ AI كشف سرطانات ثدي أكثر بنسبة 20% دون زيادة الإيجابيات الكاذبة.",
+        "en": "The Swedish {{blank_1}} trial proved that AI-supported screening detected 20% more breast cancers without increasing false positives."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "MASAI",
+            "en": "MASAI"
+          },
+          "options": [
+            {
+              "ar": "MASAI",
+              "en": "MASAI"
+            },
+            {
+              "ar": "MAMMOVISION",
+              "en": "MAMMOVISION"
+            },
+            {
+              "ar": "NORDIC-AI",
+              "en": "NORDIC-AI"
+            },
+            {
+              "ar": "SCREEN-NET",
+              "en": "SCREEN-NET"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "دراسة MASAI السويدية من أهم الأدلة على فعالية AI في فحص سرطان الثدي. 20% زيادة في الكشف تعني مرضى أكثر يحصلون على تشخيص مبكر — وهذا يُترجم إلى حياة مُنقذة فعلياً.",
+        "en": "The Swedish MASAI trial is one of the strongest evidence points for AI in breast cancer screening. A 20% detection increase means more patients get early diagnosis — translating to lives actually saved."
+      }
+    },
+    {
+      "id": "med-fb-007",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} من Microsoft مُطبّق في أكثر من 150 نظاماً صحياً ووفّر 2.5 ساعة أسبوعياً من التوثيق خارج ساعات العمل للأطباء.",
+        "en": "Microsoft's {{blank_1}} system is deployed in 150+ health systems and saved physicians 2.5 hours per week of off-hours documentation."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Nuance DAX Copilot",
+            "en": "Nuance DAX Copilot"
+          },
+          "options": [
+            {
+              "ar": "Nuance DAX Copilot",
+              "en": "Nuance DAX Copilot"
+            },
+            {
+              "ar": "Abridge",
+              "en": "Abridge"
+            },
+            {
+              "ar": "Aiva",
+              "en": "Aiva"
+            },
+            {
+              "ar": "Microsoft Health Bot",
+              "en": "Microsoft Health Bot"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "DAX Copilot هو أحد أبرز أدوات التوثيق الصوتي بـ AI. Abridge أداة منافسة قلّصت الإرهاق من 51.9% إلى 38.8%. سوق التوثيق الصوتي بـ AI بلغ 600 مليون دولار في 2025.",
+        "en": "DAX Copilot is one of the leading ambient AI documentation tools. Abridge is a competitor that reduced burnout from 51.9% to 38.8%. The ambient AI scribe market reached $600 million in 2025."
+      }
+    },
+    {
+      "id": "med-fb-008",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أداة {{blank_1}} من Paige AI تكشف السرطان في 40 نوعاً من الأنسجة وهي مبنية على نموذج Virchow الأساسي المُدرّب على أكثر من 4 ملايين شريحة باثولوجية.",
+        "en": "Paige AI's {{blank_1}} tool detects cancer across 40 tissue types and is built on the Virchow Foundation Model trained on 4+ million pathology slides."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "PanCancer Detect",
+            "en": "PanCancer Detect"
+          },
+          "options": [
+            {
+              "ar": "PanCancer Detect",
+              "en": "PanCancer Detect"
+            },
+            {
+              "ar": "Prostate Detect",
+              "en": "Prostate Detect"
+            },
+            {
+              "ar": "OncoPrecision",
+              "en": "OncoPrecision"
+            },
+            {
+              "ar": "TumorScan AI",
+              "en": "TumorScan AI"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "PanCancer Detect حصلت على تصنيف Breakthrough Device في أبريل 2025. النقلة النوعية: بدل أداة لنوع واحد من السرطان، نموذج واحد يغطي 40 نوع نسيج. هذا هو قوة النماذج الأساسية (Foundation Models) في الطب.",
+        "en": "PanCancer Detect received Breakthrough Device designation in April 2025. The paradigm shift: instead of one tool per cancer type, one model covers 40 tissue types. This is the power of Foundation Models in medicine."
+      }
+    },
+    {
+      "id": "med-fb-009",
+      "type": "fill_blank",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 1,
+      "text": {
+        "ar": "المستشفى الافتراضي {{blank_1}} في السعودية هو أكبر منشأة رعاية صحية افتراضية في العالم ويخدم أكثر من 255,000 مريض عبر تطبيق صحتي.",
+        "en": "Saudi Arabia's {{blank_1}} Virtual Hospital is the world's largest virtual healthcare facility, serving 255,000+ patients through the Sehhaty app."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "SEHA",
+            "en": "SEHA"
+          },
+          "options": [
+            {
+              "ar": "SEHA",
+              "en": "SEHA"
+            },
+            {
+              "ar": "NPHIES",
+              "en": "NPHIES"
+            },
+            {
+              "ar": "Malaffi",
+              "en": "Malaffi"
+            },
+            {
+              "ar": "NABIDH",
+              "en": "NABIDH"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "مستشفى SEHA الافتراضي أُطلق في فبراير 2025. Malaffi هو نظام التبادل الصحي في أبوظبي، وNABIDH في دبي. NPHIES هو منصة المطالبات الصحية السعودية وليس مستشفى.",
+        "en": "SEHA Virtual Hospital launched in February 2025. Malaffi is Abu Dhabi's health exchange, NABIDH is Dubai's. NPHIES is Saudi Arabia's health claims platform, not a hospital."
+      }
+    },
+    {
+      "id": "med-fb-010",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "شركة {{blank_1}} تواجه دعوى قضائية جماعية بسبب خوارزمية nH Predict التي يُدّعى أن معدل خطئها يبلغ 90% في رفض الرعاية لمرضى Medicare المسنين.",
+        "en": "{{blank_1}} faces a class-action lawsuit over its nH Predict algorithm, alleged to have a 90% error rate in denying care to elderly Medicare patients."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "UnitedHealth Group",
+            "en": "UnitedHealth Group"
+          },
+          "options": [
+            {
+              "ar": "UnitedHealth Group",
+              "en": "UnitedHealth Group"
+            },
+            {
+              "ar": "Cigna",
+              "en": "Cigna"
+            },
+            {
+              "ar": "Aetna",
+              "en": "Aetna"
+            },
+            {
+              "ar": "Blue Cross",
+              "en": "Blue Cross"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "UnitedHealth (nH Predict) وCigna (PXDX) كلتاهما تواجهان اتهامات بالرفض التلقائي للمطالبات. Cigna اتُّهمت برفض 300,000+ مطالبة في شهرين فقط. هذا يطرح سؤالاً أخلاقياً: متى يصبح استخدام AI لتوفير التكاليف ضاراً بالمرضى؟",
+        "en": "UnitedHealth (nH Predict) and Cigna (PXDX) both face allegations of automated claim denials. Cigna was accused of denying 300,000+ claims in just two months. This raises an ethical question: when does using AI to cut costs become harmful to patients?"
+      }
+    },
+    {
+      "id": "med-match-002",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل نظام AI طبي بالإحصائية الصحيحة:",
+        "en": "Match each medical AI system with the correct statistic:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Epic Sepsis Model",
+            "en": "Epic Sepsis Model"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "eCART",
+            "en": "eCART"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Abridge",
+            "en": "Abridge"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Nuance DAX",
+            "en": "Nuance DAX"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "AUC 0.63 فقط — فاته 67% من الحالات",
+            "en": "AUC 0.63 only — missed 67% of cases"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "خفّض الوفيات من 13.9% إلى 8.8%",
+            "en": "Reduced mortality from 13.9% to 8.8%"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "خفّض الإرهاق المهني من 51.9% إلى 38.8%",
+            "en": "Reduced burnout from 51.9% to 38.8%"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "وفّر 2.5 ساعة أسبوعياً من التوثيق",
+            "en": "Saved 2.5 hours/week of documentation"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "Epic Sepsis فشل (AUC 0.63)، بينما eCART نجح (AUROC 0.895). في التوثيق: Abridge قلّص الإرهاق وDAX وفّر الوقت. الدرس: ليس كل AI طبي ناجح — التقييم المستقل ضرورة.",
+        "en": "Epic Sepsis failed (AUC 0.63), while eCART succeeded (AUROC 0.895). For documentation: Abridge reduced burnout, DAX saved time. The lesson: not all medical AI succeeds — independent evaluation is essential."
+      }
+    },
+    {
+      "id": "med-match-003",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل مصطلح تنظيمي بمعناه في سياق AI الطبي:",
+        "en": "Match each regulatory term with its meaning in medical AI:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "FDA 510(k)",
+            "en": "FDA 510(k)"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "FDA De Novo",
+            "en": "FDA De Novo"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "EU AI Act",
+            "en": "EU AI Act"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "PCCP",
+            "en": "PCCP"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "المسار الأكثر شيوعاً — الجهاز مشابه لجهاز مرخص سابقاً",
+            "en": "Most common pathway — device is similar to a previously cleared one"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "مسار للأجهزة الجديدة كلياً التي لا يوجد لها مثيل سابق",
+            "en": "Pathway for completely novel devices with no prior equivalent"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "يصنّف كل أجهزة AI الطبية كعالية المخاطر مع عقوبات تصل 35 مليون يورو",
+            "en": "Classifies all medical AI devices as high-risk with penalties up to €35M"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "يسمح بتحديث الخوارزمية بعد الترخيص دون إعادة التقديم الكامل",
+            "en": "Allows post-market algorithm updates without full resubmission"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "510(k) هو المسار الأشهر (معظم الـ 295 جهاز في 2025). De Novo لأجهزة مبتكرة مثل LumineticsCore. PCCP (ديسمبر 2024) نقلة مهمة تسمح بتحديث الخوارزميات دون إعادة ترخيص كاملة — 10% من تراخيص 2025 شملته.",
+        "en": "510(k) is the most common path (most of the 295 devices in 2025). De Novo is for innovative devices like LumineticsCore. PCCP (December 2024) is a major shift allowing algorithm updates without full resubmission — 10% of 2025 clearances included it."
+      }
+    },
+    {
+      "id": "med-match-004",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل روبوت جراحي بالمعلومة الصحيحة:",
+        "en": "Match each surgical robot with the correct information:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Da Vinci 5",
+            "en": "Da Vinci 5"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Medtronic Hugo",
+            "en": "Medtronic Hugo"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "J&J Ottava",
+            "en": "J&J Ottava"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "SRT-H (جونز هوبكنز)",
+            "en": "SRT-H (Johns Hopkins)"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تغذية راجعة لمسية — 70-80% حصة سوقية — 11,100+ وحدة",
+            "en": "Force feedback — 70-80% market share — 11,100+ units"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "ترخيص FDA للمسالك البولية ديسمبر 2025 — 25+ دولة",
+            "en": "FDA urological clearance December 2025 — 25+ countries"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "يخطط لتقديم FDA De Novo في الربع الأول 2026",
+            "en": "Plans FDA De Novo submission in Q1 2026"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "استئصال مرارة ذاتي بـ 17 مهمة — بيئة محاكاة",
+            "en": "Autonomous gallbladder removal with 17 tasks — simulated"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "سوق الجراحة الروبوتية (13-14 مليار دولار) يتجه نحو 50+ مليار بحلول 2035. Intuitive تسيطر بـ Da Vinci، لكن المنافسة تشتد مع Hugo وOttava. SRT-H يمثل مستقبل الجراحة الذاتية لكنه لا يزال بعيداً عن التطبيق السريري.",
+        "en": "The surgical robotics market ($13-14B) is heading toward $50B+ by 2035. Intuitive dominates with Da Vinci, but competition is intensifying with Hugo and Ottava. SRT-H represents the future of autonomous surgery but is still far from clinical use."
+      }
+    },
+    {
+      "id": "med-match-005",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل نظام صحي رقمي خليجي بوصفه الصحيح:",
+        "en": "Match each Gulf digital health system with its correct description:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Malaffi",
+            "en": "Malaffi"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "NABIDH",
+            "en": "NABIDH"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "SEHA",
+            "en": "SEHA"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Riayati",
+            "en": "Riayati"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "أبوظبي — 1,539 منشأة — 3.5 مليار سجل",
+            "en": "Abu Dhabi — 1,539 facilities — 3.5 billion records"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "دبي — 9.47 مليون سجل — 1,300+ منشأة",
+            "en": "Dubai — 9.47 million records — 1,300+ facilities"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "أكبر مستشفى افتراضي في العالم — 255,000+ مريض",
+            "en": "World's largest virtual hospital — 255,000+ patients"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "نظام اتحادي يربط 3,000+ مقدم خدمة",
+            "en": "Federal system connecting 3,000+ providers"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "الخليج العربي يقود الرقمنة الصحية: أبوظبي (Malaffi + أول منصة ذكاء سكاني عالمياً)، دبي (NABIDH مع AI لأمن البيانات)، السعودية (SEHA الافتراضي + سوق AI صحي بـ 435 مليون دولار).",
+        "en": "The Gulf leads health digitization: Abu Dhabi (Malaffi + world's first AI population health platform), Dubai (NABIDH with AI data security), Saudi Arabia (SEHA Virtual + $435M healthcare AI market)."
+      }
+    },
+    {
+      "id": "med-match-006",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل مستشفى رائد بإنجازه في AI:",
+        "en": "Match each leading hospital with its AI achievement:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Mayo Clinic",
+            "en": "Mayo Clinic"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Mass General Brigham",
+            "en": "Mass General Brigham"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Cleveland Clinic",
+            "en": "Cleveland Clinic"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "مستشفى الملك فيصل التخصصي",
+            "en": "King Faisal Specialist Hospital"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "22 حلاً بـ AI + مليار دولار عبر 200+ مشروع",
+            "en": "22 AI solutions + $1B+ across 200+ projects"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "3,000+ طبيب يستخدمون التوثيق الصوتي بانخفاض إرهاق 21.2%",
+            "en": "3,000+ docs using ambient documentation, 21.2% burnout reduction"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "مراكز قيادة افتراضية مع Palantir + كشف إنتان Bayesian Health",
+            "en": "Virtual command centers with Palantir + Bayesian Health sepsis detection"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "85,000+ تدخل AI + تقليل الانتظار 50%+",
+            "en": "85,000+ AI interventions + 50%+ wait time reduction"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه المستشفيات الأربع تمثل نماذج مختلفة لتبني AI: Mayo Clinic (استثمار ضخم)، Mass General (التوثيق أولاً)، Cleveland (اتخاذ القرار)، الملك فيصل (الكفاءة التشغيلية). لا يوجد نموذج واحد يناسب الجميع.",
+        "en": "These four hospitals represent different AI adoption models: Mayo Clinic (massive investment), Mass General (documentation first), Cleveland (decision-making), King Faisal (operational efficiency). There's no one-size-fits-all model."
+      }
+    },
+    {
+      "id": "med-match-007",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل خطر أخلاقي لـ AI الطبي بالمثال الواقعي:",
+        "en": "Match each ethical risk of medical AI with the real-world example:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "تحيز عرقي",
+            "en": "Racial bias"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "هلوسة AI",
+            "en": "AI hallucination"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "تراجع المهارات (Deskilling)",
+            "en": "Deskilling"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "رفض آلي للمطالبات",
+            "en": "Automated claim denials"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "خوارزمية Optum صنّفت السود أقل مرضاً لأنها تنبأت بالتكلفة لا المرض",
+            "en": "Optum algorithm rated Black patients as less sick because it predicted cost not illness"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "AI صنّف عُقداً حميدة كخبيثة في 12% من حالات الأشعة",
+            "en": "AI flagged benign nodules as malignant in 12% of radiology cases"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "أطباء مناظير بولنديون انخفض أداؤهم من 28.4% إلى 22.4%",
+            "en": "Polish endoscopists' performance dropped from 28.4% to 22.4%"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "Cigna رفضت 300,000+ مطالبة في شهرين بخوارزمية PXDX",
+            "en": "Cigna denied 300,000+ claims in 2 months using PXDX algorithm"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل خطر أخلاقي له ضحايا حقيقيون. التحيز يحرم أقليات من الرعاية. الهلوسة تُضلل التشخيص. Deskilling يُضعف الأطباء. الرفض الآلي يحرم مرضى مسنين من العلاج. AI الطبي بحاجة لحوكمة أخلاقية صارمة.",
+        "en": "Each ethical risk has real victims. Bias denies minorities care. Hallucination misleads diagnosis. Deskilling weakens doctors. Automated denials deprive elderly patients of treatment. Medical AI needs rigorous ethical governance."
+      }
+    },
+    {
+      "id": "med-match-008",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل تخصص طبي بتأثير AI الأبرز عليه:",
+        "en": "Match each medical specialty with AI's most notable impact:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "الأشعة",
+            "en": "Radiology"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "الباثولوجي",
+            "en": "Pathology"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "طب العيون",
+            "en": "Ophthalmology"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "الطب النفسي",
+            "en": "Psychiatry"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "76% من أجهزة AI المرخصة + تقليل عبء العمل 53%",
+            "en": "76% of cleared AI devices + 53% workload reduction"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أول ترخيص FDA بحساسية 0.99 لسرطان البروستاتا",
+            "en": "First FDA clearance with 0.99 sensitivity for prostate cancer"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "أول تشخيص ذاتي بالكامل دون طبيب (IDx-DR)",
+            "en": "First fully autonomous diagnosis without a doctor (IDx-DR)"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "روبوت دردشة نصح مدمناً بالتعاطي \"كمكافأة\"",
+            "en": "A chatbot advised an addict to use drugs 'as a treat'"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "الأشعة تقود كماً (76% من الأجهزة). الباثولوجي يقود نوعاً (حساسية 0.99). طب العيون سبق الجميع باستقلالية التشخيص. الطب النفسي يُظهر أخطر المخاطر — حيث هلوسة AI قد تدمر حياة مريض.",
+        "en": "Radiology leads in volume (76% of devices). Pathology leads in quality (0.99 sensitivity). Ophthalmology pioneered diagnostic autonomy. Psychiatry shows the most dangerous risks — where AI hallucination can ruin a patient's life."
+      }
+    },
+    {
+      "id": "med-match-009",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل مستوى استقلالية جراحية بوصفه:",
+        "en": "Match each surgical autonomy level with its description:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "المستوى 1",
+            "en": "Level 1"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "المستوى 2",
+            "en": "Level 2"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "المستوى 3",
+            "en": "Level 3"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "المستوى 5",
+            "en": "Level 5"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تحسين الصورة والرؤية فقط — حدود حركة نشطة",
+            "en": "Image enhancement only — active movement constraints"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "تنفيذ مهام محددة ضمن إرشادات الطبيب (مثل الخياطة الآلية)",
+            "en": "Executing specific tasks within clinician guidelines (e.g. automated suturing)"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تخطيط وتنفيذ مهام مستقلة باستخدام القدرات الإدراكية",
+            "en": "Independent planning and execution using perceptual abilities"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "استقلالية كاملة بدون أي تدخل بشري",
+            "en": "Full autonomy without any human intervention"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "معظم الروبوتات الجراحية اليوم في المستوى 1-2. SRT-H وصل لحدود المستوى 3. المستوى 5 (استقلالية كاملة) بعيد جداً — خبير يقول: \"99% من العمليات ستبقى تحت إشراف بشري. البشر سيئون جداً في المراقبة الخاملة — حارس الأمن ينام خلال دقائق!\"",
+        "en": "Most surgical robots are at Level 1-2. SRT-H reached Level 3 boundaries. Level 5 (full autonomy) is very far — an expert says: '99% of procedures will remain under human supervision. Humans are terrible at idle monitoring — a security guard falls asleep within minutes!'"
+      }
+    },
+    {
+      "id": "med-match-010",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل دراسة بحثية مهمة بنتيجتها:",
+        "en": "Match each important research study with its finding:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "دراسة MASAI السويدية",
+            "en": "Swedish MASAI trial"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "دراسة Lancet البولندية",
+            "en": "Polish Lancet study"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "دراسة Science (Obermeyer)",
+            "en": "Science study (Obermeyer)"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "تقييم Epic في ميشيغان",
+            "en": "Michigan Epic evaluation"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "AI كشف 20% سرطانات ثدي أكثر دون زيادة الإيجابيات الكاذبة",
+            "en": "AI detected 20% more breast cancers without increasing false positives"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أول حالة موثقة لتراجع مهارات الأطباء بسبب AI",
+            "en": "First documented case of physician deskilling due to AI"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "خوارزمية صحية تميّز ضد السود بالتنبؤ بالتكلفة بدل المرض",
+            "en": "Health algorithm discriminated against Black patients by predicting cost instead of illness"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "AUC 0.63 فقط — أقل بكثير من ادعاءات الشركة",
+            "en": "AUC only 0.63 — far below the company's claims"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الدراسات الأربع تشكّل أساس فهم AI الطبي: MASAI تُظهر الإمكانات، Lancet تحذّر من Deskilling، Obermeyer تكشف التحيز الهيكلي، وميشيغان تثبت أن التقييم المستقل ضرورة لا رفاهية.",
+        "en": "These four studies form the foundation of understanding medical AI: MASAI shows potential, Lancet warns of deskilling, Obermeyer reveals structural bias, and Michigan proves independent evaluation is a necessity, not a luxury."
+      }
+    },
+    {
+      "id": "med-sort-002",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مستويات استقلالية الروبوت الجراحي من الأدنى إلى الأعلى:",
+        "en": "Order the levels of surgical robot autonomy from lowest to highest:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "تحسين الصورة وحدود الحركة (مثل تكبير تلقائي)",
+            "en": "Image enhancement and movement constraints (e.g. auto-zoom)"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "تنفيذ مهام محددة ضمن إرشادات الطبيب (مثل خياطة آلية)",
+            "en": "Specific tasks within clinician guidelines (e.g. auto-suturing)"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "تخطيط وتنفيذ إجراءات مستقلة مع إشراف",
+            "en": "Independent planning and execution with supervision"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "استقلالية كاملة دون أي تدخل بشري",
+            "en": "Full autonomy without any human intervention"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "Da Vinci 5 في المستوى 1-2. SRT-H وصل حدود المستوى 3. المستوى 4-5 بعيد سنوات — المشكلة ليست تقنية فقط بل تنظيمية وأخلاقية: من يتحمل المسؤولية عندما يخطئ روبوت مستقل؟",
+        "en": "Da Vinci 5 is at Level 1-2. SRT-H reached Level 3 boundaries. Level 4-5 is years away — the issue isn't just technical but regulatory and ethical: who bears responsibility when an autonomous robot makes an error?"
+      }
+    },
+    {
+      "id": "med-sort-003",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات تقييم نظام AI لكشف الأمراض الجلدية من حيث الأولوية:",
+        "en": "Order the steps for evaluating an AI skin disease detection system by priority:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "التحقق من تنوع بيانات التدريب (ألوان بشرة، أعمار، مناطق جغرافية)",
+            "en": "Verify training data diversity (skin tones, ages, geographic regions)"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "اختبار الدقة على مجموعات مختلفة عرقياً وليس فقط على بشرة فاتحة",
+            "en": "Test accuracy across different racial groups, not just light skin"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "تقييم معدل الإيجابيات الكاذبة لتجنب الإفراط في التشخيص والعلاج",
+            "en": "Assess false positive rate to avoid overdiagnosis and overtreatment"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "وضع بروتوكول لإبلاغ المرضى بمشاركة AI في التشخيص والحصول على موافقتهم",
+            "en": "Establish protocol for informing patients about AI involvement and obtaining consent"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "التنوع أولاً لأنه الأساس — 10.2% فقط من الصور تمثل البشرة الداكنة. ثم الاختبار على فئات مختلفة لكشف الفجوات. ثم تقييم الإفراط في التشخيص — مشكلة موثقة في AI الجلدية. وأخيراً موافقة المرضى.",
+        "en": "Diversity comes first as the foundation — only 10.2% of images represent dark skin. Then test across groups to reveal gaps. Then assess overdiagnosis — a documented problem in dermatology AI. Finally, patient consent."
+      }
+    },
+    {
+      "id": "med-sort-004",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب تطور AI الجراحي الروبوتي في جونز هوبكنز زمنياً:",
+        "en": "Order the evolution of surgical AI robotics at Johns Hopkins chronologically:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "روبوت STAR أجرى جراحة على خنزير حي بعلامات خاصة على الأنسجة (2022)",
+            "en": "STAR robot performed surgery on a live pig with specially marked tissue (2022)"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "تدريب روبوت على 3 مهام جراحية أساسية: إبرة، رفع نسيج، خياطة (2024)",
+            "en": "Robot trained on 3 basic surgical tasks: needle, tissue lifting, suturing (2024)"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "SRT-H ينجز استئصال مرارة كاملاً (17 مهمة) بأنسجة طبيعية غير مُعلّمة (2025)",
+            "en": "SRT-H completes full gallbladder removal (17 tasks) on normal unmarked tissue (2025)"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "الهدف التالي: تجارب سريرية على مرضى حقيقيين تحت إشراف (مستقبلي)",
+            "en": "Next goal: clinical trials on real patients under supervision (future)"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "كل خطوة أزالت قيداً: 2022 (علامات خاصة) → 2024 (مهام بسيطة) → 2025 (إجراء كامل بأنسجة طبيعية). النقلة الكبرى في SRT-H: استخدم نماذج لغوية كبيرة للتخطيط وتكيّف مع مواقف غير متوقعة — بدقة 100% في 8 عمليات.",
+        "en": "Each step removed a constraint: 2022 (marked tissue) → 2024 (basic tasks) → 2025 (full procedure on natural tissue). SRT-H's breakthrough: used LLMs for planning and adapted to unexpected situations — 100% accuracy across 8 operations."
+      }
+    },
+    {
+      "id": "med-sort-005",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات اعتماد أداة توثيق صوتي بـ AI (Ambient Scribe) في عيادتك:",
+        "en": "Order the steps for adopting an AI ambient documentation tool in your clinic:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "التحقق من توافق الأداة مع نظام السجل الإلكتروني (EHR) المستخدم في المستشفى",
+            "en": "Verify tool compatibility with the hospital's EHR system"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "تدريب الأطباء على مراجعة وتصحيح ملخصات AI قبل اعتمادها في السجل",
+            "en": "Train physicians to review and correct AI summaries before entering them in the record"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "تشغيل تجريبي مع مجموعة صغيرة من الأطباء لقياس التأثير على الوقت والجودة",
+            "en": "Run a pilot with a small group of physicians to measure impact on time and quality"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "قياس مؤشرات الإرهاق (Burnout) ورضا المرضى قبل وبعد التطبيق الكامل",
+            "en": "Measure burnout indicators and patient satisfaction before and after full deployment"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "التوافق التقني أولاً (بعض الأدوات لا تعمل مع كل أنظمة EHR)، ثم التدريب (AI يهلوس أحياناً — مراجعة بشرية ضرورية)، ثم تجربة محدودة، وأخيراً قياس النتائج. Abridge حققت انخفاض إرهاق 13 نقطة مئوية بهذا النهج المنظم.",
+        "en": "Technical compatibility first (some tools don't work with every EHR), then training (AI sometimes hallucinates — human review is essential), then limited pilot, finally measure outcomes. Abridge achieved 13 percentage point burnout reduction with this structured approach."
+      }
+    },
+    {
+      "id": "med-sort-006",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب تطور تراخيص FDA لأجهزة AI الطبية من الأقدم إلى الأحدث:",
+        "en": "Order the evolution of FDA AI medical device milestones from earliest to latest:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "أول تشخيص ذاتي بالكامل: LumineticsCore لاعتلال الشبكية السكري (2018)",
+            "en": "First fully autonomous diagnostic: LumineticsCore for diabetic retinopathy (2018)"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "أول ترخيص AI في الباثولوجي: Paige Prostate Detect بحساسية 0.99 (2021)",
+            "en": "First pathology AI clearance: Paige Prostate Detect with 0.99 sensitivity (2021)"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "أول ترخيص AI لكشف الإنتان: Prenosis Sepsis ImmunoScore (أبريل 2024)",
+            "en": "First AI sepsis detection clearance: Prenosis Sepsis ImmunoScore (April 2024)"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "أول جهاز بنموذج أساسي: Aidoc CARE1 Foundation Model (فبراير 2025)",
+            "en": "First foundation model device: Aidoc CARE1 Foundation Model (February 2025)"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "كل معلم يمثل نقلة: 2018 (استقلالية كاملة)، 2021 (تخصص جديد)، 2024 (مشكلة سريرية حرجة)، 2025 (نماذج أساسية). FDA رخّصت 295 جهازاً في 2025 وحده — أي جهاز تقريباً كل يوم عمل.",
+        "en": "Each milestone represents a leap: 2018 (full autonomy), 2021 (new specialty), 2024 (critical clinical problem), 2025 (foundation models). The FDA cleared 295 devices in 2025 alone — roughly one every working day."
+      }
+    },
+    {
+      "id": "med-sort-007",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات التحقق من عدالة نظام AI طبي تجاه الأقليات:",
+        "en": "Order the steps for verifying a medical AI system's fairness toward minorities:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "فحص تكوين بيانات التدريب: ما نسبة تمثيل كل فئة عرقية/ديموغرافية؟",
+            "en": "Examine training data composition: what percentage represents each racial/demographic group?"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "اختبار أداء النظام بشكل منفصل على كل فئة — وليس فقط الأداء الإجمالي",
+            "en": "Test system performance separately on each group — not just overall performance"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "مقارنة النتائج: هل تتفاوت الدقة أو الحساسية أو معدل الأخطاء بين الفئات؟",
+            "en": "Compare results: do accuracy, sensitivity, or error rates vary between groups?"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "وضع خطة مراقبة مستمرة بعد النشر مع آلية تصعيد عند اكتشاف فجوات جديدة",
+            "en": "Establish continuous post-deployment monitoring with escalation mechanism for newly discovered gaps"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "دراسة Obermeyer في Science كشفت أن الأداء \"الإجمالي\" قد يخفي تحيزاً صارخاً. لو فحصوا الأداء حسب العرق مبكراً لاكتشفوا أن الخوارزمية تحرم 28.8% إضافية من السود من المساعدة.",
+        "en": "Obermeyer's Science study revealed that 'overall' performance can mask glaring bias. Had they tested by race early, they'd have discovered the algorithm was denying an additional 28.8% of Black patients help."
+      }
+    },
+    {
+      "id": "med-sort-008",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات التعامل مع اقتراح AI يتناقض مع حكمك السريري:",
+        "en": "Order the steps for handling an AI suggestion that contradicts your clinical judgment:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "مراجعة البيانات الأولية التي بنى عليها AI اقتراحه (الصور، النتائج، التاريخ المرضي)",
+            "en": "Review the raw data the AI based its suggestion on (images, results, patient history)"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "البحث عن تشخيصات تفريقية قد تكون فاتتك — هل يرى AI شيئاً لم تنتبه له؟",
+            "en": "Search for differential diagnoses you may have missed — is AI seeing something you didn't notice?"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "طلب فحوصات تأكيدية إضافية إذا استمر التناقض بين تقييمك واقتراح AI",
+            "en": "Order additional confirmatory tests if the disagreement between your assessment and AI persists"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "توثيق قرارك النهائي مع مبررات قبول أو رفض اقتراح AI",
+            "en": "Document your final decision with justification for accepting or rejecting the AI suggestion"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "دراسات تُظهر أن الأطباء الذين يتحققون من اقتراحات AI يحققون أعلى دقة تشخيصية. التبعية العمياء أو الرفض المطلق كلاهما يقلل الأداء. التوثيق مهم قانونياً خاصة مع غياب إطار واضح للمسؤولية عن أخطاء AI.",
+        "en": "Studies show doctors who verify AI suggestions achieve the highest diagnostic accuracy. Blind reliance or outright rejection both reduce performance. Documentation is legally important especially given the lack of a clear AI liability framework."
+      }
+    },
+    {
+      "id": "med-sort-009",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مراحل تطور AI في الأشعة الطبية زمنياً:",
+        "en": "Order the phases of AI evolution in medical radiology chronologically:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "كشف الحالات الإيجابية بمساعدة الحاسوب (CAD) — تنبيهات بسيطة",
+            "en": "Computer-aided detection (CAD) — simple alerts"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "تحليل كمّي ذكي (حجم الورم، تكلّس الشرايين، حجم الأعضاء)",
+            "en": "Intelligent quantification (tumor volume, arterial calcification, organ size)"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "فرز ذكي: ترتيب الحالات حسب الأولوية السريرية تلقائياً",
+            "en": "Intelligent triage: automatic prioritization of cases by clinical urgency"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "نماذج أساسية متعددة المهام: نظام واحد يحلل أنواعاً متعددة من الصور والبيانات",
+            "en": "Multi-task foundation models: one system analyzing multiple image types and data"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "CAD كان الجيل الأول (تنبيهات بسيطة). التحليل الكمّي أضاف القياسات الدقيقة. الفرز الذكي (مثل Aidoc وViz.ai) غيّر سير العمل. النماذج الأساسية (CARE1) تمثل المستقبل — نظام واحد بدل عشرات الأدوات المتخصصة.",
+        "en": "CAD was the first generation (simple alerts). Quantification added precise measurements. Intelligent triage (like Aidoc and Viz.ai) changed workflow. Foundation models (CARE1) represent the future — one system instead of dozens of specialized tools."
+      }
+    },
+    {
+      "id": "med-sort-010",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات إنشاء منظومة AI أخلاقية في مستشفاك:",
+        "en": "Order the steps for building an ethical AI governance system in your hospital:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "تشكيل لجنة حوكمة AI تضم أطباء، أخلاقيين، قانونيين، ومرضى",
+            "en": "Form an AI governance committee including physicians, ethicists, lawyers, and patients"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "وضع معايير تقييم إلزامية قبل اعتماد أي أداة AI (تنوع البيانات، التقييم المستقل، الشفافية)",
+            "en": "Establish mandatory evaluation criteria before adopting any AI tool (data diversity, independent evaluation, transparency)"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "إنشاء سجل مركزي لجميع أدوات AI المستخدمة مع مراقبة أداء مستمرة",
+            "en": "Create a central registry of all AI tools in use with continuous performance monitoring"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "تدريب جميع الطاقم الطبي على قدرات وقيود AI مع تحديث سنوي",
+            "en": "Train all medical staff on AI capabilities and limitations with annual updates"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "الحوكمة أولاً (من يقرر؟)، ثم المعايير (كيف نقرر؟)، ثم المراقبة (هل يعمل كما وعدنا؟)، ثم التدريب (هل الجميع يفهم؟). خبراء يوصون بإنشاء لجان إشراف AI في المستشفيات — وبعض المستشفيات الأمريكية الكبرى بدأت فعلاً.",
+        "en": "Governance first (who decides?), then criteria (how do we decide?), then monitoring (is it working as promised?), then training (does everyone understand?). Experts recommend AI oversight committees in hospitals — some major U.S. hospitals have already started."
+      }
+    },
+    {
+      "id": "med-sa-003",
+      "text": {
+        "ar": "مستشفاك يعرض عليك تجربة نظام AI جديد يقترح أدوية بناءً على الجينوم. لكنك لم تدرس علم الجينوم في كلية الطب. ما موقفك؟",
+        "en": "Your hospital offers you a new AI system that suggests medications based on genomics. But you never studied genomics in medical school. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أرحب بالفرصة وأبدأ بدورة تعلّم سريعة عن أساسيات الجينوم الدوائي قبل استخدام النظام",
+            "en": "I welcome the opportunity and start a quick course on pharmacogenomics basics before using the system"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أستخدم النظام كمرجع لكن لا أغيّر وصفاتي بناءً عليه حتى أفهمه جيداً",
+            "en": "I use the system as reference but don't change my prescriptions based on it until I understand it well"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفض — لا أريد استخدام أداة مبنية على علم لم أتدرب عليه",
+            "en": "I refuse — I don't want to use a tool based on science I wasn't trained in"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أوافق فوراً وأعتمد توصيات النظام بالكامل — AI أدق مني في الجينوم",
+            "en": "I agree immediately and fully adopt the system's recommendations — AI is more accurate than me in genomics"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الطب الجينومي سيصبح جزءاً أساسياً من الممارسة السريرية خلال سنوات قليلة. الاستعداد المبكر يمنحك ميزة تنافسية. لكن استخدام أداة لا تفهمها بالكامل يشبه قيادة سيارة لا تعرف مكابحها.",
+        "en": "Genomic medicine will become a core part of clinical practice within a few years. Early preparation gives you a competitive edge. But using a tool you don't fully understand is like driving a car whose brakes you don't know."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-004",
+      "text": {
+        "ar": "زميلك الجراح يخبرك أن نظام AI رفض تنفيذ خطوة جراحية لأن خوارزمية السلامة حددتها كخطيرة — رغم أنه واثق من قرار الروبوت. ما رأيك؟",
+        "en": "Your surgeon colleague tells you the AI system refused to execute a surgical step because its safety algorithm flagged it as dangerous — though he's confident about the robot's decision. What's your take?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يجب أن يكون للجراح حق تجاوز قرار AI في كل الحالات — الروبوت أداة وليس رئيساً",
+            "en": "The surgeon should be able to override AI in all cases — the robot is a tool, not a boss"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الأمان أولاً — إذا رصد AI خطراً فمن الحكمة التوقف والتحقق قبل المتابعة",
+            "en": "Safety first — if AI flags a risk, it's wise to pause and verify before proceeding"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "يجب إلغاء خاصية الرفض التلقائي — الجراح هو المسؤول الوحيد",
+            "en": "The auto-refusal feature should be disabled — the surgeon is the sole decision-maker"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يجب الاعتماد كلياً على حكم AI — البيانات أدق من الحدس البشري",
+            "en": "AI judgment should be fully relied upon — data is more accurate than human intuition"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن مهم: AI يرى أنماطاً قد يفوتها الإنسان (مثل قوة شد الخيوط)، لكن الجراح يفهم السياق الفريد لكل مريض. الحل: تحقق سريع عند تنبيه AI بدل تجاهله أو طاعته عمياء.",
+        "en": "Balance matters: AI sees patterns humans might miss (like suture tension forces), but surgeons understand each patient's unique context. The solution: quick verification when AI alerts, rather than ignoring or blindly obeying."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-005",
+      "text": {
+        "ar": "مريضك يسألك: \"دكتور، هل تستخدم ذكاء اصطناعي في تشخيصي؟\" ما ردك؟",
+        "en": "Your patient asks: 'Doctor, are you using AI in my diagnosis?' What's your response?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم، وأشرح له كيف يساعدني AI وأنني أراجع كل اقتراحاته قبل اعتمادها",
+            "en": "Yes, and I explain how AI assists me and that I review all its suggestions before adopting them"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا أذكر AI حتى لا يقلق المريض — المهم النتيجة",
+            "en": "I don't mention AI to avoid worrying the patient — what matters is the result"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أقول نعم بشكل عام لكن لا أدخل في التفاصيل التقنية",
+            "en": "I say yes generally but don't go into technical details"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أقول لا — لأن AI مجرد أداة مساعدة لا تستحق الذكر",
+            "en": "I say no — because AI is just a tool not worth mentioning"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الشفافية مع المرضى أصبحت ضرورة أخلاقية وقانونية. بعض المؤسسات بدأت بإضافة تنويه \"هذا التشخيص بمساعدة AI\". استطلاعات تُظهر أن المرضى منقسمون: بعضهم يرحب بـ AI إذا سرّع الرعاية، وآخرون يقلقون من \"آلات تتخذ القرارات\".",
+        "en": "Transparency with patients is becoming an ethical and legal necessity. Some institutions are adding 'this diagnosis was AI-assisted' disclaimers. Surveys show patients are split: some welcome AI if it speeds care, others worry about 'machines making decisions.'"
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-006",
+      "text": {
+        "ar": "اكتشفت أن نظام AI في قسم الطوارئ يُخطئ بنسبة أعلى مع المرضى من أصول أفريقية. ما تصرفك؟",
+        "en": "You discover the AI system in your ER has a higher error rate for patients of African descent. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبلّغ الإدارة فوراً وأطالب بإيقاف النظام حتى تُعالج المشكلة",
+            "en": "I immediately report to administration and demand the system be suspended until the issue is fixed"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أستمر في الاستخدام لكن أكون أكثر حذراً مع هؤلاء المرضى",
+            "en": "I continue using it but am more cautious with these patients"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا أتصرف — في منطقتنا الأقلية الأفريقية قليلة فالمشكلة لا تؤثر كثيراً",
+            "en": "I don't act — African-descent minorities are few in our region so it barely matters"
+          },
+          "flexibility_score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أنتظر حتى تُكتشف المشكلة رسمياً — ليست مسؤوليتي",
+            "en": "I wait until the issue is officially discovered — it's not my responsibility"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التحيز في AI الطبي ليس مشكلة \"نظرية\" — خوارزمية Optum حرمت 28.8% إضافية من السود من الرعاية. الإبلاغ الفوري واجب أخلاقي ومهني. حتى في مناطق ذات تنوع محدود، مبدأ العدالة في الرعاية الصحية لا يقبل الاستثناء.",
+        "en": "Medical AI bias isn't 'theoretical' — the Optum algorithm denied an additional 28.8% of Black patients care. Immediate reporting is an ethical and professional duty. Even in areas with limited diversity, the principle of healthcare equity accepts no exceptions."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-007",
+      "text": {
+        "ar": "كلية الطب التي تعمل بها تنوي إضافة مادة \"AI في الطب\" للمنهج. زميلك يعارض ويقول: \"يكفينا ما نتعلمه — AI سيختفي كموضة عابرة.\" ما رأيك؟",
+        "en": "Your medical school plans to add 'AI in Medicine' to the curriculum. A colleague objects: 'We learn enough — AI will fade as a passing trend.' What's your view?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أؤيد الإضافة بقوة — طبيب لا يفهم AI في 2025 كطبيب لا يفهم التصوير الشعاعي في 1990",
+            "en": "I strongly support it — a doctor who doesn't understand AI in 2025 is like one who didn't understand imaging in 1990"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أؤيد كمادة اختيارية وليست إلزامية — من يريد يتعلم",
+            "en": "I support it as an elective, not mandatory — whoever wants can learn"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتفق مع زميلي — المنهج مكتظ أصلاً ولا حاجة لإضافات",
+            "en": "I agree with my colleague — the curriculum is already packed and needs no additions"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أؤيد لكن فقط كورشة قصيرة وليس مادة كاملة",
+            "en": "I support it but only as a short workshop, not a full course"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "66% من الأطباء الأمريكيين يستخدمون AI في 2025 (من 38% في 2023). 1,300+ جهاز مرخص من FDA. AI ليس موضة — إنه يُعيد تشكيل الممارسة الطبية. طبيب المستقبل يحتاج فهم قدرات AI وقيوده تماماً كما يفهم قراءة الأشعة.",
+        "en": "66% of U.S. physicians use AI in 2025 (up from 38% in 2023). 1,300+ FDA-cleared devices. AI isn't a trend — it's reshaping medical practice. Future physicians need to understand AI's capabilities and limitations just as they understand reading X-rays."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-008",
+      "text": {
+        "ar": "شركة تأمين صحي تعرض على مستشفاك خوارزمية تقلل رفض المطالبات بنسبة 40%. لكنك تعلم أن شركات مثل UnitedHealth وCigna اتُّهمت بالرفض الآلي الجائر. ما موقفك؟",
+        "en": "A health insurer offers your hospital an algorithm that reduces claim denials by 40%. But you know companies like UnitedHealth and Cigna were accused of unfair automated denials. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أطالب بشفافية كاملة حول كيفية اتخاذ الخوارزمية للقرارات وآلية استئناف للمرضى",
+            "en": "I demand full transparency on how the algorithm makes decisions and an appeal mechanism for patients"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أرفض أي خوارزمية من شركات التأمين — مصلحتها تتعارض مع مصلحة المريض",
+            "en": "I reject any insurance algorithm — their interests conflict with patients' interests"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أوافق — تقليل الرفض يعني رعاية أفضل للمرضى بغض النظر عن المخاوف",
+            "en": "I approve — reducing denials means better care regardless of concerns"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أؤجل القرار حتى تصدر تشريعات واضحة تنظم استخدام AI في التأمين",
+            "en": "I defer the decision until clear legislation regulating AI in insurance is enacted"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "nH Predict مُتهمة بمعدل خطأ 90%. Cigna رفضت 300,000+ مطالبة في شهرين. الشفافية والاستئناف ضرورتان. AI يمكن أن يُحسّن التأمين الصحي فعلاً — لكن بدون رقابة يمكن أن يُحوّله لأداة ضد المرضى.",
+        "en": "nH Predict is accused of 90% error rate. Cigna denied 300,000+ claims in 2 months. Transparency and appeals are essential. AI can genuinely improve health insurance — but without oversight it can become a weapon against patients."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-009",
+      "text": {
+        "ar": "أنت طبيب مناظير وتلاحظ أن اعتمادك على AI في كشف الأورام الحميدة جعلك أقل انتباهاً عند عدم توفر النظام. ما تصرفك؟",
+        "en": "You're an endoscopist and notice that your reliance on AI for polyp detection has made you less attentive when the system is unavailable. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أخصص وقتاً منتظماً للتدريب بدون AI للحفاظ على مهاراتي الأساسية",
+            "en": "I dedicate regular time for training without AI to maintain my core skills"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطالب بأن يكون AI متاحاً دائماً — لا داعي للعمل بدونه",
+            "en": "I demand AI be always available — no need to work without it"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أعتبر الأمر طبيعياً — مثلما اعتمدنا على الأشعة لم نعد نشخص بالجس فقط",
+            "en": "I consider it normal — just as we relied on imaging, we no longer diagnose by palpation alone"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتوقف عن استخدام AI نهائياً للحفاظ على مهاراتي",
+            "en": "I stop using AI entirely to preserve my skills"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "دراسة Lancet أثبتت أن أطباء المناظير فقدوا مهاراتهم فعلاً بعد 3 أشهر فقط من AI (انخفاض من 28.4% إلى 22.4%). الحل ليس رفض AI بل \"التدريب المزدوج\" — استخدام AI في الممارسة مع تدريب منتظم بدونه.",
+        "en": "The Lancet study proved endoscopists actually lost skills after just 3 months with AI (drop from 28.4% to 22.4%). The solution isn't rejecting AI but 'dual training' — using AI in practice with regular training without it."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-010",
+      "text": {
+        "ar": "مريضك يرفض إجراء فحص لأنه قرأ على الإنترنت أن \"AI أدق من الأطباء\". يقول: \"سأستخدم تطبيقاً بدلاً من زيارتك.\" ما ردك؟",
+        "en": "Your patient refuses a test because they read online that 'AI is more accurate than doctors.' They say: 'I'll use an app instead of visiting you.' How do you respond?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أشرح له بهدوء أن AI يُكمّل الطبيب ولا يحل محله — وأن التطبيقات لا تفحص جسمه فعلياً",
+            "en": "I calmly explain that AI complements doctors, doesn't replace them — and apps can't physically examine him"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أوافقه — بعض التطبيقات فعلاً دقيقة وقد تكفي لحالته",
+            "en": "I agree — some apps are indeed accurate and might suffice for his case"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أقول له: \"هذا كلام فارغ\" وأصر على الفحص",
+            "en": "I tell him: 'That's nonsense' and insist on the test"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أحيله لمقالات علمية تشرح قيود AI الطبي وأترك له القرار",
+            "en": "I refer him to scientific articles explaining medical AI limitations and let him decide"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "واحد من كل 3 أمريكيين سيتجاهل الطبيب إذا قال AI إن حالته بسيطة. لكن AI يهلوس بنسبة 1.47% ويحذف معلومات بنسبة 3.45%. التواصل الإنساني والفحص السريري لا يمكن لتطبيق أن يحل محلهما.",
+        "en": "1 in 3 Americans would skip the doctor if AI says their case is simple. But AI hallucinates at 1.47% and omits info at 3.45%. Human communication and clinical examination can't be replaced by an app."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-011",
+      "text": {
+        "ar": "أنت مسؤول عن التعليم الطبي المستمر في مستشفاك. هل تُدرج \"كيفية التعامل مع أدوات AI\" كمتطلب إلزامي لجميع الأطباء؟",
+        "en": "You're responsible for continuing medical education at your hospital. Would you make 'How to work with AI tools' a mandatory requirement for all physicians?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم — مثلما نُلزم بتدريب الإنعاش، يجب إلزام فهم AI كأداة سريرية",
+            "en": "Yes — just as we mandate CPR training, we should mandate understanding AI as a clinical tool"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أجعله إلزامياً فقط للتخصصات التي تستخدم AI فعلاً (الأشعة، الباثولوجي...)",
+            "en": "I make it mandatory only for specialties actually using AI (radiology, pathology...)"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتركه اختيارياً — الأطباء مشغولون ولا يحتاجون عبئاً إضافياً",
+            "en": "I leave it optional — doctors are busy and don't need extra burden"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أنتظر حتى تصدر توجيهات رسمية من الجهات الصحية",
+            "en": "I wait until official directives come from health authorities"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "100% من الأنظمة الصحية الأمريكية تستخدم AI بشكل ما. 66% من الأطباء يستخدمونه شخصياً. التدريب على AI لم يعد رفاهية — إنه ضرورة لسلامة المرضى. دراسة Deskilling تثبت أن الاستخدام بدون فهم يضر.",
+        "en": "100% of U.S. health systems use AI in some form. 66% of physicians use it personally. AI training is no longer a luxury — it's a patient safety necessity. The deskilling study proves that use without understanding causes harm."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-012",
+      "text": {
+        "ar": "مستشفاك يعتمد نظام AI يتنبأ بإعادة دخول المرضى خلال 30 يوماً. النظام يقترح خروجاً مبكراً لمريضك، لكنك تشعر سريرياً أنه يحتاج يوماً إضافياً. ما قرارك؟",
+        "en": "Your hospital uses an AI system predicting 30-day readmission. The system suggests early discharge for your patient, but clinically you feel they need another day. What's your decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبقي المريض يوماً إضافياً — حكمي السريري يتضمن عوامل لا يرصدها AI",
+            "en": "I keep the patient one more day — my clinical judgment includes factors AI can't capture"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أوافق على الخروج المبكر — البيانات أدق من الحدس",
+            "en": "I approve early discharge — data is more accurate than intuition"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أطلب رأي زميل ثانٍ لحسم الخلاف بيني وبين النظام",
+            "en": "I ask a colleague for a second opinion to resolve the disagreement"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتجاهل النظام تماماً — AI لا يعرف مرضاي أفضل مني",
+            "en": "I completely ignore the system — AI doesn't know my patients better than I do"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "AI يخفض إعادة الدخول 17% لكنه لا يرى كل شيء: حالة المريض الاجتماعية، دعم الأسرة، قدرته على العناية بنفسه. أفضل ممارسة: استخدم AI كنقطة بداية واجمعها مع حكمك السريري والسياق الشخصي.",
+        "en": "AI reduces readmissions by 17% but can't see everything: patient's social situation, family support, self-care ability. Best practice: use AI as a starting point and combine it with clinical judgment and personal context."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-013",
+      "text": {
+        "ar": "زميلك يقول: \"AI سيجعل وظيفة طبيب الأشعة تختفي خلال 10 سنوات.\" ما رأيك؟",
+        "en": "Your colleague says: 'AI will make radiologists obsolete within 10 years.' What's your view?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا أتفق — الطلب يزداد (1,208 مقعد قياسي في 2025) والدخل ارتفع 48% — لكن الدور سيتغيّر",
+            "en": "I disagree — demand is growing (record 1,208 positions in 2025) and income rose 48% — but the role will change"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتفق — AI أدق من البشر في الصور وهذا سيقضي على التخصص",
+            "en": "I agree — AI is more accurate than humans in imaging and this will end the specialty"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "ربما — لكن ليس في 10 سنوات بل 20-30 سنة",
+            "en": "Maybe — but not in 10 years, rather 20-30 years"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أعرف — لا أحد يستطيع التنبؤ بالمستقبل",
+            "en": "I don't know — no one can predict the future"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "أطباء الأشعة يقضون فقط 36% من وقتهم في تفسير الصور — الباقي استشارات وإجراءات ومراقبة جودة. فقط 19% من المستشفيات التي تستخدم AI في الأشعة تُبلغ عن نجاح \"عالي\". الدور سيتطور لكن لن يختفي.",
+        "en": "Radiologists spend only 36% of their time interpreting images — the rest is consultations, procedures, and quality oversight. Only 19% of hospitals deploying radiology AI report 'high' success. The role will evolve but won't disappear."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-014",
+      "text": {
+        "ar": "أنت طبيب في الخليج العربي. تلقيت عرضاً للمشاركة في مشروع AI صحي وطني. ما أولويتك الأولى؟",
+        "en": "You're a physician in the Gulf. You receive an offer to join a national health AI project. What's your top priority?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ضمان أن بيانات التدريب تمثل السكان المحليين — وليس فقط بيانات غربية مستوردة",
+            "en": "Ensuring training data represents the local population — not just imported Western data"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "التركيز على استيراد أفضل الأنظمة الأمريكية والأوروبية وتطبيقها محلياً",
+            "en": "Focusing on importing the best American and European systems and applying them locally"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "رفض المشاركة — التقنية لم تنضج بعد للاستخدام في منطقتنا",
+            "en": "Declining — technology isn't mature enough for use in our region"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التركيز على البنية التحتية الرقمية أولاً (سجلات إلكترونية موحدة) قبل AI",
+            "en": "Focusing on digital infrastructure first (unified electronic records) before AI"
+          },
+          "flexibility_score": 4
+        }
+      ],
+      "hint_after": {
+        "ar": "تحيز البيانات مشكلة حقيقية: 10.2% فقط من صور الجلدية تمثل البشرة الداكنة. الخليج يتقدم: Malaffi (3.5 مليار سجل)، NABIDH (9.47 مليون مريض)، لكن الخطوة التالية هي بناء نماذج AI مدرّبة على بيانات السكان المحليين.",
+        "en": "Data bias is a real problem: only 10.2% of dermatology images represent dark skin. The Gulf is advancing: Malaffi (3.5B records), NABIDH (9.47M patients), but the next step is building AI models trained on local population data."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-015",
+      "text": {
+        "ar": "وزارة الصحة تطلب رأيك: هل يجب إلزام شركات AI الطبي بنشر بيانات التدريب وتفاصيل الخوارزمية (الشفافية الكاملة)؟",
+        "en": "The health ministry asks your opinion: should medical AI companies be required to publish training data and algorithm details (full transparency)?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم — الشفافية ضرورة لسلامة المرضى حتى لو أثّرت على الملكية الفكرية",
+            "en": "Yes — transparency is a patient safety necessity even if it affects intellectual property"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "شفافية جزئية: معلومات عن التنوع والأداء بدون كشف الخوارزمية نفسها",
+            "en": "Partial transparency: information about diversity and performance without revealing the algorithm itself"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا — الشفافية الكاملة ستدمر الابتكار والمنافسة",
+            "en": "No — full transparency would destroy innovation and competition"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أترك القرار للجهات التنظيمية — ليست مسؤولية الأطباء",
+            "en": "I leave the decision to regulators — it's not physicians' responsibility"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "Epic Sepsis Model نُشر في مئات المستشفيات قبل التقييم المستقل الذي كشف ضعفه الشديد. لو كانت بيانات التدريب والأداء شفافة من البداية لما وصل لـ 54% من المرضى الأمريكيين. الشفافية الجزئية (الأداء والتنوع) حل وسط عملي.",
+        "en": "Epic Sepsis Model was deployed in hundreds of hospitals before independent evaluation revealed severe weakness. Had training data and performance been transparent from the start, it wouldn't have reached 54% of U.S. patients. Partial transparency (performance and diversity) is a practical middle ground."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-016",
+      "text": {
+        "ar": "أنت طبيب أطفال. أم تسألك: \"هل يمكنني استخدام ChatGPT لتشخيص أعراض طفلي بدل الانتظار في الطوارئ؟\" ما نصيحتك؟",
+        "en": "You're a pediatrician. A mother asks: 'Can I use ChatGPT to diagnose my child's symptoms instead of waiting in the ER?' What's your advice?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يمكنها الاستعانة بـ AI كمعلومة أولية لكن ليس بديلاً عن فحص الطبيب — خاصة للأطفال",
+            "en": "She can use AI as initial information but not as a substitute for a doctor's exam — especially for children"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أحذّرها بشدة — AI يهلوس ويحذف معلومات وقد يضلّلها في حالة خطيرة",
+            "en": "I strongly warn her — AI hallucinates and omits information and could mislead her in a serious case"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أوافقها — ChatGPT دقيق بما يكفي لمعظم الحالات البسيطة",
+            "en": "I agree — ChatGPT is accurate enough for most simple cases"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أقول لها: لا تستخدمي أي تقنية — اتصلي بي مباشرة",
+            "en": "I tell her: don't use any technology — call me directly"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "روبوت دردشة نصح مدمناً متعافياً بالتعاطي \"كمكافأة\". معدل الهلوسة 1.47%. الأطفال حالة خاصة لأنهم لا يستطيعون وصف أعراضهم بدقة وحالتهم تتدهور أسرع. AI قد يكون مفيداً كمعلومة أولية لكن الفحص السريري لا غنى عنه.",
+        "en": "A chatbot told a recovering addict to use drugs 'as a treat.' Hallucination rate is 1.47%. Children are special cases — they can't accurately describe symptoms and deteriorate faster. AI can be useful as initial info but clinical examination is irreplaceable."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-017",
+      "text": {
+        "ar": "مستشفاك يخطط لاستثمار كبير في AI. ما الأولوية التي توصي بها من بين الخيارات التالية؟",
+        "en": "Your hospital plans a major AI investment. Which priority do you recommend from the following?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التوثيق الصوتي بـ AI — يقلل الإرهاق فوراً ونتائجه مُثبتة",
+            "en": "AI ambient documentation — immediately reduces burnout with proven results"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "AI تشخيصي في الأشعة — أعلى عدد أجهزة مرخصة وأكبر قاعدة أدلة",
+            "en": "Diagnostic AI in radiology — highest number of cleared devices and largest evidence base"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "روبوت جراحي — الأكثر إبهاراً وجذباً للمرضى",
+            "en": "Surgical robot — most impressive and attractive to patients"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا شيء حالياً — ننتظر حتى تنضج التقنية أكثر",
+            "en": "Nothing currently — we wait until the technology matures more"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "كلا الخيارين (التوثيق والأشعة) ممتازان ولهما أدلة قوية. التوثيق الصوتي أسرع في العائد (100% من الأنظمة تستخدمه). AI التشخيصي في الأشعة أعمق تأثيراً (76% من الأجهزة). الاختيار يعتمد على أولويات المستشفى.",
+        "en": "Both options (documentation and radiology) are excellent with strong evidence. Ambient documentation gives faster returns (100% of systems use it). Diagnostic radiology AI has deeper impact (76% of devices). The choice depends on hospital priorities."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-018",
+      "text": {
+        "ar": "أنت طبيب في بلد نامٍ. مستشفاك لا يملك أطباء أشعة كافين. هل تستخدم نظام AI بدون إشراف طبيب أشعة؟",
+        "en": "You're a physician in a developing country. Your hospital lacks sufficient radiologists. Would you use an AI system without radiologist oversight?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم للفحوصات الأولية مع تحويل الحالات المشبوهة لأقرب أخصائي — AI أفضل من لا شيء",
+            "en": "Yes for initial screening with referral of suspicious cases to the nearest specialist — AI is better than nothing"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا — AI بدون إشراف خطير مهما كانت الظروف",
+            "en": "No — unsupervised AI is dangerous regardless of circumstances"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نعم بالكامل — AI أدق من طبيب عام يقرأ أشعة خارج تخصصه",
+            "en": "Yes completely — AI is more accurate than a GP reading imaging outside their specialty"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أفضّل التطبيب عن بُعد مع أطباء أشعة في مدينة أخرى بدلاً من AI",
+            "en": "I prefer telemedicine with radiologists in another city instead of AI"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا معضلة حقيقية: أقل من 2,000 أخصائي أشعة بيطري في أمريكا الشمالية وأوروبا مجتمعتين — والوضع أسوأ في الدول النامية. LumineticsCore يعمل بدون طبيب ومرخص من FDA. لكن معظم أنظمة AI الأخرى صُممت كأدوات مساعدة وليست مستقلة.",
+        "en": "This is a real dilemma: fewer than 2,000 board-certified veterinary radiologists serve all of North America and Europe — it's worse in developing countries. LumineticsCore works without a doctor and is FDA-cleared. But most other AI systems were designed as aids, not standalone tools."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-019",
+      "text": {
+        "ar": "اكتشفت أن نظام AI في مستشفاك أخطأ في تصنيف حالة مريضك. عند البحث، وجدت أن الخطأ موجود في 5-10% من الحالات. ما تصرفك الأوّلي؟",
+        "en": "You discover the AI system in your hospital misclassified your patient's case. Upon investigation, you find the error exists in 5-10% of cases. What's your first action?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أوثّق الحادثة وأبلغ لجنة السلامة والجودة فوراً مع طلب مراجعة شاملة للنظام",
+            "en": "I document the incident and immediately report to the safety and quality committee requesting a comprehensive system review"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أعدّل تشخيص مريضي وأستمر — 5-10% معدل خطأ مقبول",
+            "en": "I correct my patient's diagnosis and move on — 5-10% error rate is acceptable"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أوقف استخدام النظام نهائياً في قسمي",
+            "en": "I permanently stop using the system in my department"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتحقق من مرضاي السابقين الذين شُخّصوا بمساعدة النظام أولاً",
+            "en": "I first check my previous patients who were diagnosed with the system's help"
+          },
+          "flexibility_score": 4
+        }
+      ],
+      "hint_after": {
+        "ar": "في AI الأشعة، 5-10% من الحالات تتضمن تشخيصات خاطئة مرتبطة بالهلوسة. التوثيق والإبلاغ واجب أخلاقي ومؤسسي — لأن المشكلة قد تؤثر على عشرات المرضى الآخرين. مراجعة المرضى السابقين ضرورية أيضاً لكنها تأتي بعد تفعيل آلية الأمان.",
+        "en": "In AI radiology, 5-10% of cases involve hallucination-linked misdiagnoses. Documentation and reporting are ethical and institutional duties — because the issue may affect dozens of other patients. Reviewing previous patients is also necessary but comes after activating safety mechanisms."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
+    },
+    {
+      "id": "med-sa-020",
+      "text": {
+        "ar": "بعد 5 سنوات من الآن، كيف تتوقع أن تكون علاقتك بـ AI كطبيب؟",
+        "en": "In 5 years, how do you envision your relationship with AI as a physician?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI سيكون شريكي اليومي — أستخدمه في التشخيص والتوثيق والتنبؤ مع الحفاظ على حكمي السريري",
+            "en": "AI will be my daily partner — I'll use it for diagnosis, documentation, and prediction while maintaining clinical judgment"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "سأستخدمه أحياناً لكن لن أعتمد عليه — لا أثق بالتقنية",
+            "en": "I'll use it occasionally but won't rely on it — I don't trust technology"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "AI سيتولى معظم عملي وسأركز على التواصل الإنساني مع المرضى فقط",
+            "en": "AI will handle most of my work and I'll focus only on human communication with patients"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أعرف — لا أفكر في المستقبل البعيد",
+            "en": "I don't know — I don't think about the distant future"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "أفضل توقع: AI كشريك وليس بديل ولا أداة هامشية. 66% من الأطباء يستخدمونه في 2025 — سترتفع النسبة لـ 90%+ خلال 5 سنوات. الأطباء الأكثر نجاحاً سيكونون من يجمع بين الخبرة السريرية وفهم AI — تماماً كما حدث مع التصوير الطبي قبل 30 عاماً.",
+        "en": "Best prediction: AI as a partner, not a replacement or a marginal tool. 66% of physicians use it in 2025 — this will rise to 90%+ within 5 years. The most successful physicians will be those combining clinical expertise with AI understanding — just as happened with medical imaging 30 years ago."
+      },
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0
     }
   ]
 }
