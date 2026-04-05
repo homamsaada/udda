@@ -1,0 +1,237 @@
+{
+  "section_id": "accounting",
+  "section_name": { "ar": "المحاسبة والتدقيق", "en": "Accounting & Auditing" },
+  "version": "1.0",
+  "last_updated": "2026-04-05",
+  "questions": [
+    {
+      "id": "acc-mcq-001",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدقق حسابات في إحدى شركات Big Four. وزارة الخزانة الأمريكية استخدمت التعلم الآلي لكشف الاحتيال في السنة المالية 2024. ما حجم النتائج مقارنة بالعام السابق؟",
+        "en": "You are an auditor at a Big Four firm. The US Treasury used machine learning for fraud detection in fiscal year 2024. How did results compare to the prior year?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "منع واسترداد أكثر من 4 مليار دولار — زيادة 6 أضعاف عن 652.7 مليون في السنة السابقة", "en": "Prevented and recovered over $4 billion — a 6-fold increase from $652.7 million the prior year" }, "score": 3 },
+        { "id": "b", "text": { "ar": "تحسّن بنسبة 10% فقط — من 650 مليوناً إلى 715 مليون دولار", "en": "Only 10% improvement — from $650 million to $715 million" }, "score": 0 },
+        { "id": "c", "text": { "ar": "النظام فشل وأنتج إنذارات كاذبة أكثر من الاحتيال الفعلي", "en": "The system failed and produced more false alarms than actual fraud" }, "score": 0 },
+        { "id": "d", "text": { "ar": "حوالي مليار دولار — تحسّن جيد لكن ليس استثنائياً", "en": "About $1 billion — good improvement but not exceptional" }, "score": 1 }
+      ],
+      "hint_after": {
+        "ar": "الخزانة الأمريكية تدير 1.4 مليار عملية دفع سنوياً بقيمة 6.9 تريليون دولار. التعلم الآلي وحده استرد مليار دولار من احتيال الشيكات. المسؤولة الرسمية وصفت النتائج بـ\"التحوّلية\" — لكنها أكدت أن \"الإنسان دائماً في الحلقة\".",
+        "en": "The US Treasury manages 1.4 billion payments annually worth $6.9 trillion. ML alone recovered $1 billion in check fraud. The official described results as 'transformative' — but confirmed 'a human is always in the loop.'"
+      }
+    },
+    {
+      "id": "acc-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت محاسب تقيّم أدوات التدقيق الذكية. منصة MindBridge AI تحلل المعاملات المالية بطريقة مختلفة جذرياً عن التدقيق التقليدي. ما ميزتها الأساسية؟",
+        "en": "You are an accountant evaluating AI audit tools. MindBridge AI analyzes financial transactions in a radically different way from traditional auditing. What is its core advantage?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "تحلل 100% من المعاملات (وليس عيّنات) باستخدام AI مدرّب على أكثر من 260 مليار معاملة مع 8,000+ قاعدة GAAP مدمجة", "en": "Analyzes 100% of transactions (not samples) using AI trained on 260+ billion transactions with 8,000+ GAAP rules embedded" }, "score": 3 },
+        { "id": "b", "text": { "ar": "تستبدل المدقق البشري بالكامل وتصدر تقارير التدقيق تلقائياً", "en": "Completely replaces the human auditor and issues audit reports automatically" }, "score": 0 },
+        { "id": "c", "text": { "ar": "تقلّل حجم العيّنة بنسبة 10% فقط مقارنة بالتدقيق التقليدي", "en": "Reduces sample size by only 10% compared to traditional auditing" }, "score": 0 },
+        { "id": "d", "text": { "ar": "تحلل البيانات المالية بعد صدور التقارير لاكتشاف الأخطاء بأثر رجعي فقط", "en": "Analyzes financial data only after reports are issued to discover errors retroactively" }, "score": 0.5 }
+      ],
+      "hint_after": {
+        "ar": "استخدام AI في المحاسبة قفز من 9% إلى 41% في سنة واحدة (Wolters Kluwer 2025). سوق AI في المحاسبة بلغ 4.9 مليار دولار في 2024 ومتوقع أن يصل 96.7 مليار بحلول 2033. التحوّل من العيّنات إلى تحليل 100% هو أهم تغيير منهجي.",
+        "en": "AI usage in accounting jumped from 9% to 41% in one year (Wolters Kluwer 2025). The AI accounting market stood at $4.9B in 2024, projected to reach $96.7B by 2033. The shift from sampling to 100% analysis is the most significant methodological change."
+      }
+    },
+    {
+      "id": "acc-mcq-003",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت شريك في مكتب محاسبة متوسط. وفقاً لبحث Stanford GSB 2025، كم يوفّر الذكاء الاصطناعي من الوقت في إعداد القوائم المالية الشهرية؟",
+        "en": "You are a partner at a mid-size accounting firm. According to Stanford GSB 2025 research, how much time does AI save in preparing monthly financial statements?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "إنهاء القوائم الشهرية أسرع بـ 7.5 أيام مع تقليل وقت المعالجة الروتينية 8.5%", "en": "Monthly statements finalized 7.5 days faster with 8.5% less time on routine processing" }, "score": 3 },
+        { "id": "b", "text": { "ar": "لا تأثير ملموس على السرعة — AI يُستخدم فقط لتحسين الدقة", "en": "No tangible speed impact — AI is only used for accuracy improvement" }, "score": 0 },
+        { "id": "c", "text": { "ar": "توفير يوم واحد فقط في الشهر — تحسّن طفيف", "en": "Only one day saved per month — slight improvement" }, "score": 0 },
+        { "id": "d", "text": { "ar": "إلغاء الحاجة لإعداد القوائم تماماً — AI يولّدها تلقائياً", "en": "Completely eliminating the need for statement preparation — AI generates them automatically" }, "score": 0 }
+      ],
+      "hint_after": {
+        "ar": "الشركات التي تستثمر في تدريب AI تحصل على 7 أسابيع إضافية من السعة لكل موظف سنوياً (Karbon 2025). 98% من المحاسبين أبلغوا عن تحسّن في الدقة (Intuit 2025). التحوّل: من إعداد التقارير إلى الاستشارات الاستراتيجية.",
+        "en": "Firms investing in AI training unlock 7 additional weeks of capacity per employee annually (Karbon 2025). 98% of accountants reported accuracy improvements (Intuit 2025). The shift: from report preparation to strategic advisory."
+      }
+    },
+    {
+      "id": "acc-tf-001",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "الذكاء الاصطناعي سيؤدي إلى انخفاض حاد في عدد وظائف المحاسبين والمدققين وفقاً لتوقعات مكتب إحصاءات العمل الأمريكي (BLS) للفترة 2024-2034.",
+        "en": "AI will lead to a sharp decline in accountant and auditor jobs according to US Bureau of Labor Statistics (BLS) projections for 2024-2034."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "BLS يتوقع نمو وظائف المحاسبين 5% (72,800 وظيفة جديدة) — بينما وظائف مسك الدفاتر ستنخفض 5%. أكثر من 300,000 محاسب أمريكي استقالوا خلال عامين — AI قد يكون حلاً لأزمة نقص الكوادر وليس سبباً لفقدان الوظائف.",
+        "en": "BLS projects 5% growth for accountants (72,800 new jobs) — while bookkeeper jobs decline 5%. Over 300,000 US accountants quit in 2 years — AI may solve the talent shortage rather than cause job loss."
+      }
+    },
+    {
+      "id": "acc-tf-002",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "شركة PwC تتوقع تحقيق أتمتة شاملة للتدقيق من البداية للنهاية (End-to-End) باستخدام الذكاء الاصطناعي بحلول عام 2026.",
+        "en": "PwC expects to achieve end-to-end AI audit automation by 2026."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "PwC استثمرت 1.5 مليار دولار في AI وطوّرت منصة Aura وGL.ai. EY خصصت 1.4 مليار لـ 150 وكيل AI يخدمون 80,000 متخصص ضرائب. KPMG التزمت بـ 2 مليار على 5 سنوات مع منصة Clara. السباق بين Big Four في تبنّي AI بلغ ذروته.",
+        "en": "PwC invested $1.5B in AI with Aura and GL.ai platforms. EY allocated $1.4B for 150 AI agents serving 80,000 tax professionals. KPMG committed $2B over 5 years with Clara platform. The Big Four AI adoption race has peaked."
+      }
+    },
+    {
+      "id": "acc-fill-001",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "منصة {{blank_1}} حققت أكثر من 500,000 مستخدم في 125 دولة واعتمدتها جميع شركات Big Four، مع ميزة DocuMine LLM التي تحقق تحسين كفاءة يصل إلى 70% في معالجة المستندات بالجملة.",
+        "en": "The {{blank_1}} platform has achieved 500,000+ users across 125 countries and is adopted by all Big Four firms, with its DocuMine LLM feature delivering up to 70% efficiency improvements in bulk document processing."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": { "ar": "DataSnipper", "en": "DataSnipper" },
+          "options": [
+            { "ar": "DataSnipper", "en": "DataSnipper" },
+            { "ar": "MindBridge", "en": "MindBridge" },
+            { "ar": "AuditBoard", "en": "AuditBoard" },
+            { "ar": "Trullion", "en": "Trullion" }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "AuditBoard تخدم أكثر من 50% من شركات Fortune 500. Thomson Reuters Audit Intelligence يقلّل حجم العيّنات حتى 50% مع الحفاظ على جودة التدقيق. Leapfin \"Luca\" يمكّن من إغلاق الدفاتر في أقل من 48 ساعة.",
+        "en": "AuditBoard serves over 50% of Fortune 500. Thomson Reuters Audit Intelligence reduces sample sizes by up to 50% while maintaining audit quality. Leapfin 'Luca' enables book closing in under 48 hours."
+      }
+    },
+    {
+      "id": "acc-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل شركة من Big Four مع استثمارها أو أداتها الرئيسية في الذكاء الاصطناعي:",
+        "en": "Match each Big Four firm with its major AI investment or tool:"
+      },
+      "left": [
+        { "id": "L1", "text": { "ar": "PwC", "en": "PwC" } },
+        { "id": "L2", "text": { "ar": "EY", "en": "EY" } },
+        { "id": "L3", "text": { "ar": "KPMG", "en": "KPMG" } },
+        { "id": "L4", "text": { "ar": "Deloitte", "en": "Deloitte" } }
+      ],
+      "right": [
+        { "id": "R1", "text": { "ar": "استثمار 1.5 مليار $ مع منصتي Aura وGL.ai وتوقع أتمتة شاملة للتدقيق بحلول 2026", "en": "$1.5B investment with Aura and GL.ai platforms, expecting end-to-end audit automation by 2026" } },
+        { "id": "R2", "text": { "ar": "1.4 مليار $ لنشر 150 وكيل AI يخدمون 80,000 متخصص ضرائب مع أداة GLAD لكشف الاحتيال", "en": "$1.4B for 150 AI agents serving 80,000 tax professionals with GLAD fraud detection tool" } },
+        { "id": "R3", "text": { "ar": "2 مليار $ على 5 سنوات مع منصة Clara و100 مليون $ في Google Cloud AI", "en": "$2B over 5 years with Clara platform and $100M in Google Cloud AI" } },
+        { "id": "R4", "text": { "ar": "إطلاق Zora AI (منصة وكيلية بتقنية NVIDIA) ومنصة Omnia السحابية للتدقيق", "en": "Launched Zora AI (agentic platform with NVIDIA tech) and cloud-based Omnia audit platform" } }
+      ],
+      "correct_pairs": [
+        { "left": "L1", "right": "R1" },
+        { "left": "L2", "right": "R2" },
+        { "left": "L3", "right": "R3" },
+        { "left": "L4", "right": "R4" }
+      ],
+      "hint_after": {
+        "ar": "KPMG تتوقع أن 72% من الشركات تختبر أو تستخدم AI في التقارير المالية حالياً، ومتوقع أن تصل النسبة لـ 99% بحلول 2027. الفارق التنافسي لم يعد في تبنّي AI — بل في سرعة وعمق التبنّي.",
+        "en": "KPMG reports 72% of companies are piloting or using AI in financial reporting, projected to reach 99% by 2027. The competitive edge is no longer about AI adoption — but the speed and depth of adoption."
+      }
+    },
+    {
+      "id": "acc-sort-001",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مهام المحاسبة من الأعلى خطورة للأتمتة إلى الأقل خطورة:",
+        "en": "Order accounting tasks from highest automation risk to lowest:"
+      },
+      "items": [
+        { "id": "S1", "text": { "ar": "تصنيف المعاملات المالية (خطورة أتمتة 90%)", "en": "Transaction categorization (90% automation risk)" } },
+        { "id": "S2", "text": { "ar": "مطابقة البنوك (خطورة أتمتة 85%)", "en": "Bank reconciliation (85% automation risk)" } },
+        { "id": "S3", "text": { "ar": "التخطيط الضريبي المعقد (خطورة أتمتة 25%)", "en": "Complex tax planning (25% automation risk)" } },
+        { "id": "S4", "text": { "ar": "المحاسبة الجنائية وكشف الاحتيال (خطورة أتمتة 15%)", "en": "Forensic accounting and fraud investigation (15% automation risk)" } }
+      ],
+      "correct_order": ["S1", "S2", "S3", "S4"],
+      "hint_after": {
+        "ar": "النمط واضح: المهام الروتينية المتكررة (تصنيف، مطابقة، فواتير) مهددة بنسبة 85-90%، بينما المهام التي تحتاج حكماً مهنياً وتحقيقاً (جنائية، استشارات CFO) محمية عند 15-20%. التحوّل من الامتثال إلى الاستشارات هو الاتجاه الحاسم.",
+        "en": "The pattern is clear: routine repetitive tasks (categorization, reconciliation, invoicing) face 85-90% risk, while judgment-intensive tasks (forensic, CFO advisory) are protected at 15-20%. The shift from compliance to advisory is the decisive trend."
+      }
+    },
+    {
+      "id": "acc-self-001",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت محاسب بخبرة 8 سنوات. مكتبك يدرس تبنّي أداة AI تحلل 100% من المعاملات بدلاً من العيّنات التقليدية. كيف تتعامل مع هذا التحوّل؟",
+        "en": "You are an accountant with 8 years of experience. Your firm is considering an AI tool that analyzes 100% of transactions instead of traditional sampling. How do you handle this shift?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أتحمّس وأطلب تدريباً مكثفاً على الأداة — هذا يحرّرني للتركيز على الاستشارات والتخطيط الضريبي", "en": "I'm excited and request intensive training on the tool — this frees me to focus on advisory and tax planning" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أقبل التغيير بحذر وأحرص على فهم كيف يعمل النظام حتى أستطيع تقييم نتائجه", "en": "I cautiously accept the change and ensure I understand how the system works to evaluate its results" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "أشعر بالقلق لأن خبرتي في اختيار العيّنات وتقييمها ستفقد قيمتها", "en": "I'm worried because my expertise in sample selection and evaluation will lose its value" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "أعارض لأن التدقيق بالعيّنات منهج مثبت ومقبول مهنياً ولا حاجة لتغييره", "en": "I oppose it because sampling is a proven and professionally accepted methodology that doesn't need changing" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "46% من المحاسبين يستخدمون AI يومياً (Karbon 2025). التحوّل من العيّنات إلى 100% يقلّل مخاطر عدم اكتشاف الاحتيال بشكل جذري. المحاسبون الذين يتبنّون AI يحصلون على 7 أسابيع إضافية من السعة سنوياً لخدمة العملاء.",
+        "en": "46% of accountants use AI daily (Karbon 2025). The shift from sampling to 100% radically reduces fraud detection risk. Accountants who adopt AI gain 7 extra weeks of annual capacity for client service."
+      }
+    },
+    {
+      "id": "acc-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدقق داخلي واكتشفت أن نظام AI للكشف عن الاحتيال في شركتك يعمل كـ\"صندوق أسود\" — لا يمكنك تفسير قراراته بالكامل. فقط 18% من المؤسسات لديها مجلس حوكمة AI. ما تصرفك؟",
+        "en": "You are an internal auditor who discovered that your company's AI fraud detection system works as a 'black box' — you can't fully explain its decisions. Only 18% of organizations have an AI governance council. What do you do?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أقترح إنشاء لجنة حوكمة AI تضم محاسبين وتقنيين وقانونيين لوضع إطار رقابي قبل الاعتماد الكامل", "en": "I propose establishing an AI governance committee with accountants, technicians, and legal experts to create an oversight framework before full reliance" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أطلب من المورّد تقديم تفسيرات لقرارات النظام وأضيف طبقة مراجعة بشرية للحالات عالية المخاطر", "en": "I request the vendor provide explanations for system decisions and add a human review layer for high-risk cases" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "أثق في النظام لأن نتائجه جيدة — التفسيرية ليست ضرورية إذا كانت الدقة عالية", "en": "I trust the system because its results are good — explainability isn't necessary if accuracy is high" }, "flexibility_score": 1 },
+        { "id": "d", "text": { "ar": "أرفض استخدام النظام تماماً حتى يصبح قابلاً للتفسير بالكامل", "en": "I completely refuse to use the system until it becomes fully explainable" }, "flexibility_score": 2 }
+      ],
+      "hint_after": {
+        "ar": "قانون AI الأوروبي يُلزم بتدقيق خارجي لأنظمة AI عالية المخاطر في الخدمات المالية — مع غرامات تصل 35 مليون يورو أو 7% من الإيراد العالمي. ISACA أطلقت شهادة AAIA لتدقيق AI. الحوكمة ليست اختيارية — إنها ضرورة مهنية وقانونية.",
+        "en": "The EU AI Act mandates third-party audits for high-risk financial AI — with fines up to €35M or 7% of global revenue. ISACA launched the AAIA credential for AI auditing. Governance isn't optional — it's a professional and legal necessity."
+      }
+    }
+  ]
+}
