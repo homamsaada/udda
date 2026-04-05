@@ -1,0 +1,247 @@
+{
+  "section_id": "public-admin",
+  "section_name": { "ar": "الإدارة العامة والحوكمة", "en": "Public Administration & Governance" },
+  "version": "1.0",
+  "last_updated": "2026-04-05",
+  "questions": [
+    {
+      "id": "pad-mcq-001",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول في جهة حكومية تخطط لاستخدام خوارزمية ذكاء اصطناعي لتحديد حالات الاحتيال في الإعانات الاجتماعية. ما الدرس الأهم من فضيحة إعانات رعاية الأطفال في هولندا؟",
+        "en": "You're a government official planning to use an AI algorithm to detect fraud in social benefits. What's the most important lesson from the Dutch Childcare Benefits Scandal?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "الخوارزمية كانت دقيقة لكن الحكومة لم تطبق نتائجها بشكل صحيح", "en": "The algorithm was accurate but the government didn't implement its results correctly" }, "score": 0 },
+        { "id": "b", "text": { "ar": "الخوارزمية اعتبرت ازدواج الجنسية مؤشراً للاحتيال، مما أدى لاتهام 35,000 أسرة ظلماً وسقوط الحكومة", "en": "The algorithm treated dual nationality as a fraud indicator, falsely accusing ~35,000 families and causing the government to resign" }, "score": 3 },
+        { "id": "c", "text": { "ar": "المشكلة كانت في حجم البيانات الصغير وليس في تصميم الخوارزمية", "en": "The problem was small data volume, not algorithm design" }, "score": 0 },
+        { "id": "d", "text": { "ar": "الفضيحة مبالغ فيها إعلامياً والخوارزمية كانت تعمل بكفاءة مقبولة", "en": "The scandal was media exaggeration and the algorithm was working at acceptable efficiency" }, "score": 0 }
+      ],
+      "hint_after": {
+        "ar": "استقالت الحكومة الهولندية بالكامل في يناير 2021 — وهي من الحالات النادرة عالمياً التي أسقط فيها فشل خوارزمي حكومة بأكملها. تقرير منظمة العفو الدولية \"Xenophobic Machines\" وثّق التنميط العنصري المدمج في الخوارزمية.",
+        "en": "The entire Dutch government resigned in January 2021 — one of the rare global cases where algorithmic failure toppled a government. Amnesty International's 'Xenophobic Machines' report documented racial profiling embedded in the algorithm."
+      }
+    },
+    {
+      "id": "pad-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مستشار تحول رقمي في حكومة عربية. الوزير يسأل عن أفضل نموذج عالمي للمساعد الحكومي الذكي. أيّ المشاريع التالية يتميز بكونه مفتوح المصدر ومعترفاً به من اليونسكو؟",
+        "en": "You're a digital transformation advisor in an Arab government. The minister asks about the best global model for a smart government assistant. Which of these projects is open-source and UNESCO-recognized?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "Bürokratt الإستوني — مساعد مفتوح المصدر ضمن أفضل 100 مشروع AI لليونسكو لعامين متتاليين", "en": "Estonia's Bürokratt — open-source assistant in UNESCO's top 100 AI projects for two consecutive years" }, "score": 3 },
+        { "id": "b", "text": { "ar": "Albert الفرنسي — نظام ذكاء اصطناعي سيادي لكنه مغلق المصدر", "en": "France's Albert — a sovereign AI system but closed-source" }, "score": 1 },
+        { "id": "c", "text": { "ar": "ChatGPT — لأنه الأكثر انتشاراً عالمياً", "en": "ChatGPT — because it's the most widely used globally" }, "score": 0 },
+        { "id": "d", "text": { "ar": "gov.pt البرتغالي — يدعم 12 لغة لكنه يعتمد على ChatGPT تجارياً", "en": "Portugal's gov.pt — supports 12 languages but relies on commercial ChatGPT" }, "score": 1 }
+      ],
+      "hint_after": {
+        "ar": "إستونيا رغم صغر حجمها (1.3 مليون نسمة) لديها 47 حالة استخدام AI حكومية فعّالة. Bürokratt مفتوح المصدر يتيح لأي حكومة تعديله. البرتغال أطلقت مساعداً يغطي 2,300+ خدمة بـ 12 لغة منذ يناير 2025.",
+        "en": "Estonia, despite its small size (1.3M people), has 47 active government AI use cases. Open-source Bürokratt allows any government to modify it. Portugal launched an assistant covering 2,300+ services in 12 languages since January 2025."
+      }
+    },
+    {
+      "id": "pad-mcq-003",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت باحث في السياسات العامة. برنامج Robodebt الأسترالي استخدم خوارزمية لمقارنة الدخل وتحديد المستحقين الذين حصلوا على إعانات زائدة. ما حجم الضرر الذي سببه؟",
+        "en": "You're a public policy researcher. Australia's Robodebt program used an algorithm to compare income and identify benefit recipients who were overpaid. What was the scale of damage?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أثر على 5,000 شخص بتسويات مالية محدودة", "en": "Affected 5,000 people with limited financial settlements" }, "score": 0 },
+        { "id": "b", "text": { "ar": "اتهم 400,000 مستفيد ظلماً وانتهى بتسوية قضائية بقيمة 1.8 مليار دولار", "en": "Wrongly accused ~400,000 recipients and ended in a $1.8 billion class action settlement" }, "score": 3 },
+        { "id": "c", "text": { "ar": "حقق نجاحاً في كشف الاحتيال لكن واجه اعتراضات سياسية فقط", "en": "Successfully detected fraud but only faced political objections" }, "score": 0 },
+        { "id": "d", "text": { "ar": "أثر على 50,000 شخص لكن الحكومة صححت الأخطاء بسرعة", "en": "Affected 50,000 people but the government quickly corrected the errors" }, "score": 0 }
+      ],
+      "hint_after": {
+        "ar": "اللجنة الملكية وصفت Robodebt بأنه \"فشل إداري هائل\". الخوارزمية استخدمت متوسط الدخل السنوي لتقدير الدخل الأسبوعي — منهجية خاطئة جوهرياً. التعويضات بلغت 1.8 مليار دولار أسترالي.",
+        "en": "The Royal Commission called Robodebt 'a massive failure of public administration.' The algorithm used annual average income to estimate weekly income — a fundamentally flawed methodology. Compensation reached AUD 1.8 billion."
+      }
+    },
+    {
+      "id": "pad-tf-001",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "الإمارات عيّنت أول وزير دولة للذكاء الاصطناعي في العالم عام 2017، وتحتل المركز الأول عالمياً في نسبة السكان في سن العمل الذين يستخدمون AI بنسبة 64%.",
+        "en": "The UAE appointed the world's first Minister of State for AI in 2017 and ranks #1 globally with 64% of working-age population using AI."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "الوزير عمر سلطان العلماء عُيّن في 2017. دبي احتلت المركز الرابع في مؤشر المدن الذكية 2025 (IMD). استراتيجية أبوظبي الرقمية 2025-2027 تستثمر 3.54 مليار دولار لأتمتة جميع العمليات الحكومية.",
+        "en": "Minister Omar Sultan Al Olama was appointed in 2017. Dubai ranked 4th in the 2025 Smart City Index (IMD). Abu Dhabi's digital strategy (2025-2027) invests $3.54 billion to automate all government processes."
+      }
+    },
+    {
+      "id": "pad-tf-002",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مشروع Smart Check في أمستردام نجح في تطبيق AI مسؤول لأنه اتبع جميع توصيات الذكاء الاصطناعي المسؤول منذ البداية.",
+        "en": "Amsterdam's Smart Check project succeeded in implementing responsible AI because it followed all Responsible AI recommendations from the start."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "العكس تماماً! Smart Check (2024) اتبع كل توصيات AI المسؤول ومع ذلك أنتج تحيزاً كبيراً ضد المهاجرين والرجال — وأُوقف المشروع. هذا يثبت أن الامتثال الشكلي لا يكفي دون اختبار فعلي للنتائج.",
+        "en": "Quite the opposite! Smart Check (2024) followed every Responsible AI recommendation yet still produced heavy bias against migrants and men — and was shelved. This proves formal compliance isn't enough without actual outcome testing."
+      }
+    },
+    {
+      "id": "pad-fill-001",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "مبادرة {{blank_1}} السعودية تمثل استثماراً بقيمة {{blank_2}} في البنية التحتية للذكاء الاصطناعي، وهي من أكبر مبادرات AI الحكومية في العالم.",
+        "en": "Saudi Arabia's {{blank_1}} initiative represents a {{blank_2}} investment in AI infrastructure, making it one of the largest government AI initiatives globally."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": { "ar": "مشروع التسامي", "en": "Project Transcendence" },
+          "options": [
+            { "ar": "مشروع التسامي", "en": "Project Transcendence" },
+            { "ar": "رؤية 2030", "en": "Vision 2030" },
+            { "ar": "نيوم", "en": "NEOM" },
+            { "ar": "سدايا", "en": "SDAIA" }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": { "ar": "100 مليار دولار", "en": "$100 billion" },
+          "options": [
+            { "ar": "100 مليار دولار", "en": "$100 billion" },
+            { "ar": "10 مليارات دولار", "en": "$10 billion" },
+            { "ar": "50 مليار دولار", "en": "$50 billion" },
+            { "ar": "مليار دولار", "en": "$1 billion" }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "في مؤتمر LEAP 2025 وحده، أُعلن عن استثمارات بقيمة 14.9 مليار دولار في البنية التحتية الرقمية والذكائية. شراكة Google Cloud مع PIF بقيمة 10 مليارات دولار من خلال شركة HUMAIN.",
+        "en": "At LEAP 2025 alone, $14.9 billion in digital and AI infrastructure investments were announced. Google Cloud's PIF partnership is worth $10 billion through the HUMAIN company."
+      }
+    },
+    {
+      "id": "pad-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل فشل حكومي في استخدام الذكاء الاصطناعي بالدولة التي وقع فيها:",
+        "en": "Match each government AI failure with the country where it occurred:"
+      },
+      "left": [
+        { "id": "L1", "text": { "ar": "Robodebt — اتهام مئات الآلاف بالاحتيال ظلماً", "en": "Robodebt — falsely accusing hundreds of thousands of fraud" } },
+        { "id": "L2", "text": { "ar": "خوارزمية إعانات الأطفال — تنميط عنصري أسقط الحكومة", "en": "Childcare benefits algorithm — racial profiling that toppled the government" } },
+        { "id": "L3", "text": { "ar": "خوارزمية A-Level — خفض 40% من درجات الطلاب", "en": "A-Level algorithm — downgrading 40% of student grades" } },
+        { "id": "L4", "text": { "ar": "Smart Check — تحيز رغم اتباع كل إرشادات AI المسؤول", "en": "Smart Check — bias despite following all Responsible AI guidelines" } }
+      ],
+      "right": [
+        { "id": "R1", "text": { "ar": "أستراليا", "en": "Australia" } },
+        { "id": "R2", "text": { "ar": "هولندا", "en": "Netherlands" } },
+        { "id": "R3", "text": { "ar": "المملكة المتحدة", "en": "United Kingdom" } },
+        { "id": "R4", "text": { "ar": "أمستردام (هولندا أيضاً)", "en": "Amsterdam (also Netherlands)" } }
+      ],
+      "correct_pairs": [
+        { "left": "L1", "right": "R1" },
+        { "left": "L2", "right": "R2" },
+        { "left": "L3", "right": "R3" },
+        { "left": "L4", "right": "R4" }
+      ],
+      "hint_after": {
+        "ar": "هولندا ظهرت مرتين! فضيحة إعانات الأطفال (2013-2019) على المستوى الوطني، وSmart Check (2024) على مستوى بلدية أمستردام. هذا يثبت أن الدول المتقدمة ليست محصنة من فشل AI الحكومي.",
+        "en": "The Netherlands appeared twice! The childcare scandal (2013-2019) at national level, and Smart Check (2024) at Amsterdam municipal level. This proves even advanced nations aren't immune to government AI failures."
+      }
+    },
+    {
+      "id": "pad-sort-001",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات تطبيق نظام ذكاء اصطناعي حكومي مسؤول لتقييم طلبات الدعم الاجتماعي:",
+        "en": "Order the steps for implementing a responsible government AI system for evaluating social support applications:"
+      },
+      "items": [
+        { "id": "S1", "text": { "ar": "تقييم أثر الخوارزمية على الفئات المختلفة (اختبار التحيز العرقي والجندري والعمري)", "en": "Assess the algorithm's impact on different groups (test for racial, gender, and age bias)" } },
+        { "id": "S2", "text": { "ar": "إنشاء آلية تظلم واضحة تتيح للمواطنين الاعتراض على القرارات الآلية", "en": "Establish a clear appeals mechanism allowing citizens to challenge automated decisions" } },
+        { "id": "S3", "text": { "ar": "تشغيل تجريبي مع إشراف بشري كامل على كل قرار قبل تنفيذه", "en": "Pilot run with full human oversight on every decision before execution" } },
+        { "id": "S4", "text": { "ar": "نشر تقارير شفافية دورية عن أداء النظام ونسب الخطأ والتحيز", "en": "Publish periodic transparency reports on system performance, error rates, and bias" } }
+      ],
+      "correct_order": ["S1", "S2", "S3", "S4"],
+      "hint_after": {
+        "ar": "قانون AI الأوروبي (EU AI Act) يصنف أنظمة AI الحكومية في الخدمات الاجتماعية ضمن فئة \"عالية المخاطرة\" مع التزامات كاملة بحلول أغسطس 2026. العقوبات تصل إلى 35 مليون يورو أو 7% من الإيرادات العالمية.",
+        "en": "The EU AI Act classifies government AI in social services as 'high-risk' with full obligations by August 2026. Penalties reach €35 million or 7% of global turnover."
+      }
+    },
+    {
+      "id": "pad-self-001",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت موظف حكومي ذو خبرة 15 سنة. الجهة تعتزم استخدام ذكاء اصطناعي لتقييم طلبات التراخيص بدلاً من المراجعة اليدوية. ما موقفك؟",
+        "en": "You're a government employee with 15 years of experience. Your agency plans to use AI to evaluate license applications instead of manual review. What's your stance?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "فرصة ممتازة — سأتعلم كيف يعمل النظام وأركز على الحالات المعقدة التي تحتاج حكماً بشرياً", "en": "Excellent opportunity — I'll learn how the system works and focus on complex cases requiring human judgment" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "مقبول بشرط أن يبقى القرار النهائي للموظف البشري وليس للخوارزمية", "en": "Acceptable on condition that the final decision remains with the human employee, not the algorithm" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "قلق من أن النظام سيرتكب أخطاء لا يستطيع موظف مبتدئ اكتشافها", "en": "Worried that the system will make errors that a junior employee won't be able to detect" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "التراخيص تحتاج فهم السياق المحلي والعلاقات الإنسانية — لا يمكن لخوارزمية أن تفهم ذلك", "en": "Licensing requires understanding local context and human relationships — no algorithm can understand that" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "43% من الموظفين الحكوميين الأمريكيين يستخدمون AI في عملهم (Gallup Q4 2025)، ارتفاعاً من 17% في 2023. التحول ليس اختيارياً — لكن دور الموظف يتغير من منفذ إلى مراقب ومقيّم.",
+        "en": "43% of U.S. government employees now use AI at work (Gallup Q4 2025), up from 17% in 2023. The shift isn't optional — but the employee's role changes from executor to supervisor and evaluator."
+      }
+    },
+    {
+      "id": "pad-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "حكومتك تخطط لبناء \"توأم رقمي\" كامل للمدينة يحاكي حركة المرور والطوارئ والتخطيط العمراني. كمسؤول تخطيط، ما رأيك؟",
+        "en": "Your government plans to build a complete 'digital twin' of the city simulating traffic, emergencies, and urban planning. As a planning official, what's your view?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "مشروع طموح وضروري — سأشارك في تصميمه وأتعلم المهارات اللازمة لاستخدامه", "en": "An ambitious and necessary project — I'll participate in its design and learn the skills needed to use it" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "فكرة جيدة لكن يجب البدء بمنطقة صغيرة كتجربة قبل التوسع لكامل المدينة", "en": "Good idea but we should start with a small area as a pilot before expanding to the whole city" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "التكلفة ستكون هائلة والبيانات المتاحة غير كافية لبناء نموذج دقيق", "en": "The cost will be enormous and available data is insufficient to build an accurate model" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "التخطيط العمراني يحتاج زيارات ميدانية وخبرة محلية لا يمكن لنموذج رقمي تعويضها", "en": "Urban planning requires field visits and local expertise that no digital model can replace" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "سنغافورة بنت Virtual Singapore — نسخة رقمية ثلاثية الأبعاد كاملة للدولة بأكملها. دبي أطلقت \"التوأم الرقمي الذكي\" ضمن مشروع \"واقع إنساني واحد\". McKinsey وPwC يقدّران أن التوائم الرقمية تحسن الكفاءة التشغيلية بنسبة 20-40%.",
+        "en": "Singapore built Virtual Singapore — a complete 3D digital replica of the entire nation. Dubai launched its 'Smart Digital Twin' as part of the 'One Human Reality' project. McKinsey and PwC estimate digital twins improve operational efficiency by 20-40%."
+      }
+    }
+  ]
+}
