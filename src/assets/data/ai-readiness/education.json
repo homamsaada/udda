@@ -1,0 +1,237 @@
+{
+  "section_id": "education",
+  "section_name": { "ar": "التربية والتعليم", "en": "Education & Teaching" },
+  "version": "1.0",
+  "last_updated": "2026-04-05",
+  "questions": [
+    {
+      "id": "edu-mcq-001",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت معلم في مدرسة ثانوية وتلاحظ أن طلابك يستخدمون AI بكثافة في واجباتهم. دراسة من كلية وارتن وجدت نتيجة مقلقة عن الطلاب الذين اعتمدوا على AI أثناء التمرين. ماذا حدث لهم؟",
+        "en": "You're a high school teacher noticing your students heavily use AI for assignments. A Wharton School study found a concerning result about students who relied on AI during practice. What happened to them?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أداؤهم تحسّن في الاختبارات وبدون AI أيضاً", "en": "Their performance improved in exams both with and without AI" }, "score": 0 },
+        { "id": "b", "text": { "ar": "أداؤهم كان جيداً أثناء التمرين لكن أسوأ في الاختبارات بدون AI", "en": "They performed well during practice but worse on exams without AI" }, "score": 3 },
+        { "id": "c", "text": { "ar": "لم يكن هناك فرق ملحوظ بينهم وبين من لم يستخدموا AI", "en": "There was no noticeable difference between them and those who didn't use AI" }, "score": 0 },
+        { "id": "d", "text": { "ar": "رفضوا الاختبارات التقليدية واعتبروها غير عادلة", "en": "They refused traditional exams and considered them unfair" }, "score": 0 }
+      ],
+      "hint_after": {
+        "ar": "دراسة وارتن وجدت أن الطلاب أدوا جيداً مع AI لكنهم تراجعوا بدونه — ما يُعرف بـ\"التفريغ المعرفي\" (Cognitive Offloading). مراجعة منهجية 2024 أكدت أن الاستخدام المنتظم لمعلّم AI مرتبط بتراجع الاحتفاظ المعرفي.",
+        "en": "The Wharton study found students performed well with AI but regressed without it — known as 'Cognitive Offloading.' A 2024 systematic review confirmed regular AI tutoring use is associated with diminished cognitive retention."
+      }
+    },
+    {
+      "id": "edu-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير مدرسة وتريد اعتماد منصة تعليم تكيفي بالذكاء الاصطناعي. منصة Khanmigo نمت من 68,000 مستخدم إلى 700,000 طالب في عام واحد. ما الميزة التي تميّزها عن ChatGPT في السياق التعليمي؟",
+        "en": "You're a school principal wanting to adopt an AI adaptive learning platform. Khanmigo grew from 68,000 to 700,000 students in one year. What distinguishes it from ChatGPT in an educational context?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "تعطي الإجابات مباشرة بسرعة أكبر من ChatGPT", "en": "It gives answers directly and faster than ChatGPT" }, "score": 0 },
+        { "id": "b", "text": { "ar": "توجّه الطلاب بأسئلة سقراطية لاكتشاف الإجابة بأنفسهم دون إعطائها مباشرة", "en": "It guides students with Socratic questioning to discover answers themselves without giving them directly" }, "score": 3 },
+        { "id": "c", "text": { "ar": "تعمل بدون إنترنت على الأجهزة المحلية", "en": "It works offline on local devices" }, "score": 0 },
+        { "id": "d", "text": { "ar": "متاحة مجاناً لجميع الطلاب بلا قيود", "en": "Available free for all students without restrictions" }, "score": 0.5 }
+      ],
+      "hint_after": {
+        "ar": "دراسة من جامعة هارفارد (2025) في Nature Scientific Reports وجدت أن الطلاب الذين استخدموا معلّماً بالذكاء الاصطناعي حققوا أكثر من ضعف مكاسب التعلم مقارنة بالفصول التقليدية. دراسة ستانفورد وجدت أن المعلّم AI أزال تقريباً فجوة الأداء بين المعلمين المبتدئين والخبراء.",
+        "en": "A Harvard RCT (2025) in Nature Scientific Reports found students using an AI tutor achieved more than double the learning gains vs. traditional classrooms. A Stanford study found AI tutoring nearly eliminated the novice-expert tutor gap."
+      }
+    },
+    {
+      "id": "edu-mcq-003",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت أستاذ جامعي وتستخدم Turnitin للكشف عن الغش بالذكاء الاصطناعي. دراسة من ستانفورد كشفت مشكلة خطيرة في أدوات كشف AI تتعلق بالطلاب غير الناطقين بالإنجليزية. ما هي؟",
+        "en": "You're a university professor using Turnitin for AI cheating detection. A Stanford study revealed a serious problem with AI detection tools regarding non-native English speakers. What is it?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "لم تستطع كشف النصوص المترجمة من لغات أخرى", "en": "It couldn't detect texts translated from other languages" }, "score": 0 },
+        { "id": "b", "text": { "ar": "صنّفت 61.3% من مقالات TOEFL لغير الناطقين بالإنجليزية خطأً على أنها مولّدة بالذكاء الاصطناعي", "en": "It misclassified 61.3% of non-native English TOEFL essays as AI-generated" }, "score": 3 },
+        { "id": "c", "text": { "ar": "أعطت نتائج متطابقة للجميع بغض النظر عن اللغة الأم", "en": "It gave identical results for everyone regardless of native language" }, "score": 0 },
+        { "id": "d", "text": { "ar": "عملت بشكل أفضل مع النصوص الأكاديمية الرسمية فقط", "en": "It only worked better with formal academic texts" }, "score": 0.5 }
+      ],
+      "hint_after": {
+        "ar": "هذا التحيز دفع 12+ جامعة كبرى — منها Yale وJohns Hopkins وUCLA — لتعطيل كشف AI في Turnitin كلياً. Claude 3.5 Haiku يُكتشف فقط بنسبة 53-60%، والمحتوى المُعاد صياغته بـ QuillBot ينخفض لـ 64%.",
+        "en": "This bias led 12+ major universities — including Yale, Johns Hopkins, and UCLA — to disable Turnitin's AI detection entirely. Claude 3.5 Haiku is flagged only 53-60%, and QuillBot-paraphrased content drops to ~64%."
+      }
+    },
+    {
+      "id": "edu-tf-001",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "وفقاً لمنظمة التعاون الاقتصادي والتنمية (OECD) 2025، يستخدم 75% من الطلاب الذين تزيد أعمارهم عن 16 سنة في دول OECD أدوات الذكاء الاصطناعي التوليدي.",
+        "en": "According to the OECD (2025), 75% of students aged 16+ across OECD countries use generative AI tools."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "استطلاع Digital Education Council لـ 3,839 طالباً في 16 دولة وجد أن 86% يستخدمون AI في دراساتهم، و54% أسبوعياً، و24% يومياً. في بريطانيا، 92% من الطلاب بدوام كامل يستخدمون AI، و88% في التقييمات الأكاديمية.",
+        "en": "The Digital Education Council survey of 3,839 students across 16 countries found 86% use AI in studies, 54% weekly, 24% daily. In the UK, 92% of full-time undergraduates use AI, with 88% using it for assessments."
+      }
+    },
+    {
+      "id": "edu-tf-002",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Duolingo استغنت عن حوالي 10% من مترجميها ومصممي مناهجها في 2024 واستبدلتهم بأنظمة آلية، رغم وصولها لـ 50 مليون مستخدم يومي نشط.",
+        "en": "Duolingo cut about 10% of its translators and curriculum designers in 2024, replacing them with automated pipelines, despite reaching 50 million daily active users."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "ميزة \"اشرح إجابتي\" المدعومة بالذكاء الاصطناعي اعتمدها 65% من المستخدمين ورفعت نسب إكمال الدورات 15%. هذا نموذج لكيف يمكن أن ينمو المنتج ويتقلص فريق العمل البشري في آن واحد.",
+        "en": "The AI-powered 'Explain My Answer' feature was adopted by 65% of users and boosted course completion rates 15%. This is a model of how a product can grow while the human workforce shrinks simultaneously."
+      }
+    },
+    {
+      "id": "edu-fill-001",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "منصة {{blank_1}} التابعة لأكاديمية خان توسعت من 68,000 إلى 700,000 طالب في عام واحد، وتخطط لتجاوز مليون طالب في 2025-2026.",
+        "en": "Khan Academy's {{blank_1}} platform expanded from 68,000 to 700,000 students in one year, planning to surpass one million in 2025-2026."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": { "ar": "Khanmigo", "en": "Khanmigo" },
+          "options": [
+            { "ar": "Khanmigo", "en": "Khanmigo" },
+            { "ar": "KhanBot", "en": "KhanBot" },
+            { "ar": "KhanTutor", "en": "KhanTutor" },
+            { "ar": "KhanAssist", "en": "KhanAssist" }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Khanmigo مبني على GPT-4 ومدعوم من Microsoft Azure. Microsoft تموّل الأداة لجعلها مجانية للمعلمين. دراسة وجدت أن الطلاب الذين يستخدمونها 30+ دقيقة أسبوعياً حققوا مكاسب تعلم أعلى بـ 20% من المتوقع.",
+        "en": "Khanmigo is built on GPT-4 and supported by Microsoft Azure. Microsoft funds the tool to make it free for teachers. A study found students using it 30+ minutes weekly showed ~20% greater-than-expected learning gains."
+      }
+    },
+    {
+      "id": "edu-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تحدٍّ في استخدام AI بالتعليم مع الدليل البحثي المرتبط به:",
+        "en": "Match each challenge in using AI in education with its associated research evidence:"
+      },
+      "left": [
+        { "id": "L1", "text": { "ar": "التفريغ المعرفي", "en": "Cognitive Offloading" } },
+        { "id": "L2", "text": { "ar": "تحيّز كشف AI ضد غير الناطقين", "en": "AI detection bias against non-natives" } },
+        { "id": "L3", "text": { "ar": "الانتشار الشامل لاستخدام AI", "en": "Universal AI usage spread" } },
+        { "id": "L4", "text": { "ar": "فعالية التعلم التكيفي", "en": "Adaptive learning effectiveness" } }
+      ],
+      "right": [
+        { "id": "R1", "text": { "ar": "وارتن: أداء أسوأ في الاختبارات بدون AI بعد التمرين معه", "en": "Wharton: worse exam performance without AI after practicing with it" } },
+        { "id": "R2", "text": { "ar": "ستانفورد: 61.3% من مقالات TOEFL صُنّفت خطأً كمولّدة", "en": "Stanford: 61.3% of TOEFL essays misclassified as AI-generated" } },
+        { "id": "R3", "text": { "ar": "OECD: 75% من طلاب 16+ يستخدمون AI التوليدي", "en": "OECD: 75% of students 16+ use generative AI" } },
+        { "id": "R4", "text": { "ar": "هارفارد: ضعف مكاسب التعلم مع معلّم AI مقارنة بالفصل التقليدي", "en": "Harvard: double the learning gains with AI tutor vs. traditional classroom" } }
+      ],
+      "correct_pairs": [
+        { "left": "L1", "right": "R1" },
+        { "left": "L2", "right": "R2" },
+        { "left": "L3", "right": "R3" },
+        { "left": "L4", "right": "R4" }
+      ],
+      "hint_after": {
+        "ar": "المفارقة المركزية في AI والتعليم: الأداة نفسها التي تضاعف التعلم (هارفارد) يمكن أن تسبب تفريغاً معرفياً (وارتن). المفتاح هو التصميم التعليمي الذي يشجع التفكير النقدي بدلاً من إعطاء الإجابات.",
+        "en": "The central paradox of AI in education: the same tool that doubles learning (Harvard) can cause cognitive offloading (Wharton). The key is instructional design that encourages critical thinking rather than giving answers."
+      }
+    },
+    {
+      "id": "edu-sort-001",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات دمج أداة ذكاء اصطناعي تعليمية في مدرستك وفق أفضل الممارسات:",
+        "en": "Order the steps for integrating an educational AI tool in your school according to best practices:"
+      },
+      "items": [
+        { "id": "S1", "text": { "ar": "وضع سياسة واضحة للاستخدام الأخلاقي للذكاء الاصطناعي في المدرسة", "en": "Establish a clear policy for ethical AI use in the school" } },
+        { "id": "S2", "text": { "ar": "تدريب المعلمين على الأداة وإمكانياتها وحدودها", "en": "Train teachers on the tool, its capabilities, and limitations" } },
+        { "id": "S3", "text": { "ar": "تجربة محدودة في فصول مختارة مع رصد النتائج", "en": "Limited pilot in selected classrooms with outcome monitoring" } },
+        { "id": "S4", "text": { "ar": "التوسع التدريجي مع تعديل المناهج وأساليب التقييم", "en": "Gradual expansion with curriculum and assessment method adjustments" } }
+      ],
+      "correct_order": ["S1", "S2", "S3", "S4"],
+      "hint_after": {
+        "ar": "30 ولاية أمريكية أصدرت توجيهات رسمية لاستخدام AI في المدارس حتى يونيو 2025. المعلمون الذين بدأوا بالأداة من بداية العام الدراسي حققوا نتائج أفضل ممن حاولوا دمجها في منتصف الفصل.",
+        "en": "30 U.S. states have released official AI guidance for schools as of June 2025. Teachers who started with the tool at the beginning of the school year achieved better results than those who tried to integrate it mid-semester."
+      }
+    },
+    {
+      "id": "edu-self-001",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "طالب يسلّمك بحثاً ممتازاً وتشك أنه استخدم AI في كتابته. أداة كشف AI تقول إن احتمال الكتابة الآلية 72%. كيف تتصرف؟",
+        "en": "A student submits an excellent paper and you suspect they used AI to write it. An AI detection tool says there's a 72% probability of automated writing. How do you act?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أجري مقابلة شفهية مع الطالب لأقيّم فهمه للموضوع — نتيجة الأداة وحدها لا تكفي للحكم", "en": "I conduct an oral interview to assess their understanding — the tool's result alone isn't sufficient for judgment" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أطلب منه إعادة كتابة جزء من البحث أمامي لأقارن المستوى", "en": "I ask them to rewrite part of the paper in front of me to compare the level" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "أعتمد نتيجة الأداة وأبلغ لجنة الانضباط الأكاديمي", "en": "I rely on the tool's result and report to the academic discipline committee" }, "flexibility_score": 1 },
+        { "id": "d", "text": { "ar": "أتجاهل الشك لأن أدوات الكشف غير موثوقة أصلاً", "en": "I ignore the suspicion because detection tools are unreliable anyway" }, "flexibility_score": 2 }
+      ],
+      "hint_after": {
+        "ar": "Turnitin تدّعي دقة 98% لكنها تكشف فقط 85% من المحتوى عمداً لتقليل الإيجابيات الكاذبة. طالب في Yale أثبت عدم موثوقية GPTZero بتمرير أوراق لرئيس الجامعة السابق وأظهرت \"احتمال 100% أنها مولّدة بـ AI\".",
+        "en": "Turnitin claims 98% accuracy but intentionally catches only ~85% to keep false positives low. A Yale student proved GPTZero's unreliability by running papers by the former university president, showing '100% probability of AI generation.'"
+      }
+    },
+    {
+      "id": "edu-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "وزارة التعليم تعلن عن خطة لدمج AI في المناهج الدراسية ابتداءً من المرحلة المتوسطة. كمعلم، ما موقفك؟",
+        "en": "The Ministry of Education announces a plan to integrate AI into curricula starting from middle school. As a teacher, what's your position?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "ممتاز — يجب تعليم الطلاب التعامل مع AI كمهارة أساسية للمستقبل، ومستعد للمشاركة في تطوير المناهج", "en": "Excellent — students must learn to work with AI as a fundamental future skill, and I'm ready to help develop curricula" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "جيد بشرط تدريب المعلمين أولاً وتوفير موارد كافية — لا يمكن فرضه دون تحضير", "en": "Good provided teachers are trained first and adequate resources are provided — it can't be imposed without preparation" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "مبكر جداً — المرحلة المتوسطة صغيرة على AI، والأفضل البدء من الجامعة", "en": "Too early — middle school is too young for AI, better to start from university" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "لا أوافق — المدرسة يجب أن تركز على الأساسيات التقليدية والتفكير النقدي، وليس التقنيات العابرة", "en": "I disagree — school should focus on traditional fundamentals and critical thinking, not passing technologies" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "86% من الطلاب يستخدمون AI بالفعل في دراساتهم (Digital Education Council). السؤال لم يعد \"هل ندمج AI\" بل \"كيف نعلّمهم استخدامه بمسؤولية\". الإمارات أدرجت AI في مناهجها، و30 ولاية أمريكية أصدرت إرشادات رسمية.",
+        "en": "86% of students already use AI in their studies (Digital Education Council). The question is no longer 'whether to integrate AI' but 'how to teach responsible use.' The UAE incorporated AI in curricula, and 30 U.S. states issued official guidance."
+      }
+    }
+  ]
+}
