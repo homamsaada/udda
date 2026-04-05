@@ -1,0 +1,237 @@
+{
+  "section_id": "biomedical-eng",
+  "section_name": { "ar": "الهندسة الطبية الحيوية", "en": "Biomedical Engineering" },
+  "version": "1.0",
+  "last_updated": "2026-04-05",
+  "questions": [
+    {
+      "id": "bme-mcq-001",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مهندس طبي حيوي تتابع تصاريح FDA للأجهزة الطبية بالذكاء الاصطناعي. كم عدد التصاريح التراكمية حتى نهاية 2025، وما نسبة الأشعة والتصوير منها؟",
+        "en": "You are a biomedical engineer tracking FDA AI medical device authorizations. How many cumulative authorizations through end of 2025, and what percentage is radiology/imaging?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أكثر من 1,450 تصريحاً تراكمياً، منها 295 في 2025 وحدها — 76% في التصوير الطبي والأشعة", "en": "Over 1,450 cumulative authorizations, with 295 in 2025 alone — 76% in radiology/imaging" }, "score": 3 },
+        { "id": "b", "text": { "ar": "حوالي 200 تصريح فقط — التقنية لا تزال في مراحلها الأولى", "en": "Only about 200 authorizations — the technology is still in early stages" }, "score": 0 },
+        { "id": "c", "text": { "ar": "آلاف التصاريح لكن معظمها تصاريح مؤقتة وليست نهائية", "en": "Thousands of authorizations but most are temporary and not final" }, "score": 0 },
+        { "id": "d", "text": { "ar": "أقل من 500 مع انتشار متساوٍ عبر جميع التخصصات الطبية", "en": "Less than 500 with equal distribution across all medical specialties" }, "score": 0.5 }
+      ],
+      "hint_after": {
+        "ar": "بين 1995 و2015 صدر 33 تصريحاً فقط — بحلول 2025 تضاعف الرقم 44 مرة. لكن أقل من 5% من الأجهزة لديها بيانات أحداث سلبية، وأقل من 30% تكشف عن تنوع بيانات التدريب الديموغرافية، و43% تفتقر لبيانات التحقق السريري.",
+        "en": "Between 1995-2015, only 33 authorizations were issued — by 2025 the number multiplied 44×. But fewer than 5% of devices report adverse events, under 30% disclose training data demographics, and 43% lack clinical validation data."
+      }
+    },
+    {
+      "id": "bme-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت باحث في واجهات الدماغ-الحاسوب (BCI). مريض Neuralink الأول Noland Arbaugh — المشلول بسبب حادث غطس — ما الذي يستطيع فعله بواسطة الشريحة المزروعة؟",
+        "en": "You are a BCI researcher. Neuralink's first patient Noland Arbaugh — paralyzed from a diving accident — what can he do with the implanted chip?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "يتحكم بمؤشر الشاشة، يلعب شطرنج ولعبة Civilization VI، ويتصفح الإنترنت بالكامل بالتفكير فقط", "en": "Controls a cursor, plays chess and Civilization VI, and browses the web entirely by thought alone" }, "score": 3 },
+        { "id": "b", "text": { "ar": "يستطيع فقط تحريك المؤشر ببطء لأعلى ولأسفل في اتجاه واحد", "en": "Can only slowly move the cursor up and down in one direction" }, "score": 0 },
+        { "id": "c", "text": { "ar": "تمكّن من المشي مجدداً بفضل الشريحة", "en": "Was able to walk again thanks to the chip" }, "score": 0 },
+        { "id": "d", "text": { "ar": "الزراعة فشلت ولم تحقق أي نتائج وظيفية", "en": "The implant failed and achieved no functional results" }, "score": 0 }
+      ],
+      "hint_after": {
+        "ar": "مريض ALS آخر (Brad Smith) سرد وحرّر فيديو YouTube باستخدام إشارات الدماغ وحدها. Synchron's Stentrode — يُزرع عبر الوريد الوداجي بدون جراحة دماغ مفتوحة — مكّن 4 مرضى من التحكم بالحاسوب. سوق BCI يُتوقع أن يتجاوز 3 مليار دولار بحلول 2030.",
+        "en": "Another ALS patient (Brad Smith) narrated and edited a YouTube video using brain signals alone. Synchron's Stentrode — delivered via catheter without open-brain surgery — enabled 4 patients to control computers. The BCI market is projected to exceed $3 billion by 2030."
+      }
+    },
+    {
+      "id": "bme-mcq-003",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مهندس أجهزة طبية حيوية. جهاز Aidoc CARE1™ حصل على تصريح FDA في فبراير 2025. لماذا يُعتبر محطة فارقة في تاريخ الأجهزة الطبية بالذكاء الاصطناعي؟",
+        "en": "You are a biomedical device engineer. Aidoc CARE1™ received FDA clearance in February 2025. Why is it considered a landmark in AI medical device history?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أول جهاز AI طبي يعمل بنموذج أساسي (Foundation Model) يحصل على تصريح FDA، بحساسية 97% ونوعية 98%", "en": "First foundation-model-powered clinical AI device to receive FDA clearance, with 97% sensitivity and 98% specificity" }, "score": 3 },
+        { "id": "b", "text": { "ar": "أول جهاز AI يعمل بدون إشراف طبي بشري على الإطلاق", "en": "First AI device that works without any human medical supervision" }, "score": 0 },
+        { "id": "c", "text": { "ar": "أول جهاز يستبدل أطباء الأشعة بالكامل في المستشفيات", "en": "First device to completely replace radiologists in hospitals" }, "score": 0 },
+        { "id": "d", "text": { "ar": "أول جهاز AI يكلّف أقل من 100 دولار للمستشفيات", "en": "First AI device costing less than $100 for hospitals" }, "score": 0 }
+      ],
+      "hint_after": {
+        "ar": "CARE1™ يغطي 14 حالة حادة في التصوير المقطعي. لكن هذا لا يعني استبدال الأطباء — عدد مقاعد تدريب الأشعة الأمريكية وصل لرقم قياسي (1,208) في 2025 مع متوسط دخل 520,000 دولار.",
+        "en": "CARE1™ covers 14 acute CT indications. But this doesn't mean replacing doctors — US radiology residency positions reached a record 1,208 in 2025 with average income of $520,000."
+      }
+    },
+    {
+      "id": "bme-tf-001",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ساعة Apple Watch حصلت على تصريح FDA للكشف عن ارتفاع ضغط الدم في سبتمبر 2025 — وهي أهم محطة تنظيمية للأجهزة الصحية القابلة للارتداء حتى الآن.",
+        "en": "Apple Watch received FDA clearance for hypertension detection in September 2025 — the most significant wearable health regulatory milestone to date."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "نموذج Apple السلوكي للأجهزة القابلة للارتداء (Wearable Behavior Model) مُدرّب على بيانات 161,855 مشاركاً (2.5 مليار ساعة)، ويحقق دقة تصل 92% في كشف الحالات الصحية عبر 27 مقياساً سلوكياً. سوق التقنيات الصحية القابلة للارتداء يُتوقع أن ينمو من 52 مليار إلى 190 مليار دولار بحلول 2032.",
+        "en": "Apple's Wearable Behavior Model trained on 161,855 participants' data (2.5B hours) achieves up to 92% accuracy detecting health conditions via 27 behavioral metrics. Wearable health tech market projected to grow from $52B to $190B by 2032."
+      }
+    },
+    {
+      "id": "bme-tf-002",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "جميع الأجهزة الطبية المعتمدة من FDA بتقنيات الذكاء الاصطناعي تكشف عن التنوع الديموغرافي (العرق، الجنس، العمر) في بيانات تدريبها كشرط إلزامي.",
+        "en": "All FDA-authorized AI medical devices disclose the demographic diversity (race, gender, age) in their training data as a mandatory requirement."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "أقل من 30% من أجهزة AI المعتمدة من FDA تكشف عن التنوع الديموغرافي في بيانات التدريب. نموذج AI للقلب أظهر معدل خطأ أعلى بـ 13.2% للمرضى من أصول أفريقية. هذه الفجوة تمثّل تحدياً أخلاقياً وتقنياً كبيراً للهندسة الطبية الحيوية.",
+        "en": "Fewer than 30% of FDA-cleared AI devices disclose training data demographics. An AI cardiovascular model showed 13.2% higher miss rate for African American patients. This gap represents a major ethical and technical challenge for biomedical engineering."
+      }
+    },
+    {
+      "id": "bme-fill-001",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "واجهة الدماغ-الحاسوب {{blank_1}} من شركة Synchron تُزرع عبر قسطرة في الوريد الوداجي بدون جراحة دماغ مفتوحة، ومكّنت 4 مرضى من التحكم بالحاسوب بالتفكير دون أحداث سلبية خطيرة لمدة 12 شهراً.",
+        "en": "Synchron's {{blank_1}} brain-computer interface is delivered via catheter through the jugular vein without open-brain surgery, enabling 4 patients to control computers by thought with no serious adverse events at 12 months."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": { "ar": "Stentrode", "en": "Stentrode" },
+          "options": [
+            { "ar": "Stentrode", "en": "Stentrode" },
+            { "ar": "N1 Implant", "en": "N1 Implant" },
+            { "ar": "BrainGate", "en": "BrainGate" },
+            { "ar": "NeuroLink", "en": "NeuroLink" }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Paradromics أيضاً حصلت على تصريح IDE من FDA لواجهة BCI لاستعادة النطق بـ 421 قطباً كهربائياً دقيقاً. أكثر من 25 تجربة سريرية لـ BCI جارية عالمياً. Neuralink تتوسع إلى بريطانيا وكندا وألمانيا والإمارات.",
+        "en": "Paradromics also received FDA IDE approval for a speech-restoration BCI with 421 microelectrodes. 25+ BCI clinical trials are underway globally. Neuralink is expanding to the UK, Canada, Germany, and the UAE."
+      }
+    },
+    {
+      "id": "bme-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تقنية هندسية طبية حيوية مدعومة بالذكاء الاصطناعي مع إنجازها المميز:",
+        "en": "Match each AI-powered biomedical engineering technology with its distinguishing achievement:"
+      },
+      "left": [
+        { "id": "L1", "text": { "ar": "Neuralink N1", "en": "Neuralink N1" } },
+        { "id": "L2", "text": { "ar": "Synchron Stentrode", "en": "Synchron Stentrode" } },
+        { "id": "L3", "text": { "ar": "Apple Watch FDA", "en": "Apple Watch FDA" } },
+        { "id": "L4", "text": { "ar": "Aidoc CARE1™", "en": "Aidoc CARE1™" } }
+      ],
+      "right": [
+        { "id": "R1", "text": { "ar": "أول مريض مشلول يلعب شطرنج ويتصفح الإنترنت بالتفكير فقط", "en": "First paralyzed patient to play chess and browse the web by thought alone" } },
+        { "id": "R2", "text": { "ar": "واجهة BCI تُزرع عبر الوريد بدون جراحة دماغ مفتوحة", "en": "BCI implanted via vein without open-brain surgery" } },
+        { "id": "R3", "text": { "ar": "أهم محطة تنظيمية للأجهزة الصحية القابلة للارتداء — كشف ارتفاع الضغط", "en": "Most significant wearable regulatory milestone — hypertension detection" } },
+        { "id": "R4", "text": { "ar": "أول جهاز AI طبي مبني على نموذج أساسي يحصل على تصريح FDA", "en": "First foundation-model-powered clinical AI to receive FDA clearance" } }
+      ],
+      "correct_pairs": [
+        { "left": "L1", "right": "R1" },
+        { "left": "L2", "right": "R2" },
+        { "left": "L3", "right": "R3" },
+        { "left": "L4", "right": "R4" }
+      ],
+      "hint_after": {
+        "ar": "تقنية TuNa-AI من Duke University حققت زيادة 42.9% في تشكيل الجسيمات النانوية الناجحة وقللت المواد المسرطنة 75%. Aspect Biosystems جمعت 115 مليون دولار للطباعة الحيوية بالذكاء الاصطناعي مع شراكة بـ 75 مليون مع Novo Nordisk.",
+        "en": "Duke's TuNa-AI achieved 42.9% increase in successful nanoparticle formation and reduced carcinogenic excipients by 75%. Aspect Biosystems raised $115M for AI-powered bioprinting with a $75M Novo Nordisk partnership."
+      }
+    },
+    {
+      "id": "bme-sort-001",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب المحطات التاريخية لتصاريح FDA للأجهزة الطبية بالذكاء الاصطناعي من الأقدم إلى الأحدث:",
+        "en": "Order the FDA AI medical device authorization milestones from earliest to most recent:"
+      },
+      "items": [
+        { "id": "S1", "text": { "ar": "33 جهازاً فقط خلال 20 سنة (1995-2015) — بداية بطيئة", "en": "Only 33 devices in 20 years (1995-2015) — a slow start" } },
+        { "id": "S2", "text": { "ar": "أول جهاز تشخيصي مستقل بالكامل (LumineticsCore لاعتلال الشبكية السكري) — أبريل 2018", "en": "First fully autonomous diagnostic device (LumineticsCore for diabetic retinopathy) — April 2018" } },
+        { "id": "S3", "text": { "ar": "أول تصريح لكشف الإنتان بـ AI (Prenosis Sepsis ImmunoScore) — أبريل 2024", "en": "First AI sepsis detection clearance (Prenosis Sepsis ImmunoScore) — April 2024" } },
+        { "id": "S4", "text": { "ar": "295 تصريحاً في سنة واحدة — رقم قياسي — وأول جهاز بنموذج أساسي (Aidoc CARE1™) — 2025", "en": "295 authorizations in one year — a record — and first foundation model device (Aidoc CARE1™) — 2025" } }
+      ],
+      "correct_order": ["S1", "S2", "S3", "S4"],
+      "hint_after": {
+        "ar": "منحنى النمو لافت: من 33 جهازاً في 20 سنة إلى 295 في سنة واحدة. لكن النمو الكمّي يجب أن يُقابله تحسّن نوعي — 43% من الأجهزة تفتقر لبيانات التحقق السريري حتى الآن.",
+        "en": "The growth curve is striking: from 33 devices in 20 years to 295 in one year. But quantitative growth must be matched by qualitative improvement — 43% of devices still lack clinical validation data."
+      }
+    },
+    {
+      "id": "bme-self-001",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مهندس طبي حيوي تصمم أجهزة تشخيصية. علمت أن أقل من 30% من أجهزة AI المعتمدة تكشف عن تنوع بيانات تدريبها الديموغرافية. كيف يؤثر هذا على عملك؟",
+        "en": "You are a biomedical engineer designing diagnostic devices. You learned that fewer than 30% of approved AI devices disclose their training data demographic diversity. How does this affect your work?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أجعل الشفافية في بيانات التدريب وتوثيق التحيّز جزءاً أساسياً من تصميم أي جهاز AI أطوّره", "en": "I make training data transparency and bias documentation a fundamental part of any AI device I develop" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أحرص على اختبار أجهزتي على عيّنات متنوعة ديموغرافياً قبل التقديم لـ FDA", "en": "I ensure testing my devices on demographically diverse samples before FDA submission" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "هذه مسؤولية الجهات التنظيمية وليست مسؤولية المهندس المصمم", "en": "This is the responsibility of regulatory bodies, not the design engineer" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "البيانات المتاحة كافية — التركيز يجب أن يكون على الأداء التقني لا التمثيل الديموغرافي", "en": "Available data is sufficient — the focus should be on technical performance, not demographic representation" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "دراسة Obermeyer الشهيرة (Science, 2019) وجدت أن خوارزمية صحية مستخدمة على نطاق واسع تمييز ضد المرضى السود بشكل منهجي. إصلاح هذا التحيّز سيرفع نسبة المرضى السود الذين يتلقون رعاية إضافية من 17.7% إلى 46.5%.",
+        "en": "The landmark Obermeyer study (Science, 2019) found a widely used health algorithm systematically discriminated against Black patients. Fixing this bias would increase Black patients receiving additional help from 17.7% to 46.5%."
+      }
+    },
+    {
+      "id": "bme-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مهندس أعصاب تعمل على واجهات الدماغ-الحاسوب. Neuralink زرعت شرائح في ~5 مرضى مع نتائج مبهرة. كيف ترى مستقبل هذا المجال؟",
+        "en": "You are a neural engineer working on BCIs. Neuralink has implanted chips in ~5 patients with impressive results. How do you see this field's future?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أرى فرصة تاريخية — أبني خبرتي في الإشارات العصبية والتعلم الآلي لأن المجال ينفجر مع 25+ تجربة سريرية جارية", "en": "I see a historic opportunity — I'm building my neural signals and ML expertise as the field explodes with 25+ clinical trials underway" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "واعد لكنني أفضّل التركيز على الأجهزة غير الغزوية (مثل Stentrode عبر الوريد) لأنها أكثر أماناً", "en": "Promising but I prefer focusing on non-invasive devices (like Stentrode via vein) as they're safer" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "التقنية مبهرة لكنها بعيدة عن الاستخدام الواسع — الأفضل الانتظار 10 سنوات أخرى", "en": "The tech is impressive but far from widespread use — better to wait another 10 years" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "المخاطر الأخلاقية والصحية لزراعة شرائح في الدماغ تجعلني أرفض العمل في هذا المجال", "en": "The ethical and health risks of brain chip implants make me refuse to work in this field" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "سوق BCI متوقع أن يتجاوز 3 مليار دولار بحلول 2030. تمويل صناعة الاندماج النووي قفز من 1.7 مليار في 2020 إلى 15 مليار في 2025 — والهندسة الطبية الحيوية على منحنى نمو مشابه. الأدوار الأكثر طلباً: مهندسو AI/ML للأجهزة الطبية والمتخصصون في الشؤون التنظيمية.",
+        "en": "The BCI market is projected to exceed $3B by 2030. Fusion industry funding jumped from $1.7B in 2020 to $15B in 2025 — biomedical engineering is on a similar growth curve. Most in-demand roles: AI/ML device engineers and regulatory affairs specialists."
+      }
+    }
+  ]
+}
