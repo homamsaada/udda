@@ -1,8 +1,11 @@
 {
   "section_id": "pharmacy",
-  "section_name": { "ar": "الصيدلة", "en": "Pharmacy" },
+  "section_name": {
+    "ar": "الصيدلة",
+    "en": "Pharmacy"
+  },
   "version": "1.0",
-  "last_updated": "2026-04-04",
+  "last_updated": "2026-04-06",
   "questions": [
     {
       "id": "phm-mcq-001",
@@ -202,12 +205,27 @@
       "blanks": [
         {
           "id": "blank_1",
-          "correct": { "ar": "Elsa", "en": "Elsa" },
+          "correct": {
+            "ar": "Elsa",
+            "en": "Elsa"
+          },
           "options": [
-            { "ar": "Elsa", "en": "Elsa" },
-            { "ar": "Watson", "en": "Watson" },
-            { "ar": "AlphaFold", "en": "AlphaFold" },
-            { "ar": "PandaOmics", "en": "PandaOmics" }
+            {
+              "ar": "Elsa",
+              "en": "Elsa"
+            },
+            {
+              "ar": "Watson",
+              "en": "Watson"
+            },
+            {
+              "ar": "AlphaFold",
+              "en": "AlphaFold"
+            },
+            {
+              "ar": "PandaOmics",
+              "en": "PandaOmics"
+            }
           ]
         }
       ],
@@ -228,22 +246,82 @@
         "en": "Match each AI technology with its primary pharmaceutical application:"
       },
       "left": [
-        { "id": "L1", "text": { "ar": "AlphaFold 3", "en": "AlphaFold 3" } },
-        { "id": "L2", "text": { "ar": "Chemistry42", "en": "Chemistry42" } },
-        { "id": "L3", "text": { "ar": "DoseMeRx", "en": "DoseMeRx" } },
-        { "id": "L4", "text": { "ar": "أنظمة NLP في اليقظة الدوائية", "en": "NLP systems in pharmacovigilance" } }
+        {
+          "id": "L1",
+          "text": {
+            "ar": "AlphaFold 3",
+            "en": "AlphaFold 3"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Chemistry42",
+            "en": "Chemistry42"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "DoseMeRx",
+            "en": "DoseMeRx"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "أنظمة NLP في اليقظة الدوائية",
+            "en": "NLP systems in pharmacovigilance"
+          }
+        }
       ],
       "right": [
-        { "id": "R1", "text": { "ar": "التنبؤ بارتباط البروتين بالجزيئات لتصميم أدوية", "en": "Predicting protein-ligand binding for drug design" } },
-        { "id": "R2", "text": { "ar": "توليد مركبات كيميائية افتراضية لمثبّطات جديدة", "en": "Generating virtual chemical compounds for new inhibitors" } },
-        { "id": "R3", "text": { "ar": "تحسين جرعات الأدوية بايزياً حسب حالة المريض", "en": "Bayesian dose optimization based on patient condition" } },
-        { "id": "R4", "text": { "ar": "استخراج إشارات أمان من تقارير تفاعلات دوائية ضارة", "en": "Extracting safety signals from adverse drug reaction reports" } }
+        {
+          "id": "R1",
+          "text": {
+            "ar": "التنبؤ بارتباط البروتين بالجزيئات لتصميم أدوية",
+            "en": "Predicting protein-ligand binding for drug design"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "توليد مركبات كيميائية افتراضية لمثبّطات جديدة",
+            "en": "Generating virtual chemical compounds for new inhibitors"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تحسين جرعات الأدوية بايزياً حسب حالة المريض",
+            "en": "Bayesian dose optimization based on patient condition"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "استخراج إشارات أمان من تقارير تفاعلات دوائية ضارة",
+            "en": "Extracting safety signals from adverse drug reaction reports"
+          }
+        }
       ],
       "correct_pairs": [
-        { "left": "L1", "right": "R1" },
-        { "left": "L2", "right": "R2" },
-        { "left": "L3", "right": "R3" },
-        { "left": "L4", "right": "R4" }
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
       ],
       "hint_after": {
         "ar": "هذه الأدوات تمثل أربع مراحل مختلفة من سلسلة الدواء: اكتشاف الهدف (AlphaFold)، تصميم المركب (Chemistry42)، ضبط الجرعة السريرية (DoseMeRx)، ومراقبة ما بعد التسويق (NLP/اليقظة الدوائية).",
@@ -262,12 +340,41 @@
         "en": "Order the stages of AI-powered drug discovery from start to reaching the patient:"
       },
       "items": [
-        { "id": "S1", "text": { "ar": "تحديد الهدف البيولوجي بتحليل البيانات الجينومية والبروتينية", "en": "Identify the biological target through genomic and proteomic data analysis" } },
-        { "id": "S2", "text": { "ar": "توليد وفرز آلاف المركبات الكيميائية الافتراضية", "en": "Generate and screen thousands of virtual chemical compounds" } },
-        { "id": "S3", "text": { "ar": "اختبار المركب المرشح في التجارب قبل السريرية ثم السريرية", "en": "Test the candidate compound in preclinical then clinical trials" } },
-        { "id": "S4", "text": { "ar": "تقديم ملف التسجيل للهيئة التنظيمية مع بيانات الفعالية والسلامة", "en": "Submit the regulatory filing with efficacy and safety data" } }
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحديد الهدف البيولوجي بتحليل البيانات الجينومية والبروتينية",
+            "en": "Identify the biological target through genomic and proteomic data analysis"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "توليد وفرز آلاف المركبات الكيميائية الافتراضية",
+            "en": "Generate and screen thousands of virtual chemical compounds"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "اختبار المركب المرشح في التجارب قبل السريرية ثم السريرية",
+            "en": "Test the candidate compound in preclinical then clinical trials"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تقديم ملف التسجيل للهيئة التنظيمية مع بيانات الفعالية والسلامة",
+            "en": "Submit the regulatory filing with efficacy and safety data"
+          }
+        }
       ],
-      "correct_order": ["S1", "S2", "S3", "S4"],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
       "hint_after": {
         "ar": "دواء rentosertib اتبع هذه المراحل بالضبط: PandaOmics حدّد هدف TNIK ← Chemistry42 ولّد 78,000 مركب ← تجارب سريرية (المرحلة IIa نُشرت 2025) ← الموافقة التنظيمية المتوقعة 2026-2027. المفاجأة: الرحلة كاملة استغرقت 30 شهراً بدل 6-8 سنوات تقليدياً.",
         "en": "Rentosertib followed exactly these stages: PandaOmics identified TNIK target → Chemistry42 generated 78,000 compounds → clinical trials (Phase IIa published 2025) → regulatory approval projected 2026–2027. The surprise: the entire journey took 30 months instead of the traditional 6–8 years."
@@ -371,6 +478,4263 @@
       "hint_after": {
         "ar": "الصيدلة السريرية والاستشارية في نمو — بينما الصرف الروتيني في تراجع. الصيادلة في البيئات المؤتمتة يقضون 45% وقتاً أكثر في الرعاية المباشرة للمرضى. المفتاح: الانتقال من \"صارف أدوية\" إلى \"مستشار دوائي\" مدعوم بالبيانات.",
         "en": "Clinical and consultative pharmacy is growing — while routine dispensing is declining. Pharmacists in automated environments spend 45% more time on direct patient care. The key: transitioning from 'drug dispenser' to data-powered 'medication consultant'."
+      }
+    },
+    {
+      "id": "phm-mcq-004",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي صناعي في خط إنتاج أدوية. يُقترح عليك نظام رؤية حاسوبية (Computer Vision) لفحص الأقراص. ما مستوى الدقة المتوقع واقعياً؟",
+        "en": "You're an industrial pharmacist on a drug production line. A computer vision system for tablet inspection is proposed. What accuracy level can you realistically expect?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقل من 80% — التقنية لا تزال تجريبية",
+            "en": "Below 80% — the technology is still experimental"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حوالي 90% — جيدة لكنها تحتاج تدخلاً بشرياً كبيراً",
+            "en": "About 90% — good but requires significant human intervention"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أكثر من 98% بفحص أكثر من 1,000 وحدة في الدقيقة",
+            "en": "Over 98% accuracy inspecting 1,000+ units per minute"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "100% — لا يمكن أن يخطئ النظام أبداً",
+            "en": "100% — the system can never make mistakes"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أنظمة الرؤية الحاسوبية في التصنيع الدوائي تكتشف العيوب بدقة تتجاوز 98% وتفحص أكثر من 1,000 وحدة في الدقيقة — معدل يستحيل على الإنسان. لكن الإشراف البشري مطلوب دائماً وفقاً لمتطلبات GMP.",
+        "en": "Computer vision in drug manufacturing detects defects at 98%+ accuracy inspecting 1,000+ units per minute — impossible for humans. But human oversight is always required per GMP regulations."
+      }
+    },
+    {
+      "id": "phm-mcq-005",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت باحث في شركة أدوية. زميلك يقول إن أدوية AI تنجح في المرحلة الأولى من التجارب السريرية بنسبة أعلى. هل هذا دقيق؟",
+        "en": "You're a pharma researcher. A colleague says AI-discovered drugs have much higher Phase I success rates. Is this accurate?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم — 80-90% مقابل 52% تقليدياً",
+            "en": "Yes — 80–90% vs. the 52% historical average"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا — لا فرق يُذكر",
+            "en": "No — no notable difference"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "العكس — الأدوية التقليدية أنجح",
+            "en": "The opposite — traditional drugs succeed more"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "نعم، وهذا يعني أن AI حلّ مشكلة الفشل نهائياً",
+            "en": "Yes, and this means AI permanently solved drug failure"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "البيانات تُظهر تفوقاً في المرحلة الأولى (80-90% مقابل 52%). لكن المرحلة الثالثة — حيث يفشل معظم الأدوية — لم تُختبر بعد بشكل كافٍ. 15-20 دواء AI في المرحلة الثالثة متوقعة خلال 2026.",
+        "en": "Data shows superiority in Phase I (80–90% vs. 52%). But Phase III — where most drugs fail — hasn't been sufficiently tested. 15–20 AI drugs in Phase III expected in 2026."
+      }
+    },
+    {
+      "id": "phm-mcq-006",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أنت صيدلي في الخليج. Insilico Medicine أسّست مركزاً لـ AI في المنطقة. أين؟",
+        "en": "You're a Gulf pharmacist. Insilico Medicine established an AI center in the region. Where?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مدينة مصدر في أبوظبي — مع خطة لمركز مماثل في الرياض 2026",
+            "en": "Masdar City, Abu Dhabi — with plans for Riyadh in 2026"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "واحة السيليكون في دبي",
+            "en": "Silicon Oasis in Dubai"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مدينة الملك عبدالله الاقتصادية",
+            "en": "King Abdullah Economic City"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الدوحة ضمن مبادرة قطر",
+            "en": "Doha as part of Qatar's initiative"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Insilico افتتحت مركز AI في مصدر بأبوظبي (مايو 2025) مع مشروع تجريبي لاكتشاف دواء أورام. Prosperity7 السعودي مستثمر استراتيجي مع خطة لمركز في الرياض.",
+        "en": "Insilico opened an AI center in Masdar City, Abu Dhabi (May 2025) with a pilot oncology drug discovery project. Saudi's Prosperity7 is a strategic investor with plans for a Riyadh center."
+      }
+    },
+    {
+      "id": "phm-mcq-007",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي في سلسلة كبيرة. الإدارة تدرس نموذج Hub-and-Spoke. ما الحقيقة حول هذا النموذج؟",
+        "en": "You're a chain pharmacist. Management evaluates Hub-and-Spoke. What's true about this model?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا تزال فكرة نظرية",
+            "en": "Still a theoretical concept"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "Walgreens تملك 13 مركزاً يخدم 5,000+ صيدلية ويصرف 3.5 مليون وصفة أسبوعياً",
+            "en": "Walgreens operates 13 centers serving 5,000+ pharmacies dispensing 3.5M prescriptions weekly"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مطبّقة في المستشفيات فقط",
+            "en": "Only in hospitals"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مطبّقة بنتائج سيئة — زادت الأخطاء 15%",
+            "en": "Implemented with poor results — errors up 15%"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "المراكز الروبوتية واقع: Walgreens وفّرت 500 مليون دولار. CVS تخدم 9,000+ صيدلية. Walmart تعالج حتى 100,000 وصفة يومياً وتخطط لتغطية 90% بحلول 2026.",
+        "en": "Robotic centers are reality: Walgreens saved $500M. CVS serves 9,000+. Walmart processes up to 100,000 daily, plans 90% coverage by 2026."
+      }
+    },
+    {
+      "id": "phm-mcq-008",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي سريري. مريض poor metabolizer لـ CYP2D6 يتناول كودين. كيف يساعدك AI؟",
+        "en": "You're a clinical pharmacist. A CYP2D6 poor metabolizer patient takes codeine. How can AI help?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يحلل التفاعلات مع مراعاة الملف الجيني لاقتراح بديل",
+            "en": "Analyzes interactions considering genetic profile to suggest alternatives"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يُوقف الكودين تلقائياً بدون تدخل الصيدلي",
+            "en": "Automatically stops codeine without pharmacist input"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "يرسل تنبيهاً للمريض على هاتفه",
+            "en": "Sends alert to patient's phone"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا يستطيع AI التعامل مع البيانات الجينومية",
+            "en": "AI cannot handle genomic data"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "CYP2D6 poor metabolizer لا يحوّل الكودين لمورفين بكفاءة. أنظمة CDSS تدمج الجينات الدوائية مع الأدوية لتنبيه الصيدلي واقتراح بدائل حسب باقي أدوية المريض.",
+        "en": "A CYP2D6 poor metabolizer can't efficiently convert codeine to morphine. AI-powered CDSS integrates pharmacogenomic data with medications to alert the pharmacist and suggest alternatives."
+      }
+    },
+    {
+      "id": "phm-mcq-009",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت باحث. Recursion وExscientia اندمجتا في 2025 لأكبر كيان AI دوائي. ما الميزة الفريدة؟",
+        "en": "You're a researcher. Recursion and Exscientia merged in 2025. What's unique about this merger?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "دمج التصوير البيولوجي (2.2 مليون تجربة/أسبوع) مع التصميم الجزيئي و60+ بيتابايت",
+            "en": "Combining imaging (2.2M experiments/week) with molecular design and 60+ petabytes"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أكبر مصنع روبوتي لإنتاج الأدوية",
+            "en": "World's largest robotic drug factory"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حصرية استخدام AlphaFold",
+            "en": "Exclusive AlphaFold access"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أول دواء AI معتمد من FDA",
+            "en": "First FDA-approved AI drug"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الاندماج جمع قدرتين متكاملتين: Recursion تُجري 2.2 مليون تجربة أسبوعياً عبر 50 خلية بشرية، وExscientia تملك أدوات تصميم جزيئي دقيقة. لكن فشل REC-994 في 2025 يذكّر بأن AI لم يُلغِ الفشل السريري.",
+        "en": "The merger combined: Recursion runs 2.2M experiments weekly across 50 cell types; Exscientia has precision molecular design. But REC-994's 2025 failure reminds us AI hasn't eliminated clinical failure."
+      }
+    },
+    {
+      "id": "phm-mcq-010",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي يقيّم خزائن الصرف الآلي (ADC). 87.3% من المستشفيات الأمريكية تستخدم تحليلات أساسية. ما أهم تحدٍّ عملي؟",
+        "en": "You're evaluating ADCs. 87.3% of US hospitals use basic analytics. What's the biggest practical challenge?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التكلفة الأولية وتحديات التكامل مع السجلات الصحية",
+            "en": "High initial costs and EHR integration challenges"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "رفض المرضى",
+            "en": "Patient refusal"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الأنظمة غير دقيقة",
+            "en": "Systems are inaccurate"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا يوجد أي تحدٍّ",
+            "en": "No challenges"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "رغم تقليل الأخطاء الكبير، التكلفة الأولية وتعقيد التكامل هما العائق الأكبر خاصة للمؤسسات الصغيرة.",
+        "en": "Despite significant error reduction, initial costs and integration complexity are the biggest barriers, especially for smaller institutions."
+      }
+    },
+    {
+      "id": "phm-mcq-011",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أنت صيدلي في الإمارات. ما المبادرة لرسم خريطة DNA لدعم الطب الشخصي؟",
+        "en": "You're a UAE pharmacist. What initiative maps Emirati DNA for personalized medicine?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "برنامج الجينوم الإماراتي",
+            "en": "Emirati Genome Programme"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مشروع نيوم الجيني",
+            "en": "NEOM Genetic Project"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مبادرة قطر للجينوم",
+            "en": "Qatar Genome Initiative"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مشروع الجينوم العربي الموحد",
+            "en": "Unified Arab Genome Project"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "برنامج الجينوم الإماراتي يرسم خريطة DNA لجميع المواطنين الراغبين. G42 Healthcare تركز على الجينوميات والطب الدقيق ولعبت دوراً في تجارب لقاح كوفيد-19.",
+        "en": "The Emirati Genome Programme maps DNA of all willing citizens. G42 Healthcare focuses on genomics and precision medicine, with a key role in COVID-19 vaccine trials."
+      }
+    },
+    {
+      "id": "phm-mcq-012",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي باحث. zasocitinib (Schrödinger/Takeda) هو أبعد دواء AI. في أي مرحلة؟",
+        "en": "You're a research pharmacist. Zasocitinib is the furthest AI drug. What phase?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "المرحلة الثالثة — للصدفية",
+            "en": "Phase III — for psoriasis"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "المرحلة الأولى فقط",
+            "en": "Phase I only"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حصل على موافقة FDA",
+            "en": "Already FDA-approved"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المرحلة الثانية — أُوقف",
+            "en": "Phase II — halted"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "zasocitinib أبعد دواء AI سريرياً — المرحلة الثالثة للصدفية. Schrödinger تستخدم فيزياء حاسوبية مدعومة بـ AI. نتائج 2026 ستكون اختباراً حاسماً.",
+        "en": "Zasocitinib is the furthest AI drug clinically — Phase III for psoriasis. Schrödinger uses physics-based AI design. 2026 results will be decisive."
+      }
+    },
+    {
+      "id": "phm-mcq-013",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت في مركز Walgreens الروبوتي. كل روبوت يصرف 300 وصفة/ساعة. كم تصرف صيدلية عادية يومياً؟",
+        "en": "You're at a Walgreens robotic center. Each robot fills 300/hour. How many does a typical pharmacy fill daily?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "300 وصفة يومياً تقريباً",
+            "en": "About 300 daily"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حوالي 1,000",
+            "en": "About 1,000"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حوالي 50 فقط",
+            "en": "Only about 50"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "حوالي 3,000",
+            "en": "About 3,000"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "المفارقة مذهلة: ما ينجزه روبوت في ساعة يساوي إنتاج صيدلية كاملة في يوم. هذا يوضح لماذا الأتمتة المركزية ثورية.",
+        "en": "The contrast is striking: one robot's hourly output equals an entire pharmacy's daily output. This illustrates why centralized automation is revolutionary."
+      }
+    },
+    {
+      "id": "phm-mcq-014",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي QA. EU AI Act يصنّف بعض تطبيقات AI كـ «عالية المخاطر». متى تدخل حيز التنفيذ؟",
+        "en": "You're a QA pharmacist. When do EU AI Act high-risk provisions take effect?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أغسطس 2026",
+            "en": "August 2026"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يناير 2024",
+            "en": "January 2024"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "2030",
+            "en": "2030"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا يوجد قانون",
+            "en": "No such law exists"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أحكام المخاطر العالية تدخل في 2 أغسطس 2026. لكن معظم AI في الاكتشاف المبكر يقع خارج التصنيف — فقط التطبيقات المؤثرة على القرارات التنظيمية تُصنّف عالية المخاطر.",
+        "en": "High-risk provisions take effect August 2, 2026. But most early discovery AI falls outside classification — only regulatory-decision applications are high-risk."
+      }
+    },
+    {
+      "id": "phm-mcq-015",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي سريري. مستشفى الملك فيصل التخصصي حقق 85,000+ تدخل AI. ما النتيجة على أوقات انتظار الصيدلية؟",
+        "en": "You're a clinical pharmacist. King Faisal Specialist Hospital achieved 85,000+ AI interventions. Impact on pharmacy wait times?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "انخفاض 27%",
+            "en": "27% reduction"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لم تتغير",
+            "en": "No change"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "زادت",
+            "en": "Increased"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "انخفاض 80%",
+            "en": "80% reduction"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "85,000+ تدخل أدت لانخفاض 50%+ عموماً و27% في الصيدلية. السعودية تستثمر 40 مليار دولار في AI وتستهدف 300 شركة ناشئة بحلول 2031.",
+        "en": "85,000+ interventions led to 50%+ overall and 27% pharmacy reduction. Saudi invests $40B in AI, targeting 300 startups by 2031."
+      }
+    },
+    {
+      "id": "phm-mcq-016",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي تستخدم Remote Order Verification. كم نسبة المستشفيات الأمريكية التي تستخدم أدوات تحقق مبتكرة؟",
+        "en": "You're using remote order verification. What % of US hospitals use innovative verification tools?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقل من 20%",
+            "en": "Under 20%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حتى 73% — مع موافقات تلقائية منخفضة المخاطر",
+            "en": "Up to 73% — with low-risk auto-approvals"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "100% إلزامية",
+            "en": "100% mandatory"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "حوالي 50%",
+            "en": "About 50%"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "73% تستخدم أدوات تحقق مبتكرة: موافقات تلقائية للأدوية منخفضة المخاطر وتوجيه الأدوية عالية الخطورة للمراجعة اليدوية.",
+        "en": "73% use innovative verification: auto-approvals for low-risk medications, routing high-alert drugs for manual review."
+      }
+    },
+    {
+      "id": "phm-mcq-017",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي. ما الفرق بين Insilico وSchrödinger في اكتشاف الأدوية؟",
+        "en": "What's the difference between Insilico and Schrödinger in drug discovery?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "Insilico: كيمياء توليدية من الصفر — Schrödinger: محاكاة فيزيائية لتحسين جزيئات موجودة",
+            "en": "Insilico: generative chemistry from scratch — Schrödinger: physics simulation to optimize existing molecules"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا فرق — نفس المنهجية",
+            "en": "No difference"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "Insilico للسرطان فقط — Schrödinger لكل الأمراض",
+            "en": "Insilico cancer only — Schrödinger all diseases"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "Schrödinger تستخدم AI في التسويق فقط",
+            "en": "Schrödinger uses AI only in marketing"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الفرق جوهري: Insilico تولّد مركبات جديدة تماماً (كيمياء توليدية)، Schrödinger تتنبأ بالتفاعلات لتحسين مرشحات (فيزياء حاسوبية). لذلك rentosertib «مكتشف بالكامل» وzasocitinib «معزّز» بـ AI.",
+        "en": "Fundamental difference: Insilico generates entirely novel compounds (generative chemistry), Schrödinger predicts interactions to optimize candidates (computational physics). Hence rentosertib is 'fully discovered' while zasocitinib is 'AI-enhanced'."
+      }
+    },
+    {
+      "id": "phm-mcq-018",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت في صيدلية متصلة بمركز مركزي. النظام يوجّه الوصفات تلقائياً. ما المعيار؟",
+        "en": "You're connected to a centralized hub. The system auto-routes prescriptions. What's the criterion?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أدوية روتينية للمركز، وبخاخات ومواد مراقبة تُصرف محلياً",
+            "en": "Routine to hub; inhalers and controlled substances filled locally"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "كل الوصفات للمركز",
+            "en": "All to hub"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الغالية فقط للمركز",
+            "en": "Only expensive ones to hub"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المريض يختار",
+            "en": "Patient chooses"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "في نموذج Walgreens، الأقراص والكبسولات القياسية تُوجّه للروبوتات، والبخاخات والحمل والمواد المراقبة تُصرف محلياً لحاجتها لتعامل خاص.",
+        "en": "In Walgreens' model, standard tablets/capsules go to robots; inhalers, birth control, and controlled substances are filled locally due to special handling needs."
+      }
+    },
+    {
+      "id": "phm-mcq-019",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي. REC-994 فشل في 2025. ما دلالة هذا؟",
+        "en": "REC-994 was discontinued in 2025. What does this signify?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI يسرّع الاكتشاف لكنه لم يُثبت تحسين النجاح الإجمالي",
+            "en": "AI accelerates discovery but hasn't proven it improves overall success"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "AI فاشل تماماً",
+            "en": "AI is a complete failure"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حالة استثنائية",
+            "en": "An exceptional case"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "فشل مخطط",
+            "en": "A planned failure"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "فشل REC-994 هو الأبرز لدواء AI. معدل الفشل الإجمالي ~90% وAI لم يخفضه بعد. AI يختصر الجدول (30-40% أسرع) لكن البيولوجيا البشرية لا تزال التحدي.",
+        "en": "REC-994 is the most prominent AI drug failure. Overall ~90% failure rate hasn't been reduced by AI yet. AI compresses timelines (30–40% faster) but human biology remains the challenge."
+      }
+    },
+    {
+      "id": "phm-mcq-020",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي صناعي. يُطرح «مختبر ذاتي القيادة». ما الحقيقة؟",
+        "en": "You're pitched a Self-Driving Lab. What's the reality?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تسرّع التكرار لكنها لم تكتشف مرشحاً مُتحققاً بشكل مستقل بعد",
+            "en": "Accelerate iteration but haven't independently discovered a validated candidate yet"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "اكتشفت 5 أدوية معتمدة",
+            "en": "Discovered 5 FDA-approved drugs"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مجرد مفهوم نظري",
+            "en": "Just theoretical"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تعمل مثالياً لكنها أغلى",
+            "en": "Work perfectly but cost more"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "المختبرات ذاتية القيادة تنتشر بتمويل كبير لكنها لم تكتشف مرشحاً دوائياً مُتحققاً مستقلاً. التقنية تسرّع التكرار لكنها لا تحل محل البصيرة العلمية.",
+        "en": "Self-driving labs are proliferating with substantial funding but haven't independently discovered a validated drug candidate. They accelerate iteration but don't replace scientific insight."
+      }
+    },
+    {
+      "id": "phm-mcq-021",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي في تحليل بيانات. مريض مسن يتناول 8 أدوية. أنظمة GNN الحديثة للتفاعلات. ما الميزة؟",
+        "en": "You're a data pharmacist. Elderly patient on 8 drugs. What's GNN's advantage for DDIs?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تكتشف تفاعلات معقدة بين عدة أدوية — ليس فقط ثنائية",
+            "en": "Detect complex multi-drug interactions, not just pairwise"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تُلغي الحاجة لطبيب أو صيدلي",
+            "en": "Eliminate need for doctor or pharmacist"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تعمل مع دوائين فقط",
+            "en": "Only work with 2 drugs"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرخص فقط — لا تحسّن الدقة",
+            "en": "Only cheaper — no accuracy improvement"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "شبكات GNN تنمذج الأدوية والبروتينات والجينات كشبكة مترابطة مما يكشف تفاعلات خفية بين 3+ أدوية — شبه مستحيل يدوياً في تعدد الأدوية.",
+        "en": "GNNs model drugs, proteins, and genes as an interconnected network, revealing hidden 3+ drug interactions — nearly impossible manually in polypharmacy."
+      }
+    },
+    {
+      "id": "phm-mcq-022",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي. Walmart تخطط لتغطية 90% من متاجرها. كم وصفة يومياً؟",
+        "en": "Walmart plans 90% store coverage. How many daily prescriptions?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "حتى 100,000 يومياً — مع 30% زيادة في تفاعل الصيدلي مع المريض",
+            "en": "Up to 100,000 daily — with 30% increase in pharmacist-patient engagement"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حوالي 1,000",
+            "en": "About 1,000"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا تملك Walmart مراكز آلية",
+            "en": "Walmart has no automated centers"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "حوالي 10,000",
+            "en": "About 10,000"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "مرافق Walmart تعالج حتى 100,000 وصفة يومياً. النتيجة: 30% زيادة في تفاعل الصيدلي مع المريض بعد التخلص من المهام الروتينية.",
+        "en": "Walmart's facilities process up to 100,000 daily. Result: 30% increase in pharmacist-patient engagement after offloading routine tasks."
+      }
+    },
+    {
+      "id": "phm-mcq-023",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي باحث. كم برنامج أدوية AI في التطوير السريري حالياً؟",
+        "en": "How many AI drug programs are currently in clinical development?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقل من 10",
+            "en": "Fewer than 10"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حوالي 50",
+            "en": "About 50"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أكثر من 173 — مع 15-20 متوقعة في المرحلة الثالثة 2026",
+            "en": "Over 173 — with 15–20 expected in Phase III 2026"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أكثر من 1,000",
+            "en": "Over 1,000"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "النمو متسارع: من 3 في 2016 إلى 173+ في 2026. السوق يُقدّر بـ 5-7 مليار دولار في 2025.",
+        "en": "Exponential growth: from 3 in 2016 to 173+ in 2026. Market estimated at $5–7B in 2025."
+      }
+    },
+    {
+      "id": "phm-mcq-024",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي تناقش تأثير الأتمتة على رضا المرضى. ما نسبة التحسن المسجّلة؟",
+        "en": "What improvement in pharmacy patient satisfaction scores after AI/automation?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "15-22%",
+            "en": "15–22%"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا تغيير",
+            "en": "No change"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "انخفاض 10%",
+            "en": "10% decrease"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50%+",
+            "en": "50%+"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "تحسن 15-22% من تقليل أوقات الانتظار والأخطاء وزيادة وقت الصيدلي في الاستشارة. الأتمتة تُحرر الصيدلي — لا تلغيه.",
+        "en": "15–22% improvement from reduced wait times, fewer errors, and more pharmacist consultation time. Automation frees pharmacists — doesn't replace them."
+      }
+    },
+    {
+      "id": "phm-mcq-025",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي سريري. دراسة Nature: XGBoost على بيانات مقاومة بكتيرية. ما الدقة؟",
+        "en": "A Nature study used XGBoost on bacterial resistance data. What accuracy?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AUC 0.96 من 917,000+ عزلة — 89% نجاح في توصيات المضادات الحيوية",
+            "en": "AUC 0.96 from 917,000+ isolates — 89% success in antibiotic recommendations"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "60% فقط",
+            "en": "Only 60%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا توجد دراسة",
+            "en": "No such study"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "100%",
+            "en": "100%"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "XGBoost حقق AUC 0.96 من بيانات Pfizer ATLAS. التطبيق السريري: 89% نجاح في تعديل المضادات الحيوية و18% تقليل في العلاج غير الضروري.",
+        "en": "XGBoost achieved AUC 0.96 from Pfizer ATLAS data. Clinical implementation: 89% success in antibiotic adjustments and 18% reduction in unnecessary treatment."
+      }
+    },
+    {
+      "id": "phm-mcq-026",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما حجم سوق أتمتة الصيدليات في 2024 والتوقعات؟",
+        "en": "Global pharmacy automation market size in 2024 and projections?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "6.3 مليار → 19.35 مليار بحلول 2035",
+            "en": "$6.3B → $19.35B by 2035"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقل من مليار",
+            "en": "Under $1B"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "50 مليار",
+            "en": "$50B"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "3 مليارات ولن ينمو",
+            "en": "$3B and won't grow"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "ينمو بـ 10.75% سنوياً. المحركات: ارتفاع الوصفات، نقص العمالة، الضغط لتقليل الأخطاء والتكاليف.",
+        "en": "Growing at 10.75% CAGR. Drivers: rising prescriptions, workforce shortages, pressure to reduce errors and costs."
+      }
+    },
+    {
+      "id": "phm-mcq-027",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أبرز تحدٍّ في AI الدوائي ليس تقنياً. ما هو؟",
+        "en": "The biggest AI drug challenge isn't technical. What is it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "68% من المسؤولين يعتبرون جودة البيانات السبب الرئيسي لفشل مبادرات AI",
+            "en": "68% of executives cite poor data quality as main AI failure reason"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا توجد بيانات كافية",
+            "en": "Not enough data exists"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "البيانات متاحة بلا قيود",
+            "en": "Data freely available"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التحدي سرعة المعالجات فقط",
+            "en": "Only processor speed"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "البيانات عالية الجودة نادرة بسبب التكاليف والخصوصية وقيود المشاركة. التحدي الحقيقي ليس الخوارزميات بل البيانات.",
+        "en": "High-quality curated datasets remain scarce due to costs, privacy, and sharing restrictions. The real challenge isn't algorithms but data availability."
+      }
+    },
+    {
+      "id": "phm-mcq-028",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "دراسة MIT 2025 وجدت نسبة مفاجئة عن مشاريع AI التجريبية. ما هي؟",
+        "en": "A 2025 MIT study found a surprising statistic about AI pilots. What?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "95% فشلت في تحقيق أثر قابل للقياس — بسبب انفصال النظام عن سير العمل",
+            "en": "95% failed to deliver measurable impact — due to workflow disconnect"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "95% نجحت",
+            "en": "95% succeeded"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "50/50",
+            "en": "50/50"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم تُجرِ MIT أي دراسة",
+            "en": "MIT didn't conduct such study"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الفشل بسبب: بيانات ضعيفة، عدم تكامل مع سير العمل، غياب الحوكمة. الدرس: ابدأ بالمشكلة لا بالتقنية.",
+        "en": "Failure due to: poor data, workflow disconnect, lack of governance. The lesson: start with the problem, not the technology."
+      }
+    },
+    {
+      "id": "phm-mcq-029",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في ديسمبر 2025، FDA اعتمدت أول مؤشر حيوي بتعلم آلي. ما هو؟",
+        "en": "In December 2025, FDA qualified its first ML biomarker. What is it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AIM-NASH — يُسرّع تطوير أدوية التهاب الكبد الدهني",
+            "en": "AIM-NASH — accelerates NASH drug development"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مؤشر لتشخيص السرطان فقط",
+            "en": "Cancer diagnosis marker only"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أداة لقياس فعالية اللقاحات",
+            "en": "Vaccine efficacy tool"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم تعتمد FDA أي مؤشر بعد",
+            "en": "FDA hasn't qualified any"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "AIM-NASH يحلل صور أنسجة الكبد رقمياً بدلاً من التقييم الشخصي. يفتح الباب لتسريع تجارب NASH — سوق ضخم.",
+        "en": "AIM-NASH digitally analyzes liver tissue images instead of subjective assessment. Opens the door to accelerating NASH trials — a huge market."
+      }
+    },
+    {
+      "id": "phm-mcq-030",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Walgreens أطلقت «الصيدلية الهجينة» في 2026. ما المقصود؟",
+        "en": "Walgreens launched 'Hybrid Pharmacy' in 2026. What does it mean?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "صرف روبوتي مركزي + خدمات سريرية في الموقع — الصيدلي للمريض والروبوت للصرف",
+            "en": "Centralized robotic dispensing + on-site clinical services — pharmacist for patient, robot for dispensing"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "صيدلية بدون صيدلي",
+            "en": "Pharmacy without pharmacist"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "صيدلية تبيع أدوية وغذاء",
+            "en": "Pharmacy selling drugs and food"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "صيدلية إلكترونية فقط",
+            "en": "Fully online pharmacy"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "النموذج الهجين: المركز الروبوتي يصرف والصيدلي يقدم استشارات وتطعيمات. أُطلق في 6 ولايات أمريكية في مارس 2026.",
+        "en": "Hybrid model: robotic hub dispenses while pharmacist provides counseling and vaccinations. Launched in 6 US states in March 2026."
+      }
+    },
+    {
+      "id": "phm-tf-003",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أدوية AI تُظهر نسبة نجاح في المرحلة الأولى بين 80-90%، مقابل 52% تقليدياً.",
+        "en": "AI-discovered drugs show 80–90% Phase I success rates vs. 52% traditionally."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. لكن المرحلة الثالثة — حيث يفشل معظم الأدوية — لم تُختبر بشكل كافٍ. الاختبار الحقيقي في نتائج 2026.",
+        "en": "True. But Phase III hasn't been sufficiently tested yet. The real test lies in 2026 results."
+      }
+    },
+    {
+      "id": "phm-tf-004",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "حصل دواء مكتشف بالكامل بـ AI على موافقة FDA النهائية بحلول نهاية 2025.",
+        "en": "A fully AI-discovered drug received final FDA approval by end of 2025."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. حتى ديسمبر 2025 لم يحصل أي دواء AI على موافقة تنظيمية. rentosertib أكمل IIa بنجاح. الموافقة الأولى متوقعة 2026-2027.",
+        "en": "False. As of December 2025, no fully AI drug has received regulatory approval. Rentosertib completed Phase IIa. First approval projected 2026–2027."
+      }
+    },
+    {
+      "id": "phm-tf-005",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مراكز Walgreens الروبوتية وفّرت 500 مليون دولار من تقليل المخزون الزائد وتحسين الكفاءة.",
+        "en": "Walgreens' robotic centers saved $500 million through reducing excess inventory and improving efficiency."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. 13 مركزاً يخدم 5,000+ صيدلية ويصرف 3.5 مليون وصفة أسبوعياً.",
+        "en": "True. 13 centers serve 5,000+ pharmacies dispensing 3.5 million prescriptions weekly."
+      }
+    },
+    {
+      "id": "phm-tf-006",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "AI يختصر الاكتشاف المبكر بنسبة 30-40% لكنه لا يسرّع التجارب السريرية لأنها مرتبطة بالبيولوجيا البشرية.",
+        "en": "AI compresses early discovery by 30–40% but can't accelerate clinical trials bound by human biology."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. AI يختصر تطوير المرشح من 3-4 سنوات إلى 13-18 شهراً. لكن تسجيل المرضى والمتابعة والمراجعة التنظيمية لا يمكن تجاوزها.",
+        "en": "True. AI compresses preclinical development from 3–4 years to 13–18 months. But patient enrollment, follow-up, and regulatory review can't be bypassed."
+      }
+    },
+    {
+      "id": "phm-tf-007",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "CVS تستخدم AI وروبوتات مركزية لخدمة أكثر من 9,000 صيدلية.",
+        "en": "CVS uses centralized AI and robotics to serve over 9,000 pharmacies."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. CVS تستفيد من الروبوتات والتعلم الآلي لتبسيط العمليات عبر 9,000+ صيدلية. المنافسة في الأتمتة بين السلاسل الكبرى تتصاعد.",
+        "en": "True. CVS leverages robots and ML across 9,000+ pharmacies. The automation competition among major chains is intensifying."
+      }
+    },
+    {
+      "id": "phm-tf-008",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "AlphaFold 3 يتنبّأ ببنية البروتينات فقط — ولا يستطيع نمذجة ارتباط البروتين بالجزيئات الدوائية.",
+        "en": "AlphaFold 3 only predicts protein structures — it cannot model protein-drug molecule binding."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. AlphaFold 3 (مايو 2024) تجاوز البنية ليشمل ارتباط البروتين بالجزيئات (protein-ligand binding) بدقة محسّنة 50%+. قفزة حاسمة لتصميم الأدوية.",
+        "en": "False. AlphaFold 3 (May 2024) models protein-ligand binding with 50%+ improved accuracy. A crucial leap for drug design."
+      }
+    },
+    {
+      "id": "phm-tf-009",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أتمتة الصيدلية تُقلل دور الصيدلي — في البيئات المؤتمتة يقضي الصيادلة وقتاً أقل مع المرضى.",
+        "en": "Pharmacy automation reduces the pharmacist's role — pharmacists spend less time with patients in automated settings."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ — العكس تماماً. الصيادلة في البيئات المؤتمتة يقضون 45% وقتاً أكثر في الرعاية المباشرة. الأتمتة تُحرر الصيدلي من الروتين.",
+        "en": "False — the opposite. Pharmacists in automated environments spend 45% more time on direct care. Automation frees pharmacists from routine."
+      }
+    },
+    {
+      "id": "phm-tf-010",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "الصين زادت حصتها في صفقات ترخيص التقنيات الحيوية العالمية المتعلقة بـ AI من 21% إلى 32% في الربع الأول من 2025.",
+        "en": "China increased its AI biotech licensing deals share from 21% to 32% in Q1 2025."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. شركات AI الصينية تعزز حضورها العالمي بسرعة — تنافس متصاعد في سباق AI الدوائي.",
+        "en": "True. Chinese AI companies are rapidly strengthening their global presence — intensifying the pharmaceutical AI race."
+      }
+    },
+    {
+      "id": "phm-tf-011",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Insilico طوّرت rentosertib بتكلفة اكتشاف 150,000 دولار فقط — بدون تكاليف المختبر.",
+        "en": "Insilico developed rentosertib at a discovery cost of just $150,000 — excluding wet lab costs."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. التكلفة الحاسوبية فقط. التكلفة الإجمالية (مع المختبر والتجارب) أعلى بكثير. لكن هذا يوضح كيف يخفض AI تكاليف المراحل المبكرة جذرياً.",
+        "en": "True. Computational cost only. Total cost (with lab and trials) is much higher. But this shows how AI radically reduces early-stage costs."
+      }
+    },
+    {
+      "id": "phm-tf-012",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنظمة الصرف الروبوتية المركزية تحقق معدل أخطاء يقارب الصفر مقارنة بالأساليب اليدوية.",
+        "en": "Centralized robotic dispensing systems achieve near-zero error rates vs. manual methods."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. في دراسة مبكرة انخفضت الأخطاء من 19 لكل 100,000 إلى 7 لكل 100,000 بعد الروبوتات. لكن الأخطاء الميكانيكية ممكنة.",
+        "en": "True. An early study showed errors dropping from 19 per 100K to 7 per 100K after robots. But mechanical errors can occur."
+      }
+    },
+    {
+      "id": "phm-tf-013",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "DSP-1181 من Exscientia/Sumitomo كان أول جزيء AI يدخل التجارب البشرية — في أقل من 12 شهراً.",
+        "en": "DSP-1181 (Exscientia/Sumitomo) was the first AI-designed molecule in human trials — under 12 months."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. لعلاج الوسواس القهري. الفرق عن rentosertib: DSP-1181 صُمم جزيئياً بـ AI لكن هدفه كان معروفاً. rentosertib اكتُشف هدفه ومركبه كلاهما بـ AI.",
+        "en": "True. For OCD treatment. Unlike rentosertib where both target and compound were AI-discovered, DSP-1181's target was already known."
+      }
+    },
+    {
+      "id": "phm-tf-014",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "CYP2D6 poor metabolizers يواجهون سمية أعلى دائماً مع كل الأدوية التي يستقلبها هذا الإنزيم.",
+        "en": "CYP2D6 poor metabolizers always face higher toxicity with all drugs metabolized by this enzyme."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. التأثير يختلف حسب الدواء: مع الكودين تقل الفعالية (لا يتحول لمورفين)، لكن مع مضادات الاكتئاب ثلاثية الحلقات قد يتراكم الدواء ويسبب سمية. التعميم خطير.",
+        "en": "False. Impact varies by drug: codeine becomes less effective (doesn't convert to morphine), but tricyclics may accumulate causing toxicity. Generalizing is dangerous."
+      }
+    },
+    {
+      "id": "phm-tf-015",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نصف مؤسسات الرعاية الصحية عالمياً خططت لدمج AI بحلول 2025.",
+        "en": "Nearly half of global healthcare organizations planned AI integration by 2025."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. ~50% خططت لكن التطبيق الناجح يتطلب وضوحاً في الأدوار والفوائد والعوائق. دراسة MIT تُظهر أن 95% من المشاريع التجريبية فشلت.",
+        "en": "True. ~50% planned but successful implementation requires clarity on roles, benefits, and barriers. MIT study shows 95% of pilots failed."
+      }
+    },
+    {
+      "id": "phm-tf-016",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "مستشفى الملك فيصل التخصصي حقق 85,000+ تدخل AI أدت لتخفيض انتظار المرضى 50%+.",
+        "en": "King Faisal Specialist Hospital achieved 85,000+ AI interventions, reducing patient wait times 50%+."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. مع تخفيض 27% تحديداً في الصيدلية. السعودية تقود التحول الرقمي الصحي بصندوق AI بـ 40 مليار دولار.",
+        "en": "True. With 27% specifically in pharmacy. Saudi leads digital health transformation with a $40B AI fund."
+      }
+    },
+    {
+      "id": "phm-tf-017",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "80% من المشاركين في استطلاع ASCPT اعتبروا أن AI سيُحدث تغييراً جوهرياً في البحث الدوائي.",
+        "en": "80% of ASCPT survey participants saw AI as a significant change in pharmaceutical R&D."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. 45% يرون تصميم الجزيئات أكثر المجالات وعداً، يليه التجارب السريرية (28%).",
+        "en": "True. 45% see molecule design as most promising, followed by clinical trials (28%)."
+      }
+    },
+    {
+      "id": "phm-tf-018",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تطوير دواء جديد تقليدياً يستغرق 10-15 سنة ويكلف أكثر من 2 مليار دولار.",
+        "en": "Traditional drug development takes 10–15 years and costs over $2 billion."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. بعض التقديرات ترفعها لـ 4 مليارات. أقل من 10% تحصل على الموافقة. لذلك تسريع AI للمراحل المبكرة إنجاز حقيقي.",
+        "en": "True. Some estimates reach $4B. Fewer than 10% get approved. Hence AI's early-stage acceleration is a real achievement."
+      }
+    },
+    {
+      "id": "phm-tf-019",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في بريطانيا يُصرف أكثر من مليار وصفة سنوياً في الصيدليات المجتمعية.",
+        "en": "UK community pharmacies dispense over 1 billion prescription items annually."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. الحجم المتزايد مع شيخوخة السكان يضع ضغطاً هائلاً. الأتمتة ضرورة للسلامة والكفاءة.",
+        "en": "True. Increasing volume with aging populations puts enormous pressure. Automation is a necessity."
+      }
+    },
+    {
+      "id": "phm-tf-020",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "Isomorphic Labs التابعة لـ DeepMind هي منصة ناشئة في اكتشاف الأدوية بـ AI.",
+        "en": "Isomorphic Labs (DeepMind subsidiary) is an emerging AI drug discovery platform."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. أُسست لتطبيق تقنيات DeepMind (بما فيها AlphaFold) في اكتشاف الأدوية. منصات أخرى: Insitro، Atomwise، XtalPi.",
+        "en": "True. Founded to apply DeepMind's technologies to drug discovery. Other platforms: Insitro, Atomwise, XtalPi."
+      }
+    },
+    {
+      "id": "phm-fill-002",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "دواء {{blank_1}} هو أول دواء اكتشف AI كلاً من هدفه البيولوجي ومركبه الكيميائي من الصفر.",
+        "en": "The drug {{blank_1}} is the first where AI discovered both the biological target and compound from scratch."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "rentosertib",
+            "en": "rentosertib"
+          },
+          "options": [
+            {
+              "ar": "rentosertib",
+              "en": "rentosertib"
+            },
+            {
+              "ar": "zasocitinib",
+              "en": "zasocitinib"
+            },
+            {
+              "ar": "DSP-1181",
+              "en": "DSP-1181"
+            },
+            {
+              "ar": "REC-994",
+              "en": "REC-994"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "rentosertib من Insilico الأول من نوعه. zasocitinib مُحسّن بـ AI لكن هدفه معروف. DSP-1181 صُمم جزيئياً فقط. REC-994 فشل سريرياً.",
+        "en": "Rentosertib from Insilico is first of its kind. Zasocitinib was AI-enhanced but target known. DSP-1181 molecularly designed only. REC-994 failed clinically."
+      }
+    },
+    {
+      "id": "phm-fill-003",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} من Insilico Medicine حدّد هدف إنزيم TNIK لتليف الرئة.",
+        "en": "The {{blank_1}} system from Insilico identified TNIK kinase for pulmonary fibrosis."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "PandaOmics",
+            "en": "PandaOmics"
+          },
+          "options": [
+            {
+              "ar": "PandaOmics",
+              "en": "PandaOmics"
+            },
+            {
+              "ar": "Chemistry42",
+              "en": "Chemistry42"
+            },
+            {
+              "ar": "AlphaFold",
+              "en": "AlphaFold"
+            },
+            {
+              "ar": "DoseMeRx",
+              "en": "DoseMeRx"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "PandaOmics يحلل الجينوميات لاكتشاف أهداف. Chemistry42 يولّد مركبات. AlphaFold للبروتينات. DoseMeRx للجرعات.",
+        "en": "PandaOmics analyzes genomics for targets. Chemistry42 generates compounds. AlphaFold for proteins. DoseMeRx for dosing."
+      }
+    },
+    {
+      "id": "phm-fill-004",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "سلسلة {{blank_1}} تستخدم مراكز صرف روبوتية تملأ 60% من وصفاتها لحوالي 3,000 صيدلية.",
+        "en": "The {{blank_1}} chain uses robotic hubs filling 60% of prescriptions for ~3,000 pharmacies."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Walgreens",
+            "en": "Walgreens"
+          },
+          "options": [
+            {
+              "ar": "Walgreens",
+              "en": "Walgreens"
+            },
+            {
+              "ar": "CVS",
+              "en": "CVS"
+            },
+            {
+              "ar": "Walmart",
+              "en": "Walmart"
+            },
+            {
+              "ar": "Amazon Pharmacy",
+              "en": "Amazon Pharmacy"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Walgreens رائدة بـ 13 مركزاً. CVS تستخدم AI مركزياً لـ 9,000+. Walmart تستخدم Central Fill. Amazon تركز على التوصيل.",
+        "en": "Walgreens pioneered with 13 centers. CVS uses centralized AI for 9,000+. Walmart uses Central Fill. Amazon focuses on delivery."
+      }
+    },
+    {
+      "id": "phm-fill-005",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "شركة {{blank_1}} الإماراتية تعمل في الجينوميات والطب الدقيق ولعبت دوراً في تجارب لقاح كوفيد-19.",
+        "en": "{{blank_1}} in Abu Dhabi focuses on genomics and precision medicine and played a key COVID-19 vaccine role."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "G42 Healthcare",
+            "en": "G42 Healthcare"
+          },
+          "options": [
+            {
+              "ar": "G42 Healthcare",
+              "en": "G42 Healthcare"
+            },
+            {
+              "ar": "Insilico Medicine",
+              "en": "Insilico Medicine"
+            },
+            {
+              "ar": "Recursion",
+              "en": "Recursion"
+            },
+            {
+              "ar": "BenevolentAI",
+              "en": "BenevolentAI"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "G42 Healthcare مقرها أبوظبي. Insilico متخصصة في اكتشاف الأدوية بـ AI. Recursion وBenevolentAI شركات غربية.",
+        "en": "G42 Healthcare is Abu Dhabi-based. Insilico specializes in AI drug discovery. Recursion and BenevolentAI are Western companies."
+      }
+    },
+    {
+      "id": "phm-fill-006",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "إنزيم {{blank_1}} من أهم الإنزيمات في الجينات الدوائية — يؤثر على استقلاب الكودين ومضادات الاكتئاب.",
+        "en": "Enzyme {{blank_1}} is crucial in pharmacogenomics — affects codeine and antidepressant metabolism."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "CYP2D6",
+            "en": "CYP2D6"
+          },
+          "options": [
+            {
+              "ar": "CYP2D6",
+              "en": "CYP2D6"
+            },
+            {
+              "ar": "CYP3A4",
+              "en": "CYP3A4"
+            },
+            {
+              "ar": "ACE",
+              "en": "ACE"
+            },
+            {
+              "ar": "COX-2",
+              "en": "COX-2"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "CYP2D6 يستقلب ~25% من الأدوية الشائعة. CYP3A4 مهم لمجموعة مختلفة. ACE لضغط الدم. COX-2 هدف مضادات الالتهاب. أنظمة AI تدمج بيانات CYP2D6 لتوصيات شخصية.",
+        "en": "CYP2D6 metabolizes ~25% of common drugs. CYP3A4 important for different group. ACE for blood pressure. COX-2 anti-inflammatory target. AI integrates CYP2D6 data for personalized recommendations."
+      }
+    },
+    {
+      "id": "phm-fill-007",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أول مؤشر حيوي بتعلم آلي اعتمدته FDA (ديسمبر 2025) هو {{blank_1}} لالتهاب الكبد الدهني.",
+        "en": "The first FDA ML biomarker (December 2025) is {{blank_1}} for NASH."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "AIM-NASH",
+            "en": "AIM-NASH"
+          },
+          "options": [
+            {
+              "ar": "AIM-NASH",
+              "en": "AIM-NASH"
+            },
+            {
+              "ar": "AlphaFold",
+              "en": "AlphaFold"
+            },
+            {
+              "ar": "Elsa",
+              "en": "Elsa"
+            },
+            {
+              "ar": "DoseMeRx",
+              "en": "DoseMeRx"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "AIM-NASH يحلل صور الكبد رقمياً لتقييم شدة المرض بدلاً من التقييم الشخصي.",
+        "en": "AIM-NASH digitally analyzes liver images to assess severity instead of subjective evaluation."
+      }
+    },
+    {
+      "id": "phm-fill-008",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "صندوق {{blank_1}} السعودي مستثمر استراتيجي في Insilico Medicine لاكتشاف الأدوية بـ AI.",
+        "en": "Saudi Arabia's {{blank_1}} fund is a strategic investor in Insilico Medicine."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Prosperity7 Ventures",
+            "en": "Prosperity7 Ventures"
+          },
+          "options": [
+            {
+              "ar": "Prosperity7 Ventures",
+              "en": "Prosperity7 Ventures"
+            },
+            {
+              "ar": "صندوق الاستثمارات العامة",
+              "en": "Public Investment Fund"
+            },
+            {
+              "ar": "مبادلة",
+              "en": "Mubadala"
+            },
+            {
+              "ar": "SoftBank Vision",
+              "en": "SoftBank Vision"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Prosperity7 هو ذراع أرامكو التقني. استثمارهم يعكس اهتمام السعودية بتنويع الاقتصاد. خطط لمركز في الرياض 2026.",
+        "en": "Prosperity7 is Aramco's tech arm. Their investment reflects Saudi economic diversification. Plans for Riyadh center 2026."
+      }
+    },
+    {
+      "id": "phm-fill-009",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أدوات مثل {{blank_1}} وإرشادات CPIC تدعم دمج البيانات الجينية في قرارات العلاج الدوائي.",
+        "en": "Tools like {{blank_1}} and CPIC guidelines support integrating genetic data into drug treatment decisions."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "PharmCAT",
+            "en": "PharmCAT"
+          },
+          "options": [
+            {
+              "ar": "PharmCAT",
+              "en": "PharmCAT"
+            },
+            {
+              "ar": "ChatGPT",
+              "en": "ChatGPT"
+            },
+            {
+              "ar": "BLAST",
+              "en": "BLAST"
+            },
+            {
+              "ar": "Midjourney",
+              "en": "Midjourney"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "PharmCAT أداة مفتوحة المصدر تترجم بيانات الجينوم إلى توصيات علاجية وفق إرشادات CPIC. تدعم التكامل مع أنظمة الدعم السريري.",
+        "en": "PharmCAT is an open-source tool translating genomic data into treatment recommendations per CPIC guidelines, supporting CDSS integration."
+      }
+    },
+    {
+      "id": "phm-fill-010",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أنظمة AI في اليقظة الدوائية تحلل قاعدة بيانات {{blank_1}} وسجلات صحية ووسائل تواصل.",
+        "en": "AI pharmacovigilance systems analyze {{blank_1}} databases, EHRs, and social media."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "FAERS",
+            "en": "FAERS"
+          },
+          "options": [
+            {
+              "ar": "FAERS",
+              "en": "FAERS"
+            },
+            {
+              "ar": "PubMed",
+              "en": "PubMed"
+            },
+            {
+              "ar": "Google Scholar",
+              "en": "Google Scholar"
+            },
+            {
+              "ar": "Wikipedia",
+              "en": "Wikipedia"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "FAERS هي قاعدة FDA الرئيسية. AI يستخرج إشارات أكثر بـ 40%. لكن 94% عدم إبلاغ يعني بيانات ناقصة — لذلك تتحول الأنظمة لمصادر متعددة.",
+        "en": "FAERS is FDA's main database. AI extracts 40% more signals. But 94% underreporting means incomplete data — hence multi-source analysis."
+      }
+    },
+    {
+      "id": "phm-match-002",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل شركة بإنجازها في اكتشاف الأدوية بـ AI:",
+        "en": "Match each company with its AI drug discovery achievement:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Insilico Medicine",
+            "en": "Insilico Medicine"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Schrödinger/Takeda",
+            "en": "Schrödinger/Takeda"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Exscientia/Sumitomo",
+            "en": "Exscientia/Sumitomo"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Recursion",
+            "en": "Recursion"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "أول دواء AI بالكامل يصل المرحلة IIa",
+            "en": "First fully AI drug reaching Phase IIa"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أبعد دواء AI — المرحلة III للصدفية",
+            "en": "Furthest AI drug — Phase III for psoriasis"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "أول جزيء AI يدخل تجارب بشرية",
+            "en": "First AI molecule entering human trials"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "أبرز فشل — REC-994 أُوقف 2025",
+            "en": "Most prominent failure — REC-994 discontinued 2025"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل شركة فصل في قصة AI الدوائي: Exscientia الأولى (DSP-1181)، Insilico الأشمل (rentosertib)، Schrödinger الأبعد سريرياً (zasocitinib)، Recursion أبرز تذكير بأن الفشل واقع.",
+        "en": "Each company is a chapter: Exscientia first (DSP-1181), Insilico most comprehensive (rentosertib), Schrödinger furthest clinically (zasocitinib), Recursion the failure reminder (REC-994)."
+      }
+    },
+    {
+      "id": "phm-match-003",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل سلسلة صيدليات بنموذج أتمتتها:",
+        "en": "Match each pharmacy chain with its automation model:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Walgreens",
+            "en": "Walgreens"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "CVS",
+            "en": "CVS"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Walmart",
+            "en": "Walmart"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "UCSF Medical Center",
+            "en": "UCSF Medical Center"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "13 مركزاً روبوتياً يخدم 5,000+ صيدلية ووفّر 500 مليون دولار",
+            "en": "13 robotic centers serving 5,000+ pharmacies, $500M savings"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "AI وروبوتات مركزية لأكثر من 9,000 صيدلية",
+            "en": "Centralized AI and robotics for 9,000+ pharmacies"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "مراكز Central Fill تعالج 100,000 وصفة يومياً",
+            "en": "Central Fill processing 100,000 prescriptions daily"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "صيدلية مستشفى روبوتية — 350,000 جرعة بصفر أخطاء",
+            "en": "Hospital robotic pharmacy — 350,000 doses zero errors"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل نموذج يخدم سياقاً مختلفاً: Walgreens وCVS في التجزئة، Walmart بحجم ضخم، UCSF في المستشفى. القاسم المشترك: تحرير الصيدلي للمريض.",
+        "en": "Each model serves a different context. Common thread: freeing pharmacists for patient care."
+      }
+    },
+    {
+      "id": "phm-match-004",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مبادرة عربية بمجالها:",
+        "en": "Match each Arab initiative with its domain:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "برنامج الجينوم الإماراتي",
+            "en": "Emirati Genome Programme"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Insilico - مدينة مصدر",
+            "en": "Insilico - Masdar City"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "G42 Healthcare",
+            "en": "G42 Healthcare"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Prosperity7 Ventures",
+            "en": "Prosperity7 Ventures"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "رسم خريطة DNA لسكان الإمارات",
+            "en": "Mapping Emirati DNA for personalized medicine"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "اكتشاف أول دواء أورام AI في الإمارات",
+            "en": "First fully AI oncology drug in UAE"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "الجينوميات والطب الدقيق وتجارب اللقاحات",
+            "en": "Genomics, precision medicine, and vaccine trials"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "استثمار استراتيجي سعودي في AI الدوائي",
+            "en": "Saudi strategic investment in AI drug discovery"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "المنطقة العربية تبني منظومة متكاملة: الإمارات تجمع البيانات الجينومية وتستضيف مراكز اكتشاف، والسعودية تستثمر استراتيجياً.",
+        "en": "The Arab region builds an integrated ecosystem: UAE collects genomic data and hosts discovery centers; Saudi invests strategically."
+      }
+    },
+    {
+      "id": "phm-match-005",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل إحصائية بمجالها:",
+        "en": "Match each statistic with its pharmacy AI domain:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "94%",
+            "en": "94%"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "98%+",
+            "en": "98%+"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "45%",
+            "en": "45%"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "16.7%",
+            "en": "16.7%"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "معدل عدم الإبلاغ عن التفاعلات الضارة",
+            "en": "Adverse reaction underreporting rate"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "دقة الرؤية الحاسوبية في فحص الأقراص",
+            "en": "Computer vision tablet inspection accuracy"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "زيادة وقت الصيدلي مع المريض في الأتمتة",
+            "en": "Increase in pharmacist patient time with automation"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "معدل نجاح Chemistry42 في توليد المثبطات",
+            "en": "Chemistry42 inhibitor generation hit rate"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "94% عدم إبلاغ = بيانات ناقصة. 98% دقة تفوق أي إنسان. 45% وقت إضافي = الحجة الأقوى للأتمتة. 16.7% مقابل 0.1% = تحسن 167 ضعفاً.",
+        "en": "94% underreporting = incomplete data. 98% exceeds any human. 45% more time = strongest automation argument. 16.7% vs 0.1% = 167-fold improvement."
+      }
+    },
+    {
+      "id": "phm-match-006",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مرحلة إنتاج دوائي بتطبيق AI المناسب:",
+        "en": "Match each drug pipeline stage with its AI application:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "اكتشاف هدف جديد",
+            "en": "New target discovery"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "تصميم مركب كيميائي",
+            "en": "Chemical compound design"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "فحص جودة الإنتاج",
+            "en": "Production quality inspection"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "مراقبة ما بعد التسويق",
+            "en": "Post-marketing surveillance"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تحليل جينومي وبروتيني بتعلم عميق",
+            "en": "Deep learning genomic/proteomic analysis"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "كيمياء توليدية تُنتج آلاف المركبات الافتراضية",
+            "en": "Generative chemistry producing thousands of virtual compounds"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "رؤية حاسوبية تفحص 1,000+ وحدة/دقيقة",
+            "en": "Computer vision inspecting 1,000+ units/minute"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "NLP يستخرج إشارات أمان من تقارير ووسائل تواصل",
+            "en": "NLP extracting safety signals from reports and social media"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "AI يتغلغل في كل مرحلة: اكتشاف (تعلم عميق) → تصميم (كيمياء توليدية) → إنتاج (رؤية حاسوبية) → مراقبة (NLP). كل مرحلة تستخدم AI مختلفاً.",
+        "en": "AI permeates every stage: discovery (deep learning) → design (generative chemistry) → manufacturing (computer vision) → surveillance (NLP)."
+      }
+    },
+    {
+      "id": "phm-match-007",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تحدٍّ AI صيدلي بسببه:",
+        "en": "Match each pharmacy AI challenge with its root cause:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "95% مشاريع AI تفشل",
+            "en": "95% AI pilots fail"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "AI لم يخفض فشل التجارب",
+            "en": "AI hasn't reduced trial failure"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "يقظة دوائية بـ AI ناقصة",
+            "en": "AI pharmacovigilance incomplete"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "تأخر أتمتة الصيدليات الصغيرة",
+            "en": "Small pharmacy automation delay"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "انفصال عن سير العمل وضعف البيانات",
+            "en": "Workflow disconnect and poor data"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "البيولوجيا البشرية لا يمكن تسريعها",
+            "en": "Human biology can't be accelerated"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "94% عدم إبلاغ عن التفاعلات",
+            "en": "94% adverse reaction underreporting"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تكلفة أولية مرتفعة وتحديات تكامل",
+            "en": "High initial costs and integration challenges"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل تحدٍّ جذر مختلف: مؤسسي، بيولوجي، بيانات، اقتصادي. فهم الجذر يحدد الحل.",
+        "en": "Each challenge has a different root: institutional, biological, data, economic. Understanding the root determines the solution."
+      }
+    },
+    {
+      "id": "phm-match-008",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل منهج AI دوائي بمثاله الأبرز:",
+        "en": "Match each AI drug approach with its most prominent example:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "كيمياء توليدية",
+            "en": "Generative Chemistry"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "فيزياء حاسوبية بـ AI",
+            "en": "AI-enhanced computational physics"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "تصوير بيولوجي عالي الإنتاجية",
+            "en": "High-throughput biological imaging"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "تنبؤ ببنية البروتين",
+            "en": "Protein structure prediction"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "Chemistry42 — 78,000 مثبّط لهدف TNIK",
+            "en": "Chemistry42 — 78,000 inhibitors for TNIK"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "Schrödinger — تحسين zasocitinib",
+            "en": "Schrödinger — optimizing zasocitinib"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "Recursion — 2.2 مليون تجربة/أسبوع عبر 50 خلية",
+            "en": "Recursion — 2.2M experiments/week across 50 cell types"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "AlphaFold — نوبل 2024 — 200 مليون بروتين",
+            "en": "AlphaFold — 2024 Nobel — 200 million proteins"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "أربعة مناهج مختلفة تماماً. التكامل بينها هو المستقبل. اندماج Recursion-Exscientia مثال.",
+        "en": "Four entirely different approaches. Integration is the future. Recursion-Exscientia merger is an example."
+      }
+    },
+    {
+      "id": "phm-match-009",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تقنية أتمتة صيدلية بوظيفتها:",
+        "en": "Match each pharmacy automation tech with its function:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "خزائن الصرف الآلي (ADC)",
+            "en": "ADC"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "تحضير وريدي روبوتي",
+            "en": "Robotic IV compounding"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "باركود إدارة الأدوية (BCMA)",
+            "en": "BCMA"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "NLP في السجلات الصحية",
+            "en": "NLP in health records"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تخزين وتوزيع الأدوية في الأقسام مع تتبع الجرد",
+            "en": "Storing/distributing medications in units with inventory tracking"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "تحضير محاليل وريدية بدقة وتقليل الهدر",
+            "en": "Preparing IV solutions with precision and reducing waste"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "التأكد من إعطاء الدواء الصحيح للمريض الصحيح",
+            "en": "Verifying right medication for right patient"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "استخراج معلومات من ملاحظات طبية غير منظمة",
+            "en": "Extracting info from unstructured clinical notes"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه التقنيات تعمل كمنظومة: ADC تُدير المخزون، الروبوتات تُحضر المحاليل، BCMA تتحقق عند الإعطاء، NLP يستخرج رؤى. 87.3% من المستشفيات تستخدم تحليلات أساسية.",
+        "en": "These technologies work as an ecosystem. 87.3% of US hospitals already use basic analytics including some of these."
+      }
+    },
+    {
+      "id": "phm-match-010",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل جين دوائي بتأثيره على استقلاب الأدوية:",
+        "en": "Match each pharmacogene with its drug metabolism impact:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "CYP2D6",
+            "en": "CYP2D6"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "CYP2C9",
+            "en": "CYP2C9"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "SLCO1B1",
+            "en": "SLCO1B1"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "CYP2C19",
+            "en": "CYP2C19"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "يؤثر على الكودين ومضادات الاكتئاب ثلاثية الحلقات",
+            "en": "Affects codeine and tricyclic antidepressants"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "يؤثر على الوارفارين ومضادات الالتهاب",
+            "en": "Affects warfarin and NSAIDs"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "يؤثر على نقل الستاتينات — آلام عضلية",
+            "en": "Affects statin transport — muscle pain risk"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "يؤثر على فعالية كلوبيدوقرل",
+            "en": "Affects clopidogrel effectiveness"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الجينات الأربعة تستقلب نسبة كبيرة من الأدوية الشائعة. أنظمة CDSS تدمج بياناتها مع قوائم أدوية المريض. إرشادات CPIC وPharmCAT تدعم التكامل.",
+        "en": "These four genes metabolize a large proportion of common drugs. CDSS integrates their data with patient medication lists. CPIC and PharmCAT support integration."
+      }
+    },
+    {
+      "id": "phm-sort-002",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات تحويل صيدلية تقليدية إلى نموذج هجين مؤتمت:",
+        "en": "Order steps for converting a traditional pharmacy to a hybrid automated model:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تقييم حجم الوصفات وتحديد النسبة القابلة للأتمتة",
+            "en": "Assess prescription volume and identify automatable percentage"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "ربط الصيدلية بمركز مركزي وتكامل الأنظمة الإلكترونية",
+            "en": "Connect to centralized hub and integrate electronic systems"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تدريب الصيادلة على المهام السريرية الجديدة",
+            "en": "Train pharmacists on new clinical tasks"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "قياس النتائج: رضا المرضى، أخطاء الصرف، وقت الصيدلي مع المريض",
+            "en": "Measure outcomes: satisfaction, errors, pharmacist patient time"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "التحول الناجح: تقييم → تكامل تقني → تطوير مهارات → قياس. Walmart شهدت 30% زيادة في تفاعل الصيدلي مع المريض.",
+        "en": "Successful transformation: assessment → technical integration → skill development → measurement. Walmart saw 30% more pharmacist-patient engagement."
+      }
+    },
+    {
+      "id": "phm-sort-003",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب تطور دمج الجينات الدوائية مع AI:",
+        "en": "Order the evolution of pharmacogenomics-AI integration:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "اختبار جين واحد (CYP2D6) وتعديل الجرعة يدوياً",
+            "en": "Single gene testing and manual dose adjustment"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "لوحات جينية متعددة مع إرشادات CPIC",
+            "en": "Multi-gene panels with CPIC guidelines"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "أنظمة CDSS مدعومة بـ AI تدمج الجينات مع الأدوية والسجل الصحي",
+            "en": "AI-powered CDSS integrating genes, medications, and health records"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "طب شخصي شامل: جينوميات + بروتيوميات + أيضيات + AI",
+            "en": "Comprehensive precision: genomics + proteomics + metabolomics + AI"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "معظم المؤسسات في المرحلتين 2 و3. المرحلة 4 (multi-omics + AI) لا تزال بحثية لكنها تتسارع بفضل AlphaFold وTxGemma.",
+        "en": "Most institutions at stages 2–3. Stage 4 (multi-omics + AI) still mostly research but accelerating with AlphaFold and TxGemma."
+      }
+    },
+    {
+      "id": "phm-sort-004",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب أنواع AI في الصيدلة من الأبسط إلى الأعقد:",
+        "en": "Order AI types in pharmacy from simplest to most complex:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "أنظمة قواعد بسيطة لفحص التفاعلات الثنائية",
+            "en": "Simple rule-based pairwise drug interaction checking"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تعلم آلي تقليدي (XGBoost) للتنبؤ بمقاومة المضادات الحيوية",
+            "en": "Traditional ML (XGBoost) for antibiotic resistance prediction"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "شبكات GNN لنمذجة التفاعلات متعددة الأدوية",
+            "en": "GNN for multi-drug interaction modeling"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "كيمياء توليدية عميقة لتصميم جزيئات جديدة من الصفر",
+            "en": "Deep generative chemistry for novel molecule design"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "كل مستوى يبني على سابقه. الصيدلي لا يحتاج أن يبرمج لكن يحتاج فهم القدرات والحدود.",
+        "en": "Each level builds on the previous. Pharmacists don't need to program but need to understand capabilities and limitations."
+      }
+    },
+    {
+      "id": "phm-sort-005",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مسار الوصفة في المركز الروبوتي:",
+        "en": "Order the prescription path in a robotic center:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "النظام يوجّه الوصفة من الصيدلية المحلية إلى المركز",
+            "en": "System routes prescription from local pharmacy to center"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "ذراع روبوتية تملأ العبوة مع مسح الباركود",
+            "en": "Robotic arm fills vial with barcode scanning"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "فرز وتعبئة وتجميع مع أدوية المريض الأخرى",
+            "en": "Sorting, packaging, and combining with other patient meds"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "شحن للصيدلية المحلية لاستلام المريض",
+            "en": "Shipping to local pharmacy for patient pickup"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "في Walgreens: كل روبوت يملأ 300 وصفة/ساعة. الماسحات تقرأ الباركود في كل مرحلة. صيدلي بشري يشرف ويتحقق.",
+        "en": "At Walgreens: each robot fills 300/hour. Scanners read barcodes at every stage. A human pharmacist oversees and verifies."
+      }
+    },
+    {
+      "id": "phm-sort-006",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب معالم AI الدوائي تاريخياً:",
+        "en": "Order AI drug discovery milestones chronologically:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "DSP-1181 — أول جزيء AI يدخل تجارب بشرية (Exscientia)",
+            "en": "DSP-1181 — first AI molecule in human trials"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "نوبل الكيمياء 2024 لـ AlphaFold",
+            "en": "2024 Chemistry Nobel for AlphaFold"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "نتائج المرحلة IIa لـ rentosertib في Nature Medicine",
+            "en": "Phase IIa rentosertib results in Nature Medicine"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "15-20 دواء AI متوقع في المرحلة الثالثة 2026",
+            "en": "15–20 AI drugs expected in Phase III 2026"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "التسلسل: DSP-1181 (2020) → نوبل AlphaFold (أكتوبر 2024) → rentosertib IIa (يونيو 2025) → مرحلة ثالثة 2026.",
+        "en": "Timeline: DSP-1181 (2020) → AlphaFold Nobel (Oct 2024) → rentosertib IIa (June 2025) → Phase III 2026."
+      }
+    },
+    {
+      "id": "phm-sort-007",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مراحل AI في اليقظة الدوائية من الجمع حتى الإجراء:",
+        "en": "Order AI pharmacovigilance stages from collection to action:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "جمع بيانات من FAERS وسجلات صحية ووسائل تواصل ومنشورات",
+            "en": "Collect from FAERS, EHRs, social media, publications"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "NLP وتعلم آلي لاكتشاف إشارات أمان وأنماط خفية",
+            "en": "NLP and ML to detect safety signals and hidden patterns"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تقييم الإشارات بخبير بشري وتصنيف الخطورة",
+            "en": "Human expert evaluates signals and classifies risk"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "اتخاذ إجراء: تحديث نشرة أو سحب أو تعديل توصيات",
+            "en": "Action: update label, withdraw, or modify recommendations"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "AI يتفوق في الجمع والتحليل. لكن القرار النهائي يبقى بشرياً لأنه يتطلب حكماً سريرياً وتنظيمياً.",
+        "en": "AI excels at collection and analysis. But the final decision remains human — requiring clinical and regulatory judgment."
+      }
+    },
+    {
+      "id": "phm-sort-008",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب تطور دور الصيدلي مع AI:",
+        "en": "Order the pharmacist's role evolution with AI:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "صارف أدوية: عدّ وتعبئة وتسليم",
+            "en": "Drug dispenser: counting, filling, delivering"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "مراجع وصفات: فحص تفاعلات بأنظمة إلكترونية",
+            "en": "Prescription reviewer: checking interactions with electronic systems"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "صيدلي سريري: استشارات وإدارة علاج بدعم AI",
+            "en": "Clinical pharmacist: counseling and AI-supported therapy management"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "مستشار دوائي مخصص: جينوميات + AI لتخصيص العلاج",
+            "en": "Personalized consultant: genomics + AI to customize treatment"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "التحول من عدّ الحبوب إلى تفسير بيانات جينومية. الصيادلة المؤتمتون يقضون 45% وقتاً أكثر مع المرضى.",
+        "en": "From counting pills to interpreting genomic data. Automated pharmacists spend 45% more time with patients."
+      }
+    },
+    {
+      "id": "phm-sort-009",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب تأثير AI على الإنتاجية الصيدلية من الأقل إلى الأكثر:",
+        "en": "Order AI's pharmacy productivity impact from least to most significant:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحسين إدارة المخزون والتنبؤ بالطلب",
+            "en": "Improving inventory management and demand forecasting"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تحقق تلقائي من الوصفات منخفضة المخاطر",
+            "en": "Auto-verifying low-risk prescriptions"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "أتمتة الصرف الروتيني — زيادة 33% إنتاجية",
+            "en": "Automating routine dispensing — 33% productivity increase"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "صيدلية مركزية روبوتية: 300 وصفة/ساعة/روبوت",
+            "en": "Centralized robotic pharmacy: 300 prescriptions/hour/robot"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "كل مستوى يضاعف التأثير. Walgreens حولت هذا التدرج إلى واقع في 5,000+ صيدلية.",
+        "en": "Each level multiplies impact. Walgreens turned this progression into reality across 5,000+ pharmacies."
+      }
+    },
+    {
+      "id": "phm-sort-010",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب تطور التنظيم الدولي لـ AI الدوائي:",
+        "en": "Order international pharma AI regulation evolution:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "FDA تبدأ ترخيص أجهزة AI طبية (1,300+ حالياً)",
+            "en": "FDA begins authorizing AI medical devices (1,300+ currently)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "FDA تعتمد أداة Elsa لمراجعة الوثائق التنظيمية",
+            "en": "FDA adopts Elsa for regulatory document review"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "FDA تعتمد أول مؤشر حيوي ML (AIM-NASH) ديسمبر 2025",
+            "en": "FDA qualifies first ML biomarker (AIM-NASH) December 2025"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "EU AI Act أحكام المخاطر العالية — أغسطس 2026",
+            "en": "EU AI Act high-risk provisions — August 2026"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "التنظيم يتطور بالتوازي: ترخيص أجهزة → أدوات داخلية → مؤشرات حيوية → قوانين شاملة. معظم AI المبكر يقع خارج «عالي المخاطر».",
+        "en": "Regulation evolves in parallel: device authorization → internal tools → biomarkers → comprehensive laws. Most early AI falls outside 'high-risk'."
+      }
+    },
+    {
+      "id": "phm-self-003",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت صيدلي سريري. مديرك يقترح AI لتحليل الجينات الدوائية وتعديل الجرعات. كيف تتفاعل؟",
+        "en": "You're a clinical pharmacist. Your manager proposes AI for pharmacogenomic analysis. How do you react?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتحمّس — يرفع ممارستي ويتيح رعاية شخصية حقيقية",
+            "en": "I'm excited — elevates my practice for truly personalized care"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أوافق بشرط تدريب كافٍ",
+            "en": "I agree with adequate training"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أفضّل خبرتي — الأنظمة مبالغ فيها",
+            "en": "I prefer my experience — systems are overhyped"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا حاجة — الأدوية تعمل بنفس الطريقة مع الجميع",
+            "en": "No need — drugs work the same for everyone"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "تنوعات CYP2D6 وCYP2C9 تؤثر فعلاً. أنظمة CDSS تدمج هذه البيانات لتوصيات مخصصة — لكنها تتطلب صيدلياً يفهم المخرجات.",
+        "en": "CYP2D6 and CYP2C9 variations really matter. CDSS integrates this data — but requires a pharmacist who understands outputs."
+      }
+    },
+    {
+      "id": "phm-self-004",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت صيدلي في صيدلية مجتمعية صغيرة. السلاسل الكبرى تملك مراكز روبوتية. ما موقفك؟",
+        "en": "You're at a small community pharmacy. Major chains have robotic centers. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أركّز على ميزتي: رعاية شخصية مميزة ومعرفة عميقة بمرضاي",
+            "en": "I focus on my advantage: exceptional personal care and deep patient knowledge"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أبحث عن حلول أتمتة مناسبة لحجمي",
+            "en": "I look for automation suited to my size"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "المنافسة مستحيلة — أفكر بالإغلاق",
+            "en": "Competition impossible — considering closing"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الأتمتة موضة مؤقتة — المرضى يفضلون البشر",
+            "en": "Automation is a fad — patients prefer humans"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "الصيدليات المجتمعية تملك ميزة حقيقية: العلاقة الشخصية. حلول أتمتة مصغرة موجودة ومتنامية.",
+        "en": "Community pharmacies have a real advantage: personal relationships. Smaller automation solutions exist and are growing."
+      }
+    },
+    {
+      "id": "phm-self-005",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "رئيسك يقول AI يختصر الاكتشاف 30-40% لكن الفشل الإجمالي لا يزال 90%. ردة فعلك؟",
+        "en": "Your boss says AI compresses discovery 30–40% but overall failure remains 90%. Your reaction?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "30-40% توفير قيمة هائلة حتى لو لم يحل المشكلة بالكامل",
+            "en": "30–40% savings is enormous value even if not solving the whole problem"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مهم لكن الأهم تحسين النجاح السريري — وهذا لم يحدث",
+            "en": "Important but clinical success improvement matters more — hasn't happened"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "90% فشل يعني AI لم يغيّر شيئاً",
+            "en": "90% failure means AI changed nothing"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرقام تسويقية مبالغ فيها",
+            "en": "Exaggerated marketing numbers"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "150,000 دولار تكلفة اكتشاف مقابل مئات الملايين تقليدياً. حتى مع 90% فشل، التوفير في التكلفة والوقت حقيقي.",
+        "en": "$150K discovery cost vs. hundreds of millions traditionally. Even with 90% failure, cost and time savings are real."
+      }
+    },
+    {
+      "id": "phm-self-006",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "زميلك يرفض CDSS لأنه «يُقلل من قيمة الصيدلي». رأيك؟",
+        "en": "A colleague refuses CDSS because it 'diminishes pharmacist value.' Your view?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أختلف — CDSS يرفع قيمتي بتوفير وقت للحالات المعقدة",
+            "en": "I disagree — CDSS raises my value by freeing time for complex cases"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أفهم قلقه لكن سلامة المريض أولاً",
+            "en": "I understand but patient safety comes first"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "له حق جزئياً — لكن الحل تحسين النظام لا رفضه",
+            "en": "Partially right — but improve the system, don't reject it"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أوافقه — الصيدلي يعتمد على خبرته فقط",
+            "en": "I agree — rely on expertise only"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "CDSS لا يُقلل قيمة الصيدلي بل يُعيد تعريفها. alert fatigue مشكلة حقيقية لكن الحل في التحسين لا التخلي.",
+        "en": "CDSS doesn't diminish value — it redefines it. Alert fatigue is real but the fix is improvement, not abandonment."
+      }
+    },
+    {
+      "id": "phm-self-007",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "تقرير يُظهر أن 95% من مشاريع AI تفشل. هل يقلل حماسك؟",
+        "en": "A report shows 95% of AI pilots fail. Does this reduce your enthusiasm?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا — الفشل بسبب سوء التطبيق. أتعلم من أخطاء الآخرين",
+            "en": "No — failure is due to poor implementation. I learn from others' mistakes"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أبدأ بمشروع صغير ومحدود",
+            "en": "I start with a small pilot"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نسبة مخيفة — أفضّل الانتظار",
+            "en": "Scary rate — I prefer to wait"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "AI غير جاهز — لا داعي للميزانية",
+            "en": "AI isn't ready — no budget needed"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الفشل بسبب: بيانات ضعيفة، عدم تكامل، غياب حوكمة. ابدأ بالمشكلة لا بالتقنية. المشروع الصغير أذكى خطوة.",
+        "en": "Failure due to: poor data, disconnect, no governance. Start with the problem, not tech. Small pilot is smartest."
+      }
+    },
+    {
+      "id": "phm-self-008",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مريض مسن يسأل: «هل الروبوت حضّر دوائي؟ أريد صيدلياً بشرياً». كيف تجيب؟",
+        "en": "An elderly patient asks: 'Did a robot prepare my medication? I want a human pharmacist.' How do you respond?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أطمئنه: الروبوت يصرف فقط — صيدلي بشري راجع وصفته ومستعد لاستشارته",
+            "en": "I reassure: robot only dispenses — human pharmacist reviewed and is ready for consultation"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أشرح بهدوء كيف يعمل النظام مع إشراف بشري كامل",
+            "en": "I calmly explain the system with full human oversight"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الأتمتة هي المستقبل — عليه تقبّلها",
+            "en": "Automation is the future — he needs to accept it"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض الروبوتات تماماً — حق المريض في رعاية بشرية",
+            "en": "I reject robots — patient's right to human care"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الروبوت لا يحل محل الصيدلي — بل يتولى المهام الميكانيكية. الصيدلي الذي يشرح هذا بلطف يبني ثقة أعمق.",
+        "en": "The robot doesn't replace the pharmacist — it handles mechanical tasks. Gentle explanation builds deeper trust."
+      }
+    },
+    {
+      "id": "phm-self-009",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "الفريق يناقش أدوية مخصصة بناءً على جينات المريض. موقفك من الطب الشخصي بـ AI؟",
+        "en": "Team discusses personalized drugs based on patient genetics. Your stance on AI-powered precision medicine?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "المستقبل الحتمي — أطوّر مهاراتي في الجينوميات الآن",
+            "en": "The inevitable future — I develop genomics skills now"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "واعد لكن بعيد عن الواقع السريري — أتابع باهتمام",
+            "en": "Promising but far from clinical reality — following closely"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مبالغة — الأدوية الحالية تعمل بدون تخصيص",
+            "en": "Exaggeration — current drugs work without customization"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "خطير أخلاقياً",
+            "en": "Ethically dangerous"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الطب الشخصي ليس تلاعباً بالجينات بل استخدام المعلومات الجينية لاختيار الدواء الأنسب. برنامج الجينوم الإماراتي مثال حي.",
+        "en": "Personalized medicine isn't genetic manipulation — it uses genetic info for optimal drug selection. Emirati Genome Programme is a live example."
+      }
+    },
+    {
+      "id": "phm-self-010",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "AI كشف إشارة أمان لدواء شائع لكن البيانات غير كافية. خطوتك التالية؟",
+        "en": "AI detected a potential safety signal for a common drug but data is insufficient. Next step?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أسجّل الإشارة وأوسّع المصادر — سجلات ووسائل تواصل ومنشورات",
+            "en": "Log it and expand sources — EHRs, social media, publications"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أبلّغ الفريق كإجراء احترازي مع توضيح أنها غير مؤكدة",
+            "en": "Notify team as precaution, clarifying it's unconfirmed"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر بيانات أكثر — الإبلاغ المبكر يسبب ذعراً",
+            "en": "Wait for more data — early reporting causes panic"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتجاهلها — AI يُطلق إنذارات كاذبة كثيراً",
+            "en": "Ignore it — AI triggers many false alarms"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "في اليقظة الدوائية، عدم التصرف أخطر من الإبلاغ المبكر. 94% عدم إبلاغ. توسيع المصادر هو المنهج الأمثل.",
+        "en": "In pharmacovigilance, inaction is more dangerous than early reporting. 94% underreporting. Expanding sources is optimal."
+      }
+    },
+    {
+      "id": "phm-self-011",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت في دولة خليجية. الحكومة تستثمر مليارات في AI والجينوميات. كيف تستعد؟",
+        "en": "You're in a Gulf country. Government investing billions in AI and genomics. How do you prepare?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتعلم الجينوميات وتحليل البيانات الآن — الفرص قادمة",
+            "en": "I learn genomics and data analytics now — opportunities coming"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتابع وأحضر مؤتمرات مثل Arab Health",
+            "en": "I follow developments and attend conferences"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "استثمارات حكومية لن تؤثر على عملي",
+            "en": "Government investments won't affect my daily work"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "للباحثين فقط — الصيدلي العملي لا يحتاجها",
+            "en": "Only for researchers — practicing pharmacist doesn't need it"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "برنامج الجينوم الإماراتي + Insilico في مصدر + صندوق AI السعودي بـ 40 مليار = تحول قادم. الصيادلة المستعدون سيقودون.",
+        "en": "Emirati Genome Programme + Insilico in Masdar + Saudi $40B fund = transformation coming. Prepared pharmacists will lead."
+      }
+    },
+    {
+      "id": "phm-self-012",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "زميلتك تقول AI سيجعل الأخطاء الدوائية صفراً خلال 5 سنوات. رأيك؟",
+        "en": "A colleague says AI will make medication errors zero within 5 years. Your view?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مبالغة — AI يقلل الأخطاء لكن صفر مستحيل في بيئة بشرية معقدة",
+            "en": "Overstatement — AI reduces errors but zero is impossible in complex human environments"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ممكن في الصرف الروتيني (UCSF حققته) — لكن أخطاء الوصف والمتابعة ستبقى",
+            "en": "Possible in routine dispensing (UCSF achieved it) — but prescribing errors persist"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أوافقها — التقنية متقدمة بما يكفي",
+            "en": "I agree — technology is advanced enough"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مستحيل — الأخطاء جزء من الطبيعة البشرية",
+            "en": "Impossible — errors are part of human nature"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "UCSF: صفر أخطاء في 350,000 جرعة — لكن في الصرف الروبوتي فقط. الهدف الواقعي: تقليل جذري لا إلغاء كامل.",
+        "en": "UCSF: zero errors in 350K doses — but only in robotic dispensing. Realistic goal: radical reduction, not elimination."
+      }
+    },
+    {
+      "id": "phm-self-013",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "كلية الصيدلة تسأل: هل نضيف مادة AI للمنهج؟",
+        "en": "Pharmacy college asks: should we add an AI course?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ضروري — الخريج بدون فهم AI سيتخلف خلال 5 سنوات",
+            "en": "Essential — graduates without AI understanding will fall behind in 5 years"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أفضّل دمج AI في المواد الموجودة",
+            "en": "I prefer integrating AI into existing courses"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مادة اختيارية — ليس الكل سيحتاجها",
+            "en": "Elective — not everyone needs it"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا حاجة — الصيدلة علم طبي",
+            "en": "No need — pharmacy is medical science"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "مناصب الإقامة الصيدلية نمت 12% في 5 سنوات. الصيدلي لا يبرمج لكنه يحتاج فهم مخرجات AI وتقييمها نقدياً.",
+        "en": "Pharmacy residency positions grew 12% in 5 years. Pharmacists don't program but need to understand and critically evaluate AI outputs."
+      }
+    },
+    {
+      "id": "phm-self-014",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "الشركة تناقش استثمار ملايين في مختبر ذاتي القيادة. موقفك؟",
+        "en": "Company discusses investing millions in a Self-Driving Lab. Your position?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أؤيد بحذر — بدء محدود وتقييم العائد قبل التوسع",
+            "en": "Support cautiously — limited pilot and ROI evaluation before scaling"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مثير لكنها تُسرّع التكرار فقط ولا تحل محل البصيرة العلمية",
+            "en": "Exciting but only accelerates iteration, doesn't replace scientific insight"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "استثمار مبالغ — التكنولوجيا لم تُثبت اكتشاف أدوية مستقلة",
+            "en": "Overblown — technology hasn't proven independent drug discovery"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — الكيمياء تحتاج لمسة بشرية",
+            "en": "I reject — chemistry needs a human touch"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "المختبرات ذاتية القيادة تنتشر بتمويل كبير لكنها لم تكتشف مرشحاً دوائياً مُتحققاً بشكل مستقل بعد.",
+        "en": "Self-driving labs proliferate with funding but haven't independently discovered a validated drug candidate yet."
+      }
+    },
+    {
+      "id": "phm-self-015",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "AI كشف تفاعلاً من تحليل منشورات مرضى على وسائل التواصل. هل تأخذه بجدية؟",
+        "en": "AI detected a drug interaction from patient social media posts. Do you take it seriously?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم — مصدر قيّم يكشف تفاعلات لا تظهر رسمياً — لكنها تحتاج تأكيداً سريرياً",
+            "en": "Yes — valuable source revealing unreported interactions — but needs clinical confirmation"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "بحذر — أسجّلها كإشارة أولية وأبحث في مصادر أخرى",
+            "en": "Cautiously — log as preliminary and search other sources"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "وسائل التواصل ليست موثوقة",
+            "en": "Social media isn't reliable"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تجسس على المرضى — مخاوف أخلاقية",
+            "en": "Spying on patients — ethical concerns"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "مع 94% عدم إبلاغ، وسائل التواصل مصدر مكمّل ضروري. NLP متقدم يفصل الإشارات الحقيقية. الأخلاقيات مهمة لكن تحليل بيانات عامة مسموح.",
+        "en": "With 94% underreporting, social media is a necessary complement. Advanced NLP separates real signals. Ethics matter but public data analysis is permissible."
+      }
+    },
+    {
+      "id": "phm-self-016",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "الإدارة تسأل عن AI يتحقق تلقائياً من وصفات منخفضة المخاطر. هل توافق؟",
+        "en": "Admin asks about AI auto-verifying low-risk prescriptions. Do you agree?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أوافق بشروط واضحة: تعريف دقيق لمنخفض المخاطر وتوجيه أي استثناء للبشر",
+            "en": "I agree with clear conditions: precise low-risk definition and routing exceptions to humans"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أريد فترة اختبار أراجع فيها كل المُوافق عليها تلقائياً",
+            "en": "I want a trial period reviewing all auto-approved ones"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفض — كل وصفة تحتاج عيني الصيدلي",
+            "en": "I refuse — every prescription needs pharmacist eyes"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أوافق على أتمتة كل شيء — لا حاجة للبشر",
+            "en": "Automate everything — no human needed"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "73% من المستشفيات تستخدم هذا بالفعل — موافقات تلقائية منخفضة المخاطر وتوجيه عالية الخطورة للمراجعة.",
+        "en": "73% of hospitals already do this — auto-approving low-risk and routing high-risk for manual review."
+      }
+    },
+    {
+      "id": "phm-self-017",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "EU AI Act يدخل حيز التنفيذ أغسطس 2026. كيف يؤثر عليك؟",
+        "en": "EU AI Act takes effect August 2026. How does it affect you?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أدرس القانون الآن — فهم متطلبات التوثيق ضروري حتى خارج أوروبا",
+            "en": "I study the law now — documentation requirements matter even outside Europe"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتابع — يخص أوروبا حالياً لكن قد تلحقه دول أخرى",
+            "en": "I follow — Europe-only now but others may follow"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا يؤثر — أعمل خارج أوروبا",
+            "en": "Doesn't affect me — I work outside Europe"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "القوانين تعيق الابتكار",
+            "en": "Laws hinder innovation"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "EU AI Act سيؤثر عالمياً لأن شركات الأدوية تعمل دولياً. فهم القانون ميزة تنافسية.",
+        "en": "EU AI Act will have global impact since pharma companies operate internationally. Understanding it is competitive advantage."
+      }
+    },
+    {
+      "id": "phm-self-018",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "AI يتوقع عدم التزام مريض بدوائه بناءً على بياناته التاريخية. كيف تتعامل؟",
+        "en": "AI predicts patient non-adherence based on historical data. How do you handle this?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة للتدخل المبكر — محادثة داعمة وخطة التزام مخصصة",
+            "en": "Early intervention opportunity — supportive conversation and personalized adherence plan"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تنبيه داخلي — أراقب عن كثب في الزيارات القادمة",
+            "en": "Internal alert — monitor closely at upcoming visits"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "عدم ارتياح — التنبؤ بسلوك المريض يبدو كانتهاك خصوصية",
+            "en": "Uncomfortable — predicting behavior seems like privacy violation"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتجاهل — لا أحد يعرف مريضي أفضل مني",
+            "en": "Ignore — no one knows my patient better than me"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التحليل التنبؤي أداة قوية يجب تحويلها لمحادثة داعمة. AI يكشف الأنماط، الصيدلي يتدخل بالعلاقة الإنسانية. الالتزام يتحسن 80% مع التعبئة متعددة الجرعات.",
+        "en": "Predictive analytics is powerful — transform into supportive conversation. AI detects patterns; pharmacist intervenes with human relationship. Adherence improves up to 80% with multi-dose packaging."
+      }
+    },
+    {
+      "id": "phm-self-019",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "المدير يقترح الاستغناء عن صيادلة بسبب الأتمتة. موقفك؟",
+        "en": "Head suggests reducing pharmacists due to automation. Your position?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقترح إعادة توزيع — لا استغناء بل تحويل أدوار من الصرف إلى الرعاية السريرية",
+            "en": "I suggest redeployment — not layoffs but role transformation from dispensing to clinical care"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطلب بيانات: أي أدوار تُلغى وأيها تُنشأ؟",
+            "en": "I ask for data: which roles eliminated, which created?"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفض — الأتمتة يجب أن تُضيف لا تُلغي وظائف",
+            "en": "I refuse — automation should add, not eliminate jobs"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مؤيد — الروبوت أكفأ",
+            "en": "I support — robots are more efficient"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الحل ليس الاستغناء بل التحويل. مناصب الإقامة نمت 12%. Walmart شهدت 30% زيادة في تفاعل الصيدلي مع المريض.",
+        "en": "The solution isn't layoffs but transformation. Residency positions grew 12%. Walmart saw 30% more pharmacist-patient engagement."
+      }
+    },
+    {
+      "id": "phm-self-020",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "طالب يسأل: «هل أدرس الصيدلة أم أغيّر تخصصي قبل أن يحل AI محل الصيادلة؟»",
+        "en": "A student asks: 'Should I study pharmacy or change majors before AI replaces pharmacists?'"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الصيدلة متحولة وليست زائلة — ادرسها مع مهارات تحليل بيانات وجينوميات",
+            "en": "Pharmacy is transforming, not dying — study with data analytics and genomics skills"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ادرس الصيدلة وركّز على السريرية — محصّنة ضد الأتمتة",
+            "en": "Study and focus on clinical — protected from automation"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "فكّر جيداً — 70% صرف ستُؤتمت والمستقبل غير واضح",
+            "en": "Think carefully — 70% dispensing will be automated"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "غيّر تخصصك — الصيدلة ستختفي خلال 10 سنوات",
+            "en": "Change majors — pharmacy will disappear in 10 years"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الصيدلة لا تختفي بل تتحول. المهام الروتينية تُؤتمت لكن الأدوار السريرية تنمو. المفتاح: التحول من صارف أدوية إلى مستشار مدعوم بالبيانات.",
+        "en": "Pharmacy isn't disappearing — it's transforming. Routine tasks automate but clinical roles grow. The key: from dispenser to data-powered consultant."
       }
     }
   ]
