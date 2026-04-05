@@ -1,0 +1,247 @@
+{
+  "section_id": "logistics",
+  "section_name": { "ar": "اللوجستيات وسلاسل الإمداد", "en": "Logistics & Supply Chain" },
+  "version": "1.0",
+  "last_updated": "2026-04-05",
+  "questions": [
+    {
+      "id": "log-mcq-001",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير سلسلة إمداد في شركة تجزئة كبرى. نظام الذكاء الاصطناعي للتنبؤ بالطلب يتوقع ارتفاعاً حاداً في الطلب على منتج معين الأسبوع القادم، لكن فريق المبيعات لا يرى مؤشرات على ذلك. ما أفضل تصرف؟",
+        "en": "You're a supply chain manager at a major retailer. The AI demand forecasting system predicts a sharp spike in demand for a product next week, but your sales team sees no indicators. What's the best course of action?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "تجاهل توقع الذكاء الاصطناعي والاعتماد على خبرة فريق المبيعات فقط", "en": "Ignore the AI prediction and rely solely on the sales team's experience" }, "score": 0 },
+        { "id": "b", "text": { "ar": "فحص البيانات التي بنى عليها النظام توقعه ومقارنتها بمعطيات السوق الحالية قبل اتخاذ قرار", "en": "Examine the data behind the AI prediction and compare with current market signals before deciding" }, "score": 3 },
+        { "id": "c", "text": { "ar": "تنفيذ توقع الذكاء الاصطناعي حرفياً وطلب كميات كبيرة فوراً", "en": "Execute the AI prediction literally and order large quantities immediately" }, "score": 0.5 },
+        { "id": "d", "text": { "ar": "طلب كمية متوسطة كحل وسط بين رأي الفريق والنظام", "en": "Order a moderate quantity as a compromise between the team's view and the system" }, "score": 1 }
+      ],
+      "hint_after": {
+        "ar": "شركة Kraft Heinz استخدمت منصة o9 Solutions وحققت زيادة 11% في دقة التنبؤ الشهري وخفض 20% في مخزون الأمان — لكن النجاح جاء من فحص البيانات وتفسيرها، وليس من القبول الأعمى.",
+        "en": "Kraft Heinz used o9 Solutions and achieved an 11% increase in monthly forecast accuracy and 20% reduction in safety stock — but success came from examining and interpreting data, not blind acceptance."
+      }
+    },
+    {
+      "id": "log-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول عمليات في مستودع تجارة إلكترونية. الإدارة تريد تقليل عدد العمال بنسبة 50% بعد إدخال روبوتات ذكية. بناءً على تجربة أمازون مع مليون روبوت، ما الدرس الأهم؟",
+        "en": "You're an operations manager at an e-commerce warehouse. Management wants to cut staff by 50% after introducing smart robots. Based on Amazon's experience with 1 million robots, what's the most important lesson?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "الروبوتات استبدلت معظم العمال فعلاً وهذا هو المسار الطبيعي", "en": "Robots have indeed replaced most workers and this is the natural path" }, "score": 0 },
+        { "id": "b", "text": { "ar": "الروبوتات لا تزال تعمل بجانب 1.5 مليون موظف، ومراكز التوزيع المتقدمة تحتاج 30% موظفين أكثر في أدوار الصيانة والهندسة", "en": "Robots still work alongside 1.5 million employees, and advanced fulfillment centers need 30% more staff in maintenance and engineering roles" }, "score": 3 },
+        { "id": "c", "text": { "ar": "أمازون لم تحقق أي وفورات حقيقية من الروبوتات", "en": "Amazon hasn't achieved any real savings from robots" }, "score": 0 },
+        { "id": "d", "text": { "ar": "الروبوتات مفيدة فقط في المستودعات الصغيرة", "en": "Robots are only useful in small warehouses" }, "score": 0 }
+      ],
+      "hint_after": {
+        "ar": "أمازون نشرت مليون روبوت في أكثر من 300 مركز توزيع عالمياً بحلول 2025، لكنها لا تزال توظف حوالي 1.5 مليون شخص. مركز Shreveport المتقدم احتاج 30% موظفين إضافيين في أدوار تقنية.",
+        "en": "Amazon deployed 1 million robots across 300+ fulfillment centers globally by 2025, but still employs about 1.5 million people. The advanced Shreveport center needed 30% more staff in technical roles."
+      }
+    },
+    {
+      "id": "log-mcq-003",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "نظام ORION من شركة UPS يُعد من أنجح تطبيقات الذكاء الاصطناعي في اللوجستيات. كم يوفر سنوياً تقريباً؟",
+        "en": "UPS's ORION system is one of the most successful AI applications in logistics. Approximately how much does it save annually?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "5 ملايين دولار", "en": "$5 million" }, "score": 0 },
+        { "id": "b", "text": { "ar": "50 مليون دولار", "en": "$50 million" }, "score": 0 },
+        { "id": "c", "text": { "ar": "300-400 مليون دولار", "en": "$300-400 million" }, "score": 1 },
+        { "id": "d", "text": { "ar": "مليار دولار", "en": "$1 billion" }, "score": 0 }
+      ],
+      "hint_after": {
+        "ar": "ORION يقلل 100 مليون ميل سنوياً ويوفر 10 ملايين غالون وقود، مما يخفض انبعاثات CO₂ بنحو 100,000 طن. سر بسيط: تقليل ميل واحد فقط لكل سائق يومياً يوفر 50 مليون دولار سنوياً.",
+        "en": "ORION cuts 100 million miles annually and saves 10 million gallons of fuel, reducing CO₂ emissions by ~100,000 tons. A simple secret: reducing just one mile per driver per day saves $50 million annually."
+      }
+    },
+    {
+      "id": "log-tf-001",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "منصة Blue Yonder تقدم أكثر من 25 مليار تنبؤ بالذكاء الاصطناعي يومياً وتخدم 23 من أكبر 25 شركة تجزئة في العالم.",
+        "en": "Blue Yonder delivers over 25 billion AI predictions daily and serves 23 of the top 25 retailers worldwide."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Blue Yonder (شركة تابعة لـ Panasonic) تخدم حوالي 3,000 عميل بإيرادات بلغت 1.36 مليار دولار في 2024. منصتها تُعد من أكبر أنظمة التنبؤ بسلاسل الإمداد في العالم.",
+        "en": "Blue Yonder (a Panasonic subsidiary) serves ~3,000 customers with FY24 revenue of $1.36 billion. Its platform is among the world's largest supply chain forecasting systems."
+      }
+    },
+    {
+      "id": "log-tf-002",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام DeepFleet من أمازون هو نموذج ذكاء اصطناعي توليدي صُمم لتنسيق حركة الروبوتات داخل مراكز التوزيع، وحسّن كفاءة تنقل أسطول الروبوتات بنسبة 10%.",
+        "en": "Amazon's DeepFleet is a generative AI foundation model designed to coordinate robot movement within fulfillment centers, improving robotic fleet travel efficiency by 10%."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "DeepFleet يعمل كنظام إدارة مرور ذكي داخل المستودعات: يقلل الازدحام، يُحسّن مسارات الروبوتات، ويتكيف ديناميكياً مع تغيرات حجم الطلبات. بُني باستخدام بيانات أمازون الداخلية وأدوات AWS مثل SageMaker.",
+        "en": "DeepFleet acts as an intelligent traffic management system inside warehouses: it reduces congestion, optimizes robot paths, and dynamically adapts to order volume changes. Built using Amazon's internal logistics data and AWS tools like SageMaker."
+      }
+    },
+    {
+      "id": "log-fill-001",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} من UPS يُحلل ملايين نقاط البيانات يومياً لتحسين مسارات التوصيل، ونجح في تقليل {{blank_2}} ميل سنوياً من مسارات سائقي الشركة.",
+        "en": "UPS's {{blank_1}} system analyzes millions of data points daily to optimize delivery routes, successfully reducing {{blank_2}} miles annually from driver routes."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": { "ar": "ORION", "en": "ORION" },
+          "options": [
+            { "ar": "ORION", "en": "ORION" },
+            { "ar": "DeepFleet", "en": "DeepFleet" },
+            { "ar": "Sequoia", "en": "Sequoia" },
+            { "ar": "Navisphere", "en": "Navisphere" }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": { "ar": "100 مليون", "en": "100 million" },
+          "options": [
+            { "ar": "100 مليون", "en": "100 million" },
+            { "ar": "10 ملايين", "en": "10 million" },
+            { "ar": "500 مليون", "en": "500 million" },
+            { "ar": "مليار", "en": "1 billion" }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "ORION (On-Road Integrated Optimization and Navigation) كلّف تطويره أكثر من مليار دولار على مدى عقد. حقيقة مدهشة: استراتيجية تجنب الانعطاف يساراً وحدها وفرت ملايين الدولارات سنوياً في استهلاك الوقود.",
+        "en": "ORION (On-Road Integrated Optimization and Navigation) cost over $1 billion to develop over a decade. Fun fact: the left-turn avoidance strategy alone saved millions annually in fuel consumption."
+      }
+    },
+    {
+      "id": "log-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل أداة أو منصة ذكاء اصطناعي لوجستية بوظيفتها الأساسية:",
+        "en": "Match each logistics AI tool or platform with its primary function:"
+      },
+      "left": [
+        { "id": "L1", "text": { "ar": "ORION (UPS)", "en": "ORION (UPS)" } },
+        { "id": "L2", "text": { "ar": "Blue Yonder", "en": "Blue Yonder" } },
+        { "id": "L3", "text": { "ar": "DeepFleet (أمازون)", "en": "DeepFleet (Amazon)" } },
+        { "id": "L4", "text": { "ar": "Navisphere Vision", "en": "Navisphere Vision" } }
+      ],
+      "right": [
+        { "id": "R1", "text": { "ar": "تحسين مسارات التوصيل للسائقين", "en": "Optimizing delivery routes for drivers" } },
+        { "id": "R2", "text": { "ar": "التنبؤ بالطلب وإدارة المخزون", "en": "Demand forecasting and inventory management" } },
+        { "id": "R3", "text": { "ar": "تنسيق حركة الروبوتات داخل المستودعات", "en": "Coordinating robot movement inside warehouses" } },
+        { "id": "R4", "text": { "ar": "إدارة المخاطر والرؤية اللحظية لسلسلة الإمداد", "en": "Risk management and real-time supply chain visibility" } }
+      ],
+      "correct_pairs": [
+        { "left": "L1", "right": "R1" },
+        { "left": "L2", "right": "R2" },
+        { "left": "L3", "right": "R3" },
+        { "left": "L4", "right": "R4" }
+      ],
+      "hint_after": {
+        "ar": "كل أداة تحل مشكلة مختلفة: ORION للميل الأخير، Blue Yonder للتنبؤ، DeepFleet لداخل المستودع، وNavisphere Vision (من C.H. Robinson) للرؤية الشاملة. التكامل بينها هو مستقبل اللوجستيات الذكية.",
+        "en": "Each tool solves a different problem: ORION for last-mile, Blue Yonder for forecasting, DeepFleet for inside the warehouse, and Navisphere Vision (by C.H. Robinson) for end-to-end visibility. Integration between them is the future of smart logistics."
+      }
+    },
+    {
+      "id": "log-sort-001",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات تطبيق نظام تنبؤ بالطلب مدعوم بالذكاء الاصطناعي في شركة لوجستية من البداية للتشغيل:",
+        "en": "Order the steps for implementing an AI-powered demand forecasting system in a logistics company from start to operation:"
+      },
+      "items": [
+        { "id": "S1", "text": { "ar": "جمع وتنظيف البيانات التاريخية للمبيعات والمخزون والعوامل الموسمية", "en": "Collect and clean historical data on sales, inventory, and seasonal factors" } },
+        { "id": "S2", "text": { "ar": "تدريب النموذج ومقارنة دقته بالطرق التقليدية على بيانات سابقة", "en": "Train the model and benchmark its accuracy against traditional methods on historical data" } },
+        { "id": "S3", "text": { "ar": "تشغيل تجريبي على فئة منتجات محدودة مع إبقاء النظام القديم كاحتياط", "en": "Pilot run on a limited product category while keeping the old system as backup" } },
+        { "id": "S4", "text": { "ar": "التوسع التدريجي مع حلقة تغذية راجعة لتحسين النموذج باستمرار", "en": "Gradual expansion with a feedback loop for continuous model improvement" } }
+      ],
+      "correct_order": ["S1", "S2", "S3", "S4"],
+      "hint_after": {
+        "ar": "T-Mobile اتبعت هذا النهج التدريجي مع منصة o9 Solutions وحققت قيمة تجاوزت مليار دولار خلال 3 سنوات مع معدل تلبية 100%. المفتاح: لا تلغِ النظام القديم قبل إثبات النظام الجديد.",
+        "en": "T-Mobile followed this gradual approach with o9 Solutions and realized $1B+ in value over 3 years with 100% fulfillment rates. The key: don't eliminate the old system before proving the new one."
+      }
+    },
+    {
+      "id": "log-self-001",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير مستودع. الشركة تريد استبدال نظام إدارة المخزون اليدوي بنظام ذكاء اصطناعي يتنبأ بمستويات المخزون المثلى تلقائياً. ما موقفك؟",
+        "en": "You're a warehouse manager. The company wants to replace the manual inventory system with an AI system that automatically predicts optimal stock levels. What's your stance?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أرحب بالتغيير وأطلب التدريب فوراً — هذه فرصة لتطوير مهاراتي وتحسين الأداء", "en": "I welcome the change and request training immediately — this is an opportunity to develop my skills and improve performance" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أوافق بحذر وأقترح فترة تشغيل متوازية بين النظامين للتأكد من موثوقية النظام الجديد", "en": "I cautiously agree and suggest a parallel run period between both systems to verify the new system's reliability" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "أفضّل الانتظار حتى تثبت شركات أخرى في قطاعنا نجاح هذه الأنظمة قبل المخاطرة", "en": "I prefer waiting until other companies in our sector prove these systems work before taking the risk" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "أعتقد أن خبرتي الطويلة في إدارة المخزون أدق من أي خوارزمية ولا حاجة للتغيير", "en": "I believe my extensive inventory management experience is more accurate than any algorithm and there's no need to change" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "منصة Coupa تحلل 8-9.5 تريليون دولار من بيانات الإنفاق الفعلية وتخدم 75% من أفضل سلاسل الإمداد عالمياً. التكنولوجيا لا تحل محل الخبرة — لكنها تعزز القرارات بالبيانات.",
+        "en": "Coupa analyzes $8-9.5 trillion in real-world spending data and serves 75% of top supply chains globally. Technology doesn't replace expertise — but it enhances decisions with data."
+      }
+    },
+    {
+      "id": "log-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "شركتك اللوجستية تدرس استثمار 75% من ميزانية التطوير في الأتمتة والروبوتات مقابل تقليص التوظيف البشري بنسبة 40%. كمدير عمليات، كيف تتعامل مع هذا القرار؟",
+        "en": "Your logistics company is considering investing 75% of its development budget in automation and robotics while cutting human hiring by 40%. As an operations manager, how do you approach this decision?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أدعم الاستثمار بالكامل مع خطة لإعادة تدريب الموظفين الحاليين على الأدوار التقنية الجديدة", "en": "I fully support the investment with a plan to retrain current employees for new technical roles" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أقترح توزيعاً أكثر توازناً: 50% أتمتة و50% تطوير القوى العاملة البشرية", "en": "I suggest a more balanced allocation: 50% automation and 50% human workforce development" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "أعارض التقليص الكبير في التوظيف لأن الروبوتات لا تستطيع التعامل مع المواقف غير المتوقعة", "en": "I oppose the significant hiring cuts because robots can't handle unexpected situations" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "أرفض الفكرة بالكامل — الاعتماد على البشر أكثر مرونة وأماناً من الاعتماد على الآلات", "en": "I reject the idea entirely — relying on humans is more flexible and safer than relying on machines" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "Walmart الآن تشغّل 60% من متاجرها عبر مراكز توزيع مؤتمتة. لكن أمازون رغم مليون روبوت لا تزال توظف 1.5 مليون شخص. النموذج الناجح يجمع بين الأتمتة وإعادة التأهيل — ليس الاستبدال الكامل.",
+        "en": "Walmart now operates 60% of its stores via automated distribution centers. Yet Amazon, despite 1 million robots, still employs 1.5 million people. The successful model combines automation with reskilling — not total replacement."
+      }
+    }
+  ]
+}
