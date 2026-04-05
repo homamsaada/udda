@@ -1,0 +1,237 @@
+{
+  "section_id": "chemical-environmental-eng",
+  "section_name": { "ar": "الهندسة الكيميائية والبيئية", "en": "Chemical & Environmental Engineering" },
+  "version": "1.0",
+  "last_updated": "2026-04-05",
+  "questions": [
+    {
+      "id": "che-mcq-001",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مهندس كيميائي تبحث في اكتشاف مواد جديدة. أداة GNoME من Google DeepMind اكتشفت عدداً ضخماً من البلورات الجديدة. ما حجم هذا الاكتشاف؟",
+        "en": "You are a chemical engineer researching new materials discovery. Google DeepMind's GNoME tool discovered a massive number of new crystals. What is the scale of this discovery?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "2.2 مليون بنية بلورية جديدة، منها 380,000+ مستقرة — تعادل 800 سنة من الاكتشاف التقليدي", "en": "2.2 million new crystal structures, 380,000+ stable — equivalent to 800 years of traditional discovery" }, "score": 3 },
+        { "id": "b", "text": { "ar": "حوالي 5,000 مادة جديدة — تحسّن محدود مقارنة بالطرق التقليدية", "en": "About 5,000 new materials — a limited improvement over traditional methods" }, "score": 0 },
+        { "id": "c", "text": { "ar": "ملايين من التنبؤات لكن لم يُصنّع أي منها فعلياً", "en": "Millions of predictions but none actually synthesized" }, "score": 0.5 },
+        { "id": "d", "text": { "ar": "مئات المواد لكن جميعها كانت معروفة مسبقاً", "en": "Hundreds of materials but all were previously known" }, "score": 0 }
+      ],
+      "hint_after": {
+        "ar": "قبل GNoME، كان يُعرف فقط ~20,000 بلورة مستقرة تجريبياً و~28,000 حسابياً. GNoME اكتشف أيضاً 528 موصلاً محتملاً لأيونات الليثيوم (25 ضعف الدراسات السابقة) و52,000 مركب طبقي شبيه بالجرافين.",
+        "en": "Before GNoME, only ~20,000 experimentally stable and ~28,000 computationally stable crystals were known. GNoME also found 528 potential lithium-ion conductors (25× previous studies) and 52,000 graphene-like layered compounds."
+      }
+    },
+    {
+      "id": "che-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مهندس عمليات في شركة BASF. كيف أثّر الذكاء الاصطناعي على الجداول الزمنية للبحث والتطوير في الصناعة الكيميائية؟",
+        "en": "You are a process engineer at BASF. How has AI impacted R&D timelines in the chemical industry?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "تقليص الجدول الزمني من 18 شهراً إلى 3 أسابيع لبعض التركيبات، مع خفض تكاليف البحث 30% وتقليل عيوب الإنتاج 30%", "en": "Timeline reduced from 18 months to 3 weeks for certain formulations, with 30% R&D cost reduction and 30% batch defect reduction" }, "score": 3 },
+        { "id": "b", "text": { "ar": "تحسّن 10% في سرعة البحث فقط — لا يزال التأثير محدوداً", "en": "Only 10% improvement in research speed — impact is still limited" }, "score": 0 },
+        { "id": "c", "text": { "ar": "الذكاء الاصطناعي يُستخدم في التسويق فقط وليس في البحث الكيميائي الفعلي", "en": "AI is used only in marketing, not in actual chemical research" }, "score": 0 },
+        { "id": "d", "text": { "ar": "نتائج واعدة لكنها لم تُطبّق تجارياً بعد في الصناعة الكيميائية", "en": "Promising results but not yet commercially applied in the chemical industry" }, "score": 0 }
+      ],
+      "hint_after": {
+        "ar": "Dow Chemical حققت تحسّن 5% في كفاءة الطاقة بأفران تكسير الإيثيلين عبر التوائم الرقمية وتقليل انبعاثات CO₂ بنسبة 30% في مرافق مختارة. 76% من شركات الكيمياء تستخدم AI بالفعل في تحسين الإنتاج.",
+        "en": "Dow Chemical achieved 5% energy efficiency improvement at ethylene cracking furnaces via digital twins and 30% CO₂ reduction in select facilities. 76% of chemical companies already use AI for production optimization."
+      }
+    },
+    {
+      "id": "che-mcq-003",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مهندس بيئي مهتم بالبصمة البيئية للذكاء الاصطناعي نفسه. ما حجم استهلاك مراكز بيانات AI للكهرباء عالمياً وفقاً لوكالة الطاقة الدولية (IEA)؟",
+        "en": "You are an environmental engineer concerned about AI's own environmental footprint. How much electricity do AI data centers consume globally according to the IEA?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "415 تيراواط ساعة في 2024 (~1.5% من الكهرباء العالمية)، ومتوقع أن تتضاعف إلى 945 بحلول 2030 — أي ما يعادل استهلاك اليابان بأكملها", "en": "415 TWh in 2024 (~1.5% of global electricity), projected to double to 945 TWh by 2030 — equivalent to Japan's total consumption" }, "score": 3 },
+        { "id": "b", "text": { "ar": "أقل من 1 تيراواط ساعة — استهلاك ضئيل لا يستحق القلق", "en": "Less than 1 TWh — negligible consumption not worth worrying about" }, "score": 0 },
+        { "id": "c", "text": { "ar": "حوالي 50 تيراواط ساعة — مشكلة ثانوية مقارنة بالصناعة", "en": "About 50 TWh — a secondary problem compared to industry" }, "score": 0.5 },
+        { "id": "d", "text": { "ar": "الاستهلاك ينخفض بفضل تحسينات الكفاءة في الأجهزة", "en": "Consumption is declining thanks to hardware efficiency improvements" }, "score": 0 }
+      ],
+      "hint_after": {
+        "ar": "تدريب GPT-4 وحده استهلك أكثر من 50 غيغاواط ساعة — كفاية لتشغيل سان فرانسيسكو 3 أيام. كل طلب AI من 100 كلمة يستهلك نحو زجاجة ماء واحدة للتبريد. Google رفعت انبعاثاتها 48% منذ 2019 بسبب مراكز البيانات.",
+        "en": "Training GPT-4 alone consumed over 50 GWh — enough to power San Francisco for 3 days. Each 100-word AI prompt uses ~1 water bottle for cooling. Google's emissions rose 48% since 2019 due to data centers."
+      }
+    },
+    {
+      "id": "che-tf-001",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "روبوتات الذكاء الاصطناعي لفرز النفايات القابلة لإعادة التدوير تعمل بسرعة ودقة مماثلة للفرز البشري تقريباً دون تفوّق ملحوظ.",
+        "en": "AI recycling sorting robots work at roughly the same speed and accuracy as human sorters without notable superiority."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "AMP Robotics تفرز 80 قطعة في الدقيقة بدقة تصل 99% — أسرع 2-4 مرات من البشر. الروبوتات تفرز حتى 1,000 قطعة بالساعة مقابل 50-80 بشرياً. المرافق التي نشرت روبوتات AI ارتفعت معدلات الاسترداد فيها 20 نقطة مئوية خلال 12 شهراً.",
+        "en": "AMP Robotics sorts 80 items/min at up to 99% accuracy — 2-4× faster than humans. Robots sort up to 1,000 items/hour vs 50-80 human. Facilities deploying AI robots saw recovery rates jump 20 percentage points within 12 months."
+      }
+    },
+    {
+      "id": "che-tf-002",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "جميع الـ 380,000 مادة المكتشفة بواسطة GNoME أُثبت أنها مفيدة عملياً وقابلة للتصنيع بسهولة وفقاً لجميع الباحثين.",
+        "en": "All 380,000 materials discovered by GNoME have been proven practically useful and easily synthesizable according to all researchers."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "باحثون من UC Santa Barbara انتقدوا النتائج بقولهم إن هناك \"أدلة شحيحة على مركبات تحقق ثلاثية الجدّة والمصداقية والفائدة\". العديد من التنبؤات تعاني من مشاكل ترتيب ذري غير واقعي. الدرس: حجم الاكتشاف لا يعني تلقائياً جودته.",
+        "en": "UC Santa Barbara researchers criticized the results saying there is 'scant evidence for compounds fulfilling the trifecta of novelty, credibility, and utility.' Many predictions suffer from unrealistic atomic ordering. Lesson: discovery scale doesn't automatically mean quality."
+      }
+    },
+    {
+      "id": "che-fill-001",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "شركة {{blank_1}} نشرت أكثر من 400 نظام فرز ذكي، وروبوتها يتعرّف على أكثر من 10 مليارات قطعة سنوياً عبر أكثر من 100 فئة، وحصلت على تصنيف TIME كأحد أفضل 25 اختراعاً لعام 2025.",
+        "en": "The company {{blank_1}} deployed 400+ AI sorting systems, with its robot recognizing 10+ billion objects annually across 100+ categories, and was named to TIME's Top 25 Inventions of 2025."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": { "ar": "AMP Robotics", "en": "AMP Robotics" },
+          "options": [
+            { "ar": "AMP Robotics", "en": "AMP Robotics" },
+            { "ar": "ZenRobotics", "en": "ZenRobotics" },
+            { "ar": "Machinex", "en": "Machinex" },
+            { "ar": "TOMRA", "en": "TOMRA" }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "ZenRobotics تعالج 1.2 مليون طن سنوياً في مركز إدارة النفايات بدبي. 76% من المواد القابلة لإعادة التدوير المنزلية ينتهي بها المطاف في المطامر حالياً — AI يهدف لتغيير هذا الواقع.",
+        "en": "ZenRobotics processes 1.2 million tons annually at Dubai's Waste Management Center. 76% of residential recyclables currently end up in landfills — AI aims to change this reality."
+      }
+    },
+    {
+      "id": "che-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل حقيقة بيئية عن الذكاء الاصطناعي مع الرقم الصحيح:",
+        "en": "Match each AI environmental fact with the correct figure:"
+      },
+      "left": [
+        { "id": "L1", "text": { "ar": "استهلاك الطاقة لتدريب GPT-4", "en": "Energy consumption for training GPT-4" } },
+        { "id": "L2", "text": { "ar": "استهلاك الماء لكل 100 كلمة طلب AI", "en": "Water consumption per 100-word AI prompt" } },
+        { "id": "L3", "text": { "ar": "ارتفاع انبعاثات Google منذ 2019", "en": "Google's emissions increase since 2019" } },
+        { "id": "L4", "text": { "ar": "مشاريع مراكز بيانات أوقفتها معارضة مجتمعية (مارس-يونيو 2025)", "en": "Data center projects blocked by community opposition (March-June 2025)" } }
+      ],
+      "right": [
+        { "id": "R1", "text": { "ar": "أكثر من 50 غيغاواط ساعة — يكفي لتشغيل سان فرانسيسكو 3 أيام", "en": "Over 50 GWh — enough to power San Francisco for 3 days" } },
+        { "id": "R2", "text": { "ar": "نحو زجاجة ماء واحدة (~519 مل) للتبريد", "en": "About one water bottle (~519 mL) for cooling" } },
+        { "id": "R3", "text": { "ar": "48% مع تضاعف استهلاك الكهرباء إلى 32.2 مليون ميغاواط ساعة", "en": "48% with electricity consumption doubling to 32.2 million MWh" } },
+        { "id": "R4", "text": { "ar": "98 مليار دولار من المشاريع المُلغاة أو المعلّقة", "en": "$98 billion in cancelled or suspended projects" } }
+      ],
+      "correct_pairs": [
+        { "left": "L1", "right": "R1" },
+        { "left": "L2", "right": "R2" },
+        { "left": "L3", "right": "R3" },
+        { "left": "L4", "right": "R4" }
+      ],
+      "hint_after": {
+        "ar": "هذا هو \"التناقض البيئي للذكاء الاصطناعي\": التقنية المستخدمة لحل مشاكل البيئة لها بصمة بيئية ضخمة. البصمة الكربونية لـ AI تُقدّر بـ 32.6-79.7 مليون طن CO₂ في 2025 — مقاربة لانبعاثات مدينة نيويورك بأكملها.",
+        "en": "This is AI's 'environmental paradox': the technology used to solve environmental problems has a massive environmental footprint. AI's carbon footprint is estimated at 32.6-79.7 million tons CO₂ in 2025 — comparable to New York City's total emissions."
+      }
+    },
+    {
+      "id": "che-sort-001",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات استخدام الذكاء الاصطناعي في اكتشاف مادة كيميائية جديدة من التنبؤ إلى التصنيع المستقل:",
+        "en": "Order the steps for using AI in new chemical material discovery from prediction to autonomous synthesis:"
+      },
+      "items": [
+        { "id": "S1", "text": { "ar": "تدريب شبكة عصبية بيانية (GNN) على بيانات مواد مستقرة معروفة لتعلّم أنماط الاستقرار", "en": "Train a graph neural network (GNN) on known stable material data to learn stability patterns" } },
+        { "id": "S2", "text": { "ar": "توليد ملايين من المرشحين البلوريين الجدد وتقييم استقرارهم حسابياً بنظرية الكثافة الوظيفية", "en": "Generate millions of new crystal candidates and computationally evaluate their stability using DFT" } },
+        { "id": "S3", "text": { "ar": "تغذية النتائج مرة أخرى في النموذج عبر تعلّم نشط (Active Learning) لتحسين دقة التنبؤات", "en": "Feed results back into the model via active learning to improve prediction accuracy" } },
+        { "id": "S4", "text": { "ar": "توجيه مختبر روبوتي مستقل (مثل A-Lab) لتصنيع المركبات الواعدة فعلياً والتحقق من خصائصها", "en": "Direct an autonomous robotic lab (like A-Lab) to actually synthesize promising compounds and verify their properties" } }
+      ],
+      "correct_order": ["S1", "S2", "S3", "S4"],
+      "hint_after": {
+        "ar": "مختبر A-Lab في مختبرات لورنس بيركلي صنّع بشكل مستقل 41 مركباً جديداً خلال 17 يوماً متواصلاً من التنبؤات التي ولّدها GNoME. هذا النهج يمثّل تحولاً جذرياً من التجربة والخطأ إلى الاكتشاف الموجّه.",
+        "en": "Lawrence Berkeley's A-Lab autonomously synthesized 41 novel compounds over 17 continuous days from GNoME-generated predictions. This approach represents a paradigm shift from trial-and-error to directed discovery."
+      }
+    },
+    {
+      "id": "che-self-001",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مهندس بيئي وعُرض عليك مشروع لاستخدام الذكاء الاصطناعي في تحسين إدارة المياه في منطقتك. لكنك تعلم أن مراكز بيانات AI نفسها تستهلك كميات هائلة من الماء. كيف تتعامل مع هذا التناقض؟",
+        "en": "You are an environmental engineer offered a project to use AI for water management optimization in your region. But you know AI data centers themselves consume massive amounts of water. How do you handle this paradox?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أقبل المشروع مع إدراج تقييم شامل للبصمة المائية الكلية (توفير AI مقابل استهلاكه) لضمان صافي إيجابي", "en": "I accept the project while including a comprehensive total water footprint assessment (AI savings vs consumption) to ensure net positive impact" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أقبل لأن الفائدة البيئية المحلية تفوق الاستهلاك في مراكز البيانات البعيدة", "en": "I accept because the local environmental benefit outweighs consumption at distant data centers" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "أتردد وأطلب مزيداً من الأبحاث عن الجدوى البيئية الحقيقية قبل الالتزام", "en": "I hesitate and request more research on the actual environmental viability before committing" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "أرفض لأن استخدام تقنية مستهلكة للموارد لحل مشاكل الموارد هو تناقض غير مقبول", "en": "I refuse because using resource-consuming technology to solve resource problems is an unacceptable contradiction" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "منطقة الشرق الأوسط تملك 7% من سكان العالم لكن 1% فقط من المياه العذبة. مراكز بيانات الخليج ستستهلك أكثر من 426 مليار لتر ماء سنوياً بحلول 2030. التقييم الشمولي للأثر البيئي — وليس التبنّي أو الرفض الأعمى — هو الموقف الهندسي الصحيح.",
+        "en": "The MENA region has 7% of world population but only 1% of freshwater. Gulf data centers will consume over 426 billion liters annually by 2030. Holistic environmental impact assessment — not blind adoption or rejection — is the sound engineering position."
+      }
+    },
+    {
+      "id": "che-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت باحث في علوم المواد. الذكاء الاصطناعي أنتج 2.2 مليون تنبؤ لمواد جديدة، لكن منتقدين يشككون في فائدتها الفعلية. كيف تتعامل مع هذه النتائج؟",
+        "en": "You are a materials science researcher. AI produced 2.2 million new material predictions, but critics question their practical utility. How do you approach these results?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أستخدم التنبؤات كنقطة انطلاق موجّهة للبحث التجريبي مع تحقق مخبري مستقل — AI يسرّع الاكتشاف لا يحل محله", "en": "I use predictions as a directed starting point for experimental research with independent lab validation — AI accelerates discovery, doesn't replace it" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أركّز على الفئات الواعدة مثل موصلات الليثيوم (528 مركباً) وأتجاهل التنبؤات العامة", "en": "I focus on promising categories like lithium conductors (528 compounds) and ignore general predictions" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "أنتظر حتى يتحسّن النموذج ويعالج الانتقادات قبل أن أستثمر وقتي في هذه التنبؤات", "en": "I wait until the model improves and addresses criticisms before investing my time in these predictions" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "أتجاهل النتائج بالكامل لأن النقد الأكاديمي يثبت أنها غير موثوقة", "en": "I completely ignore the results because academic criticism proves they are unreliable" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "736 من مواد GNoME صُنّعت فعلاً بشكل مستقل في مختبرات حول العالم. النهج العلمي المتوازن يأخذ الإنجاز والانتقادات معاً — لا يرفض التقنية ولا يتبنّاها بدون تحقق.",
+        "en": "736 GNoME materials were independently synthesized in labs worldwide. The balanced scientific approach considers both the achievement and the criticism — neither rejecting the technology nor adopting it without verification."
+      }
+    }
+  ]
+}
