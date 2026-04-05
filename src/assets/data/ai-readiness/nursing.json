@@ -1,8 +1,11 @@
 {
   "section_id": "nursing",
-  "section_name": { "ar": "التمريض والقبالة", "en": "Nursing & Midwifery" },
-  "version": "1.0",
-  "last_updated": "2026-04-04",
+  "section_name": {
+    "ar": "التمريض والقبالة",
+    "en": "Nursing & Midwifery"
+  },
+  "version": "2.0",
+  "last_updated": "2026-04-06",
   "questions": [
     {
       "id": "nrs-mcq-001",
@@ -202,12 +205,27 @@
       "blanks": [
         {
           "id": "blank_1",
-          "correct": { "ar": "Aiva", "en": "Aiva" },
+          "correct": {
+            "ar": "Aiva",
+            "en": "Aiva"
+          },
           "options": [
-            { "ar": "Aiva", "en": "Aiva" },
-            { "ar": "Siri Health", "en": "Siri Health" },
-            { "ar": "DAX Copilot", "en": "DAX Copilot" },
-            { "ar": "Alexa Care", "en": "Alexa Care" }
+            {
+              "ar": "Aiva",
+              "en": "Aiva"
+            },
+            {
+              "ar": "Siri Health",
+              "en": "Siri Health"
+            },
+            {
+              "ar": "DAX Copilot",
+              "en": "DAX Copilot"
+            },
+            {
+              "ar": "Alexa Care",
+              "en": "Alexa Care"
+            }
           ]
         }
       ],
@@ -228,22 +246,82 @@
         "en": "Match each AI technology with its primary nursing function:"
       },
       "left": [
-        { "id": "L1", "text": { "ar": "eCART", "en": "eCART" } },
-        { "id": "L2", "text": { "ar": "KATE AI", "en": "KATE AI" } },
-        { "id": "L3", "text": { "ar": "Hippocratic AI", "en": "Hippocratic AI" } },
-        { "id": "L4", "text": { "ar": "Emory LIDAR", "en": "Emory LIDAR" } }
+        {
+          "id": "L1",
+          "text": {
+            "ar": "eCART",
+            "en": "eCART"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "KATE AI",
+            "en": "KATE AI"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Hippocratic AI",
+            "en": "Hippocratic AI"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Emory LIDAR",
+            "en": "Emory LIDAR"
+          }
+        }
       ],
       "right": [
-        { "id": "R1", "text": { "ar": "التنبؤ بتدهور حالة المريض قبل ساعات", "en": "Predicting patient deterioration hours in advance" } },
-        { "id": "R2", "text": { "ar": "فرز مرضى الطوارئ حسب الخطورة", "en": "Triaging ED patients by acuity level" } },
-        { "id": "R3", "text": { "ar": "متابعة المرضى هاتفياً بعد الخروج", "en": "Post-discharge patient follow-up calls" } },
-        { "id": "R4", "text": { "ar": "التنبيه قبل سقوط المريض بـ 30 ثانية", "en": "Alerting 30 seconds before a patient falls" } }
+        {
+          "id": "R1",
+          "text": {
+            "ar": "التنبؤ بتدهور حالة المريض قبل ساعات",
+            "en": "Predicting patient deterioration hours in advance"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "فرز مرضى الطوارئ حسب الخطورة",
+            "en": "Triaging ED patients by acuity level"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "متابعة المرضى هاتفياً بعد الخروج",
+            "en": "Post-discharge patient follow-up calls"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "التنبيه قبل سقوط المريض بـ 30 ثانية",
+            "en": "Alerting 30 seconds before a patient falls"
+          }
+        }
       ],
       "correct_pairs": [
-        { "left": "L1", "right": "R1" },
-        { "left": "L2", "right": "R2" },
-        { "left": "L3", "right": "R3" },
-        { "left": "L4", "right": "R4" }
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
       ],
       "hint_after": {
         "ar": "أربع تقنيات مختلفة تغطي أربع مراحل من رعاية المريض: الفرز عند الوصول (KATE)، المراقبة أثناء الإقامة (eCART)، منع السقوط (LIDAR)، والمتابعة بعد الخروج (Hippocratic). Emory Healthcare وسّعت نظام LIDAR ليشمل 1,000 سرير.",
@@ -262,12 +340,41 @@
         "en": "Order the correct steps for responding when an AI early warning system issues a potential deterioration alert for a patient:"
       },
       "items": [
-        { "id": "S1", "text": { "ar": "مراجعة اتجاه بيانات المريض (لا درجة واحدة فقط) لفهم سياق التنبيه", "en": "Review the patient's data trend (not just one score) to understand the alert context" } },
-        { "id": "S2", "text": { "ar": "تقييم سريري مباشر للمريض عند السرير", "en": "Conduct a direct bedside clinical assessment of the patient" } },
-        { "id": "S3", "text": { "ar": "إبلاغ الطبيب المسؤول بالنتائج ومناقشة خطة التدخل", "en": "Notify the attending physician with findings and discuss the intervention plan" } },
-        { "id": "S4", "text": { "ar": "توثيق التنبيه والتقييم والإجراء المتخذ في السجل الإلكتروني", "en": "Document the alert, assessment, and action taken in the electronic record" } }
+        {
+          "id": "S1",
+          "text": {
+            "ar": "مراجعة اتجاه بيانات المريض (لا درجة واحدة فقط) لفهم سياق التنبيه",
+            "en": "Review the patient's data trend (not just one score) to understand the alert context"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تقييم سريري مباشر للمريض عند السرير",
+            "en": "Conduct a direct bedside clinical assessment of the patient"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "إبلاغ الطبيب المسؤول بالنتائج ومناقشة خطة التدخل",
+            "en": "Notify the attending physician with findings and discuss the intervention plan"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "توثيق التنبيه والتقييم والإجراء المتخذ في السجل الإلكتروني",
+            "en": "Document the alert, assessment, and action taken in the electronic record"
+          }
+        }
       ],
-      "correct_order": ["S1", "S2", "S3", "S4"],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
       "hint_after": {
         "ar": "مراجعة الاتجاه أولاً تمنع «إرهاق الإنذارات» (alert fatigue) — ثم التقييم السريري يربط البيانات بالواقع. نماذج AI مُحسّنة للتمريض حققت متوسط إنذار مبكر 5.8 ساعات قبل التدهور مقابل 3.1 ساعات فقط لنظام NEWS التقليدي.",
         "en": "Reviewing the trend first prevents alert fatigue — then the clinical assessment connects data to reality. Nursing-optimized AI models achieved an average 5.8-hour lead time before deterioration vs. only 3.1 hours for the traditional NEWS system."
@@ -371,6 +478,4263 @@
       "hint_after": {
         "ar": "دراسة أوروبية 2025 أكدت أن AI يميل للإفراط في التصنيف (over-triage) وأن الأطباء والممرضات لا زالوا أفضل في التقييم الشامل. KATE مصمم كـ«عين ثانية» تدعم الممرضة — لا تستبدلها. جمعية ممرضات الطوارئ (ENA) تؤكد: AI أداة دعم للقرار لا بديل.",
         "en": "A 2025 European study confirmed AI tends to over-triage and that doctors and nurses are still better at comprehensive assessment. KATE is designed as a 'second set of eyes' supporting the nurse — not replacing them. The ENA affirms: AI is a decision-support tool, not a replacement."
+      }
+    },
+    {
+      "id": "nrs-mcq-004",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ممرض عناية مركزة. نظام AI للتنبؤ بالإنتان أصدر تنبيهاً لمريضك، لكن 55% من زملائك يقولون إن تقييمهم للمخاطر لا يتغير بعد تنبيهات النظام. ما السبب الأرجح؟",
+        "en": "You're an ICU nurse. The AI sepsis prediction system issued an alert for your patient, but 55% of your colleagues say their risk assessment doesn't change after system alerts. What's the most likely reason?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "إرهاق الإنذارات — كثرة التنبيهات الكاذبة تُفقد الممرضات الثقة بالنظام",
+            "en": "Alert fatigue — too many false positives erode nurses' trust in the system"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "النظام لا يعمل بشكل صحيح ويجب إيقافه فوراً",
+            "en": "The system isn't working properly and should be shut down immediately"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الممرضات لا يفهمن التكنولوجيا ويحتجن تدريباً أكثر فقط",
+            "en": "Nurses don't understand the technology and just need more training"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أنظمة AI غير مناسبة للاستخدام في العناية المركزة",
+            "en": "AI systems are not suitable for use in intensive care units"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "دراسة وجدت أن 13% فقط من الممرضات اعتبرن تنبيه AI للإنتان يشير لخطر حقيقي، و55% لم يغيّرن تقييمهن للمريض. إرهاق الإنذارات مشكلة جوهرية — الحل ليس إيقاف النظام بل تحسين دقته وتقليل الإيجابيات الكاذبة.",
+        "en": "A study found only 13% of nurses perceived an AI sepsis alert as indicating real risk, and 55% reported no change in their patient risk assessment. Alert fatigue is a core problem — the solution isn't shutting down the system but improving its precision and reducing false positives."
+      }
+    },
+    {
+      "id": "nrs-mcq-005",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ممرضة في قسم جراحي. نموذج AI للتنبؤ بقرح الضغط أشار إلى أن مريضك عالي الخطورة رغم أنه يبدو متحركاً. ما أفضل إجراء؟",
+        "en": "You're a nurse on a surgical ward. An AI pressure injury prediction model flagged your patient as high-risk despite appearing mobile. What's the best action?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أضع بروتوكول الوقاية الكامل — تغيير الوضعية كل ساعتين وتقييم الجلد وسطح داعم مناسب",
+            "en": "Implement the full prevention protocol — reposition every 2 hours, skin assessment, and appropriate support surface"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "المريض متحرك فلا حاجة لإجراء إضافي — النظام مبالغ",
+            "en": "The patient is mobile so no extra action needed — the system is overreacting"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أسجل التنبيه فقط وأنتظر ظهور علامات فعلية على الجلد",
+            "en": "Just document the alert and wait for actual skin signs to appear"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أطلب استشارة فريق العناية بالجروح فوراً",
+            "en": "Request an immediate wound care team consultation"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "في دراسة على مرضى العناية المركزة، نظام AI للتنبؤ بقرح الضغط خفّض انتشارها من 21% إلى 4% — انخفاض بمقدار 10 أضعاف. كما قلّص مدة الإقامة في العناية المركزة من 7.6 إلى 5.2 يوم. النموذج يكتشف عوامل خطر خفية لا يلاحظها التقييم التقليدي.",
+        "en": "In an ICU study, an AI pressure injury prediction system reduced prevalence from 21% to 4% — a 10-fold decrease. It also shortened ICU length of stay from 7.6 to 5.2 days. The model detects hidden risk factors that traditional assessment misses."
+      }
+    },
+    {
+      "id": "nrs-mcq-006",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "الإمارات وقّعت اتفاقية مع شركة Care AI عام 2023 لتقديم خدمات تمريض افتراضي ذكي. ما الأقسام التي يغطيها هذا النظام؟",
+        "en": "The UAE signed an agreement with Care AI in 2023 for smart virtual nursing services. Which departments does the system cover?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقسام الطوارئ وغرف العمليات والعناية المركزة وحضانات الأطفال",
+            "en": "Emergency departments, operating rooms, ICUs, and NICUs"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقسام العيادات الخارجية فقط",
+            "en": "Outpatient clinics only"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الصيدليات والمختبرات فقط",
+            "en": "Pharmacies and laboratories only"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أقسام التأهيل والعلاج الطبيعي فقط",
+            "en": "Rehabilitation and physical therapy departments only"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الاتفاقية تغطي الأقسام الأكثر حساسية: الطوارئ والعمليات والعناية المركزة وحضانات الأطفال. سوق الذكاء الاصطناعي الصحي في السعودية بلغ 435 مليون دولار عام 2024 ويُتوقع أن يصل إلى 8.39 مليار بحلول 2033.",
+        "en": "The agreement covers the most critical departments: EDs, ORs, ICUs, and NICUs. Saudi Arabia's AI healthcare market reached $435 million in 2024 and is projected to reach $8.39 billion by 2033."
+      }
+    },
+    {
+      "id": "nrs-mcq-007",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ممرضة عناية مركزة مسؤولة عن مريض على جهاز تنفس صناعي. نموذج AI يتنبأ بنجاح الفطام من الجهاز. ما القيمة الأهم التي يقدمها لك هذا النموذج؟",
+        "en": "You're an ICU nurse caring for a mechanically ventilated patient. An AI model predicts weaning success. What's the most important value it provides you?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يساعدني في تخطيط الرعاية وتنسيق فريق العمل مسبقاً بناءً على توقّع وقت الفطام",
+            "en": "Helps me plan care and coordinate the team in advance based on predicted weaning timing"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يسمح لي بفصل الجهاز دون استشارة الطبيب",
+            "en": "Allows me to disconnect the ventilator without consulting the physician"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "يلغي الحاجة لمحاولات الفطام التجريبية تماماً",
+            "en": "Completely eliminates the need for spontaneous breathing trials"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يُقلل مسؤوليتي عن مراقبة المريض أثناء الفطام",
+            "en": "Reduces my responsibility for monitoring the patient during weaning"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "نماذج AI لفطام التنفس الصناعي حققت AUC يصل إلى 0.976 في التنبؤ بنجاح نزع الأنبوب، وقلّصت مدة التنبيب بمعدل 21 ساعة. دور الممرضة محوري: النموذج يُرشدها للتخطيط والتنسيق — لكنها تبقى هي من تُقيّم جاهزية المريض سريرياً.",
+        "en": "AI ventilator weaning models achieved AUC up to 0.976 for predicting successful extubation, shortening intubation time by 21 hours on average. The nurse's role is central: the model guides planning and coordination — but the nurse still clinically assesses patient readiness."
+      }
+    },
+    {
+      "id": "nrs-mcq-008",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تقرير Wolters Kluwer عام 2025 كشف أن نسبة كبيرة من الممرضات يستخدمن أدوات الذكاء الاصطناعي التوليدي في العمل. ما المفارقة الخطيرة التي رصدها التقرير؟",
+        "en": "The 2025 Wolters Kluwer report revealed a large percentage of nurses use generative AI tools at work. What dangerous paradox did the report identify?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "46% من الممرضات يستخدمن GenAI لكن 18% فقط من المؤسسات لديها سياسات واضحة للاستخدام",
+            "en": "46% of nurses use GenAI but only 18% of organizations have clear usage policies"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "90% من الممرضات يرفضن استخدام أي تقنية ذكاء اصطناعي في العمل",
+            "en": "90% of nurses refuse to use any AI technology at work"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "جميع المستشفيات الأمريكية تبنّت AI بالكامل دون مشاكل",
+            "en": "All American hospitals have fully adopted AI without any issues"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الممرضات يفضّلن التوثيق اليدوي على أي أداة إلكترونية",
+            "en": "Nurses prefer manual documentation over any electronic tool"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه فجوة حوكمة خطيرة: الممرضات يتبنّين التقنية بسرعة (45% يرونها أساسية لتقليل الإرهاق)، لكن المؤسسات متأخرة في وضع ضوابط. 53% من الممرضات يخشين أن الاعتماد المفرط على AI قد يُضعف مهارات اتخاذ القرار السريري.",
+        "en": "This is a dangerous governance gap: nurses are rapidly adopting the technology (45% see it as critical for reducing burnout), but institutions lag in setting guardrails. 53% of nurses fear that AI overreliance could erode clinical decision-making skills."
+      }
+    },
+    {
+      "id": "nrs-mcq-009",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ممرضة توليد. نظام UMMS NEST يوفّر مراقبة جنينية عن بُعد بالذكاء الاصطناعي مع 17 ممرضة متخصصة تُشرف على عدة مستشفيات. ما التحدي الأكبر لهذا النموذج؟",
+        "en": "You're a midwife. The UMMS NEST system provides AI-powered remote fetal monitoring with 17 specialized nurses overseeing multiple hospitals. What's the biggest challenge of this model?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التنسيق بين الممرضة عن بُعد وفريق التوليد المحلي عند اتخاذ قرارات طارئة",
+            "en": "Coordination between the remote nurse and the local obstetric team during emergency decisions"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "النظام يحلّ محل القابلة بالكامل",
+            "en": "The system completely replaces the midwife"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "التكنولوجيا غير قادرة على مراقبة نبض الجنين",
+            "en": "The technology cannot monitor fetal heart rate"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المرضى يرفضون أي مراقبة إلكترونية أثناء الولادة",
+            "en": "Patients refuse any electronic monitoring during labor"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "UMMS NEST أُطلق في أكتوبر 2025 ويوفر مراقبة متخصصة مستمرة عبر المستشفيات. AI لتصوير الجنين يقدّر العمر الحملي بدقة أسبوع واحد ووزن الجنين بدقة ~190 غراماً. التحدي ليس التقنية بل التنسيق البشري في اللحظات الحرجة.",
+        "en": "UMMS NEST launched in October 2025 providing continuous specialized monitoring across hospitals. AI fetal imaging estimates gestational age within 1 week and fetal weight within ~190 grams. The challenge isn't the technology but human coordination during critical moments."
+      }
+    },
+    {
+      "id": "nrs-mcq-010",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "منظمة الصحة العالمية تتوقع نقصاً عالمياً في الكوادر الصحية بحلول 2030. كم يبلغ العجز المتوقع في الممرضات تحديداً؟",
+        "en": "The WHO projects a global healthcare workforce shortage by 2030. How large is the projected nursing shortage specifically?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "4.5 مليون ممرضة من أصل 11 مليون عامل صحي ناقص",
+            "en": "4.5 million nurses out of 11 million total health workers short"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "500 ألف ممرضة فقط",
+            "en": "Only 500 thousand nurses"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا يوجد نقص في التمريض — المشكلة في الأطباء فقط",
+            "en": "There is no nursing shortage — the problem is only with doctors"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مليون ممرضة في أوروبا فقط",
+            "en": "One million nurses in Europe only"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "منظمة الصحة العالمية تتوقع نقص 11 مليون عامل صحي بحلول 2030 منهم 4.5 مليون ممرضة. في أمريكا وحدها، العجز بلغ 250,710 ممرضة في 2025. ثلث الممرضات يعانين من إرهاق شديد يدفعهن للتفكير بترك المهنة. هذا هو السياق الذي يجعل AI ضرورياً — ليس لاستبدال الممرضات بل لدعمهن.",
+        "en": "WHO projects a shortage of 11 million health workers by 2030, including 4.5 million nurses. In the US alone, the deficit reached 250,710 nurses in 2025. One-third of nurses report burnout severe enough to consider leaving. This context makes AI essential — not to replace nurses but to support them."
+      }
+    },
+    {
+      "id": "nrs-mcq-011",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مديرة تمريض. تريدين تبني نظام AI للجدولة والتوزيع. ما النتيجة الأكثر واقعية التي يمكن توقعها بناءً على الأدلة؟",
+        "en": "You're a nurse manager wanting to adopt an AI scheduling and staffing system. What's the most realistic expected outcome based on evidence?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "انخفاض تكاليف العمل الإضافي بحوالي 12% مع تحسّن رضا الطاقم",
+            "en": "Approximately 12% reduction in overtime costs with improved staff satisfaction"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "إلغاء الحاجة لأي تدخل بشري في الجدولة نهائياً",
+            "en": "Complete elimination of any human intervention in scheduling"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "زيادة عدد الممرضات المطلوبات بنسبة 50%",
+            "en": "50% increase in the number of nurses required"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تحسّن في جودة الرعاية دون أي تأثير على التكاليف",
+            "en": "Improvement in care quality without any cost impact"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "أنظمة AI للجدولة خفّضت تكاليف العمل الإضافي بنسبة 12% وحسّنت رضا الموظفين. لكنها أداة دعم وليست بديلاً — مديرة التمريض تبقى مسؤولة عن القرارات النهائية مع مراعاة ظروف كل ممرضة.",
+        "en": "AI scheduling systems reduced overtime costs by 12% and improved staff satisfaction. But they're a support tool, not a replacement — the nurse manager remains responsible for final decisions, considering each nurse's circumstances."
+      }
+    },
+    {
+      "id": "nrs-mcq-012",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ممرض في قسم جراحة القلب. جهاز Edwards Lifesciences Hypotension Prediction Index ينبّهك بانخفاض متوقع في ضغط دم المريض. ما الفائدة المثبتة لهذه التقنية؟",
+        "en": "You're a nurse on a cardiac surgery unit. The Edwards Lifesciences Hypotension Prediction Index alerts you to an expected drop in your patient's blood pressure. What is the proven benefit of this technology?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تقليل الوقت الذي يقضيه المريض في ضغط دم منخفض خطير بنسبة 63%",
+            "en": "Reducing the time the patient spends at dangerously low blood pressure by 63%"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "استبدال أدوية رفع الضغط بالكامل",
+            "en": "Completely replacing blood pressure medications"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "إلغاء الحاجة لمراقبة الضغط اليدوية",
+            "en": "Eliminating the need for manual blood pressure monitoring"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تشخيص السبب الجذري لانخفاض الضغط تلقائياً",
+            "en": "Automatically diagnosing the root cause of hypotension"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "Hypotension Prediction Index من Edwards Lifesciences قلّص الوقت الذي يقضيه المريض في ضغط منخفض خطير بنسبة 63%. هذا مهم لأن هبوط الضغط أثناء الجراحة مرتبط بفشل الأعضاء وزيادة الوفيات. النظام يتنبأ — لكن الممرض هو من يتدخل.",
+        "en": "Edwards Lifesciences' Hypotension Prediction Index cut time at dangerously low blood pressure by 63%. This matters because intraoperative hypotension is linked to organ failure and increased mortality. The system predicts — but the nurse is the one who intervenes."
+      }
+    },
+    {
+      "id": "nrs-mcq-013",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "مستشفى الملك فيصل التخصصي في السعودية يتميز بنهج فريد في الذكاء الاصطناعي الصحي. ما الذي يميّزه؟",
+        "en": "King Faisal Specialist Hospital in Saudi Arabia has a unique approach to healthcare AI. What distinguishes it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "طوّر أكثر من 30 حلاً بالذكاء الاصطناعي داخلياً ويُشغّل مركزاً للذكاء الصحي",
+            "en": "Developed 30+ AI-powered solutions in-house and operates a Centre for Healthcare Intelligence"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يعتمد فقط على حلول شركات أجنبية",
+            "en": "Relies solely on solutions from foreign companies"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أوقف جميع مشاريع AI بسبب مخاوف أخلاقية",
+            "en": "Stopped all AI projects due to ethical concerns"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يستخدم AI فقط في الأبحاث وليس في الرعاية المباشرة",
+            "en": "Uses AI only in research, not in direct care"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "مستشفى الملك فيصل التخصصي طوّر أكثر من 30 حلاً بالذكاء الاصطناعي داخلياً ويُشغّل مركزاً للذكاء الصحي (Centre for Healthcare Intelligence). هذا النموذج يُظهر أن المؤسسات العربية قادرة على الابتكار وليس فقط الاستيراد التقني.",
+        "en": "King Faisal Specialist Hospital developed 30+ AI solutions in-house and operates a Centre for Healthcare Intelligence. This model shows Arab institutions are capable of innovation, not just importing technology."
+      }
+    },
+    {
+      "id": "nrs-mcq-014",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "كم تبلغ تكلفة استبدال ممرضة واحدة في المستشفى، مما يجعل الاحتفاظ بالممرضات أولوية اقتصادية لا تقل عن أولوية الرعاية؟",
+        "en": "How much does it cost to replace a single hospital nurse, making nurse retention an economic priority as much as a care priority?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "حوالي 61,000 دولار لكل ممرضة",
+            "en": "Approximately $61,000 per nurse"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "5,000 دولار فقط",
+            "en": "Only $5,000"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا توجد تكلفة — الممرضات متوفرات دائماً",
+            "en": "No cost — nurses are always available"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "500,000 دولار لكل ممرضة",
+            "en": "$500,000 per nurse"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "تكلفة استبدال ممرضة واحدة حوالي 61,110 دولار. كل 1% تغيير في معدل دوران الممرضات يُكلف أو يُوفر للمستشفى المتوسط 289,000 دولار سنوياً. لهذا فإن أي أداة AI تُقلل الإرهاق وتحتفظ بالممرضات هي استثمار مُربح.",
+        "en": "Replacing one nurse costs about $61,110. Each 1% change in RN turnover costs or saves the average hospital $289,000 annually. That's why any AI tool that reduces burnout and retains nurses is a profitable investment."
+      }
+    },
+    {
+      "id": "nrs-mcq-015",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ممرضة في مستشفى يستخدم نظام ERTRIAGE للفرز الذكي. النظام يدّعي دقة 97% ويعالج أكثر من 50 نقطة قرار في أقل من 3 دقائق. كيف يجب أن تتعاملي مع هذا الادعاء؟",
+        "en": "You're a nurse at a hospital using ERTRIAGE smart triage. The system claims 97% accuracy processing 50+ decision points in under 3 minutes. How should you approach this claim?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتعامل معه كأداة دعم قوية لكنني أتحقق من مصدر نسبة الـ 97% — هل هي من تقييم مستقل أم من الشركة نفسها؟",
+            "en": "Treat it as a strong support tool but verify the 97% source — is it from independent evaluation or the company itself?"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "97% تعني أنه لا حاجة لأي تقييم بشري إطلاقاً",
+            "en": "97% means no human assessment is needed at all"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الأرقام مبالغ فيها حتماً فأتجاهل النظام تماماً",
+            "en": "The numbers are definitely exaggerated so I ignore the system entirely"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أستخدمه فقط إذا وافق عليه جميع زملائي",
+            "en": "I use it only if all my colleagues approve"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "ERTRIAGE يدّعي دقة 97% لكن هذا الرقم من الشركة المصنّعة. الدرس المهم: Epic Sepsis Model ادّعت دقة 0.76-0.83 لكن التقييم المستقل أظهر 0.63 فقط. التفريق بين ادعاءات الشركات والتقييم المستقل مهارة أساسية لكل ممرضة تتعامل مع AI.",
+        "en": "ERTRIAGE claims 97% accuracy but this is from the manufacturer. Key lesson: Epic Sepsis Model claimed 0.76–0.83 accuracy but independent evaluation showed only 0.63. Distinguishing between vendor claims and independent validation is an essential skill for every nurse working with AI."
+      }
+    },
+    {
+      "id": "nrs-mcq-016",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مساعد Mayo Clinic الافتراضي للتمريض نُشر لعدد كبير من الممرضات. كم ممرضة تستخدمه حالياً؟",
+        "en": "Mayo Clinic's Nurse Virtual Assistant has been deployed to a large number of nurses. How many nurses currently use it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أكثر من 9,600 ممرضة عبر أقسام الإقامة والطوارئ",
+            "en": "Over 9,600 nurses across inpatient and emergency units"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "100 ممرضة في مشروع تجريبي صغير",
+            "en": "100 nurses in a small pilot project"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "فقط أطباء Mayo Clinic وليس الممرضات",
+            "en": "Only Mayo Clinic physicians, not nurses"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تم إيقاف المشروع قبل التطبيق الفعلي",
+            "en": "The project was stopped before actual implementation"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "مساعد التمريض الافتراضي في Mayo Clinic نُشر لأكثر من 9,600 ممرضة في أقسام الإقامة والطوارئ. هذا ليس مشروعاً تجريبياً — بل نشر واسع النطاق يُظهر أن المستشفيات الكبرى تتبنى AI التمريضي كأداة أساسية.",
+        "en": "Mayo Clinic's Nurse Virtual Assistant has been deployed to over 9,600 nurses across inpatient and emergency units. This isn't a pilot — it's large-scale deployment showing major hospitals are adopting nursing AI as a core tool."
+      }
+    },
+    {
+      "id": "nrs-mcq-017",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ممرضة عناية مركزة. نظام eCART كشف 4 أضعاف عدد حالات توقف القلب مقارنة بالأنظمة التقليدية. ما الدلالة المهنية لهذه الإحصائية بالنسبة لك؟",
+        "en": "You're an ICU nurse. The eCART system detected 4 times more cardiac arrests than traditional systems. What's the professional implication of this statistic for you?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يجب أن أتعلم قراءة وتفسير تنبيهات النظام كمهارة تمريضية أساسية جديدة",
+            "en": "I need to learn reading and interpreting system alerts as a new core nursing skill"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "النظام يُغني عن مهارات الملاحظة السريرية التقليدية",
+            "en": "The system makes traditional clinical observation skills unnecessary"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "هذا يعني فقط أن الأنظمة القديمة كانت سيئة جداً",
+            "en": "This only means the old systems were very poor"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا تأثير — الأطباء هم من يتعاملون مع توقف القلب",
+            "en": "No impact — doctors are the ones who handle cardiac arrests"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "eCART كشف 4 أضعاف حالات توقف القلب و50% أكثر من حالات القبول للعناية المركزة مقارنة بالأنظمة التقليدية. الممرضة هي أول من يستقبل هذه التنبيهات ويُقيّمها — لذا فهم كيفية التعامل مع أنظمة الإنذار الذكية أصبح مهارة تمريضية لا غنى عنها.",
+        "en": "eCART detected 4× more cardiac arrests and 50% more ICU admissions than traditional systems. The nurse is the first to receive and evaluate these alerts — so understanding how to work with smart warning systems has become an indispensable nursing skill."
+      }
+    },
+    {
+      "id": "nrs-mcq-018",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ممرضة في مستشفى Ardent Health. تم نشر نظام تمريض افتراضي بمساعدة AI في أكثر من 2,000 غرفة. ما الوظيفة التي لا يمكن لهذا النظام أن يؤديها؟",
+        "en": "You're a nurse at Ardent Health. An AI-assisted virtual nursing system was deployed in 2,000+ rooms. What function can this system NOT perform?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التدخل الجسدي المباشر مثل تغيير الضمادات أو إعطاء الحقن أو تقليب المريض",
+            "en": "Direct physical intervention like changing dressings, giving injections, or repositioning the patient"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "شرح تعليمات الخروج للمريض وعائلته",
+            "en": "Explaining discharge instructions to the patient and family"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مراقبة العلامات الحيوية عبر الكاميرات والأجهزة",
+            "en": "Monitoring vital signs through cameras and devices"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التواصل مع المريض لتقييم حالته النفسية",
+            "en": "Communicating with the patient to assess their psychological state"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "Ardent Health نشرت التمريض الافتراضي في أكثر من 2,000 غرفة. النظام يتولى إجراءات القبول والخروج والتثقيف الصحي والمراقبة — لكنه لا يستطيع لمس المريض. هذا هو الخط الفاصل الدائم: AI يُكمل الممرضة في المهام الإدراكية والإدارية، لكن الرعاية الجسدية تبقى بشرية.",
+        "en": "Ardent Health deployed virtual nursing in 2,000+ rooms. The system handles admission, discharge, health education, and monitoring — but cannot physically touch the patient. This is the permanent dividing line: AI complements the nurse in cognitive and administrative tasks, but physical care remains human."
+      }
+    },
+    {
+      "id": "nrs-mcq-019",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "دراسة على طلاب التمريض في السعودية وجدت أن 79% منهم يدعمون إضافة تدريب على AI في المنهج التمريضي. لكن ما النسبة التي أبدت مشاعر عدم ارتياح تجاه AI؟",
+        "en": "A study of nursing students in Saudi Arabia found 79% support adding AI training to the nursing curriculum. But what percentage expressed feelings of discomfort about AI?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "حوالي 59% أبدوا مشاعر عدم ارتياح رغم الحماس العام",
+            "en": "About 59% expressed discomfort despite overall enthusiasm"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا أحد أبدى أي قلق — الجميع متحمسون تماماً",
+            "en": "No one expressed any concern — everyone is fully enthusiastic"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "95% يرفضون AI تماماً",
+            "en": "95% completely reject AI"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الدراسة لم تسأل عن مشاعر القلق",
+            "en": "The study didn't ask about feelings of concern"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "دراسة في جامعة الملك سعود وجدت أن 92% من طلاب التمريض لديهم مواقف إيجابية تجاه AI و75% أظهروا ابتكارية، لكن 59% أبدوا عدم ارتياح. هذا التناقض طبيعي ويعكس فجوة بين الاهتمام بالتكنولوجيا والقلق من تأثيرها على المهنة.",
+        "en": "A King Saud University study found 92% of nursing students have positive attitudes toward AI and 75% showed innovativeness, but 59% expressed discomfort. This paradox is natural and reflects a gap between interest in technology and concern about its impact on the profession."
+      }
+    },
+    {
+      "id": "nrs-mcq-020",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ممرضة تعملين في منطقة ريفية نائية. نظام إنذار AI مبكر يمكنه تنبيهك لتدهور مريض قبل 12 ساعة من ظهور العلامات السريرية. ما القيمة الأكبر لهذا النظام في بيئتك تحديداً؟",
+        "en": "You're a nurse working in a remote rural area. An AI early warning system can alert you to patient deterioration 12 hours before clinical signs appear. What's the greatest value of this system specifically in your setting?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يمنحني وقتاً كافياً لترتيب نقل المريض للمستشفى الأقرب قبل تدهور حالته",
+            "en": "Gives me enough time to arrange patient transfer to the nearest hospital before deterioration"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يلغي الحاجة لوجود طبيب في المنطقة",
+            "en": "Eliminates the need for a doctor in the area"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا فائدة منه — المناطق الريفية لا تحتاج تكنولوجيا متقدمة",
+            "en": "No benefit — rural areas don't need advanced technology"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يسمح لي بعلاج المريض بالكامل دون أي دعم خارجي",
+            "en": "Allows me to treat the patient entirely without any external support"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "في المناطق النائية، 12 ساعة إنذار مبكر تعني الفرق بين الحياة والموت — وقت كافٍ لترتيب النقل والتنسيق مع مستشفى مرجعي. أنظمة AI تُعتبر أداة عدالة صحية للممرضات في البيئات محدودة الموارد، حيث تُعوّض عن غياب الأطباء المتخصصين.",
+        "en": "In remote areas, 12 hours of early warning means the difference between life and death — enough time to arrange transfer and coordinate with a referral hospital. AI systems serve as health equity tools for nurses in resource-limited settings, compensating for the absence of specialists."
+      }
+    },
+    {
+      "id": "nrs-mcq-021",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مؤسسة Cleveland Clinic دمجت تدريب AI مع برامج تطوير المسار المهني. ما النتائج المُبلغ عنها؟",
+        "en": "Cleveland Clinic combined AI training with career pathway development programs. What were the reported outcomes?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "زيادة الكفاءة 31% وتحسّن الاحتفاظ بالموظفين 34%",
+            "en": "31% efficiency boost and 34% improvement in staff retention"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا فرق ملحوظ في أي مقياس",
+            "en": "No noticeable difference in any metric"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "زيادة في الإرهاق بسبب عبء التدريب الإضافي",
+            "en": "Increase in burnout due to additional training burden"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تحسّن في الكفاءة فقط دون تأثير على الاحتفاظ",
+            "en": "Efficiency improvement only without any retention impact"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Cleveland Clinic حققت نتائج مزدوجة: كفاءة أعلى 31% واحتفاظ أفضل 34% — عبر دمج تدريب AI مع مسارات مهنية واضحة. الدرس: التدريب على التكنولوجيا وحده لا يكفي — يجب ربطه بمستقبل مهني ملموس للممرضة.",
+        "en": "Cleveland Clinic achieved dual results: 31% higher efficiency and 34% better retention — by combining AI training with clear career pathways. The lesson: technology training alone isn't enough — it must be linked to a tangible career future for the nurse."
+      }
+    },
+    {
+      "id": "nrs-mcq-022",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ممرضة في حضانة أطفال حديثي الولادة. تقنية LIDAR المُستخدمة في Emory Healthcare تُنبّه قبل سقوط المريض. ما آلية عملها؟",
+        "en": "You're a NICU nurse. The LIDAR technology used at Emory Healthcare alerts before patient falls. What's its mechanism of action?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أشعة ليزر تكشف تغيرات في حركة الجسم وتتنبأ بالسقوط قبل 30 ثانية",
+            "en": "Laser beams detect changes in body movement and predict falls 30 seconds before they happen"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "كاميرات تراقب تعبيرات وجه المريض فقط",
+            "en": "Cameras that only monitor the patient's facial expressions"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أساور معصم تقيس نبض القلب",
+            "en": "Wristbands that measure heart rate"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ميكروفونات تكشف أصوات الاستغاثة",
+            "en": "Microphones that detect distress sounds"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "LIDAR يستخدم أشعة ليزر لرسم خريطة ثلاثية الأبعاد لحركة المريض ويتنبأ بالسقوط قبل 30 ثانية. Emory Healthcare وسّعت النظام ليشمل 1,000 سرير. هذا مهم لأن سقوط المرضى في المستشفيات مشكلة مكلفة — ممرضة تتلقى تنبيهاً مبكراً يمكنها منع السقوط قبل وقوعه.",
+        "en": "LIDAR uses laser beams to create a 3D map of patient movement and predicts falls 30 seconds in advance. Emory Healthcare expanded the system to 1,000 beds. This matters because hospital falls are costly — a nurse who receives an early alert can prevent a fall before it happens."
+      }
+    },
+    {
+      "id": "nrs-mcq-023",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تقرير Philips Future Health Index 2024 سأل قيادات الرعاية الصحية عن أهمية الأتمتة. ما النسبة التي اعتبرت الأتمتة ضرورية لمواجهة نقص الكوادر؟",
+        "en": "The 2024 Philips Future Health Index report asked healthcare leaders about the importance of automation. What percentage considered automation essential to address staffing shortages?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "92% من قيادات الرعاية الصحية",
+            "en": "92% of healthcare leaders"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "30% فقط",
+            "en": "Only 30%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أقل من 10%",
+            "en": "Less than 10%"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التقرير لم يتناول موضوع الأتمتة",
+            "en": "The report didn't address automation"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "92% من قيادات الرعاية الصحية يعتبرون الأتمتة ضرورية لمواجهة نقص الكوادر. مع توقع نقص 10 ملايين عامل صحي عالمياً بحلول 2030، لم يعد السؤال «هل نتبنى AI؟» بل «كيف نتبناه بمسؤولية؟»",
+        "en": "92% of healthcare leaders consider automation essential for addressing staffing shortages. With a projected global shortage of 10 million health workers by 2030, the question is no longer 'should we adopt AI?' but 'how do we adopt it responsibly?'"
+      }
+    },
+    {
+      "id": "nrs-mcq-024",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ممرض في قسم باطني. Baptist Health استخدمت AI لمعالجة المستندات الذكية وقلّصت العبء الإداري. بكم انخفض؟",
+        "en": "You're a nurse on a medical unit. Baptist Health used AI-powered intelligent document processing and reduced administrative burden. By how much?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "37% انخفاض في العبء الإداري",
+            "en": "37% reduction in administrative burden"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "5% فقط — تحسّن طفيف",
+            "en": "Only 5% — a slight improvement"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "100% — لم يعد هناك أي عمل إداري",
+            "en": "100% — no administrative work remains"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ارتفع العبء الإداري بسبب تعقيد النظام",
+            "en": "Administrative burden increased due to system complexity"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Baptist Health قلّصت العبء الإداري بنسبة 37% باستخدام معالجة المستندات الذكية. عندما تقضي الممرضة وقتاً أقل في الأوراق ووقتاً أكثر في العلاج، ينخفض الإرهاق وترتفع جودة الرعاية — وهذا أرخص بكثير من توظيف ممرضات جديدات.",
+        "en": "Baptist Health reduced administrative burden by 37% using intelligent document processing. When a nurse spends less time on paperwork and more on treatment, burnout drops and care quality rises — and this is much cheaper than hiring new nurses."
+      }
+    },
+    {
+      "id": "nrs-mcq-025",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ممرضة في وحدة رعاية ما بعد الجراحة. نظام LEAF Patient Monitoring System يُستخدم لتذكيرك بتغيير وضعية المرضى. ما التحسّن الموثّق في الامتثال لبروتوكول إعادة التموضع؟",
+        "en": "You're a nurse in a post-surgical care unit. The LEAF Patient Monitoring System is used to remind you about patient repositioning. What documented improvement in repositioning compliance was observed?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ارتفع الامتثال من 61% إلى 82% تقريباً خلال 18 يوماً",
+            "en": "Compliance rose from 61% to approximately 82% within 18 days"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا فرق ملحوظ — الممرضات تجاهلن التنبيهات",
+            "en": "No noticeable difference — nurses ignored the reminders"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "انخفض الامتثال بسبب الاعتماد على النظام",
+            "en": "Compliance decreased due to overreliance on the system"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ارتفع إلى 100% بشكل مستدام",
+            "en": "Rose to a sustained 100%"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "نظام LEAF رفع امتثال إعادة التموضع من 61.4% إلى 81.5% خلال 18 يوماً فقط. قرح الضغط تُكلّف النظام الصحي مليارات سنوياً — تذكير بسيط بالوقت المناسب يُحدث فرقاً كبيراً في حماية المرضى.",
+        "en": "The LEAF system raised repositioning compliance from 61.4% to 81.5% within just 18 days. Pressure injuries cost the healthcare system billions annually — a simple timely reminder makes a huge difference in patient protection."
+      }
+    },
+    {
+      "id": "nrs-mcq-026",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "البحرين سجّلت سبقاً في منطقة الخليج خلال جائحة كوفيد-19. ما هو؟",
+        "en": "Bahrain achieved a first in the GCC region during the COVID-19 pandemic. What was it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أول دولة خليجية تنشر روبوتات رعاية صحية لمساعدة الطاقم الطبي",
+            "en": "The first GCC country to deploy healthcare robots to assist medical staff"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أول دولة تمنع استخدام أي تقنية ذكاء اصطناعي في المستشفيات",
+            "en": "The first country to ban any AI technology in hospitals"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أول دولة تستبدل جميع ممرضاتها بروبوتات",
+            "en": "The first country to replace all its nurses with robots"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أول دولة تُلغي مهنة التمريض رسمياً",
+            "en": "The first country to officially abolish the nursing profession"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "البحرين كانت أول دولة خليجية تنشر روبوتات رعاية صحية خلال جائحة كوفيد-19 لمساعدة الطاقم الطبي. هذا يعكس توجّه دول الخليج نحو تبني التكنولوجيا الصحية مبكراً — وليس كبديل للممرضات بل كأداة حماية لهن.",
+        "en": "Bahrain was the first GCC country to deploy healthcare robots during COVID-19 to assist medical staff. This reflects the Gulf states' early adoption of health technology — not as a replacement for nurses but as a tool to protect them."
+      }
+    },
+    {
+      "id": "nrs-mcq-027",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ممرضة في الإمارات. الجامعات المحلية بدأت باستخدام مرضى افتراضيين بالذكاء الاصطناعي لتدريب طلاب التمريض على الصحة النفسية. لماذا هذا النهج مهم في الإمارات تحديداً؟",
+        "en": "You're a nurse in the UAE. Local universities have started using AI-powered virtual patients to train nursing students in mental health. Why is this approach particularly important in the UAE?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نقص في مواقع التدريب السريري الفعلية بسبب النمو السريع في برامج التمريض",
+            "en": "Shortage of actual clinical training sites due to rapid growth in nursing programs"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الإمارات لا تحتاج تدريباً على الصحة النفسية",
+            "en": "The UAE doesn't need mental health training"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الطلاب يفضلون التعلم عبر الكتب فقط",
+            "en": "Students prefer learning from books only"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "القانون الإماراتي يمنع التدريب السريري المباشر",
+            "en": "UAE law prohibits direct clinical training"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أكثر من 15 مؤسسة تعليمية للتمريض تعمل في الإمارات حالياً. النمو السريع في عدد الطلاب فاق قدرة المواقع السريرية المتاحة. AI المُحادثاتي يُتيح تدريباً تفاعلياً على التواصل العلاجي والتقييم النفسي في بيئة آمنة ومنضبطة.",
+        "en": "Over 15 nursing education institutions currently operate in the UAE. Rapid student growth has outpaced available clinical site capacity. Conversational AI enables interactive training in therapeutic communication and psychiatric assessment in a safe, controlled environment."
+      }
+    },
+    {
+      "id": "nrs-mcq-028",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "62% من الممرضات يعتقدن أن دمج AI في برامج التدريب الأولي يساعد الممرضات الجدد على أن يصبحن منتجات بشكل أسرع. في ظل النقص الحاد، لماذا هذا مهم استراتيجياً؟",
+        "en": "62% of nurses believe integrating AI into onboarding helps new nurses become productive faster. Given the acute shortage, why is this strategically important?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يُقلّص الفترة بين التوظيف والإنتاجية الكاملة — وهذا حيوي عندما يكون النقص المتوقع 1.6 مليون ممرضة بحلول 2029",
+            "en": "Shortens the gap between hiring and full productivity — vital when the projected shortage is 1.6 million nurses by 2029"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يلغي الحاجة لأي إشراف بشري على الممرضات الجدد",
+            "en": "Eliminates the need for any human supervision of new nurses"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "يسمح بتوظيف أشخاص غير مؤهلين في التمريض",
+            "en": "Allows hiring unqualified people in nursing"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مفيد لكن ليس له تأثير على مشكلة النقص",
+            "en": "Helpful but has no impact on the shortage problem"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "مع توقع نقص 1.6 مليون ممرضة بحلول 2029، كل أسبوع تُوفره في تدريب ممرضة جديدة يعني أسبوعاً إضافياً من الرعاية الفعلية. AI لا يُنتج ممرضات — لكنه يُسرّع تحويل المتدربة إلى ممرضة فعّالة.",
+        "en": "With a projected shortage of 1.6 million nurses by 2029, every week saved in training a new nurse means an extra week of actual care. AI doesn't produce nurses — but it accelerates turning a trainee into an effective nurse."
+      }
+    },
+    {
+      "id": "nrs-mcq-029",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ممرض عناية مركزة. نظام AI يراقب بيانات جهاز التنفس باستمرار ويكتشف عدم تزامن المريض مع الجهاز (ventilator asynchrony). ما الفائدة المباشرة لك كممرض؟",
+        "en": "You're an ICU nurse. An AI system continuously monitors ventilator data and detects patient-ventilator asynchrony. What's the direct benefit for you as a nurse?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يُنبّهني للتدخل المبكر قبل أن يعاني المريض من مضاعفات — بدل الاكتشاف المتأخر يدوياً",
+            "en": "Alerts me for early intervention before the patient suffers complications — instead of late manual detection"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يعدّل إعدادات الجهاز تلقائياً دون علمي",
+            "en": "Automatically adjusts ventilator settings without my knowledge"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "يلغي الحاجة لوجود معالج تنفسي في القسم",
+            "en": "Eliminates the need for a respiratory therapist in the unit"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يسجّل البيانات فقط دون أي تنبيه",
+            "en": "Only records data without any alerts"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "جهاز التنفس يُولّد كمّاً هائلاً من البيانات كل ثانية — مستحيل على الممرض تحليلها يدوياً باستمرار. AI يكتشف عدم التزامن فورياً ويُنبّه الممرض للتدخل. نظام INTELLiVENT-ASV من Hamilton Medical ثبت أنه آمن سريرياً ويُقلل التعديلات اليدوية.",
+        "en": "A ventilator generates massive amounts of data every second — impossible for a nurse to manually analyze continuously. AI detects asynchrony instantly and alerts the nurse to intervene. Hamilton Medical's INTELLiVENT-ASV has been proven clinically safe and reduces manual adjustments."
+      }
+    },
+    {
+      "id": "nrs-mcq-030",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنظمة AI للتنبؤ بالإنتان في العناية المركزة تحقق دقة AUC تتجاوز 0.85 في الغالب. بالمقارنة، ما دقة مقياس qSOFA التقليدي على نفس المجموعات؟",
+        "en": "AI sepsis prediction systems in the ICU generally achieve AUC accuracy exceeding 0.85. In comparison, what's the accuracy of the traditional qSOFA score on the same cohorts?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AUC 0.64 — أقل بكثير من نماذج AI",
+            "en": "AUC 0.64 — much lower than AI models"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "AUC 0.95 — أعلى من AI",
+            "en": "AUC 0.95 — higher than AI"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مماثل تماماً لنماذج AI",
+            "en": "Exactly the same as AI models"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا يمكن مقارنتهما لأنهما يقيسان أشياء مختلفة",
+            "en": "They can't be compared because they measure different things"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "نموذج AI حقق AUC 0.93 بينما qSOFA سجّل 0.64 على نفس المجموعة. AI يكتشف الإنتان قبل ساعات من ظهور الأعراض السريرية. لكن التحدي الأكبر ليس دقة الخوارزمية — بل ترجمة التنبيه إلى تدخل سريري فعلي من قبل فريق التمريض.",
+        "en": "An AI model achieved AUC 0.93 while qSOFA scored 0.64 on the same cohort. AI detects sepsis hours before clinical symptoms appear. But the biggest challenge isn't algorithm accuracy — it's translating the alert into actual clinical intervention by the nursing team."
+      }
+    },
+    {
+      "id": "nrs-tf-003",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام AI للتنبؤ بقرح الضغط في العناية المركزة خفّض انتشارها من 21% إلى 4% — أي انخفاض بمقدار 10 أضعاف.",
+        "en": "An AI pressure injury prediction system in the ICU reduced their prevalence from 21% to 4% — a 10-fold decrease."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. الدراسة أظهرت أيضاً انخفاض مدة الإقامة في العناية المركزة من 7.6 إلى 5.2 يوم. النموذج يستخدم بين 6 و86 متغيراً من السجلات الصحية الإلكترونية لتحديد المرضى الأكثر عرضة.",
+        "en": "True. The study also showed ICU length of stay decreased from 7.6 to 5.2 days. The model uses between 6 and 86 variables from electronic health records to identify the most at-risk patients."
+      }
+    },
+    {
+      "id": "nrs-tf-004",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "معظم الممرضات (55%) يعتقدن أن تنبيهات AI للإنتان تعكس خطراً حقيقياً ويُغيّرن تقييمهن للمريض بناءً عليها.",
+        "en": "Most nurses (55%) believe AI sepsis alerts reflect real risk and change their patient assessment based on them."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. الواقع معكوس: 13% فقط من الممرضات اعتبرن تنبيه AI يشير لخطر إنتان حقيقي، و55% لم يُغيّرن تقييمهن بعد التنبيه. هذه فجوة خطيرة بين قدرة الخوارزمية وثقة الممرضات بها.",
+        "en": "False. The reality is the opposite: only 13% of nurses perceived the AI alert as indicating real sepsis risk, and 55% reported no change in their assessment. This is a critical gap between algorithm capability and nurse trust."
+      }
+    },
+    {
+      "id": "nrs-tf-005",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تكلفة وكيل Hippocratic AI الصوتي 9 دولارات في الساعة مقابل 45-65 دولار لتكلفة الممرضة البشرية، مما يعني أن الاستبدال الكامل أمر حتمي اقتصادياً.",
+        "en": "Hippocratic AI's voice agent costs $9/hour vs. $45–65/hour for a human nurse, meaning complete replacement is economically inevitable."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. رغم الفرق الكبير في التكلفة، وكلاء Hippocratic AI مصممون لمهام غير تشخيصية فقط (متابعة الأدوية والأعراض) مع تصعيد الحالات الخطرة لممرضة بشرية. الاستبدال الكامل غير ممكن لأن التدخل الجسدي والحكم السريري المعقد يتطلبان ممرضة حقيقية.",
+        "en": "False. Despite the large cost gap, Hippocratic AI agents are designed for non-diagnostic tasks only (medication and symptom follow-up) with escalation of serious cases to a human nurse. Complete replacement isn't possible because physical intervention and complex clinical judgment require a real nurse."
+      }
+    },
+    {
+      "id": "nrs-tf-006",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "في مايو 2025، أُطلقت أول عيادة طبية مدعومة بالذكاء الاصطناعي بالكامل في العالم في منطقة الأحساء بالسعودية.",
+        "en": "In May 2025, the world's first fully AI-powered doctor clinic was launched in Saudi Arabia's Al-Ahsa region."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. السعودية أطلقت أول عيادة طبية مدعومة بالذكاء الاصطناعي في الأحساء. سوق الذكاء الاصطناعي الصحي السعودي ينمو بمعدل 37% سنوياً ويُتوقع أن يصل إلى 8.39 مليار دولار بحلول 2033.",
+        "en": "True. Saudi Arabia launched the world's first AI-powered doctor clinic in Al-Ahsa. The Saudi AI healthcare market is growing at 37% CAGR and is projected to reach $8.39 billion by 2033."
+      }
+    },
+    {
+      "id": "nrs-tf-007",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نماذج AI لفطام التنفس الصناعي حققت دقة AUC تصل إلى 0.976 في التنبؤ بنجاح نزع الأنبوب.",
+        "en": "AI ventilator weaning models achieved AUC accuracy of up to 0.976 in predicting successful extubation."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. هذه الدقة العالية تُمكّن الفريق التمريضي من تخطيط الرعاية مسبقاً وتقليل مدة التنبيب بمعدل 21 ساعة. الفطام المتأخر يزيد مخاطر الالتهاب الرئوي المرتبط بجهاز التنفس وضمور العضلات.",
+        "en": "True. This high accuracy enables the nursing team to plan care in advance and reduce intubation time by an average of 21 hours. Delayed weaning increases risks of ventilator-associated pneumonia and muscle wasting."
+      }
+    },
+    {
+      "id": "nrs-tf-008",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في أمريكا عام 2025، كان هناك فائض في عدد الممرضات المسجلات يتجاوز الطلب بأكثر من 100,000 ممرضة.",
+        "en": "In the US in 2025, there was a surplus of registered nurses exceeding demand by over 100,000 nurses."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. الواقع عكس ذلك تماماً: أمريكا عانت من عجز بلغ 250,710 ممرضة مسجّلة في 2025. أكثر من 65% من المستشفيات عملت بأقل من طاقتها الكاملة بسبب نقص الكوادر. معدل دوران الممرضات بلغ 24% سنوياً.",
+        "en": "False. The reality was exactly the opposite: the US had a deficit of 250,710 registered nurses in 2025. Over 65% of hospitals operated below full capacity due to staffing shortages. Nurse turnover rate reached 24% annually."
+      }
+    },
+    {
+      "id": "nrs-tf-009",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "90% من العاملين في الرعاية الصحية يستخدمون الذكاء الاصطناعي بشكل ما في عملهم اليومي.",
+        "en": "Nearly 90% of healthcare workers use artificial intelligence in some capacity in their daily work."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. قرابة 90% من العاملين الصحيين يستخدمون AI بشكل ما، وثلثا الأطباء يستخدمون أدوات AI في عملياتهم اليومية. التحدي ليس التبني — بل الحوكمة والتدريب المنظم لضمان استخدام آمن وفعّال.",
+        "en": "True. Nearly 90% of healthcare workers use AI in some capacity, and two-thirds of physicians leverage AI tools in daily operations. The challenge isn't adoption — it's governance and structured training to ensure safe and effective use."
+      }
+    },
+    {
+      "id": "nrs-tf-010",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مؤسسة Intermountain Healthcare نجحت في خفض معدل الشواغر التمريضية من 18% إلى 7% خلال سنتين باستخدام استراتيجية تجمع بين AI والجدولة المرنة والشراكات الأكاديمية.",
+        "en": "Intermountain Healthcare succeeded in reducing nursing vacancy rates from 18% to 7% in two years using a strategy combining AI, flexible scheduling, and academic partnerships."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. Intermountain استخدمت استراتيجية «كل شيء في كل مكان» تجمع بين الجدولة المرنة وتكامل AI والشراكات مع الكليات المحلية. الدرس: AI وحده لا يحل مشكلة النقص — يجب دمجه مع إصلاحات نظامية شاملة.",
+        "en": "True. Intermountain used an 'everything everywhere' strategy combining flexible scheduling, AI integration, and community college partnerships. The lesson: AI alone doesn't solve the shortage — it must be combined with comprehensive systemic reforms."
+      }
+    },
+    {
+      "id": "nrs-tf-011",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "إطار DIKW (البيانات، المعلومات، المعرفة، الحكمة) في المعلوماتية التمريضية يُظهر أن AI يمكنه توليد الحكمة السريرية بشكل مستقل دون تدخل الممرضة.",
+        "en": "The DIKW (Data, Information, Knowledge, Wisdom) framework in nursing informatics shows that AI can independently generate clinical wisdom without nurse intervention."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. AI يُعزّز كل مستوى من إطار DIKW — من أتمتة جمع البيانات إلى تحديد الأنماط — لكن مستوى «الحكمة» يتطلب الحكم الأخلاقي والسياق الإنساني الذي لا يملكه AI. الممرضة تبقى مسؤولة عن تفسير رؤى AI واتخاذ القرار في السياق الكامل لحالة المريض.",
+        "en": "False. AI enhances each level of the DIKW framework — from automating data collection to identifying patterns — but the 'Wisdom' level requires ethical judgment and human context that AI doesn't possess. The nurse remains responsible for interpreting AI insights and making decisions in the full context of the patient's situation."
+      }
+    },
+    {
+      "id": "nrs-tf-012",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "دراسة شملت 10 دول عربية وجدت أن طلاب التمريض قلقون من فقدان وظائفهم بسبب AI لكنهم يعترفون بإمكاناته السريرية.",
+        "en": "A multi-center survey across 10 Arab countries found nursing students concerned about AI job displacement while recognizing its clinical potential."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. الدراسة كشفت عن مشاعر مزدوجة: قلق حقيقي من الاستبدال الوظيفي يتعايش مع اعتراف بالإمكانات السريرية. في السعودية تحديداً، 55% من الممرضات عبّرن عن مخاوف أخلاقية تتعلق بخصوصية البيانات وسرية المرضى.",
+        "en": "True. The study revealed dual feelings: real concern about job displacement coexisting with recognition of clinical potential. In Saudi Arabia specifically, 55% of nurses expressed ethical concerns about data privacy and patient confidentiality."
+      }
+    },
+    {
+      "id": "nrs-tf-013",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نسبة الممرضات اللواتي يعانين من إرهاق يدفعهن للتفكير بترك المهنة تبلغ حوالي 5% فقط.",
+        "en": "The percentage of nurses experiencing burnout severe enough to consider leaving the profession is only about 5%."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. ثلث الممرضات (33%) يعانين من إرهاق شديد يدفعهن للتفكير بترك المهنة. في استطلاعات أخرى، 61% من الممرضات يخططن لترك وظيفتهن خلال 12 شهراً. هذه أزمة حقيقية تجعل أي أداة AI تُقلل الإرهاق ذات قيمة استراتيجية.",
+        "en": "False. One-third of nurses (33%) experience burnout severe enough to consider leaving. In other surveys, 61% of nurses plan to leave their jobs within 12 months. This is a real crisis that makes any AI tool reducing burnout strategically valuable."
+      }
+    },
+    {
+      "id": "nrs-tf-014",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نموذج AI لتنبؤ الإنتان عند الأطفال باستخدام الشبكات العصبية الاصطناعية (ANN) حقق دقة 0.96 في مجموعة الاختبار.",
+        "en": "An AI sepsis prediction model for children using Artificial Neural Networks (ANN) achieved 0.96 accuracy in the test set."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. نموذج ANN حلّل 12 عاملاً سريرياً ومخبرياً (بما فيها اللاكتات والضغط ومؤشر SOFA للأطفال) وحقق دقة 0.96 وAUC 0.962 في مجموعة اختبار من 516 طفلاً. هذا مهم لممرضات الأطفال لأن الإنتان عند الأطفال صعب التشخيص بسبب أعراضه غير النوعية.",
+        "en": "True. The ANN model analyzed 12 clinical and laboratory parameters (including lactate, blood pressure, and pediatric SOFA) achieving 0.96 accuracy and 0.962 AUC in a test set of 516 children. This matters for pediatric nurses because sepsis in children is difficult to diagnose due to nonspecific symptoms."
+      }
+    },
+    {
+      "id": "nrs-tf-015",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام المستشفى الافتراضي SEHA في السعودية هو أكبر مرفق رعاية صحية افتراضية في العالم ويخدم أكثر من 255,000 مريض.",
+        "en": "Saudi Arabia's SEHA Virtual Hospital is the world's largest virtual healthcare facility, serving over 255,000 patients."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. المستشفى الافتراضي SEHA أُطلق في فبراير 2025 ويخدم أكثر من 255,000 مريض عبر تطبيق صحتي. هذا مثال على أن المنطقة العربية لا تستورد التكنولوجيا فقط بل تبتكر نماذج رعاية صحية رقمية رائدة عالمياً.",
+        "en": "True. SEHA Virtual Hospital launched in February 2025 serving 255,000+ patients through the Sehhaty app. This exemplifies how the Arab region isn't just importing technology but pioneering globally leading digital healthcare models."
+      }
+    },
+    {
+      "id": "nrs-tf-016",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "عندما يراجع الطبيب تنبيه AI للإنتان ويؤكده خلال 3 ساعات، ينخفض وقت إعطاء المضاد الحيوي بمعدل 1.8 ساعة.",
+        "en": "When a physician reviews and confirms an AI sepsis alert within 3 hours, antibiotic administration time decreases by an average of 1.8 hours."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. هذا يؤكد أن AI لا يُحسّن النتائج بمفرده — بل يحتاج استجابة بشرية سريعة. الممرضة هي غالباً أول من يرى التنبيه وتُبلّغ الطبيب. التأخر في الاستجابة يُلغي فائدة الإنذار المبكر.",
+        "en": "True. This confirms AI doesn't improve outcomes on its own — it needs rapid human response. The nurse is usually the first to see the alert and notify the physician. Delayed response negates the benefit of early warning."
+      }
+    },
+    {
+      "id": "nrs-tf-017",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "81% من الممرضات في الاستطلاع السنوي الأمريكي 2025-2026 قلن إنهن سيخترن مهنة التمريض مرة أخرى لو عاد بهن الزمن.",
+        "en": "81% of nurses in the 2025-2026 US annual survey said they would choose a nursing career again if they could go back in time."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. رغم الإرهاق والتحديات، 81% من الممرضات سيخترن المهنة مجدداً. لكن القلق الأكبر من AI كان فقدان «الاتصال الإنساني». هذا يُظهر أن الممرضات يُقدّرن جوهر مهنتهن — ويحتجن AI يدعمهن لا يُهدد هذا الجوهر.",
+        "en": "True. Despite burnout and challenges, 81% of nurses would choose the career again. But the biggest AI concern was loss of 'human connection.' This shows nurses value the essence of their profession — and need AI that supports, not threatens, this essence."
+      }
+    },
+    {
+      "id": "nrs-tf-018",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "12% فقط من الأطباء و38% من الممرضات يعتقدون أن نماذج AI تُحسّن خدمات التشخيص والعلاج.",
+        "en": "Only 12% of doctors and 38% of nurses believe AI models improve diagnostic and treatment services."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. هذه الأرقام تكشف فجوة ثقة كبيرة: الممرضات أكثر تقبّلاً للـ AI من الأطباء. السبب المحتمل: تنبيهات AI قبل ظهور الأعراض قد تبدو «سابقة لأوانها» للأطباء، بينما الممرضات اللواتي يُراقبن المريض باستمرار أكثر استعداداً لقبول إنذارات مبكرة.",
+        "en": "True. These numbers reveal a significant trust gap: nurses are more receptive to AI than doctors. Likely reason: AI alerts before symptom onset may seem 'premature' to doctors, while nurses who continuously monitor patients are more prepared to accept early warnings."
+      }
+    },
+    {
+      "id": "nrs-tf-019",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تكاليف العمالة تشكّل أكثر من 50% من ميزانيات تشغيل المستشفيات، و99% من المدراء الماليين يُشيرون إلى نقص الممرضات كالسبب الرئيسي لضغط الهامش المالي.",
+        "en": "Labor costs comprise over 50% of hospital operating budgets, and 99% of CFOs point to nursing shortages as the root cause of margin pressure."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. 96% من المدراء الماليين يعتبرون تكاليف العمالة أكبر ضغط على الهامش المالي، و99% يُرجعون ذلك لنقص الممرضات. هذا يعني أن أي تقنية AI تُحسّن احتفاظ المستشفى بممرضاته ليست فقط مفيدة سريرياً — بل ضرورة اقتصادية.",
+        "en": "True. 96% of CFOs cite labor costs as the top margin pressure, and 99% point to nursing shortages as the root cause. This means any AI technology that improves nurse retention isn't just clinically beneficial — it's an economic necessity."
+      }
+    },
+    {
+      "id": "nrs-tf-020",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "دراسة مقارنة بين مصر والسعودية وجدت أن دمج روبوت محادثة AI في برامج تدريب التمريض حسّن معرفة الممرضات وتصوراتهن عن AI بشكل ملحوظ في كلا البلدين.",
+        "en": "A comparative study between Egypt and Saudi Arabia found that integrating an AI chatbot into nursing training programs significantly improved nurses' knowledge and perceptions of AI in both countries."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. الدراسة شملت 146 ممرضة (73 من كل بلد). أكبر تحسّن كان في فهم دور AI في تعزيز مهام التمريض المستقبلية (من 46.6% إلى 80.3% في مصر). بعد التدخل، أكثر من 90% وافقوا على فوائد AI في التمريض.",
+        "en": "True. The study included 146 nurses (73 from each country). The biggest improvement was in understanding AI's role in enhancing future nursing functions (from 46.6% to 80.3% in Egypt). Post-intervention, over 90% agreed on AI's benefits in nursing."
+      }
+    },
+    {
+      "id": "nrs-fill-002",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} للتنبؤ بهبوط ضغط الدم من شركة Edwards Lifesciences قلّص الوقت الذي يقضيه المريض في ضغط منخفض خطير بنسبة 63%.",
+        "en": "The {{blank_1}} system for predicting hypotension from Edwards Lifesciences reduced the time patients spend at dangerously low blood pressure by 63%."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Hypotension Prediction Index",
+            "en": "Hypotension Prediction Index"
+          },
+          "options": [
+            {
+              "ar": "Hypotension Prediction Index",
+              "en": "Hypotension Prediction Index"
+            },
+            {
+              "ar": "Blood Pressure AI",
+              "en": "Blood Pressure AI"
+            },
+            {
+              "ar": "CardioGuard",
+              "en": "CardioGuard"
+            },
+            {
+              "ar": "VitalSync",
+              "en": "VitalSync"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Hypotension Prediction Index يتنبأ بهبوط الضغط قبل حدوثه، مما يمنح الممرض وقتاً للتدخل الوقائي. هذا مهم بشكل خاص في العمليات الجراحية حيث يرتبط هبوط الضغط بفشل الأعضاء.",
+        "en": "Hypotension Prediction Index predicts blood pressure drops before they occur, giving the nurse time for preventive intervention. This is especially important during surgery where hypotension is linked to organ failure."
+      }
+    },
+    {
+      "id": "nrs-fill-003",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "في أكتوبر 2025، أطلق نظام {{blank_1}} مراقبة جنينية عن بُعد بالذكاء الاصطناعي مع 17 ممرضة متخصصة تُشرف على عدة مستشفيات في الوقت الحقيقي.",
+        "en": "In October 2025, the {{blank_1}} system launched AI-powered remote fetal monitoring with 17 specialized nurses providing real-time oversight across multiple hospitals."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "UMMS NEST",
+            "en": "UMMS NEST"
+          },
+          "options": [
+            {
+              "ar": "UMMS NEST",
+              "en": "UMMS NEST"
+            },
+            {
+              "ar": "BabyWatch AI",
+              "en": "BabyWatch AI"
+            },
+            {
+              "ar": "INFANT-Guardian",
+              "en": "INFANT-Guardian"
+            },
+            {
+              "ar": "FetalSafe",
+              "en": "FetalSafe"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "UMMS NEST يختلف عن INFANT-Guardian: الأول يوفر شبكة ممرضات متخصصات يُراقبن الأجنة عن بُعد عبر مستشفيات متعددة، بينما الثاني يُفسّر تخطيط نبض الجنين محلياً. كلاهما يخدم القبالة لكن بطرق مختلفة.",
+        "en": "UMMS NEST differs from INFANT-Guardian: the former provides a network of specialized nurses remotely monitoring fetuses across multiple hospitals, while the latter interprets CTG locally. Both serve midwifery but in different ways."
+      }
+    },
+    {
+      "id": "nrs-fill-004",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "مؤسسة {{blank_1}} نشرت نظام التمريض الافتراضي بمساعدة AI في أكثر من 2,000 غرفة مستشفى.",
+        "en": "{{blank_1}} is deploying AI-assisted virtual nursing in over 2,000 hospital rooms."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Ardent Health",
+            "en": "Ardent Health"
+          },
+          "options": [
+            {
+              "ar": "Ardent Health",
+              "en": "Ardent Health"
+            },
+            {
+              "ar": "Mayo Clinic",
+              "en": "Mayo Clinic"
+            },
+            {
+              "ar": "Cleveland Clinic",
+              "en": "Cleveland Clinic"
+            },
+            {
+              "ar": "Johns Hopkins",
+              "en": "Johns Hopkins"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Ardent Health نشرت التمريض الافتراضي في 2,000+ غرفة. Houston Methodist نشرته في معظم غرفها أيضاً. Mayo Clinic ركّزت على المساعد الافتراضي لـ 9,600 ممرضة. كل نموذج يختلف في التطبيق لكن الهدف واحد: تحرير الممرضة للرعاية المباشرة.",
+        "en": "Ardent Health deployed virtual nursing in 2,000+ rooms. Houston Methodist deployed it in most rooms too. Mayo Clinic focused on a virtual assistant for 9,600 nurses. Each model differs in application but shares one goal: freeing the nurse for direct care."
+      }
+    },
+    {
+      "id": "nrs-fill-005",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام الفرز الذكي {{blank_1}} يدّعي دقة 97% ومعالجة أكثر من 50 نقطة قرار سريري في أقل من 3 دقائق.",
+        "en": "The {{blank_1}} smart triage system claims 97% accuracy and processes 50+ clinical decision points in under 3 minutes."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "ERTRIAGE",
+            "en": "ERTRIAGE"
+          },
+          "options": [
+            {
+              "ar": "ERTRIAGE",
+              "en": "ERTRIAGE"
+            },
+            {
+              "ar": "KATE",
+              "en": "KATE"
+            },
+            {
+              "ar": "TriageAI",
+              "en": "TriageAI"
+            },
+            {
+              "ar": "SmartSort",
+              "en": "SmartSort"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "ERTRIAGE يختلف عن KATE: الأول يدّعي 97% والثاني حقق 75.7% في دراسة مستقلة. الفرق المهم: ادعاءات الشركة المصنّعة ليست كتقييم مستقل. ممرضات الطوارئ يجب أن يعرفن هذا الفرق.",
+        "en": "ERTRIAGE differs from KATE: the former claims 97% while the latter achieved 75.7% in an independent study. The key difference: manufacturer claims aren't the same as independent evaluation. ED nurses need to know this distinction."
+      }
+    },
+    {
+      "id": "nrs-fill-006",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "ظاهرة {{blank_1}} تحدث عندما تتجاهل الممرضات تنبيهات AI بسبب كثرة الإنذارات الكاذبة، مما يُضعف فعالية أنظمة الإنذار المبكر.",
+        "en": "The phenomenon of {{blank_1}} occurs when nurses ignore AI alerts due to excessive false alarms, undermining the effectiveness of early warning systems."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "إرهاق الإنذارات",
+            "en": "alert fatigue"
+          },
+          "options": [
+            {
+              "ar": "إرهاق الإنذارات",
+              "en": "alert fatigue"
+            },
+            {
+              "ar": "الإرهاق المهني",
+              "en": "burnout"
+            },
+            {
+              "ar": "مقاومة التغيير",
+              "en": "resistance to change"
+            },
+            {
+              "ar": "فقدان المهارات",
+              "en": "deskilling"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "إرهاق الإنذارات (Alert fatigue) مشكلة جوهرية: 55% من الممرضات لا يُغيّرن تقييمهن بعد تنبيه AI للإنتان. الحل ليس إيقاف الأنظمة بل تحسين دقتها وتقليل الإيجابيات الكاذبة وتدريب الممرضات على التمييز بين التنبيهات.",
+        "en": "Alert fatigue is a core problem: 55% of nurses don't change their assessment after an AI sepsis alert. The solution isn't stopping systems but improving their precision, reducing false positives, and training nurses to distinguish between alerts."
+      }
+    },
+    {
+      "id": "nrs-fill-007",
+      "type": "fill_blank",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 1,
+      "text": {
+        "ar": "المستشفى الافتراضي {{blank_1}} في السعودية هو أكبر مرفق رعاية صحية افتراضية في العالم ويخدم أكثر من 255,000 مريض عبر تطبيق صحتي.",
+        "en": "Saudi Arabia's {{blank_1}} Virtual Hospital is the world's largest virtual healthcare facility, serving over 255,000 patients through the Sehhaty app."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "SEHA",
+            "en": "SEHA"
+          },
+          "options": [
+            {
+              "ar": "SEHA",
+              "en": "SEHA"
+            },
+            {
+              "ar": "Tawakkalna",
+              "en": "Tawakkalna"
+            },
+            {
+              "ar": "Cura",
+              "en": "Cura"
+            },
+            {
+              "ar": "Vezeeta",
+              "en": "Vezeeta"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "SEHA أُطلق في فبراير 2025 ويُقدّم خدمات طبية افتراضية شاملة. السعودية تستثمر بكثافة في الصحة الرقمية ضمن رؤية 2030 — مما يُوفر فرصاً جديدة للممرضات في التمريض عن بُعد والرعاية الافتراضية.",
+        "en": "SEHA launched in February 2025 providing comprehensive virtual medical services. Saudi Arabia is investing heavily in digital health under Vision 2030 — creating new opportunities for nurses in telehealth and virtual care."
+      }
+    },
+    {
+      "id": "nrs-fill-008",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} من Hamilton Medical يُعدّل إعدادات جهاز التنفس تلقائياً بناءً على ميكانيكا الرئة، وثبت أنه آمن سريرياً ويُقلل التعديلات اليدوية.",
+        "en": "Hamilton Medical's {{blank_1}} system automatically adjusts ventilator settings based on lung mechanics, and has been proven clinically safe while reducing manual adjustments."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "INTELLiVENT-ASV",
+            "en": "INTELLiVENT-ASV"
+          },
+          "options": [
+            {
+              "ar": "INTELLiVENT-ASV",
+              "en": "INTELLiVENT-ASV"
+            },
+            {
+              "ar": "SmartVent",
+              "en": "SmartVent"
+            },
+            {
+              "ar": "AutoBreath",
+              "en": "AutoBreath"
+            },
+            {
+              "ar": "LungAI",
+              "en": "LungAI"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "INTELLiVENT-ASV هو نظام تهوية «حلقة مغلقة» يُعدّل الإعدادات باستمرار. هذا يُقلل عبء التعديلات اليدوية على الممرض والمعالج التنفسي، لكنهما يبقيان مسؤولين عن المراقبة العامة واتخاذ القرارات السريرية الكبرى.",
+        "en": "INTELLiVENT-ASV is a 'closed-loop' ventilation system that continuously adjusts settings. This reduces the burden of manual adjustments on the nurse and respiratory therapist, but they remain responsible for overall monitoring and major clinical decisions."
+      }
+    },
+    {
+      "id": "nrs-fill-009",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "تقنية {{blank_1}} في Emory Healthcare تستخدم أشعة ليزر لرسم خريطة حركة المريض ثلاثية الأبعاد والتنبيه قبل سقوطه بـ 30 ثانية.",
+        "en": "{{blank_1}} technology at Emory Healthcare uses laser beams to create a 3D map of patient movement and alerts 30 seconds before a fall."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "LIDAR",
+            "en": "LIDAR"
+          },
+          "options": [
+            {
+              "ar": "LIDAR",
+              "en": "LIDAR"
+            },
+            {
+              "ar": "RADAR",
+              "en": "RADAR"
+            },
+            {
+              "ar": "Infrared",
+              "en": "Infrared"
+            },
+            {
+              "ar": "Ultrasound",
+              "en": "Ultrasound"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "LIDAR (Light Detection and Ranging) يُستخدم عادةً في السيارات ذاتية القيادة والمسح الجغرافي. Emory Healthcare وظّفته لمنع سقوط المرضى ووسّعته إلى 1,000 سرير. هذا مثال على نقل تقنية من صناعة لأخرى بشكل مبتكر.",
+        "en": "LIDAR (Light Detection and Ranging) is typically used in self-driving cars and geographic surveying. Emory Healthcare repurposed it for fall prevention and expanded it to 1,000 beds. This is an example of innovatively transferring technology between industries."
+      }
+    },
+    {
+      "id": "nrs-fill-010",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "مقياس {{blank_1}} التقليدي لتقييم خطر الإنتان حقق دقة AUC 0.64 فقط، مقارنة بـ 0.93 لنماذج الذكاء الاصطناعي على نفس المجموعات السريرية.",
+        "en": "The traditional {{blank_1}} score for assessing sepsis risk achieved only AUC 0.64, compared to 0.93 for AI models on the same clinical cohorts."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "qSOFA",
+            "en": "qSOFA"
+          },
+          "options": [
+            {
+              "ar": "qSOFA",
+              "en": "qSOFA"
+            },
+            {
+              "ar": "NEWS",
+              "en": "NEWS"
+            },
+            {
+              "ar": "APACHE",
+              "en": "APACHE"
+            },
+            {
+              "ar": "GCS",
+              "en": "GCS"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "qSOFA (quick Sequential Organ Failure Assessment) يعتمد على 3 معايير فقط: معدل التنفس والضغط الانقباضي ومستوى الوعي. محدوديته تجعل AI متفوقاً لأنه يحلل عشرات المتغيرات معاً ويكتشف أنماطاً خفية. لكن qSOFA يبقى مفيداً في البيئات التي لا تتوفر فيها تقنية AI.",
+        "en": "qSOFA (quick Sequential Organ Failure Assessment) relies on only 3 criteria: respiratory rate, systolic BP, and consciousness level. Its limitations make AI superior as it analyzes dozens of variables and detects hidden patterns. But qSOFA remains useful in settings where AI technology isn't available."
+      }
+    },
+    {
+      "id": "nrs-match-002",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مستشفى أو مؤسسة بإنجازها في مجال AI التمريضي:",
+        "en": "Match each hospital or institution with its nursing AI achievement:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Houston Methodist",
+            "en": "Houston Methodist"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Mayo Clinic",
+            "en": "Mayo Clinic"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Ardent Health",
+            "en": "Ardent Health"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Baptist Health",
+            "en": "Baptist Health"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "95.3% من الممرضات وجدنه مفيداً — تمريض افتراضي في كل الغرف",
+            "en": "95.3% of nurses found it helpful — virtual nursing in every room"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "مساعد افتراضي لأكثر من 9,600 ممرضة",
+            "en": "Virtual assistant for over 9,600 nurses"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تمريض افتراضي في أكثر من 2,000 غرفة",
+            "en": "Virtual nursing in 2,000+ rooms"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "خفض العبء الإداري بنسبة 37%",
+            "en": "37% reduction in administrative burden"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل مؤسسة اختارت نهجاً مختلفاً: Houston Methodist ركّزت على التمريض الافتراضي الشامل، Mayo Clinic على المساعد الافتراضي لعدد ضخم من الممرضات، Ardent Health على التوسع الكبير في الغرف، وBaptist Health على تقليل الأعباء الإدارية. لا يوجد نموذج واحد يناسب الجميع.",
+        "en": "Each institution chose a different approach: Houston Methodist focused on comprehensive virtual nursing, Mayo Clinic on a virtual assistant for a huge number of nurses, Ardent Health on massive room expansion, and Baptist Health on reducing administrative burden. No single model fits all."
+      }
+    },
+    {
+      "id": "nrs-match-003",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تحدٍّ في AI التمريضي بالإحصائية المرتبطة به:",
+        "en": "Match each nursing AI challenge with its associated statistic:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "إرهاق الإنذارات",
+            "en": "Alert fatigue"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "فجوة الحوكمة",
+            "en": "Governance gap"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "نقص الكوادر العالمي",
+            "en": "Global workforce shortage"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "تكلفة دوران الممرضات",
+            "en": "Nurse turnover cost"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "13% فقط اعتبرن تنبيه AI للإنتان خطراً حقيقياً",
+            "en": "Only 13% perceived AI sepsis alert as real risk"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "46% يستخدمن GenAI لكن 18% فقط لديهم سياسات",
+            "en": "46% use GenAI but only 18% have policies"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "نقص 4.5 مليون ممرضة بحلول 2030",
+            "en": "4.5 million nurse shortage by 2030"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "61,110 دولار لاستبدال ممرضة واحدة",
+            "en": "$61,110 to replace one nurse"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الأرقام تُشكّل المشهد الكامل: إرهاق الإنذارات يُقلل فعالية AI، فجوة الحوكمة تُعرّض المرضى للخطر، نقص الكوادر يجعل AI ضرورة، وتكلفة الاستبدال تجعل الاحتفاظ بالممرضات أولوية اقتصادية.",
+        "en": "These numbers paint the full picture: alert fatigue reduces AI effectiveness, governance gaps endanger patients, workforce shortages make AI necessary, and replacement costs make nurse retention an economic priority."
+      }
+    },
+    {
+      "id": "nrs-match-004",
+      "type": "matching",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 1,
+      "text": {
+        "ar": "وصّل كل دولة عربية بإنجازها في AI الصحي:",
+        "en": "Match each Arab country with its healthcare AI achievement:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "السعودية",
+            "en": "Saudi Arabia"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "الإمارات",
+            "en": "UAE"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "البحرين",
+            "en": "Bahrain"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "مستشفى الملك فيصل",
+            "en": "King Faisal Hospital"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "أكبر مستشفى افتراضي في العالم (SEHA)",
+            "en": "World's largest virtual hospital (SEHA)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "اتفاقية Care AI للتمريض الافتراضي الذكي",
+            "en": "Care AI agreement for smart virtual nursing"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "أول دولة خليجية تنشر روبوتات صحية في كوفيد",
+            "en": "First GCC to deploy health robots in COVID"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "30+ حلاً بالذكاء الاصطناعي طُوّرت داخلياً",
+            "en": "30+ AI solutions developed in-house"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "المنطقة العربية ليست مجرد مستورد للتكنولوجيا — بل رائدة في نماذج الرعاية الرقمية. سوق AI الصحي السعودي ينمو بمعدل 37% سنوياً ليصل 8.39 مليار دولار بحلول 2033.",
+        "en": "The Arab region isn't just importing technology — it's pioneering digital care models. The Saudi AI healthcare market grows at 37% CAGR to reach $8.39 billion by 2033."
+      }
+    },
+    {
+      "id": "nrs-match-005",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "وصّل كل نظام AI بدقته الموثّقة:",
+        "en": "Match each AI system with its documented accuracy:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "eCART (إنذار مبكر)",
+            "en": "eCART (early warning)"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "KATE (فرز طوارئ)",
+            "en": "KATE (ED triage)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "AI فطام التنفس",
+            "en": "AI ventilator weaning"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Epic Sepsis Model",
+            "en": "Epic Sepsis Model"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "AUROC 0.895",
+            "en": "AUROC 0.895"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "75.7% دقة فرز",
+            "en": "75.7% triage accuracy"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "AUC يصل إلى 0.976",
+            "en": "AUC up to 0.976"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "AUC 0.63 فقط — فشل",
+            "en": "AUC only 0.63 — failure"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "ليس كل AI ناجحاً: eCART (0.895) وفطام التنفس (0.976) قصص نجاح، بينما Epic Sepsis (0.63) فشل ذريع رغم انتشاره في مستشفيات تخدم 54% من المرضى الأمريكيين. الدرس للممرضات: الانتشار لا يعني الجودة.",
+        "en": "Not all AI succeeds: eCART (0.895) and ventilator weaning (0.976) are success stories, while Epic Sepsis (0.63) was a dismal failure despite deployment in hospitals serving 54% of US patients. The lesson for nurses: adoption doesn't mean quality."
+      }
+    },
+    {
+      "id": "nrs-match-006",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مصطلح تمريضي مرتبط بـ AI بتعريفه:",
+        "en": "Match each nursing AI term with its definition:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "التمريض الافتراضي",
+            "en": "Virtual nursing"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "التوثيق المحيط",
+            "en": "Ambient documentation"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "الإنذار المبكر التنبؤي",
+            "en": "Predictive early warning"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "الجدولة الذكية",
+            "en": "Smart scheduling"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "ممرضون عن بُعد يتولون مهام إدارية عبر كاميرات",
+            "en": "Remote nurses handling administrative tasks via cameras"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "تحويل المحادثات الصوتية لتوثيق آلي في السجل",
+            "en": "Converting voice conversations to automated EHR documentation"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "خوارزميات تكتشف تدهور المريض قبل ساعات",
+            "en": "Algorithms detecting patient deterioration hours in advance"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "توزيع المناوبات بناءً على حدة المرضى وكفاءات الممرضات",
+            "en": "Shift distribution based on patient acuity and nurse competencies"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه المصطلحات الأربعة تمثل الأعمدة الرئيسية لتطبيقات AI في التمريض: تقديم الرعاية عن بُعد، تقليل عبء التوثيق، التنبؤ المبكر بالمخاطر، وتحسين إدارة الكوادر.",
+        "en": "These four terms represent the main pillars of AI applications in nursing: remote care delivery, documentation burden reduction, early risk prediction, and workforce management optimization."
+      }
+    },
+    {
+      "id": "nrs-match-007",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل فئة من الممرضات بتصرفها المتوقع تجاه AI:",
+        "en": "Match each nursing group with their expected AI behavior:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "ممرضات بخبرة 40 سنة في Cedars-Sinai",
+            "en": "40-year veteran nurses at Cedars-Sinai"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "55% من الممرضات في دراسة إنتان",
+            "en": "55% of nurses in a sepsis study"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "طلاب تمريض سعوديون",
+            "en": "Saudi nursing students"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "ممرضات في Intermountain",
+            "en": "Nurses at Intermountain"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "وصفن Aiva بأنه «منقذ للحياة»",
+            "en": "Called Aiva 'a lifesaver'"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "لم يُغيّرن تقييمهن بعد تنبيه AI",
+            "en": "Didn't change their assessment after AI alert"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "79% يدعمون إدراج AI في المنهج",
+            "en": "79% support adding AI to curriculum"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "انخفض معدل الشواغر من 18% إلى 7%",
+            "en": "Vacancy rate dropped from 18% to 7%"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "الاستجابات تختلف بحسب السياق: الممرضات المخضرمات اللواتي جرّبن الأداة أحببنها، لكن من تلقّين تنبيهات دون تدريب لم يثقن بها. الطلاب متحمسون نظرياً. والمؤسسة التي دمجت AI مع إصلاحات شاملة حققت نتائج ملموسة.",
+        "en": "Responses vary by context: veteran nurses who tried the tool loved it, but those receiving alerts without training didn't trust them. Students are theoretically enthusiastic. And the institution that combined AI with comprehensive reforms achieved tangible results."
+      }
+    },
+    {
+      "id": "nrs-match-008",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مؤشر أداء بالقيمة الصحيحة:",
+        "en": "Match each performance indicator with the correct value:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "وقت إنذار eCART قبل التدهور",
+            "en": "eCART alert lead time before deterioration"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "تكلفة وكيل Hippocratic AI بالساعة",
+            "en": "Hippocratic AI agent hourly cost"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "انخفاض قرح الضغط بنظام AI",
+            "en": "AI pressure injury reduction"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "معدل دوران الممرضات السنوي",
+            "en": "Annual nurse turnover rate"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "5.8 ساعات في المتوسط",
+            "en": "5.8 hours on average"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "9 دولارات",
+            "en": "$9"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "من 21% إلى 4%",
+            "en": "From 21% to 4%"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "24% سنوياً",
+            "en": "24% annually"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل رقم يروي قصة: 5.8 ساعات = فرصة إنقاذ. 9 دولارات = تحدٍّ اقتصادي لمهنة التمريض. من 21% إلى 4% = دليل على فعالية AI الوقائي. 24% دوران = أزمة تحتاج حلولاً جذرية.",
+        "en": "Each number tells a story: 5.8 hours = a rescue opportunity. $9 = an economic challenge for the nursing profession. 21% to 4% = proof of preventive AI effectiveness. 24% turnover = a crisis needing fundamental solutions."
+      }
+    },
+    {
+      "id": "nrs-match-009",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تقنية AI بمرحلة رعاية المريض التي تخدمها:",
+        "en": "Match each AI technology with the patient care stage it serves:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "AI للتنبؤ بالإنتان",
+            "en": "AI sepsis prediction"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "AI لفطام التنفس الصناعي",
+            "en": "AI ventilator weaning"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "LEAF لتغيير الوضعية",
+            "en": "LEAF repositioning"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Hippocratic AI للمتابعة",
+            "en": "Hippocratic AI follow-up"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "الكشف المبكر عن العدوى قبل تفاقمها",
+            "en": "Early infection detection before escalation"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "الانتقال من الدعم التنفسي للتنفس المستقل",
+            "en": "Transitioning from respiratory support to independent breathing"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "الوقاية من مضاعفات طول الإقامة",
+            "en": "Preventing complications of prolonged stay"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "ضمان استمرارية الرعاية بعد مغادرة المستشفى",
+            "en": "Ensuring care continuity after hospital discharge"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "AI يخدم كل مراحل الرعاية: الكشف المبكر (إنتان) → العلاج المكثف (فطام) → الوقاية من المضاعفات (قرح الضغط) → المتابعة بعد الخروج. الممرضة تبقى المحور في كل مرحلة.",
+        "en": "AI serves all care stages: early detection (sepsis) → intensive treatment (weaning) → complication prevention (pressure injuries) → post-discharge follow-up. The nurse remains the hub at every stage."
+      }
+    },
+    {
+      "id": "nrs-match-010",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "وصّل كل أداة توثيق AI بالفئة التي تخدمها:",
+        "en": "Match each AI documentation tool with the group it serves:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Aiva Nurse Assistant",
+            "en": "Aiva Nurse Assistant"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "DAX Copilot",
+            "en": "DAX Copilot"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Abridge",
+            "en": "Abridge"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Epic Ambient AI",
+            "en": "Epic Ambient AI"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "مصمم خصيصاً للممرضات — إملاء في 50 حقلاً في Epic",
+            "en": "Designed specifically for nurses — dictation into 50 Epic fields"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "مصمم أساساً للأطباء — من Microsoft/Nuance",
+            "en": "Designed primarily for physicians — by Microsoft/Nuance"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "خفّض الإرهاق المهني من 51.9% إلى 38.8%",
+            "en": "Reduced burnout from 51.9% to 38.8%"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "قيد التجربة في 9 أنظمة صحية للتمريض",
+            "en": "Being piloted at 9 health systems for nursing"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل أداة تخدم فئة مختلفة: Aiva للممرضات، DAX للأطباء، Abridge يُقلل الإرهاق، وEpic تُوسّع التوثيق المحيط ليشمل التمريض. الممرضة تحتاج أداة مصممة لسير عملها — أدوات الأطباء لا تناسب احتياجاتها.",
+        "en": "Each tool serves a different group: Aiva for nurses, DAX for physicians, Abridge reduces burnout, and Epic is expanding ambient documentation to include nursing. Nurses need tools designed for their workflow — physician tools don't fit their needs."
+      }
+    },
+    {
+      "id": "nrs-sort-002",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مراحل دمج نظام AI للفرز في قسم طوارئ جديد:",
+        "en": "Order the phases of integrating an AI triage system into a new ED:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تقييم سير العمل الحالي وتحديد الفجوات في دقة الفرز",
+            "en": "Assess current workflow and identify triage accuracy gaps"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تدريب ممرضات الطوارئ على تفسير تنبيهات النظام والتعامل مع التناقضات",
+            "en": "Train ED nurses on interpreting system alerts and handling discrepancies"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تشغيل النظام بوضع صامت (لا يؤثر على القرارات) لمدة محددة لتقييم الأداء",
+            "en": "Run the system in silent mode (no impact on decisions) for a set period to evaluate performance"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تفعيل النظام كأداة دعم قرار مع مراجعة دورية للنتائج ورضا الممرضات",
+            "en": "Activate the system as a decision-support tool with periodic review of outcomes and nurse satisfaction"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "التدرج مهم: الفهم أولاً، ثم التدريب، ثم الاختبار الصامت، وأخيراً التفعيل. تخطي أي مرحلة يُعرّض لخطر إرهاق الإنذارات وفقدان ثقة الممرضات — كما حدث مع Epic Sepsis Model.",
+        "en": "Gradual rollout matters: understanding first, then training, then silent testing, and finally activation. Skipping any phase risks alert fatigue and loss of nurse trust — as happened with Epic Sepsis Model."
+      }
+    },
+    {
+      "id": "nrs-sort-003",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات الاستجابة لتنبيه AI بهبوط متوقع في ضغط دم مريض أثناء الجراحة:",
+        "en": "Order the response steps when AI alerts to expected blood pressure drop during surgery:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "مراجعة سياق التنبيه: اتجاه الضغط والأدوية الحالية وحالة السوائل",
+            "en": "Review alert context: BP trend, current medications, and fluid status"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "إبلاغ طبيب التخدير فوراً بالتنبيه ونتائج التقييم",
+            "en": "Immediately notify the anesthesiologist of the alert and assessment findings"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تحضير السوائل الوريدية وأدوية رفع الضغط للاستخدام الفوري",
+            "en": "Prepare IV fluids and vasopressors for immediate use"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "توثيق التنبيه والتدخل والاستجابة في السجل الجراحي",
+            "en": "Document the alert, intervention, and response in the surgical record"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "Hypotension Prediction Index يتنبأ بهبوط الضغط قبل حدوثه. الاستجابة المنظمة (تقييم → إبلاغ → تحضير → توثيق) تُقلل الوقت في ضغط خطير بنسبة 63%. كل ثانية تأخير تزيد خطر فشل الأعضاء.",
+        "en": "Hypotension Prediction Index predicts BP drops before they occur. The organized response (assess → notify → prepare → document) reduces time at dangerous pressure by 63%. Every second of delay increases organ failure risk."
+      }
+    },
+    {
+      "id": "nrs-sort-004",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب أولويات مديرة التمريض عند تبني AI لمواجهة نقص الكوادر:",
+        "en": "Order a nurse manager's priorities when adopting AI to address staffing shortages:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحديد المهام الإدارية التي تستهلك وقت الممرضات دون إضافة قيمة سريرية",
+            "en": "Identify administrative tasks consuming nurse time without adding clinical value"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "اختيار أدوات AI مصممة خصيصاً لسير عمل التمريض — وليس أدوات الأطباء",
+            "en": "Select AI tools designed specifically for nursing workflow — not physician tools"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تدريب الطاقم مع ربط التدريب بمسارات مهنية واضحة",
+            "en": "Train staff while linking training to clear career pathways"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "قياس التأثير على الإرهاق والاحتفاظ وجودة الرعاية — وليس فقط التوفير المالي",
+            "en": "Measure impact on burnout, retention, and care quality — not just financial savings"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "Intermountain Healthcare نجحت بهذا النهج: من 18% شواغر إلى 7% في سنتين. Cleveland Clinic أضافت المسارات المهنية وحققت 34% تحسّن في الاحتفاظ. المفتاح: لا تبدأ بالتكنولوجيا — بل بفهم المشكلة.",
+        "en": "Intermountain Healthcare succeeded with this approach: from 18% vacancies to 7% in two years. Cleveland Clinic added career pathways and achieved 34% retention improvement. The key: don't start with technology — start by understanding the problem."
+      }
+    },
+    {
+      "id": "nrs-sort-005",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مراحل تطور دور الممرضة مع انتشار AI في المستشفيات:",
+        "en": "Order the evolution phases of the nurse's role as AI spreads in hospitals:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تعلّم استخدام أدوات AI الأساسية (سجلات إلكترونية، أنظمة تنبيه)",
+            "en": "Learn to use basic AI tools (EHRs, alert systems)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تطوير مهارة التقييم النقدي لتنبيهات AI والتمييز بين الحقيقي والكاذب",
+            "en": "Develop critical evaluation skills for AI alerts — distinguishing real from false"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "المشاركة في حوكمة AI — تصميم السياسات وتقييم الأدوات الجديدة",
+            "en": "Participate in AI governance — designing policies and evaluating new tools"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "قيادة الابتكار — تحديد فرص جديدة لتطبيق AI في الرعاية التمريضية",
+            "en": "Lead innovation — identifying new AI application opportunities in nursing care"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الممرضة لا تتحول لمُشغّلة تقنية فحسب — بل تتطور من مستخدمة إلى مُقيّمة إلى مُشاركة في الحوكمة إلى قائدة ابتكار. هذا المسار يتطلب تعليماً مستمراً وثقافة مؤسسية تدعم التمكين.",
+        "en": "The nurse doesn't just become a tech operator — she evolves from user to evaluator to governance participant to innovation leader. This pathway requires continuous education and an institutional culture that supports empowerment."
+      }
+    },
+    {
+      "id": "nrs-sort-006",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات تقييم فعالية نظام AI تمريضي بعد تشغيله:",
+        "en": "Order the steps for evaluating a nursing AI system's effectiveness after deployment:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "جمع بيانات الأداء: دقة التنبيهات ومعدل الإيجابيات الكاذبة",
+            "en": "Collect performance data: alert accuracy and false positive rate"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "استطلاع رأي الممرضات: الثقة بالنظام والأثر على سير العمل والإرهاق",
+            "en": "Survey nurses: trust in the system and impact on workflow and burnout"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "مقارنة النتائج السريرية (معدلات السقوط، الإنتان، قرح الضغط) قبل وبعد",
+            "en": "Compare clinical outcomes (fall rates, sepsis, pressure injuries) before and after"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تعديل إعدادات النظام بناءً على النتائج وإعادة التقييم دورياً",
+            "en": "Adjust system settings based on findings and re-evaluate periodically"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "التقييم يجب أن يكون شاملاً: الأداء التقني + تجربة الممرضات + النتائج السريرية + التحسين المستمر. Epic Sepsis Model فشل لأنه نُشر بدون تقييم مستقل كافٍ — تقييم الشركة المصنّعة ليس كافياً.",
+        "en": "Evaluation must be comprehensive: technical performance + nurse experience + clinical outcomes + continuous improvement. Epic Sepsis Model failed because it was deployed without sufficient independent evaluation — manufacturer assessment isn't enough."
+      }
+    },
+    {
+      "id": "nrs-sort-007",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب الخطوات الصحيحة للاستفادة من نظام AI للتنبؤ بقرح الضغط:",
+        "en": "Order the correct steps for utilizing an AI pressure injury prediction system:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "مراجعة قائمة المرضى عاليي الخطورة حسب تصنيف النظام في بداية المناوبة",
+            "en": "Review the high-risk patient list per system classification at shift start"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "فحص جلد المرضى المُصنّفين عاليي الخطورة وتوثيق الحالة",
+            "en": "Inspect skin of high-risk classified patients and document status"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تنفيذ بروتوكول الوقاية الكامل: سطح داعم وتغيير وضعية وتغذية مناسبة",
+            "en": "Implement full prevention protocol: support surface, repositioning, and appropriate nutrition"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "مراجعة تحديثات النظام خلال المناوبة — خطورة المريض قد تتغير",
+            "en": "Review system updates during shift — patient risk may change"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "AI خفّض قرح الضغط من 21% إلى 4% لأنه يكتشف عوامل خطر خفية. لكن الممرضة تبقى هي من تفحص الجلد فعلياً وتُنفّذ البروتوكول. AI يُوجّه — والممرضة تُنقذ.",
+        "en": "AI reduced pressure injuries from 21% to 4% because it detects hidden risk factors. But the nurse is still the one who actually inspects the skin and implements the protocol. AI guides — the nurse saves."
+      }
+    },
+    {
+      "id": "nrs-sort-008",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب أولويات ممرضة تريد تطوير مهاراتها في AI التمريضي:",
+        "en": "Order the priorities for a nurse wanting to develop nursing AI skills:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "فهم المفاهيم الأساسية: ما هو التعلم الآلي وكيف تعمل أنظمة الإنذار",
+            "en": "Understand basic concepts: what is machine learning and how do alert systems work"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "التدرّب على الأدوات المُستخدمة فعلياً في مستشفاها (eCART, Aiva, KATE...)",
+            "en": "Practice with tools actually used in her hospital (eCART, Aiva, KATE...)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تعلّم قراءة الأبحاث: ما معنى AUC، ما الفرق بين ادعاء الشركة والتقييم المستقل",
+            "en": "Learn to read research: what AUC means, difference between vendor claims and independent evaluation"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "المشاركة في لجان تقييم أدوات AI الجديدة في المستشفى",
+            "en": "Participate in committees evaluating new AI tools in the hospital"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "المسار من الأساسيات إلى الممارسة إلى التقييم النقدي إلى القيادة. الممرضة التي تفهم ما معنى AUC 0.63 (فشل Epic Sepsis) مقابل 0.895 (نجاح eCART) تتخذ قرارات أفضل لمرضاها.",
+        "en": "The path from basics to practice to critical evaluation to leadership. A nurse who understands what AUC 0.63 (Epic Sepsis failure) vs. 0.895 (eCART success) means makes better decisions for her patients."
+      }
+    },
+    {
+      "id": "nrs-sort-009",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات إدارة حالة مريض يُنبّه نظام AI بخطر إنتان قبل ظهور أعراض واضحة:",
+        "en": "Order the steps for managing a patient when AI alerts to sepsis risk before clear symptoms appear:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "سحب مزرعة دم وعينات مختبرية (لاكتات، CBC) فوراً — حتى لو المريض يبدو مستقراً",
+            "en": "Draw blood cultures and lab samples (lactate, CBC) immediately — even if the patient looks stable"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "إبلاغ الطبيب بالتنبيه ونتائج المختبر لبدء المضاد الحيوي خلال الساعة الذهبية",
+            "en": "Notify the physician of the alert and lab results to start antibiotics within the golden hour"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "بدء سوائل وريدية وفقاً للبروتوكول مع مراقبة ضغط الدم وكمية البول",
+            "en": "Start IV fluids per protocol while monitoring blood pressure and urine output"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "توثيق التنبيه والتدخلات ومتابعة استجابة المريض كل ساعة",
+            "en": "Document the alert, interventions, and monitor patient response hourly"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "كل ساعة تأخير في علاج الإنتان تزيد معدل الوفيات. AI يكتشف الإنتان قبل ساعات — لكن فائدته تتحقق فقط إذا استجاب الفريق بسرعة. دراسة أثبتت أن المراجعة خلال 3 ساعات تُقلل وقت إعطاء المضاد بـ 1.8 ساعة.",
+        "en": "Every hour of delay in sepsis treatment increases mortality. AI detects sepsis hours early — but its benefit only materializes if the team responds quickly. A study proved that review within 3 hours reduces antibiotic administration time by 1.8 hours."
+      }
+    },
+    {
+      "id": "nrs-sort-010",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب الخطوات الصحيحة لتقييم موثوقية أداة AI تمريضية جديدة قبل تبنّيها:",
+        "en": "Order the correct steps for evaluating a new nursing AI tool's reliability before adoption:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "التحقق مما إذا كانت ادعاءات الدقة من تقييم مستقل أم من الشركة المصنّعة فقط",
+            "en": "Check whether accuracy claims are from independent evaluation or manufacturer only"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "البحث عن دراسات على مجموعات سكانية مشابهة لمرضاك (العمر، العرق، الحالة)",
+            "en": "Look for studies on patient populations similar to yours (age, ethnicity, condition)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تقييم معدل الإيجابيات الكاذبة وتأثيره على إرهاق الإنذارات في بيئتك",
+            "en": "Evaluate the false positive rate and its impact on alert fatigue in your setting"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تجربة النظام بوضع صامت في قسمك لمدة محددة قبل التفعيل الكامل",
+            "en": "Trial the system in silent mode in your unit for a set period before full activation"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "هذه المنهجية كانت ستمنع كارثة Epic Sepsis Model الذي ادّعى AUC 0.76-0.83 لكن التقييم المستقل أظهر 0.63 فقط. الممرضة المُثقّفة تقنياً تحمي مرضاها من أنظمة AI رديئة الجودة.",
+        "en": "This methodology would have prevented the Epic Sepsis Model disaster — it claimed AUC 0.76-0.83 but independent evaluation showed only 0.63. A tech-literate nurse protects her patients from poor-quality AI systems."
+      }
+    },
+    {
+      "id": "nrs-self-003",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت ممرض عناية مركزة بخبرة 10 سنوات. مستشفاك يُدخل نظام AI يتنبأ بالإنتان قبل 12 ساعة. لكنك تعلم أن 55% من زملائك لا يثقون بهذه التنبيهات. ما موقفك؟",
+        "en": "You're an ICU nurse with 10 years of experience. Your hospital is introducing an AI system that predicts sepsis 12 hours early. But you know 55% of colleagues don't trust these alerts. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتبنّى النظام بحماس وأُصبح سفيراً له — أُدرّب زملائي على كيفية تفسير التنبيهات",
+            "en": "Embrace the system enthusiastically and become its ambassador — training colleagues on interpreting alerts"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أستخدمه لنفسي لكن أحترم قرار من لا يريد الاعتماد عليه — الثقة تحتاج وقتاً",
+            "en": "Use it myself but respect those who don't want to rely on it — trust takes time"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أجرّبه بحذر — 55% عدم ثقة رقم مقلق ويجب فهم أسبابه قبل التوسع",
+            "en": "Try it cautiously — 55% distrust is concerning and its causes must be understood before expansion"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض استخدامه — إذا أغلب الممرضات لا يثقن به فهناك مشكلة حقيقية",
+            "en": "Refuse to use it — if most nurses don't trust it, there's a real problem"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "عدم ثقة 55% ليس دليلاً على فشل النظام — بل على فشل التطبيق والتدريب. دراسات تُظهر أن التدريب المناسب والنشر التدريجي يرفعان الثقة بشكل كبير. الممرض المبادر يمكنه قيادة التغيير.",
+        "en": "55% distrust isn't evidence of system failure — but of implementation and training failure. Studies show proper training and gradual deployment significantly increase trust. A proactive nurse can lead the change."
+      }
+    },
+    {
+      "id": "nrs-self-004",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "إدارة مستشفاك تخطط لاستخدام AI لتوزيع المناوبات تلقائياً بناءً على حدة المرضى وكفاءات كل ممرضة. ما رأيك؟",
+        "en": "Your hospital administration plans to use AI for automatically distributing shifts based on patient acuity and each nurse's competencies. What's your opinion?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فكرة ممتازة إذا كانت شفافة — أعرف لماذا حصلت على هذه المناوبة وأستطيع الاعتراض",
+            "en": "Excellent idea if transparent — I know why I got this shift and can object"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقبولة كاقتراح أولي تراجعه مديرة التمريض قبل الاعتماد النهائي",
+            "en": "Acceptable as an initial suggestion reviewed by the nurse manager before final approval"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلقة — الخوارزمية قد لا تراعي ظروفي الشخصية أو تفضيلاتي",
+            "en": "Worried — the algorithm may not account for my personal circumstances or preferences"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — الجدولة يجب أن تبقى بشرية بالكامل",
+            "en": "I refuse — scheduling should remain entirely human"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "أنظمة AI للجدولة خفّضت تكاليف العمل الإضافي 12% وحسّنت رضا الموظفين. المفتاح: الشفافية (لماذا هذا التوزيع) وإمكانية الاعتراض. الخوارزمية تقترح والإنسان يُقرّر.",
+        "en": "AI scheduling systems reduced overtime costs by 12% and improved staff satisfaction. The key: transparency (why this distribution) and the ability to object. The algorithm suggests and the human decides."
+      }
+    },
+    {
+      "id": "nrs-self-005",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "زميلتك تستخدم ChatGPT لصياغة ملاحظاتها التمريضية ثم تنسخها في السجل الإلكتروني. لا يوجد سياسة واضحة في المستشفى حول هذا. ما تصرفك؟",
+        "en": "Your colleague uses ChatGPT to draft her nursing notes then copies them into the EHR. There's no clear hospital policy about this. What's your action?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أناقش الأمر معها وأقترح أن نرفع الموضوع للإدارة لوضع سياسة واضحة تحمي الجميع",
+            "en": "Discuss it with her and suggest we raise the issue to management to establish a clear policy protecting everyone"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا أتدخل لكن أتأكد من عدم استخدام بيانات مرضى حقيقية في الأداة",
+            "en": "Don't intervene but make sure no real patient data is being entered into the tool"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أبلّغ الإدارة فوراً — هذا سلوك غير مقبول",
+            "en": "Report to management immediately — this is unacceptable behavior"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أفعل مثلها — إذا لا يوجد سياسة فلا مشكلة",
+            "en": "Do the same — if there's no policy, there's no problem"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "46% من الممرضات يستخدمن GenAI لكن 18% فقط من المؤسسات لديها سياسات. خصوصية المرضى هي الخطر الأكبر — إدخال بيانات حقيقية في أدوات خارجية قد يُشكّل انتهاكاً. المبادرة لوضع السياسة هي القيادة الحقيقية.",
+        "en": "46% of nurses use GenAI but only 18% of organizations have policies. Patient privacy is the biggest risk — entering real data into external tools may constitute a violation. Taking initiative to establish policy is true leadership."
+      }
+    },
+    {
+      "id": "nrs-self-006",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مستشفاك يُجرّب نظام AI يراقب حركة المرضى بالكاميرات للتنبؤ بالسقوط. بعض المرضى يشتكون من انتهاك الخصوصية. ما موقفك؟",
+        "en": "Your hospital is piloting an AI system that monitors patient movement via cameras to predict falls. Some patients complain about privacy violations. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أدعم النظام لكن أُصرّ على شرحه للمرضى وأخذ موافقتهم — الشفافية ضرورية",
+            "en": "Support the system but insist on explaining it to patients and getting consent — transparency is essential"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أدعم مع تحفظ — يجب التأكد من أن الصور لا تُحفظ ولا يراها غير المصرح لهم",
+            "en": "Support with reservations — must ensure images aren't stored and aren't seen by unauthorized personnel"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مقلق — مراقبة المرضى بالكاميرات في غرفهم الخاصة مسألة أخلاقية كبيرة",
+            "en": "Concerned — monitoring patients with cameras in their private rooms is a major ethical issue"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — حتى لو منع السقوط، الخصوصية حق لا يُنتهك",
+            "en": "I refuse — even if it prevents falls, privacy is a right that cannot be violated"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "LIDAR في Emory Healthcare يرسم خريطة حركة ثلاثية الأبعاد — ليس فيديو. Houston Methodist تستخدم «طَرق افتراضي» قبل التواصل. كلا النهجين يُظهر أن حلول الخصوصية موجودة — لكن يجب المطالبة بها وليس افتراضها.",
+        "en": "LIDAR at Emory creates a 3D movement map — not video. Houston Methodist uses a 'virtual knock' before connecting. Both approaches show privacy solutions exist — but they must be demanded, not assumed."
+      }
+    },
+    {
+      "id": "nrs-self-007",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مقال علمي يُظهر أن وكلاء AI الصوتيين يحصلون على تقييم 9.0/10 من المرضى مقابل 45-65 دولار/ساعة لتكلفة الممرضة. هل يقلقك هذا؟",
+        "en": "A scientific article shows AI voice agents receive 9.0/10 patient ratings vs. $45-65/hour for a nurse's cost. Does this concern you?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا — AI يتولى المتابعة الروتينية فأتفرّغ أنا لما لا يستطيعه: الرعاية المعقدة والإنسانية",
+            "en": "No — AI handles routine follow-up so I focus on what it can't: complex and human care"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "قلق محدود — يجب أن أطوّر مهاراتي في المجالات التي لا يستطيع AI تقديمها",
+            "en": "Limited concern — I need to develop skills in areas AI can't provide"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مقلق — الفرق في التكلفة قد يدفع المستشفيات لتقليص عدد الممرضات",
+            "en": "Concerning — the cost difference may push hospitals to reduce nurse numbers"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مقلق جداً — هذا بداية نهاية مهنة التمريض",
+            "en": "Very concerning — this is the beginning of the end of the nursing profession"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Hippocratic AI مصممة لمهام غير تشخيصية فقط مع تصعيد الحالات الخطرة لممرضة بشرية. ثلث الممرضات يعانين من إرهاق شديد — AI يمكنه تخفيف العبء الروتيني. المفتاح: الممرضة التي تُطوّر مهارات AI لا يستطيعها تبقى لا غنى عنها.",
+        "en": "Hippocratic AI is designed for non-diagnostic tasks only with escalation to human nurses. One-third of nurses suffer severe burnout — AI can relieve routine burden. The key: the nurse who develops skills AI can't provide remains indispensable."
+      }
+    },
+    {
+      "id": "nrs-self-008",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت قابلة في مستشفى يستخدم INFANT-Guardian لمراقبة نبض الجنين. النظام أشار لتسارع مقلق لكن تقييمك السريري يقول إن الوضع طبيعي. ما تفعلين؟",
+        "en": "You're a midwife at a hospital using INFANT-Guardian for fetal heart monitoring. The system flagged concerning tachycardia but your clinical assessment says it's normal. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أوثّق تقييمي وتنبيه النظام وأراقب عن كثب — التناقض بينهما يستحق مزيداً من اليقظة",
+            "en": "Document my assessment and the system's alert and monitor closely — the discrepancy deserves extra vigilance"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أثق بتقييمي لكن أُبلّغ الطبيب بالتناقض ليشاركني اتخاذ القرار",
+            "en": "Trust my assessment but notify the physician of the discrepancy to share decision-making"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتبع النظام تماماً — الخوارزمية أدق مني في قراءة CTG",
+            "en": "Follow the system completely — the algorithm is more accurate than me at reading CTG"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتجاهل النظام — 25 سنة خبرة في التوليد لا تُعادلها خوارزمية",
+            "en": "Ignore the system — 25 years of obstetric experience aren't matched by an algorithm"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "في مستشفى Mater Mothers، INFANT-Guardian ارتبط بانخفاض نتائج الولادة السيئة للنصف. لكن الخبرة السريرية أساسية — التوازن بين البيانات والحكم البشري هو مهارة القابلة في عصر AI.",
+        "en": "At Mater Mothers, INFANT-Guardian was associated with halving poor birth outcomes. But clinical experience is essential — balancing data with human judgment is the midwife's skill in the AI era."
+      }
+    },
+    {
+      "id": "nrs-self-009",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "تتلقين عرض عمل كـ«ممرضة افتراضية» — تعملين من المنزل وتُشرفين على 20 مريضاً عبر شاشات بدلاً من 5 مرضى جسدياً. ما شعورك؟",
+        "en": "You receive a job offer as a 'virtual nurse' — working from home monitoring 20 patients via screens instead of 5 patients physically. How do you feel?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة مثيرة — أُوسّع تأثيري وأحقق توازناً أفضل بين العمل والحياة",
+            "en": "Exciting opportunity — I expand my impact and achieve better work-life balance"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مهتمة لكن قلقة من فقدان مهارات الرعاية المباشرة مع الوقت",
+            "en": "Interested but worried about losing direct care skills over time"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "غير مرتاحة — التمريض الحقيقي يتطلب وجوداً جسدياً مع المريض",
+            "en": "Uncomfortable — real nursing requires physical presence with the patient"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — هذا ليس تمريضاً، هذا عمل مكتبي متنكّر",
+            "en": "I refuse — this isn't nursing, it's office work in disguise"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التمريض الافتراضي ينمو بسرعة: Houston Methodist وArdent Health وEmory Healthcare كلها توسّعت فيه. القلق من فقدان المهارات مشروع ويمكن معالجته بجدولة مختلطة (افتراضي + بعض المناوبات المباشرة).",
+        "en": "Virtual nursing is growing rapidly: Houston Methodist, Ardent Health, and Emory Healthcare have all expanded it. The concern about skill loss is legitimate and can be addressed with hybrid scheduling (virtual + some direct shifts)."
+      }
+    },
+    {
+      "id": "nrs-self-010",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مديرتك تقترح استخدام AI لتحليل ملاحظاتك التمريضية وتصنيفها حسب الجودة تلقائياً. ما رأيك؟",
+        "en": "Your manager suggests using AI to analyze your nursing notes and automatically classify them by quality. What's your opinion?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مفيد إذا استُخدم للتطوير والتعلم وليس للعقاب — أريد معرفة نقاط ضعفي في التوثيق",
+            "en": "Helpful if used for development and learning, not punishment — I want to know my documentation weaknesses"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقبول بشرط أن يكون التقييم النهائي بشرياً وليس آلياً بالكامل",
+            "en": "Acceptable if final evaluation is human, not fully automated"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مقلق — AI لا يفهم سياق الحالة الكاملة خلف كل ملاحظة",
+            "en": "Concerning — AI doesn't understand the full case context behind each note"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — التوثيق فن تمريضي لا يمكن لخوارزمية تقييمه",
+            "en": "I refuse — documentation is a nursing art that an algorithm can't evaluate"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "AI يمكنه كشف أنماط في التوثيق: ملاحظات ناقصة، تناقضات، أخطاء في رموز الأدوية. لكن استخدامه للمراقبة والعقاب يُدمّر الثقة. أفضل النماذج تستخدمه كأداة تعلّم ذاتي للممرضة وليس سلاحاً إدارياً.",
+        "en": "AI can detect documentation patterns: incomplete notes, inconsistencies, medication code errors. But using it for surveillance and punishment destroys trust. The best models use it as a self-learning tool for the nurse, not an administrative weapon."
+      }
+    },
+    {
+      "id": "nrs-self-011",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "دراسة أثبتت أن استخدام AI في المناطق النائية يمكنه تعويض غياب الأطباء المتخصصين. هل ترى هذا فرصة أم تهديداً لدورك كممرض ريفي؟",
+        "en": "A study proved AI in remote areas can compensate for the absence of specialist doctors. Do you see this as an opportunity or a threat to your role as a rural nurse?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة — AI يعطيني أدوات دعم قرار كنت أفتقدها وأصبح أكثر فعالية وأماناً لمرضاي",
+            "en": "Opportunity — AI gives me decision-support tools I lacked, making me more effective and safer for my patients"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "فرصة بشرط أن يكون هناك اتصال دائم بطبيب يمكنني الرجوع إليه عند الحاجة",
+            "en": "Opportunity provided there's always a physician I can consult when needed"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مقلق — قد تعتبر الإدارة أن AI يكفي وتُلغي طلباتي لتوظيف أطباء",
+            "en": "Concerning — management might consider AI sufficient and cancel my requests for hiring doctors"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تهديد — يعني أنهم لن يُرسلوا أطباء أبداً وسيكتفون بالتكنولوجيا",
+            "en": "Threat — it means they'll never send doctors and will settle for technology"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "AI في المناطق النائية أداة عدالة صحية: 12 ساعة إنذار مبكر تعني فرصة ترتيب النقل. لكن الممرضة يجب أن تُطالب بأن يكون AI إضافة للموارد البشرية — وليس بديلاً عنها.",
+        "en": "AI in remote areas is a health equity tool: 12 hours early warning means time to arrange transfers. But nurses must demand AI as an addition to human resources — not a substitute for them."
+      }
+    },
+    {
+      "id": "nrs-self-012",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مستشفاك يريد نشر كاميرات AI في كل غرف المرضى لمراقبة السلامة (سقوط، تغيرات حالة). أنت عضو في لجنة الأخلاقيات. ما توصيتك؟",
+        "en": "Your hospital wants to deploy AI cameras in all patient rooms for safety monitoring (falls, condition changes). You're on the ethics committee. What's your recommendation?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أوافق بشروط: موافقة المريض، «طَرق افتراضي» قبل التفعيل، وعدم حفظ الصور لغير الضرورة الطبية",
+            "en": "Approve with conditions: patient consent, 'virtual knock' before activation, and no image storage beyond medical necessity"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أوافق لأقسام العناية المركزة فقط حيث السلامة حرجة — وليس كل الأقسام",
+            "en": "Approve for ICU only where safety is critical — not all departments"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أطلب تأجيل القرار حتى تتوفر دراسات أكثر عن تأثير المراقبة على نفسية المرضى",
+            "en": "Request postponing the decision until more studies on surveillance's impact on patient psychology are available"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — حق الخصوصية يتفوق على أي فائدة تكنولوجية",
+            "en": "Refuse — the right to privacy supersedes any technological benefit"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "Houston Methodist وEmory Healthcare نجحتا بنشر كاميرات مع ضوابط خصوصية صارمة. المفتاح: الشفافية مع المريض والضوابط التقنية (طَرق افتراضي، عدم حفظ غير ضروري). الأخلاقيات ليست عائقاً — بل إطار لتطبيق AI المسؤول.",
+        "en": "Houston Methodist and Emory Healthcare successfully deployed cameras with strict privacy controls. The key: patient transparency and technical safeguards (virtual knock, no unnecessary storage). Ethics isn't a barrier — it's a framework for responsible AI deployment."
+      }
+    },
+    {
+      "id": "nrs-self-013",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت ممرض تعليمي في كلية تمريض. طلابك يستخدمون ChatGPT لحل الواجبات والتحضير للامتحانات. ما نهجك؟",
+        "en": "You're a nursing educator at a nursing college. Your students use ChatGPT for assignments and exam prep. What's your approach?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أدمج AI رسمياً في المنهج وأعلّمهم كيف يستخدمونه بمسؤولية ومتى لا يعتمدون عليه",
+            "en": "Officially integrate AI into the curriculum and teach them responsible use and when not to rely on it"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أسمح به كأداة مساعدة لكن أُصمّم الامتحانات بحيث تختبر التفكير النقدي لا المعلومات",
+            "en": "Allow it as a support tool but design exams that test critical thinking, not information"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أمنعه في الامتحانات لكن أسمح به في الواجبات مع الإسناد",
+            "en": "Ban it in exams but allow it in assignments with attribution"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أمنعه تماماً — الطالب يجب أن يتعلم بمفرده",
+            "en": "Ban it completely — students must learn on their own"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "62% من الممرضات يعتقدن أن دمج AI في التدريب يُسرّع إنتاجية الممرضات الجدد. الطالب الذي يتعلم استخدام AI بمسؤولية اليوم سيكون ممرضاً أفضل غداً. المنع لا يمنع الاستخدام — بل يمنع التعلم.",
+        "en": "62% of nurses believe AI in onboarding accelerates new nurse productivity. The student who learns responsible AI use today will be a better nurse tomorrow. Banning doesn't prevent use — it prevents learning."
+      }
+    },
+    {
+      "id": "nrs-self-014",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "قرأت أن AI كشف 4 أضعاف حالات توقف القلب مقارنة بالأنظمة التقليدية. هل تشعر أن هذا يُقلل من قيمة ملاحظاتك السريرية كممرضة؟",
+        "en": "You read that AI detected 4 times more cardiac arrests than traditional systems. Do you feel this diminishes the value of your clinical observations as a nurse?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا — AI يُكمل ملاحظاتي لا يُلغيها. أنا أُقيّم المريض كإنسان والنظام يحلل البيانات",
+            "en": "No — AI complements my observations, it doesn't replace them. I assess the patient as a person and the system analyzes data"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا، لكنه يدفعني لتطوير مهاراتي لأكون أكثر دقة في الملاحظة السريرية",
+            "en": "No, but it pushes me to develop my skills to be more precise in clinical observation"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نعم قليلاً — يبدو أن التكنولوجيا تتفوق على الحدس السريري",
+            "en": "A little — it seems technology surpasses clinical intuition"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "نعم كثيراً — إذا AI أفضل مني في الملاحظة فلماذا أنا موجودة؟",
+            "en": "Very much — if AI is better than me at observation, why am I here?"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "eCART يحلل عشرات المتغيرات في وقت واحد — مستحيل على أي إنسان. لكن الممرضة تُلاحظ ما لا تقيسه الأجهزة: تعبيرات الوجه، قلق العائلة، تغيرات دقيقة في سلوك المريض. AI قوي في البيانات والممرضة قوية في السياق — معاً أقوى.",
+        "en": "eCART analyzes dozens of variables simultaneously — impossible for any human. But the nurse notices what devices don't measure: facial expressions, family anxiety, subtle changes in patient behavior. AI is strong in data, the nurse is strong in context — together they're stronger."
+      }
+    },
+    {
+      "id": "nrs-self-015",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مستشفاك يريد ربط أجهزة مراقبة قابلة للارتداء (wearables) بنظام AI لمراقبة المرضى بعد الخروج. الممرضة تتلقى تنبيهات عن بُعد. ما شعورك تجاه هذا الدور الجديد؟",
+        "en": "Your hospital wants to link wearable monitoring devices to an AI system for post-discharge patient monitoring. The nurse receives remote alerts. How do you feel about this new role?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "متحمسة — أُتابع مرضاي بعد الخروج وأمنع إعادة القبول قبل أن تتفاقم حالتهم",
+            "en": "Excited — I follow up on my patients after discharge and prevent readmission before their condition worsens"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مهتمة لكن قلقة من حجم التنبيهات — لا أريد إرهاق إنذارات جديد",
+            "en": "Interested but worried about alert volume — I don't want a new alert fatigue"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "متحفظة — مسؤولية مريض لا أراه جسدياً محفوفة بالمخاطر القانونية",
+            "en": "Reserved — responsibility for a patient I can't physically see is legally risky"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — بعد خروج المريض مسؤوليتي تنتهي",
+            "en": "I refuse — my responsibility ends after patient discharge"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "أدوات AI لتقليل إعادة القبول حققت انخفاضاً 17% في إعادة القبول خلال 30 يوماً و28% خلال 90 يوماً. هذا يفتح دوراً تمريضياً جديداً: ممرضة ما بعد الخروج. القلق القانوني مشروع ويحتاج إطاراً تنظيمياً واضحاً.",
+        "en": "AI readmission reduction tools achieved 17% reduction in 30-day readmissions and 28% in 90-day readmissions. This opens a new nursing role: post-discharge nurse. Legal concerns are legitimate and need a clear regulatory framework."
+      }
+    },
+    {
+      "id": "nrs-self-016",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "بعد 3 أشهر من استخدام نظام AI في عملك، لاحظت أنك تعتمدين عليه أكثر وتفحصين المريض يدوياً أقل. هل هذا يقلقك؟",
+        "en": "After 3 months of using an AI system at work, you notice you rely on it more and manually check patients less. Does this concern you?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم — هذا بالضبط «فقدان المهارات» الذي حذّرت منه الأبحاث. سأعود لروتين الفحص اليدوي بانتظام",
+            "en": "Yes — this is exactly the 'deskilling' research warned about. I'll return to regular manual examination routines"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقلق نسبياً — سأحاول التوازن بين الاعتماد على AI والتقييم السريري المباشر",
+            "en": "Somewhat concerning — I'll try to balance AI reliance with direct clinical assessment"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "طبيعي — إذا النظام يعمل جيداً لماذا أكرر الفحص يدوياً؟",
+            "en": "Natural — if the system works well, why repeat the examination manually?"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا يقلقني — التكنولوجيا أفضل مني في هذا",
+            "en": "Doesn't concern me — technology is better than me at this"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "دراسة في Lancet 2025 وثّقت أول حالة «فقدان مهارات» بسبب AI: أطباء استخدموا AI لمنظار القولون لـ 3 أشهر انخفض أداؤهم بدون AI من 28.4% إلى 22.4% في كشف الأورام الحميدة. هذا ينطبق على التمريض أيضاً — الفحص اليدوي المنتظم مهارة يجب الحفاظ عليها.",
+        "en": "A 2025 Lancet study documented the first case of AI 'deskilling': doctors using AI-assisted colonoscopy for 3 months saw their unassisted adenoma detection drop from 28.4% to 22.4%. This applies to nursing too — regular manual assessment is a skill that must be maintained."
+      }
+    },
+    {
+      "id": "nrs-self-017",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "في استطلاع 2025-2026، كان القلق الأكبر لدى الممرضات تجاه AI هو فقدان «الاتصال الإنساني». هل تشاركين هذا القلق؟",
+        "en": "In the 2025-2026 survey, nurses' biggest AI concern was loss of 'human connection.' Do you share this concern?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أشاركه لكنني أعتقد أن AI يُحرّرني للتواصل الإنساني أكثر — إذا قلّص الأعمال الورقية",
+            "en": "I share it but believe AI frees me for more human connection — if it reduces paperwork"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أشاركه — لكن الحل هو تبني AI بوعي وليس رفضه",
+            "en": "I share it — but the solution is adopting AI consciously, not rejecting it"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نعم — التكنولوجيا تُبعدنا حتماً عن المريض",
+            "en": "Yes — technology inevitably distances us from the patient"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا — الاتصال الإنساني لن يتأثر مهما تطور AI",
+            "en": "No — human connection won't be affected no matter how AI develops"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "81% من الممرضات سيخترن المهنة مجدداً — مما يعني أنهن يُقدّرن جوهرها الإنساني. AI الناجح هو الذي يُقلل الوقت في الأعمال الورقية (مثل تقليص Baptist Health 37%) ويُتيح وقتاً أطول مع المريض.",
+        "en": "81% of nurses would choose the career again — meaning they value its human essence. Successful AI is one that reduces paperwork time (like Baptist Health's 37% reduction) and allows more time with the patient."
+      }
+    },
+    {
+      "id": "nrs-self-018",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت ممرضة في السعودية. رؤية 2030 تدفع نحو دمج AI في الرعاية الصحية بقوة. كيف تُقيّمين جاهزيتك الشخصية؟",
+        "en": "You're a nurse in Saudi Arabia. Vision 2030 strongly pushes AI integration in healthcare. How do you assess your personal readiness?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "جاهزة — أتابع التطورات وأُجرّب الأدوات المتاحة وأُشارك في تدريبات AI في المستشفى",
+            "en": "Ready — I follow developments, try available tools, and participate in AI training at the hospital"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "جاهزة جزئياً — أحتاج تدريباً منظماً على الأدوات المحددة المستخدمة في مستشفاي",
+            "en": "Partially ready — I need structured training on specific tools used in my hospital"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "غير جاهزة — لم أتلقَّ أي تدريب على AI ولا أعرف من أين أبدأ",
+            "en": "Not ready — I haven't received any AI training and don't know where to start"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "AI ليس من اهتماماتي — أركّز على الرعاية التقليدية فقط",
+            "en": "AI isn't my interest — I focus on traditional care only"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "79% من طلاب التمريض السعوديين يدعمون إدراج AI في المنهج. مستشفى الملك فيصل طوّر 30+ حلاً داخلياً. البيئة السعودية مهيّأة — والممرضة التي تتأخر ستجد نفسها في فجوة مهارات متزايدة.",
+        "en": "79% of Saudi nursing students support adding AI to the curriculum. King Faisal Hospital developed 30+ solutions in-house. The Saudi environment is ready — and the nurse who delays will find herself in a growing skills gap."
+      }
+    },
+    {
+      "id": "nrs-self-019",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "وكيل AI يتصل بمريضك بعد الخروج ويسألك عن حالته. المريض يظن أنه يتحدث مع ممرضة حقيقية. ما تقييمك الأخلاقي؟",
+        "en": "An AI agent calls your patient post-discharge to ask about their condition. The patient thinks they're talking to a real nurse. What's your ethical assessment?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "غير مقبول أخلاقياً — يجب أن يعرف المريض أنه يتحدث مع AI حتى لو كان الصوت واقعياً",
+            "en": "Ethically unacceptable — the patient must know they're talking to AI even if the voice is realistic"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "رمادي أخلاقياً — المهم هو جودة المتابعة وليس هوية المُتصل",
+            "en": "Ethically gray — what matters is follow-up quality, not the caller's identity"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مقبول إذا كان النظام يُصعّد لممرضة حقيقية عند الحاجة",
+            "en": "Acceptable if the system escalates to a real nurse when needed"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا مشكلة أخلاقية — التكنولوجيا تخدم المريض",
+            "en": "No ethical issue — technology serves the patient"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Hippocratic AI يتحدث بأكثر من 20 لغة وتقييم المرضى 9.0/10. لكن الشفافية واجب أخلاقي: المريض له الحق في معرفة ما إذا كان يتحدث مع إنسان أم خوارزمية. الثقة المبنية على خداع تنهار عند أول مشكلة.",
+        "en": "Hippocratic AI speaks 20+ languages with 9.0/10 patient ratings. But transparency is an ethical duty: the patient has the right to know whether they're speaking with a human or algorithm. Trust built on deception collapses at the first problem."
+      }
+    },
+    {
+      "id": "nrs-self-020",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مستشفاك يطلب منك الاختيار: تدريب مكثف على AI لمدة أسبوعين (بدون مناوبات) أو الاستمرار كما أنت. مع العلم أن الممرضات المدرّبات على AI حققن كفاءة أعلى 31%. ما تختارين؟",
+        "en": "Your hospital asks you to choose: two weeks of intensive AI training (no shifts) or continue as you are. Knowing that AI-trained nurses achieved 31% higher efficiency. What do you choose?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقبل فوراً — أسبوعان استثمار في مستقبلي المهني وسيعود بالنفع على مرضاي",
+            "en": "Accept immediately — two weeks investing in my career future that will benefit my patients"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقبل بشرط أن يكون التدريب عملياً على الأدوات المستخدمة فعلاً في مستشفاي",
+            "en": "Accept provided the training is practical and focused on tools actually used in my hospital"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "متردّدة — أسبوعان بعيدة عن مرضاي كثير وزملائي سيتحملون عبئاً إضافياً",
+            "en": "Hesitant — two weeks away from patients is a lot and colleagues will bear extra burden"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — لا أريد تغيير طريقة عملي الحالية",
+            "en": "Refuse — I don't want to change my current way of working"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Cleveland Clinic حققت 31% زيادة في الكفاءة و34% تحسّن في الاحتفاظ من خلال دمج تدريب AI مع مسارات مهنية. القلق على الزملاء مشروع — لكن التدريب الآن يمنع أزمة أكبر لاحقاً.",
+        "en": "Cleveland Clinic achieved 31% efficiency gain and 34% retention improvement by combining AI training with career pathways. Concern for colleagues is legitimate — but training now prevents a bigger crisis later."
       }
     }
   ]
