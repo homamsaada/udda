@@ -1,0 +1,237 @@
+{
+  "section_id": "law-sharia",
+  "section_name": { "ar": "القانون والشريعة", "en": "Law & Islamic Sharia" },
+  "version": "1.0",
+  "last_updated": "2026-04-05",
+  "questions": [
+    {
+      "id": "law-mcq-001",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت محامٍ في مكتب كبير وتستخدم أداة بحث قانوني مدعومة بالذكاء الاصطناعي. وجدت الأداة سابقة قضائية تدعم موقف موكّلك بشكل مثالي، لكنك لم تسمع بها من قبل. ما أول خطوة يجب أن تتخذها؟",
+        "en": "You're a lawyer at a major firm using an AI-powered legal research tool. The tool found a case precedent that perfectly supports your client's position, but you've never heard of it. What's your first step?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أضمّنها في المرافعة فوراً — الأداة موثوقة ومدفوعة الثمن", "en": "Include it in the brief immediately — the tool is reliable and expensive" }, "score": 0 },
+        { "id": "b", "text": { "ar": "أتحقق من وجود القضية فعلياً في قواعد البيانات القانونية الرسمية قبل أي استخدام", "en": "Verify the case actually exists in official legal databases before any use" }, "score": 3 },
+        { "id": "c", "text": { "ar": "أطلب من زميل مبتدئ التحقق منها لتوفير وقتي", "en": "Ask a junior associate to verify it to save my time" }, "score": 1 },
+        { "id": "d", "text": { "ar": "أتجاهلها لأنني لا أعرفها — الأفضل الاعتماد على سوابق أعرفها", "en": "Ignore it since I don't recognize it — better to rely on precedents I know" }, "score": 0.5 }
+      ],
+      "hint_after": {
+        "ar": "دراسة ستانفورد (2024) وجدت أن نماذج اللغة الكبيرة العامة تهلوس بنسبة 69-88% في الاستفسارات القانونية، وحتى الأدوات التجارية المتخصصة مثل Westlaw AI تهلوس بنسبة تتجاوز 34%. أكثر من 200 محكمة أمريكية تطلب الآن من المحامين التأكيد على مراجعة المصادر المولّدة بالذكاء الاصطناعي.",
+        "en": "A Stanford study (2024) found general-purpose LLMs hallucinate at 69-88% on legal queries, and even specialized commercial tools like Westlaw AI hallucinate over 34%. Over 200 U.S. courts now require lawyers to certify they've verified AI-generated sources."
+      }
+    },
+    {
+      "id": "law-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مستشار قانوني في شركة وتبحث عن أداة ذكاء اصطناعي لمراجعة العقود. أي أداة من التالية متخصصة فعلاً في إدارة دورة حياة العقود وتخدم شركات مثل L'Oréal وSalesforce؟",
+        "en": "You're in-house counsel looking for an AI tool for contract review. Which of the following tools actually specializes in contract lifecycle management and serves companies like L'Oréal and Salesforce?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "ChatGPT Enterprise", "en": "ChatGPT Enterprise" }, "score": 0 },
+        { "id": "b", "text": { "ar": "Ironclad", "en": "Ironclad" }, "score": 3 },
+        { "id": "c", "text": { "ar": "Grammarly Business", "en": "Grammarly Business" }, "score": 0 },
+        { "id": "d", "text": { "ar": "Harvey AI", "en": "Harvey AI" }, "score": 1 }
+      ],
+      "hint_after": {
+        "ar": "Ironclad متخصصة في إدارة دورة حياة العقود بالذكاء الاصطناعي وتخدم شركات كبرى. أما Harvey AI فمنصة بحث قانوني شاملة تقدّر بـ 11 مليار دولار وتخدم أكثر من 1,300 مؤسسة قانونية، لكن تركيزها أوسع من مجرد العقود.",
+        "en": "Ironclad specializes in AI-powered contract lifecycle management for major companies. Harvey AI is a comprehensive legal platform valued at $11 billion serving 1,300+ organizations, but its focus is broader than contracts alone."
+      }
+    },
+    {
+      "id": "law-mcq-003",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت باحث في الفقه الإسلامي وتريد استخدام أداة ذكاء اصطناعي للبحث في مسائل الفتوى. ما الموقف الشرعي السائد بين المؤسسات الإسلامية الكبرى تجاه استخدام AI في الإفتاء؟",
+        "en": "You're a researcher in Islamic jurisprudence wanting to use an AI tool for fatwa research. What is the prevailing position of major Islamic institutions regarding AI use in fatwa issuance?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "يجوز الاعتماد الكامل على AI في إصدار الفتاوى لأنه أسرع وأدق", "en": "Full reliance on AI for fatwa issuance is permissible as it's faster and more accurate" }, "score": 0 },
+        { "id": "b", "text": { "ar": "محرّم تماماً حتى كأداة مساعدة في البحث الفقهي", "en": "Completely forbidden even as an assistive tool for jurisprudential research" }, "score": 0 },
+        { "id": "c", "text": { "ar": "يجوز كأداة مساعدة في البحث، لكن إصدار الفتوى يبقى حصراً للمفتي المؤهل", "en": "Permissible as a research assistant, but fatwa issuance remains exclusively for qualified muftis" }, "score": 3 },
+        { "id": "d", "text": { "ar": "لا يوجد موقف واضح — المسألة لم تُبحث بعد", "en": "No clear position exists — the matter hasn't been studied yet" }, "score": 0.5 }
+      ],
+      "hint_after": {
+        "ar": "دار الإفتاء المصرية أفتت بعدم جواز الاعتماد على AI في الفتاوى لافتقاره للاجتهاد والتقوى. لكن سنغافورة طوّرت IftaSG كأداة بحث فقهي، ودبي أطلقت برنامج \"الإفتاء الافتراضي\"، والقرار النهائي يبقى بشرياً دائماً.",
+        "en": "Egypt's Dar al-Ifta ruled AI cannot issue fatwas as it lacks ijtihad and taqwa. However, Singapore developed IftaSG for fatwa research, and Dubai launched 'Virtual Ifta'', with the final decision always remaining human."
+      }
+    },
+    {
+      "id": "law-tf-001",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "قضية Mata v. Avianca عام 2023 كانت أول حالة موثقة يُعاقب فيها محامٍ بسبب تقديم استشهادات قانونية مُلفّقة بواسطة ChatGPT لمحكمة أمريكية.",
+        "en": "The Mata v. Avianca case in 2023 was the first documented case where a lawyer was sanctioned for submitting fabricated legal citations generated by ChatGPT to a U.S. court."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "المحامي ستيفن شوارتز قدّم 6 سوابق قضائية مُختلقة بالكامل بواسطة ChatGPT. غُرّم هو وزميله والمكتب 5,000 دولار لكل منهم. منذ ذلك الحين وثّق الباحثون أكثر من 486 حالة استشهاد قانوني ملفق بالذكاء الاصطناعي حول العالم.",
+        "en": "Attorney Steven Schwartz submitted 6 entirely fabricated case citations generated by ChatGPT. He, his co-counsel, and the firm were each fined $5,000. Since then, researchers have documented over 486 cases of AI-fabricated legal citations worldwide."
+      }
+    },
+    {
+      "id": "law-tf-002",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "بموجب قانون الذكاء الاصطناعي الأوروبي (EU AI Act)، تُصنَّف أنظمة الذكاء الاصطناعي المستخدمة في إدارة العدالة كأنظمة \"عالية الخطورة\" وتتطلب شفافية ورقابة بشرية.",
+        "en": "Under the EU AI Act, AI systems used in administering justice are classified as 'high-risk' and require transparency and human oversight."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "قانون AI الأوروبي (دخل حيز التنفيذ أغسطس 2024) يفرض على الأنظمة عالية الخطورة متطلبات صارمة تشمل الشفافية والرقابة البشرية، مع عقوبات تصل إلى 35 مليون يورو أو 7% من الإيرادات السنوية العالمية.",
+        "en": "The EU AI Act (effective August 2024) imposes strict requirements on high-risk systems including transparency and human oversight, with penalties up to €35 million or 7% of global annual revenue."
+      }
+    },
+    {
+      "id": "law-fill-001",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أصدرت نقابة المحامين الأمريكية (ABA) الرأي الرسمي رقم {{blank_1}} في يوليو 2024 كأول توجيه أخلاقي شامل بشأن استخدام المحامين للذكاء الاصطناعي التوليدي.",
+        "en": "The American Bar Association (ABA) issued Formal Opinion No. {{blank_1}} in July 2024 as the first comprehensive ethics guidance on lawyers' use of generative AI."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": { "ar": "512", "en": "512" },
+          "options": [
+            { "ar": "512", "en": "512" },
+            { "ar": "405", "en": "405" },
+            { "ar": "318", "en": "318" },
+            { "ar": "627", "en": "627" }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "الرأي 512 غطّى ستة التزامات أخلاقية: الكفاءة، السرية، التواصل مع العملاء، الصدق أمام المحكمة، الإشراف على المساعدين، والأتعاب المعقولة. لم تُنشئ أي ولاية أمريكية قواعد أخلاقية جديدة خاصة بالذكاء الاصطناعي — بل وسّعت القواعد القائمة لتشمله.",
+        "en": "Opinion 512 covered six ethical obligations: competence, confidentiality, client communication, candor toward tribunals, supervision, and reasonable fees. No U.S. state has created new AI-specific ethical rules — they've extended existing rules to cover AI."
+      }
+    },
+    {
+      "id": "law-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل أداة ذكاء اصطناعي قانونية بوظيفتها الرئيسية:",
+        "en": "Match each legal AI tool with its primary function:"
+      },
+      "left": [
+        { "id": "L1", "text": { "ar": "Harvey AI", "en": "Harvey AI" } },
+        { "id": "L2", "text": { "ar": "CoCounsel", "en": "CoCounsel" } },
+        { "id": "L3", "text": { "ar": "Luminance", "en": "Luminance" } },
+        { "id": "L4", "text": { "ar": "vLex Vincent AI", "en": "vLex Vincent AI" } }
+      ],
+      "right": [
+        { "id": "R1", "text": { "ar": "بحث قانوني شامل بتقنية الوكلاء لمكاتب المحاماة الكبرى", "en": "Comprehensive agentic legal research for major law firms" } },
+        { "id": "R2", "text": { "ar": "بحث قانوني مبني على محتوى Westlaw يخدم مليون مستخدم", "en": "Legal research grounded in Westlaw content serving 1 million users" } },
+        { "id": "R3", "text": { "ar": "مراجعة وثائق بتقنية Mixture-of-Experts توفر حتى 80% من الوقت", "en": "Document review using Mixture-of-Experts saving up to 80% of time" } },
+        { "id": "R4", "text": { "ar": "قانون مقارن عبر 17 دولة بتكلفة تبدأ من 399 دولاراً شهرياً", "en": "Comparative law across 17 countries starting at $399/month" } }
+      ],
+      "correct_pairs": [
+        { "left": "L1", "right": "R1" },
+        { "left": "L2", "right": "R2" },
+        { "left": "L3", "right": "R3" },
+        { "left": "L4", "right": "R4" }
+      ],
+      "hint_after": {
+        "ar": "سوق أدوات AI القانونية ينمو بسرعة: Harvey تُقدّر بـ 11 مليار دولار وتخدم 1,300+ مؤسسة في 60 دولة. CoCounsel وصل لمليون مستخدم في 107 دول. اعتماد تحليل العقود بالذكاء الاصطناعي ارتفع 17% بين الفرق القانونية الداخلية.",
+        "en": "The legal AI market is growing rapidly: Harvey is valued at $11 billion serving 1,300+ organizations in 60 countries. CoCounsel reached 1 million users in 107 countries. AI contract analysis adoption rose 17% among in-house legal teams."
+      }
+    },
+    {
+      "id": "law-sort-001",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات استخدام الذكاء الاصطناعي في إعداد مذكرة قانونية وفق أفضل الممارسات المهنية:",
+        "en": "Order the steps for using AI in preparing a legal brief according to professional best practices:"
+      },
+      "items": [
+        { "id": "S1", "text": { "ar": "تحديد المسألة القانونية وصياغة استعلام بحث واضح", "en": "Define the legal issue and formulate a clear research query" } },
+        { "id": "S2", "text": { "ar": "استخدام أداة AI قانونية متخصصة للبحث الأولي", "en": "Use a specialized legal AI tool for initial research" } },
+        { "id": "S3", "text": { "ar": "التحقق من كل استشهاد ومرجع في قواعد البيانات الرسمية", "en": "Verify every citation and reference in official databases" } },
+        { "id": "S4", "text": { "ar": "مراجعة المذكرة النهائية وإقرار المحامي بمسؤوليته عن المحتوى", "en": "Review the final brief and certify attorney responsibility for the content" } }
+      ],
+      "correct_order": ["S1", "S2", "S3", "S4"],
+      "hint_after": {
+        "ar": "التحقق من المصادر (الخطوة 3) هو الأكثر أهمية: حتى الأدوات التجارية المتخصصة تهلوس. Harvard Law School وجدت أن المساعدين القانونيين بمساعدة AI أنجزوا مراجعة المستندات أسرع بـ 58%، لكن بشرط المراجعة البشرية الدقيقة.",
+        "en": "Source verification (step 3) is most critical: even specialized commercial tools hallucinate. Harvard Law School found AI-assisted paralegals completed document review 58% faster, but only with careful human review."
+      }
+    },
+    {
+      "id": "law-self-001",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مكتب المحاماة الذي تعمل فيه يدرس الاشتراك في Harvey AI بتكلفة كبيرة. بعض الشركاء يرونها ضرورة تنافسية، وآخرون يعتبرونها مخاطرة. ما موقفك؟",
+        "en": "Your law firm is considering subscribing to Harvey AI at significant cost. Some partners see it as a competitive necessity, others view it as a risk. What's your position?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أؤيد بقوة — المكاتب التي لا تتبنى AI ستتخلف حتماً، ويجب أن نكون من الأوائل", "en": "Strongly support — firms that don't adopt AI will inevitably fall behind, we must be early movers" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أؤيد بحذر — نبدأ بتجربة محدودة في قسم واحد ونقيّم النتائج قبل التوسع", "en": "Cautiously support — start with a limited pilot in one department and evaluate results before expanding" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "متحفظ — التكلفة عالية ومخاطر الهلوسة والسرية تقلقني، ننتظر حتى تنضج التقنية", "en": "Hesitant — the cost is high and hallucination/confidentiality risks concern me, let's wait for the technology to mature" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "أرفض — المحاماة تعتمد على الخبرة البشرية والحكم الشخصي، والأدوات الآلية لن تحل محل ذلك", "en": "Oppose — law depends on human expertise and judgment, automated tools will never replace that" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "أكثر من نصف أكبر 100 مكتب محاماة أمريكي يستخدم Harvey AI حالياً. Goldman Sachs يقدّر أن 44% من المهام القانونية معرّضة لأتمتة AI — من أعلى النسب بين المهن. لكن الحكم البشري يبقى لا غنى عنه.",
+        "en": "Over half of the top 100 U.S. law firms currently use Harvey AI. Goldman Sachs estimates 44% of legal tasks are exposed to AI automation — among the highest of any profession. But human judgment remains indispensable."
+      }
+    },
+    {
+      "id": "law-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "عميل يسألك: \"هل يمكنني الاعتماد على تطبيق ذكاء اصطناعي للحصول على استشارة قانونية بدلاً من محامٍ؟\" كيف تجيبه؟",
+        "en": "A client asks you: 'Can I rely on an AI app for legal advice instead of a lawyer?' How do you respond?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أشرح له بوضوح حدود AI وأوضح أين يمكن أن يفيده وأين لا يغني عن محامٍ مؤهل", "en": "I clearly explain AI's limitations and show where it can help and where it can't replace a qualified lawyer" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أنصحه باستخدامه للمعلومات العامة فقط مع التأكيد على ضرورة مراجعة محامٍ للقرارات المهمة", "en": "I advise using it for general information only while emphasizing the need to consult a lawyer for important decisions" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "أحذّره بشدة من الاعتماد عليه لأن نسبة الأخطاء مرتفعة جداً وقد يتضرر قانونياً", "en": "I strongly warn him against relying on it because the error rate is very high and he could face legal harm" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "أقول له إن القانون مجال حساس لا يمكن لآلة أن تفهمه، ولا أرى أي فائدة من هذه التطبيقات", "en": "I tell him law is a sensitive field no machine can understand, and I see no benefit in these apps" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "Deloitte تتوقع أتمتة حوالي 100,000 وظيفة قانونية بحلول 2036. لكن مهام كالحكم الأخلاقي وفهم السياق والتفاوض تبقى بشرية. المحامي الذي يفهم AI ويعرف حدوده هو الأكثر قيمة في السوق.",
+        "en": "Deloitte projects approximately 100,000 legal roles automated by 2036. But tasks like ethical judgment, context understanding, and negotiation remain human. The lawyer who understands AI and knows its limits is most valuable in the market."
+      }
+    }
+  ]
+}
