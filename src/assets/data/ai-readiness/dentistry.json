@@ -1,8 +1,11 @@
 {
   "section_id": "dentistry",
-  "section_name": { "ar": "طب الأسنان", "en": "Dentistry" },
-  "version": "1.0",
-  "last_updated": "2026-04-04",
+  "section_name": {
+    "ar": "طب الأسنان",
+    "en": "Dentistry"
+  },
+  "version": "2.0",
+  "last_updated": "2026-04-06",
   "questions": [
     {
       "id": "dnt-mcq-001",
@@ -152,12 +155,27 @@
       "blanks": [
         {
           "id": "blank_1",
-          "correct": { "ar": "Neocis Yomi", "en": "Neocis Yomi" },
+          "correct": {
+            "ar": "Neocis Yomi",
+            "en": "Neocis Yomi"
+          },
           "options": [
-            { "ar": "Neocis Yomi", "en": "Neocis Yomi" },
-            { "ar": "Da Vinci 5", "en": "Da Vinci 5" },
-            { "ar": "Invisalign AI", "en": "Invisalign AI" },
-            { "ar": "CEREC Primemill", "en": "CEREC Primemill" }
+            {
+              "ar": "Neocis Yomi",
+              "en": "Neocis Yomi"
+            },
+            {
+              "ar": "Da Vinci 5",
+              "en": "Da Vinci 5"
+            },
+            {
+              "ar": "Invisalign AI",
+              "en": "Invisalign AI"
+            },
+            {
+              "ar": "CEREC Primemill",
+              "en": "CEREC Primemill"
+            }
           ]
         }
       ],
@@ -178,22 +196,82 @@
         "en": "Match each dental AI platform with its key competitive advantage:"
       },
       "left": [
-        { "id": "L1", "text": { "ar": "Pearl", "en": "Pearl" } },
-        { "id": "L2", "text": { "ar": "Overjet", "en": "Overjet" } },
-        { "id": "L3", "text": { "ar": "VideaHealth", "en": "VideaHealth" } },
-        { "id": "L4", "text": { "ar": "DentalMonitoring", "en": "DentalMonitoring" } }
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Pearl",
+            "en": "Pearl"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Overjet",
+            "en": "Overjet"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "VideaHealth",
+            "en": "VideaHealth"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "DentalMonitoring",
+            "en": "DentalMonitoring"
+          }
+        }
       ],
       "right": [
-        { "id": "R1", "text": { "ar": "ترخيص في 120 دولة وتغطية بانورامية + CBCT", "en": "Clearance in 120 countries with panoramic + CBCT coverage" } },
-        { "id": "R2", "text": { "ar": "أول ترخيص FDA لتجزئة التسوس + 5 تراخيص", "en": "First FDA caries segmentation clearance + 5 clearances" } },
-        { "id": "R3", "text": { "ar": "تحليل أكثر من 500 مليون أشعة سنوياً عبر 60+ DSO", "en": "Analyzing 500+ million X-rays annually across 60+ DSOs" } },
-        { "id": "R4", "text": { "ar": "متابعة تقويم عن بُعد لأكثر من 2 مليون مريض", "en": "Remote orthodontic monitoring for 2+ million patients" } }
+        {
+          "id": "R1",
+          "text": {
+            "ar": "ترخيص في 120 دولة وتغطية بانورامية + CBCT",
+            "en": "Clearance in 120 countries with panoramic + CBCT coverage"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أول ترخيص FDA لتجزئة التسوس + 5 تراخيص",
+            "en": "First FDA caries segmentation clearance + 5 clearances"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تحليل أكثر من 500 مليون أشعة سنوياً عبر 60+ DSO",
+            "en": "Analyzing 500+ million X-rays annually across 60+ DSOs"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "متابعة تقويم عن بُعد لأكثر من 2 مليون مريض",
+            "en": "Remote orthodontic monitoring for 2+ million patients"
+          }
+        }
       ],
       "correct_pairs": [
-        { "left": "L1", "right": "R1" },
-        { "left": "L2", "right": "R2" },
-        { "left": "L3", "right": "R3" },
-        { "left": "L4", "right": "R4" }
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
       ],
       "hint_after": {
         "ar": "Pearl وOverjet وVideaHealth تتنافس على سوق تحليل الأشعة، لكن كل واحدة تميزت بمسار مختلف. DentalMonitoring تعمل في مجال مختلف تماماً — متابعة التقويم بالكاميرا والذكاء الاصطناعي.",
@@ -212,12 +290,41 @@
         "en": "Order the steps for integrating an AI radiograph analysis system into a dental practice from start to finish:"
       },
       "items": [
-        { "id": "S1", "text": { "ar": "التحقق من توافق النظام مع برنامج إدارة العيادة ونظام الأشعة الحالي", "en": "Verify the system's compatibility with existing practice management software and imaging system" } },
-        { "id": "S2", "text": { "ar": "تدريب الفريق على تفسير تنبيهات الذكاء الاصطناعي وحدوده (ليس بديلاً عن التشخيص)", "en": "Train the team on interpreting AI alerts and its limitations (not a replacement for diagnosis)" } },
-        { "id": "S3", "text": { "ar": "تشغيل النظام على حالات سابقة كتجربة قبل الاستخدام مع المرضى", "en": "Run the system on past cases as a pilot before using it with patients" } },
-        { "id": "S4", "text": { "ar": "مراجعة دورية لمعدلات التوافق والاختلاف بين تشخيصك وتنبيهات الذكاء الاصطناعي", "en": "Periodically review agreement and disagreement rates between your diagnoses and AI alerts" } }
+        {
+          "id": "S1",
+          "text": {
+            "ar": "التحقق من توافق النظام مع برنامج إدارة العيادة ونظام الأشعة الحالي",
+            "en": "Verify the system's compatibility with existing practice management software and imaging system"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تدريب الفريق على تفسير تنبيهات الذكاء الاصطناعي وحدوده (ليس بديلاً عن التشخيص)",
+            "en": "Train the team on interpreting AI alerts and its limitations (not a replacement for diagnosis)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تشغيل النظام على حالات سابقة كتجربة قبل الاستخدام مع المرضى",
+            "en": "Run the system on past cases as a pilot before using it with patients"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "مراجعة دورية لمعدلات التوافق والاختلاف بين تشخيصك وتنبيهات الذكاء الاصطناعي",
+            "en": "Periodically review agreement and disagreement rates between your diagnoses and AI alerts"
+          }
+        }
       ],
-      "correct_order": ["S1", "S2", "S3", "S4"],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
       "hint_after": {
         "ar": "التكامل التقني أولاً، ثم التدريب البشري، ثم التجربة، ثم المراجعة المستمرة. 19% فقط من المنظمات الصحية التي نشرت AI أبلغت عن نجاح «عالٍ» — والسبب غالباً تخطّي خطوات التدريب والتجريب.",
         "en": "Technical integration first, then human training, then piloting, then continuous review. Only 19% of health systems deploying AI report 'high' success — often because training and piloting steps were skipped."
@@ -371,6 +478,4263 @@
       "hint_after": {
         "ar": "DentalMonitoring يخدم أكثر من 2 مليون مريض عالمياً وحصل على تمويل 100 مليون دولار عام 2025. سؤال المسؤولية القانونية مشروع تماماً ويجب الإجابة عليه قبل التبني، لكنه ليس سبباً للرفض المطلق.",
         "en": "DentalMonitoring serves 2+ million patients globally and secured $100 million in 2025 funding. The legal liability question is entirely legitimate and should be answered before adoption, but it's not grounds for outright refusal."
+      }
+    },
+    {
+      "id": "dnt-mcq-004",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب أسنان عام. نظام VideaHealth نُشر في جميع عيادات Aspen Dental البالغ عددها 1,100 عيادة خلال 6 أسابيع فقط (فبراير 2026). ما النتيجة التي أبلغت عنها العيادات التجريبية؟",
+        "en": "You're a general dentist. VideaHealth was rolled out to all 1,100 Aspen Dental offices in just 6 weeks (February 2026). What did pilot offices report?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "زيادة 12% في قبول العلاج الفوري في نفس اليوم",
+            "en": "12% increase in same-day treatment acceptance"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "انخفاض 20% في عدد المرضى بسبب مخاوفهم من AI",
+            "en": "20% decrease in patients due to AI concerns"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا فرق ملحوظ في الإيرادات أو قبول العلاج",
+            "en": "No noticeable difference in revenue or treatment acceptance"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "زيادة 50% في وقت الاستشارة بسبب شرح نتائج AI",
+            "en": "50% increase in consultation time due to explaining AI results"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "VideaHealth يخدم 90,000+ طبيب عبر 60+ شبكة عيادات ويحلل 500+ مليون أشعة سنوياً. زيادة 12% في قبول العلاج الفوري تعني إيرادات إضافية ومرضى يحصلون على رعاية أسرع. AI هنا لا يشخّص فقط — بل يساعد في إقناع المريض بالعلاج عبر تصوير مرئي للمشكلة.",
+        "en": "VideaHealth serves 90,000+ clinicians across 60+ DSOs, analyzing 500+ million X-rays annually. A 12% same-day treatment acceptance increase means additional revenue and patients getting faster care. AI here doesn't just diagnose — it helps convince patients through visual problem presentation."
+      }
+    },
+    {
+      "id": "dnt-mcq-005",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "كم عدد أجهزة AI لطب الأسنان التي حصلت على ترخيص FDA في عام 2025 وحده؟",
+        "en": "How many dental AI devices received FDA clearance in 2025 alone?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "5 أجهزة",
+            "en": "5 devices"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "18 جهازاً — أكثر من العامين السابقين مجتمعين",
+            "en": "18 devices — more than the prior two years combined"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "44 جهازاً",
+            "en": "44 devices"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "3 أجهزة فقط",
+            "en": "Only 3 devices"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "18 ترخيصاً في 2025 وحده ليصل الإجمالي إلى 44 جهازاً مرخصاً. الرقم 44 هو الإجمالي التراكمي حتى ديسمبر 2025 وليس في عام واحد. السوق بلغ 421-460 مليون دولار ويتجه نحو 3.1 مليار بحلول 2034.",
+        "en": "18 clearances in 2025 alone, bringing the total to 44 cleared devices. The number 44 is the cumulative total through December 2025, not in a single year. The market reached $421-460 million heading toward $3.1 billion by 2034."
+      }
+    },
+    {
+      "id": "dnt-mcq-006",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب أسنان تستخدم نظام Overjet. بيانات FDA أظهرت أن الأطباء فاتهم أسنان مصابة بالتسوس أقل بنسبة معينة عند استخدام النظام. ما هذه النسبة؟",
+        "en": "You use the Overjet system. FDA data showed dentists missed fewer teeth with caries when using it. What was this percentage?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "10% أقل",
+            "en": "10% fewer"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "25% أقل",
+            "en": "25% fewer"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "43% أقل",
+            "en": "43% fewer"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "60% أقل",
+            "en": "60% fewer"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "43% أقل من الأسنان المصابة بالتسوس فاتت الأطباء مع Overjet. النظام يملك 5+ تراخيص FDA (رقم قياسي في طب الأسنان) بما فيها أول وأوحد ترخيص لتجزئة التسوس. نوعيته المستقلة تبلغ 98.1%.",
+        "en": "Dentists missed 43% fewer teeth with caries using Overjet. The system holds 5+ FDA clearances (a dental record) including the first and only caries segmentation clearance. Its standalone specificity is 98.1%."
+      }
+    },
+    {
+      "id": "dnt-mcq-007",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "شركة Pearl حصلت على أكبر جولة تمويل في تاريخ AI لطب الأسنان. كم بلغت وما المستثمر الاستراتيجي المفاجئ؟",
+        "en": "Pearl secured the largest venture round in dental AI history. How much was it and who was the surprising strategic investor?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "58 مليون دولار — بمشاركة جمعية طب الأسنان الأمريكية (ADA)",
+            "en": "$58 million — with American Dental Association (ADA) participation"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "100 مليون دولار — بمشاركة Google Health",
+            "en": "$100 million — with Google Health participation"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "20 مليون دولار — بمشاركة جامعة هارفارد",
+            "en": "$20 million — with Harvard University participation"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "58 مليون دولار — بمشاركة شركة تأمين أسنان كبرى",
+            "en": "$58 million — with a major dental insurance company"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "Pearl جمعت 58 مليون دولار في جولة السلسلة B (2024) بمشاركة ADA كمستثمر استراتيجي. Pearl مرخصة في 120 دولة ويستخدمها 50,000+ طبيب. تدّعي كشف 37% أمراض أكثر وزيادة إنتاج العيادة الشهري 30,000 دولار.",
+        "en": "Pearl raised $58M in Series B (2024) with ADA as a strategic investor. Pearl is cleared in 120 countries with 50,000+ clinicians. It claims to detect 37% more disease and increase monthly practice production by $30,000."
+      }
+    },
+    {
+      "id": "dnt-mcq-008",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت أخصائي لثة. نظام HC-Net+ (نُشر في npj Digital Medicine 2025) قارن أداءه بأخصائيي اللثة في كشف أمراض اللثة من الأشعة البانورامية. ما كانت النتيجة؟",
+        "en": "You're a periodontist. The HC-Net+ system (published in npj Digital Medicine 2025) compared its performance to periodontal specialists in detecting periodontal disease from panoramic radiographs. What was the result?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI تفوّق على الأخصائيين: AUROC 94.2% مقابل 85.6%",
+            "en": "AI outperformed specialists: AUROC 94.2% vs 85.6%"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الأخصائيون تفوقوا على AI بفارق كبير",
+            "en": "Specialists significantly outperformed AI"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أداء متساوٍ تقريباً بدون فرق ذي دلالة",
+            "en": "Nearly equal performance with no significant difference"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "AI نجح فقط في الحالات المتقدمة وفشل في المبكرة",
+            "en": "AI succeeded only in advanced cases and failed in early ones"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "HC-Net+ تفوّق على أخصائيي اللثة (AUROC 94.2% مقابل 85.6%). الأهم: مكّن أطباء الأسنان المبتدئين من مطابقة أداء الأخصائيين عند استخدامه. هذا أول نموذج AI مبني على أشعة بانورامية مرتبطة بتشخيصات سريرية فعلية.",
+        "en": "HC-Net+ outperformed periodontal specialists (AUROC 94.2% vs 85.6%). Crucially: it enabled junior dentists to match specialist performance when using it. This is the first AI model built on panoramic radiographs linked to actual clinical diagnoses."
+      }
+    },
+    {
+      "id": "dnt-mcq-009",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "ما حجم سوق تصوير الأسنان في الشرق الأوسط في 2025؟",
+        "en": "What is the Middle East dental imaging market size in 2025?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقل من 10 ملايين دولار",
+            "en": "Less than $10 million"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "130+ مليون دولار ويتجه نحو 180+ مليون بحلول 2031",
+            "en": "$130+ million heading toward $180+ million by 2031"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مليار دولار",
+            "en": "$1 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا يوجد سوق — AI لم يصل لطب الأسنان في المنطقة",
+            "en": "No market — AI hasn't reached dentistry in the region"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "سوق تصوير الأسنان في الشرق الأوسط يبلغ 130+ مليون دولار ويتجه نحو 180+ مليون بحلول 2031. DentalMonitoring تخطط للتوسع في الشرق الأوسط باستثمار 100 مليون دولار. السعودية نشرت أول ميثاق أخلاقيات AI صحي في المنطقة (2022).",
+        "en": "Middle East dental imaging market is $130M+ heading to $180M+ by 2031. DentalMonitoring plans Middle East expansion with $100M investment. Saudi Arabia published the first national AI Ethics in Healthcare Charter in the region (2022)."
+      }
+    },
+    {
+      "id": "dnt-mcq-010",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب أسنان ترميمي. دراسات 2025 وجدت أن أدوات AI في تصميم التيجان CAD توفّر وقتاً ملحوظاً. كم يبلغ التوفير تقريباً؟",
+        "en": "You're a restorative dentist. 2025 studies found that AI-assisted CAD crown design tools save notable time. How much time is saved approximately?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "5 دقائق فقط لكل حالة",
+            "en": "Only 5 minutes per case"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "30-45 دقيقة لكل حالة مع تقليل إعادة الصنع 18%",
+            "en": "30-45 minutes per case with 18% reduction in remakes"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "ساعتان لكل حالة",
+            "en": "2 hours per case"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا توفير ملحوظ — AI يضيف تعقيداً",
+            "en": "No notable savings — AI adds complexity"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أدوات AI في CAD توفّر 30-45 دقيقة لكل حالة وتقلل إعادة الصنع 18% (Migliorati 2025). نظام 3Shape Automate يصمم تاجاً في 90 ثانية. أحد المختبرات ضاعف عدد الوحدات القابلة للتفريز يومياً — مما ضاعف كفاءة المواد والتوفير.",
+        "en": "AI CAD tools save 30-45 minutes per case and reduce remakes by 18% (Migliorati 2025). 3Shape Automate designs a crown in 90 seconds. One lab doubled daily millable units — doubling material efficiency and savings."
+      }
+    },
+    {
+      "id": "dnt-mcq-011",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت جراح فم. نظام Neocis Yomi S الروبوتي ساعد في وضع ما يقارب 100,000 زرعة. ما الميزة الرئيسية لنظام YomiPlan AI؟",
+        "en": "You're an oral surgeon. The Neocis Yomi S robot has assisted in placing nearly 100,000 implants. What is YomiPlan AI's key feature?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تحديد مواقع الأعصاب والجيوب تلقائياً من صور CBCT",
+            "en": "Automatic nerve and sinus segmentation from CBCT scans"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "وضع الزرعات بالكامل دون تدخل الجراح",
+            "en": "Placing implants entirely without surgeon intervention"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "اختيار نوع الزرعة المناسب تلقائياً",
+            "en": "Automatically selecting the appropriate implant type"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تحليل كثافة العظم فقط",
+            "en": "Analyzing bone density only"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "YomiPlan AI يحدد الأعصاب والجيوب تلقائياً من CBCT — مما يقلل مخاطر إصابة العصب السنخي السفلي أو اختراق الجيب الفكي. الروبوت لا يزرع وحده — الجراح يتحكم مع إرشاد روبوتي. حصل على ترخيص FDA في نوفمبر 2025.",
+        "en": "YomiPlan AI automatically segments nerves and sinuses from CBCT — reducing risk of inferior alveolar nerve injury or maxillary sinus perforation. The robot doesn't implant alone — the surgeon controls with robotic guidance. FDA cleared November 2025."
+      }
+    },
+    {
+      "id": "dnt-mcq-012",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "دراسة في npj Digital Medicine (2025) عن كشف أمراض اللثة وجدت أن نظام AI مكّن أطباء الأسنان المبتدئين من تحقيق نتيجة محددة. ما هي؟",
+        "en": "An npj Digital Medicine study (2025) on periodontal disease detection found AI enabled junior dentists to achieve a specific outcome. What was it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مطابقة أداء أخصائيي اللثة عند استخدام AI",
+            "en": "Matching periodontal specialist performance when using AI"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تشخيص أسرع بـ 50% لكن بدقة أقل",
+            "en": "50% faster diagnosis but with lower accuracy"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الاستغناء عن الحاجة للإحالة لأخصائي",
+            "en": "Eliminating the need for specialist referral"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تقليل وقت الفحص فقط دون تحسين الدقة",
+            "en": "Reducing exam time only without improving accuracy"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "AI مكّن المبتدئين من مطابقة أداء الأخصائيين. هذا يعني تقليل الفجوة بين طبيب الأسنان العام وأخصائي اللثة في الكشف المبكر — خاصة في مناطق تعاني نقصاً في الأخصائيين. أكثر من مليار شخص يعانون أمراض اللثة عالمياً.",
+        "en": "AI enabled juniors to match specialist performance. This means reducing the gap between general dentists and periodontists in early detection — especially in areas lacking specialists. Over 1 billion people suffer from periodontal disease globally."
+      }
+    },
+    {
+      "id": "dnt-mcq-013",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب أسنان تجميلي. نظام 3Shape Automate يستخدم الذكاء الاصطناعي التوليدي لتصميم التيجان. كم يستغرق تصميم تاج واحد؟",
+        "en": "You're a cosmetic dentist. 3Shape Automate uses generative AI for crown design. How long does it take to design a single crown?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "حوالي 90 ثانية",
+            "en": "About 90 seconds"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "15 دقيقة",
+            "en": "15 minutes"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "ساعة كاملة",
+            "en": "A full hour"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يوم كامل",
+            "en": "A full day"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "3Shape Automate يصمم تاجاً في 90 ثانية باستخدام AI توليدي — يحلل عشرات الآلاف من المعاملات لكل تصميم. أحد المختبرات ضاعف عدد الوحدات القابلة للتفريز يومياً. لكن الطبيب/الفني لا يزال يراجع ويعدّل — AI يولّد الاقتراح لا القرار النهائي.",
+        "en": "3Shape Automate designs a crown in 90 seconds using generative AI — analyzing tens of thousands of parameters per design. One lab doubled daily millable units. But the dentist/technician still reviews and modifies — AI generates the suggestion, not the final decision."
+      }
+    },
+    {
+      "id": "dnt-mcq-014",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "بيانات Pearl تدّعي أن نظامها يكشف أمراضاً أكثر بنسبة معينة ويزيد إنتاج العيادة الشهري. ما الأرقام؟",
+        "en": "Pearl claims its system detects a certain percentage more disease and increases monthly practice production. What are the numbers?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "37% أمراض أكثر و30,000 دولار إنتاج شهري إضافي",
+            "en": "37% more disease and $30,000 additional monthly production"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "10% أمراض أكثر و5,000 دولار إنتاج إضافي",
+            "en": "10% more disease and $5,000 additional production"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "50% أمراض أكثر و100,000 دولار إنتاج إضافي",
+            "en": "50% more disease and $100,000 additional production"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم تنشر Pearl أي أرقام محددة",
+            "en": "Pearl hasn't published any specific numbers"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Pearl تدّعي كشف 37% أمراض أكثر وزيادة 30,000 دولار شهرياً. هذه أرقام الشركة — يجب التعامل معها بحذر حتى تُثبت بدراسات مستقلة. لكن استثمار ADA فيها يعطي مصداقية. Pearl مرخصة في 120 دولة مع 50,000+ طبيب.",
+        "en": "Pearl claims 37% more disease detection and $30,000/month increase. These are company figures — treat with caution until independently validated. But ADA's investment adds credibility. Pearl is cleared in 120 countries with 50,000+ clinicians."
+      }
+    },
+    {
+      "id": "dnt-mcq-015",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "حصل Dr. Hamid على جائزة عالمية مرموقة في مجال AI لطب الأسنان عام 2025. ما هي؟",
+        "en": "Dr. Hamid received a prestigious global award in dental AI in 2025. What was it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "جائزة آلان تورينغ في AI لطب الأسنان، ويشغل منصب رئيس الفرع الشرق أوسطي لجمعية AI لطب الأسنان",
+            "en": "The Alan Turing Award in dental AI, and serves as President of the Middle East Chapter of the Dental AI Association"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "جائزة نوبل في الطب",
+            "en": "The Nobel Prize in Medicine"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "جائزة ADA لأفضل بحث سنوي",
+            "en": "ADA Best Annual Research Award"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "جائزة FDI للابتكار",
+            "en": "FDI Innovation Award"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "Dr. Hamid حصل على جائزة آلان تورينغ العالمية في AI لطب الأسنان ويرأس الفرع الشرق أوسطي لجمعية AI لطب الأسنان. معرض AEEDC Dubai 2026 استقطب أكثر من 80,000 زائر مع تركيز على ابتكارات AI في طب الأسنان.",
+        "en": "Dr. Hamid received the global Alan Turing Award in dental AI and presides over the Middle East Chapter of the Dental AI Association. AEEDC Dubai 2026 attracted 80,000+ visitors with a focus on dental AI innovations."
+      }
+    },
+    {
+      "id": "dnt-mcq-016",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "سوق AI لطب الأسنان بلغ 421-460 مليون دولار في 2024. ما التوقعات لعام 2034؟",
+        "en": "The dental AI market reached $421-460 million in 2024. What are the projections for 2034?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مليار دولار",
+            "en": "$1 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "3.1 مليار دولار بمعدل نمو 22% سنوياً",
+            "en": "$3.1 billion at 22% CAGR"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "10 مليارات دولار",
+            "en": "$10 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "سيتراجع بسبب مقاومة أطباء الأسنان",
+            "en": "It will decline due to dentist resistance"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "السوق يتجه نحو 3.1 مليار دولار بحلول 2034 بنمو 22% سنوياً. 44 جهازاً مرخصاً من FDA حتى 2025 مع تسارع واضح (18 في 2025 وحده). ADA وFDI وISO يعملون على معايير تقييم AI في أشعة الأسنان وتصميم التقويم والترميمات.",
+        "en": "The market heads toward $3.1B by 2034 at 22% CAGR. 44 FDA-cleared devices through 2025 with clear acceleration (18 in 2025 alone). ADA, FDI, and ISO are developing AI validation benchmarks for dental radiography, orthodontics, and restorative design."
+      }
+    },
+    {
+      "id": "dnt-mcq-017",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب أسنان عام في السعودية. استطلاع 2022 وجد أن نسبة من أطباء الأسنان السعوديين استخدموا تطبيقات AI. كم بلغت؟",
+        "en": "You're a general dentist in Saudi Arabia. A 2022 survey found that a percentage of Saudi dental professionals had used AI applications. What was it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقل من 5%",
+            "en": "Less than 5%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حوالي 25%",
+            "en": "About 25%"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أكثر من 60%",
+            "en": "More than 60%"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم يُجرَ أي استطلاع",
+            "en": "No survey was conducted"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "~25% من أطباء الأسنان السعوديين استخدموا AI في 2022. السعودية نشرت أول ميثاق أخلاقيات AI صحي في الشرق الأوسط (2022، SDAIA/وزارة الصحة) يدمج القيم الإسلامية البيوأخلاقية مع مبادئ AI.",
+        "en": "~25% of Saudi dental professionals used AI in 2022. Saudi Arabia published the first national AI Ethics in Healthcare Charter in the Middle East (2022, SDAIA/MOH) integrating Islamic bioethical values with AI principles."
+      }
+    },
+    {
+      "id": "dnt-mcq-018",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "الطباعة ثلاثية الأبعاد المدعومة بـ AI قلّلت معدل إعادة صنع الأجهزة السنية. ما النسبة تقريباً؟",
+        "en": "AI-assisted 3D printing reduced dental device remake rates. By approximately what percentage?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "1-2% فقط",
+            "en": "Only 1-2%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "10-25%",
+            "en": "10-25%"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "50% أو أكثر",
+            "en": "50% or more"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم تُثبت أي دراسة تقليلاً",
+            "en": "No study has proven any reduction"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "إعدادات الطباعة المُحسّنة بـ AI (ارتفاع الطبقات، ملفات الطابعة الموثقة) تقلل إعادة الصنع 10-25% (Migliorati 2025). الطباعة ثلاثية الأبعاد الآن تنتج تيجاناً بدقة DLP تصل 97% مطابقة للمسح الأصلي.",
+        "en": "AI-optimized print settings (layer heights, validated printer profiles) reduce remakes by 10-25% (Migliorati 2025). 3D printing now produces crowns with DLP accuracy reaching 97% match to original scans."
+      }
+    },
+    {
+      "id": "dnt-mcq-019",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "الانطباعات الرقمية (Digital Impressions) تحقق دقة أعلى من التقليدية. ما الفرق تقريباً؟",
+        "en": "Digital impressions achieve higher accuracy than traditional ones. What is the approximate difference?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "99.7% مقابل 94.2% للتقليدية",
+            "en": "99.7% vs 94.2% for traditional"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "فرق بسيط لا يتجاوز 1%",
+            "en": "A small difference not exceeding 1%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "التقليدية لا تزال أدق",
+            "en": "Traditional is still more accurate"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم تُجرَ مقارنات موثوقة",
+            "en": "No reliable comparisons have been made"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الانطباعات الرقمية تحقق 99.7% دقة مقابل 94.2% للتقليدية. هذا يعني أقل تعديلات وأقل إعادة صنع. الدقة تصل 20-50 ميكرون — أفضل بكثير من مواد الانطباع التقليدية.",
+        "en": "Digital impressions achieve 99.7% accuracy vs 94.2% for traditional. This means fewer adjustments and fewer remakes. Precision reaches 20-50 microns — far better than conventional impression materials."
+      }
+    },
+    {
+      "id": "dnt-mcq-020",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "DentalMonitoring حصلت على تمويل ضخم في 2025 وتخدم ملايين المرضى. ما الأرقام؟",
+        "en": "DentalMonitoring secured major funding in 2025 and serves millions of patients. What are the numbers?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "100 مليون دولار تمويل و2+ مليون مريض عالمياً",
+            "en": "$100 million funding and 2+ million patients globally"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "10 ملايين دولار و100,000 مريض",
+            "en": "$10 million and 100,000 patients"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "500 مليون دولار و10 ملايين مريض",
+            "en": "$500 million and 10 million patients"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50 مليون دولار ومليون مريض",
+            "en": "$50 million and 1 million patients"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "DentalMonitoring جمعت 100 مليون دولار وتخدم 2+ مليون مريض بمتابعة تقويم عن بُعد بـ AI. تقلل الزيارات 25-67% حسب نوع العلاج. تخطط للتوسع في الشرق الأوسط.",
+        "en": "DentalMonitoring raised $100M and serves 2+ million patients with AI remote orthodontic monitoring. It reduces visits by 25-67% depending on treatment type. Expansion into the Middle East is planned."
+      }
+    },
+    {
+      "id": "dnt-mcq-021",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب أسنان عام وتريد اعتماد AI في عيادتك. بيانات Pearl تُظهر أن أنظمتها مرخصة في عدد كبير من الدول. كم دولة؟",
+        "en": "You're a general dentist wanting to adopt AI. Pearl's data shows its systems are cleared in a large number of countries. How many?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "20 دولة",
+            "en": "20 countries"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "120 دولة",
+            "en": "120 countries"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "50 دولة",
+            "en": "50 countries"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الولايات المتحدة فقط",
+            "en": "United States only"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Pearl مرخصة في 120 دولة — أوسع انتشار جغرافي في AI لطب الأسنان. كانت أول شركة AI سنية تحصل على ترخيص لتحليل الأشعة ثنائية وثلاثية الأبعاد معاً.",
+        "en": "Pearl is cleared in 120 countries — the widest geographic reach in dental AI. It was the first dental AI company cleared for both 2D and 3D radiographic analysis."
+      }
+    },
+    {
+      "id": "dnt-mcq-022",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما حساسية ونوعية AI في كشف التسوس حسب التحليل التجميعي (PLOS ONE 2024-2025)؟",
+        "en": "What are AI's sensitivity and specificity for caries detection per the pooled meta-analysis (PLOS ONE 2024-2025)?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "حساسية 0.85 ونوعية 0.90",
+            "en": "Sensitivity 0.85 and specificity 0.90"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حساسية 0.99 ونوعية 0.99",
+            "en": "Sensitivity 0.99 and specificity 0.99"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حساسية 0.50 ونوعية 0.70",
+            "en": "Sensitivity 0.50 and specificity 0.70"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم تُجرَ تحليلات تجميعية بعد",
+            "en": "No meta-analyses have been conducted yet"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "حساسية 0.85 ونوعية 0.90 — جيدة لكن ليست مثالية. التسوس المبكر بين الأسنان هو نقطة القوة لـ AI مقارنة بأطباء الأسنان العامين. لكن خطر الإفراط في التشخيص موثق ويجب مراعاته.",
+        "en": "Sensitivity 0.85 and specificity 0.90 — good but not perfect. Early interproximal caries is AI's strength vs general dentists. But overdiagnosis risk is documented and must be considered."
+      }
+    },
+    {
+      "id": "dnt-mcq-023",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت تدير مختبر أسنان وتريد تبني 3Shape Automate. ما أقصى عدد وحدات يمكن تفريزها يومياً بعد التبني مقارنة بالوضع الحالي؟",
+        "en": "You run a dental lab and want to adopt 3Shape Automate. What's the maximum daily milling capacity change after adoption compared to current?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "زيادة 10%",
+            "en": "10% increase"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مضاعفة العدد (2×)",
+            "en": "Doubled (2×)"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا تغيير — AI يصمم فقط لا يسرّع التصنيع",
+            "en": "No change — AI only designs, doesn't speed manufacturing"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "زيادة 5× أو أكثر",
+            "en": "5× increase or more"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "مختبر Nakanishi Dental Lab ضاعف عدد الوحدات القابلة للتفريز يومياً مع 3Shape Automate. السبب: AI يصمم في 90 ثانية بدل ساعات — فيزيد وقت التفريز الفعلي. الكفاءة المادية تتضاعف أيضاً مما يقلل التكاليف.",
+        "en": "Nakanishi Dental Lab doubled daily millable units with 3Shape Automate. The reason: AI designs in 90 seconds instead of hours — increasing actual milling time. Material efficiency also doubles, reducing costs."
+      }
+    },
+    {
+      "id": "dnt-mcq-024",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "في أي عام نشرت السعودية أول ميثاق أخلاقيات AI صحي في الشرق الأوسط؟",
+        "en": "In what year did Saudi Arabia publish the first national AI Ethics in Healthcare Charter in the Middle East?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "2018",
+            "en": "2018"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "2022",
+            "en": "2022"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "2025",
+            "en": "2025"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم تُنشر بعد",
+            "en": "Not yet published"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "السعودية نشرت الميثاق في 2022 عبر SDAIA ووزارة الصحة، ويدمج القيم الإسلامية البيوأخلاقية مع مبادئ AI. هذا الميثاق الأول من نوعه في المنطقة ويُوجّه تطبيقات AI الصحية بما فيها طب الأسنان.",
+        "en": "Saudi Arabia published the charter in 2022 via SDAIA and MOH, integrating Islamic bioethical values with AI principles. This first-of-its-kind charter guides health AI applications including dentistry."
+      }
+    },
+    {
+      "id": "dnt-mcq-025",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنظمة AI لأمراض اللثة تكشف فقدان العظم السنخي من الأشعة البانورامية بدقة تصنيف نمط فقدان العظم (أفقي مقابل زاوي) تبلغ:",
+        "en": "AI systems for periodontal disease detect alveolar bone loss from panoramic radiographs with bone loss pattern classification accuracy (horizontal vs angular) of:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "87%",
+            "en": "87%"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "50%",
+            "en": "50%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "99%",
+            "en": "99%"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم يُختبر التصنيف حسب النمط بعد",
+            "en": "Pattern classification hasn't been tested yet"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "دقة تصنيف نمط فقدان العظم 87% مع ICC يصل 0.80 لشدة الفقدان. هذا أول إطار يجمع بين كشف شدة ونمط فقدان العظم معاً باستخدام YOLOv8 وKeypoint R-CNN (Scientific Reports 2026).",
+        "en": "Bone loss pattern classification accuracy of 87% with ICC up to 0.80 for severity. This is the first framework combining bone loss severity and pattern detection using YOLOv8 and Keypoint R-CNN (Scientific Reports 2026)."
+      }
+    },
+    {
+      "id": "dnt-mcq-026",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت تخطط لبناء عيادة أسنان رقمية بالكامل. أيهما يوفّر أكثر: ماسح ضوئي داخل الفم + تفريز فوري مقابل الانطباعات التقليدية + مختبر خارجي؟",
+        "en": "You're planning a fully digital dental practice. Which saves more: intraoral scanner + chairside milling vs traditional impressions + external lab?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التدفق الرقمي يلغي شحن القوالب وتأخير المختبر وفشل الترميمات المؤقتة — ويوفّر 100+ دولار لكل حالة",
+            "en": "Digital workflow eliminates impression shipping, lab delays, and temporary restoration failures — saving $100+ per case"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "التقليدي لا يزال أوفر لأن المعدات الرقمية مكلفة",
+            "en": "Traditional is still cheaper because digital equipment is costly"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا فرق مالي — الوفورات تعوّض تكلفة المعدات تماماً",
+            "en": "No financial difference — savings exactly offset equipment costs"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الرقمي أغلى دائماً لكن أسرع",
+            "en": "Digital is always more expensive but faster"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "التدفق الرقمي يوفّر 100+ دولار لكل حالة بإلغاء الشحن والتأخير والترميمات المؤقتة. فني واحد ينجز 6+ حالات رقمية يومياً بدل 2 تقليدية. التكلفة الأولية للمعدات تُسترد عادة خلال سنة في عيادة متعددة الكراسي.",
+        "en": "Digital workflow saves $100+ per case by eliminating shipping, delays, and temporaries. One technician handles 6+ digital cases daily vs 2 traditional. Initial equipment cost is typically recovered within a year in a multi-operatory clinic."
+      }
+    },
+    {
+      "id": "dnt-mcq-027",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "معرض AEEDC Dubai 2026 — أكبر معرض أسنان في الشرق الأوسط — استقطب عدداً كبيراً من الزوار. كم بلغ؟",
+        "en": "AEEDC Dubai 2026 — the Middle East's largest dental exhibition — attracted a large number of visitors. How many?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أكثر من 80,000 زائر",
+            "en": "Over 80,000 visitors"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حوالي 10,000 زائر",
+            "en": "About 10,000 visitors"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "500,000 زائر",
+            "en": "500,000 visitors"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم يُعقد في 2026",
+            "en": "It wasn't held in 2026"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "AEEDC Dubai 2026 استقطب 80,000+ زائر مع AI كمحور رئيسي. المعرض عرض ابتكارات AI في الأشعة السنية والتقويم والتصميم الرقمي — مما يعكس نضج سوق AI لطب الأسنان في المنطقة.",
+        "en": "AEEDC Dubai 2026 attracted 80,000+ visitors with AI as a central focus. The exhibition showcased dental AI innovations in radiography, orthodontics, and digital design — reflecting the maturing dental AI market in the region."
+      }
+    },
+    {
+      "id": "dnt-mcq-028",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تحليل تلوي في PLOS ONE وجد أن نماذج التعلم العميق حققت حساسية أعلى بشكل ملحوظ مقارنة بأطباء الأسنان العامين في كشف نوع محدد من التسوس. ما هو؟",
+        "en": "A PLOS ONE meta-analysis found deep learning models achieved significantly higher sensitivity than general dentists for detecting a specific type of caries. Which type?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التسوس المبكر بين الأسنان (proximal/interproximal)",
+            "en": "Early proximal/interproximal caries"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "التسوس السطحي الواضح (occlusal)",
+            "en": "Obvious occlusal caries"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تسوس الجذور",
+            "en": "Root caries"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التسوس تحت الحشوات (secondary/recurrent)",
+            "en": "Secondary/recurrent caries under restorations"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "التسوس المبكر بين الأسنان هو المجال الأصعب بصرياً — وهو حيث يتفوق AI بشكل أوضح على أطباء الأسنان العامين. لكن هذا التفوق يأتي مع خطر الإفراط في التشخيص: النوعية 0.90 تعني أن 10% من التنبيهات قد تكون كاذبة.",
+        "en": "Early interproximal caries is the visually hardest area — and where AI most clearly outperforms general dentists. But this superiority comes with overdiagnosis risk: 0.90 specificity means 10% of alerts may be false."
+      }
+    },
+    {
+      "id": "dnt-mcq-029",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Overjet يملك رقماً قياسياً في تراخيص FDA لطب الأسنان. كم ترخيصاً يملك وما الترخيص الفريد بينها؟",
+        "en": "Overjet holds a record number of FDA clearances for dental AI. How many does it have and what's the unique clearance among them?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "5+ تراخيص — بما فيها أول وأوحد ترخيص لتجزئة التسوس",
+            "en": "5+ clearances — including the first and only caries segmentation clearance"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "3 تراخيص — جميعها لكشف أمراض اللثة",
+            "en": "3 clearances — all for periodontal disease detection"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "10 تراخيص — أكثرها للتقويم",
+            "en": "10 clearances — mostly for orthodontics"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ترخيص واحد فقط",
+            "en": "Only one clearance"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Overjet يملك 5+ تراخيص FDA (رقم قياسي) بما فيها أول ترخيص لتجزئة التسوس على مستوى العالم. نوعيته المستقلة 98.1%. الأطباء فاتهم 43% أقل من التسوس عند استخدامه — وهذا أقوى دليل سريري في AI لطب الأسنان.",
+        "en": "Overjet holds 5+ FDA clearances (a record) including the world's first caries segmentation clearance. Standalone specificity of 98.1%. Dentists missed 43% fewer caries using it — the strongest clinical evidence in dental AI."
+      }
+    },
+    {
+      "id": "dnt-mcq-030",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب أسنان في عيادة Aspen Dental. بعد تطبيق VideaHealth، لاحظت زيادة في قبول المرضى للعلاج الفوري. ما السبب الأرجح؟",
+        "en": "You're a dentist at Aspen Dental. After implementing VideaHealth, you notice increased patient acceptance of immediate treatment. What's the most likely reason?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI يعرض للمريض صورة بصرية واضحة للمشكلة — مما يقنعه بالعلاج أكثر من الوصف الشفهي",
+            "en": "AI shows the patient a clear visual of the problem — which is more convincing than verbal description"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "المرضى يثقون بالآلة أكثر من الطبيب",
+            "en": "Patients trust machines more than doctors"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "AI يخيف المرضى فيوافقون على العلاج بسرعة",
+            "en": "AI scares patients so they agree to treatment quickly"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "النظام يُلزم المرضى بقبول العلاج",
+            "en": "The system forces patients to accept treatment"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "التصوير المرئي بـ AI يُظهر للمريض تسوسه أو فقدان عظمه بوضوح — \"رؤية\" المشكلة أقوى من سماعها. هذا رفع قبول العلاج الفوري 12% في عيادات Aspen Dental التجريبية. AI هنا أداة تواصل لا مجرد أداة تشخيص.",
+        "en": "AI visualization shows patients their caries or bone loss clearly — 'seeing' the problem is more powerful than hearing about it. This raised same-day treatment acceptance by 12% in pilot Aspen Dental offices. AI here is a communication tool, not just a diagnostic one."
+      }
+    },
+    {
+      "id": "dnt-tf-003",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام Overjet حصل على أول وأوحد ترخيص FDA لتجزئة التسوس في العالم، مع نوعية مستقلة تبلغ 98.1%.",
+        "en": "Overjet received the first and only FDA clearance for caries segmentation worldwide, with standalone specificity of 98.1%."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. Overjet يملك 5+ تراخيص FDA (رقم قياسي). نوعية 98.1% تعني أن 1.9% فقط من تنبيهاته إيجابيات كاذبة — أفضل بكثير من المتوسط.",
+        "en": "True. Overjet holds 5+ FDA clearances (a record). 98.1% specificity means only 1.9% of alerts are false positives — far better than average."
+      }
+    },
+    {
+      "id": "dnt-tf-004",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام ClinCheck Live Plan من Align Technology يستخدم بيانات أكثر من 21 مليون مريض Invisalign سابق لتوليد خطة تقويم جاهزة للطبيب خلال 15 دقيقة تقريباً.",
+        "en": "Align Technology's ClinCheck Live Plan uses data from 21+ million past Invisalign patients to generate a doctor-ready orthodontic plan in about 15 minutes."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. الإطلاق العالمي بداية 2026. الخطة 'جاهزة للمراجعة' وليست نهائية — أخصائي التقويم يراجع ويعدّل. 15 دقيقة بدل أيام يعني تحوّل جذري في سير العمل.",
+        "en": "True. Global rollout Q1 2026. The plan is 'doctor-ready' not final — the orthodontist reviews and modifies. 15 minutes instead of days means a fundamental workflow shift."
+      }
+    },
+    {
+      "id": "dnt-tf-005",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "جميع أنظمة AI لطب الأسنان المرخصة من FDA مصنّفة كأجهزة من الفئة الثالثة (Class III) عالية المخاطر.",
+        "en": "All FDA-cleared dental AI systems are classified as Class III (high-risk) devices."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. معظم أنظمة AI لطب الأسنان مصنّفة كأجهزة من الفئة الثانية (Class II) — تتطلب شفافية في بيانات التدريب ومراقبة ما بعد السوق، لكنها ليست عالية المخاطر بمعيار FDA.",
+        "en": "False. Most dental AI systems are classified as Class II devices — requiring training data transparency and post-market monitoring, but not high-risk by FDA standards."
+      }
+    },
+    {
+      "id": "dnt-tf-006",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "الإمارات عيّنت أول وزير للذكاء الاصطناعي في العالم عام 2017، وعرضت ابتكارات AI في طب الأسنان في معرض AEEDC Dubai 2026.",
+        "en": "The UAE appointed the world's first Minister of AI in 2017 and showcased dental AI innovations at AEEDC Dubai 2026."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. AEEDC 2026 استقطب 80,000+ زائر. DentalMonitoring تخطط للتوسع في الشرق الأوسط. سوق تصوير الأسنان في المنطقة يبلغ 130+ مليون دولار ويتجه نحو 180+ مليون بحلول 2031.",
+        "en": "True. AEEDC 2026 attracted 80,000+ visitors. DentalMonitoring plans Middle East expansion. Regional dental imaging market is $130M+ heading to $180M+ by 2031."
+      }
+    },
+    {
+      "id": "dnt-tf-007",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام HC-Net+ لكشف أمراض اللثة تفوّق على أخصائيي اللثة في الدقة التشخيصية من الأشعة البانورامية (AUROC 94.2% مقابل 85.6%).",
+        "en": "The HC-Net+ system for periodontal disease detection outperformed periodontal specialists in diagnostic accuracy from panoramic radiographs (AUROC 94.2% vs 85.6%)."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح (npj Digital Medicine 2025). هذا أول نموذج AI مبني على أشعة بانورامية مرتبطة بتشخيصات سريرية فعلية. تم تدريبه وتحسينه على 10,881 أشعة واختباره على 382 أشعة مع تشخيصات سريرية و760 من 4 مراكز دولية.",
+        "en": "True (npj Digital Medicine 2025). This is the first AI model built on panoramic radiographs linked to actual clinical diagnoses. Trained and fine-tuned on 10,881 radiographs and tested on 382 clinically labeled and 760 from 4 international centers."
+      }
+    },
+    {
+      "id": "dnt-tf-008",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أدوات AI في تصميم CAD للتيجان والجسور توفّر 30-45 دقيقة لكل حالة وتقلل إعادة الصنع بنسبة 18% تقريباً.",
+        "en": "AI-assisted CAD tools for crown and bridge design save 30-45 minutes per case and reduce remakes by approximately 18%."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح (دراسات 2025). AI يتحقق تلقائياً من نقاط الاتصال بين الأسنان ومسار الإدخال والسماكة الدنيا — ويُنبّه عند وجود مشاكل قبل التصنيع. هذا يقلل الهدر ويحسّن رضا المرضى.",
+        "en": "True (2025 studies). AI automatically checks interproximal contacts, path of insertion, and minimum thickness — alerting to issues before manufacturing. This reduces waste and improves patient satisfaction."
+      }
+    },
+    {
+      "id": "dnt-tf-009",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام Pearl لا يملك ترخيصاً إلا في الولايات المتحدة فقط.",
+        "en": "Pearl is only cleared in the United States."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. Pearl مرخصة في 120 دولة — أوسع انتشار جغرافي في AI لطب الأسنان. كانت أول شركة AI سنية تحصل على ترخيص لتحليل الأشعة ثنائية وثلاثية الأبعاد معاً. يستخدمها 50,000+ طبيب.",
+        "en": "False. Pearl is cleared in 120 countries — the widest geographic reach in dental AI. It was the first dental AI company cleared for both 2D and 3D analysis. Used by 50,000+ clinicians."
+      }
+    },
+    {
+      "id": "dnt-tf-010",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أمراض اللثة تصيب أكثر من مليار شخص حول العالم وتُعتبر تحدياً كبيراً للصحة العامة بسبب ارتباطها بأمراض القلب والسكري وأمراض الجهاز التنفسي.",
+        "en": "Periodontal diseases affect over 1 billion people worldwide and represent a major public health challenge due to their links to cardiovascular disease, diabetes, and respiratory diseases."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. AI يمكن أن يُحدث فرقاً كبيراً هنا: الكشف المبكر عن فقدان العظم السنخي من الأشعة الروتينية يمنع فقدان الأسنان ويقلل المضاعفات الجهازية. HC-Net+ حقق AUROC 94.2% — أعلى من الأخصائيين.",
+        "en": "True. AI can make a huge difference here: early detection of alveolar bone loss from routine radiographs prevents tooth loss and reduces systemic complications. HC-Net+ achieved 94.2% AUROC — higher than specialists."
+      }
+    },
+    {
+      "id": "dnt-tf-011",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أكبر جولة تمويل في تاريخ AI لطب الأسنان كانت 58 مليون دولار لشركة Pearl في 2024 بمشاركة ADA كمستثمر استراتيجي.",
+        "en": "The largest venture round in dental AI history was $58 million for Pearl in 2024 with ADA as a strategic investor."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. مشاركة ADA تُشير إلى أن المؤسسة المهنية الأكبر في طب الأسنان تؤمن بمستقبل AI. DentalMonitoring جمعت 100 مليون دولار في 2025 لكن في مجال مختلف (متابعة التقويم لا الأشعة).",
+        "en": "True. ADA's participation signals that the largest dental professional organization believes in AI's future. DentalMonitoring raised $100M in 2025 but in a different domain (orthodontic monitoring, not radiography)."
+      }
+    },
+    {
+      "id": "dnt-tf-012",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أطباء الأسنان يقضون وقتاً أقل في الاستشارة عند استخدام AI — لأن المريض يرى المشكلة بصرياً فيقبل العلاج أسرع.",
+        "en": "Dentists spend less consultation time when using AI — because patients visually see the problem and accept treatment faster."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. VideaHealth أظهر زيادة 12% في قبول العلاج الفوري. التصوير المرئي بـ AI يُحوّل الحوار من 'الطبيب يقول هناك مشكلة' إلى 'المريض يرى المشكلة بعينه'. هذا يوفّر وقت الإقناع ويزيد ثقة المريض.",
+        "en": "True. VideaHealth showed 12% increase in same-day treatment acceptance. AI visualization shifts the dialogue from 'the doctor says there's a problem' to 'the patient sees the problem.' This saves persuasion time and increases patient trust."
+      }
+    },
+    {
+      "id": "dnt-tf-013",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Neocis Yomi هو النظام الروبوتي الوحيد الحاصل على ترخيص FDA لجراحة زراعة الأسنان، وقد ساعد في وضع ما يقارب 100,000 زرعة.",
+        "en": "Neocis Yomi is the only FDA-cleared robotic system for dental implant surgery, having assisted in placing nearly 100,000 implants."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. حصل Yomi S على ترخيص FDA في نوفمبر 2025. YomiPlan AI يحدد الأعصاب والجيوب تلقائياً من CBCT. الجراح يتحكم مع إرشاد روبوتي — الروبوت لا يزرع وحده.",
+        "en": "True. Yomi S received FDA clearance in November 2025. YomiPlan AI automatically segments nerves and sinuses from CBCT. The surgeon controls with robotic guidance — the robot doesn't implant alone."
+      }
+    },
+    {
+      "id": "dnt-tf-014",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنظمة AI في طب الأسنان لا تعمل على الأشعة ثلاثية الأبعاد (CBCT) — فقط على الأشعة البانورامية والذروية.",
+        "en": "Dental AI systems don't work on 3D imaging (CBCT) — only on panoramic and periapical radiographs."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. Pearl كانت أول شركة AI سنية تحصل على ترخيص لتحليل الأشعة ثنائية وثلاثية الأبعاد معاً. YomiPlan AI يحلل CBCT لتخطيط الزراعة. AI يعمل على البانورامية والذروية والـ Bitewing والـ CBCT.",
+        "en": "False. Pearl was the first dental AI company cleared for both 2D and 3D analysis. YomiPlan AI analyzes CBCT for implant planning. AI works on panoramic, periapical, bitewing, and CBCT imaging."
+      }
+    },
+    {
+      "id": "dnt-tf-015",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "VideaHealth تحلل أكثر من 500 مليون أشعة سنوياً عبر أكثر من 60 شبكة عيادات أسنان وتخدم 90,000+ طبيب.",
+        "en": "VideaHealth analyzes 500+ million X-rays annually across 60+ DSOs and serves 90,000+ clinicians."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. في فبراير 2026، نُشر VideaHealth في جميع عيادات Aspen Dental الـ 1,100 في 6 أسابيع فقط. هذا السرعة في النشر غير مسبوقة وتعكس نضج المنصة وسهولة تكاملها.",
+        "en": "True. In February 2026, VideaHealth was rolled out to all 1,100 Aspen Dental offices in just 6 weeks. This deployment speed is unprecedented and reflects platform maturity and integration ease."
+      }
+    },
+    {
+      "id": "dnt-tf-016",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "ADA وFDI وISO TC106 يعملون حالياً على تطوير معايير تقييم لـ AI في أشعة الأسنان وتصميم التقويم والترميمات.",
+        "en": "ADA, FDI, and ISO TC106 are currently developing validation benchmarks for AI in dental radiography, orthodontic simulation, and restorative design."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. التنظيم يلحق بالتقنية. EU AI Act يطلب قابلية التفسير والتدقيق في التحيز لأنظمة AI الصحية. HIPAA 2025 يعزز التشفير وسجلات الوصول والموافقة الصريحة.",
+        "en": "True. Regulation is catching up with technology. EU AI Act demands explainability and bias audits for health AI systems. HIPAA 2025 reinforces encryption, access logs, and explicit consent."
+      }
+    },
+    {
+      "id": "dnt-tf-017",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "الدقة الحدية (Marginal accuracy) للتيجان المصنوعة بالطباعة ثلاثية الأبعاد تفوّقت على تلك المصنوعة بالتفريز التقليدي في دراسات مقارنة حديثة.",
+        "en": "Marginal accuracy of 3D-printed crowns surpassed that of traditionally milled crowns in recent comparative studies."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. الطباعة ثلاثية الأبعاد تحقق دقة حدية وداخلية أعلى من التفريز التقليدي، مما يقلل فشل التاج وانزعاج المريض. تقنية DLP تحقق 97% مطابقة للمسح الأصلي.",
+        "en": "True. 3D printing achieves superior marginal and internal accuracy compared to traditional milling, reducing crown failure and patient discomfort. DLP technology achieves 97% match to original scans."
+      }
+    },
+    {
+      "id": "dnt-tf-018",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "AI التوليدي في تصميم التيجان (مثل 3Shape Automate) ينتج تصميمات نهائية لا تحتاج مراجعة بشرية.",
+        "en": "Generative AI in crown design (like 3Shape Automate) produces final designs that don't need human review."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. AI التوليدي ينتج اقتراحات 'جاهزة للمراجعة' وليست نهائية. الطبيب/الفني يراجع ويعدّل — AI يولّد المسودة لا القرار. مستخدمو 3Shape Dental System يمكنهم تعديل التصميمات المُستلمة.",
+        "en": "False. Generative AI produces 'review-ready' suggestions, not final designs. The dentist/technician reviews and modifies — AI generates the draft, not the decision. 3Shape Dental System users can edit received designs."
+      }
+    },
+    {
+      "id": "dnt-tf-019",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "AI يمكنه التنبؤ بخطر عدم تتبع التقويم (non-tracking) مبكراً باستخدام ميزات مثل زاوية الدوران وطول الجذر ودعم اللثة.",
+        "en": "AI can predict aligner non-tracking risk early using features like rotation angle, root length, and periodontal support."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. هذا يسمح لأخصائي التقويم بتعديل الخطة مبكراً قبل فشل التتبع — مما يقلل وقت العلاج والحاجة لإعادة التخطيط. AI يحوّل التقويم من 'ردّ فعل' إلى 'استباق'.",
+        "en": "True. This allows orthodontists to modify the plan early before tracking failure — reducing treatment time and replanning needs. AI transforms orthodontics from 'reactive' to 'proactive'."
+      }
+    },
+    {
+      "id": "dnt-tf-020",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "خوارزمية AI يمكنها تصميم تاج أسنان مشابه للسن الطبيعي شكلياً ووظيفياً — بعد التدريب على 600 مجموعة قوالب رقمية.",
+        "en": "An AI algorithm can design a dental crown similar to a natural tooth morphologically and functionally — after training on 600 digital cast sets."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح (Dental Materials 2023). الخوارزمية (3D-DCGAN) تعلّمت ملامح السن الطبيعي وأنتجت تيجاناً قابلة للمقارنة مع التصميم اليدوي والتصميم بـ CEREC — شكلاً ووظيفة (مقاومة الإرهاق الميكانيكي).",
+        "en": "True (Dental Materials 2023). The algorithm (3D-DCGAN) learned natural tooth features and produced crowns comparable to manual and CEREC designs — both morphologically and functionally (fatigue resistance)."
+      }
+    },
+    {
+      "id": "dnt-fill-002",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} يخدم أكثر من 90,000 طبيب عبر 60+ شبكة عيادات ويحلل أكثر من 500 مليون أشعة سنوياً، ونُشر في جميع عيادات Aspen Dental الـ 1,100 في فبراير 2026.",
+        "en": "The {{blank_1}} system serves 90,000+ clinicians across 60+ DSOs, analyzes 500+ million X-rays annually, and was deployed to all 1,100 Aspen Dental offices in February 2026."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "VideaHealth",
+            "en": "VideaHealth"
+          },
+          "options": [
+            {
+              "ar": "VideaHealth",
+              "en": "VideaHealth"
+            },
+            {
+              "ar": "Pearl",
+              "en": "Pearl"
+            },
+            {
+              "ar": "Overjet",
+              "en": "Overjet"
+            },
+            {
+              "ar": "Dentistry.AI",
+              "en": "Dentistry.AI"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "VideaHealth تحلل 500+ مليون أشعة سنوياً. في 6 أسابيع فقط نُشرت في 1,100 عيادة Aspen Dental — سرعة نشر غير مسبوقة تعكس نضج المنصة.",
+        "en": "VideaHealth analyzes 500+ million X-rays annually. In just 6 weeks it was deployed to 1,100 Aspen Dental offices — unprecedented deployment speed reflecting platform maturity."
+      }
+    },
+    {
+      "id": "dnt-fill-003",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} حقق AUROC 94.2% في كشف أمراض اللثة من الأشعة البانورامية — متفوقاً على أخصائيي اللثة الذين حققوا 85.6%.",
+        "en": "The {{blank_1}} system achieved AUROC 94.2% in detecting periodontal disease from panoramic radiographs — outperforming periodontal specialists who achieved 85.6%."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "HC-Net+",
+            "en": "HC-Net+"
+          },
+          "options": [
+            {
+              "ar": "HC-Net+",
+              "en": "HC-Net+"
+            },
+            {
+              "ar": "PerioDent AI",
+              "en": "PerioDent AI"
+            },
+            {
+              "ar": "Overjet Perio",
+              "en": "Overjet Perio"
+            },
+            {
+              "ar": "BoneLoss Pro",
+              "en": "BoneLoss Pro"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "HC-Net+ أول نموذج AI سني مبني على أشعة مرتبطة بتشخيصات سريرية فعلية. مكّن المبتدئين من مطابقة أداء الأخصائيين. أمراض اللثة تصيب مليار+ شخص عالمياً.",
+        "en": "HC-Net+ is the first dental AI model built on radiographs linked to actual clinical diagnoses. It enabled juniors to match specialist performance. Periodontal disease affects 1B+ people globally."
+      }
+    },
+    {
+      "id": "dnt-fill-004",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "تقنية {{blank_1}} من Align Technology تستخدم بيانات 21+ مليون مريض لتوليد خطة تقويم جاهزة للطبيب خلال 15 دقيقة تقريباً.",
+        "en": "Align Technology's {{blank_1}} uses data from 21+ million patients to generate a doctor-ready orthodontic plan in about 15 minutes."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "ClinCheck Live Plan",
+            "en": "ClinCheck Live Plan"
+          },
+          "options": [
+            {
+              "ar": "ClinCheck Live Plan",
+              "en": "ClinCheck Live Plan"
+            },
+            {
+              "ar": "iTero AI",
+              "en": "iTero AI"
+            },
+            {
+              "ar": "SmileDirect AI",
+              "en": "SmileDirect AI"
+            },
+            {
+              "ar": "Invisalign AutoPlan",
+              "en": "Invisalign AutoPlan"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "ClinCheck Live Plan يحوّل التخطيط من أيام إلى 15 دقيقة. لكنها خطة 'جاهزة للمراجعة' وليست نهائية — أخصائي التقويم يبقى صانع القرار.",
+        "en": "ClinCheck Live Plan transforms planning from days to 15 minutes. But it's a 'review-ready' plan, not final — the orthodontist remains the decision-maker."
+      }
+    },
+    {
+      "id": "dnt-fill-005",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "شركة {{blank_1}} تخدم أكثر من 2 مليون مريض عالمياً بمتابعة تقويم عن بُعد بالذكاء الاصطناعي، وحصلت على تمويل 100 مليون دولار في 2025.",
+        "en": "{{blank_1}} serves 2+ million patients globally with AI remote orthodontic monitoring and secured $100 million in 2025 funding."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "DentalMonitoring",
+            "en": "DentalMonitoring"
+          },
+          "options": [
+            {
+              "ar": "DentalMonitoring",
+              "en": "DentalMonitoring"
+            },
+            {
+              "ar": "Invisalign Go",
+              "en": "Invisalign Go"
+            },
+            {
+              "ar": "SmileDirectClub",
+              "en": "SmileDirectClub"
+            },
+            {
+              "ar": "Candid",
+              "en": "Candid"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "DentalMonitoring تقلل الزيارات 25-67% حسب العلاج. تخطط للتوسع في الشرق الأوسط. 100 مليون دولار تمويل يعكس ثقة المستثمرين في متابعة التقويم عن بُعد.",
+        "en": "DentalMonitoring reduces visits by 25-67% depending on treatment. Plans Middle East expansion. $100M funding reflects investor confidence in remote orthodontic monitoring."
+      }
+    },
+    {
+      "id": "dnt-fill-006",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} من 3Shape يستخدم الذكاء الاصطناعي التوليدي لتصميم التيجان في 90 ثانية فقط، وضاعف عدد الوحدات القابلة للتفريز يومياً في بعض المختبرات.",
+        "en": "3Shape's {{blank_1}} uses generative AI to design crowns in just 90 seconds, doubling daily millable units in some labs."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Automate",
+            "en": "Automate"
+          },
+          "options": [
+            {
+              "ar": "Automate",
+              "en": "Automate"
+            },
+            {
+              "ar": "TRIOS AI",
+              "en": "TRIOS AI"
+            },
+            {
+              "ar": "Dental System Pro",
+              "en": "Dental System Pro"
+            },
+            {
+              "ar": "ShapeOptimizer",
+              "en": "ShapeOptimizer"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Automate يحلل عشرات الآلاف من المعاملات لكل تصميم. النظام مفتوح — يقبل ملفات من Exocad وMedit وShining 3D وغيرها.",
+        "en": "Automate analyzes tens of thousands of parameters per design. The system is open — accepts files from Exocad, Medit, Shining 3D, and others."
+      }
+    },
+    {
+      "id": "dnt-fill-007",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "شركة {{blank_1}} كانت أول شركة AI سنية تحصل على ترخيص FDA لتحليل الأشعة ثنائية وثلاثية الأبعاد، ومرخصة في 120 دولة.",
+        "en": "{{blank_1}} was the first dental AI company cleared by FDA for both 2D and 3D radiographic analysis, licensed in 120 countries."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Pearl",
+            "en": "Pearl"
+          },
+          "options": [
+            {
+              "ar": "Pearl",
+              "en": "Pearl"
+            },
+            {
+              "ar": "Overjet",
+              "en": "Overjet"
+            },
+            {
+              "ar": "VideaHealth",
+              "en": "VideaHealth"
+            },
+            {
+              "ar": "Apteryx",
+              "en": "Apteryx"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Pearl مرخصة في 120 دولة مع 50,000+ طبيب. تدّعي كشف 37% أمراض أكثر وزيادة 30,000 دولار شهرياً. ADA استثمرت فيها استراتيجياً.",
+        "en": "Pearl is cleared in 120 countries with 50,000+ clinicians. Claims 37% more disease detection and $30,000/month increase. ADA invested strategically."
+      }
+    },
+    {
+      "id": "dnt-fill-008",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أداة AI لتصنيف نمط فقدان العظم السنخي (أفقي مقابل زاوي) حققت دقة تصنيف تبلغ {{blank_1}}%.",
+        "en": "An AI tool for classifying alveolar bone loss pattern (horizontal vs angular) achieved classification accuracy of {{blank_1}}%."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "87",
+            "en": "87"
+          },
+          "options": [
+            {
+              "ar": "87",
+              "en": "87"
+            },
+            {
+              "ar": "95",
+              "en": "95"
+            },
+            {
+              "ar": "50",
+              "en": "50"
+            },
+            {
+              "ar": "72",
+              "en": "72"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "أول إطار يجمع كشف شدة ونمط فقدان العظم معاً (Scientific Reports 2026). ICC يصل 0.80 للشدة. يستخدم YOLOv8 وKeypoint R-CNN.",
+        "en": "First framework combining bone loss severity and pattern detection (Scientific Reports 2026). ICC up to 0.80 for severity. Uses YOLOv8 and Keypoint R-CNN."
+      }
+    },
+    {
+      "id": "dnt-fill-009",
+      "type": "fill_blank",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 1,
+      "text": {
+        "ar": "أول ميثاق أخلاقيات AI صحي في الشرق الأوسط نشرته {{blank_1}} عام 2022 عبر SDAIA ووزارة الصحة.",
+        "en": "The first national AI Ethics in Healthcare Charter in the Middle East was published by {{blank_1}} in 2022 via SDAIA and the Ministry of Health."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "السعودية",
+            "en": "Saudi Arabia"
+          },
+          "options": [
+            {
+              "ar": "السعودية",
+              "en": "Saudi Arabia"
+            },
+            {
+              "ar": "الإمارات",
+              "en": "UAE"
+            },
+            {
+              "ar": "قطر",
+              "en": "Qatar"
+            },
+            {
+              "ar": "البحرين",
+              "en": "Bahrain"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "الميثاق يدمج القيم الإسلامية البيوأخلاقية مع مبادئ AI — نموذج فريد عالمياً. سوق تصوير الأسنان في الشرق الأوسط 130+ مليون دولار.",
+        "en": "The charter integrates Islamic bioethical values with AI principles — a globally unique model. Middle East dental imaging market is $130M+."
+      }
+    },
+    {
+      "id": "dnt-fill-010",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "الانطباعات الرقمية باستخدام تقنية CAD/CAM تحقق دقة تبلغ {{blank_1}}% مقارنة بـ 94.2% للانطباعات التقليدية.",
+        "en": "Digital impressions using CAD/CAM technology achieve {{blank_1}}% accuracy compared to 94.2% for traditional impressions."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "99.7",
+            "en": "99.7"
+          },
+          "options": [
+            {
+              "ar": "99.7",
+              "en": "99.7"
+            },
+            {
+              "ar": "97.0",
+              "en": "97.0"
+            },
+            {
+              "ar": "95.5",
+              "en": "95.5"
+            },
+            {
+              "ar": "93.0",
+              "en": "93.0"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "الانطباعات الرقمية تحقق دقة 20-50 ميكرون — أفضل بكثير من المواد التقليدية. هذا يعني تعديلات أقل وإعادة صنع أقل ورضا مرضى أعلى.",
+        "en": "Digital impressions achieve 20-50 micron precision — far better than traditional materials. This means fewer adjustments, fewer remakes, and higher patient satisfaction."
+      }
+    },
+    {
+      "id": "dnt-match-002",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل إحصائية بالمنصة الصحيحة:",
+        "en": "Match each statistic with the correct platform:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "50,000+ طبيب",
+            "en": "50,000+ clinicians"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "90,000+ طبيب",
+            "en": "90,000+ clinicians"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "2+ مليون مريض",
+            "en": "2+ million patients"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "100,000 زرعة تقريباً",
+            "en": "Nearly 100,000 implants"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "Pearl",
+            "en": "Pearl"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "VideaHealth",
+            "en": "VideaHealth"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "DentalMonitoring",
+            "en": "DentalMonitoring"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "Neocis Yomi",
+            "en": "Neocis Yomi"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل منصة لها حجم مختلف: Pearl (تشخيص الأشعة)، VideaHealth (أكبر قاعدة أطباء)، DentalMonitoring (متابعة التقويم)، Yomi (الجراحة الروبوتية). السوق يتنوع بسرعة.",
+        "en": "Each platform has a different scale: Pearl (radiograph diagnosis), VideaHealth (largest clinician base), DentalMonitoring (orthodontic monitoring), Yomi (robotic surgery). The market is diversifying rapidly."
+      }
+    },
+    {
+      "id": "dnt-match-003",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل تقنية بتخصصها في طب الأسنان الرقمي:",
+        "en": "Match each technology with its dental specialization:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "CBCT + YomiPlan AI",
+            "en": "CBCT + YomiPlan AI"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "ClinCheck Live Plan",
+            "en": "ClinCheck Live Plan"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "3Shape Automate",
+            "en": "3Shape Automate"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "HC-Net+",
+            "en": "HC-Net+"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تخطيط زراعة الأسنان الروبوتية",
+            "en": "Robotic implant surgery planning"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "تخطيط تقويم الأسنان الشفاف",
+            "en": "Clear aligner orthodontic planning"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تصميم التيجان والجسور بـ AI توليدي",
+            "en": "Crown and bridge design with generative AI"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "كشف أمراض اللثة من الأشعة البانورامية",
+            "en": "Periodontal disease detection from panoramic radiographs"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "AI في طب الأسنان لم يعد مقتصراً على كشف التسوس — يغطي الزراعة والتقويم والترميم واللثة. كل تخصص فرعي له أدواته المتخصصة.",
+        "en": "Dental AI is no longer limited to caries detection — it covers implants, orthodontics, restorations, and periodontics. Each subspecialty has its specialized tools."
+      }
+    },
+    {
+      "id": "dnt-match-004",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل ميزة لـ AI بالفائدة السريرية:",
+        "en": "Match each AI feature with its clinical benefit:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "كشف التسوس المبكر بين الأسنان",
+            "en": "Early interproximal caries detection"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "تجزئة فقدان العظم السنخي",
+            "en": "Alveolar bone loss segmentation"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "التصميم التوليدي للتيجان",
+            "en": "Generative crown design"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "المتابعة عن بُعد للتقويم",
+            "en": "Remote orthodontic monitoring"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تقليل الأسنان الفائتة 43% (Overjet)",
+            "en": "43% fewer missed teeth (Overjet)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "AUROC 94.2% متفوقاً على الأخصائيين",
+            "en": "94.2% AUROC outperforming specialists"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تصميم في 90 ثانية وتقليل إعادة الصنع 18%",
+            "en": "Design in 90 seconds with 18% fewer remakes"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تقليل الزيارات 25-67%",
+            "en": "25-67% fewer visits"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل تطبيق AI يحل مشكلة مختلفة: التسوس (دقة تشخيصية)، اللثة (تفوق على الأخصائيين)، الترميم (سرعة وكفاءة)، التقويم (راحة المريض). التأثير الكلي يتضاعف عند الجمع بينها.",
+        "en": "Each AI application solves a different problem: caries (diagnostic accuracy), periodontics (outperforming specialists), restorations (speed and efficiency), orthodontics (patient convenience). Combined impact multiplies."
+      }
+    },
+    {
+      "id": "dnt-match-005",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل رقم بالحقيقة الصحيحة عن سوق AI لطب الأسنان:",
+        "en": "Match each number with the correct dental AI market fact:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "44",
+            "en": "44"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "18",
+            "en": "18"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "$3.1 مليار",
+            "en": "$3.1 billion"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "22%",
+            "en": "22%"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "إجمالي أجهزة AI سنية مرخصة من FDA حتى ديسمبر 2025",
+            "en": "Total FDA-cleared dental AI devices through December 2025"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "عدد التراخيص الجديدة في 2025 وحده",
+            "en": "New clearances in 2025 alone"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "حجم السوق المتوقع بحلول 2034",
+            "en": "Projected market size by 2034"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "معدل النمو السنوي المركّب",
+            "en": "Compound annual growth rate"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "44 جهازاً تراكمياً، 18 في 2025 (أكثر من العامين السابقين)، 3.1 مليار بحلول 2034 بنمو 22% سنوياً. السوق يتسارع بشكل واضح — وأطباء الأسنان الذين يتبنون مبكراً سيكسبون ميزة تنافسية.",
+        "en": "44 cumulative devices, 18 in 2025 (more than previous 2 years), $3.1B by 2034 at 22% CAGR. The market is clearly accelerating — early adopters gain competitive advantage."
+      }
+    },
+    {
+      "id": "dnt-match-006",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل تحدي أخلاقي بمثاله في AI لطب الأسنان:",
+        "en": "Match each ethical challenge with its example in dental AI:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "الإفراط في التشخيص",
+            "en": "Overdiagnosis"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "المسؤولية القانونية",
+            "en": "Legal liability"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "خصوصية البيانات",
+            "en": "Data privacy"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "فجوة التبني",
+            "en": "Adoption gap"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "إيجابيات كاذبة في التسوس بين الأسنان تؤدي لعلاج غير ضروري",
+            "en": "False positives in interproximal caries leading to unnecessary treatment"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "من يتحمل المسؤولية عندما تفوت خوارزمية DentalMonitoring مشكلة؟",
+            "en": "Who bears responsibility when a DentalMonitoring algorithm misses a problem?"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "HIPAA 2025 يعزز التشفير والموافقة الصريحة لبيانات AI",
+            "en": "HIPAA 2025 reinforces encryption and explicit consent for AI data"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "25% فقط من أطباء الأسنان السعوديين استخدموا AI في 2022",
+            "en": "Only 25% of Saudi dentists used AI in 2022"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل تحدٍّ يحتاج حلاً مختلفاً: الإفراط في التشخيص (مراجعة بشرية)، المسؤولية (أطر قانونية واضحة)، الخصوصية (تنظيمات مُحدّثة)، فجوة التبني (تدريب ووعي).",
+        "en": "Each challenge needs a different solution: overdiagnosis (human review), liability (clear legal frameworks), privacy (updated regulations), adoption gap (training and awareness)."
+      }
+    },
+    {
+      "id": "dnt-match-007",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل مرحلة في التدفق الرقمي لطب الأسنان بالأداة المناسبة:",
+        "en": "Match each stage of the digital dental workflow with the appropriate tool:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "التقاط الانطباع الرقمي",
+            "en": "Capturing digital impression"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "تصميم الترميم",
+            "en": "Designing the restoration"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "التصنيع",
+            "en": "Manufacturing"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "مراقبة الجودة",
+            "en": "Quality control"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "ماسح ضوئي داخل الفم (iTero, TRIOS)",
+            "en": "Intraoral scanner (iTero, TRIOS)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "برنامج CAD مدعوم بـ AI (3Shape Automate, Dentbird)",
+            "en": "AI-powered CAD software (3Shape Automate, Dentbird)"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "آلة تفريز أو طابعة ثلاثية الأبعاد",
+            "en": "Milling machine or 3D printer"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "AI لفحص الحواف والاتصالات ومقاومة الإرهاق",
+            "en": "AI for checking margins, contacts, and fatigue resistance"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "التدفق الرقمي الكامل: مسح → تصميم بـ AI → تصنيع → فحص AI. كل مرحلة تستفيد من AI: المسح (دقة 99.7%)، التصميم (90 ثانية)، التصنيع (تقليل إعادة الصنع 10-25%)، الفحص (كشف المشاكل قبل التركيب).",
+        "en": "Full digital workflow: scan → AI design → manufacture → AI check. Each stage benefits from AI: scanning (99.7% accuracy), design (90 seconds), manufacturing (10-25% fewer remakes), checking (catching issues before delivery)."
+      }
+    },
+    {
+      "id": "dnt-match-008",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل بلد/منطقة خليجية بإنجازها في AI لطب الأسنان:",
+        "en": "Match each Gulf country/region with its dental AI achievement:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "السعودية",
+            "en": "Saudi Arabia"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "الإمارات",
+            "en": "UAE"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "AEEDC Dubai",
+            "en": "AEEDC Dubai"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Dr. Hamid",
+            "en": "Dr. Hamid"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "أول ميثاق أخلاقيات AI صحي في الشرق الأوسط (2022)",
+            "en": "First AI Ethics in Healthcare Charter in Middle East (2022)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أول وزير AI في العالم (2017)",
+            "en": "World's first AI Minister (2017)"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "80,000+ زائر مع تركيز على AI في 2026",
+            "en": "80,000+ visitors with AI focus in 2026"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "جائزة آلان تورينغ في AI لطب الأسنان (2025)",
+            "en": "Alan Turing Award in dental AI (2025)"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "الخليج العربي يبني منظومة AI سنية متكاملة: تنظيم أخلاقي (السعودية)، قيادة حكومية (الإمارات)، معارض عالمية (AEEDC)، وكوادر بشرية (Dr. Hamid). سوق تصوير الأسنان في المنطقة 130+ مليون دولار.",
+        "en": "The Gulf is building an integrated dental AI ecosystem: ethical regulation (Saudi), government leadership (UAE), global exhibitions (AEEDC), and human talent (Dr. Hamid). Regional dental imaging market is $130M+."
+      }
+    },
+    {
+      "id": "dnt-match-009",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل نوع أشعة بتطبيق AI الأنسب له:",
+        "en": "Match each radiograph type with its most suitable AI application:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "أشعة بانورامية",
+            "en": "Panoramic radiograph"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "أشعة ذروية (Periapical)",
+            "en": "Periapical radiograph"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "CBCT (ثلاثية الأبعاد)",
+            "en": "CBCT (3D)"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "صور كاميرا هاتف",
+            "en": "Smartphone camera images"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "كشف فقدان العظم وتصنيف أمراض اللثة (HC-Net+)",
+            "en": "Bone loss detection and periodontal staging (HC-Net+)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "كشف التسوس المبكر بين الأسنان (Overjet)",
+            "en": "Early interproximal caries detection (Overjet)"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تخطيط الزراعة وتحديد الأعصاب (YomiPlan)",
+            "en": "Implant planning and nerve identification (YomiPlan)"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "متابعة تقويم الأسنان عن بُعد (DentalMonitoring)",
+            "en": "Remote orthodontic monitoring (DentalMonitoring)"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل نوع أشعة يخدم تطبيقاً مختلفاً. AI لم يعد مقتصراً على نوع واحد — Pearl مثلاً تحلل الأشعة ثنائية وثلاثية الأبعاد معاً.",
+        "en": "Each radiograph type serves a different application. AI is no longer limited to one type — Pearl, for example, analyzes both 2D and 3D radiographs."
+      }
+    },
+    {
+      "id": "dnt-match-010",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "صِل كل جولة تمويل بالشركة الصحيحة:",
+        "en": "Match each funding round with the correct company:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "58 مليون دولار (2024)",
+            "en": "$58 million (2024)"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "100 مليون دولار (2025)",
+            "en": "$100 million (2025)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "ADA كمستثمر استراتيجي",
+            "en": "ADA as strategic investor"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "1,100 عيادة في 6 أسابيع",
+            "en": "1,100 offices in 6 weeks"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "Pearl",
+            "en": "Pearl"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "DentalMonitoring",
+            "en": "DentalMonitoring"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "Pearl أيضاً",
+            "en": "Pearl too"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "VideaHealth + Aspen Dental",
+            "en": "VideaHealth + Aspen Dental"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "Pearl جمعت أكبر جولة (58 مليون مع ADA). DentalMonitoring جمعت 100 مليون في مجال مختلف. VideaHealth نشرت في 1,100 عيادة بسرعة قياسية. كل شركة تبني نموذجاً مختلفاً.",
+        "en": "Pearl raised the largest round ($58M with ADA). DentalMonitoring raised $100M in a different domain. VideaHealth deployed to 1,100 offices at record speed. Each company builds a different model."
+      }
+    },
+    {
+      "id": "dnt-sort-002",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات التدفق الرقمي الكامل لتصنيع تاج أسنان في جلسة واحدة:",
+        "en": "Order the complete digital workflow steps for single-visit crown fabrication:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "مسح رقمي داخل الفم بدقة 20-50 ميكرون",
+            "en": "Intraoral digital scan at 20-50 micron precision"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "تصميم بـ AI التوليدي (90 ثانية) مع مراجعة الطبيب",
+            "en": "Generative AI design (90 seconds) with dentist review"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "تفريز أو طباعة ثلاثية الأبعاد (8-15 دقيقة)",
+            "en": "Milling or 3D printing (8-15 minutes)"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "فحص AI للحواف والاتصالات ثم تركيب وتعديل نهائي",
+            "en": "AI check of margins and contacts then fitting and final adjustment"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "التدفق الكامل من المسح للتركيب يمكن أن يتم في ساعة واحدة. هذا يلغي القوالب والمؤقتات والانتظار — ويوفّر 100+ دولار لكل حالة.",
+        "en": "The complete workflow from scan to fitting can happen in one hour. This eliminates impressions, temporaries, and waiting — saving $100+ per case."
+      }
+    },
+    {
+      "id": "dnt-sort-003",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب تطور AI في طب الأسنان زمنياً:",
+        "en": "Order the evolution of dental AI chronologically:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "أول ترخيص FDA لتشخيص ذاتي بـ AI في طب العيون (IDx-DR 2018) — ألهم طب الأسنان",
+            "en": "First autonomous AI diagnostic FDA clearance in ophthalmology (IDx-DR 2018) — inspired dentistry"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "Pearl تحصل على أول ترخيص FDA لتحليل أشعة الأسنان ثنائية وثلاثية الأبعاد",
+            "en": "Pearl receives first FDA clearance for both 2D and 3D dental radiograph analysis"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "Overjet يحصل على أول ترخيص FDA لتجزئة التسوس + 18 ترخيصاً سنياً في 2025",
+            "en": "Overjet receives first FDA caries segmentation clearance + 18 dental clearances in 2025"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "VideaHealth تنشر في 1,100 عيادة + ClinCheck Live Plan يُطلق عالمياً (2026)",
+            "en": "VideaHealth deploys to 1,100 offices + ClinCheck Live Plan launches globally (2026)"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "كل مرحلة بنت على سابقتها: من الإلهام الطبي العام → أول تراخيص → تسارع التراخيص → النشر الواسع. 2025-2026 هي نقطة التحول من التجريب إلى التبني الجماعي.",
+        "en": "Each phase built on the previous: from general medical inspiration → first clearances → clearance acceleration → wide deployment. 2025-2026 marks the shift from experimentation to mass adoption."
+      }
+    },
+    {
+      "id": "dnt-sort-004",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات تقييم نظام AI لكشف التسوس قبل شرائه لعيادتك:",
+        "en": "Order the steps for evaluating an AI caries detection system before purchasing for your practice:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "التحقق من تراخيص FDA/CE وبيانات التدريب المنشورة",
+            "en": "Verify FDA/CE clearances and published training data"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "مراجعة الأدلة السريرية المستقلة (دراسات ليست من الشركة نفسها)",
+            "en": "Review independent clinical evidence (studies not from the company itself)"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "اختبار النظام على حالات سابقة في عيادتك ومقارنة النتائج بتشخيصاتك",
+            "en": "Test the system on past cases in your practice and compare results to your diagnoses"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "حساب العائد على الاستثمار: هل الزيادة في قبول العلاج تبرر التكلفة الشهرية؟",
+            "en": "Calculate ROI: does the increase in treatment acceptance justify the monthly cost?"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "الترتيب يعكس مبدأ 'ثق لكن تحقق': التراخيص أولاً (الحد الأدنى)، ثم الأدلة المستقلة (ليست ادعاءات الشركة)، ثم الاختبار المحلي (هل يعمل في عيادتك؟)، وأخيراً الجدوى المالية.",
+        "en": "The order reflects 'trust but verify': clearances first (minimum bar), then independent evidence (not company claims), then local testing (does it work in your practice?), finally financial viability."
+      }
+    },
+    {
+      "id": "dnt-sort-005",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مستويات تأثير AI على تخصصات طب الأسنان من الأكثر تأثراً إلى الأقل حالياً:",
+        "en": "Order dental subspecialties by current AI impact from most to least affected:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "تشخيص أشعة الأسنان (76% من أجهزة FDA + 3 منصات رئيسية)",
+            "en": "Dental radiograph diagnosis (76% of FDA devices + 3 major platforms)"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "تقويم الأسنان (ClinCheck + DentalMonitoring)",
+            "en": "Orthodontics (ClinCheck + DentalMonitoring)"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "طب الأسنان الترميمي (CAD/CAM + AI التوليدي)",
+            "en": "Restorative dentistry (CAD/CAM + generative AI)"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "جراحة الزراعة الروبوتية (Yomi — نظام واحد فقط مرخص)",
+            "en": "Robotic implant surgery (Yomi — only one cleared system)"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "الأشعة تقود لأنها بيانات رقمية جاهزة للتحليل. التقويم ثانياً بفضل بيانات Invisalign الضخمة. الترميم ثالثاً مع AI التوليدي. الجراحة الروبوتية في البداية — نظام واحد فقط مرخص.",
+        "en": "Radiography leads because it's digital data ready for analysis. Orthodontics second thanks to massive Invisalign data. Restorative third with generative AI. Robotic surgery is earliest — only one cleared system."
+      }
+    },
+    {
+      "id": "dnt-sort-006",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات استخدام AI في التخطيط لزراعة أسنان مع نظام Yomi الروبوتي:",
+        "en": "Order the steps for using AI in implant planning with the Yomi robotic system:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "تصوير CBCT للمريض والتحميل على YomiPlan AI",
+            "en": "CBCT imaging of patient and upload to YomiPlan AI"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "AI يحدد الأعصاب والجيوب تلقائياً ويقترح موضع الزرعة",
+            "en": "AI automatically segments nerves and sinuses and suggests implant position"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "الجراح يراجع ويعدّل الخطة ثم يبدأ الجراحة مع إرشاد روبوتي",
+            "en": "Surgeon reviews and modifies the plan then begins surgery with robotic guidance"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "الروبوت يوجّه حركة المثقاب في الوقت الحقيقي — الجراح يتحكم بالقوة والسرعة",
+            "en": "Robot guides drill movement in real-time — surgeon controls force and speed"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "Yomi لا يزرع وحده — الجراح يتحكم بالكامل مع إرشاد روبوتي. YomiPlan AI يقلل مخاطر إصابة العصب السنخي واختراق الجيب. ساعد في وضع ~100,000 زرعة.",
+        "en": "Yomi doesn't implant alone — the surgeon maintains full control with robotic guidance. YomiPlan AI reduces risk of nerve injury and sinus perforation. It has assisted in placing ~100,000 implants."
+      }
+    },
+    {
+      "id": "dnt-sort-007",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب فوائد AI في طب الأسنان من الأكثر إثباتاً علمياً إلى الأقل:",
+        "en": "Order dental AI benefits from most to least scientifically proven:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "تحسين كشف التسوس المبكر (تحليلات تجميعية: حساسية 0.85، نوعية 0.90)",
+            "en": "Improved early caries detection (meta-analysis: sensitivity 0.85, specificity 0.90)"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "تقليل الأسنان الفائتة 43% عند استخدام Overjet (بيانات FDA)",
+            "en": "43% fewer missed teeth using Overjet (FDA data)"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "زيادة قبول العلاج الفوري 12% (دراسة عيادات Aspen)",
+            "en": "12% increase in same-day treatment acceptance (Aspen Dental study)"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "زيادة الإنتاج الشهري 30,000 دولار (ادعاء Pearl — غير مُثبت مستقلاً)",
+            "en": "$30,000 monthly production increase (Pearl claim — not independently verified)"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "التحليلات التجميعية (أعلى مستوى أدلة)، ثم بيانات FDA (مُراجعة تنظيمياً)، ثم دراسة عيادات (أدلة واقعية)، وأخيراً ادعاءات الشركات (تحتاج تحقق مستقل). كطبيب، ميّز بين مستويات الأدلة.",
+        "en": "Meta-analyses (highest evidence level), then FDA data (regulatory reviewed), then clinic studies (real-world evidence), finally company claims (need independent verification). As a dentist, distinguish between evidence levels."
+      }
+    },
+    {
+      "id": "dnt-sort-008",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات تبني عيادتك لنظام متابعة تقويم عن بُعد بـ AI:",
+        "en": "Order the steps for your practice adopting an AI remote orthodontic monitoring system:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "تقييم حالات التقويم الحالية: أيها مناسب للمتابعة عن بُعد وأيها يحتاج حضوراً شخصياً؟",
+            "en": "Assess current orthodontic cases: which are suitable for remote monitoring vs in-person?"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "تدريب الفريق والمرضى على التقاط الصور بالهاتف واستخدام التطبيق",
+            "en": "Train staff and patients on phone photo capture and app usage"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "بدء تجريبي مع حالات بسيطة (تقويم شفاف غير معقد) لمدة 3 أشهر",
+            "en": "Start a pilot with simple cases (uncomplicated clear aligners) for 3 months"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "قياس النتائج: عدد الزيارات الملغاة، رضا المرضى، معدل التتبع، والإيرادات",
+            "en": "Measure outcomes: cancelled visits, patient satisfaction, tracking rate, and revenue"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "البدء بالحالات البسيطة يقلل المخاطر ويبني الثقة. DentalMonitoring تقلل الزيارات 25-67% — لكن البدء بنسبة محافظة أحكم. 2+ مليون مريض يستخدمون المنصة حالياً.",
+        "en": "Starting with simple cases reduces risk and builds confidence. DentalMonitoring reduces visits 25-67% — but starting conservatively is wiser. 2+ million patients currently use the platform."
+      }
+    },
+    {
+      "id": "dnt-sort-009",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب تقنيات الطباعة ثلاثية الأبعاد في طب الأسنان من الأكثر دقة إلى الأقل:",
+        "en": "Order 3D printing technologies in dentistry from most to least accurate:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "DLP (معالجة الضوء الرقمي) — 97% مطابقة",
+            "en": "DLP (Digital Light Processing) — 97% match"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "PolyJet — دقة استثنائية مماثلة لـ DLP",
+            "en": "PolyJet — exceptional accuracy comparable to DLP"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "SLA (الطباعة الحجرية الضوئية) — خطأ نسبي 0.3% لكن أقل من DLP",
+            "en": "SLA (Stereolithography) — 0.3% relative error but lower than DLP"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "FDM (ترسيب المادة المنصهرة) — الأقل دقة في طب الأسنان",
+            "en": "FDM (Fused Deposition Modeling) — least accurate in dentistry"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "DLP وPolyJet يتفوقان في الدقة. SLA جيدة لكنها أقل قليلاً. FDM الأقل دقة ونادراً ما تُستخدم للترميمات النهائية. اختيار التقنية يعتمد على التطبيق: أدلة جراحية، تيجان مؤقتة، أو ترميمات نهائية.",
+        "en": "DLP and PolyJet excel in accuracy. SLA is good but slightly lower. FDM is least accurate and rarely used for final restorations. Technology choice depends on application: surgical guides, temporary crowns, or final restorations."
+      }
+    },
+    {
+      "id": "dnt-sort-010",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب العوائق أمام تبني AI في عيادات الأسنان من الأكبر إلى الأصغر:",
+        "en": "Order barriers to dental AI adoption from largest to smallest:"
+      },
+      "items": [
+        {
+          "id": "s1",
+          "text": {
+            "ar": "تكلفة الاستثمار الأولي وعدم وضوح العائد على الاستثمار",
+            "en": "Initial investment cost and unclear ROI"
+          }
+        },
+        {
+          "id": "s2",
+          "text": {
+            "ar": "نقص التدريب وفهم قدرات وقيود AI",
+            "en": "Lack of training and understanding of AI capabilities and limitations"
+          }
+        },
+        {
+          "id": "s3",
+          "text": {
+            "ar": "مخاوف المسؤولية القانونية وخصوصية بيانات المرضى",
+            "en": "Legal liability concerns and patient data privacy"
+          }
+        },
+        {
+          "id": "s4",
+          "text": {
+            "ar": "مقاومة التغيير من الأطباء ذوي الخبرة الطويلة",
+            "en": "Resistance to change from experienced practitioners"
+          }
+        }
+      ],
+      "correct_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "hint_after": {
+        "ar": "التكلفة العائق الأول عملياً — لكن Pearl تدّعي 30,000 دولار إنتاج إضافي شهرياً. التدريب ثانياً — 25% فقط من السعوديين استخدموا AI. المسؤولية القانونية ثالثاً — لا أطر واضحة بعد. المقاومة رابعاً — تتراجع مع الأدلة.",
+        "en": "Cost is the biggest practical barrier — but Pearl claims $30,000 additional monthly production. Training is second — only 25% of Saudi dentists used AI. Legal liability third — no clear frameworks yet. Resistance fourth — declining with evidence."
+      }
+    },
+    {
+      "id": "dnt-self-003",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت طبيب أسنان عام. أحد مرضاك يسألك: 'هل الكمبيوتر هو من يشخّصني الآن؟' ما ردك؟",
+        "en": "You're a general dentist. A patient asks: 'Is the computer diagnosing me now?' How do you respond?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم، وأشرح له أن AI يساعدني في رؤية ما قد تفوته العين — لكنني أتخذ القرار النهائي",
+            "en": "Yes, and I explain AI helps me see what the eye might miss — but I make the final decision"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا — أخفي استخدام AI لتجنب قلق المريض",
+            "en": "No — I hide AI usage to avoid patient worry"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أقول نعم لكن لا أدخل في التفاصيل",
+            "en": "I say yes but don't go into details"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أقول إن AI يكتشف أشياء أكثر بنسبة 37% — وهذا يجب أن يريح المريض",
+            "en": "I say AI detects 37% more things — and this should reassure the patient"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "الشفافية مع المرضى ضرورة. VideaHealth أثبتت أن التصوير المرئي بـ AI يزيد قبول العلاج 12% — المرضى يقدّرون رؤية المشكلة بأنفسهم. استخدام أرقام شركات بدون سياق قد يبدو كتسويق.",
+        "en": "Transparency with patients is essential. VideaHealth proved AI visualization increases treatment acceptance by 12% — patients appreciate seeing the problem themselves. Using company numbers without context may seem like marketing."
+      }
+    },
+    {
+      "id": "dnt-self-004",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "عيادة أسنان منافسة في منطقتك بدأت تستخدم AI وتُعلن عن ذلك في حملاتها التسويقية. ما ردّ فعلك؟",
+        "en": "A competing dental practice in your area started using AI and advertising it in their marketing. What's your reaction?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبادر بتبني AI وأركّز على الجودة والنتائج لا مجرد التسويق",
+            "en": "I proactively adopt AI and focus on quality and outcomes, not just marketing"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتجاهل الأمر — المرضى يختارون الطبيب لا التقنية",
+            "en": "I ignore it — patients choose the doctor, not the technology"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أدرس الموضوع بعناية وأتبنى AI فقط إذا أثبت فعالية في سياقي",
+            "en": "I study it carefully and adopt AI only if proven effective in my context"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أشكك علناً في ادعاءات المنافس — AI لا يزال غير موثوق",
+            "en": "I publicly question the competitor's claims — AI is still unreliable"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "AI أصبح ميزة تنافسية. VideaHealth زاد قبول العلاج 12%. Pearl تدّعي 30,000 دولار إنتاج إضافي شهرياً. التبني المدروس أفضل من التسرع أو الانتظار الطويل.",
+        "en": "AI is becoming a competitive advantage. VideaHealth increased treatment acceptance by 12%. Pearl claims $30,000 additional monthly production. Thoughtful adoption is better than rushing or waiting too long."
+      }
+    },
+    {
+      "id": "dnt-self-005",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "نظام AI في عيادتك يقترح حشوة لسن تعتقد أنه يحتاج تاجاً كاملاً. ما قرارك؟",
+        "en": "AI in your practice suggests a filling for a tooth you believe needs a full crown. What's your decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أعيد فحص الحالة بعناية — ربما AI يرى بنية سنية كافية لم ألاحظها",
+            "en": "I carefully re-examine — maybe AI sees sufficient tooth structure I didn't notice"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتبع حكمي السريري — AI لا يلمس السن ولا يعرف حالته الفعلية",
+            "en": "I follow my clinical judgment — AI doesn't touch the tooth or know its actual condition"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتبع AI دائماً — بياناته أشمل من خبرتي",
+            "en": "I always follow AI — its data is more comprehensive than my experience"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أناقش الحالة مع زميل قبل اتخاذ القرار",
+            "en": "I discuss the case with a colleague before deciding"
+          },
+          "flexibility_score": 4
+        }
+      ],
+      "hint_after": {
+        "ar": "AI يحلل الأشعة فقط — لا يلمس السن ولا يفحص الحواف ولا يعرف عادات المريض. أفضل نتيجة تجمع بين رؤية AI (ما يراه في الصورة) وحكم الطبيب (ما يعرفه عن السياق الكامل).",
+        "en": "AI analyzes radiographs only — it doesn't touch the tooth, examine margins, or know patient habits. Best results combine AI's vision (what it sees in the image) with the dentist's judgment (what they know about the full context)."
+      }
+    },
+    {
+      "id": "dnt-self-006",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت أخصائي تقويم. Align Technology تقدم خطط علاج جاهزة بـ AI في 15 دقيقة بدل أيام. هل تشعر بتهديد لدورك؟",
+        "en": "You're an orthodontist. Align Technology offers AI-ready treatment plans in 15 minutes instead of days. Do you feel threatened?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا — AI يحررني من العمل الروتيني لأركز على الحالات المعقدة والحكم السريري",
+            "en": "No — AI frees me from routine work to focus on complex cases and clinical judgment"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "نعم — أي طبيب أسنان عام يمكنه الآن تقديم تقويم بدوني",
+            "en": "Yes — any general dentist can now offer orthodontics without me"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق — لكن الخطة 'جاهزة للمراجعة' وليست نهائية فمهاراتي لا تزال مطلوبة",
+            "en": "Concerned — but the plan is 'review-ready' not final so my skills are still needed"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أعرف — أحتاج وقتاً لتقييم التأثير الفعلي",
+            "en": "I don't know — I need time to assess the actual impact"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "ClinCheck Live Plan يُسرّع التخطيط لكن لا يُلغي الأخصائي. الخطة 'جاهزة للمراجعة' — التعديل والحكم السريري يبقيان ضروريين. أخصائي التقويم يتحول من 'مُخطط' إلى 'مُشرف ومُقيّم' — دور أعلى قيمة.",
+        "en": "ClinCheck Live Plan speeds planning but doesn't eliminate the specialist. The plan is 'review-ready' — modification and clinical judgment remain essential. The orthodontist shifts from 'planner' to 'supervisor and evaluator' — a higher-value role."
+      }
+    },
+    {
+      "id": "dnt-self-007",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "زميلك يرفض استخدام AI ويقول: 'أنا طبيب أسنان ناجح منذ 20 سنة بدون AI — لماذا أغيّر الآن؟' ما رأيك؟",
+        "en": "A colleague refuses AI saying: 'I've been a successful dentist for 20 years without AI — why change now?' What's your view?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أحترم رأيه لكن أذكّره: 43% من التسوس يفوت العين البشرية — AI شبكة أمان لا بديل",
+            "en": "I respect his view but remind him: 43% of caries are missed by the human eye — AI is a safety net, not a replacement"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتفق معه — الخبرة أهم من أي تقنية",
+            "en": "I agree — experience matters more than any technology"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أعارضه بشدة — من يرفض AI سيفقد مرضاه لمن يستخدمه",
+            "en": "I strongly disagree — those who reject AI will lose patients to those who use it"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أقترح عليه تجربة بسيطة: شغّل AI على 10 حالات سابقة وقارن النتائج",
+            "en": "I suggest a simple trial: run AI on 10 past cases and compare results"
+          },
+          "flexibility_score": 4
+        }
+      ],
+      "hint_after": {
+        "ar": "الاحترام مع الحقائق: دراسة Overjet أظهرت 43% أقل تسوس فائت. التجربة العملية أقوى حجة من الجدل النظري. 66% من الأطباء الأمريكيين يستخدمون AI في 2025.",
+        "en": "Respect with facts: Overjet study showed 43% fewer missed caries. Practical trial is a stronger argument than theoretical debate. 66% of U.S. physicians use AI in 2025."
+      }
+    },
+    {
+      "id": "dnt-self-008",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مريضتك تسألك عن تطبيق لمتابعة تقويمها من المنزل بدل زيارات شهرية. ما موقفك؟",
+        "en": "Your patient asks about an app to monitor her orthodontic treatment from home instead of monthly visits. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أرحب وأقترح DentalMonitoring — مع شرح أنها لا تُلغي الزيارات بل تقللها للحالات الضرورية",
+            "en": "I welcome it and suggest DentalMonitoring — explaining it doesn't eliminate visits but reduces them to necessary cases"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أرفض — لا يمكن تقييم التقويم من صورة هاتف",
+            "en": "I refuse — orthodontic assessment can't be done from a phone photo"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أوافق لكن بحذر — أبدأ مع هذه المريضة فقط كتجربة",
+            "en": "I agree cautiously — starting with this patient only as a trial"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أحيلها لأخصائي تقويم يستخدم التطبيق",
+            "en": "I refer her to an orthodontist who uses the app"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "DentalMonitoring تخدم 2+ مليون مريض وتقلل الزيارات 25-67%. التطبيق لا يُلغي الزيارات — يُعيد توزيعها بحيث يحضر المريض فقط عند الحاجة الفعلية. هذا يوفّر وقت المريض والطبيب.",
+        "en": "DentalMonitoring serves 2+ million patients and reduces visits 25-67%. The app doesn't eliminate visits — it redistributes them so patients come only when actually needed. This saves both patient and dentist time."
+      }
+    },
+    {
+      "id": "dnt-self-009",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "اكتشفت أن AI في عيادتك أعطى إنذاراً كاذباً (False Positive) لتسوس في 5 حالات هذا الشهر. ما تصرفك؟",
+        "en": "You discover AI in your practice gave false positive caries alerts in 5 cases this month. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أراجع كل حالة وأوثّق الإنذارات الكاذبة — هذا طبيعي (نوعية 0.90 = 10% كاذبة) لكن يجب مراقبته",
+            "en": "I review each case and document false alerts — this is normal (0.90 specificity = 10% false) but must be monitored"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أوقف النظام فوراً — 5 إنذارات كاذبة غير مقبولة",
+            "en": "I stop the system immediately — 5 false alerts are unacceptable"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتجاهل الأمر — كل نظام له أخطاء",
+            "en": "I ignore it — every system has errors"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتواصل مع الشركة لمعرفة ما إذا كان هناك تحديث يحل المشكلة",
+            "en": "I contact the company to see if there's an update that fixes the issue"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "نوعية 0.90 تعني أن 10% من التنبيهات قد تكون كاذبة — هذا مُتوقع ومُوثّق. المراجعة والتوثيق ضروريان لتحسين أدائك مع النظام. المراجعات المنهجية حذّرت من خطر الإفراط في التشخيص تحديداً في التسوس بين الأسنان.",
+        "en": "0.90 specificity means 10% of alerts may be false — this is expected and documented. Review and documentation are essential to improve your performance with the system. Systematic reviews warned of overdiagnosis risk specifically in interproximal caries."
+      }
+    },
+    {
+      "id": "dnt-self-010",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "طالب طب أسنان يسألك: 'هل يجب أن أتعلم AI أثناء الدراسة أم بعد التخرج؟' ما نصيحتك؟",
+        "en": "A dental student asks: 'Should I learn AI during school or after graduation?' What's your advice?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أثناء الدراسة حتماً — AI سيكون جزءاً أساسياً من ممارستك السريرية قبل أن تتخرج",
+            "en": "During school for sure — AI will be a core part of your clinical practice before you graduate"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "بعد التخرج — ركّز الآن على الأساسيات السريرية",
+            "en": "After graduation — focus now on clinical fundamentals"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا يحتاج — AI سيكون سهلاً ولا يتطلب تعلماً خاصاً",
+            "en": "No need — AI will be easy and won't require special learning"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أثناء الدراسة لكن كمادة اختيارية وليست إلزامية",
+            "en": "During school but as an elective, not mandatory"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "44 جهازاً مرخصاً حتى 2025 و18 جهازاً جديداً سنوياً. ADA وFDI وISO يعملون على معايير تقييم. AI سيكون في كل عيادة أسنان خلال 5 سنوات. طالب لا يفهم AI سيتخرج متخلفاً عن السوق.",
+        "en": "44 cleared devices through 2025 with 18 new annually. ADA, FDI, and ISO developing benchmarks. AI will be in every dental practice within 5 years. A student who doesn't understand AI will graduate behind the market."
+      }
+    },
+    {
+      "id": "dnt-self-011",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مختبر أسنان يعرض عليك خدمة تصميم تيجان بـ AI بتكلفة أقل 40% من التصميم اليدوي. هل تقبل؟",
+        "en": "A dental lab offers you AI crown design service at 40% lower cost than manual design. Do you accept?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أجرّب على حالات بسيطة أولاً وأقارن الجودة — إذا كانت مقبولة أتوسع تدريجياً",
+            "en": "I try simple cases first and compare quality — if acceptable, I gradually expand"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أوافق فوراً — 40% توفير كبير",
+            "en": "I accept immediately — 40% savings is significant"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفض — لا أثق بجودة AI في تصميم الترميمات",
+            "en": "I refuse — I don't trust AI quality in restoration design"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أقبل فقط للحالات المؤقتة وليس النهائية",
+            "en": "I accept only for temporary cases, not final ones"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "3Shape Automate يصمم في 90 ثانية ويقلل إعادة الصنع 18%. لكن الجودة تعتمد على المختبر أيضاً. التجربة المدروسة مع مقارنة الجودة هي الأسلم — لا تقبل بناءً على السعر وحده.",
+        "en": "3Shape Automate designs in 90 seconds and reduces remakes by 18%. But quality also depends on the lab. A measured trial with quality comparison is safest — don't accept based on price alone."
+      }
+    },
+    {
+      "id": "dnt-self-012",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مريضك يرفض العلاج رغم أن AI أظهر له صورة واضحة للتسوس. يقول: 'لا أثق بالكمبيوتر.' كيف تتعامل؟",
+        "en": "Your patient refuses treatment despite AI showing them a clear image of caries. They say: 'I don't trust the computer.' How do you handle it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أحترم رأيه وأشرح بأسلوبي الخاص — AI أداة لي وليست الحكم — وأوثّق رفضه",
+            "en": "I respect his view and explain in my own way — AI is my tool, not the judge — and document his refusal"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أصر على العلاج — الصورة واضحة ورفضه غير عقلاني",
+            "en": "I insist on treatment — the image is clear and his refusal is irrational"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أوقف استخدام AI مع هذا المريض تحديداً",
+            "en": "I stop using AI with this specific patient"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أعرض عليه فحصاً يدوياً بدون AI ليقتنع",
+            "en": "I offer a manual exam without AI so he's convinced"
+          },
+          "flexibility_score": 4
+        }
+      ],
+      "hint_after": {
+        "ar": "بعض المرضى يقلقون من 'الآلات التي تتخذ القرارات'. الاحترام مع الشفافية أفضل نهج. توثيق الرفض ضرورة قانونية. الفحص اليدوي المُكمّل يمكن أن يُقنع المريض بدون ضغط.",
+        "en": "Some patients worry about 'machines making decisions.' Respect with transparency is the best approach. Documenting refusal is a legal necessity. A complementary manual exam can convince the patient without pressure."
+      }
+    },
+    {
+      "id": "dnt-self-013",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت في مؤتمر طب أسنان وسمعت محاضراً يقول: 'خلال 5 سنوات، لن يحتاج طبيب الأسنان لقراءة أشعة — AI سيفعل ذلك.' ما رأيك؟",
+        "en": "At a dental conference you hear a speaker say: 'In 5 years, dentists won't need to read radiographs — AI will do it.' What's your view?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مبالغة — AI سيساعد في القراءة لكن الطبيب سيبقى المسؤول عن التفسير السريري",
+            "en": "Exaggeration — AI will assist reading but the dentist will remain responsible for clinical interpretation"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتفق — AI بحساسية 0.85 ونوعية 0.90 سيحل محل القراءة البشرية",
+            "en": "I agree — AI with 0.85 sensitivity and 0.90 specificity will replace human reading"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مبكر جداً لتحديد — لكن الاتجاه واضح نحو أتمتة أكبر",
+            "en": "Too early to tell — but the trend toward greater automation is clear"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أهتم بالتوقعات — أركّز على ما يعمل اليوم",
+            "en": "I don't care about predictions — I focus on what works today"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "حساسية 0.85 ونوعية 0.90 جيدتان لكن ليستا كافيتين للاستقلالية الكاملة. في الطب، LumineticsCore وحده حقق استقلالية كاملة بعد سنوات من الأدلة. AI السني لا يزال 'مساعداً' وليس 'بديلاً' — والمسؤولية تبقى على الطبيب.",
+        "en": "0.85 sensitivity and 0.90 specificity are good but insufficient for full autonomy. In medicine, only LumineticsCore achieved full autonomy after years of evidence. Dental AI is still an 'assistant,' not a 'replacement' — and liability remains with the dentist."
+      }
+    },
+    {
+      "id": "dnt-self-014",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت طبيب أسنان في منطقة ريفية بعيدة عن أي أخصائي لثة. نظام AI يكشف فقدان عظم سنخي بـ AUROC 94.2%. هل تعتمد عليه في التشخيص؟",
+        "en": "You're a dentist in a rural area far from any periodontist. An AI system detects alveolar bone loss with AUROC 94.2%. Would you rely on it for diagnosis?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم كأداة فحص أولية — مع إحالة الحالات المتقدمة عبر التطبيب عن بُعد لأخصائي",
+            "en": "Yes as a screening tool — with referral of advanced cases via teledentistry to a specialist"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا — بدون أخصائي لا يمكنني تشخيص أمراض اللثة",
+            "en": "No — without a specialist I can't diagnose periodontal disease"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نعم بالكامل — 94.2% أعلى من الأخصائيين أنفسهم",
+            "en": "Yes completely — 94.2% is higher than specialists themselves"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أفضّل التدريب على التشخيص اليدوي بدل الاعتماد على AI",
+            "en": "I prefer training in manual diagnosis instead of relying on AI"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "HC-Net+ مكّن المبتدئين من مطابقة أداء الأخصائيين. في المناطق النائية، AI + تطبيب عن بُعد قد يكون الحل الأفضل. أكثر من مليار شخص يعانون أمراض اللثة — AI يمكن أن يسد الفجوة في المناطق التي لا يصلها الأخصائيون.",
+        "en": "HC-Net+ enabled juniors to match specialist performance. In remote areas, AI + teledentistry may be the best solution. Over 1 billion people suffer periodontal disease — AI can bridge the gap in areas specialists don't reach."
+      }
+    },
+    {
+      "id": "dnt-self-015",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "شركة تأمين أسنان تطلب منك استخدام AI في التشخيص كشرط لزيادة تعويضاتها. ما موقفك؟",
+        "en": "A dental insurance company requires you to use AI in diagnosis as a condition for increased reimbursement. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مقبول إذا كان النظام مرخصاً وأحتفظ بحقي في الحكم السريري النهائي",
+            "en": "Acceptable if the system is cleared and I retain my right to final clinical judgment"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أرفض — لا أريد أن تفرض شركة تأمين أدواتي التشخيصية",
+            "en": "I refuse — I don't want an insurance company dictating my diagnostic tools"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أوافق بدون تحفظ — التعويضات الأعلى تستحق",
+            "en": "I agree without reservation — higher reimbursement is worth it"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أقبل لكن أتأكد أن البيانات تبقى ملكي وملك مرضاي",
+            "en": "I accept but ensure data remains mine and my patients'"
+          },
+          "flexibility_score": 4
+        }
+      ],
+      "hint_after": {
+        "ar": "التأمين يتجه نحو ربط AI بالتعويضات (بعض شركات التأمين بدأت فعلاً). الشرط المنطقي: النظام مرخص + الطبيب يحتفظ بالحكم + البيانات محمية. رفض AI تماماً قد يعني تعويضات أقل مستقبلاً.",
+        "en": "Insurance is trending toward linking AI to reimbursement (some insurers have already started). The logical conditions: cleared system + dentist retains judgment + data is protected. Completely refusing AI may mean lower reimbursement in the future."
+      }
+    },
+    {
+      "id": "dnt-self-016",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "فني المختبر الذي تعمل معه منذ 15 سنة يقلق من أن AI سيلغي وظيفته. ما تقوله له؟",
+        "en": "The lab technician you've worked with for 15 years worries AI will eliminate his job. What do you tell him?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI سيُغيّر دوره لا يُلغيه — سينتقل من التصميم اليدوي إلى مراجعة وتحسين تصميمات AI",
+            "en": "AI will change his role, not eliminate it — he'll shift from manual design to reviewing and improving AI designs"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا تقلق — AI لن يحل محل اليد البشرية أبداً",
+            "en": "Don't worry — AI will never replace the human hand"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "للأسف، بعض الوظائف ستختفي — يجب أن يتأقلم",
+            "en": "Unfortunately, some jobs will disappear — he needs to adapt"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أنصحه بتعلم التعامل مع 3Shape Automate ليبقى ذا قيمة",
+            "en": "I advise him to learn 3Shape Automate to stay valuable"
+          },
+          "flexibility_score": 4
+        }
+      ],
+      "hint_after": {
+        "ar": "3Shape Automate ضاعفت إنتاج بعض المختبرات — لكن الفني لا يزال يراجع ويعدّل. الدور يتحول من 'مصمم' إلى 'مُشرف جودة ومُعدّل'. الفني الذي يتقن AI سيكون أكثر قيمة — والذي يرفضه سيتراجع.",
+        "en": "3Shape Automate doubled output in some labs — but the technician still reviews and modifies. The role shifts from 'designer' to 'quality supervisor and modifier.' A technician who masters AI will be more valuable — one who refuses it will fall behind."
+      }
+    },
+    {
+      "id": "dnt-self-017",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "لو كان لديك ميزانية لتقنية واحدة فقط لتحسين عيادتك، ماذا تختار؟",
+        "en": "If you had budget for only one technology to improve your practice, what would you choose?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نظام AI لتحليل الأشعة — يحسّن التشخيص ويزيد قبول العلاج",
+            "en": "AI radiograph analysis system — improves diagnosis and increases treatment acceptance"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ماسح ضوئي داخل الفم — يرفع دقة الانطباعات ويلغي القوالب",
+            "en": "Intraoral scanner — improves impression accuracy and eliminates molds"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "طابعة ثلاثية الأبعاد — تصنيع داخلي يوفّر المال والوقت",
+            "en": "3D printer — in-house fabrication saves money and time"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا شيء — التقنية الحالية كافية لعيادتي",
+            "en": "Nothing — current technology is sufficient for my practice"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "كلا الخيارين الأولين ممتازان. AI للأشعة يؤثر على كل مريض (كل مريض يحتاج أشعة). الماسح يؤثر على الترميمات. الأولوية تعتمد على نوع العيادة. لكن AI للأشعة عادة يحقق أسرع عائد (12% زيادة في قبول العلاج).",
+        "en": "Both top choices are excellent. Radiograph AI impacts every patient (every patient needs X-rays). The scanner impacts restorations. Priority depends on practice type. But radiograph AI usually achieves fastest ROI (12% increase in treatment acceptance)."
+      }
+    },
+    {
+      "id": "dnt-self-018",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "بعد عام من استخدام AI في عيادتك، تلاحظ أنك أصبحت تنظر للأشعة بسرعة أكبر وتعتمد أكثر على تنبيهات AI. هل يقلقك هذا؟",
+        "en": "After a year of using AI in your practice, you notice you're glancing at radiographs more quickly and relying more on AI alerts. Does this worry you?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم — هذا بداية Deskilling. سأخصص وقتاً أسبوعياً لقراءة أشعة بدون AI للحفاظ على مهاراتي",
+            "en": "Yes — this is the beginning of deskilling. I'll dedicate weekly time to reading radiographs without AI to maintain my skills"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا — هذا تطور طبيعي مثلما اعتمدنا على الحاسبة بدل الحساب الذهني",
+            "en": "No — this is natural evolution just as we relied on calculators instead of mental math"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مقلق — لكنني لا أعرف ماذا أفعل حيال ذلك",
+            "en": "Worrying — but I don't know what to do about it"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا يقلقني أبداً — AI أدق مني في الأشعة وهذا كافٍ",
+            "en": "Doesn't worry me at all — AI is more accurate than me in radiographs and that's enough"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "دراسة Lancet أثبتت أن أطباء المناظير فقدوا مهاراتهم بعد 3 أشهر فقط من AI (من 28.4% إلى 22.4%). التدريب المزدوج (مع وبدون AI) هو الحل — ليس رفض AI ولا الاعتماد الكامل عليه.",
+        "en": "The Lancet study proved endoscopists lost skills after just 3 months with AI (from 28.4% to 22.4%). Dual training (with and without AI) is the solution — not rejecting AI or fully depending on it."
+      }
+    },
+    {
+      "id": "dnt-self-019",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "هل تعتقد أن مستقبل طب الأسنان سيكون رقمياً بالكامل خلال 10 سنوات؟",
+        "en": "Do you think dentistry's future will be fully digital within 10 years?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "رقمي بشكل كبير لكن ليس كلياً — اللمسة البشرية والفحص السريري لن يُستبدلا",
+            "en": "Largely digital but not entirely — human touch and clinical examination can't be replaced"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "نعم بالكامل — من المسح الرقمي إلى الروبوت الجراحي",
+            "en": "Yes completely — from digital scanning to surgical robots"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا — معظم العيادات ستبقى تقليدية",
+            "en": "No — most practices will remain traditional"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "سيتفاوت بحسب المنطقة — المدن الكبرى ستكون رقمية والريف تقليدي",
+            "en": "It will vary by region — major cities will be digital and rural areas traditional"
+          },
+          "flexibility_score": 4
+        }
+      ],
+      "hint_after": {
+        "ar": "السوق ينمو 22% سنوياً نحو 3.1 مليار دولار بحلول 2034. التبني سيتفاوت: العيادات الكبرى والشبكات (مثل Aspen Dental) ستكون رقمية بالكامل. العيادات الصغيرة والمناطق النائية ستتأخر لكنها ستتبع. الفحص السريري المباشر والعلاقة الإنسانية سيبقيان ثوابت.",
+        "en": "Market growing at 22% CAGR toward $3.1B by 2034. Adoption will vary: large practices and DSOs (like Aspen Dental) will be fully digital. Small practices and remote areas will lag but follow. Direct clinical examination and human relationship will remain constants."
+      }
+    },
+    {
+      "id": "dnt-self-020",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "بعد 5 سنوات، كيف تتصوّر علاقتك بـ AI كطبيب أسنان؟",
+        "en": "In 5 years, how do you envision your relationship with AI as a dentist?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI سيكون في كل خطوة: يحلل الأشعة ويصمم الترميم ويتابع التقويم — وأنا أشرف وأتخذ القرار",
+            "en": "AI will be in every step: analyzing radiographs, designing restorations, monitoring orthodontics — and I supervise and decide"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "سأستخدمه في الأشعة فقط — بقية عملي لن يتأثر",
+            "en": "I'll use it for radiographs only — the rest of my work won't be affected"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "AI سيتولى معظم عملي وأصبح مشرفاً فقط",
+            "en": "AI will handle most of my work and I'll become just a supervisor"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أعرف — أحتاج رؤية كيف تتطور التقنية أولاً",
+            "en": "I don't know — I need to see how technology evolves first"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "AI في طب الأسنان يتوسع من الأشعة إلى التقويم إلى الترميم إلى الجراحة. خلال 5 سنوات سيكون في معظم المراحل — لكن الطبيب يبقى محور العملية: يقرر ويعدّل ويتواصل مع المريض. أنجح أطباء الأسنان سيكونون من يجمع بين المهارة السريرية وفهم AI.",
+        "en": "Dental AI is expanding from radiography to orthodontics to restorations to surgery. Within 5 years it will be in most stages — but the dentist remains the process center: deciding, modifying, and communicating with patients. The most successful dentists will be those combining clinical skill with AI understanding."
       }
     }
   ]
