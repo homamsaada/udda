@@ -1,0 +1,161 @@
+{
+  "section_id": "chemistry-biology",
+  "section_name": { "ar": "الكيمياء والأحياء", "en": "Chemistry & Biology" },
+  "version": "1.0",
+  "last_updated": "2026-04-05",
+  "questions": [
+    {
+      "id": "chb-mcq-001",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": { "ar": "أنت باحث في البيولوجيا الجزيئية. AlphaFold من DeepMind حقق إنجازاً تاريخياً حصل على جائزة نوبل في الكيمياء 2024. ما حجم هذا الإنجاز؟", "en": "You are a molecular biology researcher. DeepMind's AlphaFold achieved a historic breakthrough that won the 2024 Nobel Prize in Chemistry. What is the scale of this achievement?" },
+      "options": [
+        { "id": "a", "text": { "ar": "تنبأ بتركيب ~214 مليون بروتين من مليون نوع — يغطي تقريباً كل بروتين معروف على وجه الأرض — واستخدمه 3+ مليون باحث في 190+ دولة", "en": "Predicted ~214 million protein structures from 1 million species — covering nearly every known protein on Earth — used by 3+ million researchers in 190+ countries" }, "score": 3 },
+        { "id": "b", "text": { "ar": "تنبأ بتركيب 1,000 بروتين فقط — إنجاز محدود", "en": "Predicted only 1,000 protein structures — a limited achievement" }, "score": 0 },
+        { "id": "c", "text": { "ar": "صنّع بروتينات جديدة في المختبر دون تنبؤ حاسوبي", "en": "Synthesized new proteins in the lab without computational prediction" }, "score": 0 },
+        { "id": "d", "text": { "ar": "حل مشكلة طي البروتين جزئياً لكنه لم يحصل على أي تقدير أكاديمي", "en": "Partially solved the protein folding problem but received no academic recognition" }, "score": 0 }
+      ],
+      "hint_after": { "ar": "AlphaFold 2 حقق دقة GDT 92.4/100 — مقاربة للطرق التجريبية. AlphaFold 3 (مايو 2024) يتنبأ بمركّبات البروتين مع DNA وRNA والجزيئات الصغيرة بتحسّن دقة 50%+. نوبل 2024 في الكيمياء ذهبت لـ Demis Hassabis وJohn Jumper مع David Baker — أول نوبل لإنجاز مدعوم بـ AI.", "en": "AlphaFold 2 achieved 92.4/100 GDT — comparable to experimental methods. AlphaFold 3 (May 2024) predicts protein complexes with DNA, RNA, and ligands with 50%+ accuracy improvement. 2024 Chemistry Nobel went to Hassabis and Jumper with Baker — first Nobel for an AI-powered breakthrough." }
+    },
+    {
+      "id": "chb-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": { "ar": "أنت باحث في المضادات الحيوية. AI اكتشف مضاداً حيوياً فعالاً ضد أخطر البكتيريا المقاومة في العالم. ما اسمه وكيف اكتُشف؟", "en": "You are an antibiotics researcher. AI discovered an antibiotic effective against the world's most dangerous resistant bacteria. What is it called and how was it discovered?" },
+      "options": [
+        { "id": "a", "text": { "ar": "Halicin — شبكة عصبية فحصت 100+ مليون مركب من قاعدة ZINC15 واكتشفته، وهو فعال ضد A. baumannii والسل وC. difficile", "en": "Halicin — a neural network screened 100+ million compounds from ZINC15 database, effective against A. baumannii, TB, and C. difficile" }, "score": 3 },
+        { "id": "b", "text": { "ar": "مضاد حيوي اكتُشف بالطرق التقليدية ثم حُسّن بـ AI", "en": "An antibiotic discovered traditionally then improved with AI" }, "score": 0.5 },
+        { "id": "c", "text": { "ar": "مركب نظري لم يُختبر مخبرياً بعد", "en": "A theoretical compound not yet tested in the lab" }, "score": 0 },
+        { "id": "d", "text": { "ar": "دواء موجود أعاد AI اكتشافه بدون أي جدّة", "en": "An existing drug AI rediscovered without any novelty" }, "score": 0.5 }
+      ],
+      "hint_after": { "ar": "Halicin سُمي نسبةً لـ HAL 9000. كان في الأصل دواء سكري فاشل (SU-3327). Abaucin (2023) يستهدف تحديداً A. baumannii (أولوية حرجة لـ WHO) واكتُشف بالتعلم الآلي في ~ساعتين — مقارنة بـ 10-15 سنة و2.6+ مليار $ في الاكتشاف التقليدي.", "en": "Halicin was named after HAL 9000. It was originally a failed diabetes drug (SU-3327). Abaucin (2023) specifically targets A. baumannii (WHO critical priority) and was identified by ML in ~2 hours — vs 10-15 years and $2.6B+ in traditional discovery." }
+    },
+    {
+      "id": "chb-mcq-003",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": { "ar": "أنت عالم أحياء جينية. OpenCRISPR-1 يُعتبر أول محرر جينات CRISPR صمّمه الذكاء الاصطناعي بالكامل. ما الذي يميّزه عن المحررات الطبيعية؟", "en": "You are a geneticist. OpenCRISPR-1 is considered the first AI-designed CRISPR gene editor. What distinguishes it from natural editors?" },
+      "options": [
+        { "id": "a", "text": { "ar": "يبعد أكثر من 400 طفرة حمض أميني عن SpCas9 و~200 عن أي بروتين CRISPR طبيعي معروف — لكنه يحقق كفاءة تحرير عالية في خلايا بشرية", "en": "Over 400 amino acid mutations from SpCas9 and ~200 from any known natural CRISPR protein — yet achieves high editing efficiency in human cells" }, "score": 3 },
+        { "id": "b", "text": { "ar": "نسخة محسّنة طفيفاً من SpCas9 بتعديلات بسيطة", "en": "A slightly improved version of SpCas9 with minor modifications" }, "score": 0 },
+        { "id": "c", "text": { "ar": "محرر نظري لم يُختبر في خلايا حقيقية بعد", "en": "A theoretical editor not yet tested in real cells" }, "score": 0 },
+        { "id": "d", "text": { "ar": "نفس تركيب SpCas9 لكن بكفاءة أعلى 10%", "en": "Same structure as SpCas9 but with 10% higher efficiency" }, "score": 0 }
+      ],
+      "hint_after": { "ar": "OpenCRISPR-1 (Profluent, Nature 2025) صُمم باستخدام نماذج لغوية للبروتينات مدرّبة على مليون+ أوبرون CRISPR من 26 تيرابايت بيانات جينومية. CRISPR-GPT (Stanford 2025) يعمل كـ\"مساعد طيار\" لتحرير الجينات مدرّب على 11 سنة من نقاشات الخبراء.", "en": "OpenCRISPR-1 (Profluent, Nature 2025) was designed using protein language models trained on 1M+ CRISPR operons from 26 terabases of genomic data. CRISPR-GPT (Stanford 2025) acts as a gene-editing 'copilot' trained on 11 years of expert discussions." }
+    },
+    {
+      "id": "chb-tf-001",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": { "ar": "جائزة نوبل في الفيزياء 2024 ذهبت أيضاً لعالم ذكاء اصطناعي — Geoffrey Hinton \"الأب الروحي لـ AI\" — مما يعني أن جائزتي نوبل في الكيمياء والفيزياء لعام 2024 كلتاهما مرتبطتان بالذكاء الاصطناعي.", "en": "The 2024 Nobel Prize in Physics also went to an AI scientist — Geoffrey Hinton 'Godfather of AI' — meaning both the 2024 Chemistry and Physics Nobel Prizes were connected to artificial intelligence." },
+      "correct_answer": true,
+      "hint_after": { "ar": "Hinton شارك الفيزياء مع John Hopfield عن \"الاكتشافات الأساسية التي تمكّن التعلم الآلي\". Hinton كان في Google Brain (2013-2023). هذا يمثّل اعترافاً تاريخياً: AI لم يعد مجرد أداة — أصبح موضوع نوبل ذاته.", "en": "Hinton shared Physics with John Hopfield for 'foundational discoveries enabling machine learning.' Hinton was at Google Brain (2013-2023). This represents historic recognition: AI is no longer just a tool — it's become a Nobel subject itself." }
+    },
+    {
+      "id": "chb-tf-002",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": { "ar": "أول دواء صُمم بالكامل بواسطة الذكاء الاصطناعي (هدف ومركب) حصل بالفعل على موافقة تنظيمية كاملة ويُباع في الصيدليات حالياً.", "en": "The first drug entirely designed by AI (both target and compound) has already received full regulatory approval and is currently sold in pharmacies." },
+      "correct_answer": false,
+      "hint_after": { "ar": "Rentosertib من Insilico Medicine هو أول دواء اكتُشف هدفه ومركبه بالكامل بـ AI — في المرحلة IIa حالياً. Zasocitinib (Schrödinger/Takeda) الأبعد في التجارب السريرية (المرحلة III). الموافقة التنظيمية الكاملة متوقعة في 2026-2027. الأدوية المكتشفة بـ AI تُظهر نسبة نجاح 80-90% في المرحلة الأولى مقابل 52% تاريخياً.", "en": "Insilico's Rentosertib is the first drug with both target and compound AI-discovered — currently in Phase IIa. Zasocitinib (Schrödinger/Takeda) is furthest in clinical trials (Phase III). Full regulatory approval expected 2026-2027. AI-discovered drugs show 80-90% Phase I success vs 52% historically." }
+    },
+    {
+      "id": "chb-fill-001",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": { "ar": "مختبر {{blank_1}} المستقل في مختبرات لورنس بيركلي صنّع ذاتياً 41 مركباً جديداً من 58 هدفاً خلال 17 يوماً متواصلاً من العمل بدون تدخل بشري (نسبة نجاح 71%).", "en": "The autonomous {{blank_1}} laboratory at Lawrence Berkeley Lab synthesized 41 novel compounds from 58 targets over 17 continuous days without human intervention (71% success rate)." },
+      "blanks": [{ "id": "blank_1", "correct": { "ar": "A-Lab", "en": "A-Lab" }, "options": [{ "ar": "A-Lab", "en": "A-Lab" }, { "ar": "DeepChem", "en": "DeepChem" }, { "ar": "ChemBot", "en": "ChemBot" }, { "ar": "SynthAI", "en": "SynthAI" }] }],
+      "hint_after": { "ar": "CMU's Coscientist يستخدم GPT-4 وClaude لتفسير مشكلات علمية وتخطيط تجارب والتفاعل مع أجهزة روبوتية. Sakana AI's AI Scientist-v2 أنتج أول ورقة بحثية مولّدة بالكامل بـ AI اجتازت مراجعة بشرية. عصر المختبرات المستقلة بدأ.", "en": "CMU's Coscientist uses GPT-4 and Claude to interpret scientific problems, plan experiments, and interface with robotic hardware. Sakana AI's AI Scientist-v2 produced the first fully AI-generated paper to pass human peer review. The era of autonomous labs has begun." }
+    },
+    {
+      "id": "chb-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": { "ar": "وصّل كل اكتشاف AI في الكيمياء والأحياء مع تفاصيله:", "en": "Match each AI discovery in chemistry and biology with its details:" },
+      "left": [
+        { "id": "L1", "text": { "ar": "AlphaFold 2 (نوبل 2024)", "en": "AlphaFold 2 (Nobel 2024)" } },
+        { "id": "L2", "text": { "ar": "Halicin (MIT, 2020)", "en": "Halicin (MIT, 2020)" } },
+        { "id": "L3", "text": { "ar": "OpenCRISPR-1 (Profluent, 2025)", "en": "OpenCRISPR-1 (Profluent, 2025)" } },
+        { "id": "L4", "text": { "ar": "Rentosertib (Insilico Medicine)", "en": "Rentosertib (Insilico Medicine)" } }
+      ],
+      "right": [
+        { "id": "R1", "text": { "ar": "214 مليون تركيب بروتيني متنبّأ به — بدقة 92.4 GDT — يغطي تقريباً كل بروتين معروف", "en": "214 million predicted protein structures — at 92.4 GDT accuracy — covering nearly every known protein" } },
+        { "id": "R2", "text": { "ar": "مضاد حيوي اكتُشف بفحص 100+ مليون مركب — فعال ضد بكتيريا مقاومة لكل العلاجات المعروفة", "en": "Antibiotic discovered by screening 100+ million compounds — effective against pan-resistant bacteria" } },
+        { "id": "R3", "text": { "ar": "أول محرر جينات CRISPR مصمم بالكامل بـ AI — يبعد 400+ طفرة عن أي محرر طبيعي", "en": "First fully AI-designed CRISPR gene editor — 400+ mutations from any natural editor" } },
+        { "id": "R4", "text": { "ar": "أول دواء اكتُشف هدفه ومركبه بالكامل بـ AI — من هدف جديد إلى مرحلة أولى في 30 شهراً", "en": "First drug with both target and compound AI-discovered — from novel target to Phase I in 30 months" } }
+      ],
+      "correct_pairs": [{ "left": "L1", "right": "R1" }, { "left": "L2", "right": "R2" }, { "left": "L3", "right": "R3" }, { "left": "L4", "right": "R4" }],
+      "hint_after": { "ar": "الاكتشاف التقليدي للأدوية يستغرق 10-15 سنة ويكلّف 2.6+ مليار $. Insilico وصل للمرحلة الأولى في 30 شهراً. 173+ برنامج دوائي مكتشف بـ AI في التطوير السريري حالياً، و15-20 متوقع دخولها المرحلة الثالثة في 2026.", "en": "Traditional drug discovery takes 10-15 years and costs $2.6B+. Insilico reached Phase I in 30 months. 173+ AI-discovered drug programs are in clinical development, with 15-20 expected to enter Phase III in 2026." }
+    },
+    {
+      "id": "chb-sort-001",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": { "ar": "رتّب محطات تطور AI في علوم الحياة من الأقدم إلى الأحدث:", "en": "Order AI milestones in life sciences from earliest to most recent:" },
+      "items": [
+        { "id": "S1", "text": { "ar": "AlphaFold 2 يحل مشكلة طي البروتين بدقة 92.4 GDT (2020)", "en": "AlphaFold 2 solves protein folding at 92.4 GDT accuracy (2020)" } },
+        { "id": "S2", "text": { "ar": "تحميل 214 مليون تركيب بروتيني — تغطية شبه كاملة لكل الكائنات (يوليو 2022)", "en": "Upload of 214 million protein structures — near-complete coverage of all organisms (July 2022)" } },
+        { "id": "S3", "text": { "ar": "AlphaFold 3 يتنبأ بمركّبات البروتين مع DNA/RNA/جزيئات صغيرة (مايو 2024)", "en": "AlphaFold 3 predicts protein complexes with DNA/RNA/small molecules (May 2024)" } },
+        { "id": "S4", "text": { "ar": "جائزة نوبل في الكيمياء لـ Hassabis وJumper عن AlphaFold (أكتوبر 2024)", "en": "Nobel Prize in Chemistry to Hassabis and Jumper for AlphaFold (October 2024)" } }
+      ],
+      "correct_order": ["S1", "S2", "S3", "S4"],
+      "hint_after": { "ar": "ورقة AlphaFold 2 (Nature 2021) استُشهد بها ~43,000 مرة. David Baker شارك نوبل عن تصميم البروتينات الحاسوبي. RoseTTAFold All-Atom (2024) هو أول برنامج يمثّل البروتينات والأحماض النووية والجزيئات الصغيرة والمعادن في نموذج واحد.", "en": "The AlphaFold 2 Nature paper has been cited ~43,000 times. David Baker shared the Nobel for computational protein design. RoseTTAFold All-Atom (2024) is the first program modeling proteins, nucleic acids, small molecules, and metals simultaneously." }
+    },
+    {
+      "id": "chb-self-001",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": { "ar": "أنت عالم أحياء في مختبر تقليدي. المختبرات المستقلة (مثل A-Lab) تصنّع مركبات جديدة على مدار الساعة بدون بشر. كيف ترى مستقبل عملك المخبري؟", "en": "You are a biologist in a traditional lab. Autonomous labs (like A-Lab) synthesize new compounds around the clock without humans. How do you see the future of your lab work?" },
+      "options": [
+        { "id": "a", "text": { "ar": "أتعلّم واجهات التحكم بالمختبرات الآلية وأتحوّل من مشغّل يدوي إلى مصمّم تجارب ومُوجّه لأنظمة AI", "en": "I learn autonomous lab control interfaces and transition from manual operator to experiment designer and AI systems director" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أستخدم AI لتصميم التجارب وتحليل النتائج مع الحفاظ على التنفيذ اليدوي للتجارب الحرجة", "en": "I use AI for experiment design and results analysis while maintaining manual execution for critical experiments" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "أعتقد أن المختبرات المستقلة مناسبة للكيمياء فقط وليست لعلوم الحياة المعقدة", "en": "I believe autonomous labs are suitable for chemistry only, not complex life sciences" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "أشعر بالتهديد وأفكّر بالانتقال لمجال بعيد عن المختبرات", "en": "I feel threatened and consider moving to a field away from labs" }, "flexibility_score": 1 }
+      ],
+      "hint_after": { "ar": "Emerald Cloud Lab يعالج 46,620 عيّنة تحليلية سنوياً مقابل 8,880 في المختبرات التقليدية. Argonne's Polybot فحص 90,000 تركيبة مواد في أسابيع. العالم الذكي يوجّه الروبوتات — لا ينافسها. دراسة Nature 2025: العلماء الذين يستخدمون AI ينشرون 3 أضعاف الأوراق.", "en": "Emerald Cloud Lab processes 46,620 analytical samples/year vs 8,880 traditional. Argonne's Polybot screened 90,000 material combinations in weeks. The smart scientist directs robots — doesn't compete with them. Nature 2025: AI-using scientists publish 3× more papers." }
+    },
+    {
+      "id": "chb-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": { "ar": "أنت باحث في الأمن الحيوي. تجربة MegaSyn أثبتت أن AI يمكنه توليد 40,000 جزيء سام في 6 ساعات فقط بعكس هدف تجنّب السمية. كيف يؤثر هذا على عملك في اكتشاف الأدوية بـ AI؟", "en": "You are a biosecurity researcher. The MegaSyn experiment proved AI can generate 40,000 toxic molecule candidates in just 6 hours by inverting its toxicity-avoidance objective. How does this affect your work in AI drug discovery?" },
+      "options": [
+        { "id": "a", "text": { "ar": "أتبنّى نهج \"الاستخدام المسؤول\" — أطالب بضوابط وصول صارمة وفحص أمني لمخرجات النماذج مع الاستمرار في استخدام AI للاكتشاف النافع", "en": "I adopt a 'responsible use' approach — demanding strict access controls and security screening of model outputs while continuing to use AI for beneficial discovery" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أركّز بحثي على تطوير أنظمة كشف وتصفية تمنع إساءة استخدام نماذج اكتشاف الأدوية", "en": "I focus my research on developing detection and filtering systems that prevent misuse of drug discovery models" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "الخطر نظري وبعيد — RAND Corporation أكدت أن AI أداة مساعدة وليس محركاً مستقلاً للتصميم البيولوجي حالياً", "en": "The risk is theoretical and distant — RAND Corporation confirmed AI is an assistive tool, not an independent driver of biological design currently" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "أوقف أبحاثي في اكتشاف الأدوية بـ AI بالكامل لأن المخاطر أكبر من الفوائد", "en": "I completely stop my AI drug discovery research because risks outweigh benefits" }, "flexibility_score": 1 }
+      ],
+      "hint_after": { "ar": "RAND (2025) تقيّم AI كـ\"أداة مساعدة وليس محركاً مستقلاً\" حالياً — لكن المخاطر متوقع أن تتوسع بعد 2027. ورقة في Science (أكتوبر 2025) أثبتت أن أدوات تصميم البروتينات التوليدي تنتج تسلسلات سامة تتجاوز أنظمة الفحص الحالية. التوازن بين الابتكار والأمان — وليس التوقف — هو المسار الصحيح.", "en": "RAND (2025) assesses AI as an 'assistive tool, not independent driver' currently — but risks expected to expand after 2027. A Science paper (October 2025) showed generative protein design tools produce toxic sequences that slip past current screening. Balancing innovation and security — not stopping — is the right path." }
+    }
+  ]
+}
