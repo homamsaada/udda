@@ -2463,6 +2463,17 @@
 
   function resumeGlobalTimer() {
     globalTimerPaused = false;
+    // إعادة إنشاء الـ interval إذا كان محذوفاً (بدون إعادة تعيين الوقت)
+    if (!globalTimerInterval) {
+      globalTimerInterval = setInterval(function() {
+        if (globalTimerPaused) return;
+        globalTimeLeft--;
+        updateGlobalTimerDisplay();
+        if (globalTimeLeft <= 0) {
+          onGlobalTimeUp();
+        }
+      }, 1000);
+    }
   }
 
   function updateGlobalTimerDisplay() {
