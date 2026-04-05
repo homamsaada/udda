@@ -1,0 +1,237 @@
+{
+  "section_id": "cs-data",
+  "section_name": { "ar": "هندسة الحاسوب وعلوم البيانات", "en": "Computer Engineering & Data Science" },
+  "version": "1.0",
+  "last_updated": "2026-04-05",
+  "questions": [
+    {
+      "id": "csd-mcq-001",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير أمن تطبيقات في شركة تقنية، وفريق التطوير يعتمد بشكل متزايد على أدوات توليد الكود بالذكاء الاصطناعي. وفقاً لتقرير Veracode 2025 الذي فحص أكثر من 100 نموذج لغوي كبير، ما نسبة الكود المولّد آلياً الذي يحتوي على ثغرات أمنية من قائمة OWASP Top 10؟",
+        "en": "You are an application security manager at a tech company, and the dev team increasingly relies on AI code generation tools. According to the 2025 Veracode report that tested 100+ LLMs, what percentage of AI-generated code contains OWASP Top 10 security vulnerabilities?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "45% من العيّنات تحتوي على ثغرات أمنية، ولغة Java الأسوأ بنسبة فشل 72%", "en": "45% of samples contain vulnerabilities, with Java worst at 72% failure rate" }, "score": 3 },
+        { "id": "b", "text": { "ar": "أقل من 10% — فالنماذج الحديثة تنتج كوداً آمناً بشكل شبه كامل", "en": "Less than 10% — modern models produce nearly fully secure code" }, "score": 0 },
+        { "id": "c", "text": { "ar": "حوالي 20% وهي نسبة مقاربة للكود البشري", "en": "About 20%, which is comparable to human-written code" }, "score": 0.5 },
+        { "id": "d", "text": { "ar": "90% وهذا يعني أن الكود المولّد غير قابل للاستخدام نهائياً", "en": "90%, meaning AI-generated code is completely unusable" }, "score": 0 }
+      ],
+      "hint_after": {
+        "ar": "الكود المولّد بالذكاء الاصطناعي يحتوي على ثغرات أكثر بـ 2.74 مرة من الكود البشري. والأخطر: النماذج الأحدث والأكبر لا تُنتج كوداً أكثر أماناً — الأداء الأمني ظل ثابتاً رغم تحسّن الأداء الوظيفي.",
+        "en": "AI-generated code contains 2.74× more vulnerabilities than human-written code. Most alarming: newer, larger models don't produce more secure code — security performance remained flat despite functional improvements."
+      }
+    },
+    {
+      "id": "csd-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير توظيف تقني في شركة كبرى. دراسة من Stanford بناءً على بيانات رواتب تغطي 3.5-5 مليون عامل أمريكي شهرياً كشفت عن تغيّر واضح في سوق العمل البرمجي. ما أبرز نتائجها؟",
+        "en": "You are a tech hiring manager at a major company. A Stanford study based on payroll data covering 3.5-5 million US workers monthly revealed a clear shift in the programming job market. What was its key finding?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "انخفاض توظيف الفئة العمرية 22-25 سنة بنسبة 16-20% في المهن المرتبطة بالذكاء الاصطناعي، بينما نمت الفئة 35-49 بنسبة 6-9%", "en": "16-20% employment decline for ages 22-25 in AI-exposed occupations, while ages 35-49 grew by 6-9%" }, "score": 3 },
+        { "id": "b", "text": { "ar": "انخفاض متساوٍ في التوظيف عبر جميع الفئات العمرية بنسبة 10%", "en": "Equal 10% employment decline across all age groups" }, "score": 0 },
+        { "id": "c", "text": { "ar": "زيادة كبيرة في توظيف المبتدئين لأن الشركات تحتاج من يراجع الكود المولّد", "en": "Large increase in junior hiring because companies need people to review generated code" }, "score": 0 },
+        { "id": "d", "text": { "ar": "لا تأثير ملحوظ — التغييرات ضمن الهامش الإحصائي الطبيعي", "en": "No noticeable impact — changes are within normal statistical margins" }, "score": 0 }
+      ],
+      "hint_after": {
+        "ar": "بيانات BLS الأمريكية تُظهر أن إجمالي توظيف المبرمجين انخفض 27.5% بين 2023 و2025. في ألمانيا، تراجعت وظائف المبرمجين المبتدئين 54%. لكن وظائف مهندسي AI/ML نمت 143% — المهارة تتغيّر لا تختفي.",
+        "en": "US BLS data shows total programmer employment fell 27.5% between 2023-2025. In Germany, junior software jobs declined 54%. But AI/ML engineer roles grew 143% — skills are shifting, not disappearing."
+      }
+    },
+    {
+      "id": "csd-mcq-003",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مطوّر أول في فريق يعتمد على GitHub Copilot. في تجربة عشوائية مضبوطة أجرتها GitHub/Accenture على 4,800 مطوّر، ما النتائج الإنتاجية التي تحققت فعلياً؟",
+        "en": "You are a senior developer on a team using GitHub Copilot. In a randomized controlled trial by GitHub/Accenture with 4,800 developers, what productivity results were actually achieved?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "إنجاز المهام أسرع بنسبة 55%، ودورة طلبات السحب انخفضت من 9.6 أيام إلى 2.4 يوم", "en": "Tasks completed 55% faster, and PR cycle time dropped from 9.6 days to 2.4 days" }, "score": 3 },
+        { "id": "b", "text": { "ar": "لا فرق إحصائي ملحوظ بين المجموعتين", "en": "No statistically significant difference between the two groups" }, "score": 0 },
+        { "id": "c", "text": { "ar": "تحسّن 10-15% فقط في سرعة الإنجاز دون تأثير على جودة الكود", "en": "Only 10-15% improvement in completion speed with no impact on code quality" }, "score": 0.5 },
+        { "id": "d", "text": { "ar": "تسريع كبير لكن مع تراجع حاد في جودة الكود بنسبة 40%", "en": "Major speedup but with a sharp 40% decline in code quality" }, "score": 0 }
+      ],
+      "hint_after": {
+        "ar": "Shopify أيضاً سجّلت زيادة 33% في طلبات السحب المدمجة، وانخفض وسيط وقت الدمج من 24 ساعة إلى 90 دقيقة. لكن هذه المكاسب تأتي مع تكلفة أمنية — لذلك المراجعة البشرية الأمنية تظل ضرورية.",
+        "en": "Shopify also reported a 33% boost in merged PRs, with median merge time falling from 24 hours to 90 minutes. But these gains come with a security cost — so human security review remains essential."
+      }
+    },
+    {
+      "id": "csd-tf-001",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مصطلح \"Vibe Coding\" الذي صاغه Andrej Karpathy يعني تطوير البرمجيات عبر إعطاء أوامر بالغة الطبيعية للذكاء الاصطناعي مع مراجعة دقيقة لكل سطر من الكود المولّد قبل اعتماده.",
+        "en": "The term 'Vibe Coding' coined by Andrej Karpathy means developing software through natural language prompts to AI with careful review of every line of generated code before adoption."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "Vibe Coding يعني تحديداً العكس: البرمجة عبر الأوامر النصية دون مراجعة الكود الناتج. 25% من مشاريع Y Combinator شتاء 2025 كانت أكواد قواعدها مولّدة بنسبة 95%+ بالذكاء الاصطناعي. المصطلح أصبح كلمة العام 2025 في قاموس Collins.",
+        "en": "Vibe Coding means specifically the opposite: coding through prompts WITHOUT reviewing output code. 25% of Y Combinator's Winter 2025 cohort had 95%+ AI-generated codebases. The term became Collins Dictionary's Word of the Year 2025."
+      }
+    },
+    {
+      "id": "csd-tf-002",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "GitHub Copilot يولّد في المتوسط 46% من إجمالي الكود لدى مستخدميه النشطين، وتصل النسبة إلى 61% لمطوّري Java تحديداً.",
+        "en": "GitHub Copilot generates on average 46% of all code for its active users, reaching 61% specifically for Java developers."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Copilot يهيمن بحصة سوقية 42% وأكثر من 20 مليون مستخدم (يوليو 2025). منافسه Cursor وصل إلى مليار دولار إيراد سنوي في أقل من عامين — أسرع نمو لمنتج B2B SaaS في التاريخ.",
+        "en": "Copilot dominates with 42% market share and 20+ million users (July 2025). Competitor Cursor reached $1 billion ARR in under 2 years — the fastest-scaling B2B SaaS product in history."
+      }
+    },
+    {
+      "id": "csd-fill-001",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "شركة {{blank_1}} قلّصت عدد موظفيها من حوالي 5,500 إلى 3,000، معتمدةً على روبوت دردشة AI يتعامل مع ثلثي استفسارات العملاء — لكنها اعترفت لاحقاً بتراجع رضا العملاء وبدأت بإعادة توظيف بشريين.",
+        "en": "The company {{blank_1}} shrank from ~5,500 to 3,000 employees, relying on an AI chatbot handling two-thirds of customer queries — but later admitted customer satisfaction dropped and began rehiring humans."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": { "ar": "Klarna", "en": "Klarna" },
+          "options": [
+            { "ar": "Klarna", "en": "Klarna" },
+            { "ar": "Shopify", "en": "Shopify" },
+            { "ar": "Stripe", "en": "Stripe" },
+            { "ar": "PayPal", "en": "PayPal" }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "قصة Klarna درس مهم: الاستبدال الكامل للبشر بالذكاء الاصطناعي في خدمة العملاء أدى لتراجع الجودة. في المقابل، Salesforce قلّصت 4,000 وظيفة دعم (من 9,000 إلى 5,000) باستخدام AI — النهج الحذر أفضل من الاستبدال الشامل.",
+        "en": "Klarna's story is an important lesson: completely replacing humans with AI in customer service led to quality decline. Meanwhile, Salesforce cut 4,000 support roles (from 9,000 to 5,000) using AI — a cautious approach beats wholesale replacement."
+      }
+    },
+    {
+      "id": "csd-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل أداة برمجة بالذكاء الاصطناعي مع الحقيقة المميزة لها:",
+        "en": "Match each AI coding tool with its distinguishing fact:"
+      },
+      "left": [
+        { "id": "L1", "text": { "ar": "GitHub Copilot", "en": "GitHub Copilot" } },
+        { "id": "L2", "text": { "ar": "Cursor (Anysphere)", "en": "Cursor (Anysphere)" } },
+        { "id": "L3", "text": { "ar": "Claude Code", "en": "Claude Code" } },
+        { "id": "L4", "text": { "ar": "Devin (Cognition Labs)", "en": "Devin (Cognition Labs)" } }
+      ],
+      "right": [
+        { "id": "R1", "text": { "ar": "حصة سوقية 42% وأكثر من 20 مليون مستخدم", "en": "42% market share with 20+ million users" } },
+        { "id": "R2", "text": { "ar": "أسرع منتج B2B SaaS في التاريخ — مليار دولار إيراد سنوي في أقل من عامين", "en": "Fastest B2B SaaS ever — $1 billion ARR in under 2 years" } },
+        { "id": "R3", "text": { "ar": "يمثّل أكثر من 4% من عمليات الدفع العامة على GitHub", "en": "Accounts for over 4% of public GitHub commits" } },
+        { "id": "R4", "text": { "ar": "Goldman Sachs تختبره لـ 12,000 مطوّر بهدف تحقيق 3-4 أضعاف الإنتاجية", "en": "Goldman Sachs piloting it for 12,000 developers targeting 3-4× productivity boost" } }
+      ],
+      "correct_pairs": [
+        { "left": "L1", "right": "R1" },
+        { "left": "L2", "right": "R2" },
+        { "left": "L3", "right": "R3" },
+        { "left": "L4", "right": "R4" }
+      ],
+      "hint_after": {
+        "ar": "سوق أدوات البرمجة بالذكاء الاصطناعي يتطور بسرعة غير مسبوقة. الرئيس التنفيذي لـ Google أكّد أن أكثر من 30% من كود Google الجديد مولّد بالذكاء الاصطناعي.",
+        "en": "The AI coding tools market is evolving at unprecedented speed. Google's CEO confirmed that 30%+ of Google's new code is AI-generated."
+      }
+    },
+    {
+      "id": "csd-sort-001",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات الاستخدام الآمن لأدوات توليد الكود بالذكاء الاصطناعي في بيئة إنتاجية، من أول خطوة إلى آخر خطوة:",
+        "en": "Order the steps for safely using AI code generation tools in a production environment, from first to last:"
+      },
+      "items": [
+        { "id": "S1", "text": { "ar": "تحديد سياسة أمنية تصنّف المهام المسموح فيها بتوليد الكود آلياً والمهام المحظورة", "en": "Define a security policy classifying tasks where AI code generation is permitted versus prohibited" } },
+        { "id": "S2", "text": { "ar": "توليد الكود باستخدام أداة AI مع تضمين متطلبات الأمان في الأوامر النصية", "en": "Generate code using an AI tool while embedding security requirements in the prompts" } },
+        { "id": "S3", "text": { "ar": "إجراء تحليل ثابت (SAST) وفحص مكونات الطرف الثالث (SCA) على الكود المولّد", "en": "Run static analysis (SAST) and software composition analysis (SCA) on the generated code" } },
+        { "id": "S4", "text": { "ar": "مراجعة بشرية أمنية متخصصة قبل دمج الكود في خط الإنتاج", "en": "Specialized human security review before merging code into the production pipeline" } }
+      ],
+      "correct_order": ["S1", "S2", "S3", "S4"],
+      "hint_after": {
+        "ar": "Georgia Tech تتتبع ثغرات CVE الناتجة عن كود AI وسجّلت 74 ثغرة مؤكدة بحلول 2026، منها 35 في مارس 2026 وحده — وتيرة متسارعة تؤكد ضرورة هذا النهج المنظّم.",
+        "en": "Georgia Tech tracks CVEs from AI code and recorded 74 confirmed vulnerabilities by 2026, with 35 in March 2026 alone — an accelerating trend confirming the need for this systematic approach."
+      }
+    },
+    {
+      "id": "csd-self-001",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مطوّر برمجيات بخبرة 5 سنوات. لاحظت أن زملاءك المبتدئين أصبحوا ينتجون كوداً بنفس سرعتك تقريباً بفضل أدوات AI. كيف تتعامل مع هذا الواقع؟",
+        "en": "You are a software developer with 5 years of experience. You've noticed that your junior colleagues now produce code at nearly your speed thanks to AI tools. How do you handle this reality?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أركّز على بناء مهارات أعمق في هندسة الأنظمة والمراجعة الأمنية والقيادة التقنية — وهي مهارات لا يستطيع AI تعويضها", "en": "I focus on building deeper skills in systems architecture, security review, and tech leadership — skills AI can't replace" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أتبنّى أدوات AI بالكامل لمضاعفة إنتاجيتي وأحافظ على تفوّقي بالسرعة والجودة معاً", "en": "I fully adopt AI tools to multiply my productivity and maintain my edge through both speed and quality" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "أشعر بالقلق لكنني أعتقد أن الخبرة الحقيقية لا يمكن استبدالها بأدوات، فأستمر كما أنا", "en": "I feel concerned but believe real experience can't be replaced by tools, so I continue as I am" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "أرفض استخدام أدوات AI في عملي لأنها تنتج كوداً رديء الجودة وأفضّل الاعتماد على مهاراتي فقط", "en": "I refuse to use AI tools in my work because they produce low-quality code, and I prefer relying only on my skills" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "استطلاع Stack Overflow 2025 وجد أن المطوّرين يستخدمون أدوات AI أكثر لكنهم يثقون بها أقل من أي وقت مضى. المفتاح: استخدم الأداة مع الحفاظ على التفكير النقدي. في المهام المعقدة (32 ساعة)، البشر يتفوقون على AI بنسبة 2:1.",
+        "en": "Stack Overflow's 2025 survey found developers use AI tools more but trust them less than ever. The key: use the tool while maintaining critical thinking. On complex tasks (32 hours), humans outperform AI 2:1."
+      }
+    },
+    {
+      "id": "csd-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت قائد فريق تقني وتدرس إمكانية اعتماد أسلوب \"Vibe Coding\" حيث يكتب الفريق أوامر نصية فقط ويترك AI يولّد الكود. ما نهجك؟",
+        "en": "You are a tech team lead considering adopting 'Vibe Coding' where the team writes only natural language prompts and lets AI generate the code. What's your approach?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أتبنّاه للنماذج الأولية وأدوات MVP مع إلزام مراجعة أمنية وفحص ثابت قبل أي نشر إنتاجي", "en": "I adopt it for prototypes and MVP tools while requiring security review and static analysis before any production deployment" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أسمح بتجربته في مشاريع داخلية محدودة الأثر لتقييم المخاطر والفوائد فعلياً", "en": "I allow trying it on limited-impact internal projects to evaluate risks and benefits practically" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "أنتظر حتى تتحسن الأدوات وتنخفض نسبة الثغرات الأمنية بشكل ملموس", "en": "I wait until tools improve and the vulnerability rate drops significantly" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "أرفضه تماماً — كتابة الكود يدوياً هي الطريقة الوحيدة لضمان الجودة والأمان", "en": "I reject it completely — writing code manually is the only way to ensure quality and security" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "25% من دفعة Y Combinator شتاء 2025 استخدمت أكواداً مولّدة بنسبة 95%+. النهج المتوازن — الاستفادة من السرعة مع فرض ضوابط أمنية — هو الأكثر واقعية في ظل تطوّر السوق.",
+        "en": "25% of Y Combinator's Winter 2025 cohort used 95%+ AI-generated codebases. The balanced approach — leveraging speed while enforcing security controls — is most realistic given the market's evolution."
+      }
+    }
+  ]
+}
