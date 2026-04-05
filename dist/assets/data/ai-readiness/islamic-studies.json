@@ -1,0 +1,237 @@
+{
+  "section_id": "islamic-studies",
+  "section_name": { "ar": "العلوم الإسلامية والدعوة", "en": "Islamic Studies & Da'wah" },
+  "version": "1.0",
+  "last_updated": "2026-04-05",
+  "questions": [
+    {
+      "id": "isl-mcq-001",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت باحث في الفقه الإسلامي، وطلب منك مسؤول في هيئة إفتاء تقييم نظام ذكاء اصطناعي للإجابة عن أسئلة الفتاوى. النظام يستخدم تقنية RAG (التوليد المعزز بالاسترجاع) ويعتمد على قاعدة بيانات دار الإفتاء المصرية. ما أدق وصف لنسبة الهلوسة المتوقعة من هذا النوع من الأنظمة المتخصصة؟",
+        "en": "You are an Islamic jurisprudence researcher, and a fatwa authority official asks you to evaluate an AI system for answering fatwa questions. The system uses RAG (Retrieval-Augmented Generation) based on Egypt's Dar al-Ifta database. What is the most accurate description of the expected hallucination rate for this type of specialized system?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أقل من 1% — تقنية RAG مع بيانات موثوقة تقلل الهلوسة بشكل كبير", "en": "Less than 1% — RAG with reliable data significantly reduces hallucinations" }, "score": 3 },
+        { "id": "b", "text": { "ar": "بين 5-10% — وهي نسبة مقبولة لأي نظام ذكاء اصطناعي", "en": "Between 5-10% — an acceptable rate for any AI system" }, "score": 1 },
+        { "id": "c", "text": { "ar": "بين 30-50% — لأن الذكاء الاصطناعي لا يفهم الفقه", "en": "Between 30-50% — because AI doesn't understand jurisprudence" }, "score": 0 },
+        { "id": "d", "text": { "ar": "0% — لأنه يسترجع من مصادر موثوقة فقط", "en": "0% — because it only retrieves from reliable sources" }, "score": 0.5 }
+      ],
+      "hint_after": {
+        "ar": "نظام Aftina — المبني على بيانات دار الإفتاء المصرية باستخدام RAG — حقق نسبة هلوسة 0.40% فقط في دراسة نُشرت 2025 في مجلة Neural Computing and Applications. هذا أقل بكثير من نماذج اللغة العامة التي تهلوس بنسبة 30-80% في المجالات المتخصصة.",
+        "en": "The Aftina system — built on Egypt's Dar al-Ifta data using RAG — achieved only a 0.40% hallucination rate in a 2025 study published in Neural Computing and Applications. This is far lower than general-purpose LLMs, which hallucinate at 30-80% in specialized domains."
+      }
+    },
+    {
+      "id": "isl-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير صندوق استثماري إسلامي وتريد التحقق من التزام محفظتك بضوابط الشريعة. أي وصف أدق لما تقدمه منصة IdealRatings؟",
+        "en": "You manage an Islamic investment fund and want to verify your portfolio's Shariah compliance. Which description most accurately reflects what IdealRatings provides?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "فحص أكثر من 40,000 سهم و3,000 صكوك و850 صندوق عقاري وفق أكثر من 40 معياراً شرعياً", "en": "Screening 40,000+ equities, 3,000+ sukuk, and 850+ REITs against 40+ Shariah criteria" }, "score": 3 },
+        { "id": "b", "text": { "ar": "تطبيق للأفراد يحسب زكاة الأسهم فقط", "en": "A consumer app that only calculates stock zakat" }, "score": 0 },
+        { "id": "c", "text": { "ar": "منصة فتاوى آلية في المعاملات المالية", "en": "An automated fatwa platform for financial transactions" }, "score": 0 },
+        { "id": "d", "text": { "ar": "بنك إسلامي رقمي يقدم حسابات استثمارية", "en": "A digital Islamic bank offering investment accounts" }, "score": 0.5 }
+      ],
+      "hint_after": {
+        "ar": "IdealRatings تخدم أكثر من 300 مؤسسة في 25+ دولة، وتشغّل مؤشرات FTSE IdealRatings Islamic. تحليلها يعتمد على بحث يدوي لأنشطة الشركات ونسبها المالية — وليس على تصنيف قطاعي فقط — مما يزيد دقة الامتثال الشرعي.",
+        "en": "IdealRatings serves 300+ institutions across 25+ countries and powers the FTSE IdealRatings Islamic Index Series. Its analysis uses manual research of company activities and financial ratios — not just sector classification — increasing Shariah compliance accuracy."
+      }
+    },
+    {
+      "id": "isl-mcq-003",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت معلم قرآن وتريد تطبيقاً يساعد طلابك على مراجعة حفظهم بشكل مستقل. تطبيق Tarteel AI يخدم أكثر من 15 مليون مسلم — ما الميزة الأساسية التي تميزه؟",
+        "en": "You are a Quran teacher wanting an app to help students review memorization independently. Tarteel AI serves 15+ million Muslims — what is its core distinguishing feature?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "تصحيح التلاوة لحظياً بالذكاء الاصطناعي مع كشف أخطاء الحفظ على مستوى الكلمة", "en": "Real-time AI recitation correction with word-level memorization error detection" }, "score": 3 },
+        { "id": "b", "text": { "ar": "ترجمة القرآن إلى 200 لغة بالذكاء الاصطناعي", "en": "AI translation of the Quran into 200 languages" }, "score": 0 },
+        { "id": "c", "text": { "ar": "تفسير آلي للآيات باستخدام نماذج اللغة الكبيرة", "en": "Automated verse interpretation using large language models" }, "score": 0 },
+        { "id": "d", "text": { "ar": "مصحف إلكتروني مع تسجيلات صوتية فقط", "en": "An electronic Mushaf with audio recordings only" }, "score": 1 }
+      ],
+      "hint_after": {
+        "ar": "Tarteel يعمل كـ\"شازام للقرآن\" — يستمع لتلاوتك ويكشف الأخطاء والكلمات المحذوفة والتشكيل الخاطئ لحظياً. نماذجه مدرّبة على أكثر من 75,000 دقيقة من التلاوات القرآنية المنتقاة، بالشراكة مع NVIDIA.",
+        "en": "Tarteel works as a 'Shazam for Quran' — listening to your recitation and detecting errors, skipped words, and incorrect tashkeel in real time. Its models are trained on 75,000+ minutes of curated Quranic recitations, in partnership with NVIDIA."
+      }
+    },
+    {
+      "id": "isl-tf-001",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أصدرت دار الإفتاء المصرية والمجمع الفقهي الدولي والأزهر حكماً بجواز الاعتماد الكامل على الذكاء الاصطناعي في إصدار الفتاوى، بشرط أن يكون النموذج مدرّباً على مصادر فقهية موثوقة.",
+        "en": "Egypt's Dar al-Ifta, the International Islamic Fiqh Academy, and Al-Azhar have ruled that full reliance on AI for issuing fatwas is permissible, provided the model is trained on reliable jurisprudential sources."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "الإجماع العلمي واضح: الذكاء الاصطناعي لا يملك مؤهلات المفتي — يفتقر للاجتهاد والنية والتقوى. لكن يمكن استخدامه كأداة مساعدة للبحث الفقهي. سنغافورة طوّرت IftaSG كأداة بحث — لكن الإصدار النهائي للفتوى يبقى بشرياً حصراً.",
+        "en": "The scholarly consensus is clear: AI lacks the qualifications of a mufti — it has no ijtihad, niyyah, or taqwa. But it can serve as a research assistant. Singapore's MUIS developed IftaSG as a research tool — but final fatwa issuance remains exclusively human."
+      }
+    },
+    {
+      "id": "isl-tf-002",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أعلنت منظمة نهضة العلماء في إندونيسيا أن تعلّم الذكاء الاصطناعي يُعدّ فرض كفاية على المسلمين.",
+        "en": "Indonesia's Nahdlatul Ulama declared that learning AI is a fardhu kifayah (collective religious obligation) for Muslims."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "نهضة العلماء — أكبر منظمة إسلامية في العالم بعشرات الملايين من الأعضاء — اعتبرت تعلّم AI فرض كفاية، مما يعكس وعياً متنامياً بأن التقنية أصبحت ضرورة دينية وليست ترفاً.",
+        "en": "Nahdlatul Ulama — the world's largest Islamic organization with tens of millions of members — deemed AI learning a fardhu kifayah, reflecting growing awareness that technology has become a religious necessity, not a luxury."
+      }
+    },
+    {
+      "id": "isl-fill-001",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "منصة {{blank_1}} توفر وصولاً بالذكاء الاصطناعي لأكثر من 15,000 نص إسلامي تشمل الفقه والحديث والتفسير، وتعتمد على المكتبة الشاملة كمصدر أساسي.",
+        "en": "The platform {{blank_1}} provides AI-powered access to over 15,000 Islamic texts covering jurisprudence, hadith, and exegesis, relying on the Shamela Library as a primary source."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": { "ar": "Usul.ai", "en": "Usul.ai" },
+          "options": [
+            { "ar": "Usul.ai", "en": "Usul.ai" },
+            { "ar": "Tarteel AI", "en": "Tarteel AI" },
+            { "ar": "SheikhGPT", "en": "SheikhGPT" },
+            { "ar": "ChatmuGPT", "en": "ChatmuGPT" }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Usul.ai — من مؤسسة The Seemore Foundation — يوفر وصولاً ذكياً لأكثر من 15,000 نص تشمل 5,770 في الفقه و2,921 في الحديث و897 في التفسير. بينما Tarteel متخصص في التلاوة، وChatmuGPT هو أداة محمدية إندونيسية مدرّبة على 20 كتاباً تنظيمياً.",
+        "en": "Usul.ai — by The Seemore Foundation — provides AI access to 15,000+ texts including 5,770 in jurisprudence, 2,921 in hadith, and 897 in exegesis. Tarteel specializes in recitation, while ChatmuGPT is an Indonesian Muhammadiyah tool trained on 20 organizational books."
+      }
+    },
+    {
+      "id": "isl-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل أداة ذكاء اصطناعي إسلامية بوظيفتها الأساسية:",
+        "en": "Match each Islamic AI tool with its primary function:"
+      },
+      "left": [
+        { "id": "L1", "text": { "ar": "Tarteel AI", "en": "Tarteel AI" } },
+        { "id": "L2", "text": { "ar": "IdealRatings", "en": "IdealRatings" } },
+        { "id": "L3", "text": { "ar": "Maarifa", "en": "Maarifa" } },
+        { "id": "L4", "text": { "ar": "OpenITI", "en": "OpenITI" } }
+      ],
+      "right": [
+        { "id": "R1", "text": { "ar": "تصحيح تلاوة القرآن بالتعرف على الصوت", "en": "Quran recitation correction via voice recognition" } },
+        { "id": "R2", "text": { "ar": "فحص الأسهم والصكوك للامتثال الشرعي", "en": "Screening equities and sukuk for Shariah compliance" } },
+        { "id": "R3", "text": { "ar": "مساعد ذكاء اصطناعي إسلامي بإشراف علماء الأزهر", "en": "Islamic AI assistant validated by Al-Azhar scholars" } },
+        { "id": "R4", "text": { "ar": "رقمنة المخطوطات الإسلامية بدقة OCR تتجاوز 97%", "en": "Digitizing Islamic manuscripts with 97%+ OCR accuracy" } }
+      ],
+      "correct_pairs": [
+        { "left": "L1", "right": "R1" },
+        { "left": "L2", "right": "R2" },
+        { "left": "L3", "right": "R3" },
+        { "left": "L4", "right": "R4" }
+      ],
+      "hint_after": {
+        "ar": "المنظومة الإسلامية للذكاء الاصطناعي تتنوع: Tarteel (15M+ مستخدم) للتلاوة، IdealRatings (300+ مؤسسة) للتمويل، Maarifa بإشراف الأزهر للاستشارات، وOpenITI (بتمويل $1.75M من Mellon) لرقمنة التراث بدقة تتجاوز 97% للخطوط العربية الشائعة.",
+        "en": "The Islamic AI ecosystem is diverse: Tarteel (15M+ users) for recitation, IdealRatings (300+ institutions) for finance, Maarifa with Al-Azhar oversight for consultation, and OpenITI ($1.75M Mellon funding) for heritage digitization with 97%+ accuracy on common Arabic typefaces."
+      }
+    },
+    {
+      "id": "isl-sort-001",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب الخطوات الصحيحة لتقييم أداة ذكاء اصطناعي مقترحة للبحث الفقهي في هيئة إفتاء — من الأولى إلى الأخيرة:",
+        "en": "Order the correct steps for evaluating a proposed AI tool for jurisprudential research at a fatwa authority — from first to last:"
+      },
+      "items": [
+        { "id": "S1", "text": { "ar": "التحقق من مصادر الأداة وقاعدة بياناتها الفقهية", "en": "Verify the tool's sources and jurisprudential database" } },
+        { "id": "S2", "text": { "ar": "اختبار نسبة الهلوسة بأسئلة فقهية معروفة الإجابة", "en": "Test hallucination rate with jurisprudential questions of known answers" } },
+        { "id": "S3", "text": { "ar": "تحديد دور الأداة كمساعد بحثي — لا بديل عن المفتي", "en": "Define the tool's role as research assistant — not a substitute for the mufti" } },
+        { "id": "S4", "text": { "ar": "وضع بروتوكول مراجعة بشرية إلزامية قبل أي إصدار", "en": "Establish a mandatory human review protocol before any issuance" } }
+      ],
+      "correct_order": ["S1", "S2", "S3", "S4"],
+      "hint_after": {
+        "ar": "تجربة IftaSG السنغافورية تؤكد هذا التسلسل: بدأوا بتنقيح البيانات، ثم اختبروا الدقة بهندسة الأوامر (Prompt Engineering)، ثم حدّدوا الأداة كمساعد بحثي، وأبقوا الإصدار النهائي للفتوى حصرياً بيد العلماء.",
+        "en": "Singapore's IftaSG experience confirms this sequence: they started with data curation, tested accuracy with prompt engineering, defined the tool as a research assistant, and kept final fatwa issuance exclusively in scholars' hands."
+      }
+    },
+    {
+      "id": "isl-self-001",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "طالب في كلية الشريعة يسألك: \"لماذا أدرس أصول الفقه إذا كان الذكاء الاصطناعي يستطيع البحث في آلاف المصادر في ثوانٍ؟\" — ما أقرب رد لموقفك؟",
+        "en": "A Sharia college student asks you: \"Why should I study Usul al-Fiqh if AI can search thousands of sources in seconds?\" — which response best reflects your position?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "الذكاء الاصطناعي أداة بحث قوية لكنه يفتقر للاجتهاد والملكة الفقهية — دراسة الأصول تمنحك القدرة على تقييم ما يقدمه AI وليس فقط قبوله", "en": "AI is a powerful research tool but lacks ijtihad and juristic reasoning — studying Usul gives you the ability to evaluate what AI offers, not just accept it" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "سؤال وجيه — ربما يجب تحديث مناهج الشريعة لتشمل كيفية استخدام AI في البحث الفقهي مع الحفاظ على الأصول", "en": "A fair question — perhaps Sharia curricula should be updated to include how to use AI in jurisprudential research while preserving fundamentals" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "العلم الشرعي لا يُقارن بالتقنية — يجب دراسة الأصول كاملة أولاً ثم النظر في التقنية لاحقاً", "en": "Religious knowledge cannot be compared to technology — one must study fundamentals fully first, then consider technology later" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "الذكاء الاصطناعي فتنة تشغل عن طلب العلم الحقيقي — الأفضل تجنبه في المجال الشرعي", "en": "AI is a distraction from true knowledge-seeking — it's best avoided in the religious field" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "منظمة نهضة العلماء الإندونيسية اعتبرت تعلّم AI فرض كفاية. المقاربة المثلى تجمع بين التأسيس الشرعي والكفاءة التقنية — فالعالم الذي يفهم AI يستطيع تقييم مخرجاته وتوظيفها بشكل سليم.",
+        "en": "Indonesia's Nahdlatul Ulama deemed AI learning a fardhu kifayah. The optimal approach combines religious grounding with technical competency — a scholar who understands AI can properly evaluate and utilize its outputs."
+      }
+    },
+    {
+      "id": "isl-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مؤسستك الدعوية تلقت عرضاً لاستخدام روبوت محادثة إسلامي يجيب عن أسئلة المسلمين الجدد بأكثر من 20 لغة. ما موقفك؟",
+        "en": "Your da'wah organization received an offer to use an Islamic chatbot that answers new Muslims' questions in 20+ languages. What is your position?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "فرصة ممتازة للوصول لجمهور عالمي — أوافق بشرط إشراف شرعي مستمر ومراجعة دورية للإجابات وتنبيه المستخدمين أن هذا ليس إفتاءً", "en": "An excellent opportunity to reach a global audience — I agree with ongoing scholarly oversight, periodic review of answers, and alerting users this is not a fatwa" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أجرّبه في نطاق محدود أولاً — أسئلة العقيدة الأساسية والعبادات فقط — ثم أقيّم النتائج قبل التوسع", "en": "I'd pilot it in a limited scope first — basic creed and worship questions only — then evaluate results before expanding" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "أفضّل الاكتفاء بالدعاة البشريين حتى تنضج التقنية أكثر — المخاطرة بإجابات خاطئة في أمور الدين كبيرة", "en": "I prefer sticking with human da'ees until the technology matures more — the risk of incorrect answers in religious matters is too high" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "أرفض تماماً — الدعوة تحتاج تواصلاً إنسانياً ولا يمكن لآلة أن تنقل روح الإسلام", "en": "I completely refuse — da'wah requires human connection and a machine cannot convey the spirit of Islam" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "Ansari Chat — روبوت محادثة إسلامي مفتوح المصدر يعمل بتقنية RAG — يقدم إجابات مستندة للقرآن والحديث والفقه بأكثر من 20 لغة. التحدي الحقيقي ليس في القدرة التقنية بل في ضمان الإشراف الشرعي المستمر.",
+        "en": "Ansari Chat — an open-source Islamic chatbot using RAG — provides answers grounded in Quran, Hadith, and Fiqh in 20+ languages. The real challenge isn't technical capability but ensuring continuous scholarly oversight."
+      }
+    }
+  ]
+}
