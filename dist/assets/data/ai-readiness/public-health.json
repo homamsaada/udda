@@ -1,0 +1,237 @@
+{
+  "section_id": "public-health",
+  "section_name": { "ar": "الصحة العامة", "en": "Public Health" },
+  "version": "1.0",
+  "last_updated": "2026-04-05",
+  "questions": [
+    {
+      "id": "pbh-mcq-001",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول ترصّد وبائي في وزارة الصحة، وظهرت تقارير عن التهاب رئوي مجهول في مدينة أجنبية. منصة BlueDot أطلقت تنبيهاً قبل أن تصدر منظمة الصحة العالمية بياناً رسمياً. ما الآلية التي تعتمدها هذه المنصة للكشف المبكر؟",
+        "en": "You are an epidemiological surveillance officer at the Ministry of Health, and reports have emerged about an unknown pneumonia in a foreign city. BlueDot issued an alert before the WHO released an official statement. What mechanism does this platform rely on for early detection?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "تحليل بيانات تذاكر الطيران والأخبار بأكثر من 130 لغة باستخدام معالجة اللغات الطبيعية", "en": "Analyzing airline ticketing data and news in 130+ languages using natural language processing" }, "score": 3 },
+        { "id": "b", "text": { "ar": "الاعتماد على تقارير المستشفيات الرسمية فقط وتجميعها مركزياً", "en": "Relying solely on official hospital reports and centralizing them" }, "score": 0 },
+        { "id": "c", "text": { "ar": "تحليل استعلامات بحث Google لاكتشاف أنماط المرض", "en": "Analyzing Google search queries to discover disease patterns" }, "score": 0.5 },
+        { "id": "d", "text": { "ar": "رصد منشورات وسائل التواصل الاجتماعي حصرياً لاكتشاف الأعراض", "en": "Exclusively monitoring social media posts to detect symptoms" }, "score": 1 }
+      ],
+      "hint_after": {
+        "ar": "BlueDot رصدت التهاب رئوي غير عادي في ووهان يوم 31 ديسمبر 2019، قبل بيان منظمة الصحة العالمية بتسعة أيام، وتنبأت بشكل صحيح بأول 11 مدينة ستصلها العدوى عبر تحليل بيانات الطيران.",
+        "en": "BlueDot flagged unusual pneumonia in Wuhan on December 31, 2019 — 9 days before the WHO statement — and correctly predicted the first 11 cities to receive cases by analyzing airline data."
+      }
+    },
+    {
+      "id": "pbh-mcq-002",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير عمليات في مستشفى يعاني من اكتظاظ مزمن في غرف العمليات. عُرض عليك نظام LeanTaaS iQueue لإدارة السعة بالذكاء الاصطناعي. ما النتيجة الأكثر واقعية التي يمكنك توقعها؟",
+        "en": "You are an operations director at a hospital suffering from chronic OR overcrowding. You've been offered the LeanTaaS iQueue AI capacity management system. What is the most realistic outcome you can expect?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "زيادة حجم الحالات بنسبة 6% وعائد إضافي بقيمة نصف مليون دولار لكل غرفة عمليات سنوياً", "en": "6% increase in case volume and additional revenue of $500K per OR per year" }, "score": 3 },
+        { "id": "b", "text": { "ar": "استغناء كامل عن مديري العمليات البشريين وإدارة المستشفى آلياً", "en": "Complete replacement of human operations managers with automated hospital management" }, "score": 0 },
+        { "id": "c", "text": { "ar": "تقليل مدة العمليات الجراحية ذاتها بنسبة 50%", "en": "Reducing the duration of surgical procedures themselves by 50%" }, "score": 0 },
+        { "id": "d", "text": { "ar": "تحسين الجدولة فقط دون تأثير ملموس على الإيرادات", "en": "Improving scheduling only without any tangible impact on revenue" }, "score": 1 }
+      ],
+      "hint_after": {
+        "ar": "LeanTaaS iQueue يُستخدم في أكثر من 1,200 مستشفى أمريكي ويدير أكثر من 4,600 غرفة عمليات، وقد حصل على تصنيف Best in KLAS 2025 في فئة إدارة السعة.",
+        "en": "LeanTaaS iQueue is used in 1,200+ US hospitals managing 4,600+ ORs, and earned the Best in KLAS 2025 award for Capacity Optimization Management."
+      }
+    },
+    {
+      "id": "pbh-mcq-003",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت باحث في مقاومة المضادات الحيوية (AMR) التي تسبب 1.27 مليون وفاة سنوياً. ما الذي أثبتته نماذج الذكاء الاصطناعي في هذا المجال وفقاً لدراسة نُشرت في Nature عام 2025؟",
+        "en": "You are a researcher studying antimicrobial resistance (AMR), which causes 1.27 million deaths annually. What have AI models demonstrated in this field according to a 2025 Nature study?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "نماذج XGBoost حققت AUC بقيمة 0.96 في التنبؤ بمقاومة المضادات الحيوية من بيانات 917 ألف عزلة بكتيرية", "en": "XGBoost models achieved an AUC of 0.96 in predicting antibiotic resistance from 917K bacterial isolate data" }, "score": 3 },
+        { "id": "b", "text": { "ar": "الذكاء الاصطناعي يستطيع القضاء على البكتيريا المقاومة مباشرةً دون الحاجة لمضادات حيوية", "en": "AI can directly eliminate resistant bacteria without the need for antibiotics" }, "score": 0 },
+        { "id": "c", "text": { "ar": "نماذج التعلم العميق حلت محل اختبارات الحساسية المخبرية بالكامل في المستشفيات", "en": "Deep learning models have completely replaced lab sensitivity tests in hospitals" }, "score": 0 },
+        { "id": "d", "text": { "ar": "الذكاء الاصطناعي يقتصر دوره على تحليل البيانات دون قدرة على تقديم توصيات علاجية", "en": "AI's role is limited to data analysis without the ability to provide treatment recommendations" }, "score": 0.5 }
+      ],
+      "hint_after": {
+        "ar": "التطبيق السريري لهذه النماذج أظهر نسبة نجاح 89% في توصيات تعديل المضادات الحيوية، وقلّل العلاج غير الضروري بنسبة 18%. يُتوقع أن تصل وفيات AMR إلى 10 ملايين بحلول 2050.",
+        "en": "Clinical implementation showed an 89% success rate in antibiotic adjustment recommendations and reduced unnecessary treatment by 18%. AMR deaths are projected to reach 10 million by 2050."
+      }
+    },
+    {
+      "id": "pbh-tf-001",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مشروع Google Flu Trends أثبت نجاحاً مستداماً في التنبؤ بالأوبئة عبر تحليل استعلامات البحث، وما زال مرجعاً معتمداً في الترصّد الوبائي حتى اليوم.",
+        "en": "Google Flu Trends proved to be a sustained success in predicting epidemics through search query analysis, and remains a trusted reference in epidemiological surveillance today."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "Google Flu Trends بالغ في تقدير الإنفلونزا بنسبة تجاوزت 140% خلال 2011-2013، وأخفق في رصد جائحة H1N1 عام 2009. أُوقف المشروع عام 2015. الدرس: البيانات الضخمة وحدها لا تكفي دون سياق وبائي ونماذج هجينة.",
+        "en": "Google Flu Trends overestimated flu by over 140% during 2011-2013 and missed the 2009 H1N1 pandemic. The project was discontinued in 2015. The lesson: big data alone isn't enough without epidemiological context and hybrid models."
+      }
+    },
+    {
+      "id": "pbh-tf-002",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "خوارزمية Epic Sepsis Model — المنتشرة في مستشفيات تخدم 54% من المرضى الأمريكيين — أثبتت فعالية عالية ومتسقة في الكشف المبكر عن الإنتان وفقاً للتقييمات المستقلة.",
+        "en": "The Epic Sepsis Model — deployed in hospitals serving 54% of US patients — has proven consistently effective in early sepsis detection according to independent evaluations."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "التقييم المستقل بجامعة ميشيغان كشف أن دقة النموذج (AUC) بلغت 0.63 فقط، وفاته 67% من حالات الإنتان. في المقابل، حصل نظام Prenosis على أول تصريح من FDA لكشف الإنتان بالذكاء الاصطناعي عام 2024.",
+        "en": "Independent validation at the University of Michigan revealed an AUC of only 0.63, missing 67% of sepsis cases. Meanwhile, Prenosis received the first FDA clearance for AI sepsis detection in 2024."
+      }
+    },
+    {
+      "id": "pbh-fill-001",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} التابع لمنظمة الصحة العالمية، الذي أُطلقت نسخته المحدّثة عام 2025، يغطي أكثر من 110 دول ويجمع أكثر من 150,000 مقال إخباري يومياً بقدرات ذكاء اصطناعي جديدة للترصّد الوبائي.",
+        "en": "The WHO's {{blank_1}} system, whose updated version launched in 2025, covers 110+ member states and gathers 150,000+ news articles daily with new AI capabilities for epidemiological surveillance."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": { "ar": "EIOS 2.0", "en": "EIOS 2.0" },
+          "options": [
+            { "ar": "EIOS 2.0", "en": "EIOS 2.0" },
+            { "ar": "HealthMap", "en": "HealthMap" },
+            { "ar": "ProMED-mail", "en": "ProMED-mail" },
+            { "ar": "GPHIN", "en": "GPHIN" }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "EIOS يعني Epidemic Intelligence from Open Sources — وهو يمثل تطور منظمة الصحة العالمية نحو دمج الذكاء الاصطناعي في الترصّد بدلاً من الاعتماد على التقارير الرسمية وحدها.",
+        "en": "EIOS stands for Epidemic Intelligence from Open Sources — it represents WHO's evolution toward integrating AI into surveillance instead of relying solely on official reports."
+      }
+    },
+    {
+      "id": "pbh-match-001",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل منصة ترصّد وبائي بالذكاء الاصطناعي مع الإنجاز أو الخاصية التي تميّزها:",
+        "en": "Match each AI-powered epidemiological surveillance platform with its distinguishing achievement or feature:"
+      },
+      "left": [
+        { "id": "L1", "text": { "ar": "BlueDot", "en": "BlueDot" } },
+        { "id": "L2", "text": { "ar": "EPIWATCH", "en": "EPIWATCH" } },
+        { "id": "L3", "text": { "ar": "Ginkgo Biosecurity", "en": "Ginkgo Biosecurity" } },
+        { "id": "L4", "text": { "ar": "Google Flu Trends", "en": "Google Flu Trends" } }
+      ],
+      "right": [
+        { "id": "R1", "text": { "ar": "تنبيه مبكر عن كوفيد-19 قبل منظمة الصحة العالمية بـ 9 أيام", "en": "Early COVID-19 alert 9 days before WHO" } },
+        { "id": "R2", "text": { "ar": "كشف ذروة الالتهاب الرئوي في الصين قبل إعلان WHO الرسمي", "en": "Detected China's pneumonia peak before WHO's official announcement" } },
+        { "id": "R3", "text": { "ar": "محطات رادار حيوي في 7 مطارات أمريكية لرصد مسببات الأمراض", "en": "Bioradar stations at 7 US airports for pathogen monitoring" } },
+        { "id": "R4", "text": { "ar": "أخفق في رصد جائحة H1N1 وبالغ في تقدير الإنفلونزا بأكثر من 140%", "en": "Failed to detect H1N1 pandemic and overestimated flu by over 140%" } }
+      ],
+      "correct_pairs": [
+        { "left": "L1", "right": "R1" },
+        { "left": "L2", "right": "R2" },
+        { "left": "L3", "right": "R3" },
+        { "left": "L4", "right": "R4" }
+      ],
+      "hint_after": {
+        "ar": "تحليل BlueDot الأخير أظهر فجوة 79 يوماً (وسيط) بين اكتشاف التفشي والإعلان الرسمي عام 2025، مقارنة بـ 3 أيام فقط لدى BlueDot — مما يوضح قيمة الترصّد المعزز بالذكاء الاصطناعي.",
+        "en": "A recent BlueDot analysis showed a median 79-day lag between outbreak detection and official declarations in 2025, versus BlueDot's 3-day lag — highlighting AI-enhanced surveillance value."
+      }
+    },
+    {
+      "id": "pbh-sort-001",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات استخدام الذكاء الاصطناعي في برنامج تقليل إعادة الإدخال للمستشفى، من أول خطوة إلى آخر خطوة:",
+        "en": "Order the steps for using AI in a hospital readmission reduction program, from first to last step:"
+      },
+      "items": [
+        { "id": "S1", "text": { "ar": "تدريب خوارزمية تنبؤية على بيانات السجلات الصحية الإلكترونية لتحديد المرضى الأعلى خطورة", "en": "Train a predictive algorithm on EHR data to identify highest-risk patients" } },
+        { "id": "S2", "text": { "ar": "دمج النظام مع سير العمل السريري وتوليد تنبيهات آنية عند دخول مريض عالي الخطورة", "en": "Integrate the system into clinical workflow and generate real-time alerts for high-risk admissions" } },
+        { "id": "S3", "text": { "ar": "تفعيل تدخلات استباقية تشمل الجوانب الطبية والاجتماعية للمرضى المُحدّدين", "en": "Activate proactive interventions covering medical and social aspects for identified patients" } },
+        { "id": "S4", "text": { "ar": "قياس معدلات إعادة الإدخال وفجوات العدالة الصحية وتعديل النموذج بناءً على النتائج", "en": "Measure readmission rates and health equity gaps and adjust the model based on outcomes" } }
+      ],
+      "correct_order": ["S1", "S2", "S3", "S4"],
+      "hint_after": {
+        "ar": "مستشفى زوكربيرغ سان فرانسيسكو استخدم هذا النهج ونجح في إزالة الفجوة العرقية في معدلات إعادة الإدخال بين المرضى الأمريكيين من أصول أفريقية وبقية السكان.",
+        "en": "Zuckerberg San Francisco General used this approach and successfully eliminated the racial disparity in readmission rates between Black/African American patients and the general population."
+      }
+    },
+    {
+      "id": "pbh-self-001",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول صحة عامة في منطقتك، وتلقيت عرضاً لتبنّي منصة ترصّد وبائي تعمل بالذكاء الاصطناعي تحلل الأخبار ووسائل التواصل الاجتماعي للكشف المبكر عن تفشي الأمراض. ما موقفك؟",
+        "en": "You are a public health official in your region, and you've received an offer to adopt an AI-powered epidemiological surveillance platform that analyzes news and social media for early disease outbreak detection. What is your position?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أسارع لتبنّيها كمكمّل لنظام الترصّد التقليدي مع تشكيل فريق لتقييم تنبيهاتها", "en": "I quickly adopt it as a complement to traditional surveillance with a team to evaluate its alerts" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أبدأ بتجربة محدودة على مرض واحد لقياس الأداء قبل التوسع", "en": "I start with a limited pilot on one disease to measure performance before expanding" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "أنتظر حتى تتبنّاها وزارات صحة أخرى في المنطقة وأقيّم نتائجهم أولاً", "en": "I wait until other regional health ministries adopt it and evaluate their results first" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "أرفض لأن الترصّد الوبائي يجب أن يعتمد على التقارير السريرية الرسمية حصراً", "en": "I refuse because epidemiological surveillance must rely exclusively on official clinical reports" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "الترصّد الرقمي بالذكاء الاصطناعي مكمّل وليس بديلاً للترصّد التقليدي — لكن التأخر في تبنّيه يعني فجوة قد تصل إلى 79 يوماً بين رصد التفشي والإعلان الرسمي.",
+        "en": "AI-powered digital surveillance complements rather than replaces traditional surveillance — but delay in adoption means a gap of up to 79 days between outbreak detection and official declaration."
+      }
+    },
+    {
+      "id": "pbh-self-002",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير جودة في مستشفى، واقترح فريقك تطبيق خوارزمية ذكاء اصطناعي للتنبؤ بالإنتان المبكر. لكنك تعلم أن نموذج Epic Sepsis الشهير فاته 67% من الحالات في تقييم مستقل. كيف تتعامل مع الاقتراح؟",
+        "en": "You are a quality director at a hospital, and your team proposed implementing an AI algorithm for early sepsis prediction. But you know the popular Epic Sepsis Model missed 67% of cases in independent evaluation. How do you handle the proposal?"
+      },
+      "options": [
+        { "id": "a", "text": { "ar": "أوافق على المبدأ لكن أشترط اختيار نظام حاصل على تصريح FDA مع تقييم مستقل قبل التبنّي", "en": "I agree in principle but require selecting an FDA-cleared system with independent validation before adoption" }, "flexibility_score": 5 },
+        { "id": "b", "text": { "ar": "أطلب من الفريق دراسة مقارنة بين النماذج المتاحة وعرضها على لجنة طبية قبل القرار", "en": "I ask the team for a comparative study of available models to present to a medical committee before deciding" }, "flexibility_score": 4 },
+        { "id": "c", "text": { "ar": "أرفض مؤقتاً وأنتظر حتى تنضج التقنية بشكل أكبر وتظهر نماذج أكثر موثوقية", "en": "I temporarily refuse and wait until the technology matures more and more reliable models emerge" }, "flexibility_score": 2 },
+        { "id": "d", "text": { "ar": "أرفض تماماً لأن فشل Epic يثبت أن الذكاء الاصطناعي غير جاهز للاستخدام السريري", "en": "I completely refuse because Epic's failure proves AI is not ready for clinical use" }, "flexibility_score": 1 }
+      ],
+      "hint_after": {
+        "ar": "ليست كل أنظمة AI متساوية: نظام eCART مثلاً حقق AUROC بقيمة 0.895 وقلّل الوفيات من 13.9% إلى 8.8%. التقييم النقدي لكل نظام على حدة أفضل من رفض التقنية بالكامل أو تبنّيها عشوائياً.",
+        "en": "Not all AI systems are equal: eCART achieved AUROC of 0.895 and reduced mortality from 13.9% to 8.8%. Critically evaluating each system individually is better than blanket rejection or uncritical adoption."
+      }
+    }
+  ]
+}
