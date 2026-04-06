@@ -1,8 +1,11 @@
 {
   "section_id": "public-admin",
-  "section_name": { "ar": "الإدارة العامة والحوكمة", "en": "Public Administration & Governance" },
-  "version": "1.0",
-  "last_updated": "2026-04-05",
+  "section_name": {
+    "ar": "الإدارة العامة والحوكمة",
+    "en": "Public Administration & Governance"
+  },
+  "version": "2.0",
+  "last_updated": "2026-04-06",
   "questions": [
     {
       "id": "pad-mcq-001",
@@ -16,10 +19,38 @@
         "en": "You're a government official planning to use an AI algorithm to detect fraud in social benefits. What's the most important lesson from the Dutch Childcare Benefits Scandal?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "الخوارزمية كانت دقيقة لكن الحكومة لم تطبق نتائجها بشكل صحيح", "en": "The algorithm was accurate but the government didn't implement its results correctly" }, "score": 0 },
-        { "id": "b", "text": { "ar": "الخوارزمية اعتبرت ازدواج الجنسية مؤشراً للاحتيال، مما أدى لاتهام 35,000 أسرة ظلماً وسقوط الحكومة", "en": "The algorithm treated dual nationality as a fraud indicator, falsely accusing ~35,000 families and causing the government to resign" }, "score": 3 },
-        { "id": "c", "text": { "ar": "المشكلة كانت في حجم البيانات الصغير وليس في تصميم الخوارزمية", "en": "The problem was small data volume, not algorithm design" }, "score": 0 },
-        { "id": "d", "text": { "ar": "الفضيحة مبالغ فيها إعلامياً والخوارزمية كانت تعمل بكفاءة مقبولة", "en": "The scandal was media exaggeration and the algorithm was working at acceptable efficiency" }, "score": 0 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخوارزمية كانت دقيقة لكن الحكومة لم تطبق نتائجها بشكل صحيح",
+            "en": "The algorithm was accurate but the government didn't implement its results correctly"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الخوارزمية اعتبرت ازدواج الجنسية مؤشراً للاحتيال، مما أدى لاتهام 35,000 أسرة ظلماً وسقوط الحكومة",
+            "en": "The algorithm treated dual nationality as a fraud indicator, falsely accusing ~35,000 families and causing the government to resign"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "المشكلة كانت في حجم البيانات الصغير وليس في تصميم الخوارزمية",
+            "en": "The problem was small data volume, not algorithm design"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الفضيحة مبالغ فيها إعلامياً والخوارزمية كانت تعمل بكفاءة مقبولة",
+            "en": "The scandal was media exaggeration and the algorithm was working at acceptable efficiency"
+          },
+          "score": 0
+        }
       ],
       "hint_after": {
         "ar": "استقالت الحكومة الهولندية بالكامل في يناير 2021 — وهي من الحالات النادرة عالمياً التي أسقط فيها فشل خوارزمي حكومة بأكملها. تقرير منظمة العفو الدولية \"Xenophobic Machines\" وثّق التنميط العنصري المدمج في الخوارزمية.",
@@ -38,10 +69,38 @@
         "en": "You're a digital transformation advisor in an Arab government. The minister asks about the best global model for a smart government assistant. Which of these projects is open-source and UNESCO-recognized?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "Bürokratt الإستوني — مساعد مفتوح المصدر ضمن أفضل 100 مشروع AI لليونسكو لعامين متتاليين", "en": "Estonia's Bürokratt — open-source assistant in UNESCO's top 100 AI projects for two consecutive years" }, "score": 3 },
-        { "id": "b", "text": { "ar": "Albert الفرنسي — نظام ذكاء اصطناعي سيادي لكنه مغلق المصدر", "en": "France's Albert — a sovereign AI system but closed-source" }, "score": 1 },
-        { "id": "c", "text": { "ar": "ChatGPT — لأنه الأكثر انتشاراً عالمياً", "en": "ChatGPT — because it's the most widely used globally" }, "score": 0 },
-        { "id": "d", "text": { "ar": "gov.pt البرتغالي — يدعم 12 لغة لكنه يعتمد على ChatGPT تجارياً", "en": "Portugal's gov.pt — supports 12 languages but relies on commercial ChatGPT" }, "score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "Bürokratt الإستوني — مساعد مفتوح المصدر ضمن أفضل 100 مشروع AI لليونسكو لعامين متتاليين",
+            "en": "Estonia's Bürokratt — open-source assistant in UNESCO's top 100 AI projects for two consecutive years"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "Albert الفرنسي — نظام ذكاء اصطناعي سيادي لكنه مغلق المصدر",
+            "en": "France's Albert — a sovereign AI system but closed-source"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "ChatGPT — لأنه الأكثر انتشاراً عالمياً",
+            "en": "ChatGPT — because it's the most widely used globally"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "gov.pt البرتغالي — يدعم 12 لغة لكنه يعتمد على ChatGPT تجارياً",
+            "en": "Portugal's gov.pt — supports 12 languages but relies on commercial ChatGPT"
+          },
+          "score": 1
+        }
       ],
       "hint_after": {
         "ar": "إستونيا رغم صغر حجمها (1.3 مليون نسمة) لديها 47 حالة استخدام AI حكومية فعّالة. Bürokratt مفتوح المصدر يتيح لأي حكومة تعديله. البرتغال أطلقت مساعداً يغطي 2,300+ خدمة بـ 12 لغة منذ يناير 2025.",
@@ -60,10 +119,38 @@
         "en": "You're a public policy researcher. Australia's Robodebt program used an algorithm to compare income and identify benefit recipients who were overpaid. What was the scale of damage?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "أثر على 5,000 شخص بتسويات مالية محدودة", "en": "Affected 5,000 people with limited financial settlements" }, "score": 0 },
-        { "id": "b", "text": { "ar": "اتهم 400,000 مستفيد ظلماً وانتهى بتسوية قضائية بقيمة 1.8 مليار دولار", "en": "Wrongly accused ~400,000 recipients and ended in a $1.8 billion class action settlement" }, "score": 3 },
-        { "id": "c", "text": { "ar": "حقق نجاحاً في كشف الاحتيال لكن واجه اعتراضات سياسية فقط", "en": "Successfully detected fraud but only faced political objections" }, "score": 0 },
-        { "id": "d", "text": { "ar": "أثر على 50,000 شخص لكن الحكومة صححت الأخطاء بسرعة", "en": "Affected 50,000 people but the government quickly corrected the errors" }, "score": 0 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "أثر على 5,000 شخص بتسويات مالية محدودة",
+            "en": "Affected 5,000 people with limited financial settlements"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "اتهم 400,000 مستفيد ظلماً وانتهى بتسوية قضائية بقيمة 1.8 مليار دولار",
+            "en": "Wrongly accused ~400,000 recipients and ended in a $1.8 billion class action settlement"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حقق نجاحاً في كشف الاحتيال لكن واجه اعتراضات سياسية فقط",
+            "en": "Successfully detected fraud but only faced political objections"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أثر على 50,000 شخص لكن الحكومة صححت الأخطاء بسرعة",
+            "en": "Affected 50,000 people but the government quickly corrected the errors"
+          },
+          "score": 0
+        }
       ],
       "hint_after": {
         "ar": "اللجنة الملكية وصفت Robodebt بأنه \"فشل إداري هائل\". الخوارزمية استخدمت متوسط الدخل السنوي لتقدير الدخل الأسبوعي — منهجية خاطئة جوهرياً. التعويضات بلغت 1.8 مليار دولار أسترالي.",
@@ -118,22 +205,52 @@
       "blanks": [
         {
           "id": "blank_1",
-          "correct": { "ar": "مشروع التسامي", "en": "Project Transcendence" },
+          "correct": {
+            "ar": "مشروع التسامي",
+            "en": "Project Transcendence"
+          },
           "options": [
-            { "ar": "مشروع التسامي", "en": "Project Transcendence" },
-            { "ar": "رؤية 2030", "en": "Vision 2030" },
-            { "ar": "نيوم", "en": "NEOM" },
-            { "ar": "سدايا", "en": "SDAIA" }
+            {
+              "ar": "مشروع التسامي",
+              "en": "Project Transcendence"
+            },
+            {
+              "ar": "رؤية 2030",
+              "en": "Vision 2030"
+            },
+            {
+              "ar": "نيوم",
+              "en": "NEOM"
+            },
+            {
+              "ar": "سدايا",
+              "en": "SDAIA"
+            }
           ]
         },
         {
           "id": "blank_2",
-          "correct": { "ar": "100 مليار دولار", "en": "$100 billion" },
+          "correct": {
+            "ar": "100 مليار دولار",
+            "en": "$100 billion"
+          },
           "options": [
-            { "ar": "100 مليار دولار", "en": "$100 billion" },
-            { "ar": "10 مليارات دولار", "en": "$10 billion" },
-            { "ar": "50 مليار دولار", "en": "$50 billion" },
-            { "ar": "مليار دولار", "en": "$1 billion" }
+            {
+              "ar": "100 مليار دولار",
+              "en": "$100 billion"
+            },
+            {
+              "ar": "10 مليارات دولار",
+              "en": "$10 billion"
+            },
+            {
+              "ar": "50 مليار دولار",
+              "en": "$50 billion"
+            },
+            {
+              "ar": "مليار دولار",
+              "en": "$1 billion"
+            }
           ]
         }
       ],
@@ -154,22 +271,82 @@
         "en": "Match each government AI failure with the country where it occurred:"
       },
       "left": [
-        { "id": "L1", "text": { "ar": "Robodebt — اتهام مئات الآلاف بالاحتيال ظلماً", "en": "Robodebt — falsely accusing hundreds of thousands of fraud" } },
-        { "id": "L2", "text": { "ar": "خوارزمية إعانات الأطفال — تنميط عنصري أسقط الحكومة", "en": "Childcare benefits algorithm — racial profiling that toppled the government" } },
-        { "id": "L3", "text": { "ar": "خوارزمية A-Level — خفض 40% من درجات الطلاب", "en": "A-Level algorithm — downgrading 40% of student grades" } },
-        { "id": "L4", "text": { "ar": "Smart Check — تحيز رغم اتباع كل إرشادات AI المسؤول", "en": "Smart Check — bias despite following all Responsible AI guidelines" } }
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Robodebt — اتهام مئات الآلاف بالاحتيال ظلماً",
+            "en": "Robodebt — falsely accusing hundreds of thousands of fraud"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "خوارزمية إعانات الأطفال — تنميط عنصري أسقط الحكومة",
+            "en": "Childcare benefits algorithm — racial profiling that toppled the government"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "خوارزمية A-Level — خفض 40% من درجات الطلاب",
+            "en": "A-Level algorithm — downgrading 40% of student grades"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Smart Check — تحيز رغم اتباع كل إرشادات AI المسؤول",
+            "en": "Smart Check — bias despite following all Responsible AI guidelines"
+          }
+        }
       ],
       "right": [
-        { "id": "R1", "text": { "ar": "أستراليا", "en": "Australia" } },
-        { "id": "R2", "text": { "ar": "هولندا", "en": "Netherlands" } },
-        { "id": "R3", "text": { "ar": "المملكة المتحدة", "en": "United Kingdom" } },
-        { "id": "R4", "text": { "ar": "أمستردام (هولندا أيضاً)", "en": "Amsterdam (also Netherlands)" } }
+        {
+          "id": "R1",
+          "text": {
+            "ar": "أستراليا",
+            "en": "Australia"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "هولندا",
+            "en": "Netherlands"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "المملكة المتحدة",
+            "en": "United Kingdom"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "أمستردام (هولندا أيضاً)",
+            "en": "Amsterdam (also Netherlands)"
+          }
+        }
       ],
       "correct_pairs": [
-        { "left": "L1", "right": "R1" },
-        { "left": "L2", "right": "R2" },
-        { "left": "L3", "right": "R3" },
-        { "left": "L4", "right": "R4" }
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
       ],
       "hint_after": {
         "ar": "هولندا ظهرت مرتين! فضيحة إعانات الأطفال (2013-2019) على المستوى الوطني، وSmart Check (2024) على مستوى بلدية أمستردام. هذا يثبت أن الدول المتقدمة ليست محصنة من فشل AI الحكومي.",
@@ -188,12 +365,41 @@
         "en": "Order the steps for implementing a responsible government AI system for evaluating social support applications:"
       },
       "items": [
-        { "id": "S1", "text": { "ar": "تقييم أثر الخوارزمية على الفئات المختلفة (اختبار التحيز العرقي والجندري والعمري)", "en": "Assess the algorithm's impact on different groups (test for racial, gender, and age bias)" } },
-        { "id": "S2", "text": { "ar": "إنشاء آلية تظلم واضحة تتيح للمواطنين الاعتراض على القرارات الآلية", "en": "Establish a clear appeals mechanism allowing citizens to challenge automated decisions" } },
-        { "id": "S3", "text": { "ar": "تشغيل تجريبي مع إشراف بشري كامل على كل قرار قبل تنفيذه", "en": "Pilot run with full human oversight on every decision before execution" } },
-        { "id": "S4", "text": { "ar": "نشر تقارير شفافية دورية عن أداء النظام ونسب الخطأ والتحيز", "en": "Publish periodic transparency reports on system performance, error rates, and bias" } }
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تقييم أثر الخوارزمية على الفئات المختلفة (اختبار التحيز العرقي والجندري والعمري)",
+            "en": "Assess the algorithm's impact on different groups (test for racial, gender, and age bias)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "إنشاء آلية تظلم واضحة تتيح للمواطنين الاعتراض على القرارات الآلية",
+            "en": "Establish a clear appeals mechanism allowing citizens to challenge automated decisions"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تشغيل تجريبي مع إشراف بشري كامل على كل قرار قبل تنفيذه",
+            "en": "Pilot run with full human oversight on every decision before execution"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "نشر تقارير شفافية دورية عن أداء النظام ونسب الخطأ والتحيز",
+            "en": "Publish periodic transparency reports on system performance, error rates, and bias"
+          }
+        }
       ],
-      "correct_order": ["S1", "S2", "S3", "S4"],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
       "hint_after": {
         "ar": "قانون AI الأوروبي (EU AI Act) يصنف أنظمة AI الحكومية في الخدمات الاجتماعية ضمن فئة \"عالية المخاطرة\" مع التزامات كاملة بحلول أغسطس 2026. العقوبات تصل إلى 35 مليون يورو أو 7% من الإيرادات العالمية.",
         "en": "The EU AI Act classifies government AI in social services as 'high-risk' with full obligations by August 2026. Penalties reach €35 million or 7% of global turnover."
@@ -211,10 +417,38 @@
         "en": "You're a government employee with 15 years of experience. Your agency plans to use AI to evaluate license applications instead of manual review. What's your stance?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "فرصة ممتازة — سأتعلم كيف يعمل النظام وأركز على الحالات المعقدة التي تحتاج حكماً بشرياً", "en": "Excellent opportunity — I'll learn how the system works and focus on complex cases requiring human judgment" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "مقبول بشرط أن يبقى القرار النهائي للموظف البشري وليس للخوارزمية", "en": "Acceptable on condition that the final decision remains with the human employee, not the algorithm" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "قلق من أن النظام سيرتكب أخطاء لا يستطيع موظف مبتدئ اكتشافها", "en": "Worried that the system will make errors that a junior employee won't be able to detect" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "التراخيص تحتاج فهم السياق المحلي والعلاقات الإنسانية — لا يمكن لخوارزمية أن تفهم ذلك", "en": "Licensing requires understanding local context and human relationships — no algorithm can understand that" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة ممتازة — سأتعلم كيف يعمل النظام وأركز على الحالات المعقدة التي تحتاج حكماً بشرياً",
+            "en": "Excellent opportunity — I'll learn how the system works and focus on complex cases requiring human judgment"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقبول بشرط أن يبقى القرار النهائي للموظف البشري وليس للخوارزمية",
+            "en": "Acceptable on condition that the final decision remains with the human employee, not the algorithm"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق من أن النظام سيرتكب أخطاء لا يستطيع موظف مبتدئ اكتشافها",
+            "en": "Worried that the system will make errors that a junior employee won't be able to detect"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التراخيص تحتاج فهم السياق المحلي والعلاقات الإنسانية — لا يمكن لخوارزمية أن تفهم ذلك",
+            "en": "Licensing requires understanding local context and human relationships — no algorithm can understand that"
+          },
+          "flexibility_score": 1
+        }
       ],
       "hint_after": {
         "ar": "43% من الموظفين الحكوميين الأمريكيين يستخدمون AI في عملهم (Gallup Q4 2025)، ارتفاعاً من 17% في 2023. التحول ليس اختيارياً — لكن دور الموظف يتغير من منفذ إلى مراقب ومقيّم.",
@@ -233,14 +467,4524 @@
         "en": "Your government plans to build a complete 'digital twin' of the city simulating traffic, emergencies, and urban planning. As a planning official, what's your view?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "مشروع طموح وضروري — سأشارك في تصميمه وأتعلم المهارات اللازمة لاستخدامه", "en": "An ambitious and necessary project — I'll participate in its design and learn the skills needed to use it" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "فكرة جيدة لكن يجب البدء بمنطقة صغيرة كتجربة قبل التوسع لكامل المدينة", "en": "Good idea but we should start with a small area as a pilot before expanding to the whole city" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "التكلفة ستكون هائلة والبيانات المتاحة غير كافية لبناء نموذج دقيق", "en": "The cost will be enormous and available data is insufficient to build an accurate model" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "التخطيط العمراني يحتاج زيارات ميدانية وخبرة محلية لا يمكن لنموذج رقمي تعويضها", "en": "Urban planning requires field visits and local expertise that no digital model can replace" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "مشروع طموح وضروري — سأشارك في تصميمه وأتعلم المهارات اللازمة لاستخدامه",
+            "en": "An ambitious and necessary project — I'll participate in its design and learn the skills needed to use it"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "فكرة جيدة لكن يجب البدء بمنطقة صغيرة كتجربة قبل التوسع لكامل المدينة",
+            "en": "Good idea but we should start with a small area as a pilot before expanding to the whole city"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "التكلفة ستكون هائلة والبيانات المتاحة غير كافية لبناء نموذج دقيق",
+            "en": "The cost will be enormous and available data is insufficient to build an accurate model"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التخطيط العمراني يحتاج زيارات ميدانية وخبرة محلية لا يمكن لنموذج رقمي تعويضها",
+            "en": "Urban planning requires field visits and local expertise that no digital model can replace"
+          },
+          "flexibility_score": 1
+        }
       ],
       "hint_after": {
         "ar": "سنغافورة بنت Virtual Singapore — نسخة رقمية ثلاثية الأبعاد كاملة للدولة بأكملها. دبي أطلقت \"التوأم الرقمي الذكي\" ضمن مشروع \"واقع إنساني واحد\". McKinsey وPwC يقدّران أن التوائم الرقمية تحسن الكفاءة التشغيلية بنسبة 20-40%.",
         "en": "Singapore built Virtual Singapore — a complete 3D digital replica of the entire nation. Dubai launched its 'Smart Digital Twin' as part of the 'One Human Reality' project. McKinsey and PwC estimate digital twins improve operational efficiency by 20-40%."
+      }
+    },
+    {
+      "id": "pad-mcq-004",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول تحول رقمي في وزارة عربية. تريد إطلاق مساعد حكومي يخدم المواطنين بلغات متعددة. أي نموذج عالمي يغطي أكبر عدد من الخدمات العامة بأكثر اللغات؟",
+        "en": "You're a digital transformation officer in an Arab ministry. You want to launch a multilingual government assistant. Which global model covers the most public services in the most languages?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "Bürokratt الإستوني — مفتوح المصدر لكنه باللغة الإستونية فقط",
+            "en": "Estonia's Bürokratt — open-source but Estonian-only"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "gov.pt البرتغالي — يغطي أكثر من 2,300 خدمة بـ 12 لغة منذ يناير 2025",
+            "en": "Portugal's gov.pt — covers 2,300+ services in 12 languages since January 2025"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "Albert الفرنسي — سيادي وقوي لكنه مخصص للموظفين وليس للمواطنين",
+            "en": "France's Albert — sovereign and powerful but designed for government agents, not citizens"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ChatGPT المباشر — لأنه الأقوى تقنياً",
+            "en": "Direct ChatGPT — because it's the most technically powerful"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "المساعد البرتغالي gov.pt أُطلق في يناير 2025 ويعتمد على ChatGPT لكنه مُدرَّب على بيانات الخدمات الحكومية البرتغالية. Albert الفرنسي أُطلق في أبريل 2024 كنموذج AI سيادي يساعد الموظفين الحكوميين وليس المواطنين مباشرة.",
+        "en": "Portugal's gov.pt assistant launched in January 2025, powered by ChatGPT but trained on Portuguese government service data. France's Albert launched in April 2024 as a sovereign AI model assisting government agents, not citizens directly."
+      }
+    },
+    {
+      "id": "pad-mcq-005",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مستشار حوكمة بيانات في جهة حكومية أمريكية. تقرير حديث يُظهر أن الوكالات تقضي 80% من وقت تطبيق AI في مهام مرتبطة بالبيانات. ما السبب الرئيسي؟",
+        "en": "You're a data governance advisor at a U.S. government agency. A recent report shows agencies spend 80% of AI implementation time on data-related tasks. What's the main reason?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نماذج AI الحكومية أبطأ من نماذج القطاع الخاص",
+            "en": "Government AI models are slower than private sector models"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "البيانات الحكومية مجزأة وغير متسقة وأحياناً غير مكتملة — مشكلة 'قمامة تدخل، قمامة تخرج'",
+            "en": "Government data is fragmented, inconsistent, and sometimes incomplete — the 'garbage in, garbage out' problem"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الموظفون يرفضون مشاركة بياناتهم مع أنظمة AI",
+            "en": "Employees refuse to share their data with AI systems"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "القوانين تمنع الوكالات من استخدام البيانات الموجودة",
+            "en": "Laws prevent agencies from using existing data"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الجمعية الأمريكية للإحصاء وجدت أن الوكالات الإحصائية الفيدرالية تعاني من تحديات في تقديم بيانات عالية الجودة. جودة البيانات هي العائق الأول أمام نجاح AI الحكومي — وليس التقنية نفسها.",
+        "en": "The American Statistical Association found federal statistical agencies struggle to deliver high-quality datasets. Data quality is the #1 barrier to government AI success — not the technology itself."
+      }
+    },
+    {
+      "id": "pad-mcq-006",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "كم عدد حالات استخدام AI المُبلَّغ عنها في الحكومة الفيدرالية الأمريكية في بداية 2025؟",
+        "en": "How many AI use cases were reported across the U.S. federal government at the start of 2025?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "حوالي 200 حالة استخدام",
+            "en": "About 200 use cases"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حوالي 2,133 حالة استخدام — والعدد قد تضاعف منذ ذلك الحين",
+            "en": "About 2,133 use cases — and the number may have doubled since"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أكثر من 10,000 حالة استخدام",
+            "en": "More than 10,000 use cases"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا توجد حالات استخدام رسمية مُوثقة",
+            "en": "No officially documented use cases"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "20 من أصل 23 وكالة أمريكية كبرى أبلغت عن نحو 1,200 حالة استخدام AI حالية ومخططة (GAO). التقارير تشير إلى أن الإدارة قد ضاعفت عدد الاستخدامات منذ آخر إحصاء.",
+        "en": "20 of 23 major U.S. agencies reported about 1,200 current and planned AI use cases (GAO). Reports suggest the administration may have doubled AI uses since last reporting."
+      }
+    },
+    {
+      "id": "pad-tf-003",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "قانون الذكاء الاصطناعي الأوروبي (EU AI Act) يحظر صراحةً أنظمة AI التي تتنبأ باحتمال ارتكاب شخص ما لجريمة، وذلك بموجب المادة 5 التي دخلت حيز التنفيذ في فبراير 2025.",
+        "en": "The EU AI Act explicitly prohibits AI systems that predict the probability of someone committing a crime, under Article 5 which took effect in February 2025."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "المادة 5 من قانون AI الأوروبي تحظر عدة ممارسات منها التنبؤ بالجريمة على مستوى الأفراد. أداة COMPAS الأمريكية للتنبؤ بالعودة للإجرام وُجد أنها تُظهر تحيزاً عنصرياً ضد السود — وهذا بالضبط ما يحاول القانون الأوروبي منعه.",
+        "en": "EU AI Act Article 5 prohibits several practices including individual-level crime prediction. The U.S. COMPAS recidivism tool was found by ProPublica to show racial bias against Black defendants — exactly what the EU law aims to prevent."
+      }
+    },
+    {
+      "id": "pad-tf-004",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "كوريا الجنوبية طوّرت نظام dBrain+ الذي يستخدم AI لتحليل البيانات المالية العامة في الوقت الحقيقي لتحسين إدارة المالية الحكومية.",
+        "en": "South Korea developed dBrain+, an AI system that analyzes real-time public fiscal data to optimize government financial management."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "dBrain+ هو تطور لنظام dBrain الكوري لإدارة المالية العامة. إضافة AI مكّنت من تحليل البيانات المالية لحظياً واتخاذ قرارات مالية أسرع وأدق على مستوى الحكومة.",
+        "en": "dBrain+ is an evolution of Korea's dBrain public finance system. Adding AI enabled real-time fiscal data analysis for faster and more accurate government-level financial decisions."
+      }
+    },
+    {
+      "id": "pad-fill-002",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "تقرير منظمة التعاون الاقتصادي والتنمية (OECD) لعام 2025 بعنوان 'الحوكمة بالذكاء الاصطناعي' استعرض {{blank_1}} مثالاً واقعياً عبر 11 وظيفة حكومية أساسية، ووجد أن {{blank_2}} من الدول استخدمت AI لتحسين العمليات الداخلية.",
+        "en": "The OECD's 2025 report 'Governing with Artificial Intelligence' explored {{blank_1}} real-world examples across 11 core government functions, finding that {{blank_2}} of countries used AI to improve internal processes."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "200",
+            "en": "200"
+          },
+          "options": [
+            {
+              "ar": "200",
+              "en": "200"
+            },
+            {
+              "ar": "50",
+              "en": "50"
+            },
+            {
+              "ar": "500",
+              "en": "500"
+            },
+            {
+              "ar": "1000",
+              "en": "1000"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "70%",
+            "en": "70%"
+          },
+          "options": [
+            {
+              "ar": "70%",
+              "en": "70%"
+            },
+            {
+              "ar": "30%",
+              "en": "30%"
+            },
+            {
+              "ar": "90%",
+              "en": "90%"
+            },
+            {
+              "ar": "50%",
+              "en": "50%"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "الفجوة كبيرة: 70% من الدول استخدمت AI لتحسين العمليات الداخلية، لكن 33% فقط استخدمته لتحسين تصميم السياسات. تحسين الكفاءة أسهل من تحسين صنع القرار.",
+        "en": "The gap is significant: 70% of countries used AI for internal process improvement, but only 33% used it for policy design. Improving efficiency is easier than improving decision-making."
+      }
+    },
+    {
+      "id": "pad-match-002",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مبادرة حكومية ذكية بالدولة أو المنطقة التي أطلقتها:",
+        "en": "Match each smart government initiative with the country or region that launched it:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Albert — نموذج AI سيادي للموظفين الحكوميين",
+            "en": "Albert — sovereign AI model for government agents"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "dBrain+ — تحليل بيانات مالية عامة بالذكاء الاصطناعي",
+            "en": "dBrain+ — AI-powered public fiscal data analysis"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Smart Nation 2.0 — مليار دولار لأبحاث AI",
+            "en": "Smart Nation 2.0 — $1 billion for AI R&D"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "مشروع التسامي — 100 مليار دولار في AI",
+            "en": "Project Transcendence — $100 billion in AI"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "فرنسا",
+            "en": "France"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "كوريا الجنوبية",
+            "en": "South Korea"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "سنغافورة",
+            "en": "Singapore"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "المملكة العربية السعودية",
+            "en": "Saudi Arabia"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "فرنسا أطلقت Albert في أبريل 2024 عبر DINUM كنموذج سيادي. سنغافورة خصصت مليار دولار لأبحاث AI و5 مليارات للبنية التحتية. السعودية أعلنت مشروع التسامي في أواخر 2024 بقيمة 100 مليار دولار.",
+        "en": "France launched Albert in April 2024 via DINUM as a sovereign model. Singapore allocated $1B for AI R&D and $5B for infrastructure. Saudi Arabia announced Project Transcendence in late 2024 at $100 billion."
+      }
+    },
+    {
+      "id": "pad-sort-002",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات تطبيق نظام AI حكومي لتقييم طلبات الإعانات الاجتماعية من الأقل خطورة إلى الأكثر خطورة:",
+        "en": "Order the steps of implementing a government AI system for evaluating social benefit applications from least to most risky:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "استخدام AI لتصنيف الطلبات حسب الأولوية مع إبقاء القرار النهائي للموظف",
+            "en": "Using AI to prioritize applications while keeping the final decision with the human employee"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "استخدام AI لاقتراح قرار مع مراجعة بشرية إلزامية قبل الإبلاغ",
+            "en": "Using AI to suggest a decision with mandatory human review before notification"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "اتخاذ قرارات آلية بالكامل مع إمكانية الاستئناف البشري بعد الإبلاغ",
+            "en": "Fully automated decisions with the possibility of human appeal after notification"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "اتخاذ قرارات آلية بالكامل دون آلية استئناف واضحة",
+            "en": "Fully automated decisions without a clear appeal mechanism"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "Robodebt الأسترالي وإعانات الأطفال الهولندية كلاهما وصلا للمستوى الرابع (قرارات آلية بلا استئناف فعّال). المادة 22 من GDPR تحظر اتخاذ قرارات مبنية حصرياً على المعالجة الآلية إذا أثرت جوهرياً على الأفراد.",
+        "en": "Both Australia's Robodebt and the Dutch childcare scandal reached level 4 (automated decisions without effective appeal). GDPR Article 22 prohibits decisions based solely on automated processing if they significantly affect individuals."
+      }
+    },
+    {
+      "id": "pad-self-003",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير إدارة في جهة حكومية. رئيسك يطلب منك تطبيق نظام AI لتقييم أداء الموظفين تلقائياً. ما موقفك؟",
+        "en": "You're a department manager in a government agency. Your boss asks you to implement an AI system to automatically evaluate employee performance. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة لجعل التقييم أكثر موضوعية — سأبدأ بمؤشرات قابلة للقياس وأُبقي الجوانب النوعية للمدير",
+            "en": "Opportunity for more objective evaluation — I'll start with measurable indicators and keep qualitative aspects for the manager"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقبول كأداة مساعدة تُنبه لأنماط غير ملحوظة، لكن القرار النهائي يبقى بشرياً",
+            "en": "Acceptable as a support tool that flags unnoticed patterns, but the final decision remains human"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "محفوف بالمخاطر — تقييم الأداء يحتاج فهم السياق الشخصي والظروف الفردية",
+            "en": "Risky — performance evaluation requires understanding personal context and individual circumstances"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "خطير تماماً — الخوارزميات ستخلق بيئة مراقبة وتدمر الثقة بين الإدارة والموظفين",
+            "en": "Completely dangerous — algorithms will create a surveillance environment and destroy trust between management and employees"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "استطلاع يوروباروميتر وجد أن 61% من الأوروبيين يعتقدون أن AI يضر بالتواصل في مكان العمل. التحدي ليس تقنياً بل ثقافي: كيف تجعل الموظفين يقبلون التقييم الخوارزمي دون الشعور بأنهم مراقَبون.",
+        "en": "The Eurobarometer found 61% of Europeans think AI harms workplace communication. The challenge isn't technical but cultural: how to make employees accept algorithmic evaluation without feeling surveilled."
+      }
+    },
+    {
+      "id": "pad-self-004",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "حكومتك تُعلن عن شراء نظام AI من شركة خاصة لاتخاذ قرارات تؤثر على المواطنين، لكن الشركة ترفض الكشف عن خوارزمياتها بحجة الملكية الفكرية. كمسؤول حوكمة، ما موقفك؟",
+        "en": "Your government announces purchasing an AI system from a private company for decisions affecting citizens, but the company refuses to disclose its algorithms citing intellectual property. As a governance official, what's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الشفافية غير قابلة للتفاوض — يجب رفض أي نظام لا يمكن تدقيقه عند اتخاذ قرارات تمس المواطنين",
+            "en": "Transparency is non-negotiable — any system that can't be audited when making decisions affecting citizens must be rejected"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يمكن قبوله بشرط وجود هيئة رقابة مستقلة تدقق الخوارزمية دون نشرها علنياً",
+            "en": "Acceptable if there's an independent oversight body that audits the algorithm without public disclosure"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الملكية الفكرية حق مشروع — المهم أن النتائج تكون عادلة وليس الخوارزمية نفسها",
+            "en": "Intellectual property is a legitimate right — what matters is that results are fair, not the algorithm itself"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التفاصيل التقنية لا تهم المواطن العادي — الحكومة تعرف ما تفعل",
+            "en": "Technical details don't matter to the average citizen — the government knows what it's doing"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "معظم إخفاقات AI الحكومية (Robodebt، إعانات هولندا، COMPAS) حدثت بسبب غياب الشفافية والرقابة المستقلة. حتى مع النوايا الحسنة، الخوارزميات غير المُدققة قد تنتج تحيزاً منهجياً.",
+        "en": "Most government AI failures (Robodebt, Dutch benefits, COMPAS) occurred due to lack of transparency and independent oversight. Even with good intentions, unaudited algorithms can produce systematic bias."
+      }
+    },
+    {
+      "id": "pad-mcq-007",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مستشار في وزارة العدل. أداة COMPAS الأمريكية تُستخدم للتنبؤ بعودة المتهمين للإجرام. ما المشكلة الرئيسية التي كشفتها دراسة ProPublica؟",
+        "en": "You're an advisor at the Ministry of Justice. The U.S. COMPAS tool is used to predict defendant recidivism. What's the main problem revealed by ProPublica's study?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الأداة كانت دقيقة لكنها بطيئة جداً في إعطاء النتائج",
+            "en": "The tool was accurate but too slow in delivering results"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "صنّفت المتهمين السود كخطرين بمعدل أعلى بكثير من البيض المتهمين بجرائم مماثلة",
+            "en": "Flagged Black defendants as high-risk at a much higher rate than white defendants charged with similar crimes"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "كانت دقيقة مع الجرائم الكبرى لكنها فشلت مع الجرائم الصغيرة",
+            "en": "Was accurate with major crimes but failed with minor ones"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المشكلة كانت فقط في واجهة الاستخدام وليس في الخوارزمية نفسها",
+            "en": "The problem was only in the user interface, not the algorithm itself"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "COMPAS استُخدمت في عدة ولايات أمريكية لمساعدة القضاة في تحديد الكفالة والأحكام. التحيز العنصري لم يكن مقصوداً بل نتج عن بيانات تاريخية تعكس تفاوتات عنصرية في النظام القضائي الأمريكي.",
+        "en": "COMPAS was used in several U.S. states to help judges determine bail and sentencing. The racial bias wasn't intentional but resulted from historical data reflecting racial disparities in the American justice system."
+      }
+    },
+    {
+      "id": "pad-mcq-008",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول في وزارة الداخلية الإسبانية. نظام VioGén للتنبؤ بالعنف الأسري يعمل منذ 2007 وأُضيف له AI في 2022. ما الإشكالية الرئيسية التي يواجهها؟",
+        "en": "You're an official at Spain's Ministry of Interior. The VioGén domestic violence prediction system has been operating since 2007, with AI added in 2022. What's its main challenge?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "النظام يتنبأ بالخطر المنخفض بدقة عالية لكنه ينتج نسبة عالية من الإيجابيات الكاذبة في الحالات عالية الخطورة",
+            "en": "The system predicts low risk accurately but produces high false positives in high-risk cases"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "النظام قديم ولا يستخدم أي تقنية حديثة",
+            "en": "The system is outdated and doesn't use any modern technology"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الضحايا يرفضن التعاون مع النظام",
+            "en": "Victims refuse to cooperate with the system"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "النظام متاح فقط في مدريد وليس على المستوى الوطني",
+            "en": "The system is only available in Madrid, not nationwide"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "VioGén يُقبل عمداً بنسبة عالية من الإيجابيات الكاذبة لتحقيق أقصى حساسية (عدم ترك أي امرأة معرضة للخطر بلا حماية). في يناير 2025 أُطلق VioGén 2 بنماذج تقييم مُحدّثة. أداة EPV-R في إقليم الباسك لا تتجاوز دقتها 48% في الحالات عالية الخطورة.",
+        "en": "VioGén intentionally accepts high false positives to maximize sensitivity (not leaving any at-risk woman without protection). In January 2025, VioGén 2 launched with updated assessment models. The Basque Country's EPV-R tool has only 48% accuracy for high-risk cases."
+      }
+    },
+    {
+      "id": "pad-mcq-009",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "ما نسبة الموظفين الحكوميين الأمريكيين الذين يستخدمون AI في عملهم بحسب استطلاع Gallup الربع الرابع 2025؟",
+        "en": "What percentage of U.S. government employees use AI at work according to Gallup's Q4 2025 survey?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "10% فقط",
+            "en": "Only 10%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "43% — ارتفاعاً من 17% في 2023",
+            "en": "43% — up from 17% in 2023"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "75% — معظمهم يستخدمونه يومياً",
+            "en": "75% — most use it daily"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أقل من 5% — الحكومات بطيئة في التبني",
+            "en": "Less than 5% — governments are slow to adopt"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "القفزة من 17% إلى 43% خلال عامين فقط تُظهر تسارعاً هائلاً في تبني AI الحكومي. لكن الفجوة مع القطاع الخاص (حيث 78% من المؤسسات تستخدم AI) لا تزال واسعة.",
+        "en": "The jump from 17% to 43% in just two years shows massive acceleration in government AI adoption. But the gap with the private sector (where 78% of organizations use AI) remains wide."
+      }
+    },
+    {
+      "id": "pad-tf-005",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أداة Geolitica (PredPol سابقاً) للشرطة التنبؤية في مدينة Plainfield بنيوجيرسي حققت دقة تزيد عن 50% في التنبؤ بمواقع الجرائم.",
+        "en": "Geolitica (formerly PredPol) predictive policing tool in Plainfield, New Jersey achieved over 50% accuracy in predicting crime locations."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "أقل من 0.5% فقط من 23,631 تنبؤاً أنتجتها Geolitica لمدينة Plainfield كانت دقيقة فعلاً. هذه النسبة المتدنية تثير تساؤلات جدية حول فعالية الشرطة التنبؤية.",
+        "en": "Less than 0.5% of 23,631 predictions generated by Geolitica for Plainfield were actually accurate. This extremely low rate raises serious questions about the effectiveness of predictive policing."
+      }
+    },
+    {
+      "id": "pad-tf-006",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "خوارزمية التأشيرات البريطانية أُلغيت في 2020 بعد أن أثبت ناشطون أنها تنحاز لصالح المتقدمين البيض.",
+        "en": "The UK Home Office visa algorithm was scrapped in 2020 after campaigners demonstrated it favored white applicants."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذه حالة أخرى تثبت أن AI يمكن أن يُضخّم التحيزات الموجودة في البيانات التاريخية. نظام التأشيرات صنّف الطلبات آلياً وأعطى أولوية للجنسيات التي تاريخياً حظيت بمعدلات قبول أعلى.",
+        "en": "Another case proving AI can amplify biases in historical data. The visa system automatically classified applications and prioritized nationalities that historically had higher acceptance rates."
+      }
+    },
+    {
+      "id": "pad-fill-003",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} الإسباني للتنبؤ بالعنف الأسري يستخدم {{blank_2}} مؤشر خطورة في نموذج التقييم الأولي (VPR 4.0) لتحديد مستوى الخطر على الضحية.",
+        "en": "Spain's {{blank_1}} system for predicting domestic violence uses {{blank_2}} risk indicators in its initial assessment form (VPR 4.0) to determine the victim's risk level."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "VioGén",
+            "en": "VioGén"
+          },
+          "options": [
+            {
+              "ar": "VioGén",
+              "en": "VioGén"
+            },
+            {
+              "ar": "COMPAS",
+              "en": "COMPAS"
+            },
+            {
+              "ar": "PredPol",
+              "en": "PredPol"
+            },
+            {
+              "ar": "RisCanvi",
+              "en": "RisCanvi"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "39",
+            "en": "39"
+          },
+          "options": [
+            {
+              "ar": "39",
+              "en": "39"
+            },
+            {
+              "ar": "10",
+              "en": "10"
+            },
+            {
+              "ar": "100",
+              "en": "100"
+            },
+            {
+              "ar": "5",
+              "en": "5"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "VioGén يصنف الخطر إلى 4 مستويات: منخفض، متوسط، مرتفع، شديد. النموذج يتطور باستمرار — دراسة حديثة اقترحت نموذج هجين يجمع بين الإحصاءات التقليدية والتعلم الآلي لتحسين الدقة.",
+        "en": "VioGén classifies risk into 4 levels: low, medium, high, extreme. The model evolves continuously — a recent study proposed a hybrid model combining traditional statistics with machine learning to improve accuracy."
+      }
+    },
+    {
+      "id": "pad-match-003",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل أداة AI حكومية بالمشكلة الرئيسية التي واجهتها:",
+        "en": "Match each government AI tool with the main problem it faced:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "COMPAS (أمريكا)",
+            "en": "COMPAS (USA)"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "خوارزمية التأشيرات (بريطانيا)",
+            "en": "Visa algorithm (UK)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "خوارزمية A-Level (بريطانيا)",
+            "en": "A-Level algorithm (UK)"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "خوارزمية روتردام للرعاية الاجتماعية",
+            "en": "Rotterdam welfare algorithm"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تحيز عنصري في التنبؤ بالعودة للإجرام",
+            "en": "Racial bias in recidivism prediction"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "تفضيل جنسيات معينة على أساس بيانات تاريخية",
+            "en": "Favoring certain nationalities based on historical data"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "خفض درجات 40% من الطلاب وأثّر بشكل أكبر على المحرومين",
+            "en": "Downgrading 40% of students' grades, disproportionately affecting disadvantaged ones"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تحيز ضد النساء والآباء وغير الناطقين بالهولندية",
+            "en": "Bias against women, parents, and non-native Dutch speakers"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل هذه الحالات تشترك في نمط واحد: خوارزميات تعلمت من بيانات تاريخية تعكس تحيزات مجتمعية موجودة. الحل ليس تجنب AI بل ضمان الرقابة المستقلة واختبار التحيز قبل النشر.",
+        "en": "All these cases share one pattern: algorithms that learned from historical data reflecting existing societal biases. The solution isn't avoiding AI but ensuring independent oversight and bias testing before deployment."
+      }
+    },
+    {
+      "id": "pad-sort-003",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مراحل تطبيق الحكومة الذكية من الأبسط إلى الأكثر تعقيداً:",
+        "en": "Order the stages of smart government implementation from simplest to most complex:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "رقمنة الخدمات الحكومية (نماذج إلكترونية، مواعيد أونلاين)",
+            "en": "Digitizing government services (e-forms, online appointments)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "روبوتات دردشة لخدمة المواطنين والإجابة على الاستفسارات",
+            "en": "Chatbots for citizen service and answering inquiries"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تحليل تنبؤي لتوقع الطلب على الخدمات وتخصيص الموارد",
+            "en": "Predictive analytics to forecast service demand and allocate resources"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "توأم رقمي للمدينة يحاكي السيناريوهات ويدعم التخطيط",
+            "en": "Digital twin of the city simulating scenarios and supporting planning"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "سنغافورة (Virtual Singapore) ودبي (Smart Digital Twin) وصلتا للمرحلة الرابعة. McKinsey وPwC يُقدّران أن التوائم الرقمية تحسّن الكفاءة التشغيلية بنسبة 20-40%.",
+        "en": "Singapore (Virtual Singapore) and Dubai (Smart Digital Twin) have reached stage 4. McKinsey and PwC estimate digital twins improve operational efficiency by 20-40%."
+      }
+    },
+    {
+      "id": "pad-self-005",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول في شرطة محلية. القيادة تعرض عليك تجربة نظام AI للتنبؤ بمواقع الجرائم المحتملة. ما موقفك؟",
+        "en": "You're a local police official. Leadership offers you a trial of an AI system to predict potential crime locations. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "سأجربه كأداة إضافية — مع مراقبة مستمرة للتحيز وشفافية كاملة مع المجتمع",
+            "en": "I'll try it as an additional tool — with continuous bias monitoring and full transparency with the community"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقبل التجربة بشرط تدقيق مستقل للخوارزمية ونشر تقارير دورية عن نتائجها",
+            "en": "I accept the trial on condition of independent algorithm auditing and publishing periodic reports on its results"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق من أن النظام سيعزز دوريات مكثفة في أحياء معينة ويخلق حلقة تحيز مفرغة",
+            "en": "Worried the system will intensify patrols in certain neighborhoods and create a bias feedback loop"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الشرطة التقليدية القائمة على الخبرة الميدانية أفضل من أي خوارزمية",
+            "en": "Traditional policing based on field experience is better than any algorithm"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Geolitica (PredPol سابقاً) حققت أقل من 0.5% دقة في Plainfield. لكن نظام Crime Nabi الياباني يدّعي فعالية أعلى بـ 50% من الأساليب التقليدية. النتائج تختلف جذرياً بحسب جودة البيانات وتصميم النظام.",
+        "en": "Geolitica achieved less than 0.5% accuracy in Plainfield. But Japan's Crime Nabi system claims 50% higher effectiveness than traditional methods. Results vary drastically based on data quality and system design."
+      }
+    },
+    {
+      "id": "pad-self-006",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "استطلاع يوروباروميتر يُظهر أن 66% من الأوروبيين يعتقدون أن الروبوتات والذكاء الاصطناعي تسلب وظائف العمال. أنت موظف حكومي، كيف ترى هذا بالنسبة لقطاعك؟",
+        "en": "The Eurobarometer survey shows 66% of Europeans believe robots and AI steal workers' jobs. You're a government employee — how do you see this for your sector?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI سيغير دوري من منفّذ إلى مراقب ومقيّم — وهذا تطور إيجابي أستعد له",
+            "en": "AI will change my role from executor to supervisor and evaluator — a positive evolution I'm preparing for"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "بعض المهام ستُؤتمت لكن الخدمات الحكومية تحتاج دائماً بعداً إنسانياً",
+            "en": "Some tasks will be automated but government services always need a human dimension"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "القطاع الحكومي أبطأ في التغيير — لدي وقت قبل أن يؤثر AI على وظيفتي فعلاً",
+            "en": "The government sector is slower to change — I have time before AI actually affects my job"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الحكومات لا يمكنها الاستغناء عن الموظفين — هناك حماية وظيفية تمنع ذلك",
+            "en": "Governments can't lay off employees — there's job protection that prevents that"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "73% من الأوروبيين يوافقون على أن AI يسرّع إنجاز المهام. التحدي ليس في اختفاء الوظائف بل في تغير طبيعتها. المؤسسات الحكومية الأمريكية التي تبنت AI مبكراً تُظهر أن تدريب الموظفين على AI يزيد الإنتاجية 80% (PwC الشرق الأوسط 2025).",
+        "en": "73% of Europeans agree AI accelerates task completion. The challenge isn't jobs disappearing but their nature changing. In the Middle East, ~80% of employees say AI improved their productivity (PwC 2025)."
+      }
+    },
+    {
+      "id": "pad-mcq-010",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت باحث في الحوكمة الرقمية. اللجنة الملكية الأسترالية وصفت برنامج Robodebt بعبارة أصبحت مرجعاً في أدبيات فشل AI الحكومي. ما هي؟",
+        "en": "You're a digital governance researcher. The Australian Royal Commission described Robodebt with a phrase that became a reference in government AI failure literature. What was it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "\"خطأ تقني بسيط تم تصحيحه بسرعة\"",
+            "en": "\"A simple technical error quickly corrected\""
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "\"فشل إداري هائل\"",
+            "en": "\"A massive failure of public administration\""
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "\"تجربة ناجحة واجهت معارضة سياسية\"",
+            "en": "\"A successful experiment that faced political opposition\""
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "\"مشكلة محدودة النطاق أثّرت على مئات فقط\"",
+            "en": "\"A limited-scope problem that affected only hundreds\""
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الخوارزمية استخدمت متوسط الدخل السنوي لتقدير الدخل الأسبوعي — خطأ منهجي أساسي أدى لاتهام 400,000 شخص ظلماً وتسوية بقيمة 1.8 مليار دولار أسترالي.",
+        "en": "The algorithm used annual average income to estimate weekly income — a fundamental methodological error that wrongly accused 400,000 people and led to an AUD 1.8 billion settlement."
+      }
+    },
+    {
+      "id": "pad-mcq-011",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول حماية بيانات في حكومة أوروبية. الحكومة الأمريكية وقّعت عقداً مع xAI لتوفير Grok للوكالات الفيدرالية مقابل 0.42 دولار لكل وكالة. ما القلق الرئيسي من منظور الحوكمة؟",
+        "en": "You're a data protection officer in a European government. The U.S. government signed a contract with xAI to provide Grok to federal agencies for $0.42 per agency. What's the main governance concern?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "السعر منخفض جداً مما يشير لجودة ضعيفة",
+            "en": "The price is too low, suggesting poor quality"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الجمهور لا يعرف أي نماذج أو إصدارات تُستخدم ولا كيف تتصل بقواعد البيانات الفيدرالية",
+            "en": "The public doesn't know which models or versions are used or how they connect to federal databases"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "Grok أقل دقة من ChatGPT في المهام الحكومية",
+            "en": "Grok is less accurate than ChatGPT for government tasks"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "العقد يمنع الوكالات من استخدام نماذج أخرى",
+            "en": "The contract prevents agencies from using other models"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "موقع الحكومة الأمريكية الرسمي لا يذكر أي النماذج أو الإصدارات المقدمة من xAI أو OpenAI. الشفافية في مشتريات AI الحكومية لا تزال ناقصة رغم وجود مذكرة OMB 25-22 التي تُلزم بتقييم مستقل عند اقتناء أنظمة AI.",
+        "en": "The main U.S. government website doesn't list which models or versions are provided by xAI or OpenAI. Transparency in government AI procurement remains lacking despite OMB Memo 25-22 requiring independent evaluation."
+      }
+    },
+    {
+      "id": "pad-mcq-012",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "كم دولة من أصل 50 ولاية أمريكية سنّت تشريعات خاصة بالمحتوى المولّد بالذكاء الاصطناعي حتى فبراير 2026؟",
+        "en": "How many of the 50 U.S. states enacted legislation specifically about AI-generated content by February 2026?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "5 ولايات فقط",
+            "en": "Only 5 states"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "46 ولاية",
+            "en": "46 states"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا توجد تشريعات ولائية بعد",
+            "en": "No state legislation yet"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "جميع الولايات الخمسين",
+            "en": "All 50 states"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "46 ولاية من 50 سنّت تشريعات حتى فبراير 2026. قانون TAKE IT DOWN الفيدرالي (مايو 2025) هو أول قانون أمريكي كبير يستهدف الصور الاصطناعية غير التوافقية. قانون AI الأوروبي يفرض غرامات تصل إلى 35 مليون يورو أو 7% من الإيرادات العالمية.",
+        "en": "46 of 50 states enacted legislation by February 2026. The TAKE IT DOWN Act (May 2025) is the first major U.S. federal law targeting non-consensual AI imagery. The EU AI Act imposes fines up to €35 million or 7% of global turnover."
+      }
+    },
+    {
+      "id": "pad-tf-007",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "خسائر الكفاءة في تحديث الحكومة الفيدرالية الأمريكية في 2025 جاءت بشكل رئيسي من تسرّب الكوادر المؤسسية وضعف الأنظمة الحيوية بسبب مبادرات التقليص السريعة.",
+        "en": "Efficiency losses in U.S. federal government modernization in 2025 mainly came from institutional knowledge drain and critical systems becoming fragile due to rapid downsizing initiatives."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "مبادرات الكفاءة في 2025 كشفت أن الكفاءة بدون مرونة تخلق هشاشة — أنظمة تعمل جيداً في الظروف المثالية لكنها تنهار تحت الضغط. 'الابتكار المرن' أصبح الشعار الجديد لتقنية المعلومات الفيدرالية في 2026.",
+        "en": "The 2025 efficiency drives revealed that efficiency without resilience creates brittleness — systems that work well under ideal conditions but fail catastrophically when stressed. 'Resilient innovation' became the new motto for federal IT in 2026."
+      }
+    },
+    {
+      "id": "pad-tf-008",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تقرير منظمة العمل الدولي يتوقع أن AI سيُلغي وظائف أكثر مما يخلق بحلول 2030، مما يعني صافي خسارة صافية في الوظائف عالمياً.",
+        "en": "The World Economic Forum report predicts AI will eliminate more jobs than it creates by 2030, meaning a net global job loss."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "العكس: تقرير المنتدى الاقتصادي العالمي 2025 (1,000+ شركة تمثل 14 مليون+ عامل) يتوقع خلق 170 مليون وظيفة جديدة وإلغاء 92 مليون — أي صافي ربح 78 مليون وظيفة بحلول 2030.",
+        "en": "The opposite: WEF's 2025 report (1,000+ employers representing 14M+ workers) projects 170 million new jobs created and 92 million displaced — a net gain of 78 million jobs by 2030."
+      }
+    },
+    {
+      "id": "pad-fill-004",
+      "type": "fill_blank",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 1,
+      "text": {
+        "ar": "مشروع {{blank_1}} في أبوظبي يستثمر 3.54 مليار دولار لأتمتة جميع العمليات الحكومية ضمن استراتيجية {{blank_2}}.",
+        "en": "Abu Dhabi's {{blank_1}} project invests $3.54 billion to automate all government processes as part of the {{blank_2}} strategy."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "الاستراتيجية الرقمية الحكومية",
+            "en": "Government Digital Strategy"
+          },
+          "options": [
+            {
+              "ar": "الاستراتيجية الرقمية الحكومية",
+              "en": "Government Digital Strategy"
+            },
+            {
+              "ar": "نيوم",
+              "en": "NEOM"
+            },
+            {
+              "ar": "مدينة مصدر",
+              "en": "Masdar City"
+            },
+            {
+              "ar": "أبوظبي الذكية",
+              "en": "Smart Abu Dhabi"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "2025-2027",
+            "en": "2025-2027"
+          },
+          "options": [
+            {
+              "ar": "2025-2027",
+              "en": "2025-2027"
+            },
+            {
+              "ar": "2030-2035",
+              "en": "2030-2035"
+            },
+            {
+              "ar": "2020-2023",
+              "en": "2020-2023"
+            },
+            {
+              "ar": "2028-2030",
+              "en": "2028-2030"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "الإمارات حققت رقمنة 90% من خدماتها الحكومية. معهد Microsoft لاقتصاد AI صنّف الإمارات الأولى عالمياً بنسبة 64% من السكان في سن العمل الذين يستخدمون AI.",
+        "en": "The UAE achieved 90% digitization of government services. The Microsoft AI Economy Institute ranked the UAE #1 globally with 64% of working-age population using AI."
+      }
+    },
+    {
+      "id": "pad-match-004",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل إحصائية بمصدرها الصحيح:",
+        "en": "Match each statistic with its correct source:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "78% من المؤسسات تستخدم AI في وظيفة واحدة على الأقل",
+            "en": "78% of organizations use AI in at least one function"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "170 مليون وظيفة جديدة و92 مليون ملغاة بحلول 2030",
+            "en": "170M new jobs and 92M displaced by 2030"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "العاملون بمهارات AI يكسبون علاوة 56%",
+            "en": "AI-skilled workers earn a 56% wage premium"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "84% من مؤسسات الخليج تبنت AI",
+            "en": "84% of GCC organizations adopted AI"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "McKinsey 2025",
+            "en": "McKinsey 2025"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "المنتدى الاقتصادي العالمي 2025",
+            "en": "WEF 2025"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "PwC AI Jobs Barometer 2025",
+            "en": "PwC AI Jobs Barometer 2025"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "McKinsey — مسح الخليج 2025",
+            "en": "McKinsey GCC Survey 2025"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "رغم أن 78% من المؤسسات تستخدم AI، إلا أن 1% فقط وصلت لمرحلة النضج الكامل، وأكثر من 80% لا ترى أثراً ملموساً على أرباحها من AI التوليدي (McKinsey). التبني لا يعني بالضرورة الاستفادة الفعلية.",
+        "en": "Though 78% of organizations use AI, only 1% reached full maturity, and over 80% see no tangible EBIT impact from generative AI (McKinsey). Adoption doesn't necessarily mean effective utilization."
+      }
+    },
+    {
+      "id": "pad-sort-004",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب دول الخليج حسب حجم استثماراتها المعلنة في AI من الأكبر إلى الأصغر:",
+        "en": "Order these GCC countries by their announced AI investment size from largest to smallest:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "السعودية — مشروع التسامي (100 مليار دولار)",
+            "en": "Saudi Arabia — Project Transcendence ($100 billion)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "الإمارات — Stargate UAE + استراتيجية أبوظبي الرقمية (مليارات)",
+            "en": "UAE — Stargate UAE + Abu Dhabi Digital Strategy (billions)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "سنغافورة — Smart Nation 2.0 (مليار دولار لأبحاث AI + 5 مليارات للبنية التحتية)",
+            "en": "Singapore — Smart Nation 2.0 ($1B AI R&D + $5B infrastructure)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "البحرين — أول مشروع قانون تنظيمي لـ AI في المنطقة (أبريل 2024)",
+            "en": "Bahrain — first draft AI regulation law in the region (April 2024)"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "دول مجلس التعاون الخليجي استثمرت أكثر من 30 مليار دولار في مشاريع AI بحلول أوائل 2025. AI التوليدي من المتوقع أن يولّد أكثر من 23 مليار دولار سنوياً عبر اقتصادات الخليج (~2% من الناتج المحلي غير النفطي).",
+        "en": "GCC nations invested over $30 billion in AI projects by early 2025. GenAI is expected to generate over $23 billion annually across GCC economies (~2% of non-oil GDP)."
+      }
+    },
+    {
+      "id": "pad-self-007",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "حكومتك تريد تطبيق نظام التعرف على الوجه في المطارات والأماكن العامة لتعزيز الأمن. كمسؤول سياسات عامة، ما موقفك؟",
+        "en": "Your government wants to deploy facial recognition in airports and public spaces to enhance security. As a public policy official, what's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أؤيد مع ضوابط صارمة: استخدام محدود، رقابة مستقلة، وحق المواطن في معرفة أنه يُراقَب",
+            "en": "I support it with strict controls: limited use, independent oversight, and citizens' right to know they're being monitored"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقبول في المطارات فقط — الأماكن العامة العادية يجب أن تبقى خارج المراقبة",
+            "en": "Acceptable in airports only — regular public spaces should remain outside surveillance"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق جداً — أنظمة التعرف على الوجه أثبتت تحيزاً عنصرياً وأدت لاعتقالات خاطئة",
+            "en": "Very concerned — facial recognition systems have proven racial bias and led to wrongful arrests"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض تماماً — هذا يُنشئ دولة مراقبة ويقضي على الخصوصية",
+            "en": "I completely refuse — this creates a surveillance state and destroys privacy"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "حوادث Deepfake ارتفعت 257% في 2024. نصف الشركات تعرضت لاحتيال باستخدام صوت أو فيديو معدّل بالذكاء الاصطناعي. التوازن بين الأمن والخصوصية هو التحدي الأكبر لصانعي السياسات.",
+        "en": "Deepfake incidents surged 257% in 2024. Half of all businesses experienced fraud involving AI-altered audio/video. Balancing security with privacy is the biggest challenge for policymakers."
+      }
+    },
+    {
+      "id": "pad-self-008",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت موظف في جهة حكومية عربية. تعلم أن 84% من مؤسسات الخليج تبنت AI، لكن فريقك لم يتلقَّ أي تدريب بعد. ما خطوتك الأولى؟",
+        "en": "You're a government employee in an Arab agency. You learn 84% of GCC organizations adopted AI, but your team has received no training yet. What's your first step?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبادر بتعلم AI ذاتياً وأقترح على إدارتي خطة تدريب مع حالات استخدام عملية من قطاعنا",
+            "en": "I take initiative to self-learn AI and propose a training plan to my management with practical use cases from our sector"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطالب الإدارة رسمياً بتوفير تدريب AI للفريق قبل أي تطبيق",
+            "en": "I formally request management to provide AI training for the team before any implementation"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر حتى تصدر توجيهات رسمية — التدريب مسؤولية الجهة وليس الموظف",
+            "en": "I wait until official directives are issued — training is the organization's responsibility, not the employee's"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هذه الإحصائيات للقطاع الخاص — الحكومة لها إيقاعها الخاص ولا داعي للاستعجال",
+            "en": "These statistics are for the private sector — government has its own pace and there's no need to rush"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "PwC وجدت أن 80% من موظفي الشرق الأوسط يقولون إن AI حسّن إنتاجيتهم — تحول جذري من 2023 حين كان 39% فقط من سكان الإمارات ينظرون لـ AI بإيجابية. من يتعلم مبكراً يحصل على علاوة 56% في سوق العمل (PwC).",
+        "en": "PwC found ~80% of Middle Eastern employees say AI improved their productivity — a dramatic flip from 2023 when only 39% of UAE respondents viewed AI favorably. Early learners earn a 56% wage premium (PwC)."
+      }
+    },
+    {
+      "id": "pad-mcq-013",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول مشتريات حكومية. مذكرة OMB الأمريكية M-25-22 (أبريل 2025) تشترط شيئاً محدداً عند شراء أنظمة AI للحكومة. ما هو؟",
+        "en": "You're a government procurement officer. U.S. OMB Memo M-25-22 (April 2025) requires something specific when purchasing AI systems for government. What is it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تقييم مستقل لأنظمة AI قبل الاقتناء",
+            "en": "Independent evaluation of AI systems before acquisition"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أن تكون جميع الأنظمة مفتوحة المصدر",
+            "en": "All systems must be open-source"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "شراء الأنظمة فقط من شركات أمريكية",
+            "en": "Purchasing systems only from American companies"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "عدم استخدام AI في القرارات التي تؤثر على المواطنين",
+            "en": "Not using AI in decisions affecting citizens"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "رغم وجود المذكرة، العقود الحالية مع xAI وOpenAI أُبرمت قبل تطبيقها. النقاد يقولون إن المذكرة تسمح للموردين بتقييم أنفسهم ذاتياً — وهي ثغرة كبيرة.",
+        "en": "Despite the memo, current contracts with xAI and OpenAI were signed before its implementation. Critics say the memo allows vendors to self-evaluate — a significant loophole."
+      }
+    },
+    {
+      "id": "pad-mcq-014",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مختص أمن سيبراني في جهة حكومية. ما الخطر الأمني الجديد الذي تُدخله أنظمة AI للبنية التحتية الحكومية؟",
+        "en": "You're a cybersecurity specialist at a government agency. What new security risk do AI systems introduce to government infrastructure?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI لا يُدخل مخاطر أمنية جديدة — المخاطر نفسها كأي برنامج",
+            "en": "AI doesn't introduce new security risks — the risks are the same as any software"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "هجمات عدائية يمكنها التلاعب ببيانات التدريب لإفساد مخرجات النموذج",
+            "en": "Adversarial attacks can manipulate training data to corrupt model outputs"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "AI يحمي نفسه تلقائياً ولا يحتاج تدخل بشري",
+            "en": "AI protects itself automatically and doesn't need human intervention"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الخطر الوحيد هو تسرب البيانات عبر الإنترنت",
+            "en": "The only risk is data leakage through the internet"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "الهجمات العدائية (Adversarial Attacks) يمكنها إفساد نماذج AI عبر حقن بيانات مسمومة في بيانات التدريب. حماية البنية التحتية AI تتطلب ضوابط وصول صارمة، تقييمات ثغرات دورية، وأنظمة احتياطية بدون نقاط فشل واحدة.",
+        "en": "Adversarial attacks can corrupt AI models by injecting poisoned data into training datasets. Protecting AI infrastructure requires access controls, regular vulnerability assessments, and redundant systems with no single points of failure."
+      }
+    },
+    {
+      "id": "pad-mcq-015",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مخطط حضري. حكومتك تريد بناء 'توأم رقمي' للمدينة. أي مدينة أنشأت نسخة ثلاثية الأبعاد كاملة للدولة بأكملها (وليس مدينة واحدة)؟",
+        "en": "You're an urban planner. Your government wants to build a 'digital twin' of the city. Which city created a complete 3D digital replica of the entire nation (not just one city)?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "دبي — Smart Digital Twin",
+            "en": "Dubai — Smart Digital Twin"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "سنغافورة — Virtual Singapore",
+            "en": "Singapore — Virtual Singapore"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نيويورك — Hudson Yards",
+            "en": "New York — Hudson Yards"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هلسنكي — Helsinki 3D",
+            "en": "Helsinki — Helsinki 3D"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "Virtual Singapore هي نسخة رقمية ثلاثية الأبعاد كاملة للدولة بأكملها، تُستخدم لمحاكاة إدارة الحشود والاستجابة للطوارئ والتخطيط العمراني. دبي أطلقت Smart Digital Twin ضمن مشروع 'واقع إنساني واحد'.",
+        "en": "Virtual Singapore is a complete 3D digital replica of the entire nation, used for crowd management, emergency response, and urban planning simulation. Dubai launched Smart Digital Twin as part of the 'One Human Reality' project."
+      }
+    },
+    {
+      "id": "pad-tf-009",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "البحرين كانت أول دولة في منطقة الخليج تقترح مشروع قانون تنظيمي خاص بالذكاء الاصطناعي في أبريل 2024.",
+        "en": "Bahrain was the first GCC country to propose a draft AI regulation law in April 2024."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "بينما تركز السعودية والإمارات على الاستثمار الضخم في AI، بادرت البحرين بالجانب التنظيمي. التوازن بين تشجيع الابتكار وتنظيمه هو تحدي كل حكومة في عصر AI.",
+        "en": "While Saudi Arabia and UAE focus on massive AI investment, Bahrain took the lead on regulation. Balancing innovation encouragement with regulation is every government's challenge in the AI era."
+      }
+    },
+    {
+      "id": "pad-tf-010",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تقرير McKinsey 2025 يُظهر أن أكثر من 80% من المؤسسات التي تبنت AI التوليدي ترى أثراً ملموساً على أرباحها التشغيلية (EBIT).",
+        "en": "McKinsey's 2025 report shows over 80% of organizations that adopted generative AI see tangible impact on their operating profits (EBIT)."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "العكس تماماً: أكثر من 80% لا ترى أثراً ملموساً على EBIT من AI التوليدي، رغم أن 78% من المؤسسات تستخدم AI. 1% فقط وصلت لمرحلة النضج الكامل. التبني واسع لكن العائد الفعلي لا يزال محدوداً.",
+        "en": "Quite the opposite: over 80% report no tangible EBIT impact from generative AI, despite 78% using AI. Only 1% reached full maturity. Adoption is wide but actual returns remain limited."
+      }
+    },
+    {
+      "id": "pad-fill-005",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "تطبيق {{blank_1}} الهولندي للتنبؤ بالجرائم هو أول نظام شرطة تنبؤية يعمل على المستوى الوطني في العالم، ويستهدف أصلاً الجرائم {{blank_2}}.",
+        "en": "The Dutch {{blank_1}} application for crime prediction is the world's first predictive policing system deployed at national scale, originally targeting {{blank_2}} crimes."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "CAS (نظام استباق الجريمة)",
+            "en": "CAS (Crime Anticipation System)"
+          },
+          "options": [
+            {
+              "ar": "CAS (نظام استباق الجريمة)",
+              "en": "CAS (Crime Anticipation System)"
+            },
+            {
+              "ar": "VioGén",
+              "en": "VioGén"
+            },
+            {
+              "ar": "COMPAS",
+              "en": "COMPAS"
+            },
+            {
+              "ar": "PredPol",
+              "en": "PredPol"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "عالية الأثر (سطو منازل، سرقة، نشل)",
+            "en": "high-impact (burglaries, robberies, mugging)"
+          },
+          "options": [
+            {
+              "ar": "عالية الأثر (سطو منازل، سرقة، نشل)",
+              "en": "high-impact (burglaries, robberies, mugging)"
+            },
+            {
+              "ar": "الجرائم الإلكترونية",
+              "en": "cybercrime"
+            },
+            {
+              "ar": "جرائم القتل فقط",
+              "en": "murder only"
+            },
+            {
+              "ar": "الإرهاب",
+              "en": "terrorism"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "نظام CAS الهولندي يجمع بيانات ديموغرافية واجتماعية واقتصادية من ثلاثة مصادر: قاعدة بيانات الجريمة المركزية، الإدارة البلدية، والمكتب المركزي للإحصاء. يعرض النتائج كخرائط حرارية (heat maps).",
+        "en": "The Dutch CAS combines demographic, social, and economic data from three sources: Central Crime Database, Municipal Administration, and Central Bureau of Statistics. Results are displayed as heat maps."
+      }
+    },
+    {
+      "id": "pad-match-005",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل قانون أو تنظيم بالجهة التي أصدرته:",
+        "en": "Match each law or regulation with the body that issued it:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "حظر التنبؤ بالجرائم على مستوى الأفراد بـ AI",
+            "en": "Ban on individual-level AI crime prediction"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "مذكرة M-25-22 لتقييم مستقل عند شراء AI حكومي",
+            "en": "Memo M-25-22 for independent evaluation when purchasing government AI"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "قانون TAKE IT DOWN لحظر الصور الاصطناعية غير التوافقية",
+            "en": "TAKE IT DOWN Act banning non-consensual AI imagery"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "أول مشروع قانون تنظيمي لـ AI في الخليج",
+            "en": "First draft AI regulation law in the GCC"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "قانون AI الأوروبي — المادة 5",
+            "en": "EU AI Act — Article 5"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "مكتب الإدارة والميزانية الأمريكي (OMB)",
+            "en": "U.S. Office of Management and Budget (OMB)"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "الكونغرس الأمريكي (مايو 2025)",
+            "en": "U.S. Congress (May 2025)"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "البحرين (أبريل 2024)",
+            "en": "Bahrain (April 2024)"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "المشهد التنظيمي يتسارع: 46 ولاية أمريكية سنّت تشريعات AI حتى فبراير 2026. قانون AI الأوروبي يفرض غرامات حتى 35 مليون يورو أو 7% من الإيرادات العالمية. الخليج يبدأ بالبحرين.",
+        "en": "The regulatory landscape is accelerating: 46 U.S. states enacted AI legislation by February 2026. The EU AI Act imposes fines up to €35M or 7% of global revenue. The GCC starts with Bahrain."
+      }
+    },
+    {
+      "id": "pad-sort-005",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات تدقيق خوارزمية AI حكومية قبل نشرها من الأولى إلى الأخيرة:",
+        "en": "Order the steps of auditing a government AI algorithm before deployment from first to last:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "فحص جودة بيانات التدريب والتحقق من تمثيلها لجميع الفئات السكانية",
+            "en": "Examine training data quality and verify it represents all demographic groups"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "اختبار التحيز عبر تشغيل الخوارزمية على مجموعات سكانية مختلفة ومقارنة النتائج",
+            "en": "Test for bias by running the algorithm on different demographic groups and comparing results"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تقييم قابلية التفسير — هل يمكن شرح قرارات الخوارزمية للمواطن المتضرر؟",
+            "en": "Evaluate explainability — can the algorithm's decisions be explained to the affected citizen?"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "وضع آلية مراقبة مستمرة وتقارير دورية بعد النشر",
+            "en": "Establish continuous monitoring mechanisms and periodic reports after deployment"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "Smart Check في أمستردام اتبع كل هذه الخطوات ومع ذلك أنتج تحيزاً! الدرس: التدقيق ضروري لكنه ليس ضماناً كافياً — المراقبة المستمرة بعد النشر (الخطوة 4) هي الأهم.",
+        "en": "Amsterdam's Smart Check followed all these steps yet still produced bias! The lesson: auditing is necessary but not sufficient — continuous monitoring after deployment (step 4) is most critical."
+      }
+    },
+    {
+      "id": "pad-self-009",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "حكومتك تقرر استخدام AI لتسريع معاملات المواطنين. النظام يختصر وقت المعاملة من 3 أسابيع إلى يومين، لكنه يرفض 15% من الطلبات التي كانت تُقبل سابقاً. كمدير خدمات، ما قرارك؟",
+        "en": "Your government decides to use AI to speed up citizen transactions. The system reduces processing time from 3 weeks to 2 days, but rejects 15% of applications that were previously accepted. As a services manager, what's your decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أستمر مع تحسين النظام — الفوائد تفوق المشاكل، مع فتح قناة استئناف سريعة للمرفوضين",
+            "en": "I continue while improving the system — benefits outweigh problems, with opening a fast appeal channel for rejected applicants"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أوقف النظام مؤقتاً حتى تُحل مشكلة الرفض الخاطئ — لا يمكن قبول 15% خطأ",
+            "en": "I pause the system until the false rejection problem is solved — 15% error is unacceptable"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أُلغي النظام — تسريع المعاملات لا يبرر حرمان مواطنين من حقوقهم",
+            "en": "I cancel the system — speeding up transactions doesn't justify denying citizens their rights"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أعود للنظام اليدوي — الأمان أهم من السرعة",
+            "en": "I return to the manual system — safety is more important than speed"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا بالضبط ما حدث في عدة حكومات. الحل الأمثل ليس إلغاء النظام بالكامل ولا تجاهل المشكلة، بل الحفاظ على مسار بشري موازٍ مع تحسين الخوارزمية باستمرار.",
+        "en": "This is exactly what happened in several governments. The optimal solution isn't canceling the system entirely or ignoring the problem, but maintaining a parallel human track while continuously improving the algorithm."
+      }
+    },
+    {
+      "id": "pad-self-010",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "تقرير McKinsey يقول إن 39% من المهارات الحالية ستصبح قديمة بحلول 2030. أنت موظف حكومي في منتصف مسيرتك المهنية. كيف تتعامل مع هذا؟",
+        "en": "McKinsey reports that 39% of existing skills will become outdated by 2030. You're a mid-career government employee. How do you handle this?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبدأ الآن بتعلم AI وتحليل البيانات وأبحث عن شهادات معتمدة — التحول بدأ فعلاً",
+            "en": "I start now learning AI and data analysis and look for certified credentials — the transformation has already begun"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتابع التطورات وأنتظر حتى توفر جهتي برامج تدريب رسمية",
+            "en": "I follow developments and wait until my organization provides official training programs"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "المهارات الإدارية والقيادية لن تتقادم — AI أداة والبشر يقودون",
+            "en": "Management and leadership skills won't become outdated — AI is a tool and humans lead"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هذه توقعات مبالغ فيها — 2030 لا تزال بعيدة والتغيير الحكومي بطيء",
+            "en": "These are exaggerated predictions — 2030 is still far and government change is slow"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "86% من أصحاب العمل يتوقعون أن AI سيُحوّل أعمالهم بحلول 2030 (WEF). العاملون بمهارات AI يكسبون علاوة 56% (PwC) — ارتفاعاً من 25% في 2023. التأخر في التعلم يعني فجوة رواتب متزايدة.",
+        "en": "86% of employers expect AI to transform their business by 2030 (WEF). AI-skilled workers earn a 56% wage premium (PwC) — up from 25% in 2023. Delaying learning means a growing salary gap."
+      }
+    },
+    {
+      "id": "pad-mcq-016",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول تخطيط في حكومة خليجية. مسح McKinsey 2025 لدول مجلس التعاون الخليجي يُظهر نسبة تبني AI في المؤسسات الخليجية. ما هي؟",
+        "en": "You're a planning official in a GCC government. McKinsey's 2025 GCC survey shows the AI adoption rate among GCC organizations. What is it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "45% — أقل من المتوسط العالمي",
+            "en": "45% — below the global average"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "84% — ارتفاعاً من 62% في 2023",
+            "en": "84% — up from 62% in 2023"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "100% — جميع المؤسسات الخليجية تستخدم AI",
+            "en": "100% — all GCC organizations use AI"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "70% — مماثل للمتوسط العالمي",
+            "en": "70% — similar to the global average"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "القفزة من 62% إلى 84% في عامين تعكس الاستثمارات الضخمة. AI التوليدي يُتوقع أن يولّد أكثر من 23 مليار دولار سنوياً عبر اقتصادات الخليج — نحو 2% من الناتج المحلي غير النفطي.",
+        "en": "The jump from 62% to 84% in two years reflects massive investments. GenAI is expected to generate over $23 billion annually across GCC economies — about 2% of non-oil GDP."
+      }
+    },
+    {
+      "id": "pad-mcq-017",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "ما ترتيب دبي في مؤشر المدن الذكية 2025 الصادر عن IMD؟",
+        "en": "What was Dubai's ranking in the 2025 Smart City Index by IMD?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الأولى عالمياً",
+            "en": "1st globally"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الرابعة عالمياً",
+            "en": "4th globally"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "العاشرة عالمياً",
+            "en": "10th globally"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "العشرين عالمياً",
+            "en": "20th globally"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "دبي الرابعة عالمياً في مؤشر المدن الذكية 2025 (IMD). التوأم الرقمي لدبي يدمج خرائط ثنائية وثلاثية الأبعاد لجميع أصول المدينة ضمن مشروع 'واقع إنساني واحد' للميتافيرس.",
+        "en": "Dubai ranked 4th globally in the 2025 Smart City Index (IMD). Dubai's Smart Digital Twin integrates 2D and 3D maps of all city assets as part of the 'One Human Reality' metaverse project."
+      }
+    },
+    {
+      "id": "pad-mcq-018",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير ضرائب في هيئة حكومية. كيف تُستخدم AI حالياً في إدارة الضرائب عالمياً؟",
+        "en": "You're a tax administration manager. How is AI currently used in tax administration globally?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فقط لحساب الضرائب المستحقة تلقائياً",
+            "en": "Only to automatically calculate taxes owed"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "كشف الاحتيال الضريبي وتحسين الامتثال وتعزيز خدمات دافعي الضرائب",
+            "en": "Tax fraud detection, improving compliance, and enhancing taxpayer services"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا يُستخدم في الضرائب بسبب حساسية البيانات",
+            "en": "Not used in taxes due to data sensitivity"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "فقط للرد على استفسارات المواطنين عبر الهاتف",
+            "en": "Only for answering citizen inquiries by phone"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "العديد من الإدارات الضريبية بدأت بأنظمة قواعد ثابتة ثم انتقلت للتعلم الآلي للتعامل مع أحجام بيانات أكبر وأنماط احتيال أعقد. AI يساعد في اكتشاف أنماط التهرب التي يصعب على المحللين البشريين ملاحظتها.",
+        "en": "Many tax administrations started with rules-based systems then moved to machine learning to handle larger data volumes and more complex fraud patterns. AI helps detect evasion patterns that are difficult for human analysts to notice."
+      }
+    },
+    {
+      "id": "pad-tf-011",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "إستونيا، رغم أن عدد سكانها 1.3 مليون فقط، لديها 47 حالة استخدام AI حكومية فعّالة وتُطوّر برمجياتها الحكومية داخلياً بدلاً من شرائها من شركات خاصة.",
+        "en": "Estonia, despite having only 1.3 million people, has 47 active government AI use cases and develops its government software internally rather than buying from private companies."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "إستونيا وفرنسا تُعتبران نموذجين في تطوير البرمجيات الحكومية داخلياً. هذا النهج يتجنب مشكلة 'الصندوق الأسود' التي تحدث عند الاعتماد على موردين خارجيين لا يكشفون عن خوارزمياتهم.",
+        "en": "Estonia and France are models for in-house government software development. This approach avoids the 'black box' problem that occurs when relying on external vendors who don't disclose their algorithms."
+      }
+    },
+    {
+      "id": "pad-tf-012",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "70% من الأهداف الاستراتيجية السعودية تتضمن مكوناً للبيانات والذكاء الاصطناعي بحسب مسؤولي سدايا.",
+        "en": "70% of Saudi Arabia's strategic goals involve data and AI components according to SDAIA officials."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "سدايا (الهيئة السعودية للبيانات والذكاء الاصطناعي) تقود التحول الرقمي في المملكة. AWS تستثمر 5.3 مليار دولار في مراكز بيانات سعودية بحلول 2026، وشراكة Google Cloud مع PIF بقيمة 10 مليارات دولار.",
+        "en": "SDAIA leads Saudi Arabia's digital transformation. AWS is investing $5.3 billion in Saudi data centers by 2026, and the Google Cloud-PIF partnership is worth $10 billion."
+      }
+    },
+    {
+      "id": "pad-fill-006",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "خوارزمية {{blank_1}} في بلدية روتردام الهولندية أُوقفت بعد تحقيق كشف تحيزها ضد {{blank_2}}.",
+        "en": "The {{blank_1}} algorithm in the Dutch city of Rotterdam was suspended after an investigation revealed bias against {{blank_2}}."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "الرعاية الاجتماعية",
+            "en": "welfare"
+          },
+          "options": [
+            {
+              "ar": "الرعاية الاجتماعية",
+              "en": "welfare"
+            },
+            {
+              "ar": "المرور",
+              "en": "traffic"
+            },
+            {
+              "ar": "الضرائب",
+              "en": "taxes"
+            },
+            {
+              "ar": "التعليم",
+              "en": "education"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "النساء والآباء وغير الناطقين بالهولندية",
+            "en": "women, parents, and non-native Dutch speakers"
+          },
+          "options": [
+            {
+              "ar": "النساء والآباء وغير الناطقين بالهولندية",
+              "en": "women, parents, and non-native Dutch speakers"
+            },
+            {
+              "ar": "كبار السن فقط",
+              "en": "elderly only"
+            },
+            {
+              "ar": "الرجال والعزاب",
+              "en": "men and singles"
+            },
+            {
+              "ar": "الأثرياء",
+              "en": "wealthy individuals"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "تحقيق Lighthouse Reports كشف أن خوارزمية روتردام تنحاز ضد فئات محددة. هولندا ظهرت ثلاث مرات في قائمة إخفاقات AI الحكومية: إعانات الأطفال الوطنية، Smart Check أمستردام، وخوارزمية روتردام.",
+        "en": "A Lighthouse Reports investigation revealed Rotterdam's algorithm biased against specific groups. The Netherlands appeared three times in government AI failure lists: national childcare benefits, Amsterdam's Smart Check, and Rotterdam's algorithm."
+      }
+    },
+    {
+      "id": "pad-match-006",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تحدي في تطبيق AI الحكومي بالحل الأنسب:",
+        "en": "Match each government AI implementation challenge with the most appropriate solution:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "بيانات تدريب مجزأة وغير متسقة",
+            "en": "Fragmented and inconsistent training data"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "خوارزمية 'صندوق أسود' لا يمكن تفسير قراراتها",
+            "en": "'Black box' algorithm with unexplainable decisions"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "تسرب الكوادر المؤهلة في AI من الحكومة للقطاع الخاص",
+            "en": "AI talent drain from government to private sector"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "هجمات عدائية على نماذج AI الحكومية",
+            "en": "Adversarial attacks on government AI models"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "استراتيجية جودة بيانات مركزية مع معايير موحدة عبر الوكالات",
+            "en": "Centralized data quality strategy with unified standards across agencies"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "اشتراط قابلية التفسير في عقود الشراء وتطوير نماذج داخلية",
+            "en": "Requiring explainability in procurement contracts and developing in-house models"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "شراكات مع الجامعات وبرامج تدريب AI للموظفين الحاليين",
+            "en": "University partnerships and AI training programs for current employees"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "ضوابط وصول صارمة وتقييمات ثغرات دورية وأنظمة احتياطية",
+            "en": "Strict access controls, regular vulnerability assessments, and redundant systems"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "إستونيا خصصت وحدة تحليل خاصة لمراقبة جودة البيانات واقتراح تحسينات. فرنسا وإستونيا تطوران برمجياتهما داخلياً. الحلول ليست تقنية فحسب بل مؤسسية وثقافية.",
+        "en": "Estonia dedicated a special analysis unit to monitor data quality and suggest improvements. France and Estonia develop their software in-house. Solutions aren't just technical but institutional and cultural."
+      }
+    },
+    {
+      "id": "pad-sort-006",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب هذه الدول حسب أقدمية تعيين مسؤول رفيع المستوى لشؤون AI في الحكومة (من الأقدم للأحدث):",
+        "en": "Order these countries by when they appointed a high-level AI official in government (earliest to latest):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "الإمارات — أول وزير دولة لـ AI في العالم (2017)",
+            "en": "UAE — world's first Minister of State for AI (2017)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "فرنسا — إطلاق Albert كنموذج AI سيادي حكومي (أبريل 2024)",
+            "en": "France — launching Albert as sovereign government AI model (April 2024)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "البرتغال — إطلاق مساعد حكومي بـ ChatGPT لـ 2,300 خدمة (يناير 2025)",
+            "en": "Portugal — launching ChatGPT government assistant for 2,300 services (January 2025)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "الولايات المتحدة — مذكرة OMB M-25-22 لحوكمة مشتريات AI (أبريل 2025)",
+            "en": "USA — OMB Memo M-25-22 for AI procurement governance (April 2025)"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الإمارات كانت سباقة عالمياً بتعيين وزير AI في 2017. لكن كل دولة اختارت نهجاً مختلفاً: الإمارات (قيادة سياسية)، فرنسا (سيادة تقنية)، البرتغال (خدمة مواطنين)، أمريكا (حوكمة وتنظيم).",
+        "en": "The UAE was a global pioneer appointing an AI minister in 2017. But each country chose a different approach: UAE (political leadership), France (tech sovereignty), Portugal (citizen service), USA (governance and regulation)."
+      }
+    },
+    {
+      "id": "pad-self-011",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مواطن اكتشفت أن طلبك للحصول على إعانة حكومية رُفض بقرار خوارزمي. لا يوجد تفسير واضح للرفض. ما خطوتك؟",
+        "en": "You're a citizen who discovered your government benefit application was rejected by an algorithmic decision. There's no clear explanation for the rejection. What's your step?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أطالب بتفسير واضح وقابل للفهم لقرار الخوارزمية — هذا حقي القانوني",
+            "en": "I demand a clear and understandable explanation of the algorithm's decision — this is my legal right"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقدم استئنافاً رسمياً وأطلب مراجعة بشرية للطلب",
+            "en": "I file a formal appeal and request a human review of the application"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أحاول تعديل طلبي وإعادة تقديمه أملاً في نتيجة مختلفة",
+            "en": "I try to modify my application and resubmit hoping for a different result"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أقبل القرار — الخوارزميات أدق من البشر عادةً",
+            "en": "I accept the decision — algorithms are usually more accurate than humans"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "GDPR المادة 22 وقانون AI الأوروبي يمنحان المواطنين حق الحصول على تفسير للقرارات الآلية وحق الاستئناف البشري. Robodebt و400,000 ضحية يُذكّروننا بأهمية عدم قبول القرارات الخوارزمية بصمت.",
+        "en": "GDPR Article 22 and the EU AI Act grant citizens the right to an explanation of automated decisions and the right to human appeal. Robodebt and 400,000 victims remind us not to silently accept algorithmic decisions."
+      }
+    },
+    {
+      "id": "pad-self-012",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول في وزارة صحة. شركة AI تعرض عليكم نظاماً يُقلل وقت انتظار المرضى 40%، لكن يتطلب مشاركة بيانات المرضى مع خوادم الشركة خارج البلاد. ما قرارك؟",
+        "en": "You're a health ministry official. An AI company offers a system that reduces patient wait times by 40%, but requires sharing patient data with the company's servers abroad. What's your decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقبل بشرط تشفير البيانات بالكامل واتفاقية معالجة بيانات صارمة مع حق التدقيق",
+            "en": "I accept with full data encryption and a strict data processing agreement with audit rights"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أرفض نقل البيانات للخارج وأطلب حلاً يعمل على خوادم محلية (سيادة البيانات)",
+            "en": "I refuse data transfer abroad and request a solution running on local servers (data sovereignty)"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفض تماماً — بيانات المرضى لا يمكن مشاركتها مع أي شركة خارجية",
+            "en": "I completely refuse — patient data cannot be shared with any external company"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "40% تقليل في وقت الانتظار لا يستحق المخاطرة ببيانات المرضى",
+            "en": "40% reduction in wait times isn't worth risking patient data"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "فرنسا اختارت نهج السيادة الرقمية بتطوير Albert داخلياً. GDPR وHIPAA يفرضان قيوداً صارمة على نقل البيانات الصحية. التشفير والمعالجة المحلية والتدقيق المستقل هي الضمانات الأساسية.",
+        "en": "France chose digital sovereignty by developing Albert in-house. GDPR and HIPAA impose strict restrictions on health data transfer. Encryption, local processing, and independent auditing are the essential safeguards."
+      }
+    },
+    {
+      "id": "pad-mcq-019",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول في هيئة إحصائية وطنية. الجمعية الأمريكية للإحصاء وجدت أن الوكالات الإحصائية الفيدرالية تعاني من مشكلة رئيسية. ما هي؟",
+        "en": "You're an official at a national statistics bureau. The American Statistical Association found federal statistical agencies face a key problem. What is it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تعاني من تقديم بيانات عالية الجودة بسبب تحديات في القدرات والاتساق",
+            "en": "Struggling to deliver high-quality datasets due to capacity and consistency challenges"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تمتلك بيانات ممتازة لكنها لا تشاركها مع الجمهور",
+            "en": "Have excellent data but don't share it with the public"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تستخدم AI بشكل مفرط دون إشراف بشري",
+            "en": "Use AI excessively without human oversight"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا تجمع بيانات رقمية من الأساس",
+            "en": "Don't collect digital data in the first place"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا يفسر لماذا تقضي المؤسسات 80% من وقت تطبيق AI في مهام مرتبطة بالبيانات. جودة البيانات الحكومية هي التحدي الأول وليس التقنية.",
+        "en": "This explains why organizations spend 80% of AI implementation time on data tasks. Government data quality is the #1 challenge, not technology."
+      }
+    },
+    {
+      "id": "pad-mcq-020",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مستشار AI في وزارة الداخلية البريطانية. ما الحدث الذي وقع في 2020 بخصوص خوارزمية التأشيرات؟",
+        "en": "You're an AI advisor at the UK Home Office. What happened in 2020 regarding the visa algorithm?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تم تطويرها وتحسينها بنجاح",
+            "en": "It was successfully developed and improved"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أُلغيت بعد أن أثبت ناشطون تحيزها لصالح المتقدمين البيض",
+            "en": "Scrapped after campaigners demonstrated it favored white applicants"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أُلغيت بسبب تكلفتها العالية وليس بسبب التحيز",
+            "en": "Scrapped due to high cost, not bias"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "نُقلت لشركة خاصة لتشغيلها",
+            "en": "Transferred to a private company to operate"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "النظام صنّف الطلبات آلياً وأعطى أولوية للجنسيات ذات معدلات القبول التاريخية العالية — مما أدى لتمييز منهجي. هذه القضية عززت الدعوة لشفافية خوارزميات الهجرة عالمياً.",
+        "en": "The system auto-classified applications and prioritized nationalities with historically high acceptance rates — causing systematic discrimination. This case strengthened calls for immigration algorithm transparency globally."
+      }
+    },
+    {
+      "id": "pad-mcq-021",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول تخطيط استراتيجي. ما نسبة الدول التي استخدمت AI لتحسين تصميم السياسات العامة (وليس فقط العمليات الداخلية) بحسب مؤشر OECD للحكومة الرقمية؟",
+        "en": "You're a strategic planning official. What percentage of countries used AI to improve policy design (not just internal processes) according to the OECD Digital Government Index?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "70% — نفس نسبة تحسين العمليات",
+            "en": "70% — same as process improvement"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "33% فقط — أقل بكثير من نسبة تحسين العمليات (70%)",
+            "en": "Only 33% — much lower than process improvement (70%)"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "90% — معظم الدول تستخدمه في السياسات",
+            "en": "90% — most countries use it for policy"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "5% فقط — استخدام AI في السياسات نادر جداً",
+            "en": "Only 5% — AI use in policy is extremely rare"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الفجوة بين 70% (عمليات) و33% (سياسات) تعكس حقيقة أن أتمتة المهام المتكررة أسهل بكثير من استخدام AI في صنع القرار الاستراتيجي. التحدي ليس تقنياً بل في ثقة صانعي السياسات بمخرجات AI.",
+        "en": "The gap between 70% (operations) and 33% (policy) reflects that automating repetitive tasks is much easier than using AI for strategic decision-making. The challenge isn't technical but in policymakers' trust in AI outputs."
+      }
+    },
+    {
+      "id": "pad-mcq-022",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "ما المبلغ الذي أعلنته السعودية كاستثمارات في البنية التحتية الرقمية والذكائية في مؤتمر LEAP 2025 وحده؟",
+        "en": "How much did Saudi Arabia announce in digital and AI infrastructure investments at LEAP 2025 alone?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "1 مليار دولار",
+            "en": "$1 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "14.9 مليار دولار",
+            "en": "$14.9 billion"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "500 مليون دولار",
+            "en": "$500 million"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50 مليار دولار",
+            "en": "$50 billion"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "مؤتمر LEAP أصبح من أكبر فعاليات التقنية في العالم. 14.9 مليار دولار في مؤتمر واحد تعكس حجم الطموح السعودي في مجال AI.",
+        "en": "LEAP has become one of the world's largest tech events. $14.9 billion at a single conference reflects the scale of Saudi AI ambition."
+      }
+    },
+    {
+      "id": "pad-mcq-023",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير أزمات في بلدية. ما الفائدة الرئيسية من 'التوأم الرقمي' للمدينة في إدارة الطوارئ؟",
+        "en": "You're a crisis manager in a municipality. What's the main benefit of a city 'digital twin' in emergency management?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يوفر المال فقط من خلال تقليل عدد الموظفين",
+            "en": "Only saves money by reducing staff numbers"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يتيح محاكاة سيناريوهات الكوارث قبل وقوعها واختبار خطط الاستجابة افتراضياً",
+            "en": "Enables simulating disaster scenarios before they happen and testing response plans virtually"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "يستبدل فرق الإنقاذ بالكامل",
+            "en": "Completely replaces rescue teams"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يُستخدم فقط للتوثيق بعد الأحداث",
+            "en": "Used only for documentation after events"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "McKinsey وPwC يقدّران أن التوائم الرقمية تحسّن الكفاءة التشغيلية 20-40%. مئات المدن حول العالم يُتوقع أن تنشر توائم رقمية بحلول 2025-2026.",
+        "en": "McKinsey and PwC estimate digital twins improve operational efficiency by 20-40%. Hundreds of cities worldwide are expected to deploy digital twins by 2025-2026."
+      }
+    },
+    {
+      "id": "pad-mcq-024",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مخطط موارد بشرية حكومي. الحكومة الفيدرالية الأمريكية تواجه تحدياً جديداً في 2026 بخصوص AI. ما هو؟",
+        "en": "You're a government HR planner. The U.S. federal government faces a new challenge in 2026 regarding AI. What is it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مبادرات الكفاءة السريعة أدت لتسرب المعرفة المؤسسية وهشاشة الأنظمة الحيوية",
+            "en": "Rapid efficiency initiatives led to institutional knowledge drain and fragility of critical systems"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "AI يعمل بشكل ممتاز ولا توجد تحديات",
+            "en": "AI is working perfectly with no challenges"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الكونغرس يمنع استخدام AI في الحكومة",
+            "en": "Congress is blocking AI use in government"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموظفون يرفضون استخدام AI لأسباب دينية",
+            "en": "Employees refuse AI use for religious reasons"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "'الابتكار المرن' (Resilient Innovation) أصبح الشعار الجديد: التحديث مع تجنب نقاط الفشل الواحدة والاعتماد على مورد واحد والمخاطر التشغيلية. الكفاءة بدون مرونة = هشاشة.",
+        "en": "'Resilient Innovation' became the new motto: modernize while avoiding single points of failure, vendor dependencies, and operational risks. Efficiency without resilience = brittleness."
+      }
+    },
+    {
+      "id": "pad-mcq-025",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مستشار حوكمة. ما المشكلة الفريدة في مشروع Smart Check بأمستردام (2024) مقارنة بإخفاقات AI الحكومية الأخرى؟",
+        "en": "You're a governance advisor. What's unique about Amsterdam's Smart Check project (2024) compared to other government AI failures?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لم يتبع أي إرشادات أخلاقية",
+            "en": "Didn't follow any ethical guidelines"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "اتبع كل توصيات AI المسؤول ومع ذلك أنتج تحيزاً كبيراً",
+            "en": "Followed every Responsible AI recommendation yet still produced heavy bias"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نجح في البداية ثم فشل بعد سنوات",
+            "en": "Succeeded initially then failed after years"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "استخدم بيانات مزيفة عمداً",
+            "en": "Deliberately used fake data"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه هي الحالة الأكثر إزعاجاً: حتى الامتثال الشكلي الكامل لا يضمن عدالة المخرجات. الدرس: إرشادات AI المسؤول ضرورية لكنها ليست كافية بدون اختبار فعلي مستمر.",
+        "en": "This is the most troubling case: even full formal compliance doesn't guarantee fair outcomes. The lesson: Responsible AI guidelines are necessary but insufficient without continuous real-world testing."
+      }
+    },
+    {
+      "id": "pad-mcq-026",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "ما حجم الشراكة الاستراتيجية بين Google Cloud وصندوق الاستثمارات العامة السعودي (PIF) عبر شركة HUMAIN؟",
+        "en": "What's the size of the strategic partnership between Google Cloud and Saudi PIF through HUMAIN?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "1 مليار دولار",
+            "en": "$1 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "10 مليارات دولار",
+            "en": "$10 billion"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "100 مليون دولار",
+            "en": "$100 million"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50 مليار دولار",
+            "en": "$50 billion"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "HUMAIN شركة مدعومة من صندوق الاستثمارات العامة لبناء مركز AI سعودي. هذا بالإضافة لاستثمار AWS بقيمة 5.3 مليار دولار في مراكز بيانات سعودية بحلول 2026.",
+        "en": "HUMAIN is a PIF-backed company to build a Saudi AI hub. This is in addition to AWS's $5.3 billion investment in Saudi data centers by 2026."
+      }
+    },
+    {
+      "id": "pad-tf-013",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "اليابان طوّرت نظام شرطة تنبؤية يُدعى Crime Nabi تدّعي السلطات أنه أكثر فعالية بنسبة 50% من أساليب الشرطة التقليدية.",
+        "en": "Japan developed a predictive policing system called Crime Nabi that authorities claim is 50% more effective than traditional policing methods."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Crime Nabi طُوّر من شركة ناشئة يابانية واستُخدم أولاً قبل أولمبياد طوكيو 2020. المحاكاة أظهرت فعالية أعلى 50% في تحديد المناطق عالية الخطورة مقارنة بالأساليب التقليدية.",
+        "en": "Crime Nabi was developed by a Japanese startup and first used before the 2020 Tokyo Olympics. Simulations showed 50% higher effectiveness in identifying high-risk areas compared to traditional methods."
+      }
+    },
+    {
+      "id": "pad-tf-014",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "الحكومة الأمريكية تنشر قائمة شاملة ومحدّثة بجميع حالات استخدام AI عبر الوكالات الفيدرالية بشكل منتظم ومتاح للجمهور.",
+        "en": "The U.S. government publishes a comprehensive and updated list of all AI use cases across federal agencies regularly and publicly."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "رغم التزام الوكالات بنشر حالات استخدام AI، القائمة الموحدة لا تزال غير مكتملة. بعض الوكالات بدأت تنشر قوائم مُحدّثة على مواقعها لكن القائمة المركزية المجمّعة غير متوفرة بعد.",
+        "en": "Despite agencies being required to publish AI use cases, the consolidated inventory is still incomplete. Some agencies started publishing updated inventories on their websites, but the centralized consolidated list is not yet available."
+      }
+    },
+    {
+      "id": "pad-tf-015",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مؤسسة Marinus Analytics نجحت في استخدام AI والتعلم الآلي والتحليل الجغرافي المكاني لتتبع أشخاص مفقودين في شبكات الاتجار بالبشر في الولايات المتحدة.",
+        "en": "Marinus Analytics successfully used AI, machine learning, and geospatial analysis to track missing persons in human trafficking networks in the United States."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Marinus Analytics أُسست من جامعة Carnegie Mellon وخرجت من معهد الروبوتات. هذا مثال إيجابي نادر لاستخدام AI في إنفاذ القانون — إنقاذ أرواح فعلياً بدلاً من مراقبة المواطنين.",
+        "en": "Marinus Analytics was founded out of Carnegie Mellon's Robotics Institute. This is a rare positive example of AI in law enforcement — actually saving lives rather than surveilling citizens."
+      }
+    },
+    {
+      "id": "pad-tf-016",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "مشروع Stargate UAE هو مشروع حوسبة AI بقدرة 1 جيغاوات بدعم من G42 وOpenAI وOracle وCisco وNVIDIA وSoftBank.",
+        "en": "The Stargate UAE project is a 1GW AI compute cluster backed by G42, OpenAI, Oracle, Cisco, NVIDIA, and SoftBank."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "أُعلن عن المشروع في مايو 2025. الإمارات تسعى لتكون مركزاً عالمياً لحوسبة AI مع بنية تحتية ضخمة تجذب أكبر شركات التقنية في العالم.",
+        "en": "Announced in May 2025, the UAE aims to become a global hub for AI compute with massive infrastructure attracting the world's largest tech companies."
+      }
+    },
+    {
+      "id": "pad-tf-017",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "التقنيات الحالية لديها القدرة التقنية على أتمتة حوالي 57% من ساعات العمل في الولايات المتحدة.",
+        "en": "Current technologies have the technical potential to automate approximately 57% of U.S. work hours."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا تقدير McKinsey 2025 للإمكانية التقنية وليس التطبيق الفعلي. الفارق بين القدرة التقنية والتطبيق الواقعي يعتمد على عوامل اقتصادية وتنظيمية واجتماعية.",
+        "en": "This is McKinsey's 2025 estimate of technical potential, not actual implementation. The gap between technical capability and real-world application depends on economic, regulatory, and social factors."
+      }
+    },
+    {
+      "id": "pad-tf-018",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نمو إنتاجية الصناعات المتأثرة بالذكاء الاصطناعي تضاعف أربع مرات تقريباً مقارنة بالصناعات غير المتأثرة بحسب PwC.",
+        "en": "Productivity growth in AI-exposed industries nearly quadrupled compared to non-AI-exposed industries according to PwC."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "PwC AI Jobs Barometer (تحليل مليار إعلان وظيفي) وجد أيضاً أن العاملين بمهارات AI يكسبون علاوة 56% — ارتفاعاً من 25% في 2023. AI ليس مجرد أداة بل محرك اقتصادي.",
+        "en": "PwC AI Jobs Barometer (analyzing ~1 billion job ads) also found AI-skilled workers earn a 56% wage premium — up from 25% in 2023. AI isn't just a tool but an economic engine."
+      }
+    },
+    {
+      "id": "pad-fill-007",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "تقرير {{blank_1}} 2025 شمل أكثر من {{blank_2}} شركة تمثل 14 مليون+ عامل، وتوقع صافي ربح 78 مليون وظيفة جديدة بحلول 2030.",
+        "en": "The {{blank_1}} 2025 report surveyed over {{blank_2}} employers representing 14M+ workers, projecting a net gain of 78 million new jobs by 2030."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "المنتدى الاقتصادي العالمي (WEF)",
+            "en": "World Economic Forum (WEF)"
+          },
+          "options": [
+            {
+              "ar": "المنتدى الاقتصادي العالمي (WEF)",
+              "en": "World Economic Forum (WEF)"
+            },
+            {
+              "ar": "McKinsey",
+              "en": "McKinsey"
+            },
+            {
+              "ar": "PwC",
+              "en": "PwC"
+            },
+            {
+              "ar": "OECD",
+              "en": "OECD"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "1,000",
+            "en": "1,000"
+          },
+          "options": [
+            {
+              "ar": "1,000",
+              "en": "1,000"
+            },
+            {
+              "ar": "100",
+              "en": "100"
+            },
+            {
+              "ar": "10,000",
+              "en": "10,000"
+            },
+            {
+              "ar": "500",
+              "en": "500"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "التقرير يتوقع خلق 170 مليون وظيفة جديدة وإلغاء 92 مليون — صافي ربح 78 مليون. 86% من أصحاب العمل يتوقعون أن AI سيحوّل أعمالهم بحلول 2030.",
+        "en": "The report projects 170M new jobs created and 92M displaced — net gain of 78M. 86% of employers expect AI to transform their business by 2030."
+      }
+    },
+    {
+      "id": "pad-fill-008",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "مدينة {{blank_1}} استخدمت شركة Ironside لتطوير نموذج شرطة تنبؤية قلّل آثار الجريمة بنسبة {{blank_2}} خلال أول 5 أسابيع.",
+        "en": "The city of {{blank_1}} used Ironside to develop a predictive policing model that reduced crime impacts by {{blank_2}} within the first 5 weeks."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "مانشستر (نيوهامبشير)",
+            "en": "Manchester (New Hampshire)"
+          },
+          "options": [
+            {
+              "ar": "مانشستر (نيوهامبشير)",
+              "en": "Manchester (New Hampshire)"
+            },
+            {
+              "ar": "لوس أنجلوس",
+              "en": "Los Angeles"
+            },
+            {
+              "ar": "شيكاغو",
+              "en": "Chicago"
+            },
+            {
+              "ar": "نيويورك",
+              "en": "New York"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "28%",
+            "en": "28%"
+          },
+          "options": [
+            {
+              "ar": "28%",
+              "en": "28%"
+            },
+            {
+              "ar": "5%",
+              "en": "5%"
+            },
+            {
+              "ar": "50%",
+              "en": "50%"
+            },
+            {
+              "ar": "80%",
+              "en": "80%"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "النتائج تختلف جذرياً: Ironside في مانشستر حققت 28% تحسن، بينما Geolitica في Plainfield حققت أقل من 0.5% دقة. البيانات المحلية وجودة النموذج هما العامل الحاسم.",
+        "en": "Results vary drastically: Ironside in Manchester achieved 28% improvement, while Geolitica in Plainfield achieved less than 0.5% accuracy. Local data and model quality are the decisive factors."
+      }
+    },
+    {
+      "id": "pad-fill-009",
+      "type": "fill_blank",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 1,
+      "text": {
+        "ar": "الشراكة الاستراتيجية بين السعودية والولايات المتحدة في مجال {{blank_1}} وُقّعت في {{blank_2}} 2025.",
+        "en": "The Strategic {{blank_1}} Partnership between Saudi Arabia and the U.S. was signed in {{blank_2}} 2025."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "الذكاء الاصطناعي",
+            "en": "AI"
+          },
+          "options": [
+            {
+              "ar": "الذكاء الاصطناعي",
+              "en": "AI"
+            },
+            {
+              "ar": "الطاقة المتجددة",
+              "en": "Renewable Energy"
+            },
+            {
+              "ar": "الفضاء",
+              "en": "Space"
+            },
+            {
+              "ar": "الأمن السيبراني",
+              "en": "Cybersecurity"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "نوفمبر",
+            "en": "November"
+          },
+          "options": [
+            {
+              "ar": "نوفمبر",
+              "en": "November"
+            },
+            {
+              "ar": "يناير",
+              "en": "January"
+            },
+            {
+              "ar": "مايو",
+              "en": "May"
+            },
+            {
+              "ar": "سبتمبر",
+              "en": "September"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الشراكة جزء من سلسلة استثمارات سعودية ضخمة في AI تشمل مشروع التسامي (100 مليار دولار) وشراكة Google-PIF (10 مليارات) واستثمارات AWS (5.3 مليار).",
+        "en": "This partnership is part of a series of massive Saudi AI investments including Project Transcendence ($100B), Google-PIF partnership ($10B), and AWS investments ($5.3B)."
+      }
+    },
+    {
+      "id": "pad-fill-010",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "قانون AI الأوروبي يفرض غرامات تصل إلى {{blank_1}} يورو أو {{blank_2}} من الإيرادات العالمية على المخالفين.",
+        "en": "The EU AI Act imposes fines up to {{blank_1}} euros or {{blank_2}} of global turnover on violators."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "35 مليون",
+            "en": "€35 million"
+          },
+          "options": [
+            {
+              "ar": "35 مليون",
+              "en": "€35 million"
+            },
+            {
+              "ar": "1 مليون",
+              "en": "€1 million"
+            },
+            {
+              "ar": "100 مليون",
+              "en": "€100 million"
+            },
+            {
+              "ar": "10 مليون",
+              "en": "€10 million"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "7%",
+            "en": "7%"
+          },
+          "options": [
+            {
+              "ar": "7%",
+              "en": "7%"
+            },
+            {
+              "ar": "1%",
+              "en": "1%"
+            },
+            {
+              "ar": "15%",
+              "en": "15%"
+            },
+            {
+              "ar": "3%",
+              "en": "3%"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "غرامات قانون AI الأوروبي أعلى من غرامات GDPR (20 مليون أو 4%). هذا يعكس الخطورة التي يراها المشرعون الأوروبيون في AI غير المنضبط.",
+        "en": "EU AI Act fines are higher than GDPR fines (€20M or 4%). This reflects the seriousness European legislators see in unregulated AI."
+      }
+    },
+    {
+      "id": "pad-match-007",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل دولة بمبادرة التوأم الرقمي الخاصة بها:",
+        "en": "Match each country with its digital twin initiative:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "سنغافورة",
+            "en": "Singapore"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "دبي",
+            "en": "Dubai"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "نيويورك",
+            "en": "New York"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "هلسنكي",
+            "en": "Helsinki"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "Virtual Singapore — نسخة 3D كاملة للدولة",
+            "en": "Virtual Singapore — complete 3D replica of the nation"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "Smart Digital Twin ضمن مشروع 'واقع إنساني واحد'",
+            "en": "Smart Digital Twin as part of 'One Human Reality'"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "Hudson Yards — توأم رقمي لحي ذكي",
+            "en": "Hudson Yards — digital twin of a smart neighborhood"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "نموذج 3D مفتوح المصدر للمدينة",
+            "en": "Open-source 3D city model"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل مشروع يعكس أولويات مختلفة: سنغافورة (دولة بأكملها)، دبي (ميتافيرس حكومي)، نيويورك (حي محدود)، هلسنكي (انفتاح ومشاركة). النطاق والطموح يختلفان جذرياً.",
+        "en": "Each project reflects different priorities: Singapore (entire nation), Dubai (government metaverse), New York (limited neighborhood), Helsinki (openness and sharing). Scale and ambition vary dramatically."
+      }
+    },
+    {
+      "id": "pad-match-008",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل نهج حكومي في AI بالدولة التي تتبناه:",
+        "en": "Match each government AI approach with the country that follows it:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "تطوير نماذج AI سيادية داخلياً لحماية الاستقلالية",
+            "en": "Developing sovereign AI models internally for independence"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "تعيين وزير مخصص لـ AI وقيادة سياسية عليا",
+            "en": "Appointing a dedicated AI minister with top political leadership"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "استخدام نماذج تجارية (ChatGPT) لخدمة المواطنين مباشرة",
+            "en": "Using commercial models (ChatGPT) to serve citizens directly"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "التركيز على التنظيم والحوكمة عبر مذكرات ومعايير",
+            "en": "Focusing on regulation and governance through memos and standards"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "فرنسا (Albert/DINUM)",
+            "en": "France (Albert/DINUM)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "الإمارات (عمر العلماء 2017)",
+            "en": "UAE (Omar Al Olama 2017)"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "البرتغال (gov.pt يناير 2025)",
+            "en": "Portugal (gov.pt January 2025)"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "الولايات المتحدة (OMB M-25-22)",
+            "en": "USA (OMB M-25-22)"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "لا يوجد نهج واحد صحيح — كل دولة تختار ما يناسب سياقها. الدول العربية يمكنها التعلم من جميع النماذج: السيادة (فرنسا)، القيادة (الإمارات)، الخدمة (البرتغال)، الحوكمة (أمريكا).",
+        "en": "There's no single right approach — each country chooses what fits its context. Arab countries can learn from all models: sovereignty (France), leadership (UAE), service (Portugal), governance (USA)."
+      }
+    },
+    {
+      "id": "pad-match-009",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل إحصائية خليجية بالمصدر أو الجهة المسؤولة:",
+        "en": "Match each GCC statistic with its source or responsible entity:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "64% من السكان في سن العمل يستخدمون AI",
+            "en": "64% of working-age population using AI"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "100 مليار دولار في البنية التحتية لـ AI",
+            "en": "$100 billion in AI infrastructure"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "أول مشروع قانون تنظيمي لـ AI في الخليج",
+            "en": "First draft AI regulation law in GCC"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "أكثر من 23 مليار دولار سنوياً من AI التوليدي",
+            "en": "Over $23 billion annually from GenAI"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "الإمارات (تصنيف Microsoft AI Economy Institute)",
+            "en": "UAE (Microsoft AI Economy Institute ranking)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "السعودية (مشروع التسامي)",
+            "en": "Saudi Arabia (Project Transcendence)"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "البحرين (أبريل 2024)",
+            "en": "Bahrain (April 2024)"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "توقعات لاقتصادات الخليج مجتمعة",
+            "en": "Projection for combined GCC economies"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل دولة خليجية تأخذ زاوية مختلفة: الإمارات (التبني الشعبي)، السعودية (الاستثمار الضخم)، البحرين (التنظيم). هذا التكامل يجعل الخليج نموذجاً فريداً عالمياً.",
+        "en": "Each GCC country takes a different angle: UAE (mass adoption), Saudi Arabia (massive investment), Bahrain (regulation). This complementarity makes the GCC a unique global model."
+      }
+    },
+    {
+      "id": "pad-match-010",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل أداة شرطة تنبؤية بالبلد الذي طوّرها:",
+        "en": "Match each predictive policing tool with the country that developed it:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "VioGén — تقييم مخاطر العنف الأسري",
+            "en": "VioGén — domestic violence risk assessment"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "CAS — نظام استباق الجريمة الوطني",
+            "en": "CAS — national Crime Anticipation System"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Crime Nabi — نظام شرطة تنبؤية بالتعلم العميق",
+            "en": "Crime Nabi — deep learning predictive policing"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "COMPAS — تنبؤ بالعودة للإجرام",
+            "en": "COMPAS — recidivism prediction"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "إسبانيا",
+            "en": "Spain"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "هولندا",
+            "en": "Netherlands"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "اليابان",
+            "en": "Japan"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "الولايات المتحدة",
+            "en": "United States"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هولندا رائدة عالمياً في الشرطة التنبؤية على المستوى الوطني (CAS). إسبانيا تركز على حماية الضحايا (VioGén). اليابان تركز على الأمان العام. أمريكا واجهت أكبر انتقادات بسبب تحيز COMPAS.",
+        "en": "Netherlands is a global pioneer in national-level predictive policing (CAS). Spain focuses on victim protection (VioGén). Japan focuses on public safety. The USA faced the most criticism due to COMPAS bias."
+      }
+    },
+    {
+      "id": "pad-sort-007",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مستويات نضج AI الحكومي من الأدنى للأعلى:",
+        "en": "Order government AI maturity levels from lowest to highest:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تجارب مبدئية: مشاريع تجريبية محدودة في وكالات فردية",
+            "en": "Initial experiments: limited pilot projects in individual agencies"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تبني منظم: سياسات واضحة وبرامج تدريب وميزانيات مخصصة لـ AI",
+            "en": "Organized adoption: clear policies, training programs, and dedicated AI budgets"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تكامل شامل: AI مدمج في جميع العمليات مع حوكمة مركزية",
+            "en": "Comprehensive integration: AI embedded in all operations with centralized governance"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "ابتكار ذاتي: الحكومة تطور نماذج AI خاصة بها وتشاركها مع دول أخرى",
+            "en": "Self-innovation: government develops its own AI models and shares them with other countries"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "معظم الحكومات في المستوى 1-2. إستونيا وسنغافورة والإمارات في المستوى 3-4. McKinsey وجدت أن 1% فقط من المؤسسات عالمياً وصلت لمرحلة النضج الكامل في AI.",
+        "en": "Most governments are at level 1-2. Estonia, Singapore, and UAE are at level 3-4. McKinsey found only 1% of organizations globally reached full AI maturity."
+      }
+    },
+    {
+      "id": "pad-sort-008",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب إخفاقات AI الحكومية حسب ترتيبها الزمني من الأقدم للأحدث:",
+        "en": "Order government AI failures chronologically from earliest to latest:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "فضيحة إعانات الأطفال الهولندية (2013-2019)",
+            "en": "Dutch Childcare Benefits Scandal (2013-2019)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "Robodebt الأسترالي (2015-2019)",
+            "en": "Australia's Robodebt (2015-2019)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "خوارزمية A-Level البريطانية (2020)",
+            "en": "UK A-Level Algorithm (2020)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "Smart Check أمستردام (2024)",
+            "en": "Amsterdam's Smart Check (2024)"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "كل إخفاق قدّم درساً مختلفاً: هولندا (التنميط العنصري)، أستراليا (المنهجية الخاطئة)، بريطانيا (أثر على الفئات المحرومة)، أمستردام (الامتثال الشكلي لا يكفي).",
+        "en": "Each failure taught a different lesson: Netherlands (racial profiling), Australia (flawed methodology), UK (disproportionate impact on disadvantaged), Amsterdam (formal compliance isn't enough)."
+      }
+    },
+    {
+      "id": "pad-sort-009",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات شراء نظام AI حكومي وفقاً لمذكرة OMB الأمريكية:",
+        "en": "Order the steps of purchasing a government AI system according to U.S. OMB guidance:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحديد الاحتياج الحكومي والمشكلة التي سيحلها AI",
+            "en": "Identify the government need and problem AI will solve"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تقييم مستقل للمورد والنموذج قبل الاقتناء",
+            "en": "Independent evaluation of vendor and model before acquisition"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "اشتراط شفافية الخوارزمية وقابلية التدقيق في العقد",
+            "en": "Require algorithm transparency and auditability in the contract"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "مراقبة مستمرة بعد النشر مع تقارير دورية عن الأداء والتحيز",
+            "en": "Continuous monitoring after deployment with periodic performance and bias reports"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "المشكلة: عقود xAI وOpenAI مع الحكومة الأمريكية أُبرمت قبل تطبيق هذه المعايير. النقاد يطالبون بتطبيقها بأثر رجعي على العقود القائمة.",
+        "en": "The problem: xAI and OpenAI contracts with the U.S. government were signed before these standards were applied. Critics demand retroactive application to existing contracts."
+      }
+    },
+    {
+      "id": "pad-sort-010",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مخاطر AI في القطاع الحكومي من الأكثر شيوعاً إلى الأقل شيوعاً بحسب التقارير:",
+        "en": "Order AI risks in government from most to least common according to reports:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحيز خوارزمي يعكس تفاوتات تاريخية في البيانات",
+            "en": "Algorithmic bias reflecting historical data disparities"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "انتهاك خصوصية المواطنين عبر تجميع بيانات من مصادر متعددة",
+            "en": "Citizen privacy violation through aggregating data from multiple sources"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "غياب المساءلة عند فشل القرارات الآلية",
+            "en": "Lack of accountability when automated decisions fail"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "هجمات عدائية على نماذج AI الحكومية",
+            "en": "Adversarial attacks on government AI models"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "التحيز الخوارزمي هو الأكثر توثيقاً (COMPAS، هولندا، روتردام، أمستردام، بريطانيا). الهجمات العدائية أقل شيوعاً حالياً لكنها تُعتبر الخطر المستقبلي الأكبر.",
+        "en": "Algorithmic bias is most documented (COMPAS, Netherlands, Rotterdam, Amsterdam, UK). Adversarial attacks are less common now but considered the biggest future risk."
+      }
+    },
+    {
+      "id": "pad-self-013",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول في وزارة التعليم. تقترح عليك شركة AI نظاماً يتنبأ بالطلاب المعرضين للتسرب المدرسي بدقة 85%. ما موقفك؟",
+        "en": "You're an education ministry official. An AI company proposes a system that predicts students at risk of dropping out with 85% accuracy. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة ذهبية — التدخل المبكر ينقذ مستقبل آلاف الطلاب، مع حماية خصوصية بياناتهم",
+            "en": "Golden opportunity — early intervention saves thousands of students' futures, with protecting their data privacy"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقبل بشرط عدم مشاركة بيانات الطلاب مع أي جهة خارج الوزارة",
+            "en": "I accept on condition student data isn't shared with any entity outside the ministry"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "خطير — تصنيف الطلاب خوارزمياً قد يخلق نبوءة تحقق ذاتها ويوصم الطلاب",
+            "en": "Dangerous — algorithmically labeling students could create a self-fulfilling prophecy and stigmatize them"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المعلمون يعرفون طلابهم أفضل من أي خوارزمية — لا حاجة لهذا النظام",
+            "en": "Teachers know their students better than any algorithm — no need for this system"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "خوارزمية A-Level البريطانية خفضت درجات 40% من الطلاب وأثرت بشكل أكبر على المحرومين. التحيز ضد الفئات المحرومة هو الخطر الأكبر في أنظمة AI التعليمية. التوازن بين التدخل المبكر وحماية الطلاب ضروري.",
+        "en": "The UK A-Level algorithm downgraded 40% of students, disproportionately affecting disadvantaged ones. Bias against disadvantaged groups is the biggest risk in educational AI systems. Balancing early intervention with student protection is essential."
+      }
+    },
+    {
+      "id": "pad-self-014",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مواطن تعرف أن حكومتك تستخدم AI في خدمات كثيرة لكنها لا تنشر تفاصيل عن الخوارزميات المستخدمة. ما رأيك؟",
+        "en": "You're a citizen who knows your government uses AI in many services but doesn't publish details about the algorithms used. What's your view?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يجب أن تُنشر تقارير شفافية دورية — حق المواطن في المعرفة أولوية",
+            "en": "Periodic transparency reports should be published — the citizen's right to know is a priority"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقبول إذا كانت هناك هيئة رقابة مستقلة تُدقق الخوارزميات حتى لو لم تُنشر للجمهور",
+            "en": "Acceptable if there's an independent oversight body auditing algorithms even if not published publicly"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الشفافية الكاملة قد تُعرّض الأمن القومي للخطر — بعض السرية مطلوب",
+            "en": "Full transparency could endanger national security — some secrecy is needed"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا مشكلة — أثق في حكومتي وهي تعرف مصلحتنا",
+            "en": "No problem — I trust my government and they know what's best for us"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "GDPR يمنح المواطنين حق التفسير. لكن حتى في أمريكا — أكبر ديمقراطية — الجمهور لا يعرف أي نماذج AI تستخدمها الحكومة ولا كيف تتصل بقواعد البيانات الفيدرالية.",
+        "en": "GDPR grants citizens the right to explanation. But even in the U.S., the public doesn't know which AI models the government uses or how they connect to federal databases."
+      }
+    },
+    {
+      "id": "pad-self-015",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت قائد فريق في جهة حكومية. تتاح لك فرصة إرسال 3 موظفين لبرنامج تدريب AI مكثف لمدة شهرين. لكن هذا سيُثقل العمل على الفريق المتبقي. ما قرارك؟",
+        "en": "You're a team leader at a government agency. You have the opportunity to send 3 employees to an intensive 2-month AI training program. But this will burden the remaining team. What's your decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أُرسلهم فوراً — الاستثمار في المهارات المستقبلية أولوية حتى لو تحمّل الفريق ضغطاً مؤقتاً",
+            "en": "Send them immediately — investing in future skills is a priority even if the team bears temporary pressure"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أُرسل موظفاً واحداً أولاً ليُدرّب الباقين لاحقاً — تدريب متسلسل",
+            "en": "Send one employee first to train the rest later — sequential training"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر حتى يتوفر تدريب أقصر أو عن بُعد لا يؤثر على سير العمل",
+            "en": "Wait until shorter or remote training is available that doesn't affect workflow"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الفريق محتاج — لا أستطيع التضحية بإنتاجية شهرين مقابل تدريب",
+            "en": "The team needs everyone — I can't sacrifice two months of productivity for training"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "PwC وجدت أن العاملين بمهارات AI يكسبون علاوة 56%. WEF يتوقع أن 39% من المهارات الحالية ستتقادم بحلول 2030. التأخر في تدريب الفريق = تراكم الفجوة.",
+        "en": "PwC found AI-skilled workers earn a 56% premium. WEF expects 39% of current skills to become outdated by 2030. Delaying team training = accumulating gap."
+      }
+    },
+    {
+      "id": "pad-self-016",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير مكتب خدمة مواطنين. النظام الجديد يُحيل 70% من الاستفسارات لروبوت دردشة AI. المواطنون كبار السن يشتكون أنهم لا يستطيعون التحدث مع إنسان. ما حلك؟",
+        "en": "You're a citizen services office manager. The new system routes 70% of inquiries to an AI chatbot. Elderly citizens complain they can't talk to a human. What's your solution?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أُبقي الروبوت مع إضافة زر واضح 'تحدث مع موظف' — التوازن بين الكفاءة والإتاحة",
+            "en": "Keep the bot while adding a clear 'Talk to an employee' button — balancing efficiency with accessibility"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أُقلل نسبة تحويل الاستفسارات للروبوت إلى 40% وأُبقي أغلبها للموظفين",
+            "en": "Reduce bot routing to 40% and keep most for employees"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أُلغي الروبوت — خدمة المواطنين لا يمكن أن تكون آلية",
+            "en": "Cancel the bot — citizen services can't be automated"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المواطنون سيتعودون مع الوقت — لا حاجة لتغيير",
+            "en": "Citizens will get used to it over time — no need for change"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الحكومات الناجحة في التحول الرقمي تحافظ دائماً على قناة بشرية موازية. البرتغال تقدم 2,300+ خدمة عبر مساعد AI لكنها لا تُلغي الخدمة البشرية. الإتاحة الرقمية = خيار وليس إجبار.",
+        "en": "Successful digital transformation governments always maintain a parallel human channel. Portugal offers 2,300+ services via AI assistant but doesn't cancel human service. Digital access = choice, not force."
+      }
+    },
+    {
+      "id": "pad-self-017",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "تقرأ أن التقنيات الحالية يمكنها نظرياً أتمتة 57% من ساعات العمل في بلدك. كموظف حكومي، كيف تتفاعل؟",
+        "en": "You read that current technologies can theoretically automate 57% of work hours in your country. As a government employee, how do you react?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "هذا يعني أن 57% من وقتي يمكن تحريره لمهام أكثر قيمة — وهذا محفز للتطور",
+            "en": "This means 57% of my time can be freed for higher-value tasks — this is motivating for growth"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقلق لكنه فرصة — أحتاج تحديد المهام القابلة للأتمتة في عملي والتركيز على ما لا يُؤتمت",
+            "en": "Concerning but an opportunity — I need to identify automatable tasks in my work and focus on what can't be automated"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الإمكانية النظرية مختلفة عن التطبيق الفعلي — لن يحدث في القطاع الحكومي قريباً",
+            "en": "Theoretical possibility is different from actual implementation — won't happen in government soon"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هذه إحصائيات مبالغ فيها من شركات تقنية تريد بيع منتجاتها",
+            "en": "These are exaggerated statistics from tech companies wanting to sell their products"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "McKinsey 2025: إمكانية تقنية لأتمتة 57% من ساعات العمل. لكن 80%+ من المؤسسات لا ترى أثراً فعلياً على أرباحها. الفجوة بين الإمكانية والتطبيق واسعة — لكنها تضيق بسرعة.",
+        "en": "McKinsey 2025: technical potential to automate 57% of work hours. But 80%+ of organizations see no actual profit impact. The gap between potential and implementation is wide — but narrowing fast."
+      }
+    },
+    {
+      "id": "pad-self-018",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "حكومتك ترسل إليك رسالة رسمية أن وظيفتك ستتغير جذرياً خلال عامين بسبب AI: بعض مهامك ستُؤتمت وستحتاج مهارات جديدة. ما ردة فعلك الأولى؟",
+        "en": "Your government sends you an official notice that your job will fundamentally change within two years due to AI: some tasks will be automated and you'll need new skills. What's your first reaction?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبدأ فوراً بخطة تعلم شخصية — من يبدأ مبكراً يحصل على الفرص الأفضل",
+            "en": "I immediately start a personal learning plan — early starters get the best opportunities"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطالب الحكومة بتوفير تدريب مجاني ووقت مخصص للتعلم ضمن ساعات العمل",
+            "en": "I demand the government provide free training and dedicated learning time within work hours"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر وأرى — ربما تتغير الخطط أو يتأخر التطبيق كما حدث كثيراً",
+            "en": "Wait and see — plans might change or implementation might be delayed as often happens"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أبحث عن وظيفة أخرى في قطاع لا يتأثر بـ AI",
+            "en": "I look for another job in a sector not affected by AI"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "المنتدى الاقتصادي العالمي: 86% من أصحاب العمل يتوقعون تحولاً بحلول 2030. لا يوجد قطاع محصن من AI. الموظفون الذين يتعلمون AI مبكراً يحصلون على علاوة 56% (PwC) ويصبحون أكثر أماناً وظيفياً.",
+        "en": "WEF: 86% of employers expect transformation by 2030. No sector is immune from AI. Employees who learn AI early earn a 56% premium (PwC) and become more job-secure."
+      }
+    },
+    {
+      "id": "pad-mcq-027",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول AI في وزارة عدل. GDPR المادة 22 تحظر اتخاذ قرارات مبنية حصرياً على المعالجة الآلية. ما الاستثناء المسموح؟",
+        "en": "You're an AI official at a justice ministry. GDPR Article 22 prohibits decisions based solely on automated processing. What's the allowed exception?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا توجد استثناءات — الحظر مطلق",
+            "en": "No exceptions — the ban is absolute"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "إذا سمح قانون الاتحاد أو الدولة العضو بذلك مع ضمانات مناسبة",
+            "en": "If Union or Member State law allows it with appropriate safeguards"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "فقط إذا وافق المواطن كتابياً",
+            "en": "Only if the citizen agrees in writing"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "فقط في الحالات الأمنية الطارئة",
+            "en": "Only in emergency security cases"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "GDPR والتوجيه الأوروبي لإنفاذ القانون (LED) يسمحان للدول بتقنين الاستثناءات. لكن هذا خلق تفاوتاً بين الدول — ما هو مسموح في دولة قد يكون ممنوعاً في أخرى.",
+        "en": "GDPR and the Law Enforcement Directive allow states to legislate exceptions. But this created disparities between countries — what's allowed in one may be banned in another."
+      }
+    },
+    {
+      "id": "pad-mcq-028",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مستشار تقني في بلدية صغيرة. ميزانيتك محدودة لكنك تريد تطبيق AI. ما النصيحة الأفضل بناءً على التجارب العالمية؟",
+        "en": "You're a tech advisor in a small municipality. Your budget is limited but you want to implement AI. What's the best advice based on global experiences?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تعاون مع الجامعات ومختبرات التقنية المدنية — أنجح نهج للبلديات الصغيرة",
+            "en": "Partner with universities and civic tech labs — most successful approach for small municipalities"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "انتظر حتى تكبر الميزانية — AI مكلف جداً للبلديات الصغيرة",
+            "en": "Wait until the budget grows — AI is too expensive for small municipalities"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "اشترِ أرخص نظام تجاري متاح",
+            "en": "Buy the cheapest commercial system available"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "البلديات الصغيرة لا تحتاج AI أصلاً",
+            "en": "Small municipalities don't need AI in the first place"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الحكومات لا تحتاج أن تصبح شركات تقنية — تحتاج هياكل حوكمة واضحة وقواعد مشتريات شفافة وشراكات مع الجامعات. الولايات الأمريكية يمكنها إنشاء مكاتب سياسات AI مركزية تخدم البلديات الصغيرة.",
+        "en": "Governments don't need to become tech companies — they need clear governance structures, transparent procurement rules, and university partnerships. U.S. states can create centralized AI policy offices serving small municipalities."
+      }
+    },
+    {
+      "id": "pad-mcq-029",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "ما نسبة أصحاب العمل الذين يتوقعون أن AI سيحوّل أعمالهم بحلول 2030 بحسب المنتدى الاقتصادي العالمي؟",
+        "en": "What percentage of employers expect AI to transform their business by 2030 according to WEF?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "50%",
+            "en": "50%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "86%",
+            "en": "86%"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "30%",
+            "en": "30%"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "100%",
+            "en": "100%"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "86% يتوقعون التحول — مما يجعل AI أولوية لا يمكن تأجيلها. الحكومات التي لا تستعد الآن ستجد نفسها متأخرة بشكل يصعب تعويضه.",
+        "en": "86% expect transformation — making AI a priority that can't be postponed. Governments that don't prepare now will find themselves behind in ways difficult to recover from."
+      }
+    },
+    {
+      "id": "pad-mcq-030",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مستشار أمني. تقرير يُظهر أن حوادث Deepfake ارتفعت 257% في 2024. ما التهديد الأكبر للحكومات تحديداً؟",
+        "en": "You're a security advisor. A report shows Deepfake incidents surged 257% in 2024. What's the biggest threat specifically for governments?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التأثير على الانتخابات والتلاعب بالرأي العام عبر فيديوهات مُزيفة لمسؤولين",
+            "en": "Influencing elections and manipulating public opinion through fake videos of officials"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "سرقة بيانات الموظفين الحكوميين",
+            "en": "Stealing government employees' data"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تعطيل المواقع الحكومية الإلكترونية",
+            "en": "Disrupting government websites"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "Deepfakes لا تؤثر على الحكومات بشكل خاص",
+            "en": "Deepfakes don't particularly affect governments"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "نصف الشركات تعرضت لاحتيال بـ Deepfake في 2024. قانون TAKE IT DOWN (مايو 2025) يستهدف الصور الاصطناعية. 46 ولاية أمريكية سنّت تشريعات. قانون AI الأوروبي يُلزم بتوسيم المحتوى المولّد بـ AI.",
+        "en": "Half of businesses experienced Deepfake fraud in 2024. TAKE IT DOWN Act (May 2025) targets synthetic imagery. 46 U.S. states enacted legislation. EU AI Act requires labeling AI-generated content."
+      }
+    },
+    {
+      "id": "pad-tf-019",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "فرنسا تُعد من الدول الرائدة في تطوير برمجيات AI حكومية داخلياً بدلاً من الاعتماد على شركات خارجية، وهو ما يُعرف بالسيادة الرقمية.",
+        "en": "France is among the leading countries in developing government AI software internally rather than relying on external companies, known as digital sovereignty."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Albert (أبريل 2024) هو نموذج AI سيادي طورته DINUM (مديرية الرقمنة الحكومية الفرنسية). النهج السيادي يتجنب الاعتماد على شركات أمريكية ويمنح الحكومة تحكماً كاملاً في البيانات والخوارزميات.",
+        "en": "Albert (April 2024) is a sovereign AI model developed by DINUM (French Government Digital Directorate). The sovereign approach avoids reliance on American companies and gives the government full control over data and algorithms."
+      }
+    },
+    {
+      "id": "pad-tf-020",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "التوائم الرقمية للمدن تحسّن الكفاءة التشغيلية بنسبة 1-3% فقط بحسب McKinsey وPwC.",
+        "en": "Digital twins for cities improve operational efficiency by only 1-3% according to McKinsey and PwC."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "التقدير الفعلي هو 20-40% تحسن في الكفاءة التشغيلية — أعلى بكثير مما يتوقعه كثيرون. مئات المدن حول العالم تنشر توائم رقمية مما يجعلها معياراً جديداً في التخطيط الحضري.",
+        "en": "The actual estimate is 20-40% operational efficiency improvement — much higher than many expect. Hundreds of cities worldwide are deploying digital twins, making them a new standard in urban planning."
+      }
+    },
+    {
+      "id": "pad-self-019",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير مشتريات حكومية. عُرض عليك نظامان: الأول من شركة عالمية (صندوق أسود لكنه أكثر دقة 15%) والثاني مفتوح المصدر (أقل دقة لكنه شفاف تماماً). أيهما تختار؟",
+        "en": "You're a government procurement manager. You're offered two systems: one from a global company (black box but 15% more accurate) and one open-source (less accurate but fully transparent). Which do you choose?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مفتوح المصدر — الشفافية والتدقيق في الحكومة أهم من 15% دقة إضافية",
+            "en": "Open-source — transparency and auditability in government are more important than 15% extra accuracy"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أحاول التفاوض مع الشركة العالمية لفتح الخوارزمية للتدقيق المستقل",
+            "en": "I try to negotiate with the global company to open the algorithm for independent audit"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الدقة الأعلى تعني خدمة أفضل للمواطنين — أختار النظام الأدق",
+            "en": "Higher accuracy means better citizen service — I choose the more accurate system"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أترك القرار للجنة تقنية متخصصة",
+            "en": "I leave the decision to a specialized technical committee"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Bürokratt الإستوني مفتوح المصدر واختارته اليونسكو ضمن أفضل 100 مشروع AI. النهج المفتوح يتيح لأي حكومة تعديله وتحسينه — وهذا أقوى من أي ميزة دقة قصيرة المدى.",
+        "en": "Estonia's open-source Bürokratt was selected by UNESCO among top 100 AI projects. The open approach allows any government to modify and improve it — more powerful than any short-term accuracy advantage."
+      }
+    },
+    {
+      "id": "pad-self-020",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "الإمارات حققت رقمنة 90% من خدماتها الحكومية. حكومتك في بداية الطريق. كموظف، كيف تنظر لهذه الفجوة؟",
+        "en": "The UAE achieved 90% government service digitization. Your government is just starting. As an employee, how do you view this gap?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة للتعلم من تجربتهم وتجنب أخطائهم — لا نحتاج إعادة اختراع العجلة",
+            "en": "Opportunity to learn from their experience and avoid their mistakes — we don't need to reinvent the wheel"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "محفز للعمل — يجب أن نسرّع التحول مع مراعاة خصوصية مجتمعنا",
+            "en": "Motivating — we should accelerate transformation while considering our society's specifics"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "كل دولة لها ظروفها — المقارنة غير عادلة بسبب الفرق في الموارد",
+            "en": "Each country has its circumstances — comparison is unfair due to resource differences"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الرقمنة ليست أولوية — هناك تحديات أهم يجب حلها أولاً",
+            "en": "Digitization isn't a priority — there are more important challenges to solve first"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "80% من موظفي الشرق الأوسط يقولون إن AI حسّن إنتاجيتهم (PwC 2025). في 2023 كان 39% فقط من سكان الإمارات ينظرون لـ AI بإيجابية — التحول الثقافي ممكن وسريع إذا توفرت القيادة والاستثمار.",
+        "en": "~80% of Middle Eastern employees say AI improved productivity (PwC 2025). In 2023, only 39% of UAE residents viewed AI favorably — cultural transformation is possible and fast with leadership and investment."
       }
     }
   ]

@@ -1,8 +1,11 @@
 {
   "section_id": "logistics",
-  "section_name": { "ar": "اللوجستيات وسلاسل الإمداد", "en": "Logistics & Supply Chain" },
-  "version": "1.0",
-  "last_updated": "2026-04-05",
+  "section_name": {
+    "ar": "اللوجستيات وسلاسل الإمداد",
+    "en": "Logistics & Supply Chain"
+  },
+  "version": "2.0",
+  "last_updated": "2026-04-06",
   "questions": [
     {
       "id": "log-mcq-001",
@@ -16,10 +19,38 @@
         "en": "You're a supply chain manager at a major retailer. The AI demand forecasting system predicts a sharp spike in demand for a product next week, but your sales team sees no indicators. What's the best course of action?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "تجاهل توقع الذكاء الاصطناعي والاعتماد على خبرة فريق المبيعات فقط", "en": "Ignore the AI prediction and rely solely on the sales team's experience" }, "score": 0 },
-        { "id": "b", "text": { "ar": "فحص البيانات التي بنى عليها النظام توقعه ومقارنتها بمعطيات السوق الحالية قبل اتخاذ قرار", "en": "Examine the data behind the AI prediction and compare with current market signals before deciding" }, "score": 3 },
-        { "id": "c", "text": { "ar": "تنفيذ توقع الذكاء الاصطناعي حرفياً وطلب كميات كبيرة فوراً", "en": "Execute the AI prediction literally and order large quantities immediately" }, "score": 0.5 },
-        { "id": "d", "text": { "ar": "طلب كمية متوسطة كحل وسط بين رأي الفريق والنظام", "en": "Order a moderate quantity as a compromise between the team's view and the system" }, "score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "تجاهل توقع الذكاء الاصطناعي والاعتماد على خبرة فريق المبيعات فقط",
+            "en": "Ignore the AI prediction and rely solely on the sales team's experience"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "فحص البيانات التي بنى عليها النظام توقعه ومقارنتها بمعطيات السوق الحالية قبل اتخاذ قرار",
+            "en": "Examine the data behind the AI prediction and compare with current market signals before deciding"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تنفيذ توقع الذكاء الاصطناعي حرفياً وطلب كميات كبيرة فوراً",
+            "en": "Execute the AI prediction literally and order large quantities immediately"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "طلب كمية متوسطة كحل وسط بين رأي الفريق والنظام",
+            "en": "Order a moderate quantity as a compromise between the team's view and the system"
+          },
+          "score": 1
+        }
       ],
       "hint_after": {
         "ar": "شركة Kraft Heinz استخدمت منصة o9 Solutions وحققت زيادة 11% في دقة التنبؤ الشهري وخفض 20% في مخزون الأمان — لكن النجاح جاء من فحص البيانات وتفسيرها، وليس من القبول الأعمى.",
@@ -38,10 +69,38 @@
         "en": "You're an operations manager at an e-commerce warehouse. Management wants to cut staff by 50% after introducing smart robots. Based on Amazon's experience with 1 million robots, what's the most important lesson?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "الروبوتات استبدلت معظم العمال فعلاً وهذا هو المسار الطبيعي", "en": "Robots have indeed replaced most workers and this is the natural path" }, "score": 0 },
-        { "id": "b", "text": { "ar": "الروبوتات لا تزال تعمل بجانب 1.5 مليون موظف، ومراكز التوزيع المتقدمة تحتاج 30% موظفين أكثر في أدوار الصيانة والهندسة", "en": "Robots still work alongside 1.5 million employees, and advanced fulfillment centers need 30% more staff in maintenance and engineering roles" }, "score": 3 },
-        { "id": "c", "text": { "ar": "أمازون لم تحقق أي وفورات حقيقية من الروبوتات", "en": "Amazon hasn't achieved any real savings from robots" }, "score": 0 },
-        { "id": "d", "text": { "ar": "الروبوتات مفيدة فقط في المستودعات الصغيرة", "en": "Robots are only useful in small warehouses" }, "score": 0 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "الروبوتات استبدلت معظم العمال فعلاً وهذا هو المسار الطبيعي",
+            "en": "Robots have indeed replaced most workers and this is the natural path"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الروبوتات لا تزال تعمل بجانب 1.5 مليون موظف، ومراكز التوزيع المتقدمة تحتاج 30% موظفين أكثر في أدوار الصيانة والهندسة",
+            "en": "Robots still work alongside 1.5 million employees, and advanced fulfillment centers need 30% more staff in maintenance and engineering roles"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أمازون لم تحقق أي وفورات حقيقية من الروبوتات",
+            "en": "Amazon hasn't achieved any real savings from robots"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الروبوتات مفيدة فقط في المستودعات الصغيرة",
+            "en": "Robots are only useful in small warehouses"
+          },
+          "score": 0
+        }
       ],
       "hint_after": {
         "ar": "أمازون نشرت مليون روبوت في أكثر من 300 مركز توزيع عالمياً بحلول 2025، لكنها لا تزال توظف حوالي 1.5 مليون شخص. مركز Shreveport المتقدم احتاج 30% موظفين إضافيين في أدوار تقنية.",
@@ -60,10 +119,38 @@
         "en": "UPS's ORION system is one of the most successful AI applications in logistics. Approximately how much does it save annually?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "5 ملايين دولار", "en": "$5 million" }, "score": 0 },
-        { "id": "b", "text": { "ar": "50 مليون دولار", "en": "$50 million" }, "score": 0 },
-        { "id": "c", "text": { "ar": "300-400 مليون دولار", "en": "$300-400 million" }, "score": 1 },
-        { "id": "d", "text": { "ar": "مليار دولار", "en": "$1 billion" }, "score": 0 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "5 ملايين دولار",
+            "en": "$5 million"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "50 مليون دولار",
+            "en": "$50 million"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "300-400 مليون دولار",
+            "en": "$300-400 million"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مليار دولار",
+            "en": "$1 billion"
+          },
+          "score": 0
+        }
       ],
       "hint_after": {
         "ar": "ORION يقلل 100 مليون ميل سنوياً ويوفر 10 ملايين غالون وقود، مما يخفض انبعاثات CO₂ بنحو 100,000 طن. سر بسيط: تقليل ميل واحد فقط لكل سائق يومياً يوفر 50 مليون دولار سنوياً.",
@@ -118,22 +205,52 @@
       "blanks": [
         {
           "id": "blank_1",
-          "correct": { "ar": "ORION", "en": "ORION" },
+          "correct": {
+            "ar": "ORION",
+            "en": "ORION"
+          },
           "options": [
-            { "ar": "ORION", "en": "ORION" },
-            { "ar": "DeepFleet", "en": "DeepFleet" },
-            { "ar": "Sequoia", "en": "Sequoia" },
-            { "ar": "Navisphere", "en": "Navisphere" }
+            {
+              "ar": "ORION",
+              "en": "ORION"
+            },
+            {
+              "ar": "DeepFleet",
+              "en": "DeepFleet"
+            },
+            {
+              "ar": "Sequoia",
+              "en": "Sequoia"
+            },
+            {
+              "ar": "Navisphere",
+              "en": "Navisphere"
+            }
           ]
         },
         {
           "id": "blank_2",
-          "correct": { "ar": "100 مليون", "en": "100 million" },
+          "correct": {
+            "ar": "100 مليون",
+            "en": "100 million"
+          },
           "options": [
-            { "ar": "100 مليون", "en": "100 million" },
-            { "ar": "10 ملايين", "en": "10 million" },
-            { "ar": "500 مليون", "en": "500 million" },
-            { "ar": "مليار", "en": "1 billion" }
+            {
+              "ar": "100 مليون",
+              "en": "100 million"
+            },
+            {
+              "ar": "10 ملايين",
+              "en": "10 million"
+            },
+            {
+              "ar": "500 مليون",
+              "en": "500 million"
+            },
+            {
+              "ar": "مليار",
+              "en": "1 billion"
+            }
           ]
         }
       ],
@@ -154,22 +271,82 @@
         "en": "Match each logistics AI tool or platform with its primary function:"
       },
       "left": [
-        { "id": "L1", "text": { "ar": "ORION (UPS)", "en": "ORION (UPS)" } },
-        { "id": "L2", "text": { "ar": "Blue Yonder", "en": "Blue Yonder" } },
-        { "id": "L3", "text": { "ar": "DeepFleet (أمازون)", "en": "DeepFleet (Amazon)" } },
-        { "id": "L4", "text": { "ar": "Navisphere Vision", "en": "Navisphere Vision" } }
+        {
+          "id": "L1",
+          "text": {
+            "ar": "ORION (UPS)",
+            "en": "ORION (UPS)"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Blue Yonder",
+            "en": "Blue Yonder"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "DeepFleet (أمازون)",
+            "en": "DeepFleet (Amazon)"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Navisphere Vision",
+            "en": "Navisphere Vision"
+          }
+        }
       ],
       "right": [
-        { "id": "R1", "text": { "ar": "تحسين مسارات التوصيل للسائقين", "en": "Optimizing delivery routes for drivers" } },
-        { "id": "R2", "text": { "ar": "التنبؤ بالطلب وإدارة المخزون", "en": "Demand forecasting and inventory management" } },
-        { "id": "R3", "text": { "ar": "تنسيق حركة الروبوتات داخل المستودعات", "en": "Coordinating robot movement inside warehouses" } },
-        { "id": "R4", "text": { "ar": "إدارة المخاطر والرؤية اللحظية لسلسلة الإمداد", "en": "Risk management and real-time supply chain visibility" } }
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تحسين مسارات التوصيل للسائقين",
+            "en": "Optimizing delivery routes for drivers"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "التنبؤ بالطلب وإدارة المخزون",
+            "en": "Demand forecasting and inventory management"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تنسيق حركة الروبوتات داخل المستودعات",
+            "en": "Coordinating robot movement inside warehouses"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "إدارة المخاطر والرؤية اللحظية لسلسلة الإمداد",
+            "en": "Risk management and real-time supply chain visibility"
+          }
+        }
       ],
       "correct_pairs": [
-        { "left": "L1", "right": "R1" },
-        { "left": "L2", "right": "R2" },
-        { "left": "L3", "right": "R3" },
-        { "left": "L4", "right": "R4" }
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
       ],
       "hint_after": {
         "ar": "كل أداة تحل مشكلة مختلفة: ORION للميل الأخير، Blue Yonder للتنبؤ، DeepFleet لداخل المستودع، وNavisphere Vision (من C.H. Robinson) للرؤية الشاملة. التكامل بينها هو مستقبل اللوجستيات الذكية.",
@@ -188,12 +365,41 @@
         "en": "Order the steps for implementing an AI-powered demand forecasting system in a logistics company from start to operation:"
       },
       "items": [
-        { "id": "S1", "text": { "ar": "جمع وتنظيف البيانات التاريخية للمبيعات والمخزون والعوامل الموسمية", "en": "Collect and clean historical data on sales, inventory, and seasonal factors" } },
-        { "id": "S2", "text": { "ar": "تدريب النموذج ومقارنة دقته بالطرق التقليدية على بيانات سابقة", "en": "Train the model and benchmark its accuracy against traditional methods on historical data" } },
-        { "id": "S3", "text": { "ar": "تشغيل تجريبي على فئة منتجات محدودة مع إبقاء النظام القديم كاحتياط", "en": "Pilot run on a limited product category while keeping the old system as backup" } },
-        { "id": "S4", "text": { "ar": "التوسع التدريجي مع حلقة تغذية راجعة لتحسين النموذج باستمرار", "en": "Gradual expansion with a feedback loop for continuous model improvement" } }
+        {
+          "id": "S1",
+          "text": {
+            "ar": "جمع وتنظيف البيانات التاريخية للمبيعات والمخزون والعوامل الموسمية",
+            "en": "Collect and clean historical data on sales, inventory, and seasonal factors"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تدريب النموذج ومقارنة دقته بالطرق التقليدية على بيانات سابقة",
+            "en": "Train the model and benchmark its accuracy against traditional methods on historical data"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تشغيل تجريبي على فئة منتجات محدودة مع إبقاء النظام القديم كاحتياط",
+            "en": "Pilot run on a limited product category while keeping the old system as backup"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "التوسع التدريجي مع حلقة تغذية راجعة لتحسين النموذج باستمرار",
+            "en": "Gradual expansion with a feedback loop for continuous model improvement"
+          }
+        }
       ],
-      "correct_order": ["S1", "S2", "S3", "S4"],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
       "hint_after": {
         "ar": "T-Mobile اتبعت هذا النهج التدريجي مع منصة o9 Solutions وحققت قيمة تجاوزت مليار دولار خلال 3 سنوات مع معدل تلبية 100%. المفتاح: لا تلغِ النظام القديم قبل إثبات النظام الجديد.",
         "en": "T-Mobile followed this gradual approach with o9 Solutions and realized $1B+ in value over 3 years with 100% fulfillment rates. The key: don't eliminate the old system before proving the new one."
@@ -211,10 +417,38 @@
         "en": "You're a warehouse manager. The company wants to replace the manual inventory system with an AI system that automatically predicts optimal stock levels. What's your stance?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "أرحب بالتغيير وأطلب التدريب فوراً — هذه فرصة لتطوير مهاراتي وتحسين الأداء", "en": "I welcome the change and request training immediately — this is an opportunity to develop my skills and improve performance" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "أوافق بحذر وأقترح فترة تشغيل متوازية بين النظامين للتأكد من موثوقية النظام الجديد", "en": "I cautiously agree and suggest a parallel run period between both systems to verify the new system's reliability" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "أفضّل الانتظار حتى تثبت شركات أخرى في قطاعنا نجاح هذه الأنظمة قبل المخاطرة", "en": "I prefer waiting until other companies in our sector prove these systems work before taking the risk" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "أعتقد أن خبرتي الطويلة في إدارة المخزون أدق من أي خوارزمية ولا حاجة للتغيير", "en": "I believe my extensive inventory management experience is more accurate than any algorithm and there's no need to change" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "أرحب بالتغيير وأطلب التدريب فوراً — هذه فرصة لتطوير مهاراتي وتحسين الأداء",
+            "en": "I welcome the change and request training immediately — this is an opportunity to develop my skills and improve performance"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أوافق بحذر وأقترح فترة تشغيل متوازية بين النظامين للتأكد من موثوقية النظام الجديد",
+            "en": "I cautiously agree and suggest a parallel run period between both systems to verify the new system's reliability"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أفضّل الانتظار حتى تثبت شركات أخرى في قطاعنا نجاح هذه الأنظمة قبل المخاطرة",
+            "en": "I prefer waiting until other companies in our sector prove these systems work before taking the risk"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أعتقد أن خبرتي الطويلة في إدارة المخزون أدق من أي خوارزمية ولا حاجة للتغيير",
+            "en": "I believe my extensive inventory management experience is more accurate than any algorithm and there's no need to change"
+          },
+          "flexibility_score": 1
+        }
       ],
       "hint_after": {
         "ar": "منصة Coupa تحلل 8-9.5 تريليون دولار من بيانات الإنفاق الفعلية وتخدم 75% من أفضل سلاسل الإمداد عالمياً. التكنولوجيا لا تحل محل الخبرة — لكنها تعزز القرارات بالبيانات.",
@@ -233,14 +467,4424 @@
         "en": "Your logistics company is considering investing 75% of its development budget in automation and robotics while cutting human hiring by 40%. As an operations manager, how do you approach this decision?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "أدعم الاستثمار بالكامل مع خطة لإعادة تدريب الموظفين الحاليين على الأدوار التقنية الجديدة", "en": "I fully support the investment with a plan to retrain current employees for new technical roles" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "أقترح توزيعاً أكثر توازناً: 50% أتمتة و50% تطوير القوى العاملة البشرية", "en": "I suggest a more balanced allocation: 50% automation and 50% human workforce development" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "أعارض التقليص الكبير في التوظيف لأن الروبوتات لا تستطيع التعامل مع المواقف غير المتوقعة", "en": "I oppose the significant hiring cuts because robots can't handle unexpected situations" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "أرفض الفكرة بالكامل — الاعتماد على البشر أكثر مرونة وأماناً من الاعتماد على الآلات", "en": "I reject the idea entirely — relying on humans is more flexible and safer than relying on machines" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "أدعم الاستثمار بالكامل مع خطة لإعادة تدريب الموظفين الحاليين على الأدوار التقنية الجديدة",
+            "en": "I fully support the investment with a plan to retrain current employees for new technical roles"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقترح توزيعاً أكثر توازناً: 50% أتمتة و50% تطوير القوى العاملة البشرية",
+            "en": "I suggest a more balanced allocation: 50% automation and 50% human workforce development"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أعارض التقليص الكبير في التوظيف لأن الروبوتات لا تستطيع التعامل مع المواقف غير المتوقعة",
+            "en": "I oppose the significant hiring cuts because robots can't handle unexpected situations"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض الفكرة بالكامل — الاعتماد على البشر أكثر مرونة وأماناً من الاعتماد على الآلات",
+            "en": "I reject the idea entirely — relying on humans is more flexible and safer than relying on machines"
+          },
+          "flexibility_score": 1
+        }
       ],
       "hint_after": {
         "ar": "Walmart الآن تشغّل 60% من متاجرها عبر مراكز توزيع مؤتمتة. لكن أمازون رغم مليون روبوت لا تزال توظف 1.5 مليون شخص. النموذج الناجح يجمع بين الأتمتة وإعادة التأهيل — ليس الاستبدال الكامل.",
         "en": "Walmart now operates 60% of its stores via automated distribution centers. Yet Amazon, despite 1 million robots, still employs 1.5 million people. The successful model combines automation with reskilling — not total replacement."
+      }
+    },
+    {
+      "id": "log-mcq-004",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير سلسلة إمداد. منصة o9 Solutions ساعدت T-Mobile في تحقيق نتائج استثنائية. ما حجم القيمة المُحققة؟",
+        "en": "You are a supply chain manager. o9 Solutions helped T-Mobile achieve exceptional results. What value was realized?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أكثر من مليار دولار قيمة محققة خلال 3 سنوات مع معدل تلبية طلبات 100%",
+            "en": "Over $1 billion in value realized over 3 years with 100% fulfillment rates"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "50 مليون دولار فقط — نتائج محدودة",
+            "en": "Only $50 million — limited results"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "توفير في الوقت فقط بدون قيمة مالية واضحة",
+            "en": "Time savings only without clear financial value"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "200 مليون دولار مع معدل تلبية 85%",
+            "en": "$200 million with 85% fulfillment rate"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "Kraft Heinz أيضاً استخدمت o9 Solutions وحققت 11% زيادة في دقة التنبؤ الشهري و20% خفض في مخزون الأمان. المنصات الحديثة لا تتنبأ فحسب — تُحسّن القرارات عبر سلسلة الإمداد بأكملها.",
+        "en": "Kraft Heinz also used o9 Solutions achieving 11% monthly forecast accuracy increase and 20% safety stock reduction. Modern platforms don't just forecast — they optimize decisions across the entire supply chain."
+      }
+    },
+    {
+      "id": "log-mcq-005",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول عمليات في شركة شحن. McKinsey تقدّر أن AI يمكنه خفض تكاليف اللوجستيات. بكم تحديداً؟",
+        "en": "You are an operations manager at a shipping company. McKinsey estimates AI can reduce logistics costs. By how much exactly?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "5 إلى 20% من تكاليف اللوجستيات — نطاق واسع يعتمد على نضج التطبيق وجودة البيانات",
+            "en": "5 to 20% of logistics costs — a wide range depending on implementation maturity and data quality"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقل من 1% — تأثير هامشي",
+            "en": "Less than 1% — marginal impact"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "50%+ — AI سيخفض التكاليف إلى النصف",
+            "en": "50%+ — AI will cut costs in half"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "10% ثابتة بغض النظر عن طريقة التطبيق",
+            "en": "Fixed 10% regardless of implementation method"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "الفرق بين 5% و20% يعتمد على نضج البنية التحتية الرقمية وجودة البيانات التاريخية ومدى تكامل الأنظمة. الشركات التي تبدأ ببيانات نظيفة وتطبيق تدريجي تحقق الطرف الأعلى من النطاق.",
+        "en": "The difference between 5% and 20% depends on digital infrastructure maturity, historical data quality, and system integration depth. Companies starting with clean data and gradual implementation achieve the higher end."
+      }
+    },
+    {
+      "id": "log-mcq-006",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "منصة Coupa لإدارة سلاسل الإمداد تحلل حجماً هائلاً من بيانات الإنفاق الفعلية. كم يبلغ هذا الحجم تقريباً؟",
+        "en": "Coupa's supply chain management platform analyzes a massive volume of real-world spending data. Approximately how much?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "8-9.5 تريليون دولار من بيانات الإنفاق الفعلية وتخدم 75% من أفضل سلاسل الإمداد عالمياً",
+            "en": "$8-9.5 trillion in real-world spending data serving 75% of top global supply chains"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "100 مليون دولار فقط",
+            "en": "Only $100 million"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "500 مليار دولار",
+            "en": "$500 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50 تريليون دولار",
+            "en": "$50 trillion"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "حجم البيانات هو ما يمنح هذه المنصات ميزتها — كلما زادت البيانات، زادت دقة التنبؤات. Blue Yonder تقدم 25 مليار+ تنبؤ يومياً. المنافسة في اللوجستيات أصبحت منافسة بيانات.",
+        "en": "Data volume gives these platforms their edge — more data means more accurate predictions. Blue Yonder delivers 25 billion+ predictions daily. Competition in logistics has become a data competition."
+      }
+    },
+    {
+      "id": "log-tf-003",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "78% من قادة سلاسل الإمداد يتوقعون اشتداد الاضطرابات خلال العامين القادمين، لكن 25% فقط يشعرون بالاستعداد الكافي.",
+        "en": "78% of supply chain leaders anticipate disruptions intensifying over the next two years, but only 25% feel adequately prepared."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "الفجوة بين توقع الاضطرابات والاستعداد لها تُعد من أخطر التحديات. جائحة كوفيد، نقص المواد، التضخم، تقلبات الرسوم الجمركية — كل هذا كشف هشاشة سلاسل الإمداد التقليدية. AI يوفّر المرونة المطلوبة لكن يحتاج استثماراً مبكراً.",
+        "en": "The gap between expecting disruptions and preparing for them is one of the most dangerous challenges. COVID, material shortages, inflation, tariff volatility — all exposed traditional supply chain fragility. AI provides needed flexibility but requires early investment."
+      }
+    },
+    {
+      "id": "log-tf-004",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Walmart تشغّل الآن 60% من متاجرها عبر مراكز توزيع مؤتمتة، مما يجعلها من أكبر مستثمري الأتمتة اللوجستية عالمياً.",
+        "en": "Walmart now operates 60% of its stores via automated distribution centers, making it one of the largest investors in logistics automation globally."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "رغم الأتمتة الواسعة، Walmart لا تزال توظف أكثر من 2 مليون شخص عالمياً. النموذج الناجح: أتمتة المهام الروتينية مع إعادة تأهيل العمال لأدوار أعلى قيمة. أمازون نموذج مشابه: مليون روبوت + 1.5 مليون موظف.",
+        "en": "Despite extensive automation, Walmart still employs over 2 million people globally. The successful model: automate routine tasks while reskilling workers for higher-value roles. Amazon is a similar model: 1 million robots + 1.5 million employees."
+      }
+    },
+    {
+      "id": "log-fill-002",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "منصة {{blank_1}} تخدم نحو 3,000 عميل بما فيهم 23 من أكبر 25 شركة تجزئة في العالم، وتقدم أكثر من {{blank_2}} تنبؤ بالذكاء الاصطناعي يومياً.",
+        "en": "Platform {{blank_1}} serves approximately 3,000 customers including 23 of the top 25 retailers worldwide, delivering over {{blank_2}} AI predictions daily."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Blue Yonder",
+            "en": "Blue Yonder"
+          },
+          "options": [
+            {
+              "ar": "Blue Yonder",
+              "en": "Blue Yonder"
+            },
+            {
+              "ar": "SAP",
+              "en": "SAP"
+            },
+            {
+              "ar": "Oracle SCM",
+              "en": "Oracle SCM"
+            },
+            {
+              "ar": "Kinaxis",
+              "en": "Kinaxis"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "25 مليار",
+            "en": "25 billion"
+          },
+          "options": [
+            {
+              "ar": "25 مليار",
+              "en": "25 billion"
+            },
+            {
+              "ar": "مليون",
+              "en": "1 million"
+            },
+            {
+              "ar": "100 مليون",
+              "en": "100 million"
+            },
+            {
+              "ar": "تريليون",
+              "en": "1 trillion"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Blue Yonder (تابعة لـ Panasonic) حققت إيرادات 1.36 مليار دولار في 2024. حجم التنبؤات اليومي (25 مليار) يعكس تعقيد سلاسل الإمداد الحديثة — كل قرار مخزون وتسليم وتسعير يحتاج تنبؤاً منفصلاً.",
+        "en": "Blue Yonder (Panasonic subsidiary) had FY24 revenue of $1.36 billion. The daily prediction volume (25 billion) reflects modern supply chain complexity — every inventory, delivery, and pricing decision needs a separate prediction."
+      }
+    },
+    {
+      "id": "log-match-002",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل شركة لوجستية مع إنجازها في تطبيق AI:",
+        "en": "Match each logistics company with its AI implementation achievement:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "أمازون",
+            "en": "Amazon"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "UPS (نظام ORION)",
+            "en": "UPS (ORION system)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Kraft Heinz",
+            "en": "Kraft Heinz"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "T-Mobile",
+            "en": "T-Mobile"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "مليون روبوت في 300+ مركز توزيع مع 1.5 مليون موظف",
+            "en": "1 million robots in 300+ fulfillment centers with 1.5 million employees"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "توفير 300-400 مليون دولار سنوياً بتقليل 100 مليون ميل",
+            "en": "Saving $300-400 million annually by cutting 100 million miles"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "11% زيادة في دقة التنبؤ و20% خفض مخزون الأمان",
+            "en": "11% forecast accuracy increase and 20% safety stock reduction"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "مليار دولار+ قيمة محققة مع 100% معدل تلبية",
+            "en": "$1 billion+ value with 100% fulfillment rate"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل شركة حلّت مشكلة مختلفة بـ AI: أمازون للأتمتة الداخلية، UPS لتحسين المسارات، Kraft Heinz للتنبؤ بالطلب، T-Mobile لتلبية الطلبات. النجاح المشترك: تطبيق تدريجي مع قياس واضح للنتائج.",
+        "en": "Each company solved a different problem with AI: Amazon for internal automation, UPS for route optimization, Kraft Heinz for demand forecasting, T-Mobile for order fulfillment. Common success factor: gradual implementation with clear result measurement."
+      }
+    },
+    {
+      "id": "log-sort-002",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مراحل تطور AI في اللوجستيات من الأقدم للأحدث:",
+        "en": "Order the evolution stages of AI in logistics from oldest to newest:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "أنظمة تحسين المسارات القائمة على القواعد (مثل ORION المبكر)",
+            "en": "Rule-based route optimization systems (like early ORION)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "التنبؤ بالطلب بالتعلم الآلي باستخدام بيانات تاريخية",
+            "en": "Machine learning demand forecasting using historical data"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "AI توليدي لنمذجة السيناريوهات والتوائم الرقمية",
+            "en": "Generative AI for scenario modeling and digital twins"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "AI وكيل مستقل يكتشف الاضطرابات ويعيد توجيه الشحنات تلقائياً",
+            "en": "Autonomous agentic AI detecting disruptions and rerouting shipments automatically"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "التطور من القواعد الثابتة إلى AI الوكيل المستقل يمثل قفزة نوعية. BCG وجدت أن AI الوكيل شكّل 17% من قيمة AI الإجمالية في 2025 ومتوقع أن يصل 29% بحلول 2028. سلاسل الإمداد المستقبلية 'تشفي نفسها' من الاضطرابات تلقائياً.",
+        "en": "Evolution from fixed rules to autonomous agentic AI represents a quantum leap. BCG found agentic AI accounted for 17% of total AI value in 2025, projected to reach 29% by 2028. Future supply chains 'self-heal' from disruptions automatically."
+      }
+    },
+    {
+      "id": "log-self-003",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير لوجستيات في شركة تصنيع. المدير التنفيذي يريد استثمار 5 ملايين دولار في منصة AI للتنبؤ بالطلب. ما موقفك؟",
+        "en": "You are a logistics director at a manufacturing company. The CEO wants to invest $5 million in an AI demand forecasting platform. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أؤيد مع خطة تطبيق تدريجية: تجربة على فئة منتجات واحدة أولاً، ثم التوسع بناءً على قياس واضح للعائد على الاستثمار",
+            "en": "I support with a phased implementation plan: pilot on one product category first, then expand based on clear ROI measurement"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أؤيد التطبيق الشامل الفوري لتحقيق أقصى استفادة بأسرع وقت",
+            "en": "I support immediate full-scale implementation to maximize benefit as fast as possible"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أعارض — 5 ملايين مبلغ كبير والأساليب التقليدية تعمل بشكل جيد",
+            "en": "I oppose — $5 million is too much and traditional methods work fine"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أقترح الانتظار حتى تنخفض تكاليف هذه المنصات",
+            "en": "I suggest waiting until these platform costs come down"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "T-Mobile حققت مليار دولار+ قيمة من استثمارها في o9 Solutions خلال 3 سنوات. لكن النجاح جاء من التطبيق التدريجي — البداية بتجربة محدودة ثم التوسع. الشركات التي تطبّق دفعة واحدة تواجه مخاطر أعلى في الفشل.",
+        "en": "T-Mobile realized $1B+ value from its o9 Solutions investment over 3 years. But success came from gradual implementation — starting with a limited pilot then expanding. Companies implementing all at once face higher failure risks."
+      }
+    },
+    {
+      "id": "log-self-004",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول نقل في شركة شحن. الشاحنات ذاتية القيادة تُختبر على بعض الطرق السريعة. هل تشعر بالقلق على مستقبلك المهني؟",
+        "en": "You are a transport manager at a shipping company. Self-driving trucks are being tested on some highways. Do you worry about your career future?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا — أركّز على تطوير مهاراتي في إدارة الأساطيل المختلطة (بشرية + ذاتية) لأن هذا هو المستقبل القريب",
+            "en": "No — I focus on developing skills in managing mixed fleets (human + autonomous) because that's the near future"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "قليلاً — لكنني أعلم أن الأتمتة الكاملة ستستغرق سنوات طويلة",
+            "en": "Slightly — but I know full automation will take many years"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نعم كثيراً — أفكر في تغيير المهنة",
+            "en": "Very much — I'm thinking of changing careers"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أصدق أن الشاحنات ذاتية القيادة ستعمل فعلاً — التقنية لن تنجح",
+            "en": "I don't believe self-driving trucks will actually work — the technology won't succeed"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "نقص 4 ملايين سائق شاحنة عالمياً يدفع الاستثمار في القيادة الذاتية. Isuzu تهدف لتشغيل شاحنات Level 4 بحلول 2027. لكن الانتقال سيكون تدريجياً — المدير الذي يفهم كلا النظامين (بشري + ذاتي) سيكون الأكثر طلباً.",
+        "en": "A global shortage of 4 million truck drivers drives investment in autonomous driving. Isuzu aims for Level 4 trucks by 2027. But transition will be gradual — the manager who understands both systems (human + autonomous) will be most in demand."
+      }
+    },
+    {
+      "id": "log-mcq-007",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير مستودع. ما الدرس الأهم من تجربة أمازون مع مركز Shreveport المتقدم تقنياً؟",
+        "en": "You are a warehouse manager. What's the most important lesson from Amazon's experience with the advanced Shreveport center?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "المركز المتقدم تقنياً احتاج 30% موظفين إضافيين في أدوار تقنية (صيانة، هندسة، برمجة) — الأتمتة تُغيّر الأدوار لا تُلغيها",
+            "en": "The advanced center needed 30% more staff in technical roles (maintenance, engineering, programming) — automation changes roles, doesn't eliminate them"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "المركز عمل بدون موظفين بشريين بالكامل",
+            "en": "The center operated without any human employees"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "فشل المركز واضطرت أمازون للعودة للعمليات اليدوية",
+            "en": "The center failed and Amazon had to return to manual operations"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المركز خفّض الموظفين 80% مع نفس الإنتاجية",
+            "en": "The center cut staff 80% with same productivity"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا يكسر الأسطورة الشائعة: الأتمتة ≠ إلغاء الوظائف. في أمازون، الروبوتات تُجلب الأرفف للعمال بدلاً من سير العمال للأرفف. النتيجة: إنتاجية أعلى + وظائف مختلفة (أعلى قيمة وأعلى أجراً).",
+        "en": "This busts the common myth: automation ≠ job elimination. At Amazon, robots bring shelves to workers instead of workers walking to shelves. Result: higher productivity + different jobs (higher value and higher pay)."
+      }
+    },
+    {
+      "id": "log-mcq-008",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول التنبؤ في شركة تجزئة. ما أهم العوامل الخارجية التي يحللها AI الحديث للتنبؤ بالطلب والتي لم تكن ممكنة بالأساليب التقليدية؟",
+        "en": "You are a forecasting manager at a retailer. What external factors does modern AI analyze for demand forecasting that weren't possible with traditional methods?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أنماط الطقس، الأحداث الجيوسياسية، اتجاهات وسائل التواصل الاجتماعي، مؤشرات اقتصادية كلية — كل ذلك لحظياً",
+            "en": "Weather patterns, geopolitical events, social media trends, macroeconomic indicators — all in real-time"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "بيانات المبيعات التاريخية فقط مثل الأساليب التقليدية",
+            "en": "Historical sales data only, like traditional methods"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "بيانات المخزون الحالي فقط",
+            "en": "Current inventory data only"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أسعار المنافسين فقط",
+            "en": "Competitor prices only"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "التنبؤ بالطلب تطور من 'ماذا حدث العام الماضي في نفس الفترة' إلى 'ماذا يحدث الآن في العالم وكيف سيؤثر على الطلب غداً'. دمج الإشارات الخارجية مع البيانات الداخلية هو ما يميّز AI عن Excel.",
+        "en": "Demand forecasting evolved from 'what happened last year in the same period' to 'what's happening now in the world and how it will affect demand tomorrow'. Combining external signals with internal data is what distinguishes AI from Excel."
+      }
+    },
+    {
+      "id": "log-mcq-009",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير عمليات. نقص سائقي الشاحنات مشكلة عالمية. كم يبلغ العجز الحالي عالمياً؟",
+        "en": "You are an operations manager. Truck driver shortage is a global problem. What is the current global deficit?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نحو 4 ملايين سائق شاحنة عالمياً وفقاً لمنظمة النقل البري الدولية — وهذا لا يشمل التقاعد والتسرب",
+            "en": "About 4 million truck drivers globally according to World Road Transport Organisation — and this doesn't include retirement and attrition"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "100,000 سائق فقط في أمريكا",
+            "en": "Only 100,000 drivers in America"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا يوجد نقص حقيقي — المشكلة مبالغ فيها",
+            "en": "No real shortage — the problem is exaggerated"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "500,000 سائق عالمياً",
+            "en": "500,000 drivers globally"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "نقص السائقين يُعد من أقوى محركات الاستثمار في الشاحنات ذاتية القيادة. صناعة النقل بالشاحنات تنقل بضائع بقيمة 2.2 تريليون دولار (2022) ومتوقع 3.4 تريليون بحلول 2030. الشاحنات الذاتية لا تنام — يمكنها العمل 24/7.",
+        "en": "Driver shortage is one of the strongest drivers for autonomous trucking investment. Trucking moves $2.2 trillion worth of goods (2022), projected to $3.4 trillion by 2030. Autonomous trucks don't sleep — they can operate 24/7."
+      }
+    },
+    {
+      "id": "log-tf-005",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "AI الوكيل (Agentic AI) في سلاسل الإمداد شكّل 17% من قيمة AI الإجمالية في 2025 وفقاً لـ BCG، ومتوقع أن يصل 29% بحلول 2028.",
+        "en": "Agentic AI in supply chains accounted for 17% of total AI value in 2025 according to BCG, projected to reach 29% by 2028."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "AI الوكيل ينتقل من 'أداة مساعدة' إلى 'شريك تشغيلي مستقل'. يمكنه إعادة توجيه الشحنات، تعديل المخزون، وتفعيل موردين بديلين فور اكتشاف الاضطراب — بسرعة تفوق القدرة البشرية.",
+        "en": "Agentic AI is transitioning from 'helper tool' to 'autonomous operational partner'. It can reroute shipments, adjust inventory, and activate alternative suppliers the moment a disruption is detected — at superhuman speed."
+      }
+    },
+    {
+      "id": "log-tf-006",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نقص سائقي الشاحنات عالمياً يبلغ نحو 4 ملايين سائق، وهذا النقص يُعد من أقوى محركات الاستثمار في الشاحنات ذاتية القيادة.",
+        "en": "The global truck driver shortage is approximately 4 million drivers, and this shortage is one of the strongest drivers for autonomous trucking investment."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Isuzu تهدف لتشغيل شاحنات Level 4 (ذاتية بالكامل) بحلول 2027. Applied Intuition تتعاون مع Isuzu في اليابان. حتى Level 2 (مساعدة القيادة) يمكنه جذب سائقين أصغر سناً وتحسين الكفاءة.",
+        "en": "Isuzu aims for Level 4 (fully autonomous) trucks by 2027. Applied Intuition partners with Isuzu in Japan. Even Level 2 (driver assistance) can attract younger drivers and improve efficiency."
+      }
+    },
+    {
+      "id": "log-fill-003",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} من أمازون هو نموذج AI توليدي مصمم لتنسيق حركة {{blank_2}} داخل مراكز التوزيع وحسّن كفاءة تنقل الأسطول بنسبة 10%.",
+        "en": "Amazon's {{blank_1}} system is a generative AI foundation model designed to coordinate {{blank_2}} movement within fulfillment centers, improving fleet travel efficiency by 10%."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "DeepFleet",
+            "en": "DeepFleet"
+          },
+          "options": [
+            {
+              "ar": "DeepFleet",
+              "en": "DeepFleet"
+            },
+            {
+              "ar": "ORION",
+              "en": "ORION"
+            },
+            {
+              "ar": "Sequoia",
+              "en": "Sequoia"
+            },
+            {
+              "ar": "Rufus",
+              "en": "Rufus"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "الروبوتات",
+            "en": "robots"
+          },
+          "options": [
+            {
+              "ar": "الروبوتات",
+              "en": "robots"
+            },
+            {
+              "ar": "الشاحنات",
+              "en": "trucks"
+            },
+            {
+              "ar": "الطائرات المسيّرة",
+              "en": "drones"
+            },
+            {
+              "ar": "العمال",
+              "en": "workers"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "DeepFleet يعمل كنظام إدارة مرور ذكي داخلي: يقلل الازدحام بين الروبوتات ويُحسّن مساراتها ديناميكياً. بُني بأدوات AWS مثل SageMaker. أمازون نشرت أكثر من مليون روبوت في 300+ مركز توزيع.",
+        "en": "DeepFleet acts as an internal smart traffic management system: reduces robot congestion and dynamically optimizes their paths. Built with AWS tools like SageMaker. Amazon deployed over 1 million robots in 300+ fulfillment centers."
+      }
+    },
+    {
+      "id": "log-match-003",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تحدٍّ لوجستي مع حل AI المناسب له:",
+        "en": "Match each logistics challenge with the appropriate AI solution:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "نقص سائقي الشاحنات (4 ملايين عالمياً)",
+            "en": "Truck driver shortage (4 million globally)"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "ازدحام الروبوتات داخل المستودعات",
+            "en": "Robot congestion inside warehouses"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "اضطرابات سلسلة الإمداد المفاجئة",
+            "en": "Sudden supply chain disruptions"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "هدر المخزون والتكدس",
+            "en": "Inventory waste and overstock"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "شاحنات ذاتية القيادة ومساعدة القيادة Level 2+",
+            "en": "Autonomous trucks and Level 2+ driving assistance"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "DeepFleet — نظام إدارة مرور ذكي للروبوتات",
+            "en": "DeepFleet — smart traffic management for robots"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "AI وكيل يكتشف المشاكل ويعيد التوجيه تلقائياً",
+            "en": "Agentic AI detecting problems and automatically rerouting"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تنبؤ بالطلب مع إشارات خارجية (طقس، أحداث)",
+            "en": "Demand forecasting with external signals (weather, events)"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل تحدٍّ في اللوجستيات الحديثة له حل AI مخصص. التكامل بين هذه الحلول هو ما يُنشئ سلسلة إمداد ذكية حقاً — وليس تطبيق أداة واحدة بمعزل عن البقية.",
+        "en": "Every modern logistics challenge has a specialized AI solution. Integration between these solutions creates a truly smart supply chain — not applying one tool in isolation."
+      }
+    },
+    {
+      "id": "log-sort-003",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مستويات الأتمتة في القيادة الذاتية للشاحنات من الأقل للأكثر استقلالية:",
+        "en": "Order automation levels in autonomous trucking from least to most autonomous:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "Level 2: مساعدة القيادة — AI يساعد في التوجيه والتسارع لكن السائق مسؤول",
+            "en": "Level 2: Driver assistance — AI helps with steering and acceleration but driver is responsible"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "Level 3: أتمتة مشروطة — AI يقود في ظروف محددة لكن السائق يتدخل عند الطلب",
+            "en": "Level 3: Conditional automation — AI drives in specific conditions but driver intervenes on request"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "Level 4: أتمتة عالية — AI يقود بالكامل في بيئات محددة (مثل طرق سريعة)",
+            "en": "Level 4: High automation — AI drives fully in defined environments (like highways)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "Level 5: أتمتة كاملة — AI يقود في كل الظروف بدون أي تدخل بشري",
+            "en": "Level 5: Full automation — AI drives in all conditions without any human intervention"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "Isuzu تهدف لـ Level 4 بحلول 2027 على طرق لوجستية محددة. Level 5 لا يزال بعيداً لأنه يتطلب أداء في كل الظروف (ثلوج، أمطار، طرق غير مألوفة). المرحلة الانتقالية ستكون طويلة مع أساطيل مختلطة.",
+        "en": "Isuzu aims for Level 4 by 2027 on specific logistics routes. Level 5 is still distant as it requires performance in all conditions (snow, rain, unfamiliar roads). The transition phase will be long with mixed fleets."
+      }
+    },
+    {
+      "id": "log-self-005",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير سلسلة إمداد. 78% من القادة يتوقعون اشتداد الاضطرابات لكن 25% فقط مستعدون. أين تضع نفسك؟",
+        "en": "You are a supply chain director. 78% of leaders expect disruptions to intensify but only 25% are prepared. Where do you place yourself?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أنا من الـ 25% المستعدين — أستثمر في AI والتوائم الرقمية وتنويع الموردين وأبني خطط طوارئ ديناميكية",
+            "en": "I'm in the 25% prepared — investing in AI, digital twins, supplier diversification, and building dynamic contingency plans"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أعرف المخاطر وأعمل على الاستعداد تدريجياً",
+            "en": "I know the risks and am gradually preparing"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أعترف أنني غير مستعد لكنني أراهن على أن الاضطرابات لن تكون بهذه الحدة",
+            "en": "I admit I'm not prepared but I'm betting disruptions won't be this severe"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أعتقد أن AI ضروري — الخبرة البشرية كافية للتعامل مع الأزمات",
+            "en": "I don't think AI is necessary — human experience is sufficient for handling crises"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الشركات غير المستعدة واجهت خسائر فادحة في جائحة كوفيد ونقص أشباه الموصلات. التوائم الرقمية تسمح بمحاكاة السيناريوهات قبل حدوثها. AI الوكيل يتصرف في ثوانٍ بينما القرار البشري يستغرق أياماً.",
+        "en": "Unprepared companies suffered catastrophic losses during COVID and semiconductor shortages. Digital twins allow simulating scenarios before they happen. Agentic AI acts in seconds while human decision-making takes days."
+      }
+    },
+    {
+      "id": "log-self-006",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مخطط لوجستي. AI الوكيل يمكنه الآن إعادة توجيه الشحنات وتعديل المخزون تلقائياً دون انتظارك. هل تشعر بالتهديد؟",
+        "en": "You are a logistics planner. Agentic AI can now reroute shipments and adjust inventory automatically without waiting for you. Do you feel threatened?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا — أحوّل تركيزي للتخطيط الاستراتيجي وإدارة العلاقات مع الموردين والقرارات المعقدة التي تحتاج حكماً بشرياً",
+            "en": "No — I shift focus to strategic planning, supplier relationship management, and complex decisions requiring human judgment"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "قليلاً — لكنني أثق أن AI يحتاج إشرافاً بشرياً دائماً",
+            "en": "Slightly — but I trust AI always needs human oversight"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نعم — أعتقد أن التخطيط اللوجستي سيختفي كمهنة",
+            "en": "Yes — I believe logistics planning will disappear as a profession"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أثق بـ AI لاتخاذ قرارات لوجستية مستقلة — سيُخطئ حتماً",
+            "en": "I don't trust AI to make independent logistics decisions — it will inevitably make mistakes"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "المخطط اللوجستي ينتقل من 'صانع قرار تشغيلي' إلى 'مشرف استراتيجي على AI'. المهام التي يتفوق فيها البشر: التفاوض مع الموردين، فهم السياق السياسي، إدارة الأزمات غير المتوقعة. AI ممتاز في السرعة والحجم — البشر في الحكم والعلاقات.",
+        "en": "The logistics planner transitions from 'operational decision maker' to 'strategic AI supervisor'. Tasks where humans excel: supplier negotiation, understanding political context, managing unexpected crises. AI excels in speed and scale — humans in judgment and relationships."
+      }
+    },
+    {
+      "id": "log-mcq-010",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول لوجستيات. مفهوم 'سلسلة الإمداد ذاتية الشفاء' (Self-Healing Supply Chain) يتطور في 2026. ما المقصود به؟",
+        "en": "You are a logistics manager. The 'self-healing supply chain' concept is evolving in 2026. What does it mean?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "سلسلة إمداد تكتشف الاضطرابات وتتخذ إجراءات تصحيحية تلقائياً — مثل إعادة توجيه شحنات أو تفعيل موردين بديلين — بأقل تدخل بشري",
+            "en": "A supply chain that detects disruptions and takes corrective actions automatically — like rerouting shipments or activating alternative suppliers — with minimal human intervention"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "سلسلة إمداد تعمل بدون أي تقنية — تعتمد على المرونة البشرية",
+            "en": "A supply chain operating without any technology — relying on human flexibility"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نظام صيانة يُصلح الآلات تلقائياً",
+            "en": "A maintenance system that automatically repairs machines"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مستودع يعمل بالكامل بدون بشر",
+            "en": "A warehouse operating entirely without humans"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "سلسلة الإمداد ذاتية الشفاء تستخدم بيانات لحظية + تحليلات تنبؤية + AI وكيل لإدارة الاضطرابات استباقياً. بدلاً من الاستجابة بعد حدوث المشكلة، النظام يكتشف إشارات الخطر مبكراً ويتصرف قبل أن يتأثر العملاء.",
+        "en": "Self-healing supply chains use real-time data + predictive analytics + agentic AI for proactive disruption management. Instead of responding after the problem occurs, the system detects risk signals early and acts before customers are affected."
+      }
+    },
+    {
+      "id": "log-mcq-011",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير لوجستيات. Microsoft نشرت أكثر من 25 وكيل AI في عملياتها اللوجستية. ما مثال 'CargoPilot Agent'؟",
+        "en": "You are a logistics director. Microsoft deployed over 25 AI agents in its logistics operations. What is the 'CargoPilot Agent' example?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يحلل طرق النقل والتكاليف والأثر الكربوني وأوقات الدورة ويقدم توصيات شحن مُحسّنة توازن بين السرعة والاستدامة",
+            "en": "Analyzes transport modes, costs, carbon impact, and cycle times, providing optimized shipping recommendations balancing speed and sustainability"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يقود الطائرات المسيّرة للتوصيل",
+            "en": "Pilots delivery drones"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "يدير حسابات العملاء فقط",
+            "en": "Manages customer accounts only"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يراقب كاميرات المستودعات",
+            "en": "Monitors warehouse cameras"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Microsoft تهدف لتشغيل 100+ وكيل AI بنهاية 2026 وتزويد كل موظف بدعم وكيل ذكي. Kinaxis تقدم منصة Maestro مع وكلاء AI يكتشفون الاضطرابات ويُجرون محاكاة سيناريوهات ويقدمون رؤى وصفية بلغة طبيعية.",
+        "en": "Microsoft aims to operate 100+ AI agents by end 2026 and equip every employee with agentic support. Kinaxis offers Maestro platform with AI agents detecting disruptions, running scenario simulations, and providing prescriptive insights in natural language."
+      }
+    },
+    {
+      "id": "log-mcq-012",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول سلسلة إمداد. 'التوأم الرقمي لسلسلة الإمداد' (Digital Supply Chain Twin) أصبح أداة حاسمة. ما الذي يفعله بالتحديد؟",
+        "en": "You are a supply chain manager. The 'Digital Supply Chain Twin' has become a critical tool. What exactly does it do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ينشئ نسخة افتراضية كاملة من سلسلة الإمداد لمحاكاة اضطرابات (عمالية، جمركية، مناخية) وتقييم تأثيرها قبل حدوثها فعلياً",
+            "en": "Creates a complete virtual replica of the supply chain to simulate disruptions (labor, tariff, climate) and assess their impact before they actually occur"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مجرد لوحة بيانات لعرض المخزون الحالي",
+            "en": "Just a dashboard displaying current inventory"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نسخة احتياطية من بيانات الشركة",
+            "en": "A backup copy of company data"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "نظام تتبع شحنات فقط",
+            "en": "A shipment tracking system only"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "Unilever وProcter & Gamble تستخدمان التوائم الرقمية لمحاكاة اضطرابات مثل: ماذا يحدث لو أغلق ميناء شنغهاي؟ أو لو ارتفعت الرسوم الجمركية 20%؟ القرارات تُتخذ بناءً على محاكاة وليس حدس.",
+        "en": "Unilever and Procter & Gamble use digital twins to simulate disruptions like: what if Shanghai port closes? Or tariffs increase 20%? Decisions are made based on simulation, not intuition."
+      }
+    },
+    {
+      "id": "log-mcq-013",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "ما التقنية التي تُعدّ اللبنة الأساسية لعمل نظام ORION من UPS في تحسين مسارات التوصيل؟",
+        "en": "What technology is the foundational building block for UPS's ORION system in optimizing delivery routes?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تحليل ملايين نقاط البيانات يومياً عبر خوارزميات تحسين مسارات مع استراتيجية تجنب الانعطاف يساراً",
+            "en": "Analyzing millions of data points daily via route optimization algorithms with a left-turn avoidance strategy"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "GPS فقط بدون أي ذكاء اصطناعي",
+            "en": "GPS only without any artificial intelligence"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "خرائط ورقية محسّنة",
+            "en": "Enhanced paper maps"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "اتصالات لاسلكية بين السائقين",
+            "en": "Wireless communications between drivers"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "استراتيجية تجنب الانعطاف يساراً وحدها وفّرت ملايين الدولارات سنوياً في استهلاك الوقود. ORION كلّف تطويره أكثر من مليار دولار على مدى عقد — لكنه يوفر 300-400 مليون سنوياً. استثمار ضخم بعائد أضخم.",
+        "en": "The left-turn avoidance strategy alone saved millions annually in fuel consumption. ORION cost over $1 billion to develop over a decade — but saves $300-400 million annually. A massive investment with even more massive returns."
+      }
+    },
+    {
+      "id": "log-tf-007",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Microsoft تهدف لتشغيل أكثر من 100 وكيل AI في عملياتها اللوجستية بنهاية 2026 وتزويد كل موظف بدعم وكيل ذكي.",
+        "en": "Microsoft aims to operate over 100 AI agents in its logistics operations by end 2026 and equip every employee with agentic support."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Microsoft نشرت بالفعل 25+ وكيل وتطبيق AI. CargoPilot Agent للشحن، Demand Planning Agent للتنبؤ، DC Spare-Part Space Solver لقطع الغيار. الاتجاه واضح: من أداة واحدة إلى جيش من الوكلاء المتخصصين.",
+        "en": "Microsoft already deployed 25+ AI agents and applications. CargoPilot Agent for shipping, Demand Planning Agent for forecasting, DC Spare-Part Space Solver for spare parts. The trend is clear: from one tool to an army of specialized agents."
+      }
+    },
+    {
+      "id": "log-tf-008",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "McKinsey تقدّر أن دمج AI في عمليات سلاسل الإمداد يمكنه خفض تكاليف اللوجستيات بنسبة 5 إلى 20%.",
+        "en": "McKinsey estimates integrating AI in supply chain operations can reduce logistics costs by 5 to 20%."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "النطاق الواسع (5-20%) يعكس الفرق بين التطبيق الأساسي والمتقدم. الشركات التي تدمج AI في كامل سلسلة الإمداد (تنبؤ + مخزون + نقل + مستودعات) تحقق الطرف الأعلى. البدء بمنطقة واحدة ثم التوسع هو المنهج الأمثل.",
+        "en": "The wide range (5-20%) reflects the difference between basic and advanced implementation. Companies integrating AI across the entire supply chain (forecasting + inventory + transport + warehousing) achieve the higher end. Starting with one area then expanding is optimal."
+      }
+    },
+    {
+      "id": "log-tf-009",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Everstream Analytics صنّفت مستوى تهديد 'التشظي الجيوسياسي والاستخدام الاستراتيجي للوائح التجارية' عند 97% في 2026.",
+        "en": "Everstream Analytics rated the threat level of 'Geopolitical Fragmentation and Strategic Use of Trade Regulations' at 97% in 2026."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "الرسوم الجمركية تحوّلت من إجراءات مؤقتة إلى متغير دائم في 2026. يجب على مديري سلاسل الإمداد نمذجة تأثير الرسوم على كامل فاتورة المواد وليس فقط الموردين من المستوى الأول. AI يمكنه تقييم التعرض وتحديد البدائل بسرعة.",
+        "en": "Tariffs have morphed from temporary measures into a permanent variable in 2026. Supply chain managers must model tariff impact across the entire bill of materials, not just Tier 1 suppliers. AI can evaluate exposure and identify alternatives quickly."
+      }
+    },
+    {
+      "id": "log-tf-010",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "استراتيجية UPS لتجنب الانعطاف يساراً وحدها وفرت ملايين الدولارات سنوياً في استهلاك الوقود.",
+        "en": "UPS's left-turn avoidance strategy alone saved millions of dollars annually in fuel consumption."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "فكرة بسيطة — تجنب الانعطاف يساراً — أدت لتوفير هائل عندما طُبّقت على 100,000+ سائق. ORION يقلل 100 مليون ميل سنوياً ويوفر 10 ملايين غالون وقود. أحياناً أكبر الاختراقات تأتي من أبسط الأفكار مطبّقة على نطاق واسع.",
+        "en": "A simple idea — avoiding left turns — led to massive savings when applied across 100,000+ drivers. ORION cuts 100 million miles annually and saves 10 million gallons of fuel. Sometimes the biggest breakthroughs come from the simplest ideas applied at scale."
+      }
+    },
+    {
+      "id": "log-fill-004",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "منصة {{blank_1}} تحلل 8-9.5 تريليون دولار من بيانات الإنفاق الفعلية وتخدم {{blank_2}} من أفضل سلاسل الإمداد عالمياً.",
+        "en": "Platform {{blank_1}} analyzes $8-9.5 trillion in real-world spending data and serves {{blank_2}} of top global supply chains."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Coupa",
+            "en": "Coupa"
+          },
+          "options": [
+            {
+              "ar": "Coupa",
+              "en": "Coupa"
+            },
+            {
+              "ar": "SAP Ariba",
+              "en": "SAP Ariba"
+            },
+            {
+              "ar": "Oracle",
+              "en": "Oracle"
+            },
+            {
+              "ar": "Jaggaer",
+              "en": "Jaggaer"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "75%",
+            "en": "75%"
+          },
+          "options": [
+            {
+              "ar": "75%",
+              "en": "75%"
+            },
+            {
+              "ar": "25%",
+              "en": "25%"
+            },
+            {
+              "ar": "50%",
+              "en": "50%"
+            },
+            {
+              "ar": "90%",
+              "en": "90%"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "الوصول لبيانات إنفاق بهذا الحجم يمنح Coupa ميزة تنبؤية فريدة — تستطيع مقارنة أداء أي شركة بآلاف الشركات المماثلة. البيانات التجميعية هي 'نفط' العصر الرقمي في اللوجستيات.",
+        "en": "Access to spending data of this volume gives Coupa a unique predictive advantage — it can benchmark any company against thousands of similar ones. Aggregated data is the 'oil' of the digital age in logistics."
+      }
+    },
+    {
+      "id": "log-fill-005",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "شركة {{blank_1}} اليابانية لتصنيع الشاحنات التجارية تتعاون مع Applied Intuition لتحقيق القيادة الذاتية من المستوى {{blank_2}} بحلول 2027.",
+        "en": "Japanese commercial vehicle manufacturer {{blank_1}} is partnering with Applied Intuition to achieve Level {{blank_2}} autonomous driving by 2027."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Isuzu",
+            "en": "Isuzu"
+          },
+          "options": [
+            {
+              "ar": "Isuzu",
+              "en": "Isuzu"
+            },
+            {
+              "ar": "Toyota",
+              "en": "Toyota"
+            },
+            {
+              "ar": "Hino",
+              "en": "Hino"
+            },
+            {
+              "ar": "Mitsubishi",
+              "en": "Mitsubishi"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "4",
+            "en": "4"
+          },
+          "options": [
+            {
+              "ar": "4",
+              "en": "4"
+            },
+            {
+              "ar": "2",
+              "en": "2"
+            },
+            {
+              "ar": "5",
+              "en": "5"
+            },
+            {
+              "ar": "3",
+              "en": "3"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Level 4 يعني أتمتة كاملة في بيئات محددة (طرق سريعة). الشاحنات ذاتية القيادة لا تنام — يمكنها العمل 24/7 مما يُحسّن جداول التسليم ويتجنب الاختناقات. نقص 4 ملايين سائق عالمياً يدفع هذا الاستثمار.",
+        "en": "Level 4 means full automation in defined environments (highways). Autonomous trucks don't sleep — they can operate 24/7, improving delivery schedules and avoiding bottlenecks. A global shortage of 4 million drivers drives this investment."
+      }
+    },
+    {
+      "id": "log-fill-006",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "مفهوم '{{blank_1}}' في اللوجستيات يعني سلسلة إمداد تكتشف الاضطرابات وتتخذ إجراءات تصحيحية تلقائياً بأقل تدخل بشري.",
+        "en": "The '{{blank_1}}' concept in logistics means a supply chain that detects disruptions and takes corrective actions automatically with minimal human intervention."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "سلسلة الإمداد ذاتية الشفاء",
+            "en": "Self-Healing Supply Chain"
+          },
+          "options": [
+            {
+              "ar": "سلسلة الإمداد ذاتية الشفاء",
+              "en": "Self-Healing Supply Chain"
+            },
+            {
+              "ar": "سلسلة الإمداد الخضراء",
+              "en": "Green Supply Chain"
+            },
+            {
+              "ar": "سلسلة الإمداد الرشيقة",
+              "en": "Lean Supply Chain"
+            },
+            {
+              "ar": "سلسلة الإمداد المرنة",
+              "en": "Agile Supply Chain"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "سلسلة الإمداد ذاتية الشفاء تستخدم بيانات لحظية + تحليلات تنبؤية + AI وكيل + توائم رقمية. الهدف: الانتقال من ردة الفعل (حدثت مشكلة → نتصرف) إلى الاستباق (نتوقع المشكلة → نمنعها قبل أن تؤثر).",
+        "en": "Self-healing supply chains use real-time data + predictive analytics + agentic AI + digital twins. The goal: moving from reaction (problem happened → we act) to proaction (we predict the problem → we prevent it before impact)."
+      }
+    },
+    {
+      "id": "log-match-004",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مصطلح AI لوجستي بتعريفه:",
+        "en": "Match each logistics AI term with its definition:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "التوأم الرقمي (Digital Twin)",
+            "en": "Digital Twin"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "AI الوكيل (Agentic AI)",
+            "en": "Agentic AI"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "الصيانة التنبؤية (Predictive Maintenance)",
+            "en": "Predictive Maintenance"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "تحسين مسار العرض (Supply Path Optimization)",
+            "en": "Supply Path Optimization"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "نسخة افتراضية من سلسلة الإمداد لمحاكاة السيناريوهات",
+            "en": "Virtual replica of the supply chain for scenario simulation"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "AI يراقب ويقرر وينفذ إجراءات مستقلة",
+            "en": "AI that monitors, decides, and executes autonomous actions"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "توقع أعطال المعدات قبل حدوثها وجدولة الصيانة",
+            "en": "Predicting equipment failures before they occur and scheduling maintenance"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تقليل الوسطاء بين المعلن والناشر في الإعلانات البرمجية",
+            "en": "Reducing intermediaries between advertiser and publisher in programmatic ads"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "ملاحظة: Supply Path Optimization ينتمي فعلاً لعالم الإعلانات البرمجية وليس اللوجستيات — السؤال يختبر التمييز بين المصطلحات عبر التخصصات. في اللوجستيات، المصطلح المقابل هو 'تحسين شبكة الموردين'.",
+        "en": "Note: Supply Path Optimization actually belongs to programmatic advertising, not logistics — the question tests cross-discipline term distinction. In logistics, the equivalent term is 'supplier network optimization'."
+      }
+    },
+    {
+      "id": "log-match-005",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل رقم مع ما يمثله في عالم اللوجستيات وAI:",
+        "en": "Match each number with what it represents in logistics and AI:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "مليون",
+            "en": "1 million"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "100 مليون",
+            "en": "100 million"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "25 مليار",
+            "en": "25 billion"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "4 ملايين",
+            "en": "4 million"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "عدد روبوتات أمازون في مراكز التوزيع",
+            "en": "Number of Amazon's robots in fulfillment centers"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "عدد الأميال التي يوفرها ORION سنوياً",
+            "en": "Miles ORION saves annually"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "عدد تنبؤات Blue Yonder اليومية",
+            "en": "Blue Yonder's daily predictions"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "نقص سائقي الشاحنات عالمياً",
+            "en": "Global truck driver shortage"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الأرقام تُظهر حجم التحول: مليون روبوت في شركة واحدة، 25 مليار تنبؤ يومياً من منصة واحدة. اللوجستيات أصبحت أكبر مستخدم لـ AI بعد القطاع المالي — والسبب واضح: حجم البيانات والتعقيد يفوقان القدرة البشرية.",
+        "en": "These numbers show the scale of transformation: 1 million robots in one company, 25 billion daily predictions from one platform. Logistics has become the largest AI user after finance — the reason is clear: data volume and complexity exceed human capability."
+      }
+    },
+    {
+      "id": "log-match-006",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل نوع من وكلاء AI في Microsoft مع وظيفته اللوجستية:",
+        "en": "Match each Microsoft AI agent type with its logistics function:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "CargoPilot Agent",
+            "en": "CargoPilot Agent"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Demand Planning Agent",
+            "en": "Demand Planning Agent"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "DC Spare-Part Space Solver",
+            "en": "DC Spare-Part Space Solver"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Kinaxis Maestro Agent",
+            "en": "Kinaxis Maestro Agent"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تحسين الشحن بتوازن بين السرعة والتكلفة والاستدامة",
+            "en": "Optimizing shipping balancing speed, cost, and sustainability"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "محاكاة الطلب على مكونات غير تقنية",
+            "en": "Simulating demand for non-IT components"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "توقع احتياجات تخزين قطع الغيار بالرؤية الحاسوبية",
+            "en": "Predicting spare parts storage needs using computer vision"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "اكتشاف الاضطرابات ومحاكاة السيناريوهات بلغة طبيعية",
+            "en": "Detecting disruptions and simulating scenarios in natural language"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "الاتجاه واضح: من وكيل واحد عام إلى جيش من الوكلاء المتخصصين. كل وكيل يحل مشكلة محددة في سلسلة الإمداد. Microsoft تهدف لـ 100+ وكيل بنهاية 2026 — كل موظف سيكون له 'مساعد AI' مخصص لمهامه.",
+        "en": "The trend is clear: from one general agent to an army of specialized agents. Each agent solves a specific supply chain problem. Microsoft aims for 100+ agents by end 2026 — every employee will have a dedicated 'AI assistant' for their tasks."
+      }
+    },
+    {
+      "id": "log-sort-004",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب أولويات مدير سلسلة الإمداد في 2026 من الأكثر إلحاحاً:",
+        "en": "Order a supply chain director's 2026 priorities from most urgent:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "نمذجة تأثير الرسوم الجمركية على كامل فاتورة المواد وليس فقط الموردين المباشرين",
+            "en": "Modeling tariff impact across the entire bill of materials, not just direct suppliers"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تنويع شبكة الموردين مع خطط طوارئ لأكثر من سيناريو جيوسياسي",
+            "en": "Diversifying supplier network with contingency plans for multiple geopolitical scenarios"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "بناء توأم رقمي لمحاكاة الاضطرابات واختبار الاستجابات",
+            "en": "Building a digital twin to simulate disruptions and test responses"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "نشر وكلاء AI لأتمتة القرارات التشغيلية منخفضة المخاطر",
+            "en": "Deploying AI agents to automate low-risk operational decisions"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "Everstream Analytics صنّفت التشظي الجيوسياسي عند مستوى تهديد 97%. الرسوم الجمركية أصبحت متغيراً دائماً وليس إجراءً مؤقتاً. الأولوية الأولى: فهم التعرض الحالي ثم بناء البدائل ثم الأتمتة.",
+        "en": "Everstream Analytics rated geopolitical fragmentation at 97% threat level. Tariffs have become a permanent variable, not a temporary measure. Top priority: understand current exposure, then build alternatives, then automate."
+      }
+    },
+    {
+      "id": "log-sort-005",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب الشركات حسب حجم استثمارها/تأثيرها في أتمتة اللوجستيات من الأكبر:",
+        "en": "Order companies by their logistics automation investment/impact from largest:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "أمازون — مليون روبوت في 300+ مركز",
+            "en": "Amazon — 1 million robots in 300+ centers"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "Walmart — 60% من متاجرها عبر مراكز مؤتمتة",
+            "en": "Walmart — 60% of stores via automated centers"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "UPS ORION — توفير 300-400 مليون دولار سنوياً",
+            "en": "UPS ORION — saving $300-400 million annually"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "DHL — تحليلات AI لكشف المخاطر واعادة التوجيه",
+            "en": "DHL — AI analytics for risk detection and rerouting"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "أمازون وWalmart تتنافسان على الريادة في أتمتة المستودعات. UPS تقود في تحسين المسارات. DHL في الرؤية اللحظية لسلسلة الإمداد. كل شركة تحل مشكلة مختلفة — لكن الهدف واحد: سلسلة إمداد أسرع وأرخص وأكثر مرونة.",
+        "en": "Amazon and Walmart compete for warehousing automation leadership. UPS leads in route optimization. DHL in real-time supply chain visibility. Each solves a different problem — but the goal is one: a faster, cheaper, more flexible supply chain."
+      }
+    },
+    {
+      "id": "log-sort-006",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات تطبيق نظام AI وكيل في سلسلة الإمداد من البداية:",
+        "en": "Order steps for implementing an agentic AI system in supply chain from the beginning:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحديد حدود واضحة لما يمكن للوكيل فعله مستقلاً مقابل ما يحتاج موافقة بشرية",
+            "en": "Define clear boundaries for what the agent can do autonomously versus what needs human approval"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "البداية بقرارات منخفضة المخاطر (مثل إعادة طلب مخزون روتيني)",
+            "en": "Start with low-risk decisions (like routine inventory reordering)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "بناء الثقة بتقليل الإنذارات الكاذبة وإثبات دقة القرارات",
+            "en": "Build trust by minimizing false alerts and proving decision accuracy"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "الترقية تدريجياً لقرارات أعلى مخاطر (مثل تغيير الموردين أثناء الأزمات)",
+            "en": "Gradually upgrade to higher-risk decisions (like switching suppliers during crises)"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "المخطط الذي لا يثق بالتنبؤات سيتوقف عن استخدام AI. لذلك يجب بناء الثقة تدريجياً: إنذارات أقل + دقة أعلى = تبني أسرع. BCG تتوقع أن AI الوكيل سيمثل 29% من قيمة AI بحلول 2028.",
+        "en": "A planner who doesn't trust forecasts will stop using AI. Therefore trust must be built gradually: fewer alerts + higher accuracy = faster adoption. BCG projects agentic AI will represent 29% of AI value by 2028."
+      }
+    },
+    {
+      "id": "log-self-007",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير مشتريات. AI يمكنه الآن تقييم الموردين وتأهيلهم ومراقبة أدائهم تلقائياً. ما موقفك؟",
+        "en": "You are a procurement manager. AI can now evaluate, qualify, and monitor supplier performance automatically. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أستخدم AI للتقييم الكمي (أسعار، مواعيد، جودة) وأركّز جهدي على بناء العلاقات والتفاوض الاستراتيجي — الجزء البشري الذي لا يمكن أتمتته",
+            "en": "I use AI for quantitative evaluation (prices, timelines, quality) and focus my effort on relationship building and strategic negotiation — the human part that can't be automated"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أترك AI يدير كل شيء — أثق بالبيانات أكثر من حدسي",
+            "en": "I let AI manage everything — I trust data more than my intuition"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفض AI في المشتريات — العلاقات الشخصية هي كل شيء",
+            "en": "I reject AI in procurement — personal relationships are everything"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أنتظر حتى يطلب مني المدير استخدام AI",
+            "en": "I wait until my manager asks me to use AI"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Coupa تحلل 8-9.5 تريليون دولار من بيانات الإنفاق لمساعدة المشترين في اتخاذ قرارات أفضل. لكن التفاوض وبناء الثقة مع الموردين الاستراتيجيين يبقى مهارة بشرية حاسمة. أفضل مديري المشتريات يجمعون بين تحليلات AI والذكاء العلاقي.",
+        "en": "Coupa analyzes $8-9.5 trillion in spending data to help buyers make better decisions. But negotiation and building trust with strategic suppliers remains a critical human skill. The best procurement managers combine AI analytics with relationship intelligence."
+      }
+    },
+    {
+      "id": "log-self-008",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول لوجستيات في شركة خليجية. الرسوم الجمركية العالمية تتغير باستمرار. هل تعتمد على AI لإدارة هذا التعقيد؟",
+        "en": "You manage logistics at a Gulf company. Global tariffs are constantly changing. Do you rely on AI to manage this complexity?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم — أستخدم AI لنمذجة تأثير الرسوم على كامل سلسلة الإمداد ومحاكاة سيناريوهات بديلة مع بقائي مسؤولاً عن القرارات النهائية",
+            "en": "Yes — I use AI to model tariff impact across the entire supply chain and simulate alternative scenarios while remaining responsible for final decisions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أعتمد على AI جزئياً مع مراجعة مستشار تجاري",
+            "en": "I partially rely on AI with trade consultant review"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا أحتاج AI — فريقي يتابع التغييرات يدوياً",
+            "en": "I don't need AI — my team tracks changes manually"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الرسوم لا تؤثر علينا كثيراً في منطقة الخليج",
+            "en": "Tariffs don't affect us much in the Gulf region"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Everstream Analytics صنّفت التشظي الجيوسياسي عند 97% مستوى تهديد. منطقة الخليج ليست معزولة — اضطرابات الشحن في البحر الأحمر والتوترات التجارية العالمية تؤثر مباشرة. AI يمكنه محاكاة آلاف السيناريوهات في دقائق مقابل أسابيع يدوياً.",
+        "en": "Everstream Analytics rated geopolitical fragmentation at 97% threat level. The Gulf region isn't isolated — Red Sea shipping disruptions and global trade tensions directly impact it. AI can simulate thousands of scenarios in minutes versus weeks manually."
+      }
+    },
+    {
+      "id": "log-self-009",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير مستودع. الشركة تريد تطبيق روبوتات متحركة (AMR) في مستودعك. بعض العمال قلقون على وظائفهم. كيف تتعامل؟",
+        "en": "You're a warehouse manager. The company wants to implement autonomous mobile robots (AMR) in your warehouse. Some workers are worried about their jobs. How do you handle it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أشرح لفريقي تجربة أمازون: الروبوتات أنشأت وظائف تقنية جديدة (30% إضافية). أضع خطة تدريب واضحة لتأهيل العمال للأدوار الجديدة",
+            "en": "I explain Amazon's experience to my team: robots created new technical jobs (30% additional). I create a clear training plan to qualify workers for new roles"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطبّق الروبوتات بهدوء وأتعامل مع القلق لاحقاً",
+            "en": "I quietly implement robots and address concerns later"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أعارض الروبوتات لحماية وظائف فريقي",
+            "en": "I oppose robots to protect my team's jobs"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أخبر العمال أن لا خيار أمامهم — إما التكيّف أو المغادرة",
+            "en": "I tell workers they have no choice — adapt or leave"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "أمازون: مليون روبوت + 1.5 مليون موظف. مركز Shreveport المتقدم احتاج 30% موظفين إضافيين في أدوار تقنية. القيادة الناجحة للتحول الرقمي تجمع بين الشفافية والتدريب والطمأنة — وليس فرض الأمر الواقع.",
+        "en": "Amazon: 1 million robots + 1.5 million employees. Advanced Shreveport center needed 30% more staff in technical roles. Successful digital transformation leadership combines transparency, training, and reassurance — not imposing fait accompli."
+      }
+    },
+    {
+      "id": "log-self-010",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مخطط طلب. نظام AI التنبؤي يقترح خفض مخزون منتج رئيسي 40% رغم أن حدسك يقول العكس. ما قرارك؟",
+        "en": "You are a demand planner. The AI forecasting system suggests cutting a key product's inventory by 40% despite your instinct saying otherwise. What's your decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أفحص البيانات التي بنى عليها AI قراره وأقارنها بمعرفتي بالسوق — إذا كانت البيانات مقنعة أتبع AI مع مراقبة مكثفة",
+            "en": "I examine the data behind AI's decision and compare with my market knowledge — if data is convincing I follow AI with intensive monitoring"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أنفذ توصية AI حرفياً — الخوارزمية أدق من الحدس",
+            "en": "I execute AI recommendation literally — the algorithm is more accurate than instinct"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتجاهل AI وأبقي المخزون كما هو — خبرتي أهم",
+            "en": "I ignore AI and keep inventory as is — my experience matters more"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أخفض 20% كحل وسط دون فحص البيانات",
+            "en": "I cut 20% as a compromise without examining data"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Kraft Heinz حققت 20% خفض في مخزون الأمان بفضل AI — لكن النجاح جاء من فحص البيانات وليس القبول الأعمى. أفضل المخططين يعاملون AI كزميل ذكي: يستمعون لتوصياته ويفحصون منطقه ثم يتخذون قراراً مدروساً.",
+        "en": "Kraft Heinz achieved 20% safety stock reduction with AI — but success came from examining data, not blind acceptance. The best planners treat AI as a smart colleague: listen to its recommendations, examine its logic, then make an informed decision."
+      }
+    },
+    {
+      "id": "log-mcq-014",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول عمليات. AI في اللوجستيات تطور في 2025 من أداة مساعدة إلى شريك تشغيلي. ما أكبر إنجاز فعلي حققه AI في 2025 وفقاً لخبراء القطاع؟",
+        "en": "You're an operations manager. AI in logistics evolved in 2025 from helper tool to operational partner. What was AI's biggest actual achievement in 2025 according to industry experts?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تحسين جودة القرارات وتقليل الضوضاء وتمكين المخططين من التصرف بسرعة أكبر بمعلومات أفضل — وليس الأتمتة الكاملة",
+            "en": "Improving decision quality, reducing noise, and enabling planners to act faster with better information — not full automation"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتمتة كاملة لعمليات المستودعات بدون بشر",
+            "en": "Full automation of warehouse operations without humans"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "استبدال 50% من مديري سلاسل الإمداد",
+            "en": "Replacing 50% of supply chain managers"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "روبوتات دردشة لخدمة العملاء اللوجستية — النجاح الوحيد",
+            "en": "Customer service chatbots — the only success"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الخبراء يُميّزون بوضوح بين ما نجح فعلاً (تحسين القرارات، كشف المخاطر، تحسين المسارات) وما فشل (أتمتة المستودعات الكاملة، روبوتات خدمة العملاء اللوجستية). في 2026، AI ينتقل من 'اختياري' إلى 'مكون أساسي' في سير العمل.",
+        "en": "Experts clearly distinguish between what actually worked (decision improvement, risk detection, route optimization) and what failed (full warehouse automation, logistics customer service chatbots). In 2026, AI transitions from 'optional' to 'core workflow component'."
+      }
+    },
+    {
+      "id": "log-mcq-015",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير نقل. تقنية 'تشكيل حركة ما قبل المزاد' (Pre-Auction Traffic Shaping) في اللوجستيات تعمل بنفس مبدأ نظيرتها في الإعلانات. ما الذي تفعله في سياق النقل؟",
+        "en": "You are a transport manager. 'Pre-Auction Traffic Shaping' technology in logistics works on the same principle as its advertising counterpart. What does it do in transport context?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تفحص طلبات النقل عند الحافة وتُرسل فقط الطلبات ذات الاحتمالية العالية للمطابقة — مما يقلل الضوضاء والتكاليف",
+            "en": "Screens transport requests at the edge and forwards only high-probability matching requests — reducing noise and costs"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تُبطئ حركة الشاحنات لتوفير الوقود",
+            "en": "Slows down truck movement to save fuel"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تمنع دخول شاحنات جديدة للسوق",
+            "en": "Prevents new trucks from entering the market"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تُتيح للسائقين اختيار مساراتهم بأنفسهم",
+            "en": "Allows drivers to choose their own routes"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "المبدأ واحد عبر القطاعات: بدلاً من إرسال كل طلب لكل ناقل محتمل، AI يفحص ويُرسل فقط الطلبات ذات الاحتمالية العالية. النتيجة: أنابيب أنظف وأسرع وأرخص. هذا المبدأ يُطبّق في الإعلانات واللوجستيات والتمويل.",
+        "en": "The principle is the same across sectors: instead of sending every request to every possible carrier, AI screens and forwards only high-probability requests. Result: cleaner, faster, cheaper pipes. This principle applies in advertising, logistics, and finance."
+      }
+    },
+    {
+      "id": "log-tf-011",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Unilever وProcter & Gamble تستخدمان التوائم الرقمية لمحاكاة اضطرابات سلسلة الإمداد — مثل إغلاق ميناء أو ارتفاع رسوم جمركية — قبل حدوثها فعلياً.",
+        "en": "Unilever and Procter & Gamble use digital twins to simulate supply chain disruptions — like port closure or tariff increases — before they actually occur."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "التوأم الرقمي يحوّل القرارات من 'ماذا نفعل بعد المشكلة' إلى 'ماذا سنفعل عندما تحدث المشكلة'. الفرق هائل: الاستجابة المُعدّة مسبقاً أسرع بأيام من الاستجابة التفاعلية.",
+        "en": "Digital twins transform decisions from 'what do we do after the problem' to 'what will we do when the problem occurs'. The difference is huge: pre-prepared response is days faster than reactive response."
+      }
+    },
+    {
+      "id": "log-tf-012",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "DHL تستخدم تحليلات AI للكشف المبكر عن المخاطر مثل إضرابات الموانئ والأحداث المناخية، مما يُتيح إعادة التوجيه الاستباقي أو تعديل المخزون.",
+        "en": "DHL uses AI analytics for early risk detection like port strikes and weather events, enabling proactive rerouting or inventory adjustments."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "DHL تُعد من رواد الرؤية اللحظية (Real-Time Visibility) في سلاسل الإمداد. C.H. Robinson مع Navisphere Vision تقدم نفس الفكرة. المشترك: AI يكتشف المشكلة قبل أن تصل لعتبة بابك ويُعطيك وقتاً للتصرف.",
+        "en": "DHL is a pioneer in real-time visibility in supply chains. C.H. Robinson with Navisphere Vision offers the same concept. Common thread: AI detects the problem before it reaches your doorstep and gives you time to act."
+      }
+    },
+    {
+      "id": "log-tf-013",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "صناعة النقل بالشاحنات تنقل بضائع بقيمة 2.2 تريليون دولار (2022) ومتوقع أن تصل 3.4 تريليون بحلول 2030.",
+        "en": "The trucking industry moves $2.2 trillion worth of goods (2022), expected to reach $3.4 trillion by 2030."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا الحجم الهائل يوضح لماذا أي تحسين بسيط في كفاءة النقل ينتج وفورات بالمليارات. ORION يوفر 300-400 مليون سنوياً بتقليل ميل واحد لكل سائق يومياً. الشاحنات ذاتية القيادة يمكنها العمل 24/7 مما يُضاعف الإنتاجية.",
+        "en": "This massive volume explains why any small improvement in transport efficiency produces billions in savings. ORION saves $300-400 million annually by cutting one mile per driver daily. Autonomous trucks can operate 24/7, potentially doubling productivity."
+      }
+    },
+    {
+      "id": "log-fill-007",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "منصة {{blank_1}} من C.H. Robinson تقدم إدارة المخاطر والرؤية اللحظية لسلسلة الإمداد بالكامل.",
+        "en": "C.H. Robinson's {{blank_1}} platform provides risk management and real-time visibility across the entire supply chain."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Navisphere Vision",
+            "en": "Navisphere Vision"
+          },
+          "options": [
+            {
+              "ar": "Navisphere Vision",
+              "en": "Navisphere Vision"
+            },
+            {
+              "ar": "Blue Yonder",
+              "en": "Blue Yonder"
+            },
+            {
+              "ar": "ORION",
+              "en": "ORION"
+            },
+            {
+              "ar": "Coupa",
+              "en": "Coupa"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "الرؤية اللحظية أصبحت ضرورية في عالم الاضطرابات المستمرة. C.H. Robinson من أكبر شركات الوساطة اللوجستية عالمياً. التكامل بين الرؤية (Navisphere) والتنبؤ (Blue Yonder) والتحسين (ORION) هو مستقبل اللوجستيات الذكية.",
+        "en": "Real-time visibility has become essential in a world of constant disruptions. C.H. Robinson is one of the largest logistics brokers globally. Integration between visibility (Navisphere), forecasting (Blue Yonder), and optimization (ORION) is the future of smart logistics."
+      }
+    },
+    {
+      "id": "log-self-011",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير سلسلة إمداد في شركة تصنيع عربية. هل تعتقد أن التوأم الرقمي استثمار ضروري لشركتك؟",
+        "en": "You are a supply chain manager at an Arab manufacturing company. Do you think a digital twin is a necessary investment for your company?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم — سأقترح بناء توأم رقمي يبدأ بنمذجة سيناريوهات الرسوم الجمركية واضطرابات الشحن في البحر الأحمر",
+            "en": "Yes — I'll propose building a digital twin starting with modeling tariff scenarios and Red Sea shipping disruptions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ربما في المستقبل عندما تنضج التقنية أكثر",
+            "en": "Maybe in the future when the technology matures more"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا — شركتنا صغيرة جداً لهذا الاستثمار",
+            "en": "No — our company is too small for this investment"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أفهم ما هو التوأم الرقمي ولا أحتاجه",
+            "en": "I don't understand what a digital twin is and don't need it"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوائم الرقمية لم تعد حكراً على الشركات العملاقة. حلول سحابية مثل Kinaxis وo9 Solutions تقدمها كخدمة (SaaS) بتكاليف معقولة. اضطرابات البحر الأحمر أثّرت مباشرة على الشركات العربية — القدرة على محاكاة البدائل أصبحت ضرورة وليست ترفاً.",
+        "en": "Digital twins are no longer exclusive to giant companies. Cloud solutions like Kinaxis and o9 Solutions offer them as SaaS at reasonable costs. Red Sea disruptions directly affected Arab companies — the ability to simulate alternatives has become a necessity, not a luxury."
+      }
+    },
+    {
+      "id": "log-self-012",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت سائق شاحنة خبير بـ 15 سنة. تسمع عن شاحنات ذاتية القيادة Level 4. ما شعورك؟",
+        "en": "You're an experienced truck driver with 15 years. You hear about Level 4 autonomous trucks. How do you feel?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبدأ بتعلم صيانة وإشراف أنظمة القيادة الذاتية — الانتقال سيكون تدريجياً وسأكون من أوائل المؤهلين لإدارة الأساطيل المختلطة",
+            "en": "I start learning to maintain and supervise autonomous driving systems — the transition will be gradual and I'll be among the first qualified to manage mixed fleets"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "قلق لكن أعلم أن Level 4 يعمل فقط على الطرق السريعة — سأظل مطلوباً للنقل المحلي",
+            "en": "Worried but I know Level 4 only works on highways — I'll still be needed for local transport"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا أصدق أن الشاحنات ستقود نفسها حقاً — لن تنجح",
+            "en": "I don't believe trucks will really drive themselves — it won't work"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أبحث عن مهنة أخرى فوراً",
+            "en": "I look for another career immediately"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "الانتقال سيكون تدريجياً: Level 2 (مساعدة) → Level 4 (ذاتية على الطرق السريعة) → Level 5 (ذاتية كاملة — بعيد جداً). السائق الذي يتعلم التقنية الجديدة سينتقل لدور 'مشغّل أسطول مستقل' — أعلى أجراً وأقل إرهاقاً من القيادة الفعلية.",
+        "en": "The transition will be gradual: Level 2 (assistance) → Level 4 (autonomous on highways) → Level 5 (full autonomy — very far away). A driver who learns new technology will transition to 'autonomous fleet operator' role — higher pay and less fatigue than actual driving."
+      }
+    },
+    {
+      "id": "log-mcq-016",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير لوجستيات. ما الفرق الجوهري بين AI التنبؤي وAI الوكيل في سلاسل الإمداد؟",
+        "en": "You're a logistics director. What's the fundamental difference between predictive AI and agentic AI in supply chains?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التنبؤي يتوقع (مثل تأخير شحنة) — الوكيل يتوقع ثم يتصرف مستقلاً (يعيد توجيه الشحنة لمسار بديل تلقائياً)",
+            "en": "Predictive forecasts (like a shipment delay) — agentic forecasts then acts autonomously (reroutes shipment to alternative path automatically)"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا فرق حقيقي — تسميات مختلفة لنفس الشيء",
+            "en": "No real difference — different names for the same thing"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الوكيل أبسط من التنبؤي",
+            "en": "Agentic is simpler than predictive"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التنبؤي يعمل لحظياً والوكيل يعمل شهرياً",
+            "en": "Predictive works real-time and agentic works monthly"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "AI الوكيل هو التطور الطبيعي: يراقب → يكتشف → يقرر → ينفذ. مثال: عند اكتشاف إضراب في ميناء، الوكيل يعيد توجيه الشحنات لميناء بديل ويُعدّل المخزون ويُبلّغ العملاء — كل ذلك في ثوانٍ.",
+        "en": "Agentic AI is the natural evolution: monitors → detects → decides → executes. Example: upon detecting a port strike, the agent reroutes shipments to an alternative port, adjusts inventory, and notifies customers — all in seconds."
+      }
+    },
+    {
+      "id": "log-mcq-017",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير مخاطر سلسلة إمداد. أزمة البحر الأحمر أثّرت على الشحن العالمي. ما أفضل أداة AI لإدارة هذا النوع من الاضطرابات؟",
+        "en": "You're a supply chain risk manager. The Red Sea crisis affected global shipping. What's the best AI tool for managing this type of disruption?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "توأم رقمي يُحاكي تأثير إغلاق المسار على كامل سلسلة الإمداد + وكيل AI يُفعّل مسارات بديلة تلقائياً",
+            "en": "Digital twin simulating route closure impact on the entire supply chain + AI agent automatically activating alternative routes"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "جدول Excel محدّث يدوياً",
+            "en": "Manually updated Excel spreadsheet"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الاتصال بالموردين هاتفياً لمعرفة الوضع",
+            "en": "Calling suppliers by phone to check the situation"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الانتظار حتى تنتهي الأزمة",
+            "en": "Waiting until the crisis ends"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "اضطرابات البحر الأحمر أضافت 10-14 يوماً لرحلات الشحن بين آسيا وأوروبا ورفعت التكاليف 200-300%. الشركات التي كانت تملك توائم رقمية وخطط طوارئ مسبقة كانت الأقل تأثراً — القرارات المُعدّة مسبقاً أسرع بأيام.",
+        "en": "Red Sea disruptions added 10-14 days to Asia-Europe shipping routes and raised costs 200-300%. Companies with digital twins and pre-prepared contingency plans were least affected — pre-prepared decisions are days faster."
+      }
+    },
+    {
+      "id": "log-mcq-018",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول صيانة أسطول شاحنات. الصيانة التنبؤية بـ AI تُغيّر طريقة العمل. ما الفرق عن الصيانة التقليدية؟",
+        "en": "You manage a truck fleet maintenance. AI predictive maintenance is changing how things work. What's different from traditional maintenance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "بدلاً من الصيانة حسب جدول زمني ثابت أو بعد العطل، AI يتنبأ بالأعطال قبل حدوثها من بيانات المستشعرات — مما يقلل التوقف غير المخطط",
+            "en": "Instead of scheduled maintenance or post-failure repair, AI predicts failures before they occur from sensor data — reducing unplanned downtime"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا فرق — الصيانة التنبؤية هي مجرد اسم جديد للصيانة الدورية",
+            "en": "No difference — predictive maintenance is just a new name for scheduled maintenance"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "AI يُصلح الشاحنات تلقائياً بدون تدخل بشري",
+            "en": "AI automatically repairs trucks without human intervention"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "AI ينبّه بعد حدوث العطل فقط",
+            "en": "AI only alerts after the failure occurs"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الأسطول يمكنه الآن مراقبة: درجة حرارة المحرك، اهتزازات المحاور، ضغط الإطارات، استهلاك الوقود — لحظياً. عندما تخرج أي قراءة عن النمط الطبيعي، AI يُنذر قبل أن يتعطل المكوّن. هذا يحوّل الصيانة من 'تكلفة مفاجئة' إلى 'تكلفة مخططة'.",
+        "en": "Fleets can now monitor: engine temperature, axle vibrations, tire pressure, fuel consumption — in real-time. When any reading deviates from normal patterns, AI alerts before the component fails. This transforms maintenance from 'surprise cost' to 'planned cost'."
+      }
+    },
+    {
+      "id": "log-mcq-019",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "ما حجم فجوة الاستثمار العالمية في البنية التحتية حتى 2040 التي تضغط على شبكات اللوجستيات؟",
+        "en": "What is the global infrastructure investment gap through 2040 that's straining logistics networks?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "106 تريليون دولار — فجوة هائلة تعني تقادم الطرق والموانئ والمستودعات",
+            "en": "$106 trillion — a massive gap meaning aging roads, ports, and warehouses"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "10 مليار دولار فقط",
+            "en": "Only $10 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "500 مليار دولار",
+            "en": "$500 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50 تريليون دولار",
+            "en": "$50 trillion"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الفجوة تعني أن الحلول الذكية (AI، أتمتة، تحسين المسارات) ليست ترفاً — إنها ضرورة للتعويض عن البنية التحتية المتقادمة. AI يمكنه استخلاص أقصى كفاءة من البنية الحالية بدلاً من انتظار بنية جديدة.",
+        "en": "This gap means smart solutions (AI, automation, route optimization) aren't luxury — they're necessary to compensate for aging infrastructure. AI can extract maximum efficiency from existing infrastructure instead of waiting for new construction."
+      }
+    },
+    {
+      "id": "log-mcq-020",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول مستودع. ما الفرق بين روبوت AMR (ذاتي الحركة) وAGV (موجّه تلقائياً) في المستودعات؟",
+        "en": "You manage a warehouse. What's the difference between AMR (autonomous mobile robot) and AGV (automated guided vehicle) in warehouses?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AMR يتنقل بذكاء اصطناعي ويتجنب العقبات تلقائياً ويُعدّل مساره ديناميكياً — AGV يتبع مساراً ثابتاً (خطوط أو مغناطيس) فقط",
+            "en": "AMR navigates with AI, automatically avoids obstacles and dynamically adjusts its path — AGV follows a fixed path (lines or magnets) only"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا فرق — كلاهما نفس التقنية بأسماء مختلفة",
+            "en": "No difference — both are the same technology with different names"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "AGV أكثر ذكاءً من AMR",
+            "en": "AGV is smarter than AMR"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "AMR يعمل في الهواء الطلق فقط",
+            "en": "AMR works outdoors only"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أمازون تستخدم كلا النوعين: AGV للمسارات الثابتة (نقل أرفف) وAMR للمهام المرنة. DeepFleet ينسّق حركة كليهما. الاتجاه: المزيد من AMR لأنه أكثر مرونة ولا يحتاج تعديل بنية المستودع.",
+        "en": "Amazon uses both: AGV for fixed paths (shelf transport) and AMR for flexible tasks. DeepFleet coordinates both. The trend: more AMR because it's more flexible and doesn't require warehouse infrastructure changes."
+      }
+    },
+    {
+      "id": "log-mcq-021",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير سلسلة إمداد. Kinaxis تقدم منصة Maestro. ما الذي يميّزها عن منصات التنبؤ التقليدية؟",
+        "en": "You're a supply chain manager. Kinaxis offers its Maestro platform. What distinguishes it from traditional forecasting platforms?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "وكلاء AI يكتشفون الاضطرابات ويُجرون محاكاة سيناريوهات ويقدمون رؤى وصفية بلغة طبيعية — وليس مجرد أرقام في جداول",
+            "en": "AI agents detecting disruptions, running scenario simulations, and providing prescriptive insights in natural language — not just numbers in spreadsheets"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مجرد لوحة بيانات أجمل شكلاً",
+            "en": "Just a better-looking dashboard"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تعمل بدون بيانات — تعتمد على AI التوليدي فقط",
+            "en": "Works without data — relies on generative AI only"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "حصرية لقطاع السيارات فقط",
+            "en": "Exclusive to automotive sector only"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الرؤى الوصفية (Prescriptive Insights) هي المرحلة التالية بعد التنبؤ: بدلاً من إخبارك 'ماذا سيحدث'، تُخبرك 'ماذا يجب أن تفعل'. Capgemini وPwC وNTT DATA يبنون حلولاً مشابهة باستخدام تقنيات Microsoft.",
+        "en": "Prescriptive insights are the next stage after forecasting: instead of telling you 'what will happen', they tell you 'what you should do'. Capgemini, PwC, and NTT DATA are building similar solutions using Microsoft technologies."
+      }
+    },
+    {
+      "id": "log-mcq-022",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول إدارة الموردين. كيف يساعد AI في تقييم وتأهيل الموردين في 2026؟",
+        "en": "You manage supplier relations. How does AI help in evaluating and qualifying suppliers in 2026?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يحلل أداء الموردين تاريخياً + يراقب إشارات خطر خارجية (أخبار، استقرار مالي، طقس) + يقترح بدائل مؤهلة عند الحاجة — كل ذلك تلقائياً",
+            "en": "Analyzes supplier performance historically + monitors external risk signals (news, financial stability, weather) + suggests qualified alternatives when needed — all automatically"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يُرسل رسائل بريد إلكتروني تلقائية للموردين فقط",
+            "en": "Only sends automatic emails to suppliers"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "يختار الموردين الأرخص بدون أي معايير أخرى",
+            "en": "Selects the cheapest suppliers without any other criteria"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا دور لـ AI في إدارة الموردين",
+            "en": "No role for AI in supplier management"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "التقييم الشامل للموردين أصبح يتجاوز السعر والجودة. AI يراقب: استقرار مالي، مخاطر جيوسياسية، سمعة بيئية، مرونة لوجستية. Everstream Analytics توفّر تقييم مخاطر الموردين بناءً على بيانات عالمية لحظية.",
+        "en": "Comprehensive supplier evaluation now goes beyond price and quality. AI monitors: financial stability, geopolitical risks, environmental reputation, logistics flexibility. Everstream Analytics provides supplier risk assessment based on real-time global data."
+      }
+    },
+    {
+      "id": "log-mcq-023",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير لوجستيات. ما مفهوم 'Cross-Docking الذكي' بالذكاء الاصطناعي في 2026؟",
+        "en": "You're a logistics director. What is 'Smart Cross-Docking' with AI in 2026?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI يتنبأ بوصول الشاحنات الواردة ويطابقها فوراً مع الشاحنات الصادرة — نقل البضائع من شاحنة لأخرى بدون تخزين مؤقت",
+            "en": "AI predicts incoming truck arrivals and immediately matches them with outbound trucks — transferring goods from one truck to another without interim storage"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تخزين البضائع في مستودع مؤقت لأسابيع",
+            "en": "Storing goods in a temporary warehouse for weeks"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نقل البضائع بطائرات مسيّرة بين المستودعات",
+            "en": "Transporting goods between warehouses by drones"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "فحص جودة البضائع أثناء النقل",
+            "en": "Quality inspecting goods during transport"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Cross-Docking الذكي يختصر وقت التخزين ويُقلل التكاليف بشكل كبير. AI يجعله ممكناً بالتنبؤ الدقيق بمواعيد الوصول والمغادرة. النتيجة: سلسلة إمداد أسرع بخطوة تخزين أقل.",
+        "en": "Smart cross-docking shortens storage time and significantly reduces costs. AI makes it possible with accurate arrival and departure predictions. Result: a supply chain that's faster with one less storage step."
+      }
+    },
+    {
+      "id": "log-mcq-024",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير عمليات. الأمن السيبراني أصبح تهديداً متزايداً للوجستيات في 2026. ما نوع التهديد الأخطر؟",
+        "en": "You're an operations manager. Cybersecurity has become a growing logistics threat in 2026. What type of threat is most dangerous?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التقاء سرقة الشحنات التقليدية مع الجريمة الإلكترونية — مجرمون يستخدمون AI لانتحال الشخصية ومعرفة مواقع الشحنات القيّمة",
+            "en": "Convergence of traditional cargo theft with cybercrime — criminals using AI for identity spoofing and locating valuable shipments"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "فيروسات الحاسوب التقليدية فقط",
+            "en": "Traditional computer viruses only"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "اختراق البريد الإلكتروني فقط",
+            "en": "Email hacking only"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا توجد تهديدات سيبرانية في اللوجستيات",
+            "en": "No cyber threats in logistics"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "NMFTA حذرت أن 2026 يشهد 'أكثر بيئة تهديد سيبراني تعقيداً في تاريخ النقل'. التقارب بين سرقة الشحنات التقليدية والجريمة الإلكترونية يهدد العمليات المادية وليس فقط الأنظمة. AI يُستخدم من الطرفين: المهاجمين والمدافعين.",
+        "en": "NMFTA warned that 2026 sees 'the most complex cyber threat environment in transport history'. The convergence of traditional cargo theft and cybercrime threatens physical operations, not just systems. AI is used by both attackers and defenders."
+      }
+    },
+    {
+      "id": "log-mcq-025",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "ما أحدث تقنية لمكافحة سرقة الشحنات في 2026؟",
+        "en": "What's the latest technology for combating cargo theft in 2026?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبواب شحن رقمية متصلة + أنظمة قفل ذكية + منصة AI مثل TrailerHawk.AI لمراقبة وتتبع المقطورات لحظياً",
+            "en": "Digitally connected cargo doors + smart locking systems + AI platform like TrailerHawk.AI for real-time trailer monitoring and tracking"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقفال تقليدية محسّنة فقط",
+            "en": "Enhanced traditional locks only"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حراسة بشرية 24/7",
+            "en": "24/7 human security guards"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "كاميرات مراقبة ثابتة فقط",
+            "en": "Fixed surveillance cameras only"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Wabash وسّعت برنامجها Trailer-as-a-Service المدعوم بـ TrailerHawk.AI في 2025. التقنية تجمع: رؤية حاسوبية + تتبع GPS + أقفال ذكية + تحليلات AI. سرقة الشحنات أصبحت أكثر تعقيداً ولكن أدوات الحماية تتطور بالمقابل.",
+        "en": "Wabash expanded its Trailer-as-a-Service program powered by TrailerHawk.AI in 2025. The technology combines: computer vision + GPS tracking + smart locks + AI analytics. Cargo theft has become more sophisticated but protection tools are evolving accordingly."
+      }
+    },
+    {
+      "id": "log-mcq-026",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير لوجستيات. ما أهم درس من تجربة AI في اللوجستيات في 2025 وفقاً للخبراء؟",
+        "en": "You're a logistics director. What's the most important lesson from AI in logistics in 2025 according to experts?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أنجح تطبيقات AI كانت ضيقة ومحددة ومتكاملة مع سير العمل الحالي — وليست تحولات جذرية شاملة",
+            "en": "The most successful AI applications were narrow, well-defined, and tightly integrated with existing workflows — not comprehensive radical transformations"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "AI نجح فقط في الشركات الكبيرة",
+            "en": "AI succeeded only in large companies"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتمتة المستودعات الكاملة كانت أنجح تطبيق",
+            "en": "Full warehouse automation was the most successful application"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "روبوتات الدردشة اللوجستية كانت أفضل إنجاز",
+            "en": "Logistics chatbots were the best achievement"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الخبراء صريحون: أتمتة المستودعات الكاملة وروبوتات خدمة العملاء اللوجستية لم تنجح بعد. ما نجح: تحسين القرارات، كشف المخاطر، تحسين المسارات. القاعدة: ابدأ بمشكلة محددة + بيانات نظيفة + تكامل مع الأنظمة الحالية.",
+        "en": "Experts are candid: full warehouse automation and logistics customer service chatbots haven't succeeded yet. What worked: improving decisions, risk detection, route optimization. The rule: start with a specific problem + clean data + integration with existing systems."
+      }
+    },
+    {
+      "id": "log-mcq-027",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول سلسلة إمداد. ما مفهوم 'الرؤية اللحظية' (Real-Time Visibility) وما أهميتها في 2026؟",
+        "en": "You're a supply chain manager. What is 'Real-Time Visibility' and why is it important in 2026?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "القدرة على مراقبة كل شحنة ومنتج في كل مرحلة من سلسلة الإمداد لحظياً — مما يسمح بالاستجابة الفورية للاضطرابات وتحسين التواصل مع العملاء",
+            "en": "The ability to monitor every shipment and product at every supply chain stage in real-time — enabling immediate disruption response and improved customer communication"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تقرير شهري عن حالة الشحنات",
+            "en": "A monthly report on shipment status"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "كاميرات مراقبة في المستودعات فقط",
+            "en": "Surveillance cameras in warehouses only"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تتبع GPS بدون أي تحليلات",
+            "en": "GPS tracking without any analytics"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Navisphere Vision من C.H. Robinson وProject44 وFourKites من أبرز منصات الرؤية اللحظية. الفرق الحاسم: الرؤية وحدها لا تكفي — تحتاج AI لتحويلها إلى قرارات. 'رأيت مشكلة' ≠ 'حللت المشكلة'.",
+        "en": "Navisphere Vision by C.H. Robinson, Project44, and FourKites are leading real-time visibility platforms. The critical difference: visibility alone isn't enough — you need AI to turn it into decisions. 'I saw a problem' ≠ 'I solved the problem'."
+      }
+    },
+    {
+      "id": "log-mcq-028",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول عمليات. مفهوم 'الأتمتة الفائقة' (Hyperautomation) في اللوجستيات يعني:",
+        "en": "You're an operations manager. 'Hyperautomation' in logistics means:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتمتة كل عملية ممكنة من الشراء حتى التسليم النهائي — حيث يلعب AI دور المنسّق بين جميع الأنظمة المؤتمتة",
+            "en": "Automating every possible process from procurement to final delivery — with AI playing the coordinator role between all automated systems"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "استخدام روبوت واحد في المستودع",
+            "en": "Using one robot in the warehouse"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتمتة البريد الإلكتروني فقط",
+            "en": "Email automation only"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا علاقة لها بـ AI",
+            "en": "Unrelated to AI"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Hyperautomation تتجاوز أتمتة مهمة واحدة إلى أتمتة سلسلة كاملة من العمليات المترابطة. AI هو 'الغراء الذكي' الذي يربط بين الأنظمة المختلفة — ERP، WMS، TMS — ويُنسّق بينها في الوقت الفعلي.",
+        "en": "Hyperautomation goes beyond automating one task to automating an entire chain of interconnected processes. AI is the 'smart glue' connecting different systems — ERP, WMS, TMS — and coordinating them in real-time."
+      }
+    },
+    {
+      "id": "log-mcq-029",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير نقل. AI يُستخدم الآن لتحسين مسارات التوصيل. ما أكبر عائق أمام تطبيقه فعلياً؟",
+        "en": "You're a transport manager. AI is now used to optimize delivery routes. What's the biggest barrier to actual implementation?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "جودة البيانات — بيانات غير نظيفة أو مجزأة تُنتج تنبؤات خاطئة مهما كانت الخوارزمية متقدمة",
+            "en": "Data quality — unclean or fragmented data produces wrong predictions regardless of how advanced the algorithm is"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تكلفة الأجهزة المطلوبة",
+            "en": "Cost of required hardware"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "رفض السائقين للتقنية الجديدة",
+            "en": "Driver resistance to new technology"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "عدم توفر إنترنت في المناطق الريفية",
+            "en": "Lack of internet in rural areas"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "ORION من UPS كلّف أكثر من مليار دولار ليس بسبب الخوارزمية — بل بسبب بناء بنية بيانات نظيفة ومتكاملة. القاعدة الذهبية: Garbage In, Garbage Out. أفضل AI في العالم لا يمكنه تعويض بيانات رديئة.",
+        "en": "UPS's ORION cost over $1 billion not because of the algorithm — but because of building clean, integrated data infrastructure. Golden rule: Garbage In, Garbage Out. The best AI in the world can't compensate for poor data."
+      }
+    },
+    {
+      "id": "log-mcq-030",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "ما إيرادات Blue Yonder (شركة Panasonic) في عام 2024؟",
+        "en": "What was Blue Yonder's (Panasonic subsidiary) revenue in fiscal year 2024?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "1.36 مليار دولار — مما يجعلها من أكبر شركات تقنية سلاسل الإمداد عالمياً",
+            "en": "$1.36 billion — making it one of the largest supply chain technology companies globally"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "50 مليون دولار فقط",
+            "en": "Only $50 million"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "10 مليار دولار",
+            "en": "$10 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "200 مليون دولار",
+            "en": "$200 million"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Blue Yonder تخدم 3,000 عميل بما فيهم 23 من أكبر 25 شركة تجزئة. 25 مليار تنبؤ يومياً. الحجم يعكس أهمية سلاسل الإمداد في الاقتصاد العالمي — وأهمية الذكاء الاصطناعي في إدارتها.",
+        "en": "Blue Yonder serves 3,000 customers including 23 of the top 25 retailers. 25 billion daily predictions. The scale reflects supply chains' importance in the global economy — and AI's importance in managing them."
+      }
+    },
+    {
+      "id": "log-tf-014",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنجح تطبيقات AI في اللوجستيات في 2025 كانت ضيقة ومحددة ومتكاملة مع سير العمل الحالي — وليست تحولات جذرية شاملة.",
+        "en": "The most successful AI applications in logistics in 2025 were narrow, well-defined, and tightly integrated with existing workflows — not comprehensive radical transformations."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "فشلت: أتمتة المستودعات الكاملة، روبوتات خدمة العملاء اللوجستية، AI التوليدي للقرارات التشغيلية بدون بيانات كافية. نجحت: التنبؤ بالطلب، تحسين المسارات، كشف المخاطر. الدرس: ابدأ صغيراً ثم توسّع.",
+        "en": "Failed: full warehouse automation, logistics customer service chatbots, generative AI for operational decisions without sufficient data. Succeeded: demand forecasting, route optimization, risk detection. Lesson: start small then scale."
+      }
+    },
+    {
+      "id": "log-tf-015",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Isuzu تتعاون مع Applied Intuition لتحقيق شاحنات ذاتية القيادة من المستوى 4 (أتمتة عالية في بيئات محددة) بحلول 2027.",
+        "en": "Isuzu is partnering with Applied Intuition to achieve Level 4 autonomous trucks (high automation in defined environments) by 2027."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "اليابان تواجه نقصاً حاداً في السائقين وشيخوخة سكانية. الشاحنات ذاتية القيادة حل حيوي. Level 4 يعمل على طرق محددة مسبقاً — الخطوة التالية لتشغيل تجاري على مسارات لوجستية ثابتة.",
+        "en": "Japan faces acute driver shortage and aging population. Autonomous trucks are a vital solution. Level 4 works on pre-defined routes — the next step for commercial operation on fixed logistics routes."
+      }
+    },
+    {
+      "id": "log-tf-016",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "NMFTA (الرابطة الوطنية للشحن بالشاحنات) حذرت أن 2026 يشهد 'أكثر بيئة تهديد سيبراني تعقيداً في تاريخ قطاع النقل في أمريكا الشمالية'.",
+        "en": "NMFTA warned that 2026 sees 'the most complex cyber threat environment in North American transport history'."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "التقارب بين الجريمة الإلكترونية وسرقة الشحنات يعني أن الأمن السيبراني لم يعد مجرد مشكلة IT — إنه مشكلة عمليات فعلية. المجرمون يستخدمون AI لاستهداف الشحنات القيّمة. الحماية تتطلب AI مقابل AI.",
+        "en": "The convergence of cybercrime and cargo theft means cybersecurity is no longer just an IT problem — it's a physical operations problem. Criminals use AI to target valuable shipments. Protection requires AI versus AI."
+      }
+    },
+    {
+      "id": "log-tf-017",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "ORION من UPS كلّف تطويره أكثر من مليار دولار على مدى عقد كامل من البحث والتطوير.",
+        "en": "UPS's ORION cost over $1 billion to develop over a full decade of research and development."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "استثمار مليار دولار يبدو ضخماً — لكنه يوفر 300-400 مليون سنوياً. العائد على الاستثمار خلال 3-4 سنوات فقط. هذا يُظهر أن مشاريع AI اللوجستية الكبيرة تحتاج صبراً ورؤية طويلة المدى — لكن عوائدها تستحق.",
+        "en": "A $1 billion investment seems massive — but it saves $300-400 million annually. ROI within just 3-4 years. This shows major logistics AI projects need patience and long-term vision — but returns are worth it."
+      }
+    },
+    {
+      "id": "log-tf-018",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "جودة البيانات هي أكبر عائق أمام نجاح تطبيقات AI في اللوجستيات — بيانات غير نظيفة تُنتج تنبؤات خاطئة مهما كانت الخوارزمية متقدمة.",
+        "en": "Data quality is the biggest barrier to successful AI implementation in logistics — unclean data produces wrong predictions regardless of how advanced the algorithm is."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "القاعدة الذهبية: Garbage In, Garbage Out. UPS أنفقت أكثر من مليار على بنية البيانات قبل أن تعمل ORION بكفاءة. الشركات التي تتخطى مرحلة تنظيف البيانات وتقفز مباشرة للخوارزميات تفشل.",
+        "en": "Golden rule: Garbage In, Garbage Out. UPS spent over $1 billion on data infrastructure before ORION worked efficiently. Companies that skip the data cleaning phase and jump straight to algorithms fail."
+      }
+    },
+    {
+      "id": "log-tf-019",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مفهوم Hyperautomation في اللوجستيات يعني أتمتة كل عملية ممكنة من الشراء حتى التسليم النهائي مع AI كمنسّق مركزي بين جميع الأنظمة.",
+        "en": "Hyperautomation in logistics means automating every possible process from procurement to final delivery with AI as the central coordinator between all systems."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "الفرق بين الأتمتة والأتمتة الفائقة: الأولى تُؤتمت مهمة واحدة (مثل فرز الطرود)، الثانية تربط كل المهام المؤتمتة معاً في سلسلة ذكية. AI هو 'الدماغ' الذي يربط ERP وWMS وTMS وCRM في نظام واحد.",
+        "en": "Difference between automation and hyperautomation: the first automates one task (like parcel sorting), the second links all automated tasks into a smart chain. AI is the 'brain' connecting ERP, WMS, TMS, and CRM into one system."
+      }
+    },
+    {
+      "id": "log-tf-020",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Cross-Docking الذكي بـ AI يتنبأ بوصول الشاحنات الواردة ويطابقها فوراً مع الشاحنات الصادرة، مما يلغي الحاجة للتخزين المؤقت ويُسرّع سلسلة الإمداد.",
+        "en": "AI Smart Cross-Docking predicts incoming truck arrivals and immediately matches them with outbound trucks, eliminating the need for interim storage and accelerating the supply chain."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Cross-Docking التقليدي يعتمد على التخطيط المسبق اليدوي. AI يجعله ديناميكياً: يتكيف مع التغييرات اللحظية في مواعيد الوصول والحمولات. النتيجة: مستودعات أصغر، تكاليف أقل، سرعة أعلى.",
+        "en": "Traditional cross-docking relies on manual advance planning. AI makes it dynamic: adapting to real-time changes in arrival times and loads. Result: smaller warehouses, lower costs, higher speed."
+      }
+    },
+    {
+      "id": "log-fill-008",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "فجوة الاستثمار العالمية في البنية التحتية حتى 2040 تبلغ {{blank_1}} تريليون دولار، مما يضغط على شبكات اللوجستيات ويجعل الحلول الذكية ضرورة وليست ترفاً.",
+        "en": "The global infrastructure investment gap through 2040 is ${{blank_1}} trillion, straining logistics networks and making smart solutions a necessity, not a luxury."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "106",
+            "en": "106"
+          },
+          "options": [
+            {
+              "ar": "106",
+              "en": "106"
+            },
+            {
+              "ar": "10",
+              "en": "10"
+            },
+            {
+              "ar": "50",
+              "en": "50"
+            },
+            {
+              "ar": "500",
+              "en": "500"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الفجوة تعني: طرق متهالكة، موانئ مزدحمة، مستودعات قديمة. AI يمكنه استخلاص كفاءة أعلى من البنية الحالية بينما ينتظر العالم بنية جديدة. تحسين مسار واحد لسائق UPS يوفر 50 مليون$ سنوياً — تخيّل التأثير على مستوى عالمي.",
+        "en": "This gap means: deteriorating roads, congested ports, aging warehouses. AI can extract higher efficiency from existing infrastructure while the world waits for new construction. Optimizing one UPS driver's route saves $50M annually — imagine the impact globally."
+      }
+    },
+    {
+      "id": "log-fill-009",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "شركة {{blank_1}} وسّعت برنامجها Trailer-as-a-Service في 2025، المدعوم بمنصة TrailerHawk.AI لمكافحة سرقة الشحنات بالتتبع الذكي.",
+        "en": "Company {{blank_1}} expanded its Trailer-as-a-Service program in 2025, powered by the TrailerHawk.AI platform for combating cargo theft with smart tracking."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Wabash",
+            "en": "Wabash"
+          },
+          "options": [
+            {
+              "ar": "Wabash",
+              "en": "Wabash"
+            },
+            {
+              "ar": "FedEx",
+              "en": "FedEx"
+            },
+            {
+              "ar": "Maersk",
+              "en": "Maersk"
+            },
+            {
+              "ar": "DHL",
+              "en": "DHL"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "النموذج 'المقطورة كخدمة' يجمع بين التقنية والعمليات: تتبع AI + أقفال ذكية + إدارة الأسطول + تأمين الشحنات. سرقة الشحنات بلغت مستويات قياسية في القيمة مع تحوّل المجرمين لاستهداف شحنات أعلى ثمناً.",
+        "en": "The 'trailer-as-a-service' model combines technology and operations: AI tracking + smart locks + fleet management + cargo security. Cargo theft hit record value levels as criminals shifted to targeting higher-value shipments."
+      }
+    },
+    {
+      "id": "log-fill-010",
+      "type": "fill_blank",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 1,
+      "text": {
+        "ar": "تقليل ميل واحد فقط لكل سائق {{blank_1}} يومياً يوفر للشركة {{blank_2}} مليون دولار سنوياً.",
+        "en": "Reducing just one mile per {{blank_1}} driver daily saves the company ${{blank_2}} million annually."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "UPS",
+            "en": "UPS"
+          },
+          "options": [
+            {
+              "ar": "UPS",
+              "en": "UPS"
+            },
+            {
+              "ar": "FedEx",
+              "en": "FedEx"
+            },
+            {
+              "ar": "DHL",
+              "en": "DHL"
+            },
+            {
+              "ar": "أرامكس",
+              "en": "Aramex"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "50",
+            "en": "50"
+          },
+          "options": [
+            {
+              "ar": "50",
+              "en": "50"
+            },
+            {
+              "ar": "5",
+              "en": "5"
+            },
+            {
+              "ar": "100",
+              "en": "100"
+            },
+            {
+              "ar": "10",
+              "en": "10"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا يُظهر قوة التحسين على نطاق واسع: تغيير بسيط × 100,000+ سائق = توفير هائل. ORION لا يبحث عن حلول ثورية — يبحث عن تحسينات صغيرة مُطبّقة على نطاق ضخم. هذا المبدأ هو جوهر AI في اللوجستيات.",
+        "en": "This shows the power of optimization at scale: small change × 100,000+ drivers = massive savings. ORION doesn't seek revolutionary solutions — it seeks small improvements applied at massive scale. This principle is the essence of AI in logistics."
+      }
+    },
+    {
+      "id": "log-match-007",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مفهوم AI لوجستي متقدم بوصفه:",
+        "en": "Match each advanced logistics AI concept with its description:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "سلسلة إمداد ذاتية الشفاء",
+            "en": "Self-Healing Supply Chain"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Cross-Docking ذكي",
+            "en": "Smart Cross-Docking"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "الأتمتة الفائقة (Hyperautomation)",
+            "en": "Hyperautomation"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "الصيانة التنبؤية",
+            "en": "Predictive Maintenance"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "اكتشاف الاضطرابات وتصحيحها تلقائياً بأقل تدخل بشري",
+            "en": "Detecting disruptions and correcting them automatically with minimal human intervention"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "نقل البضائع من شاحنة واردة لصادرة بدون تخزين مؤقت",
+            "en": "Transferring goods from incoming to outgoing truck without interim storage"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "أتمتة كل عملية من الشراء للتسليم مع AI كمنسّق",
+            "en": "Automating every process from procurement to delivery with AI as coordinator"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "توقع أعطال المعدات من بيانات المستشعرات قبل حدوثها",
+            "en": "Predicting equipment failures from sensor data before they occur"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه المفاهيم تتكامل: الصيانة التنبؤية تمنع الأعطال، Cross-Docking الذكي يُسرّع التدفق، الأتمتة الفائقة تربط كل شيء، وسلسلة الإمداد ذاتية الشفاء هي الهدف النهائي — نظام يتكيّف ويتعافى تلقائياً.",
+        "en": "These concepts integrate: predictive maintenance prevents failures, smart cross-docking accelerates flow, hyperautomation connects everything, and self-healing supply chain is the ultimate goal — a system that adapts and recovers automatically."
+      }
+    },
+    {
+      "id": "log-match-008",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مستوى قيادة ذاتية للشاحنات بقدراته:",
+        "en": "Match each autonomous trucking level with its capabilities:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Level 2",
+            "en": "Level 2"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Level 3",
+            "en": "Level 3"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Level 4",
+            "en": "Level 4"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Level 5",
+            "en": "Level 5"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "مساعدة في التوجيه والتسارع — السائق مسؤول دائماً",
+            "en": "Steering and acceleration assistance — driver always responsible"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "AI يقود في ظروف محددة — السائق يتدخل عند الطلب",
+            "en": "AI drives in specific conditions — driver intervenes on request"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "AI يقود بالكامل في بيئات محددة (طرق سريعة) — Isuzu تهدف لها 2027",
+            "en": "AI drives fully in defined environments (highways) — Isuzu targets 2027"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "أتمتة كاملة في كل الظروف — لا يزال بعيداً تقنياً",
+            "en": "Full automation in all conditions — still technically distant"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "الفجوة بين Level 4 وLevel 5 هائلة: Level 4 يعمل في بيئات مُعرّفة مسبقاً (طريق سريع محدد)، Level 5 يعمل في أي مكان وأي ظرف. Level 2 متاح اليوم ويحسّن السلامة والكفاءة فوراً.",
+        "en": "The gap between Level 4 and Level 5 is massive: Level 4 works in pre-defined environments (specific highway), Level 5 works anywhere in any conditions. Level 2 is available today and immediately improves safety and efficiency."
+      }
+    },
+    {
+      "id": "log-match-009",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل شركة استشارية/تقنية بمشروعها اللوجستي مع Microsoft:",
+        "en": "Match each consulting/tech company with its logistics project with Microsoft:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Avanade",
+            "en": "Avanade"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Softserve",
+            "en": "Softserve"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "NTT DATA",
+            "en": "NTT DATA"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Capgemini",
+            "en": "Capgemini"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "وكلاء جاهزون: امتثال تجاري + توأم رقمي + lead-2-cash",
+            "en": "Ready-made agents: trade compliance + digital twin + lead-2-cash"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "3 وكلاء مخصصين في 30 يوماً",
+            "en": "3 customized agents in 30 days"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "نظام دعم قرار AI وكيل لإعادة توازن شبكة سلسلة الإمداد",
+            "en": "Agentic AI decision-support for supply chain network rebalancing"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "عرض شامل end-to-end باستخدام Microsoft IQ",
+            "en": "End-to-end offering using Microsoft IQ technology"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا النظام البيئي يعكس اتجاهاً واضحاً: شركات التقنية الكبرى (Microsoft، AWS) توفّر البنية التحتية، والشركات الاستشارية تبني الحلول المخصصة. النتيجة: AI لوجستي أصبح متاحاً لشركات من كل الأحجام.",
+        "en": "This ecosystem reflects a clear trend: big tech (Microsoft, AWS) provides infrastructure, consulting firms build customized solutions. Result: logistics AI has become accessible to companies of all sizes."
+      }
+    },
+    {
+      "id": "log-match-010",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تهديد لوجستي في 2026 بمستوى خطورته:",
+        "en": "Match each logistics threat in 2026 with its severity level:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "التشظي الجيوسياسي والرسوم الجمركية",
+            "en": "Geopolitical fragmentation and tariffs"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "الأمن السيبراني + سرقة الشحنات بـ AI",
+            "en": "Cybersecurity + AI-enabled cargo theft"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "فجوة البنية التحتية العالمية",
+            "en": "Global infrastructure gap"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "نقص سائقي الشاحنات",
+            "en": "Truck driver shortage"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "97% مستوى تهديد (Everstream Analytics)",
+            "en": "97% threat level (Everstream Analytics)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أكثر بيئة تهديد تعقيداً في تاريخ النقل (NMFTA)",
+            "en": "Most complex threat environment in transport history (NMFTA)"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "106 تريليون دولار فجوة حتى 2040",
+            "en": "$106 trillion gap through 2040"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "4 ملايين سائق نقص عالمياً",
+            "en": "4 million drivers short globally"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل هذه التهديدات تتقاطع: الرسوم تغيّر المسارات، الأمن السيبراني يهدد العمليات، البنية التحتية المتقادمة تُبطئ كل شيء، ونقص السائقين يضغط على التكاليف. الحل الشامل: AI يراقب ويتنبأ ويتكيّف مع كل هذه التهديدات متزامنة.",
+        "en": "All these threats intersect: tariffs change routes, cybersecurity threatens operations, aging infrastructure slows everything, and driver shortage pressures costs. Comprehensive solution: AI monitors, predicts, and adapts to all these simultaneous threats."
+      }
+    },
+    {
+      "id": "log-sort-007",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات الاستجابة الذكية لاضطراب مفاجئ في سلسلة الإمداد (مثل إغلاق ميناء):",
+        "en": "Order the smart response steps to a sudden supply chain disruption (like a port closure):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "AI يكتشف الإشارة (أخبار، بيانات شحن لحظية، تنبيهات جيوسياسية)",
+            "en": "AI detects the signal (news, real-time shipping data, geopolitical alerts)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "التوأم الرقمي يُحاكي تأثير الاضطراب على كامل سلسلة الإمداد",
+            "en": "Digital twin simulates disruption impact on the entire supply chain"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "AI وكيل يُفعّل خطة الطوارئ: مسارات بديلة + موردون بديلون + إعلام العملاء",
+            "en": "Agentic AI activates contingency plan: alternative routes + alternative suppliers + customer notification"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "مراجعة بشرية للقرارات الكبيرة (تغيير مورد رئيسي) مع تأكيد أو تعديل",
+            "en": "Human review of major decisions (changing key supplier) with confirmation or adjustment"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "هذا هو نموذج 'سلسلة الإمداد ذاتية الشفاء' في العمل. AI يتصرف في الثواني الأولى بينما القرار البشري يستغرق أياماً. لكن القرارات الاستراتيجية الكبيرة (تغيير مورد رئيسي) لا تزال تحتاج إشرافاً بشرياً.",
+        "en": "This is the 'self-healing supply chain' model in action. AI acts in the first seconds while human decision-making takes days. But major strategic decisions (changing a key supplier) still need human oversight."
+      }
+    },
+    {
+      "id": "log-sort-008",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب أنجح تطبيقات AI في اللوجستيات (2025) من الأكثر نجاحاً حسب تقييم الخبراء:",
+        "en": "Order the most successful AI applications in logistics (2025) from most successful per expert assessment:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحسين التنبؤ بالطلب بدمج إشارات خارجية (طقس، أحداث، اتجاهات)",
+            "en": "Improving demand forecasting by integrating external signals (weather, events, trends)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تحسين مسارات التوصيل (مثل ORION)",
+            "en": "Delivery route optimization (like ORION)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "كشف المخاطر والرؤية اللحظية",
+            "en": "Risk detection and real-time visibility"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "الصيانة التنبؤية لأساطيل النقل",
+            "en": "Predictive maintenance for transport fleets"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "التنبؤ بالطلب يتصدر لأنه يؤثر على كل قرار لاحق: المخزون، الإنتاج، النقل، التوظيف. بيانات نظيفة + إشارات خارجية = تنبؤات أدق = قرارات أفضل عبر كامل السلسلة.",
+        "en": "Demand forecasting leads because it affects every subsequent decision: inventory, production, transport, staffing. Clean data + external signals = more accurate forecasts = better decisions across the entire chain."
+      }
+    },
+    {
+      "id": "log-sort-009",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مكونات 'سلسلة الإمداد الذكية المتكاملة' من الأساس للقمة:",
+        "en": "Order 'Integrated Smart Supply Chain' components from foundation to top:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "بيانات نظيفة ومتكاملة من كل أنظمة الشركة (ERP, WMS, TMS)",
+            "en": "Clean, integrated data from all company systems (ERP, WMS, TMS)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "رؤية لحظية لكل شحنة ومنتج ومورد",
+            "en": "Real-time visibility of every shipment, product, and supplier"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تنبؤ ذكي يدمج بيانات داخلية وإشارات خارجية",
+            "en": "Smart forecasting integrating internal data and external signals"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "وكلاء AI مستقلون يتخذون قرارات ويُنفذون إجراءات تلقائياً",
+            "en": "Autonomous AI agents making decisions and executing actions automatically"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "لا يمكن بناء الطابق الرابع بدون الأول. البيانات النظيفة → الرؤية → التنبؤ → الأتمتة الذكية. الشركات التي تقفز للوكلاء AI بدون بيانات نظيفة تفشل حتماً. ORION احتاج مليار دولار في بنية البيانات أولاً.",
+        "en": "You can't build the fourth floor without the first. Clean data → visibility → forecasting → smart automation. Companies jumping to AI agents without clean data inevitably fail. ORION needed $1 billion in data infrastructure first."
+      }
+    },
+    {
+      "id": "log-sort-010",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات التحضير لعالم الشاحنات ذاتية القيادة في شركة نقل:",
+        "en": "Order preparation steps for autonomous trucking world in a transport company:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تقييم الطرق والمسارات المناسبة للقيادة الذاتية (طرق سريعة ثابتة)",
+            "en": "Evaluate routes suitable for autonomous driving (fixed highways)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "الاستثمار في بنية تحتية داعمة (صيانة، اتصالات، محطات شحن)",
+            "en": "Invest in supporting infrastructure (maintenance, connectivity, charging stations)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تجربة Level 2 (مساعدة القيادة) مع السائقين الحاليين",
+            "en": "Pilot Level 2 (driver assistance) with current drivers"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تدريب السائقين على أدوار جديدة (مشغّل أسطول مستقل، صيانة أنظمة)",
+            "en": "Train drivers for new roles (autonomous fleet operator, systems maintenance)"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S3",
+        "S2",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "التقييم أولاً: ليس كل طريق مناسب للقيادة الذاتية. التجربة مع Level 2 تبني الثقة والخبرة. البنية التحتية ضرورية قبل التوسع. تدريب السائقين يضمن انتقالاً عادلاً — الاستبدال المفاجئ يُضر بالشركة والمجتمع.",
+        "en": "Evaluate first: not every route is suitable for autonomous driving. Level 2 piloting builds trust and experience. Infrastructure is necessary before scaling. Driver training ensures fair transition — sudden replacement hurts the company and community."
+      }
+    },
+    {
+      "id": "log-self-013",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير مشتريات في شركة تصنيع عربية. AI يقترح تغيير مورد رئيسي كان شريكاً لشركتك لمدة 15 عاماً لأن بديلاً أرخص وأسرع. ما قرارك؟",
+        "en": "You're a procurement manager at an Arab manufacturer. AI suggests switching a key supplier who's been your partner for 15 years because a cheaper, faster alternative exists. What's your decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أفحص بيانات AI بعمق — إذا كانت مقنعة، أتفاوض مع المورد الحالي أولاً (فرصة للتحسين) وأبقي البديل كخيار احتياطي",
+            "en": "I deeply examine AI data — if convincing, I negotiate with current supplier first (improvement opportunity) and keep alternative as backup"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أنفذ توصية AI فوراً — البيانات لا تكذب",
+            "en": "I execute AI recommendation immediately — data doesn't lie"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفض — العلاقة الطويلة أهم من السعر الأقل",
+            "en": "I refuse — long relationship is more important than lower price"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتجاهل التوصية — AI لا يفهم ثقافة الأعمال العربية",
+            "en": "I ignore the recommendation — AI doesn't understand Arab business culture"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "العلاقات مهمة في ثقافة الأعمال العربية — لكنها ليست عذراً لتجاهل البيانات. أفضل نهج: استخدم بيانات AI كأداة تفاوض مع المورد الحالي. إذا لم يتحسن، البديل جاهز. القرار المدروس يحترم العلاقة ويحمي المصلحة.",
+        "en": "Relationships matter in Arab business culture — but they're not an excuse to ignore data. Best approach: use AI data as a negotiation tool with the current supplier. If no improvement, the alternative is ready. A thoughtful decision respects the relationship and protects interests."
+      }
+    },
+    {
+      "id": "log-self-014",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول أمن في شركة شحن. الأمن السيبراني أصبح تهديداً حقيقياً للعمليات الفعلية وليس فقط الأنظمة. كيف تستعد؟",
+        "en": "You're a security manager at a shipping company. Cybersecurity has become a real threat to physical operations, not just systems. How do you prepare?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أدمج الأمن السيبراني مع أمن الشحنات في استراتيجية واحدة — وأستخدم AI للكشف المبكر عن التهديدات المتقاطعة",
+            "en": "I integrate cybersecurity with cargo security in one strategy — and use AI for early detection of converging threats"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أعزز فقط جدار الحماية والأنظمة الإلكترونية",
+            "en": "I only strengthen the firewall and electronic systems"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الأمن السيبراني مسؤولية قسم IT وليس عملياتي",
+            "en": "Cybersecurity is IT's responsibility, not operations'"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أركّز على الحراسة البشرية فقط",
+            "en": "I focus on human security guards only"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "NMFTA حذرت من تقاطع الجريمة الإلكترونية وسرقة الشحنات. المجرمون يستخدمون AI لانتحال شخصيات ومعرفة مواقع الشحنات القيّمة. الحماية تتطلب نهجاً متكاملاً: AI للكشف + أجهزة ذكية + تدريب بشري.",
+        "en": "NMFTA warned of cybercrime and cargo theft convergence. Criminals use AI for identity spoofing and locating valuable shipments. Protection requires an integrated approach: AI detection + smart devices + human training."
+      }
+    },
+    {
+      "id": "log-self-015",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير سلسلة إمداد. شركتك لا تملك توأماً رقمياً ولا وكلاء AI. تريد البدء. من أين تبدأ؟",
+        "en": "You're a supply chain director. Your company has no digital twin or AI agents. You want to start. Where do you begin?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبدأ بتنظيف البيانات وتوحيدها من كل الأنظمة — ثم أطبّق AI على مشكلة واحدة محددة (مثل التنبؤ بالطلب) وأقيس النتائج قبل التوسع",
+            "en": "I start by cleaning and unifying data from all systems — then apply AI to one specific problem (like demand forecasting) and measure results before scaling"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أشتري أحدث منصة AI شاملة فوراً",
+            "en": "I immediately buy the latest comprehensive AI platform"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر حتى تتطور التقنية أكثر وتنخفض التكاليف",
+            "en": "I wait until technology develops more and costs decrease"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أوظف فريق بيانات كبير أولاً ثم نبدأ بعد سنة",
+            "en": "I hire a large data team first then start after a year"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "أنجح التطبيقات بدأت بمشكلة واحدة محددة + بيانات نظيفة. ORION بدأ بتحسين مسار واحد. Kraft Heinz بدأت بفئة منتجات واحدة. القاعدة: ابدأ صغيراً + أثبت القيمة + توسّع. تنظيف البيانات هو الخطوة صفر التي لا يمكن تخطيها.",
+        "en": "The most successful implementations started with one specific problem + clean data. ORION started with one route optimization. Kraft Heinz started with one product category. The rule: start small + prove value + scale. Data cleaning is step zero that cannot be skipped."
+      }
+    },
+    {
+      "id": "log-self-016",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير لوجستيات في شركة أغذية. AI يتنبأ بانقطاع في سلسلة الإمداد لمكوّن أساسي خلال أسبوعين. ما أول خطوة؟",
+        "en": "You're a logistics director at a food company. AI predicts a supply chain disruption for a key ingredient in two weeks. What's your first step?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أفحص مصداقية التنبؤ (مصدر البيانات، نسبة الثقة) ثم أُفعّل خطة الطوارئ المُعدّة مسبقاً: تأمين مخزون إضافي + تفعيل مورد بديل مؤهل",
+            "en": "I verify prediction credibility (data source, confidence level) then activate pre-prepared contingency plan: secure extra inventory + activate qualified alternative supplier"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أنفذ فوراً بدون تحقق — الوقت لا يسمح",
+            "en": "I execute immediately without verification — no time"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر حتى يحدث الانقطاع فعلاً ثم أتصرف",
+            "en": "I wait until the disruption actually happens then act"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتجاهل التنبؤ — AI غالباً يخطئ",
+            "en": "I ignore the prediction — AI often gets it wrong"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "T-Mobile حققت 100% معدل تلبية بفضل AI التنبؤي + خطط طوارئ مُعدّة مسبقاً. المفتاح: لا تنتظر حتى يحدث الاضطراب لتُعد الخطة. الشركات التي تُعد خطط طوارئ مسبقة تستجيب أسرع بأيام.",
+        "en": "T-Mobile achieved 100% fulfillment rate through predictive AI + pre-prepared contingency plans. The key: don't wait until disruption to prepare the plan. Companies with pre-prepared contingency plans respond days faster."
+      }
+    },
+    {
+      "id": "log-self-017",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول عمليات. فريقك يقاوم استخدام أدوات AI الجديدة — 'النظام القديم يعمل بشكل جيد'. كيف تتعامل مع المقاومة؟",
+        "en": "You're an operations manager. Your team resists using new AI tools — 'the old system works fine'. How do you handle the resistance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبدأ بمشكلة يُعاني منها الفريق فعلاً وأوضح كيف سيحلها AI — ثم أُشرك الفريق في التجربة والقياس لبناء الملكية",
+            "en": "I start with a problem the team actually struggles with and show how AI solves it — then involve the team in testing and measurement to build ownership"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أفرض الأداة بقرار إداري — لا وقت للمقاومة",
+            "en": "I impose the tool by management decision — no time for resistance"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتراجع وأبقي النظام القديم — الفريق أعرف بعمله",
+            "en": "I back down and keep the old system — the team knows their work best"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أنتظر حتى يتقاعد المقاومون",
+            "en": "I wait until the resistors retire"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الخبراء يؤكدون: المخطط الذي لا يثق بالتنبؤات سيتوقف عن استخدام AI. بناء الثقة يبدأ بـ: حل مشكلة حقيقية + تقليل الإنذارات الكاذبة + إشراك الفريق. الإجبار ينتج امتثالاً ظاهرياً — التمكين ينتج تبنياً حقيقياً.",
+        "en": "Experts confirm: a planner who doesn't trust forecasts will stop using AI. Building trust starts with: solving a real problem + minimizing false alerts + involving the team. Coercion produces superficial compliance — empowerment produces real adoption."
+      }
+    },
+    {
+      "id": "log-self-018",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول لوجستيات. الإنفاق العالمي على AI في سلاسل الإمداد يتضاعف. هل تطلب ميزانية AI لقسمك؟",
+        "en": "You manage logistics. Global spending on supply chain AI is doubling. Do you request an AI budget for your department?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم — أعد دراسة جدوى تُظهر ROI متوقعاً مع أمثلة حقيقية (Kraft Heinz: 11% دقة، T-Mobile: مليار$) وأطلب ميزانية تجريبية أولاً",
+            "en": "Yes — I prepare a business case showing expected ROI with real examples (Kraft Heinz: 11% accuracy, T-Mobile: $1B) and request a pilot budget first"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطلب ميزانية كبيرة لتطبيق شامل فوري",
+            "en": "I request a large budget for immediate comprehensive implementation"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا أطلب — إذا أرادت الإدارة AI ستخصص ميزانية بدون طلب مني",
+            "en": "I don't request — if management wants AI they'll allocate budget without my asking"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أنتظر العام القادم — هذا العام ليس الوقت المناسب",
+            "en": "I wait until next year — this year isn't the right time"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "McKinsey تقدّر أن AI يخفض تكاليف اللوجستيات 5-20%. دراسة الجدوى بأمثلة واقعية هي أقوى أداة لإقناع الإدارة. المفتاح: ابدأ بتجربة صغيرة تُثبت القيمة — ثم وسّع الميزانية بناءً على نتائج فعلية.",
+        "en": "McKinsey estimates AI reduces logistics costs 5-20%. A business case with real examples is the strongest tool for convincing management. The key: start with a small pilot proving value — then expand budget based on actual results."
+      }
+    },
+    {
+      "id": "log-self-019",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير لوجستيات. زميلك يقول 'AI مجرد موضة ستنتهي — مثل blockchain في اللوجستيات'. ما ردّك؟",
+        "en": "You're a logistics director. Your colleague says 'AI is just a fad that will end — like blockchain in logistics'. What's your response?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI مختلف جذرياً: أمازون لديها مليون روبوت، ORION يوفر 400 مليون$ سنوياً، Blue Yonder 25 مليار تنبؤ يومياً — هذه نتائج حقيقية وليست وعوداً",
+            "en": "AI is fundamentally different: Amazon has 1 million robots, ORION saves $400M annually, Blue Yonder 25 billion daily predictions — these are real results, not promises"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ربما يكون على حق — لنراقب الوضع",
+            "en": "Maybe he's right — let's watch the situation"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "AI فعلاً مبالغ فيه — الأدوات التقليدية كافية",
+            "en": "AI is indeed overhyped — traditional tools are sufficient"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أعرف ما يكفي للرد عليه",
+            "en": "I don't know enough to respond"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "الفرق بين AI وblockchain في اللوجستيات: blockchain وعد بحلول لم تتحقق بعد. AI يُنتج نتائج قابلة للقياس اليوم: 300-400 مليون$ توفير (UPS)، مليار$+ قيمة (T-Mobile)، 20% خفض مخزون (Kraft Heinz). النتائج تتحدث.",
+        "en": "The difference between AI and blockchain in logistics: blockchain promised solutions not yet realized. AI produces measurable results today: $300-400M savings (UPS), $1B+ value (T-Mobile), 20% stock reduction (Kraft Heinz). Results speak."
+      }
+    },
+    {
+      "id": "log-self-020",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول سلسلة إمداد في شركة متوسطة. ليست لديك ميزانية ضخمة مثل أمازون أو UPS. هل AI متاح لك؟",
+        "en": "You're a supply chain manager at a mid-sized company. You don't have massive budgets like Amazon or UPS. Is AI available to you?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم — حلول SaaS مثل o9 Solutions وKinaxis وBlue Yonder متاحة كخدمة سحابية بتكاليف معقولة ويمكنني البدء بتجربة صغيرة",
+            "en": "Yes — SaaS solutions like o9 Solutions, Kinaxis, and Blue Yonder are available as cloud services at reasonable costs and I can start with a small pilot"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ربما — لكنني أحتاج البحث أكثر",
+            "en": "Maybe — but I need to research more"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا — AI مخصص للشركات العملاقة فقط",
+            "en": "No — AI is only for giant companies"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "سأبني حلاً داخلياً من الصفر — أرخص",
+            "en": "I'll build an in-house solution from scratch — cheaper"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "التوائم الرقمية وأنظمة التنبؤ لم تعد حكراً على العمالقة. الحلول السحابية (SaaS) خفّضت حاجز الدخول بشكل كبير. Softserve تقدم 3 وكلاء AI مخصصين في 30 يوماً فقط. المفتاح: ابدأ بمشكلة واحدة + حل سحابي + قياس النتائج.",
+        "en": "Digital twins and forecasting systems are no longer exclusive to giants. Cloud solutions (SaaS) have significantly lowered the entry barrier. Softserve offers 3 customized AI agents in just 30 days. The key: start with one problem + cloud solution + measure results."
       }
     }
   ]
