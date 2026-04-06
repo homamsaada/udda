@@ -1,8 +1,11 @@
 {
   "section_id": "public-health",
-  "section_name": { "ar": "الصحة العامة", "en": "Public Health" },
-  "version": "1.0",
-  "last_updated": "2026-04-05",
+  "section_name": {
+    "ar": "الصحة العامة",
+    "en": "Public Health"
+  },
+  "version": "2.0",
+  "last_updated": "2026-04-06",
   "questions": [
     {
       "id": "pbh-mcq-001",
@@ -16,10 +19,38 @@
         "en": "You are an epidemiological surveillance officer at the Ministry of Health, and reports have emerged about an unknown pneumonia in a foreign city. BlueDot issued an alert before the WHO released an official statement. What mechanism does this platform rely on for early detection?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "تحليل بيانات تذاكر الطيران والأخبار بأكثر من 130 لغة باستخدام معالجة اللغات الطبيعية", "en": "Analyzing airline ticketing data and news in 130+ languages using natural language processing" }, "score": 3 },
-        { "id": "b", "text": { "ar": "الاعتماد على تقارير المستشفيات الرسمية فقط وتجميعها مركزياً", "en": "Relying solely on official hospital reports and centralizing them" }, "score": 0 },
-        { "id": "c", "text": { "ar": "تحليل استعلامات بحث Google لاكتشاف أنماط المرض", "en": "Analyzing Google search queries to discover disease patterns" }, "score": 0.5 },
-        { "id": "d", "text": { "ar": "رصد منشورات وسائل التواصل الاجتماعي حصرياً لاكتشاف الأعراض", "en": "Exclusively monitoring social media posts to detect symptoms" }, "score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "تحليل بيانات تذاكر الطيران والأخبار بأكثر من 130 لغة باستخدام معالجة اللغات الطبيعية",
+            "en": "Analyzing airline ticketing data and news in 130+ languages using natural language processing"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الاعتماد على تقارير المستشفيات الرسمية فقط وتجميعها مركزياً",
+            "en": "Relying solely on official hospital reports and centralizing them"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تحليل استعلامات بحث Google لاكتشاف أنماط المرض",
+            "en": "Analyzing Google search queries to discover disease patterns"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "رصد منشورات وسائل التواصل الاجتماعي حصرياً لاكتشاف الأعراض",
+            "en": "Exclusively monitoring social media posts to detect symptoms"
+          },
+          "score": 1
+        }
       ],
       "hint_after": {
         "ar": "BlueDot رصدت التهاب رئوي غير عادي في ووهان يوم 31 ديسمبر 2019، قبل بيان منظمة الصحة العالمية بتسعة أيام، وتنبأت بشكل صحيح بأول 11 مدينة ستصلها العدوى عبر تحليل بيانات الطيران.",
@@ -38,10 +69,38 @@
         "en": "You are an operations director at a hospital suffering from chronic OR overcrowding. You've been offered the LeanTaaS iQueue AI capacity management system. What is the most realistic outcome you can expect?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "زيادة حجم الحالات بنسبة 6% وعائد إضافي بقيمة نصف مليون دولار لكل غرفة عمليات سنوياً", "en": "6% increase in case volume and additional revenue of $500K per OR per year" }, "score": 3 },
-        { "id": "b", "text": { "ar": "استغناء كامل عن مديري العمليات البشريين وإدارة المستشفى آلياً", "en": "Complete replacement of human operations managers with automated hospital management" }, "score": 0 },
-        { "id": "c", "text": { "ar": "تقليل مدة العمليات الجراحية ذاتها بنسبة 50%", "en": "Reducing the duration of surgical procedures themselves by 50%" }, "score": 0 },
-        { "id": "d", "text": { "ar": "تحسين الجدولة فقط دون تأثير ملموس على الإيرادات", "en": "Improving scheduling only without any tangible impact on revenue" }, "score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "زيادة حجم الحالات بنسبة 6% وعائد إضافي بقيمة نصف مليون دولار لكل غرفة عمليات سنوياً",
+            "en": "6% increase in case volume and additional revenue of $500K per OR per year"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "استغناء كامل عن مديري العمليات البشريين وإدارة المستشفى آلياً",
+            "en": "Complete replacement of human operations managers with automated hospital management"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تقليل مدة العمليات الجراحية ذاتها بنسبة 50%",
+            "en": "Reducing the duration of surgical procedures themselves by 50%"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تحسين الجدولة فقط دون تأثير ملموس على الإيرادات",
+            "en": "Improving scheduling only without any tangible impact on revenue"
+          },
+          "score": 1
+        }
       ],
       "hint_after": {
         "ar": "LeanTaaS iQueue يُستخدم في أكثر من 1,200 مستشفى أمريكي ويدير أكثر من 4,600 غرفة عمليات، وقد حصل على تصنيف Best in KLAS 2025 في فئة إدارة السعة.",
@@ -60,10 +119,38 @@
         "en": "You are a researcher studying antimicrobial resistance (AMR), which causes 1.27 million deaths annually. What have AI models demonstrated in this field according to a 2025 Nature study?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "نماذج XGBoost حققت AUC بقيمة 0.96 في التنبؤ بمقاومة المضادات الحيوية من بيانات 917 ألف عزلة بكتيرية", "en": "XGBoost models achieved an AUC of 0.96 in predicting antibiotic resistance from 917K bacterial isolate data" }, "score": 3 },
-        { "id": "b", "text": { "ar": "الذكاء الاصطناعي يستطيع القضاء على البكتيريا المقاومة مباشرةً دون الحاجة لمضادات حيوية", "en": "AI can directly eliminate resistant bacteria without the need for antibiotics" }, "score": 0 },
-        { "id": "c", "text": { "ar": "نماذج التعلم العميق حلت محل اختبارات الحساسية المخبرية بالكامل في المستشفيات", "en": "Deep learning models have completely replaced lab sensitivity tests in hospitals" }, "score": 0 },
-        { "id": "d", "text": { "ar": "الذكاء الاصطناعي يقتصر دوره على تحليل البيانات دون قدرة على تقديم توصيات علاجية", "en": "AI's role is limited to data analysis without the ability to provide treatment recommendations" }, "score": 0.5 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "نماذج XGBoost حققت AUC بقيمة 0.96 في التنبؤ بمقاومة المضادات الحيوية من بيانات 917 ألف عزلة بكتيرية",
+            "en": "XGBoost models achieved an AUC of 0.96 in predicting antibiotic resistance from 917K bacterial isolate data"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الذكاء الاصطناعي يستطيع القضاء على البكتيريا المقاومة مباشرةً دون الحاجة لمضادات حيوية",
+            "en": "AI can directly eliminate resistant bacteria without the need for antibiotics"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نماذج التعلم العميق حلت محل اختبارات الحساسية المخبرية بالكامل في المستشفيات",
+            "en": "Deep learning models have completely replaced lab sensitivity tests in hospitals"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الذكاء الاصطناعي يقتصر دوره على تحليل البيانات دون قدرة على تقديم توصيات علاجية",
+            "en": "AI's role is limited to data analysis without the ability to provide treatment recommendations"
+          },
+          "score": 0.5
+        }
       ],
       "hint_after": {
         "ar": "التطبيق السريري لهذه النماذج أظهر نسبة نجاح 89% في توصيات تعديل المضادات الحيوية، وقلّل العلاج غير الضروري بنسبة 18%. يُتوقع أن تصل وفيات AMR إلى 10 ملايين بحلول 2050.",
@@ -118,12 +205,27 @@
       "blanks": [
         {
           "id": "blank_1",
-          "correct": { "ar": "EIOS 2.0", "en": "EIOS 2.0" },
+          "correct": {
+            "ar": "EIOS 2.0",
+            "en": "EIOS 2.0"
+          },
           "options": [
-            { "ar": "EIOS 2.0", "en": "EIOS 2.0" },
-            { "ar": "HealthMap", "en": "HealthMap" },
-            { "ar": "ProMED-mail", "en": "ProMED-mail" },
-            { "ar": "GPHIN", "en": "GPHIN" }
+            {
+              "ar": "EIOS 2.0",
+              "en": "EIOS 2.0"
+            },
+            {
+              "ar": "HealthMap",
+              "en": "HealthMap"
+            },
+            {
+              "ar": "ProMED-mail",
+              "en": "ProMED-mail"
+            },
+            {
+              "ar": "GPHIN",
+              "en": "GPHIN"
+            }
           ]
         }
       ],
@@ -144,22 +246,82 @@
         "en": "Match each AI-powered epidemiological surveillance platform with its distinguishing achievement or feature:"
       },
       "left": [
-        { "id": "L1", "text": { "ar": "BlueDot", "en": "BlueDot" } },
-        { "id": "L2", "text": { "ar": "EPIWATCH", "en": "EPIWATCH" } },
-        { "id": "L3", "text": { "ar": "Ginkgo Biosecurity", "en": "Ginkgo Biosecurity" } },
-        { "id": "L4", "text": { "ar": "Google Flu Trends", "en": "Google Flu Trends" } }
+        {
+          "id": "L1",
+          "text": {
+            "ar": "BlueDot",
+            "en": "BlueDot"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "EPIWATCH",
+            "en": "EPIWATCH"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Ginkgo Biosecurity",
+            "en": "Ginkgo Biosecurity"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Google Flu Trends",
+            "en": "Google Flu Trends"
+          }
+        }
       ],
       "right": [
-        { "id": "R1", "text": { "ar": "تنبيه مبكر عن كوفيد-19 قبل منظمة الصحة العالمية بـ 9 أيام", "en": "Early COVID-19 alert 9 days before WHO" } },
-        { "id": "R2", "text": { "ar": "كشف ذروة الالتهاب الرئوي في الصين قبل إعلان WHO الرسمي", "en": "Detected China's pneumonia peak before WHO's official announcement" } },
-        { "id": "R3", "text": { "ar": "محطات رادار حيوي في 7 مطارات أمريكية لرصد مسببات الأمراض", "en": "Bioradar stations at 7 US airports for pathogen monitoring" } },
-        { "id": "R4", "text": { "ar": "أخفق في رصد جائحة H1N1 وبالغ في تقدير الإنفلونزا بأكثر من 140%", "en": "Failed to detect H1N1 pandemic and overestimated flu by over 140%" } }
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تنبيه مبكر عن كوفيد-19 قبل منظمة الصحة العالمية بـ 9 أيام",
+            "en": "Early COVID-19 alert 9 days before WHO"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "كشف ذروة الالتهاب الرئوي في الصين قبل إعلان WHO الرسمي",
+            "en": "Detected China's pneumonia peak before WHO's official announcement"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "محطات رادار حيوي في 7 مطارات أمريكية لرصد مسببات الأمراض",
+            "en": "Bioradar stations at 7 US airports for pathogen monitoring"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "أخفق في رصد جائحة H1N1 وبالغ في تقدير الإنفلونزا بأكثر من 140%",
+            "en": "Failed to detect H1N1 pandemic and overestimated flu by over 140%"
+          }
+        }
       ],
       "correct_pairs": [
-        { "left": "L1", "right": "R1" },
-        { "left": "L2", "right": "R2" },
-        { "left": "L3", "right": "R3" },
-        { "left": "L4", "right": "R4" }
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
       ],
       "hint_after": {
         "ar": "تحليل BlueDot الأخير أظهر فجوة 79 يوماً (وسيط) بين اكتشاف التفشي والإعلان الرسمي عام 2025، مقارنة بـ 3 أيام فقط لدى BlueDot — مما يوضح قيمة الترصّد المعزز بالذكاء الاصطناعي.",
@@ -178,12 +340,41 @@
         "en": "Order the steps for using AI in a hospital readmission reduction program, from first to last step:"
       },
       "items": [
-        { "id": "S1", "text": { "ar": "تدريب خوارزمية تنبؤية على بيانات السجلات الصحية الإلكترونية لتحديد المرضى الأعلى خطورة", "en": "Train a predictive algorithm on EHR data to identify highest-risk patients" } },
-        { "id": "S2", "text": { "ar": "دمج النظام مع سير العمل السريري وتوليد تنبيهات آنية عند دخول مريض عالي الخطورة", "en": "Integrate the system into clinical workflow and generate real-time alerts for high-risk admissions" } },
-        { "id": "S3", "text": { "ar": "تفعيل تدخلات استباقية تشمل الجوانب الطبية والاجتماعية للمرضى المُحدّدين", "en": "Activate proactive interventions covering medical and social aspects for identified patients" } },
-        { "id": "S4", "text": { "ar": "قياس معدلات إعادة الإدخال وفجوات العدالة الصحية وتعديل النموذج بناءً على النتائج", "en": "Measure readmission rates and health equity gaps and adjust the model based on outcomes" } }
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تدريب خوارزمية تنبؤية على بيانات السجلات الصحية الإلكترونية لتحديد المرضى الأعلى خطورة",
+            "en": "Train a predictive algorithm on EHR data to identify highest-risk patients"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "دمج النظام مع سير العمل السريري وتوليد تنبيهات آنية عند دخول مريض عالي الخطورة",
+            "en": "Integrate the system into clinical workflow and generate real-time alerts for high-risk admissions"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تفعيل تدخلات استباقية تشمل الجوانب الطبية والاجتماعية للمرضى المُحدّدين",
+            "en": "Activate proactive interventions covering medical and social aspects for identified patients"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "قياس معدلات إعادة الإدخال وفجوات العدالة الصحية وتعديل النموذج بناءً على النتائج",
+            "en": "Measure readmission rates and health equity gaps and adjust the model based on outcomes"
+          }
+        }
       ],
-      "correct_order": ["S1", "S2", "S3", "S4"],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
       "hint_after": {
         "ar": "مستشفى زوكربيرغ سان فرانسيسكو استخدم هذا النهج ونجح في إزالة الفجوة العرقية في معدلات إعادة الإدخال بين المرضى الأمريكيين من أصول أفريقية وبقية السكان.",
         "en": "Zuckerberg San Francisco General used this approach and successfully eliminated the racial disparity in readmission rates between Black/African American patients and the general population."
@@ -201,10 +392,38 @@
         "en": "You are a public health official in your region, and you've received an offer to adopt an AI-powered epidemiological surveillance platform that analyzes news and social media for early disease outbreak detection. What is your position?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "أسارع لتبنّيها كمكمّل لنظام الترصّد التقليدي مع تشكيل فريق لتقييم تنبيهاتها", "en": "I quickly adopt it as a complement to traditional surveillance with a team to evaluate its alerts" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "أبدأ بتجربة محدودة على مرض واحد لقياس الأداء قبل التوسع", "en": "I start with a limited pilot on one disease to measure performance before expanding" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "أنتظر حتى تتبنّاها وزارات صحة أخرى في المنطقة وأقيّم نتائجهم أولاً", "en": "I wait until other regional health ministries adopt it and evaluate their results first" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "أرفض لأن الترصّد الوبائي يجب أن يعتمد على التقارير السريرية الرسمية حصراً", "en": "I refuse because epidemiological surveillance must rely exclusively on official clinical reports" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "أسارع لتبنّيها كمكمّل لنظام الترصّد التقليدي مع تشكيل فريق لتقييم تنبيهاتها",
+            "en": "I quickly adopt it as a complement to traditional surveillance with a team to evaluate its alerts"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أبدأ بتجربة محدودة على مرض واحد لقياس الأداء قبل التوسع",
+            "en": "I start with a limited pilot on one disease to measure performance before expanding"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر حتى تتبنّاها وزارات صحة أخرى في المنطقة وأقيّم نتائجهم أولاً",
+            "en": "I wait until other regional health ministries adopt it and evaluate their results first"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض لأن الترصّد الوبائي يجب أن يعتمد على التقارير السريرية الرسمية حصراً",
+            "en": "I refuse because epidemiological surveillance must rely exclusively on official clinical reports"
+          },
+          "flexibility_score": 1
+        }
       ],
       "hint_after": {
         "ar": "الترصّد الرقمي بالذكاء الاصطناعي مكمّل وليس بديلاً للترصّد التقليدي — لكن التأخر في تبنّيه يعني فجوة قد تصل إلى 79 يوماً بين رصد التفشي والإعلان الرسمي.",
@@ -223,14 +442,4299 @@
         "en": "You are a quality director at a hospital, and your team proposed implementing an AI algorithm for early sepsis prediction. But you know the popular Epic Sepsis Model missed 67% of cases in independent evaluation. How do you handle the proposal?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "أوافق على المبدأ لكن أشترط اختيار نظام حاصل على تصريح FDA مع تقييم مستقل قبل التبنّي", "en": "I agree in principle but require selecting an FDA-cleared system with independent validation before adoption" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "أطلب من الفريق دراسة مقارنة بين النماذج المتاحة وعرضها على لجنة طبية قبل القرار", "en": "I ask the team for a comparative study of available models to present to a medical committee before deciding" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "أرفض مؤقتاً وأنتظر حتى تنضج التقنية بشكل أكبر وتظهر نماذج أكثر موثوقية", "en": "I temporarily refuse and wait until the technology matures more and more reliable models emerge" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "أرفض تماماً لأن فشل Epic يثبت أن الذكاء الاصطناعي غير جاهز للاستخدام السريري", "en": "I completely refuse because Epic's failure proves AI is not ready for clinical use" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "أوافق على المبدأ لكن أشترط اختيار نظام حاصل على تصريح FDA مع تقييم مستقل قبل التبنّي",
+            "en": "I agree in principle but require selecting an FDA-cleared system with independent validation before adoption"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطلب من الفريق دراسة مقارنة بين النماذج المتاحة وعرضها على لجنة طبية قبل القرار",
+            "en": "I ask the team for a comparative study of available models to present to a medical committee before deciding"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفض مؤقتاً وأنتظر حتى تنضج التقنية بشكل أكبر وتظهر نماذج أكثر موثوقية",
+            "en": "I temporarily refuse and wait until the technology matures more and more reliable models emerge"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض تماماً لأن فشل Epic يثبت أن الذكاء الاصطناعي غير جاهز للاستخدام السريري",
+            "en": "I completely refuse because Epic's failure proves AI is not ready for clinical use"
+          },
+          "flexibility_score": 1
+        }
       ],
       "hint_after": {
         "ar": "ليست كل أنظمة AI متساوية: نظام eCART مثلاً حقق AUROC بقيمة 0.895 وقلّل الوفيات من 13.9% إلى 8.8%. التقييم النقدي لكل نظام على حدة أفضل من رفض التقنية بالكامل أو تبنّيها عشوائياً.",
         "en": "Not all AI systems are equal: eCART achieved AUROC of 0.895 and reduced mortality from 13.9% to 8.8%. Critically evaluating each system individually is better than blanket rejection or uncritical adoption."
+      }
+    },
+    {
+      "id": "pbh-mcq-004",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول ترصّد وبائي تريد رصد انتشار فيروسات تنفسية في مجتمعك بشكل استباقي دون الاعتماد على فحوصات المرضى. ما المصدر الأكثر فعالية الذي أثبت جدواه خلال جائحة كوفيد-19؟",
+        "en": "You are an epidemiological surveillance officer wanting to proactively monitor respiratory virus spread in your community without relying on patient testing. What data source proved most effective during the COVID-19 pandemic?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تحليل مياه الصرف الصحي بالذكاء الاصطناعي لرصد الحمض النووي الريبوزي الفيروسي — يكشف التفشي قبل 8 أسابيع من البيانات السريرية",
+            "en": "AI-powered wastewater analysis to detect viral RNA — detects outbreaks up to 8 weeks before clinical data"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تحليل استعلامات بحث Google عن أعراض الأمراض",
+            "en": "Analyzing Google search queries for disease symptoms"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الاعتماد على تقارير المستشفيات اليومية للحالات المؤكدة",
+            "en": "Relying on daily hospital reports of confirmed cases"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "رصد مبيعات الأدوية في الصيدليات كمؤشر غير مباشر",
+            "en": "Monitoring pharmacy drug sales as an indirect indicator"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "نظام CDC الأمريكي لمراقبة مياه الصرف (NWSS) يغطي أكثر من 1,300 موقع يمثل 151 مليون شخص. نماذج التعلم الآلي تتنبأ بحالات كوفيد-19 بدقة قبل 8 أسابيع من ظهورها في البيانات السريرية.",
+        "en": "The CDC's National Wastewater Surveillance System (NWSS) covers 1,300+ sites representing 151 million people. ML models predict COVID-19 cases accurately up to 8 weeks before they appear in clinical data."
+      }
+    },
+    {
+      "id": "pbh-mcq-005",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير مشروع وطني لمكافحة الأمراض المعدية. تريد نظام إنذار مبكر يدمج عدة مصادر بيانات. ما النهج الذي أثبتت الأنظمة الحديثة أنه الأكثر دقة؟",
+        "en": "You are directing a national infectious disease control project. You want an early warning system integrating multiple data sources. What approach have modern systems proven most accurate?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نماذج هجينة تدمج بيانات وبائية وبيئية ومناخية وجينومية وصرف صحي بالتعلم العميق",
+            "en": "Hybrid models integrating epidemiological, environmental, climate, genomic, and wastewater data with deep learning"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الاعتماد الكامل على الذكاء الاصطناعي دون خبرة وبائية بشرية",
+            "en": "Full reliance on AI without human epidemiological expertise"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "استخدام نموذج SIR التقليدي فقط مع بيانات الحالات المُبلغ عنها",
+            "en": "Using only the traditional SIR model with reported case data"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "بناء نظام يعتمد حصرياً على تحليل وسائل التواصل الاجتماعي",
+            "en": "Building a system relying exclusively on social media analysis"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "درس Google Flu Trends أن الاعتماد على مصدر واحد يفشل. الأنظمة الحديثة مثل SmartHealth-Track تدمج بيانات من إنترنت الأشياء، الصيدليات، الأجهزة القابلة للارتداء، ومياه الصرف — وحققت دقة 92.4% في كشف التفشي.",
+        "en": "Google Flu Trends taught us that relying on a single source fails. Modern systems like SmartHealth-Track integrate IoT, pharmacy, wearable, and wastewater data — achieving 92.4% outbreak detection accuracy."
+      }
+    },
+    {
+      "id": "pbh-mcq-006",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أنت باحث في وبائيات الأمراض المنقولة بالمياه في بلد نامٍ. كم عدد مواقع مراقبة مياه الصرف النشطة عالمياً وما نسبة تركزها في الدول الغنية؟",
+        "en": "You are a waterborne disease epidemiology researcher in a developing country. How many active wastewater surveillance sites exist globally and what percentage are concentrated in wealthy countries?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أكثر من 3,000 موقع، و85% منها في الدول الأكثر ثراءً",
+            "en": "Over 3,000 sites, with 85% in wealthier countries"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقل من 500 موقع، موزعة بالتساوي بين الدول",
+            "en": "Fewer than 500 sites, evenly distributed among countries"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أكثر من 10,000 موقع، ومعظمها في آسيا وأفريقيا",
+            "en": "Over 10,000 sites, mostly in Asia and Africa"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "حوالي 1,000 موقع، جميعها في الولايات المتحدة وأوروبا حصرياً",
+            "en": "About 1,000 sites, all exclusively in the US and Europe"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الفجوة الرقمية في الترصّد الوبائي حقيقية: 85% من مواقع مراقبة الصرف في دول غنية. الاتحاد الأوروبي أطلق لوحة مراقبة مباشرة لمسببات الأمراض في مياه الصرف مطلع 2025.",
+        "en": "The digital divide in epidemiological surveillance is real: 85% of wastewater monitoring sites are in wealthy countries. The EU launched a real-time wastewater pathogen monitoring dashboard in early 2025."
+      }
+    },
+    {
+      "id": "pbh-tf-003",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تحليل مياه الصرف الصحي بالذكاء الاصطناعي يمكنه فقط رصد فيروس SARS-CoV-2 ولا يصلح لمراقبة فيروسات أخرى مثل الإنفلونزا أو الفيروس المخلوي التنفسي (RSV).",
+        "en": "AI-powered wastewater analysis can only detect SARS-CoV-2 and is not suitable for monitoring other viruses like influenza or RSV."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. نظام CDC الأمريكي (NWSS) يراقب حالياً ليس فقط SARS-CoV-2 بل أيضاً الإنفلونزا وRSV وجدري القرود وغيرها. التقنية تعتمد على كشف الحمض النووي الريبوزي لأي مُمرض في مياه الصرف.",
+        "en": "False. The CDC's NWSS currently monitors not just SARS-CoV-2 but also influenza, RSV, mpox, and more. The technology relies on detecting RNA of any pathogen in wastewater."
+      }
+    },
+    {
+      "id": "pbh-tf-004",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "منصة BlueDot تمكنت من التنبؤ بشكل صحيح بانتشار فيروس زيكا إلى فلوريدا قبل 6 أشهر من حدوثه، ونُشرت نتائجها في مجلة The Lancet.",
+        "en": "BlueDot correctly predicted Zika virus spreading to Florida 6 months before it occurred, and the results were published in The Lancet."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. BlueDot لا تقتصر على كوفيد-19 — فقد نشرت في The Lancet تنبؤها بانتشار زيكا إلى فلوريدا قبل 6 أشهر، مما يُثبت قدرة الذكاء الاصطناعي على التنبؤ بمسارات الأوبئة عبر تحليل بيانات السفر والمناخ.",
+        "en": "True. BlueDot isn't limited to COVID-19 — it published in The Lancet its prediction of Zika spreading to Florida 6 months ahead, demonstrating AI's ability to predict epidemic trajectories through travel and climate data analysis."
+      }
+    },
+    {
+      "id": "pbh-fill-002",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "شركة {{blank_1}} (التي كانت تُعرف سابقاً بـ Metabiota واستُحوذ عليها عام 2022) تُشغّل محطات رادار حيوي في 7 مطارات أمريكية رئيسية لرصد مسببات الأمراض، ونشرت أنظمة مراقبة في قطر وبوتسوانا ورواندا.",
+        "en": "{{blank_1}} (formerly known as Metabiota, acquired in 2022) operates bioradar stations at 7 major U.S. airports for pathogen monitoring, and has deployed surveillance systems in Qatar, Botswana, and Rwanda."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Ginkgo Biosecurity",
+            "en": "Ginkgo Biosecurity"
+          },
+          "options": [
+            {
+              "ar": "Ginkgo Biosecurity",
+              "en": "Ginkgo Biosecurity"
+            },
+            {
+              "ar": "BlueDot",
+              "en": "BlueDot"
+            },
+            {
+              "ar": "Gryphon Scientific",
+              "en": "Gryphon Scientific"
+            },
+            {
+              "ar": "Metabiota",
+              "en": "Metabiota"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Ginkgo Biosecurity (المعروفة سابقاً بـ Metabiota) تمثل الجيل الجديد من الأمن الحيوي — تدمج بين التسلسل الجينومي والذكاء الاصطناعي لرصد مسببات الأمراض في نقاط الدخول مثل المطارات.",
+        "en": "Ginkgo Biosecurity (formerly Metabiota) represents the new generation of biosecurity — combining genomic sequencing and AI to monitor pathogens at entry points like airports."
+      }
+    },
+    {
+      "id": "pbh-match-002",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تقنية ذكاء اصطناعي في الصحة العامة مع مصدر البيانات الرئيسي الذي تعتمد عليه:",
+        "en": "Match each public health AI technology with its primary data source:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "BlueDot",
+            "en": "BlueDot"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "NWSS (CDC)",
+            "en": "NWSS (CDC)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "SmartHealth-Track",
+            "en": "SmartHealth-Track"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Google Flu Trends",
+            "en": "Google Flu Trends"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تذاكر طيران + أخبار بـ 130 لغة + NLP",
+            "en": "Airline tickets + news in 130 languages + NLP"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "تحليل الحمض النووي الريبوزي في مياه الصرف الصحي",
+            "en": "RNA analysis in wastewater"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "إنترنت الأشياء + صيدليات + أجهزة قابلة للارتداء + صرف صحي",
+            "en": "IoT + pharmacies + wearables + wastewater"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "استعلامات محرك بحث Google",
+            "en": "Google search queries"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كلما تعددت مصادر البيانات، زادت دقة الترصّد. فشل Google Flu Trends (مصدر واحد) مقابل نجاح BlueDot (مصادر متعددة) يوضح هذا المبدأ بجلاء.",
+        "en": "The more diverse the data sources, the more accurate the surveillance. Google Flu Trends' failure (single source) versus BlueDot's success (multiple sources) clearly illustrates this principle."
+      }
+    },
+    {
+      "id": "pbh-sort-002",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات تصميم نظام ترصّد وبائي بمياه الصرف الصحي معزز بالذكاء الاصطناعي، من البداية إلى النهاية:",
+        "en": "Order the steps for designing an AI-enhanced wastewater epidemiological surveillance system, from start to finish:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "جمع عينات مياه الصرف من مواقع استراتيجية وإجراء تحليل جزيئي (PCR) لاستخلاص الحمض النووي الفيروسي",
+            "en": "Collect wastewater samples from strategic sites and perform molecular analysis (PCR) to extract viral RNA"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تدريب نماذج تعلم آلي على البيانات البيئية والوبائية التاريخية للتنبؤ بالاتجاهات المرضية",
+            "en": "Train ML models on historical environmental and epidemiological data to predict disease trends"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "دمج النموذج مع لوحات مراقبة تفاعلية وإطلاق تنبيهات آنية عند اكتشاف شذوذ في تركيزات المُمرض",
+            "en": "Integrate the model with interactive dashboards and trigger real-time alerts when pathogen concentration anomalies are detected"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تقييم أداء النظام عبر مقارنة تنبؤاته مع البيانات السريرية الفعلية وتحسين النموذج بالتغذية الراجعة",
+            "en": "Evaluate system performance by comparing predictions with actual clinical data and improve the model through feedback"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الاتحاد الأوروبي أطلق لوحة مراقبة مباشرة لمياه الصرف مطلع 2025 تغطي عدة مسببات أمراض. المفتاح هو ربط البيانات الجزيئية بنماذج تنبؤية قابلة للتحسين المستمر.",
+        "en": "The EU launched a real-time wastewater monitoring dashboard in early 2025 covering multiple pathogens. The key is linking molecular data to predictive models that can be continuously improved."
+      }
+    },
+    {
+      "id": "pbh-self-003",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول صحة عامة في مدينة عربية. عُرض عليك مشروع لمراقبة مياه الصرف بالذكاء الاصطناعي لرصد الأوبئة مبكراً — لكن 85% من التقنيات والبيانات المرجعية مبنية على دول غربية. ما موقفك؟",
+        "en": "You are a public health official in an Arab city. You've been offered a project for AI-powered wastewater surveillance for early epidemic detection — but 85% of the technologies and reference data are built on Western countries. What's your position?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتبنّى المشروع مع تكييف النماذج محلياً — بيانات الصرف المحلية ستحسّن الدقة تدريجياً",
+            "en": "I adopt the project while locally adapting models — local wastewater data will gradually improve accuracy"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أبدأ بمشروع تجريبي على مُمرض واحد (مثل SARS-CoV-2) لبناء قاعدة بيانات محلية",
+            "en": "I start with a pilot on one pathogen (e.g., SARS-CoV-2) to build a local database"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر حتى تتوفر نماذج مصممة خصيصاً للمنطقة العربية قبل الاستثمار",
+            "en": "I wait until models specifically designed for the Arab region become available"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض لأن البنية التحتية للصرف في مدينتنا لا تسمح بمراقبة فعالة",
+            "en": "I refuse because our city's sewage infrastructure doesn't allow effective monitoring"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "كل نظام ترصّد يبدأ ببيانات ناقصة ويتحسن بالاستخدام. دول مثل قطر استضافت أنظمة Ginkgo Biosecurity — البدء هو الخطوة الأهم.",
+        "en": "Every surveillance system starts with incomplete data and improves with use. Countries like Qatar have hosted Ginkgo Biosecurity systems — starting is the most important step."
+      }
+    },
+    {
+      "id": "pbh-self-004",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت وبائي ميداني وتلقيت تنبيهاً من نظام ذكاء اصطناعي عن احتمال تفشي مرض تنفسي في منطقتك، لكن التقارير السريرية الرسمية لا تدعم ذلك بعد. ماذا تفعل؟",
+        "en": "You are a field epidemiologist who received an AI system alert about a possible respiratory disease outbreak in your area, but official clinical reports don't support it yet. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبدأ فوراً بتحقيق ميداني استباقي للتحقق من التنبيه مع إخطار الإدارة",
+            "en": "I immediately start a proactive field investigation to verify the alert while notifying management"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أرفع مستوى المراقبة في المنطقة المستهدفة وأطلب بيانات إضافية من المستشفيات",
+            "en": "I increase surveillance in the target area and request additional data from hospitals"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر تأكيداً سريرياً قبل اتخاذ أي إجراء — التقارير الرسمية هي المعيار",
+            "en": "I wait for clinical confirmation before taking action — official reports are the standard"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتجاهل التنبيه — الأنظمة الآلية تُصدر إنذارات كاذبة كثيرة",
+            "en": "I ignore the alert — automated systems generate many false alarms"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "تحليل BlueDot أظهر أن الفجوة الوسطية بين رصد التفشي والإعلان الرسمي تبلغ 79 يوماً. الانتظار للتأكيد الرسمي قد يعني خسارة أسابيع حاسمة من الاستجابة المبكرة.",
+        "en": "BlueDot analysis showed a median 79-day gap between outbreak detection and official declaration. Waiting for official confirmation could mean losing crucial weeks of early response."
+      }
+    },
+    {
+      "id": "pbh-mcq-007",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير قسم الطوارئ في مستشفى كبير. ما مدى تفوق أنظمة الفرز بالذكاء الاصطناعي على ممرضات الفرز التقليديين في تحديد مستوى خطورة المرضى؟",
+        "en": "You are the emergency department director at a large hospital. How much do AI triage systems outperform traditional triage nurses in determining patient acuity levels?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نموذج KATE حقق دقة 75.7% مقابل 59.8% لممرضات الفرز — تحسن بنسبة 27%",
+            "en": "The KATE model achieved 75.7% accuracy vs 59.8% for triage nurses — a 27% improvement"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أنظمة AI تحقق 99% دقة وتفوقت على جميع الأطباء البشريين",
+            "en": "AI systems achieve 99% accuracy and outperform all human physicians"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا يوجد فرق ملموس بين AI والبشر في الفرز الطبي حتى الآن",
+            "en": "There is no tangible difference between AI and humans in medical triage yet"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "AI أفضل فقط في الحالات البسيطة لكنه يفشل في الحالات المعقدة",
+            "en": "AI is better only in simple cases but fails in complex ones"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "نظام ERTRIAGE يدّعي دقة فرز تصل إلى 97%، ويعالج أكثر من 50 نقطة قرار سريري في أقل من 3 دقائق. لكن القرار النهائي يبقى بشرياً.",
+        "en": "ERTRIAGE claims up to 97% triage accuracy, processing 50+ clinical decision points in under 3 minutes. But the final decision remains human."
+      }
+    },
+    {
+      "id": "pbh-mcq-008",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت رئيس قسم العناية المركزة. نظام eCART للتنبؤ بتدهور حالة المرضى عُرض عليك. ما النتائج السريرية الفعلية لهذا النظام مقارنة بالأنظمة التقليدية؟",
+        "en": "You are the ICU chief. The eCART patient deterioration prediction system has been offered to you. What are the actual clinical results of this system compared to traditional ones?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AUROC بقيمة 0.895 مع كشف 4 أضعاف السكتات القلبية و50% أكثر من حالات النقل للعناية المركزة",
+            "en": "AUROC of 0.895 with 4× more cardiac arrests detected and 50% more ICU transfers identified"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أداء مماثل لنظام Epic Sepsis بدقة 0.63 فقط",
+            "en": "Performance similar to Epic Sepsis Model with only 0.63 accuracy"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "النظام يكتشف التدهور لكنه لا يوفر وقتاً كافياً للتدخل",
+            "en": "The system detects deterioration but doesn't provide enough time for intervention"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يعمل فقط في مستشفيات أمريكية ولا يمكن تكييفه عالمياً",
+            "en": "Works only in American hospitals and cannot be adapted globally"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "eCART يقدم إنذاراً مبكراً بـ 11 ساعة قبل التدهور، وقلّل الوفيات من 13.9% إلى 8.8%. المفتاح: ليست كل أنظمة AI متساوية — eCART يختلف جذرياً عن Epic Sepsis (0.63 فقط).",
+        "en": "eCART provides 11-hour early warning before deterioration, reducing mortality from 13.9% to 8.8%. Key point: not all AI systems are equal — eCART is radically different from Epic Sepsis (only 0.63)."
+      }
+    },
+    {
+      "id": "pbh-mcq-009",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت خبير في نمذجة إعادة الإدخال للمستشفى. ما مدى تفوق نماذج التعلم الآلي على مؤشر LACE التقليدي في التنبؤ بإعادة الإدخال خلال 30 يوماً؟",
+        "en": "You are a hospital readmission modeling expert. How much do ML models outperform the traditional LACE index in predicting 30-day readmission?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نماذج gradient boosting حققت AUC بقيمة 0.83 مقابل 0.66 لمؤشر LACE — وخفضت إعادة الإدخال 17%",
+            "en": "Gradient boosting models achieved AUC of 0.83 vs 0.66 for LACE — and reduced readmissions by 17%"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الفرق ضئيل — التعلم الآلي يتفوق بنسبة 2-3% فقط",
+            "en": "The difference is marginal — ML outperforms by only 2-3%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "التعلم الآلي أفضل في التنبؤ لكنه لا يقلل إعادة الإدخال فعلياً",
+            "en": "ML is better at prediction but doesn't actually reduce readmissions"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مؤشر LACE لا يزال المعيار الذهبي ولم يتفوق عليه أي نظام AI",
+            "en": "LACE remains the gold standard and no AI system has outperformed it"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "مراجعة منهجية في JAMA Network Open عام 2025 أكدت أن أدوات AI خفضت إعادة الإدخال خلال 30 يوماً بنسبة 17% وخلال 90 يوماً بنسبة 28%. McKinsey تقدّر أن AI يمكن أن يوفر 200-360 مليار دولار سنوياً للرعاية الصحية الأمريكية.",
+        "en": "A 2025 JAMA Network Open systematic review confirmed AI tools reduced 30-day readmissions by 17% and 90-day readmissions by 28%. McKinsey estimates AI could save U.S. healthcare $200-360 billion annually."
+      }
+    },
+    {
+      "id": "pbh-tf-005",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام LeanTaaS iQueue لإدارة سعة المستشفيات حقق تحسناً في دقة التنبؤ بتدفق المرضى بنسبة 41% مقارنة بالطرق التقليدية، ويحدد عوائق الخروج بدقة تتجاوز 80%.",
+        "en": "LeanTaaS iQueue hospital capacity management system improved patient flow prediction accuracy by 41% compared to traditional methods, and identifies discharge barriers with over 80% accuracy."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. iQueue يُستخدم في أكثر من 500 مستشفى و175 نظام صحي (بما فيها 40% من أفضل 25 نظام أمريكي). منظومة CommonSpirit Health حققت عائد استثمار بقيمة 40 مليون دولار.",
+        "en": "True. iQueue is used in 500+ hospitals and 175 health systems (including 40% of top 25 U.S. systems). CommonSpirit Health reported $40 million ROI."
+      }
+    },
+    {
+      "id": "pbh-tf-006",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "نماذج AI للتنبؤ بنجاح فطام المرضى عن أجهزة التنفس الصناعي حققت AUC بقيمة 0.976 وقلّصت مدة التنبيب بمعدل 21 ساعة.",
+        "en": "AI models for predicting successful ventilator weaning achieved an AUC of 0.976 and shortened intubation time by an average of 21 hours."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. كل ساعة إضافية على جهاز التنفس تزيد مخاطر العدوى والمضاعفات. توفير 21 ساعة في المتوسط يعني تقليل تكاليف العناية المركزة وتحسين نتائج المرضى بشكل ملموس.",
+        "en": "True. Every extra hour on a ventilator increases infection and complication risks. Saving 21 hours on average means reducing ICU costs and measurably improving patient outcomes."
+      }
+    },
+    {
+      "id": "pbh-fill-003",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "مراجعة منهجية نُشرت في JAMA Network Open عام 2025 أظهرت أن أدوات الذكاء الاصطناعي خفضت معدل إعادة إدخال المرضى للمستشفى خلال 30 يوماً بنسبة {{blank_1}}%.",
+        "en": "A systematic review published in JAMA Network Open in 2025 showed that AI tools reduced 30-day hospital readmission rates by {{blank_1}}%."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "17",
+            "en": "17"
+          },
+          "options": [
+            {
+              "ar": "17",
+              "en": "17"
+            },
+            {
+              "ar": "5",
+              "en": "5"
+            },
+            {
+              "ar": "45",
+              "en": "45"
+            },
+            {
+              "ar": "30",
+              "en": "30"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "17% خلال 30 يوماً و28% خلال 90 يوماً — أرقام واقعية وليست مبالغاً فيها. النماذج الأفضل تدمج البيانات السريرية مع المحددات الاجتماعية للصحة.",
+        "en": "17% for 30-day and 28% for 90-day — realistic, not exaggerated numbers. The best models integrate clinical data with social determinants of health."
+      }
+    },
+    {
+      "id": "pbh-match-003",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "وصّل كل نظام ذكاء اصطناعي في إدارة المستشفيات مع الإنجاز الموثّق الذي حققه:",
+        "en": "Match each hospital management AI system with its documented achievement:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "eCART",
+            "en": "eCART"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "LeanTaaS iQueue (غرف العمليات)",
+            "en": "LeanTaaS iQueue (ORs)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Hypotension Prediction Index",
+            "en": "Hypotension Prediction Index"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "AI لفطام التنفس الصناعي",
+            "en": "AI ventilator weaning"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "خفض الوفيات من 13.9% إلى 8.8%",
+            "en": "Reduced mortality from 13.9% to 8.8%"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "زيادة حجم الحالات 6% وإيراد إضافي 500K$ لكل غرفة عمليات",
+            "en": "6% case volume increase and $500K additional revenue per OR"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "خفض وقت انخفاض ضغط الدم الخطير بنسبة 63%",
+            "en": "Cut time at dangerously low blood pressure by 63%"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تقصير مدة التنبيب بمعدل 21 ساعة",
+            "en": "Shortened intubation time by 21 hours average"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الأنظمة الأربعة تثبت أن AI في إدارة المستشفيات ليس نظرياً — إنه يُنقذ أرواحاً ويوفر أموالاً بشكل قابل للقياس.",
+        "en": "These four systems prove that AI in hospital management isn't theoretical — it saves lives and money in measurable ways."
+      }
+    },
+    {
+      "id": "pbh-sort-003",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مصادر بيانات الترصّد الوبائي حسب سرعة الإنذار المبكر (من الأسرع إلى الأبطأ):",
+        "en": "Order epidemiological surveillance data sources by early warning speed (from fastest to slowest):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحليل مياه الصرف الصحي بالذكاء الاصطناعي (يسبق البيانات السريرية بأسابيع)",
+            "en": "AI-powered wastewater analysis (leads clinical data by weeks)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "رصد الأخبار ووسائل التواصل الاجتماعي بمعالجة اللغات الطبيعية (يسبق بأيام إلى أسابيع)",
+            "en": "News and social media monitoring with NLP (leads by days to weeks)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "بيانات زيارات الطوارئ والصيدليات (يسبق بأيام قليلة)",
+            "en": "Emergency visit and pharmacy data (leads by a few days)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "التقارير السريرية الرسمية وتأكيد المختبرات (الأبطأ — فجوة وسطية 79 يوماً عن الرصد المبكر)",
+            "en": "Official clinical reports and lab confirmation (slowest — median 79-day gap from early detection)"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الأنظمة الحديثة تدمج كل هذه المصادر في منصة واحدة. الاعتماد على مصدر واحد — كما فعل Google Flu Trends — وصفة للفشل.",
+        "en": "Modern systems integrate all these sources into a single platform. Relying on one source — as Google Flu Trends did — is a recipe for failure."
+      }
+    },
+    {
+      "id": "pbh-self-005",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير عمليات مستشفى وتلقيت عرضاً لنظام AI يتنبأ بتدهور حالة المرضى قبل 11 ساعة. لكن فريقك الطبي يشكك في دقة الأنظمة بعد فشل Epic Sepsis الشهير. ما قرارك؟",
+        "en": "You are a hospital operations director and received an offer for an AI system that predicts patient deterioration 11 hours in advance. But your medical team doubts system accuracy after the famous Epic Sepsis failure. What's your decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أميّز بين الأنظمة — أطلب بيانات التحقق المستقل لهذا النظام تحديداً (مثل AUROC ومعدل الإنذارات الكاذبة) قبل القرار",
+            "en": "I differentiate between systems — I request independent validation data for this specific system (like AUROC and false alarm rate) before deciding"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أوافق على تجربة لمدة 3 أشهر في قسم واحد مع مقارنة النتائج بالفترة السابقة",
+            "en": "I agree to a 3-month trial in one department comparing results with the previous period"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفض مؤقتاً حتى تتوفر أنظمة حاصلة على تصريح هيئة تنظيمية مثل FDA",
+            "en": "I temporarily refuse until systems with regulatory approval like FDA become available"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — فشل Epic يثبت أن AI غير جاهز للاستخدام السريري بعد",
+            "en": "I refuse — Epic's failure proves AI is not ready for clinical use yet"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Epic Sepsis (AUC 0.63) وeCART (AUC 0.895) — الفرق شاسع بين نظام ونظام. رفض كل التقنية بسبب فشل نظام واحد يشبه رفض كل الأدوية بسبب فشل دواء واحد.",
+        "en": "Epic Sepsis (AUC 0.63) vs eCART (AUC 0.895) — the gap between systems is enormous. Rejecting all technology because one system failed is like rejecting all medicine because one drug failed."
+      }
+    },
+    {
+      "id": "pbh-self-006",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير برنامج تقليل إعادة إدخال المرضى. نظام AI الجديد يطلب دمج بيانات المحددات الاجتماعية (السكن، الدخل، النقل) مع البيانات السريرية للتنبؤ بإعادة الإدخال. ما رأيك؟",
+        "en": "You are a readmission reduction program director. The new AI system requests integrating social determinants data (housing, income, transportation) with clinical data to predict readmission. What's your view?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ممتاز — المحددات الاجتماعية تفسر 80% من التباين الصحي، ودمجها يرفع دقة التنبؤ من AUC 0.66 إلى 0.83",
+            "en": "Excellent — social determinants explain 80% of health variation, integrating them improves prediction from AUC 0.66 to 0.83"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "فكرة جيدة لكن يجب ضمان خصوصية البيانات الاجتماعية وموافقة المرضى",
+            "en": "Good idea but must ensure social data privacy and patient consent"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أفضّل الاقتصار على البيانات السريرية — جمع البيانات الاجتماعية معقد وحساس",
+            "en": "I prefer sticking to clinical data — collecting social data is complex and sensitive"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — مهمة المستشفى هي العلاج الطبي وليس جمع بيانات اجتماعية",
+            "en": "I refuse — the hospital's job is medical treatment, not collecting social data"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الدراسات تُظهر أن 80% من التباين الصحي يعود لعوامل غير سريرية. نموذج AI دمج بيانات SDOH مع البيانات السريرية رفع دقة التنبؤ بالتكلفة العالية بشكل ملموس مقارنة بنماذج المطالبات فقط.",
+        "en": "Studies show 80% of health variation comes from non-clinical factors. An AI model integrating SDOH with clinical data significantly improved high-cost prediction accuracy compared to claims-only models."
+      }
+    },
+    {
+      "id": "pbh-mcq-010",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت محلل سياسات صحية. شركة UnitedHealth — أكبر شركة تأمين صحي أمريكية — واجهت دعوى قضائية جماعية بسبب خوارزمية nH Predict. ما التهمة الرئيسية؟",
+        "en": "You are a health policy analyst. UnitedHealth — the largest U.S. health insurer — faced a class-action lawsuit over its nH Predict algorithm. What was the main accusation?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "استخدام خوارزمية بمعدل خطأ 90% لرفض تغطية إعادة التأهيل للمسنين وتجاوز قرارات أطبائهم",
+            "en": "Using an algorithm with a 90% error rate to deny rehabilitation coverage for elderly patients, overriding their doctors' decisions"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "استخدام بيانات المرضى لأغراض تسويقية دون موافقتهم",
+            "en": "Using patient data for marketing purposes without their consent"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "فشل النظام في حماية السجلات الصحية من الاختراق الإلكتروني",
+            "en": "System failure to protect health records from cyber attacks"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تسريب بيانات المرضى عبر خطأ في تصميم الخوارزمية",
+            "en": "Leaking patient data through an algorithm design error"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الدعوى كشفت أن UnitedHealth طالبت موظفيها بالالتزام بتوقعات nH Predict بفارق لا يتجاوز 1%، مع علمها أن 0.2% فقط من المرضى يطعنون في القرارات. في فبراير 2025، قرر قاضٍ أمريكي السماح باستمرار الدعوى الجماعية.",
+        "en": "The lawsuit revealed UnitedHealth required employees to follow nH Predict predictions within 1% variance, knowing only 0.2% of patients appeal decisions. In February 2025, a U.S. judge allowed the class-action to proceed."
+      }
+    },
+    {
+      "id": "pbh-mcq-011",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت باحث في العدالة الصحية. دراسة Obermeyer الشهيرة في مجلة Science كشفت تحيزاً عنصرياً في خوارزمية Optum المستخدمة لإدارة 70 مليون مريض. ما السبب الجذري للتحيز؟",
+        "en": "You are a health equity researcher. Obermeyer's famous Science study revealed racial bias in Optum's algorithm managing 70 million patients. What was the root cause of the bias?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "استخدام تكاليف الرعاية الصحية كبديل عن الحالة المرضية — المرضى السود ينفقون أقل بسبب عوائق منهجية وليس لأنهم أصح",
+            "en": "Using healthcare costs as a proxy for illness — Black patients spend less due to systemic barriers, not because they are healthier"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "إدخال متغير العرق مباشرة في الخوارزمية واستبعاد المرضى السود عمداً",
+            "en": "Directly inputting race as a variable and deliberately excluding Black patients"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "خطأ تقني في البرمجة تسبب في ترجيح بيانات المرضى البيض",
+            "en": "A technical programming error that weighted white patient data"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "عدم تمثيل المرضى السود في بيانات التدريب بسبب صغر حجم العينة",
+            "en": "Underrepresentation of Black patients in training data due to small sample size"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "تصحيح هذا التحيز سيرفع نسبة المرضى السود الذين يتلقون رعاية إضافية من 17.7% إلى 46.5%. الدرس: اختيار المتغير البديل (proxy) يمكن أن يكون مصدر تمييز خطير حتى بدون نية.",
+        "en": "Fixing this bias would increase Black patients receiving additional care from 17.7% to 46.5%. The lesson: proxy variable choice can be a serious source of discrimination even without intent."
+      }
+    },
+    {
+      "id": "pbh-mcq-012",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير مستشفى تلقيت عرضاً من شركة تأمين لاستخدام خوارزمية AI لتحديد مدة إقامة المرضى. الخوارزمية تعتمد على بيانات 6 ملايين مريض سابق. ما أكبر مخاطرة في هذا النهج؟",
+        "en": "You are a hospital director who received an offer from an insurer to use an AI algorithm to determine patient length of stay. The algorithm relies on data from 6 million previous patients. What is the biggest risk in this approach?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخوارزمية ترث قرارات خفض التكاليف السابقة وتعيد إنتاجها — مدة الإقامة ليست متغيراً بيولوجياً بل قرار إداري",
+            "en": "The algorithm inherits previous cost-cutting decisions and reproduces them — length of stay is not a biological variable but an administrative decision"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "البيانات القديمة لا تعكس التقنيات الطبية الحديثة فقط",
+            "en": "Old data only fails to reflect modern medical technologies"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حجم 6 ملايين مريض غير كافٍ لتدريب نموذج دقيق",
+            "en": "6 million patients is insufficient to train an accurate model"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المخاطرة الوحيدة هي اختراق البيانات وليس دقة التنبؤ",
+            "en": "The only risk is data breach, not prediction accuracy"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "كما قال الباحث Ziad Obermeyer: \"مدة الإقامة ليست متغيراً بيولوجياً\" — إنها تعكس قرارات سياساتية واقتصادية سابقة. نظام nH Predict خصص 20 يوماً فقط لمريضة مشلولة بعد سكتة دماغية — نصف المعدل الطبيعي.",
+        "en": "As researcher Ziad Obermeyer said: 'Length of stay is not some biological variable' — it reflects previous policy and economic decisions. nH Predict allocated only 20 days for a paralyzed stroke patient — half the average."
+      }
+    },
+    {
+      "id": "pbh-tf-007",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "شركة Cigna الأمريكية للتأمين الصحي اتُّهمت برفض أكثر من 300,000 مطالبة تأمينية خلال شهرين فقط باستخدام نظام ذكاء اصطناعي يسمى PXDX.",
+        "en": "U.S. health insurer Cigna was accused of denying over 300,000 insurance claims in just two months using an AI system called PXDX."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. ProPublica وثّقت ذلك. كل من UnitedHealth (nH Predict) وCigna (PXDX) تواجهان اتهامات بالرفض التلقائي. الجمعية الطبية الأمريكية (AMA) طالبت بفحص بشري إلزامي قبل رفض أي مطالبة.",
+        "en": "True. ProPublica documented this. Both UnitedHealth (nH Predict) and Cigna (PXDX) face automated denial allegations. The American Medical Association (AMA) demanded mandatory human review before any claim denial."
+      }
+    },
+    {
+      "id": "pbh-tf-008",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مستشفى زوكربيرغ في سان فرانسيسكو نجح في إزالة الفجوة العرقية في معدلات إعادة إدخال المرضى بين الأمريكيين من أصل أفريقي وبقية السكان باستخدام نظام AI مخصص.",
+        "en": "Zuckerberg San Francisco General successfully eliminated the racial disparity in readmission rates between African American patients and the general population using a dedicated AI system."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. هذا يثبت أن AI يمكن أن يكون أداة لتقليل التفاوتات الصحية وليس فقط تعزيزها — لكن ذلك يتطلب تصميماً واعياً يراعي العدالة الصحية ويقيس الفجوات ويعالجها.",
+        "en": "True. This proves AI can be a tool to reduce health disparities, not just amplify them — but it requires equity-conscious design that measures and addresses gaps."
+      }
+    },
+    {
+      "id": "pbh-fill-004",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "دراسة Obermeyer في مجلة Science كشفت أن تصحيح التحيز العنصري في خوارزمية Optum سيرفع نسبة المرضى السود الذين يحصلون على رعاية إضافية من 17.7% إلى {{blank_1}}%.",
+        "en": "Obermeyer's Science study revealed that fixing the racial bias in Optum's algorithm would increase the percentage of Black patients receiving additional care from 17.7% to {{blank_1}}%."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "46.5",
+            "en": "46.5"
+          },
+          "options": [
+            {
+              "ar": "46.5",
+              "en": "46.5"
+            },
+            {
+              "ar": "25",
+              "en": "25"
+            },
+            {
+              "ar": "80",
+              "en": "80"
+            },
+            {
+              "ar": "35",
+              "en": "35"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "القفزة من 17.7% إلى 46.5% تعني أن التحيز كان يحرم أكثر من نصف المرضى السود المستحقين من الرعاية الإضافية. Obermeyer نجح بالتعاون مع Optum في تقليل التحيز بنسبة 84%.",
+        "en": "The jump from 17.7% to 46.5% means the bias was depriving more than half of eligible Black patients of additional care. Obermeyer, collaborating with Optum, managed to reduce the bias by 84%."
+      }
+    },
+    {
+      "id": "pbh-match-004",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل حادثة فشل أو تحيز في AI الصحة العامة مع السبب الجذري الذي أدى إليها:",
+        "en": "Match each public health AI failure or bias incident with its root cause:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Google Flu Trends — تقدير مفرط 140%",
+            "en": "Google Flu Trends — 140% overestimation"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "خوارزمية Optum — تمييز عنصري",
+            "en": "Optum algorithm — racial discrimination"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Epic Sepsis Model — فات 67% من الحالات",
+            "en": "Epic Sepsis Model — missed 67% of cases"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "nH Predict — رفض تغطية المسنين",
+            "en": "nH Predict — denying elderly coverage"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "خلط بين الارتباط والسببية + \"غطرسة البيانات الضخمة\"",
+            "en": "Correlation-causation confusion + 'big data hubris'"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "استخدام تكاليف الرعاية كبديل عن المرض — يعاقب الأقل إنفاقاً",
+            "en": "Using care costs as proxy for illness — penalizes lower spenders"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "عدم كفاية التحقق المستقل — اعتمدت على تقييمات الشركة المطورة",
+            "en": "Insufficient independent validation — relied on developer's own evaluations"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "توريث قرارات خفض التكاليف السابقة + ضغط للالتزام بالتنبؤات بفارق 1%",
+            "en": "Inheriting previous cost-cutting decisions + pressure to follow predictions within 1%"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل فشل يُعلّم درساً مختلفاً: Google Flu Trends (لا تعتمد على مصدر واحد)، Optum (تحقق من المتغيرات البديلة)، Epic (التحقق المستقل ضروري)، nH Predict (لا تستبدل الحكم الطبي بالخوارزمية).",
+        "en": "Each failure teaches a different lesson: Google Flu Trends (don't rely on one source), Optum (validate proxy variables), Epic (independent validation is essential), nH Predict (don't replace medical judgment with algorithms)."
+      }
+    },
+    {
+      "id": "pbh-sort-004",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات التدقيق الأخلاقي لخوارزمية AI في الصحة العامة قبل نشرها، من الأولى إلى الأخيرة:",
+        "en": "Order the ethical audit steps for a public health AI algorithm before deployment, from first to last:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "فحص بيانات التدريب بحثاً عن تحيزات ديموغرافية وعرقية واقتصادية",
+            "en": "Examine training data for demographic, racial, and economic biases"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "إجراء تحقق مستقل (ليس من الشركة المطورة) على مجموعات سكانية متنوعة",
+            "en": "Conduct independent validation (not by the developer) on diverse populations"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "قياس فجوات الأداء بين المجموعات العرقية والاقتصادية المختلفة بعد النشر",
+            "en": "Measure performance gaps between different racial and economic groups post-deployment"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "وضع آلية مراقبة مستمرة مع حق النقض البشري على كل قرار خوارزمي يؤثر على رعاية المريض",
+            "en": "Establish continuous monitoring with human veto power over every algorithmic decision affecting patient care"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "Obermeyer أثبت أن فحص البيانات وحده لا يكفي — يجب التحقق المستقل ثم القياس المستمر بعد النشر. Optum قال إن التكلفة \"أحد عناصر كثيرة\"، لكنها كانت العنصر المسيطر.",
+        "en": "Obermeyer proved that data inspection alone isn't enough — independent validation then continuous post-deployment measurement are needed. Optum said cost was 'one of many elements,' but it was the dominant one."
+      }
+    },
+    {
+      "id": "pbh-self-007",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول سياسات صحية. شركات التأمين في بلدك بدأت تستخدم AI لتقييم مطالبات المرضى. بعض المرضى يُرفضون تلقائياً دون مراجعة بشرية. ما موقفك التنظيمي؟",
+        "en": "You are a health policy officer. Insurance companies in your country have started using AI to evaluate patient claims. Some patients are automatically denied without human review. What's your regulatory position?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أطالب بتشريع يُلزم بمراجعة بشرية قبل أي رفض وكشف استخدام AI للمريض + تدقيق مستقل دوري",
+            "en": "I demand legislation requiring human review before any denial, disclosure of AI use to patients, and periodic independent auditing"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطالب بالشفافية — إلزام الشركات بنشر معدلات الخطأ والتحيز في خوارزمياتها",
+            "en": "I demand transparency — requiring companies to publish error rates and bias in their algorithms"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أترك الأمر للسوق — المنافسة ستُصلح الخوارزميات السيئة تلقائياً",
+            "en": "I leave it to the market — competition will automatically fix bad algorithms"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أمنع استخدام AI في التأمين الصحي بالكامل حتى إشعار آخر",
+            "en": "I ban AI use in health insurance entirely until further notice"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الجمعية الطبية الأمريكية (AMA) اتخذت موقفاً وسطاً: أشادت بقدرة AI على تسريع الموافقات المسبقة، لكنها طالبت بفحص بشري إلزامي قبل الرفض. 0.2% فقط من المرضى يطعنون — مما يعني أن معظم الرفض غير العادل يمر دون مساءلة.",
+        "en": "The AMA took a middle ground: praised AI's ability to speed prior authorization, but demanded mandatory human review before denials. Only 0.2% of patients appeal — meaning most unfair denials go unchallenged."
+      }
+    },
+    {
+      "id": "pbh-self-008",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير مستشفى وعلمت أن خوارزمية AI المستخدمة في مستشفاك للتنبؤ بالمخاطر تستخدم تكاليف الرعاية السابقة كمتغير رئيسي — وهي نفس المنهجية التي كشف Obermeyer تحيزها العنصري. ماذا تفعل؟",
+        "en": "You are a hospital director who learned that the AI risk prediction algorithm used in your hospital uses previous care costs as a primary variable — the same methodology Obermeyer exposed as racially biased. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أوقف استخدام الخوارزمية فوراً وأطلب من البائع إصلاح المتغيرات البديلة — مع مراجعة كل القرارات السابقة المتأثرة",
+            "en": "I immediately stop using the algorithm and ask the vendor to fix proxy variables — while reviewing all affected previous decisions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطلب تدقيقاً مستقلاً لقياس حجم التحيز في بيانات مستشفانا تحديداً قبل اتخاذ قرار",
+            "en": "I request an independent audit to measure the bias extent in our hospital's specific data before deciding"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أبقي الخوارزمية مع إضافة مراجعة بشرية — المشكلة قد لا تنطبق على سكاننا",
+            "en": "I keep the algorithm with added human review — the problem may not apply to our population"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أبقي الخوارزمية كما هي — الشركة تقول إن التكلفة عنصر واحد من عناصر كثيرة",
+            "en": "I keep the algorithm as is — the company says cost is just one of many elements"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Optum قالت إن التكلفة \"عنصر من عناصر كثيرة\"، لكن بحث Obermeyer أثبت أنها كانت العنصر المهيمن. التحيز موجود حتى لو لم تكن الخوارزمية تستخدم العرق مباشرة.",
+        "en": "Optum said cost was 'one of many elements,' but Obermeyer's research proved it was the dominant factor. Bias exists even if the algorithm doesn't directly use race."
+      }
+    },
+    {
+      "id": "pbh-mcq-013",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب أمراض جلدية تدرس تحيز صور AI الطبية. دراسة JEAD عام 2025 حللت 4,000 صورة جلدية مولّدة بالذكاء الاصطناعي. ما نسبة الصور التي تمثل البشرة الداكنة؟",
+        "en": "You are a dermatologist studying medical AI image bias. A 2025 JEAD study analyzed 4,000 AI-generated dermatological images. What percentage represented dark skin?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "10.2% فقط — مما يعني أن نماذج AI الجلدية أقل دقة بكثير لأصحاب البشرة الداكنة",
+            "en": "Only 10.2% — meaning dermatological AI models are far less accurate for dark-skinned individuals"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حوالي 40% — تمثيل عادل تقريباً",
+            "en": "About 40% — roughly fair representation"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أقل من 1% — تمثيل شبه معدوم",
+            "en": "Less than 1% — virtually no representation"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "25% — نقص ملحوظ لكن ليس حاداً",
+            "en": "25% — noticeable deficiency but not severe"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "10.2% فقط يعني أن 90% من بيانات التدريب تمثل بشرة فاتحة. بحث جامعة Northwestern أظهر أن دعم AI رفع دقة جميع الأطباء، لكن الفجوة بين أداء البشرة الفاتحة والداكنة اتسعت — AI يُفاقم التفاوت أحياناً.",
+        "en": "Only 10.2% means 90% of training data represents light skin. Northwestern research showed AI support improved all physicians' accuracy, but the gap between light and dark skin performance widened — AI sometimes amplifies disparity."
+      }
+    },
+    {
+      "id": "pbh-mcq-014",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت خبير سلامة مرضى. ما معدل الهلوسة (المعلومات الخاطئة) في أنظمة النماذج اللغوية الكبيرة المستخدمة في الرعاية الصحية وفقاً لدراسة npj Digital Medicine عام 2025؟",
+        "en": "You are a patient safety expert. What is the hallucination rate (false information) in LLMs used in healthcare according to a 2025 npj Digital Medicine study?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "معدل هلوسة 1.47% ومعدل إغفال 3.45% عبر 12,999 جملة قيّمها أطباء",
+            "en": "1.47% hallucination rate and 3.45% omission rate across 12,999 clinician-annotated sentences"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "معدل هلوسة أقل من 0.01% — النماذج اللغوية آمنة تماماً سريرياً",
+            "en": "Hallucination rate below 0.01% — LLMs are completely safe clinically"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "معدل هلوسة 50% — مما يجعلها عديمة الفائدة سريرياً",
+            "en": "50% hallucination rate — making them useless clinically"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "معدل هلوسة 15% — وهو مقبول في السياق الطبي",
+            "en": "15% hallucination rate — which is acceptable in the medical context"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "1.47% يبدو منخفضاً، لكن في مجال الأشعة: 5-10% من الحالات المحللة تضمنت أخطاء تشخيصية مرتبطة بالهلوسة، بما فيها تصنيف 12% من العقد الحميدة على أنها خبيثة. \"روبوت محادثة علاجي\" نصح مريضاً متعافياً بأن \"يتناول القليل من الميثامفيتامين كمكافأة\".",
+        "en": "1.47% seems low, but in radiology: 5-10% of analyzed cases involved hallucination-linked misdiagnoses, including flagging 12% of benign nodules as malignant. A therapy chatbot told a recovering addict to 'have a little meth as a treat.'"
+      }
+    },
+    {
+      "id": "pbh-mcq-015",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أنت ممرض تستخدم جهاز قياس تأكسج النبض (pulse oximeter). ما المشكلة المعروفة في هذه الأجهزة بالنسبة لأصحاب البشرة الداكنة؟",
+        "en": "You are a nurse using a pulse oximeter. What is the known problem with these devices for dark-skinned individuals?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "المرضى ذوو البشرة الداكنة أكثر عرضة بنحو 3 أضعاف لعدم اكتشاف انخفاض خطير في مستوى الأكسجين",
+            "en": "Dark-skinned patients are nearly 3× more likely to have dangerously low oxygen levels missed"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الأجهزة تعطي قراءات عالية بشكل مفرط لجميع المرضى بالتساوي",
+            "en": "Devices give excessively high readings for all patients equally"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا توجد مشكلة — الأجهزة الحديثة حلت هذا التحيز بالكامل",
+            "en": "No problem — modern devices have completely resolved this bias"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المشكلة فقط في أجهزة الإصبع وليس في أجهزة الأذن",
+            "en": "The problem is only with finger devices, not ear devices"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا ليس فقط مشكلة AI — إنه مشكلة تصميم أجهزة طبية منذ عقود. لكن عندما تُدمج هذه القراءات المتحيزة في خوارزميات AI، يتضاعف التحيز: بيانات مدخلة خاطئة → قرارات خاطئة.",
+        "en": "This isn't just an AI problem — it's a medical device design problem going back decades. But when these biased readings are fed into AI algorithms, bias compounds: wrong input data → wrong decisions."
+      }
+    },
+    {
+      "id": "pbh-tf-009",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "بحث جامعة Northwestern أظهر أن دعم الذكاء الاصطناعي في التشخيص رفع دقة جميع الأطباء — لكن الفجوة في الأداء بين البشرة الفاتحة والداكنة اتسعت لدى أطباء الرعاية الأولية.",
+        "en": "Northwestern University research showed that AI diagnostic support improved all physicians' accuracy — but the performance gap between light and dark skin widened for primary care physicians."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. هذا يعني أن AI يمكن أن يُفاقم التفاوتات الصحية حتى عندما يُحسّن الأداء العام. الحل: تدريب النماذج على بيانات متنوعة وقياس فجوات الأداء بين المجموعات المختلفة بشكل منهجي.",
+        "en": "True. This means AI can worsen health disparities even while improving overall performance. The solution: train models on diverse data and systematically measure performance gaps between different groups."
+      }
+    },
+    {
+      "id": "pbh-tf-010",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "المحددات الاجتماعية للصحة (SDOH) مثل السكن والدخل والنقل تفسر حوالي 20% فقط من التباين في الحالة الصحية بين الأفراد.",
+        "en": "Social determinants of health (SDOH) like housing, income, and transportation explain only about 20% of the variation in health status among individuals."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. المحددات الاجتماعية تفسر حوالي 80% من التباين الصحي — بينما الرعاية السريرية تفسر فقط 20%. إدماج بيانات SDOH في نماذج AI يرفع دقة التنبؤ بشكل ملموس.",
+        "en": "False. Social determinants explain about 80% of health variation — while clinical care explains only 20%. Integrating SDOH data into AI models measurably improves prediction accuracy."
+      }
+    },
+    {
+      "id": "pbh-fill-005",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "في الأشعة التشخيصية المدعومة بـ AI، وُجد أن {{blank_1}}% من الحالات المحللة تضمنت أخطاء تشخيصية مرتبطة بهلوسة الذكاء الاصطناعي، بما فيها تصنيف عقد حميدة على أنها خبيثة.",
+        "en": "In AI-supported diagnostic radiology, {{blank_1}}% of analyzed cases involved misdiagnoses linked to AI hallucination, including classifying benign nodules as malignant."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "5-10",
+            "en": "5-10"
+          },
+          "options": [
+            {
+              "ar": "5-10",
+              "en": "5-10"
+            },
+            {
+              "ar": "0.1-0.5",
+              "en": "0.1-0.5"
+            },
+            {
+              "ar": "25-30",
+              "en": "25-30"
+            },
+            {
+              "ar": "50-60",
+              "en": "50-60"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "12% من العقد الحميدة صُنّفت خطأً كخبيثة — مما قد يؤدي لإجراءات طبية غير ضرورية. الهلوسة في AI الطبي ليست مجرد إزعاج — إنها خطر على سلامة المرضى.",
+        "en": "12% of benign nodules were incorrectly classified as malignant — potentially leading to unnecessary medical procedures. Hallucination in medical AI isn't just an annoyance — it's a patient safety risk."
+      }
+    },
+    {
+      "id": "pbh-match-005",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "وصّل كل نوع من تحيز AI في الصحة العامة مع مثاله الواقعي:",
+        "en": "Match each type of public health AI bias with its real-world example:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "تحيز المتغير البديل (Proxy Bias)",
+            "en": "Proxy Bias"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "نقص التمثيل في البيانات",
+            "en": "Data Underrepresentation"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "تحيز تصميم الأجهزة",
+            "en": "Device Design Bias"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "تحيز إداري مُوَرَّث",
+            "en": "Inherited Administrative Bias"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "Optum: استخدام التكلفة كبديل عن المرض يُميّز ضد السود",
+            "en": "Optum: using cost as proxy for illness discriminates against Black patients"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "10.2% فقط من صور AI الجلدية تمثل بشرة داكنة",
+            "en": "Only 10.2% of dermatological AI images represent dark skin"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "مقاييس التأكسج تُخطئ 3 أضعاف مع البشرة الداكنة",
+            "en": "Pulse oximeters err 3× more with dark skin"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "nH Predict: يُعيد إنتاج قرارات خفض تكاليف سابقة",
+            "en": "nH Predict: reproduces previous cost-cutting decisions"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "فهم أنواع التحيز المختلفة ضروري لمواجهتها. كل نوع يتطلب استراتيجية مختلفة: إصلاح المتغيرات، تنويع البيانات، إعادة تصميم الأجهزة، أو قطع سلسلة القرارات المتحيزة.",
+        "en": "Understanding different bias types is essential to combating them. Each type requires a different strategy: fixing variables, diversifying data, redesigning devices, or breaking biased decision chains."
+      }
+    },
+    {
+      "id": "pbh-sort-005",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مصادر تحيز الذكاء الاصطناعي في الصحة العامة حسب صعوبة اكتشافها (من الأسهل اكتشافاً إلى الأصعب):",
+        "en": "Order sources of AI bias in public health by detection difficulty (from easiest to hardest to detect):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "نقص التمثيل في البيانات — قابل للقياس بتحليل ديموغرافي بسيط",
+            "en": "Data underrepresentation — measurable with simple demographic analysis"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تحيز تصميم الأجهزة — يُكتشف بمقارنة القراءات بين المجموعات السكانية",
+            "en": "Device design bias — detected by comparing readings across populations"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تحيز المتغير البديل — يحتاج لفهم عميق للعلاقات بين المتغيرات الاجتماعية والصحية",
+            "en": "Proxy variable bias — requires deep understanding of relationships between social and health variables"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تحيز إداري مُوَرَّث — مخفي في ملايين القرارات التاريخية ويبدو وكأنه \"بيانات واقعية\"",
+            "en": "Inherited administrative bias — hidden in millions of historical decisions and appears as 'factual data'"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الأخطر هو التحيز الذي يبدو طبيعياً: nH Predict يبني تنبؤاته على \"بيانات واقعية\" من 6 ملايين مريض — لكنها تعكس قرارات خفض تكاليف، وليس الاحتياج الطبي الفعلي.",
+        "en": "The most dangerous bias looks natural: nH Predict builds predictions on 'factual data' from 6 million patients — but it reflects cost-cutting decisions, not actual medical need."
+      }
+    },
+    {
+      "id": "pbh-self-009",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مصمم خوارزميات صحية وطُلب منك بناء نظام AI يحدد أي المرضى يحتاجون رعاية إضافية. أي مقياس تختاره كمتغير رئيسي لتحديد \"الحاجة الصحية\"؟",
+        "en": "You are a health algorithm designer asked to build an AI system determining which patients need extra care. Which measure do you choose as the primary variable for 'health need'?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "عدد الأمراض المزمنة + شدتها + المحددات الاجتماعية — وليس تكاليف الرعاية السابقة",
+            "en": "Number of chronic conditions + severity + social determinants — not previous care costs"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مزيج من التكاليف السابقة والحالات المرضية مع مراقبة دورية للتحيز",
+            "en": "A mix of previous costs and medical conditions with periodic bias monitoring"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تكاليف الرعاية الصحية السابقة — فهي المقياس الأسهل والأكثر توفراً",
+            "en": "Previous healthcare costs — they are the easiest and most available measure"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض بناء النظام — تحديد الحاجة يجب أن يبقى قراراً بشرياً بالكامل",
+            "en": "I refuse to build the system — determining need should remain a fully human decision"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "Obermeyer أثبت أن استخدام التكلفة كمقياس يُميّز ضد من ينفقون أقل لأسباب اجتماعية وليس صحية. الحل الأمثل يدمج عدة مقاييس مباشرة للمرض مع مراقبة نشطة للتحيز.",
+        "en": "Obermeyer proved that using cost as a measure discriminates against those who spend less for social, not health, reasons. The optimal solution integrates multiple direct illness measures with active bias monitoring."
+      }
+    },
+    {
+      "id": "pbh-self-010",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول صحة عامة وعلمت أن نظام AI يستخدمه مستشفى في منطقتك يُظهر فجوة أداء 15% بين المرضى من خلفيات عرقية مختلفة. الشركة تقول إن الأداء العام ممتاز. ما موقفك؟",
+        "en": "You are a public health official and learned that an AI system used by a hospital in your area shows a 15% performance gap between patients of different racial backgrounds. The company says overall performance is excellent. What's your position?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الأداء العام الممتاز لا يبرر فجوة 15% — أطالب بخطة لتقليص الفجوة مع جدول زمني واضح",
+            "en": "Excellent overall performance doesn't justify a 15% gap — I demand a gap reduction plan with a clear timeline"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطلب تقريراً مفصلاً عن أسباب الفجوة وأوجّه المستشفى لعدم الاعتماد على AI وحده لهذه المجموعات",
+            "en": "I request a detailed report on gap causes and instruct the hospital not to rely solely on AI for these groups"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "15% فجوة مقبولة طالما الأداء العام جيد — التكنولوجيا ستتحسن لاحقاً",
+            "en": "A 15% gap is acceptable as long as overall performance is good — technology will improve later"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أمنع استخدام أي نظام AI في المستشفيات حتى تصل الفجوة إلى صفر",
+            "en": "I ban all AI systems in hospitals until the gap reaches zero"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "\"الأداء العام الممتاز\" يُخفي أحياناً تفاوتات خطيرة. Northwestern أثبتت أن AI يمكن أن يُحسّن الأداء العام ويُفاقم الفجوات في نفس الوقت. القياس المنفصل لكل مجموعة ضروري.",
+        "en": "'Excellent overall performance' sometimes hides serious disparities. Northwestern proved AI can improve overall performance while widening gaps simultaneously. Separate measurement for each group is essential."
+      }
+    },
+    {
+      "id": "pbh-mcq-016",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير إدارة صحية. McKinsey تقدّر أن AI يمكن أن يقلل الجهد اليدوي في عمليات الموافقة المسبقة بنسبة كبيرة. ما هذه النسبة؟",
+        "en": "You are a health administration director. McKinsey estimates AI could reduce manual effort in prior authorization processes by a significant percentage. What is it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "50-75% — مما يحرر الكوادر للتركيز على رعاية المرضى المباشرة",
+            "en": "50-75% — freeing staff to focus on direct patient care"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "10-15% — تحسين طفيف فقط",
+            "en": "10-15% — only slight improvement"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "100% — أتمتة كاملة دون حاجة لأي تدخل بشري",
+            "en": "100% — complete automation without any human intervention"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "30-40% — تحسين متوسط لكن لا يزال يحتاج كوادر كبيرة",
+            "en": "30-40% — moderate improvement but still needs large staff"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "McKinsey تقدّر أن دمج AI يمكن أن يوفر لشركات التأمين 150-300 مليون دولار في التكاليف الإدارية و380-970 مليون دولار في التكاليف الطبية لكل 10 مليار دولار إيرادات.",
+        "en": "McKinsey estimates AI integration could save insurers $150-300 million in administrative costs and $380-970 million in medical costs per $10 billion in revenue."
+      }
+    },
+    {
+      "id": "pbh-mcq-017",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت وبائي خبير تخشى أن يحل AI محل دورك. بناءً على الأدلة الحالية، ما الوصف الأدق لتأثير AI على مهنة الوبائيات؟",
+        "en": "You are an experienced epidemiologist worried AI will replace your role. Based on current evidence, what is the most accurate description of AI's impact on the epidemiology profession?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI يؤتمت جمع البيانات والتحليل الروتيني ويرفع دور الوبائي إلى مفسّر وصانع قرار — لا استغناء بل تحوّل",
+            "en": "AI automates data collection and routine analysis, elevating the epidemiologist to interpreter and decision-maker — not replacement but transformation"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "AI سيحل محل الوبائيين بالكامل خلال 5 سنوات",
+            "en": "AI will completely replace epidemiologists within 5 years"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "AI لا يؤثر على مهنة الوبائيات على الإطلاق",
+            "en": "AI doesn't affect the epidemiology profession at all"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "AI سيقلص عدد الوبائيين المطلوبين بنسبة 80% مع إبقاء القليل للإشراف",
+            "en": "AI will reduce the number of needed epidemiologists by 80% while keeping a few for oversight"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "Google Flu Trends أثبت أن AI بدون وبائيين يفشل. الأنظمة الناجحة (مثل BlueDot) توظف فرقاً من الوبائيين والأطباء وعلماء البيانات — AI أداة تعزيز وليس بديلاً.",
+        "en": "Google Flu Trends proved AI without epidemiologists fails. Successful systems (like BlueDot) employ teams of epidemiologists, physicians, and data scientists — AI is an enhancement tool, not a replacement."
+      }
+    },
+    {
+      "id": "pbh-mcq-018",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول تخطيط في وزارة الصحة. McKinsey تقدّر أن AI يمكن أن يوفر للنظام الصحي الأمريكي وحده مبلغاً ضخماً سنوياً. ما هذا المبلغ؟",
+        "en": "You are a planning officer at the Ministry of Health. McKinsey estimates AI could save the U.S. healthcare system alone a massive annual amount. What is it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "200-360 مليار دولار سنوياً — عبر تحسين الكفاءة وتقليل الهدر وتحسين النتائج",
+            "en": "200-360 billion annually — through improved efficiency, reduced waste, and better outcomes"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "10-20 مليار دولار سنوياً — توفير محدود في قطاع ضخم",
+            "en": "10-20 billion annually — limited savings in a massive sector"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أكثر من تريليون دولار سنوياً — AI سيغيّر كل شيء",
+            "en": "Over a trillion annually — AI will change everything"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50-80 مليار دولار سنوياً — رقم متواضع مقارنة بحجم الإنفاق",
+            "en": "50-80 billion annually — modest compared to total spending"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "200-360 مليار دولار يمثل 5-10% من إجمالي الإنفاق الصحي الأمريكي. التكاليف الإدارية وحدها تمثل 15-30% من الإنفاق الصحي — وهي المنطقة الأكثر قابلية للأتمتة بالذكاء الاصطناعي.",
+        "en": "200-360 billion represents 5-10% of total U.S. healthcare spending. Administrative costs alone account for 15-30% of healthcare spending — the area most amenable to AI automation."
+      }
+    },
+    {
+      "id": "pbh-tf-011",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "التكاليف الإدارية في القطاع الصحي تمثل 15-30% من إجمالي الإنفاق — وهي المنطقة التي يمكن للذكاء الاصطناعي تحقيق أكبر وفورات فيها.",
+        "en": "Administrative costs in healthcare represent 15-30% of total spending — the area where AI can achieve the greatest savings."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. الموافقات المسبقة، إدارة المطالبات، جدولة العمليات، وتوزيع الأسرّة — كلها عمليات إدارية قابلة للأتمتة. لكن الخطر (كما في حالة nH Predict) هو أن الأتمتة تخدم خفض التكاليف على حساب جودة الرعاية.",
+        "en": "True. Prior authorizations, claims management, OR scheduling, and bed allocation — all automatable administrative processes. But the risk (as in nH Predict) is automation serving cost reduction at the expense of care quality."
+      }
+    },
+    {
+      "id": "pbh-tf-012",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "معدل الإبلاغ المنقوص عن التفاعلات الدوائية الضارة يبلغ 94% وسطياً — مما يجعل أدوات AI للرصد الدوائي (pharmacovigilance) ضرورة وليس رفاهية.",
+        "en": "The median underreporting rate for adverse drug reactions is 94% — making AI pharmacovigilance tools a necessity, not a luxury."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. أدوات AI لليقظة الدوائية تستخرج 40% أكثر من إشارات السلامة من تقارير FDA FAERS مقارنة بالأنظمة القائمة على القواعد. 94% معدل إبلاغ ناقص يعني أن معظم التفاعلات الضارة تمر دون رصد.",
+        "en": "True. AI pharmacovigilance tools harvest 40% more safety signals from FDA FAERS reports than rule-based engines. A 94% underreporting rate means most adverse reactions go undetected."
+      }
+    },
+    {
+      "id": "pbh-fill-006",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "صيدلية UCSF Medical Center الروبوتية وزّعت {{blank_1}} جرعة دوائية بمعدل خطأ صفر تماماً — مثال على أتمتة AI في الصحة العامة.",
+        "en": "UCSF Medical Center's robotic pharmacy has dispensed {{blank_1}} medication doses with a zero error rate — an example of AI automation in public health."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "350,000",
+            "en": "350,000"
+          },
+          "options": [
+            {
+              "ar": "350,000",
+              "en": "350,000"
+            },
+            {
+              "ar": "10,000",
+              "en": "10,000"
+            },
+            {
+              "ar": "1,000,000",
+              "en": "1,000,000"
+            },
+            {
+              "ar": "50,000",
+              "en": "50,000"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "350,000 جرعة بدون خطأ واحد. الأخطاء الدوائية تُقتل أكثر من 7,000 مريض سنوياً في أمريكا وحدها. لكن الروبوتات لا تستطيع استبدال الاستشارة الصيدلانية أو الحكم السريري المعقد.",
+        "en": "350,000 doses without a single error. Medication errors kill over 7,000 patients annually in the U.S. alone. But robots cannot replace pharmaceutical consultation or complex clinical judgment."
+      }
+    },
+    {
+      "id": "pbh-match-006",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مجال في الصحة العامة مع نسبة التأثير المتوقع للذكاء الاصطناعي عليه:",
+        "en": "Match each public health area with the expected AI impact percentage:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "تقليل الجهد اليدوي في الموافقات المسبقة",
+            "en": "Reducing manual effort in prior authorizations"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "استخلاص إشارات سلامة دوائية إضافية",
+            "en": "Extracting additional drug safety signals"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "خطر إزاحة مهام الصرف الروتينية (5-10 سنوات)",
+            "en": "Risk of routine dispensing task displacement (5-10 years)"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "وقت الصيادلة المُعاد توجيهه لرعاية المرضى",
+            "en": "Pharmacist time redirected to patient care"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "50-75%",
+            "en": "50-75%"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "40% أكثر",
+            "en": "40% more"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "70%",
+            "en": "70%"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "45% أكثر",
+            "en": "45% more"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "AI في الصحة العامة لا يلغي الوظائف بل يُحوّلها: الصيادلة ينتقلون من صرف الأدوية (قابل للأتمتة) إلى الاستشارة والمتابعة السريرية (لا يمكن أتمتتها). المحصلة: وظائف أقل رتابة وأكثر قيمة.",
+        "en": "AI in public health doesn't eliminate jobs but transforms them: pharmacists shift from dispensing (automatable) to consultation and clinical follow-up (not automatable). Net result: less monotonous, more valuable roles."
+      }
+    },
+    {
+      "id": "pbh-sort-006",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مهام مسؤول الصحة العامة حسب قابليتها للأتمتة بالذكاء الاصطناعي (من الأكثر قابلية إلى الأقل):",
+        "en": "Order public health officer tasks by AI automation potential (from most automatable to least):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "جمع وتنظيف وتنسيق بيانات الترصّد من مصادر متعددة",
+            "en": "Collecting, cleaning, and formatting surveillance data from multiple sources"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "إنتاج تقارير وبائية دورية وتحليل الاتجاهات الإحصائية",
+            "en": "Producing periodic epidemiological reports and statistical trend analysis"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تصميم حملات توعية صحية مخصصة ثقافياً للمجتمعات المختلفة",
+            "en": "Designing culturally tailored health awareness campaigns for different communities"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "التفاوض مع صناع القرار السياسي وقيادة الاستجابة الوبائية في الأزمات",
+            "en": "Negotiating with political decision-makers and leading epidemic response during crises"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "CDC تستهدف تقليل العمليات اليدوية بنسبة 30% بحلول نهاية 2025 عبر حلول DIBBs الآلية. لكن القيادة والتواصل الإنساني والتكييف الثقافي تبقى مهارات بشرية لا يمكن أتمتتها.",
+        "en": "CDC targets reducing manual processes by 30% by end of 2025 through automated DIBBs solutions. But leadership, human communication, and cultural adaptation remain human skills that cannot be automated."
+      }
+    },
+    {
+      "id": "pbh-self-011",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت وبائي شاب في بداية مسيرتك. ما المهارة الإضافية التي ترى أنها الأهم لمستقبلك المهني في عصر AI؟",
+        "en": "You are a young epidemiologist starting your career. What additional skill do you see as most important for your professional future in the AI era?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "علم البيانات وبرمجة Python/R — لأفهم نماذج AI وأقيّمها وأكيّفها لسياقي المحلي",
+            "en": "Data science and Python/R programming — to understand, evaluate, and adapt AI models to my local context"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "التواصل والقيادة — لأنقل نتائج AI لصناع القرار بشكل مؤثر",
+            "en": "Communication and leadership — to effectively convey AI results to decision-makers"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "التخصص العميق في الإحصاء التقليدي — AI موضة ستمر",
+            "en": "Deep specialization in traditional statistics — AI is a trend that will pass"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "إدارة المشاريع — لأنسّق بين فرق التقنية والصحة",
+            "en": "Project management — to coordinate between tech and health teams"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "BlueDot وEPIWATCH توظف فرقاً متعددة التخصصات: وبائيون + علماء بيانات + أطباء. الوبائي المستقبلي يحتاج أن يتحدث لغتين: لغة الصحة العامة ولغة البيانات.",
+        "en": "BlueDot and EPIWATCH employ multidisciplinary teams: epidemiologists + data scientists + physicians. The future epidemiologist needs to speak two languages: public health and data."
+      }
+    },
+    {
+      "id": "pbh-self-012",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير مستشفى وAI قلّص وقت معالجة المطالبات التأمينية من 3 أيام إلى 6 دقائق. لديك فائض 15 موظفاً إدارياً. ما قرارك؟",
+        "en": "You are a hospital director and AI reduced insurance claims processing time from 3 days to 6 minutes. You have a surplus of 15 administrative staff. What's your decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أعيد تدريبهم على مهام أعلى قيمة: متابعة المرضى بعد الخروج، التنسيق مع الجهات المجتمعية، تحليل بيانات الجودة",
+            "en": "I retrain them on higher-value tasks: post-discharge patient follow-up, community coordination, quality data analysis"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أحتفظ بنصفهم للمراجعة البشرية وأوجّه الباقين لأقسام أخرى",
+            "en": "I keep half for human review and redirect the rest to other departments"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أستغني عن المهارات الزائدة تدريجياً — هذا واقع التحول التقني",
+            "en": "I gradually phase out excess capacity — this is the reality of technological transformation"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أبقي كل الموظفين في نفس أدوارهم — AI قد يفشل في أي لحظة",
+            "en": "I keep all staff in the same roles — AI could fail at any moment"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "أداة FDA \"Elsa\" تقلص مراجعة المستندات التنظيمية من 3 أيام إلى 6 دقائق. التحول لا يعني بالضرورة فقدان وظائف — بل إعادة توجيه الطاقة البشرية نحو مهام تتطلب تعاطفاً وتفكيراً نقدياً.",
+        "en": "FDA's 'Elsa' AI tool reduces regulatory document review from 3 days to 6 minutes. Transformation doesn't necessarily mean job loss — but redirecting human energy toward tasks requiring empathy and critical thinking."
+      }
+    },
+    {
+      "id": "pbh-mcq-019",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مستشار تنظيمي صحي. في فبراير 2025، اتخذ قاضٍ أمريكي قراراً مهماً بشأن دعوى nH Predict ضد UnitedHealth. ما كان هذا القرار؟",
+        "en": "You are a health regulatory consultant. In February 2025, a U.S. judge made an important ruling on the nH Predict lawsuit against UnitedHealth. What was it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "سمح باستمرار الدعوى الجماعية — مؤكداً أن AI لا يجب أن يتجاوز الالتزامات التعاقدية بالمراجعة البشرية",
+            "en": "Allowed the class-action to proceed — affirming that AI should not override contractual commitments to human review"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "رفض الدعوى بالكامل لعدم كفاية الأدلة",
+            "en": "Dismissed the case entirely for insufficient evidence"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "فرض غرامة فورية على UnitedHealth بقيمة مليار دولار",
+            "en": "Imposed an immediate $1 billion fine on UnitedHealth"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أحال القضية للكونغرس لتشريع قانون جديد لتنظيم AI الصحي",
+            "en": "Referred the case to Congress for new health AI legislation"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "المحكمة قبلت دعوى خرق العقد وحسن النية — لأن وثائق التأمين وعدت بأن \"الطاقم السريري أو الأطباء\" سيتخذون قرارات التغطية، وليس خوارزمية. هذا سابقة قانونية مهمة لمستقبل AI في التأمين الصحي.",
+        "en": "The court accepted breach of contract and good faith claims — because insurance documents promised 'clinical staff or physicians' would make coverage decisions, not an algorithm. This is an important legal precedent for AI in health insurance."
+      }
+    },
+    {
+      "id": "pbh-mcq-020",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول في هيئة تنظيمية صحية. في ديسمبر 2025، اعتمدت FDA أداة AI مهمة في مجال تطوير الأدوية لأول مرة. ما هي؟",
+        "en": "You are an official at a health regulatory body. In December 2025, the FDA qualified an important AI tool in drug development for the first time. What was it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AIM-NASH — أول مؤشر حيوي قائم على التعلم الآلي معتمد لتطوير الأدوية",
+            "en": "AIM-NASH — the first machine-learning biomarker qualified for drug development"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ChatGPT Medical — أول نظام لغوي معتمد للاستشارات الطبية",
+            "en": "ChatGPT Medical — the first language system approved for medical consultations"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "DeepMind Drug — أول خوارزمية لتصميم الأدوية ذاتياً دون إشراف بشري",
+            "en": "DeepMind Drug — the first algorithm for self-designing drugs without human oversight"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "AI Pharmacist — أول نظام AI معتمد لصرف الأدوية بشكل مستقل",
+            "en": "AI Pharmacist — the first AI system approved for independent drug dispensing"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "AIM-NASH (مؤشر AI للتهاب الكبد الدهني غير الكحولي) يمثل نقلة في تنظيم AI الصحي — FDA لم تعتمد فقط أداة تشخيصية بل أداة لتطوير الأدوية ذاتها، مما يعني أن نتائج AI يمكن أن تُقبل كدليل في التجارب السريرية.",
+        "en": "AIM-NASH (AI marker for non-alcoholic steatohepatitis) represents a regulatory shift — FDA didn't just approve a diagnostic tool but a drug development tool, meaning AI results can be accepted as evidence in clinical trials."
+      }
+    },
+    {
+      "id": "pbh-mcq-021",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت باحث في سلامة المرضى. تقرير لجنة التحقيقات في مجلس الشيوخ الأمريكي (أكتوبر 2024) كشف ارتفاعاً في معدل رفض UnitedHealth للموافقات المسبقة. ما هذا الارتفاع؟",
+        "en": "You are a patient safety researcher. A U.S. Senate investigation committee report (October 2024) revealed a rise in UnitedHealth's prior authorization denial rate. What was this increase?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "من 10.9% عام 2020 إلى 22.7% عام 2022 — مما يتزامن مع توسع استخدام AI",
+            "en": "From 10.9% in 2020 to 22.7% in 2022 — coinciding with expanded AI use"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "من 50% إلى 90% — ارتفاع كارثي غير مسبوق",
+            "en": "From 50% to 90% — an unprecedented catastrophic increase"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لم يكن هناك ارتفاع — المعدل ظل ثابتاً",
+            "en": "There was no increase — the rate remained constant"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "من 5% إلى 7% — ارتفاع طفيف فقط",
+            "en": "From 5% to 7% — only a slight increase"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "التضاعف من 10.9% إلى 22.7% حدث بالتزامن مع تبنّي أوسع لأدوات AI في تقييم المطالبات. السؤال المحوري: هل AI يُحسّن قرارات الرفض أم يُسهّلها على نطاق أوسع؟",
+        "en": "The doubling from 10.9% to 22.7% coincided with broader AI adoption in claims evaluation. The key question: does AI improve denial decisions or just facilitate them at scale?"
+      }
+    },
+    {
+      "id": "pbh-tf-013",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام Prenosis حصل عام 2024 على أول تصريح من هيئة FDA الأمريكية لنظام ذكاء اصطناعي للكشف عن الإنتان (Sepsis).",
+        "en": "Prenosis received the first FDA clearance in 2024 for an AI sepsis detection system."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. Prenosis هو أول نظام AI يحصل على تصريح FDA لكشف الإنتان — على عكس Epic Sepsis الذي انتشر في مستشفيات تخدم 54% من المرضى الأمريكيين دون تقييم مستقل كافٍ.",
+        "en": "True. Prenosis is the first FDA-cleared AI sepsis detection system — unlike Epic Sepsis which spread to hospitals serving 54% of U.S. patients without sufficient independent evaluation."
+      }
+    },
+    {
+      "id": "pbh-tf-014",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "CDC تستهدف تقليل العمليات اليدوية في وكالات الصحة العامة بنسبة 30% بحلول نهاية 2025 عبر حلول البيانات الآلية (DIBBs).",
+        "en": "CDC targets reducing manual processes in public health agencies by 30% by end of 2025 through automated data solutions (DIBBs)."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. استراتيجية CDC للبيانات الصحية 2025-2026 تشمل أيضاً تحديث نظام NBS إلى نسخة سحابية مع معالجة أسرع 8 مرات، وتوسيع نظام مراقبة مياه الصرف ليشمل 45% من الولايات بحلول 2026.",
+        "en": "True. CDC's 2025-2026 Public Health Data Strategy also includes upgrading NBS to a cloud-based version with 8× faster processing, and expanding wastewater surveillance to 45% of states by 2026."
+      }
+    },
+    {
+      "id": "pbh-fill-007",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "في عام 2025 وحده، اعتمدت هيئة FDA الأمريكية أكثر من {{blank_1}} جهاز طبي جديد يعمل بالذكاء الاصطناعي — أي بمعدل جهاز جديد تقريباً كل يوم عمل.",
+        "en": "In 2025 alone, the U.S. FDA authorized over {{blank_1}} new AI-powered medical devices — roughly one new device every working day."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "295",
+            "en": "295"
+          },
+          "options": [
+            {
+              "ar": "295",
+              "en": "295"
+            },
+            {
+              "ar": "50",
+              "en": "50"
+            },
+            {
+              "ar": "500",
+              "en": "500"
+            },
+            {
+              "ar": "150",
+              "en": "150"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "295 ترخيصاً في 2025 وحده ليصل الإجمالي لأكثر من 1,300 جهاز. ثلاثة أرباع الأجهزة الجديدة كانت في مجال التصوير الطبي. وسطي وقت الترخيص كان 142 يوماً.",
+        "en": "295 clearances in 2025 alone, bringing the total to over 1,300 devices. Three quarters of new devices were in medical imaging. Median clearance time was 142 days."
+      }
+    },
+    {
+      "id": "pbh-match-007",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل إجراء تنظيمي مع الجهة أو الدولة التي اتخذته في مجال AI الصحي:",
+        "en": "Match each regulatory action with the entity or country that took it regarding health AI:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "تصريح أول نظام AI لكشف الإنتان",
+            "en": "First AI sepsis detection clearance"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "أول مؤشر حيوي قائم على التعلم الآلي لتطوير الأدوية",
+            "en": "First ML biomarker for drug development"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "السماح لدعوى AI التأمين الصحي بالاستمرار كدعوى جماعية",
+            "en": "Allowing health insurance AI lawsuit to proceed as class-action"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "مطالبة بمراجعة بشرية إلزامية قبل رفض مطالبات تأمينية",
+            "en": "Demanding mandatory human review before insurance claim denials"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "FDA — Prenosis (2024)",
+            "en": "FDA — Prenosis (2024)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "FDA — AIM-NASH (ديسمبر 2025)",
+            "en": "FDA — AIM-NASH (December 2025)"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "محكمة فيدرالية أمريكية (فبراير 2025)",
+            "en": "U.S. Federal Court (February 2025)"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "الجمعية الطبية الأمريكية AMA",
+            "en": "American Medical Association (AMA)"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "المشهد التنظيمي لـ AI الصحي يتطور بسرعة: FDA تعتمد المئات سنوياً، والمحاكم تبدأ بمحاسبة الشركات، والجمعيات المهنية تضع حدوداً. من لا يتابع سيتخلف.",
+        "en": "The health AI regulatory landscape is evolving rapidly: FDA approves hundreds annually, courts are starting to hold companies accountable, and professional associations are setting boundaries. Those who don't keep up will fall behind."
+      }
+    },
+    {
+      "id": "pbh-sort-007",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب معالم تنظيم AI في الصحة العامة حسب تسلسلها الزمني (من الأقدم إلى الأحدث):",
+        "en": "Order health AI regulatory milestones chronologically (from oldest to newest):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "دراسة Obermeyer في Science تكشف تحيز خوارزمية Optum العنصري (2019)",
+            "en": "Obermeyer's Science study exposing Optum algorithm's racial bias (2019)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "دعوى nH Predict ضد UnitedHealth بسبب معدل خطأ 90% (نوفمبر 2023)",
+            "en": "nH Predict lawsuit against UnitedHealth over 90% error rate (November 2023)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "Prenosis — أول تصريح FDA لنظام AI لكشف الإنتان (2024)",
+            "en": "Prenosis — first FDA clearance for AI sepsis detection (2024)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "قاضٍ أمريكي يسمح باستمرار الدعوى الجماعية ضد UnitedHealth (فبراير 2025)",
+            "en": "U.S. judge allows class-action against UnitedHealth to proceed (February 2025)"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "هذا التسلسل يُظهر كيف تحوّل AI من \"وعد\" إلى \"مسألة قانونية وتنظيمية\" في 6 سنوات فقط. Obermeyer فتح الباب، والدعاوى والتنظيمات تتوالى.",
+        "en": "This sequence shows how AI shifted from 'promise' to 'legal and regulatory issue' in just 6 years. Obermeyer opened the door, and lawsuits and regulations followed."
+      }
+    },
+    {
+      "id": "pbh-self-013",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول في هيئة تنظيمية صحية في بلدك العربي. ما أولويتك في تنظيم AI الصحي؟",
+        "en": "You are an official at a health regulatory body in your Arab country. What is your priority in health AI regulation?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "وضع إطار يجمع بين الابتكار والحماية: تصريح سريع مع رقابة ما بعد السوق وشفافية إلزامية",
+            "en": "Creating a framework balancing innovation and protection: fast approval with post-market surveillance and mandatory transparency"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الاكتفاء باعتماد معايير FDA/EU AI Act دون تعديل — لتوفير الوقت والموارد",
+            "en": "Simply adopting FDA/EU AI Act standards without modification — to save time and resources"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "منع استخدام AI في القرارات الطبية حتى نبني خبرتنا التنظيمية",
+            "en": "Banning AI in medical decisions until we build our regulatory expertise"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ترك التنظيم للسوق — الشركات الرديئة ستفشل تلقائياً",
+            "en": "Leaving regulation to the market — bad companies will automatically fail"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "FDA اعتمدت 295 جهاز AI في 2025 وحده — السرعة ممكنة مع الحماية. تجربة Epic Sepsis تُثبت أن \"الانتشار بدون تحقق مستقل\" وصفة للفشل. البلدان العربية تحتاج إطاراً يُراعي سياقها الديموغرافي.",
+        "en": "FDA approved 295 AI devices in 2025 alone — speed with protection is possible. Epic Sepsis proves 'deployment without independent validation' is a recipe for failure. Arab countries need a framework considering their demographic context."
+      }
+    },
+    {
+      "id": "pbh-self-014",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت طبيب في مستشفى وشركة التأمين رفضت مطالبة مريضك المسنّ باستخدام خوارزمية AI — رغم أنك ترى أن المريض يحتاج رعاية ممتدة. ما تصرفك؟",
+        "en": "You are a doctor at a hospital and the insurance company denied your elderly patient's claim using an AI algorithm — even though you believe the patient needs extended care. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أطعن رسمياً وأطالب بالحصول على تقرير الخوارزمية وأقدم أدلة سريرية تفصيلية تدعم موقفي",
+            "en": "I formally appeal and demand the algorithm report, providing detailed clinical evidence supporting my position"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتواصل مباشرة مع الطبيب المراجع في شركة التأمين لمناقشة الحالة",
+            "en": "I directly contact the reviewing physician at the insurance company to discuss the case"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أقبل قرار الخوارزمية — شركة التأمين لديها بيانات أكثر مني",
+            "en": "I accept the algorithm's decision — the insurance company has more data than I do"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أوجّه المريض للدفع من جيبه — الطعن عملية طويلة ومعقدة",
+            "en": "I direct the patient to pay out-of-pocket — appealing is a long, complex process"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "0.2% فقط من المرضى يطعنون — وشركات التأمين تعتمد على ذلك. الطعن الموثّق بأدلة سريرية هو السلاح الأقوى. في قضية nH Predict، بعض المرضى حُرموا من حقهم لأن تقارير الخوارزمية اعتُبرت \"معلومات ملكية خاصة\".",
+        "en": "Only 0.2% of patients appeal — and insurers count on that. Documented clinical appeals are the strongest weapon. In the nH Predict case, some patients were denied access because algorithm reports were deemed 'proprietary information.'"
+      }
+    },
+    {
+      "id": "pbh-mcq-022",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول في وزارة الصحة السعودية. المستشفى الافتراضي SEHA الذي أُطلق في فبراير 2025 يُعتبر الأكبر عالمياً. كم عدد المرضى الذين يخدمهم عبر تطبيق صحتي؟",
+        "en": "You are an official at the Saudi Ministry of Health. The SEHA Virtual Hospital, launched in February 2025, is considered the world's largest. How many patients does it serve through the Sehhaty app?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أكثر من 255,000 مريض",
+            "en": "Over 255,000 patients"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حوالي 10,000 مريض",
+            "en": "About 10,000 patients"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أكثر من مليون مريض",
+            "en": "Over one million patients"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "حوالي 50,000 مريض",
+            "en": "About 50,000 patients"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "SEHA الافتراضي جزء من برنامج التحول الصحي السعودي الذي يستهدف تغطية 88% من السكان بسجلات رقمية موحدة. سوق AI الصحي السعودي بلغ 435.63 مليون دولار عام 2024، ويُتوقع أن يصل لـ 8.39 مليار بحلول 2033.",
+        "en": "SEHA Virtual is part of Saudi's Health Sector Transformation Program targeting 88% population coverage with unified digital records. Saudi health AI market reached $435.63 million in 2024, projected to $8.39 billion by 2033."
+      }
+    },
+    {
+      "id": "pbh-mcq-023",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير تقنية معلومات صحية في الخليج. نظام Malaffi في أبوظبي يربط عدداً ضخماً من المنشآت الصحية. ما حجم هذا النظام؟",
+        "en": "You are a health IT director in the Gulf. Abu Dhabi's Malaffi system connects a massive number of healthcare facilities. How large is this system?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "1,539 منشأة و39,600 طبيب مع 3.5 مليار سجل سريري لـ 12.7 مليون مريض",
+            "en": "1,539 facilities and 39,600 clinicians with 3.5 billion clinical records for 12.7 million patients"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "100 منشأة و5,000 طبيب مع 500 مليون سجل",
+            "en": "100 facilities and 5,000 clinicians with 500 million records"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "10,000 منشأة في جميع أنحاء الإمارات",
+            "en": "10,000 facilities across the entire UAE"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "500 منشأة مع مليار سجل — في أبوظبي ودبي معاً",
+            "en": "500 facilities with 1 billion records — in Abu Dhabi and Dubai together"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "Malaffi (أبوظبي) وNABIDH (دبي: 9.47 مليون سجل عبر 1,300+ منشأة) وRiayati (اتحادي: 3,000+ مقدم) — ثلاث منظومات تجعل الإمارات من أكثر الدول رقمنة صحياً عالمياً. NABIDH دمج AI لمراقبة أمن البيانات في أبريل 2025.",
+        "en": "Malaffi (Abu Dhabi), NABIDH (Dubai: 9.47M records across 1,300+ facilities), and Riayati (federal: 3,000+ providers) — three systems making the UAE among the most digitally advanced healthcare nations. NABIDH integrated AI for data security monitoring in April 2025."
+      }
+    },
+    {
+      "id": "pbh-mcq-024",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أنت باحث في الصحة الرقمية الخليجية. مستشفى الملك فيصل التخصصي في السعودية حقق إنجازات ملموسة بالذكاء الاصطناعي. ما أبرزها؟",
+        "en": "You are a Gulf digital health researcher. King Faisal Specialist Hospital in Saudi Arabia achieved tangible AI results. What is the most notable?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أكثر من 85,000 تدخل AI أدت لتقليل أوقات انتظار المرضى بأكثر من 50% وانتظار الصيدلية بـ 27%",
+            "en": "Over 85,000 AI interventions reducing patient wait times by 50%+ and pharmacy wait by 27%"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أول مستشفى في العالم يعمل بالكامل بدون أطباء بشريين",
+            "en": "The world's first hospital operating entirely without human doctors"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تطوير أول دواء سعودي باستخدام AI بالكامل",
+            "en": "Developing the first Saudi drug using AI entirely"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تقليل الأخطاء الطبية بنسبة 5% فقط",
+            "en": "Reducing medical errors by only 5%"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "مستشفى الملك فيصل طوّر أكثر من 30 حلاً بالذكاء الاصطناعي داخلياً ويُشغّل مركزاً لذكاء الرعاية الصحية. نموذج يُحتذى للمستشفيات العربية التي تريد بناء قدرات AI محلية بدلاً من الاعتماد الكامل على حلول مستوردة.",
+        "en": "King Faisal developed 30+ AI solutions in-house and operates a Centre for Healthcare Intelligence. A model for Arab hospitals wanting to build local AI capabilities instead of fully relying on imported solutions."
+      }
+    },
+    {
+      "id": "pbh-tf-015",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "البحرين كانت أول دولة خليجية تنشر روبوتات رعاية صحية أثناء جائحة كوفيد-19.",
+        "en": "Bahrain was the first GCC country to deploy healthcare robots during the COVID-19 pandemic."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. البحرين سبقت في هذا المجال. مسح متعدد المراكز شمل 10 دول عربية وجد اهتماماً كبيراً بـ AI مع قلق من فقدان الوظائف بين طلاب التمريض.",
+        "en": "True. Bahrain led in this area. A multi-center survey across 10 Arab countries found significant interest in AI alongside concern about job displacement among nursing students."
+      }
+    },
+    {
+      "id": "pbh-tf-016",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "سوق الذكاء الاصطناعي في الرعاية الصحية السعودية بلغ 435.63 مليون دولار عام 2024، ويُتوقع أن يصل إلى 8.39 مليار دولار بحلول 2033 بمعدل نمو سنوي مركب 37%.",
+        "en": "Saudi Arabia's AI healthcare market reached $435.63 million in 2024, projected to reach $8.39 billion by 2033 with a 37% CAGR."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. معدل نمو 37% يجعل السعودية من أسرع الأسواق نمواً عالمياً في هذا المجال. في مايو 2025، أُطلقت أول عيادة في العالم تعمل بالكامل بالذكاء الاصطناعي في منطقة الأحساء بالسعودية.",
+        "en": "True. A 37% growth rate makes Saudi Arabia one of the fastest-growing markets globally. In May 2025, the world's first fully AI-powered doctor clinic launched in Saudi Arabia's Al-Ahsa region."
+      }
+    },
+    {
+      "id": "pbh-fill-008",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} في دبي يوحّد 9.47 مليون سجل مريض عبر أكثر من 1,300 منشأة صحية، ودمج الذكاء الاصطناعي لمراقبة أمن البيانات في أبريل 2025.",
+        "en": "Dubai's {{blank_1}} system unifies 9.47 million patient records across 1,300+ healthcare facilities, and integrated AI for data security monitoring in April 2025."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "NABIDH",
+            "en": "NABIDH"
+          },
+          "options": [
+            {
+              "ar": "NABIDH",
+              "en": "NABIDH"
+            },
+            {
+              "ar": "Malaffi",
+              "en": "Malaffi"
+            },
+            {
+              "ar": "SEHA",
+              "en": "SEHA"
+            },
+            {
+              "ar": "Riayati",
+              "en": "Riayati"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "NABIDH (دبي) وMalaffi (أبوظبي) نظامان منفصلان — Malaffi يربط 1,539 منشأة بـ 3.5 مليار سجل، بينما Riayati هو النظام الاتحادي الذي يربط 3,000+ مقدم في كل الإمارات.",
+        "en": "NABIDH (Dubai) and Malaffi (Abu Dhabi) are separate systems — Malaffi connects 1,539 facilities with 3.5 billion records, while Riayati is the federal system linking 3,000+ providers across all UAE."
+      }
+    },
+    {
+      "id": "pbh-match-008",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "وصّل كل نظام صحي رقمي خليجي مع الوصف الصحيح الذي يميّزه:",
+        "en": "Match each Gulf digital health system with its correct distinguishing description:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "SEHA الافتراضي (السعودية)",
+            "en": "SEHA Virtual (Saudi Arabia)"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Malaffi (أبوظبي)",
+            "en": "Malaffi (Abu Dhabi)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Sidra Medicine (قطر)",
+            "en": "Sidra Medicine (Qatar)"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "مستشفى الملك فيصل التخصصي",
+            "en": "King Faisal Specialist Hospital"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "أكبر مستشفى افتراضي في العالم — 255,000+ مريض عبر صحتي",
+            "en": "World's largest virtual hospital — 255,000+ patients via Sehhaty"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "3.5 مليار سجل سريري — 12.7 مليون مريض — 1,539 منشأة",
+            "en": "3.5 billion clinical records — 12.7 million patients — 1,539 facilities"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "أداة AI حققت 84% في تصنيف مرض السكري من النوع الأول",
+            "en": "AI tool achieving 84% for Type 1 diabetes stratification"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "30+ حلاً AI داخلياً — 85,000+ تدخل — تقليل الانتظار 50%+",
+            "en": "30+ in-house AI solutions — 85,000+ interventions — 50%+ wait reduction"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "قطر خصصت 22 مليار ريال قطري (~6 مليار دولار) للرعاية الصحية في 2025، مع استراتيجية وطنية للذكاء الاصطناعي تؤكد على قطاع الصحة. الخليج يبني نماذج متميزة يمكن أن تُصدَّر لبقية العالم العربي.",
+        "en": "Qatar allocated QAR 22 billion (~$6 billion) for healthcare in 2025, with a national AI strategy emphasizing health. The Gulf is building distinctive models that could be exported to the rest of the Arab world."
+      }
+    },
+    {
+      "id": "pbh-sort-008",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مراحل بناء منظومة صحة عامة رقمية متكاملة بالذكاء الاصطناعي في بلد عربي (من البداية إلى الكمال):",
+        "en": "Order the stages of building an integrated AI-powered digital public health system in an Arab country (from start to completion):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "توحيد السجلات الصحية الإلكترونية عبر كل المنشآت في نظام مركزي (مثل Malaffi/NABIDH)",
+            "en": "Unifying electronic health records across all facilities in a central system (like Malaffi/NABIDH)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "بناء قدرات AI محلية: تدريب نماذج على بيانات السكان المحليين (أمراض شائعة، عوامل وراثية، أنماط حياة)",
+            "en": "Building local AI capabilities: training models on local population data (common diseases, genetic factors, lifestyles)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "دمج AI في سير العمل السريري: أنظمة إنذار مبكر، ترصّد وبائي، إدارة سعة المستشفيات",
+            "en": "Integrating AI into clinical workflow: early warning systems, epidemic surveillance, hospital capacity management"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تطوير إطار تنظيمي وأخلاقي محلي مع رقابة مستمرة على التحيز والأداء عبر كل الفئات السكانية",
+            "en": "Developing a local regulatory and ethical framework with continuous bias and performance monitoring across all population groups"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الإمارات والسعودية بدأتا بالخطوة الأولى (توحيد السجلات)، لكن الخطوة الثانية (نماذج محلية) لا تزال في مراحلها الأولى. استيراد نماذج غربية بدون تكييف يعني استيراد تحيزاتها أيضاً.",
+        "en": "The UAE and Saudi Arabia started with step one (record unification), but step two (local models) is still in early stages. Importing Western models without adaptation means importing their biases too."
+      }
+    },
+    {
+      "id": "pbh-self-015",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول صحة عامة في دولة عربية. سوق AI الصحي السعودي ينمو بـ 37% سنوياً بينما بلدك لم يبدأ بعد. ما أولويتك؟",
+        "en": "You are a public health official in an Arab country. Saudi health AI market grows at 37% annually while your country hasn't started yet. What's your priority?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبدأ بتوحيد السجلات الصحية الإلكترونية — لا فائدة من AI بدون بيانات منظمة",
+            "en": "I start with unifying electronic health records — AI is useless without organized data"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتعاون مع دولة خليجية رائدة لنقل تجربتها وتكييفها محلياً",
+            "en": "I partner with a leading Gulf state to transfer their experience and adapt it locally"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر حتى تتضح أفضل الممارسات عالمياً ثم أنسخها",
+            "en": "I wait until global best practices become clear, then copy them"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أركّز على تحسين الخدمات التقليدية — AI ليس أولوية لبلد نامٍ",
+            "en": "I focus on improving traditional services — AI is not a priority for a developing country"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "البنية التحتية الرقمية هي الأساس الذي لا يمكن تجاوزه. Malaffi وNABIDH لم يُبنيا في يوم — لكنهما الآن يُمكّنان AI. البلدان التي تبدأ الآن ستكون جاهزة خلال 3-5 سنوات.",
+        "en": "Digital infrastructure is the foundation that cannot be skipped. Malaffi and NABIDH weren't built in a day — but now they enable AI. Countries that start now will be ready in 3-5 years."
+      }
+    },
+    {
+      "id": "pbh-self-016",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت طبيب صحة عامة سعودي تعمل في SEHA الافتراضي. المنصة تقترح تشخيصاً وخطة علاجية لمريض عبر الفيديو، لكنك لا تتفق مع الاقتراح. ما تصرفك؟",
+        "en": "You are a Saudi public health doctor working at SEHA Virtual. The platform suggests a diagnosis and treatment plan for a video patient, but you disagree with the suggestion. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتبع حكمي السريري — AI أداة مساعدة وليس صانع قرار. أوثّق سبب الاختلاف للتعلم المستمر",
+            "en": "I follow my clinical judgment — AI is a support tool, not a decision-maker. I document the reason for disagreement for continuous learning"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطلب رأي زميل آخر قبل اتخاذ قرار نهائي",
+            "en": "I seek another colleague's opinion before making a final decision"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتبع اقتراح AI — الخوارزمية مبنية على بيانات أكثر مما أملك",
+            "en": "I follow the AI suggestion — the algorithm is built on more data than I have"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض استخدام المنصة — لا أثق بالتشخيص عن بُعد",
+            "en": "I refuse to use the platform — I don't trust remote diagnosis"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الذكاء الاصطناعي يُكمل الخبرة الطبية ولا يحل محلها. توثيق حالات الاختلاف بين AI والطبيب يُحسّن النظام للمستقبل. SEHA الافتراضي مصمم كأداة دعم وليس كبديل للحكم الطبي.",
+        "en": "AI complements medical expertise, not replaces it. Documenting disagreements between AI and physicians improves the system for the future. SEHA Virtual is designed as a support tool, not a substitute for medical judgment."
+      }
+    },
+    {
+      "id": "pbh-mcq-025",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مستشرف مستقبلي في قطاع الصحة. ما النهج الذي يُتوقع أن يهيمن على ترصّد الأمراض خلال 3-5 سنوات القادمة؟",
+        "en": "You are a health sector futurist. What approach is expected to dominate disease surveillance in the next 3-5 years?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نهج \"صحة واحدة\" (One Health) يدمج بيانات بشرية وحيوانية وبيئية بالذكاء الاصطناعي — مع بيانات آنية من أجهزة قابلة للارتداء وحساسات بيئية",
+            "en": "A 'One Health' approach integrating human, animal, and environmental data with AI — plus real-time data from wearables and environmental sensors"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الاعتماد الكامل على التنبؤات اللغوية من GPT دون بيانات وبائية",
+            "en": "Full reliance on GPT language predictions without epidemiological data"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "العودة لنماذج SIR التقليدية مع حوسبة أسرع فقط",
+            "en": "Returning to traditional SIR models with just faster computing"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ترصّد مياه الصرف حصرياً — كل المصادر الأخرى ستصبح غير ضرورية",
+            "en": "Wastewater surveillance exclusively — all other sources will become unnecessary"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "نهج One Health يدمج بيانات من: وسائل التواصل، أجهزة قابلة للارتداء، حساسات بيئية، مراقبة مياه صرف، تسلسل جينومي — في منصة واحدة. المستقبل هو \"ترصّد متعدد الأبعاد\" وليس حل واحد سحري.",
+        "en": "One Health integrates data from: social media, wearables, environmental sensors, wastewater monitoring, genomic sequencing — into one platform. The future is 'multidimensional surveillance,' not one magic solution."
+      }
+    },
+    {
+      "id": "pbh-mcq-026",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مصمم نظام ترصّد وبائي من الجيل القادم. ما التقنية الناشئة التي ستُحدث أكبر فرق في خصوصية بيانات المرضى أثناء مشاركة البيانات بين المستشفيات؟",
+        "en": "You are designing a next-generation surveillance system. What emerging technology will make the biggest difference in patient data privacy during data sharing between hospitals?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التعلم الموحّد (Federated Learning) — تدريب النماذج على البيانات محلياً دون نقلها بين المؤسسات",
+            "en": "Federated Learning — training models on data locally without transferring it between institutions"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تشفير البيانات بالكامل قبل مشاركتها — كافٍ لحل مشكلة الخصوصية",
+            "en": "Full data encryption before sharing — sufficient to solve the privacy problem"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حذف أسماء المرضى فقط من السجلات قبل المشاركة",
+            "en": "Only deleting patient names from records before sharing"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "عدم مشاركة البيانات نهائياً بين المؤسسات — كل مستشفى يبني نموذجه المستقل",
+            "en": "Never sharing data between institutions — each hospital builds its own independent model"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "التعلم الموحّد يسمح لعدة مستشفيات بتدريب نموذج AI مشترك دون أن تغادر بيانات أي مريض مؤسسته. هذا يحل معضلة \"نحتاج بيانات أكثر لتحسين الدقة\" مقابل \"نحتاج حماية خصوصية المرضى\".",
+        "en": "Federated Learning allows multiple hospitals to train a shared AI model without any patient data leaving its institution. This solves the dilemma of 'we need more data to improve accuracy' versus 'we need to protect patient privacy.'"
+      }
+    },
+    {
+      "id": "pbh-mcq-027",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت باحث في مقاومة المضادات الحيوية. ما التطور الناشئ في استخدام AI لمحاربة البكتيريا المقاومة للمضادات الحيوية؟",
+        "en": "You are an antimicrobial resistance researcher. What is the emerging development in using AI to fight antibiotic-resistant bacteria?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "العلاج بالعاثيات البكتيرية المُوجّه بالذكاء الاصطناعي — استخدام فيروسات تهاجم البكتيريا المقاومة تحديداً",
+            "en": "AI-guided bacteriophage therapy — using viruses that specifically attack resistant bacteria"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "AI يصنع مضادات حيوية جديدة تماماً من لا شيء",
+            "en": "AI creates entirely new antibiotics from nothing"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "استبدال المضادات الحيوية بالكامل بلقاحات مولّدة بالذكاء الاصطناعي",
+            "en": "Completely replacing antibiotics with AI-generated vaccines"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "AI لا يفيد في مجال مقاومة المضادات — المشكلة بيولوجية بحتة",
+            "en": "AI is useless in antimicrobial resistance — the problem is purely biological"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "العاثيات البكتيرية (Bacteriophages) موجودة منذ عقود لكنها كانت صعبة الاستخدام. AI يُمكّن من تحديد العاثية المناسبة لكل بكتيريا مقاومة بدقة — مما يفتح باباً جديداً في عصر ما بعد المضادات الحيوية.",
+        "en": "Bacteriophages have existed for decades but were difficult to use. AI enables precisely matching the right phage to each resistant bacterium — opening a new door in the post-antibiotic era."
+      }
+    },
+    {
+      "id": "pbh-tf-017",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "التعلم المعزز (Reinforcement Learning) يُعتبر الاتجاه المستقبلي لأنظمة اتخاذ القرار التكيفية في إدارة الأوبئة — حيث يتعلم النظام من نتائج قراراته ويُحسّنها تلقائياً.",
+        "en": "Reinforcement Learning is considered the future direction for adaptive decision-making systems in epidemic management — where the system learns from the outcomes of its decisions and automatically improves them."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. التعلم المعزز يتجاوز مجرد التنبؤ إلى اقتراح أفضل الإجراءات (مثل: هل نفرض حجراً صحياً؟ متى نرفعه؟) بناءً على التغذية الراجعة من النتائج الفعلية — مثل لاعب شطرنج يتعلم من كل مباراة.",
+        "en": "True. Reinforcement Learning goes beyond prediction to suggesting optimal actions (e.g., should we impose quarantine? when to lift it?) based on feedback from actual outcomes — like a chess player learning from every game."
+      }
+    },
+    {
+      "id": "pbh-tf-018",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "خطة CDC الأمريكية تستهدف أن 45% من الولايات تُرسل نتائج مراقبة SARS-CoV-2 في مياه الصرف بحلول 2026.",
+        "en": "The CDC's plan targets 45% of U.S. states submitting SARS-CoV-2 wastewater surveillance results by 2026."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. في 2025 الهدف كان 35%، وفي 2026 يرتفع إلى 45%. هذا التوسع التدريجي يعكس التحول من مراقبة مياه الصرف كأداة طوارئ (كوفيد) إلى نظام ترصّد دائم ومتعدد المسببات.",
+        "en": "True. The 2025 target was 35%, rising to 45% in 2026. This gradual expansion reflects the shift from wastewater surveillance as an emergency tool (COVID) to a permanent, multi-pathogen surveillance system."
+      }
+    },
+    {
+      "id": "pbh-fill-009",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "يُتوقع أن تصل وفيات مقاومة المضادات الحيوية (AMR) إلى {{blank_1}} مليون وفاة سنوياً بحلول عام 2050 — مما يجعلها أحد أكبر تحديات الصحة العامة في المستقبل.",
+        "en": "Antimicrobial resistance (AMR) deaths are projected to reach {{blank_1}} million annually by 2050 — making it one of the biggest future public health challenges."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "10",
+            "en": "10"
+          },
+          "options": [
+            {
+              "ar": "10",
+              "en": "10"
+            },
+            {
+              "ar": "2",
+              "en": "2"
+            },
+            {
+              "ar": "50",
+              "en": "50"
+            },
+            {
+              "ar": "20",
+              "en": "20"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "10 ملايين وفاة سنوياً — أكثر من السرطان حالياً (9.7 مليون). AMR تقتل حالياً 1.27 مليون مباشرة. AI يُقدم أملاً: نماذج XGBoost حققت AUC 0.96 في التنبؤ بالمقاومة.",
+        "en": "10 million deaths annually — more than cancer currently (9.7 million). AMR currently kills 1.27 million directly. AI offers hope: XGBoost models achieved 0.96 AUC in predicting resistance."
+      }
+    },
+    {
+      "id": "pbh-match-009",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل اتجاه مستقبلي في AI الصحة العامة مع التقنية الرئيسية التي يعتمد عليها:",
+        "en": "Match each future public health AI trend with its key enabling technology:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "ترصّد متعدد الأبعاد (One Health)",
+            "en": "Multidimensional surveillance (One Health)"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "حماية خصوصية البيانات أثناء التدريب المشترك",
+            "en": "Data privacy during collaborative training"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "إدارة أوبئة تكيفية ذاتية التحسين",
+            "en": "Self-improving adaptive epidemic management"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "تتبع تطور المُمرضات لحظياً",
+            "en": "Real-time pathogen evolution tracking"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "دمج بيانات بشرية + حيوانية + بيئية + جينومية في منصة واحدة",
+            "en": "Integrating human + animal + environmental + genomic data in one platform"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "التعلم الموحّد (Federated Learning)",
+            "en": "Federated Learning"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "التعلم المعزز (Reinforcement Learning)",
+            "en": "Reinforcement Learning"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "التسلسل الجينومي المقترن بـ AI",
+            "en": "AI-coupled genomic sequencing"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه التقنيات الأربع مجتمعة ستُشكّل \"الترصّد الوبائي 2.0\": شامل، خاص، تكيفي، ودقيق على مستوى الجينوم. التحدي: بناء البنية التحتية والكوادر لدعمها.",
+        "en": "These four technologies combined will form 'Surveillance 2.0': comprehensive, private, adaptive, and genome-level precise. The challenge: building the infrastructure and workforce to support them."
+      }
+    },
+    {
+      "id": "pbh-sort-009",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب أولويات الاستثمار في AI الصحة العامة للبلدان النامية (من الأولوية العليا إلى الأدنى):",
+        "en": "Order investment priorities in public health AI for developing countries (from highest to lowest priority):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "بنية تحتية رقمية: سجلات صحية إلكترونية موحدة واتصال إنترنت مستقر",
+            "en": "Digital infrastructure: unified EHRs and stable internet connectivity"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "بناء كوادر: تدريب وبائيين على علم البيانات وتوظيف فرق متعددة التخصصات",
+            "en": "Workforce building: training epidemiologists in data science and hiring multidisciplinary teams"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تبنّي أدوات AI مُثبتة: مراقبة مياه صرف + ترصّد رقمي + أنظمة إنذار مبكر",
+            "en": "Adopting proven AI tools: wastewater monitoring + digital surveillance + early warning systems"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تطوير نماذج AI محلية مُكيّفة ثقافياً وديموغرافياً مع إطار أخلاقي وتنظيمي",
+            "en": "Developing locally adapted AI models culturally and demographically with ethical and regulatory framework"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "البنية التحتية أولاً — لا فائدة من AI بدون بيانات رقمية. ثم الكوادر — لا فائدة من أدوات دون من يستخدمها بذكاء. ثم التبنّي — أدوات مُثبتة قبل الابتكار. وأخيراً التطوير المحلي — الاستدامة.",
+        "en": "Infrastructure first — AI is useless without digital data. Then workforce — tools are useless without smart users. Then adoption — proven tools before innovation. Finally local development — sustainability."
+      }
+    },
+    {
+      "id": "pbh-self-017",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير برنامج صحة عامة وعُرض عليك نظام AI يدمج بيانات بشرية وحيوانية وبيئية لتنبؤ بالأوبئة القادمة (نهج One Health). ما رأيك؟",
+        "en": "You are a public health program director offered an AI system integrating human, animal, and environmental data to predict upcoming epidemics (One Health approach). What's your view?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نهج ثوري — أبدأ فوراً بتكوين فريق متعدد التخصصات (وبائيون + أطباء بيطريون + علماء بيئة) لتبنّيه",
+            "en": "A revolutionary approach — I immediately start forming a multidisciplinary team (epidemiologists + veterinarians + environmental scientists) to adopt it"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "فكرة واعدة لكن أبدأ بدمج البيانات البشرية والحيوانية فقط قبل إضافة البيئية",
+            "en": "Promising idea but I start by integrating human and animal data only before adding environmental"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الفكرة نظرية — أفضّل التركيز على تحسين الترصّد البشري التقليدي أولاً",
+            "en": "The idea is theoretical — I prefer focusing on improving traditional human surveillance first"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — خلط بيانات بشرية وحيوانية وبيئية سيُعقّد الأمور دون فائدة واضحة",
+            "en": "I refuse — mixing human, animal, and environmental data will complicate things without clear benefit"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "60% من الأمراض المعدية الناشئة حيوانية المنشأ (مثل كوفيد-19 وإيبولا وإنفلونزا الطيور). تجاهل البيانات الحيوانية والبيئية يعني تجاهل 60% من مصادر الخطر.",
+        "en": "60% of emerging infectious diseases are zoonotic (like COVID-19, Ebola, and avian flu). Ignoring animal and environmental data means ignoring 60% of risk sources."
+      }
+    },
+    {
+      "id": "pbh-self-018",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول صحة عامة في المستقبل (2030). AI أصبح يُنتج توصيات وبائية شبه فورية. بعض الزملاء يقولون إن الوبائيين البشريين لم يعودوا ضروريين. ما رأيك؟",
+        "en": "You are a public health official in the future (2030). AI now produces near-instant epidemiological recommendations. Some colleagues say human epidemiologists are no longer necessary. What's your view?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الوبائيون أهم من أي وقت — AI يُسرّع الحسابات لكن الحكم السريقي والتواصل المجتمعي والقيادة في الأزمات تبقى بشرية",
+            "en": "Epidemiologists are more important than ever — AI accelerates calculations but contextual judgment, community communication, and crisis leadership remain human"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "عدد الوبائيين المطلوب سيقل لكن جودة المتبقين يجب أن ترتفع — نحتاج وبائيين يتقنون البيانات والقيادة معاً",
+            "en": "The number needed will decrease but the quality must rise — we need epidemiologists proficient in both data and leadership"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "ربما يكفي فريق صغير من مهندسي AI مع مستشار وبائي واحد",
+            "en": "Perhaps a small AI engineering team with one epidemiology consultant is sufficient"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا حاجة لوبائيين — AI يمكنه فعل كل شيء من الترصّد إلى اتخاذ القرار",
+            "en": "No need for epidemiologists — AI can do everything from surveillance to decision-making"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Google Flu Trends فشل لأنه لم يكن هناك وبائيون في الحلقة. BlueDot نجح لأن فريقه يجمع بين AI والخبرة الوبائية البشرية. المستقبل: وبائيون مُعزَّزون بالذكاء الاصطناعي، وليس ذكاء اصطناعي بلا وبائيين.",
+        "en": "Google Flu Trends failed because there were no epidemiologists in the loop. BlueDot succeeded because its team combines AI with human epidemiological expertise. The future: AI-augmented epidemiologists, not AI without epidemiologists."
+      }
+    },
+    {
+      "id": "pbh-mcq-028",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول تغذية سكانية. أردت استخدام AI لتحديد المناطق الأكثر عرضة لانعدام الأمن الغذائي. ما التحدي الأكبر في استخدام بيانات السجلات الصحية الإلكترونية لهذا الغرض؟",
+        "en": "You are a population nutrition officer. You want to use AI to identify areas most vulnerable to food insecurity. What is the biggest challenge in using EHR data for this purpose?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "بيانات المحددات الاجتماعية مسجلة في حقول نصية حرة وليست منظمة — مما يصعّب تجميعها بدون NLP",
+            "en": "Social determinants data is recorded in free-text fields, not structured — making aggregation difficult without NLP"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "السجلات الصحية لا تحتوي على أي معلومات غذائية أبداً",
+            "en": "Health records never contain any nutritional information"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "التحدي فقط تقني — أي مبرمج يمكنه استخراج البيانات بسهولة",
+            "en": "The challenge is only technical — any programmer can easily extract the data"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "بيانات السجلات الصحية منظمة تماماً ولا تحتاج لمعالجة",
+            "en": "EHR data is perfectly structured and needs no processing"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "تقنيات NLP مثل Caliper تستخرج 40% أكثر من بيانات المحددات الاجتماعية من النصوص الحرة في السجلات. المشكلة ليست غياب البيانات بل أنها مخبّأة في ملاحظات الأطباء النصية غير المنظمة.",
+        "en": "NLP technologies like Caliper extract 40% more SDOH data from free-text EHR notes. The problem isn't absent data but data hidden in physicians' unstructured text notes."
+      }
+    },
+    {
+      "id": "pbh-mcq-029",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير مشروع لتقليل إعادة إدخال مرضى السكري. ترغب في استخدام AI لتحديد المرضى الأعلى خطورة. أي نموذج تنبؤي أثبت تفوقه الواضح على النماذج التقليدية؟",
+        "en": "You are directing a diabetes readmission reduction project. You want to use AI to identify highest-risk patients. Which predictive model has clearly proven superior to traditional models?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نماذج AI تدمج بيانات المطالبات + المحددات الاجتماعية + تنبيهات الدخول/الخروج — تتفوق على CDPS التقليدي في تحديد أعلى 5% خطورة",
+            "en": "AI models integrating claims + SDOH + admission/discharge alerts — outperform traditional CDPS in identifying top 5% risk"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مؤشر LACE التقليدي يبقى الأفضل — لا حاجة لـ AI",
+            "en": "Traditional LACE index remains the best — no need for AI"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "ChatGPT يمكنه قراءة ملفات المرضى وتحديد الخطورة مباشرة",
+            "en": "ChatGPT can read patient files and directly determine risk"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أي نموذج تعلم آلي يتفوق تلقائياً — لا حاجة لاختيار دقيق",
+            "en": "Any ML model automatically outperforms — no need for careful selection"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "دراسة Medical Home Network أثبتت أن نموذج AI يدمج بيانات SDOH مع المطالبات يحدد المرضى ذوي التكلفة المرتفعة بدقة أعلى بكثير من النماذج الاكتوارية التقليدية (CDPS) التي تعتمد على المطالبات فقط.",
+        "en": "A Medical Home Network study proved AI models integrating SDOH with claims data identified high-cost patients far more accurately than traditional actuarial (CDPS) models relying on claims alone."
+      }
+    },
+    {
+      "id": "pbh-mcq-030",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صيدلي سريري في مستشفى كبير. كيف يُغيّر AI دور الصيدلي في منظومة الصحة العامة؟",
+        "en": "You are a clinical pharmacist at a large hospital. How is AI changing the pharmacist's role in the public health system?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI يؤتمت الصرف الروتيني ويُحرر الصيدلي لقضاء 45% وقت أكثر في الرعاية المباشرة — لكن الاستشارة والحكم السريري لا يمكن أتمتتهما",
+            "en": "AI automates routine dispensing and frees pharmacists to spend 45% more time on direct care — but consultation and clinical judgment cannot be automated"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "AI سيحل محل الصيادلة بالكامل خلال 3 سنوات",
+            "en": "AI will completely replace pharmacists within 3 years"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "AI لا يؤثر على مهنة الصيدلة — هي مهنة بشرية بالكامل",
+            "en": "AI doesn't affect pharmacy — it's an entirely human profession"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "AI يُقلل إنتاجية الصيادلة بسبب تعقيد الأنظمة الجديدة",
+            "en": "AI reduces pharmacist productivity due to the complexity of new systems"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هناك خطر إزاحة 70% من مهام الصرف الروتينية خلال 5-10 سنوات. لكن AI يرفع إنتاجية الصيدلي 33%، والصيادلة في بيئات مؤتمتة يقضون 45% وقت أكثر مع المرضى — تحوّل من \"صارف أدوية\" إلى \"مستشار علاجي\".",
+        "en": "There's a 70% displacement risk for routine dispensing tasks over 5-10 years. But AI increases pharmacist productivity by 33%, and pharmacists in automated environments spend 45% more time with patients — transforming from 'drug dispenser' to 'therapeutic consultant.'"
+      }
+    },
+    {
+      "id": "pbh-tf-019",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام Edwards Lifesciences Hypotension Prediction Index نجح في تقليل الوقت الذي يقضيه المرضى في مستويات ضغط دم خطيرة بنسبة 63% أثناء العمليات الجراحية.",
+        "en": "Edwards Lifesciences' Hypotension Prediction Index successfully reduced time patients spend at dangerously low blood pressure levels by 63% during surgeries."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. انخفاض ضغط الدم أثناء الجراحة يزيد خطر الفشل الكلوي والسكتة الدماغية والوفاة. تقليل وقت الانخفاض بـ 63% ينعكس مباشرة على نتائج المرضى.",
+        "en": "True. Intraoperative hypotension increases risk of kidney failure, stroke, and death. Reducing hypotension time by 63% directly impacts patient outcomes."
+      }
+    },
+    {
+      "id": "pbh-tf-020",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "شركة Insilico Medicine أنشأت مركز ذكاء اصطناعي في مدينة مصدر بأبوظبي وأعلنت عن تجربة لاكتشاف أول مرشح دوائي للأورام بالكامل في الإمارات، مع خطط لافتتاح مركز مماثل في الرياض عام 2026.",
+        "en": "Insilico Medicine established an AI center in Masdar City, Abu Dhabi, and announced a pilot to discover the first oncology drug candidate entirely in the UAE, with plans for a mirrored facility in Riyadh in 2026."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. برنامج الجينوم الإماراتي يرسم خريطة الحمض النووي لكل المواطنين الراغبين، وG42 Healthcare تركز على الجينوميات والطب الدقيق. المنطقة تنتقل من \"مستهلك\" لتقنيات AI الصحية إلى \"مُنتج\" لها.",
+        "en": "True. The Emirati Genome Programme maps willing citizens' DNA, and G42 Healthcare focuses on genomics and precision medicine. The region is shifting from 'consumer' of health AI technologies to 'producer.'"
+      }
+    },
+    {
+      "id": "pbh-fill-010",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "قطر خصصت {{blank_1}} مليار ريال قطري (حوالي 6 مليار دولار) للرعاية الصحية في عام 2025، مع استراتيجية وطنية للذكاء الاصطناعي تُعطي أولوية لقطاع الصحة.",
+        "en": "Qatar allocated {{blank_1}} billion Qatari Riyals (approximately $6 billion) for healthcare in 2025, with a national AI strategy prioritizing the health sector."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "22",
+            "en": "22"
+          },
+          "options": [
+            {
+              "ar": "22",
+              "en": "22"
+            },
+            {
+              "ar": "5",
+              "en": "5"
+            },
+            {
+              "ar": "50",
+              "en": "50"
+            },
+            {
+              "ar": "10",
+              "en": "10"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Sidra Medicine في قطر طوّرت أداة AI حققت 84% دقة في تصنيف مرض السكري من النوع الأول. الاستثمارات الخليجية في AI الصحي ليست مجرد أرقام — إنها تترجم إلى أدوات سريرية ملموسة.",
+        "en": "Qatar's Sidra Medicine developed an AI tool achieving 84% accuracy for Type 1 diabetes stratification. Gulf health AI investments aren't just numbers — they translate to tangible clinical tools."
+      }
+    },
+    {
+      "id": "pbh-match-010",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل سيناريو في الصحة العامة مع أفضل نهج AI للتعامل معه:",
+        "en": "Match each public health scenario with the best AI approach to handle it:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "كشف تفشي فيروسي مبكر في مجتمع دون فحوصات كافية",
+            "en": "Early detection of a viral outbreak in a community without sufficient testing"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "تقليل فجوة إعادة الإدخال بين مجموعات عرقية مختلفة",
+            "en": "Reducing readmission gap between different racial groups"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "التنبؤ بمقاومة بكتيرية لمضاد حيوي محدد",
+            "en": "Predicting bacterial resistance to a specific antibiotic"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "إدارة تدفق المرضى وجدولة غرف العمليات",
+            "en": "Managing patient flow and OR scheduling"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "مراقبة مياه الصرف + تعلم آلي تنبؤي",
+            "en": "Wastewater surveillance + predictive ML"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "نماذج تنبؤية تدمج SDOH مع مقاييس عدالة صحية",
+            "en": "Predictive models integrating SDOH with health equity metrics"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "XGBoost على بيانات عزلات بكتيرية + تقييم سريري",
+            "en": "XGBoost on bacterial isolate data + clinical evaluation"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "LeanTaaS iQueue — تحسين السعة بالتعلم الآلي",
+            "en": "LeanTaaS iQueue — ML capacity optimization"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "الصحة العامة ليست مجالاً واحداً — إنها عشرات المجالات الفرعية. كل تحدٍّ يحتاج نهج AI مختلفاً. المتخصص الجيد يعرف أي أداة يستخدم لأي مشكلة.",
+        "en": "Public health isn't one field — it's dozens of sub-fields. Each challenge needs a different AI approach. A good specialist knows which tool to use for which problem."
+      }
+    },
+    {
+      "id": "pbh-sort-010",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات الاستجابة الوبائية المعززة بالذكاء الاصطناعي لتفشي مرض جديد (من أول إجراء إلى آخر إجراء):",
+        "en": "Order AI-enhanced epidemic response steps for a novel disease outbreak (from first to last action):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "أنظمة الترصّد الرقمي ترصد إشارات غير عادية (أخبار + صرف صحي + صيدليات) وتُطلق تنبيهاً مبكراً",
+            "en": "Digital surveillance systems detect unusual signals (news + wastewater + pharmacies) and trigger early alert"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "نماذج AI تُحلل بيانات السفر والمناخ والجينوم للتنبؤ بمسار الانتشار الجغرافي",
+            "en": "AI models analyze travel, climate, and genomic data to predict geographic spread trajectory"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "أنظمة تخصيص الموارد بـ AI تُوزّع الأسرّة والمعدات والكوادر على المناطق الأكثر حاجة",
+            "en": "AI resource allocation systems distribute beds, equipment, and staff to areas of greatest need"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تقييم AI لفعالية التدخلات (حجر صحي، تطعيم، إغلاقات) وتعديل الاستراتيجية بناءً على النتائج",
+            "en": "AI evaluation of intervention effectiveness (quarantine, vaccination, lockdowns) and strategy adjustment based on outcomes"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "هذا التسلسل هو ما كان يجب أن يحدث في بداية كوفيد-19 — لكن معظم الأنظمة لم تكن جاهزة. BlueDot كانت الاستثناء في الخطوة الأولى. المستقبل: أنظمة متكاملة تُنفذ كل الخطوات تلقائياً.",
+        "en": "This sequence is what should have happened at the start of COVID-19 — but most systems weren't ready. BlueDot was the exception at step one. The future: integrated systems executing all steps automatically."
+      }
+    },
+    {
+      "id": "pbh-self-019",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير مختبر صحة عامة. AI يمكنه الآن قراءة نتائج زراعة البكتيريا بسرعة 3 أضعاف التقنيين البشريين وبدقة أعلى. هل تتبنّى النظام؟",
+        "en": "You are a public health lab director. AI can now read bacterial culture results 3× faster than human technicians with higher accuracy. Do you adopt the system?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم — أدمجه مع إبقاء التقنيين للمراجعة والحالات المعقدة وأعيد تدريبهم على مهارات أعلى",
+            "en": "Yes — I integrate it while keeping technicians for review and complex cases, retraining them on higher skills"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أبدأ بتجربة على أنواع محددة من العينات ثم أوسّع تدريجياً",
+            "en": "I start with a trial on specific sample types then gradually expand"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتردد — التقنيون لديهم خبرة 20 سنة لا يمكن استبدالها بسهولة",
+            "en": "I hesitate — technicians have 20 years of experience that can't be easily replaced"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — نتائج المختبر حساسة جداً ولا يمكن تسليمها لآلة",
+            "en": "I refuse — lab results are too sensitive to entrust to a machine"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "نظام APAS Independence يعالج 200 طبق زراعة بكتيرية في الساعة (3 أضعاف السرعة اليدوية)، وفي جونز هوبكنز حقق 100% توافق تنبؤي إيجابي لـ MRSA واكتشف 5 حالات فاتت التقنيين.",
+        "en": "APAS Independence processes 200 culture plates per hour (3× manual speed), and at Johns Hopkins achieved 100% positive predictive agreement for MRSA and caught 5 positives missed by technicians."
+      }
+    },
+    {
+      "id": "pbh-self-020",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول صحة عامة تُقيّم جاهزيتك لعصر الذكاء الاصطناعي. بعد كل ما تعلمته في هذا التقييم — كيف ترى مستقبل مهنتك؟",
+        "en": "You are a public health official assessing your readiness for the AI era. After everything you've learned in this assessment — how do you see your profession's future?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "متفائل بحذر — AI سيُعزز قدراتي إذا استثمرت في تعلم تحليل البيانات وفهم حدود AI وأخلاقياته",
+            "en": "Cautiously optimistic — AI will enhance my capabilities if I invest in learning data analysis and understanding AI's limits and ethics"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "متفائل — AI سيحل أصعب المشاكل ودوري سيصبح أسهل",
+            "en": "Optimistic — AI will solve the hardest problems and my role will become easier"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق — AI قد يجعل دوري هامشياً وأحتاج لتغيير مساري المهني",
+            "en": "Worried — AI might make my role marginal and I need to change my career path"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أعتقد أن AI سيؤثر على مهنتي بشكل جوهري — هي موجة ستمر",
+            "en": "I don't think AI will fundamentally affect my profession — it's a wave that will pass"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الوبائيون المعززون بـ AI سيحلون محل الوبائيين الذين لا يستخدمون AI — وليس العكس. الجمع بين الخبرة التخصصية ومهارات البيانات والحس الأخلاقي هو وصفة النجاح في عصر AI.",
+        "en": "AI-augmented epidemiologists will replace epidemiologists who don't use AI — not the other way around. Combining domain expertise with data skills and ethical awareness is the recipe for success in the AI era."
       }
     }
   ]
