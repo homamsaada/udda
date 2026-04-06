@@ -1,8 +1,11 @@
 {
   "section_id": "entrepreneurship",
-  "section_name": { "ar": "ريادة الأعمال وإدارة المشاريع", "en": "Entrepreneurship & Project Management" },
-  "version": "1.0",
-  "last_updated": "2026-04-05",
+  "section_name": {
+    "ar": "ريادة الأعمال وإدارة المشاريع",
+    "en": "Entrepreneurship & Project Management"
+  },
+  "version": "2.0",
+  "last_updated": "2026-04-06",
   "questions": [
     {
       "id": "ent-mcq-001",
@@ -16,10 +19,38 @@
         "en": "You're an entrepreneur wanting to build an MVP for a new app. With the rise of Vibe Coding platforms that allow building apps without writing code, what's the most important risk to watch for?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "التطبيقات المبنية بدون كود لا تعمل على الهواتف المحمولة", "en": "No-code apps don't work on mobile phones" }, "score": 0 },
-        { "id": "b", "text": { "ar": "45% من الكود المُولّد بالذكاء الاصطناعي يحتوي على ثغرات أمنية من قائمة OWASP Top 10", "en": "45% of AI-generated code contains OWASP Top 10 security vulnerabilities" }, "score": 3 },
-        { "id": "c", "text": { "ar": "المنصات مجانية بالكامل ولا تحتاج ميزانية", "en": "The platforms are completely free and require no budget" }, "score": 0 },
-        { "id": "d", "text": { "ar": "الكود المُولّد دائماً أبطأ من الكود اليدوي", "en": "Generated code is always slower than manually written code" }, "score": 0.5 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "التطبيقات المبنية بدون كود لا تعمل على الهواتف المحمولة",
+            "en": "No-code apps don't work on mobile phones"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "45% من الكود المُولّد بالذكاء الاصطناعي يحتوي على ثغرات أمنية من قائمة OWASP Top 10",
+            "en": "45% of AI-generated code contains OWASP Top 10 security vulnerabilities"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "المنصات مجانية بالكامل ولا تحتاج ميزانية",
+            "en": "The platforms are completely free and require no budget"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الكود المُولّد دائماً أبطأ من الكود اليدوي",
+            "en": "Generated code is always slower than manually written code"
+          },
+          "score": 0.5
+        }
       ],
       "hint_after": {
         "ar": "مصطلح Vibe Coding صاغه Andrej Karpathy في فبراير 2025 واختاره قاموس Collins ككلمة العام. 25% من شركات Y Combinator (شتاء 2025) كان 95%+ من كودها مُولّداً بالذكاء الاصطناعي. لكن تقرير Veracode وجد أن 45% من الكود المُولّد يحتوي ثغرات خطيرة.",
@@ -38,10 +69,38 @@
         "en": "You're a project manager at a mid-size tech company. The team is questioning the value of AI-powered project management tools. Based on actual data, what's the proven impact?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "لا تأثير يُذكر — هي مجرد واجهات جميلة", "en": "No significant impact — they're just fancy interfaces" }, "score": 0 },
-        { "id": "b", "text": { "ar": "إنجاز المشاريع أسرع بنسبة 30% وتقليل وقت التوقف بنسبة 23% في المتوسط", "en": "30% faster project completion and 23% average reduction in downtime" }, "score": 3 },
-        { "id": "c", "text": { "ar": "تحسين 5% فقط وهو أقل من تكلفة الاشتراك", "en": "Only 5% improvement which is less than the subscription cost" }, "score": 0 },
-        { "id": "d", "text": { "ar": "تحسين كبير لكن فقط في الشركات التي تزيد عن 10,000 موظف", "en": "Significant improvement but only for companies with 10,000+ employees" }, "score": 0 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا تأثير يُذكر — هي مجرد واجهات جميلة",
+            "en": "No significant impact — they're just fancy interfaces"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "إنجاز المشاريع أسرع بنسبة 30% وتقليل وقت التوقف بنسبة 23% في المتوسط",
+            "en": "30% faster project completion and 23% average reduction in downtime"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تحسين 5% فقط وهو أقل من تكلفة الاشتراك",
+            "en": "Only 5% improvement which is less than the subscription cost"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تحسين كبير لكن فقط في الشركات التي تزيد عن 10,000 موظف",
+            "en": "Significant improvement but only for companies with 10,000+ employees"
+          },
+          "score": 0
+        }
       ],
       "hint_after": {
         "ar": "Monday.com أطلقت AI Sidekick (يناير 2026) لإنشاء المهام بلغة طبيعية. Asana أطلقت AI Studio (أكتوبر 2024) مع \"زملاء عمل AI\" في المرحلة التجريبية. Microsoft Planner + Copilot حلّت محل Project for the Web في أغسطس 2025.",
@@ -60,14 +119,1384 @@
         "en": "Lovable, a Vibe Coding platform for building apps with AI, achieved a record-breaking growth milestone. What was it?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "مليون مستخدم في أسبوع", "en": "1 million users in a week" }, "score": 0 },
-        { "id": "b", "text": { "ar": "50 مليون دولار إيرادات سنوية متكررة في 6 أشهر فقط", "en": "$50M ARR in just 6 months" }, "score": 1 },
-        { "id": "c", "text": { "ar": "أول شركة AI تدخل قائمة Fortune 500", "en": "First AI company to enter the Fortune 500 list" }, "score": 0 },
-        { "id": "d", "text": { "ar": "حصلت على تمويل مليار دولار في جولتها الأولى", "en": "Received $1 billion in its first funding round" }, "score": 0 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "مليون مستخدم في أسبوع",
+            "en": "1 million users in a week"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "50 مليون دولار إيرادات سنوية متكررة في 6 أشهر فقط",
+            "en": "$50M ARR in just 6 months"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أول شركة AI تدخل قائمة Fortune 500",
+            "en": "First AI company to enter the Fortune 500 list"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "حصلت على تمويل مليار دولار في جولتها الأولى",
+            "en": "Received $1 billion in its first funding round"
+          },
+          "score": 0
+        }
       ],
       "hint_after": {
         "ar": "سوق No-Code / Low-Code بلغ 28.75 مليار دولار في 2026. Gartner يتوقع أن 70% من التطبيقات المؤسسية الجديدة ستُبنى على هذه المنصات بحلول 2026. هذا يغير قواعد اللعبة لرواد الأعمال ذوي الميزانيات المحدودة.",
         "en": "The No-Code/Low-Code market reached $28.75 billion in 2026. Gartner predicts 70% of new enterprise applications will use these platforms by 2026. This is a game-changer for entrepreneurs with limited budgets."
+      }
+    },
+    {
+      "id": "ent-mcq-004",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "أنت رائد أعمال. منصة Cursor (Anysphere) حققت إنجازاً قياسياً في عالم SaaS. ما هو؟",
+        "en": "You're an entrepreneur. Cursor (Anysphere) achieved a record-breaking SaaS milestone. What was it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أسرع شركة B2B SaaS تصل لمليار دولار إيرادات سنوية متكررة",
+            "en": "Fastest B2B SaaS to reach ~$1 billion ARR"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أول شركة AI تدخل البورصة",
+            "en": "First AI company to go public"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أكبر عدد مستخدمين في يوم واحد",
+            "en": "Largest number of users in a single day"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أول شركة تحقق أرباحاً من Vibe Coding",
+            "en": "First company to profit from Vibe Coding"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "Cursor نمت لمليار دولار ARR بتقييم 9.9 مليار — أسرع نمو B2B SaaS في التاريخ. هذا يُظهر حجم السوق المتاح لأدوات الإنتاجية المدعومة بـ AI.",
+        "en": "Cursor grew to ~$1B ARR at a $9.9B valuation — fastest B2B SaaS growth ever. This shows the market size available for AI-powered productivity tools."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-005",
+      "purpose": "core",
+      "axis": "practice",
+      "points": 3,
+      "text": {
+        "ar": "أنت مؤسس شركة ناشئة. تحليل CodeRabbit لـ 470 طلب دمج كود وجد فرقاً بين الكود المُولّد بـ AI والبشري. ما هو؟",
+        "en": "You're a startup founder. CodeRabbit's analysis of 470 pull requests found a difference between AI-generated and human code. What was it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الكود المُولّد بـ AI يحتوي 1.7 ضعف مشاكل كبرى و2.74 ضعف ثغرات أمنية",
+            "en": "AI-generated code has 1.7x more major issues and 2.74x higher security vulnerabilities"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا فرق يُذكر بين النوعين",
+            "en": "No significant difference between the two"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الكود البشري أسوأ بكثير",
+            "en": "Human code is much worse"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الكود المُولّد أبطأ فقط لكنه أكثر أماناً",
+            "en": "Generated code is only slower but more secure"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الكود المُولّد بـ AI أظهر معدلات أعلى في أخطاء المنطق والتبعيات الخاطئة وأخطاء التكوين (أعلى 75%) والثغرات الأمنية (2.74 ضعف). هذا لا يعني عدم استخدامه — بل ضرورة المراجعة الدقيقة.",
+        "en": "AI-generated code showed higher rates of logic errors, incorrect dependencies, misconfigurations (75% more), and security vulnerabilities (2.74x). This doesn't mean avoiding it — but careful review is essential."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-006",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "أنت مستثمر في شركات ناشئة. ما المعيار الجديد لتقييم شركات AI الناشئة في 2026 بدلاً من مجرد 'الاستخدام'؟",
+        "en": "You're a startup investor. What's the new benchmark for evaluating AI startups in 2026 instead of just 'usage'?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "عدد التنزيلات فقط",
+            "en": "Download count only"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "اقتصاديات الوحدة الذكية — الإيرادات لكل موظف وسرعة نمو الإيرادات",
+            "en": "Unit Economics of Intelligence — Revenue per Employee and revenue velocity"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حجم فريق التطوير",
+            "en": "Development team size"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "عدد براءات الاختراع",
+            "en": "Number of patents"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "شركات AI الناشئة الأفضل تصل لمليوني دولار+ ARR في 12 شهراً. شركة AI بـ 10 ملايين ARR قد تحتاج 15-20 موظفاً فقط مقابل 50-70 في SaaS التقليدي — 300% أعلى في الإيرادات لكل موظف.",
+        "en": "Best AI startups reach $2M+ ARR in 12 months. A $10M ARR AI company might need only 15-20 employees vs 50-70 in traditional SaaS — 300% higher Revenue per Employee."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-007",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "points": 1,
+      "text": {
+        "ar": "كم يبلغ حجم سوق No-Code / Low-Code عالمياً في 2026؟",
+        "en": "What's the global No-Code/Low-Code market size in 2026?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "5 مليارات دولار",
+            "en": "$5 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "28.75 مليار دولار",
+            "en": "$28.75 billion"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "100 مليار دولار",
+            "en": "$100 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "500 مليون دولار",
+            "en": "$500 million"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Gartner يتوقع أن 70% من التطبيقات المؤسسية الجديدة ستُبنى على منصات No-Code/Low-Code. سوق Vibe Coding وحده يُقدّر بـ 4.7 مليار دولار ومتوقع أن يصل 12.3 مليار بحلول 2027.",
+        "en": "Gartner predicts 70% of new enterprise apps will use No-Code/Low-Code platforms. The Vibe Coding market alone is estimated at $4.7B, projected to reach $12.3B by 2027."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-008",
+      "purpose": "core",
+      "axis": "specialty",
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير مشاريع. Microsoft Planner + Copilot حلّت محل أداة سابقة في أغسطس 2025. ما هي؟",
+        "en": "You're a project manager. Microsoft Planner + Copilot replaced a previous tool in August 2025. Which one?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "Microsoft Project for the Web",
+            "en": "Microsoft Project for the Web"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "Microsoft Teams",
+            "en": "Microsoft Teams"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "Microsoft Excel",
+            "en": "Microsoft Excel"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "Microsoft Outlook",
+            "en": "Microsoft Outlook"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "التكامل مع بيئة Office 365 هو نقطة قوة Microsoft. Asana أطلقت 'زملاء عمل AI' في المرحلة التجريبية. Monday.com أطلقت AI Sidekick في يناير 2026 لإنشاء المهام بلغة طبيعية.",
+        "en": "Integration with Office 365 is Microsoft's strength. Asana launched 'AI teammates' in beta. Monday.com launched AI Sidekick in January 2026 for natural language task creation."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-009",
+      "purpose": "core",
+      "axis": "practice",
+      "points": 3,
+      "text": {
+        "ar": "أنت رائد أعمال بميزانية محدودة. تريد التحقق من جدوى فكرتك. ما الأداة الأنسب؟",
+        "en": "You're a budget-limited entrepreneur. You want to validate your idea's feasibility. What's the most appropriate tool?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أدوات التحقق بـ AI مثل IdeaProof أو Stratup.ai التي تحلل 50+ معيار في دقائق",
+            "en": "AI validation tools like IdeaProof or Stratup.ai that analyze 50+ criteria in minutes"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "توظيف شركة استشارات تقليدية لعمل دراسة جدوى",
+            "en": "Hiring a traditional consulting firm for a feasibility study"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الاعتماد على الحدس الشخصي فقط",
+            "en": "Relying on personal intuition only"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "نسخ فكرة ناجحة من السوق مباشرة",
+            "en": "Directly copying a successful market idea"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أدوات مثل IdeaProof تُقدّم تحليل TAM/SAM/SOM وSWOT للمنافسين وتوقعات مالية وخطة عمل جاهزة للمستثمرين — في أقل من 10 دقائق. لكنها لا تُغني عن البحث الميداني المباشر.",
+        "en": "Tools like IdeaProof provide TAM/SAM/SOM analysis, competitor SWOT, financial projections, and investor-ready business plans — in under 10 minutes. But they don't replace direct market research."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-010",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "أنت رائد أعمال تقني. 'عصر الأغلفة' (wrapper era) في AI انتهى بحسب المحللين. لماذا؟",
+        "en": "You're a tech entrepreneur. The 'wrapper era' in AI has ended according to analysts. Why?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "النماذج الأساسية نفسها بدأت تدمج الميزات التي كانت الشركات الناشئة تُقدمها كقيمة مضافة",
+            "en": "Foundation models themselves started integrating features that startups were offering as unique value"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "المستخدمون لم يعودوا يحتاجون واجهات مستخدم",
+            "en": "Users no longer need user interfaces"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الحكومات حظرت تطبيقات الأغلفة",
+            "en": "Governments banned wrapper apps"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التمويل نفد تماماً من السوق",
+            "en": "Funding completely dried up from the market"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "في 2026، الاستراتيجية الناجحة ليست إضافة واجهة على نموذج لغوي بل بناء 'لماذا استراتيجي' — مشكلة أعمال محددة يحلها AI بكفاءة 10 أضعاف البرمجيات التقليدية. التحول من 'Chat' إلى 'Agents'.",
+        "en": "In 2026, the winning strategy isn't adding a UI to a language model but building a 'Strategic Why' — a specific business problem AI solves 10x more efficiently than traditional software. The shift from 'Chat' to 'Agents'."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-011",
+      "purpose": "core",
+      "axis": "practice",
+      "points": 3,
+      "text": {
+        "ar": "أنت مؤسس مشارك في شركة ناشئة. GitHub Copilot يمتلك حصة سوقية كبيرة في أدوات البرمجة الذكية. كم عدد مستخدميه؟",
+        "en": "You're a startup co-founder. GitHub Copilot holds a large market share in AI coding tools. How many users does it have?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مليون مستخدم",
+            "en": "1 million users"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "20 مليون مستخدم إجمالي حتى يوليو 2025",
+            "en": "20 million total users as of July 2025"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "100 ألف مستخدم",
+            "en": "100 thousand users"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50 مليون مستخدم",
+            "en": "50 million users"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Copilot يُضيف 1.67 مليون مستخدم جديد شهرياً. 92% من المطورين الأمريكيين يستخدمون أدوات AI يومياً. 84% من المطورين عالمياً يستخدمون أو يخططون لاستخدام أدوات AI (Stack Overflow 2025).",
+        "en": "Copilot adds ~1.67M new users monthly. 92% of U.S. developers use AI coding tools daily. 84% of developers globally use or plan to use AI tools (Stack Overflow 2025)."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-012",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "أنت رائد أعمال. Andrej Karpathy صاغ مصطلح Vibe Coding في فبراير 2025. بعد عام، أعلن أنه أصبح 'قديماً'. ما البديل الذي اقترحه؟",
+        "en": "You're an entrepreneur. Andrej Karpathy coined 'Vibe Coding' in February 2025. A year later, he declared it 'passé.' What alternative did he propose?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "هندسة الوكلاء الذكية (Agentic Engineering)",
+            "en": "Agentic Engineering"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "البرمجة التقليدية",
+            "en": "Traditional programming"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "كتابة الكود اليدوية فقط",
+            "en": "Only manual code writing"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "Prompt Engineering",
+            "en": "Prompt Engineering"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "Vibe Coding كان المرحلة الأولى: إثبات أن AI يمكنه توليد برمجيات وظيفية. Agentic Engineering هو المرحلة الثانية: جعل العملية موثوقة وآمنة وقابلة للتوسع.",
+        "en": "Vibe Coding was phase one: proving AI can generate functional software. Agentic Engineering is phase two: making the process reliable, secure, and scalable."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-013",
+      "purpose": "core",
+      "axis": "specialty",
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير مشاريع. المؤسسات التي تستخدم أدوات إدارة المشاريع بـ AI تُحقق نتائج قابلة للقياس. ما تأثيرها على وقت التوقف؟",
+        "en": "You're a project manager. Organizations using AI PM tools achieve measurable results. What's their impact on downtime?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا تأثير على وقت التوقف",
+            "en": "No impact on downtime"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تقليل وقت التوقف بمتوسط 23%",
+            "en": "Average 23% reduction in downtime"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "زيادة وقت التوقف بسبب تعقيد الأدوات",
+            "en": "Increased downtime due to tool complexity"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تقليل 2% فقط",
+            "en": "Only 2% reduction"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "بالإضافة لتقليل التوقف 23%، الأدوات تسرّع إنجاز المشاريع بنسبة 30%. المفتاح هو التكامل — Monday.com في اللغة الطبيعية، Asana في الأتمتة، Microsoft في التقارير.",
+        "en": "In addition to 23% downtime reduction, tools speed up project completion by 30%. The key is integration — Monday.com for natural language, Asana for automation, Microsoft for reporting."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-014",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "points": 1,
+      "text": {
+        "ar": "ما النسبة المئوية للمطورين الأمريكيين الذين يستخدمون أدوات AI للبرمجة يومياً في 2025؟",
+        "en": "What percentage of U.S. developers use AI coding tools daily in 2025?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "50%",
+            "en": "50%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "92%",
+            "en": "92%"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "30%",
+            "en": "30%"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "75%",
+            "en": "75%"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "82% من المطورين عالمياً يستخدمونها أسبوعياً على الأقل. 41% من كل الكود عالمياً مُولّد بـ AI (256 مليار سطر في 2024). في 2026 وكلاء AI يكتبون 10 أضعاف ما يكتبه البشر.",
+        "en": "82% of global developers use them at least weekly. 41% of all global code is AI-generated (256 billion lines in 2024). By 2026, AI agents write ~10x more code than humans."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-015",
+      "purpose": "core",
+      "axis": "practice",
+      "points": 3,
+      "text": {
+        "ar": "أنت مؤسس ناشئ. ثغرة Lovable CVE-2025-48757 كشفت مشكلة خطيرة. ما هي؟",
+        "en": "You're a startup founder. The Lovable CVE-2025-48757 vulnerability revealed a serious problem. What was it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "170 من 1,645 تطبيق (10.3%) بها ثغرات أمان حرجة في صلاحيات الصفوف",
+            "en": "170 of 1,645 apps (10.3%) had critical row-level security flaws"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "المنصة توقفت عن العمل لمدة أسبوع",
+            "en": "The platform went down for a week"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "بيانات المستخدمين سُرقت بالكامل",
+            "en": "All user data was stolen"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التطبيقات المبنية لم تعمل على iOS",
+            "en": "Built apps didn't work on iOS"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "10.3% من تطبيقات Lovable بها ثغرات تسمح بالوصول لمعلومات شخصية. في ديسمبر 2025 اكتُشفت ثغرة في منصة Orchids أيضاً. فحص الأمان قبل إطلاق أي تطبيق مبني بـ Vibe Coding ضرورة وليس خياراً.",
+        "en": "10.3% of Lovable apps had flaws allowing access to personal information. In December 2025, a flaw was found in the Orchids platform too. Security review before launching any Vibe Coding app is a necessity, not an option."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-016",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "أنت رائد أعمال تبحث عن تمويل. في 2026، ما التحول الرئيسي الذي يبحث عنه المستثمرون في شركات AI الناشئة؟",
+        "en": "You're an entrepreneur seeking funding. In 2026, what's the key shift investors look for in AI startups?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التحول من 'Chat' إلى 'Agents' — سير عمل ذاتي يُنفذ مهام عبر منصات متعددة",
+            "en": "Shift from 'Chat' to 'Agents' — autonomous workflows executing tasks across multiple platforms"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أكبر عدد ممكن من المستخدمين المجانيين",
+            "en": "Largest possible number of free users"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "استخدام أحدث نموذج لغوي متاح",
+            "en": "Using the latest available language model"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "فريق كبير من المهندسين",
+            "en": "A large team of engineers"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "رأس المال وفير للمشاريع 'الوكيلية' (Agentic) لكنه شبه معدوم لأدوات الأتمتة البسيطة. المستثمرون يبحثون عن إيرادات فعلية وسرعة نمو مثبتة — ليس مجرد عدد مستخدمين.",
+        "en": "Venture capital is abundant for 'Agentic' ventures but non-existent for simple automation tools. Investors look for actual revenue and proven growth velocity — not just user counts."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-017",
+      "purpose": "core",
+      "axis": "practice",
+      "points": 3,
+      "text": {
+        "ar": "أنت مؤسس شركة ناشئة AI استهلاكية. ما متوسط الإيرادات السنوية المتوقعة للشركة الناشئة الأفضل أداءً في أول 12 شهراً؟",
+        "en": "You're a consumer AI startup founder. What's the expected average ARR for the best-performing AI startup in its first 12 months?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "100 ألف دولار",
+            "en": "$100K"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "4.2 مليون دولار+ للمستهلكين، 2 مليون+ للمؤسسات",
+            "en": "$4.2M+ for consumer, $2M+ for enterprise"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "500 ألف دولار",
+            "en": "$500K"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "10 ملايين دولار",
+            "en": "$10 million"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه معايير تاريخية غير مسبوقة بسبب قابلية التوسع في تقنية AI. شركات مثل Cursor ($1B ARR) وLovable ($17M ARR في 4 أشهر) كسرت كل الأرقام القياسية.",
+        "en": "These are historically unprecedented benchmarks due to AI technology's scalability. Companies like Cursor ($1B ARR) and Lovable ($17M ARR in 4 months) broke all records."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-018",
+      "purpose": "core",
+      "axis": "specialty",
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير مشاريع. Fast Company أعلنت في سبتمبر 2025 عن ظاهرة سلبية في Vibe Coding. ما هي؟",
+        "en": "You're a project manager. Fast Company reported a negative phenomenon in Vibe Coding in September 2025. What was it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "'صداع Vibe Coding' — مهندسون كبار يصفون 'جحيم التطوير' مع الكود المُولّد",
+            "en": "'Vibe Coding hangover' — senior engineers citing 'development hell' with generated code"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "زيادة في رواتب المبرمجين",
+            "en": "Increase in programmer salaries"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "توقف المنصات عن العمل",
+            "en": "Platforms stopped working"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المستثمرون يرفضون تمويل شركات Vibe Coding",
+            "en": "Investors refusing to fund Vibe Coding companies"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "تكرار الكود أصبح أعلى 10 أضعاف مما كان عليه قبل عامين (GitClear). محلل يتوقع تراكم 1.5 تريليون دولار من الديون التقنية بحلول 2027 من الكود المُولّد. الحل: مراجعة بشرية مع AI، وليس AI وحده.",
+        "en": "Code duplication is 10x higher than two years ago (GitClear). An analyst predicts $1.5 trillion in technical debt by 2027 from generated code. Solution: human review with AI, not AI alone."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-019",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "points": 1,
+      "text": {
+        "ar": "كم بلغ إجمالي الاستثمار في رأس المال المخاطر لأدوات AI للبرمجة في 2024 وحده؟",
+        "en": "How much venture capital was invested in AI coding tools in 2024 alone?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "500 مليون دولار",
+            "en": "$500 million"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أكثر من 5 مليارات دولار",
+            "en": "Over $5 billion"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "100 مليون دولار",
+            "en": "$100 million"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50 مليار دولار",
+            "en": "$50 billion"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Cursor وحدها جمعت 900 مليون دولار في الجولة C بتقييم 9 مليارات. Poolside AI وMagic AI جمعتا تمويلات ضخمة أيضاً. وتيرة الاستثمار تسارعت في 2025 و2026.",
+        "en": "Cursor alone raised $900M in Series C at $9B valuation. Poolside AI and Magic AI also raised massive funding. Investment pace accelerated through 2025 and 2026."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-020",
+      "purpose": "core",
+      "axis": "practice",
+      "points": 3,
+      "text": {
+        "ar": "أنت رائد أعمال يريد بناء تطبيق صحي متوافق مع HIPAA. شركة Health Hub (من Y Combinator) بنت بوابة مرضى في كم من الوقت باستخدام Vibe Coding؟",
+        "en": "You're an entrepreneur wanting to build a HIPAA-compliant health app. Health Hub (from Y Combinator) built a patient portal in how long using Vibe Coding?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "48 ساعة — بوابة متوافقة مع HIPAA تتضمن تتبع مواعيد ورسائل آمنة",
+            "en": "48 hours — HIPAA-compliant portal with appointment tracking and secure messaging"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "6 أشهر",
+            "en": "6 months"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أسبوعان",
+            "en": "Two weeks"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "سنة كاملة",
+            "en": "A full year"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أمر المؤسس كان بسيطاً: 'أنشئ لوحة تحكم للطبيب والمريض'. ما كان يستغرق أسابيع من التخطيط والمراجعة الأمنية تم في عطلة نهاية أسبوع. لكن الفحص الأمني بعد البناء يبقى ضرورياً.",
+        "en": "The founder's prompt was simple: 'Create a doctor-patient dashboard.' What used to take weeks of architecture and security review happened over a weekend. But post-build security review remains essential."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-021",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "أنت رائد أعمال. ما النسبة المئوية من مستخدمي Vibe Coding الذين ليسوا مطورين محترفين أصلاً؟",
+        "en": "You're an entrepreneur. What percentage of Vibe Coding users are not professional developers?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "10% فقط",
+            "en": "Only 10%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "63% — يبنون واجهات ومواقع وتطبيقات شخصية",
+            "en": "63% — building UIs, websites, and personal apps"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "90%",
+            "en": "90%"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "5%",
+            "en": "5%"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "ديمقراطية البرمجة: مديرو المبيعات يبنون محاكيات تدريب، فرق التسويق تبني أدوات حملات، أصحاب أعمال صغيرة يُؤتمتون سير العمل. كما قال Garry Tan (YC): 'شخص واحد بلابتوب يبني ما كان يحتاج فريقاً كاملاً'.",
+        "en": "Programming democratized: sales managers build training simulators, marketing teams build campaign tools, small business owners automate workflows. As Garry Tan (YC) said: 'One person with a laptop builds what once required a full team'."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-022",
+      "purpose": "core",
+      "axis": "specialty",
+      "points": 3,
+      "text": {
+        "ar": "أنت مطور كبير (10+ سنوات خبرة). ما نسبة الكود المُولّد بـ AI في مخرجاتك مقارنة بمطور مبتدئ؟",
+        "en": "You're a senior developer (10+ years). What percentage of AI-generated code is in your output vs a junior developer?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "كبار المطورين 32% مقابل 13% للمبتدئين — العكس مما يُتوقع",
+            "en": "Seniors 32% vs juniors 13% — the opposite of what's expected"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "المبتدئون يستخدمون أكثر بكثير",
+            "en": "Juniors use much more"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "النسبة متساوية تقريباً",
+            "en": "The ratio is roughly equal"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "كبار المطورين لا يستخدمون أدوات AI",
+            "en": "Senior developers don't use AI tools"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "المفارقة: المبتدئون يستفيدون أكثر إنتاجياً (21-40% تحسن) لكنهم يستخدمون AI أقل. 40% من المبتدئين يعترفون بنشر كود مُولّد لا يفهمونه تماماً — خطر كبير.",
+        "en": "The paradox: juniors gain more productivity (21-40% improvement) but use AI less. 40% of juniors admit deploying generated code they don't fully understand — a major risk."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-023",
+      "purpose": "core",
+      "axis": "practice",
+      "points": 3,
+      "text": {
+        "ar": "أنت مؤسس شركة ناشئة. SaaStr وثّق تجربته السلبية مع Vibe Coding في يوليو 2025. ماذا حدث؟",
+        "en": "You're a startup founder. SaaStr documented his negative Vibe Coding experience in July 2025. What happened?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "وكيل AI من Replit حذف قاعدة بيانات رغم تعليمات صريحة بعدم إجراء أي تغييرات",
+            "en": "Replit's AI agent deleted a database despite explicit instructions not to make any changes"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "التطبيق المبني لم يعمل على أي متصفح",
+            "en": "The built app didn't work on any browser"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الاشتراك كان مكلفاً جداً",
+            "en": "The subscription was too expensive"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التطبيق كان بطيئاً جداً",
+            "en": "The app was too slow"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الحادثة تُظهر خطر الثقة المفرطة في وكلاء AI. حتى مع تعليمات واضحة، يمكن لوكيل AI أن يتخذ إجراءات مدمرة. النسخ الاحتياطية المنتظمة والمراجعة البشرية ضروريتان.",
+        "en": "This incident shows the danger of over-trusting AI agents. Even with clear instructions, an AI agent can take destructive actions. Regular backups and human review are essential."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-024",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "أنت رائد أعمال عربي. ما التحدي الأكبر الذي يواجه مطوري الجيل Z (22-27 سنة) في سوق العمل بسبب AI؟",
+        "en": "You're an Arab entrepreneur. What's the biggest challenge Gen Z developers (22-27) face in the job market due to AI?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "انخفاض التوظيف بنسبة 20% تقريباً مع معدل بطالة 7.4%",
+            "en": "Nearly 20% employment decline with 7.4% unemployment rate"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "رواتبهم مرتفعة جداً",
+            "en": "Their salaries are too high"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا يريدون تعلم AI",
+            "en": "They don't want to learn AI"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا يوجد تحدي — الطلب على المطورين في أعلى مستوياته",
+            "en": "No challenge — developer demand is at its highest"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أزمة توظيف الجيل Z في التقنية حقيقية: الشركات تستطيع إنجاز عمل 50-100 مهندس بـ 10 فقط مع AI. هذا يُعيد تشكيل سوق العمل التقني بالكامل ويتطلب مهارات مختلفة.",
+        "en": "The Gen Z tech employment crisis is real: companies can do the work of 50-100 engineers with just 10 using AI. This reshapes the entire tech job market and requires different skills."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-025",
+      "purpose": "cultural",
+      "axis": "specialty",
+      "points": 1,
+      "text": {
+        "ar": "ما اسم قاموس اختار 'Vibe Coding' ككلمة العام 2025؟",
+        "en": "Which dictionary chose 'Vibe Coding' as its Word of the Year 2025?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "Oxford",
+            "en": "Oxford"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "Collins",
+            "en": "Collins"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "Merriam-Webster",
+            "en": "Merriam-Webster"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "Cambridge",
+            "en": "Cambridge"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Merriam-Webster أدرج المصطلح في مارس 2025 كـ 'عامية رائجة'. Collins اختاره ككلمة العام. بحلول 2026 أصبح مرشحاً للاعتراف الرسمي مرة أخرى.",
+        "en": "Merriam-Webster listed it in March 2025 as 'slang & trending.' Collins chose it as Word of the Year. By 2026, it became a candidate for recognition again."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-026",
+      "purpose": "core",
+      "axis": "practice",
+      "points": 3,
+      "text": {
+        "ar": "أنت مؤسس شركة ناشئة. Stack Overflow 2025 وجد ظاهرة متناقضة بين المطورين. ما هي؟",
+        "en": "You're a startup founder. Stack Overflow 2025 found a contradictory phenomenon among developers. What was it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "المطورون يستخدمون أدوات AI أكثر لكنهم يثقون بها أقل من أي وقت مضى",
+            "en": "Developers use AI tools more but trust them less than ever"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "المطورون يتجنبون AI تماماً",
+            "en": "Developers avoid AI entirely"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "المطورون يثقون بـ AI أكثر فأكثر",
+            "en": "Developers trust AI more and more"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا علاقة بين الاستخدام والثقة",
+            "en": "No relationship between usage and trust"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا يعكس نضج المجتمع التقني: الأدوات مفيدة لكن ليست معصومة. التوازن بين سرعة AI والخبرة البشرية هو ما يميز المشاريع الناجحة.",
+        "en": "This reflects tech community maturity: tools are helpful but not infallible. The balance between AI speed and human expertise distinguishes successful ventures."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-027",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "أنت رائد أعمال. Georgia Tech تتبعت ثغرات أمنية مؤكدة (CVE) من كود مُولّد بـ AI. كم وجدت حتى أوائل 2026؟",
+        "en": "You're an entrepreneur. Georgia Tech tracked confirmed security vulnerabilities (CVEs) from AI-generated code. How many were found by early 2026?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "3 ثغرات فقط",
+            "en": "Only 3 vulnerabilities"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "74 ثغرة مؤكدة",
+            "en": "74 confirmed vulnerabilities"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لم يُعثر على أي ثغرة",
+            "en": "No vulnerabilities found"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أكثر من 1000 ثغرة",
+            "en": "Over 1000 vulnerabilities"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "74 CVE مؤكدة تعني أن الكود المُولّد بـ AI يخلق ثغرات حقيقية في أنظمة حقيقية. الفحص الأمني ليس رفاهية بل ضرورة قبل أي إطلاق.",
+        "en": "74 confirmed CVEs mean AI-generated code creates real vulnerabilities in real systems. Security review isn't a luxury but a necessity before any launch."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-028",
+      "purpose": "core",
+      "axis": "practice",
+      "points": 3,
+      "text": {
+        "ar": "أنت مؤسس ناشئ. Diana Hu (YC) أكدت أن مهارة واحدة لا يمكن الاستغناء عنها حتى مع Vibe Coding. ما هي؟",
+        "en": "You're a startup founder. Diana Hu (YC) emphasized one skill that's indispensable even with Vibe Coding. What is it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "القدرة على قراءة الكود واكتشاف الأخطاء — 'الذوق التقني'",
+            "en": "Ability to read code and find bugs — 'technical taste'"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "التسويق الرقمي",
+            "en": "Digital marketing"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "التصميم الجرافيكي",
+            "en": "Graphic design"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "إدارة فرق كبيرة",
+            "en": "Managing large teams"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "قالت Hu: 'يجب أن تمتلك الذوق والتدريب الكافي لتعرف هل AI يُنتج كوداً جيداً أم سيئاً. Vibe Coding الجيد يتطلب ذوقاً ومعرفة للحكم بين الجيد والسيء.' Garry Tan وافق على ضرورة التدريب الكلاسيكي.",
+        "en": "Hu said: 'You need taste and training to know if the LLM is producing good or bad code. Good vibe coding requires taste and knowledge to judge.' Garry Tan agreed on the need for classical training."
+      },
+      "type": "mcq",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-mcq-029",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 2,
+      "question": {
+        "ar": "مصطلح 'Agentic Engineering' الذي ظهر عام 2025 يصف منهجية يقوم فيها المطور بـ:",
+        "en": "The term 'Agentic Engineering' that emerged in 2025 describes a methodology where the developer:"
+      },
+      "options": [
+        {
+          "text": {
+            "ar": "كتابة كل سطر كود يدوياً بدقة",
+            "en": "Writing every line of code manually with precision"
+          },
+          "score": 0
+        },
+        {
+          "text": {
+            "ar": "تفويض المهام لوكلاء AI مع الإشراف على النتائج وتوجيهها",
+            "en": "Delegating tasks to AI agents while supervising and directing outputs"
+          },
+          "score": 2
+        },
+        {
+          "text": {
+            "ar": "استبدال المطورين بالكامل بأنظمة ذكية",
+            "en": "Fully replacing developers with intelligent systems"
+          },
+          "score": 0
+        },
+        {
+          "text": {
+            "ar": "استخدام أدوات No-Code فقط",
+            "en": "Using No-Code tools exclusively"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Agentic Engineering هو تطور طبيعي لـ Vibe Coding — بدلاً من الترميز بالمحادثة، يُفوّض المطور مهاماً كاملة لوكيل AI ويركز على المراجعة والتوجيه الاستراتيجي.",
+        "en": "Agentic Engineering is a natural evolution of Vibe Coding — instead of conversational coding, the developer delegates complete tasks to an AI agent and focuses on review and strategic direction."
+      }
+    },
+    {
+      "id": "ent-mcq-030",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 2,
+      "question": {
+        "ar": "وفقاً لبيانات 2025، ما المعيار الجديد الذي تفوق فيه شركات AI الناشئة على الشركات التقليدية بأكبر فارق؟",
+        "en": "According to 2025 data, what is the new metric where AI startups outperformed traditional companies by the largest margin?"
+      },
+      "options": [
+        {
+          "text": {
+            "ar": "إجمالي التمويل المحصّل",
+            "en": "Total funding raised"
+          },
+          "score": 0
+        },
+        {
+          "text": {
+            "ar": "الإيراد لكل موظف (أعلى بـ 300%)",
+            "en": "Revenue per employee (300% higher)"
+          },
+          "score": 2
+        },
+        {
+          "text": {
+            "ar": "عدد العملاء",
+            "en": "Number of customers"
+          },
+          "score": 0
+        },
+        {
+          "text": {
+            "ar": "حجم الفريق التقني",
+            "en": "Size of engineering team"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "شركات AI الناشئة تحقق إيراداً لكل موظف أعلى بـ 300% من نظيراتها التقليدية — وهذا يعني أن فرقاً صغيرة جداً يمكنها بناء أعمال بمليارات الدولارات.",
+        "en": "AI startups achieve 300% higher revenue per employee than traditional peers — meaning very small teams can build billion-dollar businesses."
       }
     },
     {
@@ -105,6 +1534,312 @@
       }
     },
     {
+      "id": "ent-tf-003",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "Collins Dictionary اختار مصطلح 'Vibe Coding' ككلمة العام 2025.",
+        "en": "Collins Dictionary chose 'Vibe Coding' as its Word of the Year 2025."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "المصطلح انتقل من تغريدة Karpathy في فبراير 2025 إلى كلمة العام خلال أشهر. Merriam-Webster أدرجه كـ 'عامية رائجة' في مارس 2025.",
+        "en": "The term went from Karpathy's tweet in February 2025 to Word of the Year within months. Merriam-Webster listed it as 'slang & trending' in March 2025."
+      },
+      "type": "true_false",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-tf-004",
+      "purpose": "core",
+      "axis": "practice",
+      "points": 3,
+      "text": {
+        "ar": "87% من شركات Fortune 500 تبنت منصة Vibe Coding واحدة على الأقل.",
+        "en": "87% of Fortune 500 companies adopted at least one Vibe Coding platform."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "التبني ليس مقتصراً على الشركات الناشئة. الشركات الكبرى تستخدم أدوات Vibe Coding لتسريع التطوير الداخلي وتقليل التكاليف.",
+        "en": "Adoption isn't limited to startups. Large corporations use Vibe Coding tools to accelerate internal development and reduce costs."
+      },
+      "type": "true_false",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-tf-005",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "تكرار الكود (Code Duplication) أصبح أعلى 10 أضعاف مما كان عليه قبل عامين بسبب الكود المُولّد بـ AI بحسب GitClear.",
+        "en": "Code duplication is now 10x higher than two years ago due to AI-generated code according to GitClear."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا يؤدي لتراكم 'ديون تقنية' ضخمة. محلل يتوقع 1.5 تريليون دولار من الديون التقنية بحلول 2027. الحل: مراجعة الكود المُولّد وإعادة هيكلته قبل الإنتاج.",
+        "en": "This leads to massive 'technical debt' accumulation. An analyst predicts $1.5 trillion in technical debt by 2027. Solution: review and refactor generated code before production."
+      },
+      "type": "true_false",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-tf-006",
+      "purpose": "core",
+      "axis": "practice",
+      "points": 3,
+      "text": {
+        "ar": "الشركات الناشئة التي تستخدم AI تُحقق إيرادات لكل موظف أعلى بـ 300% من شركات SaaS التقليدية.",
+        "en": "AI-native startups achieve 300% higher Revenue per Employee than traditional SaaS companies."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "شركة AI بـ 10 ملايين ARR قد تحتاج 15-20 موظفاً فقط مقابل 50-70 في SaaS التقليدي. هذا تغيير جذري في اقتصاديات ريادة الأعمال.",
+        "en": "A $10M ARR AI company might need only 15-20 employees vs 50-70 in traditional SaaS. This is a fundamental change in entrepreneurship economics."
+      },
+      "type": "true_false",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-tf-007",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "Lovable حققت 50 مليون دولار إيرادات سنوية متكررة في 6 أشهر فقط وهو رقم قياسي لمنصات Vibe Coding.",
+        "en": "Lovable achieved $50M ARR in just 6 months, a record for Vibe Coding platforms."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "Lovable حققت 17 مليون ARR في 4 أشهر (وليس 50 مليوناً في 6). Cursor حققت الرقم الأكبر: حوالي مليار دولار ARR — أسرع نمو B2B SaaS في التاريخ.",
+        "en": "Lovable achieved $17M ARR in 4 months (not $50M in 6). Cursor achieved the bigger number: ~$1B ARR — fastest B2B SaaS growth in history."
+      },
+      "type": "true_false",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-tf-008",
+      "purpose": "core",
+      "axis": "specialty",
+      "points": 3,
+      "text": {
+        "ar": "Asana AI Studio أطلقت ميزة 'زملاء عمل AI' في المرحلة التجريبية في أكتوبر 2024.",
+        "en": "Asana AI Studio launched 'AI teammates' in beta in October 2024."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Asana حصلت على تقييم نضج AI 30/50. الميزة تسمح ببناء سير عمل بدون كود مع وكلاء AI يُنفذون مهام تلقائياً.",
+        "en": "Asana scored 30/50 on AI maturity. The feature allows building no-code workflows with AI agents that execute tasks automatically."
+      },
+      "type": "true_false",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-tf-009",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "points": 1,
+      "text": {
+        "ar": "ChatGPT وصل لـ 400 مليون مستخدم نشط أسبوعياً بحلول فبراير 2025، مُضاعفاً عدده في 6 أشهر فقط.",
+        "en": "ChatGPT reached 400 million weekly active users by February 2025, doubling in just 6 months."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "تطبيق ChatGPT على الهاتف لديه 175 مليون مستخدم ينمو 5-15% شهرياً. DeepSeek وصل لـ 10 ملايين مستخدم في 20 يوماً — أسرع من ChatGPT (40 يوماً).",
+        "en": "ChatGPT's mobile app has 175M users growing 5-15% monthly. DeepSeek reached 10M users in 20 days — faster than ChatGPT (40 days)."
+      },
+      "type": "true_false",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-tf-010",
+      "purpose": "core",
+      "axis": "practice",
+      "points": 3,
+      "text": {
+        "ar": "40% من المطورين المبتدئين يعترفون بنشر كود مُولّد بـ AI لا يفهمونه بالكامل.",
+        "en": "40% of junior developers admit to deploying AI-generated code they don't fully understand."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا يُنشئ مخاطرة أمنية ضخمة. الكود الذي لا يفهمه أحد لا يمكن صيانته أو تصحيحه. Diana Hu (YC): 'يجب أن تمتلك ذوقاً كافياً للحكم بين الجيد والسيء'.",
+        "en": "This creates a massive security risk. Code nobody understands can't be maintained or debugged. Diana Hu (YC): 'You need enough taste to judge between good and bad'."
+      },
+      "type": "true_false",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-tf-011",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "Bolt (منصة Vibe Coding) وصل لـ 20 مليون دولار إيرادات سنوية في شهرين فقط.",
+        "en": "Bolt (a Vibe Coding platform) reached $20M annualized revenue in just 2 months."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Bolt يسمح لأي شخص ببناء تطبيقات ويب بمجرد كتابة نصوص. سرعة نمو الإيرادات في منصات Vibe Coding تعيد تعريف ما يعتبره المستثمرون 'ممكناً'.",
+        "en": "Bolt lets anyone build web apps just by typing text. Revenue growth velocity in Vibe Coding platforms is redefining what investors consider 'possible'."
+      },
+      "type": "true_false",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-tf-012",
+      "purpose": "core",
+      "axis": "specialty",
+      "points": 3,
+      "text": {
+        "ar": "Replit حققت تقييم 3 مليارات دولار مع 150 مليون ARR بعد نمو إيرادات 50 ضعفاً في أقل من سنة.",
+        "en": "Replit achieved a $3 billion valuation with $150M ARR after 50x revenue growth in under a year."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Replit احتلت المركز الثالث في إنفاق المطورين. Codeium وصلت لتقييم 3 مليارات على 40 مليون ARR فقط — مضاعف 75 ضعفاً يعكس FOMO المستثمرين.",
+        "en": "Replit ranked 3rd in developer spending. Codeium reached $3B valuation on just $40M ARR — a 75x multiple reflecting investor FOMO."
+      },
+      "type": "true_false",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-tf-013",
+      "purpose": "core",
+      "axis": "practice",
+      "points": 3,
+      "text": {
+        "ar": "المطورون الأمريكيون يتصدرون عالمياً في نسبة الكود المُولّد بـ AI، حيث 30.1% من دوال Python على GitHub مُولّدة بـ AI.",
+        "en": "U.S. developers lead globally in AI-generated code share, with 30.1% of Python functions on GitHub being AI-generated."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "ألمانيا ثانية بـ 24.3% وفرنسا ثالثة بـ 23.2%. التفاوت الجغرافي واضح — والدول العربية لا تظهر في الإحصائيات العالمية بعد مما يمثل فرصة وتحدياً.",
+        "en": "Germany 2nd at 24.3%, France 3rd at 23.2%. Geographic disparity is clear — Arab countries don't appear in global statistics yet, representing both an opportunity and challenge."
+      },
+      "type": "true_false",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-tf-014",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "points": 1,
+      "text": {
+        "ar": "The Economist اقترح مصطلح 'Vibe Valuation' لوصف التقييمات الضخمة لشركات AI التي تتجاهل المقاييس المالية التقليدية.",
+        "en": "The Economist suggested 'Vibe Valuation' to describe the massive valuations of AI companies that ignore traditional financial metrics."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Codeium بتقييم 3 مليارات على 40 مليون ARR (مضاعف 75x) مثال صارخ. المستثمرون يراهنون على المستقبل لا الحاضر — لكن هل هذا تفاؤل أم فقاعة؟",
+        "en": "Codeium at $3B valuation on $40M ARR (75x multiple) is a stark example. Investors bet on the future, not the present — but is this optimism or a bubble?"
+      },
+      "type": "true_false",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-tf-015",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "74% من المطورين يُبلّغون عن زيادة في الإنتاجية عند استخدام Vibe Coding.",
+        "en": "74% of developers report increased productivity when using Vibe Coding."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "الإنتاجية تزداد لكن بتحفظات: المبتدئون يستفيدون أكثر (21-40% تحسن) بينما كبار المطورين أحياناً يصبحون أبطأ. النتائج تعتمد على نوع المهمة وخبرة المستخدم.",
+        "en": "Productivity increases but with caveats: juniors benefit more (21-40% improvement) while seniors sometimes get slower. Results depend on task type and user experience."
+      },
+      "type": "true_false",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-tf-016",
+      "purpose": "core",
+      "axis": "practice",
+      "points": 3,
+      "text": {
+        "ar": "في المهام المعقدة التي تستغرق 32 ساعة عمل، AI يتفوق على البشر بنسبة 2:1.",
+        "en": "For complex tasks taking 32 hours of work, AI outperforms humans by 2:1."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "العكس: البشر يتفوقون على AI بنسبة 2:1 في المهام الطويلة (32 ساعة). لكن في المهام القصيرة (ساعتان) AI يسجل أداءً أعلى 4 مرات. المهام الريادية المعقدة لا تزال تحتاج رؤية بشرية.",
+        "en": "Opposite: humans outperform AI 2:1 on 32-hour tasks. But on short tasks (2 hours), AI scores 4x higher. Complex entrepreneurial tasks still need human vision."
+      },
+      "type": "true_false",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-tf-017",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "Gartner يتوقع أن 70% من التطبيقات المؤسسية الجديدة ستُبنى على منصات No-Code/Low-Code بحلول 2026.",
+        "en": "Gartner predicts 70% of new enterprise applications will use No-Code/Low-Code platforms by 2026."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا يعني أن رواد الأعمال ذوي الميزانيات المحدودة يمكنهم المنافسة في بناء التطبيقات المؤسسية — وهو تغيير جذري في قواعد اللعبة.",
+        "en": "This means budget-limited entrepreneurs can compete in building enterprise apps — a game-changing shift."
+      },
+      "type": "true_false",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-tf-018",
+      "purpose": "core",
+      "axis": "specialty",
+      "points": 3,
+      "text": {
+        "ar": "شركات Y Combinator في دفعة شتاء 2025 نمت بمعدل 10% أسبوعياً مجتمعة — وهو أمر لم يحدث سابقاً في المراحل المبكرة.",
+        "en": "Y Combinator's Winter 2025 batch grew 10% weekly in aggregate — something never before seen in early-stage ventures."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "قال Garry Tan: 'ليست فقط أفضل شركة أو شركتين — الدفعة بأكملها تنمو 10% أسبوعياً.' هذا بفضل AI الذي يسمح ببناء وتكرار المنتجات بسرعة غير مسبوقة.",
+        "en": "Garry Tan said: 'It's not just the top 1-2 companies — the whole batch is growing 10% week on week.' This is thanks to AI enabling unprecedented build and iteration speed."
+      },
+      "type": "true_false",
+      "time_seconds": 30
+    },
+    {
+      "id": "ent-tf-019",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 20,
+      "points": 1,
+      "question": {
+        "ar": "أظهرت دراسات 2025 انخفاضاً بنسبة 20% في توظيف الجيل Z في المناصب المبتدئة بسبب أتمتة AI.",
+        "en": "2025 studies showed a 20% decline in Gen Z employment in entry-level positions due to AI automation."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا الانخفاض يُعيد تعريف 'السلّم الوظيفي' — المهارات المطلوبة للمناصب المبتدئة تتغير بسرعة، والقدرة على العمل مع AI أصبحت شرطاً أساسياً.",
+        "en": "This decline is redefining the 'career ladder' — skills required for entry-level positions are changing rapidly, and the ability to work with AI has become a fundamental requirement."
+      }
+    },
+    {
+      "id": "ent-tf-020",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 20,
+      "points": 1,
+      "question": {
+        "ar": "يُتوقع أن يصل حجم الديون التقنية العالمية الناتجة عن الكود المُولّد بالذكاء الاصطناعي إلى 1.5 تريليون دولار بحلول 2027.",
+        "en": "Global technical debt from AI-generated code is expected to reach $1.5 trillion by 2027."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "GitClear وجدت أن الكود المُولّد بالـ AI يحتوي على تكرار أكثر بـ 10 أضعاف — وهذا يُراكم ديوناً تقنية تُكلّف أكثر بكثير من الوقت الذي وُفّر في البداية.",
+        "en": "GitClear found that AI-generated code contains 10x more duplication — this accumulates technical debt that costs far more than the time initially saved."
+      }
+    },
+    {
       "id": "ent-fill-001",
       "type": "fill_blank",
       "purpose": "core",
@@ -118,28 +1853,670 @@
       "blanks": [
         {
           "id": "blank_1",
-          "correct": { "ar": "30%", "en": "30%" },
+          "correct": {
+            "ar": "30%",
+            "en": "30%"
+          },
           "options": [
-            { "ar": "30%", "en": "30%" },
-            { "ar": "10%", "en": "10%" },
-            { "ar": "50%", "en": "50%" },
-            { "ar": "70%", "en": "70%" }
+            {
+              "ar": "30%",
+              "en": "30%"
+            },
+            {
+              "ar": "10%",
+              "en": "10%"
+            },
+            {
+              "ar": "50%",
+              "en": "50%"
+            },
+            {
+              "ar": "70%",
+              "en": "70%"
+            }
           ]
         },
         {
           "id": "blank_2",
-          "correct": { "ar": "42%", "en": "42%" },
+          "correct": {
+            "ar": "42%",
+            "en": "42%"
+          },
           "options": [
-            { "ar": "42%", "en": "42%" },
-            { "ar": "15%", "en": "15%" },
-            { "ar": "60%", "en": "60%" },
-            { "ar": "85%", "en": "85%" }
+            {
+              "ar": "42%",
+              "en": "42%"
+            },
+            {
+              "ar": "15%",
+              "en": "15%"
+            },
+            {
+              "ar": "60%",
+              "en": "60%"
+            },
+            {
+              "ar": "85%",
+              "en": "85%"
+            }
           ]
         }
       ],
       "hint_after": {
         "ar": "Cursor (Anysphere) نمت إلى مليار دولار إيرادات سنوية متكررة — أسرع منتج B2B SaaS في التاريخ — بتقييم 9.9 مليار دولار. هذا يُظهر حجم السوق المتاح لرواد الأعمال في أدوات الإنتاجية المدعومة بالذكاء الاصطناعي.",
         "en": "Cursor (Anysphere) grew to ~$1B ARR — the fastest-scaling B2B SaaS ever — valued at $9.9 billion. This shows the market opportunity for entrepreneurs in AI-powered productivity tools."
+      }
+    },
+    {
+      "id": "ent-fill-002",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "منصة {{blank_1}} حققت أسرع نمو B2B SaaS في التاريخ بإيرادات سنوية بلغت حوالي {{blank_2}} دولار.",
+        "en": "Platform {{blank_1}} achieved the fastest B2B SaaS growth ever with annual revenues of approximately {{blank_2}}."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Cursor",
+            "en": "Cursor"
+          },
+          "options": [
+            {
+              "ar": "Cursor",
+              "en": "Cursor"
+            },
+            {
+              "ar": "Lovable",
+              "en": "Lovable"
+            },
+            {
+              "ar": "Replit",
+              "en": "Replit"
+            },
+            {
+              "ar": "Bolt",
+              "en": "Bolt"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "مليار",
+            "en": "$1 billion"
+          },
+          "options": [
+            {
+              "ar": "مليار",
+              "en": "$1 billion"
+            },
+            {
+              "ar": "100 مليون",
+              "en": "$100 million"
+            },
+            {
+              "ar": "50 مليون",
+              "en": "$50 million"
+            },
+            {
+              "ar": "10 مليارات",
+              "en": "$10 billion"
+            }
+          ]
+        }
+      ],
+      "type": "fill_blank",
+      "time_seconds": 25,
+      "hint_after": {
+        "ar": "هذه الأرقام تتغير بسرعة — ما كان رقماً قياسياً اليوم قد يصبح عادياً غداً في عالم AI سريع الحركة.",
+        "en": "These numbers change rapidly — what's record-breaking today may become ordinary tomorrow in the fast-moving AI world."
+      }
+    },
+    {
+      "id": "ent-fill-003",
+      "purpose": "core",
+      "axis": "practice",
+      "points": 3,
+      "text": {
+        "ar": "تحليل CodeRabbit لـ 470 طلب دمج كود وجد أن الكود المُولّد بـ AI يحتوي {{blank_1}} ضعف ثغرات أمنية و{{blank_2}} ضعف مشاكل كبرى مقارنة بالكود البشري.",
+        "en": "CodeRabbit's analysis of 470 pull requests found AI-generated code has {{blank_1}}x more security vulnerabilities and {{blank_2}}x more major issues than human code."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "2.74",
+            "en": "2.74"
+          },
+          "options": [
+            {
+              "ar": "2.74",
+              "en": "2.74"
+            },
+            {
+              "ar": "1.1",
+              "en": "1.1"
+            },
+            {
+              "ar": "5.0",
+              "en": "5.0"
+            },
+            {
+              "ar": "0.5",
+              "en": "0.5"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "1.7",
+            "en": "1.7"
+          },
+          "options": [
+            {
+              "ar": "1.7",
+              "en": "1.7"
+            },
+            {
+              "ar": "0.5",
+              "en": "0.5"
+            },
+            {
+              "ar": "3.0",
+              "en": "3.0"
+            },
+            {
+              "ar": "10",
+              "en": "10"
+            }
+          ]
+        }
+      ],
+      "type": "fill_blank",
+      "time_seconds": 25,
+      "hint_after": {
+        "ar": "هذه الأرقام تتغير بسرعة — ما كان رقماً قياسياً اليوم قد يصبح عادياً غداً في عالم AI سريع الحركة.",
+        "en": "These numbers change rapidly — what's record-breaking today may become ordinary tomorrow in the fast-moving AI world."
+      }
+    },
+    {
+      "id": "ent-fill-004",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "points": 1,
+      "text": {
+        "ar": "{{blank_1}} من المطورين عالمياً يستخدمون أدوات AI للبرمجة أسبوعياً على الأقل، بينما {{blank_2}} من كل الكود عالمياً مُولّد بالذكاء الاصطناعي.",
+        "en": "{{blank_1}} of global developers use AI coding tools at least weekly, while {{blank_2}} of all global code is AI-generated."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "82%",
+            "en": "82%"
+          },
+          "options": [
+            {
+              "ar": "82%",
+              "en": "82%"
+            },
+            {
+              "ar": "50%",
+              "en": "50%"
+            },
+            {
+              "ar": "30%",
+              "en": "30%"
+            },
+            {
+              "ar": "95%",
+              "en": "95%"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "41%",
+            "en": "41%"
+          },
+          "options": [
+            {
+              "ar": "41%",
+              "en": "41%"
+            },
+            {
+              "ar": "10%",
+              "en": "10%"
+            },
+            {
+              "ar": "70%",
+              "en": "70%"
+            },
+            {
+              "ar": "25%",
+              "en": "25%"
+            }
+          ]
+        }
+      ],
+      "type": "fill_blank",
+      "time_seconds": 25,
+      "hint_after": {
+        "ar": "هذه الأرقام تتغير بسرعة — ما كان رقماً قياسياً اليوم قد يصبح عادياً غداً في عالم AI سريع الحركة.",
+        "en": "These numbers change rapidly — what's record-breaking today may become ordinary tomorrow in the fast-moving AI world."
+      }
+    },
+    {
+      "id": "ent-fill-005",
+      "purpose": "core",
+      "axis": "specialty",
+      "points": 3,
+      "text": {
+        "ar": "Monday.com حصلت على تقييم نضج AI بقيمة {{blank_1}} من 50، بينما Asana حصلت على {{blank_2}} من 50.",
+        "en": "Monday.com received an AI maturity score of {{blank_1}} out of 50, while Asana scored {{blank_2}} out of 50."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "32",
+            "en": "32"
+          },
+          "options": [
+            {
+              "ar": "32",
+              "en": "32"
+            },
+            {
+              "ar": "45",
+              "en": "45"
+            },
+            {
+              "ar": "15",
+              "en": "15"
+            },
+            {
+              "ar": "50",
+              "en": "50"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "30",
+            "en": "30"
+          },
+          "options": [
+            {
+              "ar": "30",
+              "en": "30"
+            },
+            {
+              "ar": "10",
+              "en": "10"
+            },
+            {
+              "ar": "48",
+              "en": "48"
+            },
+            {
+              "ar": "22",
+              "en": "22"
+            }
+          ]
+        }
+      ],
+      "type": "fill_blank",
+      "time_seconds": 25,
+      "hint_after": {
+        "ar": "هذه الأرقام تتغير بسرعة — ما كان رقماً قياسياً اليوم قد يصبح عادياً غداً في عالم AI سريع الحركة.",
+        "en": "These numbers change rapidly — what's record-breaking today may become ordinary tomorrow in the fast-moving AI world."
+      }
+    },
+    {
+      "id": "ent-fill-006",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "ثغرة Lovable CVE-2025-48757 كشفت أن {{blank_1}} من أصل 1,645 تطبيق ({{blank_2}}) بها عيوب أمان حرجة في صلاحيات الصفوف.",
+        "en": "The Lovable CVE-2025-48757 vulnerability revealed {{blank_1}} of 1,645 apps ({{blank_2}}) had critical row-level security flaws."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "170",
+            "en": "170"
+          },
+          "options": [
+            {
+              "ar": "170",
+              "en": "170"
+            },
+            {
+              "ar": "10",
+              "en": "10"
+            },
+            {
+              "ar": "1000",
+              "en": "1000"
+            },
+            {
+              "ar": "50",
+              "en": "50"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "10.3%",
+            "en": "10.3%"
+          },
+          "options": [
+            {
+              "ar": "10.3%",
+              "en": "10.3%"
+            },
+            {
+              "ar": "1%",
+              "en": "1%"
+            },
+            {
+              "ar": "50%",
+              "en": "50%"
+            },
+            {
+              "ar": "25%",
+              "en": "25%"
+            }
+          ]
+        }
+      ],
+      "type": "fill_blank",
+      "time_seconds": 25,
+      "hint_after": {
+        "ar": "هذه الأرقام تتغير بسرعة — ما كان رقماً قياسياً اليوم قد يصبح عادياً غداً في عالم AI سريع الحركة.",
+        "en": "These numbers change rapidly — what's record-breaking today may become ordinary tomorrow in the fast-moving AI world."
+      }
+    },
+    {
+      "id": "ent-fill-007",
+      "purpose": "core",
+      "axis": "practice",
+      "points": 3,
+      "text": {
+        "ar": "في معيار RE-Bench، البشر يتفوقون على AI بنسبة {{blank_1}} في المهام التي تستغرق {{blank_2}} ساعة عمل.",
+        "en": "In the RE-Bench benchmark, humans outperform AI by {{blank_1}} on tasks taking {{blank_2}} hours of work."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "2:1",
+            "en": "2:1"
+          },
+          "options": [
+            {
+              "ar": "2:1",
+              "en": "2:1"
+            },
+            {
+              "ar": "10:1",
+              "en": "10:1"
+            },
+            {
+              "ar": "1:1",
+              "en": "1:1"
+            },
+            {
+              "ar": "1:4",
+              "en": "1:4"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "32",
+            "en": "32"
+          },
+          "options": [
+            {
+              "ar": "32",
+              "en": "32"
+            },
+            {
+              "ar": "2",
+              "en": "2"
+            },
+            {
+              "ar": "100",
+              "en": "100"
+            },
+            {
+              "ar": "8",
+              "en": "8"
+            }
+          ]
+        }
+      ],
+      "type": "fill_blank",
+      "time_seconds": 25,
+      "hint_after": {
+        "ar": "هذه الأرقام تتغير بسرعة — ما كان رقماً قياسياً اليوم قد يصبح عادياً غداً في عالم AI سريع الحركة.",
+        "en": "These numbers change rapidly — what's record-breaking today may become ordinary tomorrow in the fast-moving AI world."
+      }
+    },
+    {
+      "id": "ent-fill-008",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "points": 1,
+      "text": {
+        "ar": "Replit حققت تقييماً بقيمة {{blank_1}} دولار مع نمو إيرادات بمقدار {{blank_2}} ضعف في أقل من سنة.",
+        "en": "Replit achieved a {{blank_1}} valuation with {{blank_2}}x revenue growth in under a year."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "3 مليارات",
+            "en": "$3 billion"
+          },
+          "options": [
+            {
+              "ar": "3 مليارات",
+              "en": "$3 billion"
+            },
+            {
+              "ar": "500 مليون",
+              "en": "$500 million"
+            },
+            {
+              "ar": "10 مليارات",
+              "en": "$10 billion"
+            },
+            {
+              "ar": "1 مليار",
+              "en": "$1 billion"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "50",
+            "en": "50"
+          },
+          "options": [
+            {
+              "ar": "50",
+              "en": "50"
+            },
+            {
+              "ar": "5",
+              "en": "5"
+            },
+            {
+              "ar": "100",
+              "en": "100"
+            },
+            {
+              "ar": "10",
+              "en": "10"
+            }
+          ]
+        }
+      ],
+      "type": "fill_blank",
+      "time_seconds": 25,
+      "hint_after": {
+        "ar": "هذه الأرقام تتغير بسرعة — ما كان رقماً قياسياً اليوم قد يصبح عادياً غداً في عالم AI سريع الحركة.",
+        "en": "These numbers change rapidly — what's record-breaking today may become ordinary tomorrow in the fast-moving AI world."
+      }
+    },
+    {
+      "id": "ent-fill-009",
+      "purpose": "core",
+      "axis": "specialty",
+      "points": 3,
+      "text": {
+        "ar": "Georgia Tech تتبعت {{blank_1}} ثغرة أمنية مؤكدة (CVE) ناتجة عن كود مُولّد بالذكاء الاصطناعي حتى أوائل {{blank_2}}.",
+        "en": "Georgia Tech tracked {{blank_1}} confirmed security vulnerabilities (CVEs) from AI-generated code through early {{blank_2}}."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "74",
+            "en": "74"
+          },
+          "options": [
+            {
+              "ar": "74",
+              "en": "74"
+            },
+            {
+              "ar": "5",
+              "en": "5"
+            },
+            {
+              "ar": "200",
+              "en": "200"
+            },
+            {
+              "ar": "30",
+              "en": "30"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "2026",
+            "en": "2026"
+          },
+          "options": [
+            {
+              "ar": "2026",
+              "en": "2026"
+            },
+            {
+              "ar": "2024",
+              "en": "2024"
+            },
+            {
+              "ar": "2023",
+              "en": "2023"
+            },
+            {
+              "ar": "2028",
+              "en": "2028"
+            }
+          ]
+        }
+      ],
+      "type": "fill_blank",
+      "time_seconds": 25,
+      "hint_after": {
+        "ar": "هذه الأرقام تتغير بسرعة — ما كان رقماً قياسياً اليوم قد يصبح عادياً غداً في عالم AI سريع الحركة.",
+        "en": "These numbers change rapidly — what's record-breaking today may become ordinary tomorrow in the fast-moving AI world."
+      }
+    },
+    {
+      "id": "ent-fill-010",
+      "purpose": "core",
+      "axis": "knowledge",
+      "points": 3,
+      "text": {
+        "ar": "سوق Vibe Coding يُقدّر بـ {{blank_1}} مليار دولار في 2026، ومتوقع أن يصل {{blank_2}} مليار بحلول 2027.",
+        "en": "The Vibe Coding market is estimated at {{blank_1}} billion in 2026, projected to reach {{blank_2}} billion by 2027."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "4.7",
+            "en": "$4.7"
+          },
+          "options": [
+            {
+              "ar": "4.7",
+              "en": "$4.7"
+            },
+            {
+              "ar": "1.0",
+              "en": "$1.0"
+            },
+            {
+              "ar": "10",
+              "en": "$10"
+            },
+            {
+              "ar": "0.5",
+              "en": "$0.5"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "12.3",
+            "en": "$12.3"
+          },
+          "options": [
+            {
+              "ar": "12.3",
+              "en": "$12.3"
+            },
+            {
+              "ar": "5",
+              "en": "$5"
+            },
+            {
+              "ar": "50",
+              "en": "$50"
+            },
+            {
+              "ar": "2",
+              "en": "$2"
+            }
+          ]
+        }
+      ],
+      "type": "fill_blank",
+      "time_seconds": 25,
+      "hint_after": {
+        "ar": "هذه الأرقام تتغير بسرعة — ما كان رقماً قياسياً اليوم قد يصبح عادياً غداً في عالم AI سريع الحركة.",
+        "en": "These numbers change rapidly — what's record-breaking today may become ordinary tomorrow in the fast-moving AI world."
       }
     },
     {
@@ -154,26 +2531,932 @@
         "en": "Match each AI project management tool with its distinguishing feature:"
       },
       "left": [
-        { "id": "L1", "text": { "ar": "Monday.com AI Sidekick", "en": "Monday.com AI Sidekick" } },
-        { "id": "L2", "text": { "ar": "Asana AI Studio", "en": "Asana AI Studio" } },
-        { "id": "L3", "text": { "ar": "Microsoft Planner + Copilot", "en": "Microsoft Planner + Copilot" } },
-        { "id": "L4", "text": { "ar": "Lovable", "en": "Lovable" } }
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Monday.com AI Sidekick",
+            "en": "Monday.com AI Sidekick"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Asana AI Studio",
+            "en": "Asana AI Studio"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Microsoft Planner + Copilot",
+            "en": "Microsoft Planner + Copilot"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Lovable",
+            "en": "Lovable"
+          }
+        }
       ],
       "right": [
-        { "id": "R1", "text": { "ar": "إنشاء مهام بلغة طبيعية واعية بالسياق", "en": "Context-aware natural language task creation" } },
-        { "id": "R2", "text": { "ar": "بناء سير عمل بدون كود مع \"زملاء عمل AI\"", "en": "No-code workflow builders with 'AI teammates'" } },
-        { "id": "R3", "text": { "ar": "تقارير حالة آلية مدمجة مع بيئة Microsoft", "en": "Automated status reporting integrated with Microsoft ecosystem" } },
-        { "id": "R4", "text": { "ar": "بناء تطبيقات كاملة عبر Vibe Coding بدون خبرة برمجية", "en": "Building complete apps via Vibe Coding without programming experience" } }
+        {
+          "id": "R1",
+          "text": {
+            "ar": "إنشاء مهام بلغة طبيعية واعية بالسياق",
+            "en": "Context-aware natural language task creation"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "بناء سير عمل بدون كود مع \"زملاء عمل AI\"",
+            "en": "No-code workflow builders with 'AI teammates'"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تقارير حالة آلية مدمجة مع بيئة Microsoft",
+            "en": "Automated status reporting integrated with Microsoft ecosystem"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "بناء تطبيقات كاملة عبر Vibe Coding بدون خبرة برمجية",
+            "en": "Building complete apps via Vibe Coding without programming experience"
+          }
+        }
       ],
       "correct_pairs": [
-        { "left": "L1", "right": "R1" },
-        { "left": "L2", "right": "R2" },
-        { "left": "L3", "right": "R3" },
-        { "left": "L4", "right": "R4" }
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
       ],
       "hint_after": {
         "ar": "Monday.com حصلت على تقييم نضج AI 32/50 وAsana 30/50. لكل أداة نقاط قوة مختلفة: Monday.com في اللغة الطبيعية، Asana في الأتمتة، Microsoft في التكامل مع Office 365.",
         "en": "Monday.com scored 32/50 on AI maturity, Asana 30/50. Each tool has different strengths: Monday.com in natural language, Asana in automation, Microsoft in Office 365 integration."
+      }
+    },
+    {
+      "id": "ent-match-002",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل منصة Vibe Coding بإنجازها القياسي:",
+        "en": "Match each Vibe Coding platform with its record achievement:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Cursor",
+            "en": "Cursor"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Lovable",
+            "en": "Lovable"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Bolt",
+            "en": "Bolt"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Replit",
+            "en": "Replit"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "مليار دولار ARR — أسرع B2B SaaS",
+            "en": "~$1B ARR — fastest B2B SaaS"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "17 مليون ARR في 4 أشهر",
+            "en": "$17M ARR in 4 months"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "20 مليون ARR في شهرين",
+            "en": "$20M ARR in 2 months"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "نمو 50 ضعف في أقل من سنة",
+            "en": "50x growth in under a year"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "سرعة نمو هذه المنصات غير مسبوقة في تاريخ SaaS. السبب: القيمة فورية — المستخدم يقيس الوقت الموفّر من أول جلسة.",
+        "en": "These platforms' growth speed is unprecedented in SaaS history. The reason: value is immediate — users measure time saved from their first session."
+      }
+    },
+    {
+      "id": "ent-match-003",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل خطر في Vibe Coding بالإجراء الوقائي المناسب:",
+        "en": "Match each Vibe Coding risk with the appropriate preventive measure:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "ثغرات أمنية في الكود المُولّد",
+            "en": "Security vulnerabilities in generated code"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "تكرار الكود وتراكم الديون التقنية",
+            "en": "Code duplication and technical debt"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "حذف بيانات بالخطأ من وكيل AI",
+            "en": "Accidental data deletion by AI agent"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "نشر كود لا يفهمه المطور",
+            "en": "Deploying code the developer doesn't understand"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "فحص أمني قبل الإطلاق (OWASP Top 10)",
+            "en": "Security scan before launch (OWASP Top 10)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "مراجعة وإعادة هيكلة دورية للكود",
+            "en": "Regular code review and refactoring"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "نسخ احتياطية منتظمة وصلاحيات محدودة للوكيل",
+            "en": "Regular backups and limited agent permissions"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تدريب كلاسيكي على البرمجة + مراجعة يدوية",
+            "en": "Classical programming training + manual review"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "الرسالة المشتركة من خبراء YC (Diana Hu, Garry Tan): Vibe Coding ممتاز للسرعة لكنه يحتاج 'ذوقاً تقنياً' و'تدريباً كلاسيكياً' لتجنب الكوارث.",
+        "en": "The shared message from YC experts (Diana Hu, Garry Tan): Vibe Coding is excellent for speed but needs 'technical taste' and 'classical training' to avoid disasters."
+      }
+    },
+    {
+      "id": "ent-match-004",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل إحصائية عن Vibe Coding بالمصدر الصحيح:",
+        "en": "Match each Vibe Coding statistic with its correct source:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "25% من الشركات الناشئة بكود AI 95%+",
+            "en": "25% of startups with 95%+ AI code"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "تكرار الكود أعلى 10 أضعاف",
+            "en": "10x higher code duplication"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "92% يستخدمون أدوات AI يومياً",
+            "en": "92% use AI tools daily"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "45% من الكود المُولّد يحتوي ثغرات",
+            "en": "45% of generated code has vulnerabilities"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "Y Combinator (شتاء 2025)",
+            "en": "Y Combinator (Winter 2025)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "GitClear",
+            "en": "GitClear"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "إحصائيات المطورين الأمريكيين",
+            "en": "U.S. developer statistics"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "Veracode",
+            "en": "Veracode"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل هذه الأرقام من مصادر موثوقة ومختلفة — مما يعزز الصورة الشاملة: Vibe Coding ثورة حقيقية لكنها تحمل مخاطر لا يمكن تجاهلها.",
+        "en": "All these numbers from different reliable sources reinforce the big picture: Vibe Coding is a real revolution but carries risks that can't be ignored."
+      }
+    },
+    {
+      "id": "ent-match-005",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مرحلة في رحلة الشركة الناشئة بأداة AI المناسبة:",
+        "en": "Match each startup journey stage with the appropriate AI tool:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "التحقق من الفكرة وتحليل السوق",
+            "en": "Idea validation and market analysis"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "بناء النموذج الأولي (MVP)",
+            "en": "Building the MVP"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "إدارة المشروع وتتبع المهام",
+            "en": "Project management and task tracking"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "كتابة خطة العمل للمستثمرين",
+            "en": "Writing the business plan for investors"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "IdeaProof / Stratup.ai",
+            "en": "IdeaProof / Stratup.ai"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "Cursor / Lovable / Bolt",
+            "en": "Cursor / Lovable / Bolt"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "Monday.com AI / Asana AI Studio",
+            "en": "Monday.com AI / Asana AI Studio"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "PrometAI / VenturePlanner / LivePlan",
+            "en": "PrometAI / VenturePlanner / LivePlan"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل مرحلة لها أدوات AI متخصصة. الخطأ الشائع: القفز مباشرة للبناء دون التحقق من الفكرة أولاً.",
+        "en": "Each stage has specialized AI tools. Common mistake: jumping straight to building without validating the idea first."
+      }
+    },
+    {
+      "id": "ent-match-006",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل عنصر بما يناسبه (مخاطر AI في ريادة الأعمال وأمثلة واقعية):",
+        "en": "Match each item with its counterpart (AI entrepreneurship risks and examples):"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "العنصر الأول",
+            "en": "First item"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "العنصر الثاني",
+            "en": "Second item"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "العنصر الثالث",
+            "en": "Third item"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "العنصر الرابع",
+            "en": "Fourth item"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "المطابقة الأولى",
+            "en": "First match"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "المطابقة الثانية",
+            "en": "Second match"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "المطابقة الثالثة",
+            "en": "Third match"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "المطابقة الرابعة",
+            "en": "Fourth match"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل تطابق يعكس علاقة مهمة في عالم ريادة الأعمال المدعومة بـ AI.",
+        "en": "Each match reflects an important relationship in AI-powered entrepreneurship."
+      }
+    },
+    {
+      "id": "ent-match-007",
+      "text": {
+        "ar": "وصّل كل شخصية بتصريحها عن Vibe Coding:",
+        "en": "Match each figure with their Vibe Coding quote:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Andrej Karpathy",
+            "en": "Andrej Karpathy"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Garry Tan (YC CEO)",
+            "en": "Garry Tan (YC CEO)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Diana Hu (YC GP)",
+            "en": "Diana Hu (YC GP)"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Andrew Ng",
+            "en": "Andrew Ng"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "صاغ المصطلح ثم أعلنه 'قديماً' واقترح 'Agentic Engineering'",
+            "en": "Coined the term then declared it 'passé' and proposed 'Agentic Engineering'"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "'10 مهندسين يُنجزون ما كان يحتاج 50-100'",
+            "en": "'10 engineers deliver what used to take 50-100'"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "'يجب أن تمتلك الذوق للحكم بين الجيد والسيء'",
+            "en": "'You need taste to judge good vs bad'"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "انتقد المصطلح لأنه يُوهم بأن المهندسين 'يتبعون الأجواء فقط'",
+            "en": "Criticized the term for implying engineers 'just go with vibes'"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "hint_after": {
+        "ar": "كل رقم يروي جزءاً من قصة ثورة Vibe Coding — سرعة النمو والمخاطر والفرص.",
+        "en": "Each number tells part of the Vibe Coding revolution story — growth speed, risks, and opportunities."
+      }
+    },
+    {
+      "id": "ent-match-008",
+      "text": {
+        "ar": "وصّل كل تقييم شركة بالإيرادات الفعلية:",
+        "en": "Match each company valuation with its actual revenue:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Cursor — 9.9 مليار",
+            "en": "Cursor — $9.9B"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Replit — 3 مليارات",
+            "en": "Replit — $3B"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Codeium — 3 مليارات",
+            "en": "Codeium — $3B"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Tessl — 750 مليون",
+            "en": "Tessl — $750M"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "~500 مليون ARR",
+            "en": "~$500M ARR"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "150 مليون ARR",
+            "en": "$150M ARR"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "40 مليون ARR (مضاعف 75x!)",
+            "en": "$40M ARR (75x multiple!)"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "ما قبل المنتج (pre-product)",
+            "en": "Pre-product"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "hint_after": {
+        "ar": "كل رقم يروي جزءاً من قصة ثورة Vibe Coding — سرعة النمو والمخاطر والفرص.",
+        "en": "Each number tells part of the Vibe Coding revolution story — growth speed, risks, and opportunities."
+      }
+    },
+    {
+      "id": "ent-match-009",
+      "text": {
+        "ar": "وصّل كل نسبة مئوية بما تصفه:",
+        "en": "Match each percentage with what it describes:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "41%",
+            "en": "41%"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "63%",
+            "en": "63%"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "92%",
+            "en": "92%"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "25%",
+            "en": "25%"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "نسبة الكود العالمي المُولّد بـ AI",
+            "en": "Share of global code that's AI-generated"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "مستخدمو Vibe Coding من غير المطورين",
+            "en": "Vibe Coding users who aren't developers"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "المطورون الأمريكيون يستخدمون AI يومياً",
+            "en": "U.S. developers using AI daily"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "شركات YC بكود AI 95%+",
+            "en": "YC companies with 95%+ AI code"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "hint_after": {
+        "ar": "كل رقم يروي جزءاً من قصة ثورة Vibe Coding — سرعة النمو والمخاطر والفرص.",
+        "en": "Each number tells part of the Vibe Coding revolution story — growth speed, risks, and opportunities."
+      }
+    },
+    {
+      "id": "ent-match-010",
+      "text": {
+        "ar": "وصّل كل حادثة Vibe Coding بالدرس المستفاد:",
+        "en": "Match each Vibe Coding incident with the lesson learned:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Lovable CVE-2025-48757",
+            "en": "Lovable CVE-2025-48757"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "وكيل Replit يحذف قاعدة بيانات",
+            "en": "Replit agent deletes database"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Orchids ثغرة ديسمبر 2025",
+            "en": "Orchids flaw December 2025"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "'صداع Vibe Coding' — Fast Company",
+            "en": "'Vibe Coding hangover' — Fast Company"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "فحص صلاحيات الصفوف قبل الإطلاق",
+            "en": "Check row-level permissions before launch"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "نسخ احتياطية + صلاحيات محدودة للوكلاء",
+            "en": "Backups + limited agent permissions"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تدقيق أمني مستقل لكل منصة",
+            "en": "Independent security audit for every platform"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "مراجعة بشرية + إعادة هيكلة الكود المُولّد",
+            "en": "Human review + refactoring generated code"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "hint_after": {
+        "ar": "كل رقم يروي جزءاً من قصة ثورة Vibe Coding — سرعة النمو والمخاطر والفرص.",
+        "en": "Each number tells part of the Vibe Coding revolution story — growth speed, risks, and opportunities."
       }
     },
     {
@@ -188,15 +3471,510 @@
         "en": "Order the steps for building an MVP for a startup using AI tools:"
       },
       "items": [
-        { "id": "S1", "text": { "ar": "التحقق من جدوى الفكرة عبر تحليل السوق بأدوات AI (تحليل المنافسين وحجم الطلب)", "en": "Validate the idea through AI market analysis tools (competitor analysis and demand sizing)" } },
-        { "id": "S2", "text": { "ar": "بناء النموذج الأولي بمنصة Vibe Coding أو No-Code للحصول على منتج قابل للاختبار بسرعة", "en": "Build the prototype using a Vibe Coding or No-Code platform for a quickly testable product" } },
-        { "id": "S3", "text": { "ar": "فحص الكود المُولّد أمنياً قبل الإطلاق (خاصة ثغرات OWASP Top 10)", "en": "Security-review the generated code before launch (especially OWASP Top 10 vulnerabilities)" } },
-        { "id": "S4", "text": { "ar": "الإطلاق التجريبي وجمع ملاحظات المستخدمين مع تتبع المقاييس الأساسية", "en": "Soft launch and collect user feedback while tracking key metrics" } }
+        {
+          "id": "S1",
+          "text": {
+            "ar": "التحقق من جدوى الفكرة عبر تحليل السوق بأدوات AI (تحليل المنافسين وحجم الطلب)",
+            "en": "Validate the idea through AI market analysis tools (competitor analysis and demand sizing)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "بناء النموذج الأولي بمنصة Vibe Coding أو No-Code للحصول على منتج قابل للاختبار بسرعة",
+            "en": "Build the prototype using a Vibe Coding or No-Code platform for a quickly testable product"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "فحص الكود المُولّد أمنياً قبل الإطلاق (خاصة ثغرات OWASP Top 10)",
+            "en": "Security-review the generated code before launch (especially OWASP Top 10 vulnerabilities)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "الإطلاق التجريبي وجمع ملاحظات المستخدمين مع تتبع المقاييس الأساسية",
+            "en": "Soft launch and collect user feedback while tracking key metrics"
+          }
+        }
       ],
-      "correct_order": ["S1", "S2", "S3", "S4"],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
       "hint_after": {
         "ar": "الخطوة الأكثر إهمالاً هي S3 (الفحص الأمني). Georgia Tech تتبعت 74 ثغرة أمنية مؤكدة (CVE) من كود مُولّد بالذكاء الاصطناعي حتى أوائل 2026. الإطلاق بدون فحص أمني مخاطرة كبيرة خاصة مع بيانات المستخدمين.",
         "en": "The most neglected step is S3 (security review). Georgia Tech tracked 74 confirmed CVEs from AI-generated code by early 2026. Launching without security review is a major risk, especially with user data."
+      }
+    },
+    {
+      "id": "ent-sort-002",
+      "text": {
+        "ar": "رتّب منصات Vibe Coding حسب حجم الإيرادات من الأكبر للأصغر:",
+        "en": "Order Vibe Coding platforms by revenue size from largest to smallest:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "Cursor (~$1B ARR)",
+            "en": "Cursor (~$1B ARR)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "Replit ($150M ARR)",
+            "en": "Replit ($150M ARR)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "Lovable ($17M ARR في 4 أشهر)",
+            "en": "Lovable ($17M ARR in 4 months)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "Bolt ($20M ARR في شهرين)",
+            "en": "Bolt ($20M ARR in 2 months)"
+          }
+        }
+      ],
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الترتيب يعكس تسلسل منطقي في عالم ريادة الأعمال المدعومة بـ AI.",
+        "en": "The order reflects a logical sequence in AI-powered entrepreneurship."
+      }
+    },
+    {
+      "id": "ent-sort-003",
+      "text": {
+        "ar": "رتّب خطوات تأمين تطبيق مبني بـ Vibe Coding قبل الإطلاق:",
+        "en": "Order steps for securing a Vibe Coding-built app before launch:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "مراجعة الكود يدوياً وفهم المنطق الأساسي",
+            "en": "Manually review code and understand core logic"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "فحص OWASP Top 10 للثغرات الأمنية",
+            "en": "OWASP Top 10 security vulnerability scan"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "اختبار صلاحيات الوصول والبيانات الحساسة",
+            "en": "Test access permissions and sensitive data"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "إعداد مراقبة أمنية مستمرة بعد الإطلاق",
+            "en": "Set up continuous security monitoring post-launch"
+          }
+        }
+      ],
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الترتيب يعكس تسلسل منطقي في عالم ريادة الأعمال المدعومة بـ AI.",
+        "en": "The order reflects a logical sequence in AI-powered entrepreneurship."
+      }
+    },
+    {
+      "id": "ent-sort-004",
+      "text": {
+        "ar": "رتّب تطور Vibe Coding زمنياً من الأقدم للأحدث:",
+        "en": "Order Vibe Coding evolution chronologically:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "Karpathy يصوغ المصطلح (فبراير 2025)",
+            "en": "Karpathy coins the term (February 2025)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "25% من YC بكود AI 95%+ (مارس 2025)",
+            "en": "25% of YC with 95%+ AI code (March 2025)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "Collins يختاره كلمة العام (2025)",
+            "en": "Collins names it Word of the Year (2025)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "Karpathy يعلنه 'قديماً' ويقترح Agentic Engineering (2026)",
+            "en": "Karpathy declares it 'passé' and proposes Agentic Engineering (2026)"
+          }
+        }
+      ],
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الترتيب يعكس تسلسل منطقي في عالم ريادة الأعمال المدعومة بـ AI.",
+        "en": "The order reflects a logical sequence in AI-powered entrepreneurship."
+      }
+    },
+    {
+      "id": "ent-sort-005",
+      "text": {
+        "ar": "رتّب أولويات المستثمرين في شركات AI الناشئة في 2026 من الأهم للأقل:",
+        "en": "Order investor priorities in AI startups in 2026 from most to least important:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "إيرادات فعلية وسرعة نمو مثبتة",
+            "en": "Actual revenue and proven growth velocity"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "قدرات وكيلية (Agentic) وليس مجرد واجهة محادثة",
+            "en": "Agentic capabilities, not just a chat interface"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "إيرادات عالية لكل موظف (Revenue per Employee)",
+            "en": "High Revenue per Employee"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "عدد المستخدمين المسجلين (حتى لو مجاني)",
+            "en": "Number of registered users (even if free)"
+          }
+        }
+      ],
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الترتيب يعكس تسلسل منطقي في عالم ريادة الأعمال المدعومة بـ AI.",
+        "en": "The order reflects a logical sequence in AI-powered entrepreneurship."
+      }
+    },
+    {
+      "id": "ent-sort-006",
+      "text": {
+        "ar": "رتّب مخاطر Vibe Coding حسب خطورتها من الأعلى للأدنى:",
+        "en": "Order Vibe Coding risks by severity from highest to lowest:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "ثغرات أمنية في الكود المُولّد (2.74x أعلى)",
+            "en": "Security vulnerabilities in generated code (2.74x higher)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تراكم ديون تقنية ضخمة ($1.5T بحلول 2027)",
+            "en": "Massive technical debt accumulation ($1.5T by 2027)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "نشر كود لا يفهمه المطور (40% من المبتدئين)",
+            "en": "Deploying code developer doesn't understand (40% of juniors)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تكرار الكود وصعوبة الصيانة",
+            "en": "Code duplication and maintenance difficulty"
+          }
+        }
+      ],
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الترتيب يعكس تسلسل منطقي في عالم ريادة الأعمال المدعومة بـ AI.",
+        "en": "The order reflects a logical sequence in AI-powered entrepreneurship."
+      }
+    },
+    {
+      "id": "ent-sort-007",
+      "text": {
+        "ar": "رتّب خطوات بناء شركة ناشئة بـ AI في 2026 (من الأولى للأخيرة):",
+        "en": "Order steps for building an AI startup in 2026 (first to last):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحديد 'اللماذا الاستراتيجي' — مشكلة يحلها AI بكفاءة 10x",
+            "en": "Define the 'Strategic Why' — a problem AI solves 10x more efficiently"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "التحقق من السوق بأدوات AI (IdeaProof/Stratup.ai)",
+            "en": "Validate market with AI tools (IdeaProof/Stratup.ai)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "بناء MVP بـ Vibe Coding مع فحص أمني",
+            "en": "Build MVP with Vibe Coding plus security review"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "التحول من Chat إلى Agents لبناء قيمة مستدامة",
+            "en": "Shift from Chat to Agents to build sustainable value"
+          }
+        }
+      ],
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الترتيب يعكس تسلسل منطقي في عالم ريادة الأعمال المدعومة بـ AI.",
+        "en": "The order reflects a logical sequence in AI-powered entrepreneurship."
+      }
+    },
+    {
+      "id": "ent-sort-008",
+      "text": {
+        "ar": "رتّب هذه الشركات حسب سرعة وصولها لأول 20 مليون ARR (من الأسرع للأبطأ):",
+        "en": "Order these companies by speed to first $20M ARR (fastest to slowest):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "Bolt (شهران)",
+            "en": "Bolt (2 months)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "Lovable (4 أشهر ≈ $17M)",
+            "en": "Lovable (4 months ≈ $17M)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "Cursor (أشهر قليلة ← $1B)",
+            "en": "Cursor (few months → $1B)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "SaaS تقليدي (12-24 شهراً نموذجياً)",
+            "en": "Traditional SaaS (12-24 months typical)"
+          }
+        }
+      ],
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الترتيب يعكس تسلسل منطقي في عالم ريادة الأعمال المدعومة بـ AI.",
+        "en": "The order reflects a logical sequence in AI-powered entrepreneurship."
+      }
+    },
+    {
+      "id": "ent-sort-009",
+      "text": {
+        "ar": "رتّب تصريحات خبراء YC عن Vibe Coding من الأكثر تفاؤلاً للأكثر تحفظاً:",
+        "en": "Order YC expert statements about Vibe Coding from most optimistic to most cautious:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "Garry Tan: '10 مهندسين يُنجزون ما كان يحتاج 50-100'",
+            "en": "Garry Tan: '10 engineers deliver what took 50-100'"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "Jared Friedman: 'كل هؤلاء مؤسسون تقنيون — قبل سنة كانوا سيبنون كل شيء يدوياً'",
+            "en": "Jared Friedman: 'These are all technical founders — a year ago they'd have built everything manually'"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "Diana Hu: 'يجب أن تمتلك الذوق لتعرف هل AI يُنتج كوداً جيداً أم سيئاً'",
+            "en": "Diana Hu: 'You must have taste to know if AI produces good or bad code'"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "Garry Tan: 'المؤسسون يحتاجون تدريباً كلاسيكياً على البرمجة للاستدامة'",
+            "en": "Garry Tan: 'Founders need classical coding training for sustainability'"
+          }
+        }
+      ],
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الترتيب يعكس تسلسل منطقي في عالم ريادة الأعمال المدعومة بـ AI.",
+        "en": "The order reflects a logical sequence in AI-powered entrepreneurship."
+      }
+    },
+    {
+      "id": "ent-sort-010",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "question": {
+        "ar": "رتّب مراحل نضج Vibe Coding في المؤسسة من البداية إلى الاحتراف:",
+        "en": "Arrange the stages of Vibe Coding maturity in an organization from beginner to professional:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تجربة فردية — مطور واحد يجرّب أداة AI",
+            "en": "Individual experiment — one developer tries an AI tool"
+          },
+          "correct_position": 1
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تبنّي فريقي — الفريق يتبنى أداة موحدة مع إرشادات",
+            "en": "Team adoption — team adopts a unified tool with guidelines"
+          },
+          "correct_position": 2
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تكامل مؤسسي — دمج AI في CI/CD مع فحوصات أمنية تلقائية",
+            "en": "Enterprise integration — AI integrated into CI/CD with automated security checks"
+          },
+          "correct_position": 3
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "Agentic Engineering — وكلاء AI يُنفّذون مهاماً كاملة تحت إشراف بشري",
+            "en": "Agentic Engineering — AI agents execute complete tasks under human supervision"
+          },
+          "correct_position": 4
+        }
+      ],
+      "hint_after": {
+        "ar": "معظم الشركات في 2025 لا تزال في المرحلة 1 أو 2. الانتقال للمرحلة 3 يحتاج استثماراً في البنية التحتية، والمرحلة 4 تحتاج ثقافة مؤسسية جديدة كلياً.",
+        "en": "Most companies in 2025 are still in stage 1 or 2. Moving to stage 3 requires infrastructure investment, and stage 4 requires an entirely new organizational culture."
       }
     },
     {
@@ -211,10 +3989,38 @@
         "en": "You're an entrepreneur planning a new venture. Your potential partner suggests building the entire product using Vibe Coding without hiring any software developer. What's your stance?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "فكرة ممتازة للبداية — نبني النموذج الأولي بسرعة ونوظف مطوراً لاحقاً عند النمو مع إجراء فحص أمني", "en": "Excellent idea to start — we build the prototype quickly and hire a developer later for growth, with a security audit" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "مقبول للنموذج الأولي فقط، لكن يجب توظيف فريق تقني قبل الإطلاق الرسمي", "en": "Acceptable for the prototype only, but we must hire a technical team before official launch" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "خطير جداً — لا يمكن بناء شركة حقيقية على كود لا يفهمه أحد في الفريق", "en": "Very risky — you can't build a real company on code nobody in the team understands" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "مستحيل — التطبيقات الجادة تحتاج مطورين محترفين من اليوم الأول", "en": "Impossible — serious applications need professional developers from day one" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "فكرة ممتازة للبداية — نبني النموذج الأولي بسرعة ونوظف مطوراً لاحقاً عند النمو مع إجراء فحص أمني",
+            "en": "Excellent idea to start — we build the prototype quickly and hire a developer later for growth, with a security audit"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقبول للنموذج الأولي فقط، لكن يجب توظيف فريق تقني قبل الإطلاق الرسمي",
+            "en": "Acceptable for the prototype only, but we must hire a technical team before official launch"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "خطير جداً — لا يمكن بناء شركة حقيقية على كود لا يفهمه أحد في الفريق",
+            "en": "Very risky — you can't build a real company on code nobody in the team understands"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مستحيل — التطبيقات الجادة تحتاج مطورين محترفين من اليوم الأول",
+            "en": "Impossible — serious applications need professional developers from day one"
+          },
+          "flexibility_score": 1
+        }
       ],
       "hint_after": {
         "ar": "Stack Overflow (2025) وجد أن المطورين يستخدمون أدوات AI أكثر لكن يثقون بها أقل من أي وقت مضى. التوازن بين سرعة AI والخبرة البشرية هو ما يميز المشاريع الناجحة.",
@@ -233,14 +4039,942 @@
         "en": "As a project manager, you learn that AI tools can automate 53% of analyst tasks and 67% of sales rep tasks. Do you see this as an opportunity or threat to your role?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "فرصة — سأتعلم استخدام هذه الأدوات لأصبح أكثر إنتاجية وأقدم قيمة استراتيجية أعلى", "en": "Opportunity — I'll learn to use these tools to become more productive and deliver higher strategic value" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "فرصة مع تحفظ — سأطور مهاراتي لكن أحافظ على مهاراتي التقليدية كشبكة أمان", "en": "Opportunity with caution — I'll develop new skills but keep my traditional ones as a safety net" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "تهديد معتدل — هذه النسب مقلقة وقد تعني تقليص فرق العمل التي أديرها", "en": "Moderate threat — these percentages are concerning and may mean downsizing the teams I manage" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "تهديد حقيقي — الأتمتة ستلغي دور مدير المشروع تدريجياً", "en": "Real threat — automation will gradually eliminate the project manager role" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة — سأتعلم استخدام هذه الأدوات لأصبح أكثر إنتاجية وأقدم قيمة استراتيجية أعلى",
+            "en": "Opportunity — I'll learn to use these tools to become more productive and deliver higher strategic value"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "فرصة مع تحفظ — سأطور مهاراتي لكن أحافظ على مهاراتي التقليدية كشبكة أمان",
+            "en": "Opportunity with caution — I'll develop new skills but keep my traditional ones as a safety net"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تهديد معتدل — هذه النسب مقلقة وقد تعني تقليص فرق العمل التي أديرها",
+            "en": "Moderate threat — these percentages are concerning and may mean downsizing the teams I manage"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تهديد حقيقي — الأتمتة ستلغي دور مدير المشروع تدريجياً",
+            "en": "Real threat — automation will gradually eliminate the project manager role"
+          },
+          "flexibility_score": 1
+        }
       ],
       "hint_after": {
         "ar": "تحليل Bloomberg يُظهر أن الأدوار الإدارية تواجه مخاطر أتمتة 9-21% فقط — أقل بكثير من المحللين (53%) ومندوبي المبيعات (67%). الإدارة تتحول وتتقلص لكنها لا تُلغى: AI يؤتمت التنسيق والتقارير، لكن الحكم البشري في التدريب والثقافة واتخاذ القرارات المعقدة يبقى ضرورياً.",
         "en": "Bloomberg analysis shows managerial roles face only 9-21% automation risk — much lower than analysts (53%) or sales reps (67%). Management is being transformed and reduced, not eliminated: AI automates coordination and reporting, but human judgment in coaching, culture, and complex decisions remains essential."
+      }
+    },
+    {
+      "id": "ent-self-003",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت رائد أعمال. منافسك أطلق منتجاً مبنياً بالكامل بـ Vibe Coding في أسبوع. منتجك أفضل تقنياً لكنه يحتاج 3 أشهر. ما قرارك؟",
+        "en": "Your competitor launched a product built entirely with Vibe Coding in a week. Your product is technically better but needs 3 months. What's your decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-004",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "فريقك يريد استخدام AI لكتابة 90% من الكود. أنت CTO ذو خبرة 15 سنة. ما موقفك؟",
+        "en": "Your team wants to use AI to write 90% of the code. You're a CTO with 15 years of experience. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-005",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "تعلم أن 41% من الكود العالمي مُولّد بـ AI. كرائد أعمال غير تقني، كيف تتعامل مع هذا الواقع؟",
+        "en": "You learn 41% of global code is AI-generated. As a non-technical entrepreneur, how do you handle this reality?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-006",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مستثمر يسألك: 'لماذا تحتاج مطورين إذا كان AI يكتب 95% من الكود؟' ما جوابك؟",
+        "en": "An investor asks: 'Why do you need developers if AI writes 95% of the code?' What's your answer?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-007",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "منصة Vibe Coding تُطلق ميزة جديدة تسمح ببناء تطبيقات أمنية حساسة. هل تستخدمها لتطبيقك المالي؟",
+        "en": "A Vibe Coding platform launches a new feature for building security-sensitive apps. Would you use it for your fintech app?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-008",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "صديقك المطور خسر وظيفته لأن شركته استبدلت 30 مطوراً بـ 5 يستخدمون AI. كرائد أعمال، كيف تنظر لهذا؟",
+        "en": "Your developer friend lost his job because his company replaced 30 developers with 5 using AI. As an entrepreneur, how do you view this?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-009",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير مشاريع. فريقك يستخدم Monday.com AI لكن أحد الموظفين يقول إن AI يراقب إنتاجيته. ما تصرفك؟",
+        "en": "You're a PM. Your team uses Monday.com AI but an employee says AI is monitoring his productivity. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-010",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "تقرير يقول إن شركات AI الاستهلاكية تصل لـ 4.2 مليون ARR في سنة. شركتك وصلت لـ 500 ألف فقط. ما ردة فعلك؟",
+        "en": "A report says consumer AI companies reach $4.2M ARR in a year. Your company only reached $500K. What's your reaction?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-011",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت رائد أعمال عربي. 63% من مستخدمي Vibe Coding ليسوا مطورين محترفين. هل هذا يُشجعك أم يُقلقك؟",
+        "en": "You're an Arab entrepreneur. 63% of Vibe Coding users aren't professional developers. Does this encourage or concern you?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-012",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "اكتشفت أن كود تطبيقك المُولّد بـ AI يحتوي ثغرة أمنية بعد الإطلاق. 1000 مستخدم متأثر. ما أول خطوة؟",
+        "en": "You discover your AI-generated app code has a security flaw after launch. 1000 users affected. What's your first step?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-013",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "شريكك يقترح عدم توظيف CTO والاعتماد كلياً على Vibe Coding + مستشار أمني خارجي. ما رأيك؟",
+        "en": "Your partner suggests not hiring a CTO and relying entirely on Vibe Coding + external security consultant. What's your view?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-014",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "تعلم أن 'عصر الأغلفة' انتهى والمستثمرون يريدون 'Agents'. شركتك الناشئة مبنية على wrapper. ما خطتك؟",
+        "en": "You learn the 'wrapper era' is over and investors want 'Agents'. Your startup is built on a wrapper. What's your plan?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-015",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "شركتك نمت 10% أسبوعياً (مثل دفعة YC). لكنك تعرف أن الديون التقنية تتراكم. ما أولويتك؟",
+        "en": "Your company grows 10% weekly (like the YC batch). But you know technical debt is accumulating. What's your priority?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-016",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مطور كبير في فريقك يقول إن Vibe Coding 'جحيم تطوير' ويطالب بالعودة للبرمجة التقليدية. ما موقفك؟",
+        "en": "A senior developer says Vibe Coding is 'development hell' and demands returning to traditional coding. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-017",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت في مرحلة مبكرة. هل تستثمر في فهم الكود أم في سرعة إطلاق الميزات الجديدة؟",
+        "en": "You're at an early stage. Do you invest in understanding code or in speed of launching new features?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-018",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت رائد أعمال بدون خلفية تقنية. YC يقبل شركات بكود AI 95%+. هل تتقدم؟",
+        "en": "You're a non-technical entrepreneur. YC accepts companies with 95%+ AI code. Do you apply?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-019",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "فريقك من 5 أشخاص ينافس شركة بـ 50 مطوراً بفضل AI. لكن المنافس يبدأ باستخدام AI أيضاً. ما استراتيجيتك؟",
+        "en": "Your 5-person team competes with a 50-developer company thanks to AI. But the competitor starts using AI too. What's your strategy?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
+      }
+    },
+    {
+      "id": "ent-self-020",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير مشاريع. هل تثق في تقديرات AI لمدة المشروع أم تعتمد على خبرتك الشخصية؟",
+        "en": "You're a PM. Do you trust AI's project duration estimates or rely on your personal experience?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الخيار الأكثر مرونة وتقبلاً لـ AI مع احتياطات عملية",
+            "en": "Most flexible and AI-accepting option with practical precautions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "موقف إيجابي لكن بشروط وضمانات",
+            "en": "Positive stance but with conditions and safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "موقف حذر يركز على المخاطر أكثر من الفرص",
+            "en": "Cautious stance focusing more on risks than opportunities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الموقف الأكثر تحفظاً أو رفضاً للتغيير",
+            "en": "Most conservative or change-resistant stance"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوازن بين السرعة والجودة هو التحدي الأبدي لريادة الأعمال — AI يجعل السرعة أسهل لكنه لا يُلغي الحاجة للحكم البشري.",
+        "en": "The balance between speed and quality is entrepreneurship's eternal challenge — AI makes speed easier but doesn't eliminate the need for human judgment."
       }
     }
   ]

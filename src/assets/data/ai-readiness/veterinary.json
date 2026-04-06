@@ -1,8 +1,11 @@
 {
   "section_id": "veterinary",
-  "section_name": { "ar": "الطب البيطري", "en": "Veterinary Medicine" },
-  "version": "1.0",
-  "last_updated": "2026-04-04",
+  "section_name": {
+    "ar": "الطب البيطري",
+    "en": "Veterinary Medicine"
+  },
+  "version": "2.0",
+  "last_updated": "2026-04-05",
   "questions": [
     {
       "id": "vet-mcq-001",
@@ -152,12 +155,27 @@
       "blanks": [
         {
           "id": "blank_1",
-          "correct": { "ar": "VetScan Imagyst", "en": "VetScan Imagyst" },
+          "correct": {
+            "ar": "VetScan Imagyst",
+            "en": "VetScan Imagyst"
+          },
           "options": [
-            { "ar": "VetScan Imagyst", "en": "VetScan Imagyst" },
-            { "ar": "SignalPET", "en": "SignalPET" },
-            { "ar": "Vetology AI", "en": "Vetology AI" },
-            { "ar": "ImpriMed", "en": "ImpriMed" }
+            {
+              "ar": "VetScan Imagyst",
+              "en": "VetScan Imagyst"
+            },
+            {
+              "ar": "SignalPET",
+              "en": "SignalPET"
+            },
+            {
+              "ar": "Vetology AI",
+              "en": "Vetology AI"
+            },
+            {
+              "ar": "ImpriMed",
+              "en": "ImpriMed"
+            }
           ]
         }
       ],
@@ -178,22 +196,82 @@
         "en": "Match each veterinary AI technology with the animal or sector it primarily serves:"
       },
       "left": [
-        { "id": "L1", "text": { "ar": "CattleEye", "en": "CattleEye" } },
-        { "id": "L2", "text": { "ar": "RenalTech", "en": "RenalTech" } },
-        { "id": "L3", "text": { "ar": "Faromatics ChickenBoy", "en": "Faromatics ChickenBoy" } },
-        { "id": "L4", "text": { "ar": "Aquabyte", "en": "Aquabyte" } }
+        {
+          "id": "L1",
+          "text": {
+            "ar": "CattleEye",
+            "en": "CattleEye"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "RenalTech",
+            "en": "RenalTech"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Faromatics ChickenBoy",
+            "en": "Faromatics ChickenBoy"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Aquabyte",
+            "en": "Aquabyte"
+          }
+        }
       ],
       "right": [
-        { "id": "R1", "text": { "ar": "مراقبة العرج وحالة الجسم في الأبقار بالكاميرات", "en": "Camera-based lameness and body condition monitoring in cattle" } },
-        { "id": "R2", "text": { "ar": "التنبؤ بأمراض الكلى في القطط قبل ظهور الأعراض", "en": "Predicting kidney disease in cats before symptoms appear" } },
-        { "id": "R3", "text": { "ar": "روبوت معلّق بالسقف لمراقبة حظائر الدواجن", "en": "Ceiling-suspended robot for monitoring poultry houses" } },
-        { "id": "R4", "text": { "ar": "تصوير تحت الماء لمراقبة قمل وكتلة أسماك السلمون", "en": "Underwater imaging for salmon lice counting and biomass estimation" } }
+        {
+          "id": "R1",
+          "text": {
+            "ar": "مراقبة العرج وحالة الجسم في الأبقار بالكاميرات",
+            "en": "Camera-based lameness and body condition monitoring in cattle"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "التنبؤ بأمراض الكلى في القطط قبل ظهور الأعراض",
+            "en": "Predicting kidney disease in cats before symptoms appear"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "روبوت معلّق بالسقف لمراقبة حظائر الدواجن",
+            "en": "Ceiling-suspended robot for monitoring poultry houses"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تصوير تحت الماء لمراقبة قمل وكتلة أسماك السلمون",
+            "en": "Underwater imaging for salmon lice counting and biomass estimation"
+          }
+        }
       ],
       "correct_pairs": [
-        { "left": "L1", "right": "R1" },
-        { "left": "L2", "right": "R2" },
-        { "left": "L3", "right": "R3" },
-        { "left": "L4", "right": "R4" }
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
       ],
       "hint_after": {
         "ar": "الزراعة الدقيقة للحيوانات ليست مستقبلاً بل حاضر: CattleEye يراقب 200,000+ بقرة في 23 دولة. Connecterra IDA حققت دقة 90% في كشف 7 سلوكيات للأبقار مع ادعاء زيادة إنتاج الحليب 30% وتقليل المضادات الحيوية 50%.",
@@ -212,12 +290,41 @@
         "en": "Order the steps for using a veterinary AI radiology platform (like SignalPET 360°) from imaging to treatment decision:"
       },
       "items": [
-        { "id": "S1", "text": { "ar": "التقاط الأشعة بالجهاز الموجود في العيادة — النظام متوافق مع المعدات الحالية", "en": "Capture X-rays with the clinic's existing equipment — the system is compatible with current gear" } },
-        { "id": "S2", "text": { "ar": "AI يحلل الصور تلقائياً ويصدر تقريراً فورياً يفحص 66 مرضاً خلال دقائق", "en": "AI automatically analyzes images and issues an immediate report scanning 66 pathologies within minutes" } },
-        { "id": "S3", "text": { "ar": "مراجعة التقرير مع السياق السريري للحيوان وتقرير الحالة المرضية", "en": "Review the report with the animal's clinical context and case history" } },
-        { "id": "S4", "text": { "ar": "تصعيد للتقرير الكامل أو لأخصائي أشعة معتمد إذا كانت الحالة معقدة", "en": "Escalate to the complete report or a board-certified radiologist if the case is complex" } }
+        {
+          "id": "S1",
+          "text": {
+            "ar": "التقاط الأشعة بالجهاز الموجود في العيادة — النظام متوافق مع المعدات الحالية",
+            "en": "Capture X-rays with the clinic's existing equipment — the system is compatible with current gear"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "AI يحلل الصور تلقائياً ويصدر تقريراً فورياً يفحص 66 مرضاً خلال دقائق",
+            "en": "AI automatically analyzes images and issues an immediate report scanning 66 pathologies within minutes"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "مراجعة التقرير مع السياق السريري للحيوان وتقرير الحالة المرضية",
+            "en": "Review the report with the animal's clinical context and case history"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تصعيد للتقرير الكامل أو لأخصائي أشعة معتمد إذا كانت الحالة معقدة",
+            "en": "Escalate to the complete report or a board-certified radiologist if the case is complex"
+          }
+        }
       ],
-      "correct_order": ["S1", "S2", "S3", "S4"],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
       "hint_after": {
         "ar": "المبدأ الأساسي: AI يعطيك «عيناً ثانية» فورية، لكن القرار السريري يبقى لك. في الحالات الطارئة، التقرير الفوري (دقائق) قد يُنقذ حياة الحيوان. في الحالات المعقدة، التصعيد لأخصائي متاح 24/7 بتقرير موقّع خلال ساعة.",
         "en": "The core principle: AI gives you an instant 'second set of eyes,' but the clinical decision remains yours. In emergencies, the immediate report (minutes) can save the animal's life. In complex cases, escalation to a specialist is available 24/7 with a signed report within an hour."
@@ -321,6 +428,4313 @@
       "hint_after": {
         "ar": "CattleEye يراقب 200,000+ بقرة في 140+ مزرعة عبر 23 دولة. يكتشف العرج مبكراً — وهو أحد أكثر المشكلات تكلفة في تربية الأبقار. القلق من تقليل الزيارات مشروع، لكن البيانات المستمرة تجعل الزيارات أكثر فعالية — الطبيب يأتي مستعداً بدل أن يفحص عشوائياً.",
         "en": "CattleEye monitors 200,000+ cattle across 140+ farms in 23 countries. It detects lameness early — one of the costliest problems in cattle farming. The concern about reduced visits is valid, but continuous data makes visits more effective — the vet arrives prepared instead of screening randomly."
+      }
+    },
+    {
+      "id": "vet-mcq-003",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب بيطري تقضي ساعتين يومياً في كتابة سجلات SOAP. جامعة UC Davis (المصنّفة #1 عالمياً) اعتمدت أداة AI لكتابة الملاحظات. ما هذه الأداة؟",
+        "en": "You're a vet spending 2 hours daily writing SOAP records. UC Davis (#1 ranked vet school) adopted an AI note-writing tool. What is it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ScribbleVet — كاتب SOAP بالذكاء الاصطناعي يسجّل الموعد ويحوّله لملاحظات خلال دقائق",
+            "en": "ScribbleVet — an AI SOAP writer that records appointments and converts them to notes in minutes"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ChatGPT مع قالب SOAP مخصص",
+            "en": "ChatGPT with a custom SOAP template"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "Nuance DAX المستخدم في الطب البشري",
+            "en": "Nuance DAX used in human medicine"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "نظام تحويل صوت عادي بدون تخصص بيطري",
+            "en": "A generic speech-to-text system without veterinary specialization"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "ScribbleVet تستخدمه آلاف الأطباء البيطريين. UC Davis اعتمدته في ديسمبر 2025 لمرافقها السريرية وطلابها. يوفر حوالي 70 دقيقة يومياً ويتكامل مع أنظمة PIMS بنقرة واحدة.",
+        "en": "ScribbleVet is used by thousands of vets. UC Davis adopted it in December 2025 for clinical facilities and students. It saves about 70 min/day and integrates with PIMS in one click."
+      }
+    },
+    {
+      "id": "vet-mcq-004",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب بيطري تستخدم ScribbleVet. أثناء الفحص يسأل المالك عن تشخيصات تفريقية. ما الميزة المدمجة حديثاً؟",
+        "en": "You use ScribbleVet. During an exam the owner asks about differential diagnoses. What recently integrated feature helps?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تكامل LifeLearn Sofie — محرك بحث سريري من مكتبة مراجع بيطرية موثوقة مغلقة",
+            "en": "LifeLearn Sofie integration — a clinical search engine from a closed trusted veterinary reference library"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "بحث Google Scholar تلقائي",
+            "en": "Automatic Google Scholar search"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قاعدة بيانات أدوية فقط",
+            "en": "A medication database only"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا توجد ميزة كهذه",
+            "en": "No such feature exists"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Sofie تعمل من نظام مغلق بمراجع بيطرية موثوقة فقط. التشخيصات التفريقية تظهر مع مراجعها داخل قسم Assessment من ملاحظات SOAP.",
+        "en": "Sofie operates within a closed system using only trusted veterinary references. Differential diagnoses appear with citations directly within the SOAP Assessment section."
+      }
+    },
+    {
+      "id": "vet-mcq-005",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "كم يُقدّر حجم سوق تشخيصات AI البيطري عالمياً في 2024-2025؟",
+        "en": "What is the global veterinary AI diagnostics market size in 2024-2025?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "1.6 إلى 1.9 مليار دولار",
+            "en": "$1.6 to $1.9 billion"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقل من 100 مليون دولار",
+            "en": "Less than $100 million"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "10 مليارات دولار",
+            "en": "$10 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "500 مليون دولار",
+            "en": "$500 million"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "السوق يُقدّر بـ 1.6-1.9 مليار دولار بنمو سنوي 20%، متوقع أن يصل 4-5 مليار بحلول 2029-2030.",
+        "en": "The market is valued at $1.6-1.9B with 20% annual growth, projected to reach $4-5B by 2029-2030."
+      }
+    },
+    {
+      "id": "vet-tf-003",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام SignalPET تدرّب على أكثر من 20 مليون صورة أشعة مُعلّمة ويحلل حوالي 50,000 أشعة أسبوعياً في أكثر من 2,500 عيادة.",
+        "en": "SignalPET was trained on 20+ million annotated radiographs and analyzes ~50,000 X-rays weekly across 2,500+ clinics."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. يخدم 7,000+ طبيب. دراسة Frontiers أثبتت أن دقته تطابق أفضل أخصائي. يعالج نقص أقل من 2,000 أخصائي أشعة بيطري معتمد في أمريكا الشمالية وأوروبا.",
+        "en": "True. Serves 7,000+ clinicians. A Frontiers study found accuracy matched the best radiologist. Addresses shortage of fewer than 2,000 board-certified vet radiologists in NA and Europe."
+      }
+    },
+    {
+      "id": "vet-tf-004",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أداة ScribbleVet تتطلب من الطبيب التحدث بطريقة محددة ونطق علامات الترقيم أثناء التسجيل.",
+        "en": "ScribbleVet requires the vet to speak in a specific way and dictate punctuation while recording."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. يسمح بالتحدث طبيعياً ويُفلتر المحادثات غير الطبية تلقائياً. الملاحظات جاهزة خلال دقيقة.",
+        "en": "False. Allows natural speech and automatically filters non-medical conversation. Notes ready within a minute."
+      }
+    },
+    {
+      "id": "vet-fill-002",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} من Mars Petcare يتنبأ بمرض الكلى المزمن في القطط قبل سنتين من الأعراض بدقة تتجاوز 95%.",
+        "en": "The {{blank_1}} system from Mars Petcare predicts CKD in cats 2 years before symptoms with over 95% accuracy."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "RenalTech",
+            "en": "RenalTech"
+          },
+          "options": [
+            {
+              "ar": "RenalTech",
+              "en": "RenalTech"
+            },
+            {
+              "ar": "KidneyGuard",
+              "en": "KidneyGuard"
+            },
+            {
+              "ar": "FelinePredict",
+              "en": "FelinePredict"
+            },
+            {
+              "ar": "CatScan AI",
+              "en": "CatScan AI"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "مرض الكلى المزمن السبب الأول لوفاة القطط فوق 5 سنوات. RenalTech دُرّب على بيانات 150,000+ قطة و750,000 زيارة من عيادات Banfield.",
+        "en": "CKD is the #1 cause of death for cats over 5. RenalTech was trained on data from 150,000+ cats and 750,000 Banfield visits."
+      }
+    },
+    {
+      "id": "vet-match-002",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل أداة AI بيطرية بوظيفتها الرئيسية:",
+        "en": "Match each veterinary AI tool with its primary function:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "ScribbleVet",
+            "en": "ScribbleVet"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Vetology",
+            "en": "Vetology"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "ImpriMed",
+            "en": "ImpriMed"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Connecterra IDA",
+            "en": "Connecterra IDA"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "كتابة ملاحظات SOAP تلقائياً من تسجيل الموعد",
+            "en": "Auto SOAP notes from appointment recordings"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "فحص 83 علامة شعاعية بتوافق 92% مع الأخصائيين",
+            "en": "Screening 83 radiographic findings with 92% specialist agreement"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "اختبار 13 دواء كيميائياً على خلايا سرطان حية",
+            "en": "Testing 13 chemo drugs on live cancer cells"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "مراقبة 7 سلوكيات للأبقار بدقة 90%",
+            "en": "Monitoring 7 cow behaviors at 90% accuracy"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل أداة تخدم جانباً مختلفاً: ScribbleVet تقلل العبء الإداري، Vetology تعوض نقص أخصائيي الأشعة، ImpriMed تُخصّص علاج السرطان، وConnecterra IDA تُحوّل تربية الأبقار إلى قائمة على البيانات.",
+        "en": "Each tool serves a different aspect: ScribbleVet reduces admin burden, Vetology compensates for radiologist shortages, ImpriMed personalizes cancer treatment, Connecterra IDA makes dairy farming data-driven."
+      }
+    },
+    {
+      "id": "vet-sort-002",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات استخدام ImpriMed للطب الدقيق في علاج سرطان الغدد الليمفاوية المنتكس في كلب:",
+        "en": "Order the steps for using ImpriMed for relapsed canine lymphoma:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "أخذ عينة من الخلايا السرطانية الحية وإرسالها لمختبر ImpriMed",
+            "en": "Taking live cancer cells and sending to ImpriMed's lab"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "اختبار 13 دواءً كيميائياً على الخلايا الحية",
+            "en": "Testing 13 chemo drugs on live cells"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "AI يحلل النتائج ويرتّب الأدوية حسب احتمالية الاستجابة",
+            "en": "AI analyzes results and ranks drugs by response probability"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "اختيار البروتوكول العلاجي المتوافق مع توقعات AI",
+            "en": "Selecting treatment matching AI predictions"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "حقق معدل استجابة كاملة أعلى 4 مرات ومتوسط بقاء أطول 3 مرات. ImpriMed ساعدت 5,000+ كلب وتتوسع للأورام البشرية.",
+        "en": "Achieved 4× higher complete response rate and 3× longer median survival. ImpriMed helped 5,000+ dogs and is expanding to human oncology."
+      }
+    },
+    {
+      "id": "vet-self-003",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت طبيب بيطري شاب. عيادتك تريد شراء اشتراك ScribbleVet لأتمتة كتابة الملاحظات. ما موقفك؟",
+        "en": "You're a young vet. Your clinic wants to subscribe to ScribbleVet. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ممتاز — 70 دقيقة يومياً سأقضيها مع المرضى. هذا ما يحتاجه جيلنا لمقاومة الإرهاق",
+            "en": "Excellent — 70 min/day with patients instead of screens. Exactly what our generation needs against burnout"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "جيد لكن أريد مراجعة كل ملاحظة قبل حفظها — كتابة الملاحظات جزء من التعلم",
+            "en": "Good but I want to review every note — writing notes is part of clinical learning"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق أن الاعتماد على AI سيُضعف مهاراتي في التوثيق",
+            "en": "Worried AI reliance will weaken my documentation skills"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أفضل كتابة ملاحظاتي بنفسي — هكذا تعلمت",
+            "en": "I prefer writing my own notes — that's how I learned"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الإرهاق يصيب 60%+ من الأطباء البيطريين. التوثيق يستهلك 30-40% من يوم العمل. UC Davis المصنفة #1 اعتمدتها لطلابها.",
+        "en": "Burnout affects 60%+ of vets. Documentation consumes 30-40% of the workday. UC Davis ranked #1 adopted it for students."
+      }
+    },
+    {
+      "id": "vet-self-004",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "شركة أدوية تعرض عليك VetScan Imagyst من Zoetis — 7 تطبيقات تشخيصية بـ AI في جهاز واحد. ما قرارك؟",
+        "en": "A pharma company offers Zoetis' VetScan Imagyst — 7 AI diagnostic apps in one device. Your decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة ذهبية — سيُسرّع التشخيص ويقلل الاعتماد على المختبرات الخارجية",
+            "en": "Golden opportunity — speeds diagnosis and reduces external lab dependence"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مهتم لكن أريد تجربته ومقارنة نتائجه مع فحوصاتي المعتادة",
+            "en": "Interested but want to trial and compare with my usual tests"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أشك في جودة 7 تطبيقات في جهاز واحد — أفضل أدوات منفصلة",
+            "en": "Doubt quality of 7 apps in one device — prefer separate tools"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أحتاجه — أعتمد على خبرتي والمختبر الخارجي",
+            "en": "Don't need it — I rely on expertise and external lab"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "VetScan Imagyst أضاف AI Masses لفحص الأورام في يونيو 2025. 39.2% من المهنيين البيطريين يستخدمون AI بالفعل.",
+        "en": "VetScan Imagyst added AI Masses for tumor screening June 2025. 39.2% of vet professionals already use AI tools."
+      }
+    },
+    {
+      "id": "vet-mcq-006",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "دراسة Frontiers قارنت SignalPET مع أخصائيي الأشعة المعتمدين. ما النتيجة؟",
+        "en": "A Frontiers study compared SignalPET with board-certified radiologists. What was the result?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "SignalPET طابق دقة أفضل أخصائي أشعة مع تفوّق في النوعية",
+            "en": "SignalPET matched the best radiologist with higher specificity"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تفوّق على الجميع في كل الحالات",
+            "en": "Outperformed all specialists in every case"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أقل دقة بنسبة 20%",
+            "en": "20% less accurate"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم تُجرَ دراسات مقارنة",
+            "en": "No comparative studies conducted"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "النتيجة ليست أن AI أفضل في كل شيء بل يحقق مستوى مكافئاً لأفضل الأخصائيين مع ميزة: متاح 24/7. مع أقل من 2,000 أخصائي أشعة بيطري — هذا تغيير جذري.",
+        "en": "AI isn't better at everything but achieves a level equivalent to the best specialists with availability 24/7. With fewer than 2,000 vet radiologists — this is transformative."
+      }
+    },
+    {
+      "id": "vet-mcq-007",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب دواجن في مزرعة 40,000 دجاجة. أي نظام AI يراقب الحظيرة دون الحاجة لدخولك المتكرر؟",
+        "en": "You're a poultry vet in a 40,000-bird farm. Which AI system monitors without frequent human entry?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "Faromatics ChickenBoy — روبوت سقفي بالرؤية الحاسوبية لحظائر 20,000-60,000 طائر",
+            "en": "Faromatics ChickenBoy — ceiling robot with computer vision for 20K-60K bird houses"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "كاميرات مراقبة عادية مع شاشة",
+            "en": "Regular cameras with a monitor"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حساسات درجة حرارة فقط",
+            "en": "Temperature sensors only"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "طائرة مسيّرة داخل الحظيرة",
+            "en": "A drone inside the house"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "ChickenBoy (AGCO) يتحرك على سكة بالسقف دون إزعاج الطيور. تحليل الصور الآلي يكشف مشاكل الصحة والسلوك مبكراً.",
+        "en": "ChickenBoy (AGCO) moves on ceiling rail without disturbing birds. Automated image analysis detects health and behavior issues early."
+      }
+    },
+    {
+      "id": "vet-mcq-008",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نماذج ML للتنبؤ بتفشي إنفلونزا الطيور حققت دقة:",
+        "en": "ML models for predicting avian influenza outbreaks achieved accuracy of:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "92% في التنبؤ بتفشي إنفلونزا الطيور",
+            "en": "92% in predicting avian influenza outbreaks"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "50% — ليست أفضل من التخمين",
+            "en": "50% — no better than guessing"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "100% — بلا أخطاء",
+            "en": "100% — no errors"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "75% — مقبول لكن غير كافٍ",
+            "en": "75% — acceptable but insufficient"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "Random Forest حققت AUC 0.95 مع حساسية 91% ونوعية 88%. قلّصت تأخير اكتشاف التفشي بـ 12 يوماً — فارق حاسم في أمراض سريعة الانتشار.",
+        "en": "Random Forest achieved AUC 0.95 with 91% sensitivity and 88% specificity. Reduced detection delay by 12 days — crucial for rapidly spreading diseases."
+      }
+    },
+    {
+      "id": "vet-tf-005",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Vetology يفحص 83 علامة شعاعية بتوافق 92% مع أخصائيي الأشعة وحقق 88.7% في كشف الانصباب الجنبي مقابل 75% للبشر.",
+        "en": "Vetology screens 83 findings with 92% specialist agreement, achieving 88.7% in pleural effusion vs 75% for humans."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "AI يكتشف حالات طارئة بنسبة أعلى — ليس لأن الأطباء سيئون بل لأن العين البشرية لها حدود فسيولوجية موثقة علمياً.",
+        "en": "AI detects emergencies at higher rates — not because doctors are bad but because the human eye has scientifically documented physiological limits."
+      }
+    },
+    {
+      "id": "vet-tf-006",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أقل من 5% من الأطباء البيطريين يستخدمون أدوات AI حالياً.",
+        "en": "Fewer than 5% of vets currently use AI tools."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. استطلاع Digitail-AAHA 2024: 39.2% يستخدمون AI، و69.5% من المستخدمين يوظفونها يومياً أو أسبوعياً.",
+        "en": "False. 2024 Digitail-AAHA survey: 39.2% use AI, and 69.5% of users employ them daily or weekly."
+      }
+    },
+    {
+      "id": "vet-fill-003",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} يستخدم التصوير تحت الماء لمراقبة قمل السلمون وتقدير الكتلة الحيوية، ويلتقط أكثر من مليون صورة يومياً.",
+        "en": "The {{blank_1}} system uses underwater imaging for salmon lice and biomass monitoring, capturing 1M+ images daily."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Aquabyte",
+            "en": "Aquabyte"
+          },
+          "options": [
+            {
+              "ar": "Aquabyte",
+              "en": "Aquabyte"
+            },
+            {
+              "ar": "FishScan",
+              "en": "FishScan"
+            },
+            {
+              "ar": "OceanEye",
+              "en": "OceanEye"
+            },
+            {
+              "ar": "SalmonGuard",
+              "en": "SalmonGuard"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Aquabyte (استحوذت عليها Vitruvian Partners ديسمبر 2025) تُحوّل مراقبة مزارع السلمون من يدوية مكلفة إلى آلية مستمرة دون لمس الأسماك.",
+        "en": "Aquabyte (Vitruvian Partners majority stake Dec 2025) transforms salmon farm monitoring from costly manual to continuous automation without touching fish."
+      }
+    },
+    {
+      "id": "vet-match-003",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل إحصائية بالمجال الصحيح في AI البيطري:",
+        "en": "Match each statistic with its correct veterinary AI area:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "دقة أعلى بـ 13.7%",
+            "en": "13.7% higher accuracy"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "20+ مليون صورة تدريبية",
+            "en": "20M+ training images"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "4× معدل الاستجابة الكاملة",
+            "en": "4× complete response rate"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "تقليل المضادات الحيوية 50%",
+            "en": "50% antibiotic reduction"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "كشف الانصباب الجنبي AI vs بشر (Vetology)",
+            "en": "AI vs human pleural effusion (Vetology)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "قاعدة بيانات تدريب SignalPET",
+            "en": "SignalPET training dataset"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "الطب الدقيق لسرطان الكلاب (ImpriMed)",
+            "en": "Canine cancer precision medicine (ImpriMed)"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "مراقبة سلوك الأبقار (Connecterra IDA)",
+            "en": "Cow behavior monitoring (Connecterra IDA)"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الأرقام من دراسات منشورة وليست ادعاءات تسويقية. ابحث دائماً عن الورقة العلمية المحكّمة.",
+        "en": "These numbers are from published studies, not marketing claims. Always look for the peer-reviewed paper."
+      }
+    },
+    {
+      "id": "vet-sort-003",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مراحل تطور استخدام AI في عيادة بيطرية:",
+        "en": "Order the stages of AI adoption in a vet clinic:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "كاتب SOAP بـ AI (مثل ScribbleVet)",
+            "en": "AI SOAP writer (e.g. ScribbleVet)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "أداة تحليل أشعة بـ AI (مثل SignalPET)",
+            "en": "AI radiology tool (e.g. SignalPET)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تشخيص تنبؤي (مثل RenalTech)",
+            "en": "Predictive diagnostics (e.g. RenalTech)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "ربط جميع أدوات AI في منصة واحدة مع PIMS",
+            "en": "Connecting all AI tools with PIMS"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "معظم العيادات تبدأ بالأدوات الإدارية لأنها الأسهل تبنياً والأوضح عائداً (70 دقيقة/يوم).",
+        "en": "Most clinics start with admin tools as they're easiest to adopt with clearest ROI (70 min/day)."
+      }
+    },
+    {
+      "id": "vet-self-005",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت أخصائي أشعة بيطري (أحد أقل من 2,000). SignalPET تقارب دقتك. كيف تتعامل؟",
+        "en": "You're a board-certified vet radiologist (one of <2,000). SignalPET matches your accuracy. How do you respond?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتعاون — AI يتولى الروتيني وأنا أركز على المعقد والتعليم والبحث",
+            "en": "I collaborate — AI handles routine, I focus on complex cases, teaching, research"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أستخدمه كفرز أولي وأراجع تقاريره",
+            "en": "I use it for preliminary screening and review its reports"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق لكنني أعرف أن الحالات المعقدة ستحتاجني",
+            "en": "Worried but I know complex cases will always need me"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض التعاون — سيُنهي تخصصنا",
+            "en": "I refuse — this will end our specialty"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "النقص الحاد يعني أن AI مُكمّل لا منافس. SignalPET يقدم 3 مستويات تنتهي بتصعيد لأخصائي بشري. التخصص يتطور — لا يختفي.",
+        "en": "The severe shortage means AI is a complement, not competitor. SignalPET offers 3 tiers ending with human specialist escalation. The specialty evolves — doesn't disappear."
+      }
+    },
+    {
+      "id": "vet-self-006",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "قطة عمرها 7 سنوات. RenalTech تنبّأ بمرض الكلى خلال سنتين رغم أنها سليمة. كيف تتعامل مع المالك؟",
+        "en": "A 7-year-old cat. RenalTech predicted CKD within 2 years despite appearing healthy. How do you handle the owner?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أشرح التنبؤ بشفافية وأضع خطة وقائية — تغذية كلوية وفحوصات دورية",
+            "en": "I explain transparently and create a preventive plan — renal diet and periodic checkups"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطلب فحوصات تأكيدية قبل إخبار المالك",
+            "en": "I order confirmatory tests before telling the owner"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر ظهور الأعراض — القطة سليمة الآن",
+            "en": "I wait for symptoms — the cat is healthy now"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أثق بتنبؤات الخوارزميات",
+            "en": "I don't trust algorithmic predictions"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "RenalTech دقة 95%+. أصحاب القطط المشخصة مبكراً زادت زياراتهم 31%. CKD السبب #1 لوفاة القطط فوق 5 سنوات.",
+        "en": "RenalTech >95% accuracy. Owners of early-diagnosed cats increased visits by 31%. CKD is #1 cause of death for cats over 5."
+      }
+    },
+    {
+      "id": "vet-mcq-009",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "جامعة فلوريدا كانت أول كلية بيطرية تعتمد ScribbleVet (مارس 2025). من تلاها في ديسمبر 2025؟",
+        "en": "University of Florida was first to adopt ScribbleVet (March 2025). Who followed in December 2025?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "UC Davis",
+            "en": "UC Davis"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "كورنيل",
+            "en": "Cornell"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الكلية الملكية بلندن",
+            "en": "Royal Vet College London"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "جامعة غيلف",
+            "en": "University of Guelph"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "UC Davis اعتمدته بعد مراجعة أمنية مكثفة وشكّلت فريقاً لتقييم دمجه في التعليم.",
+        "en": "UC Davis adopted after extensive security review and formed a task force for integration into education."
+      }
+    },
+    {
+      "id": "vet-mcq-010",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "CattleEye (GEA Group منذ مارس 2024) تراقب أبقاراً في 23 دولة. كم بقرة تقريباً؟",
+        "en": "CattleEye (GEA since March 2024) monitors cattle in 23 countries. Approximately how many?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "200,000+ في 140+ مزرعة",
+            "en": "200,000+ across 140+ farms"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "5,000 في 10 مزارع",
+            "en": "5,000 in 10 farms"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مليون — يغطي كل المزارع",
+            "en": "1M — covers all farms"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50,000 في أوروبا فقط",
+            "en": "50,000 in Europe only"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "الاندماج مع GEA (أكبر شركة معدات ألبان) يعني تسريع الانتشار عالمياً.",
+        "en": "Merging with GEA (largest dairy equipment company) means accelerated global deployment."
+      }
+    },
+    {
+      "id": "vet-mcq-011",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "استطلاع Digitail-AAHA 2024 (3,968 مهنياً). ما نسبة المستخدمين اليوميين/الأسبوعيين لـ AI؟",
+        "en": "2024 Digitail-AAHA survey (3,968 professionals). What % of AI users employ it daily/weekly?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "69.5%",
+            "en": "69.5%"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقل من 10%",
+            "en": "Less than 10%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "30%",
+            "en": "30%"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "95%",
+            "en": "95%"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "39.2% تبنّوا AI ومنهم 69.5% يستخدمونها بانتظام. من يبدأ يستمر.",
+        "en": "39.2% adopted AI and 69.5% of those use it regularly. Those who start tend to continue."
+      }
+    },
+    {
+      "id": "vet-tf-007",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ImpriMed تتوسع من سرطان الكلاب للأورام البشرية (المايلوما المتعددة).",
+        "en": "ImpriMed is expanding from canine cancer to human oncology (multiple myeloma)."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. مثال نادر على الطب البيطري يسبق البشري. التجارب البيطرية أسرع وأقل تعقيداً تنظيمياً.",
+        "en": "True. Rare example of vet medicine leading human medicine. Vet trials are faster and less regulatory complex."
+      }
+    },
+    {
+      "id": "vet-tf-008",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "السعودية طوّرت نظام AI لصحة الثروة الحيوانية فاز بشهادة التميز في WSIS 2025.",
+        "en": "Saudi Arabia developed an AI livestock health system winning WSIS 2025 Excellence Certificate."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. قُدّم في جنيف يوليو 2025 ضمن عرض وزارة البيئة والمياه والزراعة.",
+        "en": "True. Presented in Geneva July 2025 as part of Saudi MEWA showcase."
+      }
+    },
+    {
+      "id": "vet-fill-004",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "فريق كاوست طوّر مسيّرات AI للتعرف على {{blank_1}} وتتبعها من الجو.",
+        "en": "KAUST developed AI drones to recognize and track {{blank_1}} from the air."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "الإبل",
+            "en": "camels"
+          },
+          "options": [
+            {
+              "ar": "الإبل",
+              "en": "camels"
+            },
+            {
+              "ar": "الصقور",
+              "en": "falcons"
+            },
+            {
+              "ar": "المها العربي",
+              "en": "Arabian oryx"
+            },
+            {
+              "ar": "الأغنام",
+              "en": "sheep"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "الإبل تتنقل 50 كم/يوم. النظام يوفر بديلاً منخفض التكلفة لمربي الإبل.",
+        "en": "Camels roam 50 km/day. The system provides a low-cost alternative for camel herders."
+      }
+    },
+    {
+      "id": "vet-match-004",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل قصة نجاح AI بيطري بنتيجتها:",
+        "en": "Match each vet AI success story with its outcome:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "اعتماد UC Davis لـ ScribbleVet",
+            "en": "UC Davis adopting ScribbleVet"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "استحواذ GEA على CattleEye",
+            "en": "GEA acquiring CattleEye"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "استحواذ Vitruvian على Aquabyte",
+            "en": "Vitruvian acquiring Aquabyte"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "استحواذ AGCO على Faromatics",
+            "en": "AGCO acquiring Faromatics"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تدريب طلاب البيطري على AI",
+            "en": "Training vet students on AI"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "دمج مراقبة العرج مع معدات الألبان",
+            "en": "Integrating lameness monitoring with dairy equipment"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "توسيع مراقبة مزارع السلمون",
+            "en": "Expanding smart salmon monitoring"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "دمج روبوتات الدواجن مع المعدات الزراعية",
+            "en": "Integrating poultry robots with ag equipment"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "النمط واضح: شركات AI البيطرية الناجحة يتم استحواذها من شركات كبرى — انتقال من الشركات الناشئة للتكامل المؤسسي.",
+        "en": "Clear pattern: successful vet AI companies acquired by major players — transition from startups to institutional integration."
+      }
+    },
+    {
+      "id": "vet-sort-004",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات إعداد مراقبة ذكية لقطيع أبقار بـ CattleEye:",
+        "en": "Order steps for setting up smart cattle monitoring with CattleEye:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تركيب كاميرات في ممرات الأبقار وأماكن الحلب",
+            "en": "Installing cameras at walkways and milking areas"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "AI يحلل المشية ويقيّم حالة الجسم تلقائياً",
+            "en": "AI analyzes gait and assesses body condition"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "النظام يُنبّه بالحالات المشتبهة مبكراً",
+            "en": "System alerts about suspected cases early"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "الطبيب يفحص الحالات المُبلّغة ويتخذ قرارات مبنية على بيانات",
+            "en": "Vet examines flagged cases with data-driven decisions"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الطبيب يأتي مستعداً بدل أن يفحص 500 بقرة عشوائياً.",
+        "en": "The vet arrives prepared instead of randomly screening 500 cows."
+      }
+    },
+    {
+      "id": "vet-self-007",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "ImpriMed أغلى من البروتوكول القياسي لكن النتائج 4× أفضل. كيف تتعامل كمالك عيادة صغيرة؟",
+        "en": "ImpriMed costs more than standard protocol but results are 4× better. How do you handle it as a small clinic owner?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أعرضها على كل مالك حيوان مصاب بالسرطان — من واجبي إخباره",
+            "en": "I offer it to every cancer-diagnosed pet owner — it's my duty to inform"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أعرضها للحالات المنتكسة فقط",
+            "en": "I offer only for relapsed cases"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "التكلفة مرتفعة لعملائي",
+            "en": "Cost too high for my clients"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أثق بنتائج شركة ناشئة",
+            "en": "Don't trust startup results"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "نُشرت في Frontiers in Oncology. الطب الدقيق يوفر على المالك تكاليف علاجات فاشلة متعددة.",
+        "en": "Published in Frontiers in Oncology. Precision medicine saves owners the cost of multiple failed treatments."
+      }
+    },
+    {
+      "id": "vet-self-008",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "كلية البيطري في جامعتك تريد إدراج تدريب على AI في المنهج. ما رأيك كأستاذ؟",
+        "en": "Your vet school wants to include AI training in curriculum. Your opinion as professor?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ضروري — الطلاب سيجدون AI في كل عيادة بعد التخرج",
+            "en": "Essential — students will find AI in every clinic post-graduation"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقبول كمادة اختيارية",
+            "en": "Acceptable as an elective"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مبكر — يجب تعلم الأساسيات أولاً",
+            "en": "Too early — learn fundamentals first"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — سيُضعف مهاراتهم التشخيصية",
+            "en": "I refuse — will weaken diagnostic skills"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "UC Davis شكّلت فريقاً لدمج ScribbleVet في التعليم. جامعة فلوريدا سبقتها مارس 2025.",
+        "en": "UC Davis formed a task force to integrate ScribbleVet into education. University of Florida preceded in March 2025."
+      }
+    },
+    {
+      "id": "vet-mcq-012",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت تستخدم ScribbleVet. المالك يشارك معلومات شخصية. ما آلية حماية الخصوصية؟",
+        "en": "You use ScribbleVet. The owner shares sensitive info. What privacy mechanism?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فلترة تلقائية — النظام يحذف المحادثات غير الطبية",
+            "en": "Automatic filtering — removes non-medical conversations"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تشفير بدون فلترة",
+            "en": "Encryption without filtering"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا حماية — كل شيء يُسجّل",
+            "en": "No protection — everything recorded"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "إيقاف يدوي عند كل محادثة شخصية",
+            "en": "Manual stop at every personal conversation"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "UC Davis أجرت مراجعة أمنية مكثفة. الفلترة التلقائية ميزة تصميمية أساسية.",
+        "en": "UC Davis conducted extensive security review. Automatic filtering is a core design feature."
+      }
+    },
+    {
+      "id": "vet-mcq-013",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "AI أعطى تشخيصاً خاطئاً لحالة طارئة. من المسؤول قانونياً؟",
+        "en": "AI gave a wrong diagnosis for an emergency. Who is legally responsible?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الطبيب — AI أداة مساعدة والمسؤولية النهائية عليك",
+            "en": "The vet — AI is assistive and ultimate responsibility remains yours"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "شركة AI",
+            "en": "The AI company"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا أحد",
+            "en": "No one"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مالك الحيوان",
+            "en": "The pet owner"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "في القانون الحالي AI أداة — كجهاز الأشعة. الطبيب صاحب القرار النهائي.",
+        "en": "In current law AI is a tool — like an X-ray machine. The doctor makes the final decision."
+      }
+    },
+    {
+      "id": "vet-mcq-014",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أبرز مخاوف الأطباء البيطريين من AI حسب AVMA:",
+        "en": "Top vet concerns about AI per AVMA:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "موثوقية ودقة أنظمة AI",
+            "en": "Reliability and accuracy of AI systems"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تكلفة الاشتراك فقط",
+            "en": "Subscription cost only"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "صعوبة التعلم",
+            "en": "Difficulty learning"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "رفض العملاء",
+            "en": "Client refusal"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا دفع ScribbleVet للتكامل مع Sofie — نظام مغلق بمراجع موثوقة بدل الإنترنت المفتوح.",
+        "en": "This drove ScribbleVet-Sofie integration — a closed system with trusted references instead of open internet."
+      }
+    },
+    {
+      "id": "vet-tf-009",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "60-70% من الأمراض المعدية الجديدة حيوانية المنشأ، مما يجعل AI البيطري مسألة صحة عامة.",
+        "en": "60-70% of new infectious diseases are zoonotic, making vet AI a public health matter."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "نهج الصحة الواحدة (One Health). نماذج ML حققت 92% في التنبؤ بإنفلونزا الطيور.",
+        "en": "One Health approach. ML models achieved 92% in predicting avian influenza."
+      }
+    },
+    {
+      "id": "vet-tf-010",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "Sofie تبحث في الإنترنت المفتوح للتشخيصات التفريقية.",
+        "en": "Sofie searches the open internet for differential diagnoses."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. تعمل من نظام مغلق بمراجع بيطرية محكّمة فقط.",
+        "en": "False. Operates from a closed system with peer-reviewed vet references only."
+      }
+    },
+    {
+      "id": "vet-fill-005",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نهج {{blank_1}} يربط صحة الحيوان والإنسان والبيئة.",
+        "en": "The {{blank_1}} approach links animal, human, and environmental health."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "الصحة الواحدة",
+            "en": "One Health"
+          },
+          "options": [
+            {
+              "ar": "الصحة الواحدة",
+              "en": "One Health"
+            },
+            {
+              "ar": "الصحة الشاملة",
+              "en": "Total Health"
+            },
+            {
+              "ar": "الصحة المتكاملة",
+              "en": "Integrated Health"
+            },
+            {
+              "ar": "الصحة الرقمية",
+              "en": "Digital Health"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "COVID-19 مثال على مرض حيواني المنشأ. AI يرصد مبكراً عبر تحليل بيانات المزارع والحياة البرية والمناخ.",
+        "en": "COVID-19 is a recent zoonotic example. AI detects early by analyzing farm, wildlife, and climate data."
+      }
+    },
+    {
+      "id": "vet-match-005",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تحدٍّ أخلاقي في AI البيطري بحله:",
+        "en": "Match each ethical challenge in vet AI with its solution:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "خصوصية بيانات العملاء",
+            "en": "Client data privacy"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "موثوقية التشخيصات",
+            "en": "Diagnosis reliability"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "مسؤولية الأخطاء",
+            "en": "Error responsibility"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "تحيز البيانات",
+            "en": "Data bias"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "فلترة تلقائية ومراجعة أمنية",
+            "en": "Auto filtering and security review"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "نظام مغلق بمراجع محكّمة (Sofie)",
+            "en": "Closed system with peer-reviewed refs (Sofie)"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "AI كعين ثانية والقرار للطبيب",
+            "en": "AI as second eyes, decision with vet"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تنويع بيانات التدريب جغرافياً وعرقياً",
+            "en": "Diversifying training data geographically"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل تحدٍّ أخلاقي له حل عملي يُطبّق فعلاً.",
+        "en": "Every ethical challenge has a practical solution already being implemented."
+      }
+    },
+    {
+      "id": "vet-sort-005",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب التعامل مع تشخيص AI خاطئ في حالة طارئة:",
+        "en": "Order handling a wrong AI diagnosis in an emergency:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحقق سريري فوري — فحص الحيوان بنفسك",
+            "en": "Immediate clinical verification — examine yourself"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "قرار علاجي بحكمك السريري مع مراعاة تقرير AI",
+            "en": "Treatment decision based on your judgment considering AI report"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "توثيق الخطأ وإبلاغ شركة AI",
+            "en": "Documenting error and notifying AI company"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "مراجعة بروتوكول استخدام AI في العيادة",
+            "en": "Reviewing clinic AI usage protocol"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "AI ليس معصوماً — حتى Vetology بدقة 92% يخطئ في 8%. المبدأ: AI يقترح والطبيب يقرر.",
+        "en": "AI isn't infallible — even Vetology at 92% is wrong 8% of the time. Principle: AI suggests, doctor decides."
+      }
+    },
+    {
+      "id": "vet-self-009",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت طبيب بيطري. عميل يسأل: 'هل AI يسجّل كل ما أقوله؟' كيف تجيب؟",
+        "en": "A client asks: 'Does AI record everything I say?' How do you respond?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أشرح بشفافية: يسجّل ويحذف الشخصي تلقائياً. أعرض إيقافه إذا أراد",
+            "en": "I explain transparently: records and auto-removes personal. Offer to stop if wanted"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أُطمئنه أن البيانات مشفّرة",
+            "en": "I reassure that data is encrypted"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتجنب الشرح وأقول أنها أداة ملاحظات",
+            "en": "I avoid detail and say it's a notes tool"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أوقف التسجيل فوراً وأعود للكتابة اليدوية",
+            "en": "I stop recording and go back to manual"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الشفافية أساسية. إعطاء العميل خيار الإيقاف يبني الثقة.",
+        "en": "Transparency is essential. Giving the client the option to stop builds trust."
+      }
+    },
+    {
+      "id": "vet-self-010",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مزرعة دواجن 50,000 طائر تريد كاميرات AI. جمعية رفق حيوان تعترض. ما موقفك كطبيب المزرعة؟",
+        "en": "A 50K-bird farm wants AI cameras. Animal welfare group objects. Your stance as farm vet?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI يُحسّن الرفاهية — يكتشف المشاكل مبكراً ويقلل التدخل البشري المُزعج",
+            "en": "AI improves welfare — detects problems early and reduces disruptive human intervention"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتفهم قلقهم وأقترح شراكة: نشارك بيانات الرفاهية",
+            "en": "I understand and suggest partnership: share welfare data"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتجاهل الاعتراض",
+            "en": "I ignore the objection"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أوافق الجمعية — الكاميرات مُجهدة",
+            "en": "I agree — cameras stress animals"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "ChickenBoy يتحرك على السقف ولا يُزعج الطيور — بعكس الفحوصات البشرية. AI يُحسّن الرفاهية.",
+        "en": "ChickenBoy moves on ceiling without disturbing birds — unlike human inspections. AI improves welfare."
+      }
+    },
+    {
+      "id": "vet-mcq-015",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "النقص المتوقع في الأطباء البيطريين بأمريكا بحلول 2030:",
+        "en": "Expected US vet shortage by 2030:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "24,000-25,000 طبيب",
+            "en": "24,000-25,000 vets"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "فائض",
+            "en": "Surplus"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "1,000 فقط",
+            "en": "Only 1,000"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "5,000",
+            "en": "5,000"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "55,000 إضافي مطلوبون للحيوانات الأليفة وحدها. AI ضرورة لسد الفجوة.",
+        "en": "55,000 additional needed for companion animals alone. AI is a necessity."
+      }
+    },
+    {
+      "id": "vet-mcq-016",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "حسب Merck وAVMA 2024 — نسبة الإنهاك العالي بين الأطباء البيطريين:",
+        "en": "Per Merck & AVMA 2024 — high exhaustion rate among vets:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أكثر من 60%",
+            "en": "Over 60%"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "20%",
+            "en": "20%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "90%",
+            "en": "90%"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "40%",
+            "en": "40%"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "التوثيق يستهلك 30-40% من اليوم. AI يوفر 70 دقيقة — استثمار في الصحة النفسية. البطالة 0.5-0.7%.",
+        "en": "Documentation consumes 30-40% of the day. AI saves 70 min — investment in mental health. Unemployment 0.5-0.7%."
+      }
+    },
+    {
+      "id": "vet-mcq-017",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "الأدوار الوظيفية الجديدة الناشئة في البيطري بسبب AI:",
+        "en": "New job roles emerging in vet medicine due to AI:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أخصائي AI بيطري، منسق طب عن بُعد، محلل بيانات سريرية، فني بيطري بمهام موسّعة بـ AI",
+            "en": "Vet AI specialist, telemedicine coordinator, clinical data analyst, enhanced AI-assisted vet tech"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا أدوار جديدة",
+            "en": "No new roles"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مبرمجون يحلّون محل الأطباء",
+            "en": "Programmers replacing vets"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "فنيو صيانة روبوتات فقط",
+            "en": "Robot maintenance only"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "AI لا يُلغي الوظائف بل يُحوّلها. الطلب ينمو 20% — المهارات التقنية أصبحت تفاضلية.",
+        "en": "AI doesn't eliminate jobs but transforms them. Demand growing 20% — tech skills becoming differentiators."
+      }
+    },
+    {
+      "id": "vet-tf-011",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "التوثيق يستهلك 30-40% من يوم الطبيب البيطري وScribbleVet يوفر 70 دقيقة يومياً.",
+        "en": "Documentation consumes 30-40% and ScribbleVet saves 70 min/day."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "70 دقيقة = 3-4 مواعيد إضافية يومياً. مع نقص 24,000 كل دقيقة مضاعفة القيمة.",
+        "en": "70 min = 3-4 extra appointments daily. With 24K shortage every saved minute has multiplied value."
+      }
+    },
+    {
+      "id": "vet-tf-012",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "البطالة بين الأطباء البيطريين أقل من 1%، مما يعني AI سيساعد لا يضر.",
+        "en": "Vet unemployment below 1%, meaning AI will help not harm."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "0.5-0.7% مقابل 3.8% وطنياً. المهنة تحتاج المزيد. AI يساعد كل طبيب على فعل المزيد.",
+        "en": "0.5-0.7% vs 3.8% nationally. The profession needs more. AI helps each vet do more."
+      }
+    },
+    {
+      "id": "vet-fill-006",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "يحتاج السوق أكثر من {{blank_1}} سنة من الخريجين لسد حاجة 10 سنوات من الفنيين البيطريين المعتمدين.",
+        "en": "The market needs {{blank_1}}+ years of graduates to fill the 10-year credentialed vet tech demand."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "30",
+            "en": "30"
+          },
+          "options": [
+            {
+              "ar": "30",
+              "en": "30"
+            },
+            {
+              "ar": "5",
+              "en": "5"
+            },
+            {
+              "ar": "10",
+              "en": "10"
+            },
+            {
+              "ar": "50",
+              "en": "50"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "الفجوة في الفنيين أكبر من الأطباء. AI يُوسّع قدرات الموجودين بأتمتة الروتيني.",
+        "en": "The technician gap is larger than doctors. AI expands existing tech capabilities by automating routine."
+      }
+    },
+    {
+      "id": "vet-match-006",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مسبب للإرهاق البيطري بحله التقني:",
+        "en": "Match each burnout driver with its tech solution:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "كتابة السجلات بعد ساعات العمل",
+            "en": "Writing records after hours"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "فحص مئات الحيوانات وحيداً",
+            "en": "Examining hundreds alone"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "نقص أخصائيي الأشعة",
+            "en": "Radiologist shortage"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "ضغط العملاء للردود الفورية",
+            "en": "Client pressure for instant responses"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "كاتب SOAP بـ AI (ScribbleVet/Scribenote)",
+            "en": "AI SOAP writer (ScribbleVet/Scribenote)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "فحص نقطة الرعاية (VetScan Imagyst)",
+            "en": "Point-of-care screening (VetScan Imagyst)"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "أشعة AI 24/7 (SignalPET/Vetology)",
+            "en": "AI radiology 24/7 (SignalPET/Vetology)"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "ملخص بريد تلقائي للعميل (Care Cards)",
+            "en": "Automatic client email summary (Care Cards)"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل مسبب له حل متاح الآن — المشكلة في سرعة التبني لا توفر الأدوات.",
+        "en": "Every driver has a solution available now — the issue is adoption speed not tool availability."
+      }
+    },
+    {
+      "id": "vet-sort-006",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب أولويات تبني AI في عيادة مُنهكة وقليلة الموظفين:",
+        "en": "Order AI priorities in a burned-out understaffed clinic:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "أتمتة التوثيق (70 دقيقة/يوم)",
+            "en": "Automate documentation (70 min/day)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "ملخصات عميل تلقائية",
+            "en": "Automatic client summaries"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "أداة أشعة بـ AI",
+            "en": "AI radiology tool"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تشخيص تنبؤي — من تفاعلي لوقائي",
+            "en": "Predictive diagnostics — reactive to preventive"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "ابدأ بما يوفر أكبر وقت بأقل جهد. التوثيق الآلي = تشغيل التسجيل فقط.",
+        "en": "Start with most time saved, least effort. Auto documentation = just turn on recording."
+      }
+    },
+    {
+      "id": "vet-self-011",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت طبيب بيطري ريفي وحيد. 12 ساعة/يوم وتكتب السجلات ليلاً. هل تتبنى AI؟",
+        "en": "You're a solo rural vet. 12 hrs/day, records at night. Adopt AI?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فوراً — حياتي تعتمد على ذلك. أبدأ بكاتب SOAP ثم أشعة",
+            "en": "Immediately — my life depends on it. SOAP writer then radiology"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أجرّب كاتب SOAP أولاً",
+            "en": "I try SOAP writer first"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أحتاج تدريباً — ليس لدي وقت الآن",
+            "en": "Need training — no time now"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "عملت هكذا 15 سنة ولا أزال بخير",
+            "en": "Worked like this 15 years and still fine"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "45% من المقاطعات الريفية الأمريكية قد تصبح بلا طبيب بحلول 2030. AI يوفر ما يعادل فريقاً مساعداً.",
+        "en": "45% of US rural counties may become vet-less by 2030. AI provides the equivalent of a support team."
+      }
+    },
+    {
+      "id": "vet-self-012",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "Mars Veterinary Health تسألك في المقابلة عن أدوات AI. ماذا يعني هذا لمستقبل التوظيف؟",
+        "en": "Mars Vet Health asks about AI tools in your interview. What does this mean for hiring?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "المعرفة بـ AI أصبحت مهارة تنافسية — يجب أن أتعلمها الآن",
+            "en": "AI knowledge is now a competitive skill — must learn now"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "سؤال معقول من شركة كبيرة — لن يكون معياراً في العيادات الصغيرة",
+            "en": "Reasonable from a large company — won't apply to small clinics"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مبالغة — المهارات السريرية هي المعيار",
+            "en": "Exaggeration — clinical skills are the standard"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا يعنيني — إذا رفضوني بسبب AI أعمل في مكان آخر",
+            "en": "Doesn't concern me — if rejected due to AI I'll work elsewhere"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "ما يبدأ كميزة تنافسية يصبح حداً أدنى خلال سنوات. الاستثمار في AI الآن يحميك لعقد.",
+        "en": "What starts as competitive advantage becomes minimum requirement within years. Investing in AI now protects you for a decade."
+      }
+    },
+    {
+      "id": "vet-mcq-018",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "كوريا طوّرت نظام AI لإدارة الأوبئة الحيوانية. أيّ نظام؟",
+        "en": "Korea developed an AI system for animal epidemic management. Which?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "KAHIS — يحلل حركة مركبات الثروة الحيوانية بالتعلم العميق",
+            "en": "KAHIS — analyzes livestock vehicle movement with deep learning"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "BlueDot",
+            "en": "BlueDot"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "GPS بسيط",
+            "en": "Simple GPS"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا يوجد نظام حكومي",
+            "en": "No government system"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "KAHIS بدأ خلال وباء HPAI 2016-2017. استطلاع 2024: 100% من المسؤولين وجدوه مفيداً.",
+        "en": "KAHIS started during 2016-2017 HPAI. 2024 survey: 100% of officials found it helpful."
+      }
+    },
+    {
+      "id": "vet-mcq-019",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "حجم سوق صحة الحيوان في الخليج (GCC) المتوقع بحلول 2030:",
+        "en": "Projected GCC animal health market by 2030:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "2.36 مليار دولار بنمو 9.45%",
+            "en": "$2.36B at 9.45% growth"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "100 مليون",
+            "en": "$100M"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "10 مليارات",
+            "en": "$10B"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "500 مليون",
+            "en": "$500M"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "ينمو بسرعة مدفوعاً بارتفاع تملّك الحيوانات الأليفة. السعودية أطلقت أول تأمين للحيوانات الأليفة سبتمبر 2024.",
+        "en": "Growing rapidly driven by rising pet ownership. Saudi Arabia launched first pet insurance September 2024."
+      }
+    },
+    {
+      "id": "vet-mcq-020",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "السعودية أنشأت مجمعاً للتقنية الحيوية البيطرية في الدرعية. هدفه:",
+        "en": "Saudi Arabia created a vet biotech park in Dhurma. Its goal:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "توطين صناعة اللقاحات والأدوية البيطرية محلياً",
+            "en": "Localizing veterinary vaccine and drug manufacturing"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تدريب فقط",
+            "en": "Training only"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تصدير حيوانات",
+            "en": "Exporting animals"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "حديقة حيوانات تقنية",
+            "en": "Tech zoo"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "75% من أمراض الحيوان تنتقل للإنسان — توطين اللقاحات مسألة أمن غذائي وصحي.",
+        "en": "75% of animal diseases transmit to humans — localizing vaccines is food and health security."
+      }
+    },
+    {
+      "id": "vet-mcq-021",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مركز AI للبيئة والمياه والزراعة بالسعودية (بالتعاون مع سدايا). أي وزارة تشرف عليه؟",
+        "en": "Saudi AI Center for Environment, Water & Agriculture (with SDAIA). Which ministry oversees?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "وزارة البيئة والمياه والزراعة (MEWA)",
+            "en": "MEWA"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الصحة",
+            "en": "Health"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الاتصالات وتقنية المعلومات",
+            "en": "Communications & IT"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التجارة",
+            "en": "Commerce"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "يدعم 7 مشاريع رقمية تشمل مراقبة الثروة الحيوانية بـ AI ومراقبة المسالخ والموارد المائية.",
+        "en": "Supports 7 digital projects including AI livestock monitoring, smart slaughterhouse monitoring, and water resources."
+      }
+    },
+    {
+      "id": "vet-tf-013",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "السعودية أصدرت قانون صحة الحيوان 2023 يلزم بالفحوصات والتطعيمات والإبلاغ عن الأمراض.",
+        "en": "Saudi Arabia issued Animal Health Law 2023 mandating health checks, vaccinations, and disease reporting."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "القانون يُسهّل دمج AI لأنه يوفر بيانات منظمة ومستمرة.",
+        "en": "The law facilitates AI integration by providing organized, continuous data."
+      }
+    },
+    {
+      "id": "vet-tf-014",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Zomedica وسّعت مبيعاتها البيطرية للخليج والهند ومصر في 2024 عبر Leader Healthcare.",
+        "en": "Zomedica expanded vet sales to GCC, India, Egypt in 2024 via Leader Healthcare."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "يعكس نمو السوق في المنطقة ويُمهّد لأدوات AI أكثر تقدماً.",
+        "en": "Reflects regional market growth and paves way for more advanced AI tools."
+      }
+    },
+    {
+      "id": "vet-tf-015",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "سوق الشرق الأوسط وأفريقيا للرعاية البيطرية أقل من 500 مليون دولار.",
+        "en": "ME&A vet healthcare market is less than $500M."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. بلغ 3.82 مليار دولار في 2024 ومتوقع 6.91 مليار بحلول 2033.",
+        "en": "False. Reached $3.82B in 2024, projected $6.91B by 2033."
+      }
+    },
+    {
+      "id": "vet-tf-016",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنظمة AI لتحليل صوت الدجاج تكشف أمراض الجهاز التنفسي والاضطرابات السلوكية مبكراً.",
+        "en": "AI sound analysis of chicken vocalizations detects respiratory diseases and behavioral disorders early."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "تحليل الصوت بالشبكات العصبية يكتشف أنماطاً غير مسموعة للبشر — مكمّل للرؤية الحاسوبية.",
+        "en": "Neural network sound analysis detects patterns inaudible to humans — complements computer vision."
+      }
+    },
+    {
+      "id": "vet-fill-007",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام CattleEye يكشف مبكراً عن {{blank_1}} — أحد أغلى المشكلات في تربية الماشية.",
+        "en": "CattleEye detects early {{blank_1}} — one of the most expensive livestock problems."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "العرج",
+            "en": "lameness"
+          },
+          "options": [
+            {
+              "ar": "العرج",
+              "en": "lameness"
+            },
+            {
+              "ar": "الحمى",
+              "en": "fever"
+            },
+            {
+              "ar": "فقدان الوزن",
+              "en": "weight loss"
+            },
+            {
+              "ar": "العقم",
+              "en": "infertility"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "العرج يُكلف مئات الدولارات لكل حالة. CattleEye يحلل المشية ويكتشف التغيرات قبل العامل البشري.",
+        "en": "Lameness costs hundreds per case. CattleEye analyzes gait and detects changes before human workers."
+      }
+    },
+    {
+      "id": "vet-fill-008",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "كتابة ملاحظات بيطرية بـ AI تسجّل الموعد وتُحوّله لملاحظات {{blank_1}}.",
+        "en": "AI vet note-writing records appointments and converts to {{blank_1}} notes."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "SOAP",
+            "en": "SOAP"
+          },
+          "options": [
+            {
+              "ar": "SOAP",
+              "en": "SOAP"
+            },
+            {
+              "ar": "EMR",
+              "en": "EMR"
+            },
+            {
+              "ar": "POMR",
+              "en": "POMR"
+            },
+            {
+              "ar": "BIRP",
+              "en": "BIRP"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "SOAP = Subjective, Objective, Assessment, Plan. هذا التنسيق القياسي يُسهّل على AI التنظيم التلقائي.",
+        "en": "SOAP = Subjective, Objective, Assessment, Plan. This standard format makes AI auto-organization easy."
+      }
+    },
+    {
+      "id": "vet-fill-009",
+      "type": "fill_blank",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 1,
+      "text": {
+        "ar": "هيئة البيانات والذكاء الاصطناعي السعودية {{blank_1}} تتعاون مع وزارة البيئة في مشاريع AI بيطرية.",
+        "en": "Saudi Data and AI Authority {{blank_1}} collaborates with MEWA on vet AI projects."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "سدايا",
+            "en": "SDAIA"
+          },
+          "options": [
+            {
+              "ar": "سدايا",
+              "en": "SDAIA"
+            },
+            {
+              "ar": "نيوم",
+              "en": "NEOM"
+            },
+            {
+              "ar": "أرامكو",
+              "en": "Aramco"
+            },
+            {
+              "ar": "سابك",
+              "en": "SABIC"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "سدايا مسؤولة عن استراتيجية AI الوطنية. أنشأت مع وزارة البيئة مركزاً متخصصاً.",
+        "en": "SDAIA oversees national AI strategy. Created a specialized center with MEWA."
+      }
+    },
+    {
+      "id": "vet-match-007",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل كاتب ملاحظات بيطري بـ AI بميزته المميزة:",
+        "en": "Match each vet AI note-writer with its distinguishing feature:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "ScribbleVet",
+            "en": "ScribbleVet"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Scribenote",
+            "en": "Scribenote"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "CoVet",
+            "en": "CoVet"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "ScribVet",
+            "en": "ScribVet"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "Sofie للتشخيصات التفريقية + رسم أسنان بصري",
+            "en": "Sofie integration + visual dental charts"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أداة سطح مكتب لنقل السجلات في <10 ثوانٍ",
+            "en": "Desktop widget for record transfer in <10 sec"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "40+ قالباً تغطي حيوانات غريبة وخيول",
+            "en": "40+ templates covering exotics and equine"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "50+ لغة للنسخ الصوتي بما فيها العربية",
+            "en": "50+ languages including Arabic"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "تعدد الأدوات يعكس نضج السوق. الطبيب يختار حسب أولوياته.",
+        "en": "Multiple tools reflect market maturity. Vet chooses based on priorities."
+      }
+    },
+    {
+      "id": "vet-match-008",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مبادرة عربية بمجالها في AI البيطري:",
+        "en": "Match each Arab initiative with its vet AI field:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "مجمع الدرعية",
+            "en": "Dhurma Biotech Park"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "نظام صحة الثروة الحيوانية (WSIS)",
+            "en": "Livestock Health AI (WSIS)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "مسيّرات كاوست",
+            "en": "KAUST drones"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "تأمين Tree (سبتمبر 2024)",
+            "en": "Tree insurance (Sep 2024)"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "توطين صناعة اللقاحات البيطرية",
+            "en": "Localizing vet vaccine manufacturing"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "مراقبة ميدانية ذكية",
+            "en": "Smart field monitoring"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تتبع الإبل من الجو",
+            "en": "Aerial camel tracking"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "أول تأمين حيوانات أليفة في السعودية",
+            "en": "First Saudi pet insurance"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "تحوّل شامل في المنطقة — من استيراد الحلول لتطويرها محلياً.",
+        "en": "Comprehensive regional transformation — from importing to developing solutions locally."
+      }
+    },
+    {
+      "id": "vet-match-009",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تخصص بيطري بأداة AI الأنسب:",
+        "en": "Match each vet specialty with its best AI tool:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "طبيب أسنان بيطري",
+            "en": "Vet dentist"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "طبيب أورام بيطري",
+            "en": "Vet oncologist"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "طبيب استزراع سمكي",
+            "en": "Aquaculture vet"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "طبيب طوارئ",
+            "en": "Emergency vet"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "ScribbleVet + خرائط أسنان بصرية",
+            "en": "ScribbleVet + visual dental charts"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "ImpriMed لاختبار أدوية على خلايا حية",
+            "en": "ImpriMed for live cell drug testing"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "Aquabyte للتصوير تحت الماء",
+            "en": "Aquabyte for underwater imaging"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "SignalPET/Vetology لأشعة فورية 24/7",
+            "en": "SignalPET/Vetology for 24/7 instant radiology"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل تخصص له أداة مصممة خصيصاً — لم يعد حلاً واحداً للجميع.",
+        "en": "Each specialty has a tailored tool — no longer one-size-fits-all."
+      }
+    },
+    {
+      "id": "vet-sort-007",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب استخدام ScribbleVet لموعد بيطري:",
+        "en": "Order ScribbleVet usage for a vet appointment:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "ابدأ التسجيل وتحدث طبيعياً أثناء الفحص",
+            "en": "Start recording and speak naturally during exam"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "AI يُفلتر ويُنشئ SOAP مع تقييم",
+            "en": "AI filters and creates SOAP with assessment"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "راجع الملاحظات بسرعة",
+            "en": "Quickly review notes"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "انقل لـ PIMS بنقرة واحدة وأرسل ملخصاً للعميل",
+            "en": "Transfer to PIMS in one click and send client summary"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "العملية تستغرق ~30 ثانية بعد الموعد. ملخص العميل يُترجم المصطلحات المعقدة.",
+        "en": "The process takes ~30 sec after appointment. Client summary translates complex terms."
+      }
+    },
+    {
+      "id": "vet-sort-008",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب الاستجابة لتنبيه AI عن تفشٍّ محتمل لإنفلونزا الطيور:",
+        "en": "Order response to AI alert about potential avian influenza outbreak:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحليل تقييم المخاطر من AI",
+            "en": "Analyze AI risk assessment"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "فحص سريري + عينات + تعزيز الأمن الحيوي",
+            "en": "Clinical exam + sampling + enhanced biosecurity"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تتبع حركة المركبات خلال 21 يوماً",
+            "en": "Track vehicle movements for 21 days"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "إبلاغ السلطات وتطبيق الحجر إذا تأكدت الإصابة",
+            "en": "Notify authorities and quarantine if confirmed"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "KAHIS الكوري يتتبع مركبات الثروة الحيوانية. قلّل تأخير اكتشاف التفشي بـ 12 يوماً.",
+        "en": "Korean KAHIS tracks livestock vehicles. Reduced detection delay by 12 days."
+      }
+    },
+    {
+      "id": "vet-sort-009",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب تطور AI البيطري زمنياً:",
+        "en": "Order vet AI timeline chronologically:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "RenalTech للتنبؤ بأمراض الكلى من بيانات 150,000+ قطة",
+            "en": "RenalTech for CKD prediction from 150K+ cats"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "استحواذ GEA على CattleEye (مارس 2024)",
+            "en": "GEA acquiring CattleEye (March 2024)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "جامعة فلوريدا تعتمد ScribbleVet (مارس 2025)",
+            "en": "U of Florida adopts ScribbleVet (March 2025)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "UC Davis تعتمد ScribbleVet + Zoetis تُطلق AI Masses (2025)",
+            "en": "UC Davis + Zoetis AI Masses (2025)"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "كل عام يشهد قفزة أكبر: من أدوات تنبؤية → استحواذات → اعتماد أكاديمي.",
+        "en": "Each year brings a bigger leap: predictive tools → acquisitions → academic adoption."
+      }
+    },
+    {
+      "id": "vet-self-013",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت طبيب بيطري عربي. أدوات AI كلها بالإنجليزية. ما موقفك؟",
+        "en": "You're an Arab vet. AI tools are all in English. Your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتعلمها بالإنجليزية الآن — الانتظار يعني التأخر سنوات",
+            "en": "Learn in English now — waiting means falling years behind"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أبحث عن أدوات تدعم العربية — ScribVet يدعم 50+ لغة",
+            "en": "Look for Arabic-supporting tools — ScribVet supports 50+ languages"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر التعريب",
+            "en": "I wait for Arabic localization"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مصممة للغرب ولا تناسبنا",
+            "en": "Designed for the West, doesn't suit us"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "بعض الأدوات تدعم العربية فعلاً. السعودية تطوّر حلولاً محلية. الفرصة: تبني الأدوات + تطوير حلول للمنطقة.",
+        "en": "Some tools already support Arabic. Saudi develops local solutions. Opportunity: adopt tools + develop regional solutions."
+      }
+    },
+    {
+      "id": "vet-self-014",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت طبيب إبل سعودي. كاوست تعرض مسيّرات AI لتتبع إبلك. هل تتبناها؟",
+        "en": "You're a Saudi camel vet. KAUST offers AI drones to track camels. Adopt?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "حتماً — الإبل تتنقل 50 كم/يوم. المسيّرات توفر ساعات وتحمي من حوادث الطرق",
+            "en": "Absolutely — camels roam 50 km/day. Drones save hours and prevent road accidents"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أجرّب على جزء من القطيع",
+            "en": "Trial on part of the herd"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الرعاة التقليديون أفضل",
+            "en": "Traditional herders are better"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مكلفة ومعقدة",
+            "en": "Expensive and complex"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "النظام منخفض التكلفة. لا يُلغي الرعاة بل يُكمّلهم بعيون جوية.",
+        "en": "Low-cost system. Doesn't replace herders but complements with aerial eyes."
+      }
+    },
+    {
+      "id": "vet-self-015",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "عميلك يريد تطبيق AI لتشخيص حيوانه بنفسه بدل الزيارة. موقفك؟",
+        "en": "Client wants AI app for self-diagnosis instead of clinic visit. Your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أرحب بجمع معلومات أولية — لكن التطبيق للفرز لا التشخيص النهائي",
+            "en": "Welcome initial info — but app is for triage not final diagnosis"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أحذّره لكن أسأل عن النتائج للاستفادة",
+            "en": "I warn but ask about results to use them"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفض — التطبيقات تُضلّل",
+            "en": "I refuse — apps mislead"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "إذا أراد تطبيقاً فليعالج حيوانه بنفسه",
+            "en": "If they want an app they can treat themselves"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التوجه العالمي: تطبيقات فرز ترشد لقرار الزيارة. الطبيب الذكي يستفيد من معلومات العميل.",
+        "en": "Global trend: triage apps guide visit decisions. Smart vet uses client's pre-gathered info."
+      }
+    },
+    {
+      "id": "vet-self-016",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت طبيب بيطري في مسلخ. السلطات تريد مراقبة AI 24/7 لسلامة الغذاء. رأيك؟",
+        "en": "You're a slaughterhouse vet. Authorities want 24/7 AI monitoring. Opinion?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ممتاز — المراقبة المستمرة تكشف مخالفات النظافة فوراً",
+            "en": "Excellent — continuous monitoring detects violations instantly"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "جيد كطبقة إضافية — لا يحل محل الفحص البشري",
+            "en": "Good extra layer — doesn't replace human inspection"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق من مراقبة الموظفين لا الغذاء",
+            "en": "Worried about monitoring employees not food"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — الفحص التقليدي كافٍ",
+            "en": "I refuse — traditional is sufficient"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "السعودية عرضت نظام مراقبة ذكية للمسالخ في WSIS 2025. المراقبة المستمرة أفضل من العشوائية.",
+        "en": "Saudi showcased smart slaughterhouse monitoring at WSIS 2025. Continuous beats random inspections."
+      }
+    },
+    {
+      "id": "vet-mcq-022",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب أسماك. Aquabyte يلتقط مليون+ صورة/يوم. ميزة عدّ القمل بـ AI مقابل اليدوي؟",
+        "en": "You're a fish vet. Aquabyte captures 1M+ images/day. AI lice counting advantage vs manual?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الطريقة اليدوية تتطلب تخدير الأسماك — AI بلا لمس",
+            "en": "Manual requires sedating fish — AI is touch-free"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "AI أرخص فقط",
+            "en": "Just cheaper"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا فرق",
+            "en": "No difference"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "AI أدق لكنه بطيء",
+            "en": "Accurate but slow"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "قمل البحر مشكلة بمليارات الدولارات. العدّ اليدوي = تخدير عينة. Aquabyte = مراقبة مستمرة بلا تدخل.",
+        "en": "Sea lice cost billions. Manual counting = sedating samples. Aquabyte = continuous non-invasive monitoring."
+      }
+    },
+    {
+      "id": "vet-mcq-023",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "حجم سوق صحة الحيوان في السعودية تقريباً في 2024:",
+        "en": "Saudi animal health market size approximately in 2024:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "360-710 مليون دولار (حسب نطاق التقدير)",
+            "en": "$360-710M depending on estimate scope"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقل من 10 ملايين",
+            "en": "Less than $10M"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "5 مليارات",
+            "en": "$5B"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50 مليون",
+            "en": "$50M"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "ينمو مدفوعاً بتملّك الحيوانات الأليفة (2.7M متوقع) والإنتاج الحيواني.",
+        "en": "Growing driven by pet ownership (2.7M projected) and livestock production."
+      }
+    },
+    {
+      "id": "vet-mcq-024",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تحدي التنظيم الرئيسي للطب البيطري عن بُعد في معظم الولايات الأمريكية:",
+        "en": "Main regulatory challenge for vet telemedicine in most US states:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "شرط علاقة VCPR حضورية قبل وصف الأدوية عن بُعد",
+            "en": "In-person VCPR requirement before remote prescribing"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا قيود — حرية كاملة",
+            "en": "No restrictions — total freedom"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "ممنوع تماماً",
+            "en": "Completely banned"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ترخيص منفصل",
+            "en": "Separate license needed"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "ولايات مثل جورجيا وميشيغان تُوسّع التعريفات لكن تحافظ على VCPR. AI يساعد في الفرز لا يغني عن الزيارة.",
+        "en": "States like Georgia and Michigan expand definitions but maintain VCPR. AI helps triage, doesn't replace visits."
+      }
+    },
+    {
+      "id": "vet-mcq-025",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "المعيار الأهم لاختيار أداة أشعة AI موثوقة:",
+        "en": "Most important criterion for choosing a reliable AI radiology tool:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "دراسات محكّمة تُثبت الدقة مقارنة بأخصائيين (مثل دراسة Frontiers لـ SignalPET)",
+            "en": "Peer-reviewed studies proving accuracy vs specialists (like Frontiers study for SignalPET)"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "واجهة المستخدم الجميلة",
+            "en": "Beautiful user interface"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "السعر الأرخص",
+            "en": "Cheapest price"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "شهرة الشركة فقط",
+            "en": "Company fame only"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "الدراسات المحكّمة هي المعيار الذهبي. اسأل دائماً: أين الورقة العلمية؟",
+        "en": "Peer-reviewed studies are the gold standard. Always ask: where's the scientific paper?"
+      }
+    },
+    {
+      "id": "vet-tf-017",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "التعلم المُوحّد (Federated Learning) يسمح لعيادات بتدريب نموذج AI مشترك دون مشاركة بيانات المرضى.",
+        "en": "Federated Learning allows clinics to jointly train AI without sharing patient data."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "كل عيادة تدرّب محلياً وتُرسل تحسينات الأوزان فقط — خصوصية مع نماذج أقوى.",
+        "en": "Each clinic trains locally and sends only weight updates — privacy with stronger models."
+      }
+    },
+    {
+      "id": "vet-tf-018",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "الطلب على وظائف الأطباء البيطريين ينمو 20% — أسرع بكثير من المتوسط.",
+        "en": "Vet job demand growing at 20% — much faster than average."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "مدفوع بارتفاع تملّك الحيوانات الأليفة (94M أسرة أمريكية). الأطباء الذين يتقنون AI سيكونون الأكثر طلباً.",
+        "en": "Driven by rising pet ownership (94M US households). Vets who master AI will be most in demand."
+      }
+    },
+    {
+      "id": "vet-fill-010",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "شركة {{blank_1}} هي الأكبر عالمياً في صحة الحيوان وأطلقت VetScan Imagyst بـ 7 تطبيقات AI.",
+        "en": "{{blank_1}} is the world's largest animal health company and launched VetScan Imagyst with 7 AI apps."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Zoetis",
+            "en": "Zoetis"
+          },
+          "options": [
+            {
+              "ar": "Zoetis",
+              "en": "Zoetis"
+            },
+            {
+              "ar": "Merck",
+              "en": "Merck"
+            },
+            {
+              "ar": "Pfizer",
+              "en": "Pfizer"
+            },
+            {
+              "ar": "Bayer",
+              "en": "Bayer"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Zoetis أكبر شركة صحة حيوانية عالمياً. VetScan Imagyst الجهاز الرئيسي بـ 7 تطبيقات AI في جهاز واحد.",
+        "en": "Zoetis is the world's largest animal health company. VetScan Imagyst is the flagship with 7 AI apps in one device."
+      }
+    },
+    {
+      "id": "vet-match-010",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مستوى من SignalPET 360° بوصفه:",
+        "en": "Match each SignalPET 360° tier with its description:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "المستوى الأول",
+            "en": "Tier 1"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "المستوى الثاني",
+            "en": "Tier 2"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "المستوى الثالث",
+            "en": "Tier 3"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "قاعدة البيانات",
+            "en": "Database"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "فحص 66 مرضاً في دقائق — للطوارئ",
+            "en": "66 pathologies in minutes — for emergencies"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "تقرير يحاكي أخصائي أشعة",
+            "en": "Report mimicking a radiologist"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "أخصائي بشري 24/7 بتقرير موقّع خلال ساعة",
+            "en": "Human specialist 24/7 with signed report in an hour"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "20+ مليون أشعة مُعلّمة",
+            "en": "20M+ annotated radiographs"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "النموذج المتدرج يتيح اختيار الدعم حسب التعقيد والميزانية.",
+        "en": "The tiered model allows choosing support by complexity and budget."
+      }
+    },
+    {
+      "id": "vet-sort-010",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مكونات نظام مراقبة ذكي متكامل لمزرعة حديثة:",
+        "en": "Order components of integrated smart monitoring for a modern farm:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "حساسات بيئية (حرارة، رطوبة)",
+            "en": "Environmental sensors (temperature, humidity)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "كاميرات AI لتحليل المشية والسلوك",
+            "en": "AI cameras for gait and behavior"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "أجهزة يمكن ارتداؤها للعلامات الحيوية",
+            "en": "Wearables for vital signs"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "منصة AI مركزية تدمج كل البيانات",
+            "en": "Central AI platform integrating all data"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "التدرج من البيئي (أبسط) للفردي (أعقد) للتكاملي (أشمل). المستقبل: أنظمة متعددة الحواس.",
+        "en": "Progression from environmental to individual to integrative. Future: multi-sensory systems."
+      }
+    },
+    {
+      "id": "vet-self-017",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "شركات كبرى تتبنى AI في 1,000+ عيادة. أنت تملك عيادة صغيرة. تهديد أم فرصة؟",
+        "en": "Major companies adopt AI in 1K+ clinics. You own a small clinic. Threat or opportunity?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة — نفس الأدوات بتكلفة اشتراك + خدمة شخصية لا يقدمونها",
+            "en": "Opportunity — same tools at subscription cost + personal service they can't offer"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تهديد لكن أتميّز بالتخصص في مجال محدد",
+            "en": "Threat but I differentiate through specialization"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مقلق — ميزانيتي لا تسمح بالمنافسة",
+            "en": "Worrying — budget doesn't allow competing"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لن يتغير شيء — عملائي يثقون بي",
+            "en": "Nothing changes — clients trust me"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "أدوات مثل ScribbleVet وSignalPET متاحة باشتراك ميسّر. المعادلة: تقنية الكبار + حميمية الصغار = ميزة فريدة.",
+        "en": "Tools like ScribbleVet and SignalPET available via affordable subscriptions. Equation: big-company tech + small-clinic intimacy = unique advantage."
+      }
+    },
+    {
+      "id": "vet-self-018",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "خلال 5 سنوات، هل يتغير دور الطبيب البيطري بسبب AI؟",
+        "en": "In 5 years, will the vet's role change due to AI?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم — من 'طبيب يفعل كل شيء' إلى 'قائد فريق بشري-رقمي'",
+            "en": "Yes — from do-everything to human-digital team leader"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "جزئياً — AI يتولى التوثيق والفرز لكن الطب الأساسي يبقى",
+            "en": "Partially — AI handles documentation but core medicine stays"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لن يتغير كثيراً — المهنة عملية جداً",
+            "en": "Won't change much — very hands-on profession"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "AI سيحل محل معظم الأطباء",
+            "en": "AI will replace most vets"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الطلب ينمو 20%، النقص 24,000، البطالة 0.5%. AI يُحوّل لا يُلغي. الأدوار الجديدة تُثبت: المستقبل تكامل لا استبدال.",
+        "en": "Demand 20%, shortage 24K, unemployment 0.5%. AI transforms not eliminates. New roles prove: future is integration not replacement."
+      }
+    },
+    {
+      "id": "vet-mcq-026",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تحليل الأصوات بـ Deep Learning يُستخدم لكشف أمراض أي حيوانات أساساً؟",
+        "en": "Sound analysis with Deep Learning primarily detects diseases in which animals?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الدواجن والخنازير — أمراض تنفسية واضطرابات سلوك",
+            "en": "Poultry and swine — respiratory and behavioral disorders"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الأسماك — أصوات تحت الماء",
+            "en": "Fish — underwater sounds"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "القطط — تحليل المواء",
+            "en": "Cats — meowing analysis"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الخيول — تحليل الصهيل",
+            "en": "Horses — neigh analysis"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الشبكات العصبية تحلل أنماطاً غير مسموعة للبشر. في حظائر 20,000-60,000 طائر تكشف مشاكل تنفسية قبل الأعراض المرئية.",
+        "en": "CNNs analyze patterns inaudible to humans. In 20K-60K bird houses, detects respiratory issues before visible symptoms."
+      }
+    },
+    {
+      "id": "vet-mcq-027",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "متوسط ديون تعليم الطبيب البيطري الأمريكي:",
+        "en": "Average US vet grad educational debt:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "154,000-180,000 دولار",
+            "en": "$154,000-180,000"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقل من 20,000",
+            "en": "Less than $20K"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "500,000",
+            "en": "$500K"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50,000",
+            "en": "$50K"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الديون + الضغط = وصفة للإرهاق. AI يوفر 70 دقيقة/يوم ويُمكّن من رؤية مرضى أكثر. أقل من 17% بلا ديون.",
+        "en": "Debt + pressure = burnout recipe. AI saves 70 min/day and enables more patients. Less than 17% debt-free."
+      }
+    },
+    {
+      "id": "vet-mcq-028",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تصوير حراري بالأشعة تحت الحمراء + AI أثبت فعالية عالية في أي مجال بيطري؟",
+        "en": "Infrared thermography + AI proven highly effective in which vet field?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "كشف التهاب الضرع (mastitis) مبكراً في الأبقار",
+            "en": "Early mastitis detection in cows"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ضغط الدم في القطط",
+            "en": "Cat blood pressure"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أمراض الكلى في الكلاب",
+            "en": "Canine kidney diseases"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الحمل في الأغنام",
+            "en": "Sheep pregnancy"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "التهاب الضرع من أغلى أمراض صناعة الألبان. التصوير الحراري + AI يكشف ارتفاع الحرارة الموضعي قبل تغيّر الحليب.",
+        "en": "Mastitis is one of the costliest dairy diseases. Thermal + AI detects localized heat before milk changes."
+      }
+    },
+    {
+      "id": "vet-mcq-029",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت طبيب بيطري تريد مقارنة أداء AI بالفحص اليدوي. ما أهم مقياس إحصائي تبحث عنه في الدراسات؟",
+        "en": "You want to compare AI vs manual exam. What's the key statistical metric to look for in studies?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AUC (المساحة تحت المنحنى) — يقيس قدرة النموذج على التمييز بين المريض والسليم",
+            "en": "AUC (Area Under Curve) — measures model's ability to distinguish sick from healthy"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "عدد المستخدمين فقط",
+            "en": "Number of users only"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "سعر الاشتراك",
+            "en": "Subscription price"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "سنة الإطلاق",
+            "en": "Launch year"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "AUC 0.95 لـ Random Forest في إنفلونزا الطيور تعني تمييزاً ممتازاً. AUC 0.5 = لا أفضل من التخمين. AUC 1.0 = مثالي.",
+        "en": "AUC 0.95 for Random Forest in avian influenza means excellent discrimination. AUC 0.5 = no better than guessing. AUC 1.0 = perfect."
+      }
+    },
+    {
+      "id": "vet-mcq-030",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أول تأمين للحيوانات الأليفة في السعودية أُطلق في:",
+        "en": "First pet insurance in Saudi Arabia launched in:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "سبتمبر 2024 — عبر شركة Tree",
+            "en": "September 2024 — via Tree"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "2010",
+            "en": "2010"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا يوجد تأمين حيوانات في السعودية",
+            "en": "No pet insurance in Saudi Arabia"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "2020",
+            "en": "2020"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "يعكس تحوّل ثقافي: الحيوانات الأليفة أصبحت جزءاً من الأسرة. 2.7 مليون حيوان أليف متوقع.",
+        "en": "Reflects cultural shift: pets becoming family members. 2.7M pets projected."
+      }
+    },
+    {
+      "id": "vet-tf-019",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Connecterra IDA تراقب 7 سلوكيات للأبقار بدقة 90% وساهمت في تقليل استخدام المضادات الحيوية 50% وزيادة إنتاجية الألبان 30%.",
+        "en": "Connecterra IDA monitors 7 cow behaviors at 90% accuracy, reducing antibiotics 50% and boosting dairy productivity 30%."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "المراقبة السلوكية المستمرة تكشف المرض مبكراً — فيُعالج بسرعة بدون مضادات وقائية عشوائية.",
+        "en": "Continuous behavioral monitoring detects illness early — treated quickly without preventive antibiotics."
+      }
+    },
+    {
+      "id": "vet-tf-020",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "سوق المستشفيات البيطرية في الخليج بلغ 750 مليون دولار في 2024 ومتوقع أن يصل 1.4 مليار بحلول 2033.",
+        "en": "Gulf vet hospital market reached $750M in 2024, projected $1.4B by 2033."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "النمو مدفوع بارتفاع تملّك الحيوانات الأليفة وزيادة الوعي بصحة الحيوان في دول الخليج.",
+        "en": "Growth driven by rising pet ownership and increased animal health awareness in Gulf states."
+      }
+    },
+    {
+      "id": "vet-self-019",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت طبيب بيطري حديث التخرج. زميلك يقول: 'AI سيأخذ وظائفنا'. ما ردك؟",
+        "en": "You're a new vet grad. A colleague says: 'AI will take our jobs.' Your response?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "البطالة 0.5% والنقص 24,000 — AI سيساعدنا لا يحل محلنا. أريد تعلّمه الآن",
+            "en": "Unemployment 0.5% and shortage 24K — AI helps not replaces. I want to learn now"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "فيه نقطة — لكن التخصص والمهارات العملية تحمينا",
+            "en": "Has a point — but specialization and hands-on skills protect us"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق لكن لن أفعل شيئاً حتى أرى التأثير الفعلي",
+            "en": "Worried but won't act until I see actual impact"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "محق — يجب أن نقاوم تبني AI في العيادات",
+            "en": "Right — we should resist AI adoption in clinics"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الأطباء الذين يتقنون AI سيكونون الأكثر طلباً. 39.2% يستخدمون AI فعلاً. من يبدأ الآن يبني ميزة تنافسية لعقد.",
+        "en": "Vets who master AI will be most in demand. 39.2% already use AI. Starting now builds a decade-long competitive advantage."
+      }
+    },
+    {
+      "id": "vet-self-020",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مزرعة دجاج كبيرة تعرض عليك وظيفة 'طبيب بيطري + مشرف أنظمة AI'. هل تقبل؟",
+        "en": "A large poultry farm offers you a role as 'vet + AI systems supervisor.' Accept?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة ذهبية — أجمع بين الطب والتقنية وأكون من أوائل المتخصصين",
+            "en": "Golden opportunity — combining medicine and tech, becoming a pioneer"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقبل لكن أشترط تدريباً مكثفاً على الأنظمة أولاً",
+            "en": "Accept but require intensive systems training first"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مهتم لكن أفضّل العمل السريري الصرف",
+            "en": "Interested but prefer pure clinical work"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هذه وظيفة مهندس لا طبيب بيطري",
+            "en": "This is an engineer's job not a vet's"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "أدوار مثل 'أخصائي AI بيطري' و'منسق طب عن بُعد' ناشئة فعلاً. من يدخل مبكراً يحدد مسار التخصص.",
+        "en": "Roles like 'vet AI specialist' and 'telemedicine coordinator' are already emerging. Early entrants shape the specialty."
       }
     }
   ]

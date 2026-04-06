@@ -1,8 +1,11 @@
 {
   "section_id": "allied-health",
-  "section_name": { "ar": "العلوم الصحية المساعدة", "en": "Allied Health Sciences" },
-  "version": "1.0",
-  "last_updated": "2026-04-04",
+  "section_name": {
+    "ar": "العلوم الصحية المساعدة",
+    "en": "Allied Health Sciences"
+  },
+  "version": "2.0",
+  "last_updated": "2026-04-06",
   "questions": [
     {
       "id": "alh-mcq-001",
@@ -202,12 +205,27 @@
       "blanks": [
         {
           "id": "blank_1",
-          "correct": { "ar": "Phoenix", "en": "Phoenix" },
+          "correct": {
+            "ar": "Phoenix",
+            "en": "Phoenix"
+          },
           "options": [
-            { "ar": "Phoenix", "en": "Phoenix" },
-            { "ar": "Robin", "en": "Robin" },
-            { "ar": "Alexa Health", "en": "Alexa Health" },
-            { "ar": "Watson Rehab", "en": "Watson Rehab" }
+            {
+              "ar": "Phoenix",
+              "en": "Phoenix"
+            },
+            {
+              "ar": "Robin",
+              "en": "Robin"
+            },
+            {
+              "ar": "Alexa Health",
+              "en": "Alexa Health"
+            },
+            {
+              "ar": "Watson Rehab",
+              "en": "Watson Rehab"
+            }
           ]
         }
       ],
@@ -228,22 +246,82 @@
         "en": "Match each AI technology with its allied health specialty:"
       },
       "left": [
-        { "id": "L1", "text": { "ar": "APAS Independence", "en": "APAS Independence" } },
-        { "id": "L2", "text": { "ar": "LumineticsCore", "en": "LumineticsCore" } },
-        { "id": "L3", "text": { "ar": "Hinge Health TrueMotion", "en": "Hinge Health TrueMotion" } },
-        { "id": "L4", "text": { "ar": "Phonak DEEPSONIC", "en": "Phonak DEEPSONIC" } }
+        {
+          "id": "L1",
+          "text": {
+            "ar": "APAS Independence",
+            "en": "APAS Independence"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "LumineticsCore",
+            "en": "LumineticsCore"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Hinge Health TrueMotion",
+            "en": "Hinge Health TrueMotion"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Phonak DEEPSONIC",
+            "en": "Phonak DEEPSONIC"
+          }
+        }
       ],
       "right": [
-        { "id": "R1", "text": { "ar": "قراءة أطباق الزراعة البكتيرية آلياً", "en": "Automated bacterial culture plate reading" } },
-        { "id": "R2", "text": { "ar": "تشخيص مستقل لاعتلال الشبكية السكري", "en": "Autonomous diabetic retinopathy diagnosis" } },
-        { "id": "R3", "text": { "ar": "تتبع حركة المريض بالكاميرا للعلاج الطبيعي", "en": "Camera-based patient motion tracking for physical therapy" } },
-        { "id": "R4", "text": { "ar": "معالجة صوتية ذكية في أجهزة السمع", "en": "Smart audio processing in hearing aids" } }
+        {
+          "id": "R1",
+          "text": {
+            "ar": "قراءة أطباق الزراعة البكتيرية آلياً",
+            "en": "Automated bacterial culture plate reading"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "تشخيص مستقل لاعتلال الشبكية السكري",
+            "en": "Autonomous diabetic retinopathy diagnosis"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تتبع حركة المريض بالكاميرا للعلاج الطبيعي",
+            "en": "Camera-based patient motion tracking for physical therapy"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "معالجة صوتية ذكية في أجهزة السمع",
+            "en": "Smart audio processing in hearing aids"
+          }
+        }
       ],
       "correct_pairs": [
-        { "left": "L1", "right": "R1" },
-        { "left": "L2", "right": "R2" },
-        { "left": "L3", "right": "R3" },
-        { "left": "L4", "right": "R4" }
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
       ],
       "hint_after": {
         "ar": "أربعة تخصصات صحية مساعدة مختلفة — علوم مختبرات، بصريات، علاج طبيعي، سمعيات — كلها تشهد ثورة AI. شريحة Phonak DEEPSONIC تجري 7,700 مليون عملية في الثانية (53 ضعف المعالج السابق) مدرّبة على 22 مليون عينة صوتية.",
@@ -262,12 +340,41 @@
         "en": "Order the correct workflow steps when using an autonomous AI system for diabetic retinopathy diagnosis in a primary care clinic:"
       },
       "items": [
-        { "id": "S1", "text": { "ar": "التقاط صور الشبكية بكاميرا متوافقة دون توسيع حدقة العين", "en": "Capture retinal images with a compatible camera without pupil dilation" } },
-        { "id": "S2", "text": { "ar": "الخوارزمية تحلل الصور وتصدر نتيجة تشخيصية خلال أقل من دقيقة", "en": "The algorithm analyzes images and issues a diagnostic result in under one minute" } },
-        { "id": "S3", "text": { "ar": "النتيجة السلبية تُوثّق مباشرة — الإيجابية تُحال لطبيب عيون", "en": "A negative result is documented directly — a positive result is referred to an ophthalmologist" } },
-        { "id": "S4", "text": { "ar": "متابعة دورية حسب الجدول (سنوياً للسلبيين) مع تكرار الفحص AI", "en": "Periodic follow-up per schedule (annually for negatives) with repeated AI screening" } }
+        {
+          "id": "S1",
+          "text": {
+            "ar": "التقاط صور الشبكية بكاميرا متوافقة دون توسيع حدقة العين",
+            "en": "Capture retinal images with a compatible camera without pupil dilation"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "الخوارزمية تحلل الصور وتصدر نتيجة تشخيصية خلال أقل من دقيقة",
+            "en": "The algorithm analyzes images and issues a diagnostic result in under one minute"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "النتيجة السلبية تُوثّق مباشرة — الإيجابية تُحال لطبيب عيون",
+            "en": "A negative result is documented directly — a positive result is referred to an ophthalmologist"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "متابعة دورية حسب الجدول (سنوياً للسلبيين) مع تكرار الفحص AI",
+            "en": "Periodic follow-up per schedule (annually for negatives) with repeated AI screening"
+          }
+        }
       ],
-      "correct_order": ["S1", "S2", "S3", "S4"],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
       "hint_after": {
         "ar": "في التجربة السريرية المحورية لـ LumineticsCore، تجنّب النظام 91% من زيارات الأخصائيين غير الضرورية عبر تقديم نتيجة في نقطة الرعاية مباشرة. هذا يعني أن مرضى السكري يحصلون على فحص الشبكية أثناء زيارتهم الروتينية لطبيب الرعاية الأولية.",
         "en": "In LumineticsCore's pivotal trial, the system avoided 91% of unnecessary specialist visits by providing a point-of-care result. This means diabetic patients get retinal screening during their routine primary care visit."
@@ -371,6 +478,4263 @@
       "hint_after": {
         "ar": "Sword Health خدمت 700,000+ عضو بأكثر من 10 ملايين جلسة AI وادّخرت لعملائها أكثر من مليار دولار. لكن الشركة نفسها خفّضت 17% من كوادرها السريرية في أكتوبر 2024 ضمن إعادة هيكلة — مما يؤكد أن التحول ليس نظرياً بل يحدث الآن.",
         "en": "Sword Health served 700,000+ members with 10+ million AI sessions and saved clients over $1 billion. But the company itself cut 17% of clinical staff in October 2024 during restructuring — confirming this transformation is not theoretical but happening now."
+      }
+    },
+    {
+      "id": "alh-mcq-004",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت فني أشعة في مستشفى حكومي. اقترحت الإدارة اعتماد نظام AI يقرأ صور الأشعة السينية للصدر ويُصدر تقريراً مبدئياً مكتملاً بنسبة 95%. كيف يؤثر هذا على عملك اليومي؟",
+        "en": "You're a radiology technician at a government hospital. Management proposed adopting an AI system that reads chest X-rays and generates a 95% complete preliminary report. How does this affect your daily work?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يلغي حاجة المستشفى لفنيي الأشعة تماماً",
+            "en": "It completely eliminates the hospital's need for radiology technicians"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يُسرّع سير العمل ويتيح لي التركيز على جودة التصوير والحالات العاجلة بينما يُعدّ AI التقارير المبدئية",
+            "en": "It speeds up workflow and lets me focus on image quality and urgent cases while AI drafts preliminary reports"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "يعمل فقط مع الأشعة السينية ولا يمكن تطبيقه على أي نوع آخر من التصوير",
+            "en": "It only works with X-rays and cannot be applied to any other imaging modality"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يحتاج فني أشعة متخصص في البرمجة لتشغيله",
+            "en": "It requires a radiology tech specialized in programming to operate"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "نظام طوّرته جامعة نورث ويسترن يُنشئ تقريراً مبدئياً مكتملاً بنسبة 95% ومُخصصاً بأسلوب كل طبيب أشعة. الأطباء أفادوا بأنه ضاعف كفاءتهم. النظام يكشف أيضاً الحالات الطارئة كالاسترواح الصدري فوراً قبل مراجعة الطبيب.",
+        "en": "A Northwestern University system generates a 95% complete preliminary report personalized to each radiologist's style. Physicians reported it doubled their efficiency. The system also flags emergencies like pneumothorax in real time before the radiologist reviews."
+      }
+    },
+    {
+      "id": "alh-mcq-005",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت أخصائي تغذية علاجية. منصة Nourish جمعت تمويلاً بقيمة 115 مليون دولار وتُقدّم استشارات تغذية افتراضية مع ملاحظات مؤتمتة بالذكاء الاصطناعي. ما التأثير الأبرز لهذا النموذج على مهنتك؟",
+        "en": "You're a clinical dietitian. Nourish raised $115M in funding and offers virtual nutrition consultations with AI-automated chart notes. What's the most significant impact of this model on your profession?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يُقلل وقت التوثيق بنسبة 75% مما يتيح لي قضاء وقت أكثر مع المرضى",
+            "en": "It reduces documentation time by 75%, allowing me to spend more time with patients"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يُغني عن أخصائيي التغذية لأن AI يُعطي نصائح أفضل",
+            "en": "It makes dietitians unnecessary because AI gives better advice"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "يقتصر على تسجيل الوجبات فقط دون أي تحليل",
+            "en": "It's limited to meal logging only without any analysis"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يُفيد المرضى فقط ولا يغيّر شيئاً في ممارسة أخصائي التغذية",
+            "en": "It only benefits patients and doesn't change anything about dietitian practice"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "استطلاع RxFood أظهر توفير 75% من وقت مقدمي الرعاية للحصول على التاريخ الغذائي باستخدام AI. منصة Nourish تُغطي استشاراتها بالتأمين الصحي وتستخدم AI لأتمتة ملاحظات الملف الطبي، مما يتيح لأخصائيي التغذية التركيز على التحليل السريري والتفاعل مع المرضى.",
+        "en": "An RxFood survey showed 75% time savings for healthcare providers obtaining diet histories using AI. Nourish covers consultations via insurance and uses AI to automate chart notes, enabling dietitians to focus on clinical analysis and patient interaction."
+      }
+    },
+    {
+      "id": "alh-mcq-006",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أنت أخصائي سمعيات. شريحة Phonak DEEPSONIC في أجهزة السمع الحديثة تجري 7,700 مليون عملية في الثانية. كم ضعفاً تفوق المعالج السابق؟",
+        "en": "You're an audiologist. The Phonak DEEPSONIC chip in modern hearing aids performs 7,700 million operations per second. How many times faster is it than the previous processor?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "10 أضعاف",
+            "en": "10 times"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "53 ضعفاً",
+            "en": "53 times"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "100 ضعف",
+            "en": "100 times"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "5 أضعاف",
+            "en": "5 times"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "شريحة DEEPSONIC أسرع 53 ضعفاً من المعالج السابق ومُدرّبة على 22 مليون عينة صوتية. هذا يتيح معالجة صوتية ذكية تتكيف مع بيئة المستخدم لحظياً — من المحادثات الهادئة إلى الأماكن الصاخبة.",
+        "en": "The DEEPSONIC chip is 53× faster than its predecessor and trained on 22 million sound samples. This enables smart audio processing that adapts to the user's environment in real time — from quiet conversations to noisy venues."
+      }
+    },
+    {
+      "id": "alh-tf-003",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام CellaVision للتحليل المورفولوجي الرقمي يُصنّف الخلايا اللمفاوية بدقة تصل إلى 99.47%، لكنه لا يمكنه اكتشاف خلايا الأرومات (blast cells).",
+        "en": "The CellaVision digital morphology system classifies lymphocytes with 99.47% accuracy, but it cannot detect blast cells."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. CellaVision يكتشف خلايا الأرومات بحساسية 98.2%. هذه القدرة حاسمة لأن اكتشاف الأرومات المبكر قد ينقذ حياة مرضى سرطان الدم. نظام Scopio Labs X100 يُقلل أيضاً وقت التحليل المورفولوجي بنسبة 15.8%.",
+        "en": "False. CellaVision detects blast cells with 98.2% sensitivity. This capability is critical because early blast detection can save leukemia patients' lives. The Scopio Labs X100 also reduces overall morphology turnaround time by 15.8%."
+      }
+    },
+    {
+      "id": "alh-tf-004",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Sword Health استحوذت على Kaia Health في يناير 2026 بقيمة 285 مليون دولار، مما أنشأ أكبر مجموعة بيانات رقمية للجهاز العضلي الهيكلي في العالم.",
+        "en": "Sword Health acquired Kaia Health in January 2026 for $285 million, creating the world's largest digital musculoskeletal dataset."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. الاستحواذ جمع بيانات Sword (أكثر من 10 ملايين جلسة AI) مع بيانات Kaia Health لإنشاء أكبر مجموعة بيانات MSK رقمية. تقييم Sword وصل 4 مليارات دولار في يونيو 2025.",
+        "en": "True. The acquisition combined Sword's data (10+ million AI sessions) with Kaia Health's to create the largest digital MSK dataset. Sword's valuation reached $4 billion in June 2025."
+      }
+    },
+    {
+      "id": "alh-fill-002",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} من Scopio Labs يلتقط صوراً رقمية كاملة المجال بتكبير 100× ويُقلل الوقت الإجمالي للتحليل المورفولوجي بنسبة 15.8%.",
+        "en": "The {{blank_1}} system from Scopio Labs captures full-field digital images at 100× magnification and reduces overall morphology turnaround time by 15.8%."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "X100",
+            "en": "X100"
+          },
+          "options": [
+            {
+              "ar": "X100",
+              "en": "X100"
+            },
+            {
+              "ar": "DM9600",
+              "en": "DM9600"
+            },
+            {
+              "ar": "LeukoDx",
+              "en": "LeukoDx"
+            },
+            {
+              "ar": "PathVision",
+              "en": "PathVision"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Scopio Labs X100 يُحوّل المجهر التقليدي إلى رقمي بالكامل. DM9600 هو نظام CellaVision للتحليل المورفولوجي الرقمي. الفرق الجوهري: X100 يلتقط صورة كاملة المجال بينما الأنظمة التقليدية تحلل مناطق محددة فقط.",
+        "en": "Scopio Labs X100 fully digitizes the traditional microscope. DM9600 is CellaVision's digital morphology system. The key difference: X100 captures a complete full-field image while traditional systems analyze only specific regions."
+      }
+    },
+    {
+      "id": "alh-match-002",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل أداة AI بوظيفتها في مجال العلاج الطبيعي الرقمي:",
+        "en": "Match each AI tool with its function in digital physical therapy:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "TrueMotion",
+            "en": "TrueMotion"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Phoenix",
+            "en": "Phoenix"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Robin",
+            "en": "Robin"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Kaia Health",
+            "en": "Kaia Health"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تتبع حركة المريض بالكاميرا بدل أجهزة الاستشعار",
+            "en": "Tracks patient movement via camera instead of sensors"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أول أخصائي علاج طبيعي محادثاتي بالذكاء الاصطناعي",
+            "en": "First conversational AI physical therapist"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "مساعد AI يعمل على مدار الساعة للمتابعة بين الجلسات",
+            "en": "24/7 AI care assistant for between-session follow-up"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "منصة استحوذت عليها Sword Health لتوسيع بيانات الجهاز العضلي الهيكلي",
+            "en": "Platform acquired by Sword Health to expand MSK data"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "TrueMotion من Hinge Health وPhoenix من Sword Health يمثلان نهجين مختلفين: الأول يعتمد على الرؤية الحاسوبية والثاني على المحادثة الذكية. Robin هو مساعد Hinge Health وليس Sword. استحواذ Sword على Kaia Health بـ285 مليون دولار في 2026 أنشأ أكبر مجموعة بيانات MSK رقمية.",
+        "en": "TrueMotion (Hinge Health) and Phoenix (Sword Health) represent two different approaches: computer vision vs. conversational AI. Robin is Hinge Health's assistant, not Sword's. Sword's $285M acquisition of Kaia Health in 2026 created the world's largest digital MSK dataset."
+      }
+    },
+    {
+      "id": "alh-sort-002",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات سير العمل عند استخدام نظام APAS Independence لقراءة أطباق الزراعة البكتيرية آلياً:",
+        "en": "Order the workflow steps when using APAS Independence for automated bacterial culture plate reading:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحضين أطباق الزراعة البكتيرية بالطريقة المعتادة",
+            "en": "Incubate bacterial culture plates in the standard manner"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "النظام يلتقط صوراً عالية الدقة لكل طبق ويُحللها بالذكاء الاصطناعي",
+            "en": "The system captures high-resolution images of each plate and analyzes them with AI"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "الأطباق السلبية تُستبعد تلقائياً — الإيجابية تُحوّل لمراجعة الفني",
+            "en": "Negative plates are automatically removed — positive ones are routed to the technician for review"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "الفني يؤكد النتائج الإيجابية ويُجري اختبارات التعرف والحساسية",
+            "en": "The technician confirms positive results and performs identification and susceptibility tests"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "APAS Independence يعالج 200 طبق في الساعة ويزيل تلقائياً حتى 95% من الأطباق السلبية من سير العمل. في مركز Albany الطبي، قلّص وقت القراءة اليدوية بمقدار الثلث وسرّع الإبلاغ عن السلبيات بساعتين لكل اختبار.",
+        "en": "APAS Independence processes 200 plates per hour and automatically removes up to 95% of negative plates from the workflow. At Albany Medical Center, it cut hands-on reading time by one-third and sped up reporting of negatives by 2 hours per test."
+      }
+    },
+    {
+      "id": "alh-self-003",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت أخصائي علاج تنفسي. مستشفاك يختبر نظام AI يراقب مرضى العناية المركزة ويتنبأ بالحاجة لتعديل إعدادات جهاز التنفس الصناعي قبل ساعة من الأزمة. كيف تتعامل مع هذا النظام؟",
+        "en": "You're a respiratory therapist. Your hospital is testing an AI system that monitors ICU patients and predicts the need to adjust ventilator settings one hour before a crisis. How do you approach this system?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة ذهبية — سأتعلم تفسير تنبؤاته وأدمجها مع تقييمي السريري لتحسين نتائج المرضى",
+            "en": "A golden opportunity — I'll learn to interpret its predictions and integrate them with my clinical assessment to improve patient outcomes"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مفيد كإنذار مبكر لكنني سأتحقق دائماً بنفسي قبل أي تعديل",
+            "en": "Useful as an early warning but I'll always verify myself before any adjustment"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا أعارضه لكنني أخشى أن يتجاهل الأطباء رأيي إذا اختلف مع AI",
+            "en": "I don't oppose it but I worry doctors will ignore my opinion if it differs from the AI's"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "خبرتي السريرية كافية — لا أحتاج خوارزمية لتخبرني متى أعدّل الجهاز",
+            "en": "My clinical experience is sufficient — I don't need an algorithm to tell me when to adjust the ventilator"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "أنظمة الإنذار المبكر بالذكاء الاصطناعي في العناية المركزة أظهرت قدرة على التنبؤ بالتدهور قبل حدوثه بساعات. لكن القرار النهائي يبقى للمعالج — AI يُعطي إنذاراً والمعالج يُقيّم الصورة الكاملة. التحدي الحقيقي: تجنب «إرهاق التنبيهات» عندما يُصدر النظام إنذارات كثيرة غير ضرورية.",
+        "en": "AI early warning systems in ICUs have shown the ability to predict deterioration hours before it occurs. But the final decision remains with the therapist — AI gives an alert and the therapist evaluates the full picture. The real challenge: avoiding 'alert fatigue' when the system issues too many unnecessary warnings."
+      }
+    },
+    {
+      "id": "alh-self-004",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت أخصائي تغذية. مريضك يُريك تطبيقاً على هاتفه يُحلّل صورة طعامه ويحسب السعرات والعناصر الغذائية بالذكاء الاصطناعي، ويسألك: «هل أحتاجك فعلاً بعد الآن؟» ما ردّك؟",
+        "en": "You're a dietitian. Your patient shows you a phone app that uses AI to analyze food photos and calculate calories and nutrients, asking: 'Do I really still need you?' What's your response?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "هذا التطبيق أداة ممتازة لتسجيل وجباتك — لكن دوري هو تحليل نتائجه في سياق حالتك الصحية وتعديل خطتك الغذائية وفقاً لذلك",
+            "en": "This app is an excellent tool for logging your meals — but my role is to analyze its results in the context of your health condition and adjust your nutrition plan accordingly"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "استمر في استخدامه لكن تعال لزيارات متابعة شهرية للتحقق من دقته",
+            "en": "Keep using it but come for monthly follow-ups to verify its accuracy"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "هذه التطبيقات غير دقيقة بما يكفي — الأفضل أن تسجّل وجباتك يدوياً",
+            "en": "These apps aren't accurate enough — it's better to log your meals manually"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التغذية العلاجية أعمق بكثير من حساب السعرات — لا يمكن لتطبيق أن يحل محلي",
+            "en": "Clinical nutrition is much deeper than calorie counting — no app can replace me"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "تطبيقات تحليل صور الطعام بالذكاء الاصطناعي تُحقق دقة مقاربة لأخصائيي التغذية في تقدير السعرات. لكن التغذية العلاجية تتضمن تحليل التفاعلات الدوائية-الغذائية، تعديل الخطة حسب نتائج المختبر، والدعم السلوكي — أمور لا يستطيع أي تطبيق القيام بها.",
+        "en": "AI food photo analysis apps achieve accuracy comparable to dietitians in calorie estimation. But clinical nutrition involves analyzing drug-nutrient interactions, adjusting plans based on lab results, and behavioral support — things no app can do."
+      }
+    },
+    {
+      "id": "alh-mcq-007",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت فني مختبرات. دراسة على قاعدة بيانات Pfizer ATLAS لـ917,049 عزلة بكتيرية أظهرت أن نموذج XGBoost حقق AUC 0.96 في التنبؤ بمقاومة المضادات الحيوية. ما الأثر السريري الأهم؟",
+        "en": "You're a lab technician. A study on Pfizer's ATLAS database of 917,049 bacterial isolates showed that an XGBoost model achieved AUC 0.96 for predicting antibiotic resistance. What's the most important clinical impact?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يلغي الحاجة لاختبارات الحساسية المخبرية التقليدية",
+            "en": "It eliminates the need for traditional susceptibility testing"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يُمكّن الأطباء من وصف المضاد الحيوي المناسب فوراً — مما يقلل العلاج غير الضروري بنسبة 18%",
+            "en": "It enables physicians to prescribe the right antibiotic immediately — reducing unnecessary treatment by 18%"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "يعمل فقط مع أنواع محددة من البكتيريا",
+            "en": "It works only with specific types of bacteria"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يحل محل طبيب الأمراض المعدية في اتخاذ قرارات العلاج",
+            "en": "It replaces the infectious disease physician in treatment decisions"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "النموذج حقق نسبة نجاح 89% في التوصية بتعديلات المضادات الحيوية وقلّل العلاج غير الضروري بنسبة 18% (دراسة Nature 2025). هذا يكافح مقاومة المضادات الحيوية — أكبر تحدٍّ صحي عالمي — لكن اختبارات الحساسية المخبرية تبقى ضرورية للتأكيد.",
+        "en": "The model achieved 89% success rate in recommending antibiotic adjustments and reduced unnecessary treatment by 18% (Nature 2025). This combats antibiotic resistance — the biggest global health challenge — but lab susceptibility tests remain necessary for confirmation."
+      }
+    },
+    {
+      "id": "alh-mcq-008",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت فني أشعة. تقرير Philips 2025 أظهر أن 78% من أطباء الأشعة شاركوا في تطوير تقنيات جديدة في مؤسساتهم، لكن 41% يشعرون أن هذه الأدوات لا تلبي احتياجاتهم الفعلية. ما السبب الأرجح؟",
+        "en": "You're a radiology tech. Philips' 2025 report showed that 78% of radiologists were involved in developing new technologies at their organizations, yet 41% feel those tools don't meet their real-world needs. What's the most likely reason?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تطوير AI يبدأ ببناء الخوارزمية قبل فهم سير العمل البشري الذي يُفترض أن تدعمه",
+            "en": "AI development starts with building the algorithm before understanding the human workflow it's supposed to support"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطباء الأشعة يرفضون التكنولوجيا بشكل عام",
+            "en": "Radiologists generally reject technology"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "AI لم يصل بعد لمستوى كافٍ من الدقة",
+            "en": "AI hasn't yet reached sufficient accuracy"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المستشفيات لا تملك ميزانيات كافية لشراء الأنظمة المناسبة",
+            "en": "Hospitals don't have sufficient budgets to buy the right systems"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "حسب تقرير Philips Future Health Index 2025: أنجح أدوات AI هي التي تبدأ بفهم احتياجات المستخدم أولاً. 43% من أطباء الأشعة يقضون وقتاً أقل مع المرضى ووقتاً أكثر في العمل الإداري مقارنة بخمس سنوات مضت — مما يؤكد أن الأولوية يجب أن تكون لتقليل العبء الإداري.",
+        "en": "Per Philips' 2025 Future Health Index: the most effective AI tools start by understanding user needs first. 43% of radiologists spend less time with patients and more on administrative work than 5 years ago — confirming the priority should be reducing administrative burden."
+      }
+    },
+    {
+      "id": "alh-mcq-009",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت أخصائي نطق وتخاطب. تقرير ASHA يُظهر أن 89% من أخصائيي النطق يعانون من أعباء عمل مفرطة، ومتوسط فترة الانتظار للعلاج 3-6 أشهر. كيف يمكن لـ AI المساعدة؟",
+        "en": "You're a speech-language pathologist. An ASHA report shows 89% of SLPs have overwhelming caseloads, with average wait times for therapy of 3-6 months. How can AI help?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يُجري الفحص المبدئي آلياً ويُقلل وقت التوثيق بنسبة 90% مما يتيح لي رؤية المزيد من المرضى",
+            "en": "It conducts automated screening and reduces documentation time by 90%, allowing me to see more patients"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يحل محل أخصائي النطق في جلسات العلاج المباشر",
+            "en": "It replaces the SLP in direct therapy sessions"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "يُحلل عينات الكلام يدوياً بشكل أفضل من الأخصائي",
+            "en": "It manually analyzes speech samples better than the specialist"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يقتصر على توليد التقارير ولا يساعد في التقييم أو العلاج",
+            "en": "It's limited to report generation and doesn't help with assessment or therapy"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "منصة TheraPlatform تُقلل وقت التوثيق بنسبة 90% باستخدام الذكاء الاصطناعي. أدوات ASR (التعرف التلقائي على الكلام) تكتشف أنماطاً دقيقة في النطق قد تفوت التحليل البشري. الأطفال الذين يستخدمون تطبيق Otsimo أظهروا معدل تفاعل أعلى بنسبة 50% واكتساب مهارات أسرع بنسبة 30%.",
+        "en": "TheraPlatform reduces documentation time by 90% using AI. ASR (Automatic Speech Recognition) tools detect subtle speech patterns that might be missed by human analysis. Children using Otsimo showed 50% higher engagement and 30% faster skill acquisition."
+      }
+    },
+    {
+      "id": "alh-tf-005",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنظمة الذكاء الاصطناعي في تحليل الأشعة تُخطئ أحياناً بتصنيف عُقد حميدة على أنها خبيثة في 12% من الحالات المُحللة.",
+        "en": "AI systems in radiology analysis sometimes misclassify benign nodules as malignant in 12% of analyzed cases."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. دراسات وجدت أن 5-10% من الحالات المُحللة بـ AI تضمنت تشخيصات خاطئة مرتبطة بالهلوسة الخوارزمية، مع تصنيف عُقد حميدة كخبيثة في 12% من الحالات. لذلك تبقى المراجعة البشرية ضرورية — AI أداة مساعدة وليس بديلاً.",
+        "en": "True. Studies found 5-10% of AI-analyzed cases involved misdiagnoses linked to algorithmic hallucination, with benign nodules flagged as malignant in 12% of cases. Human review remains essential — AI is a support tool, not a replacement."
+      }
+    },
+    {
+      "id": "alh-tf-006",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أكثر من 70% من أقسام الأشعة في المستشفيات الأمريكية زادت اعتمادها على أدوات الذكاء الاصطناعي بحلول عام 2025.",
+        "en": "Over 70% of U.S. hospital radiology departments have increased their reliance on AI tools by 2025."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. سوق AI في التصوير الطبي نما من 7.52 مليار دولار في 2025 إلى توقعات بـ26.16 مليار دولار بحلول 2030. الشركات الكبرى مثل Siemens وGE وPhilips إما استحوذت على شركات AI ناشئة أو بنت فرقاً داخلية متخصصة.",
+        "en": "True. The AI medical imaging market grew from $7.52 billion in 2025 to projections of $26.16 billion by 2030. Major companies like Siemens, GE, and Philips either acquired AI startups or built dedicated internal teams."
+      }
+    },
+    {
+      "id": "alh-fill-003",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أول نظام AI مستقل حصل على ترخيص FDA للتشخيص الطبي المستقل في أي تخصص كان {{blank_1}}، وحصل على الترخيص في أبريل 2018.",
+        "en": "The first autonomous AI system to receive FDA clearance for independent medical diagnosis in any specialty was {{blank_1}}, receiving clearance in April 2018."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "LumineticsCore (IDx-DR)",
+            "en": "LumineticsCore (IDx-DR)"
+          },
+          "options": [
+            {
+              "ar": "LumineticsCore (IDx-DR)",
+              "en": "LumineticsCore (IDx-DR)"
+            },
+            {
+              "ar": "APAS Independence",
+              "en": "APAS Independence"
+            },
+            {
+              "ar": "Viz.ai",
+              "en": "Viz.ai"
+            },
+            {
+              "ar": "Aidoc",
+              "en": "Aidoc"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "LumineticsCore (المعروف سابقاً بـ IDx-DR) يُشخّص اعتلال الشبكية السكري باستقلالية تامة بحساسية 87.4% ونوعية 89.5%. مُنتشر في أكثر من 1,000 عيادة. APAS Independence يعمل في مجال المختبرات لا البصريات، أما Viz.ai وAidoc فيعملان في الأشعة كأدوات مساعدة لا مستقلة.",
+        "en": "LumineticsCore (formerly IDx-DR) diagnoses diabetic retinopathy autonomously with 87.4% sensitivity and 89.5% specificity. Deployed in 1,000+ clinics. APAS Independence is in lab sciences not optometry, while Viz.ai and Aidoc are radiology support tools, not autonomous."
+      }
+    },
+    {
+      "id": "alh-match-003",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تقنية AI في المختبرات الطبية بقدرتها التشخيصية الرئيسية:",
+        "en": "Match each AI technology in medical labs with its primary diagnostic capability:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "MDA-LeukoLens",
+            "en": "MDA-LeukoLens"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "CellaVision DM9600",
+            "en": "CellaVision DM9600"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Scopio Labs X100",
+            "en": "Scopio Labs X100"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "XGBoost على بيانات ATLAS",
+            "en": "XGBoost on ATLAS data"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "كشف سرطان الدم النقوي الحاد بدقة 100%",
+            "en": "Detecting acute promyelocytic leukemia with 100% accuracy"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "تصنيف الخلايا اللمفاوية بدقة 99.47%",
+            "en": "Lymphocyte classification with 99.47% accuracy"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تصوير رقمي كامل المجال بتكبير 100×",
+            "en": "Full-field digital imaging at 100× magnification"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "التنبؤ بمقاومة المضادات الحيوية بـ AUC 0.96",
+            "en": "Predicting antibiotic resistance with AUC 0.96"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "أربع تقنيات مختلفة تغطي أربعة جوانب مخبرية: تشخيص طوارئ (LeukoLens)، تصنيف خلوي (CellaVision)، تصوير رقمي (Scopio)، وتنبؤ بالمقاومة (XGBoost). كلها تُعزز الفني ولا تلغيه — القرار النهائي يبقى بشرياً.",
+        "en": "Four different technologies covering four lab aspects: emergency diagnosis (LeukoLens), cell classification (CellaVision), digital imaging (Scopio), and resistance prediction (XGBoost). All augment the technician rather than replace them — final decisions remain human."
+      }
+    },
+    {
+      "id": "alh-sort-003",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مراحل دمج الذكاء الاصطناعي في ممارسة أخصائي النطق والتخاطب من الأبسط إلى الأكثر تقدماً:",
+        "en": "Order the stages of integrating AI into speech-language pathology practice from simplest to most advanced:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "أتمتة التوثيق وملاحظات الجلسات بالنسخ الصوتي الذكي",
+            "en": "Automating documentation and session notes with smart transcription"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "استخدام تطبيقات علاج نطق تفاعلية مع تغذية راجعة فورية للمرضى",
+            "en": "Using interactive speech therapy apps with instant patient feedback"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تحليل عينات لغوية بـ NLP لرصد أنماط تأخر لغوي لا يكتشفها الفحص التقليدي",
+            "en": "Analyzing language samples with NLP to detect delay patterns missed by traditional assessment"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "نظام AI شامل يدمج بيانات المريض ويولّد خطة علاج مخصصة ويتتبع التقدم تلقائياً",
+            "en": "A comprehensive AI system that integrates patient data, generates personalized treatment plans, and tracks progress automatically"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "التدرج ضروري: البدء بأتمتة المهام الإدارية (أقل مخاطرة) ثم الانتقال تدريجياً للدعم السريري. 89% من أخصائيي النطق يعانون من أعباء عمل مفرطة — لذلك أتمتة التوثيق (الخطوة الأولى) تُحقق أكبر أثر فوري.",
+        "en": "Gradual integration is essential: start with administrative automation (lowest risk) then progressively move to clinical support. 89% of SLPs have overwhelming caseloads — so documentation automation (step 1) achieves the biggest immediate impact."
+      }
+    },
+    {
+      "id": "alh-self-005",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت أخصائي بصريات. نظام AI جديد يُشخّص اعتلال الشبكية السكري بشكل مستقل في عيادة طبيب الأسرة — دون الحاجة لتحويل المريض إليك. كيف تنظر لهذا التطور؟",
+        "en": "You're an optometrist. A new AI system autonomously diagnoses diabetic retinopathy in a family physician's clinic — without needing to refer the patient to you. How do you view this development?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ممتاز — سيكتشف حالات كانت ستُفقد لأن المرضى لا يزورون أخصائي بصريات، وسأركّز على الحالات المعقدة",
+            "en": "Excellent — it will catch cases that would be missed because patients don't visit optometrists, and I'll focus on complex cases"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مفيد للمرضى لكنني قلق من فقدان جزء من مرضاي",
+            "en": "Beneficial for patients but I'm concerned about losing some of my patients"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "فحص الشبكية يتطلب حكماً سريرياً لا تملكه الخوارزميات — لا أثق بنتائجه",
+            "en": "Retinal examination requires clinical judgment that algorithms don't have — I don't trust its results"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يجب أن يبقى فحص العيون حصرياً على أخصائيي البصريات وأطباء العيون",
+            "en": "Eye examinations should remain exclusive to optometrists and ophthalmologists"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "LumineticsCore تجنّب 91% من زيارات الأخصائيين غير الضرورية. النظام مُصمم ليكون في نقطة الرعاية الأولية — يكتشف الحالات المُبكرة التي لن تصل أبداً لأخصائي البصريات. الحالات الإيجابية تُحال لأخصائي — أي أن دورك يتحول لا يختفي.",
+        "en": "LumineticsCore avoided 91% of unnecessary specialist visits. The system is designed for primary care point-of-care — detecting early cases that would never reach an optometrist. Positive cases are referred to specialists — your role transforms rather than disappears."
+      }
+    },
+    {
+      "id": "alh-self-006",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت أخصائي علاج وظيفي. دراسة تُشير إلى أن أدوات AI قلّلت وقت التوثيق بنسبة 30-50% وحسّنت دقة تقييم المرضى. لكن زميلك يرفض استخدامها ويقول: «أنا لم أدرس 5 سنوات لأكتب تقارير بالكمبيوتر». ما رأيك؟",
+        "en": "You're an occupational therapist. A study shows AI tools reduced documentation time by 30-50% and improved patient assessment accuracy. But your colleague refuses to use them, saying: 'I didn't study 5 years to write reports on a computer.' What's your take?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "بالعكس — تقليل التوثيق يعني وقتاً أكثر مع المرضى، وهذا هو جوهر تخصصنا",
+            "en": "On the contrary — less documentation means more time with patients, which is the core of our specialty"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتفهم مخاوفه لكن أنصحه بتجربة أداة واحدة ورؤية النتائج بنفسه",
+            "en": "I understand his concerns but I'd advise him to try one tool and see the results himself"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لديه وجهة نظر — بعض الأدوات الرقمية تُعقّد العمل أكثر مما تُسهّله",
+            "en": "He has a point — some digital tools complicate work more than they simplify it"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أوافقه — التكنولوجيا لا تفهم التفاعل الإنساني الذي هو أساس العلاج الوظيفي",
+            "en": "I agree — technology doesn't understand the human interaction that is the foundation of occupational therapy"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "سوق العلاج الوظيفي في الولايات المتحدة يُقدّر بـ54 مليار دولار (2023) ومُتوقع أن يصل لـ128 مليار بحلول 2032. 30% من المرافق دمجت AI في سير العمل السريري. الأدوات تُقلل الاحتراق الوظيفي عبر تقليل المهام الإدارية المتكررة.",
+        "en": "The U.S. OT market is valued at $54 billion (2023), projected to reach $128 billion by 2032. 30% of facilities have integrated AI into clinical workflows. These tools reduce burnout by cutting repetitive administrative tasks."
+      }
+    },
+    {
+      "id": "alh-mcq-010",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت فني مختبرات. في مستشفى Johns Hopkins، نظام APAS Independence اكتشف زراعات بكتيرية إيجابية فاتت فنيي المختبرات البشريين. كم عدد هذه الحالات؟",
+        "en": "You're a lab technician. At Johns Hopkins Hospital, APAS Independence detected positive bacterial cultures missed by human lab technicians. How many such cases were there?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "حالة واحدة فقط",
+            "en": "Only one case"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "5 حالات",
+            "en": "5 cases"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "20 حالة",
+            "en": "20 cases"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم يكتشف أي حالات إضافية",
+            "en": "It didn't detect any additional cases"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "اكتشف APAS 5 زراعات إيجابية فاتت الفنيين في دراسة مراقبة MRSA بمستشفى Johns Hopkins مع تحقيق توافق إيجابي 100%. هذا يعني أن AI يمكن أن يمنع عدوى لم تُكتشف — وهو مسألة سلامة مرضى حرفية.",
+        "en": "APAS detected 5 positive cultures missed by technicians in a Johns Hopkins MRSA surveillance study with 100% positive agreement. This means AI can prevent undetected infections — literally a patient safety issue."
+      }
+    },
+    {
+      "id": "alh-mcq-011",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت أخصائي علاج طبيعي. Sword Health خفّضت 17% من كوادرها السريرية في أكتوبر 2024 رغم خدمة أكثر من 700,000 عضو. ماذا يعني هذا لمهنتك؟",
+        "en": "You're a physical therapist. Sword Health cut 17% of its clinical staff in October 2024 despite serving 700,000+ members. What does this mean for your profession?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI لم ينجح في العلاج الطبيعي الرقمي والشركة تتراجع",
+            "en": "AI hasn't succeeded in digital PT and the company is retreating"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "AI يوسّع نطاق الخدمة بعدد أقل من المعالجين — التحول حقيقي ويحدث الآن",
+            "en": "AI is expanding service reach with fewer therapists — the transformation is real and happening now"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "هذا خاص بشركة واحدة ولا يعكس اتجاهاً عاماً",
+            "en": "This is specific to one company and doesn't reflect a general trend"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الشركة خفّضت الكوادر لأسباب مالية لا علاقة لها بـ AI",
+            "en": "The company cut staff for financial reasons unrelated to AI"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "Sword Health وصلت لتقييم 4 مليارات دولار واستحوذت على Kaia Health بـ285 مليون دولار — ليست شركة تتراجع. تخفيض 17% من الكوادر السريرية مع زيادة عدد المستخدمين يؤكد أن AI يُغيّر معادلة العرض والطلب في العلاج الطبيعي. Hinge Health أيضاً خدمت 47% أعضاء أكثر بتكاليف فريق ثابتة.",
+        "en": "Sword Health reached a $4B valuation and acquired Kaia Health for $285M — not a retreating company. Cutting 17% of clinical staff while growing users confirms AI is changing the supply-demand equation in PT. Hinge Health also served 47% more members with flat team costs."
+      }
+    },
+    {
+      "id": "alh-mcq-012",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت أخصائي نطق وتخاطب. جهاز SpeechVive يستخدم AI لاكتشاف أنماط الكلام وتحسين الإخراج الصوتي تلقائياً لمرضى باركنسون. ما نسبة المرضى الذين أظهروا تحسناً مستداماً؟",
+        "en": "You're an SLP. The SpeechVive device uses AI to detect speech patterns and automatically improve vocal output for Parkinson's patients. What percentage of patients showed sustained improvement?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "50%",
+            "en": "50%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "89%",
+            "en": "89%"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "30%",
+            "en": "30%"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "75%",
+            "en": "75%"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "89% من المستخدمين أظهروا تحسناً مستداماً في الكلام أثناء استخدام الجهاز مع تأثيرات ممتدة حتى 6 أشهر. هذا مهم لأن مرضى باركنسون يعانون من تدهور تدريجي في الكلام — والجهاز يوفر تغذية راجعة فورية لا تتوفر بين جلسات العلاج.",
+        "en": "89% of users showed sustained speech improvements during device use, with carryover effects lasting up to 6 months. This matters because Parkinson's patients experience progressive speech deterioration — the device provides instant feedback unavailable between therapy sessions."
+      }
+    },
+    {
+      "id": "alh-tf-007",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "شركة Hinge Health طرحت أسهمها للاكتتاب العام في مايو 2025 بإيرادات تجاوزت 500 مليون دولار وتخدم 49% من شركات Fortune 100.",
+        "en": "Hinge Health went public in May 2025 with revenue exceeding $500 million and serves 49% of Fortune 100 companies."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. Hinge Health حققت إيرادات 588 مليون دولار (نمو 51%) وتخدم 25 مليون عقد حياة بما يشمل 49% من شركات Fortune 100. تقنية TrueMotion استبدلت 95% من ساعات العلاج الطبيعي التقليدية بالرؤية الحاسوبية.",
+        "en": "True. Hinge Health achieved $588M revenue (51% growth) serving 25 million contracted lives including 49% of Fortune 100 companies. TrueMotion replaced 95% of traditional PT hours with computer vision."
+      }
+    },
+    {
+      "id": "alh-tf-008",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أطلقت المملكة العربية السعودية أكبر مستشفى افتراضي في العالم (SEHA) في فبراير 2025، وخدم أكثر من 255,000 مريض عبر تطبيق صحتي.",
+        "en": "Saudi Arabia launched the world's largest virtual hospital (SEHA) in February 2025, serving over 255,000 patients through the Sehhaty app."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. مستشفى SEHA الافتراضي في السعودية هو الأكبر عالمياً. مستشفى الملك فيصل التخصصي حقق أكثر من 85,000 تدخل بالذكاء الاصطناعي أدت لانخفاض أوقات انتظار المرضى بأكثر من 50% وأوقات الانتظار في الصيدلية بـ27%.",
+        "en": "True. Saudi Arabia's SEHA Virtual Hospital is the world's largest. King Faisal Specialist Hospital achieved 85,000+ AI interventions leading to 50%+ reduction in patient waiting times and 27% reduction in pharmacy wait times."
+      }
+    },
+    {
+      "id": "alh-fill-004",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "نظام {{blank_1}} في الإمارات يربط 1,539 منشأة صحية و39,600 طبيب مع 3.5 مليار سجل سريري لـ12.7 مليون مريض.",
+        "en": "The {{blank_1}} system in the UAE connects 1,539 healthcare facilities and 39,600 clinicians with 3.5 billion clinical records for 12.7 million patients."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "ملفي (Malaffi)",
+            "en": "Malaffi"
+          },
+          "options": [
+            {
+              "ar": "ملفي (Malaffi)",
+              "en": "Malaffi"
+            },
+            {
+              "ar": "نابض (NABIDH)",
+              "en": "NABIDH"
+            },
+            {
+              "ar": "رعايتي (Riayati)",
+              "en": "Riayati"
+            },
+            {
+              "ar": "صحتي (Sehhaty)",
+              "en": "Sehhaty"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "ملفي (Malaffi) هو نظام أبوظبي. نابض (NABIDH) هو نظام دبي يوحّد 9.47 مليون سجل مريض عبر 1,300+ منشأة. رعايتي هو النظام الاتحادي الإماراتي. صحتي هو تطبيق وزارة الصحة السعودية.",
+        "en": "Malaffi is Abu Dhabi's system. NABIDH is Dubai's system unifying 9.47 million patient records across 1,300+ facilities. Riayati is the UAE's federal system. Sehhaty is Saudi Arabia's Ministry of Health app."
+      }
+    },
+    {
+      "id": "alh-match-004",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل منصة صحية رقمية بالدولة التي تنتمي إليها:",
+        "en": "Match each digital health platform with its country:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "SEHA المستشفى الافتراضي",
+            "en": "SEHA Virtual Hospital"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "ملفي (Malaffi)",
+            "en": "Malaffi"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "نابض (NABIDH)",
+            "en": "NABIDH"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "سدرة للطب",
+            "en": "Sidra Medicine"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "المملكة العربية السعودية",
+            "en": "Saudi Arabia"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أبوظبي — الإمارات",
+            "en": "Abu Dhabi — UAE"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "دبي — الإمارات",
+            "en": "Dubai — UAE"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "قطر",
+            "en": "Qatar"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "المنطقة العربية تشهد استثمارات ضخمة في البنية التحتية الصحية الرقمية. السعودية خصصت 40 مليار دولار لصندوق استثمار AI. قطر خصصت 22 مليار ريال قطري (~6 مليارات دولار) للرعاية الصحية في 2025. سدرة للطب طوّرت أداة AI حققت 84% نسبة إيجابية حقيقية في تصنيف مخاطر السكري النوع الأول.",
+        "en": "The Arab region is seeing massive digital health infrastructure investments. Saudi Arabia allocated $40B for its AI fund. Qatar allocated QAR 22B (~$6B) for healthcare in 2025. Sidra Medicine developed an AI tool achieving 84% true positive rate for Type 1 diabetes risk stratification."
+      }
+    },
+    {
+      "id": "alh-sort-004",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مراحل تطور الأتمتة في المختبرات الطبية تاريخياً:",
+        "en": "Order the stages of automation evolution in medical laboratories historically:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "أول محلل آلي مستقل (Autoanalyzer I) بتقنية التدفق المستمر — 1957",
+            "en": "First standalone automated analyzer (Autoanalyzer I) using continuous flow — 1957"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "ربط الأجهزة بأنظمة معلومات المختبر (LIS) وأتمتة نقل العينات",
+            "en": "Connecting instruments to Laboratory Information Systems (LIS) and automating sample transport"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "التحليل المورفولوجي الرقمي بالذكاء الاصطناعي (CellaVision، Scopio Labs)",
+            "en": "Digital morphology analysis with AI (CellaVision, Scopio Labs)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "قراءة أطباق الزراعة آلياً بالكامل (APAS Independence) والتنبؤ بمقاومة المضادات",
+            "en": "Fully automated culture plate reading (APAS Independence) and antibiotic resistance prediction"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الأتمتة تخطو من قراءة بسيطة (1957) إلى ربط أنظمة معلومات إلى تحليل صور ذكي إلى اتخاذ قرارات. الأتمتة قللت معدلات الخطأ بأكثر من 70% وقللت وقت الفني لكل عينة بنسبة 10% — لكن المختبرات تحتاج كوادر مؤهلة لتشغيل هذه الأنظمة المتقدمة.",
+        "en": "Automation progresses from simple reading (1957) to information systems to smart image analysis to decision-making. Automation reduced error rates by 70%+ and technician time per specimen by 10% — but labs need qualified staff to operate these advanced systems."
+      }
+    },
+    {
+      "id": "alh-self-007",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت أخصائي علاج طبيعي حضوري في عيادة خاصة. مرضاك بدأوا يسألون: «لماذا أدفع لزيارة حضورية بينما يمكنني استخدام تطبيق Hinge Health مجاناً عبر تأمين الشركة؟» كيف ترد؟",
+        "en": "You're an in-person PT at a private clinic. Your patients are asking: 'Why should I pay for in-person visits when I can use Hinge Health free through my employer's insurance?' How do you respond?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أوضح أن التطبيق مثالي للمتابعة المنزلية بين الجلسات — وأقترح نموذجاً مختلطاً: تقييم وعلاج حضوري + متابعة رقمية",
+            "en": "I explain the app is ideal for home follow-up between sessions — and suggest a hybrid model: in-person assessment and treatment + digital follow-up"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أركّز على الحالات المعقدة التي لا تناسبها التطبيقات وأحيل الحالات البسيطة للمنصات الرقمية",
+            "en": "I focus on complex cases unsuitable for apps and refer simple cases to digital platforms"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أشرح لهم مخاطر العلاج الرقمي بدون إشراف مباشر",
+            "en": "I explain the risks of digital therapy without direct supervision"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا بديل عن اللمس والتقييم اليدوي — التطبيقات لا تصلح للعلاج الطبيعي الحقيقي",
+            "en": "There's no substitute for hands-on assessment — apps aren't suitable for real physical therapy"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Hinge Health تخدم 49% من شركات Fortune 100 بتخفيض ألم 68% وتوفير 2,400 دولار لكل عضو. المعالجون الذين يتبنون النموذج المختلط يوسّعون قاعدة مرضاهم بدل خسارتها. الواقع: العلاج الطبيعي الرقمي نما ليصبح صناعة بمليارات الدولارات.",
+        "en": "Hinge Health serves 49% of Fortune 100 with 68% pain reduction and $2,400 per-member savings. Therapists who adopt a hybrid model expand their patient base rather than losing it. Reality: digital PT has grown into a multi-billion dollar industry."
+      }
+    },
+    {
+      "id": "alh-self-008",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت فني مختبرات. مشرفك أخبرك أنه بسبب نقص الكوادر (معدل شغور 7.2%)، ستتولى أنت الإشراف على نظام AI يقرأ الأطباق بدل زملائك الذين تقاعدوا. ما شعورك؟",
+        "en": "You're a lab technician. Your supervisor tells you that due to staffing shortages (7.2% vacancy rate), you'll oversee the AI plate reading system instead of the colleagues who retired. How do you feel?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فخور — أصبح دوري أكثر أهمية كمشرف على الجودة بدل قارئ أطباق",
+            "en": "Proud — my role has become more important as a quality supervisor instead of a plate reader"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقبول لكن أطالب بتدريب كافٍ وزيادة في الراتب تعكس المسؤولية الجديدة",
+            "en": "Acceptable but I demand adequate training and a salary increase reflecting the new responsibility"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق — أنا الآن مسؤول عن أخطاء النظام وليس أخطائي فقط",
+            "en": "Worried — I'm now responsible for the system's errors, not just my own"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "رافض — يجب توظيف فنيين جدد لا استبدالهم بآلات",
+            "en": "I refuse — new technicians should be hired, not replaced by machines"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "نقص كوادر المختبرات حقيقي: عجز يُقدر بـ20,000-25,000 فني في الولايات المتحدة وحدها. قانون Medical Laboratory Personnel Shortage Relief Act لعام 2025 يهدف لتوسيع برامج التدريب وإعفاء القروض. الأتمتة ليست خياراً — إنها ضرورة لسد الفجوة. السؤال الحقيقي: هل ستُكافأ على دورك الجديد؟",
+        "en": "The lab staffing shortage is real: an estimated 20,000-25,000 technician shortfall in the U.S. alone. The 2025 Medical Laboratory Personnel Shortage Relief Act aims to expand training and loan forgiveness. Automation isn't optional — it's necessary to bridge the gap. The real question: will you be compensated for your new role?"
+      }
+    },
+    {
+      "id": "alh-mcq-013",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت فني أشعة. دراسة أظهرت أن أنظمة AI لصور الجلد أنتجت 4,000 صورة، لكن 10.2% فقط منها عكست بشرة داكنة. ما الخطر السريري الأكبر؟",
+        "en": "You're a radiology tech. A study showed AI dermatology systems generated 4,000 images, but only 10.2% reflected dark skin. What's the greatest clinical risk?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "النظام قد يفشل في تشخيص أمراض جلدية لدى مرضى ذوي بشرة داكنة — مما يُعمّق التفاوت الصحي",
+            "en": "The system may fail to diagnose skin conditions in dark-skinned patients — deepening health disparities"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الصور ذات البشرة الفاتحة أسهل في التحليل تقنياً فقط",
+            "en": "Light-skin images are only technically easier to analyze"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "هذا لا يؤثر على الأشعة — فقط على الجلدية",
+            "en": "This doesn't affect radiology — only dermatology"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يمكن تصحيحه بسهولة بتعديل الإعدادات",
+            "en": "It can easily be fixed by adjusting settings"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "دراسة JEAD 2025 أثبتت هذا التحيز. بحث Northwestern (Nature Medicine 2024) وجد أن AI حسّن دقة الجميع لكن الفجوة بين البشرة الفاتحة والداكنة اتسعت لأطباء الرعاية الأولية. مقاييس التأكسج أيضاً تجعل المرضى ذوي البشرة الداكنة أكثر عرضة 3 أضعاف لعدم اكتشاف نقص الأكسجين الخطير.",
+        "en": "A 2025 JEAD study confirmed this bias. Northwestern research (Nature Medicine 2024) found AI improved everyone's accuracy but widened the gap between light and dark skin for primary care physicians. Pulse oximeters also make dark-skinned patients 3× more likely to have dangerously low oxygen missed."
+      }
+    },
+    {
+      "id": "alh-mcq-014",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت فني مختبرات. إطار تقييم معدلات الهلوسة في النماذج اللغوية الكبيرة وجد أن معدل الهلوسة في السياق الطبي هو 1.47% ومعدل الإغفال 3.45%. ما التداعيات لعملك المخبري؟",
+        "en": "You're a lab technician. A framework assessing LLM hallucination rates found a 1.47% hallucination rate and 3.45% omission rate in medical contexts. What are the implications for your lab work?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "هذه النسب ضئيلة ولا تستدعي القلق",
+            "en": "These rates are negligible and don't warrant concern"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "كل نتيجة يُصدرها AI يجب أن تخضع لمراجعة بشرية — نسبة خطأ 1.47% في مليون اختبار تعني آلاف الأخطاء",
+            "en": "Every AI output must undergo human review — a 1.47% error rate in a million tests means thousands of errors"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "هذه النسب خاصة بالنماذج اللغوية ولا تنطبق على أنظمة التحليل المخبري",
+            "en": "These rates are specific to language models and don't apply to lab analysis systems"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الحل هو عدم استخدام AI في المختبرات الطبية نهائياً",
+            "en": "The solution is to never use AI in medical labs at all"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "دراسة npj Digital Medicine 2025 وثّقت هذه النسب عبر 12,999 جملة راجعها أطباء. في سياق المختبرات: اختبار واحد خاطئ قد يعني تشخيصاً خاطئاً. لذلك الإطار التنظيمي يفرض إشرافاً بشرياً — لا يوجد نظام AI طبي مرخص بدون رقابة بشرية.",
+        "en": "An npj Digital Medicine 2025 study documented these rates across 12,999 clinician-annotated sentences. In lab contexts: one wrong test could mean a wrong diagnosis. Therefore, regulatory frameworks mandate human oversight — no medical AI system is licensed without human supervision."
+      }
+    },
+    {
+      "id": "alh-mcq-015",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت أخصائي بصريات. 63% من أطباء الأشعة قلقون من تحيز خوارزميات AI و63% قلقون من المسؤولية القانونية. ما العامل الأهم لبناء الثقة بالأنظمة؟",
+        "en": "You're an optometrist. 63% of radiologists are concerned about AI algorithm bias and 63% worry about legal liability. What's the most important factor for building trust?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "وضوح المسؤولية القانونية عند استخدام AI — من يتحمل الخطأ؟",
+            "en": "Clarity on legal liability when using AI — who bears responsibility for errors?"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تقليل سعر الأنظمة",
+            "en": "Reducing system prices"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "جعل AI إلزامياً بقرار إداري",
+            "en": "Making AI mandatory by administrative decision"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تدريب المرضى على استخدام AI",
+            "en": "Training patients to use AI"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "حسب Philips Future Health Index 2025: الأولوية الأولى لبناء الثقة هي وضوح المسؤولية القانونية (40%)، يليها الشفافية في أساس التوصيات (38%)، ثم توفر دعم تقني موثوق (36%). لا يوجد حتى الآن سوابق قضائية ثابتة تتعامل مباشرة مع الأخطاء الطبية بـ AI.",
+        "en": "Per Philips' 2025 Future Health Index: the top priority for building trust is legal liability clarity (40%), followed by transparency about recommendation basis (38%), then reliable IT support (36%). No established case law directly addresses AI medical malpractice yet."
+      }
+    },
+    {
+      "id": "alh-tf-009",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "قانون AI الأوروبي (EU AI Act) الذي دخل حيز التنفيذ في أغسطس 2024 يُصنّف جميع أجهزة AI الطبية على أنها «عالية الخطورة» مع غرامات تصل إلى 35 مليون يورو.",
+        "en": "The EU AI Act (effective August 2024) classifies all AI medical devices as 'high-risk' with penalties up to €35 million."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. الغرامات تصل إلى 35 مليون يورو أو 7% من الإيرادات السنوية. كما أن HIPAA تلقى تحديثات مقترحة في يناير 2025 — أول مراجعة كبرى للقواعد الأمنية منذ 20 عاماً — تشمل صراحةً بيانات تدريب AI. FDA أصدرت إرشادات PCCP النهائية (ديسمبر 2024) تسمح بتحديث الخوارزميات بعد التسويق.",
+        "en": "True. Penalties reach €35M or 7% of annual revenue. HIPAA also received proposed updates in January 2025 — the first major Security Rule revision in 20 years — explicitly covering AI training data. FDA published PCCP Final Guidance (December 2024) allowing post-market algorithm updates."
+      }
+    },
+    {
+      "id": "alh-tf-010",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "هناك سوابق قضائية راسخة تحدد بوضوح مسؤولية الخطأ الطبي عند استخدام أنظمة الذكاء الاصطناعي في التشخيص.",
+        "en": "There is established case law that clearly determines medical malpractice liability when AI diagnostic systems are used."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. لا توجد حتى الآن سوابق قضائية راسخة تعالج مباشرة الأخطاء الطبية بـ AI. اتحاد مجالس الطب الأمريكية يوصي بأن يتحمل الأطباء (لا مصنّعو AI) المسؤولية. دعاوى سوء الممارسة المتعلقة بـ AI زادت 14% بين 2022 و2024.",
+        "en": "False. No established case law directly addresses AI medical malpractice. The Federation of State Medical Boards recommends clinicians (not AI makers) bear liability. Malpractice claims involving AI tools increased 14% from 2022 to 2024."
+      }
+    },
+    {
+      "id": "alh-fill-005",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "دراسة Obermeyer الشهيرة (Science, 2019) كشفت أن خوارزمية صحية مُستخدمة على نطاق واسع تمييزية ضد المرضى السود لأنها تتنبأ بـ {{blank_1}} بدلاً من المرض الفعلي.",
+        "en": "The landmark Obermeyer study (Science, 2019) revealed a widely used health algorithm discriminated against Black patients because it predicted {{blank_1}} instead of actual illness."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "تكاليف الرعاية الصحية",
+            "en": "healthcare costs"
+          },
+          "options": [
+            {
+              "ar": "تكاليف الرعاية الصحية",
+              "en": "healthcare costs"
+            },
+            {
+              "ar": "عدد زيارات الطبيب",
+              "en": "number of doctor visits"
+            },
+            {
+              "ar": "العمر المتوقع",
+              "en": "life expectancy"
+            },
+            {
+              "ar": "مستوى الدخل",
+              "en": "income level"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "الخوارزمية استخدمت تكاليف الرعاية كبديل عن الصحة — لكن بسبب التفاوتات في الوصول للرعاية، المرضى السود ينفقون أقل رغم أنهم أمرض. تصحيح هذا التحيز سيرفع نسبة المرضى السود الحاصلين على رعاية إضافية من 17.7% إلى 46.5%.",
+        "en": "The algorithm used healthcare costs as a proxy for health — but due to access disparities, Black patients spend less despite being sicker. Fixing this bias would increase Black patients receiving additional help from 17.7% to 46.5%."
+      }
+    },
+    {
+      "id": "alh-match-005",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تحدٍّ أخلاقي بمثاله الواقعي في العلوم الصحية المساعدة:",
+        "en": "Match each ethical challenge with its real-world example in allied health:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "التحيز العرقي في البيانات",
+            "en": "Racial bias in data"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "هلوسة الخوارزمية",
+            "en": "Algorithmic hallucination"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "إنكار تغطية تأمينية خاطئ",
+            "en": "Wrongful insurance claim denial"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "فجوة المسؤولية القانونية",
+            "en": "Legal liability gap"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "10.2% فقط من صور الجلدية تعكس بشرة داكنة",
+            "en": "Only 10.2% of dermatology images reflect dark skin"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "AI يُصنّف عُقداً حميدة كخبيثة في 12% من الحالات",
+            "en": "AI flags benign nodules as malignant in 12% of cases"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "خوارزمية UnitedHealth بنسبة خطأ 90% في رفض رعاية المسنين",
+            "en": "UnitedHealth algorithm with 90% error rate denying elderly care"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "لا توجد سوابق قضائية ثابتة لأخطاء AI الطبية",
+            "en": "No established case law for AI medical errors"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "UnitedHealth تواجه دعوى جماعية تزعم أن خوارزمية nH Predict رفضت رعاية ما بعد الحالات الحادة لمسنّي Medicare بنسبة خطأ 90%. Cigna رفضت أكثر من 300,000 مطالبة في شهرين بخوارزمية PXDX. هذه ليست أخطاء نظرية — بل تؤثر على ملايين المرضى.",
+        "en": "UnitedHealth faces a class-action lawsuit alleging its nH Predict algorithm denied post-acute care to elderly Medicare patients with a 90% error rate. Cigna denied 300,000+ claims in two months using its PXDX algorithm. These aren't theoretical errors — they affect millions of patients."
+      }
+    },
+    {
+      "id": "alh-sort-005",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب الإجراءات الصحيحة عند اكتشاف تحيز عرقي في نظام AI يُستخدم في قسم الأشعة:",
+        "en": "Order the correct actions when discovering racial bias in an AI system used in the radiology department:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "توثيق الحالات التي أظهر فيها النظام أداءً متفاوتاً بين الفئات السكانية",
+            "en": "Document cases where the system showed disparate performance across demographic groups"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "إبلاغ رئيس القسم ولجنة جودة الرعاية وفريق الامتثال التنظيمي",
+            "en": "Report to department head, care quality committee, and regulatory compliance team"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تعليق الاعتماد الكامل على النظام للفئات المتأثرة مع استمرار المراجعة البشرية المكثفة",
+            "en": "Suspend full reliance on the system for affected groups while intensifying human review"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "العمل مع الشركة المصنّعة لإعادة تدريب النموذج على بيانات أكثر تنوعاً وإعادة التحقق",
+            "en": "Work with the manufacturer to retrain the model on more diverse data and revalidate"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "التوثيق أولاً يضمن وجود دليل ملموس. الإبلاغ يُفعّل القنوات الرسمية. التعليق يحمي المرضى فوراً. إعادة التدريب تُعالج المشكلة جذرياً. دراسة Northwestern أكدت أن AI حسّن الدقة للجميع لكنه وسّع الفجوة — مما يستدعي يقظة مستمرة.",
+        "en": "Documentation first ensures concrete evidence exists. Reporting activates official channels. Suspension protects patients immediately. Retraining addresses the root cause. Northwestern's study confirmed AI improved accuracy for all but widened the gap — requiring ongoing vigilance."
+      }
+    },
+    {
+      "id": "alh-self-009",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت أخصائي تغذية. مريض يقول لك إن ChatGPT أعطاه خطة غذائية كاملة لحالته. راجعت الخطة ووجدت أن 80% منها صحيح لكن 20% يتعارض مع أدويته. كيف تتصرف؟",
+        "en": "You're a dietitian. A patient says ChatGPT gave him a complete diet plan for his condition. You reviewed it and found 80% is correct but 20% conflicts with his medications. How do you handle this?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أشرح له أن AI أداة مفيدة لكنها لا تعرف تاريخه الدوائي — وأعدّل الخطة مع شرح أسباب كل تعديل ليتعلم التمييز مستقبلاً",
+            "en": "I explain AI is a useful tool but doesn't know his medication history — and modify the plan while explaining reasons so he learns to distinguish in the future"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أحذّره من الاعتماد على AI وأعطيه خطة جديدة كاملة من عندي",
+            "en": "I warn him against relying on AI and give him a completely new plan from me"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أطلب منه عدم استخدام AI لأمور صحية نهائياً",
+            "en": "I ask him to never use AI for health matters at all"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الخطة صحيحة بنسبة 80% — أعدّل الـ20% الخاطئة فقط دون تعليق إضافي",
+            "en": "The plan is 80% correct — I only modify the 20% that's wrong without further comment"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "79% من البالغين الأمريكيين يبحثون عن إجابات صحية عبر الإنترنت، و1 من كل 3 قد يتأخر في زيارة الطبيب إذا صنّف AI أعراضه كمنخفضة الخطورة. دور أخصائي التغذية يتحوّل من «مُصدر خطة» إلى «مُراجع ومُعدّل» — وهذا يتطلب مهارات جديدة في فهم مخرجات AI.",
+        "en": "79% of American adults go online for health answers, and 1 in 3 would delay seeing a doctor if AI characterized symptoms as low risk. The dietitian's role shifts from 'plan issuer' to 'reviewer and modifier' — requiring new skills in understanding AI outputs."
+      }
+    },
+    {
+      "id": "alh-self-010",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت فني أشعة. 63% من أطباء الأشعة قلقون من التحيز في خوارزميات AI. مديرك يطلب منك تطبيق نظام AI جديد في قسمك. ماذا تفعل؟",
+        "en": "You're a radiology tech. 63% of radiologists are concerned about bias in AI algorithms. Your manager asks you to implement a new AI system in your department. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أطبّقه مع وضع بروتوكول مراجعة عشوائية للنتائج عبر الفئات السكانية المختلفة لرصد أي تحيز",
+            "en": "I implement it with a random audit protocol across demographic groups to monitor for bias"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطبّقه مع التأكد أن الفريق الطبي يعلم أنه أداة مساعدة وليس بديلاً عن حكمهم",
+            "en": "I implement it while ensuring the medical team knows it's a support tool, not a replacement for their judgment"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أطلب مزيداً من الوقت لدراسة النظام قبل أي تطبيق",
+            "en": "I request more time to study the system before any implementation"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض التطبيق حتى تُحل مشكلة التحيز تماماً",
+            "en": "I refuse implementation until the bias problem is completely solved"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التحيز لن يُحل 100% أبداً — حتى الأطباء البشريون لديهم تحيزات. الحل العملي: تطبيق مع مراقبة مستمرة. Philips 2025 وجد أن 40% من الأطباء يرون وضوح المسؤولية القانونية كأهم عامل لبناء الثقة، يليه الشفافية (38%).",
+        "en": "Bias will never be 100% solved — even human doctors have biases. The practical solution: implement with continuous monitoring. Philips 2025 found 40% of physicians see legal liability clarity as the top trust factor, followed by transparency (38%)."
+      }
+    },
+    {
+      "id": "alh-mcq-016",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت فني مختبرات. مهنة النسخ الطبي أُتمتت بنسبة 99% تقريباً مع توقع انخفاض التوظيف بنسبة 4.7% خلال عقد. هل يواجه فنيو المختبرات نفس المصير؟",
+        "en": "You're a lab tech. Medical transcription is ~99% automated with employment projected to decline 4.7% over a decade. Do lab technicians face the same fate?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا — فنيو المختبرات يتحولون من التحليل اليدوي إلى الإشراف على الأنظمة الآلية، والتوظيف متوقع أن ينمو",
+            "en": "No — lab technicians are transitioning from manual analysis to overseeing automated systems, and employment is projected to grow"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "نعم — الأتمتة ستلغي معظم وظائف المختبرات خلال 10 سنوات",
+            "en": "Yes — automation will eliminate most lab jobs within 10 years"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "المختبرات الطبية لا يمكن أتمتتها أصلاً",
+            "en": "Medical labs cannot be automated at all"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "فقط فنيو المختبرات في الدول المتقدمة سيتأثرون",
+            "en": "Only lab technicians in developed countries will be affected"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "مكتب إحصاءات العمل الأمريكي يتوقع نمو توظيف فنيي المختبرات بنسبة 5-7% — وهي من المهن التي لا يُتوقع تراجعها بسبب الأتمتة. السبب: الأجهزة المتطورة تحتاج كوادر متطورة لتشغيلها. التحول: من منفّذ اختبارات إلى مشرف على أنظمة ذكية ومحلّل نتائج معقدة.",
+        "en": "The BLS projects lab technician employment to grow 5-7% — a profession not predicted to decline due to automation. Reason: sophisticated instruments need sophisticated professionals. The shift: from test executor to smart system supervisor and complex result analyst."
+      }
+    },
+    {
+      "id": "alh-mcq-017",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت أخصائي علاج وظيفي. 30% من مرافق العلاج الوظيفي في الولايات المتحدة دمجت AI في سير عملها السريري. ما المهارة الجديدة الأهم لك للبقاء تنافسياً؟",
+        "en": "You're an OT. 30% of U.S. OT facilities have integrated AI into clinical workflows. What's the most important new skill for staying competitive?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تعلم البرمجة العميقة وتطوير خوارزميات AI",
+            "en": "Learning deep programming and AI algorithm development"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "القدرة على تفسير بيانات AI الحيوية (من الأجهزة القابلة للارتداء) ودمجها في خطط العلاج الفردية",
+            "en": "The ability to interpret AI biometric data (from wearables) and integrate it into individualized treatment plans"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "رفض التكنولوجيا والتركيز على المهارات اليدوية التقليدية فقط",
+            "en": "Rejecting technology and focusing solely on traditional manual skills"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "إدارة حسابات التواصل الاجتماعي للعيادة",
+            "en": "Managing the clinic's social media accounts"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أخصائيو العلاج الوظيفي الحديثون يستخدمون بيانات حيوية من الأجهزة القابلة للارتداء (عدد الخطوات، معدل القلب، أنماط النوم، تشبع الأكسجين) لتطوير خطط علاج شخصية مبنية على أدلة موضوعية. لا حاجة لتعلم البرمجة — بل لفهم كيفية تفسير مخرجات AI.",
+        "en": "Modern OTs use biometric data from wearables (step count, heart rate, sleep patterns, oxygen saturation) to develop personalized evidence-based treatment plans. No need to learn programming — but understanding how to interpret AI outputs is essential."
+      }
+    },
+    {
+      "id": "alh-mcq-018",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت فني أشعة. تقرير المنتدى الاقتصادي العالمي 2025 يتوقع إزاحة 85 مليون وظيفة عالمياً بسبب AI مع خلق 97 مليون وظيفة جديدة. كيف ينطبق هذا على تخصصك؟",
+        "en": "You're a radiology tech. The WEF 2025 report projects 85 million jobs displaced by AI globally but 97 million new jobs created. How does this apply to your field?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تخصص فني الأشعة سيختفي ضمن الوظائف المُزاحة",
+            "en": "The radiology tech specialty will disappear among displaced jobs"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "دوري يتطور — مهام تقليدية تُؤتمت بينما تظهر أدوار جديدة في إدارة AI والتصوير المتقدم والتفاعل مع المرضى",
+            "en": "My role evolves — traditional tasks are automated while new roles emerge in AI management, advanced imaging, and patient interaction"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "هذا ينطبق فقط على قطاعات أخرى ولا يؤثر على الرعاية الصحية",
+            "en": "This only applies to other sectors and doesn't affect healthcare"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "سيزداد الطلب على فنيي الأشعة دون أي تغيير في طبيعة عملهم",
+            "en": "Demand for radiology techs will increase without any change in their work nature"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "AI يُؤتمت المهام المتكررة (بروتوكولات المسح، تحسين الصور، تقليل إعادة التصوير) بينما يخلق أدواراً جديدة: مشرف جودة AI، متخصص تصوير متقدم، منسق عمل عن بُعد. مستشفى KMC Manipal في الهند: سير العمل المُعزز بـ AI أتاح خدمة 20-30 مريضاً إضافياً يومياً.",
+        "en": "AI automates repetitive tasks (scan protocols, image enhancement, reducing retakes) while creating new roles: AI quality supervisor, advanced imaging specialist, remote workflow coordinator. KMC Manipal Hospital in India: AI-enhanced workflows enabled serving 20-30 additional patients daily."
+      }
+    },
+    {
+      "id": "alh-tf-011",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "عدد برامج تدريب فنيي المختبرات المعتمدة في الولايات المتحدة انخفض من حوالي 1,000 برنامج عام 1970 إلى أقل من 500 برنامج في 2025.",
+        "en": "The number of accredited U.S. lab technician training programs declined from about 1,000 in 1970 to fewer than 500 in 2025."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. في 2025 يوجد 256 برنامج MLS و244 برنامج MLT فقط. المهنة «تُخرّج أقل من نصف العدد المطلوب». متبرع مجهول تبرع بأكثر من 50 مليون دولار لجامعة واشنطن لتغطية رسوم التدريب السريري لطلاب المختبرات للـ50 عاماً القادمة.",
+        "en": "True. In 2025 there are only 256 MLS and 244 MLT programs. The profession 'is educating less than half the number needed.' An anonymous donor gave $50M+ to the University of Washington to cover clinical rotation tuition for lab students for the next 50 years."
+      }
+    },
+    {
+      "id": "alh-tf-012",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "الأطباء يعتمدون على العمل التشخيصي المختبري في حوالي 70% من قراراتهم الطبية.",
+        "en": "Physicians rely on laboratory diagnostic work for approximately 70% of their medical decisions."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. المختبرات الطبية هي أكثر الأنشطة حجماً في القطاع الصحي. رغم ذلك، فنيو المختبرات نادراً ما يحظون بالتقدير الذي يستحقونه. أسبوع المهنيين المختبريين (أبريل من كل عام) يسعى لرفع الوعي بدورهم الحيوي.",
+        "en": "True. Medical labs are the highest-volume activity in healthcare. Yet lab technicians rarely receive the recognition they deserve. Medical Laboratory Professionals Week (April annually) aims to raise awareness of their vital role."
+      }
+    },
+    {
+      "id": "alh-fill-006",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "يُقدّر نقص فنيي المختبرات في الولايات المتحدة بحوالي {{blank_1}} فني، مع معدل شغور وظيفي يبلغ حوالي 7.2%.",
+        "en": "The U.S. lab technician shortage is estimated at approximately {{blank_1}} technicians, with a vacancy rate of about 7.2%."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "20,000 إلى 25,000",
+            "en": "20,000 to 25,000"
+          },
+          "options": [
+            {
+              "ar": "20,000 إلى 25,000",
+              "en": "20,000 to 25,000"
+            },
+            {
+              "ar": "5,000 إلى 10,000",
+              "en": "5,000 to 10,000"
+            },
+            {
+              "ar": "50,000 إلى 75,000",
+              "en": "50,000 to 75,000"
+            },
+            {
+              "ar": "100,000",
+              "en": "100,000"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "العجز يعادل فنياً واحداً لكل 1,000 مواطن أمريكي. قانون Medical Laboratory Personnel Shortage Relief Act 2025 يهدف لضم فنيي المختبرات لبرنامج NHSC (إعفاء قروض الطلاب) وتوفير منح لتوسيع برامج التدريب.",
+        "en": "The shortfall equals one technologist per 1,000 U.S. citizens. The 2025 Medical Laboratory Personnel Shortage Relief Act aims to add lab personnel to the NHSC (student loan forgiveness) and provide grants to expand training programs."
+      }
+    },
+    {
+      "id": "alh-match-006",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تخصص صحي مساعد بتأثير AI الأبرز على مستقبله الوظيفي:",
+        "en": "Match each allied health specialty with the most notable AI impact on its career future:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "فني مختبرات طبية",
+            "en": "Medical lab technician"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "أخصائي علاج طبيعي",
+            "en": "Physical therapist"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "فني أشعة",
+            "en": "Radiology technician"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "أخصائي نطق وتخاطب",
+            "en": "Speech-language pathologist"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "من قارئ عينات إلى مشرف على أنظمة آلية وسط نقص كوادر حاد",
+            "en": "From sample reader to automated system supervisor amid severe staffing shortages"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "من جلسات حضورية فقط إلى نموذج مختلط مع AI يخدم ملايين العقود",
+            "en": "From in-person only sessions to a hybrid model with AI serving millions of contracts"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "من مشغّل أجهزة إلى مشرف جودة AI ومنسق تصوير متقدم",
+            "en": "From device operator to AI quality supervisor and advanced imaging coordinator"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "من توثيق يدوي مُرهق إلى تحليل AI لأنماط الكلام يرصد ما يفوت الأذن البشرية",
+            "en": "From exhausting manual documentation to AI speech pattern analysis detecting what the human ear misses"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "القاسم المشترك: AI لا يُلغي هذه المهن بل يُعيد تعريفها. المعالجون الذين يتبنون الأدوات الجديدة يتقدمون — والذين يقاومون يتأخرون. المهارة الأهم للجميع: فهم مخرجات AI وتفسيرها سريرياً.",
+        "en": "The common thread: AI doesn't eliminate these professions but redefines them. Practitioners who embrace new tools advance — those who resist fall behind. The most important skill for all: understanding and clinically interpreting AI outputs."
+      }
+    },
+    {
+      "id": "alh-sort-006",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب التخصصات الصحية المساعدة من الأكثر تأثراً بالأتمتة (عدد ساعات العمل المُستبدلة) إلى الأقل تأثراً:",
+        "en": "Order allied health specialties from most affected by automation (work hours replaced) to least affected:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "فني مختبرات — أنظمة تزيل حتى 95% من العمل الروتيني (قراءة الأطباق السلبية)",
+            "en": "Lab tech — systems remove up to 95% of routine work (reading negative plates)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "أخصائي علاج طبيعي — AI يستبدل 95% من ساعات العلاج التقليدية بالرؤية الحاسوبية",
+            "en": "Physical therapist — AI replaces 95% of traditional PT hours with computer vision"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "فني أشعة — AI يؤتمت البروتوكولات ويُعدّ تقارير مبدئية لكن التصوير يدوي",
+            "en": "Radiology tech — AI automates protocols and drafts reports but imaging remains manual"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "أخصائي علاج وظيفي — AI يُقلل التوثيق 30-50% لكن التفاعل الإنساني يبقى جوهرياً",
+            "en": "Occupational therapist — AI reduces documentation 30-50% but human interaction remains core"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "APAS Independence يُزيل 95% من الأطباق السلبية. TrueMotion استبدلت 95% من ساعات العلاج الطبيعي. لكن كلاهما يحتاج إشرافاً بشرياً. العلاج الوظيفي الأقل تأثراً لأن جوهره التفاعل اليدوي والتواصل — أكثر المهارات مقاومة للأتمتة.",
+        "en": "APAS removes 95% of negative plates. TrueMotion replaced 95% of PT hours. But both need human oversight. OT is least affected because its core is hands-on interaction and communication — the most automation-resistant skills."
+      }
+    },
+    {
+      "id": "alh-self-011",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت أخصائي نطق وتخاطب. تعرف أن 89% من زملائك يعانون من أعباء عمل مفرطة. زميلك يقترح استخدام أداة AI للفحص المبدئي لتسريع الإحالات. ما رأيك؟",
+        "en": "You're an SLP. You know 89% of your colleagues have overwhelming workloads. Your colleague suggests using an AI screening tool to speed up referrals. What's your take?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "رائع — الفحص المبدئي بـ AI يكشف التأخر اللغوي مبكراً ويُقلل فترة الانتظار من 3-6 أشهر",
+            "en": "Great — AI screening catches language delays early and reduces wait times from 3-6 months"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مفيد كفلتر أولي لكنني أريد تقييم كل طفل بنفسي قبل قبوله",
+            "en": "Useful as an initial filter but I want to evaluate every child myself before accepting"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق من أن يفوّت AI أنماطاً دقيقة في الكلام يلتقطها فقط أخصائي متمرس",
+            "en": "Concerned AI might miss subtle speech patterns only captured by an experienced specialist"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الفحص المبدئي يجب أن يكون حصرياً على الأخصائيين المرخصين — لا مكان لـ AI في التقييم",
+            "en": "Initial screening must be exclusive to licensed specialists — there's no place for AI in assessment"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "فترة انتظار 3-6 أشهر تعني أطفالاً يفقدون أشهراً حاسمة من التدخل المبكر. AI لا يُشخّص — بل يُحدد من يحتاج أولوية. ASHA تؤكد أن AI لا يمكن أن يحل محل الحكم السريري لكنه يمكن أن يبتكر رعاية شخصية عند استخدامه بعناية.",
+        "en": "A 3-6 month wait means children lose crucial early intervention months. AI doesn't diagnose — it identifies who needs priority. ASHA confirms AI cannot replace clinical judgment but can innovate personalized care when carefully considered."
+      }
+    },
+    {
+      "id": "alh-self-012",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت فني أشعة. مستشفاك يُعلن عن وظيفة جديدة: «منسق جودة AI في قسم الأشعة» — وهي مزيج من خبرة التصوير وفهم أنظمة AI. هل تتقدم؟",
+        "en": "You're a radiology tech. Your hospital announces a new position: 'AI Quality Coordinator in Radiology' — a mix of imaging expertise and AI system understanding. Would you apply?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فوراً — هذا مستقبل المهنة وأريد أن أكون في الصدارة",
+            "en": "Immediately — this is the future of the profession and I want to be at the forefront"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "نعم، لكن بعد الحصول على تدريب إضافي في أنظمة AI",
+            "en": "Yes, but after getting additional training in AI systems"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مهتم لكن قلق من أن تكون وظيفة مؤقتة تختفي مع تطور AI",
+            "en": "Interested but worried it might be a temporary role that disappears as AI evolves"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا — أفضّل البقاء في التصوير المباشر الذي أعرفه وأتقنه",
+            "en": "No — I prefer staying in direct imaging work that I know and master"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "أدوار جديدة مثل «منسق جودة AI» و«مشرف تصوير متقدم» ظهرت في المستشفيات الكبرى. هذه الأدوار تجمع بين الخبرة السريرية وفهم التكنولوجيا — وغالباً ما تأتي بتعويضات أعلى. المستشفيات الصغيرة التي لا تتبنى AI تخشى التخلف عن الركب.",
+        "en": "New roles like 'AI Quality Coordinator' and 'Advanced Imaging Supervisor' have emerged in major hospitals. These roles combine clinical expertise with technology understanding — and often come with higher compensation. Small hospitals not adopting AI fear being left behind."
+      }
+    },
+    {
+      "id": "alh-mcq-019",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت فني أشعة. إرشادات FDA النهائية (PCCP) الصادرة في ديسمبر 2024 قدّمت مفهوماً جديداً مهماً لأنظمة AI الطبية. ما هو؟",
+        "en": "You're a radiology tech. The FDA's final PCCP guidance issued in December 2024 introduced an important new concept for medical AI systems. What is it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "السماح بتحديث خوارزميات AI بعد التسويق دون الحاجة لإعادة تقديم طلب ترخيص كامل",
+            "en": "Allowing post-market AI algorithm updates without requiring a full resubmission for clearance"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "منع استخدام AI في التشخيص الطبي نهائياً",
+            "en": "Banning AI use in medical diagnosis entirely"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "إلزام كل مستشفى بفريق AI متخصص",
+            "en": "Requiring every hospital to have a dedicated AI team"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تصنيف جميع أنظمة AI كأجهزة طبية منخفضة الخطورة",
+            "en": "Classifying all AI systems as low-risk medical devices"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "PCCP (Predetermined Change Control Plan) يسمح للشركات بوصف التغييرات المتوقعة على خوارزمياتهم مسبقاً. إذا وافقت FDA على الخطة، يمكن إجراء التحديثات دون تقديم طلب 510(k) جديد لكل تغيير — مما يُسرّع تحسين أداء AI بشكل كبير.",
+        "en": "PCCP (Predetermined Change Control Plan) allows companies to describe anticipated algorithm changes upfront. If FDA approves the plan, updates can be made without filing a new 510(k) for each change — significantly accelerating AI performance improvement."
+      }
+    },
+    {
+      "id": "alh-mcq-020",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت فني مختبرات. HIPAA تلقى أول تحديث رئيسي لقواعده الأمنية منذ 20 عاماً في يناير 2025. ما الجانب الجديد الأهم المتعلق بـ AI؟",
+        "en": "You're a lab tech. HIPAA received its first major Security Rule update in 20 years in January 2025. What's the most important new AI-related aspect?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تغطي صراحةً بيانات تدريب AI كبيانات صحية محمية",
+            "en": "It explicitly covers AI training data as protected health information"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تمنع استخدام AI في المختبرات الصغيرة",
+            "en": "It bans AI use in small laboratories"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تُلغي متطلبات الموافقة المسبقة من المرضى",
+            "en": "It eliminates prior patient consent requirements"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تُلزم المختبرات بتشفير جميع البيانات فقط دون تغييرات أخرى",
+            "en": "It only requires labs to encrypt all data without other changes"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "تحديث HIPAA 2025 يشمل: تغطية صريحة لبيانات تدريب AI، فحص الثغرات كل 6 أشهر على الأقل، واختبار الاختراق سنوياً. أي مورد AI يتعامل مع بيانات مرضى يجب أن يكون تحت اتفاقية شريك أعمال (BAA) — OpenAI مثلاً لا تدخل في هذه الاتفاقيات مما يجعل ChatGPT غير متوافق مع HIPAA.",
+        "en": "The 2025 HIPAA update includes: explicit AI training data coverage, vulnerability scanning at least every 6 months, and annual penetration testing. Any AI vendor handling patient data must be under a BAA — OpenAI for example doesn't enter BAAs, making ChatGPT non-HIPAA compliant."
+      }
+    },
+    {
+      "id": "alh-mcq-021",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أنت أخصائي علاج طبيعي. دول الخليج تستثمر بكثافة في البنية التحتية الصحية الرقمية. كم خصصت قطر للرعاية الصحية في 2025؟",
+        "en": "You're a physical therapist. Gulf countries are investing heavily in digital health infrastructure. How much did Qatar allocate for healthcare in 2025?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مليار دولار",
+            "en": "$1 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "6 مليارات دولار تقريباً (22 مليار ريال قطري)",
+            "en": "Approximately $6 billion (QAR 22 billion)"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "500 مليون دولار",
+            "en": "$500 million"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "20 مليار دولار",
+            "en": "$20 billion"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "قطر خصصت 22 مليار ريال قطري (~6 مليارات دولار) مع تركيز استراتيجيتها الوطنية للذكاء الاصطناعي على الصحة. سدرة للطب طوّر أداة AI بنسبة إيجابية حقيقية 84% لتصنيف مخاطر السكري النوع الأول. سوق AI الصحي السعودي وصل 435 مليون دولار في 2024 ومُتوقع أن يبلغ 8.39 مليار بحلول 2033.",
+        "en": "Qatar allocated QAR 22 billion (~$6B) with its National AI Strategy emphasizing health. Sidra Medicine developed an AI tool with 84% true positive rate for Type 1 diabetes risk stratification. Saudi Arabia's healthcare AI market reached $435M in 2024, projected to reach $8.39B by 2033."
+      }
+    },
+    {
+      "id": "alh-tf-013",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ChatGPT متوافق مع قواعد HIPAA ويمكن استخدامه لمعالجة بيانات المرضى في المختبرات الطبية الأمريكية.",
+        "en": "ChatGPT is HIPAA compliant and can be used to process patient data in U.S. medical laboratories."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. OpenAI لا تدخل في اتفاقيات شريك أعمال (BAA) مع الجهات المشمولة بـ HIPAA — وهو شرط قانوني لأي مورد يعالج بيانات صحية محمية (PHI). أي استخدام لـ ChatGPT مع بيانات مرضى يُعدّ انتهاكاً لـ HIPAA.",
+        "en": "False. OpenAI does not enter Business Associate Agreements (BAAs) with covered entities — a legal requirement for any vendor processing protected health information (PHI). Any use of ChatGPT with patient data constitutes a HIPAA violation."
+      }
+    },
+    {
+      "id": "alh-tf-014",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أطلقت المملكة العربية السعودية أول عيادة طبية يديرها AI بالكامل في منطقة الأحساء في مايو 2025.",
+        "en": "Saudi Arabia launched the first fully AI-powered doctor clinic in the Al-Ahsa region in May 2025."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. هي أول عيادة من نوعها في العالم. سوق AI الصحي السعودي ينمو بمعدل 37% سنوياً ليصل إلى 8.39 مليار دولار بحلول 2033. الاستراتيجية الوطنية للذكاء الاصطناعي 2031 تتضمن صندوقاً بقيمة 40 مليار دولار.",
+        "en": "True. It's the first clinic of its kind in the world. Saudi Arabia's healthcare AI market is growing at 37% CAGR to reach $8.39 billion by 2033. The National AI Strategy 2031 includes a $40 billion fund."
+      }
+    },
+    {
+      "id": "alh-fill-007",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "إرشادات FDA النهائية الصادرة في ديسمبر 2024 تُعرف اختصاراً بـ {{blank_1}} وتسمح بتحديث خوارزميات AI الطبية بعد التسويق دون إعادة تقديم طلب ترخيص كامل.",
+        "en": "The FDA's final guidance issued in December 2024 is known as {{blank_1}} and allows post-market medical AI algorithm updates without full resubmission."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "PCCP",
+            "en": "PCCP"
+          },
+          "options": [
+            {
+              "ar": "PCCP",
+              "en": "PCCP"
+            },
+            {
+              "ar": "PAMA",
+              "en": "PAMA"
+            },
+            {
+              "ar": "510(k)",
+              "en": "510(k)"
+            },
+            {
+              "ar": "De Novo",
+              "en": "De Novo"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "PCCP = Predetermined Change Control Plan (خطة التحكم المحددة مسبقاً في التغييرات). PAMA = قانون حماية الوصول لـ Medicare. 510(k) = مسار الترخيص العادي لأجهزة طبية مشابهة لأخرى موجودة. De Novo = مسار ترخيص لأجهزة جديدة تماماً (مثل LumineticsCore).",
+        "en": "PCCP = Predetermined Change Control Plan. PAMA = Protecting Access to Medicare Act. 510(k) = standard clearance pathway for devices similar to existing ones. De Novo = pathway for entirely new devices (like LumineticsCore)."
+      }
+    },
+    {
+      "id": "alh-match-007",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل إطار تنظيمي بنطاقه المتعلق بـ AI في الرعاية الصحية:",
+        "en": "Match each regulatory framework with its scope related to AI in healthcare:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "قانون AI الأوروبي (EU AI Act)",
+            "en": "EU AI Act"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "HIPAA (تحديث 2025)",
+            "en": "HIPAA (2025 update)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "FDA PCCP",
+            "en": "FDA PCCP"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "نظام حماية البيانات الشخصية السعودي (PDPL)",
+            "en": "Saudi PDPL"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تصنيف أجهزة AI الطبية كعالية الخطورة مع غرامات حتى 35 مليون يورو",
+            "en": "Classifying medical AI as high-risk with fines up to €35 million"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "تغطية صريحة لبيانات تدريب AI مع فحص ثغرات كل 6 أشهر",
+            "en": "Explicitly covering AI training data with vulnerability scanning every 6 months"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "السماح بتحديث الخوارزميات بعد التسويق دون إعادة طلب ترخيص كامل",
+            "en": "Allowing post-market algorithm updates without full resubmission"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "حماية البيانات الصحية على غرار GDPR في المنطقة العربية",
+            "en": "GDPR-like health data protection in the Arab region"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "المشهد التنظيمي يتشكل سريعاً: EU AI Act يفرض أعلى معايير صرامة. HIPAA أول تحديث منذ 20 عاماً يعترف بـ AI. FDA PCCP يُسهّل التحديث المستمر. السعودية والإمارات بنت أطر حوكمة شاملة. الأثر العملي: كل أخصائي صحي يحتاج فهم الإطار التنظيمي لبلده.",
+        "en": "The regulatory landscape is forming rapidly: EU AI Act imposes the strictest standards. HIPAA's first update in 20 years acknowledges AI. FDA PCCP enables continuous improvement. Saudi Arabia and UAE built comprehensive governance frameworks. Practical impact: every health professional needs to understand their country's regulatory framework."
+      }
+    },
+    {
+      "id": "alh-sort-007",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب الخطوات الصحيحة قبل استخدام أداة AI جديدة تعالج بيانات مرضى في مختبرك الطبي:",
+        "en": "Order the correct steps before using a new AI tool that processes patient data in your medical lab:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "التحقق من امتلاك المورد لاتفاقية شريك أعمال (BAA) متوافقة مع HIPAA",
+            "en": "Verify the vendor has a HIPAA-compliant Business Associate Agreement (BAA)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "إجراء تقييم مخاطر لكيفية تخزين البيانات ومعالجتها ومشاركتها",
+            "en": "Conduct a risk assessment for how data is stored, processed, and shared"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تدريب فريق المختبر على الاستخدام الآمن والمسؤول للأداة",
+            "en": "Train the lab team on safe and responsible use of the tool"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تطبيق بروتوكول مراقبة مستمر يتضمن فحص ثغرات كل 6 أشهر واختبار اختراق سنوي",
+            "en": "Implement a continuous monitoring protocol including vulnerability scanning every 6 months and annual penetration testing"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "BAA أولاً — بدونها أي استخدام يُعدّ انتهاكاً قانونياً. ثم تقييم المخاطر (أين تذهب البيانات؟). ثم التدريب (كيف يستخدمها الفريق بأمان؟). أخيراً المراقبة المستمرة. تحديث HIPAA 2025 يفرض معايير صارمة — والمختبرات التي لا تلتزم تواجه غرامات كبيرة.",
+        "en": "BAA first — without it, any use is a legal violation. Then risk assessment (where does data go?). Then training (how does the team use it safely?). Finally, continuous monitoring. The 2025 HIPAA update enforces strict standards — non-compliant labs face significant fines."
+      }
+    },
+    {
+      "id": "alh-self-013",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت فني مختبرات في دولة خليجية. الحكومة أطلقت منصة صحية رقمية وطنية تربط جميع المستشفيات وتستخدم AI لمراقبة أمن البيانات. كيف ترى هذا التحول؟",
+        "en": "You're a lab technician in a Gulf country. The government launched a national digital health platform connecting all hospitals and using AI for data security monitoring. How do you view this transformation?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فرصة ممتازة — ملف صحي موحّد يعني نتائج مختبري متاحة لكل أطباء المريض فوراً ويُقلل تكرار الفحوصات",
+            "en": "Excellent opportunity — a unified health record means my lab results are instantly available to all the patient's doctors, reducing repeat tests"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مفيد لكنني أحتاج تدريباً على النظام الجديد وأريد ضمانات حول خصوصية البيانات",
+            "en": "Useful but I need training on the new system and want guarantees about data privacy"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق من مركزية البيانات — اختراق واحد يكشف سجلات ملايين المرضى",
+            "en": "Worried about data centralization — one breach exposes millions of patient records"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "النظام الورقي كان يعمل بشكل جيد — لا حاجة لكل هذا التعقيد",
+            "en": "The paper system was working fine — no need for all this complexity"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "نظام ملفي في أبوظبي يربط 1,539 منشأة و39,600 طبيب. نابض في دبي يوحّد 9.47 مليون سجل. هذه الأنظمة تُقلل تكرار الفحوصات وتُسرّع التشخيص وتُحسّن سلامة المرضى. القلق الأمني مشروع — لكن هذه المنصات مبنية بمعايير أمنية متقدمة تشمل مراقبة AI للبيانات.",
+        "en": "Abu Dhabi's Malaffi connects 1,539 facilities and 39,600 clinicians. Dubai's NABIDH unifies 9.47 million records. These systems reduce repeat tests, speed diagnosis, and improve patient safety. Security concerns are valid — but these platforms are built with advanced security standards including AI data monitoring."
+      }
+    },
+    {
+      "id": "alh-self-014",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت أخصائي سمعيات. مريض يسألك: «سمعت أن أجهزة السمع الجديدة تتعلم وتتكيف لوحدها بالذكاء الاصطناعي. هل هذا يعني أنني لن أحتاج لزيارة أخصائي لضبطها؟» ما جوابك؟",
+        "en": "You're an audiologist. A patient asks: 'I heard new hearing aids learn and adapt on their own with AI. Does this mean I won't need to visit a specialist to adjust them?' What's your answer?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI يتعامل مع 80% من التعديلات اليومية تلقائياً — لكن دوري هو ضبط الإعدادات الأساسية وتقييم سمعك الدوري وتعديل البرمجة عندما تتغير حالتك",
+            "en": "AI handles 80% of daily adjustments automatically — but my role is fine-tuning base settings, periodic hearing evaluation, and reprogramming when your condition changes"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الأجهزة الذكية جيدة لكنها لا تُغني عن الزيارات الدورية لفحص السمع",
+            "en": "Smart devices are good but don't replace periodic hearing examinations"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "AI في أجهزة السمع لا يزال في مراحله الأولى ولا يمكن الاعتماد عليه",
+            "en": "AI in hearing aids is still in early stages and can't be relied upon"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا — ضبط أجهزة السمع يجب أن يكون يدوياً حصرياً من أخصائي مرخص",
+            "en": "No — hearing aid adjustment must be done manually exclusively by a licensed specialist"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "شريحة DEEPSONIC أسرع 53 ضعفاً ومُدرّبة على 22 مليون عينة صوتية. تتكيف تلقائياً مع بيئة المستخدم — لكن الضبط الأولي والتقييم السمعي الدوري يبقيان ضمن اختصاص أخصائي السمعيات. AI لا يكتشف تغيّرات السمع المرضية — فقط الأخصائي يمكنه ذلك.",
+        "en": "The DEEPSONIC chip is 53× faster and trained on 22 million sound samples. It adapts automatically to the user's environment — but initial fitting and periodic hearing evaluation remain within the audiologist's scope. AI doesn't detect pathological hearing changes — only the specialist can."
+      }
+    },
+    {
+      "id": "alh-mcq-022",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "دراسة استقصائية متعددة المراكز شملت طلاب تمريض في 10 دول عربية فحصت مواقفهم تجاه AI. ما كانت أبرز نتيجة؟",
+        "en": "A multi-center survey across 10 Arab countries examined nursing students' attitudes toward AI. What was the most notable finding?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "رفض تام للتكنولوجيا في الرعاية الصحية",
+            "en": "Complete rejection of technology in healthcare"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "قلق كبير من فقدان الوظائف مع الاعتراف بالإمكانات السريرية لـ AI في نفس الوقت",
+            "en": "Significant concern about job displacement alongside recognition of AI's clinical potential"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حماس مطلق دون أي تحفظات",
+            "en": "Absolute enthusiasm without any reservations"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "عدم معرفة بـ AI أصلاً",
+            "en": "No knowledge of AI at all"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "النتيجة تعكس واقعاً مزدوجاً: الجيل الجديد من المهنيين الصحيين العرب يعترف بقوة AI لكنه يخشى تأثيره على مستقبلهم الوظيفي. هذا يؤكد الحاجة لدمج AI في المناهج الصحية العربية لبناء الثقة والكفاءة معاً.",
+        "en": "The finding reflects a dual reality: the new generation of Arab health professionals acknowledges AI's power but fears its impact on their career future. This confirms the need to integrate AI into Arab health curricula to build both confidence and competence."
+      }
+    },
+    {
+      "id": "alh-mcq-023",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "مستشفى الملك فيصل التخصصي في السعودية حقق أكثر من 85,000 تدخل بالذكاء الاصطناعي. ما كان الأثر الأبرز على تجربة المرضى؟",
+        "en": "King Faisal Specialist Hospital in Saudi Arabia achieved over 85,000 AI interventions. What was the most notable impact on patient experience?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "انخفاض أوقات انتظار المرضى بأكثر من 50% وأوقات الصيدلية بـ27%",
+            "en": "Patient waiting times reduced by over 50% and pharmacy wait times by 27%"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "زيادة عدد الأطباء بنسبة 50%",
+            "en": "50% increase in number of physicians"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "إلغاء جميع الفحوصات المخبرية",
+            "en": "Elimination of all laboratory tests"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تحويل المستشفى بالكامل للعمل عن بُعد",
+            "en": "Complete transition to remote operations"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "85,000+ تدخل AI في مستشفى واحد يُظهر حجم التطبيق. مركز القيادة والسيطرة يستخدم AI لاتخاذ القرارات التشغيلية. برنامج تحول القطاع الصحي السعودي يستهدف تغطية 88% من السكان بسجلات رقمية موحّدة 100%.",
+        "en": "85,000+ AI interventions in a single hospital shows the scale of implementation. The Capacity and Command Centre uses AI for operational decisions. Saudi Arabia's Health Sector Transformation Program targets 88% population coverage with 100% unified digital records."
+      }
+    },
+    {
+      "id": "alh-mcq-024",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت فني مختبرات في الإمارات. نظام NABIDH في دبي (أبريل 2025) دمج AI لمراقبة أمن البيانات. ما عدد سجلات المرضى الموحّدة في النظام؟",
+        "en": "You're a lab tech in the UAE. Dubai's NABIDH system (April 2025) integrated AI for data security monitoring. How many patient records are unified in the system?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مليون سجل",
+            "en": "1 million records"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "9.47 مليون سجل عبر أكثر من 1,300 منشأة",
+            "en": "9.47 million records across 1,300+ facilities"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "100,000 سجل",
+            "en": "100,000 records"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50 مليون سجل",
+            "en": "50 million records"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "NABIDH في دبي يوحّد 9.47 مليون سجل عبر 1,300+ منشأة. في أبوظبي، ملفي يربط 1,539 منشأة مع 3.5 مليار سجل سريري. النظام الاتحادي «رعايتي» يربط أكثر من 3,000 مقدم خدمة — جاعلاً الإمارات من أكثر الدول تكاملاً رقمياً صحياً في العالم.",
+        "en": "NABIDH in Dubai unifies 9.47 million records across 1,300+ facilities. In Abu Dhabi, Malaffi connects 1,539 facilities with 3.5 billion clinical records. The federal Riayati system connects 3,000+ providers — making the UAE among the world's most digitally integrated health systems."
+      }
+    },
+    {
+      "id": "alh-tf-015",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "سوق الذكاء الاصطناعي في الرعاية الصحية بالسعودية وصل 435 مليون دولار في 2024 ومُتوقع أن يبلغ 8.39 مليار دولار بحلول 2033 بمعدل نمو 37% سنوياً.",
+        "en": "Saudi Arabia's healthcare AI market reached $435 million in 2024 and is projected to reach $8.39 billion by 2033 with 37% annual growth."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. هذا النمو مدفوع باستراتيجية AI الوطنية 2031 وصندوق الاستثمار بـ40 مليار دولار. أول عيادة AI في الأحساء (مايو 2025) والمستشفى الافتراضي SEHA (فبراير 2025) يُظهران أن السعودية تسعى لقيادة التحول الصحي الرقمي عالمياً.",
+        "en": "True. This growth is driven by the National AI Strategy 2031 and a $40 billion investment fund. The first AI clinic in Al-Ahsa (May 2025) and SEHA Virtual Hospital (February 2025) show Saudi Arabia aims to lead the global digital health transformation."
+      }
+    },
+    {
+      "id": "alh-tf-016",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "البحرين كانت أول دولة خليجية تنشر روبوتات رعاية صحية خلال جائحة كوفيد-19.",
+        "en": "Bahrain was the first GCC country to deploy healthcare robots during the COVID-19 pandemic."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. البحرين استخدمت الروبوتات لتقليل تعرض الكوادر الصحية للعدوى. هذا يعكس استعداد دول الخليج المبكر لتبني التكنولوجيا الصحية. الآن في 2025-2026، التحول انتقل من روبوتات طوارئ إلى بنية تحتية رقمية شاملة.",
+        "en": "True. Bahrain used robots to reduce healthcare workers' infection exposure. This reflects early GCC readiness to adopt health technology. Now in 2025-2026, the transformation has moved from emergency robots to comprehensive digital infrastructure."
+      }
+    },
+    {
+      "id": "alh-fill-008",
+      "type": "fill_blank",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 1,
+      "text": {
+        "ar": "مايكروسوفت عرضت مساعداً صحياً بالذكاء الاصطناعي يدعم العربية والإنجليزية اسمه {{blank_1}} في أبوظبي.",
+        "en": "Microsoft showcased an AI health companion supporting Arabic and English called {{blank_1}} in Abu Dhabi."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "حياة (Hayat)",
+            "en": "Hayat"
+          },
+          "options": [
+            {
+              "ar": "حياة (Hayat)",
+              "en": "Hayat"
+            },
+            {
+              "ar": "صحتي (Sehhaty)",
+              "en": "Sehhaty"
+            },
+            {
+              "ar": "طبيب (Tabib)",
+              "en": "Tabib"
+            },
+            {
+              "ar": "عافية (Aafiya)",
+              "en": "Aafiya"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "حياة (Hayat) عُرض بالتزامن مع إطلاق منصة الذكاء الاصطناعي لصحة السكان في أبوظبي (أكتوبر 2025) — أول منصة من نوعها عالمياً. دعم اللغة العربية في أدوات AI الصحية خطوة حاسمة لإتاحة الخدمات لجميع المواطنين.",
+        "en": "Hayat was showcased alongside Abu Dhabi's launch of the world's first AI-powered population health platform (October 2025). Arabic language support in health AI tools is a critical step for making services accessible to all citizens."
+      }
+    },
+    {
+      "id": "alh-match-008",
+      "type": "matching",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 1,
+      "text": {
+        "ar": "وصّل كل إنجاز صحي رقمي بالجهة المسؤولة عنه في المنطقة العربية:",
+        "en": "Match each digital health achievement with the responsible entity in the Arab region:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "أكبر مستشفى افتراضي في العالم",
+            "en": "World's largest virtual hospital"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "أول عيادة AI في العالم",
+            "en": "World's first AI clinic"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "أول منصة AI لصحة السكان",
+            "en": "First AI population health platform"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "أداة AI لتصنيف مخاطر السكري النوع الأول بدقة 84%",
+            "en": "AI tool for Type 1 diabetes risk stratification with 84% accuracy"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "SEHA — السعودية",
+            "en": "SEHA — Saudi Arabia"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "منطقة الأحساء — السعودية",
+            "en": "Al-Ahsa region — Saudi Arabia"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "دائرة الصحة — أبوظبي",
+            "en": "Department of Health — Abu Dhabi"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "سدرة للطب — قطر",
+            "en": "Sidra Medicine — Qatar"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "المنطقة العربية تُحقق إنجازات «أولى عالمياً» في AI الصحي. السعودية تقود بحجم الاستثمار (40 مليار دولار)، الإمارات بالبنية التحتية الرقمية (ملفي + نابض + رعايتي)، وقطر بالبحث الطبي المتقدم (سدرة). البحرين كانت رائدة في روبوتات كوفيد. هذا التنافس يدفع الابتكار.",
+        "en": "The Arab region is achieving 'world firsts' in health AI. Saudi Arabia leads in investment scale ($40B), UAE in digital infrastructure (Malaffi + NABIDH + Riayati), and Qatar in advanced medical research (Sidra). Bahrain pioneered COVID robots. This competition drives innovation."
+      }
+    },
+    {
+      "id": "alh-sort-008",
+      "type": "sorting",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 1,
+      "text": {
+        "ar": "رتّب إنجازات AI الصحي في المنطقة العربية حسب التسلسل الزمني:",
+        "en": "Order Arab region health AI achievements chronologically:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "البحرين تنشر روبوتات صحية خلال كوفيد-19 (2020)",
+            "en": "Bahrain deploys healthcare robots during COVID-19 (2020)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "إطلاق المستشفى الافتراضي SEHA في السعودية (فبراير 2025)",
+            "en": "Launch of SEHA Virtual Hospital in Saudi Arabia (February 2025)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "أول عيادة AI في الأحساء (مايو 2025)",
+            "en": "First AI clinic in Al-Ahsa (May 2025)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "إطلاق أول منصة AI لصحة السكان في أبوظبي (أكتوبر 2025)",
+            "en": "Launch of first AI population health platform in Abu Dhabi (October 2025)"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "التسلسل يُظهر تطور المنطقة من استجابة طوارئ (روبوتات كوفيد 2020) إلى بنية تحتية منهجية (SEHA فبراير 2025) إلى عيادات AI متخصصة (مايو 2025) إلى منصات ذكاء سكاني شامل (أكتوبر 2025) — تقدم سريع في 5 سنوات فقط.",
+        "en": "The timeline shows the region's evolution from emergency response (COVID robots 2020) to systematic infrastructure (SEHA February 2025) to specialized AI clinics (May 2025) to comprehensive population intelligence platforms (October 2025) — rapid progress in just 5 years."
+      }
+    },
+    {
+      "id": "alh-self-015",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت أخصائي علاج طبيعي في دولة خليجية. سمعت أن سوق AI الصحي في السعودية ينمو بمعدل 37% سنوياً. كيف تُخطط لمسيرتك المهنية؟",
+        "en": "You're a PT in a Gulf country. You've heard Saudi Arabia's healthcare AI market is growing at 37% annually. How do you plan your career?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبدأ فوراً بتعلم أدوات العلاج الطبيعي الرقمي والتقدم لوظائف في المستشفيات الذكية",
+            "en": "I immediately start learning digital PT tools and apply for positions in smart hospitals"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطوّر مهاراتي تدريجياً مع الحفاظ على خبرتي السريرية الحضورية",
+            "en": "I gradually develop my skills while maintaining my in-person clinical expertise"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر حتى تتضح الصورة أكثر قبل اتخاذ أي خطوة",
+            "en": "I wait until the picture becomes clearer before taking any steps"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المنطقة العربية ستتأخر في تبني AI الصحي — لا داعي للاستعجال",
+            "en": "The Arab region will be slow to adopt health AI — no need to rush"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الخيار (د) خاطئ فعلياً — المنطقة العربية تُحقق إنجازات «أولى عالمياً» في AI الصحي. السعودية والإمارات وقطر تستثمر مليارات الدولارات. المهنيون الذين يتأخرون في تطوير مهاراتهم الرقمية سيجدون أنفسهم خارج المنافسة في سوق عمل يتغير بسرعة.",
+        "en": "Option (d) is actually wrong — the Arab region is achieving 'world firsts' in health AI. Saudi Arabia, UAE, and Qatar are investing billions. Professionals who delay developing their digital skills will find themselves out of competition in a rapidly changing job market."
+      }
+    },
+    {
+      "id": "alh-self-016",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت فني مختبرات في مستشفى عربي. وزارة الصحة تُعلن عن برنامج لتدريب فنيي المختبرات على إدارة أنظمة AI — لكنه يتطلب 6 أشهر من الدراسة المسائية. هل تنضم؟",
+        "en": "You're a lab tech in an Arab hospital. The Ministry of Health announces a program to train lab technicians on managing AI systems — but it requires 6 months of evening study. Would you join?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "بالتأكيد — هذه الشهادة ستجعلني لا غنى عنه في المستقبل القريب",
+            "en": "Absolutely — this certification will make me indispensable in the near future"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "نعم، رغم صعوبة الجمع بين العمل والدراسة — الاستثمار يستحق",
+            "en": "Yes, despite the difficulty of balancing work and study — the investment is worth it"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أفضّل انتظار برنامج أقصر أو عبر الإنترنت",
+            "en": "I prefer waiting for a shorter or online program"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "6 أشهر كثيرة — خبرتي العملية كافية دون شهادات إضافية",
+            "en": "6 months is too much — my work experience is sufficient without additional certifications"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "في عالم يُعاني من نقص 20,000-25,000 فني مختبرات في أمريكا وحدها، الفني المُدرّب على AI يصبح أصلاً نادراً وثميناً. جامعة واشنطن تلقت تبرعاً بـ50+ مليون دولار لدعم طلاب المختبرات — مما يؤكد أن العالم يعترف بأهمية هذه المهنة ويستثمر في مستقبلها.",
+        "en": "In a world with a 20,000-25,000 lab technician shortage in the U.S. alone, an AI-trained technician becomes a rare and valuable asset. The University of Washington received a $50M+ donation to support lab students — confirming the world recognizes this profession's importance and invests in its future."
+      }
+    },
+    {
+      "id": "alh-mcq-025",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت فني أشعة. سوق AI في التصوير الطبي يُتوقع أن ينمو من 7.52 مليار دولار (2025) إلى 26.16 مليار دولار بحلول 2030. ما المحرك الأساسي لهذا النمو؟",
+        "en": "You're a radiology tech. The medical imaging AI market is projected to grow from $7.52 billion (2025) to $26.16 billion by 2030. What's the primary driver of this growth?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "زيادة حاجة المستشفيات لتوفير التكاليف فقط",
+            "en": "Only hospitals' need to save costs"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تقدم النماذج الأساسية التي تعالج عدة أنواع من الصور والنصوص معاً — مما يوسّع تطبيقات AI من مهمة واحدة إلى نظام شامل",
+            "en": "Advancement of foundation models that process multiple image types and text together — expanding AI applications from single tasks to comprehensive systems"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نقص أطباء الأشعة حصرياً",
+            "en": "Radiologist shortage exclusively"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ضغط من شركات التأمين لتقليل عدد الفحوصات",
+            "en": "Insurance company pressure to reduce the number of examinations"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "النماذج الأساسية (Foundation Models) المشابهة للنماذج اللغوية الكبيرة تُدرّب على كميات ضخمة من البيانات غير المُصنّفة وتعالج الصور والنصوص معاً. هذا التحول من أنظمة «مهمة واحدة» (كشف التسوس فقط) إلى أنظمة شاملة هو ما يدفع النمو الانفجاري — خاصة في منطقة آسيا والمحيط الهادئ.",
+        "en": "Foundation models similar to LLMs are trained on massive unlabeled data and process both images and text. This shift from 'single-task' systems (detect only cavities) to comprehensive systems drives explosive growth — particularly in the Asia-Pacific region."
+      }
+    },
+    {
+      "id": "alh-mcq-026",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت أخصائي علاج وظيفي. سوق العلاج الوظيفي الأمريكي يُتوقع أن ينمو من 54 مليار دولار (2023) إلى 128 مليار دولار بحلول 2032. ما دور التكنولوجيا في هذا النمو؟",
+        "en": "You're an OT. The U.S. OT market is projected to grow from $54 billion (2023) to $128 billion by 2032. What role does technology play in this growth?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التكنولوجيا تحل محل المعالجين وتُخفّض التكاليف فقط",
+            "en": "Technology replaces therapists and only reduces costs"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تكامل AI والأجهزة القابلة للارتداء والروبوتات يوسّع نطاق الخدمات ويُحسّن النتائج — مما يجذب مزيداً من المرضى والتمويل",
+            "en": "Integration of AI, wearables, and robotics expands service scope and improves outcomes — attracting more patients and funding"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "النمو مدفوع بزيادة السكان فقط دون علاقة بالتكنولوجيا",
+            "en": "Growth is driven only by population increase without any technology link"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التكنولوجيا تُعقّد العلاج الوظيفي أكثر مما تُفيده",
+            "en": "Technology complicates OT more than it benefits it"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الروبوتات أظهرت تحسناً حركياً أعلى بنسبة 25% مقارنة بالعلاج التقليدي. الأجهزة القابلة للارتداء توفر بيانات موضوعية لتخصيص خطط العلاج. AI يُقلل التوثيق 30-50%. هذا التكامل يجعل العلاج الوظيفي أكثر فعالية وقابلية للتوسع — مما يدفع نمو السوق.",
+        "en": "Robotics showed 25% better motor outcomes compared to traditional therapy. Wearables provide objective data for personalizing treatment plans. AI reduces documentation 30-50%. This integration makes OT more effective and scalable — driving market growth."
+      }
+    },
+    {
+      "id": "alh-mcq-027",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت أخصائي تغذية. التوجه القادم في تطبيقات التغذية الذكية هو ربطها بالأجهزة القابلة للارتداء. ما الفائدة الأبرز؟",
+        "en": "You're a dietitian. The next trend in AI nutrition apps is connecting them with wearable devices. What's the most significant benefit?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تقديم توصيات غذائية مبنية على استجابة الجسم الفعلية (مثل مستوى السكر) بدلاً من صيغ عامة",
+            "en": "Providing dietary recommendations based on actual body response (like glucose levels) instead of generic formulas"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حساب السعرات بدقة أعلى فقط",
+            "en": "Only calculating calories more accurately"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "استبدال أخصائي التغذية بالكامل",
+            "en": "Completely replacing the dietitian"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تتبع عدد الخطوات اليومية فقط",
+            "en": "Only tracking daily step count"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "60% من تطبيقات التغذية ستتكامل مع جهاز قابل للارتداء واحد على الأقل. مثال: RxFood تشاركت مع Dexcom (جهاز مراقبة السكر المستمر) لتقديم توصيات فورية. التطبيقات بدأت أيضاً تربط التغذية بالصحة النفسية — تقترح أطعمة حسب مستوى التوتر أو التعب.",
+        "en": "60% of nutrition apps will integrate with at least one wearable. Example: RxFood partnered with Dexcom (continuous glucose monitor) for real-time recommendations. Apps are also linking nutrition to mental health — suggesting foods based on stress or fatigue levels."
+      }
+    },
+    {
+      "id": "alh-tf-017",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "العلاج بالعاثيات البكتيرية (Bacteriophage Therapy) المدعوم بالذكاء الاصطناعي يُعتبر حلاً ناشئاً لمقاومة المضادات الحيوية.",
+        "en": "AI-driven bacteriophage therapy is emerging as a solution to antibiotic resistance."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. العاثيات البكتيرية هي فيروسات تُهاجم البكتيريا بشكل محدد. AI يُسرّع اختيار العاثي المناسب لكل نوع بكتيري مقاوم. مع تزايد مقاومة المضادات الحيوية عالمياً، يُعتبر هذا التقاطع بين AI والعلاج البيولوجي من أكثر المجالات الواعدة.",
+        "en": "True. Bacteriophages are viruses that specifically attack bacteria. AI accelerates selecting the right phage for each resistant bacterial strain. With antibiotic resistance growing globally, this intersection of AI and biological therapy is among the most promising fields."
+      }
+    },
+    {
+      "id": "alh-tf-018",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "30% فقط من برامج العلاج الوظيفي في الولايات المتحدة عدّلت مناهجها لتشمل مفاهيم AI والأتمتة.",
+        "en": "Only 30% of U.S. occupational therapy programs have formally revised their curricula to include AI and automation concepts."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. هذا يعكس فجوة كبيرة بين واقع الممارسة (30% من المرافق دمجت AI) وواقع التعليم (30% من البرامج عدّلت المناهج). الخريجون يدخلون بيئة عمل رقمية بتدريب تقليدي — مما يستدعي تسريع تحديث المناهج الصحية المساعدة عالمياً.",
+        "en": "True. This reflects a significant gap between practice reality (30% of facilities integrated AI) and education reality (30% of programs revised curricula). Graduates enter a digital work environment with traditional training — requiring accelerated curriculum updates in allied health globally."
+      }
+    },
+    {
+      "id": "alh-fill-009",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "تقنية {{blank_1}} في التصوير الطبي تُدرّب على كميات ضخمة من البيانات غير المُصنّفة وتعالج عدة أنواع من الصور والنصوص معاً — مشابهة للنماذج اللغوية الكبيرة.",
+        "en": "{{blank_1}} in medical imaging are trained on massive unlabeled data and process multiple image types and text together — similar to large language models."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "النماذج الأساسية (Foundation Models)",
+            "en": "Foundation Models"
+          },
+          "options": [
+            {
+              "ar": "النماذج الأساسية (Foundation Models)",
+              "en": "Foundation Models"
+            },
+            {
+              "ar": "الشبكات العصبية التلافيفية (CNN)",
+              "en": "Convolutional Neural Networks (CNN)"
+            },
+            {
+              "ar": "أشجار القرار (Decision Trees)",
+              "en": "Decision Trees"
+            },
+            {
+              "ar": "الانحدار الخطي (Linear Regression)",
+              "en": "Linear Regression"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "النماذج الأساسية تُمثل الجيل القادم من AI في التصوير الطبي. بدلاً من تدريب نموذج واحد لكل مهمة (كشف كسور، كشف أورام...)، النموذج الأساسي يفهم الصور الطبية بشكل عام ويمكن تخصيصه لمهام متعددة. CNN هي التقنية الأقدم المستخدمة حالياً في معظم أنظمة التشخيص.",
+        "en": "Foundation models represent the next generation of medical imaging AI. Instead of training one model per task (fracture detection, tumor detection...), a foundation model understands medical images generally and can be fine-tuned for multiple tasks. CNNs are the older technology currently used in most diagnostic systems."
+      }
+    },
+    {
+      "id": "alh-match-009",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تخصص صحي مساعد بالتطور المستقبلي الأبرز المتوقع في 3-5 سنوات:",
+        "en": "Match each allied health specialty with its most expected future development in 3-5 years:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "علوم المختبرات",
+            "en": "Laboratory sciences"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "العلاج الطبيعي",
+            "en": "Physical therapy"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "الأشعة التشخيصية",
+            "en": "Diagnostic radiology"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "التغذية العلاجية",
+            "en": "Clinical nutrition"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "AI يتنبأ بمقاومة المضادات الحيوية ويوجّه العلاج بالعاثيات البكتيرية",
+            "en": "AI predicts antibiotic resistance and guides bacteriophage therapy"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "علاج مختلط بالكامل: تقييم حضوري + متابعة AI + روبوتات تأهيل منزلية",
+            "en": "Fully hybrid therapy: in-person assessment + AI follow-up + home rehab robots"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "نماذج أساسية تقرأ عدة أنواع صور وتُصدر تقارير شاملة تلقائياً",
+            "en": "Foundation models reading multiple image types and generating comprehensive reports automatically"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "توصيات فورية مبنية على بيانات حيوية من أجهزة قابلة للارتداء مرتبطة بالصحة النفسية",
+            "en": "Real-time recommendations based on wearable biometric data linked to mental health"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "المستقبل ليس AI وحيداً — بل تكامل بين AI والأجهزة والبيانات الحيوية والحكم البشري. كل تخصص يتطور بشكل مختلف لكن القاسم المشترك: الانتقال من «مهمة واحدة» إلى «منظومة ذكية شاملة» مع بقاء الإنسان في المركز.",
+        "en": "The future isn't AI alone — but integration of AI, devices, biometric data, and human judgment. Each specialty evolves differently but the common thread: transitioning from 'single task' to 'comprehensive smart ecosystem' with humans remaining at the center."
+      }
+    },
+    {
+      "id": "alh-sort-009",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مراحل التحول المتوقع في العلاج الطبيعي خلال الـ5 سنوات القادمة:",
+        "en": "Order the expected transformation stages in physical therapy over the next 5 years:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "المرحلة الحالية: تطبيقات تتبع حركة بالكاميرا + معالج بشري عن بُعد",
+            "en": "Current stage: camera-based motion tracking apps + remote human therapist"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "معالج AI محادثاتي يوجّه المريض صوتياً ويعدّل التمارين لحظياً",
+            "en": "Conversational AI therapist that guides patients by voice and adjusts exercises in real time"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "دمج أجهزة استشعار قابلة للارتداء مع AI للتنبؤ بالإصابات قبل حدوثها",
+            "en": "Integration of wearable sensors with AI to predict injuries before they occur"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "روبوتات تأهيل منزلية موجّهة بـ AI مع إشراف بشري عن بُعد للحالات المعقدة فقط",
+            "en": "Home rehab robots guided by AI with remote human supervision for complex cases only"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "نحن حالياً بين المرحلة 1 (Hinge Health TrueMotion) والمرحلة 2 (Sword Health Phoenix). المرحلة 3 بدأت مع الأجهزة القابلة للارتداء والتحليل التنبؤي. المرحلة 4 ما زالت في البحث لكن روبوتات مثل Stretch RE2 بدأت تساعد في الأنشطة اليومية.",
+        "en": "We're currently between Stage 1 (Hinge Health TrueMotion) and Stage 2 (Sword Health Phoenix). Stage 3 has begun with wearables and predictive analytics. Stage 4 is still in research, but robots like Stretch RE2 are starting to assist in daily living activities."
+      }
+    },
+    {
+      "id": "alh-self-017",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت فني مختبرات. يُتوقع أن AI يتنبأ بمقاومة المضادات الحيوية فور وصول العينة — قبل أن تنتهي من الزراعة التقليدية. هل تشعر بالتهديد أم الحماس؟",
+        "en": "You're a lab tech. AI is expected to predict antibiotic resistance upon sample arrival — before you even finish traditional culturing. Do you feel threatened or excited?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "حماس — هذا يعني أن المريض يحصل على العلاج المناسب فوراً ودوري يتحول لتأكيد النتائج ومتابعة الحالات المعقدة",
+            "en": "Excited — this means the patient gets the right treatment immediately and my role shifts to confirming results and managing complex cases"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مهتم لكن أريد التأكد أن التنبؤ دقيق بما يكفي قبل الاعتماد عليه سريرياً",
+            "en": "Interested but I want to make sure the prediction is accurate enough before relying on it clinically"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق — إذا أصبح التنبؤ فورياً فلماذا ستحتاج المستشفى لزراعة بكتيرية أصلاً؟",
+            "en": "Worried — if prediction becomes instant, why would the hospital need bacterial culture at all?"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الزراعة البكتيرية هي المعيار الذهبي ولن يتغير هذا أبداً — لا داعي للقلق",
+            "en": "Bacterial culture is the gold standard and this will never change — no need to worry"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "XGBoost حقق AUC 0.96 على 917,049 عزلة — لكنه لا يزال يحتاج تأكيداً مخبرياً. التنبؤ المبدئي يُسرّع العلاج (نسبة نجاح 89% في التوصيات) بينما الزراعة تؤكد. الفني الذي يفهم كلا النظامين (التقليدي و AI) يصبح الأكثر قيمة.",
+        "en": "XGBoost achieved AUC 0.96 on 917,049 isolates — but still needs lab confirmation. Initial prediction speeds up treatment (89% success in recommendations) while culture confirms. The technician who understands both systems (traditional and AI) becomes the most valuable."
+      }
+    },
+    {
+      "id": "alh-self-018",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت أخصائي بصريات. تتوقع أن خلال 5 سنوات، فحص اعتلال الشبكية السكري سيصبح روتينياً في كل عيادة رعاية أولية بفضل AI المستقل. كيف تُخطط؟",
+        "en": "You're an optometrist. You expect that within 5 years, diabetic retinopathy screening will become routine in every primary care clinic thanks to autonomous AI. How do you plan?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أُطوّر تخصصي نحو خدمات لا يستطيع AI تقديمها: إدارة الغلوكوما المعقدة، جراحة العيون التعاونية، ورعاية ضعف البصر",
+            "en": "I develop my specialty toward services AI can't provide: complex glaucoma management, collaborative eye surgery, and low vision care"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتعلم تشغيل أنظمة فحص AI وأقدم نفسي كخبير في دمجها مع الممارسة السريرية",
+            "en": "I learn to operate AI screening systems and position myself as an expert in integrating them with clinical practice"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أركّز على النظارات والعدسات اللاصقة — هذا لن يتغير بـ AI",
+            "en": "I focus on glasses and contact lenses — this won't change with AI"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "5 سنوات كثيرة — سأتعامل مع التغيير عندما يحدث فعلاً",
+            "en": "5 years is a long time — I'll deal with the change when it actually happens"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "حالياً 4 أنظمة FDA مرخصة لفحص اعتلال الشبكية المستقل. LumineticsCore منتشر في 1,000+ عيادة. التوسع السريع يعني أن أخصائيي البصريات الذين يعتمدون على الفحص الروتيني كمصدر دخل أساسي يحتاجون لتنويع خدماتهم الآن — وليس بعد 5 سنوات.",
+        "en": "Currently 4 FDA-cleared autonomous DR screening systems exist. LumineticsCore is deployed in 1,000+ clinics. Rapid expansion means optometrists relying on routine screening as a primary revenue source need to diversify their services now — not in 5 years."
+      }
+    },
+    {
+      "id": "alh-mcq-028",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت فني مختبرات في مستشفى ريفي. أحد الأطباء يسألك: «لماذا لا نعتمد على AI لقراءة جميع الفحوصات؟ سيوفر علينا توظيف فنيين». ما أفضل رد مهني؟",
+        "en": "You're a lab tech in a rural hospital. A physician asks: 'Why don't we rely on AI to read all tests? It would save us from hiring technicians.' What's the best professional response?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI يُؤتمت 70-95% من المهام الروتينية لكن الأجهزة المتطورة تحتاج كوادر متطورة — والتنظيمات تفرض إشرافاً بشرياً على كل نتيجة",
+            "en": "AI automates 70-95% of routine tasks but sophisticated instruments need sophisticated staff — and regulations mandate human oversight of every result"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "فكرة ممتازة — يجب تطبيقها فوراً",
+            "en": "Excellent idea — should be implemented immediately"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "AI لا يصلح للمختبرات الطبية أبداً",
+            "en": "AI doesn't work for medical labs at all"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هذا قرار إداري لا شأن لي به",
+            "en": "This is an administrative decision that's not my concern"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "الأتمتة ضرورة بسبب نقص الكوادر (20,000-25,000 عجز) لكنها لا تُلغي الحاجة للفنيين. CLIA يشترط كوادر مؤهلة لإجراء الفحوصات المتوسطة والعالية التعقيد. الأتمتة قللت الأخطاء 70%+ لكن أخطاء AI تحتاج عيناً بشرية مُدرّبة لاكتشافها.",
+        "en": "Automation is necessary due to staffing shortages (20,000-25,000 shortfall) but doesn't eliminate the need for technicians. CLIA requires qualified personnel for moderate and high complexity testing. Automation reduced errors by 70%+ but AI errors need trained human eyes to detect."
+      }
+    },
+    {
+      "id": "alh-mcq-029",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 4,
+      "text": {
+        "ar": "أنت أخصائي علاج وظيفي. مريضك كبير السن يرفض استخدام تطبيق AI للتمارين المنزلية قائلاً: «أنا لا أفهم التكنولوجيا». كيف تتعامل مع الموقف؟",
+        "en": "You're an OT. Your elderly patient refuses to use an AI exercise app at home, saying: 'I don't understand technology.' How do you handle the situation?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أحترم رأيه وأقدم بديلاً: تمارين مطبوعة + متابعة هاتفية — وأقترح إشراك فرد من العائلة في استخدام التطبيق إن رغب لاحقاً",
+            "en": "I respect his view and offer an alternative: printed exercises + phone follow-up — and suggest involving a family member with the app if he's interested later"
+          },
+          "score": 4
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أُصر على استخدام التطبيق لأنه أفضل للمتابعة",
+            "en": "I insist on using the app because it's better for follow-up"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أوقف التمارين المنزلية وأركّز فقط على الجلسات الحضورية",
+            "en": "I stop home exercises and focus only on in-person sessions"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أُحيله لمعالج آخر أكثر تقليدية",
+            "en": "I refer him to a more traditional therapist"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "العلاج الوظيفي يرتكز على احتياجات المريض وتفضيلاته — ليس على التكنولوجيا. AI أداة وليس غاية. المعالج الممتاز يُوظّف التكنولوجيا عندما تُناسب المريض ويُقدم بدائل عندما لا تُناسبه. مبدأ SMART Goals يعني أهدافاً محددة وقابلة للتحقيق — بالتكنولوجيا أو بدونها.",
+        "en": "OT is centered on the patient's needs and preferences — not technology. AI is a tool, not a goal. An excellent therapist deploys technology when it suits the patient and offers alternatives when it doesn't. SMART Goals means specific, achievable targets — with or without technology."
+      }
+    },
+    {
+      "id": "alh-mcq-030",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت فني أشعة. زميلك يعتمد كلياً على AI لتصنيف أولويات الصور ولم يعد يُراجع الصور المُصنّفة «طبيعية». ما الخطر الأكبر لهذا السلوك؟",
+        "en": "You're a radiology tech. Your colleague relies entirely on AI to prioritize images and no longer reviews images classified as 'normal.' What's the biggest risk of this behavior?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تحيز الأتمتة — يميل الناس لتفضيل قرارات الآلة على حساب تقييمهم الشخصي، مما قد يُفوّت حالات اكتشفها الفني وفاتت AI",
+            "en": "Automation bias — people tend to favor machine decisions over their own judgment, potentially missing cases the tech would catch but AI missed"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا خطر — AI أدق من الإنسان دائماً",
+            "en": "No risk — AI is always more accurate than humans"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الخطر الوحيد هو بطء النظام",
+            "en": "The only risk is system slowness"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هذا السلوك مقبول في المستشفيات التي تعاني من نقص الكوادر",
+            "en": "This behavior is acceptable in hospitals with staffing shortages"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "تحيز الأتمتة (Automation Bias) هو الميل لقبول مخرجات AI دون تفكير نقدي. AI يُخطئ بتصنيف عُقد حميدة كخبيثة في 12% من الحالات — مما يعني أنه يُخطئ أيضاً بتصنيف حالات مرضية كطبيعية. المراجعة البشرية ليست ترفاً — إنها مسؤولية قانونية وأخلاقية.",
+        "en": "Automation bias is the tendency to accept AI outputs without critical thinking. AI misclassifies benign nodules as malignant in 12% of cases — meaning it also misclassifies pathological cases as normal. Human review isn't luxury — it's a legal and ethical responsibility."
+      }
+    },
+    {
+      "id": "alh-tf-019",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في مجال التصوير الطبي بالذكاء الاصطناعي، منحت الجهات التنظيمية أنظمة AI صلاحية كاملة للعمل دون أي إشراف بشري في جميع الحالات.",
+        "en": "In AI medical imaging, regulatory bodies have granted AI systems full authority to operate without any human oversight in all cases."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "خطأ. الأطر التنظيمية الحالية تُلزم بإشراف بشري ومراجعة لحلول AI المنشورة سريرياً. LumineticsCore «مستقل» في فحص اعتلال الشبكية السكري فقط — وليس في كل فحص. باقي أنظمة AI الأشعة مُرخصة كأدوات مساعدة تحتاج مراجعة طبيب.",
+        "en": "False. Current regulatory frameworks mandate human oversight and audit of clinically deployed AI solutions. LumineticsCore is 'autonomous' only for diabetic retinopathy screening — not all examinations. Other radiology AI systems are cleared as support tools requiring physician review."
+      }
+    },
+    {
+      "id": "alh-tf-020",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "الأتمتة في المختبرات الطبية قلّلت معدلات الخطأ بأكثر من 70% وقللت وقت الفني لكل عينة بنسبة 10%.",
+        "en": "Automation in medical laboratories has reduced error rates by over 70% and decreased technician time per specimen by 10%."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "صحيح. لكن الأتمتة تُؤتمت المهام المتكررة — مثل تحضير العينات ونقلها — وتترك للفني المهام المعرفية: تحليل النتائج غير المتوقعة، التحقيق في التناقضات، واتخاذ القرارات. الأتمتة لا تُقلل الحاجة للكوادر بل تُعيد توزيع أدوارها.",
+        "en": "True. But automation automates repetitive tasks — like sample preparation and transport — and leaves cognitive tasks to the technician: analyzing unexpected results, investigating discrepancies, and decision-making. Automation doesn't reduce the need for staff but redistributes their roles."
+      }
+    },
+    {
+      "id": "alh-fill-010",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "ظاهرة {{blank_1}} تعني ميل الناس لقبول قرارات الآلة دون تفكير نقدي — حتى عندما تتعارض مع خبرتهم السريرية.",
+        "en": "The {{blank_1}} phenomenon refers to people's tendency to accept machine decisions without critical thinking — even when they conflict with their clinical expertise."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "تحيز الأتمتة (Automation Bias)",
+            "en": "Automation Bias"
+          },
+          "options": [
+            {
+              "ar": "تحيز الأتمتة (Automation Bias)",
+              "en": "Automation Bias"
+            },
+            {
+              "ar": "تحيز التأكيد (Confirmation Bias)",
+              "en": "Confirmation Bias"
+            },
+            {
+              "ar": "تحيز البقاء (Survivorship Bias)",
+              "en": "Survivorship Bias"
+            },
+            {
+              "ar": "تحيز الانتقاء (Selection Bias)",
+              "en": "Selection Bias"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "تحيز الأتمتة خطير خاصة في الرعاية الصحية. تحيز التأكيد يعني البحث عن معلومات تؤكد ما تعتقده مسبقاً. تحيز البقاء يعني التركيز على من نجح وتجاهل من فشل. تحيز الانتقاء يعني أن العينة لا تمثل المجتمع. كلها مهمة لكن تحيز الأتمتة هو الأكثر صلة بـ AI في الرعاية الصحية.",
+        "en": "Automation bias is especially dangerous in healthcare. Confirmation bias means seeking info that confirms pre-existing beliefs. Survivorship bias means focusing on successes and ignoring failures. Selection bias means the sample doesn't represent the population. All are important but automation bias is most relevant to AI in healthcare."
+      }
+    },
+    {
+      "id": "alh-match-010",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل موقف مهني بالاستجابة المثلى عند استخدام AI في العلوم الصحية المساعدة:",
+        "en": "Match each professional scenario with the optimal response when using AI in allied health:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "AI يُصنّف صورة أشعة كطبيعية لكن حدسك يقول إن هناك شيئاً غير طبيعي",
+            "en": "AI classifies an X-ray as normal but your intuition says something is abnormal"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "مريض كبير السن يرفض تطبيق التمارين المنزلية",
+            "en": "An elderly patient refuses the home exercise app"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "نظام AI يُعطي نتائج مختلفة لمجموعات عرقية مختلفة",
+            "en": "An AI system gives different results for different racial groups"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "طبيب يقترح إلغاء وظيفة فنيي المختبرات واستبدالهم بـ AI",
+            "en": "A physician suggests eliminating lab tech positions and replacing them with AI"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "أُوقف وأعيد الفحص يدوياً — الخبرة السريرية تعلو على الخوارزمية",
+            "en": "I pause and re-examine manually — clinical expertise overrides the algorithm"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أحترم تفضيله وأقدم بديلاً مع إمكانية إشراك العائلة لاحقاً",
+            "en": "I respect his preference and offer alternatives with possible family involvement later"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "أوثّق وأُبلّغ وأُعلّق الاعتماد الكامل مع تكثيف المراجعة البشرية",
+            "en": "I document, report, and suspend full reliance while intensifying human review"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "أوضح أن التنظيمات تتطلب إشرافاً بشرياً والأتمتة تُكمّل لا تُبدّل",
+            "en": "I explain that regulations require human oversight and automation complements, not replaces"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل موقف يتطلب توازناً مختلفاً بين AI والحكم البشري. القاسم المشترك: AI أداة قوية لكن القرار النهائي — والمسؤولية — يبقى على عاتق المهني الصحي المُدرّب. هذا ليس رأياً — إنه إطار تنظيمي في FDA وEU AI Act وHIPAA.",
+        "en": "Each scenario requires a different balance between AI and human judgment. The common thread: AI is a powerful tool but the final decision — and responsibility — remains with the trained health professional. This isn't an opinion — it's a regulatory framework in FDA, EU AI Act, and HIPAA."
+      }
+    },
+    {
+      "id": "alh-sort-010",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "أنت فني مختبرات. نتيجة AI تتعارض مع نتيجة الفحص اليدوي لمريض. رتّب خطوات التعامل الصحيح:",
+        "en": "You're a lab tech. An AI result contradicts your manual test result for a patient. Order the correct handling steps:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "أوقف إصدار النتيجة فوراً لكلا المصدرين حتى يُحسم التناقض",
+            "en": "Immediately hold results from both sources until the discrepancy is resolved"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "أعيد الفحص يدوياً بعينة جديدة أو أجري فحصاً تأكيدياً بطريقة مختلفة",
+            "en": "Repeat the test manually with a fresh sample or run a confirmatory test using a different method"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "أراجع سجلات المريض السابقة وأقارنها بالنتيجتين لتحديد الأقرب للمنطق السريري",
+            "en": "Review the patient's prior records and compare both results to determine which is clinically more logical"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "أُبلغ الطبيب بالتناقض مع كل البيانات وأوثّق الحادثة في سجل جودة AI",
+            "en": "Inform the physician of the discrepancy with all data and document the incident in the AI quality log"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "إيقاف النتيجة أولاً يحمي المريض. إعادة الفحص تُحدد مصدر الخطأ. مراجعة السجلات تُعطي سياقاً سريرياً. الإبلاغ والتوثيق يحسّنان النظام مستقبلاً. هذا البروتوكول ينطبق سواء كان الخطأ من AI أو من الفحص اليدوي — كلاهما قابل للخطأ.",
+        "en": "Holding results first protects the patient. Retesting identifies the error source. Record review provides clinical context. Reporting and documenting improve the system going forward. This protocol applies whether the error is from AI or manual testing — both are fallible."
+      }
+    },
+    {
+      "id": "alh-self-019",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت أخصائي تغذية في مستشفى. الإدارة تقترح استخدام AI لإنشاء خطط وجبات المرضى تلقائياً مع مراجعتك فقط للحالات المعقدة. ما رأيك؟",
+        "en": "You're a hospital dietitian. Management proposes using AI to automatically create patient meal plans with your review only for complex cases. What's your opinion?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ممتاز — AI ينشئ الخطط الروتينية وأنا أركّز على الحالات التي تحتاج خبرتي فعلاً: التفاعلات الدوائية، التغذية الأنبوبية، واضطرابات الأكل",
+            "en": "Excellent — AI creates routine plans and I focus on cases that truly need my expertise: drug interactions, tube feeding, and eating disorders"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقبول لكن أريد مراجعة كل خطة ولو سريعاً قبل تنفيذها",
+            "en": "Acceptable but I want to review every plan, even briefly, before execution"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق — كل مريض فريد ولا يمكن لـ AI فهم سياقه الثقافي والنفسي",
+            "en": "Concerned — every patient is unique and AI can't understand their cultural and psychological context"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "رافض — خطة الوجبات يجب أن يُعدّها أخصائي تغذية مرخص حصرياً",
+            "en": "I refuse — meal plans must be prepared exclusively by a licensed dietitian"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "AI يُمكنه إعداد خطط وجبات قياسية لمرضى السكري أو القلب بناءً على إرشادات ثابتة. لكن 20% من الحالات تحتاج خبرة بشرية: تفاعلات دوائية-غذائية، حساسيات متعددة، تفضيلات ثقافية/دينية (حلال، صيام). المعادلة المثلى: AI للروتين + أخصائي للتعقيد.",
+        "en": "AI can prepare standard meal plans for diabetes or cardiac patients based on established guidelines. But 20% of cases need human expertise: drug-nutrient interactions, multiple allergies, cultural/religious preferences (halal, fasting). Optimal equation: AI for routine + specialist for complexity."
+      }
+    },
+    {
+      "id": "alh-self-020",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت فني أشعة. كلية الطب تطلب منك المشاركة في تدريس طلاب التصوير الطبي كيفية العمل مع أنظمة AI. هل توافق؟",
+        "en": "You're a radiology tech. The medical school asks you to help teach imaging students how to work with AI systems. Would you accept?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "بحماس — أستطيع مشاركة خبرتي العملية في التعامل مع AI وتعليمهم متى يثقون به ومتى يتحققون بأنفسهم",
+            "en": "Enthusiastically — I can share my practical experience with AI and teach them when to trust it and when to verify themselves"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "نعم، لكن أحتاج تدريباً إضافياً على الجوانب التعليمية",
+            "en": "Yes, but I need additional training on the educational aspects"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أفضّل البقاء في العمل السريري — التدريس ليس تخصصي",
+            "en": "I prefer staying in clinical work — teaching isn't my specialty"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "AI سيتغير بسرعة — ما أعلّمه اليوم سيصبح قديماً غداً",
+            "en": "AI will change rapidly — what I teach today will be outdated tomorrow"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "30% فقط من برامج العلوم الصحية عدّلت مناهجها لتشمل AI — هناك فجوة تعليمية ضخمة. الممارسون ذوو الخبرة العملية في AI هم الأقدر على سدها. التعليم أيضاً يُعزز مسيرتك المهنية ويضعك كخبير في مجال متنامٍ.",
+        "en": "Only 30% of health science programs have revised curricula to include AI — there's a huge educational gap. Practitioners with practical AI experience are best positioned to fill it. Teaching also enhances your career and positions you as an expert in a growing field."
       }
     }
   ]
