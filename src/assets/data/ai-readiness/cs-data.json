@@ -1,8 +1,11 @@
 {
   "section_id": "cs-data",
-  "section_name": { "ar": "هندسة الحاسوب وعلوم البيانات", "en": "Computer Engineering & Data Science" },
-  "version": "1.0",
-  "last_updated": "2026-04-05",
+  "section_name": {
+    "ar": "هندسة الحاسوب وعلوم البيانات",
+    "en": "Computer Engineering & Data Science"
+  },
+  "version": "2.0",
+  "last_updated": "2026-04-06",
   "questions": [
     {
       "id": "csd-mcq-001",
@@ -16,10 +19,38 @@
         "en": "You are an application security manager at a tech company, and the dev team increasingly relies on AI code generation tools. According to the 2025 Veracode report that tested 100+ LLMs, what percentage of AI-generated code contains OWASP Top 10 security vulnerabilities?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "45% من العيّنات تحتوي على ثغرات أمنية، ولغة Java الأسوأ بنسبة فشل 72%", "en": "45% of samples contain vulnerabilities, with Java worst at 72% failure rate" }, "score": 3 },
-        { "id": "b", "text": { "ar": "أقل من 10% — فالنماذج الحديثة تنتج كوداً آمناً بشكل شبه كامل", "en": "Less than 10% — modern models produce nearly fully secure code" }, "score": 0 },
-        { "id": "c", "text": { "ar": "حوالي 20% وهي نسبة مقاربة للكود البشري", "en": "About 20%, which is comparable to human-written code" }, "score": 0.5 },
-        { "id": "d", "text": { "ar": "90% وهذا يعني أن الكود المولّد غير قابل للاستخدام نهائياً", "en": "90%, meaning AI-generated code is completely unusable" }, "score": 0 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "45% من العيّنات تحتوي على ثغرات أمنية، ولغة Java الأسوأ بنسبة فشل 72%",
+            "en": "45% of samples contain vulnerabilities, with Java worst at 72% failure rate"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقل من 10% — فالنماذج الحديثة تنتج كوداً آمناً بشكل شبه كامل",
+            "en": "Less than 10% — modern models produce nearly fully secure code"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حوالي 20% وهي نسبة مقاربة للكود البشري",
+            "en": "About 20%, which is comparable to human-written code"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "90% وهذا يعني أن الكود المولّد غير قابل للاستخدام نهائياً",
+            "en": "90%, meaning AI-generated code is completely unusable"
+          },
+          "score": 0
+        }
       ],
       "hint_after": {
         "ar": "الكود المولّد بالذكاء الاصطناعي يحتوي على ثغرات أكثر بـ 2.74 مرة من الكود البشري. والأخطر: النماذج الأحدث والأكبر لا تُنتج كوداً أكثر أماناً — الأداء الأمني ظل ثابتاً رغم تحسّن الأداء الوظيفي.",
@@ -38,10 +69,38 @@
         "en": "You are a tech hiring manager at a major company. A Stanford study based on payroll data covering 3.5-5 million US workers monthly revealed a clear shift in the programming job market. What was its key finding?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "انخفاض توظيف الفئة العمرية 22-25 سنة بنسبة 16-20% في المهن المرتبطة بالذكاء الاصطناعي، بينما نمت الفئة 35-49 بنسبة 6-9%", "en": "16-20% employment decline for ages 22-25 in AI-exposed occupations, while ages 35-49 grew by 6-9%" }, "score": 3 },
-        { "id": "b", "text": { "ar": "انخفاض متساوٍ في التوظيف عبر جميع الفئات العمرية بنسبة 10%", "en": "Equal 10% employment decline across all age groups" }, "score": 0 },
-        { "id": "c", "text": { "ar": "زيادة كبيرة في توظيف المبتدئين لأن الشركات تحتاج من يراجع الكود المولّد", "en": "Large increase in junior hiring because companies need people to review generated code" }, "score": 0 },
-        { "id": "d", "text": { "ar": "لا تأثير ملحوظ — التغييرات ضمن الهامش الإحصائي الطبيعي", "en": "No noticeable impact — changes are within normal statistical margins" }, "score": 0 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "انخفاض توظيف الفئة العمرية 22-25 سنة بنسبة 16-20% في المهن المرتبطة بالذكاء الاصطناعي، بينما نمت الفئة 35-49 بنسبة 6-9%",
+            "en": "16-20% employment decline for ages 22-25 in AI-exposed occupations, while ages 35-49 grew by 6-9%"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "انخفاض متساوٍ في التوظيف عبر جميع الفئات العمرية بنسبة 10%",
+            "en": "Equal 10% employment decline across all age groups"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "زيادة كبيرة في توظيف المبتدئين لأن الشركات تحتاج من يراجع الكود المولّد",
+            "en": "Large increase in junior hiring because companies need people to review generated code"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا تأثير ملحوظ — التغييرات ضمن الهامش الإحصائي الطبيعي",
+            "en": "No noticeable impact — changes are within normal statistical margins"
+          },
+          "score": 0
+        }
       ],
       "hint_after": {
         "ar": "بيانات BLS الأمريكية تُظهر أن إجمالي توظيف المبرمجين انخفض 27.5% بين 2023 و2025. في ألمانيا، تراجعت وظائف المبرمجين المبتدئين 54%. لكن وظائف مهندسي AI/ML نمت 143% — المهارة تتغيّر لا تختفي.",
@@ -60,10 +119,38 @@
         "en": "You are a senior developer on a team using GitHub Copilot. In a randomized controlled trial by GitHub/Accenture with 4,800 developers, what productivity results were actually achieved?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "إنجاز المهام أسرع بنسبة 55%، ودورة طلبات السحب انخفضت من 9.6 أيام إلى 2.4 يوم", "en": "Tasks completed 55% faster, and PR cycle time dropped from 9.6 days to 2.4 days" }, "score": 3 },
-        { "id": "b", "text": { "ar": "لا فرق إحصائي ملحوظ بين المجموعتين", "en": "No statistically significant difference between the two groups" }, "score": 0 },
-        { "id": "c", "text": { "ar": "تحسّن 10-15% فقط في سرعة الإنجاز دون تأثير على جودة الكود", "en": "Only 10-15% improvement in completion speed with no impact on code quality" }, "score": 0.5 },
-        { "id": "d", "text": { "ar": "تسريع كبير لكن مع تراجع حاد في جودة الكود بنسبة 40%", "en": "Major speedup but with a sharp 40% decline in code quality" }, "score": 0 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "إنجاز المهام أسرع بنسبة 55%، ودورة طلبات السحب انخفضت من 9.6 أيام إلى 2.4 يوم",
+            "en": "Tasks completed 55% faster, and PR cycle time dropped from 9.6 days to 2.4 days"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا فرق إحصائي ملحوظ بين المجموعتين",
+            "en": "No statistically significant difference between the two groups"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تحسّن 10-15% فقط في سرعة الإنجاز دون تأثير على جودة الكود",
+            "en": "Only 10-15% improvement in completion speed with no impact on code quality"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تسريع كبير لكن مع تراجع حاد في جودة الكود بنسبة 40%",
+            "en": "Major speedup but with a sharp 40% decline in code quality"
+          },
+          "score": 0
+        }
       ],
       "hint_after": {
         "ar": "Shopify أيضاً سجّلت زيادة 33% في طلبات السحب المدمجة، وانخفض وسيط وقت الدمج من 24 ساعة إلى 90 دقيقة. لكن هذه المكاسب تأتي مع تكلفة أمنية — لذلك المراجعة البشرية الأمنية تظل ضرورية.",
@@ -118,12 +205,27 @@
       "blanks": [
         {
           "id": "blank_1",
-          "correct": { "ar": "Klarna", "en": "Klarna" },
+          "correct": {
+            "ar": "Klarna",
+            "en": "Klarna"
+          },
           "options": [
-            { "ar": "Klarna", "en": "Klarna" },
-            { "ar": "Shopify", "en": "Shopify" },
-            { "ar": "Stripe", "en": "Stripe" },
-            { "ar": "PayPal", "en": "PayPal" }
+            {
+              "ar": "Klarna",
+              "en": "Klarna"
+            },
+            {
+              "ar": "Shopify",
+              "en": "Shopify"
+            },
+            {
+              "ar": "Stripe",
+              "en": "Stripe"
+            },
+            {
+              "ar": "PayPal",
+              "en": "PayPal"
+            }
           ]
         }
       ],
@@ -144,22 +246,82 @@
         "en": "Match each AI coding tool with its distinguishing fact:"
       },
       "left": [
-        { "id": "L1", "text": { "ar": "GitHub Copilot", "en": "GitHub Copilot" } },
-        { "id": "L2", "text": { "ar": "Cursor (Anysphere)", "en": "Cursor (Anysphere)" } },
-        { "id": "L3", "text": { "ar": "Claude Code", "en": "Claude Code" } },
-        { "id": "L4", "text": { "ar": "Devin (Cognition Labs)", "en": "Devin (Cognition Labs)" } }
+        {
+          "id": "L1",
+          "text": {
+            "ar": "GitHub Copilot",
+            "en": "GitHub Copilot"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Cursor (Anysphere)",
+            "en": "Cursor (Anysphere)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Claude Code",
+            "en": "Claude Code"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Devin (Cognition Labs)",
+            "en": "Devin (Cognition Labs)"
+          }
+        }
       ],
       "right": [
-        { "id": "R1", "text": { "ar": "حصة سوقية 42% وأكثر من 20 مليون مستخدم", "en": "42% market share with 20+ million users" } },
-        { "id": "R2", "text": { "ar": "أسرع منتج B2B SaaS في التاريخ — مليار دولار إيراد سنوي في أقل من عامين", "en": "Fastest B2B SaaS ever — $1 billion ARR in under 2 years" } },
-        { "id": "R3", "text": { "ar": "يمثّل أكثر من 4% من عمليات الدفع العامة على GitHub", "en": "Accounts for over 4% of public GitHub commits" } },
-        { "id": "R4", "text": { "ar": "Goldman Sachs تختبره لـ 12,000 مطوّر بهدف تحقيق 3-4 أضعاف الإنتاجية", "en": "Goldman Sachs piloting it for 12,000 developers targeting 3-4× productivity boost" } }
+        {
+          "id": "R1",
+          "text": {
+            "ar": "حصة سوقية 42% وأكثر من 20 مليون مستخدم",
+            "en": "42% market share with 20+ million users"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أسرع منتج B2B SaaS في التاريخ — مليار دولار إيراد سنوي في أقل من عامين",
+            "en": "Fastest B2B SaaS ever — $1 billion ARR in under 2 years"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "يمثّل أكثر من 4% من عمليات الدفع العامة على GitHub",
+            "en": "Accounts for over 4% of public GitHub commits"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "Goldman Sachs تختبره لـ 12,000 مطوّر بهدف تحقيق 3-4 أضعاف الإنتاجية",
+            "en": "Goldman Sachs piloting it for 12,000 developers targeting 3-4× productivity boost"
+          }
+        }
       ],
       "correct_pairs": [
-        { "left": "L1", "right": "R1" },
-        { "left": "L2", "right": "R2" },
-        { "left": "L3", "right": "R3" },
-        { "left": "L4", "right": "R4" }
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
       ],
       "hint_after": {
         "ar": "سوق أدوات البرمجة بالذكاء الاصطناعي يتطور بسرعة غير مسبوقة. الرئيس التنفيذي لـ Google أكّد أن أكثر من 30% من كود Google الجديد مولّد بالذكاء الاصطناعي.",
@@ -178,12 +340,41 @@
         "en": "Order the steps for safely using AI code generation tools in a production environment, from first to last:"
       },
       "items": [
-        { "id": "S1", "text": { "ar": "تحديد سياسة أمنية تصنّف المهام المسموح فيها بتوليد الكود آلياً والمهام المحظورة", "en": "Define a security policy classifying tasks where AI code generation is permitted versus prohibited" } },
-        { "id": "S2", "text": { "ar": "توليد الكود باستخدام أداة AI مع تضمين متطلبات الأمان في الأوامر النصية", "en": "Generate code using an AI tool while embedding security requirements in the prompts" } },
-        { "id": "S3", "text": { "ar": "إجراء تحليل ثابت (SAST) وفحص مكونات الطرف الثالث (SCA) على الكود المولّد", "en": "Run static analysis (SAST) and software composition analysis (SCA) on the generated code" } },
-        { "id": "S4", "text": { "ar": "مراجعة بشرية أمنية متخصصة قبل دمج الكود في خط الإنتاج", "en": "Specialized human security review before merging code into the production pipeline" } }
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحديد سياسة أمنية تصنّف المهام المسموح فيها بتوليد الكود آلياً والمهام المحظورة",
+            "en": "Define a security policy classifying tasks where AI code generation is permitted versus prohibited"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "توليد الكود باستخدام أداة AI مع تضمين متطلبات الأمان في الأوامر النصية",
+            "en": "Generate code using an AI tool while embedding security requirements in the prompts"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "إجراء تحليل ثابت (SAST) وفحص مكونات الطرف الثالث (SCA) على الكود المولّد",
+            "en": "Run static analysis (SAST) and software composition analysis (SCA) on the generated code"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "مراجعة بشرية أمنية متخصصة قبل دمج الكود في خط الإنتاج",
+            "en": "Specialized human security review before merging code into the production pipeline"
+          }
+        }
       ],
-      "correct_order": ["S1", "S2", "S3", "S4"],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
       "hint_after": {
         "ar": "Georgia Tech تتتبع ثغرات CVE الناتجة عن كود AI وسجّلت 74 ثغرة مؤكدة بحلول 2026، منها 35 في مارس 2026 وحده — وتيرة متسارعة تؤكد ضرورة هذا النهج المنظّم.",
         "en": "Georgia Tech tracks CVEs from AI code and recorded 74 confirmed vulnerabilities by 2026, with 35 in March 2026 alone — an accelerating trend confirming the need for this systematic approach."
@@ -201,10 +392,38 @@
         "en": "You are a software developer with 5 years of experience. You've noticed that your junior colleagues now produce code at nearly your speed thanks to AI tools. How do you handle this reality?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "أركّز على بناء مهارات أعمق في هندسة الأنظمة والمراجعة الأمنية والقيادة التقنية — وهي مهارات لا يستطيع AI تعويضها", "en": "I focus on building deeper skills in systems architecture, security review, and tech leadership — skills AI can't replace" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "أتبنّى أدوات AI بالكامل لمضاعفة إنتاجيتي وأحافظ على تفوّقي بالسرعة والجودة معاً", "en": "I fully adopt AI tools to multiply my productivity and maintain my edge through both speed and quality" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "أشعر بالقلق لكنني أعتقد أن الخبرة الحقيقية لا يمكن استبدالها بأدوات، فأستمر كما أنا", "en": "I feel concerned but believe real experience can't be replaced by tools, so I continue as I am" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "أرفض استخدام أدوات AI في عملي لأنها تنتج كوداً رديء الجودة وأفضّل الاعتماد على مهاراتي فقط", "en": "I refuse to use AI tools in my work because they produce low-quality code, and I prefer relying only on my skills" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "أركّز على بناء مهارات أعمق في هندسة الأنظمة والمراجعة الأمنية والقيادة التقنية — وهي مهارات لا يستطيع AI تعويضها",
+            "en": "I focus on building deeper skills in systems architecture, security review, and tech leadership — skills AI can't replace"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتبنّى أدوات AI بالكامل لمضاعفة إنتاجيتي وأحافظ على تفوّقي بالسرعة والجودة معاً",
+            "en": "I fully adopt AI tools to multiply my productivity and maintain my edge through both speed and quality"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أشعر بالقلق لكنني أعتقد أن الخبرة الحقيقية لا يمكن استبدالها بأدوات، فأستمر كما أنا",
+            "en": "I feel concerned but believe real experience can't be replaced by tools, so I continue as I am"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض استخدام أدوات AI في عملي لأنها تنتج كوداً رديء الجودة وأفضّل الاعتماد على مهاراتي فقط",
+            "en": "I refuse to use AI tools in my work because they produce low-quality code, and I prefer relying only on my skills"
+          },
+          "flexibility_score": 1
+        }
       ],
       "hint_after": {
         "ar": "استطلاع Stack Overflow 2025 وجد أن المطوّرين يستخدمون أدوات AI أكثر لكنهم يثقون بها أقل من أي وقت مضى. المفتاح: استخدم الأداة مع الحفاظ على التفكير النقدي. في المهام المعقدة (32 ساعة)، البشر يتفوقون على AI بنسبة 2:1.",
@@ -223,14 +442,4299 @@
         "en": "You are a tech team lead considering adopting 'Vibe Coding' where the team writes only natural language prompts and lets AI generate the code. What's your approach?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "أتبنّاه للنماذج الأولية وأدوات MVP مع إلزام مراجعة أمنية وفحص ثابت قبل أي نشر إنتاجي", "en": "I adopt it for prototypes and MVP tools while requiring security review and static analysis before any production deployment" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "أسمح بتجربته في مشاريع داخلية محدودة الأثر لتقييم المخاطر والفوائد فعلياً", "en": "I allow trying it on limited-impact internal projects to evaluate risks and benefits practically" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "أنتظر حتى تتحسن الأدوات وتنخفض نسبة الثغرات الأمنية بشكل ملموس", "en": "I wait until tools improve and the vulnerability rate drops significantly" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "أرفضه تماماً — كتابة الكود يدوياً هي الطريقة الوحيدة لضمان الجودة والأمان", "en": "I reject it completely — writing code manually is the only way to ensure quality and security" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتبنّاه للنماذج الأولية وأدوات MVP مع إلزام مراجعة أمنية وفحص ثابت قبل أي نشر إنتاجي",
+            "en": "I adopt it for prototypes and MVP tools while requiring security review and static analysis before any production deployment"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أسمح بتجربته في مشاريع داخلية محدودة الأثر لتقييم المخاطر والفوائد فعلياً",
+            "en": "I allow trying it on limited-impact internal projects to evaluate risks and benefits practically"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر حتى تتحسن الأدوات وتنخفض نسبة الثغرات الأمنية بشكل ملموس",
+            "en": "I wait until tools improve and the vulnerability rate drops significantly"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفضه تماماً — كتابة الكود يدوياً هي الطريقة الوحيدة لضمان الجودة والأمان",
+            "en": "I reject it completely — writing code manually is the only way to ensure quality and security"
+          },
+          "flexibility_score": 1
+        }
       ],
       "hint_after": {
         "ar": "25% من دفعة Y Combinator شتاء 2025 استخدمت أكواداً مولّدة بنسبة 95%+. النهج المتوازن — الاستفادة من السرعة مع فرض ضوابط أمنية — هو الأكثر واقعية في ظل تطوّر السوق.",
         "en": "25% of Y Combinator's Winter 2025 cohort used 95%+ AI-generated codebases. The balanced approach — leveraging speed while enforcing security controls — is most realistic given the market's evolution."
+      }
+    },
+    {
+      "id": "csd-mcq-004",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مهندس برمجيات وتقارن بين أدوات البرمجة بالذكاء الاصطناعي لفريقك. وفقاً لاستطلاع The Pragmatic Engineer في فبراير 2026، أي أداة تصدّرت الاستخدام بين المطورين رغم إطلاقها قبل أقل من عام؟",
+        "en": "You are a software engineer comparing AI coding tools for your team. According to The Pragmatic Engineer's February 2026 survey, which tool rose to #1 usage among developers despite being launched less than a year earlier?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "Claude Code — أصبحت الأكثر استخداماً خلال 8 أشهر فقط من إطلاقها في مايو 2025",
+            "en": "Claude Code — became the most-used tool within just 8 months of its May 2025 launch"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "Cursor — تجاوزت Copilot بسبب تكاملها العميق مع VS Code",
+            "en": "Cursor — overtook Copilot due to its deep VS Code integration"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "Devin — أول وكيل AI مستقل بالكامل في البرمجة",
+            "en": "Devin — the first fully autonomous AI coding agent"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "GitHub Copilot — لا تزال متصدرة بحصتها السوقية الكبيرة",
+            "en": "GitHub Copilot — still leading with its large market share"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "الاستطلاع كشف أن 95% من المطورين يستخدمون أدوات AI أسبوعياً على الأقل، و70% يستخدمون بين أداتين وأربع أدوات في آنٍ واحد. المهندسون الكبار (Staff+) هم الأكثر استخداماً للوكلاء بنسبة 63.5%.",
+        "en": "The survey revealed 95% of developers use AI tools at least weekly, and 70% use 2-4 tools simultaneously. Staff+ engineers are the heaviest agent users at 63.5%."
+      }
+    },
+    {
+      "id": "csd-mcq-005",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت قائد فني في شركة ناشئة وتستخدمون أسلوب Vibe Coding بشكل مكثف. في فبراير 2026، تعرّض تطبيق Moltbook — وهو شبكة اجتماعية بُنيت بالكامل بهذا الأسلوب — لاختراق أمني كبير. ماذا حدث؟",
+        "en": "You are a tech lead at a startup using Vibe Coding extensively. In February 2026, Moltbook — a social network built entirely via vibe coding — suffered a major security breach. What happened?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "شركة Wiz اكتشفت قاعدة بيانات Supabase مفتوحة للجميع، مما كشف 1.5 مليون رمز مصادقة و35,000 بريد إلكتروني",
+            "en": "Wiz discovered a Supabase database left with public access, exposing 1.5 million auth tokens and 35,000 emails"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "هجوم Prompt Injection على نموذج AI الخاص بالتطبيق أدى لتسريب بيانات المستخدمين",
+            "en": "A Prompt Injection attack on the app's AI model led to user data leakage"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "ثغرة SQL Injection تقليدية لم يلاحظها المطورون",
+            "en": "A traditional SQL injection vulnerability went unnoticed by developers"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "استخدام مكتبة npm خبيثة هلوسها نموذج AI",
+            "en": "Use of a malicious npm package hallucinated by an AI model"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "مؤسس Moltbook صرّح علنياً أنه لم يكتب سطر كود واحد بنفسه. السبب الجذري لم يكن هجوماً معقداً بل إعدادات تصاريح متساهلة وضعها AI أثناء التطوير ولم يراجعها أحد قبل النشر.",
+        "en": "Moltbook's founder publicly stated he didn't write a single line of code himself. The root cause wasn't a sophisticated attack but permissive settings placed by AI during development that no one reviewed before deployment."
+      }
+    },
+    {
+      "id": "csd-mcq-006",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أنت مطوّر تتابع سوق أدوات البرمجة بالذكاء الاصطناعي. شركة Anysphere التي تطوّر محرر Cursor حققت إنجازاً تاريخياً في عالم SaaS. ما هو؟",
+        "en": "You are a developer following the AI coding tools market. Anysphere, the company behind the Cursor editor, achieved a historic milestone in the SaaS world. What was it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أسرع منتج B2B SaaS في التاريخ يصل إلى مليار دولار إيراد سنوي، بتقييم 9.9 مليار دولار",
+            "en": "Fastest B2B SaaS product in history to reach $1 billion ARR, valued at $9.9 billion"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أول شركة SaaS تتجاوز 100 مليون مستخدم في أقل من عام",
+            "en": "First SaaS company to exceed 100 million users in under a year"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أكبر جولة تمويل Series A في تاريخ شركات أدوات المطورين",
+            "en": "Largest Series A funding round in developer tools company history"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أول شركة أدوات AI تُدرج في بورصة ناسداك",
+            "en": "First AI tools company to be listed on NASDAQ"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Cursor نمت بنسبة 35% في 9 أشهر فقط وفقاً لاستطلاعات المطورين. نموذج التفاعل المختلف — محرر كود مبني من الأساس حول AI بدلاً من إضافة AI لمحرر موجود — هو ما يميزها.",
+        "en": "Cursor grew 35% in just 9 months according to developer surveys. Its different interaction model — a code editor built from the ground up around AI rather than adding AI to an existing editor — is what distinguishes it."
+      }
+    },
+    {
+      "id": "csd-tf-003",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "النماذج اللغوية الأحدث والأكبر حجماً تنتج كوداً أكثر أماناً من النماذج القديمة، وفقاً لتقرير Veracode 2025.",
+        "en": "Newer and larger language models produce more secure code than older models, according to the Veracode 2025 report."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "هذه خرافة خطيرة. تقرير Veracode وجد أن الأداء الأمني ظل ثابتاً رغم تحسّن الأداء الوظيفي — النماذج الأحدث تكتب كوداً أفضل وظيفياً لكن ليس أكثر أماناً.",
+        "en": "This is a dangerous myth. Veracode found security performance remained flat despite functional improvements — newer models write better-functioning code but not more secure code."
+      }
+    },
+    {
+      "id": "csd-tf-004",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "وفقاً لبيانات GitHub في 2025، تجاوز عدد عمليات الدمج (Pull Requests) الشهرية 43 مليون عملية، وبلغت عمليات الـ commits السنوية ما يقارب مليار عملية.",
+        "en": "According to GitHub's 2025 data, monthly merged pull requests exceeded 43 million, and annual commits approached nearly 1 billion."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذه أرقام حقيقية تعكس انفجاراً في حجم الإنتاج البرمجي. لكن تقرير Greptile وجد أن حجم الـ PR الوسيط زاد 33% وأصبح الكود \"أكثف\"، مما يثير مخاوف حول جودة ما يُشحن للإنتاج.",
+        "en": "These are real numbers reflecting an explosion in software production. But Greptile's report found median PR size increased 33% and code became 'denser,' raising concerns about the quality of what's shipped to production."
+      }
+    },
+    {
+      "id": "csd-fill-002",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "مصطلح {{blank_1}} صاغه Andrej Karpathy في فبراير 2025 لوصف أسلوب تطوير البرمجيات بكتابة أوامر نصية فقط دون مراجعة الكود الناتج، وأصبح كلمة العام 2025 في قاموس Collins.",
+        "en": "The term {{blank_1}} was coined by Andrej Karpathy in February 2025 to describe developing software by writing only natural-language prompts without reviewing the output code, and became Collins Dictionary's Word of the Year 2025."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Vibe Coding",
+            "en": "Vibe Coding"
+          },
+          "options": [
+            {
+              "ar": "Vibe Coding",
+              "en": "Vibe Coding"
+            },
+            {
+              "ar": "Prompt Engineering",
+              "en": "Prompt Engineering"
+            },
+            {
+              "ar": "No-Code AI",
+              "en": "No-Code AI"
+            },
+            {
+              "ar": "Agentic Coding",
+              "en": "Agentic Coding"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "25% من دفعة Y Combinator شتاء 2025 كانت قواعدها البرمجية مولّدة بنسبة 95% أو أكثر بالذكاء الاصطناعي. لكن مصطلح Vibe Coding أصبح أيضاً مرتبطاً بمخاطر أمنية جدية — Georgia Tech تتتبع ثغرات CVE الناتجة عنه بشكل منهجي.",
+        "en": "25% of Y Combinator's Winter 2025 cohort had codebases 95%+ AI-generated. But Vibe Coding has also become associated with serious security risks — Georgia Tech systematically tracks CVEs resulting from it."
+      }
+    },
+    {
+      "id": "csd-match-002",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل حادثة أو ظاهرة في عالم البرمجة بالذكاء الاصطناعي مع الحقيقة المرتبطة بها:",
+        "en": "Match each AI coding incident or phenomenon with its associated fact:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "اختراق Moltbook (فبراير 2026)",
+            "en": "Moltbook breach (February 2026)"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Vibe Security Radar — Georgia Tech",
+            "en": "Vibe Security Radar — Georgia Tech"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "دراسة Stanford للاقتصاد الرقمي",
+            "en": "Stanford Digital Economy Study"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "تجربة Databricks الأمنية",
+            "en": "Databricks security experiment"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تسريب 1.5 مليون رمز مصادقة بسبب إعدادات قاعدة بيانات متساهلة",
+            "en": "1.5 million auth tokens leaked due to permissive database settings"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "74 ثغرة CVE مؤكدة ناتجة عن كود AI بحلول 2026",
+            "en": "74 confirmed CVEs from AI code by 2026"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "انخفاض توظيف المبرمجين (22-25 سنة) بنسبة 20%",
+            "en": "20% decline in employment of programmers aged 22-25"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "كود AI استخدم وحدة pickle الخطيرة في لعبة شبكية دون تنبيه",
+            "en": "AI code used dangerous pickle module in a networked game without warning"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الحوادث تكشف أنماطاً متكررة: الكود المولّد يعمل وظيفياً لكنه يفتقر للحماية الأمنية. تقرير Trend Micro (مارس 2026) لخّص المشكلة: Vibe Coding يسرّع التطوير ويسرّع المخاطر بنفس القدر.",
+        "en": "These incidents reveal recurring patterns: generated code works functionally but lacks security protections. Trend Micro's report (March 2026) summarized it: Vibe Coding accelerates development and accelerates risk equally."
+      }
+    },
+    {
+      "id": "csd-sort-002",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مراحل تبنّي أدوات البرمجة بالذكاء الاصطناعي في المؤسسات، من المرحلة الأولى إلى الأكثر نضجاً:",
+        "en": "Order the stages of adopting AI coding tools in organizations, from earliest to most mature:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "إكمال تلقائي بسيط للكود (Autocomplete) — اقتراحات سطر واحد أثناء الكتابة",
+            "en": "Simple code autocomplete — single-line suggestions while typing"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "مساعد محادثة يحلل الكود ويصلح الأخطاء عبر واجهة دردشة",
+            "en": "Chat assistant that analyzes code and fixes bugs via a chat interface"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تحرير متعدد الملفات مع فهم سياق المشروع بالكامل",
+            "en": "Multi-file editing with full project context understanding"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "وكلاء مستقلون ينفذون مهاماً كاملة من التخطيط حتى النشر",
+            "en": "Autonomous agents executing complete tasks from planning to deployment"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "هذا التدرج يعكس التطور الفعلي لأدوات AI: من Copilot الأصلي (إكمال تلقائي) إلى ChatGPT/Claude (محادثة)، ثم Cursor (تحرير متعدد)، وأخيراً Devin وClaude Code في وضع الوكيل المستقل.",
+        "en": "This progression reflects the actual evolution of AI tools: from original Copilot (autocomplete) to ChatGPT/Claude (chat), then Cursor (multi-file editing), and finally Devin and Claude Code in autonomous agent mode."
+      }
+    },
+    {
+      "id": "csd-self-003",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مطوّر ويب، وقرأت أن 25% من الدفعة الأخيرة في Y Combinator بنت مشاريعها بكود مولّد بنسبة 95% أو أكثر بالذكاء الاصطناعي. كيف يؤثر هذا على نظرتك لمهنتك؟",
+        "en": "You are a web developer, and you've read that 25% of the latest Y Combinator batch built their projects with 95%+ AI-generated code. How does this affect your view of your profession?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أرى فرصة ذهبية — سأتعلم بناء منتجات كاملة باستخدام AI وأركز على فهم المنتج والمستخدمين بدلاً من كتابة كود يدوي",
+            "en": "I see a golden opportunity — I'll learn to build full products using AI and focus on understanding the product and users instead of manual coding"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مثير للاهتمام لكن المشاريع الحقيقية أعقد — سأدمج AI في عملي مع الحفاظ على مهاراتي التقنية العميقة",
+            "en": "Interesting but real projects are more complex — I'll integrate AI into my work while maintaining my deep technical skills"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "هذا للمشاريع البسيطة فقط — التطبيقات الجدية تحتاج مطورين حقيقيين ولن يتغير هذا قريباً",
+            "en": "This is for simple projects only — serious applications need real developers and this won't change soon"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هذه فقاعة ستنفجر — الكود المولّد بالذكاء الاصطناعي رديء الجودة وسيفشل على المدى الطويل",
+            "en": "This is a bubble that will burst — AI-generated code is poor quality and will fail in the long term"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الرئيس التنفيذي لـ Coinbase فصل موظفين رفضوا تبنّي أدوات AI. لكن في المقابل، تقرير Coinbase نفسه أظهر أن المكاسب الإنتاجية غير متساوية — 90% تسريع في بعض المهام وتحسّن طفيف في أخرى.",
+        "en": "Coinbase's CEO fired employees who refused to adopt AI tools. But Coinbase's own report showed productivity gains are uneven — 90% speedup in some tasks and modest improvement in others."
+      }
+    },
+    {
+      "id": "csd-self-004",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول عن تدريب المطورين الجدد في شركتك. استطلاع Stack Overflow 2025 كشف أن المطورين يستخدمون أدوات AI أكثر لكنهم يثقون بها أقل من أي وقت مضى. كيف تصمم برنامج التدريب؟",
+        "en": "You are responsible for training new developers at your company. Stack Overflow's 2025 survey revealed developers use AI tools more but trust them less than ever. How do you design the training program?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبني البرنامج حول التفكير النقدي مع AI — كيف تستخدم الأداة، تراجع مخرجاتها، وتكتشف أخطاءها أمنياً ووظيفياً",
+            "en": "I build the program around critical thinking with AI — how to use the tool, review its outputs, and detect its security and functional errors"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أعلّمهم الأساسيات أولاً بدون AI ثم أدخل أدوات AI تدريجياً مع تمارين مقارنة بين الكود اليدوي والمولّد",
+            "en": "I teach them fundamentals first without AI, then gradually introduce AI tools with exercises comparing manual vs generated code"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أمنعهم من استخدام AI في البداية حتى يتقنوا البرمجة الحقيقية — يمكنهم استخدامها لاحقاً",
+            "en": "I prohibit AI use initially until they master real programming — they can use it later"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أدرّبهم مباشرة على AI فقط — لم يعد هناك حاجة لتعلم البرمجة التقليدية في 2026",
+            "en": "I train them directly on AI only — there's no longer a need to learn traditional programming in 2026"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "دراسة 2025 وجدت ارتباطاً سلبياً بين الاستخدام المتكرر لـ AI والتفكير النقدي — ظاهرة تُسمى \"التفريغ المعرفي\" (Cognitive Offloading). البرنامج المثالي يجمع بين المهارات الأساسية والاستخدام النقدي لـ AI.",
+        "en": "A 2025 study found a negative correlation between frequent AI use and critical thinking — a phenomenon called 'Cognitive Offloading.' The ideal program combines foundational skills with critical AI use."
+      }
+    },
+    {
+      "id": "csd-mcq-007",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت باحث في هندسة البرمجيات وتدرس إنتاجية أدوات AI. تجربة GitHub/Accenture العشوائية المحكومة على 4,800 مطوّر وجدت نتائج مفاجئة. أيّها الأدق؟",
+        "en": "You are a software engineering researcher studying AI tool productivity. The GitHub/Accenture randomized controlled trial of 4,800 developers found surprising results. Which is most accurate?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "المهام أُنجزت أسرع بـ 55%، وانخفضت دورة طلبات الدمج من 9.6 أيام إلى 2.4 يوم",
+            "en": "Tasks completed 55% faster, and pull request cycle times dropped from 9.6 days to 2.4 days"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "زيادة الإنتاجية 20% فقط لكن مع تحسّن كبير في جودة الكود",
+            "en": "Only 20% productivity increase but with significant code quality improvement"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا فرق يُذكر في الإنتاجية لكن رضا المطورين زاد بشكل كبير",
+            "en": "No significant productivity difference but developer satisfaction increased significantly"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تسريع بنسبة 80% لكن مع تراجع في جودة الكود",
+            "en": "80% speedup but with a decline in code quality"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "البُعد المهم: Shopify أيضاً سجّلت زيادة 33% في طلبات الدمج المقبولة مع انخفاض وقت الدمج الوسيط من 24 ساعة إلى 90 دقيقة. لكن تقرير DORA 2025 حذّر أن AI يعمل كـ \"مرآة ومضاعف\" — يعزز الفرق المنظمة ويكشف ضعف الفرق الفوضوية.",
+        "en": "The important nuance: Shopify also reported a 33% boost in merged PRs with median merge time dropping from 24 hours to 90 minutes. But the DORA 2025 report warned AI acts as a 'mirror and multiplier' — boosting organized teams and exposing weaknesses in chaotic ones."
+      }
+    },
+    {
+      "id": "csd-mcq-008",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت عالم بيانات تراقب تأثير AI على مهنتك. وفقاً للإحصائيات، ما نسبة وقت عمل محللي البيانات التي يستهلكها تحضير البيانات (Data Preparation)، وكيف يتغير هذا بسبب AI؟",
+        "en": "You are a data scientist monitoring AI's impact on your profession. According to statistics, what percentage of data analysts' time is consumed by data preparation, and how is this changing due to AI?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "60-80% من الوقت يُهدر على تحضير البيانات، وAI يؤتمت هذه المهمة بشكل متزايد",
+            "en": "60-80% of time is spent on data preparation, and AI increasingly automates this task"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حوالي 40% ولا يزال معظمه يحتاج إشرافاً بشرياً كاملاً",
+            "en": "About 40% and most still requires full human oversight"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "90% لكن AI يحلّ المشكلة بالكامل ولم يعد ذلك تحدياً",
+            "en": "90% but AI completely solves the problem and it's no longer a challenge"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أقل من 20% — معظم وقت عالم البيانات يذهب لبناء النماذج",
+            "en": "Less than 20% — most data scientist time goes to model building"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "مع أتمتة تحضير البيانات، المهارات المطلوبة تتحول نحو الخبرة المتخصصة في المجال والتفكير النقدي. وفقاً لـ Statista، 65% من الشركات تتوقع أن يخلق AI وظائف جديدة في البيانات مقابل 7% فقط تتوقع إلغاء وظائف.",
+        "en": "As data preparation is automated, required skills shift toward domain expertise and critical thinking. According to Statista, 65% of companies expect AI to create new data jobs versus only 7% expecting displacement."
+      }
+    },
+    {
+      "id": "csd-mcq-009",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير مشروع برمجي تقيّم ما إذا كانت أدوات AI تحقق مكاسب على مستوى المؤسسة وليس الفرد فقط. ماذا وجد تقرير DORA 2025؟",
+        "en": "You are a software project manager evaluating whether AI tools achieve gains at the organizational level, not just the individual level. What did the DORA 2025 report find?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مكاسب فردية واضحة لكن مقاييس التسليم على مستوى المؤسسة غالباً تبقى ثابتة — AI يعمل كمرآة ومضاعف",
+            "en": "Clear individual gains but company-wide delivery metrics often stay flat — AI acts as a mirror and multiplier"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مكاسب متساوية على المستوى الفردي والمؤسسي بنسبة 40% تقريباً",
+            "en": "Equal gains at individual and organizational levels of approximately 40%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "المؤسسات تحقق مكاسب أكبر من الأفراد بسبب تأثير الحجم",
+            "en": "Organizations achieve greater gains than individuals due to scale effects"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا مكاسب تُذكر لأن المطورين يقضون الوقت الموفّر في إصلاح أخطاء AI",
+            "en": "No significant gains because developers spend saved time fixing AI errors"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "السر الذي لا يتحدث عنه أحد: المكاسب الفردية واضحة لكنها لا تتحول تلقائياً لمكاسب مؤسسية. في المؤسسات المنظمة AI يعزز الكفاءة، وفي الفوضوية يكشف ويضاعف نقاط الضعف.",
+        "en": "The secret no one talks about: individual gains are clear but don't automatically translate to organizational gains. In organized companies AI boosts efficiency; in chaotic ones it reveals and amplifies weaknesses."
+      }
+    },
+    {
+      "id": "csd-tf-005",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "المطورون المبتدئون هم الأكثر استفادة من أدوات البرمجة بالذكاء الاصطناعي مقارنة بالمطورين ذوي الخبرة.",
+        "en": "Junior developers benefit the most from AI coding tools compared to experienced developers."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "الأبحاث التجريبية تظهر العكس: المطورون الأكثر خبرة يحققون مكاسب إنتاجية أكبر لأنهم يعرفون كيف يوجّهون AI بشكل أفضل ويكتشفون أخطاءه. في المهام المعقدة (32+ ساعة)، البشر يتفوقون على AI بنسبة 2:1.",
+        "en": "Empirical research shows the opposite: more experienced developers achieve greater productivity gains because they know how to guide AI better and catch its errors. On complex tasks (32+ hours), humans outperform AI 2:1."
+      }
+    },
+    {
+      "id": "csd-tf-006",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "Amazon وفّرت ما يعادل 4,500 سنة عمل مطوّر و260 مليون دولار في مشروع هجرة واحد باستخدام أدوات البرمجة بالذكاء الاصطناعي.",
+        "en": "Amazon saved an estimated 4,500 developer-years and $260 million in a single migration project using AI coding tools."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا الرقم يوضح الفرق بين استخدام AI كأداة فردية واستخدامه كبنية تحتية مؤسسية. الشركات التي تبني \"مصانع AI\" داخلية تحقق مكاسب أكبر بكثير من الاستخدام العشوائي.",
+        "en": "This number illustrates the difference between using AI as an individual tool vs organizational infrastructure. Companies building internal 'AI factories' achieve much greater gains than ad-hoc usage."
+      }
+    },
+    {
+      "id": "csd-fill-003",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "ظاهرة {{blank_1}} تصف ميل المطورين لتقليل التفكير النقدي عند الاعتماد المتكرر على AI، وقد وجدت دراسة 2025 ارتباطاً سلبياً بين كثافة استخدام AI والقدرة على التحليل المستقل.",
+        "en": "The {{blank_1}} phenomenon describes developers' tendency to reduce critical thinking when frequently relying on AI, and a 2025 study found a negative correlation between AI usage intensity and independent analysis ability."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "التفريغ المعرفي",
+            "en": "Cognitive Offloading"
+          },
+          "options": [
+            {
+              "ar": "التفريغ المعرفي",
+              "en": "Cognitive Offloading"
+            },
+            {
+              "ar": "التحيز التأكيدي",
+              "en": "Confirmation Bias"
+            },
+            {
+              "ar": "أتمتة الثقة",
+              "en": "Automation Trust"
+            },
+            {
+              "ar": "الانحياز للسهولة",
+              "en": "Ease Bias"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الظاهرة ليست حصرية على البرمجة — دراسة شملت 666 مشاركاً وجدت أنها تؤثر على جميع مستخدمي AI. الحل: استخدام متعمد وواعٍ للأداة مع ممارسة التفكير المستقل بانتظام.",
+        "en": "This phenomenon isn't exclusive to programming — a study of 666 participants found it affects all AI users. The solution: intentional, conscious tool use with regular independent thinking practice."
+      }
+    },
+    {
+      "id": "csd-match-003",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل إحصائية عن تأثير AI على إنتاجية المطورين مع المصدر الذي نشرها:",
+        "en": "Match each statistic about AI's impact on developer productivity with its source:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "إنجاز المهام أسرع بـ 55%",
+            "en": "Tasks completed 55% faster"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "زيادة 33% في طلبات الدمج المقبولة",
+            "en": "33% increase in merged pull requests"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "توفير 4,500 سنة عمل في مشروع واحد",
+            "en": "4,500 developer-years saved in a single project"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "تقليل وقت المهام الروتينية بنسبة 46%",
+            "en": "46% reduction in routine task time"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "GitHub/Accenture (4,800 مطوّر)",
+            "en": "GitHub/Accenture (4,800 developers)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "Shopify",
+            "en": "Shopify"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "Amazon",
+            "en": "Amazon"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "McKinsey (4,500 مطوّر)",
+            "en": "McKinsey (4,500 developers)"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "الأرقام الكبيرة تأتي من مؤسسات كبيرة ذات بنية تحتية ناضجة. الدرس: المكاسب الإنتاجية ليست تلقائية بل تعتمد على جاهزية المؤسسة ونضج عملياتها التقنية.",
+        "en": "The big numbers come from large organizations with mature infrastructure. The lesson: productivity gains aren't automatic but depend on organizational readiness and technical process maturity."
+      }
+    },
+    {
+      "id": "csd-sort-003",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب المهام البرمجية حسب قدرة AI على أدائها، من الأكثر قدرة إلى الأقل:",
+        "en": "Order programming tasks by AI's ability to perform them, from most capable to least:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "إعادة هيكلة الكود وكتابة الاختبارات — تسريع يصل 90%",
+            "en": "Code restructuring and test writing — up to 90% speedup"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "إكمال المهام البسيطة المحددة — تسريع يصل 55%",
+            "en": "Completing simple defined tasks — up to 55% speedup"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تصميم بنية الأنظمة المعقدة — مكاسب متواضعة",
+            "en": "Designing complex system architecture — modest gains"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "فهم منطق الأعمال واتخاذ قرارات تتطلب سياقاً — بشري أفضل",
+            "en": "Understanding business logic and context-dependent decisions — humans are better"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "كلما زاد تعقيد المهمة وحاجتها للسياق، تراجع أداء AI. تقرير Coinbase أكد: تسريع 90% في المهام البسيطة لكن مكاسب طفيفة في المهام المعقدة. القيمة الحقيقية للمطور تكمن في الطبقة العليا.",
+        "en": "The more complex and context-dependent the task, the less effective AI becomes. Coinbase's report confirmed: 90% speedup on simple tasks but modest gains on complex ones. A developer's real value lies in the upper layer."
+      }
+    },
+    {
+      "id": "csd-self-005",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مهندس بيانات أقدم وفريقك يعتمد بشكل متزايد على AI لتحضير البيانات. لاحظت أن زملاءك الأصغر سناً لم يعودوا يفهمون تفاصيل خطوات التنظيف والتحويل التي ينفذها AI تلقائياً. ما ردة فعلك؟",
+        "en": "You are a senior data engineer and your team increasingly relies on AI for data preparation. You've noticed younger colleagues no longer understand the details of cleaning and transformation steps AI executes automatically. How do you react?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أصمم جلسات تدريبية تجمع بين فهم العمليات يدوياً ثم استخدام AI لتسريعها، مع تمارين لتدقيق مخرجات AI",
+            "en": "I design training sessions combining manual process understanding then using AI to speed them up, with exercises auditing AI outputs"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أضع دليل مراجعة إلزامي لكل خطوة AI ينفذها تلقائياً، حتى لو أبطأ العمل مؤقتاً",
+            "en": "I establish a mandatory review checklist for every step AI executes automatically, even if it slows work temporarily"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا مشكلة — طالما النتائج النهائية صحيحة، لا حاجة لفهم التفاصيل الداخلية",
+            "en": "No problem — as long as final results are correct, there's no need to understand internal details"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أمنع الفريق من استخدام AI في تحضير البيانات حتى يتقنوها يدوياً أولاً",
+            "en": "I prohibit the team from using AI for data preparation until they master it manually first"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "تحضير البيانات يستهلك 60-80% من وقت المحلل. أتمتة هذه المرحلة ضرورية للإنتاجية، لكن عدم فهم ما يحدث \"تحت الغطاء\" يؤدي لأخطاء صامتة قد تُبنى عليها قرارات خاطئة.",
+        "en": "Data preparation consumes 60-80% of an analyst's time. Automating this stage is essential for productivity, but not understanding what happens 'under the hood' leads to silent errors that can cascade into wrong decisions."
+      }
+    },
+    {
+      "id": "csd-self-006",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مطوّر متمرس وتشاهد زميلك المبتدئ يولّد كوداً بسرعة مذهلة باستخدام AI لكنه لا يستطيع شرح كيف يعمل الكود. ماذا تنصحه؟",
+        "en": "You are an experienced developer watching a junior colleague generate code at amazing speed using AI but unable to explain how the code works. What do you advise?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أشجعه على استخدام AI لكن مع قاعدة: اشرح كل سطر قبل أن تدمجه — فهم الكود أهم من كتابته",
+            "en": "I encourage AI use but with a rule: explain every line before merging it — understanding code is more important than writing it"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطلب منه أن يراجع الكود أمنياً ووظيفياً حتى لو لم يفهم كل التفاصيل",
+            "en": "I ask him to review the code for security and functionality even if he doesn't understand every detail"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتركه وشأنه — السوق يكافئ السرعة والنتائج وليس الفهم العميق",
+            "en": "I leave him alone — the market rewards speed and results, not deep understanding"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أمنعه من استخدام AI حتى يتقن البرمجة — سيشكرني لاحقاً",
+            "en": "I ban him from AI until he masters programming — he'll thank me later"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "في استطلاع Hired.com، الوظائف التي تتطلب خبرة بأدوات AI زادت 340% بين 2025 و2026، لكن وظائف التنفيذ البحت تراجعت 17%. الرسالة واضحة: AI مطلوب لكن مع فهم حقيقي لما يحدث.",
+        "en": "In the Hired.com survey, jobs requiring AI tool experience increased 340% between 2025 and 2026, while pure implementation roles declined 17%. The message is clear: AI is required but with real understanding of what's happening."
+      }
+    },
+    {
+      "id": "csd-mcq-010",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مهندس DevOps في شركة كبيرة. في مارس 2026، تعطّل Amazon لمدة 6 ساعات مما أثّر على 6.3 مليون طلب. ما السبب الذي ربطه المحللون بالحادثة؟",
+        "en": "You are a DevOps engineer at a large company. In March 2026, Amazon went down for 6 hours affecting 6.3 million orders. What did analysts link the incident to?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مشاكل في كود مولّد بالذكاء الاصطناعي — بعد أن فرضت Amazon استخدام أداة Kiro بنسبة 80% أسبوعياً",
+            "en": "Issues with AI-generated code — after Amazon mandated 80% weekly usage of its Kiro AI coding tool"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "هجوم سيبراني استهدف البنية التحتية السحابية AWS",
+            "en": "A cyberattack targeting AWS cloud infrastructure"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "خطأ بشري في تحديث قاعدة البيانات الرئيسية",
+            "en": "Human error in a main database update"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "فشل في أجهزة الخوادم بسبب موجة حرارة في مركز البيانات",
+            "en": "Server hardware failure due to a heatwave in the data center"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الحادثة أصبحت مثالاً تحذيرياً عن مخاطر فرض أدوات AI بسرعة دون استثمار متناسب في المراجعة الأمنية. التوسّع السريع في توليد الكود بدون مراجعة بشرية كافية يُعرّض الأنظمة لمخاطر جدية.",
+        "en": "This incident became a cautionary example about the risks of rushing AI tool mandates without proportional investment in security review. Rapid scaling of code generation without sufficient human review exposes systems to serious risks."
+      }
+    },
+    {
+      "id": "csd-mcq-011",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مطوّر ألعاب تستخدم AI لتسريع التطوير. فريق Databricks الأمني اكتشف ثغرة خطيرة في لعبة شبكية بناها Claude. ما كانت الثغرة؟",
+        "en": "You are a game developer using AI to speed up development. Databricks' security team discovered a critical vulnerability in a networked game built by Claude. What was the vulnerability?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "استخدام وحدة pickle لسلسلة البيانات الشبكية، مما يسمح بتنفيذ كود تعسفي عن بُعد (RCE)",
+            "en": "Using pickle module for network data serialization, enabling arbitrary Remote Code Execution (RCE)"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ترك منفذ اتصال مفتوح بدون تشفير TLS",
+            "en": "Leaving a connection port open without TLS encryption"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تخزين بيانات اللاعبين بدون تشفير في الذاكرة",
+            "en": "Storing player data without encryption in memory"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "استخدام بروتوكول HTTP بدلاً من WebSocket للاتصال المباشر",
+            "en": "Using HTTP protocol instead of WebSocket for real-time communication"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الحل كان بسيطاً: استبدال pickle بـ JSON مع إضافة حد لحجم البيانات لمنع هجمات DoS. لكن بدون مراجعة بشرية، كان التطبيق سيُنشر بهذه الثغرة لأن الكود \"يعمل بشكل مثالي\" وظيفياً.",
+        "en": "The fix was simple: replace pickle with JSON plus a data size limit to prevent DoS attacks. But without human review, the app would have shipped with this vulnerability because the code 'worked perfectly' functionally."
+      }
+    },
+    {
+      "id": "csd-mcq-012",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أنت باحث في تأثيرات AI على سوق العمل. دراسة من Cornell/Berkeley نُشرت في Science (ديسمبر 2025) حللت 2.1 مليون ملخص بحثي. ما أبرز نتائجها لغير الناطقين بالإنجليزية؟",
+        "en": "You are a researcher studying AI's impact on the job market. A Cornell/Berkeley study published in Science (December 2025) analyzed 2.1 million abstracts. What was its key finding for non-English speakers?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الباحثون غير الناطقين بالإنجليزية من مؤسسات آسيوية حققوا زيادة تصل إلى 89% في النشر العلمي بفضل AI",
+            "en": "Non-English speaking researchers from Asian institutions achieved up to 89% more publications thanks to AI"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لا فرق يُذكر بين الناطقين وغير الناطقين بالإنجليزية في الاستفادة من AI",
+            "en": "No significant difference between English and non-English speakers in benefiting from AI"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الناطقون بالإنجليزية استفادوا أكثر بسبب قدرتهم على كتابة أوامر أفضل",
+            "en": "English speakers benefited more due to their ability to write better prompts"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "AI قلّل الفجوة اللغوية لكن زاد فجوة الجودة بين الأبحاث",
+            "en": "AI reduced the language gap but increased the quality gap between research papers"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا يعني أن AI يمكن أن يكون أداة تمكين قوية للباحثين العرب لتجاوز حاجز اللغة في النشر الدولي. لكن دراسة Nature حذّرت أن AI يُضيّق تنوع البحث ويُركّز العمل في المجالات الغنية بالبيانات.",
+        "en": "This means AI can be a powerful enabler for Arab researchers to overcome the language barrier in international publishing. But a Nature study warned AI narrows research diversity and concentrates work in data-rich areas."
+      }
+    },
+    {
+      "id": "csd-tf-007",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نماذج AI تهلوس أحياناً أسماء حزم برمجية غير موجودة (مثل npm أو pip)، مما يفتح الباب لهجمات typosquatting حيث يسجّل المهاجمون حزماً خبيثة بالأسماء التي تقترحها AI.",
+        "en": "AI models sometimes hallucinate non-existent package names (like npm or pip packages), opening the door for typosquatting attacks where attackers register malicious packages with AI-suggested names."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا تهديد حقيقي وموثّق: AI يقترح مكتبات تبدو حقيقية لكنها غير موجودة. المهاجمون يراقبون هذه الاقتراحات ويُنشئون حزماً خبيثة بنفس الأسماء. الحل: تدقيق كل حزمة جديدة قبل تثبيتها.",
+        "en": "This is a real, documented threat: AI suggests libraries that look real but don't exist. Attackers monitor these suggestions and create malicious packages with the same names. Solution: audit every new package before installing."
+      }
+    },
+    {
+      "id": "csd-tf-008",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تحليل أكثر من 5,600 تطبيق مبني بأسلوب Vibe Coding كشف أكثر من 2,000 ثغرة أمنية و400 سر مكشوف (مفاتيح API وكلمات مرور) و175 حالة تسريب بيانات شخصية.",
+        "en": "Analysis of over 5,600 apps built with Vibe Coding revealed more than 2,000 security vulnerabilities, 400+ exposed secrets (API keys and passwords), and 175 cases of personal data exposure."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذه البيانات من دراسة Escape.tech. شركة Wiz أيضاً وجدت أن 1 من كل 5 مؤسسات تستخدم منصات Vibe Coding تواجه مخاطر أمنية منهجية تشمل مصادقة عبر JavaScript قابلة للتجاوز وأسرار مضمّنة في الكود.",
+        "en": "This data is from Escape.tech's study. Wiz also found 1 in 5 organizations using Vibe Coding platforms face systemic security risks including bypassable JavaScript authentication and hardcoded secrets."
+      }
+    },
+    {
+      "id": "csd-fill-004",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "في عالم البرمجة بالذكاء الاصطناعي، يُقصد بمصطلح {{blank_1}} ظاهرة تراكم الكود المولّد منخفض الجودة في أنظمة الإنتاج بوتيرة متسارعة، مما يؤدي لهشاشة البرمجيات وزيادة الأعطال.",
+        "en": "In AI-powered coding, the term {{blank_1}} refers to the phenomenon of low-quality generated code accumulating in production systems at an accelerating pace, leading to software brittleness and increasing outages."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "AI Slop",
+            "en": "AI Slop"
+          },
+          "options": [
+            {
+              "ar": "AI Slop",
+              "en": "AI Slop"
+            },
+            {
+              "ar": "Tech Debt",
+              "en": "Tech Debt"
+            },
+            {
+              "ar": "Code Bloat",
+              "en": "Code Bloat"
+            },
+            {
+              "ar": "Dead Code",
+              "en": "Dead Code"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Andrej Karpathy وصف كيف أن الوكلاء \"تُضخّم التجريدات\" وتنسخ الكود بلا وعي. تحليل لصفحات حالة الخدمات وجد أن الأعطال تزداد بثبات منذ 2022 — مما يشير لتزايد هشاشة البرمجيات. Merriam-Webster اختارت slop ككلمة عام 2025.",
+        "en": "Andrej Karpathy described how agents 'bloat abstractions' and copy code mindlessly. Analysis of vendor status pages found outages increasing steadily since 2022 — suggesting growing software brittleness. Merriam-Webster chose 'slop' as its 2025 Word of the Year."
+      }
+    },
+    {
+      "id": "csd-match-004",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل نوع من ثغرات الكود المولّد بالذكاء الاصطناعي مع مثاله الواقعي:",
+        "en": "Match each type of AI-generated code vulnerability with its real-world example:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "إعدادات تصاريح متساهلة",
+            "en": "Permissive access settings"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "سلسلة بيانات غير آمنة",
+            "en": "Unsafe data serialization"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "أسرار مضمّنة في الكود",
+            "en": "Hardcoded secrets in code"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "حزم برمجية وهمية",
+            "en": "Hallucinated packages"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "Moltbook — قاعدة Supabase مفتوحة للقراءة والكتابة",
+            "en": "Moltbook — Supabase database open for read and write"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "لعبة شبكية استخدمت pickle بدلاً من JSON",
+            "en": "Networked game used pickle instead of JSON"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "400+ مفتاح API مكشوف في تطبيقات Vibe Coding",
+            "en": "400+ exposed API keys in Vibe Coded apps"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "مكتبات npm/pip غير موجودة يقترحها AI ويسجّلها مهاجمون",
+            "en": "Non-existent npm/pip libraries suggested by AI and registered by attackers"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الثغرات الأربعة تمثل 80% من مشاكل الأمان في الكود المولّد. القاسم المشترك: AI يولّد كوداً يعمل وظيفياً لكنه يفتقر لطبقة الحماية الدفاعية التي يضيفها المطور المتمرس عادةً.",
+        "en": "These four vulnerabilities represent 80% of security issues in generated code. The common thread: AI generates functionally working code but lacks the defensive protection layer an experienced developer usually adds."
+      }
+    },
+    {
+      "id": "csd-sort-004",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات التعامل مع ثغرة أمنية اكتُشفت في كود مولّد بالذكاء الاصطناعي في بيئة إنتاجية، من الأولوية القصوى إلى الأخيرة:",
+        "en": "Order the steps for handling a security vulnerability discovered in AI-generated code in a production environment, from highest to lowest priority:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "احتواء الثغرة فوراً: عزل المكوّن المصاب ومنع الوصول غير المصرّح",
+            "en": "Contain the vulnerability immediately: isolate affected component and prevent unauthorized access"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تحديد النطاق: هل تأثرت بيانات مستخدمين؟ هل هناك مكونات أخرى تستخدم نفس النمط؟",
+            "en": "Determine scope: were user data affected? Are other components using the same pattern?"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "إصلاح الثغرة وإجراء فحص أمني شامل لكل الكود المولّد بنفس الأداة",
+            "en": "Fix the vulnerability and conduct a comprehensive security scan of all code generated by the same tool"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تحديث سياسة استخدام AI لمنع تكرار هذا النمط من الثغرات",
+            "en": "Update AI usage policy to prevent this vulnerability pattern from recurring"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "Georgia Tech تقدّر العدد الفعلي لثغرات AI بين 400-700 في المصدر المفتوح — 5 إلى 10 أضعاف الرقم المُتتبّع (74). أغلب آثار AI تُحذف من تاريخ الأكواد مما يصعّب التتبع.",
+        "en": "Georgia Tech estimates actual AI vulnerability count at 400-700 in open source — 5 to 10× the tracked number (74). Most AI traces are stripped from code history, making tracking difficult."
+      }
+    },
+    {
+      "id": "csd-self-007",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مؤسس شركة ناشئة وتريد بناء MVP بأسرع وقت. أسلوب Vibe Coding يمكنه تحويل فكرتك لتطبيق عامل في ساعات بدلاً من أسابيع. لكنك قرأت عن حادثة Moltbook. كيف تتصرف؟",
+        "en": "You are a startup founder wanting to build an MVP as fast as possible. Vibe Coding can turn your idea into a working app in hours instead of weeks. But you've read about the Moltbook incident. How do you proceed?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أستخدم Vibe Coding للنموذج الأولي لكن أوظّف مختص أمني لمراجعة الكود قبل أي نشر للمستخدمين",
+            "en": "I use Vibe Coding for the prototype but hire a security specialist to review the code before any user deployment"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أبني النموذج بـ Vibe Coding وأضيف أدوات فحص أمني تلقائية (SAST/SCA) في خط الإنتاج",
+            "en": "I build the prototype with Vibe Coding and add automated security scanning tools (SAST/SCA) to the pipeline"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنشر النموذج سريعاً للحصول على تغذية راجعة وأعالج الأمان لاحقاً عند التوسع",
+            "en": "I deploy the prototype quickly for feedback and address security later when scaling"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أستخدم Vibe Coding أبداً — الأمان أهم من السرعة وسأبني كل شيء يدوياً",
+            "en": "I never use Vibe Coding — security is more important than speed and I'll build everything manually"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "53% من الفرق التي نشرت كوداً مولّداً بالذكاء الاصطناعي اكتشفت ثغرات أمنية بعد المراجعة الأولية. الأمان ليس رفاهية ولا يجب تأجيله — لكن تجنّب التقنية بالكامل يعني خسارة ميزة تنافسية حقيقية.",
+        "en": "53% of teams that shipped AI-generated code discovered security vulnerabilities after initial review. Security isn't a luxury and shouldn't be postponed — but completely avoiding the technology means losing a real competitive advantage."
+      }
+    },
+    {
+      "id": "csd-self-008",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول توظيف في شركة تقنية. مرشح واعد يقدّم مشروعاً شخصياً مبهراً لكنه يعترف أن 95% من الكود مولّد بالذكاء الاصطناعي. كيف تقيّمه؟",
+        "en": "You are a tech recruiter. A promising candidate presents an impressive personal project but admits 95% of the code was AI-generated. How do you evaluate them?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقيّم قدرته على توجيه AI بفعالية وفهم القرارات التقنية — هذه مهارة مطلوبة بشدة في 2026",
+            "en": "I evaluate their ability to guide AI effectively and understand technical decisions — this is a highly demanded skill in 2026"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أعطيه تحدي برمجة تقليدي بجانب تحدي باستخدام AI لأقيّم كلتا المهارتين",
+            "en": "I give them a traditional coding challenge alongside an AI challenge to evaluate both skills"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا قيمة للمشروع لأن الكود ليس من عمله — أحتاج أن يثبت قدراته بدون AI",
+            "en": "The project has no value since the code isn't their work — I need them to prove skills without AI"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفضه فوراً — مطوّر لا يكتب كوده بنفسه لن يكون مفيداً للفريق",
+            "en": "I reject them immediately — a developer who doesn't write their own code won't be useful to the team"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "وظائف البرمجة التي تتطلب خبرة بأدوات AI زادت 340% خلال عام واحد. في المقابل، 70% من مديري التوظيف يرون أن AI يستطيع أداء مهام المتدربين. السؤال لم يعد \"هل تكتب كود؟\" بل \"هل تفهم ما يُكتب؟\"",
+        "en": "Programming jobs requiring AI tool experience increased 340% in one year. Meanwhile, 70% of hiring managers believe AI can do intern tasks. The question is no longer 'do you write code?' but 'do you understand what's being written?'"
+      }
+    },
+    {
+      "id": "csd-mcq-013",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول حوكمة البيانات في شركة. وفقاً لتقرير Veracode 2026 الذي حلّل 1.6 مليون تطبيق، ما نسبة الشركات المتأثرة بالدين الأمني (Security Debt)؟",
+        "en": "You are a data governance officer at a company. According to the Veracode 2026 report that analyzed 1.6 million applications, what percentage of companies are affected by Security Debt?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "82% من الشركات، بارتفاع من 74% سابقاً — والثغرات عالية الخطورة ارتفعت من 8.3% إلى 11.3%",
+            "en": "82% of companies, up from 74% — and high-risk vulnerabilities increased from 8.3% to 11.3%"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حوالي 50% — نصف الشركات تعاني من دين أمني كبير",
+            "en": "About 50% — half of companies suffer from significant security debt"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أقل من 30% — معظم الشركات تستثمر كفاية في الأمن",
+            "en": "Less than 30% — most companies invest enough in security"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "95% لكن معظم الدين الأمني منخفض الخطورة ولا يؤثر فعلياً",
+            "en": "95% but most security debt is low-risk and doesn't actually matter"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "استنتاج Veracode كان صادماً: \"سرعة التطوير في عصر AI تجعل الأمن الشامل غير قابل للتحقيق.\" هذا يعني أن المقاربة التقليدية للأمن لم تعد كافية — نحتاج أدوات وعمليات جديدة.",
+        "en": "Veracode's conclusion was stark: 'The velocity of development in the AI era makes comprehensive security unattainable.' This means traditional security approaches are no longer sufficient — we need new tools and processes."
+      }
+    },
+    {
+      "id": "csd-mcq-014",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت قائد فني تدرس تأثير AI على جودة البحث العلمي. وفقاً لدراسة Nature 2025 التي حللت 41.3 مليون ورقة بحثية، ما التأثير المتناقض لـ AI على البحث؟",
+        "en": "You are a tech lead studying AI's impact on research quality. According to a Nature 2025 study that analyzed 41.3 million papers, what is AI's paradoxical effect on research?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI يعزز إنتاجية الباحث الفردي (3× أوراق، 4.8× اقتباسات) لكنه يُضيّق تنوع البحث الجماعي ويُقلّل التعاون",
+            "en": "AI boosts individual researcher output (3× papers, 4.8× citations) but narrows collective research diversity and reduces collaboration"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "AI يحسّن الإنتاجية والتنوع معاً بنفس القدر",
+            "en": "AI improves both productivity and diversity equally"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "AI يقلل الإنتاجية لأن الباحثين يقضون وقتاً في تصحيح مخرجاته",
+            "en": "AI reduces productivity because researchers spend time correcting its outputs"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "AI يحسّن التنوع لأنه يمكّن باحثين أقل خبرة من المساهمة",
+            "en": "AI improves diversity because it enables less experienced researchers to contribute"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "التأثير المتناقض: كل باحث ينشر أكثر ويُقتبس أكثر ويصبح قائد مشروع أسرع بـ 1.37 سنة. لكن الجميع يتجهون لنفس المواضيع الغنية بالبيانات، مما يُفقر المجالات الأقل رقمنة.",
+        "en": "The paradox: each researcher publishes more, gets cited more, and becomes a project leader 1.37 years earlier. But everyone gravitates to the same data-rich topics, impoverishing less digitized fields."
+      }
+    },
+    {
+      "id": "csd-mcq-015",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مهندس أمن معلومات. تقرير JetBrains مطلع 2026 كشف نسبة تبنّي Vibe Coding في الشركات الكبرى. ما هي؟",
+        "en": "You are an information security engineer. JetBrains' early 2026 report revealed the adoption rate of Vibe Coding in enterprises. What is it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أكثر من 35% من فرق التطوير في المؤسسات تستخدم AI لتوليد كتل كود كبيرة من أوامر نصية",
+            "en": "Over 35% of enterprise development teams use AI to generate large code blocks from natural language prompts"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقل من 10% — معظم المؤسسات لا تزال حذرة",
+            "en": "Less than 10% — most enterprises remain cautious"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حوالي 70% — أصبح المعيار في كل المؤسسات الكبرى",
+            "en": "About 70% — it's now the standard in all major enterprises"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50% لكن فقط في الشركات التقنية وليس في القطاعات الأخرى",
+            "en": "50% but only in tech companies, not other sectors"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "منظمتا NIST وOWASP أصدرتا إرشادات حوكمة للكود المولّد بالذكاء الاصطناعي في 2025 و2026. أي مؤسسة تتبنى Vibe Coding بدون إطار حوكمة تخاطر بمشاكل أمنية وقانونية جسيمة.",
+        "en": "NIST and OWASP published AI-generated code governance guidelines in 2025 and 2026. Any enterprise adopting Vibe Coding without a governance framework risks serious security and legal problems."
+      }
+    },
+    {
+      "id": "csd-tf-009",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "22% من أوراق علوم الحاسوب البحثية المنشورة في 2024 تحتوي على نصوص مولّدة بالذكاء الاصطناعي.",
+        "en": "22% of published computer science research papers in 2024 contain AI-generated text."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا جزء من أزمة أوسع: الأوراق الاحتيالية تتضاعف كل 1.5 سنة بينما الأوراق الشرعية تتضاعف كل 15 سنة. في 2023 تم سحب أكثر من 14,000 ورقة بحثية — رقم قياسي. أداة Problematic Paper Screener رصدت عبارات مشوّهة في 42,500 ورقة.",
+        "en": "This is part of a broader crisis: fraudulent papers double every 1.5 years while legitimate ones double every 15 years. In 2023, a record 14,000+ papers were retracted. The Problematic Paper Screener found tortured phrases in 42,500 papers."
+      }
+    },
+    {
+      "id": "csd-tf-010",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أدوات فحص الأمن الثابت (SAST) التقليدية كافية تماماً لاكتشاف كل ثغرات الكود المولّد بالذكاء الاصطناعي.",
+        "en": "Traditional Static Application Security Testing (SAST) tools are fully sufficient to detect all vulnerabilities in AI-generated code."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "أدوات SAST تكشف أنماط الثغرات المعروفة في الكود الثابت لكنها تفتقر لقواعد مخصصة للأنماط الجديدة التي يولّدها AI. أخطاء المنطق والمصادقة والبنية التحتية لا تُكتشف إلا بمراجعة بشرية واختبارات سلوكية.",
+        "en": "SAST tools detect known vulnerability patterns in static code but lack rules for new AI-generated patterns. Logic, authentication, and infrastructure errors can only be caught by human review and behavioral testing."
+      }
+    },
+    {
+      "id": "csd-fill-005",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أداة {{blank_1}} من جامعة تولوز رصدت أكثر من 7,500 \"عبارة مشوّهة\" — بدائل لغوية غير منطقية يولّدها AI مثل \"surface region\" بدل \"surface area\" — في أكثر من 42,500 ورقة بحثية منشورة.",
+        "en": "The {{blank_1}} tool from the University of Toulouse identified over 7,500 'tortured phrases' — nonsensical AI-generated linguistic substitutions like 'surface region' for 'surface area' — in over 42,500 published papers."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Problematic Paper Screener",
+            "en": "Problematic Paper Screener"
+          },
+          "options": [
+            {
+              "ar": "Problematic Paper Screener",
+              "en": "Problematic Paper Screener"
+            },
+            {
+              "ar": "Turnitin AI Detector",
+              "en": "Turnitin AI Detector"
+            },
+            {
+              "ar": "PaperMill Tracker",
+              "en": "PaperMill Tracker"
+            },
+            {
+              "ar": "Research Integrity Scanner",
+              "en": "Research Integrity Scanner"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الأداة ساهمت في كشف شبكة واسعة من \"مطاحن الأوراق\" (Paper Mills). دار Wiley أغلقت 19 مجلة وسحبت أكثر من 11,300 مقالة من Hindawi وحدها بعد اكتشاف نطاق الاحتيال.",
+        "en": "This tool helped uncover a vast network of 'paper mills.' Wiley shut down 19 journals and retracted over 11,300 Hindawi articles after discovering the scale of fraud."
+      }
+    },
+    {
+      "id": "csd-match-005",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تحدٍّ أخلاقي في هندسة البرمجيات والبيانات مع الإحصائية المرتبطة به:",
+        "en": "Match each ethical challenge in software and data engineering with its associated statistic:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "الأوراق البحثية المزيّفة",
+            "en": "Fraudulent research papers"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "التفريغ المعرفي عند المطورين",
+            "en": "Cognitive offloading in developers"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "تضييق تنوع البحث العلمي",
+            "en": "Narrowing research diversity"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "الدين الأمني في المؤسسات",
+            "en": "Security debt in organizations"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تتضاعف كل 1.5 سنة — 10 أضعاف سرعة الأوراق الشرعية",
+            "en": "Doubling every 1.5 years — 10× faster than legitimate papers"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "ارتباط سلبي بين استخدام AI والتفكير النقدي (666 مشاركاً)",
+            "en": "Negative correlation between AI use and critical thinking (666 participants)"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "الباحثون يتجمعون في المجالات الغنية بالبيانات (41.3 مليون ورقة)",
+            "en": "Researchers cluster in data-rich areas (41.3 million papers)"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "82% من الشركات متأثرة، بارتفاع من 74%",
+            "en": "82% of companies affected, up from 74%"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه التحديات مترابطة: التفريغ المعرفي يؤدي لقبول مخرجات AI بدون تدقيق، مما يزيد الدين الأمني والأوراق المزيفة. والتضييق يعني أن الجميع يعمل على نفس المشاكل بنفس الأدوات.",
+        "en": "These challenges are interconnected: cognitive offloading leads to accepting AI outputs without scrutiny, increasing security debt and fake papers. Narrowing means everyone works on the same problems with the same tools."
+      }
+    },
+    {
+      "id": "csd-sort-005",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب عناصر إطار حوكمة الكود المولّد بالذكاء الاصطناعي في المؤسسات، من الأساس إلى القمة:",
+        "en": "Order the components of an AI-generated code governance framework in organizations, from foundation to top:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "سياسة استخدام مقبول — تحدد أين يُسمح باستخدام AI وأين يُحظر",
+            "en": "Acceptable use policy — defines where AI use is permitted and prohibited"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "إطار مراجعة متدرج — مستويات مراجعة مختلفة حسب حساسية المكوّن",
+            "en": "Tiered review framework — different review levels based on component sensitivity"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تكامل الأدوات — دمج الفحص الأمني في بيئة التطوير وخط الإنتاج",
+            "en": "Tooling integration — embedding security scanning in IDE and CI/CD pipeline"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تدريب المطورين — بناء وعي أمني خاص بالكود المولّد بالذكاء الاصطناعي",
+            "en": "Developer training — building security awareness specific to AI-generated code"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "هذه العناصر الأربعة مجتمعة — وليس فرادى — هي ما يشكّل إطاراً فعالاً. السياسات وحدها لا تكفي بدون أدوات، والأدوات لا تكفي بدون وعي المطورين.",
+        "en": "These four components together — not individually — form an effective framework. Policies alone aren't enough without tools, and tools aren't enough without developer awareness."
+      }
+    },
+    {
+      "id": "csd-self-009",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت عالم بيانات وتستخدم AI لتوليد تحليلات. لاحظت أن AI يولّد تصورات بيانية جميلة لكنها أحياناً تحتوي على استنتاجات مضللة (مثل ارتباطات لا تعني سببية). كيف تتعامل مع هذا؟",
+        "en": "You are a data scientist using AI to generate analyses. You've noticed AI produces beautiful data visualizations but they sometimes contain misleading conclusions (like correlations implying causation). How do you handle this?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أستخدم AI لتوليد المسودة الأولية ثم أراجع كل استنتاج وتصور بعين ناقدة قبل تقديمه لصانعي القرار",
+            "en": "I use AI for initial draft generation then critically review every conclusion and visualization before presenting to decision-makers"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أضيف تحذيرات واضحة على كل تحليل مولّد بالذكاء الاصطناعي وأوضح حدوده لصانعي القرار",
+            "en": "I add clear disclaimers on every AI-generated analysis and explain its limitations to decision-makers"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أثق في التحليلات لأن AI أفضل مني في معالجة البيانات الكبيرة",
+            "en": "I trust the analyses because AI is better than me at processing large data"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتوقف عن استخدام AI في التحليل — لا يمكن الوثوق بأداة تُنتج استنتاجات مضللة",
+            "en": "I stop using AI for analysis — you can't trust a tool that produces misleading conclusions"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "القدرة على تمييز الارتباط من السببية هي مهارة بشرية حاسمة لا يمتلكها AI. عالم البيانات الناجح في عصر AI ليس من يولّد أكثر التحليلات بل من يميّز الصحيح من المضلل.",
+        "en": "The ability to distinguish correlation from causation is a critical human skill AI doesn't possess. A successful data scientist in the AI era isn't who generates the most analyses but who distinguishes the accurate from the misleading."
+      }
+    },
+    {
+      "id": "csd-self-010",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مبرمج وقرأت أن AI يمكنه إعادة إنتاج ثغرات أمنية تاريخية خطيرة (مثل بروتوكولات SSL ضعيفة وممارسات تشفير قديمة) لأنه تدرّب على كود تاريخي. كيف يؤثر هذا على ممارساتك؟",
+        "en": "You are a programmer and read that AI can reproduce dangerous historical security vulnerabilities (like weak SSL protocols and outdated crypto practices) because it trained on historical code. How does this affect your practices?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أطلب من AI صراحةً استخدام أحدث ممارسات الأمان وأتحقق من كل مكتبة وبروتوكول يقترحه مقابل الإرشادات الحالية",
+            "en": "I explicitly prompt AI to use latest security practices and verify every library and protocol it suggests against current guidelines"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أضيف فحص أمني تلقائي في خط الإنتاج يكتشف البروتوكولات والمكتبات المتقادمة",
+            "en": "I add automated security scanning in the CI/CD pipeline that detects outdated protocols and libraries"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أعتقد أن النماذج الحديثة تعرف الفرق بين الكود القديم والحديث ولا حاجة للقلق",
+            "en": "I believe modern models know the difference between old and new code and there's no need to worry"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هذا سبب كافٍ لعدم الثقة بأي كود مولّد — أكتب كل شيء يدوياً",
+            "en": "This is reason enough not to trust any generated code — I write everything manually"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Databricks أثبتت أن أسلوب \"الأمان بالتحفيز\" (Security Prompting) يقلل الثغرات بشكل كبير. طلب صريح من AI لتجنب المخاطر الأمنية واستخدام أحدث الممارسات يحسّن المخرجات بشكل ملموس.",
+        "en": "Databricks proved that 'Security Prompting' significantly reduces vulnerabilities. Explicitly asking AI to avoid security risks and use latest practices noticeably improves outputs."
+      }
+    },
+    {
+      "id": "csd-mcq-016",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مستشار مهني لطلاب علوم الحاسوب. وفقاً لبيانات Hired.com، كيف تغيّرت وظائف البرمجة بين يناير 2025 ويناير 2026؟",
+        "en": "You are a career advisor for CS students. According to Hired.com data, how did programming jobs change between January 2025 and January 2026?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الوظائف التي تتطلب خبرة بأدوات AI زادت 340% بينما وظائف التنفيذ البحت تراجعت 17%",
+            "en": "Jobs requiring AI tool experience increased 340% while pure implementation roles declined 17%"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "كل الوظائف البرمجية تراجعت بنسبة 30% بسبب AI",
+            "en": "All programming jobs declined 30% due to AI"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا تغيير ملحوظ — السوق استقر بعد فقاعة 2024",
+            "en": "No notable change — the market stabilized after the 2024 bubble"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "زيادة في كل الوظائف بنسبة 20% بسبب الطلب على الرقمنة",
+            "en": "Increase in all jobs by 20% due to digitization demand"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "المعادلة واضحة: الوظائف التي تمحورت حول كتابة الكود فقط تتراجع، بينما الوظائف التي تجمع بين فهم المنتج والأعمال والقدرة على توجيه AI تنمو بسرعة فائقة.",
+        "en": "The equation is clear: jobs centered only on writing code are declining, while jobs combining product/business understanding with the ability to guide AI are growing rapidly."
+      }
+    },
+    {
+      "id": "csd-mcq-017",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير فني تخطط لفريقك في 2027. وفقاً لعدة مصادر، ما الدور الجديد الذي يبرز لمطوّري المستوى المتوسط في عصر AI؟",
+        "en": "You are a tech director planning your team for 2027. According to multiple sources, what new role is emerging for mid-level developers in the AI era?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مشرفون على AI ومهندسو أتمتة — يركزون على التحقق من مخرجات AI ودمج المكونات المولّدة في الأنظمة",
+            "en": "AI supervisors and automation architects — focusing on validating AI outputs and integrating generated components into systems"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مبرمجون متخصصون في إصلاح أخطاء AI فقط",
+            "en": "Programmers specializing only in fixing AI errors"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مدراء مشاريع بلا مهارات تقنية — لأن AI يتولى كل الجانب التقني",
+            "en": "Project managers with no technical skills — because AI handles all technical aspects"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "نفس الدور التقليدي لكن مع أدوات مساعدة إضافية",
+            "en": "Same traditional role but with additional helper tools"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التحوّل الجوهري: من \"كتابة الكود\" إلى \"الإشراف على حل المشكلات\". مهارات التواصل وتصميم الأنظمة وفهم الأعمال أصبحت أهم من سرعة كتابة الكود.",
+        "en": "The fundamental shift: from 'writing code' to 'overseeing problem-solving.' Communication, system design, and business understanding skills have become more important than coding speed."
+      }
+    },
+    {
+      "id": "csd-mcq-018",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أنت مطوّر مبتدئ تتساءل عن فرصك المهنية. وفقاً لبيانات Indeed وHandshake، كيف تأثرت فرص التدريب التقني (Internships)؟",
+        "en": "You are a junior developer wondering about your career prospects. According to Indeed and Handshake data, how have tech internship opportunities been affected?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تراجعت وظائف التدريب التقني بنسبة 30% منذ 2023، و70% من مديري التوظيف يرون أن AI يمكنه أداء مهام المتدربين",
+            "en": "Tech internship postings declined 30% since 2023, and 70% of hiring managers believe AI can do intern tasks"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "زادت فرص التدريب لأن الشركات تحتاج مشرفين على أدوات AI",
+            "en": "Internship opportunities increased because companies need AI tool supervisors"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لم تتأثر — التدريب يهدف للتعلم وليس الإنتاج",
+            "en": "Not affected — internships aim for learning, not production"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تحولت فقط من حضورية لعن بُعد بدون تغير في العدد",
+            "en": "Only shifted from in-person to remote with no change in numbers"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "صحيفة New York Times نشرت تقريراً بعنوان \"وداعاً لوظائف التقنية بـ 165,000 دولار\" عن خريج حاسوب تقدّم لـ 5,762 وظيفة بدون عرض عمل واحد. المطورون الشباب يحتاجون مهارات AI بشكل عاجل.",
+        "en": "The NYT published a report titled 'Goodbye, $165,000 Tech Jobs' about a CS graduate who applied to 5,762 jobs without a single offer. Young developers urgently need AI skills."
+      }
+    },
+    {
+      "id": "csd-tf-011",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مكتب إحصاءات العمل الأمريكي يتوقع نمواً بنسبة 23-35% في الوظائف المتعلقة بالبيانات بحلول 2032 — وهو أعلى بكثير من المتوسط.",
+        "en": "The U.S. Bureau of Labor Statistics projects 23-35% growth in data-related roles by 2032 — well above average."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "سوق تحليل البيانات العالمي يتجه لـ 104 مليار دولار بنهاية 2026 و495 مليار بحلول 2034. الوظائف المعرّضة للخطر هي وظائف تحضير البيانات اليدوية والاستعلامات البسيطة، بينما الخبرة المتخصصة والتفكير النقدي أكثر طلباً.",
+        "en": "The global data analytics market is heading to $104B by end of 2026 and $495B by 2034. At-risk roles are manual data preparation and simple queries, while domain expertise and critical thinking are more in demand."
+      }
+    },
+    {
+      "id": "csd-tf-012",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "المطورون الذين يتقنون استخدام AI يحصلون على رواتب أعلى — وظائف AI للمبتدئين تدفع 90-130 ألف دولار مقابل 65-85 ألف للوظائف التقليدية.",
+        "en": "Developers who master AI tools earn higher salaries — entry-level AI roles pay $90K-$130K versus $65K-$85K for traditional dev jobs."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "السوق يكافئ من يتقن التعاون مع AI وليس من يقاومه. الفجوة في الرواتب تتسع وتشمل كل المستويات — المطورون الذين يدمجون AI في عملهم يتقدمون مهنياً أسرع.",
+        "en": "The market rewards those who master AI collaboration, not those who resist it. The salary gap is widening across all levels — developers integrating AI into their work advance faster professionally."
+      }
+    },
+    {
+      "id": "csd-fill-006",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "الدور المهني الناشئ {{blank_1}} يجمع بين مهارات التحليل التقليدية وخبرة التعلم الآلي، ويُعتبر تطوراً طبيعياً لمحلل البيانات في عصر الذكاء الاصطناعي.",
+        "en": "The emerging role of {{blank_1}} combines traditional analysis skills with machine learning expertise, and is considered a natural evolution of the data analyst in the AI era."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "محلل بيانات AI",
+            "en": "AI Data Analyst"
+          },
+          "options": [
+            {
+              "ar": "محلل بيانات AI",
+              "en": "AI Data Analyst"
+            },
+            {
+              "ar": "مهندس أوامر",
+              "en": "Prompt Engineer"
+            },
+            {
+              "ar": "مشرف AI",
+              "en": "AI Supervisor"
+            },
+            {
+              "ar": "مدقق خوارزميات",
+              "en": "Algorithm Auditor"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا الدور يعكس تحولاً أوسع في سوق العمل: الوظائف لا تختفي بل تتحول. 65% من الشركات تتوقع أن AI سيخلق وظائف جديدة في مجال البيانات، مقابل 7% فقط تتوقع إلغاء وظائف.",
+        "en": "This role reflects a broader labor market shift: jobs aren't disappearing but transforming. 65% of companies expect AI to create new data jobs, while only 7% expect displacement."
+      }
+    },
+    {
+      "id": "csd-match-006",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل فئة من المطورين مع التأثير المتوقع لـ AI على دورهم:",
+        "en": "Match each developer category with AI's expected impact on their role:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "مطوّرون مبتدئون (0-2 سنوات)",
+            "en": "Junior developers (0-2 years)"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "مطوّرون متوسطون (3-7 سنوات)",
+            "en": "Mid-level developers (3-7 years)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "مطوّرون كبار (Staff+)",
+            "en": "Senior developers (Staff+)"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "علماء بيانات تقليديون",
+            "en": "Traditional data scientists"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "أعلى خطر: AI ينافسهم مباشرة — يحتاجون مهارات AI عاجلاً",
+            "en": "Highest risk: AI directly competes with them — need AI skills urgently"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "تحوّل لمشرفي AI ومهندسي أتمتة — التحقق بدل الكتابة",
+            "en": "Shift to AI supervisors and automation architects — validating instead of writing"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "أكبر مستفيدين — 63.5% يستخدمون الوكلاء بانتظام ويحققون أعلى مكاسب",
+            "en": "Biggest beneficiaries — 63.5% regularly use agents and achieve highest gains"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تحوّل لمحللي بيانات AI — الخبرة المتخصصة أهم من تحضير البيانات",
+            "en": "Shift to AI data analysts — domain expertise more important than data preparation"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "النمط واضح: كلما زادت خبرتك وقدرتك على توجيه AI استراتيجياً، زادت استفادتك. لكن الخبرة وحدها ليست كافية — يجب أن تتبنى الأدوات فعلياً وليس مقاومتها.",
+        "en": "The pattern is clear: the more experience you have and the better you can strategically guide AI, the more you benefit. But experience alone isn't enough — you must actually adopt the tools, not resist them."
+      }
+    },
+    {
+      "id": "csd-sort-006",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب المهارات الأهم لمهندس البرمجيات في 2026 حسب الطلب في السوق، من الأعلى طلباً إلى الأقل:",
+        "en": "Order the most important skills for a software engineer in 2026 by market demand, from highest to lowest:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "فهم تصميم الأنظمة والبنية التحتية المعقدة",
+            "en": "Understanding system design and complex infrastructure"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "القدرة على توجيه أدوات AI والتحقق من مخرجاتها بنظرة نقدية",
+            "en": "Ability to guide AI tools and critically verify their outputs"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "مهارات التواصل وفهم متطلبات الأعمال",
+            "en": "Communication skills and business requirements understanding"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "سرعة كتابة الكود اليدوي والإنتاجية الشخصية",
+            "en": "Speed of manual code writing and personal productivity"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "السوق ينتقل من مكافأة الكمية (أسطر كود) إلى مكافأة الجودة (قرارات تقنية سليمة). سرعة كتابة الكود — التي كانت ميزة أساسية — أصبحت الأقل أهمية لأن AI يتولاها.",
+        "en": "The market is shifting from rewarding quantity (lines of code) to rewarding quality (sound technical decisions). Coding speed — once a core advantage — has become least important because AI handles it."
+      }
+    },
+    {
+      "id": "csd-self-011",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مبرمج بخبرة 3 سنوات وتشاهد دراسة Stanford تُظهر أن توظيف المبرمجين (22-25 سنة) انخفض 20% بينما زاد 9% لمن هم 35-49. كيف تخطط لمستقبلك؟",
+        "en": "You are a programmer with 3 years' experience watching the Stanford study showing employment of programmers (22-25) declined 20% while increasing 9% for ages 35-49. How do you plan your future?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أسارع لبناء خبرة في تصميم الأنظمة وقيادة الفرق والتخصص في مجال صناعي — لأنتقل لفئة 35-49 مبكراً",
+            "en": "I rush to build expertise in system design, team leadership, and industry specialization — to transition to the 35-49 category early"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتقن أدوات AI بعمق وأبني مشاريع تُظهر قدرتي على حل مشاكل معقدة — ليس مجرد توليد كود",
+            "en": "I master AI tools deeply and build projects showing ability to solve complex problems — not just generate code"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أركّز على تعلم لغات برمجة أكثر وبناء سيرة ذاتية تقنية قوية",
+            "en": "I focus on learning more programming languages and building a strong technical resume"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أفكر في تغيير مهنتي بالكامل — سوق البرمجة لم يعد آمناً",
+            "en": "I consider changing my career entirely — the programming market is no longer safe"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "البيانات واضحة: المطورون الأكبر سناً لم يتأثروا بل زاد توظيفهم. الخبرة في تصميم الأنظمة وفهم الأعمال والقيادة هي ما يحميك — ليس كثرة اللغات أو سرعة الكتابة.",
+        "en": "The data is clear: older developers weren't affected — their employment actually grew. Expertise in system design, business understanding, and leadership is what protects you — not more languages or faster typing."
+      }
+    },
+    {
+      "id": "csd-self-012",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت أستاذ جامعي في هندسة البرمجيات. 65% من المطورين يستخدمون أدوات AI أسبوعياً، لكن طلابك لن يتخرجوا قبل 4 سنوات. كيف تعدّل المنهج؟",
+        "en": "You are a university professor in software engineering. 65% of developers use AI tools weekly, but your students won't graduate for 4 years. How do you adjust the curriculum?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أدمج AI في كل مقرر — تعلم الأساسيات مع AI وليس بدونه، مع التركيز على التفكير النقدي والمراجعة الأمنية",
+            "en": "I integrate AI into every course — learn fundamentals with AI not without it, emphasizing critical thinking and security review"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أخصص مقررات مستقلة لأدوات AI بجانب المقررات التقليدية دون تغييرها",
+            "en": "I create separate AI tool courses alongside traditional ones without changing them"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أمنع AI في الامتحانات والواجبات — الطلاب يحتاجون أساسيات قوية أولاً",
+            "en": "I ban AI in exams and assignments — students need strong fundamentals first"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أغيّر شيئاً — الأدوات تتغير لكن المبادئ ثابتة",
+            "en": "I change nothing — tools change but principles are permanent"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الطلاب سيتخرجون في 2030 حيث ستكون أدوات AI أكثر تقدماً بكثير. تعليمهم الأساسيات بدون AI يشبه تعليمهم الحساب بدون آلة حاسبة — ممكن لكن ليس واقعياً لسوق العمل.",
+        "en": "Students will graduate in 2030 when AI tools will be far more advanced. Teaching fundamentals without AI is like teaching math without a calculator — possible but unrealistic for the job market."
+      }
+    },
+    {
+      "id": "csd-mcq-019",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول امتثال في شركة برمجيات أوروبية. ما المنظمتان الدوليتان اللتان أصدرتا إرشادات حوكمة محددة للكود المولّد بالذكاء الاصطناعي في 2025-2026؟",
+        "en": "You are a compliance officer at a European software company. Which two international organizations issued specific governance guidelines for AI-generated code in 2025-2026?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "NIST (المعهد الوطني الأمريكي) وOWASP (مشروع أمن تطبيقات الويب المفتوح)",
+            "en": "NIST (National Institute of Standards and Technology) and OWASP (Open Web Application Security Project)"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ISO والاتحاد الأوروبي فقط عبر قانون AI Act",
+            "en": "ISO and the EU only through the AI Act"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "IEEE وACM — المنظمتان المهنيتان الرئيسيتان",
+            "en": "IEEE and ACM — the main professional organizations"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم تصدر أي إرشادات رسمية بعد — القطاع ينظم نفسه ذاتياً",
+            "en": "No official guidelines have been issued yet — the sector self-regulates"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "OWASP أضافت مخاطر AI إلى قائمتها الشهيرة Top 10، وNIST أصدرت إطاراً لإدارة مخاطر AI يشمل الكود المولّد. الشركات التي تتجاهل هذه الإرشادات تعرّض نفسها لمخاطر قانونية متزايدة.",
+        "en": "OWASP added AI risks to its famous Top 10 list, and NIST released an AI risk management framework covering generated code. Companies ignoring these guidelines expose themselves to increasing legal risks."
+      }
+    },
+    {
+      "id": "csd-mcq-020",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مهندس برمجيات في شركة تبيع خدماتها لشركات كبرى. لماذا يُعتبر تتبع مصدر الكود (Code Provenance) مهماً بشكل خاص مع الكود المولّد بالذكاء الاصطناعي؟",
+        "en": "You are a software engineer at a company selling services to enterprises. Why is Code Provenance tracking especially important with AI-generated code?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لأن الكود المولّد قد يحتوي على أجزاء من كود مفتوح المصدر بتراخيص مقيّدة، مما يعرّض الشركة لدعاوى ملكية فكرية",
+            "en": "Because generated code may contain parts of open source code with restrictive licenses, exposing the company to IP lawsuits"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لأغراض التوثيق الداخلي فقط — لا تأثير قانوني مباشر",
+            "en": "For internal documentation purposes only — no direct legal impact"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لتحديد من يحصل على الائتمان في فريق التطوير",
+            "en": "To determine who gets credit on the development team"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لأن العملاء يطلبون معرفة نسبة الكود المكتوب يدوياً",
+            "en": "Because clients want to know the percentage of manually written code"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "GitHub Copilot Enterprise يقدم ميزة IP Indemnification (التعويض عن الملكية الفكرية) وتتبع مصدر الكود تحديداً لهذا السبب. المؤسسات الكبرى ترفض كوداً بدون تتبع واضح لمصدره.",
+        "en": "GitHub Copilot Enterprise offers IP Indemnification and code provenance tracking specifically for this reason. Large enterprises refuse code without clear provenance tracking."
+      }
+    },
+    {
+      "id": "csd-mcq-021",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أنت مطوّر تعمل على مشروع مفتوح المصدر. Georgia Tech تتتبع ثغرات CVE الناتجة عن أدوات AI. كيف تكتشف الأداة (Vibe Security Radar) ما إذا كان الكود من صنع AI؟",
+        "en": "You are a developer working on an open source project. Georgia Tech tracks CVEs from AI tools. How does the Vibe Security Radar detect whether code was AI-generated?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تبحث عن علامات مثل وسوم المؤلف المشارك (co-author tags) والبريد الإلكتروني للروبوت في تاريخ commits",
+            "en": "It looks for markers like co-author tags and bot emails in commit history"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تستخدم نموذج AI لاكتشاف أنماط الكتابة الآلية",
+            "en": "It uses an AI model to detect automated writing patterns"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تعتمد على إبلاغ المطورين أنفسهم",
+            "en": "It relies on self-reporting by developers"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تفحص تعليقات الكود بحثاً عن عبارات نمطية لـ AI",
+            "en": "It examines code comments for AI-typical phrases"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "المشكلة: كثير من المطورين يحذفون علامات AI من تاريخ الأكواد. Georgia Tech تقدّر العدد الفعلي بـ 5-10 أضعاف الرقم المُتتبّع. المرحلة التالية: تحليل أنماط الكتابة وسلوك commits بدلاً من البيانات الوصفية.",
+        "en": "The problem: many developers strip AI markers from code history. Georgia Tech estimates the real count at 5-10× the tracked number. Next phase: analyzing writing patterns and commit behavior instead of metadata."
+      }
+    },
+    {
+      "id": "csd-tf-013",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "سوق الأدوات No-Code/Low-Code بلغ 28.75 مليار دولار في 2026، وGartner تتوقع أن 70% من التطبيقات المؤسسية الجديدة ستُبنى بهذه المنصات بحلول نهاية 2026.",
+        "en": "The No-Code/Low-Code market reached $28.75 billion in 2026, and Gartner predicts 70% of new enterprise applications will be built using these platforms by the end of 2026."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا النمو يعكس اتجاهاً أوسع: \"ديمقراطية البرمجة\" حيث يستطيع غير المبرمجين بناء تطبيقات. لكن هذا يزيد أيضاً من سطح الهجوم الأمني — تطبيقات أكثر بمراجعة أمنية أقل.",
+        "en": "This growth reflects a broader trend: 'democratizing programming' where non-programmers can build apps. But this also increases the security attack surface — more apps with less security review."
+      }
+    },
+    {
+      "id": "csd-tf-014",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مراكز البيانات المخصصة للذكاء الاصطناعي تستهلك حالياً 415 تيراواط ساعة سنوياً — ما يعادل استهلاك دول متوسطة الحجم.",
+        "en": "AI-dedicated data centers currently consume 415 TWh annually — equivalent to mid-sized countries' consumption."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "ومن المتوقع أن يتضاعف هذا الاستهلاك إلى 945 تيراواط بحلول 2030. استعلام AI واحد يستهلك طاقة تصل إلى 10 أضعاف البحث التقليدي. هذا يطرح تحدياً بيئياً وأخلاقياً حقيقياً على صناعة التقنية.",
+        "en": "This consumption is projected to more than double to 945 TWh by 2030. A single AI query uses up to 10× more energy than a standard search. This poses a real environmental and ethical challenge for the tech industry."
+      }
+    },
+    {
+      "id": "csd-fill-007",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "في فبراير 2026، كشف الباحث {{blank_1}} عن هجوم يستغل قدرة نماذج AI على هلوسة أسماء حزم برمجية — حيث يسجّل المهاجمون حزماً خبيثة بالأسماء التي تقترحها AI ويثبتها المطورون دون تدقيق.",
+        "en": "The attack known as {{blank_1}} exploits AI models' ability to hallucinate package names — where attackers register malicious packages with AI-suggested names that developers install without verification."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Typosquatting عبر AI",
+            "en": "AI-driven Typosquatting"
+          },
+          "options": [
+            {
+              "ar": "Typosquatting عبر AI",
+              "en": "AI-driven Typosquatting"
+            },
+            {
+              "ar": "Dependency Confusion",
+              "en": "Dependency Confusion"
+            },
+            {
+              "ar": "Prompt Injection",
+              "en": "Prompt Injection"
+            },
+            {
+              "ar": "Supply Chain Poisoning",
+              "en": "Supply Chain Poisoning"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا الهجوم يجمع بين نقطتي ضعف: هلوسة AI لأسماء حزم غير موجودة، وثقة المطورين العمياء في اقتراحات AI. الحل: تشغيل npm audit أو pip-audit بعد كل جلسة Vibe Coding.",
+        "en": "This attack combines two weaknesses: AI hallucinating non-existent package names, and developers' blind trust in AI suggestions. Solution: run npm audit or pip-audit after every Vibe Coding session."
+      }
+    },
+    {
+      "id": "csd-match-007",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مصدر تنظيمي أو معياري مع دوره في حوكمة الكود المولّد بالذكاء الاصطناعي:",
+        "en": "Match each regulatory or standards body with its role in AI-generated code governance:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "OWASP",
+            "en": "OWASP"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "NIST",
+            "en": "NIST"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "GitHub Copilot Enterprise",
+            "en": "GitHub Copilot Enterprise"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Georgia Tech SSLab",
+            "en": "Georgia Tech SSLab"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "أضافت مخاطر AI لقائمة أهم 10 تهديدات لتطبيقات الويب",
+            "en": "Added AI risks to its Top 10 web application threats list"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أصدرت إطار إدارة مخاطر AI يشمل الكود المولّد",
+            "en": "Released AI risk management framework covering generated code"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "يقدم تعويض ملكية فكرية وتتبع مصدر الكود",
+            "en": "Offers IP indemnification and code provenance tracking"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تتتبع ثغرات CVE الناتجة عن أدوات AI عبر Vibe Security Radar",
+            "en": "Tracks AI-tool CVEs via the Vibe Security Radar"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "منظومة الحوكمة تتشكل بسرعة: معايير عالمية (OWASP/NIST) + أدوات تجارية (GitHub) + بحث أكاديمي (Georgia Tech). الشركات التي تتأخر في تبنّي هذه الأُطر ستواجه مخاطر قانونية وتقنية متصاعدة.",
+        "en": "The governance ecosystem is forming rapidly: global standards (OWASP/NIST) + commercial tools (GitHub) + academic research (Georgia Tech). Companies that delay adopting these frameworks face escalating legal and technical risks."
+      }
+    },
+    {
+      "id": "csd-sort-007",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مستويات المراجعة الأمنية المطلوبة للكود المولّد حسب حساسية المكوّن، من الأقل صرامة إلى الأكثر:",
+        "en": "Order the security review levels required for generated code by component sensitivity, from least to most strict:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "كود الواجهة الأمامية والتصميم — فحص تلقائي أساسي",
+            "en": "Frontend and UI code — basic automated scanning"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "منطق الأعمال والخدمات الداخلية — فحص تلقائي + مراجعة بشرية",
+            "en": "Business logic and internal services — automated scanning + human review"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "أنظمة المصادقة والتفويض — مراجعة أمنية متخصصة إلزامية",
+            "en": "Authentication and authorization systems — mandatory specialized security review"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "أنظمة الدفع والبنية التحتية — يُحظر استخدام AI كلياً أو يخضع لأعلى مستوى رقابة",
+            "en": "Payment systems and infrastructure — AI use prohibited entirely or subject to highest oversight"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "المقاربة المتدرجة تجمع بين كفاءة AI والأمان: استخدم AI بحرية في المكونات منخفضة الخطورة، وقيّده أو امنعه في المكونات الحرجة. هذا أفضل من حظر شامل أو سماح شامل.",
+        "en": "The tiered approach combines AI efficiency with security: use AI freely in low-risk components, restrict or prohibit it in critical ones. This is better than a blanket ban or blanket permission."
+      }
+    },
+    {
+      "id": "csd-self-013",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدير تقني في شركة ناشئة. عميلك الرئيسي يسأل: \"هل تستخدمون AI في كتابة الكود؟ وكيف تضمنون الجودة والأمان؟\" كيف ترد؟",
+        "en": "You are a CTO at a startup. Your main client asks: 'Do you use AI for code writing? How do you ensure quality and security?' How do you respond?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أشرح بشفافية أننا نستخدم أدوات AI مع إطار مراجعة متدرج وفحص أمني في كل مرحلة — وأعرض وثائق الحوكمة",
+            "en": "I transparently explain we use AI tools with a tiered review framework and security scanning at every stage — and present governance documentation"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقول نعم نستخدم AI لكن تحت إشراف مطورين خبراء ومع أدوات فحص أمني",
+            "en": "I say yes we use AI but under expert developer supervision and with security scanning tools"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنفي استخدام AI خوفاً من فقدان العميل",
+            "en": "I deny using AI fearing losing the client"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتجنب السؤال وأركز على نتائج الاختبارات وجودة المنتج النهائي",
+            "en": "I dodge the question and focus on test results and final product quality"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "الشفافية + الحوكمة الواضحة هي أفضل استراتيجية. الكذب أو التجنب يضعك في موقف قانوني وأخلاقي خطير خاصة مع تطور التنظيمات. GitHub Copilot Enterprise يقدم تتبع المصدر تحديداً لهذا السبب.",
+        "en": "Transparency + clear governance is the best strategy. Lying or evasion puts you in a dangerous legal and ethical position especially as regulations evolve. GitHub Copilot Enterprise offers provenance tracking for this exact reason."
+      }
+    },
+    {
+      "id": "csd-self-014",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مطوّر مفتوح المصدر وتساهم في مشروع شهير. بعض المساهمين بدأوا يرسلون طلبات دمج (Pull Requests) واضح أنها مولّدة بالكامل بالذكاء الاصطناعي بدون مراجعة. كيف تتعامل؟",
+        "en": "You are an open source developer contributing to a popular project. Some contributors have started submitting pull requests clearly entirely AI-generated without review. How do you handle this?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقترح سياسة واضحة: المساهمات المولّدة بـ AI مرحّب بها لكن يجب الإفصاح عنها وتخضع لمراجعة أمنية إضافية",
+            "en": "I propose a clear policy: AI-generated contributions are welcome but must be disclosed and undergo additional security review"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطبّق نفس معايير المراجعة على كل المساهمات بغض النظر عن مصدرها",
+            "en": "I apply the same review standards to all contributions regardless of source"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفض أي مساهمة مولّدة بـ AI — المصدر المفتوح يجب أن يكون عملاً بشرياً",
+            "en": "I reject any AI-generated contribution — open source should be human work"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أقبل كل شيء طالما يمر اختبارات CI/CD — لا أهتم بمن كتبه",
+            "en": "I accept everything as long as it passes CI/CD tests — I don't care who wrote it"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "مشروع OpenClaw مثال: أكثر من 300 تنبيه أمني وكثير منها من Vibe Coding. الشفافية في الإفصاح عن استخدام AI ضرورية لأن الكود المولّد له أنماط ثغرات مختلفة تحتاج مراجعة مخصصة.",
+        "en": "OpenClaw project is an example: over 300 security advisories, many from Vibe Coding. Transparency about AI use is essential because generated code has different vulnerability patterns requiring specialized review."
+      }
+    },
+    {
+      "id": "csd-mcq-022",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مهندس حاسوب سعودي. أعلن مجلس الوزراء السعودي تسمية 2026 بـ \"عام الذكاء الاصطناعي\". ما ترتيب المملكة عالمياً في مؤشر AI العالمي 2025؟",
+        "en": "You are a Saudi computer engineer. The Saudi Cabinet designated 2026 as the 'Year of AI.' What is the Kingdom's ranking in the 2025 Global AI Index?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "المرتبة 14 عالمياً والأولى عربياً في تطوير نماذج AI المتقدمة",
+            "en": "14th globally and first in the Arab world in developing advanced AI models"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "المرتبة 25 عالمياً والثانية عربياً بعد الإمارات",
+            "en": "25th globally and second in the Arab world after the UAE"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "المرتبة 5 عالمياً — متقدمة على معظم الدول الأوروبية",
+            "en": "5th globally — ahead of most European countries"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المرتبة 40 عالمياً مع خطة للوصول إلى المراتب العشر الأولى بحلول 2030",
+            "en": "40th globally with a plan to reach the top 10 by 2030"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "السعودية أصبحت أيضاً أول دولة عربية تنضم إلى الشراكة العالمية للذكاء الاصطناعي (GPAI)، وتستضيف المركز الدولي لأبحاث وأخلاقيات AI بدعم اليونسكو في الرياض. الإنفاق الحكومي على التقنيات الناشئة زاد أكثر من 56% في 2024.",
+        "en": "Saudi Arabia also became the first Arab country to join the Global Partnership on AI (GPAI), and hosts the UNESCO-backed International Center for AI Research and Ethics in Riyadh. Government spending on emerging technologies increased over 56% in 2024."
+      }
+    },
+    {
+      "id": "csd-mcq-023",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت عالم بيانات إماراتي. الإمارات وقّعت اتفاقية مع OpenAI ضمن مشروع Stargate لبناء بنية تحتية ضخمة للذكاء الاصطناعي. ما الميزة الفريدة التي حصلت عليها الإمارات؟",
+        "en": "You are an Emirati data scientist. The UAE signed an agreement with OpenAI as part of the Stargate project to build massive AI infrastructure. What unique benefit did the UAE receive?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "وصول ChatGPT Plus لكل سكان الإمارات — من أوائل الدول التي تتيح وصولاً وطنياً شاملاً",
+            "en": "ChatGPT Plus access for all UAE residents — among the first nations to enable nationwide access"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حصرية استخدام نماذج GPT-5 قبل بقية العالم بستة أشهر",
+            "en": "Exclusive access to GPT-5 models six months before the rest of the world"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تطوير نموذج لغوي عربي مشترك بين OpenAI والإمارات",
+            "en": "Joint development of an Arabic language model between OpenAI and the UAE"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "إعفاء من رسوم استخدام API لكل الشركات الإماراتية",
+            "en": "API usage fee waiver for all Emirati companies"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الإمارات تبني أيضاً أكبر حرم AI خارج أمريكا — 26 كم² في أبوظبي بسعة 5 جيجاوات مع شركات مثل Oracle وNVIDIA وCisco. شركة G42 الإماراتية تدير عشرات مراكز البيانات وتبني البنية التحتية لمشروع Stargate.",
+        "en": "The UAE is also building the largest AI campus outside the US — 26 sq km in Abu Dhabi with 5 GW capacity with Oracle, NVIDIA, and Cisco. UAE's G42 operates dozens of data centers and builds Stargate infrastructure."
+      }
+    },
+    {
+      "id": "csd-mcq-024",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أنت مبرمج عربي مهتم بتطوير مهاراتك. مبادرة \"مليون مبرمج عربي\" التي أطلقتها دبي تهدف لـ:",
+        "en": "You are an Arab programmer interested in developing your skills. The 'One Million Arab Coders' initiative launched by Dubai aims to:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تقديم تدريب برمجي مجاني للشباب العربي، مما يدعم بشكل غير مباشر تنمية مهارات AI",
+            "en": "Provide free programming training for Arab youth, indirectly supporting AI skill development"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "بناء نموذج لغوي عربي مفتوح المصدر",
+            "en": "Build an open-source Arabic language model"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "توظيف مليون مبرمج في شركات التقنية الخليجية",
+            "en": "Employ one million programmers in Gulf tech companies"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تطوير منصة برمجة عربية بديلة لـ GitHub",
+            "en": "Develop an Arabic programming platform as an alternative to GitHub"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "المبادرة جزء من منظومة أوسع تشمل حاضنات أعمال (Hub71)، برامج تسريع (Dubai Future Accelerators)، وتأشيرات طويلة الأمد للمتخصصين في التقنية. السعودية أيضاً أطلقت مبادرة SAMAI التي وصلت لأكثر من مليون مشارك.",
+        "en": "The initiative is part of a broader ecosystem including incubators (Hub71), accelerators (Dubai Future Accelerators), and long-term visas for tech professionals. Saudi Arabia also launched SAMAI reaching over one million participants."
+      }
+    },
+    {
+      "id": "csd-tf-015",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "السعودية استثمرت أكثر من 20 مليار دولار في البنية التحتية للذكاء الاصطناعي بما في ذلك إطلاق شركة HUMAIN المملوكة بالكامل لصندوق الاستثمارات العامة PIF لتطوير وإدارة حلول AI.",
+        "en": "Saudi Arabia invested over $20 billion in AI infrastructure including launching HUMAIN, a company wholly owned by the Public Investment Fund PIF, to develop and manage AI solutions."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "HUMAIN تمثل استراتيجية التكامل الرأسي: البنية التحتية + تطوير النماذج + التطبيقات التجارية. هذا يعني فرصاً حقيقية للمطورين وعلماء البيانات في المنطقة، لكن أيضاً منافسة متزايدة مع الكفاءات الأجنبية.",
+        "en": "HUMAIN represents a vertical integration strategy: infrastructure + model development + commercial applications. This means real opportunities for developers and data scientists in the region, but also increasing competition with foreign talent."
+      }
+    },
+    {
+      "id": "csd-tf-016",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "وفقاً لتقرير Deloitte 2025، 58% من المستهلكين في الإمارات والسعودية يستخدمون أدوات الذكاء الاصطناعي التوليدي — وهي نسبة أعلى بكثير من بريطانيا وأوروبا.",
+        "en": "According to Deloitte's 2025 report, 58% of consumers in the UAE and Saudi Arabia use generative AI tools — a much higher percentage than the UK and Europe."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا يعني أن المنطقة العربية ليست مستهلكة فقط بل سوق واعدة لتطبيقات AI. لكن 50% من المؤسسات تواجه نقصاً في الكفاءات التقنية — فرصة ذهبية للمطورين العرب الذين يتقنون AI.",
+        "en": "This means the Arab region isn't just a consumer but a promising market for AI applications. But 50% of organizations face a tech talent shortage — a golden opportunity for Arab developers who master AI."
+      }
+    },
+    {
+      "id": "csd-fill-008",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "شركة {{blank_1}} الإماراتية طوّرت نموذج Falcon اللغوي الكبير في معهد الابتكار التكنولوجي بأبوظبي، وهو من أبرز نماذج AI العربية المنافسة عالمياً.",
+        "en": "The Emirati company {{blank_1}} developed the Falcon large language model at Abu Dhabi's Technology Innovation Institute, one of the most prominent Arabic AI models competing globally."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "G42",
+            "en": "G42"
+          },
+          "options": [
+            {
+              "ar": "G42",
+              "en": "G42"
+            },
+            {
+              "ar": "Careem",
+              "en": "Careem"
+            },
+            {
+              "ar": "Noon",
+              "en": "Noon"
+            },
+            {
+              "ar": "NEOM Tech",
+              "en": "NEOM Tech"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "G42 تدير عشرات مراكز البيانات في الإمارات وتبني بنية Stargate التحتية. Falcon نموذج مُنشر ومُقاس عالمياً بأداء حقيقي. المنافسة بين السعودية (SDAIA/HUMAIN) والإمارات (G42/TII) تسرّع التطور في المنطقة.",
+        "en": "G42 operates dozens of data centers in the UAE and builds Stargate infrastructure. Falcon is a globally deployed and benchmarked model with real performance. Competition between Saudi Arabia (SDAIA/HUMAIN) and UAE (G42/TII) accelerates regional development."
+      }
+    },
+    {
+      "id": "csd-match-008",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مبادرة خليجية في مجال AI مع الدولة التي أطلقتها:",
+        "en": "Match each Gulf AI initiative with the country that launched it:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "شركة HUMAIN + حاسوب شاهين III",
+            "en": "HUMAIN company + Shaheen III supercomputer"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "نموذج Falcon + حرم AI 26 كم²",
+            "en": "Falcon model + 26 sq km AI campus"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "مبادرة مليون مبرمج عربي",
+            "en": "One Million Arab Coders initiative"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "استراتيجية وطنية للبيانات والذكاء الاصطناعي (2019)",
+            "en": "National Data and AI Strategy (2019)"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "المملكة العربية السعودية (PIF/SDAIA)",
+            "en": "Saudi Arabia (PIF/SDAIA)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "الإمارات العربية المتحدة (G42/TII)",
+            "en": "United Arab Emirates (G42/TII)"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "دبي (محمد بن راشد)",
+            "en": "Dubai (Mohammed bin Rashid)"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "قطر (الأجندة الرقمية 2030)",
+            "en": "Qatar (Digital Agenda 2030)"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "الإنفاق التقني في منطقة الشرق الأوسط وشمال أفريقيا سيبلغ 169 مليار دولار في 2026 (Gartner). المنافسة بين الدول الخليجية على الريادة في AI تخلق فرصاً غير مسبوقة للمطورين وعلماء البيانات العرب.",
+        "en": "Tech spending in MENA will reach $169 billion in 2026 (Gartner). Competition between Gulf states for AI leadership creates unprecedented opportunities for Arab developers and data scientists."
+      }
+    },
+    {
+      "id": "csd-sort-008",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب الركائز الاستراتيجية لاستراتيجية السعودية الوطنية للبيانات والذكاء الاصطناعي (NSDAI) من الأساس إلى القمة:",
+        "en": "Order the strategic pillars of Saudi Arabia's National Data and AI Strategy (NSDAI) from foundation to top:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "البنية التحتية: مراكز بيانات ضخمة وحوسبة فائقة (شاهين III)",
+            "en": "Infrastructure: massive data centers and supercomputing (Shaheen III)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "الكفاءات: تدريب أكثر من 11,000 متخصص ومليون مشارك عبر SAMAI",
+            "en": "Competencies: training 11,000+ specialists and one million participants via SAMAI"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "السياسات والتنظيم: أُطر حوكمة وانضمام للشراكة العالمية GPAI",
+            "en": "Policies and regulation: governance frameworks and joining GPAI"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "الابتكار والنظام البيئي: 664 شركة و9.1 مليار دولار تمويل",
+            "en": "Innovation and ecosystem: 664 companies and $9.1 billion in funding"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "Microsoft التزمت بمساعدة 3 ملايين شخص في السعودية على اكتساب مهارات AI بحلول 2030. Google رعت مؤشر تبنّي AI في القطاع العام الذي وثّق ريادة السعودية عالمياً في الاستخدام الحكومي لـ AI.",
+        "en": "Microsoft committed to helping 3 million people in Saudi Arabia acquire AI skills by 2030. Google sponsored the Public Sector AI Adoption Index documenting Saudi Arabia's global leadership in government AI use."
+      }
+    },
+    {
+      "id": "csd-self-015",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مطوّر عربي ترى أن 50% من المؤسسات الخليجية تعاني نقصاً في الكفاءات التقنية لـ AI. كيف تتعامل مع هذه الفرصة؟",
+        "en": "You are an Arab developer who sees that 50% of Gulf organizations suffer from AI tech talent shortages. How do you approach this opportunity?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبادر ببناء مشاريع حقيقية تستخدم أدوات AI وأشارك في مسابقات ومبادرات خليجية لبناء سمعتي في هذا المجال",
+            "en": "I proactively build real projects using AI tools and participate in Gulf competitions and initiatives to build my reputation in this field"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتعلم أدوات AI وأبحث عن وظيفة في شركات التقنية الخليجية التي توظف عن بُعد",
+            "en": "I learn AI tools and look for jobs at Gulf tech companies that hire remotely"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر حتى تنضج السوق أكثر — فرص كهذه لن تختفي بسرعة",
+            "en": "I wait until the market matures more — opportunities like these won't disappear quickly"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هذه فرص للخبراء الأجانب فقط — الشركات الخليجية تفضّل الكفاءات الغربية",
+            "en": "These are for foreign experts only — Gulf companies prefer Western talent"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "برنامج Project Transcendence السعودي يهدف لاستقطاب الكفاءات من حول العالم لكن أيضاً لتنمية الكفاءات المحلية والعربية. التأشيرات الطويلة للمتخصصين في التقنية في السعودية والإمارات تفتح الباب للمطورين العرب.",
+        "en": "Saudi Arabia's Project Transcendence aims to attract talent worldwide but also to develop local and Arab talent. Long-term tech visas in Saudi Arabia and UAE open doors for Arab developers."
+      }
+    },
+    {
+      "id": "csd-self-016",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت عالم بيانات تعمل في مؤسسة حكومية عربية. الحكومة تريد بناء \"بحيرة بيانات وطنية\" تدمج بيانات من أكثر من 430 نظاماً حكومياً. ما أكبر تحدٍّ تراه؟",
+        "en": "You are a data scientist working at an Arab government institution. The government wants to build a 'National Data Lake' integrating data from over 430 government systems. What's the biggest challenge you see?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الحوكمة والخصوصية — دمج البيانات يتطلب أُطر حماية صارمة وإشراف بشري خاصة مع استخدام AI في التحليل",
+            "en": "Governance and privacy — data integration requires strict protection frameworks and human oversight especially when using AI for analysis"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "التحدي التقني — توحيد تنسيقات البيانات من 430 نظاماً مختلفاً",
+            "en": "Technical challenge — unifying data formats from 430 different systems"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "التكلفة — بناء بنية تحتية ضخمة لتخزين ومعالجة هذا الحجم من البيانات",
+            "en": "Cost — building massive infrastructure to store and process this volume of data"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المقاومة الثقافية — الموظفون الحكوميون يخافون من فقدان السيطرة على بياناتهم",
+            "en": "Cultural resistance — government employees fear losing control of their data"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "السعودية بنت بحيرة بيانات وطنية تدمج أكثر من 430 نظاماً حكومياً. التحدي الأكبر ليس التقنية بل ضمان أن AI لا يُستخدم لانتهاك الخصوصية أو اتخاذ قرارات تمييزية تلقائياً.",
+        "en": "Saudi Arabia built a National Data Lake integrating 430+ government systems. The biggest challenge isn't technology but ensuring AI isn't used for privacy violations or automated discriminatory decisions."
+      }
+    },
+    {
+      "id": "csd-mcq-025",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مخطط استراتيجي تقني. Dario Amodei (CEO Anthropic) تنبأ في مارس 2026 أنه خلال ستة أشهر ستكون نسبة كبيرة من الكود مكتوبة بـ AI. ما النسبة التي ذكرها؟",
+        "en": "You are a tech strategist. Dario Amodei (Anthropic CEO) predicted in March 2026 that within six months, a large percentage of code would be AI-written. What percentage did he state?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "90% من كل الكود سيكون مكتوباً بالذكاء الاصطناعي",
+            "en": "90% of all code will be written by AI"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "50% — نصف الكود مولّد ونصف يدوي",
+            "en": "50% — half generated and half manual"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "75% في الشركات الكبرى فقط",
+            "en": "75% in large companies only"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "30% — زيادة طفيفة عن الوضع الحالي",
+            "en": "30% — slight increase from current state"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "حتى لو كان التوقع مبالغاً فيه، الاتجاه واضح: نسبة الكود المولّد تتزايد بسرعة. Google وMicrosoft أكّدتا أن ~25-30% من كودهما الجديد مولّد بالفعل. القفزة من 30% إلى 90% قد تكون أسرع مما نتوقع.",
+        "en": "Even if the prediction is ambitious, the trend is clear: the percentage of generated code is increasing rapidly. Google and Microsoft confirmed ~25-30% of their new code is already generated. The jump from 30% to 90% may be faster than expected."
+      }
+    },
+    {
+      "id": "csd-mcq-026",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت عالم بيانات تتابع نمو السوق. ما الحجم المتوقع لسوق تحليل البيانات العالمي بحلول 2034؟",
+        "en": "You are a data scientist tracking market growth. What is the projected size of the global data analytics market by 2034?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "حوالي 496 مليار دولار — بنمو سنوي 21.5% من 104 مليار في 2026",
+            "en": "Approximately $496 billion — with 21.5% annual growth from $104 billion in 2026"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "200 مليار دولار — نمو معتدل بسبب نضج السوق",
+            "en": "$200 billion — moderate growth due to market maturity"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تريليون دولار — AI سيتحول لأكبر صناعة في العالم",
+            "en": "$1 trillion — AI will become the world's largest industry"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50 مليار دولار — السوق سيتقلّص بسبب أتمتة التحليل",
+            "en": "$50 billion — the market will shrink due to analysis automation"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "11.5 مليون وظيفة بيانات جديدة متوقعة بنهاية 2026 عالمياً. النمو المتوقع 23-35% في الوظائف المتعلقة بالبيانات بحلول 2032 هو أعلى بكثير من المتوسط العام. المفتاح: التخصص في مجالات لا يمكن لـ AI أتمتتها.",
+        "en": "11.5 million new data jobs projected by late 2026 globally. The 23-35% growth in data-related roles by 2032 is well above average. The key: specializing in areas AI cannot automate."
+      }
+    },
+    {
+      "id": "csd-mcq-027",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أنت مطوّر مهتم بالخصوصية. وفقاً لعدة تقارير، ما الميزة الرئيسية لأدوات البرمجة المفتوحة المصدر مثل Ollama وTabby مقارنة بالأدوات السحابية؟",
+        "en": "You are a privacy-focused developer. According to multiple reports, what is the main advantage of open source coding tools like Ollama and Tabby compared to cloud tools?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "خصوصية كاملة للبيانات — الكود لا يغادر جهازك أبداً، بدون تكلفة اشتراك مستمرة",
+            "en": "Complete data privacy — code never leaves your machine, with no ongoing subscription cost"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أداء أفضل من الأدوات السحابية في كل المهام",
+            "en": "Better performance than cloud tools in all tasks"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "توفر ميزات أكثر من GitHub Copilot",
+            "en": "More features than GitHub Copilot"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "دعم رسمي أفضل من الشركات الكبرى",
+            "en": "Better official support from major companies"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "النماذج مثل DeepSeek Coder V3 وCode Llama 3 وStarCoder 3 يمكن تشغيلها محلياً. الخصوصية ميزة حاسمة للمؤسسات الحساسة والقطاعات المنظمة كالبنوك والرعاية الصحية.",
+        "en": "Models like DeepSeek Coder V3, Code Llama 3, and StarCoder 3 can run locally. Privacy is a critical advantage for sensitive institutions and regulated sectors like banking and healthcare."
+      }
+    },
+    {
+      "id": "csd-tf-017",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "الأنظمة متعددة الوكلاء (Multi-Agent Systems) التي يتعاون فيها وكلاء AI متعددون لإنجاز مشاريع برمجية معقدة من المتوقع أن تنتقل للإنتاج الفعلي في 2026 وفقاً لتوقعات IBM.",
+        "en": "Multi-Agent Systems where multiple AI agents collaborate to complete complex software projects are expected to move into production in 2026 according to IBM predictions."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Kate Blair من IBM وصفت 2025 بأنها \"عام الوكيل\" و2026 بأنها سنة انتقال الأنظمة متعددة الوكلاء للإنتاج. الشركات التي تتعامل مع AI كأداة فردية تفوّت الصورة الأكبر: AI كبنية تحتية مؤسسية.",
+        "en": "IBM's Kate Blair described 2025 as 'the year of the agent' and 2026 as the year multi-agent systems move to production. Companies treating AI as an individual tool miss the bigger picture: AI as organizational infrastructure."
+      }
+    },
+    {
+      "id": "csd-tf-018",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "وفقاً لمتخصصين في الصناعة، السؤال الأهم لمستقبل المطورين لم يعد \"هل سيحل AI محلك؟\" بل أصبح \"أي المطورين سينجح: من يستخدم AI أم من لا يستخدمه؟\"",
+        "en": "According to industry experts, the key question for developers' future is no longer 'Will AI replace you?' but 'Which developers will succeed: those who use AI or those who don't?'"
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "البيانات واضحة: التوظيف العام للمطورين لا يزال ينمو (3.8% في 2025)، لكن طبيعة العمل تتغير جذرياً. المطورون الذين يدمجون AI في عملهم يحصلون على رواتب أعلى ويتقدمون مهنياً أسرع.",
+        "en": "The data is clear: overall developer employment is still growing (3.8% in 2025), but the nature of work is fundamentally changing. Developers who integrate AI into their work earn higher salaries and advance faster."
+      }
+    },
+    {
+      "id": "csd-fill-009",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "تقنية {{blank_1}} تعني أن AI يقترح شيفرات تلقائياً وينفذها ويختبرها وينشرها بشكل مستقل — وهي المرحلة الأعلى في تطور أدوات البرمجة بالذكاء الاصطناعي.",
+        "en": "The {{blank_1}} approach means AI suggests code, executes, tests, and deploys it independently — the highest stage in AI coding tool evolution."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "البرمجة الوكيلية",
+            "en": "Agentic Coding"
+          },
+          "options": [
+            {
+              "ar": "البرمجة الوكيلية",
+              "en": "Agentic Coding"
+            },
+            {
+              "ar": "البرمجة التوليدية",
+              "en": "Generative Coding"
+            },
+            {
+              "ar": "البرمجة التلقائية",
+              "en": "Automated Coding"
+            },
+            {
+              "ar": "البرمجة المساعدة",
+              "en": "Assisted Coding"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Devin من Cognition Labs وGitHub Copilot في وضع الوكيل أمثلة حية. Goldman Sachs يختبر Devin لـ 12,000 مطوّر. لكن استطلاعات 2026 تُظهر أن المهندسين الكبار (Staff+) هم الأكثر استخداماً للوكلاء — لأنهم يعرفون كيف يوجّهونها.",
+        "en": "Devin from Cognition Labs and GitHub Copilot's agent mode are live examples. Goldman Sachs is testing Devin for 12,000 developers. But 2026 surveys show Staff+ engineers are heaviest agent users — because they know how to guide them."
+      }
+    },
+    {
+      "id": "csd-match-009",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مرحلة من تطور أدوات البرمجة بالذكاء الاصطناعي مع المثال الذي يمثلها:",
+        "en": "Match each stage of AI coding tool evolution with its representative example:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "إكمال تلقائي (2021-2023)",
+            "en": "Autocomplete (2021-2023)"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "مساعد محادثة (2023-2024)",
+            "en": "Chat assistant (2023-2024)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "تحرير متعدد الملفات (2024-2025)",
+            "en": "Multi-file editing (2024-2025)"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "وكيل مستقل (2025-2026)",
+            "en": "Autonomous agent (2025-2026)"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "GitHub Copilot الأصلي — اقتراحات سطر واحد",
+            "en": "Original GitHub Copilot — single-line suggestions"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "ChatGPT/Claude في المتصفح — شرح وإصلاح عبر الدردشة",
+            "en": "ChatGPT/Claude in browser — explaining and fixing via chat"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "Cursor Composer — تنسيق تعديلات عبر المشروع بأكمله",
+            "en": "Cursor Composer — orchestrating changes across the entire project"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "Devin/Claude Code Agent — من المهمة إلى طلب الدمج تلقائياً",
+            "en": "Devin/Claude Code Agent — from task to pull request automatically"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل مرحلة لم تُلغِ سابقتها بل أضافت طبقة. المطوّر الذكي يستخدم كل المراحل حسب المهمة: إكمال تلقائي للكود البسيط، محادثة للفهم، تحرير متعدد للمشاريع، ووكيل للمهام الروتينية.",
+        "en": "Each stage didn't replace the previous but added a layer. A smart developer uses all stages depending on the task: autocomplete for simple code, chat for understanding, multi-file for projects, and agents for routine tasks."
+      }
+    },
+    {
+      "id": "csd-sort-009",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب التحولات المتوقعة في مهنة هندسة البرمجيات حسب قربها الزمني، من الأقرب حدوثاً إلى الأبعد:",
+        "en": "Order the expected transformations in software engineering by how soon they'll occur, from nearest to farthest:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "غالبية الكود الجديد مولّد بـ AI مع مراجعة بشرية",
+            "en": "Most new code is AI-generated with human review"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "وكلاء AI ينفذون مشاريع كاملة من البداية للنهاية",
+            "en": "AI agents executing complete projects from start to finish"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "اختفاء معظم وظائف البرمجة التقليدية وظهور أدوار جديدة كلياً",
+            "en": "Disappearance of most traditional programming roles and emergence of entirely new roles"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "AI يصمم بنية الأنظمة ويتخذ قرارات تقنية معقدة بشكل مستقل",
+            "en": "AI designs system architecture and makes complex technical decisions independently"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "المرحلة الأولى تحدث الآن (30%+ في Google/Microsoft). المرحلة الثانية بدأت مع Devin وClaude Code Agent. المرحلتان الثالثة والرابعة قد تستغرقان سنوات لأن AI لا يزال يعجز عن فهم السياق المعقد واتخاذ القرارات الاستراتيجية.",
+        "en": "The first stage is happening now (30%+ at Google/Microsoft). The second is starting with Devin and Claude Code Agent. Stages 3 and 4 may take years as AI still struggles with complex context and strategic decisions."
+      }
+    },
+    {
+      "id": "csd-self-017",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مهندس برمجيات وتسمع أن وكلاء AI المستقلين بدأوا ينفذون مشاريع كاملة بدون تدخل بشري. كيف تستعد للسنوات الثلاث القادمة؟",
+        "en": "You are a software engineer hearing that autonomous AI agents are starting to execute complete projects without human intervention. How do you prepare for the next three years?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتعلم كيف أوجّه وأشرف على الوكلاء — فهم كيف يعملون وكيف أكتشف أخطاءهم وأحسّن مخرجاتهم",
+            "en": "I learn to guide and supervise agents — understanding how they work, detecting their errors, and improving their outputs"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتخصص في مجال لا يستطيع AI التعامل معه بسهولة مثل الأمن السيبراني أو البنية التحتية الحرجة",
+            "en": "I specialize in an area AI can't easily handle, like cybersecurity or critical infrastructure"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أراقب الوضع ولا أتخذ قرارات متسرعة — الوكلاء لا يزالون في مراحلهم الأولى",
+            "en": "I watch the situation and don't make hasty decisions — agents are still in early stages"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أبدأ في تعلم مهنة جديدة كلياً — البرمجة ستختفي خلال 5 سنوات",
+            "en": "I start learning an entirely new profession — programming will disappear within 5 years"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "المطورون الكبار (Staff+) هم الأكثر استخداماً للوكلاء (63.5%) وليس المبتدئين. السبب: توجيه الوكيل يحتاج فهماً عميقاً لما يجب أن يحدث. المستقبل يكافئ المشرفين المتمكنين وليس المنفذين.",
+        "en": "Staff+ engineers are the heaviest agent users (63.5%), not juniors. The reason: guiding an agent requires deep understanding of what should happen. The future rewards capable supervisors, not executors."
+      }
+    },
+    {
+      "id": "csd-self-018",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت عالم بيانات وقرأت أن AI يضيّق تنوع البحث العلمي ويُركّز العمل في المجالات الغنية بالبيانات. كيف يؤثر هذا على اختيارك لمشاريعك البحثية؟",
+        "en": "You are a data scientist and read that AI narrows research diversity, concentrating work in data-rich areas. How does this affect your choice of research projects?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أستخدم AI لتسريع عملي لكن أختار عمداً مشاريع في مجالات أقل تغطية — حيث المنافسة أقل والتأثير أكبر",
+            "en": "I use AI to speed up my work but deliberately choose projects in less-covered areas — where competition is lower and impact is greater"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أبقى في المجالات الغنية بالبيانات لأن أدوات AI تعمل بشكل أفضل فيها والنشر أسهل",
+            "en": "I stay in data-rich areas because AI tools work better there and publishing is easier"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتجنب استخدام AI في أبحاثي حتى لا أقع في فخ التضييق",
+            "en": "I avoid using AI in my research to not fall into the narrowing trap"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هذه مشكلة أكاديمية ولا تؤثر على عملي العملي كعالم بيانات",
+            "en": "This is an academic problem and doesn't affect my practical work as a data scientist"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الباحثون الذين يستخدمون AI ينشرون 3× أوراق أكثر ويُقتبسون 4.8× أكثر. لكن التنوع مهم: المجالات \"المهملة\" غالباً ما تكون أكثر أهمية مجتمعياً من المجالات \"الرائجة\".",
+        "en": "AI-using researchers publish 3× more papers and get 4.8× more citations. But diversity matters: 'neglected' areas are often more societally important than 'trendy' ones."
+      }
+    },
+    {
+      "id": "csd-mcq-028",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مهندس برمجيات في شركة مالية. فريقك يريد استخدام AI لتوليد كود نظام الدفع. وفقاً لأفضل الممارسات في 2026، ما الإجراء الصحيح؟",
+        "en": "You are a software engineer at a financial company. Your team wants to use AI to generate payment system code. According to 2026 best practices, what's the correct action?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "حظر استخدام AI كلياً في أنظمة الدفع أو إخضاعه لأعلى مستوى رقابة ومراجعة أمنية متخصصة",
+            "en": "Completely prohibit AI use in payment systems or subject it to the highest oversight and specialized security review"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "استخدام AI مع فحص أمني تلقائي فقط (SAST/SCA)",
+            "en": "Use AI with only automated security scanning (SAST/SCA)"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "السماح بـ AI لأن أدوات الفحص الحديثة تكشف كل الثغرات",
+            "en": "Allow AI because modern scanning tools catch all vulnerabilities"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "استخدام AI لكتابة المسودة ثم إعادة كتابة الكود بالكامل يدوياً",
+            "en": "Use AI to write the draft then rewrite the entire code manually"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "القطاع المالي من أعلى القطاعات حساسية. أدوات SAST التقليدية تفشل في اكتشاف أخطاء المنطق والمصادقة في الكود المولّد. المراجعة البشرية المتخصصة ضرورية ولا يمكن استبدالها.",
+        "en": "The financial sector is among the most sensitive. Traditional SAST tools fail to detect logic and authentication errors in generated code. Specialized human review is essential and cannot be replaced."
+      }
+    },
+    {
+      "id": "csd-mcq-029",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت قائد فريق تطوير وتلاحظ أن مقاييس الإنتاجية الفردية ارتفعت بشكل كبير بعد تبنّي أدوات AI، لكن مقاييس التسليم على مستوى المنظمة لم تتحسن. ما أول شيء تفحصه؟",
+        "en": "You are a development team lead noticing individual productivity metrics rose significantly after AI tool adoption, but organization-level delivery metrics haven't improved. What's the first thing you check?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "جاهزية البنية التحتية والعمليات — تقرير DORA أكد أن AI يكشف نقاط ضعف المؤسسات غير الجاهزة",
+            "en": "Infrastructure and process readiness — DORA report confirmed AI exposes weaknesses in unready organizations"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "جودة أدوات AI المستخدمة — قد تحتاج أدوات أفضل",
+            "en": "Quality of AI tools being used — may need better tools"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "عدد المطورين — قد نحتاج لتقليص الفريق لتحسين التنسيق",
+            "en": "Number of developers — may need to reduce team for better coordination"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مقاييس القياس نفسها — ربما لا تعكس الواقع",
+            "en": "The measurement metrics themselves — they may not reflect reality"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "تقرير DORA 2025 هو المفتاح: AI \"مرآة ومضاعف\". المؤسسات ذات الأساس التنظيمي القوي تحقق مكاسب ضخمة، بينما المؤسسات الفوضوية تزداد فوضى. المشكلة ليست في AI بل في جاهزية المؤسسة.",
+        "en": "DORA 2025 is the key: AI is a 'mirror and multiplier.' Organizations with strong foundations achieve huge gains, while chaotic ones become more chaotic. The problem isn't AI but organizational readiness."
+      }
+    },
+    {
+      "id": "csd-mcq-030",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير هندسة وتريد قياس التأثير الحقيقي لأدوات AI على فريقك. دراسة McKinsey (فبراير 2026) التي شملت 4,500 مطوّر في 150 مؤسسة وجدت أن AI يقلل وقت المهام الروتينية بنسبة:",
+        "en": "You are an engineering manager wanting to measure AI tools' real impact on your team. The McKinsey study (February 2026) of 4,500 developers across 150 enterprises found AI reduces routine task time by:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "46% في المتوسط — لكن المكاسب تتفاوت بشكل كبير حسب نوع المهمة ونضج المؤسسة",
+            "en": "46% on average — but gains vary significantly by task type and organizational maturity"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "80% — AI يكاد يلغي الحاجة للعمل الروتيني بالكامل",
+            "en": "80% — AI nearly eliminates the need for routine work entirely"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "10-15% فقط — المكاسب مبالغ فيها إعلامياً",
+            "en": "Only 10-15% — gains are media-exaggerated"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا تحسّن ملموس — الوقت الموفّر يُهدر في تصحيح أخطاء AI",
+            "en": "No tangible improvement — time saved is wasted fixing AI errors"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "المهم في دراسة McKinsey هو حجم العيّنة (4,500 مطوّر / 150 مؤسسة) مما يجعلها من أكثر الدراسات موثوقية. الرسالة: المكاسب حقيقية لكن ليست متساوية — تعتمد على السياق المؤسسي.",
+        "en": "The important thing about McKinsey's study is sample size (4,500 developers / 150 enterprises) making it one of the most reliable. The message: gains are real but not uniform — they depend on organizational context."
+      }
+    },
+    {
+      "id": "csd-tf-019",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أسلوب \"الأمان بالتحفيز\" (Security Prompting) — حيث تطلب صراحةً من AI استخدام ممارسات أمنية محددة — يقلل بشكل كبير نسبة الثغرات في الكود المولّد وفقاً لأبحاث Databricks.",
+        "en": "The 'Security Prompting' approach — explicitly asking AI to use specific security practices — significantly reduces vulnerability rates in generated code according to Databricks research."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Databricks أثبتت أن التحفيز المتسلسل (Chain-of-Thought) مع طلبات أمنية صريحة يحسّن الأمان بشكل ملموس. لا يكفي أن تطلب \"كوداً آمناً\" — يجب تحديد المخاطر بالاسم (مثل: تجنب SQL Injection، استخدم prepared statements).",
+        "en": "Databricks proved Chain-of-Thought prompting with explicit security requests noticeably improves safety. It's not enough to ask for 'secure code' — you must name specific risks (e.g., avoid SQL injection, use prepared statements)."
+      }
+    },
+    {
+      "id": "csd-tf-020",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "عدد المطورين حول العالم وصل إلى 28.7 مليون مطوّر في 2025 — وهو رقم قياسي جديد رغم المخاوف من تأثير AI على الوظائف.",
+        "en": "The number of developers worldwide reached 28.7 million in 2025 — a new record despite fears of AI's impact on jobs."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "التوظيف العام للمطورين نما 3.8% في 2025 مع إضافة صافية تقارب 72,000 وظيفة في أمريكا وحدها. الإزاحة الجماعية المخيفة لم تحدث — لكن طبيعة الوظائف تتغير بسرعة.",
+        "en": "Overall developer employment grew 3.8% in 2025 with a net addition of approximately 72,000 jobs in the US alone. The feared mass displacement hasn't happened — but the nature of jobs is changing rapidly."
+      }
+    },
+    {
+      "id": "csd-fill-010",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "في منهجية الأمان الحديثة للكود المولّد، يُستخدم اختصار {{blank_1}} للإشارة إلى التحليل الثابت للكود المصدري الذي يكشف أنماط الثغرات المعروفة قبل تشغيل البرنامج.",
+        "en": "In modern security methodology for generated code, the abbreviation {{blank_1}} refers to static analysis of source code that detects known vulnerability patterns before the program runs."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "SAST",
+            "en": "SAST"
+          },
+          "options": [
+            {
+              "ar": "SAST",
+              "en": "SAST"
+            },
+            {
+              "ar": "DAST",
+              "en": "DAST"
+            },
+            {
+              "ar": "IAST",
+              "en": "IAST"
+            },
+            {
+              "ar": "RASP",
+              "en": "RASP"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "SAST (Static Application Security Testing) ضروري لكنه غير كافٍ وحده. يجب دمجه مع SCA (تحليل المكونات مفتوحة المصدر) وDAST (الاختبار الديناميكي) ومراجعة بشرية — خاصة للكود المولّد بـ AI.",
+        "en": "SAST (Static Application Security Testing) is essential but insufficient alone. It must be combined with SCA (Software Composition Analysis), DAST (Dynamic Testing), and human review — especially for AI-generated code."
+      }
+    },
+    {
+      "id": "csd-match-010",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل أداة أو منهجية فحص أمني مع وظيفتها الأساسية في حماية الكود المولّد:",
+        "en": "Match each security tool or methodology with its primary function in protecting generated code:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "SAST",
+            "en": "SAST"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "SCA",
+            "en": "SCA"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "DAST",
+            "en": "DAST"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Security Prompting",
+            "en": "Security Prompting"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تحليل الكود المصدري ثابتاً لاكتشاف أنماط الثغرات المعروفة",
+            "en": "Analyzing source code statically to detect known vulnerability patterns"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "فحص المكتبات والتبعيات الخارجية بحثاً عن ثغرات معروفة",
+            "en": "Scanning external libraries and dependencies for known vulnerabilities"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "اختبار التطبيق أثناء التشغيل لاكتشاف ثغرات وقت التنفيذ",
+            "en": "Testing the application while running to discover runtime vulnerabilities"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "توجيه AI صراحة لاستخدام ممارسات أمنية محددة عند توليد الكود",
+            "en": "Explicitly directing AI to use specific security practices when generating code"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "Security Prompting هو الابتكار الخاص بعصر AI: بدلاً من فحص الكود بعد توليده فقط، نوجّه AI أثناء التوليد لتجنب الثغرات من البداية. الجمع بين كل هذه الأدوات يشكّل دفاعاً متعدد الطبقات.",
+        "en": "Security Prompting is the AI-era innovation: instead of only scanning code after generation, we guide AI during generation to avoid vulnerabilities from the start. Combining all these tools creates multi-layered defense."
+      }
+    },
+    {
+      "id": "csd-sort-010",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات بناء مسيرة مهنية ناجحة كمهندس برمجيات في عصر AI، من الأولى إلى الأخيرة:",
+        "en": "Order the steps for building a successful career as a software engineer in the AI era, from first to last:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "إتقان أداة AI واحدة على الأقل واستخدامها يومياً في عملك",
+            "en": "Master at least one AI tool and use it daily in your work"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "بناء أساسيات قوية في هندسة الأنظمة والأمن والتصميم",
+            "en": "Build strong fundamentals in system architecture, security, and design"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تطوير مهارات التواصل وفهم الأعمال والقيادة التقنية",
+            "en": "Develop communication, business understanding, and technical leadership skills"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "التخصص في مجال صناعي + بناء استراتيجية شخصية للتعامل مع AI كبنية مؤسسية",
+            "en": "Specialize in an industry domain + build a personal strategy for AI as organizational infrastructure"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "هذا التسلسل يبني على بعضه: ابدأ بالأداة (تكتيكي)، ثم عمّق الأساسيات (تقني)، ثم توسّع (قيادي)، وأخيراً تخصص (استراتيجي). كل مرحلة تفتح فرصاً أفضل ورواتب أعلى.",
+        "en": "This sequence builds on itself: start with the tool (tactical), deepen fundamentals (technical), expand (leadership), and finally specialize (strategic). Each stage opens better opportunities and higher salaries."
+      }
+    },
+    {
+      "id": "csd-self-019",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مهندس DevOps وفريقك ينتج كوداً أكثر بكثير بفضل AI. لكنك لاحظت أن تحليل صفحات حالة الخدمات يُظهر زيادة مستمرة في الأعطال منذ 2022. كيف تفسّر هذا وكيف تتصرف؟",
+        "en": "You are a DevOps engineer and your team produces much more code thanks to AI. But you've noticed that analysis of vendor status pages shows steadily increasing outages since 2022. How do you interpret this and act?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أربط بين الكمية والجودة: أقترح إبطاء وتيرة النشر وإضافة بوابات جودة وأمان أكثر صرامة لكل كود مولّد",
+            "en": "I connect quantity and quality: I propose slowing deployment pace and adding stricter quality and security gates for all generated code"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أزيد الاختبارات التلقائية لتغطية كل الكود المولّد قبل النشر",
+            "en": "I increase automated tests to cover all generated code before deployment"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "هذا ارتباط لا سببية — الأعطال قد تكون لأسباب أخرى غير AI",
+            "en": "This is correlation not causation — outages may be for reasons other than AI"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أوقف استخدام AI حتى نعود لمستويات الاستقرار السابقة",
+            "en": "I stop AI use until we return to previous stability levels"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Greptile وجدت أن حجم الكود لكل مطوّر نما من 4,450 إلى 7,839 سطر والـ PRs أصبحت أكبر بـ 33% و\"أكثف\". المزيد من الكود ليس دائماً أفضل — \"AI Slop\" يعني كوداً يعمل لكنه هش.",
+        "en": "Greptile found code per developer grew from 4,450 to 7,839 lines and PRs became 33% larger and 'denser.' More code isn't always better — 'AI Slop' means code that works but is brittle."
+      }
+    },
+    {
+      "id": "csd-self-020",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت محلل بيانات في شركة تجارة إلكترونية. الإدارة تريد الاعتماد كلياً على AI لاتخاذ قرارات التسعير والمخزون بدون إشراف بشري. ما موقفك؟",
+        "en": "You are a data analyst at an e-commerce company. Management wants to fully rely on AI for pricing and inventory decisions without human oversight. What's your position?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقترح نموذجاً هجيناً: AI يولّد التوصيات لكن القرارات النهائية تمر بمراجعة بشرية مع حدود واضحة لصلاحيات AI",
+            "en": "I propose a hybrid model: AI generates recommendations but final decisions go through human review with clear AI authority limits"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أوافق على أتمتة القرارات الروتينية مع الاحتفاظ بإشراف بشري على القرارات الكبيرة فقط",
+            "en": "I agree to automate routine decisions while keeping human oversight only for major decisions"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أؤيد الأتمتة الكاملة — AI أفضل من البشر في تحليل البيانات الكبيرة واتخاذ القرارات",
+            "en": "I support full automation — AI is better than humans at big data analysis and decision-making"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض تماماً — القرارات التجارية يجب أن تبقى بشرية بالكامل",
+            "en": "I refuse completely — business decisions must remain fully human"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الإشراف البشري ضروري خاصة في الصناعات الحساسة كالمالية والصحة والحكومة. AI قد يبني قراراته على ارتباطات مضللة أو بيانات منحازة. الإنسان يضيف فهم السياق والأخلاقيات وحكم الخبرة.",
+        "en": "Human oversight is essential especially in sensitive industries like finance, health, and government. AI may base decisions on misleading correlations or biased data. Humans add context understanding, ethics, and experience judgment."
       }
     }
   ]

@@ -1,8 +1,11 @@
 {
   "section_id": "law-sharia",
-  "section_name": { "ar": "القانون والشريعة", "en": "Law & Islamic Sharia" },
-  "version": "1.0",
-  "last_updated": "2026-04-05",
+  "section_name": {
+    "ar": "القانون والشريعة",
+    "en": "Law & Islamic Sharia"
+  },
+  "version": "2.0",
+  "last_updated": "2026-04-06",
   "questions": [
     {
       "id": "law-mcq-001",
@@ -16,10 +19,38 @@
         "en": "You're a lawyer at a major firm using an AI-powered legal research tool. The tool found a case precedent that perfectly supports your client's position, but you've never heard of it. What's your first step?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "أضمّنها في المرافعة فوراً — الأداة موثوقة ومدفوعة الثمن", "en": "Include it in the brief immediately — the tool is reliable and expensive" }, "score": 0 },
-        { "id": "b", "text": { "ar": "أتحقق من وجود القضية فعلياً في قواعد البيانات القانونية الرسمية قبل أي استخدام", "en": "Verify the case actually exists in official legal databases before any use" }, "score": 3 },
-        { "id": "c", "text": { "ar": "أطلب من زميل مبتدئ التحقق منها لتوفير وقتي", "en": "Ask a junior associate to verify it to save my time" }, "score": 1 },
-        { "id": "d", "text": { "ar": "أتجاهلها لأنني لا أعرفها — الأفضل الاعتماد على سوابق أعرفها", "en": "Ignore it since I don't recognize it — better to rely on precedents I know" }, "score": 0.5 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "أضمّنها في المرافعة فوراً — الأداة موثوقة ومدفوعة الثمن",
+            "en": "Include it in the brief immediately — the tool is reliable and expensive"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتحقق من وجود القضية فعلياً في قواعد البيانات القانونية الرسمية قبل أي استخدام",
+            "en": "Verify the case actually exists in official legal databases before any use"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أطلب من زميل مبتدئ التحقق منها لتوفير وقتي",
+            "en": "Ask a junior associate to verify it to save my time"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتجاهلها لأنني لا أعرفها — الأفضل الاعتماد على سوابق أعرفها",
+            "en": "Ignore it since I don't recognize it — better to rely on precedents I know"
+          },
+          "score": 0.5
+        }
       ],
       "hint_after": {
         "ar": "دراسة ستانفورد (2024) وجدت أن نماذج اللغة الكبيرة العامة تهلوس بنسبة 69-88% في الاستفسارات القانونية، وحتى الأدوات التجارية المتخصصة مثل Westlaw AI تهلوس بنسبة تتجاوز 34%. أكثر من 200 محكمة أمريكية تطلب الآن من المحامين التأكيد على مراجعة المصادر المولّدة بالذكاء الاصطناعي.",
@@ -38,10 +69,38 @@
         "en": "You're in-house counsel looking for an AI tool for contract review. Which of the following tools actually specializes in contract lifecycle management and serves companies like L'Oréal and Salesforce?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "ChatGPT Enterprise", "en": "ChatGPT Enterprise" }, "score": 0 },
-        { "id": "b", "text": { "ar": "Ironclad", "en": "Ironclad" }, "score": 3 },
-        { "id": "c", "text": { "ar": "Grammarly Business", "en": "Grammarly Business" }, "score": 0 },
-        { "id": "d", "text": { "ar": "Harvey AI", "en": "Harvey AI" }, "score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "ChatGPT Enterprise",
+            "en": "ChatGPT Enterprise"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "Ironclad",
+            "en": "Ironclad"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "Grammarly Business",
+            "en": "Grammarly Business"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "Harvey AI",
+            "en": "Harvey AI"
+          },
+          "score": 1
+        }
       ],
       "hint_after": {
         "ar": "Ironclad متخصصة في إدارة دورة حياة العقود بالذكاء الاصطناعي وتخدم شركات كبرى. أما Harvey AI فمنصة بحث قانوني شاملة تقدّر بـ 11 مليار دولار وتخدم أكثر من 1,300 مؤسسة قانونية، لكن تركيزها أوسع من مجرد العقود.",
@@ -60,10 +119,38 @@
         "en": "You're a researcher in Islamic jurisprudence wanting to use an AI tool for fatwa research. What is the prevailing position of major Islamic institutions regarding AI use in fatwa issuance?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "يجوز الاعتماد الكامل على AI في إصدار الفتاوى لأنه أسرع وأدق", "en": "Full reliance on AI for fatwa issuance is permissible as it's faster and more accurate" }, "score": 0 },
-        { "id": "b", "text": { "ar": "محرّم تماماً حتى كأداة مساعدة في البحث الفقهي", "en": "Completely forbidden even as an assistive tool for jurisprudential research" }, "score": 0 },
-        { "id": "c", "text": { "ar": "يجوز كأداة مساعدة في البحث، لكن إصدار الفتوى يبقى حصراً للمفتي المؤهل", "en": "Permissible as a research assistant, but fatwa issuance remains exclusively for qualified muftis" }, "score": 3 },
-        { "id": "d", "text": { "ar": "لا يوجد موقف واضح — المسألة لم تُبحث بعد", "en": "No clear position exists — the matter hasn't been studied yet" }, "score": 0.5 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "يجوز الاعتماد الكامل على AI في إصدار الفتاوى لأنه أسرع وأدق",
+            "en": "Full reliance on AI for fatwa issuance is permissible as it's faster and more accurate"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "محرّم تماماً حتى كأداة مساعدة في البحث الفقهي",
+            "en": "Completely forbidden even as an assistive tool for jurisprudential research"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "يجوز كأداة مساعدة في البحث، لكن إصدار الفتوى يبقى حصراً للمفتي المؤهل",
+            "en": "Permissible as a research assistant, but fatwa issuance remains exclusively for qualified muftis"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا يوجد موقف واضح — المسألة لم تُبحث بعد",
+            "en": "No clear position exists — the matter hasn't been studied yet"
+          },
+          "score": 0.5
+        }
       ],
       "hint_after": {
         "ar": "دار الإفتاء المصرية أفتت بعدم جواز الاعتماد على AI في الفتاوى لافتقاره للاجتهاد والتقوى. لكن سنغافورة طوّرت IftaSG كأداة بحث فقهي، ودبي أطلقت برنامج \"الإفتاء الافتراضي\"، والقرار النهائي يبقى بشرياً دائماً.",
@@ -118,12 +205,27 @@
       "blanks": [
         {
           "id": "blank_1",
-          "correct": { "ar": "512", "en": "512" },
+          "correct": {
+            "ar": "512",
+            "en": "512"
+          },
           "options": [
-            { "ar": "512", "en": "512" },
-            { "ar": "405", "en": "405" },
-            { "ar": "318", "en": "318" },
-            { "ar": "627", "en": "627" }
+            {
+              "ar": "512",
+              "en": "512"
+            },
+            {
+              "ar": "405",
+              "en": "405"
+            },
+            {
+              "ar": "318",
+              "en": "318"
+            },
+            {
+              "ar": "627",
+              "en": "627"
+            }
           ]
         }
       ],
@@ -144,22 +246,82 @@
         "en": "Match each legal AI tool with its primary function:"
       },
       "left": [
-        { "id": "L1", "text": { "ar": "Harvey AI", "en": "Harvey AI" } },
-        { "id": "L2", "text": { "ar": "CoCounsel", "en": "CoCounsel" } },
-        { "id": "L3", "text": { "ar": "Luminance", "en": "Luminance" } },
-        { "id": "L4", "text": { "ar": "vLex Vincent AI", "en": "vLex Vincent AI" } }
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Harvey AI",
+            "en": "Harvey AI"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "CoCounsel",
+            "en": "CoCounsel"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Luminance",
+            "en": "Luminance"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "vLex Vincent AI",
+            "en": "vLex Vincent AI"
+          }
+        }
       ],
       "right": [
-        { "id": "R1", "text": { "ar": "بحث قانوني شامل بتقنية الوكلاء لمكاتب المحاماة الكبرى", "en": "Comprehensive agentic legal research for major law firms" } },
-        { "id": "R2", "text": { "ar": "بحث قانوني مبني على محتوى Westlaw يخدم مليون مستخدم", "en": "Legal research grounded in Westlaw content serving 1 million users" } },
-        { "id": "R3", "text": { "ar": "مراجعة وثائق بتقنية Mixture-of-Experts توفر حتى 80% من الوقت", "en": "Document review using Mixture-of-Experts saving up to 80% of time" } },
-        { "id": "R4", "text": { "ar": "قانون مقارن عبر 17 دولة بتكلفة تبدأ من 399 دولاراً شهرياً", "en": "Comparative law across 17 countries starting at $399/month" } }
+        {
+          "id": "R1",
+          "text": {
+            "ar": "بحث قانوني شامل بتقنية الوكلاء لمكاتب المحاماة الكبرى",
+            "en": "Comprehensive agentic legal research for major law firms"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "بحث قانوني مبني على محتوى Westlaw يخدم مليون مستخدم",
+            "en": "Legal research grounded in Westlaw content serving 1 million users"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "مراجعة وثائق بتقنية Mixture-of-Experts توفر حتى 80% من الوقت",
+            "en": "Document review using Mixture-of-Experts saving up to 80% of time"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "قانون مقارن عبر 17 دولة بتكلفة تبدأ من 399 دولاراً شهرياً",
+            "en": "Comparative law across 17 countries starting at $399/month"
+          }
+        }
       ],
       "correct_pairs": [
-        { "left": "L1", "right": "R1" },
-        { "left": "L2", "right": "R2" },
-        { "left": "L3", "right": "R3" },
-        { "left": "L4", "right": "R4" }
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
       ],
       "hint_after": {
         "ar": "سوق أدوات AI القانونية ينمو بسرعة: Harvey تُقدّر بـ 11 مليار دولار وتخدم 1,300+ مؤسسة في 60 دولة. CoCounsel وصل لمليون مستخدم في 107 دول. اعتماد تحليل العقود بالذكاء الاصطناعي ارتفع 17% بين الفرق القانونية الداخلية.",
@@ -178,12 +340,41 @@
         "en": "Order the steps for using AI in preparing a legal brief according to professional best practices:"
       },
       "items": [
-        { "id": "S1", "text": { "ar": "تحديد المسألة القانونية وصياغة استعلام بحث واضح", "en": "Define the legal issue and formulate a clear research query" } },
-        { "id": "S2", "text": { "ar": "استخدام أداة AI قانونية متخصصة للبحث الأولي", "en": "Use a specialized legal AI tool for initial research" } },
-        { "id": "S3", "text": { "ar": "التحقق من كل استشهاد ومرجع في قواعد البيانات الرسمية", "en": "Verify every citation and reference in official databases" } },
-        { "id": "S4", "text": { "ar": "مراجعة المذكرة النهائية وإقرار المحامي بمسؤوليته عن المحتوى", "en": "Review the final brief and certify attorney responsibility for the content" } }
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحديد المسألة القانونية وصياغة استعلام بحث واضح",
+            "en": "Define the legal issue and formulate a clear research query"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "استخدام أداة AI قانونية متخصصة للبحث الأولي",
+            "en": "Use a specialized legal AI tool for initial research"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "التحقق من كل استشهاد ومرجع في قواعد البيانات الرسمية",
+            "en": "Verify every citation and reference in official databases"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "مراجعة المذكرة النهائية وإقرار المحامي بمسؤوليته عن المحتوى",
+            "en": "Review the final brief and certify attorney responsibility for the content"
+          }
+        }
       ],
-      "correct_order": ["S1", "S2", "S3", "S4"],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
       "hint_after": {
         "ar": "التحقق من المصادر (الخطوة 3) هو الأكثر أهمية: حتى الأدوات التجارية المتخصصة تهلوس. Harvard Law School وجدت أن المساعدين القانونيين بمساعدة AI أنجزوا مراجعة المستندات أسرع بـ 58%، لكن بشرط المراجعة البشرية الدقيقة.",
         "en": "Source verification (step 3) is most critical: even specialized commercial tools hallucinate. Harvard Law School found AI-assisted paralegals completed document review 58% faster, but only with careful human review."
@@ -201,10 +392,38 @@
         "en": "Your law firm is considering subscribing to Harvey AI at significant cost. Some partners see it as a competitive necessity, others view it as a risk. What's your position?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "أؤيد بقوة — المكاتب التي لا تتبنى AI ستتخلف حتماً، ويجب أن نكون من الأوائل", "en": "Strongly support — firms that don't adopt AI will inevitably fall behind, we must be early movers" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "أؤيد بحذر — نبدأ بتجربة محدودة في قسم واحد ونقيّم النتائج قبل التوسع", "en": "Cautiously support — start with a limited pilot in one department and evaluate results before expanding" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "متحفظ — التكلفة عالية ومخاطر الهلوسة والسرية تقلقني، ننتظر حتى تنضج التقنية", "en": "Hesitant — the cost is high and hallucination/confidentiality risks concern me, let's wait for the technology to mature" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "أرفض — المحاماة تعتمد على الخبرة البشرية والحكم الشخصي، والأدوات الآلية لن تحل محل ذلك", "en": "Oppose — law depends on human expertise and judgment, automated tools will never replace that" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "أؤيد بقوة — المكاتب التي لا تتبنى AI ستتخلف حتماً، ويجب أن نكون من الأوائل",
+            "en": "Strongly support — firms that don't adopt AI will inevitably fall behind, we must be early movers"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أؤيد بحذر — نبدأ بتجربة محدودة في قسم واحد ونقيّم النتائج قبل التوسع",
+            "en": "Cautiously support — start with a limited pilot in one department and evaluate results before expanding"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "متحفظ — التكلفة عالية ومخاطر الهلوسة والسرية تقلقني، ننتظر حتى تنضج التقنية",
+            "en": "Hesitant — the cost is high and hallucination/confidentiality risks concern me, let's wait for the technology to mature"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — المحاماة تعتمد على الخبرة البشرية والحكم الشخصي، والأدوات الآلية لن تحل محل ذلك",
+            "en": "Oppose — law depends on human expertise and judgment, automated tools will never replace that"
+          },
+          "flexibility_score": 1
+        }
       ],
       "hint_after": {
         "ar": "أكثر من نصف أكبر 100 مكتب محاماة أمريكي يستخدم Harvey AI حالياً. Goldman Sachs يقدّر أن 44% من المهام القانونية معرّضة لأتمتة AI — من أعلى النسب بين المهن. لكن الحكم البشري يبقى لا غنى عنه.",
@@ -223,14 +442,4291 @@
         "en": "A client asks you: 'Can I rely on an AI app for legal advice instead of a lawyer?' How do you respond?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "أشرح له بوضوح حدود AI وأوضح أين يمكن أن يفيده وأين لا يغني عن محامٍ مؤهل", "en": "I clearly explain AI's limitations and show where it can help and where it can't replace a qualified lawyer" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "أنصحه باستخدامه للمعلومات العامة فقط مع التأكيد على ضرورة مراجعة محامٍ للقرارات المهمة", "en": "I advise using it for general information only while emphasizing the need to consult a lawyer for important decisions" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "أحذّره بشدة من الاعتماد عليه لأن نسبة الأخطاء مرتفعة جداً وقد يتضرر قانونياً", "en": "I strongly warn him against relying on it because the error rate is very high and he could face legal harm" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "أقول له إن القانون مجال حساس لا يمكن لآلة أن تفهمه، ولا أرى أي فائدة من هذه التطبيقات", "en": "I tell him law is a sensitive field no machine can understand, and I see no benefit in these apps" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "أشرح له بوضوح حدود AI وأوضح أين يمكن أن يفيده وأين لا يغني عن محامٍ مؤهل",
+            "en": "I clearly explain AI's limitations and show where it can help and where it can't replace a qualified lawyer"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أنصحه باستخدامه للمعلومات العامة فقط مع التأكيد على ضرورة مراجعة محامٍ للقرارات المهمة",
+            "en": "I advise using it for general information only while emphasizing the need to consult a lawyer for important decisions"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أحذّره بشدة من الاعتماد عليه لأن نسبة الأخطاء مرتفعة جداً وقد يتضرر قانونياً",
+            "en": "I strongly warn him against relying on it because the error rate is very high and he could face legal harm"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أقول له إن القانون مجال حساس لا يمكن لآلة أن تفهمه، ولا أرى أي فائدة من هذه التطبيقات",
+            "en": "I tell him law is a sensitive field no machine can understand, and I see no benefit in these apps"
+          },
+          "flexibility_score": 1
+        }
       ],
       "hint_after": {
         "ar": "Deloitte تتوقع أتمتة حوالي 100,000 وظيفة قانونية بحلول 2036. لكن مهام كالحكم الأخلاقي وفهم السياق والتفاوض تبقى بشرية. المحامي الذي يفهم AI ويعرف حدوده هو الأكثر قيمة في السوق.",
         "en": "Deloitte projects approximately 100,000 legal roles automated by 2036. But tasks like ethical judgment, context understanding, and negotiation remain human. The lawyer who understands AI and knows its limits is most valuable in the market."
+      }
+    },
+    {
+      "id": "law-mcq-004",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت محامٍ في فريق الاندماجات والاستحواذات وتحتاج مراجعة 5,000 وثيقة في أسبوع. أي أداة AI متخصصة أثبتت قدرتها على توفير حتى 80% من وقت مراجعة الوثائق باستخدام بنية Mixture-of-Experts؟",
+        "en": "You're an M&A lawyer needing to review 5,000 documents in a week. Which specialized AI tool has demonstrated up to 80% time savings in document review using a Mixture-of-Experts architecture?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "Luminance",
+            "en": "Luminance"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ChatGPT Enterprise",
+            "en": "ChatGPT Enterprise"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "Google Gemini",
+            "en": "Google Gemini"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "CoCounsel",
+            "en": "CoCounsel"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Luminance تستخدم بنية Mixture-of-Experts وأكدت Deloitte توفير 50% من الوقت في نشرها. أما CoCounsel فمتخصصة في البحث القانوني أكثر من مراجعة الوثائق المكثفة.",
+        "en": "Luminance uses a Mixture-of-Experts architecture and Deloitte confirmed 50% time savings in its deployment. CoCounsel specializes more in legal research than intensive document review."
+      }
+    },
+    {
+      "id": "law-mcq-005",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مستشار قانوني تعمل على قضية تتطلب مقارنة قوانين عبر عدة دول. أي منصة AI قانونية تغطي فعلياً القانون المقارن في 17 دولة واستحوذت عليها شركة Clio عام 2025؟",
+        "en": "You're a legal consultant working on a case requiring cross-jurisdictional law comparison. Which legal AI platform actually covers comparative law across 17 countries and was acquired by Clio in 2025?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "Westlaw Edge",
+            "en": "Westlaw Edge"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "vLex Vincent AI",
+            "en": "vLex Vincent AI"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "LexisNexis+",
+            "en": "LexisNexis+"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "Harvey AI",
+            "en": "Harvey AI"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "vLex Vincent AI تغطي القانون المقارن في 17 دولة بسعر يبدأ من 399 دولاراً شهرياً، واستحوذت عليها Clio في يونيو 2025. Harvey تغطي 60+ ولاية قضائية لكن تركيزها على مكاتب المحاماة الكبرى.",
+        "en": "vLex Vincent AI covers comparative law across 17 countries starting at $399/month, acquired by Clio in June 2025. Harvey covers 60+ jurisdictions but focuses on major law firms."
+      }
+    },
+    {
+      "id": "law-mcq-006",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أعلنت Harvey AI أنها أطلقت أكثر من 120 ميزة جديدة خلال 2025. أي من التالي يمثل أحد أبرز إصداراتها في ذلك العام؟",
+        "en": "Harvey AI announced over 120 new features in 2025. Which of the following represents one of its most notable releases that year?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "Workflow Builder — أداة لبناء سير عمل قانوني آلي متعدد الخطوات",
+            "en": "Workflow Builder — a tool for building multi-step automated legal workflows"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "محرك ترجمة فورية مدمج للغات الـ 200",
+            "en": "Built-in real-time translation engine for 200 languages"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "روبوت محادثة للعملاء يحل محل الاستشارة الأولية",
+            "en": "Client chatbot that replaces initial consultation"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "نظام تقييم آلي للقضاة",
+            "en": "Automated judge evaluation system"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Workflow Builder أُطلق في يونيو 2025 وأنشأ المستخدمون أكثر من 18,000 سير عمل مخصص. يسمح بأتمتة مهام مثل ترجمة الوثائق والتدقيق اللغوي وتحويل الصوت لنص.",
+        "en": "Workflow Builder launched in June 2025 and users created over 18,000 custom workflows. It enables automation of tasks like document translation, proofreading, and audio-to-text transcription."
+      }
+    },
+    {
+      "id": "law-tf-003",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "وصل عدد مستخدمي CoCounsel من Thomson Reuters إلى مليون مستخدم مهني في 107 دول بحلول فبراير 2026.",
+        "en": "Thomson Reuters' CoCounsel reached 1 million professional users across 107 countries by February 2026."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "استحوذت Thomson Reuters على Casetext (الشركة المطورة لـ CoCounsel) مقابل 650 مليون دولار عام 2023. وأضافت ميزة Deep Research في أغسطس 2025 التي تقوم ببحث قانوني وكيلي مبني على محتوى Westlaw.",
+        "en": "Thomson Reuters acquired Casetext (CoCounsel's developer) for $650M in 2023. It added a Deep Research feature in August 2025 that performs agentic legal research grounded in Westlaw content."
+      }
+    },
+    {
+      "id": "law-tf-004",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "بلغت قيمة Harvey AI السوقية 11 مليار دولار في مارس 2026، وهي تخدم أكثر من 50% من أكبر 100 مكتب محاماة أمريكي (AmLaw 100).",
+        "en": "Harvey AI reached an $11 billion valuation in March 2026 and serves over 50% of the AmLaw 100 law firms."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "جمعت Harvey 200 مليون دولار في مارس 2026 بقيادة GIC وSequoia Capital. الشركة نمت من 200 إلى نحو 500 موظف ولديها مكاتب في سان فرانسيسكو ونيويورك ولندن وسيدني وتورنتو.",
+        "en": "Harvey raised $200M in March 2026 co-led by GIC and Sequoia Capital. The company grew from 200 to roughly 500 employees with offices in San Francisco, New York, London, Sydney, and Toronto."
+      }
+    },
+    {
+      "id": "law-fill-002",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أداة {{blank_1}} من Harvey AI أُطلقت في يونيو 2025 وتتيح للمحامين بناء سير عمل آلي متعدد الخطوات، وقد أنشأ المستخدمون أكثر من 18,000 سير عمل مخصص باستخدامها.",
+        "en": "Harvey AI's {{blank_1}} tool launched in June 2025 allows lawyers to build multi-step automated workflows, and users have created over 18,000 custom workflows with it."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Workflow Builder",
+            "en": "Workflow Builder"
+          },
+          "options": [
+            {
+              "ar": "Workflow Builder",
+              "en": "Workflow Builder"
+            },
+            {
+              "ar": "Case Analyzer",
+              "en": "Case Analyzer"
+            },
+            {
+              "ar": "Legal Copilot",
+              "en": "Legal Copilot"
+            },
+            {
+              "ar": "Smart Drafter",
+              "en": "Smart Drafter"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Workflow Builder يسمح بربط خطوات من أربعة أنواع: مدخلات المستخدم، إجراء AI، منطق شرطي، ومخرجات. من أكثر السير استخداماً: ترجمة الوثائق والتدقيق الإملائي وتحويل الصوت لنص.",
+        "en": "Workflow Builder allows linking steps of four types: user input, AI action, logic, and output. Most frequently used workflows include document translation, spell-checking, and audio transcription."
+      }
+    },
+    {
+      "id": "law-match-002",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل منصة AI قانونية بالجهة التي تبنّتها أو الصفقة المرتبطة بها:",
+        "en": "Match each legal AI platform with the organization that adopted it or the deal associated with it:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Harvey AI",
+            "en": "Harvey AI"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "CoCounsel",
+            "en": "CoCounsel"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "vLex Vincent AI",
+            "en": "vLex Vincent AI"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Ironclad",
+            "en": "Ironclad"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "HSBC أعلنت شراكة استراتيجية معها في يناير 2026",
+            "en": "HSBC announced a strategic partnership in January 2026"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "استحوذت عليها Thomson Reuters مقابل 650 مليون دولار",
+            "en": "Acquired by Thomson Reuters for $650 million"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "استحوذت عليها Clio في يونيو 2025",
+            "en": "Acquired by Clio in June 2025"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تخدم OpenAI وSalesforce وL'Oréal في إدارة العقود",
+            "en": "Serves OpenAI, Salesforce, and L'Oréal in contract management"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "سوق التقنية القانونية في تسارع: Harvey وصلت لـ 11 مليار دولار، CoCounsel لمليون مستخدم، وClio استحوذت على vLex لتعزيز قدرات القانون المقارن. Ironclad تركز على دورة حياة العقود للشركات الكبرى.",
+        "en": "The legal tech market is accelerating: Harvey reached $11B valuation, CoCounsel hit 1M users, and Clio acquired vLex to boost comparative law capabilities. Ironclad focuses on contract lifecycle management for major corporations."
+      }
+    },
+    {
+      "id": "law-sort-002",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات تبني أداة AI قانونية (مثل Harvey) في مكتب محاماة وفق أفضل الممارسات:",
+        "en": "Order the steps for adopting a legal AI tool (like Harvey) in a law firm according to best practices:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تحديد حالات الاستخدام المحددة وتوقعات الأداء",
+            "en": "Identify specific use cases and performance expectations"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تشغيل تجريبي محدود في قسم واحد مع قياس النتائج",
+            "en": "Run a limited pilot in one department with measured results"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تدريب الفريق ووضع سياسات إلزامية للاستخدام والتحقق",
+            "en": "Train the team and establish mandatory usage and verification policies"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "التوسع التدريجي مع مراقبة العائد على الاستثمار",
+            "en": "Gradual expansion with ROI monitoring"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "فريق Harvey القانوني الداخلي ينصح بأن القادة يجب أن يحددوا حالات الاستخدام ويفرضوا استخدام الأدوات — تركها للصدفة يعطي نتائج محدودة. النتائج المادية تظهر فقط عندما يتحرك القسم بأكمله في اتجاه موحد.",
+        "en": "Harvey's own legal team advises that leaders must identify use cases and mandate tool usage — leaving it to chance yields limited results. Material returns only appear when the entire department moves in a consistent direction."
+      }
+    },
+    {
+      "id": "law-self-003",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مكتبك اشترك في منصة AI قانونية جديدة. المدير يطلب منك تعلّمها واستخدامها في عملك اليومي. ما ردة فعلك؟",
+        "en": "Your firm subscribed to a new legal AI platform. The managing partner asks you to learn and use it in your daily work. What's your reaction?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتحمس وأبدأ فوراً — أبني سير عمل مخصصة وأشارك زملائي ما تعلمته",
+            "en": "Excited and start immediately — I build custom workflows and share what I learn with colleagues"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أجربها بانتظام في مهام محددة وأقيّم إن كانت توفر وقتاً فعلاً",
+            "en": "Try it regularly on specific tasks and evaluate whether it actually saves time"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أستخدمها أحياناً لكنني أفضل طريقتي المعتادة — لا أريد الاعتماد على أداة قد تخطئ",
+            "en": "Use it occasionally but prefer my usual methods — I don't want to rely on a tool that might err"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض لأن عملي لا يحتاج تقنية — الخبرة القانونية أهم من أي أداة",
+            "en": "Refuse because my work doesn't need technology — legal expertise matters more than any tool"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "دراسة Harvey أظهرت أن المحامين مع AI يتفوقون بنسبة 5% في مراجعة العقود مقارنة بالعمل بدونه أو بالاعتماد الكامل على AI. المفتاح هو الدمج الذكي وليس الإحلال.",
+        "en": "A Harvey benchmark showed lawyers working with AI outperform by 5% on contract review compared to working alone or fully relying on AI. The key is smart integration, not replacement."
+      }
+    },
+    {
+      "id": "law-self-004",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "زميلك يقترح استخدام AI لكتابة المسودة الأولى للعقود بدلاً من المحامين المبتدئين. ما رأيك؟",
+        "en": "A colleague suggests using AI to draft initial contracts instead of junior associates. What's your view?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فكرة ممتازة — تحرر المبتدئين لمهام أعلى قيمة وتسرّع الإنجاز",
+            "en": "Excellent idea — frees juniors for higher-value tasks and speeds up delivery"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يمكن تجربتها مع إشراف — لكن يجب أن يظل المبتدئون يراجعون ويتعلمون",
+            "en": "Worth trying with oversight — but juniors must still review and learn"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "متردد — كيف سيتعلم المبتدئون إن لم يكتبوا المسودات بأنفسهم؟",
+            "en": "Hesitant — how will juniors learn if they don't draft themselves?"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — كتابة المسودات مهارة أساسية لا يجوز التفريط فيها",
+            "en": "Oppose — drafting is a fundamental skill that shouldn't be compromised"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "Goldman Sachs قدّرت أن 44% من المهام القانونية معرضة لأتمتة AI. المهام الأولى التي تُؤتمت عادةً هي الأبسط التي يقوم بها المبتدئون. التحدي الحقيقي هو إعادة تصميم مسار تطوير المحامين الجدد.",
+        "en": "Goldman Sachs estimated 44% of legal tasks are exposed to AI automation. The first tasks automated are usually the simplest ones handled by juniors. The real challenge is redesigning the development path for new lawyers."
+      }
+    },
+    {
+      "id": "law-mcq-007",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت باحث قانوني تقيّم دقة أدوات AI القانونية التجارية. دراسة ستانفورد المسجلة مسبقاً (2025) وجدت أن Westlaw AI-Assisted Research يهلوس بنسبة تتجاوز:",
+        "en": "You're a legal researcher evaluating the accuracy of commercial legal AI tools. Stanford's preregistered study (2025) found that Westlaw AI-Assisted Research hallucinates at a rate exceeding:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "5%",
+            "en": "5%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "17%",
+            "en": "17%"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "34%",
+            "en": "34%"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "58%",
+            "en": "58%"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "دراسة ستانفورد (RegLab & HAI, 2025) نُشرت في Journal of Empirical Legal Studies وهي أول تقييم مسجل مسبقاً لأدوات AI القانونية. وجدت: Westlaw AI >34%، Lexis+ AI >17%، GPT-4 الخام 58-82%.",
+        "en": "Stanford's study (RegLab & HAI, 2025) published in the Journal of Empirical Legal Studies was the first preregistered evaluation. It found: Westlaw AI >34%, Lexis+ AI >17%, raw GPT-4 58-82%."
+      }
+    },
+    {
+      "id": "law-mcq-008",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت محامٍ اكتشفت أن زميلك استخدم أداتي AI مختلفتين (ChatGPT وWestlaw Precision AI) للتحقق المتبادل من الاستشهادات. هل هذا النهج كافٍ؟",
+        "en": "You discover a colleague used two different AI tools (ChatGPT and Westlaw Precision AI) to cross-verify citations. Is this approach sufficient?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا — استخدام AI للتحقق من مخرجات AI لا يُعدّ تحققاً مستقلاً",
+            "en": "No — using AI to check AI output doesn't constitute independent verification"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "نعم — أداتان مختلفتان تقللان احتمال الخطأ بشكل كافٍ",
+            "en": "Yes — two different tools sufficiently reduce the probability of error"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "يعتمد على نوع القضية — في القضايا البسيطة يكفي",
+            "en": "Depends on the case type — for simple cases it's sufficient"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "نعم — خاصة إذا كانت إحدى الأدوات تجارية متخصصة",
+            "en": "Yes — especially if one of the tools is a specialized commercial product"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "في قضية أمام الدائرة السادسة (2025)، استخدم المحامي أداتين (ChatGPT وWestlaw Precision AI) وقدم 11 استشهاداً ملفقاً. المحكمة غرّمته 15,000 دولار. التحقق المستقل يعني الرجوع للمصادر الأصلية وليس لأداة AI أخرى.",
+        "en": "In a Sixth Circuit case (2025), an attorney used two tools (ChatGPT and Westlaw Precision AI) and submitted 11 fabricated citations. The court fined him $15,000. Independent verification means checking original sources, not another AI tool."
+      }
+    },
+    {
+      "id": "law-mcq-009",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "وجدت دراسة كلية هارفارد للقانون أن المساعدين القانونيين بمساعدة AI أنجزوا مراجعة المستندات أسرع بـ:",
+        "en": "A Harvard Law School study found that AI-assisted paralegals completed document review faster by:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "25%",
+            "en": "25%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "58%",
+            "en": "58%"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "80%",
+            "en": "80%"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "42%",
+            "en": "42%"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "التسارع بنسبة 58% مرتبط بشرط أساسي: المراجعة البشرية الدقيقة للمخرجات. AI يسرّع العمل لكنه لا يلغي الحاجة للرقابة المهنية.",
+        "en": "The 58% speed increase comes with a critical condition: careful human review of outputs. AI accelerates work but doesn't eliminate the need for professional oversight."
+      }
+    },
+    {
+      "id": "law-tf-005",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ادّعت LexisNexis في البداية أن أداتها Lexis+ AI \"خالية 100% من الهلوسة\"، لكنها تراجعت عن هذا الادعاء بعد أن أظهرت دراسة ستانفورد نسبة هلوسة تتجاوز 17%.",
+        "en": "LexisNexis initially claimed its Lexis+ AI tool was '100% hallucination-free,' but walked back this claim after a Stanford study showed a hallucination rate exceeding 17%."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذه الحادثة توضح خطر التسويق المبالغ فيه لأدوات AI القانونية. حتى الأدوات التجارية المتخصصة ليست معصومة من الخطأ، والمسؤولية تقع دائماً على المحامي.",
+        "en": "This incident illustrates the danger of overhyped marketing for legal AI tools. Even specialized commercial tools aren't infallible, and responsibility always falls on the attorney."
+      }
+    },
+    {
+      "id": "law-tf-006",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "دراسة ستانفورد الأولى (2024) التي اختبرت GPT-3.5 وLlama 2 وPaLM 2 على 200,000+ استفسار قانوني وجدت أن نسبة الهلوسة في أحكام المحاكم تحديداً تبلغ 75% على الأقل.",
+        "en": "Stanford's first study (2024) testing GPT-3.5, Llama 2, and PaLM 2 on 200,000+ legal queries found that the hallucination rate specifically on court holdings is at least 75%."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "الدراسة بعنوان 'Large Legal Fictions' وجدت نسب هلوسة 69-88% للنماذج العامة عموماً، و75% على الأقل في أحكام المحاكم. هذا يعني أن 3 من كل 4 أحكام يذكرها النموذج قد تكون خاطئة.",
+        "en": "The study titled 'Large Legal Fictions' found 69-88% hallucination rates for general models overall, and at least 75% on court holdings. This means 3 out of 4 holdings cited by the model could be wrong."
+      }
+    },
+    {
+      "id": "law-fill-003",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "طوّر الباحث داميان شارلوتان من HEC Paris أداة آلية للتحقق من المراجع القانونية واكتشاف الهلوسة تُسمى {{blank_1}}.",
+        "en": "Researcher Damien Charlotin from HEC Paris developed an automated legal reference checker and hallucination detector called {{blank_1}}."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "PelAIkan",
+            "en": "PelAIkan"
+          },
+          "options": [
+            {
+              "ar": "PelAIkan",
+              "en": "PelAIkan"
+            },
+            {
+              "ar": "LegalCheck",
+              "en": "LegalCheck"
+            },
+            {
+              "ar": "CiteVerify",
+              "en": "CiteVerify"
+            },
+            {
+              "ar": "FactLaw",
+              "en": "FactLaw"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "قاعدة بيانات شارلوتان وثّقت أكثر من 550 حالة هلوسة قانونية بالذكاء الاصطناعي حول العالم. أداة PelAIkan تحاول أتمتة عملية التحقق التي يفشل كثير من المحامين في القيام بها.",
+        "en": "Charlotin's database has documented over 550 AI legal hallucination cases worldwide. PelAIkan attempts to automate the verification process that many lawyers fail to perform."
+      }
+    },
+    {
+      "id": "law-match-003",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل أداة AI قانونية بنسبة الهلوسة التي وجدتها دراسة ستانفورد (2025):",
+        "en": "Match each legal AI tool with the hallucination rate found by the Stanford study (2025):"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "GPT-4 الخام",
+            "en": "Raw GPT-4"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Westlaw AI-Assisted Research",
+            "en": "Westlaw AI-Assisted Research"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Lexis+ AI",
+            "en": "Lexis+ AI"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Ask Practical Law AI",
+            "en": "Ask Practical Law AI"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "58-82%",
+            "en": "58-82%"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أكثر من 34%",
+            "en": "Over 34%"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "أكثر من 17%",
+            "en": "Over 17%"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "أكثر من 17%",
+            "en": "Over 17%"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "حتى أفضل الأدوات التجارية تهلوس بنسبة لا تقل عن 17%. الفجوة بين GPT-4 الخام (58-82%) والأدوات المتخصصة (17-34%) تُظهر قيمة الأدوات المبنية على قواعد بيانات قانونية موثوقة، لكنها ليست كافية وحدها.",
+        "en": "Even the best commercial tools hallucinate at least 17%. The gap between raw GPT-4 (58-82%) and specialized tools (17-34%) shows the value of tools built on trusted legal databases, but they're not sufficient alone."
+      }
+    },
+    {
+      "id": "law-sort-003",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب فئات الهلوسة القانونية بالذكاء الاصطناعي من الأسهل اكتشافاً إلى الأصعب:",
+        "en": "Order the categories of AI legal hallucinations from easiest to hardest to detect:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "استشهاد بقضايا وهمية لا وجود لها أصلاً",
+            "en": "Citations to completely fictitious cases that don't exist"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "استشهاد ملفق بقضايا حقيقية أو وثائق موجودة",
+            "en": "Fabricated citations to real cases or existing documents"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "اقتباس حقيقي من قضية حقيقية لكنه لا يدعم الحجة القانونية المطروحة",
+            "en": "Real quote from a real case that fails to support the proposed legal argument"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "hint_after": {
+        "ar": "القضايا الوهمية يمكن كشفها بالبحث البسيط. الاستشهادات الملفقة بقضايا حقيقية أصعب لأن القضية موجودة فعلاً. أما الاقتباسات الحقيقية التي لا تدعم الحجة فتتطلب فهماً قانونياً عميقاً لاكتشافها.",
+        "en": "Fictitious cases can be caught with simple searches. Fabricated citations to real cases are harder because the case exists. Real quotes that don't support the argument require deep legal understanding to detect."
+      }
+    },
+    {
+      "id": "law-self-005",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت محامٍ وأداة AI قانونية وجدت لك سابقة مثالية تدعم موقف موكّلك. لكنك تعلم أن حتى أفضل الأدوات تهلوس بنسبة 17% على الأقل. ماذا تفعل؟",
+        "en": "You're a lawyer and a legal AI tool found a perfect precedent supporting your client's position. But you know even the best tools hallucinate at least 17%. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتحقق من القضية في قاعدة البيانات الرسمية وأقرأ النص الأصلي قبل أي استخدام",
+            "en": "Verify the case in the official database and read the original text before any use"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أستخدم أداة AI أخرى للتحقق المتبادل ثم أضمّنها",
+            "en": "Use another AI tool for cross-verification then include it"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتجاهلها تماماً — لا أثق بأي مخرجات AI",
+            "en": "Ignore it completely — I don't trust any AI outputs"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أضمّنها مع تنويه أنها من أداة AI — المحكمة ستتفهم",
+            "en": "Include it with a note that it's from an AI tool — the court will understand"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التحقق في المصادر الأصلية هو المعيار الذهبي. استخدام AI للتحقق من AI ليس تحققاً مستقلاً — محامٍ غُرّم 15,000 دولار رغم استخدامه أداتين AI مختلفتين. وتجاهل AI بالكامل يعني فقدان أداة إنتاجية قيّمة.",
+        "en": "Verification in original sources is the gold standard. Using AI to verify AI isn't independent verification — a lawyer was fined $15,000 despite using two different AI tools. Ignoring AI entirely means losing a valuable productivity tool."
+      }
+    },
+    {
+      "id": "law-self-006",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "زميلك المبتدئ يقول: \"AI أصبح دقيقاً جداً ولم نعد بحاجة لمراجعة كل استشهاد يدوياً.\" كيف ترد؟",
+        "en": "A junior colleague says: 'AI has become very accurate and we no longer need to manually review every citation.' How do you respond?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أشرح له بيانات الهلوسة الحقيقية وأؤكد على مسؤوليته المهنية كمحامٍ",
+            "en": "Explain the real hallucination data and emphasize his professional responsibility as a lawyer"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتفق جزئياً — الأدوات تحسنت لكن أنصحه بالحذر مع الاستشهادات الحاسمة",
+            "en": "Partially agree — tools have improved but advise caution with critical citations"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أحذره بشدة وأمنعه من استخدام AI نهائياً في عمله",
+            "en": "Warn him severely and ban him from using AI entirely in his work"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتركه يتعلم من أخطائه — سيكتشف بنفسه عندما يواجه مشكلة",
+            "en": "Let him learn from his mistakes — he'll discover on his own when he faces a problem"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "أكثر من 600 حالة هلوسة AI في المحاكم موثقة حتى أوائل 2026، ومتورط فيها 128 محامياً. الإجابة المثلى تجمع بين التوعية بالمخاطر الحقيقية والتشجيع على الاستخدام المسؤول.",
+        "en": "Over 600 AI hallucination cases in courts are documented as of early 2026, implicating 128 lawyers. The best response combines awareness of real risks with encouragement of responsible use."
+      }
+    },
+    {
+      "id": "law-mcq-010",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في مارس 2026، فرضت محكمة الدائرة السادسة الأمريكية غرامة 30,000 دولار على محاميَين. ما السبب الرئيسي؟",
+        "en": "In March 2026, the U.S. Sixth Circuit Court of Appeals imposed $30,000 in sanctions on two attorneys. What was the main reason?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تقديم أكثر من عشرين استشهاداً قانونياً ملفقاً بواسطة AI",
+            "en": "Submitting over twenty fabricated AI-generated legal citations"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "استخدام AI في التواصل مع العملاء دون إذنهم",
+            "en": "Using AI to communicate with clients without their permission"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "إدخال بيانات سرية للعملاء في ChatGPT",
+            "en": "Entering confidential client data into ChatGPT"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "توظيف AI لكتابة مرافعة كاملة دون مراجعة",
+            "en": "Using AI to write an entire brief without review"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "المحكمة غرّمت كل محامٍ 15,000 دولار وأحالت القضية للقاضي الرئيسي لاتخاذ إجراءات تأديبية. كما أسقطت القضية بسبب \"سوء السلوك المنتشر\" الذي جعلها \"تافهة بالكامل تقريباً\".",
+        "en": "The court fined each attorney $15,000 and forwarded the matter to the chief judge for disciplinary proceedings. It also dismissed the case due to 'pervasive misconduct' that rendered it 'almost entirely frivolous.'"
+      }
+    },
+    {
+      "id": "law-mcq-011",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في قضية Noland (2025، محكمة استئناف كاليفورنيا)، وُجد أن 21 من أصل 23 اقتباساً كانت ملفقة. ما كان مبلغ الغرامة — الأكبر في محاكم كاليفورنيا لقضايا AI؟",
+        "en": "In the Noland case (2025, California Appellate Court), 21 of 23 quotes were found to be fabricated. What was the fine — reportedly the largest California state court AI sanction?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "5,000 دولار",
+            "en": "$5,000"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "10,000 دولار",
+            "en": "$10,000"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "25,000 دولار",
+            "en": "$25,000"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50,000 دولار",
+            "en": "$50,000"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "غرامة 10,000 دولار مع إحالة للنقابة. أكبر غرامة فردية وُثّقت كانت في أوريغون: 109,700 دولار مجموع العقوبات والتكاليف المعاكسة. الغرامات تتصاعد بوضوح مع الوقت.",
+        "en": "A $10,000 fine plus referral to the State Bar. The largest individual penalty documented was in Oregon: $109,700 in combined sanctions and adverse costs. Fines are clearly escalating over time."
+      }
+    },
+    {
+      "id": "law-mcq-012",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "في قضية Morgan & Morgan (فبراير 2025)، ما مصدر الاستشهادات الملفقة؟",
+        "en": "In the Morgan & Morgan case (February 2025), what was the source of the fabricated citations?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ChatGPT العام",
+            "en": "General ChatGPT"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "منصة AI داخلية خاصة بالمكتب تُدعى MX2.law",
+            "en": "The firm's in-house AI platform called MX2.law"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "Google Bard",
+            "en": "Google Bard"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "Westlaw AI",
+            "en": "Westlaw AI"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Morgan & Morgan أكبر مكتب إصابات شخصية في أمريكا. رغم امتلاكهم منصة AI داخلية مخصصة، ولّدت 8 من 9 استشهادات وهمية. هذا يُظهر أن المشكلة ليست في الأداة بل في عدم التحقق.",
+        "en": "Morgan & Morgan is the largest personal injury firm in the US. Despite having their own in-house AI platform, it generated 8 of 9 non-existent citations. This shows the problem isn't the tool but the lack of verification."
+      }
+    },
+    {
+      "id": "law-tf-007",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في الربع الأول من 2026 وحده، بلغ إجمالي الغرامات المفروضة على محامين بسبب هلوسة AI في المحاكم الأمريكية حوالي 145,000 دولار.",
+        "en": "In Q1 2026 alone, total fines imposed on lawyers for AI hallucinations in U.S. courts reached approximately $145,000."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "تضمنت: 30,000 دولار في الدائرة السادسة (مارس)، 9,000 في نيوجيرسي، و109,700 في أوريغون (أكبر عقوبة فردية حتى الآن). وتيرة الحالات الموثقة في 2026 تشير إلى معدل سنوي يقارب 1,400 حالة.",
+        "en": "This included: $30,000 in the Sixth Circuit (March), $9,000 in New Jersey, and $109,700 in Oregon (largest single penalty to date). The pace of documented cases in 2026 suggests an annualized rate approaching 1,400 incidents."
+      }
+    },
+    {
+      "id": "law-tf-008",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "في قضية Mata v. Avianca (2023)، غُرّم المحامي ستيفن شوارتز وحده 5,000 دولار بينما أُعفي المكتب والزميل.",
+        "en": "In Mata v. Avianca (2023), only attorney Steven Schwartz was fined $5,000 while the firm and co-counsel were exempted."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "الثلاثة غُرّموا: شوارتز وزميله والمكتب — 5,000 دولار لكل منهم. المحكمة اعتبرت أن الجميع \"تخلّوا عن مسؤولياتهم\" بعدم التحقق من استشهاد واحد.",
+        "en": "All three were fined: Schwartz, his co-counsel, and the firm — $5,000 each. The court deemed they all 'abandoned their responsibilities' by failing to verify a single citation."
+      }
+    },
+    {
+      "id": "law-fill-004",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أطلقت شركة BriefCatch أداة {{blank_1}} في مؤتمر Legalweek 2026 متخصصة في كشف الهلوسات والتحقق من الاستشهادات القانونية المولّدة بالذكاء الاصطناعي.",
+        "en": "BriefCatch launched {{blank_1}} at Legalweek 2026, specializing in detecting hallucinations and verifying AI-generated legal citations."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "RealityCheck",
+            "en": "RealityCheck"
+          },
+          "options": [
+            {
+              "ar": "RealityCheck",
+              "en": "RealityCheck"
+            },
+            {
+              "ar": "TruthGuard",
+              "en": "TruthGuard"
+            },
+            {
+              "ar": "CiteSafe",
+              "en": "CiteSafe"
+            },
+            {
+              "ar": "VerifyAI",
+              "en": "VerifyAI"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "أزمة الهلوسة القانونية خلقت سوقاً جديدة بالكامل: أدوات التحقق من الاستشهادات. RealityCheck من أبرز الداخلين الجدد في فئة منتجات لم تكن موجودة قبل 2023.",
+        "en": "The legal hallucination crisis created an entirely new market: citation verification tools. RealityCheck is among the most notable entrants in a product category that didn't exist before 2023."
+      }
+    },
+    {
+      "id": "law-match-004",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل قضية عقوبات AI قانونية بالمبلغ أو العقوبة المرتبطة بها:",
+        "en": "Match each AI legal sanctions case with its associated penalty:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Mata v. Avianca (2023)",
+            "en": "Mata v. Avianca (2023)"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Noland (كاليفورنيا، 2025)",
+            "en": "Noland (California, 2025)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "الدائرة السادسة (2026)",
+            "en": "Sixth Circuit (2026)"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "قضية أوريغون (2026)",
+            "en": "Oregon case (2026)"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "5,000 دولار لكل من المحامي والزميل والمكتب",
+            "en": "$5,000 each for attorney, co-counsel, and firm"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "10,000 دولار مع إحالة لنقابة المحامين",
+            "en": "$10,000 with referral to the State Bar"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "30,000 دولار مع إسقاط القضية",
+            "en": "$30,000 with case dismissal"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "109,700 دولار — الأكبر حتى الآن",
+            "en": "$109,700 — the largest to date"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "الاتجاه واضح: الغرامات تتصاعد من 5,000 دولار عام 2023 إلى أكثر من 100,000 عام 2026. المحاكم لم تعد تتساهل مع ادعاءات الجهل بمشاكل AI.",
+        "en": "The trend is clear: fines escalated from $5,000 in 2023 to over $100,000 in 2026. Courts are no longer lenient with claims of ignorance about AI problems."
+      }
+    },
+    {
+      "id": "law-sort-004",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب تطور عدد حالات الهلوسة القانونية الموثقة بالذكاء الاصطناعي في المحاكم الأمريكية زمنياً من الأقدم:",
+        "en": "Order the documented AI legal hallucination cases in U.S. courts chronologically from earliest:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "حالة Mata v. Avianca — أول حالة عقوبات بارزة",
+            "en": "Mata v. Avianca — first prominent sanctions case"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "280 حالة موثقة بحسب Law360",
+            "en": "280 documented incidents per Law360"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "أكثر من 729 حالة بنهاية العام",
+            "en": "Over 729 cases by year-end"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "معدل سنوي متوقع يقارب 1,400 حالة",
+            "en": "Projected annualized rate approaching 1,400 cases"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "التسلسل: يونيو 2023 (Mata)، 2024 (280 حالة)، نهاية 2025 (729+)، الربع الأول 2026 (معدل ~1,400 سنوياً). الافتراض بأن الحالات ستنخفض مع الوعي لم يتحقق — العكس هو الصحيح.",
+        "en": "Timeline: June 2023 (Mata), 2024 (280 cases), end of 2025 (729+), Q1 2026 (rate ~1,400/year). The assumption that cases would decline with awareness hasn't materialized — the opposite is true."
+      }
+    },
+    {
+      "id": "law-self-007",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "اكتشفت أن محامياً مبتدئاً في فريقك يستخدم ChatGPT لكتابة المسودات دون علمك. الجودة جيدة ظاهرياً. ماذا تفعل؟",
+        "en": "You discover a junior associate on your team has been using ChatGPT to write drafts without your knowledge. The quality looks good on the surface. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقيّم عمله ثم أضع بروتوكولاً رسمياً لاستخدام AI في الفريق يشمل قواعد التحقق والإفصاح",
+            "en": "Evaluate his work then establish a formal AI usage protocol for the team including verification and disclosure rules"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطلب منه التوقف حتى يصدر المكتب سياسة رسمية",
+            "en": "Ask him to stop until the firm issues an official policy"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أمنعه فوراً — استخدام AI غير المعتمد يمثل مخاطرة على المكتب والعملاء",
+            "en": "Ban it immediately — unauthorized AI use poses risks to the firm and clients"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتركه يستمر ما دامت الجودة جيدة — المهم النتيجة النهائية",
+            "en": "Let him continue as long as quality is good — what matters is the final result"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الممارسة المثلى تجمع بين الانفتاح على التقنية ووضع ضوابط واضحة. أكثر من 35 نقابة محامين أمريكية أصدرت توجيهات رسمية لاستخدام AI — تركه للعشوائية يعرّض الجميع للمساءلة.",
+        "en": "Best practice combines openness to technology with clear controls. Over 35 U.S. state bar associations have issued formal AI guidance — leaving it to chance exposes everyone to accountability."
+      }
+    },
+    {
+      "id": "law-self-008",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت قاضٍ وتلقيت مذكرة تبدو مثالية لكنك تشتبه أنها كُتبت بالكامل بواسطة AI. لا يوجد في ولايتك أمر إفصاح إلزامي عن استخدام AI. ماذا تفعل؟",
+        "en": "You're a judge who received a perfect-looking brief but suspect it was entirely AI-written. Your jurisdiction has no mandatory AI disclosure order. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أصدر أمراً بإثبات السبب وأطلب من المحامي التأكيد على مراجعته لكل استشهاد",
+            "en": "Issue a show-cause order and ask the attorney to certify they verified every citation"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتحقق من بعض الاستشهادات بنفسي قبل اتخاذ أي إجراء",
+            "en": "Verify some citations myself before taking any action"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتجاهل شكوكي — ما دام المحتوى صحيحاً فلا أهمية لمن كتبه",
+            "en": "Ignore my suspicions — as long as the content is correct, it doesn't matter who wrote it"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض المذكرة تلقائياً لأن استخدام AI يقوّض نزاهة المهنة",
+            "en": "Reject the brief automatically because AI use undermines professional integrity"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "أكثر من 200 محكمة أمريكية تطلب الآن من المحامين شهادة التحقق من المصادر. التركيز القضائي ينصبّ على دقة المحتوى ومسؤولية المحامي، وليس على حظر AI بحد ذاته.",
+        "en": "Over 200 U.S. courts now require lawyers to certify source verification. Judicial focus is on content accuracy and attorney responsibility, not on banning AI itself."
+      }
+    },
+    {
+      "id": "law-mcq-013",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت محامٍ تدرس التزاماتك الأخلاقية عند استخدام AI التوليدي. كم التزاماً أخلاقياً تناوله الرأي الرسمي رقم 512 الصادر عن ABA في يوليو 2024؟",
+        "en": "You're a lawyer studying your ethical obligations when using generative AI. How many ethical obligations did ABA Formal Opinion 512 (July 2024) address?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ثلاثة التزامات",
+            "en": "Three obligations"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ستة التزامات",
+            "en": "Six obligations"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "عشرة التزامات",
+            "en": "Ten obligations"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التزامان فقط",
+            "en": "Only two obligations"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الالتزامات الستة: الكفاءة (Rule 1.1)، السرية (1.6)، التواصل مع العملاء (1.4)، الصدق أمام المحكمة (3.3)، الإشراف على المساعدين (5.3)، والأتعاب المعقولة (1.5).",
+        "en": "The six obligations: Competence (Rule 1.1), Confidentiality (1.6), Client Communication (1.4), Candor toward Tribunals (3.3), Supervision (5.3), and Reasonable Fees (1.5)."
+      }
+    },
+    {
+      "id": "law-mcq-014",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مستشار قانوني في شركة تستخدم أداة AI لفرز السير الذاتية. دراسة جامعة واشنطن (2024) وجدت أن AI يفضل الأسماء المرتبطة بالعرق الأبيض بنسبة:",
+        "en": "You're in-house counsel at a company using an AI resume screening tool. A University of Washington study (2024) found AI preferred white-associated names at a rate of:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "55%",
+            "en": "55%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "70%",
+            "en": "70%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "85%",
+            "en": "85%"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "95%",
+            "en": "95%"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "AI فضّل الأسماء \"البيضاء\" 85% من الوقت مقابل 9% فقط للأسماء \"السوداء\". في قضية Mobley v. Workday (2024-2025) سُمح بدعوى جماعية على مستوى أمريكا ضد أدوات التوظيف بالذكاء الاصطناعي.",
+        "en": "AI preferred 'white' names 85% of the time versus only 9% for 'Black' names. In Mobley v. Workday (2024-2025), a nationwide class action against AI hiring tools was conditionally certified."
+      }
+    },
+    {
+      "id": "law-mcq-015",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أنت محامٍ في كاليفورنيا. أدخلت بيانات موكّل في أداة AI عامة لتحليل قضيته. أي من القواعد الأخلاقية انتهكتها أولاً؟",
+        "en": "You're a lawyer in California. You entered client data into a public AI tool to analyze their case. Which ethical rule did you primarily violate?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "قاعدة السرية (Rule 1.6)",
+            "en": "Confidentiality (Rule 1.6)"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "قاعدة الكفاءة (Rule 1.1)",
+            "en": "Competence (Rule 1.1)"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قاعدة الأتعاب المعقولة (Rule 1.5)",
+            "en": "Reasonable Fees (Rule 1.5)"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "قاعدة الصدق أمام المحكمة (Rule 3.3)",
+            "en": "Candor toward Tribunals (Rule 3.3)"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "مشروع قانون كاليفورنيا (السيناتور توم أومبرغ) يطالب المحامين بالتأكد من عدم إدخال معلومات سرية في أنظمة AI عامة. السرية هي الالتزام الأول الذي يُنتهك عند الاستخدام غير المحسوب.",
+        "en": "A California bill (Senator Tom Umberg) requires attorneys to ensure confidential information isn't entered into public AI systems. Confidentiality is the first obligation violated with careless use."
+      }
+    },
+    {
+      "id": "law-tf-009",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أصدرت عدة ولايات أمريكية قواعد أخلاقية جديدة مصممة خصيصاً للذكاء الاصطناعي بدلاً من توسيع القواعد القائمة.",
+        "en": "Several U.S. states have created entirely new ethical rules specifically designed for AI rather than extending existing rules."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "لم تُنشئ أي ولاية أمريكية قواعد جديدة خاصة بـ AI — جميعها وسّعت القواعد القائمة (مثل قواعد الكفاءة والسرية) لتشمل AI. أكثر من 35 نقابة أصدرت توجيهات لكن ضمن الإطار الحالي.",
+        "en": "No U.S. state has created new AI-specific rules — all have extended existing rules (like competence and confidentiality) to cover AI. Over 35 bar associations issued guidance but within the current framework."
+      }
+    },
+    {
+      "id": "law-tf-010",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في قضية Mobley v. Workday (2024-2025)، منحت محكمة فيدرالية شهادة مشروطة لدعوى جماعية على مستوى أمريكا ضد أدوات التوظيف بالذكاء الاصطناعي.",
+        "en": "In Mobley v. Workday (2024-2025), a federal court granted conditional certification for a nationwide class action against AI hiring tools."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "الدعوى قد تشمل مئات الملايين من المتقدمين للوظائف. وفي قضية منفصلة، دفعت SafeRent Solutions أكثر من 2 مليون دولار تسوية بعد أن ميّزت خوارزمية AI للإيجار ضد المتقدمين السود واللاتينيين.",
+        "en": "The lawsuit could potentially involve hundreds of millions of applicants. In a separate case, SafeRent Solutions settled for over $2M after its AI tenant screening algorithm disparately impacted Black and Hispanic applicants."
+      }
+    },
+    {
+      "id": "law-fill-005",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "يصنّف قانون الذكاء الاصطناعي الأوروبي (EU AI Act) أنظمة AI المستخدمة في إدارة العدالة ضمن فئة \"{{blank_1}}\" مما يفرض متطلبات شفافية ورقابة بشرية صارمة.",
+        "en": "The EU AI Act classifies AI systems used in administering justice as '{{blank_1}},' triggering strict transparency and human oversight requirements."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "عالية الخطورة",
+            "en": "high-risk"
+          },
+          "options": [
+            {
+              "ar": "عالية الخطورة",
+              "en": "high-risk"
+            },
+            {
+              "ar": "محدودة الخطورة",
+              "en": "limited-risk"
+            },
+            {
+              "ar": "محظورة",
+              "en": "prohibited"
+            },
+            {
+              "ar": "منخفضة الخطورة",
+              "en": "low-risk"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "عقوبات مخالفة EU AI Act تصل إلى 35 مليون يورو أو 7% من الإيرادات السنوية العالمية. الأنظمة المحظورة (أعلى فئة) تشمل التلاعب اللاواعي والتصنيف الاجتماعي الحكومي.",
+        "en": "EU AI Act penalties reach €35M or 7% of global annual revenue. Prohibited systems (highest category) include subliminal manipulation and governmental social scoring."
+      }
+    },
+    {
+      "id": "law-match-005",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل التزام أخلاقي من رأي ABA 512 بتطبيقه على استخدام AI:",
+        "en": "Match each ethical obligation from ABA Opinion 512 with its AI application:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "الكفاءة (Rule 1.1)",
+            "en": "Competence (Rule 1.1)"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "السرية (Rule 1.6)",
+            "en": "Confidentiality (Rule 1.6)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "الصدق أمام المحكمة (Rule 3.3)",
+            "en": "Candor toward Tribunals (Rule 3.3)"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "الإشراف (Rule 5.3)",
+            "en": "Supervision (Rule 5.3)"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "فهم قدرات وحدود أدوات AI القانونية",
+            "en": "Understanding capabilities and limitations of legal AI tools"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "عدم إدخال بيانات العملاء في أنظمة AI عامة",
+            "en": "Not entering client data into public AI systems"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "التحقق من كل استشهاد مولّد بـ AI قبل تقديمه للمحكمة",
+            "en": "Verifying every AI-generated citation before submitting to court"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "مراقبة عمل المساعدين الذين يستخدمون AI",
+            "en": "Monitoring the work of assistants who use AI"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "الرأي 512 لم يُنشئ قواعد جديدة — بل أكد أن القواعد الحالية تنطبق تماماً على AI. التطبيق العملي: المحامي مسؤول عن كل مخرجات AI كما لو أنتجها بنفسه.",
+        "en": "Opinion 512 didn't create new rules — it confirmed existing rules fully apply to AI. Practical implication: the attorney is responsible for all AI output as if they produced it themselves."
+      }
+    },
+    {
+      "id": "law-sort-005",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب الخطوات الأخلاقية التي يجب على المحامي اتباعها قبل استخدام أداة AI في قضية عميل:",
+        "en": "Order the ethical steps a lawyer must follow before using an AI tool on a client's case:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "فهم قدرات وحدود الأداة المحددة (كفاءة)",
+            "en": "Understand the specific tool's capabilities and limitations (competence)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "التأكد من عدم إدخال بيانات سرية في نظام عام (سرية)",
+            "en": "Ensure no confidential data enters a public system (confidentiality)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "إبلاغ العميل باستخدام AI في قضيته (تواصل)",
+            "en": "Inform the client about AI use in their case (communication)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "التحقق من كل مخرج قبل تقديمه للمحكمة (صدق)",
+            "en": "Verify every output before submitting to court (candor)"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الترتيب منطقي: أولاً تفهم الأداة، ثم تحمي السرية عند الإدخال، ثم تُعلم العميل، وأخيراً تتحقق قبل التقديم. كل خطوة تُبنى على التي قبلها.",
+        "en": "The order is logical: first understand the tool, then protect confidentiality during input, then inform the client, and finally verify before submission. Each step builds on the previous one."
+      }
+    },
+    {
+      "id": "law-self-009",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "عميلك يريد استخدام أداة AI للتوظيف لفرز المتقدمين. تعلم أن هذه الأدوات أظهرت تحيزاً عنصرياً موثقاً. ما نصيحتك؟",
+        "en": "Your client wants to use an AI hiring tool to screen applicants. You know these tools have shown documented racial bias. What's your advice?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أنصح بالاستخدام مع مراجعة بشرية إلزامية وفحص دوري للتحيز والتوثيق الكامل",
+            "en": "Advise use with mandatory human review, periodic bias audits, and full documentation"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أنصح بالانتظار حتى تصدر لوائح واضحة لتجنب المسؤولية",
+            "en": "Advise waiting until clear regulations are issued to avoid liability"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفض تقديم المشورة في هذا الموضوع — خارج نطاق خبرتي القانونية",
+            "en": "Decline to advise on this topic — outside my legal expertise"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أؤكد أن أدوات AI محايدة بطبيعتها وأفضل من التحيز البشري",
+            "en": "Assure that AI tools are inherently neutral and better than human bias"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "دعوى Mobley v. Workday وتسوية SafeRent (2 مليون+) تُظهر أن المسؤولية القانونية حقيقية. المحامي الجيد لا يمنع التقنية ولا يتجاهل مخاطرها — بل يُهيكل استخدامها قانونياً.",
+        "en": "Mobley v. Workday and the SafeRent settlement ($2M+) show legal liability is real. A good lawyer neither blocks technology nor ignores its risks — they structure its use legally."
+      }
+    },
+    {
+      "id": "law-self-010",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "محكمتك تطلب الإفصاح عن استخدام AI في المرافعات. زميلك يقول: \"الإفصاح يُضعف موقفنا أمام القاضي.\" ما رأيك؟",
+        "en": "Your court requires AI disclosure in filings. A colleague says: 'Disclosure weakens our position before the judge.' What's your view?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الإفصاح واجب مهني ويُعزز الثقة — الشفافية ليست ضعفاً",
+            "en": "Disclosure is a professional duty and builds trust — transparency isn't weakness"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الإفصاح مطلوب قانونياً فنلتزم به حتى لو لم نقتنع",
+            "en": "Disclosure is legally required so we comply even if not fully convinced"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتفق — الأفضل عدم ذكر AI إلا إذا سُئلنا مباشرة",
+            "en": "Agree — better not to mention AI unless directly asked"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتجنب استخدام AI بالكامل لتفادي مسألة الإفصاح",
+            "en": "Avoid using AI entirely to avoid the disclosure issue"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "حكمت الدائرة السادسة (2025) بأن أوامر الإفصاح عن AI لا تمس سر المهنة (attorney-client privilege). الاتجاه القضائي يتحرك نحو مزيد من الشفافية لا أقل.",
+        "en": "The Sixth Circuit (2025) ruled that AI-use disclosure orders don't implicate attorney-client privilege. The judicial trend is moving toward more transparency, not less."
+      }
+    },
+    {
+      "id": "law-mcq-016",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "حسب تقرير Goldman Sachs (2023)، ما نسبة المهام القانونية المعرّضة لأتمتة AI — وهي من أعلى النسب بين كل المهن؟",
+        "en": "According to the Goldman Sachs report (2023), what percentage of legal tasks are exposed to AI automation — among the highest of any profession?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "25%",
+            "en": "25%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "44%",
+            "en": "44%"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "60%",
+            "en": "60%"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "35%",
+            "en": "35%"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "44% من المهام القانونية معرضة للأتمتة — ثاني أعلى نسبة بعد الوظائف الإدارية (46%). لكن تقرير 2025 المحدّث من Goldman Sachs خفّض التقدير لـ 17% من الوظائف القانونية فعلياً عرضة للخطر.",
+        "en": "44% of legal tasks are exposed to automation — second highest after administrative jobs (46%). But Goldman Sachs' updated 2025 report lowered the estimate to 17% of legal jobs actually at risk."
+      }
+    },
+    {
+      "id": "law-mcq-017",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت شريك مسؤول عن التوظيف في مكتب محاماة. تريد توظيف محامين لديهم خبرة في AI. بحسب التقارير الأخيرة، ما نسبة ارتفاع توظيف المحامين ذوي خبرة AI؟",
+        "en": "You're a hiring partner at a law firm wanting to recruit lawyers with AI experience. According to recent reports, how much has hiring of lawyers with AI experience increased?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "30%",
+            "en": "30%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "106%",
+            "en": "106%"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "55%",
+            "en": "55%"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "200%",
+            "en": "200%"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "ارتفع توظيف المحامين ذوي خبرة AI بنسبة 106% مقارنة بالعام السابق. المهنة لا تتقلص بسبب AI — بل تتحول: المطلوب الآن محامون يدمجون بين المعرفة القانونية والكفاءة التقنية.",
+        "en": "Hiring of lawyers with AI experience rose 106% year-over-year. The profession isn't shrinking due to AI — it's transforming: what's needed now are lawyers who combine legal knowledge with technical competence."
+      }
+    },
+    {
+      "id": "law-mcq-018",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أنت محامية تستخدم Harvey AI يومياً. بحسب دراسة Harvey (2025)، ما نسبة المحامين الذين ما زالوا يستخدمون AI بشكل أساسي على الحواسيب المحمولة وليس الهواتف؟",
+        "en": "You're a lawyer using Harvey AI daily. According to Harvey's study (2025), what percentage of lawyers still primarily use AI on laptops rather than smartphones?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "50%",
+            "en": "50%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "75%",
+            "en": "75%"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "90%",
+            "en": "90%"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "60%",
+            "en": "60%"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "75% يستخدمون AI على الحواسيب رغم أن 86% يعتمدون على الهاتف للعمل بعيداً عن المكتب و89% يراجعون رسائل العمل مراراً خارج ساعات الدوام. هذه الفجوة دفعت Harvey لإطلاق تطبيق جوال في سبتمبر 2025.",
+        "en": "75% use AI on laptops despite 86% relying on phones for away-from-desk work and 89% checking messages multiple times outside hours. This gap prompted Harvey to launch a mobile app in September 2025."
+      }
+    },
+    {
+      "id": "law-tf-011",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أفاد مكتب CMS في أكبر نشر لـ Harvey AI في أوروبا والشرق الأوسط وأفريقيا بتوفير 118 ساعة لكل محامٍ سنوياً.",
+        "en": "CMS reported saving 118 hours per lawyer annually in the largest Harvey AI deployment in EMEA."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "A&O Shearman أفادت أيضاً بتوفير 2-3 ساعات أسبوعياً لكل محامٍ وتقليل وقت مراجعة العقود بنسبة 30%. هذه الأرقام تتحول إلى ميزة تنافسية حقيقية للمكاتب التي تتبنى AI مبكراً.",
+        "en": "A&O Shearman also reported saving 2-3 hours weekly per lawyer and reducing contract review time by 30%. These numbers translate into real competitive advantages for firms that adopt AI early."
+      }
+    },
+    {
+      "id": "law-tf-012",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "ارتفع اعتماد تحليل العقود بالذكاء الاصطناعي بنسبة 17% بين الفرق القانونية الداخلية بين عامي 2024 و2025.",
+        "en": "AI contract analysis adoption rose 17% among in-house legal teams between 2024 and 2025."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "مراجعة العقود هي من أكثر المهام القانونية قابلية للأتمتة. الفرق القانونية الداخلية تتبنى AI بسرعة أكبر من المكاتب الخارجية لأن الضغط على خفض التكاليف أعلى.",
+        "en": "Contract review is among the most automatable legal tasks. In-house legal teams adopt AI faster than external firms because cost reduction pressure is higher."
+      }
+    },
+    {
+      "id": "law-fill-006",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أفاد مكتب A&O Shearman بتقليل وقت مراجعة العقود بنسبة {{blank_1}} بعد نشر Harvey AI على مستوى المكتب بالكامل لـ 4,000 موظف في 43 ولاية قضائية.",
+        "en": "A&O Shearman reported a {{blank_1}} reduction in contract review time after deploying Harvey AI enterprise-wide across 4,000 staff in 43 jurisdictions."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "30%",
+            "en": "30%"
+          },
+          "options": [
+            {
+              "ar": "30%",
+              "en": "30%"
+            },
+            {
+              "ar": "15%",
+              "en": "15%"
+            },
+            {
+              "ar": "50%",
+              "en": "50%"
+            },
+            {
+              "ar": "70%",
+              "en": "70%"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "توفير 30% من وقت المراجعة يعني ساعات عمل أقل تُحتسب على العملاء. بعض المكاتب بدأت التحول من الفوترة بالساعة إلى ترتيبات أتعاب بديلة (AFAs) بسبب مكاسب AI.",
+        "en": "A 30% reduction in review time means fewer billable hours charged to clients. Some firms are shifting from hourly billing to alternative fee arrangements (AFAs) due to AI efficiency gains."
+      }
+    },
+    {
+      "id": "law-match-006",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مكتب أو مؤسسة قانونية بإنجاز AI المرتبط بها:",
+        "en": "Match each law firm or legal institution with its AI achievement:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "A&O Shearman",
+            "en": "A&O Shearman"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "CMS",
+            "en": "CMS"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "WongPartnership (سنغافورة)",
+            "en": "WongPartnership (Singapore)"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "PwC سنغافورة",
+            "en": "PwC Singapore"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "أول مكتب Magic Circle يتبنى Harvey مع 3,500 محامٍ",
+            "en": "First Magic Circle firm to adopt Harvey with 3,500 lawyers"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أكبر نشر لـ Harvey في EMEA بتوفير 118 ساعة سنوياً",
+            "en": "Largest Harvey deployment in EMEA saving 118 hours annually"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "أول مكتب في جنوب شرق آسيا يختبر Harvey",
+            "en": "First Southeast Asian firm to test Harvey"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تبنّت Harvey لتمكين محاميها في سبتمبر 2024",
+            "en": "Adopted Harvey to empower its lawyers in September 2024"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "التبني العالمي لـ AI القانوني يتسارع: من أول تجربة في A&O نوفمبر 2022 إلى نشر عالمي يشمل أوروبا وآسيا وأستراليا خلال 3 سنوات فقط.",
+        "en": "Global adoption of legal AI is accelerating: from A&O's first trial in November 2022 to worldwide deployment across Europe, Asia, and Australia in just 3 years."
+      }
+    },
+    {
+      "id": "law-sort-006",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب محطات نمو Harvey AI من الأقدم إلى الأحدث:",
+        "en": "Order Harvey AI's growth milestones from earliest to most recent:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "جمع 5 ملايين دولار بقيادة OpenAI Startup Fund",
+            "en": "Raised $5M led by OpenAI Startup Fund"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "جمع 100 مليون دولار وتقييم 1.5 مليار دولار",
+            "en": "Raised $100M at $1.5B valuation"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "جمع 160 مليون دولار وتقييم 8 مليارات دولار",
+            "en": "Raised $160M at $8B valuation"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "جمع 200 مليون دولار وتقييم 11 مليار دولار",
+            "en": "Raised $200M at $11B valuation"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "من 5 ملايين (نوفمبر 2022) إلى 11 مليار دولار (مارس 2026) في أقل من 4 سنوات. النمو يعكس ثقة المستثمرين بأن AI القانوني سوق ضخم لم تُستغل إمكاناته بعد.",
+        "en": "From $5M (November 2022) to $11B (March 2026) in under 4 years. The growth reflects investor confidence that legal AI is a massive market whose potential hasn't been fully tapped."
+      }
+    },
+    {
+      "id": "law-self-011",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت محامٍ شاب وتعلم أن 44% من المهام القانونية قابلة للأتمتة. كيف تستعد لمستقبلك المهني؟",
+        "en": "You're a young lawyer knowing that 44% of legal tasks are automatable. How do you prepare for your career future?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أطور مهاراتي في AI والتقنية إلى جانب القانون — أصبح الجسر بين المجالين",
+            "en": "Develop AI and tech skills alongside law — become the bridge between both fields"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتخصص في مجال يصعب على AI اختراقه كالقانون المعقد والاستشاري",
+            "en": "Specialize in areas hard for AI to penetrate like complex advisory law"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لست قلقاً — المحاماة مهنة ستبقى بشرية دائماً",
+            "en": "Not worried — law is a profession that will always remain human"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أبحث عن مهنة بديلة — القانون لن يكون مجدياً في المستقبل",
+            "en": "Look for an alternative career — law won't be viable in the future"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "توظيف المحامين ذوي خبرة AI ارتفع 106%. المستقبل ليس لمن يهرب من AI ولا لمن يتجاهله — بل لمن يدمجه مع خبرته القانونية ويضيف القيمة التي لا يستطيع AI تقديمها.",
+        "en": "Hiring of lawyers with AI experience rose 106%. The future isn't for those who flee AI or ignore it — but for those who integrate it with legal expertise and add value AI cannot provide."
+      }
+    },
+    {
+      "id": "law-self-012",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مكتبك يقترح تقليل عدد المحامين المبتدئين وتعويضهم بأدوات AI للمهام الروتينية. ما موقفك؟",
+        "en": "Your firm proposes reducing junior associates and replacing their routine tasks with AI tools. What's your position?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أوافق على تقليل المهام الروتينية بـ AI لكن مع إعادة تصميم مسار التطوير المهني للمبتدئين",
+            "en": "Agree to reduce routine tasks with AI but redesign the professional development path for juniors"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أوافق — الكفاءة أهم والمبتدئون يمكنهم التعلم بطرق أخرى",
+            "en": "Agree — efficiency matters more and juniors can learn other ways"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أعارض — المبتدئون يحتاجون المهام الروتينية للتعلم",
+            "en": "Oppose — juniors need routine tasks to learn"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أعارض بشدة — هذا يدمر مهنة المحاماة من جذورها",
+            "en": "Strongly oppose — this destroys the legal profession at its roots"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "المهام الروتينية ليست بالضرورة أساسية لتطوير محامٍ جيد — كما أن التدقيق الإملائي التلقائي لم يمنع المحامين من اكتشاف الأخطاء. المفتاح هو إعادة التصميم الذكي لمسار التعلم.",
+        "en": "Routine tasks aren't necessarily essential for developing good lawyers — just as spell check didn't prevent lawyers from spotting errors. The key is intelligently redesigning the learning path."
+      }
+    },
+    {
+      "id": "law-mcq-019",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت محامٍ تستشيرك ولاية لويزيانا حول تشريعات AI القانونية. ما الإجراء الذي اتخذه حاكم لويزيانا بشأن AI في المحاماة؟",
+        "en": "You're a lawyer consulted by Louisiana on AI legal legislation. What action did Louisiana's governor take regarding AI in legal practice?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "وقّع قانوناً يُلزم المحامين بـ\"العناية المعقولة\" للتحقق من صحة الأدلة المولّدة بـ AI",
+            "en": "Signed a law requiring attorneys to use 'reasonable diligence' to verify AI-generated evidence authenticity"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حظر استخدام AI في المرافعات القضائية بالكامل",
+            "en": "Banned AI use in court filings entirely"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "فرض ترخيصاً خاصاً لاستخدام AI في المحاماة",
+            "en": "Required a special license for AI use in legal practice"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أنشأ محكمة متخصصة في قضايا AI",
+            "en": "Established a specialized AI court"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "قانون لويزيانا يسمح أيضاً للأطراف في القضايا المدنية بالطعن في مقبولية الأدلة المشتبه أنها مولّدة أو معدّلة بـ AI. نهج واقعي: لا يحظر AI بل يضع ضوابط.",
+        "en": "Louisiana's law also allows parties in civil cases to challenge the admissibility of evidence suspected of being AI-generated or altered. A pragmatic approach: doesn't ban AI but sets controls."
+      }
+    },
+    {
+      "id": "law-mcq-020",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما أقصى عقوبة يمكن أن تفرضها لوائح قانون AI الأوروبي على الشركات المخالفة؟",
+        "en": "What is the maximum penalty the EU AI Act can impose on non-compliant companies?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "10 ملايين يورو أو 2% من الإيرادات السنوية",
+            "en": "€10M or 2% of annual revenue"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "35 مليون يورو أو 7% من الإيرادات السنوية العالمية",
+            "en": "€35M or 7% of global annual revenue"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "20 مليون يورو أو 4% من الإيرادات السنوية العالمية",
+            "en": "€20M or 4% of global annual revenue"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50 مليون يورو أو 10% من الإيرادات السنوية",
+            "en": "€50M or 10% of annual revenue"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "35 مليون يورو أو 7% من الإيرادات — أشد من غرامات GDPR (20 مليون أو 4%). دخل القانون حيز التنفيذ في أغسطس 2024 ويُلزم بشفافية الخوارزميات ورقابة بشرية على الأنظمة عالية الخطورة.",
+        "en": "€35M or 7% of revenue — stricter than GDPR fines (€20M or 4%). The Act took effect August 2024 and requires algorithmic transparency and human oversight for high-risk systems."
+      }
+    },
+    {
+      "id": "law-mcq-021",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "كم عدد المحاكم الأمريكية التي تطلب الآن من المحامين شهادة تحقق من المصادر المولّدة بالذكاء الاصطناعي؟",
+        "en": "How many U.S. courts now require lawyers to certify they've verified AI-generated sources?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقل من 50 محكمة",
+            "en": "Fewer than 50 courts"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أكثر من 200 محكمة",
+            "en": "Over 200 courts"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حوالي 100 محكمة",
+            "en": "About 100 courts"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "جميع المحاكم الفيدرالية",
+            "en": "All federal courts"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أكثر من 200 محكمة بأوامر فردية من القضاة. لا يوجد بعد توجيه فيدرالي موحد — كل قاضٍ يتعامل مع المسألة بطريقته. هذا يخلق تعقيداً للمحامين الذين يمارسون في ولايات متعددة.",
+        "en": "Over 200 courts via individual judicial orders. There's no unified federal guidance yet — each judge handles it differently. This creates complexity for lawyers practicing across multiple jurisdictions."
+      }
+    },
+    {
+      "id": "law-tf-013",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "حكمت الدائرة السادسة الأمريكية (2025) بأن أوامر الإفصاح عن استخدام AI في المرافعات تنتهك سر المهنة بين المحامي والعميل (attorney-client privilege).",
+        "en": "The U.S. Sixth Circuit ruled (2025) that AI-use disclosure orders in filings violate attorney-client privilege."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "العكس: حكمت الدائرة السادسة بأن أوامر الإفصاح عن AI لا تمس سر المهنة. إفصاحك عن استخدام أداة AI لا يكشف محتوى التواصل مع العميل.",
+        "en": "The opposite: the Sixth Circuit ruled that AI-use disclosure orders don't implicate attorney-client privilege. Disclosing AI tool usage doesn't reveal the content of client communications."
+      }
+    },
+    {
+      "id": "law-tf-014",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "تطالب مقترحات الكونغرس الأمريكي بأن يقوم المكتب الإداري للمحاكم بالإبلاغ السنوي عن العقوبات المتعلقة بهلوسة AI.",
+        "en": "U.S. Congressional proposals call for the Administrative Office of the Courts to annually report AI hallucination-related sanctions."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "الاقتراح مبني على سابقة: المكتب الإداري مُلزم أصلاً بنشر إحصائيات عقوبات الإفلاس سنوياً. توسيع هذا ليشمل AI سيوفر بيانات مركزية تساعد في فهم حجم المشكلة.",
+        "en": "The proposal is based on precedent: the Administrative Office is already required to publish annual bankruptcy sanctions statistics. Extending this to AI would provide centralized data to help understand the problem's scale."
+      }
+    },
+    {
+      "id": "law-fill-007",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "أصدرت هيئة البيانات والذكاء الاصطناعي السعودية (SDAIA) {{blank_1}} التي تستشهد بمبادئ الشريعة كإطار للرقابة الأخلاقية والقانونية على AI.",
+        "en": "Saudi Arabia's Data and AI Authority (SDAIA) released the {{blank_1}} which explicitly references Sharia principles as a framework for ethical and legal AI oversight."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "الاستراتيجية الوطنية للبيانات والذكاء الاصطناعي",
+            "en": "National Strategy for Data and AI"
+          },
+          "options": [
+            {
+              "ar": "الاستراتيجية الوطنية للبيانات والذكاء الاصطناعي",
+              "en": "National Strategy for Data and AI"
+            },
+            {
+              "ar": "قانون حماية البيانات الشخصية",
+              "en": "Personal Data Protection Law"
+            },
+            {
+              "ar": "ميثاق أخلاقيات AI",
+              "en": "AI Ethics Charter"
+            },
+            {
+              "ar": "دليل حوكمة الخوارزميات",
+              "en": "Algorithm Governance Guide"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "الاستراتيجية السعودية تؤكد على الشفافية والعدالة ومنع الضرر — مبادئ متجذرة في الشريعة الإسلامية. السعودية والإمارات من أكثر الدول العربية استثماراً في AI مع إطار تنظيمي يمزج بين الحداثة والقيم الإسلامية.",
+        "en": "Saudi strategy emphasizes transparency, fairness, and harm prevention — principles rooted in Islamic Sharia. Saudi Arabia and UAE are among the most AI-invested Arab states with a regulatory framework blending modernity with Islamic values."
+      }
+    },
+    {
+      "id": "law-match-007",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل إطار تنظيمي لـ AI بخصائصه الرئيسية:",
+        "en": "Match each AI regulatory framework with its key characteristics:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "قانون AI الأوروبي (EU AI Act)",
+            "en": "EU AI Act"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "رأي ABA 512",
+            "en": "ABA Opinion 512"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "قانون لويزيانا",
+            "en": "Louisiana law"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "استراتيجية SDAIA السعودية",
+            "en": "Saudi SDAIA strategy"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تصنيف قائم على المخاطر مع غرامات حتى 35 مليون يورو",
+            "en": "Risk-based classification with fines up to €35M"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "ستة التزامات أخلاقية تطبّق القواعد الحالية على AI",
+            "en": "Six ethical obligations applying existing rules to AI"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "\"عناية معقولة\" للتحقق من الأدلة المولّدة بـ AI",
+            "en": "'Reasonable diligence' to verify AI-generated evidence"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "إطار يمزج مبادئ الشريعة مع حوكمة AI",
+            "en": "Framework blending Sharia principles with AI governance"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "الأطر التنظيمية تتنوع: EU AI Act شامل وعقابي، ABA توجيهي مهني، لويزيانا تشريعي محلي، وSDaia يدمج القيم الإسلامية. المحامي العالمي يحتاج فهم كل هذه الأطر.",
+        "en": "Regulatory frameworks vary: EU AI Act is comprehensive and punitive, ABA is professional guidance, Louisiana is local legislation, and SDAIA integrates Islamic values. A global lawyer needs to understand all these frameworks."
+      }
+    },
+    {
+      "id": "law-sort-007",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب تصنيفات قانون AI الأوروبي من الأقل تقييداً إلى الأشد:",
+        "en": "Order the EU AI Act risk classifications from least to most restrictive:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "خطورة منخفضة (Minimal Risk) — لا متطلبات خاصة",
+            "en": "Minimal Risk — no special requirements"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "خطورة محدودة (Limited Risk) — متطلبات شفافية",
+            "en": "Limited Risk — transparency requirements"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "عالية الخطورة (High Risk) — كأنظمة إدارة العدالة",
+            "en": "High Risk — like justice administration systems"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "محظورة (Prohibited) — كالتلاعب اللاواعي والتصنيف الاجتماعي",
+            "en": "Prohibited — like subliminal manipulation and social scoring"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "أنظمة العدالة (القضاء، الشرطة التنبؤية) تقع في \"عالية الخطورة\" — ليست محظورة لكنها تخضع لأشد المتطلبات بعد الحظر. المحامي يجب أن يفهم أين يقع كل نظام AI يستخدمه.",
+        "en": "Justice systems (judiciary, predictive policing) fall under 'high-risk' — not prohibited but subject to the strictest requirements after a ban. A lawyer must understand where each AI system they use falls."
+      }
+    },
+    {
+      "id": "law-self-013",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "تشريعات AI القانونية تتغير بسرعة عبر ولايات ودول مختلفة. كيف تتعامل مع هذا التعقيد في ممارستك؟",
+        "en": "AI legal regulations are changing rapidly across different jurisdictions and countries. How do you handle this complexity in your practice?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أخصص وقتاً أسبوعياً لمتابعة التحديثات التنظيمية وأشاركها مع فريقي",
+            "en": "Dedicate weekly time to track regulatory updates and share them with my team"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أعتمد على النشرات المتخصصة وأتابع القضايا البارزة",
+            "en": "Rely on specialized newsletters and follow landmark cases"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر حتى تستقر القوانين قبل تغيير ممارساتي",
+            "en": "Wait until laws stabilize before changing my practices"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أهتم بالتنظيم — الممارسة القانونية الجيدة كافية",
+            "en": "Don't care about regulation — good legal practice is sufficient"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "مع أكثر من 35 نقابة أصدرت توجيهات وقوانين مثل EU AI Act ولويزيانا وكاليفورنيا — انتظار \"الاستقرار\" يعني التخلف عن الركب. المشهد التنظيمي لن يستقر قريباً.",
+        "en": "With over 35 bar associations issuing guidance and laws like EU AI Act, Louisiana, and California — waiting for 'stability' means falling behind. The regulatory landscape won't stabilize soon."
+      }
+    },
+    {
+      "id": "law-self-014",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "عميلك شركة تكنولوجيا تطور أداة AI لاستخدامها في المحاكم الأوروبية. يسألك عن أهم ما يجب مراعاته وفق EU AI Act. ما أولويتك؟",
+        "en": "Your client is a tech company developing an AI tool for European courts. They ask about the key EU AI Act considerations. What's your priority advice?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التصنيف \"عالي الخطورة\" يعني متطلبات صارمة في الشفافية والتوثيق والرقابة البشرية يجب تصميمها من البداية",
+            "en": "The 'high-risk' classification means strict transparency, documentation, and human oversight requirements must be built in from the start"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ننتظر حتى تصدر إرشادات تفصيلية أكثر قبل التصميم",
+            "en": "Wait for more detailed guidelines before designing"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "EU AI Act لا يزال جديداً ولن يُطبّق فعلياً لسنوات",
+            "en": "EU AI Act is still new and won't be enforced for years"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "نبني المنتج أولاً ثم نعدّله للامتثال لاحقاً",
+            "en": "Build the product first then adjust for compliance later"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "مبدأ \"Privacy by Design\" يتحول إلى \"Compliance by Design\": المتطلبات يجب تضمينها من مرحلة التصميم. الغرامات (35 مليون يورو أو 7%) تجعل التأخير مكلفاً جداً.",
+        "en": "'Privacy by Design' is becoming 'Compliance by Design': requirements must be embedded from the design phase. The fines (€35M or 7%) make delays very costly."
+      }
+    },
+    {
+      "id": "law-mcq-022",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت باحث في الفقه الإسلامي. ما الموقف الذي اتخذته دار الإفتاء المصرية تجاه الاعتماد على AI في إصدار الفتاوى؟",
+        "en": "You're a researcher in Islamic jurisprudence. What position did Egypt's Dar al-Ifta take on relying on AI for fatwa issuance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا يجوز — AI يفتقد مؤهلات المفتي من علم وتقوى وبصيرة",
+            "en": "Not permissible — AI lacks a mufti's qualifications including knowledge, piety, and insight"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "جائز بشروط — بإشراف عالم مؤهل",
+            "en": "Permissible with conditions — under a qualified scholar's supervision"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "جائز مطلقاً — التقنية تخدم الدين",
+            "en": "Fully permissible — technology serves religion"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم تصدر فيها فتوى بعد",
+            "en": "No fatwa has been issued on this yet"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "دار الإفتاء المصرية والمجمع الفقهي الدولي والأزهر يتفقون: AI لا يملك مؤهلات المفتي (العلم، الخلق، التقوى). لكن تطبيقات مساعدة موجودة: IftaSG في سنغافورة وChatmuGPT في إندونيسيا.",
+        "en": "Egypt's Dar al-Ifta, the International Islamic Fiqh Academy, and Al-Azhar agree: AI lacks a mufti's qualifications (knowledge, character, piety). But assistive applications exist: IftaSG in Singapore and ChatmuGPT in Indonesia."
+      }
+    },
+    {
+      "id": "law-mcq-023",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "نظام Aftina — أداة AI للسؤال والجواب في الفتاوى مبنية على تقنية RAG ومجموعة بيانات دار الإفتاء المصرية — حققت نسبة هلوسة منخفضة جداً. كم بلغت؟",
+        "en": "The Aftina system — an AI fatwa Q&A tool built on RAG technology using Egypt's Dar al-Ifta dataset — achieved an extremely low hallucination rate. How low?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "5%",
+            "en": "5%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "2.5%",
+            "en": "2.5%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "0.40%",
+            "en": "0.40%"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "10%",
+            "en": "10%"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "0.40% مقارنة بـ 17-82% في الأدوات القانونية الغربية! السبب: تقنية RAG تربط الإجابات بمصادر محددة وموثقة بدلاً من \"تخمين\" النموذج. هذا النموذج يُثبت أن التخصص الدقيق يقلل الهلوسة بشكل جذري.",
+        "en": "0.40% compared to 17-82% in Western legal tools! The reason: RAG technology grounds answers in specific documented sources instead of model 'guessing.' This proves that narrow specialization drastically reduces hallucinations."
+      }
+    },
+    {
+      "id": "law-mcq-024",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أيّ مؤسسة إسلامية في جنوب شرق آسيا طوّرت أداة IftaSG — وهي أداة بحث في الفتاوى مبنية على نماذج لغوية كبيرة؟",
+        "en": "Which Islamic institution in Southeast Asia developed IftaSG — an LLM-based fatwa research tool?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "MUIS (مجلس الشؤون الدينية الإسلامية في سنغافورة)",
+            "en": "MUIS (Islamic Religious Council of Singapore)"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مجلس الإفتاء الماليزي",
+            "en": "Malaysian Fatwa Council"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مجلس العلماء الإندونيسي",
+            "en": "Indonesian Ulama Council"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "جامعة الأزهر فرع إندونيسيا",
+            "en": "Al-Azhar University Indonesia branch"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "MUIS في سنغافورة رائدة في دمج التقنية بالعمل الديني. أما في إندونيسيا، أنشأت منظمة المحمدية ChatmuGPT المدرّب على 20 كتاباً مرجعياً للمنظمة.",
+        "en": "Singapore's MUIS is a pioneer in integrating technology with religious work. In Indonesia, Muhammadiyah created ChatmuGPT trained on 20 key organizational reference books."
+      }
+    },
+    {
+      "id": "law-tf-015",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أطلقت هيئة الشؤون الإسلامية والعمل الخيري في دبي (IACAD) برنامج \"الإفتاء الافتراضي\" عام 2019.",
+        "en": "Dubai's Islamic Affairs and Charitable Activities Department (IACAD) launched a 'Virtual Ifta' program in 2019."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "الإمارات من أوائل الدول العربية في رقمنة الخدمات الدينية. برنامج الإفتاء الافتراضي يُسهّل الوصول للفتاوى لكنه يعتمد على علماء بشريين — AI يُستخدم كأداة مساعدة وليس بديلاً.",
+        "en": "UAE was among the first Arab countries to digitize religious services. The Virtual Ifta program facilitates fatwa access but relies on human scholars — AI is used as an assistive tool, not a replacement."
+      }
+    },
+    {
+      "id": "law-tf-016",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تستشهد قوانين حماية البيانات في السعودية والإمارات صراحة بمبادئ مستمدة من الشريعة الإسلامية فيما يخص الخصوصية.",
+        "en": "Data protection laws in Saudi Arabia and the UAE explicitly reference principles derived from Islamic Sharia regarding privacy."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "القرآن والسنة يؤكدان حرمة التجسس وانتهاك الخصوصية. قوانين البيانات الحديثة في الخليج تبني على هذا الأساس الشرعي وتضيف أُطراً تقنية معاصرة.",
+        "en": "The Quran and Sunnah emphasize the sanctity of privacy and prohibit intrusion. Modern Gulf data laws build on this Sharia foundation while adding contemporary technical frameworks."
+      }
+    },
+    {
+      "id": "law-fill-008",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "في إندونيسيا، أنشأت منظمة {{blank_1}} أداة ChatmuGPT المدرّبة على 20 كتاباً مرجعياً أساسياً للمنظمة.",
+        "en": "In Indonesia, the {{blank_1}} organization created ChatmuGPT trained on 20 key organizational reference books."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "المحمدية",
+            "en": "Muhammadiyah"
+          },
+          "options": [
+            {
+              "ar": "المحمدية",
+              "en": "Muhammadiyah"
+            },
+            {
+              "ar": "نهضة العلماء",
+              "en": "Nahdlatul Ulama"
+            },
+            {
+              "ar": "مجلس العلماء",
+              "en": "Ulama Council"
+            },
+            {
+              "ar": "جمعية الإصلاح",
+              "en": "Islah Association"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "المحمدية ثاني أكبر منظمة إسلامية في إندونيسيا (عشرات الملايين من الأعضاء). ChatmuGPT مثال على كيف يمكن بناء أدوات AI إسلامية مخصصة مع الحفاظ على الإطار المرجعي الديني.",
+        "en": "Muhammadiyah is Indonesia's second-largest Islamic organization (tens of millions of members). ChatmuGPT exemplifies how customized Islamic AI tools can be built while maintaining the religious reference framework."
+      }
+    },
+    {
+      "id": "law-match-008",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل أداة أو مبادرة AI إسلامية بالدولة أو المؤسسة المرتبطة بها:",
+        "en": "Match each Islamic AI tool or initiative with its associated country or institution:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "IftaSG",
+            "en": "IftaSG"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "ChatmuGPT",
+            "en": "ChatmuGPT"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "الإفتاء الافتراضي",
+            "en": "Virtual Ifta"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "نظام Aftina",
+            "en": "Aftina System"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "MUIS — سنغافورة",
+            "en": "MUIS — Singapore"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "المحمدية — إندونيسيا",
+            "en": "Muhammadiyah — Indonesia"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "IACAD — دبي",
+            "en": "IACAD — Dubai"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "مبني على بيانات دار الإفتاء — مصر",
+            "en": "Built on Dar al-Ifta data — Egypt"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "العالم الإسلامي ليس متأخراً في AI الديني — بل يبتكر أدوات متخصصة تراعي الضوابط الشرعية. نظام Aftina أثبت أن RAG مع مصادر موثقة يقلل الهلوسة إلى 0.40% — أفضل بكثير من أدوات القانون الغربية.",
+        "en": "The Islamic world isn't behind in religious AI — it's innovating specialized tools respecting Sharia controls. The Aftina system proved RAG with documented sources reduces hallucinations to 0.40% — far better than Western legal tools."
+      }
+    },
+    {
+      "id": "law-sort-008",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مقاصد الشريعة الخمسة التي تُستخدم كإطار لتقييم أنظمة AI في الدول الإسلامية (حسب الترتيب التقليدي للأولوية):",
+        "en": "Order the five objectives of Sharia (maqasid al-Shariah) used as a framework for evaluating AI systems in Islamic countries (in traditional priority order):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "حفظ الدين",
+            "en": "Preservation of religion"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "حفظ النفس",
+            "en": "Preservation of life"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "حفظ العقل",
+            "en": "Preservation of intellect"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "حفظ النسل",
+            "en": "Preservation of lineage"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "المقصد الخامس (حفظ المال) لم يُدرج لضبط العدد. هذه المقاصد تُطبّق على AI: حفظ الدين (عدم تحريف الفتاوى)، النفس (سلامة الأنظمة الطبية)، العقل (مكافحة المعلومات المضللة)، النسل (حماية الخصوصية).",
+        "en": "The fifth objective (preservation of wealth) wasn't included for brevity. These apply to AI: religion (preventing fatwa distortion), life (medical system safety), intellect (combating misinformation), lineage (privacy protection)."
+      }
+    },
+    {
+      "id": "law-self-015",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت فقيه شرعي سُئلت عن حكم استخدام AI كمساعد في البحث الفقهي (وليس كمُفتٍ). ما موقفك؟",
+        "en": "You're an Islamic jurist asked about the ruling on using AI as an assistant in jurisprudential research (not as a mufti). What's your position?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "جائز ومفيد — AI يُسرّع البحث في المصادر الشرعية ويساعد في المقارنة بين المذاهب مع بقاء القرار للعالم",
+            "en": "Permissible and useful — AI accelerates research in Sharia sources and helps compare madhabs while the decision remains with the scholar"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "جائز بحذر — لكن يجب التحقق من كل مصدر يذكره AI لأنه قد يهلوس",
+            "en": "Permissible with caution — but every source AI mentions must be verified as it may hallucinate"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مكروه — الاعتماد على الآلة في أمور الدين يُضعف الملَكة الفقهية",
+            "en": "Discouraged — relying on machines in religious matters weakens jurisprudential aptitude"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "حرام — العلوم الشرعية يجب أن تبقى بشرية بالكامل",
+            "en": "Prohibited — Islamic sciences must remain entirely human"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الفرق جوهري بين AI كمُفتٍ (مرفوض) وAI كمساعد بحث (مقبول). نظام Aftina بهلوسة 0.40% وIftaSG في سنغافورة يُثبتان أن AI يمكن أن يخدم العلوم الشرعية بضوابط.",
+        "en": "The distinction is fundamental: AI as a mufti (rejected) vs. AI as a research assistant (accepted). The Aftina system with 0.40% hallucination and IftaSG in Singapore prove AI can serve Islamic sciences with proper controls."
+      }
+    },
+    {
+      "id": "law-self-016",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت محامٍ في السعودية. هل ترى أن دمج مبادئ الشريعة في تنظيم AI (كما في استراتيجية SDAIA) نقطة قوة أم قيد؟",
+        "en": "You're a lawyer in Saudi Arabia. Do you see integrating Sharia principles into AI regulation (as in SDAIA's strategy) as a strength or a constraint?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نقطة قوة — يوفر إطاراً أخلاقياً متيناً يحمي الحقوق ويعزز الثقة",
+            "en": "A strength — provides a solid ethical framework that protects rights and builds trust"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "نقطة قوة محتملة — لكن يحتاج تطبيقاً عملياً واضحاً وليس مبادئ عامة فقط",
+            "en": "Potentially a strength — but needs clear practical application, not just general principles"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قيد — قد يبطئ الابتكار مقارنة بدول لا تربط التنظيم بالدين",
+            "en": "A constraint — may slow innovation compared to countries that don't tie regulation to religion"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا علاقة للشريعة بالتقنية — يجب فصلهما تماماً",
+            "en": "Sharia has no relation to technology — they should be completely separated"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "مبادئ الشريعة (العدالة، منع الضرر، حفظ الخصوصية) تتوافق بشكل كبير مع أفضل ممارسات حوكمة AI العالمية. الإطار الشرعي يمكن أن يكون ميزة تنافسية وليس عائقاً.",
+        "en": "Sharia principles (justice, harm prevention, privacy protection) align significantly with global AI governance best practices. The Sharia framework can be a competitive advantage, not an obstacle."
+      }
+    },
+    {
+      "id": "law-mcq-025",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول الابتكار في مكتب محاماة. Harvey AI أعلنت عن أكثر من 200 مصدر معرفة قانونية ودعم لأكثر من 60 ولاية قضائية. ما الاتجاه الذي يشير إليه هذا التوسع؟",
+        "en": "You're the innovation lead at a law firm. Harvey AI announced over 200 legal knowledge sources and support for 60+ jurisdictions. What trend does this expansion indicate?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تحوّل AI القانوني من أداة بحث محلية إلى منصة عالمية متعددة الولايات القضائية",
+            "en": "Legal AI is transforming from a local research tool to a global multi-jurisdictional platform"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تركيز حصري على السوق الأمريكي",
+            "en": "Exclusive focus on the U.S. market"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "انتقال من المكاتب الكبيرة إلى المحامين الأفراد",
+            "en": "Shift from large firms to solo practitioners"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تراجع عن التخصص القانوني نحو AI عام",
+            "en": "Retreat from legal specialization toward general AI"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Harvey تغطي مصادر من Glydendal Rettsdata النرويجية وEDGAR الأمريكية وقواعد بيانات في 60+ دولة. المحامي المستقبلي سيحتاج كفاءة في التعامل مع أدوات AI متعددة الولايات — وليس فقط محلية.",
+        "en": "Harvey covers sources from Norwegian Glydendal Rettsdata and American EDGAR across 60+ countries. The future lawyer will need competence in multi-jurisdictional AI tools — not just local ones."
+      }
+    },
+    {
+      "id": "law-mcq-026",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أحد الباحثين الأكاديميين يقترح نموذج \"اجتهاد جماعي بمساعدة AI\" في الفقه الإسلامي. ما الهدف الرئيسي لهذا النموذج؟",
+        "en": "A researcher proposes a 'collective AI-assisted ijtihad model' in Islamic jurisprudence. What is this model's main objective?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الحفاظ على الدقة والموضوعية والمشروعية المعيارية مع الاستفادة من تحليل AI",
+            "en": "Maintaining accuracy, objectivity, and normative legitimacy while leveraging AI analysis"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "استبدال العلماء بالخوارزميات لتسريع الإفتاء",
+            "en": "Replacing scholars with algorithms to speed up fatwa issuance"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "إلغاء الخلاف الفقهي عبر توحيد الآراء بالذكاء الاصطناعي",
+            "en": "Eliminating jurisprudential disagreement by unifying opinions with AI"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "رقمنة جميع الفتاوى التاريخية فقط",
+            "en": "Only digitizing all historical fatwas"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "النموذج يعترف بأن AI لا يفهم المقاصد ولا الحكم الأخلاقي ولا السياق الاجتماعي-الثقافي. الهدف: تعزيز الكفاءة التحليلية مع إبقاء القرار الشرعي بيد مجموعة من العلماء المؤهلين.",
+        "en": "The model acknowledges AI cannot understand maqasid, moral judgment, or socio-cultural context. The goal: enhance analytical efficiency while keeping the Sharia decision with a group of qualified scholars."
+      }
+    },
+    {
+      "id": "law-mcq-027",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "بحسب تقرير Thomson Reuters (2025) الذي شمل أكثر من 10,000 محترف قانوني، ما الذي يحدث فعلاً بسبب AI في المهنة القانونية؟",
+        "en": "According to the Thomson Reuters (2025) report surveying over 10,000 legal professionals, what is AI actually doing to the legal profession?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يخلق فرصاً ومسارات مهنية جديدة متخصصة بدلاً من إلغاء الوظائف",
+            "en": "Creating new opportunities and specialized career paths rather than eliminating jobs"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "يقلّص أعداد المحامين بنسبة 30%",
+            "en": "Reducing lawyer numbers by 30%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا تأثير ملموس حتى الآن",
+            "en": "No tangible impact yet"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "يحل محل المحامين في معظم المجالات",
+            "en": "Replacing lawyers in most areas"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "التاريخ يُظهر أن الابتكار يخلق وظائف أكثر مما يُلغي. منذ 1970 لم يحدث تراجع في سوق العمل الأمريكي بسبب التقنية — كل التراجعات كانت بسبب أزمات اقتصادية.",
+        "en": "History shows innovation creates more jobs than it eliminates. Since 1970, no U.S. job market decline was caused by technology — all declines were due to economic crises."
+      }
+    },
+    {
+      "id": "law-tf-017",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أظهر معيار Harvey الأخير أن المحامين الذين يعملون بمساعدة AI يتفوقون بنسبة 5% في مراجعة العقود مقارنة بالعمل بدون AI أو بالاعتماد الكامل على AI.",
+        "en": "Harvey's latest benchmark showed lawyers working with AI outperform by 5% on contract review compared to working without AI or fully relying on AI."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "النتيجة الأهم: الأداء الأفضل ليس مع AI وحده ولا مع الإنسان وحده — بل مع الدمج. هذا يعني أن المحامي الذي يتقن استخدام AI يتفوق على كليهما.",
+        "en": "The key finding: best performance isn't with AI alone or human alone — but with integration. This means a lawyer who masters AI use outperforms both."
+      }
+    },
+    {
+      "id": "law-tf-018",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "سمّيت Harvey AI تيمّناً بشخصية Harvey Specter من مسلسل Suits، بل واستعانت بالممثل Gabriel Macht في حملة تسويقية عام 2026.",
+        "en": "Harvey AI was named after the character Harvey Specter from the TV show Suits, and even enlisted actor Gabriel Macht for a marketing campaign in 2026."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "في فبراير 2026، أعلنت Harvey أول شراكة تسويقية مع Gabriel Macht (بطل Suits) لإطلاق صفحة Instagram الشركة. الاسم والعلامة التجارية جزء من استراتيجية تقريب التقنية القانونية من المحامين.",
+        "en": "In February 2026, Harvey announced its first brand partnership with Gabriel Macht (Suits star) to launch the company's Instagram page. The name and branding are part of a strategy to make legal tech approachable."
+      }
+    },
+    {
+      "id": "law-fill-009",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "تتوفر حالياً مجموعة ضخمة من أكثر من {{blank_1}} مخطوطة إسلامية (1.5 مليون منها بالعربية) يمكن استخدامها لتدريب نماذج AI متخصصة في الفقه والقانون الإسلامي.",
+        "en": "A massive collection of over {{blank_1}} Islamic manuscripts (1.5 million in Arabic) is now available for training AI models specialized in Islamic jurisprudence and law."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "2 مليون",
+            "en": "2 million"
+          },
+          "options": [
+            {
+              "ar": "2 مليون",
+              "en": "2 million"
+            },
+            {
+              "ar": "500 ألف",
+              "en": "500 thousand"
+            },
+            {
+              "ar": "5 ملايين",
+              "en": "5 million"
+            },
+            {
+              "ar": "100 ألف",
+              "en": "100 thousand"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه المجموعة تمثل فرصة هائلة: إذا دُرّبت نماذج AI عليها بشكل صحيح ستُمكّن من بحث فقهي مقارن لم يكن ممكناً من قبل. التحدي: الرقمنة والتنسيق والتدريب السياقي.",
+        "en": "This collection represents a huge opportunity: if AI models are properly trained on it, they'll enable comparative jurisprudential research previously impossible. The challenge: digitization, formatting, and contextual training."
+      }
+    },
+    {
+      "id": "law-match-009",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل اتجاه مستقبلي لـ AI القانوني بالتأثير المتوقع على المحامين:",
+        "en": "Match each future legal AI trend with its expected impact on lawyers:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "منصات AI متعددة الولايات القضائية",
+            "en": "Multi-jurisdictional AI platforms"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "أدوات التحقق الآلي من الاستشهادات",
+            "en": "Automated citation verification tools"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "AI للتنبؤ بنتائج القضايا",
+            "en": "AI for predicting case outcomes"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "AI في التمويل الإسلامي",
+            "en": "AI in Islamic finance"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "توسيع نطاق الممارسة لتشمل قانوناً مقارناً أسهل",
+            "en": "Expanding practice scope to easier comparative law"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "تقليل مخاطر العقوبات وزيادة ثقة المحاكم",
+            "en": "Reducing sanctions risk and increasing court trust"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تحويل التفاوض من \"بحسب الخبرة\" إلى قائم على البيانات",
+            "en": "Shifting negotiation from 'experience-based' to data-driven"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تسريع إصدار فتاوى المعاملات المالية الشرعية",
+            "en": "Accelerating Sharia-compliant financial transaction fatwas"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل اتجاه يفتح فرصاً جديدة بدلاً من إلغاء الحالية. المحامي المستقبلي يعمل عبر الحدود بسهولة أكبر، يتحقق آلياً، يفاوض ببيانات، ويخدم عملاء التمويل الإسلامي بكفاءة أعلى.",
+        "en": "Each trend opens new opportunities rather than eliminating existing ones. The future lawyer works across borders more easily, verifies automatically, negotiates with data, and serves Islamic finance clients more efficiently."
+      }
+    },
+    {
+      "id": "law-sort-009",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب المهارات القانونية حسب مقاومتها للأتمتة بالذكاء الاصطناعي (من الأسهل أتمتة إلى الأصعب):",
+        "en": "Order legal skills by their resistance to AI automation (from easiest to hardest to automate):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "مراجعة الوثائق واستخراج البنود",
+            "en": "Document review and clause extraction"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "البحث القانوني وتلخيص السوابق",
+            "en": "Legal research and precedent summarization"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "صياغة الاستراتيجية القانونية للقضية",
+            "en": "Formulating the legal strategy for a case"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "التفاوض المباشر وبناء الثقة مع العملاء والأطراف",
+            "en": "Direct negotiation and building trust with clients and parties"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "المهام المنظمة والمتكررة (مراجعة، بحث) هي أول ما يُؤتمت. المهام التي تتطلب حكماً بشرياً وذكاءً عاطفياً (استراتيجية، تفاوض) تبقى بشرية لفترة أطول بكثير.",
+        "en": "Structured, repetitive tasks (review, research) are first to be automated. Tasks requiring human judgment and emotional intelligence (strategy, negotiation) remain human for much longer."
+      }
+    },
+    {
+      "id": "law-self-017",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "في غضون 5 سنوات، يُتوقع أن AI يقوم بمعظم البحث القانوني ومراجعة العقود. كيف تتصور دور المحامي حينها؟",
+        "en": "Within 5 years, AI is expected to handle most legal research and contract review. How do you envision the lawyer's role then?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مستشار استراتيجي ومتخذ قرارات — AI ينفّذ والمحامي يفكر ويقود",
+            "en": "Strategic advisor and decision-maker — AI executes while the lawyer thinks and leads"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مشرف على مخرجات AI — يراجع ويصحح ويضمن الجودة",
+            "en": "AI output supervisor — reviews, corrects, and ensures quality"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نفس الدور الحالي مع بعض التحسينات التقنية الطفيفة",
+            "en": "Same current role with some minor technical improvements"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المحاماة ستنقرض تقريباً — لن يحتاج الناس محامين",
+            "en": "Law practice will nearly disappear — people won't need lawyers"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التاريخ يُظهر أن التقنية لا تُلغي المهن بل تُعيد تعريفها. المحامي المستقبلي يجمع بين الحكم القانوني والذكاء التقني — والذي يتقن الاثنين يتفوق على من يتقن أحدهما فقط.",
+        "en": "History shows technology doesn't eliminate professions but redefines them. The future lawyer combines legal judgment with technical intelligence — mastering both outperforms mastering just one."
+      }
+    },
+    {
+      "id": "law-self-018",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مجلة قانونية طلبت منك كتابة مقال عن مستقبل AI في الفقه الإسلامي. ما الزاوية التي تختارها؟",
+        "en": "A legal journal asked you to write an article about the future of AI in Islamic jurisprudence. What angle do you choose?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "كيف يمكن لتقنية RAG مع المصادر الشرعية الموثقة أن تُحدث ثورة في البحث الفقهي المقارن",
+            "en": "How RAG technology with documented Sharia sources can revolutionize comparative jurisprudential research"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "المخاطر الأخلاقية لاعتماد AI في الإفتاء دون رقابة علمائية",
+            "en": "Ethical risks of adopting AI in fatwa issuance without scholarly oversight"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لماذا يجب حظر AI في العلوم الشرعية نهائياً",
+            "en": "Why AI should be permanently banned from Islamic sciences"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لست مهتماً — الموضوع لا يستحق مقالاً أكاديمياً",
+            "en": "Not interested — the topic doesn't deserve an academic article"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "مع 2 مليون مخطوطة إسلامية متاحة وتقنيات RAG التي خفّضت الهلوسة إلى 0.40%، المجال مفتوح لأبحاث رائدة. النظرة المتوازنة (فرص + ضوابط) أكثر قيمة أكاديمياً من الرفض أو القبول المطلق.",
+        "en": "With 2 million Islamic manuscripts available and RAG techniques reducing hallucinations to 0.40%, the field is open for pioneering research. A balanced view (opportunities + controls) is more academically valuable than absolute rejection or acceptance."
+      }
+    },
+    {
+      "id": "law-mcq-028",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت محامٍ في مكتب صغير. عميلك يسأل لماذا أتعابك أعلى من خدمة AI قانونية تكلّف 399 دولاراً شهرياً. كيف تُبرر القيمة المضافة؟",
+        "en": "You're a lawyer at a small firm. Your client asks why your fees are higher than a legal AI service costing $399/month. How do you justify the added value?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "AI يبحث ويلخّص لكنه لا يملك الحكم القانوني ولا يتحمل المسؤولية المهنية — وأنا أقدم الاثنين",
+            "en": "AI researches and summarizes but lacks legal judgment and doesn't bear professional liability — I provide both"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "AI غير موثوق أبداً ولا يجب استخدامه في القانون",
+            "en": "AI is never reliable and shouldn't be used in law"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أخبره أنني أستخدم نفس الأدوات لكن بخبرة أكبر",
+            "en": "Tell them I use the same tools but with more experience"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أخفّض أتعابي لأنافس AI",
+            "en": "Lower my fees to compete with AI"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "القيمة الحقيقية للمحامي ليست في البحث (الذي يتقنه AI) بل في الحكم والمسؤولية والتمثيل. الإجابة المثلى تعترف بقدرات AI وتُظهر ما لا يستطيع فعله.",
+        "en": "A lawyer's real value isn't in research (which AI excels at) but in judgment, liability, and representation. The best answer acknowledges AI's capabilities while showing what it cannot do."
+      }
+    },
+    {
+      "id": "law-mcq-029",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت محامي دفاع جنائي. النيابة قدمت دليلاً من نظام AI للتعرف على الوجوه. بحثك أظهر أن نسبة الخطأ لذوي البشرة الداكنة تصل إلى 35%. ما أقوى حجة قانونية؟",
+        "en": "You're a criminal defense lawyer. The prosecution presented evidence from an AI facial recognition system. Your research shows error rates for dark-skinned individuals reach 35%. What's your strongest legal argument?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الدليل غير موثوق — التحيز الموثق يجعله ينتهك ضمانات المحاكمة العادلة",
+            "en": "The evidence is unreliable — documented bias makes it violate fair trial guarantees"
+          },
+          "score": 3
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "AI لا يُخطئ أبداً ولا يمكن الطعن فيه",
+            "en": "AI never makes mistakes and can't be challenged"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أقبل الدليل لكن أطلب إعادة التحليل بنظام آخر",
+            "en": "Accept the evidence but request reanalysis with another system"
+          },
+          "score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتجاهل التحيز وأركز على حجج أخرى",
+            "en": "Ignore the bias and focus on other arguments"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أبحاث Joy Buolamwini وجدت 35% نسبة خطأ للنساء ذوات البشرة الداكنة مقابل أقل من 1% للرجال فاتحي البشرة. هذا التحيز الموثق يُشكّل أساساً قوياً للطعن في مقبولية الدليل.",
+        "en": "Joy Buolamwini's research found 35% error rates for dark-skinned women versus below 1% for light-skinned men. This documented bias forms a strong basis for challenging evidence admissibility."
+      }
+    },
+    {
+      "id": "law-mcq-030",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أنت محامٍ وتلقيت عرضاً من شركة لبناء \"محامٍ AI\" يقدم استشارات قانونية للجمهور مباشرة. ما أكبر مخاطرة قانونية في هذا المشروع؟",
+        "en": "You're a lawyer who received an offer from a company to build an 'AI lawyer' that provides legal advice directly to the public. What's the biggest legal risk?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ممارسة القانون دون ترخيص (Unauthorized Practice of Law)",
+            "en": "Unauthorized Practice of Law (UPL)"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مشاكل حقوق الملكية الفكرية فقط",
+            "en": "Intellectual property issues only"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تكاليف التطوير العالية",
+            "en": "High development costs"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "المنافسة مع المحامين الحقيقيين",
+            "en": "Competition with real lawyers"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "تقديم استشارة قانونية محددة (وليس معلومات عامة) يُعدّ ممارسة للقانون تتطلب ترخيصاً. أي شركة تطور \"محامي AI\" تواجه مخاطر UPL الحقيقية — وهذا من أكثر القضايا القانونية الناشئة تعقيداً.",
+        "en": "Providing specific legal advice (not general information) constitutes practicing law requiring a license. Any company developing an 'AI lawyer' faces real UPL risks — one of the most complex emerging legal issues."
+      }
+    },
+    {
+      "id": "law-tf-019",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في 2025، وُجد أن بعض المحامين يلومون منصات AI القانونية على الأخطاء بدلاً من تحمل المسؤولية — ما وصفته تحليلات بأنه مثل \"لوم ماكينة البيع لأنها لم تعطِك عشاءً فاخراً\".",
+        "en": "In 2025, some lawyers were found blaming legal AI platforms for errors instead of taking responsibility — which analysts described as like 'blaming a vending machine for not giving you a steakhouse dinner.'"
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا التشبيه من Above the Law يُلخّص المشكلة: AI أداة وليس بديلاً للحكم المهني. المحامي مسؤول عن مخرجاته بغض النظر عن مصدرها — تماماً كما لا يمكنه لوم متدرب على خطأ لم يراجعه.",
+        "en": "This Above the Law analogy captures the problem: AI is a tool, not a substitute for professional judgment. A lawyer is responsible for their output regardless of source — just as they can't blame an intern for an unreviewed error."
+      }
+    },
+    {
+      "id": "law-tf-020",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "دراسة أغسطس 2024 وجدت أن نماذج اللغة الكبيرة أظهرت صوراً نمطية سلبية تجاه متحدثي اللغة الإنجليزية الأمريكية الأفريقية (AAVE) أكثر من أي تحيز بشري مُسجّل.",
+        "en": "An August 2024 study found that LLMs exhibited more negative stereotypes about African American English (AAVE) speakers than any recorded human biases."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا الاكتشاف له تداعيات قانونية مباشرة: إذا استُخدمت هذه النماذج في التقييم القضائي أو الشرطة التنبؤية أو التوظيف، فالتمييز المُضمّن فيها ينتهك قوانين الحقوق المدنية.",
+        "en": "This finding has direct legal implications: if these models are used in judicial assessment, predictive policing, or hiring, their embedded discrimination violates civil rights laws."
+      }
+    },
+    {
+      "id": "law-fill-010",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "ارتفعت نسبة توظيف المحامين ذوي خبرة في الذكاء الاصطناعي بنسبة {{blank_1}} مقارنة بالعام السابق، مما يُظهر أن AI يُعيد تشكيل المهنة بدلاً من إلغائها.",
+        "en": "Hiring of lawyers with AI experience rose by {{blank_1}} compared to the previous year, showing AI is reshaping the profession rather than eliminating it."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "106%",
+            "en": "106%"
+          },
+          "options": [
+            {
+              "ar": "106%",
+              "en": "106%"
+            },
+            {
+              "ar": "50%",
+              "en": "50%"
+            },
+            {
+              "ar": "25%",
+              "en": "25%"
+            },
+            {
+              "ar": "200%",
+              "en": "200%"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "الطلب على المحامين الذين يفهمون AI يتضاعف. المهارات المطلوبة: فهم قدرات وحدود AI، القدرة على التحقق من المخرجات، ومعرفة الأطر التنظيمية المتطورة.",
+        "en": "Demand for lawyers who understand AI is doubling. Required skills: understanding AI capabilities and limitations, ability to verify outputs, and knowledge of evolving regulatory frameworks."
+      }
+    },
+    {
+      "id": "law-match-010",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل سيناريو مهني قانوني بالمبدأ الأخلاقي الأكثر ارتباطاً:",
+        "en": "Match each legal professional scenario with the most relevant ethical principle:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "إدخال بيانات عميل في ChatGPT العام",
+            "en": "Entering client data into public ChatGPT"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "تقديم استشهاد من AI دون التحقق منه",
+            "en": "Submitting an AI citation without verification"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "عدم إخبار العميل أنك استخدمت AI في قضيته",
+            "en": "Not telling client you used AI in their case"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "عدم مراجعة عمل المتدرب الذي استخدم AI",
+            "en": "Not reviewing intern's AI-assisted work"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "انتهاك السرية",
+            "en": "Confidentiality violation"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "انتهاك الصدق أمام المحكمة",
+            "en": "Violation of candor toward tribunals"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "انتهاك واجب التواصل مع العميل",
+            "en": "Violation of client communication duty"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "انتهاك واجب الإشراف",
+            "en": "Violation of supervision duty"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "كل سيناريو ينتهك التزاماً مختلفاً من الرأي 512. الدرس: استخدام AI في المحاماة ليس \"إضافة تقنية\" — بل يمس صميم الالتزامات الأخلاقية المهنية الراسخة.",
+        "en": "Each scenario violates a different obligation from Opinion 512. The lesson: AI use in law isn't a 'tech addition' — it touches the core of established professional ethical obligations."
+      }
+    },
+    {
+      "id": "law-sort-010",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب أولويات المحامي عند اكتشاف أن مرافعة قدّمها تحتوي استشهادات ملفقة من AI (من الأعجل إلى الأخير):",
+        "en": "Order a lawyer's priorities upon discovering a filed brief contains AI-fabricated citations (from most to least urgent):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "إخطار المحكمة فوراً وسحب المرافعة",
+            "en": "Immediately notify the court and withdraw the brief"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "إبلاغ العميل بالخطأ وتقييم التأثير على قضيته",
+            "en": "Inform client of the error and assess impact on their case"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "إعادة البحث من المصادر الأصلية وتقديم مرافعة مصححة",
+            "en": "Redo research from original sources and submit a corrected brief"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "مراجعة إجراءات المكتب لمنع تكرار الخطأ",
+            "en": "Review firm procedures to prevent recurrence"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "واجب الصدق أمام المحكمة (Rule 3.3) يتطلب الإخطار الفوري. في قضية Noland، تفاقمت العقوبة لأن المحامي حاول تصحيح الموقف بتقديم مرفق \"غير مترابط\" من 88 صفحة بدلاً من الإقرار الفوري بالخطأ.",
+        "en": "The duty of candor (Rule 3.3) requires immediate notification. In the Noland case, sanctions escalated because the attorney tried to fix it by submitting an 'incoherent' 88-page appendix instead of immediately acknowledging the error."
+      }
+    },
+    {
+      "id": "law-self-019",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت عميد كلية قانون. كيف تدمج AI في المنهج الدراسي للطلاب الجدد؟",
+        "en": "You're a law school dean. How do you integrate AI into the curriculum for new students?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مقرر إلزامي عن AI القانوني يشمل الأدوات والأخلاقيات والتحقق — مع تدريب عملي",
+            "en": "Mandatory legal AI course covering tools, ethics, and verification — with hands-on training"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ورشة اختيارية عن التقنية القانونية لمن يريد",
+            "en": "Optional legal tech workshop for those interested"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أحظر AI في الكلية لأن الطلاب يجب أن يتعلموا الأساسيات أولاً",
+            "en": "Ban AI in the school because students must learn fundamentals first"
+          },
+          "flexibility_score": 1
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ليس من مهمة كلية القانون — سيتعلمون في الممارسة",
+            "en": "Not the law school's job — they'll learn in practice"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "المحاكم تفرض بالفعل معايير كفاءة AI على المحامين (ABA Rule 1.1, Comment 8 منذ 2012 يتطلب مواكبة التقنية). كلية قانون لا تُعدّ طلابها لهذا الواقع تُخرّج محامين ناقصي التأهيل.",
+        "en": "Courts already impose AI competence standards on lawyers (ABA Rule 1.1, Comment 8 since 2012 requires keeping up with technology). A law school that doesn't prepare students for this reality graduates under-qualified lawyers."
+      }
+    },
+    {
+      "id": "law-self-020",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "شركة ناشئة تعرض عليك أن تكون مستشارها القانوني مقابل أسهم. منتجها: أداة AI للتنبؤ بنتائج القضايا قبل المحاكمة. هل تقبل؟",
+        "en": "A startup offers you a legal advisor role for equity. Their product: an AI tool that predicts case outcomes before trial. Do you accept?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقبل بحماس — مجال واعد ومؤثر وأستطيع ضمان التزامه بالمعايير الأخلاقية والمهنية",
+            "en": "Accept enthusiastically — promising and impactful field, and I can ensure it meets ethical and professional standards"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقبل بحذر — أدرس المنتج أولاً وأضع شروطاً أخلاقية واضحة",
+            "en": "Accept cautiously — study the product first and set clear ethical conditions"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفض — التنبؤ بالقضايا يقوّض استقلال القضاء والعدالة",
+            "en": "Decline — case prediction undermines judicial independence and justice"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — AI في القانون فقاعة وستنفجر قريباً",
+            "en": "Decline — AI in law is a bubble that will burst soon"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "التحليل التنبؤي للقضايا من أسرع مجالات التقنية القانونية نمواً. Harvey وحدها وصلت لـ 11 مليار دولار. المحامي الذي يشارك في بناء هذه الأدوات يضمن تصميمها بمعايير مهنية — بدلاً من تركها للمبرمجين وحدهم.",
+        "en": "Predictive case analytics is among the fastest-growing legal tech areas. Harvey alone reached $11B. A lawyer who participates in building these tools ensures they're designed with professional standards — rather than leaving it to programmers alone."
       }
     }
   ]
