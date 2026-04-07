@@ -1,8 +1,11 @@
 {
   "section_id": "agriculture-food",
-  "section_name": { "ar": "الزراعة والأغذية", "en": "Agriculture & Food Science" },
-  "version": "1.0",
-  "last_updated": "2026-04-05",
+  "section_name": {
+    "ar": "الزراعة والأغذية",
+    "en": "Agriculture & Food Science"
+  },
+  "version": "2.0",
+  "last_updated": "2026-04-07",
   "questions": [
     {
       "id": "agf-mcq-001",
@@ -16,10 +19,38 @@
         "en": "You're a large-scale farmer using John Deere's See & Spray system. In 2024, the system saved 8 million gallons of herbicide mix across 1 million acres. What was the actual pesticide savings percentage?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "20% — توفير بسيط في المبيدات", "en": "20% — modest pesticide savings" }, "score": 0 },
-        { "id": "b", "text": { "ar": "59% — مع عائد اقتصادي 15.7 دولار/فدان وفق دراسة جامعة Iowa State", "en": "59% — with economic returns of $15.7/acre per Iowa State University study" }, "score": 3 },
-        { "id": "c", "text": { "ar": "90% — استبدال شبه كامل للمبيدات", "en": "90% — near-complete replacement of pesticides" }, "score": 0 },
-        { "id": "d", "text": { "ar": "40% — توفير متوسط في جميع المحاصيل", "en": "40% — average savings across all crops" }, "score": 0.5 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "20% — توفير بسيط في المبيدات",
+            "en": "20% — modest pesticide savings"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "59% — مع عائد اقتصادي 15.7 دولار/فدان وفق دراسة جامعة Iowa State",
+            "en": "59% — with economic returns of $15.7/acre per Iowa State University study"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "90% — استبدال شبه كامل للمبيدات",
+            "en": "90% — near-complete replacement of pesticides"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "40% — توفير متوسط في جميع المحاصيل",
+            "en": "40% — average savings across all crops"
+          },
+          "score": 0.5
+        }
       ],
       "hint_after": {
         "ar": "دراسة Iowa State أكدت توفيراً بنسبة 76% في الأعشاب. في 2025 توسع النظام إلى 5 ملايين فدان ووفّر 31 مليون غالون. سوق AI الزراعي يبلغ 2.55 مليار دولار في 2025 متجهاً نحو 7.05 مليار بحلول 2030.",
@@ -38,10 +69,38 @@
         "en": "You're an agricultural extension worker in Kenya. The Nuru app works offline and diagnoses cassava diseases with 98% accuracy. What's the documented economic impact on farmers?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "لا أثر اقتصادي — التطبيق تعليمي فقط", "en": "No economic impact — the app is educational only" }, "score": 0 },
-        { "id": "b", "text": { "ar": "زيادة 30% في المحصول وإضافة 300 دولار سنوياً لدخل المزارع عبر 50,000 مزارع", "en": "30% yield increase and $300/year added to farmer income across 50,000 farmers" }, "score": 3 },
-        { "id": "c", "text": { "ar": "تقليل 10% في خسائر ما بعد الحصاد فقط", "en": "Only 10% reduction in post-harvest losses" }, "score": 0.5 },
-        { "id": "d", "text": { "ar": "التطبيق مفيد لكنه غالي جداً على المزارع الأفريقي", "en": "The app is useful but too expensive for African farmers" }, "score": 0 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا أثر اقتصادي — التطبيق تعليمي فقط",
+            "en": "No economic impact — the app is educational only"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "زيادة 30% في المحصول وإضافة 300 دولار سنوياً لدخل المزارع عبر 50,000 مزارع",
+            "en": "30% yield increase and $300/year added to farmer income across 50,000 farmers"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تقليل 10% في خسائر ما بعد الحصاد فقط",
+            "en": "Only 10% reduction in post-harvest losses"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "التطبيق مفيد لكنه غالي جداً على المزارع الأفريقي",
+            "en": "The app is useful but too expensive for African farmers"
+          },
+          "score": 0
+        }
       ],
       "hint_after": {
         "ar": "Nuru (\"نور\" بالسواحيلية) من PlantVillage بجامعة Penn State مُدرّب على 100,000+ صورة نباتية ويعمل على هواتف Android البسيطة بدون إنترنت. 200 مرشد زراعي يدعمون 50,000 مزارع. نموذج ملهم لتقنية AI في خدمة الفقراء.",
@@ -60,14 +119,1392 @@
         "en": "The US FDA launched the 'Elsa' system in July 2025. What's its function in food safety?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "فحص جودة اللحوم في المسالخ", "en": "Inspecting meat quality in slaughterhouses" }, "score": 0 },
-        { "id": "b", "text": { "ar": "كشف التناقضات في ملصقات الأغذية المعبأة", "en": "Detecting inconsistencies in packaged food labels" }, "score": 1 },
-        { "id": "c", "text": { "ar": "تتبع مصادر التسمم الغذائي", "en": "Tracking food poisoning sources" }, "score": 0 },
-        { "id": "d", "text": { "ar": "مراقبة درجات حرارة النقل", "en": "Monitoring transport temperatures" }, "score": 0 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "فحص جودة اللحوم في المسالخ",
+            "en": "Inspecting meat quality in slaughterhouses"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "كشف التناقضات في ملصقات الأغذية المعبأة",
+            "en": "Detecting inconsistencies in packaged food labels"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تتبع مصادر التسمم الغذائي",
+            "en": "Tracking food poisoning sources"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مراقبة درجات حرارة النقل",
+            "en": "Monitoring transport temperatures"
+          },
+          "score": 0
+        }
       ],
       "hint_after": {
         "ar": "سوق AI في سلامة الغذاء يبلغ 7.20 مليار دولار في 2024 ومتوقع أن يصل إلى 53.51 مليار بحلول 2034. Nestlé طبّقت رؤية حاسوبية في مصانع الشوكولاتة حققت تقليل 80% في الفحوصات اليدوية.",
         "en": "The AI food safety market is $7.20B in 2024, projected to reach $53.51B by 2034. Nestlé applied computer vision in chocolate factories achieving 80% reduction in manual inspections."
+      }
+    },
+    {
+      "id": "agf-mcq-004",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في CES 2025، كشفت John Deere عن الجيل الثاني من طقم القيادة الذاتية للجرار 9RX. كم عدد الكاميرات التي يستخدمها لرؤية 360°؟",
+        "en": "At CES 2025, John Deere unveiled the second-generation autonomy kit for the 9RX tractor. How many cameras does it use for 360° vision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "4 كاميرات فقط",
+            "en": "Just 4 cameras"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "16 كاميرا موزّعة في مجموعات (pods)",
+            "en": "16 cameras arranged in pods"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "كاميرتان أماميتان وكاميرتان خلفيتان",
+            "en": "Two front and two rear cameras"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "32 كاميرا مع رادار ليزري",
+            "en": "32 cameras with LiDAR"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "الجرار 9RX الذاتي موجّه لعمليات الحراثة الكبيرة. سعره يتجاوز 600,000 دولار، لكن Deere تقدم طقم \"Autonomy Precision Upgrade\" لتحديث جرارات موديلات منذ 2020. 80% من معدات Deere الجديدة في 2025 تتضمن قدرات ذاتية.",
+        "en": "The 9RX autonomous tractor targets large-scale tillage. It costs over $600,000, but Deere offers an \"Autonomy Precision Upgrade\" retrofit kit for tractors from 2020 onward. 80% of new Deere equipment in 2025 includes autonomous capabilities."
+      }
+    },
+    {
+      "id": "agf-mcq-005",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مزارع متوسط الحجم وتفكر في الاشتراك بمنصة John Deere Operations Center. ما أكبر مصدر قلق أخلاقي يثيره الخبراء حول هذا القرار؟",
+        "en": "You're a mid-size farmer considering subscribing to the John Deere Operations Center platform. What's the biggest ethical concern experts raise about this decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "استهلاك الإنترنت العالي في المزرعة",
+            "en": "High farm internet consumption"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "\"حبس البيانات\" (Data lock-in): بياناتك الزراعية تصبح رهينة النظام ويصعب الانتقال لمنافس",
+            "en": "Data lock-in: your farm data becomes hostage to the system, making switching costly"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "ضعف إشارة GPS في المناطق النائية",
+            "en": "Weak GPS signal in remote areas"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "صعوبة تعلّم واجهة البرنامج",
+            "en": "Difficulty learning the software interface"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "منصة Operations Center تغطي أكثر من 330 مليون فدان نشط، وتخلق ما يسميه المحللون \"خندق البيانات\". في يناير 2025 رفعت FTC الأمريكية دعوى ضد Deere بسبب ممارسات \"حق الإصلاح\" (Right to Repair)، مما يعكس قلقاً تنظيمياً من هيمنة النظام المغلق.",
+        "en": "The Operations Center covers 330M+ engaged acres, creating what analysts call a \"data moat\". In January 2025, the US FTC filed suit against Deere over Right to Repair practices, reflecting regulatory concern about closed-ecosystem dominance."
+      }
+    },
+    {
+      "id": "agf-mcq-006",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "اشترت John Deere شركة Blue River Technology عام 2017 بمبلغ 305 مليون دولار. ما المنتج الرئيسي الذي خرج من هذا الاستحواذ؟",
+        "en": "John Deere acquired Blue River Technology in 2017 for $305M. What major product emerged from this acquisition?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الجرارات الكهربائية",
+            "en": "Electric tractors"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "نظام See & Spray للرش الانتقائي بالرؤية الحاسوبية",
+            "en": "The See & Spray computer-vision selective spraying system"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "طقم القيادة الذاتية الأول",
+            "en": "The first autonomy kit"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "منصة الري Netafim GrowSphere",
+            "en": "The Netafim GrowSphere irrigation platform"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Blue River Technology كانت شركة ناشئة متخصصة في الرؤية الحاسوبية الزراعية. أصبحت القلب التقني لـ See & Spray الذي يميّز بين الأعشاب والمحاصيل في أجزاء من الثانية. إيرادات Deere 2024 بلغت 51.7 مليار دولار.",
+        "en": "Blue River Technology was a startup specializing in agricultural computer vision. It became the technical heart of See & Spray, which distinguishes weeds from crops in fractions of a second. Deere's 2024 revenue was $51.7B."
+      }
+    },
+    {
+      "id": "agf-mcq-007",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير مزرعة طماطم في القصيم بالسعودية. تبنّيتم دفيئات ذكية بـ AI. ما التوفير الموثّق في استهلاك المياه الذي حققتموه؟",
+        "en": "You manage a tomato farm in Qassim, Saudi Arabia. You adopted AI-powered smart greenhouses. What documented water savings did you achieve?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "10% — تحسّن طفيف",
+            "en": "10% — minor improvement"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "40% — مع زيادة في محاصيل الطماطم والخيار",
+            "en": "40% — with yield increases on tomatoes and cucumbers"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "70% — استبدال شبه كامل للري التقليدي",
+            "en": "70% — near-complete replacement of traditional irrigation"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "5% فقط لأن الصحراء تتطلب مياهاً أكثر",
+            "en": "Only 5% because desert requires more water"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "السعودية استثمرت بقوة في الزراعة الذكية. سوق التقنية الزراعية السعودي يبلغ 274 مليون دولار في 2025 ومتجه نحو 667 مليون بحلول 2034. شركة Aydi الناشئة أطلقت منصة ORTH وحصلت على 7.5 مليون دولار تمويلاً.",
+        "en": "Saudi Arabia has invested heavily in smart agriculture. The Saudi agtech market is $274M in 2025, heading to $667M by 2034. The startup Aydi launched the ORTH platform and raised $7.5M in funding."
+      }
+    },
+    {
+      "id": "agf-mcq-008",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "الزراعة تستهلك نحو 69% من المياه العذبة عالمياً. في كاليفورنيا، حققت شركة CropX Technologies تقليلاً في استهلاك المياه بنسبة كم؟",
+        "en": "Agriculture consumes about 69% of global freshwater. In California, CropX Technologies achieved water consumption reduction of how much?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "5%",
+            "en": "5%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "15%",
+            "en": "15%"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "35% مع زيادة محصول 10-15%",
+            "en": "35% with 10-15% yield increase"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "80%",
+            "en": "80%"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "CropX تستخدم مستشعرات تربة تقيس الرطوبة على أعماق متعددة، ثم يوصي الذكاء الاصطناعي بمواعيد وكميات الري الدقيقة. سوق الري الذكي متجه إلى 2.65 مليار دولار بحلول 2030.",
+        "en": "CropX uses soil sensors measuring moisture at multiple depths, then AI recommends precise irrigation timing and amounts. The smart irrigation market is heading to $2.65B by 2030."
+      }
+    },
+    {
+      "id": "agf-mcq-009",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول صحة البساتين في مزرعة كبيرة. تريد استخدام طائرات مسيّرة مع AI لرصد المحاصيل. أيّ من هذه الشركات أطلقت أول مساعد AI توليدي زراعي باسم Ag Assistant™؟",
+        "en": "You manage orchard health at a large farm. You want to use drones with AI for crop monitoring. Which company launched the first generative AI agricultural assistant called Ag Assistant™?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "Sentera الأمريكية",
+            "en": "Sentera (USA)"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "Taranis الإسرائيلية",
+            "en": "Taranis (Israel)"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "Aerobotics الجنوب أفريقية",
+            "en": "Aerobotics (South Africa)"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "DJI Agras الصينية",
+            "en": "DJI Agras (China)"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Taranis متخصصة في صور جوية عالية الدقة تلتقط الأعشاب والآفات على مستوى الورقة. Ag Assistant™ يتيح للمزارع طرح أسئلة نصية مثل \"ما صحة حقل رقم 3؟\" والحصول على تقارير فورية.",
+        "en": "Taranis specializes in high-resolution aerial imagery capturing weeds and pests at the leaf level. Ag Assistant™ lets farmers ask text questions like \"How healthy is field 3?\" and get instant reports."
+      }
+    },
+    {
+      "id": "agf-mcq-010",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "شركة Aerobotics الجنوب أفريقية تشتهر بمنصة مراقبة البساتين. ما اسم منصتها الرئيسية؟",
+        "en": "South Africa's Aerobotics is known for its orchard monitoring platform. What's its main platform called?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "Aeroview",
+            "en": "Aeroview"
+          },
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "AgroWatch",
+            "en": "AgroWatch"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "SkyFarm",
+            "en": "SkyFarm"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "OrchardAI",
+            "en": "OrchardAI"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Aerobotics مثال على الابتكار الزراعي من جنوب أفريقيا. المنصة تعالج صور طائرات مسيّرة وأقمار صناعية لرصد صحة الأشجار والتنبؤ بالمحصول. تستخدمها مزارع في أكثر من 18 دولة.",
+        "en": "Aerobotics exemplifies African agricultural innovation. The platform processes drone and satellite imagery to monitor tree health and predict yields. Used in farms across 18+ countries."
+      }
+    },
+    {
+      "id": "agf-mcq-011",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "DJI Agras هي من الشركات الرائدة عالمياً في طائرات الرش الزراعية. ما البلد الذي تنتمي إليه؟",
+        "en": "DJI Agras is a global leader in agricultural spraying drones. Which country does it belong to?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الولايات المتحدة",
+            "en": "United States"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "اليابان",
+            "en": "Japan"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الصين",
+            "en": "China"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "إسرائيل",
+            "en": "Israel"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "DJI صينية ومعروفة بطائراتها الاستهلاكية، لكن خط Agras يخدم الزراعة بطائرات رش كبيرة. في 2024 تجاوز عدد طائرات Agras العاملة عالمياً 300,000 وحدة، خصوصاً في آسيا.",
+        "en": "DJI is Chinese and known for consumer drones, but the Agras line serves agriculture with large spray drones. By 2024, over 300,000 Agras units operated globally, especially in Asia."
+      }
+    },
+    {
+      "id": "agf-mcq-012",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تطبيق Nuru من PlantVillage يعمل بأكثر من كم لغة ويغطي كم دولة حول العالم؟",
+        "en": "The Nuru app from PlantVillage supports how many languages and covers how many countries worldwide?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "5 لغات في 10 دول",
+            "en": "5 languages in 10 countries"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "21 لغة في 90 دولة، ويُستخدم في 19 دولة أفريقية لأمراض الكسافا",
+            "en": "21 languages in 90 countries, used in 19 African countries for cassava disease"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لغة واحدة (السواحيلية) في كينيا فقط",
+            "en": "One language (Swahili) in Kenya only"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50 لغة في كل القارات",
+            "en": "50 languages across all continents"
+          },
+          "score": 0.5
+        }
+      ],
+      "hint_after": {
+        "ar": "Nuru معناها \"نور\" بالسواحيلية. مدرّب على 100,000+ صورة نباتية ويعمل بدون إنترنت على هواتف Android البسيطة. 200 مرشد زراعي يدعمون 50,000 مزارع ويزيدون المحصول 30% بمتوسط 300 دولار/سنة لكل مزارع.",
+        "en": "Nuru means \"light\" in Swahili. Trained on 100,000+ plant images and runs offline on basic Android phones. 200 extension workers support 50,000 farmers, boosting yields 30% at $300/year per farmer."
+      }
+    },
+    {
+      "id": "agf-mcq-013",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أطلقت الحكومة المصرية تطبيقاً زراعياً بالذكاء الاصطناعي يرشد المزارعين ويشخّص أمراض النباتات من صور الهاتف. ما اسمه؟",
+        "en": "The Egyptian government launched an agricultural AI app that advises farmers and diagnoses plant diseases from phone photos. What's its name?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فلاح",
+            "en": "Fallah"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "هدهد",
+            "en": "Hodhod"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نخلة",
+            "en": "Nakhla"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "قمح",
+            "en": "Qamh"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هدهد استلهم اسمه من طائر الهدهد الذي يُذكر في القرآن كرسول. شركة AgriCan المصرية تطوّر روبوتات رش دقيق على 5,230 فداناً في 15 مزرعة وتخطط لإطلاق أول مصنع روبوتات زراعية في مصر عام 2025.",
+        "en": "Hodhod is named after the hoopoe bird mentioned in the Quran as a messenger. Egypt's AgriCan develops precision spraying robots across 5,230 feddans in 15 farms, planning to launch Egypt's first agricultural robot factory in 2025."
+      }
+    },
+    {
+      "id": "agf-mcq-014",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "طوّر الدكتور Ali Shojaeipour في جامعة New England الأسترالية نظام تعرّف على الماشية بدقة تفوق 99%. على ماذا يعتمد النظام في التمييز بين الأبقار؟",
+        "en": "Dr. Ali Shojaeipour at the University of New England (Australia) developed a cattle ID system with over 99% accuracy. What does it rely on to distinguish cows?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أنماط ألوان الجسم",
+            "en": "Body color patterns"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أنماط خطم/أنف البقرة (مثل بصمة الإصبع)",
+            "en": "Muzzle/nose patterns (like fingerprints)"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أشكال القرون",
+            "en": "Horn shapes"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "طول الذيل",
+            "en": "Tail length"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "خطم البقرة فريد كبصمة الإصبع البشرية. النظام حقق 99.11% دقة على 300 بقرة. الميزة: غير تدخّلي — لا حاجة لأقراط أذن قد تضيع أو تتلف، ولا لعلامات كي مؤلمة.",
+        "en": "The cow's muzzle is unique like a human fingerprint. The system achieved 99.11% accuracy on 300 cattle. The advantage: non-invasive—no ear tags that may lose or damage, no painful branding."
+      }
+    },
+    {
+      "id": "agf-mcq-015",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير مزرعة ألبان تفكر في نظام رؤية حاسوبية لمراقبة الأبقار. دراسة حديثة (2025) حقّقت الأرقام التالية. أيّها الأدق في دقة كشف العرج (Lameness)؟",
+        "en": "You manage a dairy farm considering a computer vision monitoring system. A recent 2025 study achieved the following. Which is accurate for lameness detection?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "99% دقة",
+            "en": "99% accuracy"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "50% فقط",
+            "en": "Only 50%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حوالي 89% دقة",
+            "en": "Approximately 89% accuracy"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مستحيل كشف العرج بالكاميرا",
+            "en": "Impossible to detect lameness via camera"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الدراسة استخدمت 22 كاميرا في منطقتين وظيفيتين للبقرة. العرج من أكبر أسباب الخسائر في مزارع الألبان. الكشف المبكر ينقذ البقرة من الإعدام ويوفر آلاف الدولارات.",
+        "en": "The study used 22 cameras across functional zones. Lameness is a top loss driver in dairy farms. Early detection saves cows from culling and thousands of dollars."
+      }
+    },
+    {
+      "id": "agf-mcq-016",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مدير جودة في مصنع شوكولاتة. تدرس نظام رؤية حاسوبية مثل الذي طبّقته Nestlé. ما الأرقام الموثّقة للنتائج؟",
+        "en": "You're a quality manager at a chocolate factory studying a computer vision system like Nestlé's. What are the documented results?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تقليل 20% في الفحوصات اليدوية ودقة 70% في كشف العيوب",
+            "en": "20% reduction in manual checks, 70% defect detection accuracy"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تقليل 80% في الفحوصات اليدوية ودقة 95% في كشف العيوب",
+            "en": "80% reduction in manual checks, 95% defect detection accuracy"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "إلغاء كامل للفحص البشري",
+            "en": "Complete elimination of human inspection"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تقليل 50% في الإنتاج لكن زيادة الجودة",
+            "en": "50% production decrease but higher quality"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الأرقام من Nestlé نفسها. سوق AI في سلامة الغذاء 7.20 مليار دولار في 2024، ومتوقع أن يصل إلى 53.51 مليار بحلول 2034 — أكثر من 7 أضعاف خلال عقد.",
+        "en": "These figures are from Nestlé itself. The food safety AI market is $7.20B in 2024, projected to reach $53.51B by 2034—over 7x in a decade."
+      }
+    },
+    {
+      "id": "agf-mcq-017",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أطلقت هيئة FDA الأمريكية في يوليو 2025 نظاماً ذكياً اسمه \"Elsa\". ما وظيفته المحددة؟",
+        "en": "The US FDA launched an AI system called \"Elsa\" in July 2025. What's its specific function?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "فحص اللحوم في المسالخ",
+            "en": "Inspecting meat in slaughterhouses"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "كشف التناقضات في ملصقات الأغذية المعبأة",
+            "en": "Detecting inconsistencies in packaged food labels"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "اختبار العينات المعملية",
+            "en": "Testing lab samples"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "توقع الأوبئة الغذائية",
+            "en": "Predicting food pandemics"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Elsa تحلّل ملصقات آلاف المنتجات لكشف تناقضات بين المكوّنات المعلنة والفعلية. يساعد هذا في مكافحة الاحتيال الغذائي الذي يكلّف الصناعة العالمية مليارات الدولارات سنوياً.",
+        "en": "Elsa analyzes thousands of product labels to detect inconsistencies between declared and actual ingredients. This fights food fraud, which costs the global industry billions annually."
+      }
+    },
+    {
+      "id": "agf-mcq-018",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مشروع NEOM السعودي يستهدف إنتاج 600,000 طن من الغذاء المستدام بحلول أي سنة؟",
+        "en": "Saudi Arabia's NEOM project targets producing 600,000 tons of sustainable food by which year?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "2027",
+            "en": "2027"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "2030",
+            "en": "2030"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "2035",
+            "en": "2035"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "2040",
+            "en": "2040"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "وحدة \"Topian\" في NEOM أطلقت أول دفيئة متقدمة في منطقة أوكساغون في ديسمبر 2024 بنمذجة AI وطاقة شمسية. هذا جزء من رؤية 2030 السعودية للأمن الغذائي.",
+        "en": "NEOM's \"Topian\" unit launched its first advanced greenhouse in Oxagon in December 2024, with AI modeling and solar power. Part of Saudi Vision 2030 for food security."
+      }
+    },
+    {
+      "id": "agf-mcq-019",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "شركة Pure Harvest Smart Farms الإماراتية تعمل بكفاءة أعلى من الزراعة التقليدية بكم مرّة؟",
+        "en": "UAE's Pure Harvest Smart Farms operates at how many times higher efficiency than traditional agriculture?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "5 أضعاف",
+            "en": "5x"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "10 أضعاف",
+            "en": "10x"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "30 ضعفاً مع تمويل تجاوز 387 مليون دولار",
+            "en": "30x with over $387M in funding"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ضعفين فقط",
+            "en": "Only 2x"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Pure Harvest تستخدم دفيئات مغلقة بتحكّم كامل بالمناخ — هذا يسمح بإنتاج طماطم عالية الجودة في صيف الخليج. النموذج مناسب جداً للدول الصحراوية ذات القدرة المالية.",
+        "en": "Pure Harvest uses fully climate-controlled enclosed greenhouses—enabling high-quality tomato production in Gulf summers. The model suits cash-rich desert nations."
+      }
+    },
+    {
+      "id": "agf-mcq-020",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في يناير 2025، رفعت جهة حكومية أمريكية دعوى ضد John Deere بسبب ممارسات \"حق الإصلاح\" (Right to Repair). ما الجهة؟",
+        "en": "In January 2025, a US government body filed suit against John Deere over Right to Repair practices. Which body?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "وزارة الزراعة (USDA)",
+            "en": "Department of Agriculture (USDA)"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لجنة التجارة الفيدرالية (FTC)",
+            "en": "Federal Trade Commission (FTC)"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "وزارة العدل",
+            "en": "Department of Justice"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "وكالة حماية البيئة (EPA)",
+            "en": "Environmental Protection Agency (EPA)"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "حركة \"حق الإصلاح\" تطالب بحق المستخدمين إصلاح منتجاتهم بأنفسهم. Deere اشتهرت بمنع المزارعين من إصلاح جراراتهم الذكية دون فني رسمي من الشركة — وهذا يعتبره المنتقدون استغلالاً لقوة السوق.",
+        "en": "The Right to Repair movement demands users' right to repair their products. Deere became infamous for blocking farmers from fixing their smart tractors without an official company technician—critics see this as market power abuse."
+      }
+    },
+    {
+      "id": "agf-mcq-021",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "\"حبس البيانات\" (Data Lock-in) في الزراعة يعني أن المزارع يصبح معتمداً على منصة شركة واحدة. أيّ مصطلح يصف الظاهرة حين تكون منصة واحدة مركز كل البيانات؟",
+        "en": "Agricultural data lock-in means the farmer becomes dependent on one company's platform. What term describes the phenomenon when one platform centralizes all data?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "Data Democracy (ديمقراطية البيانات)",
+            "en": "Data Democracy"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "Data Moat (خندق البيانات)",
+            "en": "Data Moat"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "Data Lake (بحيرة البيانات)",
+            "en": "Data Lake"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "Data Wipe (مسح البيانات)",
+            "en": "Data Wipe"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "\"خندق البيانات\" مصطلح يصف ميزة تنافسية تنبع من امتلاك بيانات حصرية يصعب على المنافسين تكرارها. Operations Center من Deere بأكثر من 330 مليون فدان نشط أوضح مثال.",
+        "en": "\"Data moat\" describes a competitive advantage from exclusive data hard for competitors to replicate. Deere's Operations Center with 330M+ engaged acres is the clearest example."
+      }
+    },
+    {
+      "id": "agf-mcq-022",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "وفقاً لتقارير 2025-2026، معدل نمو سوق AI الزراعي العالمي (CAGR) من 2025 إلى 2030 يقدّر بـ:",
+        "en": "According to 2025-2026 reports, the global agricultural AI market CAGR from 2025 to 2030 is estimated at:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "5% — نمو بطيء",
+            "en": "5%—slow growth"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حوالي 22.55% — من 2.55 مليار إلى 7.05 مليار دولار",
+            "en": "About 22.55%—from $2.55B to $7.05B"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أكثر من 100% سنوياً",
+            "en": "Over 100% annually"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ثبات دون نمو",
+            "en": "Flat without growth"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا نمو ضخم لكنه واقعي. سوق الروبوتات الزراعية أسرع: من 17.73 مليار (2025) إلى 56.26 مليار (2030). مصدر الأرقام: Mordor Intelligence وتقارير أخرى.",
+        "en": "This is massive but realistic growth. Agricultural robotics grows faster: from $17.73B (2025) to $56.26B (2030). Sources: Mordor Intelligence and others."
+      }
+    },
+    {
+      "id": "agf-mcq-023",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت خريج هندسة زراعية في 2026. أيّ من هذه الوظائف الأكثر مقاومة لاستبدال AI في السنوات الخمس القادمة؟",
+        "en": "You're a 2026 agricultural engineering graduate. Which of these jobs is most AI-resistant over the next five years?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مدخل بيانات زراعية",
+            "en": "Agricultural data entry"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "سائق جرار تقليدي",
+            "en": "Traditional tractor driver"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "متخصص تكيّف أنظمة AI مع الظروف المحلية وتفسير نتائجها",
+            "en": "Specialist adapting AI systems to local conditions and interpreting results"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "عامل قطف فواكه يدوي",
+            "en": "Manual fruit picker"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الوظائف المتوسطة (مدخل بيانات، سائق جرار) هي الأكثر تأثراً. الوظائف التي تتطلب قراراً وتكيّفاً (خبير زراعي، مطوّر حلول محلية) تنمو. حتى القطف اليدوي يظل صعباً على الروبوتات في الفواكه الحساسة.",
+        "en": "Middle-tier jobs (data entry, tractor driving) are most affected. Judgment and adaptation jobs (agronomist, local solutions developer) grow. Even manual picking remains hard for robots on delicate fruits."
+      }
+    },
+    {
+      "id": "agf-mcq-024",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "تطبيق Nuru معناه \"نور\" بأيّ لغة أفريقية؟",
+        "en": "The Nuru app means \"light\" in which African language?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الهوسا",
+            "en": "Hausa"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "السواحيلية",
+            "en": "Swahili"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الأمهرية",
+            "en": "Amharic"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "اليوروبا",
+            "en": "Yoruba"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "اختيار اسم محلي ذي معنى جميل ليس تفصيلاً — بل جزء من استراتيجية قبول التقنية في المجتمعات الريفية. السواحيلية تتحدث بها أكثر من 150 مليون شخص في شرق أفريقيا.",
+        "en": "Choosing a meaningful local name isn't a detail—it's part of the tech acceptance strategy in rural communities. Swahili is spoken by over 150 million people in East Africa."
+      }
+    },
+    {
+      "id": "agf-mcq-025",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "منصة \"هدهد\" المصرية الزراعية سُمّيت على اسم طائر ورد في القرآن كـ:",
+        "en": "Egypt's \"Hodhod\" agricultural platform was named after a bird mentioned in the Quran as a:"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "صائد أسماك",
+            "en": "Fisher bird"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "رسول",
+            "en": "Messenger"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "حارس ليلي",
+            "en": "Night guardian"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "طائر مهاجر",
+            "en": "Migratory bird"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الهدهد في سورة النمل كان رسول سليمان عليه السلام إلى ملكة سبأ. الاسم يحمل دلالة ثقافية ودينية تساعد في قبول التطبيق بين المزارعين المصريين.",
+        "en": "The hoopoe in Surah An-Naml was Prophet Solomon's messenger to the Queen of Sheba. The name carries cultural and religious significance helping adoption among Egyptian farmers."
+      }
+    },
+    {
+      "id": "agf-mcq-026",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول تأمين زراعي. كيف يمكن لـ AI أن يغيّر قطاع التأمين الزراعي جذرياً؟",
+        "en": "You're an agricultural insurance official. How can AI radically change agricultural insurance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا تغيير — التأمين يعتمد على التاريخ فقط",
+            "en": "No change—insurance depends only on history"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تقدير الخسائر من صور الأقمار الصناعية بدلاً من الزيارات الميدانية",
+            "en": "Estimate losses from satellite imagery instead of field visits"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "إلغاء التأمين الزراعي بالكامل",
+            "en": "Eliminating agricultural insurance entirely"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "زيادة أسعار التأمين بشكل دائم",
+            "en": "Permanently raising insurance prices"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "\"التأمين البارامتري\" (Parametric Insurance) ثورة حقيقية: التعويض يُدفع تلقائياً عند تحقّق شرط (مثل عدم هطول الأمطار لفترة) بدلاً من تقدير الخسائر ميدانياً. هذا يخفّض التكاليف والوقت كثيراً.",
+        "en": "\"Parametric insurance\" is a real revolution: compensation is paid automatically when a condition (like prolonged drought) is met, instead of field loss assessment. This drastically cuts costs and time."
+      }
+    },
+    {
+      "id": "agf-mcq-027",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في مصر، أطلقت شركة AgriCan الناشئة روبوتات رش دقيق منتشرة في كم مزرعة؟",
+        "en": "In Egypt, the AgriCan startup deployed precision spraying robots in how many farms?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "مزرعة واحدة تجريبية",
+            "en": "One trial farm"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "15 مزرعة على 5,230 فداناً",
+            "en": "15 farms across 5,230 feddans"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أكثر من 500 مزرعة",
+            "en": "Over 500 farms"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم تُنشر بعد",
+            "en": "Not yet launched"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "AgriCan تخطط لإطلاق أول مصنع روبوتات زراعية في مصر عام 2025. هذا يمثّل بداية صناعة روبوتات زراعية عربية محلية، بدل الاعتماد الكامل على الاستيراد من الصين أو أمريكا.",
+        "en": "AgriCan plans to launch Egypt's first agricultural robot factory in 2025. This marks the start of a local Arab agricultural robotics industry, instead of full reliance on imports from China or America."
+      }
+    },
+    {
+      "id": "agf-mcq-028",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 4,
+      "text": {
+        "ar": "تدرس شراء نظام AI زراعي بسعر 100,000 دولار يعد بزيادة محصول 15% في مزرعة 500 فدان. ما أوّل سؤال يجب أن تطرحه قبل الشراء؟",
+        "en": "You're considering a $100,000 agricultural AI system promising 15% yield increase on a 500-acre farm. What's the first question to ask before buying?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "من هي الشركة المصنعة؟",
+            "en": "Who's the manufacturer?"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "هل نسبة 15% موثّقة في مزارع مشابهة لمزرعتي (تربة، محصول، مناخ)؟",
+            "en": "Is the 15% documented in farms similar to mine (soil, crop, climate)?"
+          },
+          "score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "ما هي ألوان الواجهة؟",
+            "en": "What are the interface colors?"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هل البرنامج متوفر بالعربية؟",
+            "en": "Is the software in Arabic?"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "مبدأ التعميم (Generalization) هو أخطر فخ في تقييم AI. نظام ناجح في إيوا الأمريكية قد يفشل في مصر أو السعودية بسبب فروق التربة والمناخ. التوثيق في سياقات مشابهة هو المعيار العلمي.",
+        "en": "The generalization principle is the most dangerous trap in AI evaluation. A system succeeding in Iowa may fail in Egypt or Saudi Arabia due to soil and climate differences. Documentation in similar contexts is the scientific standard."
+      }
+    },
+    {
+      "id": "agf-mcq-029",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 4,
+      "text": {
+        "ar": "تم تدريب نموذج AI لتشخيص أمراض الطماطم على صور من أمريكا الشمالية. عند تطبيقه على مزارع شمال أفريقيا، انخفضت دقته من 95% إلى 68%. ما التفسير الأرجح؟",
+        "en": "An AI model trained to diagnose tomato diseases on North American images was applied to North African farms, with accuracy dropping from 95% to 68%. Most likely explanation?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "النموذج قديم ويجب استبداله",
+            "en": "The model is old and must be replaced"
+          },
+          "score": 0.5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تحيّز البيانات (Data Bias): النموذج لم يرَ أمراضاً أو سلالات متوسطية أثناء التدريب",
+            "en": "Data bias: the model never saw Mediterranean diseases or cultivars during training"
+          },
+          "score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "المزارعون في شمال أفريقيا لا يعرفون استخدامه",
+            "en": "North African farmers don't know how to use it"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الإضاءة مختلفة والكاميرات أقل دقة",
+            "en": "Lighting differs and cameras are lower-res"
+          },
+          "score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "تحيز البيانات من أخطر مشاكل AI في التطبيقات العالمية. الحل: إعادة تدريب النموذج (Fine-tuning) على بيانات محلية، أو استخدام حلول مصممة أصلاً لسياق المنطقة مثل Nuru أو هدهد.",
+        "en": "Data bias is among the most serious AI problems in global applications. Solution: fine-tune the model on local data, or use solutions originally designed for regional context like Nuru or Hodhod."
+      }
+    },
+    {
+      "id": "agf-mcq-030",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "تستهدف المملكة العربية السعودية مساهمة AI بنسبة كم من الناتج المحلي بحلول 2030 وفق هيئة SDAIA؟",
+        "en": "Saudi Arabia targets AI contribution of what percentage of GDP by 2030 according to SDAIA?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "2%",
+            "en": "2%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "5%",
+            "en": "5%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "12.4%",
+            "en": "12.4%"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "30%",
+            "en": "30%"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الإمارات تستهدف 14% بحلول 2030. هذه الأرقام تعكس الالتزام الخليجي الاستراتيجي بـ AI، وجزء كبير منها في قطاعات الزراعة والغذاء والطاقة.",
+        "en": "UAE targets 14% by 2030. These figures reflect Gulf strategic AI commitment, with a large portion in agriculture, food, and energy sectors."
       }
     },
     {
@@ -105,6 +1542,312 @@
       }
     },
     {
+      "id": "agf-tf-003",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "وفقاً لاتحاد Farm Bureau الأمريكي، تحتاج الزراعة في الولايات المتحدة إلى ملء نحو 2.4 مليون وظيفة زراعية سنوياً، وهذا النقص في العمالة الماهرة أحد الدوافع الرئيسية لاستثمار John Deere في الأتمتة الذاتية.",
+        "en": "According to the American Farm Bureau, US agriculture needs to fill about 2.4 million farm jobs annually, and this skilled-labor shortage is a main driver behind John Deere's investment in autonomy."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "أكد Jahmy Hindman (CTO في Deere) في CES 2025 أن نقص العمالة المشكلة المشتركة بين الزراعة والبناء والمناظر التجارية. 88% من مقاولي البناء و86% من مؤسسات المناظر يواجهون نقصاً في العمالة.",
+        "en": "Jahmy Hindman (Deere CTO) emphasized at CES 2025 that labor shortages are the common problem across agriculture, construction, and landscaping. 88% of contractors and 86% of landscaping businesses face labor shortages."
+      }
+    },
+    {
+      "id": "agf-tf-004",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "وفّر نظام See & Spray في 2025 نحو 31 مليون غالون من المبيدات عبر 5 ملايين فدان، أي نحو ضعف ما وفّره في 2024 حين غطّى مليون فدان فقط.",
+        "en": "In 2025, See & Spray saved approximately 31 million gallons of herbicide across 5 million acres—nearly four times its 2024 savings when it covered just 1 million acres."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "التوسع السريع: من 8 ملايين غالون/مليون فدان (2024) إلى 31 مليون غالون/5 ملايين فدان (2025). دراسة Iowa State أكدت توفيراً 76% في الأعشاب وعائد 15.7 دولار/فدان.",
+        "en": "Rapid expansion: from 8M gallons/1M acres (2024) to 31M gallons/5M acres (2025). Iowa State study confirmed 76% weed reduction and $15.7/acre returns."
+      }
+    },
+    {
+      "id": "agf-tf-005",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أطلقت شركة Netafim الإسرائيلية في أكتوبر 2024 نظام GrowSphere كنظام تشغيل رقمي متكامل للري والتسميد الدقيقين.",
+        "en": "In October 2024, the Israeli company Netafim launched GrowSphere as an integrated digital operating system for precision irrigation and fertigation."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Netafim رائدة عالمياً في الري بالتنقيط منذ الستينيات. GrowSphere يجمع أجهزة الاستشعار، التوقعات الجوية، وبيانات النبات في واجهة واحدة. أنظمة الري الذكية قادرة نظرياً على تقليل استهلاك المياه حتى 45%.",
+        "en": "Netafim has been a global drip-irrigation pioneer since the 1960s. GrowSphere combines sensors, weather forecasts, and plant data in a single interface. Smart irrigation systems can theoretically reduce water use by up to 45%."
+      }
+    },
+    {
+      "id": "agf-tf-006",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "مشروع COALA في أستراليا حقق زيادة في كفاءة الري بنسبة 20% باستخدام أنظمة مدعومة بالذكاء الاصطناعي.",
+        "en": "Australia's COALA project achieved 20% irrigation efficiency improvement using AI-powered systems."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "أستراليا من أكثر الدول تأثراً بشح المياه. COALA يجمع بيانات الأقمار الصناعية مع نماذج AI لحساب الاحتياج المائي الفعلي لكل قطعة من الحقل.",
+        "en": "Australia is among the most water-stressed countries. COALA combines satellite data with AI models to calculate actual water needs for each field section."
+      }
+    },
+    {
+      "id": "agf-tf-007",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "شركة Emirates Bustanica في دبي تُشغّل أكبر مزرعة عمودية في العالم بمساحة 330,000 قدم مربع، وتوفر 98% من المياه مقارنة بالزراعة التقليدية.",
+        "en": "Emirates Bustanica in Dubai operates the world's largest vertical farm at 330,000 sq ft, saving 98% of water compared to traditional agriculture."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "المشروع شراكة بين طيران الإمارات وشركة Crop One. ينتج 1000 كغ من الخضروات الورقية يومياً دون استخدام مبيدات. Pure Harvest Smart Farms الإماراتية تعمل بكفاءة 30 ضعف الزراعة التقليدية بتمويل 387 مليون دولار.",
+        "en": "The project is a joint venture between Emirates Airlines and Crop One. It produces 1000 kg of leafy greens daily without pesticides. UAE's Pure Harvest Smart Farms operates at 30x traditional farming efficiency with $387M in funding."
+      }
+    },
+    {
+      "id": "agf-tf-008",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "شركة Sentera الأمريكية متخصصة في المستشعرات متعددة الأطياف التي تحمل على الطائرات المسيّرة لقياس صحة المحاصيل بطيف غير مرئي للعين البشرية.",
+        "en": "The American company Sentera specializes in multispectral sensors mounted on drones to measure crop health in spectrums invisible to the human eye."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "المستشعرات متعددة الأطياف تلتقط أشعة تحت الحمراء القريبة (NIR) التي تكشف الإجهاد النباتي قبل ظهور الأعراض على الأوراق. هذا يعطي المزارع أسبوعاً إضافياً للتدخل قبل تفشي المرض.",
+        "en": "Multispectral sensors capture near-infrared (NIR) that reveals plant stress before symptoms appear on leaves. This gives farmers an extra week to intervene before disease spread."
+      }
+    },
+    {
+      "id": "agf-tf-009",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "الطائرات المسيّرة الزراعية يمكنها فحص مئات الأفدنة في ساعات قليلة، لكنها لا تستطيع العمل في الرياح العالية أو المطر.",
+        "en": "Agricultural drones can inspect hundreds of acres in hours, but cannot operate in high winds or rain."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "عائق تشغيلي حقيقي: معظم الطائرات المسيّرة الزراعية محدودة برياح أقل من 36 كم/ساعة. المزارع يحتاج لدمج جدول الطيران مع توقعات الطقس، مما يجعل أدوات AI للتنبؤ الجوي مكمّلة ضرورية.",
+        "en": "Real operational constraint: most agricultural drones are limited to winds under 36 km/h. Farmers must integrate flight schedules with weather forecasts, making AI weather prediction tools a necessary complement."
+      }
+    },
+    {
+      "id": "agf-tf-010",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "فقط حوالي 50% من المناطق الريفية في كينيا تملك إنترنت موثوقاً، مما يجعل الحلول الزراعية التي تعمل بدون إنترنت كـ Nuru ضرورة وليست رفاهية.",
+        "en": "Only about 50% of rural Kenya has reliable internet, making offline-capable agricultural solutions like Nuru a necessity rather than a luxury."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذه إحصائية مفاجئة عن الفجوة الرقمية الزراعية. التقنيات الجيدة ليست بالضرورة الأحدث أو الأغلى — بل التي تصل للمزارع الفقير. Nuru يعمل بنموذج مضغوط يدير نفسه على جهاز Android أساسي بدون اتصال.",
+        "en": "This is a surprising agricultural digital divide statistic. Good tech isn't necessarily newest or most expensive—it's what reaches poor farmers. Nuru runs a compressed model on basic Android without connectivity."
+      }
+    },
+    {
+      "id": "agf-tf-011",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "تطبيق Nuru طوّره باحثون في جامعة Penn State الأمريكية ضمن مشروع PlantVillage.",
+        "en": "Nuru was developed by researchers at Penn State University in the USA as part of the PlantVillage project."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "المفارقة: تقنية AI تصنعها جامعة أمريكية لخدمة مزارع أفريقي. هذا يفنّد الفكرة أن AI المتقدم حكر على الدول الغنية. المعرفة المفتوحة والتعاون الدولي هما جوهر نموذج Nuru.",
+        "en": "The irony: AI tech built by an American university to serve African farmers. This refutes the notion that advanced AI is exclusive to rich countries. Open knowledge and international collaboration are Nuru's core."
+      }
+    },
+    {
+      "id": "agf-tf-012",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أطلقت شركة Afimilk في 2024 نظاماً يجمع بين AI وإنترنت الأشياء لإدارة القطيع في الوقت الفعلي، ويُستخدم في مزارع ألبان حول العالم.",
+        "en": "In 2024, Afimilk launched a system combining AI and IoT for real-time herd management, used in dairy farms worldwide."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Afimilk إسرائيلية رائدة في تقنيات الألبان منذ عقود. نظامها الجديد يتعقّب كل بقرة فردياً: إنتاج الحليب، مستوى النشاط، مواعيد الحرارة للتزاوج، وعلامات المرض المبكرة.",
+        "en": "Afimilk is an Israeli dairy-tech pioneer for decades. The new system tracks each cow individually: milk production, activity levels, heat timing for breeding, and early illness signs."
+      }
+    },
+    {
+      "id": "agf-tf-013",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "التعرّف على الوجه عند الأبقار يواجه تحدياً حقيقياً: كثير من سلالات الأبقار التجارية لها لون جسم موحّد مما يصعّب التمييز، لذا يستخدم الباحثون شكل الجسم أو الخطم كبدائل.",
+        "en": "Cow facial recognition faces a real challenge: many commercial cattle breeds have uniform body color making distinction difficult, so researchers use body shape or muzzle as alternatives."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "السلالات كالهولشتاين البيضاء والسوداء أسهل من سلالات موحّدة اللون. F1 score لتعرّف وجه البقرة الحديث بلغ 0.928 في دراسة 2024 على 77 بقرة. هذا يوضح أن AI لا يعمل \"كأنه سحر\" بل له قيود واقعية.",
+        "en": "Breeds like black-and-white Holsteins are easier than uniformly-colored ones. F1 score for recent cow facial recognition reached 0.928 in a 2024 study on 77 cows. This shows AI isn't \"magic\" but has real limitations."
+      }
+    },
+    {
+      "id": "agf-tf-014",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "سوق AI في سلامة الغذاء متوقع أن ينمو من 7.20 مليار دولار في 2024 إلى أكثر من 53 مليار بحلول 2034 — أي أكثر من 7 أضعاف خلال عشر سنوات.",
+        "en": "The food safety AI market is projected to grow from $7.20B in 2024 to over $53B by 2034—more than 7x in ten years."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا النمو الضخم يعكس ثلاثة عوامل: زيادة اللوائح العالمية (FDA، EU)، فضائح غذاء كبرى (حليب ملوّث، لحوم مجهولة المصدر)، وتطوّر الرؤية الحاسوبية. هذا أسرع نمو من معظم قطاعات AI.",
+        "en": "This massive growth reflects three factors: increased global regulations (FDA, EU), major food scandals (contaminated milk, unknown-origin meat), and computer vision advances. Faster growth than most AI sectors."
+      }
+    },
+    {
+      "id": "agf-tf-015",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "الرؤية الحاسوبية في مصانع الأغذية ليست بديلاً كاملاً عن المفتش البشري — فالنموذج \"الذهبي\" هو الجمع بين الفحص الآلي المستمر والفحص البشري العشوائي.",
+        "en": "Computer vision in food factories isn't a complete replacement for human inspectors—the \"gold standard\" combines continuous automated inspection with random human checks."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا النموذج يجمع أفضل ما في الاثنين: الآلة لا تتعب ولا تشتت انتباهها، والإنسان يكتشف ما لم يُدرّب النموذج عليه (أخطاء نادرة أو جديدة). أكثر المصانع أماناً تستخدم هذا النهج المختلط.",
+        "en": "This model combines the best of both: machines don't tire or lose focus, humans catch what the model wasn't trained on (rare or novel errors). The safest factories use this hybrid approach."
+      }
+    },
+    {
+      "id": "agf-tf-016",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "سوق الزراعة العمودية في الشرق الأوسط متجه من 1.15 مليار دولار في 2024 إلى 8.24 مليار بحلول 2032، أي أكثر من 7 أضعاف.",
+        "en": "The Middle East vertical farming market is heading from $1.15B in 2024 to $8.24B by 2032—over 7x growth."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا النمو مدفوع بثلاثة: الأمن الغذائي الاستراتيجي، شحّ المياه، الاعتماد على الاستيراد. الخليج يستورد أكثر من 80% من غذائه، وهذا يجعل الاستثمار في الزراعة العمودية قضية سيادية.",
+        "en": "This growth is driven by three factors: strategic food security, water scarcity, and import dependence. The Gulf imports over 80% of its food, making vertical farming investment a sovereignty issue."
+      }
+    },
+    {
+      "id": "agf-tf-017",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "أطلقت السعودية شركة Aydi الناشئة منصة ORTH لإدارة المحاصيل وحصلت على تمويل 7.5 مليون دولار.",
+        "en": "Saudi Arabia's startup Aydi launched the ORTH crop management platform and raised $7.5M in funding."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Aydi من أمثلة الابتكار الزراعي السعودي المحلي. سوق التقنية الزراعية السعودي 274 مليون دولار في 2025 متجهاً لـ 667 مليون بحلول 2034. الخليج يبني منظومة تقنية زراعية محلية بدل الاعتماد الكامل على الشركات الأجنبية.",
+        "en": "Aydi exemplifies local Saudi agricultural innovation. The Saudi agtech market is $274M in 2025, heading to $667M by 2034. The Gulf is building local agtech ecosystems rather than full dependence on foreign firms."
+      }
+    },
+    {
+      "id": "agf-tf-018",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "حوالي 80% من مزارع العالم تواجه عوائق تتعلق بتكلفة التقنية الزراعية الذكية وضعف البنية التحتية، مما يوسّع الفجوة بين المزارع الكبيرة والصغيرة.",
+        "en": "About 80% of global farms face barriers related to smart agtech cost and weak infrastructure, widening the gap between large and small farms."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذه الفجوة الرقمية الزراعية حقيقة مقلقة: المزارع الصغيرة تُنتج 80% من غذاء العالم النامي لكنها تستفيد أقل من 25% من فوائد AI الزراعي. حلول مثل Nuru استثناءات نادرة.",
+        "en": "This agricultural digital divide is a troubling reality: small farms produce 80% of developing world food but benefit from less than 25% of agricultural AI gains. Solutions like Nuru are rare exceptions."
+      }
+    },
+    {
+      "id": "agf-tf-019",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "flexibility",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "الأنظمة الزراعية الذكية المغلقة (Closed Ecosystems) مثل John Deere Operations Center و Bayer FieldView تخلق ما يُعرف بـ\"حبس البيانات\" (Data Lock-in) للمزارعين.",
+        "en": "Closed smart agricultural ecosystems like John Deere Operations Center and Bayer FieldView create what's known as \"data lock-in\" for farmers."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "المزارع الذي يستثمر خمس سنوات من البيانات في منصة Deere يصعب عليه الانتقال لمنصة أخرى دون خسارة التاريخ التراكمي. هذا يمنح الشركات قوة تفاوضية ضخمة في التسعير والخدمات.",
+        "en": "A farmer investing 5 years of data in Deere's platform can't easily switch without losing accumulated history. This gives companies enormous pricing and service leverage."
+      }
+    },
+    {
+      "id": "agf-tf-020",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "حسب تقارير 2025-2026، نحو 80% من معدات John Deere الجديدة في 2025 تتضمن قدرات ذاتية القيادة جزئياً أو كلياً، مقارنة بنسبة أقل بكثير قبل ثلاث سنوات.",
+        "en": "According to 2025-2026 reports, about 80% of new John Deere equipment in 2025 includes partial or full autonomy, compared to a much lower ratio three years ago."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا تحوّل جذري في الصناعة. Deere استثمرت أكثر من عقدين في تقنيات AI، والنتيجة ظهرت الآن. الشركات المنافسة (Case IH, AGCO) تلاحق بسرعة لتجنّب التخلّف عن السوق.",
+        "en": "A radical industry shift. Deere invested over two decades in AI tech—results showing now. Competitors (Case IH, AGCO) are racing to catch up to avoid market obsolescence."
+      }
+    },
+    {
       "id": "agf-fill-001",
       "type": "fill_blank",
       "purpose": "core",
@@ -118,28 +1861,645 @@
       "blanks": [
         {
           "id": "blank_1",
-          "correct": { "ar": "See & Spray", "en": "See & Spray" },
+          "correct": {
+            "ar": "See & Spray",
+            "en": "See & Spray"
+          },
           "options": [
-            { "ar": "See & Spray", "en": "See & Spray" },
-            { "ar": "CropX", "en": "CropX" },
-            { "ar": "GrowSphere", "en": "GrowSphere" },
-            { "ar": "AeroView", "en": "AeroView" }
+            {
+              "ar": "See & Spray",
+              "en": "See & Spray"
+            },
+            {
+              "ar": "CropX",
+              "en": "CropX"
+            },
+            {
+              "ar": "GrowSphere",
+              "en": "GrowSphere"
+            },
+            {
+              "ar": "AeroView",
+              "en": "AeroView"
+            }
           ]
         },
         {
           "id": "blank_2",
-          "correct": { "ar": "31 مليون", "en": "31 million" },
+          "correct": {
+            "ar": "31 مليون",
+            "en": "31 million"
+          },
           "options": [
-            { "ar": "31 مليون", "en": "31 million" },
-            { "ar": "5 ملايين", "en": "5 million" },
-            { "ar": "100 مليون", "en": "100 million" },
-            { "ar": "500 ألف", "en": "500 thousand" }
+            {
+              "ar": "31 مليون",
+              "en": "31 million"
+            },
+            {
+              "ar": "5 ملايين",
+              "en": "5 million"
+            },
+            {
+              "ar": "100 مليون",
+              "en": "100 million"
+            },
+            {
+              "ar": "500 ألف",
+              "en": "500 thousand"
+            }
           ]
         }
       ],
       "hint_after": {
         "ar": "See & Spray يستخدم كاميرات تلتقط صوراً لكل نبتة ويُميّز بين المحصول والأعشاب الضارة في أجزاء من الثانية. سوق الروبوتات الزراعية يبلغ 17.73 مليار دولار في 2025.",
         "en": "See & Spray uses cameras that capture images of every plant, distinguishing crops from weeds in fractions of a second. The agricultural robotics market is $17.73B in 2025."
+      }
+    },
+    {
+      "id": "agf-fill-002",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "منصة {{blank_1}} من John Deere هي المركز السحابي الذي يربط الجرارات والرشاشات وأجهزة الاستشعار، وتغطي أكثر من {{blank_2}} فدان نشط حول العالم.",
+        "en": "John Deere's {{blank_1}} platform is the cloud hub connecting tractors, sprayers and sensors, covering more than {{blank_2}} engaged acres worldwide."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Operations Center",
+            "en": "Operations Center"
+          },
+          "options": [
+            {
+              "ar": "Operations Center",
+              "en": "Operations Center"
+            },
+            {
+              "ar": "FieldView",
+              "en": "FieldView"
+            },
+            {
+              "ar": "Climate",
+              "en": "Climate"
+            },
+            {
+              "ar": "GrowSphere",
+              "en": "GrowSphere"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "330 مليون",
+            "en": "330 million"
+          },
+          "options": [
+            {
+              "ar": "330 مليون",
+              "en": "330 million"
+            },
+            {
+              "ar": "100 مليون",
+              "en": "100 million"
+            },
+            {
+              "ar": "50 مليون",
+              "en": "50 million"
+            },
+            {
+              "ar": "مليار",
+              "en": "1 billion"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Operations Center يصف بأنه \"الجهاز العصبي المركزي\" للمزارع الحديثة. يخلق \"دولاب طيران بيانات\" (Data Flywheel) يغذّي تدريب نماذج Deere وتحسينها — كل مزرعة تضيف بياناتها تجعل النظام أذكى للجميع.",
+        "en": "Operations Center is described as the \"central nervous system\" of modern farms. It creates a \"data flywheel\" feeding Deere's model training—every farm adding data makes the system smarter for all."
+      }
+    },
+    {
+      "id": "agf-fill-003",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "شركة {{blank_1}} الإسرائيلية أطلقت في 2024 نظام GrowSphere، وشركة {{blank_2}} الأمريكية حققت تقليل 35% في استهلاك المياه في كاليفورنيا.",
+        "en": "The Israeli company {{blank_1}} launched GrowSphere in 2024, and the American company {{blank_2}} achieved 35% water reduction in California."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Netafim",
+            "en": "Netafim"
+          },
+          "options": [
+            {
+              "ar": "Netafim",
+              "en": "Netafim"
+            },
+            {
+              "ar": "CropX",
+              "en": "CropX"
+            },
+            {
+              "ar": "Taranis",
+              "en": "Taranis"
+            },
+            {
+              "ar": "Aerobotics",
+              "en": "Aerobotics"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "CropX",
+            "en": "CropX"
+          },
+          "options": [
+            {
+              "ar": "CropX",
+              "en": "CropX"
+            },
+            {
+              "ar": "Netafim",
+              "en": "Netafim"
+            },
+            {
+              "ar": "Sentera",
+              "en": "Sentera"
+            },
+            {
+              "ar": "Bayer",
+              "en": "Bayer"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "كلا الشركتين تحلّان نفس المشكلة من زاويتين: Netafim عبر البنية التحتية للري، CropX عبر تحليل التربة. الجمع بينهما يمثّل مستقبل الري الدقيق.",
+        "en": "Both companies solve the same problem from different angles: Netafim via irrigation infrastructure, CropX via soil analysis. Combining them represents the future of precision irrigation."
+      }
+    },
+    {
+      "id": "agf-fill-004",
+      "type": "fill_blank",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 1,
+      "text": {
+        "ar": "شركة {{blank_1}} الإسرائيلية أطلقت \"Ag Assistant™\" كأول مساعد ذكاء اصطناعي توليدي زراعي في العالم.",
+        "en": "The Israeli company {{blank_1}} launched \"Ag Assistant™\" as the world's first generative agricultural AI assistant."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Taranis",
+            "en": "Taranis"
+          },
+          "options": [
+            {
+              "ar": "Taranis",
+              "en": "Taranis"
+            },
+            {
+              "ar": "Netafim",
+              "en": "Netafim"
+            },
+            {
+              "ar": "Sentera",
+              "en": "Sentera"
+            },
+            {
+              "ar": "John Deere",
+              "en": "John Deere"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا النوع من المساعدات يربط بين قدرات GPT الحديثة وبيانات المزرعة الخاصة، ويفتح عصراً جديداً من \"الزراعة الحوارية\" حيث يسأل المزارع بلغته الطبيعية عن حالة حقوله.",
+        "en": "This type of assistant bridges modern GPT capabilities with private farm data, opening a new era of \"conversational agriculture\" where farmers ask about fields in natural language."
+      }
+    },
+    {
+      "id": "agf-fill-005",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "تطبيق {{blank_1}} من PlantVillage يشخّص أمراض الكسافا بدقة {{blank_2}} ويعمل على هواتف Android البسيطة بدون إنترنت.",
+        "en": "PlantVillage's {{blank_1}} app diagnoses cassava diseases with {{blank_2}} accuracy and works on basic Android phones offline."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Nuru",
+            "en": "Nuru"
+          },
+          "options": [
+            {
+              "ar": "Nuru",
+              "en": "Nuru"
+            },
+            {
+              "ar": "Hodhod",
+              "en": "Hodhod"
+            },
+            {
+              "ar": "Plantix",
+              "en": "Plantix"
+            },
+            {
+              "ar": "CropAI",
+              "en": "CropAI"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "98%",
+            "en": "98%"
+          },
+          "options": [
+            {
+              "ar": "98%",
+              "en": "98%"
+            },
+            {
+              "ar": "60%",
+              "en": "60%"
+            },
+            {
+              "ar": "75%",
+              "en": "75%"
+            },
+            {
+              "ar": "85%",
+              "en": "85%"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "الدقة 98% تجعل Nuru أكثر دقة من كثير من الخبراء البشريين في الكشف المبكر. الكسافا محصول حيوي لأكثر من 800 مليون شخص في أفريقيا وآسيا، وأمراضه تسبب خسائر بالمليارات سنوياً.",
+        "en": "The 98% accuracy makes Nuru more accurate than many human experts in early detection. Cassava is a vital crop for over 800 million people in Africa and Asia, with diseases causing billions in annual losses."
+      }
+    },
+    {
+      "id": "agf-fill-006",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "يستخدم باحثو الماشية نموذج {{blank_1}} (You Only Look Once) في الرؤية الحاسوبية لاكتشاف الأبقار في الفيديو، وحقّق دقة تفوق {{blank_2}} في الدراسات الحديثة.",
+        "en": "Livestock researchers use the {{blank_1}} (You Only Look Once) model in computer vision to detect cattle in video, achieving over {{blank_2}} accuracy in recent studies."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "YOLOv8",
+            "en": "YOLOv8"
+          },
+          "options": [
+            {
+              "ar": "YOLOv8",
+              "en": "YOLOv8"
+            },
+            {
+              "ar": "ResNet",
+              "en": "ResNet"
+            },
+            {
+              "ar": "BERT",
+              "en": "BERT"
+            },
+            {
+              "ar": "GPT-4",
+              "en": "GPT-4"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "95%",
+            "en": "95%"
+          },
+          "options": [
+            {
+              "ar": "95%",
+              "en": "95%"
+            },
+            {
+              "ar": "50%",
+              "en": "50%"
+            },
+            {
+              "ar": "70%",
+              "en": "70%"
+            },
+            {
+              "ar": "100%",
+              "en": "100%"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "YOLOv8 من أشهر نماذج الكشف عن الأجسام في الوقت الفعلي. حقق YOLOv8-CBAM دقة 95.2% في دراسة 2025 للبقر في بيئات معقدة. هذه تقنيات نفسها المستخدمة في السيارات ذاتية القيادة.",
+        "en": "YOLOv8 is among the most popular real-time object detection models. YOLOv8-CBAM achieved 95.2% accuracy in a 2025 study on cattle in complex environments. Same tech used in self-driving cars."
+      }
+    },
+    {
+      "id": "agf-fill-007",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "طبّقت شركة {{blank_1}} رؤية حاسوبية في مصانع الشوكولاتة وحقّقت تقليلاً بنسبة {{blank_2}} في الفحوصات اليدوية.",
+        "en": "The company {{blank_1}} applied computer vision in chocolate factories, achieving a {{blank_2}} reduction in manual inspections."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Nestlé",
+            "en": "Nestlé"
+          },
+          "options": [
+            {
+              "ar": "Nestlé",
+              "en": "Nestlé"
+            },
+            {
+              "ar": "Hershey's",
+              "en": "Hershey's"
+            },
+            {
+              "ar": "Mars",
+              "en": "Mars"
+            },
+            {
+              "ar": "Cadbury",
+              "en": "Cadbury"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "80%",
+            "en": "80%"
+          },
+          "options": [
+            {
+              "ar": "80%",
+              "en": "80%"
+            },
+            {
+              "ar": "20%",
+              "en": "20%"
+            },
+            {
+              "ar": "50%",
+              "en": "50%"
+            },
+            {
+              "ar": "100%",
+              "en": "100%"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Nestlé من أوائل المتبنّين لـ AI في الصناعات الغذائية. دقة كشف العيوب 95% تعني أن الآلة تلتقط عيباً واحداً من كل 20 قطعة مصنّعة — مستوى يصعب على الإنسان الحفاظ عليه لساعات متواصلة.",
+        "en": "Nestlé is an early AI adopter in food industries. 95% defect detection means the machine catches 1 in 20 manufactured pieces—a level humans struggle to maintain over long shifts."
+      }
+    },
+    {
+      "id": "agf-fill-008",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "تُشغّل {{blank_1}} في دبي أكبر مزرعة عمودية في العالم بمساحة {{blank_2}} قدم مربع.",
+        "en": "{{blank_1}} in Dubai operates the world's largest vertical farm at {{blank_2}} square feet."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Emirates Bustanica",
+            "en": "Emirates Bustanica"
+          },
+          "options": [
+            {
+              "ar": "Emirates Bustanica",
+              "en": "Emirates Bustanica"
+            },
+            {
+              "ar": "Pure Harvest",
+              "en": "Pure Harvest"
+            },
+            {
+              "ar": "NEOM Topian",
+              "en": "NEOM Topian"
+            },
+            {
+              "ar": "Aydi",
+              "en": "Aydi"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "330,000",
+            "en": "330,000"
+          },
+          "options": [
+            {
+              "ar": "330,000",
+              "en": "330,000"
+            },
+            {
+              "ar": "50,000",
+              "en": "50,000"
+            },
+            {
+              "ar": "1,000,000",
+              "en": "1,000,000"
+            },
+            {
+              "ar": "100,000",
+              "en": "100,000"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Bustanica شراكة بين طيران الإمارات و Crop One الأمريكية. توفر 98% من المياه مقارنة بالزراعة التقليدية وتنتج خضروات ورقية تُقدَّم في وجبات الطيران.",
+        "en": "Bustanica is a joint venture between Emirates Airlines and US-based Crop One. It saves 98% of water vs traditional farming and produces leafy greens served on flight meals."
+      }
+    },
+    {
+      "id": "agf-fill-009",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "flexibility",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "في يناير 2025، رفعت هيئة {{blank_1}} الأمريكية دعوى ضد John Deere بسبب ممارسات حق الإصلاح، بينما يعكس \"{{blank_2}}\" قلقاً من هيمنة الشركات على بيانات المزارعين.",
+        "en": "In January 2025, the US {{blank_1}} filed suit against John Deere over right-to-repair practices, while \"{{blank_2}}\" reflects concerns about corporate dominance over farmer data."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "FTC",
+            "en": "FTC"
+          },
+          "options": [
+            {
+              "ar": "FTC",
+              "en": "FTC"
+            },
+            {
+              "ar": "FDA",
+              "en": "FDA"
+            },
+            {
+              "ar": "USDA",
+              "en": "USDA"
+            },
+            {
+              "ar": "EPA",
+              "en": "EPA"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "حبس البيانات / Data Lock-in",
+            "en": "Data Lock-in"
+          },
+          "options": [
+            {
+              "ar": "حبس البيانات / Data Lock-in",
+              "en": "Data Lock-in"
+            },
+            {
+              "ar": "خصوصية البيانات",
+              "en": "Data Privacy"
+            },
+            {
+              "ar": "تسريب البيانات",
+              "en": "Data Leak"
+            },
+            {
+              "ar": "سرقة الملكية",
+              "en": "IP Theft"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "هاتان القضيتان مرتبطتان: حق الإصلاح يتعلق بالأجهزة، وحبس البيانات بالمعلومات. كلاهما يعبّر عن قلق أشمل من هيمنة شركات قليلة على سلسلة الغذاء الكاملة.",
+        "en": "These two issues are linked: right to repair concerns hardware, data lock-in concerns information. Both express broader concern about a few companies dominating the entire food chain."
+      }
+    },
+    {
+      "id": "agf-fill-010",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "سوق الروبوتات الزراعية العالمي يبلغ {{blank_1}} مليار دولار في 2025، ومتوقع أن يصل إلى {{blank_2}} مليار دولار بحلول 2030.",
+        "en": "The global agricultural robotics market is {{blank_1}} billion dollars in 2025, projected to reach {{blank_2}} billion by 2030."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "17.73",
+            "en": "17.73"
+          },
+          "options": [
+            {
+              "ar": "17.73",
+              "en": "17.73"
+            },
+            {
+              "ar": "5.2",
+              "en": "5.2"
+            },
+            {
+              "ar": "50",
+              "en": "50"
+            },
+            {
+              "ar": "100",
+              "en": "100"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "56.26",
+            "en": "56.26"
+          },
+          "options": [
+            {
+              "ar": "56.26",
+              "en": "56.26"
+            },
+            {
+              "ar": "20",
+              "en": "20"
+            },
+            {
+              "ar": "200",
+              "en": "200"
+            },
+            {
+              "ar": "10",
+              "en": "10"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "معدل نمو يتجاوز 25% سنوياً. الأرقام تعكس ثقة المستثمرين الكبيرة في الروبوتات الزراعية كاستجابة لنقص العمالة وتغيّر المناخ وضغوط الاستدامة.",
+        "en": "Annual growth over 25%. These figures reflect strong investor confidence in agricultural robotics as a response to labor shortage, climate change, and sustainability pressures."
       }
     },
     {
@@ -154,26 +2514,932 @@
         "en": "Match each agricultural AI tool with its primary function:"
       },
       "left": [
-        { "id": "L1", "text": { "ar": "See & Spray (John Deere)", "en": "See & Spray (John Deere)" } },
-        { "id": "L2", "text": { "ar": "Nuru (PlantVillage)", "en": "Nuru (PlantVillage)" } },
-        { "id": "L3", "text": { "ar": "CropX Technologies", "en": "CropX Technologies" } },
-        { "id": "L4", "text": { "ar": "Taranis", "en": "Taranis" } }
+        {
+          "id": "L1",
+          "text": {
+            "ar": "See & Spray (John Deere)",
+            "en": "See & Spray (John Deere)"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Nuru (PlantVillage)",
+            "en": "Nuru (PlantVillage)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "CropX Technologies",
+            "en": "CropX Technologies"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Taranis",
+            "en": "Taranis"
+          }
+        }
       ],
       "right": [
-        { "id": "R1", "text": { "ar": "رش مبيدات دقيق على الأعشاب الضارة فقط", "en": "Precision herbicide spraying on weeds only" } },
-        { "id": "R2", "text": { "ar": "تشخيص أمراض المحاصيل بدون إنترنت على هواتف بسيطة", "en": "Diagnosing crop diseases offline on basic phones" } },
-        { "id": "R3", "text": { "ar": "تحليل التربة والري الذكي لتقليل استهلاك المياه", "en": "Soil analysis and smart irrigation to reduce water consumption" } },
-        { "id": "R4", "text": { "ar": "مراقبة المحاصيل بالطائرات المسيّرة مع مساعد AI توليدي", "en": "Crop monitoring by drones with a generative AI assistant" } }
+        {
+          "id": "R1",
+          "text": {
+            "ar": "رش مبيدات دقيق على الأعشاب الضارة فقط",
+            "en": "Precision herbicide spraying on weeds only"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "تشخيص أمراض المحاصيل بدون إنترنت على هواتف بسيطة",
+            "en": "Diagnosing crop diseases offline on basic phones"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تحليل التربة والري الذكي لتقليل استهلاك المياه",
+            "en": "Soil analysis and smart irrigation to reduce water consumption"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "مراقبة المحاصيل بالطائرات المسيّرة مع مساعد AI توليدي",
+            "en": "Crop monitoring by drones with a generative AI assistant"
+          }
+        }
       ],
       "correct_pairs": [
-        { "left": "L1", "right": "R1" },
-        { "left": "L2", "right": "R2" },
-        { "left": "L3", "right": "R3" },
-        { "left": "L4", "right": "R4" }
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
       ],
       "hint_after": {
         "ar": "Taranis أطلقت Ag Assistant™ كأول مساعد ذكاء اصطناعي توليدي زراعي. CropX حققت زيادة 10-15% في المحصول وتقليل 35% في المياه. كل أداة تحل مشكلة مختلفة في سلسلة الإنتاج الزراعي.",
         "en": "Taranis launched Ag Assistant™ as the first generative agricultural AI assistant. CropX achieved 10-15% yield increase and 35% water reduction. Each tool solves a different problem in the agricultural production chain."
+      }
+    },
+    {
+      "id": "agf-match-002",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مكوّن من منظومة القيادة الذاتية في الجرار John Deere 9RX بوظيفته:",
+        "en": "Match each component of the John Deere 9RX autonomy stack with its function:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "StarFire GPS",
+            "en": "StarFire GPS"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "16 كاميرا في مجموعات",
+            "en": "16 cameras in pods"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Geofencing",
+            "en": "Geofencing"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Operations Center Mobile",
+            "en": "Operations Center Mobile"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "توجيه دقيق أقل من إنش في الحقل",
+            "en": "Precise field guidance under 1 inch"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "رؤية 360° وكشف العوائق",
+            "en": "360° vision and obstacle detection"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تحديد حدود افتراضية للعمل لا يتجاوزها الجرار",
+            "en": "Virtual work boundaries the tractor doesn't cross"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "مراقبة الجرار والتحكم به عن بُعد من الهاتف",
+            "en": "Remote monitoring and control from phone"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "الجرار يتوقف تلقائياً عند استشعار عقبة ويرسل تنبيهاً. المزارع يشغّل الجرار ويتابع العمل من أي مكان عبر الهاتف، وهذا يسمح لمدير واحد بالإشراف على مساحات أكبر.",
+        "en": "The tractor auto-stops on obstacle detection and sends alerts. The farmer starts it and monitors from anywhere via phone, allowing one manager to oversee larger areas."
+      }
+    },
+    {
+      "id": "agf-match-003",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "وصّل كل نظام ري ذكي بإحصائيته الرئيسية الموثّقة:",
+        "en": "Match each smart irrigation system with its documented key statistic:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "CropX في كاليفورنيا",
+            "en": "CropX in California"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "COALA في أستراليا",
+            "en": "COALA in Australia"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "دفيئات القصيم الذكية (السعودية)",
+            "en": "Qassim smart greenhouses (Saudi)"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Emirates Bustanica في دبي",
+            "en": "Emirates Bustanica in Dubai"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تقليل 35% في المياه وزيادة محصول 10-15%",
+            "en": "35% water reduction, 10-15% yield increase"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "زيادة 20% في كفاءة الري عبر بيانات الأقمار الصناعية",
+            "en": "20% irrigation efficiency via satellite data"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تقليل 40% في استهلاك المياه للطماطم والخيار",
+            "en": "40% water reduction for tomatoes and cucumbers"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "توفير 98% من المياه مقارنة بالزراعة التقليدية (330,000 قدم²)",
+            "en": "98% water savings vs traditional farming (330,000 sq ft)"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "Bustanica هي أكبر مزرعة عمودية في العالم. سوق الزراعة العمودية في الشرق الأوسط متجه من 1.15 مليار (2024) إلى 8.24 مليار دولار بحلول 2032.",
+        "en": "Bustanica is the world's largest vertical farm. The Middle East vertical farming market is heading from $1.15B (2024) to $8.24B by 2032."
+      }
+    },
+    {
+      "id": "agf-match-004",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل شركة طائرات/مراقبة زراعية ببلدها أو تخصصها المميز:",
+        "en": "Match each drone/monitoring company with its country or distinctive specialty:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Taranis",
+            "en": "Taranis"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Sentera",
+            "en": "Sentera"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Aerobotics",
+            "en": "Aerobotics"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "DJI Agras",
+            "en": "DJI Agras"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "إسرائيلية — مساعد AI توليدي زراعي (Ag Assistant)",
+            "en": "Israeli — generative agricultural AI assistant"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أمريكية — مستشعرات متعددة الأطياف على الطائرات",
+            "en": "American — multispectral sensors on drones"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "جنوب أفريقية — منصة Aeroview لمراقبة البساتين",
+            "en": "South African — Aeroview orchard monitoring platform"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "صينية — طائرات رش كبيرة منتشرة في آسيا",
+            "en": "Chinese — large spray drones widespread in Asia"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "مشهد الطائرات الزراعية متنوع جغرافياً. لا توجد شركة واحدة تهيمن — كل منطقة طوّرت حلاً يناسب مشاكلها المحلية (أسرع نقل، رش أوسع، كشف أدق).",
+        "en": "The agricultural drone landscape is geographically diverse. No single company dominates—each region developed solutions suited to local problems (faster transport, wider spraying, more precise detection)."
+      }
+    },
+    {
+      "id": "agf-match-005",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مبادرة زراعية بلغة أفريقية/عربية بمنشئها:",
+        "en": "Match each African/Arab agricultural initiative with its originator:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "تطبيق Nuru",
+            "en": "Nuru app"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "تطبيق هدهد",
+            "en": "Hodhod app"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Aerobotics",
+            "en": "Aerobotics"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "AgriCan",
+            "en": "AgriCan"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "PlantVillage بجامعة Penn State لتشخيص أمراض الكسافا في أفريقيا",
+            "en": "PlantVillage at Penn State for cassava disease in Africa"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "الحكومة المصرية كمساعد زراعي للمزارعين",
+            "en": "Egyptian government as an agricultural assistant for farmers"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "شركة ناشئة من جنوب أفريقيا لمراقبة البساتين بالطائرات",
+            "en": "South African startup for orchard monitoring by drones"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "شركة مصرية ناشئة تطور روبوتات رش دقيق",
+            "en": "Egyptian startup developing precision spraying robots"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "المشهد الأفريقي والعربي يُظهر أن الابتكار الزراعي ليس حكراً على الدول الغنية. كل مبادرة تعالج مشكلة محلية بحل مناسب لميزانية وبنية تحتية المزارع المحلي.",
+        "en": "The African and Arab landscape shows agricultural innovation isn't exclusive to rich countries. Each initiative addresses a local problem with solutions fitted to local farmer budgets and infrastructure."
+      }
+    },
+    {
+      "id": "agf-match-006",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تقنية AI في الثروة الحيوانية بوظيفتها الرئيسية:",
+        "en": "Match each livestock AI technique with its main function:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "التعرّف على بصمة الخطم",
+            "en": "Muzzle biometric recognition"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "تحليل الصوتيات (vocalization)",
+            "en": "Vocalization analysis"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Body Condition Scoring (BCS)",
+            "en": "Body Condition Scoring (BCS)"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "كشف العرج (Lameness detection)",
+            "en": "Lameness detection"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "تحديد كل بقرة بشكل فريد دون أقراط أذن",
+            "en": "Uniquely identify each cow without ear tags"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "كشف الضغط النفسي والألم من صوت البقرة/الدجاجة",
+            "en": "Detect stress and pain from cow/chicken vocalizations"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تقييم الحالة الصحية والتغذوية بصرياً (1-5 درجات)",
+            "en": "Visually assess health and nutritional status (1-5 scale)"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "كشف مشاكل الحركة مبكراً قبل فقدان الإنتاجية",
+            "en": "Early detection of movement issues before productivity loss"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه المهام الأربع تمثّل الركائز الأساسية للـ\"Precision Livestock Farming\" (PLF). كلها غير تدخّلية وتحوّل مزرعة الألبان من \"إدارة قطيع\" إلى \"رعاية فردية\" لكل حيوان.",
+        "en": "These four tasks represent the pillars of Precision Livestock Farming (PLF). All non-invasive, transforming dairy farms from \"herd management\" to \"individual care\" per animal."
+      }
+    },
+    {
+      "id": "agf-match-007",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تطبيق AI في سلامة الغذاء بهدفه التنظيمي:",
+        "en": "Match each food-safety AI application with its regulatory goal:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "FDA Elsa",
+            "en": "FDA Elsa"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "رؤية حاسوبية Nestlé",
+            "en": "Nestlé computer vision"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "تتبع سلاسل التبريد بـ IoT+AI",
+            "en": "IoT+AI cold chain tracking"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "تحليل وسائل التواصل الاجتماعي",
+            "en": "Social media analysis"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "كشف تناقضات ملصقات الأغذية لمكافحة الاحتيال",
+            "en": "Detect label inconsistencies to fight fraud"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "فحص جودة الإنتاج ورصد عيوب التصنيع",
+            "en": "Production quality inspection and defect detection"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "ضمان حفظ الأغذية في درجات الحرارة الصحيحة من المصنع للرف",
+            "en": "Ensure food storage at correct temperatures factory-to-shelf"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "كشف تفشّي تسمم غذائي من شكاوى المستخدمين قبل تقارير رسمية",
+            "en": "Detect food poisoning outbreaks from user complaints before official reports"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الأمثلة توضح أن AI في سلامة الغذاء يعمل على أربع مستويات: الملصق، التصنيع، النقل، والاستهلاك. كل مستوى يسد ثغرة كان البشر يكافحون لرصدها في الوقت الفعلي.",
+        "en": "These examples show food-safety AI operates at four levels: label, manufacturing, transport, consumption. Each level plugs a gap humans struggled to monitor in real time."
+      }
+    },
+    {
+      "id": "agf-match-008",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "وصّل كل مشروع زراعي خليجي بخصوصيته الرئيسية:",
+        "en": "Match each Gulf agricultural project with its key feature:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "NEOM Topian (السعودية)",
+            "en": "NEOM Topian (Saudi)"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Emirates Bustanica (الإمارات)",
+            "en": "Emirates Bustanica (UAE)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Pure Harvest Smart Farms (الإمارات)",
+            "en": "Pure Harvest Smart Farms (UAE)"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "دفيئات القصيم (السعودية)",
+            "en": "Qassim greenhouses (Saudi)"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "هدف إنتاج 600,000 طن غذاء مستدام بحلول 2030",
+            "en": "Target 600,000 tons sustainable food by 2030"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "أكبر مزرعة عمودية في العالم (330,000 قدم²) — توفير 98% مياه",
+            "en": "World's largest vertical farm (330,000 sq ft)—98% water savings"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "كفاءة 30× مقارنة بالزراعة التقليدية — تمويل 387 مليون دولار",
+            "en": "30x efficiency vs traditional farming—$387M funding"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تقليل 40% في المياه مع زيادة محاصيل الطماطم والخيار",
+            "en": "40% water reduction with higher tomato and cucumber yields"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه المشاريع تُظهر التنوع في الاستراتيجيات الخليجية: NEOM مشروع طموح مستقبلي، Bustanica تشغيلية الآن، Pure Harvest تجارية مربحة، القصيم تطوير لبنية زراعية قائمة.",
+        "en": "These projects show Gulf strategic diversity: NEOM is an ambitious future project, Bustanica is operational now, Pure Harvest is profitably commercial, Qassim upgrades existing agriculture."
+      }
+    },
+    {
+      "id": "agf-match-009",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "flexibility",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مخاوف أخلاقية في الزراعة الذكية بمصدر القلق الرئيسي:",
+        "en": "Match each smart-agriculture ethical concern with its main source:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "حق الإصلاح",
+            "en": "Right to Repair"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "حبس البيانات",
+            "en": "Data Lock-in"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "الفجوة الرقمية",
+            "en": "Digital Divide"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "الشفافية الخوارزمية",
+            "en": "Algorithmic Transparency"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "منع المزارعين من إصلاح معداتهم دون فني الشركة",
+            "en": "Preventing farmers from repairing equipment without company technicians"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "تراكم بيانات المزرعة على منصة واحدة تصعّب الانتقال",
+            "en": "Farm data accumulating on one platform making migration difficult"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "المزارع الصغيرة والفقيرة محرومة من فوائد AI الزراعي",
+            "en": "Small and poor farms excluded from agricultural AI benefits"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "عدم معرفة \"لماذا\" توصي الخوارزمية بقرار زراعي معين",
+            "en": "Not knowing \"why\" the algorithm recommends a specific agricultural decision"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه القضايا الأربع متشابكة. جميعها تعود إلى سؤال واحد: من يملك القرار الزراعي في عصر AI؟ المزارع، الشركة، الخوارزمية، أم الحكومة؟",
+        "en": "These four issues are intertwined. All return to one question: who owns the agricultural decision in the AI era? The farmer, the company, the algorithm, or the government?"
+      }
+    },
+    {
+      "id": "agf-match-010",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "وصّل كل مشكلة زراعية كبرى في 2025-2026 بحل AI الأنسب لها:",
+        "en": "Match each major 2025-2026 agricultural problem with its best-fit AI solution:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "شحّ المياه",
+            "en": "Water scarcity"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "نقص العمالة",
+            "en": "Labor shortage"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "أمراض المحاصيل في الدول النامية",
+            "en": "Crop diseases in developing countries"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "الاحتيال الغذائي",
+            "en": "Food fraud"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "أنظمة ري ذكية تقلّل الاستهلاك 30-45% (CropX, Netafim)",
+            "en": "Smart irrigation cutting use 30-45% (CropX, Netafim)"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "جرارات ذاتية القيادة (John Deere 9RX autonomous)",
+            "en": "Autonomous tractors (John Deere 9RX)"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تطبيقات تشخيص بالهاتف بدون إنترنت (Nuru, Hodhod)",
+            "en": "Phone-based offline diagnostic apps (Nuru, Hodhod)"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "كشف تناقضات ملصقات الأغذية (FDA Elsa)",
+            "en": "Food label inconsistency detection (FDA Elsa)"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "لاحظ أن كل مشكلة لها حل AI مختلف — لا يوجد \"حل سحري واحد\". هذا التنوع يتطلب من المزارع/المهندس معرفة أدوات متعددة واختيار الأنسب لكل تحدٍّ.",
+        "en": "Note each problem has a different AI solution—no \"silver bullet\". This diversity requires farmers/engineers to know multiple tools and pick the best for each challenge."
       }
     },
     {
@@ -188,15 +3454,512 @@
         "en": "Order the steps for implementing an AI precision agriculture system on a mid-size farm:"
       },
       "items": [
-        { "id": "S1", "text": { "ar": "تركيب مستشعرات التربة والرطوبة وربطها بمنصة تحليل البيانات", "en": "Install soil and moisture sensors and connect them to a data analytics platform" } },
-        { "id": "S2", "text": { "ar": "جمع بيانات الموسم الأول لتدريب النماذج على ظروف المزرعة المحلية", "en": "Collect first season data to train models on local farm conditions" } },
-        { "id": "S3", "text": { "ar": "تشغيل الري الذكي والرش الدقيق بناءً على توصيات النظام مع مراجعة بشرية", "en": "Activate smart irrigation and precision spraying based on system recommendations with human review" } },
-        { "id": "S4", "text": { "ar": "مقارنة نتائج الموسم بالمواسم السابقة وتعديل إعدادات النظام", "en": "Compare season results with previous seasons and adjust system settings" } }
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تركيب مستشعرات التربة والرطوبة وربطها بمنصة تحليل البيانات",
+            "en": "Install soil and moisture sensors and connect them to a data analytics platform"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "جمع بيانات الموسم الأول لتدريب النماذج على ظروف المزرعة المحلية",
+            "en": "Collect first season data to train models on local farm conditions"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تشغيل الري الذكي والرش الدقيق بناءً على توصيات النظام مع مراجعة بشرية",
+            "en": "Activate smart irrigation and precision spraying based on system recommendations with human review"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "مقارنة نتائج الموسم بالمواسم السابقة وتعديل إعدادات النظام",
+            "en": "Compare season results with previous seasons and adjust system settings"
+          }
+        }
       ],
-      "correct_order": ["S1", "S2", "S3", "S4"],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
       "hint_after": {
         "ar": "Bayer وEY حققتا توفيراً يصل إلى 25 دولار/فدان في الموسم باستخدام الزراعة الدقيقة. لكن النجاح يتطلب موسماً كاملاً على الأقل لجمع البيانات المحلية — لا توجد حلول فورية.",
         "en": "Bayer and EY achieved savings of up to $25/acre per season using precision farming. But success requires at least one full season of local data collection — there are no instant solutions."
+      }
+    },
+    {
+      "id": "agf-sort-002",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات تشغيل جرار John Deere ذاتي القيادة في يوم عمل عادي:",
+        "en": "Order the steps for operating a John Deere autonomous tractor on a normal workday:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تهيئة المهمة وحدود الحقل (geofence) من تطبيق Operations Center Mobile",
+            "en": "Configure the task and field boundaries (geofence) from Operations Center Mobile"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "بدء الجرار يدوياً ومسح المحيط للتأكد من خلوه من العوائق",
+            "en": "Start the tractor manually and scan surroundings for obstacles"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "مغادرة الحقل ومتابعة العمل من الهاتف مع تلقّي تنبيهات فورية",
+            "en": "Leave the field and monitor from phone with instant alerts"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "مراجعة تقرير الأداء وبيانات المهمة في Operations Center بعد الانتهاء",
+            "en": "Review performance report and task data in Operations Center afterward"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "هذا التسلسل يعكس ما يفعله المزارعون الآن فعلياً — الجرار ليس \"اضغط وانسَ\" بل يتطلب إعداداً دقيقاً ومراجعة لاحقة. الهدف ليس إلغاء دور المزارع بل تحريره من 12 ساعة حراثة متواصلة.",
+        "en": "This sequence reflects current farmer practice—the tractor isn't \"set and forget\" but requires careful setup and later review. The goal isn't eliminating the farmer's role but freeing them from 12-hour continuous tillage."
+      }
+    },
+    {
+      "id": "agf-sort-003",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "رتّب طبقات القرار في نظام ري ذكي يعمل بـ AI (من البيانات إلى التنفيذ):",
+        "en": "Order the decision layers in an AI-driven smart irrigation system (from data to execution):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "قراءة بيانات مستشعرات رطوبة التربة ودرجة الحرارة وتوقعات الطقس",
+            "en": "Read soil moisture, temperature sensors and weather forecasts"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تغذية نموذج AI بالبيانات لحساب الاحتياج المائي لكل قطعة",
+            "en": "Feed the AI model to compute water need per field section"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "توليد جدول ري مخصّص يراعي نوع المحصول ومرحلة النمو",
+            "en": "Generate a custom irrigation schedule by crop type and growth stage"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تشغيل صمامات الري الآلية وتسجيل النتائج لتحسين النموذج",
+            "en": "Activate automated valves and log results for model improvement"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "هذه الدورة (حس → تحليل → قرار → تنفيذ → تعلّم) هي الأساس المشترك لكل أنظمة الزراعة الذكية. الخطوة الأخيرة (التعلّم) هي ما يجعل النظام يتحسّن مع كل موسم.",
+        "en": "This loop (sense → analyze → decide → execute → learn) is the shared foundation of all smart agriculture systems. The final learning step is what makes the system improve each season."
+      }
+    },
+    {
+      "id": "agf-sort-004",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "رتّب خطوات مسح حقل قمح بطائرة مسيّرة مزوّدة بـ AI:",
+        "en": "Order the steps for scanning a wheat field with an AI-equipped drone:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تخطيط مسار الطيران على خريطة الحقل وضبط ارتفاع الطيران",
+            "en": "Plan the flight path on the field map and set altitude"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "إطلاق الطائرة لالتقاط صور عالية الدقة ومتعددة الأطياف",
+            "en": "Launch the drone to capture high-res and multispectral imagery"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "رفع الصور للسحابة وتحليلها بنموذج AI مُدرَّب على الأمراض والأعشاب",
+            "en": "Upload images to cloud and analyze with an AI model trained on diseases and weeds"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "إنتاج خريطة تدخل (Prescription Map) ترسل لرشاش دقيق في الحقل",
+            "en": "Generate a prescription map sent to a precision sprayer in the field"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "هذا التسلسل \"صورة → تحليل → وصفة → تنفيذ\" يقلل استخدام المبيدات بنسبة قد تتجاوز 50% مقارنة بالرش التقليدي الشامل، لأن الرش يحدث فقط حيث تكون هناك مشكلة فعلية.",
+        "en": "This \"image → analysis → prescription → execution\" sequence can cut pesticide use by 50%+ versus blanket spraying, because spraying happens only where actual problems exist."
+      }
+    },
+    {
+      "id": "agf-sort-005",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "رتّب مراحل تطوّر مبادرة Nuru من فكرة بحثية إلى نموذج عالمي (المرحلة التاريخية):",
+        "en": "Order the evolution of the Nuru initiative from research idea to global model (historical phases):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "جمع 100,000+ صورة لأمراض النباتات في قواعد بيانات PlantVillage",
+            "en": "Collect 100,000+ plant disease images in PlantVillage databases"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تدريب نموذج تعلّم عميق مضغوط يعمل على هواتف Android بسيطة",
+            "en": "Train a compressed deep learning model running on basic Android phones"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "اختبار ميداني في كينيا مع مزارعي الكسافا ومرشدين زراعيين",
+            "en": "Field testing in Kenya with cassava farmers and extension workers"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "التوسّع إلى 50,000 مزارع في 19 دولة أفريقية و21 لغة",
+            "en": "Scale to 50,000 farmers in 19 African countries and 21 languages"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "هذا النموذج في التطوير التدريجي (بيانات → نموذج → اختبار → توسّع) هو \"المعيار الذهبي\" للمشاريع الناجحة في الزراعة الذكية، وخصوصاً عندما يكون الجمهور المستهدف صغار المزارعين.",
+        "en": "This gradual development model (data → model → test → scale) is the gold standard for successful smart agriculture projects, especially when targeting smallholder farmers."
+      }
+    },
+    {
+      "id": "agf-sort-006",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب خطوات كشف مرض مبكر في بقرة حلوب بنظام AI بصري:",
+        "en": "Order the steps for early disease detection in a dairy cow via a visual AI system:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "التقاط فيديو مستمر للبقرة في منطقة الحلابة والعلف",
+            "en": "Continuous video capture in milking and feeding areas"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تحليل حركة البقرة ووضعية جسمها وكمية الأكل",
+            "en": "Analyze cow movement, posture, and food intake"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "مقارنة السلوك الحالي بسلوك البقرة التاريخي الطبيعي",
+            "en": "Compare current behavior with the cow's historical normal"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "إرسال تنبيه للطبيب البيطري عند رصد انحراف مشبوه",
+            "en": "Send alert to the vet when a suspicious deviation is detected"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "قوة النظام في الخطوة 3: \"مقارنة كل بقرة بنفسها\" — لأن كل بقرة لها نمط حياة طبيعي مختلف. هذا يتفوّق على المراقبة البشرية التي ترى القطيع ككتلة واحدة.",
+        "en": "The system's power is in step 3: \"comparing each cow to itself\"—each cow has a different normal pattern. This beats human monitoring that sees the herd as one block."
+      }
+    },
+    {
+      "id": "agf-sort-007",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "رتّب خطوات نشر نظام رؤية حاسوبية في خط إنتاج زيت زيتون:",
+        "en": "Order the steps for deploying a computer vision system on an olive oil production line:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "توثيق أنواع العيوب المحتملة (حجر، ورق، ثمار تالفة) وتصويرها",
+            "en": "Document possible defects (stones, leaves, damaged fruits) and photograph"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "تدريب نموذج AI على آلاف الصور مع تصنيف يدوي دقيق",
+            "en": "Train AI model on thousands of images with careful manual labeling"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تركيب الكاميرات فوق الحزام الناقل وربطها بالنموذج",
+            "en": "Install cameras above conveyor belts and connect to the model"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تشغيل النظام مع مراقبة بشرية عشوائية لموسم كامل قبل التحويل الكامل",
+            "en": "Run the system with random human oversight for a full season before full handoff"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "هذه الخطوات هي المعيار الصناعي لتطبيق AI. التدريب الجيد يحتاج 10,000+ صورة مصنّفة. الموسم الأول بإشراف بشري يكشف العيوب النادرة التي لم تكن في بيانات التدريب.",
+        "en": "These are industry-standard steps for AI deployment. Good training needs 10,000+ labeled images. The first season under human oversight catches rare defects not in training data."
+      }
+    },
+    {
+      "id": "agf-sort-008",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب مراحل بناء مزرعة عمودية ذكية في الخليج من الفكرة إلى التشغيل:",
+        "en": "Order the phases of building a smart vertical farm in the Gulf from idea to operation:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "دراسة جدوى اقتصادية تقارن تكلفة الإنتاج المحلي بالاستيراد",
+            "en": "Economic feasibility study comparing local production vs imports"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "اختيار المحصول الأمثل (خضروات ورقية، توت، أعشاب) وتصميم الدفيئة",
+            "en": "Select optimal crop (leafy greens, berries, herbs) and design greenhouse"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تركيب أنظمة التحكم بالمناخ وLED الزراعي وAI للري",
+            "en": "Install climate control, agricultural LED, and AI irrigation"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "التشغيل مع تحسين مستمر بناءً على بيانات كل موسم",
+            "en": "Operate with continuous optimization based on each season's data"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "دراسة الجدوى أولاً حاسمة: الزراعة العمودية ليست اقتصادية لكل محصول. الخضروات الورقية والتوت تنجح لأنها ذات قيمة عالية للكيلو. القمح أو الذرة لا يعمل اقتصادياً.",
+        "en": "Feasibility study first is critical: vertical farming isn't economical for all crops. Leafy greens and berries succeed due to high value per kg. Wheat or corn don't work economically."
+      }
+    },
+    {
+      "id": "agf-sort-009",
+      "type": "sorting",
+      "purpose": "cultural",
+      "axis": "flexibility",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "رتّب \"طبقات\" الاعتماد على شركة AI زراعية من الأقل اعتماداً إلى الأكثر اعتماداً:",
+        "en": "Order levels of dependency on an agricultural AI company from least to most dependent:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "شراء جرار من الشركة فقط",
+            "en": "Buying only a tractor from the company"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "شراء جرار + اشتراك في برنامج أساسي",
+            "en": "Tractor + basic software subscription"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "استخدام منصة البيانات الكاملة للشركة لكل قرارات المزرعة",
+            "en": "Using the full company data platform for all farm decisions"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "الاعتماد على خدمات ذاتية القيادة مع عقود حصرية لـ 10 سنوات",
+            "en": "Relying on autonomous services with 10-year exclusive contracts"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "هذا التدرج يُظهر أن الاعتماد ليس أبيض أو أسود. المزارع الذكي يعرف في أيّ طبقة هو، ويتخذ قراره بوعي بالمقايضات (Trade-offs) بين الكفاءة والاستقلالية.",
+        "en": "This gradient shows dependency isn't black-and-white. Smart farmers know which layer they're on and decide consciously about efficiency vs independence trade-offs."
+      }
+    },
+    {
+      "id": "agf-sort-010",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 4,
+      "text": {
+        "ar": "رتّب أولوياتك كمزارع جديد يريد تبنّي AI في مزرعته خلال السنة الأولى:",
+        "en": "Order your priorities as a new farmer adopting AI in your farm during the first year:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "دراسة مشاكلك الفعلية (مياه؟ آفات؟ عمالة؟) قبل اختيار أيّ تقنية",
+            "en": "Study your actual problems (water? pests? labor?) before picking any tech"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "زيارة مزارع تستخدم التقنية المقترحة ورؤية النتائج بنفسك",
+            "en": "Visit farms using the proposed tech to see results yourself"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تجربة الحل على جزء صغير من المزرعة (10-20%) لموسم واحد",
+            "en": "Trial the solution on a small farm section (10-20%) for one season"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "التوسّع التدريجي مع قياس العائد على الاستثمار",
+            "en": "Scale gradually while measuring ROI"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "أكبر خطأ يقع فيه المزارعون: البدء بالتكنولوجيا ثم البحث عن مشكلة لحلّها بها. الترتيب الصحيح دائماً: مشكلة → بحث → تجربة → توسّع. هذا ينطبق على AI كما على أيّ استثمار.",
+        "en": "Farmers' biggest mistake: starting with tech then looking for problems to solve. Correct order always: problem → research → trial → scale. Applies to AI as to any investment."
       }
     },
     {
@@ -211,10 +3974,38 @@
         "en": "You're a traditional farmer with 20 years of experience. A company offers you an AI system that determines irrigation and fertilization schedules instead of your expertise. What's your stance?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "أجرّب النظام على جزء من المزرعة وأقارن النتائج بطريقتي التقليدية", "en": "I try the system on part of the farm and compare results with my traditional method" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "أستخدم النظام كمصدر معلومات إضافي لكن القرار النهائي يبقى لي", "en": "I use the system as an additional information source but the final decision remains mine" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "أنتظر حتى يستخدمه جيراني ويثبت نجاحه في منطقتنا", "en": "I wait until my neighbors use it and prove its success in our area" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "أرفض — أنا أعرف أرضي أفضل من أي خوارزمية ولا حاجة لتكنولوجيا مكلفة", "en": "I refuse — I know my land better than any algorithm and there's no need for expensive technology" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "أجرّب النظام على جزء من المزرعة وأقارن النتائج بطريقتي التقليدية",
+            "en": "I try the system on part of the farm and compare results with my traditional method"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أستخدم النظام كمصدر معلومات إضافي لكن القرار النهائي يبقى لي",
+            "en": "I use the system as an additional information source but the final decision remains mine"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر حتى يستخدمه جيراني ويثبت نجاحه في منطقتنا",
+            "en": "I wait until my neighbors use it and prove its success in our area"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — أنا أعرف أرضي أفضل من أي خوارزمية ولا حاجة لتكنولوجيا مكلفة",
+            "en": "I refuse — I know my land better than any algorithm and there's no need for expensive technology"
+          },
+          "flexibility_score": 1
+        }
       ],
       "hint_after": {
         "ar": "التجربة على جزء من المزرعة هي بالضبط ما يفعله المزارعون الناجحون. الزراعة الدقيقة لا تلغي الخبرة — بل تضيف بيانات لم تكن متاحة: رطوبة التربة على عمق 30 سم، توقعات الطقس لـ 10 أيام، وصور أقمار صناعية يومية.",
@@ -233,14 +4024,942 @@
         "en": "You're a food engineer. Your factory is considering using computer vision for product quality inspection instead of manual inspection. What's your view?"
       },
       "options": [
-        { "id": "a", "text": { "ar": "ممتاز — سيرفع الدقة ويقلل الفحوصات اليدوية بنسبة كبيرة مع تدريب الفريق على مراقبة النظام", "en": "Excellent — it will increase accuracy and greatly reduce manual inspections while training the team to monitor the system" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "جيد لكن يجب إبقاء فحص يدوي عشوائي كطبقة تحقق إضافية", "en": "Good but we should keep random manual inspections as an additional verification layer" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "قلق من أن الآلة لن تكتشف عيوباً يراها المفتش البشري بخبرته", "en": "Worried that the machine won't detect defects that a human inspector sees with experience" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "سلامة الغذاء أخطر من أن تُترك لخوارزمية — الخطأ قد يكلف أرواحاً", "en": "Food safety is too critical to leave to an algorithm — errors could cost lives" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "ممتاز — سيرفع الدقة ويقلل الفحوصات اليدوية بنسبة كبيرة مع تدريب الفريق على مراقبة النظام",
+            "en": "Excellent — it will increase accuracy and greatly reduce manual inspections while training the team to monitor the system"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "جيد لكن يجب إبقاء فحص يدوي عشوائي كطبقة تحقق إضافية",
+            "en": "Good but we should keep random manual inspections as an additional verification layer"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق من أن الآلة لن تكتشف عيوباً يراها المفتش البشري بخبرته",
+            "en": "Worried that the machine won't detect defects that a human inspector sees with experience"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "سلامة الغذاء أخطر من أن تُترك لخوارزمية — الخطأ قد يكلف أرواحاً",
+            "en": "Food safety is too critical to leave to an algorithm — errors could cost lives"
+          },
+          "flexibility_score": 1
+        }
       ],
       "hint_after": {
         "ar": "Nestlé حققت تقليل 80% في الفحوصات اليدوية ودقة كشف عيوب 95% بالرؤية الحاسوبية في مصانع الشوكولاتة. الجمع بين AI والفحص البشري العشوائي هو المعيار الذهبي في سلامة الغذاء.",
         "en": "Nestlé achieved 80% reduction in manual inspections and 95% defect detection accuracy with computer vision in chocolate factories. Combining AI with random human inspection is the gold standard in food safety."
+      }
+    },
+    {
+      "id": "agf-self-003",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مزارع لديك جرار 8R قديم من 2021. Deere تعرض عليك طقم \"Autonomy Precision Upgrade\" لتحديثه إلى قيادة ذاتية. ما موقفك؟",
+        "en": "You own an older 2021 8R tractor. Deere offers you the Autonomy Precision Upgrade kit. What's your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أدرس الطقم بجدية وأحسب العائد على الاستثمار مقابل موسم إضافي أو اثنين",
+            "en": "I seriously study the kit and calculate ROI against an extra season or two"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أوافق لكن أبدأ باستخدامه في مهام محدودة كالحراثة الليلية فقط",
+            "en": "I agree but start with limited tasks like nighttime tillage only"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر عاماً أو عامين لأرى تجارب الجيران وتقارير الأعطال الفعلية",
+            "en": "I wait a year or two to see neighbors' experiences and actual failure reports"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — أخشى أن أصبح رهينة منصة Deere وبياناتي لن تكون ملكي",
+            "en": "I refuse—I fear becoming hostage to Deere's platform and losing data ownership"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "كلا الموقفين عقلانيان. استراتيجية Deere \"Autonomy Ready\" من المصنع للموديلات الجديدة تجعل الانتقال أسهل للمشترين الجدد، لكن المزارع الحالي يواجه قراراً حقيقياً بين الكفاءة والاستقلالية.",
+        "en": "Both stances are reasonable. Deere's factory \"Autonomy Ready\" strategy for new models makes the transition easier for new buyers, but existing farmers face a genuine trade-off between efficiency and independence."
+      }
+    },
+    {
+      "id": "agf-self-004",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "knowledge",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "نظام See & Spray يعتمد على كاميرات ترى الأعشاب وترشها فقط. لو كنت مديراً في وزارة زراعة، ما درجة ثقتك بإحصائية \"توفير 59% من المبيدات\"؟",
+        "en": "See & Spray relies on cameras that see and spray only weeds. If you were a ministry of agriculture official, how much would you trust the \"59% pesticide savings\" claim?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أطلب تكرار النتائج في ظروف تربة ومحاصيل بلدي قبل التبني الواسع",
+            "en": "I'd require replication in local soil and crop conditions before wide adoption"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أثق بالدراسة الجامعية المستقلة (Iowa State) وأبدأ تجارب تجريبية محلية",
+            "en": "I trust the independent university study (Iowa State) and start local pilots"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أعتمد الرقم كما هو وأبدأ التوزيع على المزارع الكبيرة",
+            "en": "I accept the figure as-is and start rollout to large farms"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفضه — الشركة المصنّعة مستفيدة من ترويج هذه الأرقام",
+            "en": "I reject it—the manufacturer benefits from promoting these numbers"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الإحصائية موثّقة من دراسة Iowa State المستقلة (توفير 76% في الأعشاب تحديداً)، لكن ظروف التربة والمحاصيل تختلف. التجارب المحلية خطوة علمية صحيحة قبل التبني الواسع.",
+        "en": "The statistic is documented by the independent Iowa State study (specifically 76% weed reduction), but soil and crop conditions vary. Local pilots are a scientifically sound step before wide adoption."
+      }
+    },
+    {
+      "id": "agf-self-005",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مزارع في منطقة تعاني شحاً مائياً. شركة ري ذكي تطلب مقابل خدماتها الوصول الكامل لبيانات مزرعتك. ما قرارك؟",
+        "en": "You're a farmer in a water-stressed area. A smart irrigation company requires full access to your farm data in exchange for services. Your decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أوقّع لكن أتفاوض على بند يسمح لي بسحب بياناتي إذا انتهت الشراكة",
+            "en": "I sign but negotiate a clause allowing data withdrawal if the partnership ends"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أوافق مؤقتاً لكن أبحث عن بديل مفتوح المصدر خلال الموسم",
+            "en": "I agree temporarily but search for an open-source alternative during the season"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أقبل الصفقة كاملة — توفير المياه أهم من مخاوف البيانات",
+            "en": "I accept fully—saving water matters more than data concerns"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض وأحاول تطوير حلول محلية بسيطة مع الجيران",
+            "en": "I refuse and try developing simple local solutions with neighbors"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "قضية ملكية البيانات الزراعية أصبحت ساخنة عالمياً. بعض الدول (كأستراليا ونيوزيلندا) بدأت تسنّ قوانين لحماية المزارعين من حبس البيانات (data lock-in).",
+        "en": "Agricultural data ownership is becoming a hot global issue. Some countries (like Australia and New Zealand) are starting to legislate protections against data lock-in for farmers."
+      }
+    },
+    {
+      "id": "agf-self-006",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "practice",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مزرعتك تواجه جفافاً حاداً. لديك ميزانية لإحدى الخيارات فقط: (أ) حفر بئر جديد، (ب) تركيب نظام ري ذكي بـ AI. كيف تفكّر؟",
+        "en": "Your farm faces severe drought. You have budget for only one: (a) drilling a new well, or (b) installing an AI smart irrigation system. How do you think?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أحلّل استهلاكي الحالي أولاً — إن كان الهدر كبيراً فالنظام الذكي أولى",
+            "en": "I analyze current consumption first—if waste is high, smart system is priority"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أختار النظام الذكي لأن الجفاف سيتكرر والمياه ستقل",
+            "en": "I choose smart system because drought will recur and water will diminish"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أختار البئر — الحل المضمون الذي أعرفه",
+            "en": "I choose the well—the guaranteed solution I know"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أؤجل القرار وأطلب منحة حكومية لتغطية الخيارين",
+            "en": "I postpone and request a government grant for both"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "الإحصائية المفاجئة: كثير من المزارع تهدر 30-50% من مياه الري بسبب توقيت غير مناسب أو ريّ في مناطق لا تحتاج. النظام الذكي قد يكشف أن البئر الحالي كافٍ لو استُخدمت المياه بذكاء.",
+        "en": "Surprising fact: many farms waste 30-50% of irrigation water due to poor timing or irrigating areas that don't need it. A smart system might reveal the existing well suffices if water is used smartly."
+      }
+    },
+    {
+      "id": "agf-self-007",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مزارع كروم. شركة تعرض عليك اشتراكاً سنوياً 5000 دولار لخدمة مسح طائرات مسيّرة أسبوعي مع تقارير AI. ما موقفك؟",
+        "en": "You're a vineyard owner. A company offers a $5000/year subscription for weekly drone scans with AI reports. Your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أحسب الرقم مقابل خسائرك السنوية من الأمراض — إن تجاوز التوفيرُ الاشتراكَ فالقرار واضح",
+            "en": "I calculate it against annual disease losses—if savings exceed subscription, the answer is clear"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أجرّب الخدمة لموسم واحد فقط لقياس العائد قبل الالتزام",
+            "en": "I try the service for one season only before committing"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أوافق لأن الخسارة المحتملة من مرض واحد تتجاوز الاشتراك بكثير",
+            "en": "I agree because loss from a single disease outbreak exceeds the subscription"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "5000 دولار مبلغ كبير — أفضّل توظيف فنّي زراعي بدوام جزئي بدلاً منها",
+            "en": "$5000 is large—I'd rather hire a part-time agronomist"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "القرار المثالي يعتمد على حجم المزرعة. لمزرعة كروم من 50 فداناً، خسارة 10% من المحصول بسبب البياض الدقيقي قد تتجاوز 50,000 دولار — الاشتراك يصبح استثماراً ذكياً.",
+        "en": "The ideal decision depends on farm size. For a 50-acre vineyard, a 10% crop loss from powdery mildew can exceed $50,000—the subscription becomes a smart investment."
+      }
+    },
+    {
+      "id": "agf-self-008",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "knowledge",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "شركة طائرات AI تخبرك أن نظامها يكشف الأمراض بدقة 95%. كيف تتحقق من هذا الادعاء قبل الشراء؟",
+        "en": "A drone AI company claims its system detects diseases with 95% accuracy. How do you verify this before buying?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أطلب اختباراً على حقل تعرف فيه الأمراض مسبقاً وأقارن النتائج بفحص بشري",
+            "en": "I request a test on a field with known diseases and compare with human inspection"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أسأل مزارعين استخدموا النظام فعلياً وأطلب أرقامهم الحقيقية",
+            "en": "I ask farmers who actually used the system for their real numbers"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أقبل الرقم لأن الشركة كبيرة ولديها سمعة جيدة",
+            "en": "I accept the figure because the company is large and reputable"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أطلب دراسات علمية مستقلة عن دقة النظام",
+            "en": "I request independent scientific studies of the system's accuracy"
+          },
+          "flexibility_score": 4
+        }
+      ],
+      "hint_after": {
+        "ar": "الخيارات أ، ب، د كلها علمية وعقلانية — وتمثّل ثقافة \"التحقق المتعدد المصادر\" التي يتبنّاها أفضل المزارعين. الأرقام الدعائية 95%+ شائعة، لكن الأداء الفعلي في ظروف مختلفة قد يكون أقل.",
+        "en": "Options a, b, d are all scientific and rational—representing the \"multi-source verification\" culture that top farmers adopt. Marketing figures of 95%+ are common, but actual performance in varied conditions may be lower."
+      }
+    },
+    {
+      "id": "agf-self-009",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "specialty",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مرشد زراعي حكومي في دولة عربية. يُطلب منك اختيار بين تطبيق AI مجاني بواجهة عربية لكنه غير متقن، أو تطبيق إنجليزي متقن لكن المزارعون لا يفهمونه. ما قرارك؟",
+        "en": "You're a government agricultural advisor in an Arab country. You must choose between a free Arabic AI app that's imperfect, or a polished English app the farmers don't understand. Your decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التطبيق العربي — اللغة شرط أساسي للتبني، وسأقدّم ملاحظات للمطوّرين لتحسينه",
+            "en": "The Arabic app—language is essential for adoption, and I'll give developers feedback"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "التطبيق الإنجليزي مع تدريب المرشدين ليترجموا توصياته للمزارعين",
+            "en": "The English app with training advisors to translate its recommendations"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "كليهما بالتوازي مع اختبار أيّهما يعطي نتائج أفضل بعد موسم",
+            "en": "Both in parallel and test which gives better results after a season"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا أتبنى أياً منهما حتى يتوفّر تطبيق عربي متقن",
+            "en": "Adopt neither until a polished Arabic app exists"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "اللغة ليست تفصيلاً ثانوياً. 200 مرشد Nuru يعملون لأن التطبيق بالسواحيلية المحلية. هدهد المصري نجح لأنه بالعربية. الحلول التقنية الممتازة التي تتجاهل اللغة المحلية تفشل في الوصول.",
+        "en": "Language isn't a minor detail. 200 Nuru extension workers operate because the app is in local Swahili. Egypt's Hodhod succeeded because it's in Arabic. Excellent tech solutions that ignore local language fail to reach."
+      }
+    },
+    {
+      "id": "agf-self-010",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "تخيّل أنك مزارع كسافا في كينيا ريفية. أحدهم يعطيك هاتف Android بسيط مع تطبيق يشخّص أمراض محصولك. ما ردّ فعلك؟",
+        "en": "Imagine you're a cassava farmer in rural Kenya. Someone gives you a basic Android phone with an app that diagnoses your crop's diseases. Your reaction?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتعلّمه بشغف لأنه قد ينقذ محصول عائلتي من الخسارة",
+            "en": "I learn it eagerly because it might save my family's crop from loss"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أختبره على نبات واحد مصاب وأقارن النتيجة بما أعرفه",
+            "en": "I test it on one infected plant and compare with my knowledge"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أستخدمه لكن أبقى معتمداً على خبرة المرشد الزراعي المحلي",
+            "en": "I use it but stay reliant on the local extension worker's expertise"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — الهاتف والتطبيق غريبان عني ولا أثق بهما",
+            "en": "I refuse—the phone and app are foreign and I don't trust them"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "قبول Nuru في كينيا كان مفاجئاً بإيجابيته: المزارعون وجدوا أن الهاتف ليس رفاهية بل أداة إنتاج. هذه القصة تذكّر أن الفجوة الرقمية الحقيقية ليست دائماً في الرغبة، بل في الوصول.",
+        "en": "Nuru's acceptance in Kenya was surprisingly positive: farmers found the phone isn't a luxury but a production tool. This story reminds us the real digital divide isn't always about willingness, but access."
+      }
+    },
+    {
+      "id": "agf-self-011",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت طبيب بيطري في مزرعة ألبان. المالك يريد استبدال جولاتك اليومية بنظام AI يراقب الأبقار عبر الكاميرات. ما موقفك؟",
+        "en": "You're a vet at a dairy farm. The owner wants to replace your daily rounds with an AI camera monitoring system. Your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أؤيد النظام كعين إضافية 24/7 لكن أحتفظ بالجولات الأسبوعية للفحص البدني",
+            "en": "I support it as a 24/7 extra eye but keep weekly rounds for physical exams"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقترح تقسيم المهام: AI يرصد، أنا أشخّص ما يرصده",
+            "en": "I propose dividing tasks: AI monitors, I diagnose what it flags"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قلق من أن AI سيفوّت علامات لا تُرى بالعين (رائحة، ملمس)",
+            "en": "Worried AI will miss non-visual signs (smell, touch)"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — المريض الحيواني لا يُفحص إلا بحضور بشري",
+            "en": "I refuse—the animal patient can only be examined in person"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "الواقع يدعم الخيار أ أو ب. AI يرصد ما لا يستطيع البشر (24/7 و أفراد متعددون)، لكن الفحص البدني يبقى ضرورياً لتشخيصات كثيرة. الطبيب البيطري الذي يدمج الاثنين يقدّم خدمة أفضل.",
+        "en": "Reality supports options a or b. AI sees what humans can't (24/7, multiple individuals), but physical exams remain essential for many diagnoses. Vets who integrate both deliver better service."
+      }
+    },
+    {
+      "id": "agf-self-012",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "practice",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "في مزرعة دواجن كبيرة، AI يحلّل أصوات الدجاج ويكشف الإجهاد. يقترح التقرير أن 30% من القطيع تحت ضغط. ما أول شيء تفعله؟",
+        "en": "At a large poultry farm, AI analyzes chicken vocalizations and detects stress. The report says 30% of the flock is stressed. Your first action?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "التحقق من الظروف البيئية: الحرارة، التهوية، الكثافة، قبل أي تدخّل",
+            "en": "Verify environmental conditions: temperature, ventilation, density, before intervention"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مراجعة النموذج نفسه — هل يصنّف أصوات طبيعية كإجهاد خطأ؟",
+            "en": "Review the model itself—is it misclassifying normal sounds as stress?"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تغيير العلف فوراً لأن سوء التغذية سبب شائع",
+            "en": "Change feed immediately because malnutrition is a common cause"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تجاهل التنبيه لأن 30% نسبة عالية غير منطقية",
+            "en": "Ignore the alert because 30% is implausibly high"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه التقنيات ما زالت معظمها في مراحل البحث. الـ False Positives شائعة. المهندس الزراعي/الطبيب الذكي يتعامل مع تقرير AI كـ\"فرضية تحتاج اختباراً\" لا \"حقيقة مؤكدة\".",
+        "en": "These techniques are still largely in research. False positives are common. Smart agronomists/vets treat AI reports as \"hypotheses needing testing\" not \"confirmed facts\"."
+      }
+    },
+    {
+      "id": "agf-self-013",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مفتش سلامة غذاء في وزارة. مصنع يدّعي أن نظام AI لديه يحل محل فحوصات وزارتك. ما موقفك؟",
+        "en": "You're a food-safety inspector at a ministry. A factory claims its AI system replaces your ministry's inspections. Your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أطالب بوصول كامل لسجلات النظام ومراجعة خوارزمياته قبل أي اعتراف",
+            "en": "Demand full access to system logs and algorithm review before any acknowledgment"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أوافق على تقليل الزيارات لكن أحتفظ بالفحوصات العشوائية غير المعلنة",
+            "en": "Accept reduced visits but keep unannounced random inspections"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرحّب بالنظام بشرط أن يُدقّق من جهة خارجية مستقلة سنوياً",
+            "en": "Welcome it provided it's audited annually by an independent third party"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — صلاحية الدولة في سلامة الغذاء لا تُفوَّض لخوارزمية تجارية",
+            "en": "Refuse—state authority in food safety can't be delegated to a commercial algorithm"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "كل الخيارات مدافَع عنها. الاتجاه العالمي هو \"الرقابة القائمة على المخاطر\" (Risk-Based Supervision): المصانع التي تُثبت نضج نظمها تحصل على فحوصات أقل، لكن عشوائية غير متوقّعة.",
+        "en": "All stances are defensible. The global trend is Risk-Based Supervision: factories proving system maturity get fewer inspections but unpredictable random ones."
+      }
+    },
+    {
+      "id": "agf-self-014",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "knowledge",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "شركة عالمية تدّعي أن نظام AI لديها اكتشف مرة احتيالاً غذائياً وقت حدوثه. كمستهلك واعٍ، كيف تقيّم هذا الادعاء؟",
+        "en": "A global company claims its AI once detected food fraud as it happened. As an informed consumer, how do you assess this claim?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أطلب تفاصيل: الحادثة، التاريخ، الإجراءات المتخذة، وتقارير مستقلة",
+            "en": "I ask for details: incident, date, actions taken, and independent reports"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقارن ادعاءاتها بسجل فضائح سابقة في الشركة أو القطاع",
+            "en": "I compare its claims with past scandals in the company or sector"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أصدّقها لأن استخدام AI في هذا المجال منطقي",
+            "en": "I believe it because using AI in this field makes sense"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفضها لأن الشركات تبالغ دائماً في دعايا سلامة الغذاء",
+            "en": "I reject it because companies always exaggerate food-safety marketing"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "الشك المُنظّم (organized skepticism) هو أساس الثقافة العلمية. الشركات تستخدم قصص النجاح في التسويق، لكن الفشل نادراً ما يُعلن. البحث عن الدليل من مصادر متعددة عادة صحية.",
+        "en": "Organized skepticism is foundational to scientific culture. Companies use success stories in marketing, but failures are rarely announced. Seeking evidence from multiple sources is a healthy habit."
+      }
+    },
+    {
+      "id": "agf-self-015",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "specialty",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول في وزارة زراعة خليجية. ميزانيتك محدودة بين: (أ) دعم مزارع عمودية ضخمة مثل Bustanica، أو (ب) دعم آلاف المزارع الصغيرة بتقنيات AI بسيطة. ما اختيارك؟",
+        "en": "You're a Gulf ministry official. Budget limited between: (a) supporting mega vertical farms like Bustanica, or (b) supporting thousands of small farms with simple AI tech. Your choice?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "(ب) — التوزيع الواسع أكثر مرونة ويبني مجتمعاً زراعياً متنوعاً",
+            "en": "(b)—wider distribution is more resilient and builds diverse farming community"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مزيج من الاثنين بنسبة 60% للصغير و40% للكبير",
+            "en": "Mix: 60% for small, 40% for large"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "(أ) — المشاريع الكبرى تعطي نتائج أسرع وأكثر وضوحاً",
+            "en": "(a)—large projects give faster and more visible results"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "كل الميزانية على (أ) — الدول الخليجية تحتاج لنماذج مبهرة للعالم",
+            "en": "All budget on (a)—Gulf countries need spectacular models for the world"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "النقاش حقيقي في سياسات الأمن الغذائي الخليجية. كلا المقاربتين لهما حجج قوية: المشاريع الكبرى ترسل رسالة استراتيجية، والتوزيع الواسع يبني قدرات محلية. المزيج قد يكون الأفضل.",
+        "en": "This debate is real in Gulf food-security policy. Both approaches have strong cases: mega projects send a strategic signal, wide distribution builds local capacity. A mix may be best."
+      }
+    },
+    {
+      "id": "agf-self-016",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "تدرس الانتقال من مزرعتك التقليدية في السعودية إلى نموذج دفيئة ذكية بتكلفة تقارب 5 ملايين ريال. ما منهجك؟",
+        "en": "You're considering shifting from traditional farming in Saudi Arabia to a smart greenhouse model costing ~5 million riyals. Your approach?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أزور Bustanica وPure Harvest لأرى المشاريع الناجحة بعيني قبل الاستثمار",
+            "en": "I visit Bustanica and Pure Harvest to see successful projects firsthand before investing"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أستفسر عن دعم حكومي (صندوق التنمية الزراعية) لتغطية جزء من التكلفة",
+            "en": "I inquire about government support (ADF) to cover part of the cost"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أبدأ بدفيئة صغيرة تجريبية لموسم واحد قبل التوسّع",
+            "en": "Start with a small trial greenhouse for one season before scaling"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أؤجل القرار لحين نزول الأسعار خلال 3-5 سنوات",
+            "en": "Delay until prices drop in 3-5 years"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "الخيارات أ، ب، ج كلها جيدة. صندوق التنمية الزراعية السعودي يدعم مشاريع التقنية الزراعية، ومشاريع Vision 2030 تولي أولوية للأمن الغذائي. التجربة الصغيرة أولاً هي أفضل ممارسة عالمياً.",
+        "en": "Options a, b, c are all good. Saudi ADF funds agtech projects, and Vision 2030 prioritizes food security. Small pilots first are global best practice."
+      }
+    },
+    {
+      "id": "agf-self-017",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "تعرض عليك شركة AI زراعية عقداً حصرياً 10 سنوات بأسعار منخفضة مقابل شرط استخدام خدماتها فقط. ما تحليلك؟",
+        "en": "An agricultural AI company offers a 10-year exclusive contract at low prices, on condition you use only their services. Your analysis?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أطلب تعديلات: تخفيف الحصرية، شرط خروج، ملكية بياناتي تبقى لي",
+            "en": "I request changes: soften exclusivity, exit clause, my data stays mine"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أرفض — 10 سنوات زمن طويل والتقنية تتطور بسرعة",
+            "en": "I refuse—10 years is long and tech evolves fast"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أوافق — التوفير المالي كبير ويمكن إعادة التفاوض لاحقاً",
+            "en": "I agree—financial savings are large and can be renegotiated later"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أوقّع فقط إذا كان لدى الشركة سجل حافل ومستقبل مضمون",
+            "en": "I sign only if the company has a stellar track record and secured future"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "10 سنوات تعادل ثلاثة أجيال تقنية في عصر AI. العقود الحصرية الطويلة تاريخياً كانت الأسوأ للمزارع — لأن الشركة تصبح هي من يحدد الأسعار مستقبلاً دون منافسة.",
+        "en": "10 years equals three tech generations in the AI era. Long exclusive contracts historically hurt farmers most—the company becomes future price-setter without competition."
+      }
+    },
+    {
+      "id": "agf-self-018",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "practice",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت ناشط في جمعية مزارعين. تريد حماية الأعضاء من حبس البيانات. ما الخطوة الأولى الأكثر فاعلية؟",
+        "en": "You're an activist in a farmers' association, wanting to protect members from data lock-in. What's the most effective first step?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تثقيف المزارعين حول حقوقهم في بياناتهم قبل أي توقيع",
+            "en": "Educate farmers about their data rights before any signing"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "المطالبة بتشريع يلزم الشركات بتمكين تصدير البيانات بصيغ مفتوحة",
+            "en": "Advocate legislation forcing companies to enable data export in open formats"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تطوير منصة بديلة مفتوحة المصدر مملوكة لجمعية المزارعين",
+            "en": "Develop an open-source alternative owned by the farmers' association"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "رفع دعوى قضائية ضد شركة كبيرة كحالة اختبار",
+            "en": "File a lawsuit against a major company as a test case"
+          },
+          "flexibility_score": 3
+        }
+      ],
+      "hint_after": {
+        "ar": "الخيارات أ و ب الأكثر واقعية. التثقيف يبني وعياً جماعياً، والتشريع يغيّر قواعد اللعبة. كلاهما حدث في قطاعات أخرى مثل الاتصالات (رقم الهاتف المحمول) حيث صار الانتقال بين الشركات حقاً محمياً.",
+        "en": "Options a and b are most realistic. Education builds collective awareness, legislation changes the rules. Both happened in other sectors like telecom (mobile number portability) where switching between carriers became a protected right."
+      }
+    },
+    {
+      "id": "agf-self-019",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "بعد موسم من تجربة AI في مزرعتك، النتائج مختلطة: توفير حقيقي في المياه لكن تكلفة البرنامج أكبر من المتوقع. ما قرارك؟",
+        "en": "After a season trying AI on your farm, results are mixed: real water savings but software costs higher than expected. Your decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أتفاوض مع المزوّد على سعر أفضل مستنداً لبياناتي الفعلية",
+            "en": "I negotiate a better price with the provider based on my actual data"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أستكشف منصات بديلة (مفتوحة المصدر أو أرخص) قبل التخلي",
+            "en": "I explore alternatives (open-source or cheaper) before giving up"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أوقف الاشتراك وأعود للطرق التقليدية — التوفير لا يبرر التكلفة",
+            "en": "I cancel and return to traditional methods—savings don't justify cost"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أستمر سنة أخرى لأن السنة الأولى عادة غير حاسمة",
+            "en": "I continue another year because year one is usually inconclusive"
+          },
+          "flexibility_score": 4
+        }
+      ],
+      "hint_after": {
+        "ar": "أ و ب موقف عقلاني: جمع بيانات ثم التفاوض أو البديل. التخلي بعد موسم واحد قد يكون سابقاً لأوانه، لأن كثيراً من أنظمة AI تحتاج موسمين لتستقر نتائجها.",
+        "en": "A and b are rational: collect data then negotiate or seek alternatives. Giving up after one season may be premature—many AI systems need two seasons for results to stabilize."
+      }
+    },
+    {
+      "id": "agf-self-020",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "specialty",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "مزرعتك ستُورَّث لابنك الذي يدرس هندسة الحاسوب ويحب AI. ما أفضل تحضير له؟",
+        "en": "Your farm will be inherited by your son who studies computer engineering and loves AI. What's the best preparation for him?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أبدأ التدرّج في تقنيات AI الآن ليدخل ميداناً جاهزاً لا ميداناً تقليدياً يغيّره من صفر",
+            "en": "Start gradually adopting AI now so he enters a ready field, not a blank traditional one"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أتركه يصمم رؤيته الخاصة عند التسليم — جيله أدرى بالتقنية",
+            "en": "Let him design his own vision at handover—his generation knows tech better"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أشركه في قرارات التكنولوجيا الآن لبناء جسر بين الجيلين",
+            "en": "Involve him in tech decisions now to bridge the generations"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أحتفظ بالمزرعة تقليدية وأدعه يحوّلها بنفسه لاحقاً",
+            "en": "Keep the farm traditional and let him transform it later"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "أ و ج الأفضل. الجمع بين خبرة الأب الزراعية وتحمّس الابن التقني هو النموذج المثالي. كثير من أنجح المزارع الذكية في العالم بناها \"جيل جسر\" بين التقليد والتقنية.",
+        "en": "Options a and c are best. Combining father's farming experience with son's tech enthusiasm is the ideal model. Many of the world's most successful smart farms were built by a \"bridge generation\" between tradition and tech."
       }
     }
   ]

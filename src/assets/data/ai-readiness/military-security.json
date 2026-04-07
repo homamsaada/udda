@@ -1,8 +1,11 @@
 {
   "section_id": "military-security",
-  "section_name": { "ar": "العلوم العسكرية والأمنية", "en": "Military & Security Science" },
-  "version": "1.0",
-  "last_updated": "2026-04-05",
+  "section_name": {
+    "ar": "العلوم العسكرية والأمنية",
+    "en": "Military & Security Science"
+  },
+  "version": "2.0",
+  "last_updated": "2026-04-07",
   "questions": [
     {
       "id": "mil-mcq-001",
@@ -11,14 +14,48 @@
       "axis": "knowledge",
       "time_seconds": 30,
       "points": 3,
-      "text": { "ar": "أنت ضابط استخبارات. نظام Lavender الإسرائيلي أنتج 37,000 هدف بشري محتمل بالذكاء الاصطناعي. ما نسبة الخطأ التي اعترف بها المسؤولون الاستخباراتيون؟", "en": "You're an intelligence officer. Israel's Lavender system generated 37,000 potential human targets using AI. What error rate did intelligence officials acknowledge?" },
+      "text": {
+        "ar": "أنت ضابط استخبارات. نظام Lavender الإسرائيلي أنتج 37,000 هدف بشري محتمل بالذكاء الاصطناعي. ما نسبة الخطأ التي اعترف بها المسؤولون الاستخباراتيون؟",
+        "en": "You're an intelligence officer. Israel's Lavender system generated 37,000 potential human targets using AI. What error rate did intelligence officials acknowledge?"
+      },
       "options": [
-        { "id": "a", "text": { "ar": "0.1% — دقة شبه مطلقة", "en": "0.1% — near-absolute accuracy" }, "score": 0 },
-        { "id": "b", "text": { "ar": "نحو 10% — أي حوالي 3,700 هدف خاطئ محتمل", "en": "About 10% — meaning approximately 3,700 potentially wrong targets" }, "score": 3 },
-        { "id": "c", "text": { "ar": "50% — نصف الأهداف خاطئة", "en": "50% — half the targets are wrong" }, "score": 0 },
-        { "id": "d", "text": { "ar": "لم يُعلن عن أي نسبة خطأ", "en": "No error rate was disclosed" }, "score": 0 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "0.1% — دقة شبه مطلقة",
+            "en": "0.1% — near-absolute accuracy"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "نحو 10% — أي حوالي 3,700 هدف خاطئ محتمل",
+            "en": "About 10% — meaning approximately 3,700 potentially wrong targets"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "50% — نصف الأهداف خاطئة",
+            "en": "50% — half the targets are wrong"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم يُعلن عن أي نسبة خطأ",
+            "en": "No error rate was disclosed"
+          },
+          "score": 0
+        }
       ],
-      "hint_after": { "ar": "أدانت هيومن رايتس ووتش هذه الأنظمة في سبتمبر 2024 واصفةً إياها بأنها تستخدم \"بيانات خاطئة وتقريبات غير دقيقة\". نظام Gospel ينتج 100 هدف هيكلي يومياً مقارنة بـ 50 سنوياً يدوياً — تسارع خطير في اتخاذ قرارات الحياة والموت.", "en": "Human Rights Watch condemned these systems in September 2024 describing them as using 'faulty data and imprecise approximations.' Gospel produces 100 structural targets daily vs. 50 annually manually — a dangerous acceleration in life-and-death decisions." }
+      "hint_after": {
+        "ar": "أدانت هيومن رايتس ووتش هذه الأنظمة في سبتمبر 2024 واصفةً إياها بأنها تستخدم \"بيانات خاطئة وتقريبات غير دقيقة\". نظام Gospel ينتج 100 هدف هيكلي يومياً مقارنة بـ 50 سنوياً يدوياً — تسارع خطير في اتخاذ قرارات الحياة والموت.",
+        "en": "Human Rights Watch condemned these systems in September 2024 describing them as using 'faulty data and imprecise approximations.' Gospel produces 100 structural targets daily vs. 50 annually manually — a dangerous acceleration in life-and-death decisions."
+      }
     },
     {
       "id": "mil-mcq-002",
@@ -27,14 +64,48 @@
       "axis": "specialty",
       "time_seconds": 30,
       "points": 3,
-      "text": { "ar": "أنت خبير سياسات دفاعية. ميزانية البنتاغون FY2026 تضمنت أول بند مخصص للذكاء الاصطناعي والأنظمة الذاتية. كم بلغت قيمته؟", "en": "You're a defense policy expert. The Pentagon's FY2026 budget included its first dedicated line item for AI and autonomous systems. What was its value?" },
+      "text": {
+        "ar": "أنت خبير سياسات دفاعية. ميزانية البنتاغون FY2026 تضمنت أول بند مخصص للذكاء الاصطناعي والأنظمة الذاتية. كم بلغت قيمته؟",
+        "en": "You're a defense policy expert. The Pentagon's FY2026 budget included its first dedicated line item for AI and autonomous systems. What was its value?"
+      },
       "options": [
-        { "id": "a", "text": { "ar": "مليار دولار", "en": "$1 billion" }, "score": 0 },
-        { "id": "b", "text": { "ar": "13.4 مليار دولار", "en": "$13.4 billion" }, "score": 3 },
-        { "id": "c", "text": { "ar": "500 مليون دولار", "en": "$500 million" }, "score": 0 },
-        { "id": "d", "text": { "ar": "50 مليار دولار", "en": "$50 billion" }, "score": 0 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "مليار دولار",
+            "en": "$1 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "13.4 مليار دولار",
+            "en": "$13.4 billion"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "500 مليون دولار",
+            "en": "$500 million"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "50 مليار دولار",
+            "en": "$50 billion"
+          },
+          "score": 0
+        }
       ],
-      "hint_after": { "ar": "عقود AI العسكرية الأمريكية قفزت من 355 مليون دولار (2022) إلى 4.6 مليار (2023) — زيادة 1,200%. سوق AI العسكري العالمي يُقدّر بـ 9.31 مليار دولار (2024) متجهاً نحو 19.29 مليار بحلول 2030.", "en": "US military AI contracts jumped from $355M (2022) to $4.6B (2023) — a 1,200% increase. The global military AI market is $9.31B (2024) heading to $19.29B by 2030." }
+      "hint_after": {
+        "ar": "عقود AI العسكرية الأمريكية قفزت من 355 مليون دولار (2022) إلى 4.6 مليار (2023) — زيادة 1,200%. سوق AI العسكري العالمي يُقدّر بـ 9.31 مليار دولار (2024) متجهاً نحو 19.29 مليار بحلول 2030.",
+        "en": "US military AI contracts jumped from $355M (2022) to $4.6B (2023) — a 1,200% increase. The global military AI market is $9.31B (2024) heading to $19.29B by 2030."
+      }
     },
     {
       "id": "mil-mcq-003",
@@ -43,14 +114,48 @@
       "axis": "knowledge",
       "time_seconds": 30,
       "points": 3,
-      "text": { "ar": "أنت باحث في القانون الدولي الإنساني. قرار الجمعية العامة للأمم المتحدة 79/62 حول الأسلحة الذاتية صوّتت لصالحه 166 دولة. كم دولة عارضت؟", "en": "You're a researcher in international humanitarian law. UN General Assembly Resolution 79/62 on autonomous weapons was supported by 166 countries. How many opposed?" },
+      "text": {
+        "ar": "أنت باحث في القانون الدولي الإنساني. قرار الجمعية العامة للأمم المتحدة 79/62 حول الأسلحة الذاتية صوّتت لصالحه 166 دولة. كم دولة عارضت؟",
+        "en": "You're a researcher in international humanitarian law. UN General Assembly Resolution 79/62 on autonomous weapons was supported by 166 countries. How many opposed?"
+      },
       "options": [
-        { "id": "a", "text": { "ar": "30 دولة", "en": "30 countries" }, "score": 0 },
-        { "id": "b", "text": { "ar": "3 دول فقط (بيلاروس، كوريا الشمالية، روسيا)", "en": "Only 3 countries (Belarus, North Korea, Russia)" }, "score": 3 },
-        { "id": "c", "text": { "ar": "15 دولة", "en": "15 countries" }, "score": 0 },
-        { "id": "d", "text": { "ar": "لم يعارض أحد — القرار بالإجماع", "en": "No one opposed — the resolution was unanimous" }, "score": 0 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "30 دولة",
+            "en": "30 countries"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "3 دول فقط (بيلاروس، كوريا الشمالية، روسيا)",
+            "en": "Only 3 countries (Belarus, North Korea, Russia)"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "15 دولة",
+            "en": "15 countries"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم يعارض أحد — القرار بالإجماع",
+            "en": "No one opposed — the resolution was unanimous"
+          },
+          "score": 0
+        }
       ],
-      "hint_after": { "ar": "15 دولة امتنعت بينها الصين والهند وإيران وإسرائيل والإمارات. الأمين العام وصف هذه الأسلحة بـ\"مرفوضة سياسياً وبغيضة أخلاقياً\". البابا فرنسيس في G7 2024 طالب بحظرها: \"لا ينبغي لآلة أن تختار قتل إنسان\".", "en": "15 countries abstained including China, India, Iran, Israel, and UAE. The Secretary-General called these weapons 'politically unacceptable and morally repugnant.' Pope Francis at G7 2024 demanded a ban: 'No machine should choose to kill a human.'" }
+      "hint_after": {
+        "ar": "15 دولة امتنعت بينها الصين والهند وإيران وإسرائيل والإمارات. الأمين العام وصف هذه الأسلحة بـ\"مرفوضة سياسياً وبغيضة أخلاقياً\". البابا فرنسيس في G7 2024 طالب بحظرها: \"لا ينبغي لآلة أن تختار قتل إنسان\".",
+        "en": "15 countries abstained including China, India, Iran, Israel, and UAE. The Secretary-General called these weapons 'politically unacceptable and morally repugnant.' Pope Francis at G7 2024 demanded a ban: 'No machine should choose to kill a human.'"
+      }
     },
     {
       "id": "mil-tf-001",
@@ -59,9 +164,15 @@
       "axis": "knowledge",
       "time_seconds": 30,
       "points": 3,
-      "text": { "ar": "في ديسمبر 2024 أُجريت في أوكرانيا أول عملية عسكرية غير مأهولة بالكامل بتنسيق بين طائرات مسيّرة ومركبات أرضية لاسلكية.", "en": "In December 2024, the first fully unmanned military operation was conducted in Ukraine with coordination between drones and unmanned ground vehicles." },
+      "text": {
+        "ar": "في ديسمبر 2024 أُجريت في أوكرانيا أول عملية عسكرية غير مأهولة بالكامل بتنسيق بين طائرات مسيّرة ومركبات أرضية لاسلكية.",
+        "en": "In December 2024, the first fully unmanned military operation was conducted in Ukraine with coordination between drones and unmanned ground vehicles."
+      },
       "correct_answer": true,
-      "hint_after": { "ar": "أوكرانيا أنتجت 2 مليون طائرة مسيّرة في 2024. الطائرات المسيّرة تسببت في 70-80% من الإصابات في ساحة المعركة. مبادرة Replicator الأمريكية تهدف لنشر \"آلاف\" الأنظمة الذاتية.", "en": "Ukraine produced 2 million drones in 2024. Drones caused 70-80% of battlefield casualties. The US Replicator initiative aims to deploy 'thousands' of autonomous systems." }
+      "hint_after": {
+        "ar": "أوكرانيا أنتجت 2 مليون طائرة مسيّرة في 2024. الطائرات المسيّرة تسببت في 70-80% من الإصابات في ساحة المعركة. مبادرة Replicator الأمريكية تهدف لنشر \"آلاف\" الأنظمة الذاتية.",
+        "en": "Ukraine produced 2 million drones in 2024. Drones caused 70-80% of battlefield casualties. The US Replicator initiative aims to deploy 'thousands' of autonomous systems."
+      }
     },
     {
       "id": "mil-tf-002",
@@ -70,9 +181,15 @@
       "axis": "specialty",
       "time_seconds": 30,
       "points": 3,
-      "text": { "ar": "Project Maven (مشروع مافن) يستخدم نماذج Claude من Anthropic وChatGPT من OpenAI وLlama من Meta ضمن شبكة استخبارات تدمج 179 مصدر بيانات.", "en": "Project Maven uses Claude models from Anthropic, ChatGPT from OpenAI, and Llama from Meta within an intelligence network integrating 179 data sources." },
+      "text": {
+        "ar": "Project Maven (مشروع مافن) يستخدم نماذج Claude من Anthropic وChatGPT من OpenAI وLlama من Meta ضمن شبكة استخبارات تدمج 179 مصدر بيانات.",
+        "en": "Project Maven uses Claude models from Anthropic, ChatGPT from OpenAI, and Llama from Meta within an intelligence network integrating 179 data sources."
+      },
       "correct_answer": true,
-      "hint_after": { "ar": "عقد Palantir الرئيسي بلغ 1.3 مليار دولار حتى 2029. المشروع يخدم عشرات الآلاف من المستخدمين عبر 5 قيادات مقاتلة. الناتو تبنّاه في مارس 2025، والمملكة المتحدة بعقد 750 مليون جنيه.", "en": "Palantir's main contract reached $1.3B through 2029. The project serves tens of thousands of users across 5 combatant commands. NATO adopted it in March 2025, UK with a £750M contract." }
+      "hint_after": {
+        "ar": "عقد Palantir الرئيسي بلغ 1.3 مليار دولار حتى 2029. المشروع يخدم عشرات الآلاف من المستخدمين عبر 5 قيادات مقاتلة. الناتو تبنّاه في مارس 2025، والمملكة المتحدة بعقد 750 مليون جنيه.",
+        "en": "Palantir's main contract reached $1.3B through 2029. The project serves tens of thousands of users across 5 combatant commands. NATO adopted it in March 2025, UK with a £750M contract."
+      }
     },
     {
       "id": "mil-fill-001",
@@ -81,12 +198,66 @@
       "axis": "knowledge",
       "time_seconds": 25,
       "points": 3,
-      "text": { "ar": "مجموعة {{blank_1}} الإماراتية تضم 12,000 موظف وحققت عقود تصدير بقيمة 2.3 مليار دولار في 2024، وتحتل المرتبة {{blank_2}} عالمياً في صناعة الأسلحة.", "en": "The UAE's {{blank_1}} group employs 12,000 people, achieved $2.3B in export contracts in 2024, and ranks {{blank_2}} globally in arms manufacturing." },
+      "text": {
+        "ar": "مجموعة {{blank_1}} الإماراتية تضم 12,000 موظف وحققت عقود تصدير بقيمة 2.3 مليار دولار في 2024، وتحتل المرتبة {{blank_2}} عالمياً في صناعة الأسلحة.",
+        "en": "The UAE's {{blank_1}} group employs 12,000 people, achieved $2.3B in export contracts in 2024, and ranks {{blank_2}} globally in arms manufacturing."
+      },
       "blanks": [
-        { "id": "blank_1", "correct": { "ar": "EDGE", "en": "EDGE" }, "options": [{ "ar": "EDGE", "en": "EDGE" }, { "ar": "SAMI", "en": "SAMI" }, { "ar": "Baykar", "en": "Baykar" }, { "ar": "Anduril", "en": "Anduril" }] },
-        { "id": "blank_2", "correct": { "ar": "22", "en": "22nd" }, "options": [{ "ar": "22", "en": "22nd" }, { "ar": "5", "en": "5th" }, { "ar": "50", "en": "50th" }, { "ar": "10", "en": "10th" }] }
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "EDGE",
+            "en": "EDGE"
+          },
+          "options": [
+            {
+              "ar": "EDGE",
+              "en": "EDGE"
+            },
+            {
+              "ar": "SAMI",
+              "en": "SAMI"
+            },
+            {
+              "ar": "Baykar",
+              "en": "Baykar"
+            },
+            {
+              "ar": "Anduril",
+              "en": "Anduril"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "22",
+            "en": "22nd"
+          },
+          "options": [
+            {
+              "ar": "22",
+              "en": "22nd"
+            },
+            {
+              "ar": "5",
+              "en": "5th"
+            },
+            {
+              "ar": "50",
+              "en": "50th"
+            },
+            {
+              "ar": "10",
+              "en": "10th"
+            }
+          ]
+        }
       ],
-      "hint_after": { "ar": "EDGE تأسست في 2019 واستحوذت على Milrem Robotics الإستونية. فروعها تشمل ADASI للأنظمة الذاتية وHALCON للذخائر الموجهة. الإنفاق العسكري العالمي بلغ 2.72 تريليون دولار في 2024.", "en": "EDGE was founded in 2019 and acquired Estonia's Milrem Robotics. Its divisions include ADASI for autonomous systems and HALCON for guided munitions. Global military spending reached $2.72 trillion in 2024." }
+      "hint_after": {
+        "ar": "EDGE تأسست في 2019 واستحوذت على Milrem Robotics الإستونية. فروعها تشمل ADASI للأنظمة الذاتية وHALCON للذخائر الموجهة. الإنفاق العسكري العالمي بلغ 2.72 تريليون دولار في 2024.",
+        "en": "EDGE was founded in 2019 and acquired Estonia's Milrem Robotics. Its divisions include ADASI for autonomous systems and HALCON for guided munitions. Global military spending reached $2.72 trillion in 2024."
+      }
     },
     {
       "id": "mil-match-001",
@@ -95,21 +266,92 @@
       "axis": "specialty",
       "time_seconds": 45,
       "points": 3,
-      "text": { "ar": "وصّل كل نظام عسكري بالذكاء الاصطناعي بوظيفته:", "en": "Match each military AI system with its function:" },
+      "text": {
+        "ar": "وصّل كل نظام عسكري بالذكاء الاصطناعي بوظيفته:",
+        "en": "Match each military AI system with its function:"
+      },
       "left": [
-        { "id": "L1", "text": { "ar": "Lavender", "en": "Lavender" } },
-        { "id": "L2", "text": { "ar": "Gospel", "en": "Gospel" } },
-        { "id": "L3", "text": { "ar": "Project Maven", "en": "Project Maven" } },
-        { "id": "L4", "text": { "ar": "Replicator", "en": "Replicator" } }
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Lavender",
+            "en": "Lavender"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Gospel",
+            "en": "Gospel"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Project Maven",
+            "en": "Project Maven"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Replicator",
+            "en": "Replicator"
+          }
+        }
       ],
       "right": [
-        { "id": "R1", "text": { "ar": "منح أفراد درجات رقمية لاحتمال انتمائهم لمجموعات مسلحة", "en": "Assigning individuals numerical scores for likelihood of belonging to armed groups" } },
-        { "id": "R2", "text": { "ar": "إنتاج قوائم أهداف هيكلية (مبانٍ) للقصف تلقائياً", "en": "Automatically generating structural target lists (buildings) for bombing" } },
-        { "id": "R3", "text": { "ar": "شبكة استخبارات تدمج 179 مصدر بيانات متعدد الأنظمة", "en": "Intelligence network integrating 179 data sources across multiple systems" } },
-        { "id": "R4", "text": { "ar": "نشر آلاف الأنظمة الذاتية المصغرة بسرعة", "en": "Rapidly deploying thousands of small autonomous systems" } }
+        {
+          "id": "R1",
+          "text": {
+            "ar": "منح أفراد درجات رقمية لاحتمال انتمائهم لمجموعات مسلحة",
+            "en": "Assigning individuals numerical scores for likelihood of belonging to armed groups"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "إنتاج قوائم أهداف هيكلية (مبانٍ) للقصف تلقائياً",
+            "en": "Automatically generating structural target lists (buildings) for bombing"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "شبكة استخبارات تدمج 179 مصدر بيانات متعدد الأنظمة",
+            "en": "Intelligence network integrating 179 data sources across multiple systems"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "نشر آلاف الأنظمة الذاتية المصغرة بسرعة",
+            "en": "Rapidly deploying thousands of small autonomous systems"
+          }
+        }
       ],
-      "correct_pairs": [{ "left": "L1", "right": "R1" }, { "left": "L2", "right": "R2" }, { "left": "L3", "right": "R3" }, { "left": "L4", "right": "R4" }],
-      "hint_after": { "ar": "Lavender وGospel كُشف عنهما بتحقيقات صحفية. Maven تحوّل من مشروع تحليل صور (2017) إلى شبكة استخبارات ضخمة بعقد 1.3 مليار دولار. Replicator يستهدف التوازن مع الأعداد الصينية الهائلة.", "en": "Lavender and Gospel were revealed by investigative journalism. Maven evolved from an image analysis project (2017) to a massive intelligence network with a $1.3B contract. Replicator targets balancing against China's massive numbers." }
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "Lavender وGospel كُشف عنهما بتحقيقات صحفية. Maven تحوّل من مشروع تحليل صور (2017) إلى شبكة استخبارات ضخمة بعقد 1.3 مليار دولار. Replicator يستهدف التوازن مع الأعداد الصينية الهائلة.",
+        "en": "Lavender and Gospel were revealed by investigative journalism. Maven evolved from an image analysis project (2017) to a massive intelligence network with a $1.3B contract. Replicator targets balancing against China's massive numbers."
+      }
     },
     {
       "id": "mil-sort-001",
@@ -118,15 +360,50 @@
       "axis": "practice",
       "time_seconds": 45,
       "points": 4,
-      "text": { "ar": "رتّب مستويات الاستقلالية في الأنظمة العسكرية من الأقل للأكثر استقلالية:", "en": "Order the levels of autonomy in military systems from least to most autonomous:" },
+      "text": {
+        "ar": "رتّب مستويات الاستقلالية في الأنظمة العسكرية من الأقل للأكثر استقلالية:",
+        "en": "Order the levels of autonomy in military systems from least to most autonomous:"
+      },
       "items": [
-        { "id": "S1", "text": { "ar": "طائرة مسيّرة يتحكم بها مشغّل بشري عن بُعد في كل قرار", "en": "Drone fully controlled by a remote human operator for every decision" } },
-        { "id": "S2", "text": { "ar": "نظام يحدد الأهداف ويقترحها لكن الإنسان يوافق قبل الإطلاق", "en": "System identifies and suggests targets but human approves before firing" } },
-        { "id": "S3", "text": { "ar": "نظام يُطلق تلقائياً لكن الإنسان يستطيع إيقافه خلال فترة محددة", "en": "System fires automatically but human can stop it within a set timeframe" } },
-        { "id": "S4", "text": { "ar": "سرب طائرات مسيّرة يتخذ قرارات الهجوم بشكل مستقل بالكامل", "en": "Drone swarm making attack decisions fully autonomously" } }
+        {
+          "id": "S1",
+          "text": {
+            "ar": "طائرة مسيّرة يتحكم بها مشغّل بشري عن بُعد في كل قرار",
+            "en": "Drone fully controlled by a remote human operator for every decision"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "نظام يحدد الأهداف ويقترحها لكن الإنسان يوافق قبل الإطلاق",
+            "en": "System identifies and suggests targets but human approves before firing"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "نظام يُطلق تلقائياً لكن الإنسان يستطيع إيقافه خلال فترة محددة",
+            "en": "System fires automatically but human can stop it within a set timeframe"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "سرب طائرات مسيّرة يتخذ قرارات الهجوم بشكل مستقل بالكامل",
+            "en": "Drone swarm making attack decisions fully autonomously"
+          }
+        }
       ],
-      "correct_order": ["S1", "S2", "S3", "S4"],
-      "hint_after": { "ar": "معظم النقاش الأخلاقي يدور حول الانتقال من S2 إلى S3: هل يكفي أن يستطيع الإنسان الإيقاف أم يجب أن يوافق مسبقاً؟ 120+ دولة تؤيد معاهدة تنظيمية. حملة Stop Killer Robots تقود الجهود منذ 2013.", "en": "Most ethical debate centers on the S2→S3 transition: is it enough that a human can stop it, or must they approve in advance? 120+ countries support a regulatory treaty. Stop Killer Robots campaign has led efforts since 2013." }
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "معظم النقاش الأخلاقي يدور حول الانتقال من S2 إلى S3: هل يكفي أن يستطيع الإنسان الإيقاف أم يجب أن يوافق مسبقاً؟ 120+ دولة تؤيد معاهدة تنظيمية. حملة Stop Killer Robots تقود الجهود منذ 2013.",
+        "en": "Most ethical debate centers on the S2→S3 transition: is it enough that a human can stop it, or must they approve in advance? 120+ countries support a regulatory treaty. Stop Killer Robots campaign has led efforts since 2013."
+      }
     },
     {
       "id": "mil-self-001",
@@ -135,14 +412,48 @@
       "axis": "flexibility",
       "time_seconds": 0,
       "points": 0,
-      "text": { "ar": "أنت ضابط في قوات مسلحة. القيادة تدرس استخدام AI في اتخاذ قرارات الاستهداف مع إبقاء الموافقة البشرية. ما موقفك؟", "en": "You're an officer in the armed forces. Command is studying using AI in targeting decisions while keeping human approval. What's your stance?" },
+      "text": {
+        "ar": "أنت ضابط في قوات مسلحة. القيادة تدرس استخدام AI في اتخاذ قرارات الاستهداف مع إبقاء الموافقة البشرية. ما موقفك؟",
+        "en": "You're an officer in the armed forces. Command is studying using AI in targeting decisions while keeping human approval. What's your stance?"
+      },
       "options": [
-        { "id": "a", "text": { "ar": "مفيد إذا ظل الإنسان هو من يتخذ القرار النهائي — AI يُسرّع جمع المعلومات لكن لا يقتل", "en": "Useful if the human retains final decision — AI speeds intelligence gathering but doesn't kill" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "مقبول بضوابط صارمة: تدقيق مستقل للخوارزمية ونسب خطأ معلنة وآلية مساءلة واضحة", "en": "Acceptable with strict safeguards: independent algorithm auditing, published error rates, and clear accountability mechanism" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "خطير — نسبة خطأ 10% في 37,000 هدف تعني آلاف الأبرياء المحتملين", "en": "Dangerous — a 10% error rate on 37,000 targets means thousands of potential innocents" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "قرارات الحياة والموت يجب أن تبقى بشرية بالكامل — لا مكان للخوارزميات", "en": "Life-and-death decisions must remain fully human — there's no place for algorithms" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "مفيد إذا ظل الإنسان هو من يتخذ القرار النهائي — AI يُسرّع جمع المعلومات لكن لا يقتل",
+            "en": "Useful if the human retains final decision — AI speeds intelligence gathering but doesn't kill"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقبول بضوابط صارمة: تدقيق مستقل للخوارزمية ونسب خطأ معلنة وآلية مساءلة واضحة",
+            "en": "Acceptable with strict safeguards: independent algorithm auditing, published error rates, and clear accountability mechanism"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "خطير — نسبة خطأ 10% في 37,000 هدف تعني آلاف الأبرياء المحتملين",
+            "en": "Dangerous — a 10% error rate on 37,000 targets means thousands of potential innocents"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "قرارات الحياة والموت يجب أن تبقى بشرية بالكامل — لا مكان للخوارزميات",
+            "en": "Life-and-death decisions must remain fully human — there's no place for algorithms"
+          },
+          "flexibility_score": 1
+        }
       ],
-      "hint_after": { "ar": "لا توجد إجابة \"صحيحة\" أخلاقياً هنا — الجدل مستمر عالمياً. لكن الواقع: AI يُستخدم فعلاً في ساحات المعركة. السؤال لم يعد \"هل\" بل \"كيف\" و\"بأي ضوابط\".", "en": "There's no ethically 'correct' answer here — the debate continues globally. But the reality: AI is already being used on battlefields. The question is no longer 'whether' but 'how' and 'with what safeguards.'" }
+      "hint_after": {
+        "ar": "لا توجد إجابة \"صحيحة\" أخلاقياً هنا — الجدل مستمر عالمياً. لكن الواقع: AI يُستخدم فعلاً في ساحات المعركة. السؤال لم يعد \"هل\" بل \"كيف\" و\"بأي ضوابط\".",
+        "en": "There's no ethically 'correct' answer here — the debate continues globally. But the reality: AI is already being used on battlefields. The question is no longer 'whether' but 'how' and 'with what safeguards.'"
+      }
     },
     {
       "id": "mil-self-002",
@@ -151,14 +462,4530 @@
       "axis": "flexibility",
       "time_seconds": 0,
       "points": 0,
-      "text": { "ar": "دولتك تخطط لشراء طائرات مسيّرة ذاتية القرار من شركة أجنبية. كمستشار دفاعي، ما توصيتك؟", "en": "Your country plans to buy autonomous decision-making drones from a foreign company. As a defense advisor, what's your recommendation?" },
+      "text": {
+        "ar": "دولتك تخطط لشراء طائرات مسيّرة ذاتية القرار من شركة أجنبية. كمستشار دفاعي، ما توصيتك؟",
+        "en": "Your country plans to buy autonomous decision-making drones from a foreign company. As a defense advisor, what's your recommendation?"
+      },
       "options": [
-        { "id": "a", "text": { "ar": "أوصي بالشراء مع بناء قدرات محلية موازية وتطوير إطار قانوني وأخلاقي وطني", "en": "I recommend purchasing while building parallel local capabilities and developing a national legal and ethical framework" }, "flexibility_score": 5 },
-        { "id": "b", "text": { "ar": "أفضّل تطوير قدرات محلية أولاً لتجنب الاعتماد على مصدر أجنبي في تقنية حساسة", "en": "I prefer developing local capabilities first to avoid dependency on a foreign source for sensitive technology" }, "flexibility_score": 4 },
-        { "id": "c", "text": { "ar": "أنتظر حتى تُبرم معاهدة دولية تنظم هذه الأسلحة قبل اتخاذ أي قرار", "en": "I wait until an international treaty regulating these weapons is concluded before making any decision" }, "flexibility_score": 2 },
-        { "id": "d", "text": { "ar": "أرفض تماماً — الأسلحة الذاتية غير أخلاقية ويجب حظرها لا شراؤها", "en": "I completely refuse — autonomous weapons are unethical and should be banned, not purchased" }, "flexibility_score": 1 }
+        {
+          "id": "a",
+          "text": {
+            "ar": "أوصي بالشراء مع بناء قدرات محلية موازية وتطوير إطار قانوني وأخلاقي وطني",
+            "en": "I recommend purchasing while building parallel local capabilities and developing a national legal and ethical framework"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أفضّل تطوير قدرات محلية أولاً لتجنب الاعتماد على مصدر أجنبي في تقنية حساسة",
+            "en": "I prefer developing local capabilities first to avoid dependency on a foreign source for sensitive technology"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أنتظر حتى تُبرم معاهدة دولية تنظم هذه الأسلحة قبل اتخاذ أي قرار",
+            "en": "I wait until an international treaty regulating these weapons is concluded before making any decision"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض تماماً — الأسلحة الذاتية غير أخلاقية ويجب حظرها لا شراؤها",
+            "en": "I completely refuse — autonomous weapons are unethical and should be banned, not purchased"
+          },
+          "flexibility_score": 1
+        }
       ],
-      "hint_after": { "ar": "السعودية تنفق 78 مليار دولار سنوياً على الدفاع. EDGE الإماراتية استحوذت على شركات أوروبية لبناء قدرات محلية. الاعتماد الكلي على مورد أجنبي في تكنولوجيا عسكرية حساسة مخاطرة استراتيجية.", "en": "Saudi Arabia spends $78B annually on defense. UAE's EDGE acquired European companies to build local capabilities. Full dependency on a foreign supplier for sensitive military technology is a strategic risk." }
+      "hint_after": {
+        "ar": "السعودية تنفق 78 مليار دولار سنوياً على الدفاع. EDGE الإماراتية استحوذت على شركات أوروبية لبناء قدرات محلية. الاعتماد الكلي على مورد أجنبي في تكنولوجيا عسكرية حساسة مخاطرة استراتيجية.",
+        "en": "Saudi Arabia spends $78B annually on defense. UAE's EDGE acquired European companies to build local capabilities. Full dependency on a foreign supplier for sensitive military technology is a strategic risk."
+      }
+    },
+    {
+      "id": "mil-mcq-004",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت محلل دفاعي. كم بلغ عدد طائرات Shahed الإيرانية/الروسية التي أطلقتها روسيا على أوكرانيا شهرياً بحلول أغسطس 2025؟",
+        "en": "You're a defense analyst. How many Iranian/Russian Shahed drones did Russia launch at Ukraine per month by August 2025?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نحو 100",
+            "en": "About 100"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "نحو 400",
+            "en": "About 400"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أكثر من 4,000",
+            "en": "More than 4,000"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "نحو 50,000",
+            "en": "About 50,000"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "في يناير 2024 كان المعدل نحو 334 شهرياً، فقفز عشرة أضعاف خلال 19 شهراً. تكلفة الشاهد الواحد ~35,000 دولار فقط مقارنة بملايين الدولارات للصاروخ الباليستي.",
+        "en": "In January 2024 the rate was ~334/month, tenfolding in 19 months. Each Shahed costs only ~$35,000 vs. millions for a ballistic missile."
+      }
+    },
+    {
+      "id": "mil-mcq-005",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ضابط استخبارات تحلل حطام طائرة مسيّرة روسية. وجدت رقائق Nvidia ووحدات رؤية حرارية. ماذا يعني هذا تقنياً؟",
+        "en": "You're an intelligence officer analyzing Russian drone wreckage. You found Nvidia chips and thermal-vision modules. What does this mean technically?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لا شيء — مجرد مكونات تجارية عادية",
+            "en": "Nothing — just ordinary commercial components"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الطائرة قادرة على قفل أهداف ليلاً والمعالجة البصرية على متنها بـ AI",
+            "en": "The drone can lock targets at night with onboard AI visual processing"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تعني أنها أمريكية الصنع",
+            "en": "It means it's American-made"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "رقائق تجميل فقط لا علاقة لها بالوظيفة",
+            "en": "Decorative chips unrelated to function"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا ما اكتشفه الأوكرانيون في 2025 في حطام الشاهد. الرقائق التجارية مزدوجة الاستخدام تتسبب في إشكاليات تصدير ضخمة — كيف تمنع رقائق لعبة حاسوب من الوصول لطائرة قاتلة؟",
+        "en": "This is what Ukrainians found in 2025 in Shahed wreckage. Dual-use commercial chips create major export challenges — how do you stop gaming chips from reaching killer drones?"
+      }
+    },
+    {
+      "id": "mil-mcq-006",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت قائد وحدة مضادة للطائرات المسيّرة. ما الميزة الرئيسية لطائرة Helsing HX-2 Karma التي تجعلها خطيرة ضد الحرب الإلكترونية؟",
+        "en": "You're a counter-drone unit commander. What's the main feature of Helsing's HX-2 Karma drone that makes it dangerous against electronic warfare?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أسرع من الصوت",
+            "en": "Supersonic speed"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "قادرة على البحث عن الأهداف وإعادة تحديدها ومهاجمتها دون إشارة أو اتصال بيانات",
+            "en": "Can search, re-identify, and engage targets without signal or continuous data connection"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "مموّهة بالكامل عن الرادار",
+            "en": "Fully radar-invisible"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تعمل بالطاقة الشمسية لأسابيع",
+            "en": "Solar-powered for weeks"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "شركة Helsing الألمانية أعلنت في ديسمبر 2024 عن تسليم مئات من أصل ~4,000 HX-2 Karma لأوكرانيا. المميز أن الإنسان يمكنه البقاء \"in/on the loop\" للقرارات الحرجة لكن الطائرة تعمل في بيئات التشويش.",
+        "en": "Germany's Helsing announced December 2024 delivery of hundreds out of ~4,000 HX-2 Karma to Ukraine. The human can remain 'in/on the loop' for critical decisions while the drone operates in jammed environments."
+      }
+    },
+    {
+      "id": "mil-mcq-007",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "كم بلغ الإنفاق العسكري العالمي في 2024؟",
+        "en": "What was global military spending in 2024?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "500 مليار دولار",
+            "en": "$500 billion"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "1 تريليون دولار",
+            "en": "$1 trillion"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "2.72 تريليون دولار",
+            "en": "$2.72 trillion"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "10 تريليون دولار",
+            "en": "$10 trillion"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "رقم قياسي منذ نهاية الحرب الباردة بحسب SIPRI. سوق AI العسكري وحده ~9.31 مليار (2024) متجه إلى 19.29 مليار بحلول 2030.",
+        "en": "A record since the Cold War's end per SIPRI. The military AI market alone is ~$9.31B (2024) heading to $19.29B by 2030."
+      }
+    },
+    {
+      "id": "mil-mcq-008",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ضابط عمليات في وزارة الدفاع الأوكرانية. كيف تُستخدم أدوات AI لمعالجة مقاطع الفيديو من الجبهة؟",
+        "en": "You're an operations officer in Ukraine's MoD. How are AI tools used to process frontline video feeds?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لتحرير مقاطع ترويجية للإعلام",
+            "en": "To edit promotional videos for media"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "معالجة عشرات الآلاف من المقاطع شهرياً لتحديد وتحديد موقع وترتيب أولويات الأهداف",
+            "en": "Processing tens of thousands of monthly clips to identify, geolocate, and prioritize targets"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "فقط لتدريب الجنود الجدد",
+            "en": "Only to train new recruits"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لضغط المقاطع وتوفير المساحة",
+            "en": "To compress videos and save storage"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "وزارة الدفاع الأوكرانية تحوّل البيانات الخام من المستشعرات إلى صورة معركة قابلة للتنفيذ في الوقت شبه الحقيقي. المنصات تدمج بيانات من طائرات وأرض ومستشعرات أخرى في وعي موقفي ديناميكي.",
+        "en": "Ukraine's MoD turns raw sensor data into near-real-time actionable battlefield pictures. Platforms fuse drone, ground, and other sensor inputs into dynamic situational awareness."
+      }
+    },
+    {
+      "id": "mil-mcq-009",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مبادرة Replicator الأمريكية وضعت هدفاً بنشر آلاف الأنظمة الذاتية بحلول أغسطس 2025. ماذا حدث فعلياً؟",
+        "en": "The US Replicator initiative targeted deploying thousands of autonomous systems by August 2025. What actually happened?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تحقق الهدف بالكامل في الموعد",
+            "en": "Target fully met on schedule"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تحققت \"مئات\" فقط لا آلاف، وفق تقرير Congressional Research Service",
+            "en": "Only 'hundreds' materialized not thousands, per Congressional Research Service"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أُلغيت المبادرة نهائياً",
+            "en": "The initiative was cancelled entirely"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تضاعفت ثلاث مرات عن الهدف",
+            "en": "It tripled the target"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "المشكلات شملت فشل دمج الأنظمة مع هيكل القيادة، وأسعار مرتفعة منعت الشراء بالكميات المطلوبة. الإشراف انتقل في أغسطس 2025 من DIU إلى DAWG التابعة لـ SOCOM.",
+        "en": "Issues included failed integration with command structures, and high prices preventing bulk procurement. Oversight shifted in August 2025 from DIU to SOCOM's DAWG."
+      }
+    },
+    {
+      "id": "mil-mcq-010",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت قائد بحرية. ما هو Project Overmatch؟",
+        "en": "You're a naval commander. What is Project Overmatch?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "برنامج تدريب جنود المشاة",
+            "en": "Infantry training program"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مشروع البحرية الأمريكية لدمج AI لتمكين \"بحرية تسرب في البحر\" بتأثيرات متزامنة",
+            "en": "US Navy's AI integration project to enable a 'Navy that swarms the sea' with synchronized effects"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "نظام صواريخ فرط صوتية",
+            "en": "Hypersonic missile system"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "اتفاقية دفاع مع اليابان",
+            "en": "A defense agreement with Japan"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "قليل من المعلومات كُشف عن المشروع علناً. يُعتبر نظير البحرية لمشروع Convergence التابع للجيش. NSA لديها ~7,000 محلل يعملون على دمج AI في عملياتها.",
+        "en": "Little has been publicly disclosed. It's the naval equivalent of the Army's Project Convergence. The NSA has ~7,000 analysts integrating AI into its operations."
+      }
+    },
+    {
+      "id": "mil-mcq-011",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت صحفي تحقق في برنامج Lavender. من كشف عنه أولاً؟",
+        "en": "You're a journalist investigating Lavender. Who first exposed it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "صحيفة نيويورك تايمز",
+            "en": "The New York Times"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مجلة +972 والموقع العبري Local Call في أبريل 2024",
+            "en": "+972 Magazine and the Hebrew site Local Call in April 2024"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "BBC في 2023",
+            "en": "BBC in 2023"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "الحكومة الإسرائيلية نفسها",
+            "en": "The Israeli government itself"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "التحقيق استند لشهادات ستة ضباط استخبارات إسرائيليين. الكشف أشعل موجة نقاش عالمية عن استخدام AI في قرارات الاستهداف واحتمال انتهاك القانون الدولي الإنساني.",
+        "en": "The investigation relied on testimony from six Israeli intelligence officers. The disclosure sparked global debate about AI in targeting decisions and potential international humanitarian law violations."
+      }
+    },
+    {
+      "id": "mil-mcq-012",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "توجيه وزارة الدفاع الأمريكية 3000.09 ينظم الاستقلالية في أنظمة الأسلحة. ما المتطلب الأساسي؟",
+        "en": "US DoD Directive 3000.09 regulates autonomy in weapon systems. What's the core requirement?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تحريم كامل لأي نظام ذاتي",
+            "en": "Complete prohibition of any autonomous system"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "السماح بكل الأنظمة الذاتية دون قيود",
+            "en": "Allowing all autonomous systems without restriction"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "ضمان مستويات مناسبة من التمييز البشري على استخدام القوة",
+            "en": "Ensuring appropriate levels of human judgment over use of force"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "إلزام الحلفاء بشراء أنظمة أمريكية فقط",
+            "en": "Requiring allies to buy only US systems"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "التوجيه صدر أصلاً في 2012 وحُدّث في 2023. يتطلب مراجعة عليا قبل تطوير أو نشر أنظمة قد تطبق قوة قاتلة ذاتياً. نقاد يقولون إنه مرن جداً ويسمح بالتحايل.",
+        "en": "The directive was issued in 2012 and updated in 2023. It requires senior review before developing or deploying systems that could apply lethal force autonomously. Critics call it too flexible and easily circumvented."
+      }
+    },
+    {
+      "id": "mil-mcq-013",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول عسكري إماراتي. مجموعة EDGE استحوذت في 2023 على شركة إستونية لتعزيز قدراتها في الروبوتات الأرضية. ما اسم الشركة؟",
+        "en": "You're a UAE defense official. EDGE Group acquired in 2023 an Estonian company to boost its unmanned ground vehicle capabilities. What's the company?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "Baykar",
+            "en": "Baykar"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "Milrem Robotics",
+            "en": "Milrem Robotics"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "Rheinmetall",
+            "en": "Rheinmetall"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "BAE Systems",
+            "en": "BAE Systems"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Milrem هي الرائدة الأوروبية في المركبات الأرضية غير المأهولة مثل THeMIS. EDGE تأسست 2019 وتضم 12,000 موظف مع فروع تشمل ADASI وHALCON، وتحتل المرتبة 22 عالمياً في صناعة الأسلحة.",
+        "en": "Milrem is Europe's leader in UGVs like THeMIS. EDGE was founded in 2019, has 12,000 employees with divisions including ADASI and HALCON, and ranks 22nd globally in arms manufacturing."
+      }
+    },
+    {
+      "id": "mil-mcq-014",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول عن سياسة أسلحة. ما موقف الصين من الأسلحة الذاتية الفتاكة في الأمم المتحدة؟",
+        "en": "You're a weapons policy official. What's China's stance on lethal autonomous weapons at the UN?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تؤيد الحظر الكامل بقوة",
+            "en": "Strongly supports a full ban"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "عارضت قرار 79/62 صراحةً",
+            "en": "Explicitly opposed Resolution 79/62"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "امتنعت عن التصويت على القرار 79/62",
+            "en": "Abstained on Resolution 79/62"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لم تحضر الجلسة",
+            "en": "Did not attend the session"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الصين من بين 15 دولة امتنعت، مع الهند وإيران وإسرائيل والإمارات. فقط 3 دول عارضت (روسيا وبيلاروس وكوريا الشمالية). 166 دولة أيدت القرار وموقفه: AI في قرارات قتل الإنسان مرفوض أخلاقياً.",
+        "en": "China was among 15 abstainers, with India, Iran, Israel, and UAE. Only 3 countries opposed (Russia, Belarus, North Korea). 166 countries supported the resolution's stance that AI in kill decisions is morally unacceptable."
+      }
+    },
+    {
+      "id": "mil-mcq-015",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت قائد فرقة في ساحة معركة بها تشويش GPS كثيف. كيف تعمل الطائرات المسيّرة ذات الذكاء الاصطناعي البصري رغم التشويش؟",
+        "en": "You command a unit in a heavily GPS-jammed battlefield. How do AI-visual drones operate despite jamming?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "يستحيل — تسقط فوراً",
+            "en": "Impossible — they crash immediately"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تعتمد على خوارزميات التعرف على الصور المدربة على بيانات ساحة المعركة للملاحة والاستهداف بصرياً",
+            "en": "Rely on image-recognition algorithms trained on battlefield data for visual navigation and targeting"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تستخدم إشارات الهاتف المحمول",
+            "en": "Use cell phone signals"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تستلم توجيهات من الأقمار الصناعية المضادة للتشويش فقط",
+            "en": "Only receive guidance from anti-jam satellites"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Ukraine وRussia ينشران ملايين المقاطع شهرياً التي تُدرّب خوارزميات التعرف البصري. هذه الخوارزميات موجودة منذ أكثر من عقد لكن البيانات الضخمة من الحرب تعزز دقتها بشكل هائل.",
+        "en": "Ukraine and Russia deploy millions of clips monthly that train visual recognition algorithms. These algorithms have existed for over a decade, but massive war data is hugely boosting their accuracy."
+      }
+    },
+    {
+      "id": "mil-mcq-016",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "كم بلغت عقود الذكاء الاصطناعي العسكرية الأمريكية في 2023 مقارنة بـ 2022؟",
+        "en": "What was the change in US military AI contracts from 2022 to 2023?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "تراجعت 50%",
+            "en": "Dropped 50%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ثبتت تقريباً",
+            "en": "Remained roughly flat"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "قفزت من 355 مليون دولار إلى 4.6 مليار — زيادة ~1,200%",
+            "en": "Jumped from $355M to $4.6B — a ~1,200% increase"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تضاعفت فقط",
+            "en": "Only doubled"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الميزانية الأمريكية FY2026 تضمنت أول بند مخصص للذكاء الاصطناعي والأنظمة الذاتية بقيمة 13.4 مليار دولار. الشركات الناشئة مثل Anduril وShield AI تجتذب رؤوس أموال مغامرة بمئات الملايين.",
+        "en": "The US FY2026 budget included its first dedicated AI and autonomous systems line item worth $13.4B. Startups like Anduril and Shield AI attract hundreds of millions in venture capital."
+      }
+    },
+    {
+      "id": "mil-mcq-017",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت باحث في حوكمة AI. منظمة \"Stop Killer Robots\" متى بدأت حملتها العالمية؟",
+        "en": "You're an AI governance researcher. When did the 'Stop Killer Robots' campaign begin its global effort?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "2005",
+            "en": "2005"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "2013",
+            "en": "2013"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "2018",
+            "en": "2018"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "2023",
+            "en": "2023"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الحملة تضم أكثر من 270 منظمة غير حكومية في أكثر من 70 دولة. تطالب بمعاهدة دولية ملزمة قانونياً تحظر الأسلحة ذاتية التشغيل بالكامل. 120+ دولة تؤيد بدء مفاوضات رسمية.",
+        "en": "The campaign includes 270+ NGOs across 70+ countries. It calls for a legally binding international treaty banning fully autonomous weapons. 120+ countries support starting formal negotiations."
+      }
+    },
+    {
+      "id": "mil-mcq-018",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "منظمة الحلف الأطلسي (NATO) تبنّت نظام Project Maven في مارس 2025. من هي الشركة الرئيسية المشغّلة للعقد؟",
+        "en": "NATO adopted Project Maven in March 2025. Who's the main contractor running it?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "Microsoft",
+            "en": "Microsoft"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "Palantir Technologies",
+            "en": "Palantir Technologies"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "Amazon AWS",
+            "en": "Amazon AWS"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "Northrop Grumman",
+            "en": "Northrop Grumman"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "عقد Palantir الرئيسي بلغ 1.3 مليار دولار حتى 2029. المشروع يخدم عشرات الآلاف من المستخدمين عبر 5 قيادات مقاتلة. المملكة المتحدة وقّعت عقداً منفصلاً بـ 750 مليون جنيه إسترليني.",
+        "en": "Palantir's main contract reached $1.3B through 2029. The project serves tens of thousands of users across 5 combatant commands. The UK signed a separate £750M contract."
+      }
+    },
+    {
+      "id": "mil-mcq-019",
+      "type": "mcq",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "ماذا قال البابا فرنسيس عن الأسلحة الذاتية في قمة G7 2024؟",
+        "en": "What did Pope Francis say about autonomous weapons at the G7 2024 summit?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أيدها بقوة",
+            "en": "Strongly endorsed them"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لم يتحدث عنها",
+            "en": "Did not address them"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "\"لا ينبغي لآلة أن تختار قتل إنسان\" وطالب بحظرها",
+            "en": "'No machine should choose to kill a human' and called for a ban"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "اقترح أن تخضع لسلطة الفاتيكان",
+            "en": "Suggested placing them under Vatican authority"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "كان أول بابا يشارك في قمة G7. الأمين العام للأمم المتحدة وصف هذه الأسلحة بأنها \"مرفوضة سياسياً وبغيضة أخلاقياً\". الجدل الديني والأخلاقي أصبح جزءاً من النقاش التقني.",
+        "en": "He was the first pope to attend a G7 summit. The UN Secretary-General called these weapons 'politically unacceptable and morally repugnant.' Religious and ethical debate is now part of the technical conversation."
+      }
+    },
+    {
+      "id": "mil-mcq-020",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ضابط أمن سيبراني دفاعي. ما أبرز خطر جديد يرافق نشر AI في القيادة والسيطرة العسكرية؟",
+        "en": "You're a defense cyber officer. What's the key new risk accompanying AI deployment in military C2?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "استهلاك وقود أعلى",
+            "en": "Higher fuel consumption"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تسميم البيانات وهجمات Prompt Injection على نماذج القرار",
+            "en": "Data poisoning and Prompt Injection attacks on decision models"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "زيادة الحاجة لضباط كتابة تقارير",
+            "en": "Increased need for report-writing officers"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "مشاكل في تزييت المدافع",
+            "en": "Gun lubrication issues"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "خصم ذكي قد يحقن بيانات مزيفة في مجموعات تدريب AI العسكري ليضلل اتخاذ القرار لاحقاً. مركز RAND حذر من أن \"AI موثوق\" في سياق عسكري يتطلب معايير مختلفة تماماً عن التجارية.",
+        "en": "A smart adversary could inject fake data into military AI training sets to mislead later decisions. RAND warned that 'trustworthy AI' in a military context requires entirely different standards than commercial."
+      }
+    },
+    {
+      "id": "mil-mcq-021",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما الإعلان السياسي الذي أطلقته الولايات المتحدة بشأن الاستخدام المسؤول للذكاء الاصطناعي العسكري؟",
+        "en": "What political declaration did the US launch regarding responsible military AI use?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "معاهدة واشنطن للذكاء الاصطناعي 2020",
+            "en": "Washington AI Treaty 2020"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "الإعلان السياسي للاستخدام المسؤول للذكاء الاصطناعي والاستقلالية عسكرياً (2023)",
+            "en": "Political Declaration on Responsible Military Use of AI and Autonomy (2023)"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "اتفاقية جنيف الرابعة المعدّلة",
+            "en": "Amended Fourth Geneva Convention"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "ميثاق الأمم المتحدة الرقمي",
+            "en": "UN Digital Charter"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الإعلان غير ملزم قانونياً لكنه وقّعت عليه 50+ دولة. الصين وروسيا وإيران والهند وباكستان لم توقّع. يدعو لاختبار الأنظمة وتدريب المستخدمين والحفاظ على التحكم البشري.",
+        "en": "The declaration isn't legally binding but 50+ countries signed. China, Russia, Iran, India, Pakistan did not. It calls for system testing, user training, and maintaining human control."
+      }
+    },
+    {
+      "id": "mil-mcq-022",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ضابط لوجستيات ميداني. كيف تُستخدم AI في دعم العمليات اللوجستية العسكرية؟",
+        "en": "You're a field logistics officer. How is AI used to support military logistics?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "إرسال رسائل تحفيزية للجنود فقط",
+            "en": "Only sending motivational messages to soldiers"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "تحسين مسارات الإمداد، التنبؤ باحتياجات الذخيرة، والصيانة التنبؤية للمركبات",
+            "en": "Optimizing supply routes, forecasting ammo needs, and predictive vehicle maintenance"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "ترتيب الأعياد الرسمية",
+            "en": "Scheduling official holidays"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تصميم شارات الرتب",
+            "en": "Designing rank insignia"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "Security Assistance Group-Ukraine استخدمت AI لتنسيق المساعدات العسكرية من ائتلاف 40 دولة. الصيانة التنبؤية للطائرات وحدها توفر ملايين الدولارات سنوياً وتمنع الأعطال في مهام حساسة.",
+        "en": "The Security Assistance Group-Ukraine used AI to coordinate military aid from a 40-country coalition. Predictive aircraft maintenance alone saves millions yearly and prevents failures in critical missions."
+      }
+    },
+    {
+      "id": "mil-mcq-023",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت محلل تهديدات. ماذا يعني مصطلح \"Cognitive Warfare\" في السياق العسكري الحديث؟",
+        "en": "You're a threat analyst. What does 'Cognitive Warfare' mean in modern military context?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الحرب ضد أجهزة الكمبيوتر فقط",
+            "en": "War against computers only"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "استخدام AI والمعلومات المضللة للتأثير على تصورات وقرارات العدو والسكان",
+            "en": "Using AI and disinformation to influence perceptions and decisions of adversaries and populations"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لعبة شطرنج بين الجنرالات",
+            "en": "A chess game between generals"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "برامج لتدريس الجنود مهارات التفكير",
+            "en": "Programs to teach soldiers thinking skills"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "ناتو يعتبرها \"المجال السادس\" للحرب بعد الأرض والبحر والجو والفضاء والسيبراني. Deepfakes وشبكات البوتات وتحليل المشاعر الجماعية أدوات رئيسية. دراسات RAND توثّق توظيف روسيا لها منذ 2014.",
+        "en": "NATO considers it the 'sixth domain' of warfare after land, sea, air, space, and cyber. Deepfakes, bot networks, and mass sentiment analysis are key tools. RAND studies document Russia's use since 2014."
+      }
+    },
+    {
+      "id": "mil-mcq-024",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت ضابط في مركز قيادة إسرائيلي. وفق التحقيق، ما هي الإحصائية الصادمة بخصوص نظام Gospel مقارنة بالطرق اليدوية؟",
+        "en": "You're an officer at an Israeli command center. According to investigations, what's the shocking Gospel statistic vs. manual methods?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "ينتج 10 أهداف سنوياً فقط",
+            "en": "Produces only 10 targets per year"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "ينتج ~100 هدف هيكلي يومياً مقارنة بـ ~50 سنوياً يدوياً",
+            "en": "Produces ~100 structural targets daily vs. ~50 annually manually"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "ينتج ألف هدف بالثانية",
+            "en": "Produces 1000 targets per second"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "نفس المعدل اليدوي تقريباً",
+            "en": "Roughly the same as manual rate"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا التسارع الكبير يعني أن المراجعة البشرية لكل هدف أصبحت مستحيلة عملياً. هيومن رايتس ووتش أدانت هذه الأنظمة في سبتمبر 2024 لاستخدامها \"بيانات خاطئة وتقريبات غير دقيقة\".",
+        "en": "This massive acceleration makes per-target human review practically impossible. Human Rights Watch condemned these systems in September 2024 for using 'faulty data and imprecise approximations.'"
+      }
+    },
+    {
+      "id": "mil-mcq-025",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مسؤول تدريب في أكاديمية عسكرية. ما أنسب طريقة لدمج AI في مناهج التدريب؟",
+        "en": "You're a training officer at a military academy. What's the best way to integrate AI into curricula?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "استبدال كل المعلمين البشر بأنظمة AI",
+            "en": "Replace all human instructors with AI systems"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "حظر أي ذكر للـ AI في التدريب",
+            "en": "Ban any AI mention in training"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تعليم الجنود فهم قدرات AI وحدوده وأخلاقياته وكيفية التشغيل المشترك",
+            "en": "Teach troops to understand AI capabilities, limits, ethics, and how to operate jointly with it"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "تعليم الجنود برمجة الشبكات العصبية فقط",
+            "en": "Only teach troops to code neural networks"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "الكلية الحربية الأمريكية أضافت مساقات إلزامية عن AI والأخلاقيات. الأكاديمية الملكية السعودية وكلية زايد الإماراتية تدرسان دورات مشابهة. المعرفة النقدية أهم من المهارة التقنية.",
+        "en": "The US War College added mandatory AI ethics courses. Saudi Royal Academy and UAE's Zayed College teach similar courses. Critical understanding matters more than technical skill."
+      }
+    },
+    {
+      "id": "mil-mcq-026",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما هي منصة Brave1 الأوكرانية؟",
+        "en": "What is Ukraine's Brave1 platform?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "منصة إعلامية حكومية",
+            "en": "A government media platform"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "منصة تنسيق لتسريع تطوير الأنظمة غير المأهولة والروبوتات بين الحكومة والقطاع الخاص",
+            "en": "Coordination platform accelerating development of unmanned and robotic systems between government and private sector"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "تطبيق مواعدة للجنود",
+            "en": "A dating app for soldiers"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "حزب سياسي",
+            "en": "A political party"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "أطلقت الحكومة الأوكرانية في 2023 وموّلت أكثر من 450 مشروعاً دفاعياً. مبادرة \"Test in Ukraine\" التي أطلقتها في يوليو 2025 تدعو مصنّعي الأسلحة العالميين لاختبار أنظمتهم في قتال حقيقي.",
+        "en": "Launched by Ukraine's government in 2023, it has funded 450+ defense projects. The 'Test in Ukraine' initiative launched July 2025 invites global arms makers to test systems in real combat."
+      }
+    },
+    {
+      "id": "mil-mcq-027",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في ساحة المعركة الأوكرانية-الروسية، ما نسبة الإصابات التي تُعزى إلى الطائرات المسيّرة تقريباً؟",
+        "en": "In the Ukraine-Russia battlefield, what percentage of casualties are attributed to drones approximately?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقل من 5%",
+            "en": "Less than 5%"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "20%",
+            "en": "20%"
+          },
+          "score": 0
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "70-80%",
+            "en": "70-80%"
+          },
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "100%",
+            "en": "100%"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه قفزة تاريخية — في حروب سابقة، المدفعية كانت المهيمنة. أوكرانيا أنتجت 2 مليون طائرة مسيّرة في 2024. التكلفة المنخفضة مقابل الأثر الكبير يعيد تشكيل عقيدة الحرب البرية تماماً.",
+        "en": "This is a historic shift — in prior wars, artillery dominated. Ukraine produced 2M drones in 2024. Low cost versus high impact is reshaping land warfare doctrine entirely."
+      }
+    },
+    {
+      "id": "mil-mcq-028",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت مستشار للجيش السعودي. السعودية تنفق ~78 مليار دولار سنوياً على الدفاع. ما أولوية AI في استراتيجية رؤية 2030 الدفاعية؟",
+        "en": "You advise the Saudi military. Saudi Arabia spends ~$78B annually on defense. What's the AI priority in Vision 2030 defense strategy?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "استيراد كل شيء جاهز",
+            "en": "Import everything off-the-shelf"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "توطين 50% من الإنفاق الدفاعي عبر شركات محلية مثل SAMI وتطوير قدرات AI وطنية",
+            "en": "Localizing 50% of defense spending via domestic firms like SAMI and building national AI capabilities"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "التخلي عن الطائرات المسيّرة",
+            "en": "Abandoning drones entirely"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "شراء فقط من روسيا",
+            "en": "Buying only from Russia"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هدف التوطين 50% يعني تطوير قدرات محلية بدل الشراء من الخارج. SAMI تأسست 2017 وتعمل على منظومات بأسلوب مشابه لما فعلت EDGE الإماراتية. AI ركيزة للسيطرة على التقنية العسكرية.",
+        "en": "The 50% localization goal means building local capability instead of buying abroad. SAMI was founded in 2017 and works similarly to UAE's EDGE. AI is a pillar for technology sovereignty."
+      }
+    },
+    {
+      "id": "mil-mcq-029",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ما سبب قلق الخبراء من \"سباق التسلح بالذكاء الاصطناعي\" بين الولايات المتحدة والصين؟",
+        "en": "Why do experts worry about the AI arms race between the US and China?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "قد يُنتج سلاحاً نهائياً خلال أسابيع",
+            "en": "It might produce an ultimate weapon within weeks"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "السباق يضغط لتقليص وقت الاختبار والتحقق الأخلاقي لصالح النشر السريع",
+            "en": "The race pressures shortening testing and ethical review in favor of rapid deployment"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الصين تخلّت عن AI تماماً",
+            "en": "China abandoned AI entirely"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "هو مجرد خيال علمي",
+            "en": "It's pure science fiction"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "بول شار في كتاب \"Four Battlegrounds\" يوثّق كيف أن خوف الطرفين من التأخر يخلق حوافز خطيرة لنشر أنظمة غير ناضجة. الصين تستثمر بشراهة في AI عسكري وفق تقارير البنتاغون السنوية.",
+        "en": "Paul Scharre in 'Four Battlegrounds' documents how each side's fear of falling behind creates dangerous incentives to deploy immature systems. China invests heavily in military AI per annual Pentagon reports."
+      }
+    },
+    {
+      "id": "mil-mcq-030",
+      "type": "mcq",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أنت قائد عملية خاصة. لماذا تعتمد القوات الخاصة الأمريكية على الطائرات الصغيرة الموجّهة بـ AI في مهامها؟",
+        "en": "You command a special operation. Why do US special forces rely on AI-piloted small drones?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "لتصوير فيديوهات ترفيهية",
+            "en": "To shoot entertainment videos"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "لتوفير استطلاع مستقل في بيئات معقدة دون تعريض الجنود للخطر",
+            "en": "To provide autonomous reconnaissance in complex environments without risking soldiers"
+          },
+          "score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لنقل البريد",
+            "en": "To deliver mail"
+          },
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لبث الإشارات اللاسلكية فقط",
+            "en": "Only to broadcast radio signals"
+          },
+          "score": 0
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الطائرات قد تدخل مبنى، تحدد وجود مسلحين، وتعود — كل ذلك دون توجيه بشري مستمر. AeroVironment وAnduril وShield AI هي الموردون الرئيسيون. الطائرات الصغيرة أقل من 1 كجم أصبحت معيار صناعي.",
+        "en": "These drones can enter a building, identify armed presence, and return — all without continuous human control. AeroVironment, Anduril, Shield AI are the main suppliers. Sub-1kg drones have become an industry standard."
+      }
+    },
+    {
+      "id": "mil-tf-003",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "وفق تقرير Congressional Research Service، حقق برنامج Replicator الأمريكي هدفه الأصلي بنشر آلاف الأنظمة الذاتية بحلول أغسطس 2025.",
+        "en": "Per Congressional Research Service, the US Replicator program met its original target of deploying thousands of autonomous systems by August 2025."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "تحققت \"مئات\" فقط لا \"آلاف\". الإشراف انتقل من وحدة الابتكار الدفاعي DIU إلى مجموعة الحرب الذاتية الدفاعية DAWG التابعة لـ SOCOM. المشاكل شملت تكلفة مرتفعة وفشل دمج الأنظمة مع القيادة.",
+        "en": "Only 'hundreds' not 'thousands' were fielded. Oversight shifted from DIU to SOCOM's DAWG. Issues included high costs and failed integration with command structures."
+      }
+    },
+    {
+      "id": "mil-tf-004",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أوكرانيا أنتجت أكثر من 2 مليون طائرة مسيّرة في عام 2024 وحده.",
+        "en": "Ukraine produced more than 2 million drones in 2024 alone."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "Brave1 هي منصة التنسيق الحكومية التي موّلت أكثر من 450 مشروعاً دفاعياً. Helsing الألمانية سلمت مئات من أصل ~4,000 طائرة HX-2 Karma. الطائرات المسيّرة تسببت في 70-80% من الإصابات في ساحة المعركة.",
+        "en": "Brave1 is the government coordination platform that funded 450+ defense projects. Germany's Helsing delivered hundreds out of ~4,000 HX-2 Karmas. Drones caused 70-80% of battlefield casualties."
+      }
+    },
+    {
+      "id": "mil-tf-005",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "الصين وروسيا والهند وإسرائيل وقعوا جميعاً على الإعلان السياسي الأمريكي للاستخدام المسؤول للذكاء الاصطناعي العسكري.",
+        "en": "China, Russia, India, and Israel all signed the US Political Declaration on Responsible Military AI Use."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "أكثر من 50 دولة وقّعت، لكن الصين وروسيا وإيران والهند وباكستان لم توقّع. الإعلان أصلاً غير ملزم قانونياً لكنه أحد محاولات إرساء قواعد عالمية طوعية قبل إبرام معاهدة ملزمة.",
+        "en": "50+ countries signed, but China, Russia, Iran, India, and Pakistan did not. The declaration isn't legally binding but represents efforts to establish voluntary global norms before a binding treaty."
+      }
+    },
+    {
+      "id": "mil-tf-006",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "كشف التحقيق الصحفي لـ +972 ومجلة Local Call في أبريل 2024 أن نظام Lavender الإسرائيلي استخدم لتحديد 37,000 هدف بشري محتمل في غزة.",
+        "en": "The April 2024 investigation by +972 and Local Call revealed Israel's Lavender system was used to identify 37,000 potential human targets in Gaza."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "الكشف استند لشهادات ستة ضباط استخبارات. هيومن رايتس ووتش أدانته في سبتمبر 2024 لاستخدام \"بيانات خاطئة وتقريبات غير دقيقة\". نسبة الخطأ المعلنة ~10% تعني ~3,700 هدف خاطئ محتمل.",
+        "en": "The exposé relied on six intelligence officers' testimony. Human Rights Watch condemned it in September 2024 for using 'faulty data and imprecise approximations.' The ~10% error rate means ~3,700 potentially wrong targets."
+      }
+    },
+    {
+      "id": "mil-tf-007",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "طائرة Shahed-136 الإيرانية تكلف حوالي مليون دولار للوحدة مما يجعلها مكافئة للصاروخ الباليستي.",
+        "en": "The Iranian Shahed-136 drone costs about $1 million per unit, making it comparable to a ballistic missile."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "التكلفة ~35,000 دولار فقط مقارنة بملايين للصاروخ. هذه الفجوة السعرية هي ما يتيح لروسيا إطلاق 4,000+ طائرة شهرياً على أوكرانيا بحلول أغسطس 2025. اقتصاد الحرب تغيّر: كميات ضخمة من الأسلحة الرخيصة.",
+        "en": "The cost is ~$35,000 vs. millions for missiles. This price gap enables Russia to launch 4,000+ drones monthly at Ukraine by August 2025. War economics changed: massive quantities of cheap weapons."
+      }
+    },
+    {
+      "id": "mil-tf-008",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "توجيه وزارة الدفاع الأمريكية 3000.09 صدر لأول مرة في 2024 استجابةً لأزمة Lavender.",
+        "en": "US DoD Directive 3000.09 was first issued in 2024 in response to the Lavender controversy."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "صدر أصلاً في 2012 وحُدّث في 2023 — قبل الكشف عن Lavender. يتطلب \"مستويات مناسبة من التمييز البشري على استخدام القوة\". نقاد يصفون الصياغة بأنها مرنة جداً وتسمح بالتحايل.",
+        "en": "It was originally issued in 2012 and updated in 2023 — before Lavender's exposure. It requires 'appropriate levels of human judgment over use of force.' Critics call the wording too flexible and easily circumvented."
+      }
+    },
+    {
+      "id": "mil-tf-009",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "الطائرات المسيّرة الأوكرانية الحديثة تستطيع قفل هدف بصرياً ومتابعته ذاتياً حتى في حال انقطاع اتصال البيانات بسبب التشويش.",
+        "en": "Modern Ukrainian drones can visually lock a target and pursue it autonomously even if the data link is jammed."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذه \"الطائرات القاتلة بـ AI\" تشكّل خطوة حاسمة نحو مستويات أعلى من الاستقلالية في الاشتباكات الفتاكة. IEEE Spectrum وثّق كيف أن البيانات الضخمة من حرب أوكرانيا تدرّب خوارزميات التعرف البصري بشكل لم يسبق له مثيل.",
+        "en": "These 'killer AI drones' represent a critical step toward higher autonomy in lethal engagements. IEEE Spectrum documented how massive Ukraine war data is training visual recognition algorithms unprecedentedly."
+      }
+    },
+    {
+      "id": "mil-tf-010",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مبادرة \"Stop Killer Robots\" بدأت في 2013 وتضم اليوم أكثر من 270 منظمة غير حكومية في أكثر من 70 دولة.",
+        "en": "The 'Stop Killer Robots' campaign began in 2013 and today includes 270+ NGOs in 70+ countries."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "تطالب بمعاهدة دولية ملزمة تحظر الأسلحة ذاتية التشغيل. 120+ دولة تدعم بدء مفاوضات رسمية. الأمين العام للأمم المتحدة وصف هذه الأسلحة بأنها \"مرفوضة سياسياً وبغيضة أخلاقياً\".",
+        "en": "It demands a binding international treaty banning fully autonomous weapons. 120+ countries support starting formal negotiations. The UN SG called them 'politically unacceptable and morally repugnant.'"
+      }
+    },
+    {
+      "id": "mil-tf-011",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "الإنفاق العسكري العالمي في 2024 بلغ 2.72 تريليون دولار وهو الأعلى منذ نهاية الحرب الباردة بحسب SIPRI.",
+        "en": "Global military spending in 2024 reached $2.72 trillion, the highest since the Cold War's end per SIPRI."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "سوق AI العسكري وحده يُقدّر بـ 9.31 مليار (2024) ومتجه إلى 19.29 مليار بحلول 2030. ميزانية البنتاغون FY2026 تضمنت أول بند مخصص للذكاء الاصطناعي بقيمة 13.4 مليار دولار.",
+        "en": "The military AI market alone is ~$9.31B (2024) heading to $19.29B by 2030. The Pentagon's FY2026 budget included its first dedicated AI line item worth $13.4B."
+      }
+    },
+    {
+      "id": "mil-tf-012",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "مجموعة EDGE الإماراتية استحوذت على شركة Milrem Robotics الإستونية المتخصصة في المركبات الأرضية غير المأهولة.",
+        "en": "UAE's EDGE Group acquired Estonia's Milrem Robotics, which specializes in unmanned ground vehicles."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "EDGE تأسست 2019 وتضم 12,000 موظف وتحتل المرتبة 22 عالمياً في صناعة الأسلحة. الاستحواذ في 2023 عزز قدرات الإمارات في الروبوتات الأرضية مثل منصة THeMIS الشهيرة.",
+        "en": "EDGE was founded in 2019, has 12,000 employees, and ranks 22nd globally in arms manufacturing. The 2023 acquisition boosted UAE UGV capabilities including the famous THeMIS platform."
+      }
+    },
+    {
+      "id": "mil-tf-013",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ناتو اعتبرت الحرب المعرفية (Cognitive Warfare) \"المجال السادس\" للحرب بعد الأرض والبحر والجو والفضاء والسيبراني.",
+        "en": "NATO considers Cognitive Warfare the 'sixth domain' of warfare after land, sea, air, space, and cyber."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "AI يُسرّع Deepfakes وشبكات البوتات وتحليل المشاعر الجماعية لتشكيل تصورات السكان والقوات. RAND وثّق توظيف روسيا لها منذ 2014 في أوكرانيا والانتخابات الغربية.",
+        "en": "AI accelerates deepfakes, bot networks, and mass sentiment analysis to shape population and troop perceptions. RAND documented Russia's use since 2014 in Ukraine and Western elections."
+      }
+    },
+    {
+      "id": "mil-tf-014",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "قرار الأمم المتحدة 79/62 حول الأسلحة الذاتية حصل على إجماع كامل دون معارضين أو ممتنعين.",
+        "en": "UN Resolution 79/62 on autonomous weapons was adopted by full consensus with no opponents or abstainers."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "166 دولة أيدت، لكن 3 عارضت (روسيا وبيلاروس وكوريا الشمالية) و15 امتنعت (بينها الصين والهند وإيران وإسرائيل والإمارات). الامتناع كثيراً ما يعكس مصالح دول تطوّر هذه التقنيات بنفسها.",
+        "en": "166 supported, but 3 opposed (Russia, Belarus, North Korea) and 15 abstained (including China, India, Iran, Israel, UAE). Abstention often reflects interests of states developing these technologies themselves."
+      }
+    },
+    {
+      "id": "mil-tf-015",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "ضباط استخبارات إسرائيليون اعترفوا لـ +972 بأنهم قضوا ~20 ثانية فقط في مراجعة كل هدف يقترحه Lavender قبل الموافقة.",
+        "en": "Israeli intelligence officers told +972 they spent only ~20 seconds reviewing each Lavender-suggested target before approving."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "المراجعة الرمزية تحت ضغط الحرب تفرغ \"الإنسان في الحلقة\" من مضمونه. هذا ما يدفع المنتقدين للقول إن \"التحكم البشري الفعّال\" يحتاج معايير أكثر صرامة من مجرد وجود زر موافقة.",
+        "en": "Token review under war pressure drains 'human in the loop' of meaning. This drives critics to argue 'effective human control' needs stricter standards than just an approval button."
+      }
+    },
+    {
+      "id": "mil-tf-016",
+      "type": "true_false",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 1,
+      "text": {
+        "ar": "المعركة الأولى الموثقة التي قُتل فيها إنسان بقرار ذاتي كامل من طائرة مسيّرة كانت وفق تقرير الأمم المتحدة في ليبيا 2020.",
+        "en": "The first documented combat killing by a fully autonomous drone decision was per a UN report in Libya 2020."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "التقرير أشار إلى طائرة Kargu-2 التركية التي طاردت هدفاً وهاجمته دون اتصال بيانات. هذا جعل ليبيا بشكل مشؤوم \"الأولى\" في تاريخ الحرب المستقلة. الحادثة أشعلت نقاش الحظر الدولي.",
+        "en": "The report referenced Turkey's Kargu-2 drone that pursued and attacked a target without data link. This made Libya ominously 'first' in autonomous warfare history. The incident intensified international ban debate."
+      }
+    },
+    {
+      "id": "mil-tf-017",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "Palantir Technologies هي الشركة الرئيسية التي تشغّل عقد Project Maven بقيمة 1.3 مليار دولار حتى 2029.",
+        "en": "Palantir Technologies is the main contractor running Project Maven with a $1.3B contract through 2029."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "المشروع بدأ 2017 لتحليل مقاطع الطائرات المسيّرة في حرب الشرق الأوسط ضد داعش والقاعدة. اليوم يخدم عشرات الآلاف من المستخدمين عبر 5 قيادات مقاتلة. NATO تبنّاه مارس 2025 والمملكة المتحدة بعقد 750 مليون جنيه.",
+        "en": "The project began in 2017 to analyze drone footage in Mideast wars against ISIS and al-Qaeda. Today it serves tens of thousands of users across 5 combatant commands. NATO adopted it March 2025; UK with £750M contract."
+      }
+    },
+    {
+      "id": "mil-tf-018",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "أوكرانيا أطلقت في 2025 مبادرة \"Test in Ukraine\" عبر Brave1 لدعوة مصنّعي الأسلحة العالميين لاختبار أنظمتهم في قتال حقيقي ضد روسيا.",
+        "en": "Ukraine launched 'Test in Ukraine' in 2025 via Brave1 inviting global arms makers to test systems in real combat against Russia."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "المسؤولون البريطانيون حذّروا صناعة الطائرات المسيّرة من أن عدم الاختبار في أوكرانيا سيؤدي للتقادم التقني. الشركات الغربية من الناشئة إلى الكبرى مثل Palantir وQuantum Systems تدفع أنظمتها للجبهة.",
+        "en": "UK officials warned drone manufacturers that not testing in Ukraine leads to obsolescence. Western firms from startups to giants like Palantir and Quantum Systems push systems to the front."
+      }
+    },
+    {
+      "id": "mil-tf-019",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "في ساحة المعركة الأوكرانية حالياً، الطائرات المسيّرة تسبب أقل من 10% من الإصابات العسكرية.",
+        "en": "On the current Ukrainian battlefield, drones cause less than 10% of military casualties."
+      },
+      "correct_answer": false,
+      "hint_after": {
+        "ar": "النسبة 70-80% — قفزة تاريخية هائلة. في الحروب السابقة كانت المدفعية المهيمنة. هذا التحول يعيد تشكيل عقيدة الحرب البرية ويجعل الخنادق والتحركات المكشوفة شديدة الخطورة.",
+        "en": "It's 70-80% — a massive historical shift. In prior wars, artillery dominated. This transformation reshapes land warfare doctrine, making trenches and exposed movements extremely dangerous."
+      }
+    },
+    {
+      "id": "mil-tf-020",
+      "type": "true_false",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 30,
+      "points": 3,
+      "text": {
+        "ar": "حتى أكثر أنظمة AI العسكرية تقدماً اليوم، معظمها لا يزال يعمل بنمط \"human-in-the-loop\" وليس مستقلاً بالكامل.",
+        "en": "Even today's most advanced military AI systems mostly operate in 'human-in-the-loop' mode, not fully autonomous."
+      },
+      "correct_answer": true,
+      "hint_after": {
+        "ar": "هذا ما تؤكده مصادر إسرائيلية وأمريكية وأوكرانية وفق تقارير 2025. السؤال الأخلاقي ليس \"هل هناك إنسان؟\" بل \"هل تحكّم الإنسان ذو معنى حقيقي أم مجرد ختم مطاطي؟\"",
+        "en": "This is confirmed by Israeli, US, and Ukrainian sources per 2025 reports. The ethical question isn't 'is there a human?' but 'is the human control meaningful or a rubber stamp?'"
+      }
+    },
+    {
+      "id": "mil-fill-002",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "منصة {{blank_1}} الأوكرانية الحكومية نسّقت تطوير أكثر من 450 مشروعاً دفاعياً مع القطاع الخاص، وأطلقت مبادرة \"Test in Ukraine\" في يوليو {{blank_2}}.",
+        "en": "Ukraine's government platform {{blank_1}} coordinated 450+ defense projects with the private sector and launched the 'Test in Ukraine' initiative in July {{blank_2}}."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Brave1",
+            "en": "Brave1"
+          },
+          "options": [
+            {
+              "ar": "Brave1",
+              "en": "Brave1"
+            },
+            {
+              "ar": "Palantir",
+              "en": "Palantir"
+            },
+            {
+              "ar": "EDGE",
+              "en": "EDGE"
+            },
+            {
+              "ar": "Maven",
+              "en": "Maven"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "2025",
+            "en": "2025"
+          },
+          "options": [
+            {
+              "ar": "2025",
+              "en": "2025"
+            },
+            {
+              "ar": "2022",
+              "en": "2022"
+            },
+            {
+              "ar": "2020",
+              "en": "2020"
+            },
+            {
+              "ar": "2018",
+              "en": "2018"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "Brave1 أسّستها الحكومة الأوكرانية في 2023. المبادرة تدعو شركات أسلحة عالمية لاختبار أنظمتها في قتال حقيقي مقابل بيانات أداء مفصلة من الجبهة.",
+        "en": "Brave1 was founded by Ukraine's government in 2023. The initiative invites global arms firms to test systems in real combat for detailed frontline performance data."
+      }
+    },
+    {
+      "id": "mil-fill-003",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "الطائرة الإيرانية {{blank_1}} التي تستخدمها روسيا تكلف ~35,000 دولار فقط، وزادت أعداد إطلاقها شهرياً على أوكرانيا من ~334 (يناير 2024) إلى أكثر من {{blank_2}} (أغسطس 2025).",
+        "en": "Iran's {{blank_1}} drone used by Russia costs only ~$35,000, and monthly launches at Ukraine rose from ~334 (January 2024) to more than {{blank_2}} (August 2025)."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Shahed-136",
+            "en": "Shahed-136"
+          },
+          "options": [
+            {
+              "ar": "Shahed-136",
+              "en": "Shahed-136"
+            },
+            {
+              "ar": "Bayraktar TB2",
+              "en": "Bayraktar TB2"
+            },
+            {
+              "ar": "Switchblade",
+              "en": "Switchblade"
+            },
+            {
+              "ar": "Predator",
+              "en": "Predator"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "4000",
+            "en": "4,000"
+          },
+          "options": [
+            {
+              "ar": "4000",
+              "en": "4,000"
+            },
+            {
+              "ar": "500",
+              "en": "500"
+            },
+            {
+              "ar": "50000",
+              "en": "50,000"
+            },
+            {
+              "ar": "1000",
+              "en": "1,000"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "روسيا أعادت تسمية النسخة المحلية \"Geran-2\". الأوكرانيون وجدوا رقائق Nvidia ووحدات رؤية حرارية في الحطام عام 2025، مما يؤكد أن الطائرات أصبحت \"ذكية\" على متنها.",
+        "en": "Russia rebranded the local version 'Geran-2.' Ukrainians found Nvidia chips and thermal vision modules in 2025 wreckage, confirming the drones became onboard 'smart.'"
+      }
+    },
+    {
+      "id": "mil-fill-004",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "ميزانية البنتاغون للسنة المالية 2026 تضمنت أول بند مخصص للذكاء الاصطناعي والأنظمة الذاتية بقيمة {{blank_1}} مليار دولار، بينما سوق AI العسكري العالمي يُقدّر بـ {{blank_2}} مليار دولار في 2024.",
+        "en": "The Pentagon's FY2026 budget included its first dedicated AI and autonomous systems line item of ${{blank_1}}B, while the global military AI market is ~${{blank_2}}B in 2024."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "13.4",
+            "en": "13.4"
+          },
+          "options": [
+            {
+              "ar": "13.4",
+              "en": "13.4"
+            },
+            {
+              "ar": "1.3",
+              "en": "1.3"
+            },
+            {
+              "ar": "130",
+              "en": "130"
+            },
+            {
+              "ar": "50",
+              "en": "50"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "9.31",
+            "en": "9.31"
+          },
+          "options": [
+            {
+              "ar": "9.31",
+              "en": "9.31"
+            },
+            {
+              "ar": "93",
+              "en": "93"
+            },
+            {
+              "ar": "0.93",
+              "en": "0.93"
+            },
+            {
+              "ar": "100",
+              "en": "100"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "السوق متجه إلى 19.29 مليار بحلول 2030. عقود AI العسكرية الأمريكية قفزت من 355 مليون (2022) إلى 4.6 مليار (2023) — زيادة ~1,200%. Anduril وShield AI يجتذبان مئات الملايين من رأس مال المغامرة.",
+        "en": "The market heads to $19.29B by 2030. US military AI contracts jumped from $355M (2022) to $4.6B (2023) — ~1,200% increase. Anduril and Shield AI attract hundreds of millions in venture capital."
+      }
+    },
+    {
+      "id": "mil-fill-005",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "قرار الأمم المتحدة {{blank_1}} حول الأسلهة الذاتية أيدته 166 دولة، بينما عارضته 3 دول فقط هي روسيا وبيلاروس و{{blank_2}}.",
+        "en": "UN Resolution {{blank_1}} on autonomous weapons was supported by 166 countries, while only 3 opposed: Russia, Belarus, and {{blank_2}}."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "79/62",
+            "en": "79/62"
+          },
+          "options": [
+            {
+              "ar": "79/62",
+              "en": "79/62"
+            },
+            {
+              "ar": "2749",
+              "en": "2749"
+            },
+            {
+              "ar": "1325",
+              "en": "1325"
+            },
+            {
+              "ar": "3000/09",
+              "en": "3000/09"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "كوريا الشمالية",
+            "en": "North Korea"
+          },
+          "options": [
+            {
+              "ar": "كوريا الشمالية",
+              "en": "North Korea"
+            },
+            {
+              "ar": "إيران",
+              "en": "Iran"
+            },
+            {
+              "ar": "الصين",
+              "en": "China"
+            },
+            {
+              "ar": "إسرائيل",
+              "en": "Israel"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "15 دولة امتنعت بينها الصين والهند وإيران وإسرائيل والإمارات. الأمين العام للأمم المتحدة وصف الأسلحة الذاتية بأنها \"مرفوضة سياسياً وبغيضة أخلاقياً\". البابا فرنسيس طالب بحظرها في G7 2024.",
+        "en": "15 abstained including China, India, Iran, Israel, UAE. The UN SG called autonomous weapons 'politically unacceptable and morally repugnant.' Pope Francis demanded a ban at G7 2024."
+      }
+    },
+    {
+      "id": "mil-fill-006",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "شركة {{blank_1}} الألمانية أعلنت في ديسمبر 2024 عن تسليم مئات من طائرة HX-2 Karma ذات الذكاء الاصطناعي لأوكرانيا. مجموعها المخطط ~{{blank_2}} طائرة.",
+        "en": "Germany's {{blank_1}} announced in December 2024 the delivery of hundreds of its AI-equipped HX-2 Karma drones to Ukraine. The planned total is ~{{blank_2}} drones."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "Helsing",
+            "en": "Helsing"
+          },
+          "options": [
+            {
+              "ar": "Helsing",
+              "en": "Helsing"
+            },
+            {
+              "ar": "Rheinmetall",
+              "en": "Rheinmetall"
+            },
+            {
+              "ar": "Airbus",
+              "en": "Airbus"
+            },
+            {
+              "ar": "Anduril",
+              "en": "Anduril"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "4000",
+            "en": "4,000"
+          },
+          "options": [
+            {
+              "ar": "4000",
+              "en": "4,000"
+            },
+            {
+              "ar": "400",
+              "en": "400"
+            },
+            {
+              "ar": "40000",
+              "en": "40,000"
+            },
+            {
+              "ar": "40",
+              "en": "40"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "HX-2 Karma مقاوم للحرب الإلكترونية — يستطيع البحث وإعادة التعرف على الهدف ومهاجمته دون إشارة أو اتصال بيانات. الإنسان يبقى \"in/on the loop\" للقرارات الحرجة حسب بيان الشركة.",
+        "en": "HX-2 Karma is EW-resistant — it can search, re-identify, and engage a target without signal or data link. The human remains 'in/on the loop' for critical decisions per the company."
+      }
+    },
+    {
+      "id": "mil-fill-007",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "مجموعة {{blank_1}} الإماراتية استحوذت على شركة {{blank_2}} الإستونية في 2023 لتعزيز قدراتها في المركبات الأرضية غير المأهولة مثل منصة THeMIS.",
+        "en": "UAE's {{blank_1}} Group acquired Estonia's {{blank_2}} in 2023 to boost its unmanned ground vehicle capabilities such as the THeMIS platform."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "EDGE",
+            "en": "EDGE"
+          },
+          "options": [
+            {
+              "ar": "EDGE",
+              "en": "EDGE"
+            },
+            {
+              "ar": "SAMI",
+              "en": "SAMI"
+            },
+            {
+              "ar": "Baykar",
+              "en": "Baykar"
+            },
+            {
+              "ar": "Aselsan",
+              "en": "Aselsan"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "Milrem Robotics",
+            "en": "Milrem Robotics"
+          },
+          "options": [
+            {
+              "ar": "Milrem Robotics",
+              "en": "Milrem Robotics"
+            },
+            {
+              "ar": "Helsing",
+              "en": "Helsing"
+            },
+            {
+              "ar": "Anduril",
+              "en": "Anduril"
+            },
+            {
+              "ar": "Palantir",
+              "en": "Palantir"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "EDGE تأسست 2019 وتضم 12,000 موظف وتحقق عقود تصدير بقيمة 2.3 مليار دولار في 2024. فروعها تشمل ADASI للأنظمة الذاتية وHALCON للذخائر الموجهة.",
+        "en": "EDGE was founded in 2019, has 12,000 employees, and achieved $2.3B in export contracts in 2024. Its divisions include ADASI for autonomous systems and HALCON for guided munitions."
+      }
+    },
+    {
+      "id": "mil-fill-008",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "Project Maven بدأ عام {{blank_1}} لتحليل مقاطع الطائرات المسيّرة ضد داعش والقاعدة، وتحوّل اليوم إلى شبكة استخبارات بعقد رئيسي لـ Palantir بقيمة {{blank_2}} مليار دولار حتى 2029.",
+        "en": "Project Maven began in {{blank_1}} to analyze drone footage against ISIS and al-Qaeda, and has become an intelligence network with a main Palantir contract of ${{blank_2}}B through 2029."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "2017",
+            "en": "2017"
+          },
+          "options": [
+            {
+              "ar": "2017",
+              "en": "2017"
+            },
+            {
+              "ar": "2012",
+              "en": "2012"
+            },
+            {
+              "ar": "2020",
+              "en": "2020"
+            },
+            {
+              "ar": "2007",
+              "en": "2007"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "1.3",
+            "en": "1.3"
+          },
+          "options": [
+            {
+              "ar": "1.3",
+              "en": "1.3"
+            },
+            {
+              "ar": "13",
+              "en": "13"
+            },
+            {
+              "ar": "0.13",
+              "en": "0.13"
+            },
+            {
+              "ar": "130",
+              "en": "130"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "NATO تبنّى المشروع في مارس 2025، والمملكة المتحدة وقّعت عقداً منفصلاً بـ 750 مليون جنيه. يخدم عشرات الآلاف من المستخدمين عبر 5 قيادات مقاتلة ويدمج 179 مصدر بيانات.",
+        "en": "NATO adopted the project March 2025; UK signed a separate £750M contract. It serves tens of thousands of users across 5 combatant commands and integrates 179 data sources."
+      }
+    },
+    {
+      "id": "mil-fill-009",
+      "type": "fill_blank",
+      "purpose": "cultural",
+      "axis": "knowledge",
+      "time_seconds": 25,
+      "points": 1,
+      "text": {
+        "ar": "الإنفاق العسكري العالمي في 2024 بلغ {{blank_1}} تريليون دولار وهو الأعلى منذ نهاية {{blank_2}} بحسب معهد SIPRI.",
+        "en": "Global military spending in 2024 reached ${{blank_1}}T, the highest since the end of the {{blank_2}} per SIPRI."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "2.72",
+            "en": "2.72"
+          },
+          "options": [
+            {
+              "ar": "2.72",
+              "en": "2.72"
+            },
+            {
+              "ar": "1.5",
+              "en": "1.5"
+            },
+            {
+              "ar": "5",
+              "en": "5"
+            },
+            {
+              "ar": "10",
+              "en": "10"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "الحرب الباردة",
+            "en": "Cold War"
+          },
+          "options": [
+            {
+              "ar": "الحرب الباردة",
+              "en": "Cold War"
+            },
+            {
+              "ar": "الحرب العالمية الأولى",
+              "en": "WWI"
+            },
+            {
+              "ar": "حرب فيتنام",
+              "en": "Vietnam War"
+            },
+            {
+              "ar": "حرب الخليج",
+              "en": "Gulf War"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "من أصل هذا المبلغ، ~9.31 مليار دولار فقط موجّه لـ AI عسكري، لكنه الجزء الأسرع نمواً. سوق AI العسكري يُقدّر أن يصل إلى 19.29 مليار بحلول 2030.",
+        "en": "Of this, only ~$9.31B targets military AI, but it's the fastest-growing segment. The military AI market is expected to reach $19.29B by 2030."
+      }
+    },
+    {
+      "id": "mil-fill-010",
+      "type": "fill_blank",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 25,
+      "points": 3,
+      "text": {
+        "ar": "في أوكرانيا، {{blank_1}}% تقريباً من الإصابات في ساحة المعركة تُعزى إلى الطائرات المسيّرة، وهي قفزة تاريخية عن دور المدفعية التقليدي. وزارة الدفاع تعالج عشرات الآلاف من مقاطع الفيديو {{blank_2}}.",
+        "en": "In Ukraine, approximately {{blank_1}}% of battlefield casualties are attributed to drones — a historic shift from artillery's traditional role. MoD processes tens of thousands of video clips {{blank_2}}."
+      },
+      "blanks": [
+        {
+          "id": "blank_1",
+          "correct": {
+            "ar": "70-80",
+            "en": "70-80"
+          },
+          "options": [
+            {
+              "ar": "70-80",
+              "en": "70-80"
+            },
+            {
+              "ar": "5-10",
+              "en": "5-10"
+            },
+            {
+              "ar": "30",
+              "en": "30"
+            },
+            {
+              "ar": "100",
+              "en": "100"
+            }
+          ]
+        },
+        {
+          "id": "blank_2",
+          "correct": {
+            "ar": "شهرياً",
+            "en": "monthly"
+          },
+          "options": [
+            {
+              "ar": "شهرياً",
+              "en": "monthly"
+            },
+            {
+              "ar": "سنوياً",
+              "en": "yearly"
+            },
+            {
+              "ar": "يومياً",
+              "en": "daily"
+            },
+            {
+              "ar": "مرة واحدة",
+              "en": "once"
+            }
+          ]
+        }
+      ],
+      "hint_after": {
+        "ar": "الخنادق والتحركات المكشوفة أصبحت شديدة الخطورة. منصات AI تحوّل البيانات الخام إلى صورة معركة قابلة للتنفيذ في الوقت شبه الحقيقي، مما يقلّب عقيدة الحرب البرية الموروثة.",
+        "en": "Trenches and exposed movements became extremely dangerous. AI platforms turn raw data into near-real-time actionable battlefield pictures, upending inherited land warfare doctrine."
+      }
+    },
+    {
+      "id": "mil-match-002",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل شركة دفاع ناشئة تعتمد على AI بمنتجها/تخصصها الرئيسي:",
+        "en": "Match each AI-focused defense startup with its main product/specialty:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Anduril",
+            "en": "Anduril"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Shield AI",
+            "en": "Shield AI"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Helsing",
+            "en": "Helsing"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Palantir",
+            "en": "Palantir"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "أنظمة استطلاع ودفاع مستقلة وطائرات مسيّرة مثل Dive-LD",
+            "en": "Autonomous surveillance/defense systems and drones like Dive-LD"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "طائرة V-BAT وبرمجيات أسراب ذاتية القرار",
+            "en": "V-BAT drone and autonomous swarm software"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "طائرات HX-2 Karma المقاومة للحرب الإلكترونية للجبهة الأوكرانية",
+            "en": "HX-2 Karma EW-resistant drones for the Ukrainian front"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "منصات تحليل بيانات استخباراتية ضخمة مثل Gotham وMaven",
+            "en": "Massive intelligence data analysis platforms like Gotham and Maven"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الشركات الأربع جمعت رؤوس أموال مغامرة بمئات الملايين. Anduril أسسها بالمر لاكي (مؤسس Oculus)، وHelsing ألمانية نمت بسرعة هائلة، وShield AI متخصصة في الأسراب، وPalantir الأكبر والأقدم.",
+        "en": "These four raised hundreds of millions in VC. Anduril was founded by Palmer Luckey (Oculus founder), Helsing is a fast-growing German firm, Shield AI specializes in swarms, and Palantir is the largest and oldest."
+      }
+    },
+    {
+      "id": "mil-match-003",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مصطلح في حوكمة AI العسكري بتعريفه:",
+        "en": "Match each military AI governance term with its definition:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Human-in-the-loop",
+            "en": "Human-in-the-loop"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Human-on-the-loop",
+            "en": "Human-on-the-loop"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Human-out-of-the-loop",
+            "en": "Human-out-of-the-loop"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Meaningful human control",
+            "en": "Meaningful human control"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "الإنسان يوافق على كل قرار استخدام قوة قبل التنفيذ",
+            "en": "Human approves each use-of-force decision before execution"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "النظام يعمل تلقائياً والإنسان يراقب ويستطيع التدخل",
+            "en": "System runs autonomously; human monitors and can intervene"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "النظام يقرر ويُنفّذ دون أي تدخل بشري ممكن",
+            "en": "System decides and acts with no possible human intervention"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تحكّم بشري ذو سياق ومعرفة وصلاحية حقيقية للإيقاف",
+            "en": "Human control with context, knowledge, and real stop authority"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "الجدل القانوني يدور حول \"التحكم البشري الفعّال\" — هل يكفي أن يستطيع الإنسان الإيقاف نظرياً، أم يجب أن يفهم ويقرر حقاً؟ قضية Lavender كشفت أن الإنسان \"في الحلقة\" قد يكون مجرد ختم مطاطي.",
+        "en": "Legal debate centers on 'meaningful human control' — is it enough that a human can theoretically stop it, or must they truly understand and decide? The Lavender case showed 'in-the-loop' humans can be rubber stamps."
+      }
+    },
+    {
+      "id": "mil-match-004",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل أزمة/حادثة بالنظام أو البرنامج المرتبط بها:",
+        "en": "Match each crisis/incident with its associated system or program:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "37,000 هدف بشري في غزة",
+            "en": "37,000 human targets in Gaza"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "100 هدف هيكلي يومياً للقصف",
+            "en": "100 structural targets daily for bombing"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "فشل تحقيق \"آلاف\" الأنظمة بحلول أغسطس 2025",
+            "en": "Failure to field 'thousands' by August 2025"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "أول قتل ذاتي موثق بتقرير أممي في 2020",
+            "en": "First documented autonomous killing per UN report 2020"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "Lavender",
+            "en": "Lavender"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "Gospel",
+            "en": "Gospel"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "Replicator",
+            "en": "Replicator"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "Kargu-2 في ليبيا",
+            "en": "Kargu-2 in Libya"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الحوادث أشعلت النقاش العالمي حول \"هل فاتنا لحظة التنظيم؟\" Kargu-2 التركية جعلت ليبيا \"الأولى\" بشكل مؤسف، وLavender وGospel كُشفا بتحقيقات صحفية استقصائية، وReplicator أثبت صعوبة الوعود التقنية.",
+        "en": "These incidents sparked the global 'did we miss the regulation moment?' debate. Turkey's Kargu-2 made Libya tragically 'first,' Lavender/Gospel were exposed by investigative journalism, and Replicator proved tech promises are hard to keep."
+      }
+    },
+    {
+      "id": "mil-match-005",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل فئة استخدام للـ AI العسكري بمثال واقعي:",
+        "en": "Match each military AI use category with a real-world example:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "تحليل استخبارات بصرية",
+            "en": "Visual intelligence analysis"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "حرب إلكترونية ومضادة لها",
+            "en": "Electronic warfare and counter-EW"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "صيانة تنبؤية",
+            "en": "Predictive maintenance"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "دفاع سيبراني",
+            "en": "Cyber defense"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "Project Maven يحلل مقاطع طائرات مسيّرة لـ 5 قيادات مقاتلة",
+            "en": "Project Maven analyzes drone footage for 5 combatant commands"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "Helsing HX-2 Karma تعمل دون اتصال في بيئات التشويش",
+            "en": "Helsing HX-2 Karma operates without link in jammed environments"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "القوات الجوية الأمريكية تتنبأ بأعطال الطائرات قبل حدوثها",
+            "en": "US Air Force predicts aircraft failures before they occur"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "NSA بـ 7,000 محلل يدمجون AI في عمليات الدفاع الرقمي",
+            "en": "NSA with 7,000 analysts integrating AI into cyber operations"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه الاستخدامات \"الدفاعية\" و\"الداعمة\" أقل إثارة للجدل الأخلاقي من قرارات الاستهداف. كثير من الخبراء يرون أن السباق للحظر يجب أن يركز على الأسلحة ذاتية القرار، لا AI بشكل عام.",
+        "en": "These 'defensive' and 'support' uses are less ethically controversial than targeting decisions. Many experts argue the ban race should focus on autonomous decision weapons, not AI generally."
+      }
+    },
+    {
+      "id": "mil-match-006",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل دولة بموقفها من قرار الأمم المتحدة 79/62 حول الأسلحة الذاتية:",
+        "en": "Match each country with its position on UN Resolution 79/62 on autonomous weapons:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "النمسا",
+            "en": "Austria"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "الصين",
+            "en": "China"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "روسيا",
+            "en": "Russia"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "الإمارات",
+            "en": "UAE"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "مؤيد قوي قاد الجهود الدبلوماسية",
+            "en": "Strong supporter leading diplomatic efforts"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "ممتنعة عن التصويت",
+            "en": "Abstained"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "معارضة صراحةً",
+            "en": "Explicitly opposed"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "ممتنعة عن التصويت",
+            "en": "Abstained"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "المشهد معقد: دول تطوّر الأسلحة الذاتية بنفسها (كالإمارات وإسرائيل والصين) مترددة في الموافقة على قيود ملزمة. النمسا والدول الصغيرة والبرازيل وأفريقيا تقود جهود الحظر. الولايات المتحدة أيدت مع تحفظ.",
+        "en": "The picture is complex: countries developing autonomous weapons themselves (UAE, Israel, China) are reluctant to accept binding limits. Austria, small states, Brazil, and Africa lead ban efforts. The US supported with reservations."
+      }
+    },
+    {
+      "id": "mil-match-007",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل مستوى ناتو للمجال الحربي بمثاله:",
+        "en": "Match each NATO warfare domain level with its example:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "البر",
+            "en": "Land"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "السيبراني",
+            "en": "Cyber"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "الفضاء",
+            "en": "Space"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "المعرفي",
+            "en": "Cognitive"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "معارك الخنادق والمركبات المدرعة",
+            "en": "Trench battles and armored vehicles"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "هجمات ransomware واستهداف البنية التحتية",
+            "en": "Ransomware attacks and infrastructure targeting"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "الأقمار الصناعية ومضاداتها",
+            "en": "Satellites and anti-satellite weapons"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "Deepfakes وحملات التأثير على الوعي الجماعي",
+            "en": "Deepfakes and mass cognitive influence campaigns"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "المجال المعرفي هو الأحدث رسمياً — أقرّه ناتو رسمياً كمجال سادس. RAND وثّق توظيف روسيا له منذ 2014 في أوكرانيا والانتخابات الغربية. AI يضاعف فاعلية هذا النوع من الحرب بشكل مخيف.",
+        "en": "The cognitive domain is the newest — formally recognized by NATO as the sixth. RAND documented Russia's use since 2014 in Ukraine and Western elections. AI scarily multiplies this warfare's effectiveness."
+      }
+    },
+    {
+      "id": "mil-match-008",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل تقنية مقاومة تشويش GPS بآلية عملها:",
+        "en": "Match each GPS jam-resistance technique with its mechanism:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "Inertial navigation",
+            "en": "Inertial navigation"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Visual terrain matching",
+            "en": "Visual terrain matching"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Celestial navigation",
+            "en": "Celestial navigation"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "Inter-drone mesh",
+            "en": "Inter-drone mesh"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "دوارات ومسرّعات تقدّر الموقع من قياس الحركة",
+            "en": "Gyros and accelerometers estimate position from motion measurement"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "كاميرا + AI لمطابقة المشاهد مع خرائط مسبقة",
+            "en": "Camera + AI to match scenes with pre-loaded maps"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "قراءة مواقع النجوم لحساب الاتجاه (يعود لتقنيات قديمة)",
+            "en": "Star position readings to compute direction (revived old tech)"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "شبكة طائرات تتبادل بيانات موقع نسبية",
+            "en": "Drone network exchanges relative position data"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "الشاهد-136 حتى في نسخه المبكرة تغلّب على التشويش بالـ inertial. الطائرات الحديثة تجمع هذه التقنيات مع تعرف بصري بـ AI. هذا يجعل الحرب الإلكترونية مع AI سباق قط وفأر سريع التطور.",
+        "en": "Even early Shahed-136s overcame jamming via inertial navigation. Modern drones combine these with AI visual recognition. This makes EW with AI a rapidly evolving cat-and-mouse race."
+      }
+    },
+    {
+      "id": "mil-match-009",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل قوة بمنظومة الدفاع المقاومة للطائرات المسيّرة الخاصة بها:",
+        "en": "Match each force with its counter-drone defense system:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "الجيش الأمريكي",
+            "en": "US military"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "أوكرانيا",
+            "en": "Ukraine"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "إسرائيل",
+            "en": "Israel"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "روسيا",
+            "en": "Russia"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "Joint Interagency Task Force 401 وReplicator 2",
+            "en": "Joint Interagency Task Force 401 and Replicator 2"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "مدافع 23 مم ZU23 مع تصوير حراري وتطبيقات قتالية",
+            "en": "ZU23 23mm guns with thermal imaging and combat apps"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "Iron Dome معزز بخوارزميات توقع مسارات",
+            "en": "Iron Dome augmented with trajectory-prediction algorithms"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "شبكة Rostec للكشف البصري وتشويش GPS واسع النطاق",
+            "en": "Rostec optical detection network and wide-area GPS jamming"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "لاحظ أن دفاع الطائرات المسيّرة أصبح مشكلة معقدة بلا حل سحري. الأرخص أحياناً أفضل: مدفع رشاش بـ10,000 دولار يسقط طائرة بـ1,000 دولار. الأغلى (صاروخ باتريوت بملايين) يسقط طائرة بـ35,000 دولار.",
+        "en": "Note counter-drone defense became a complex problem without a magic bullet. Cheap sometimes wins: a $10K machine gun downs a $1K drone. The expensive (million-dollar Patriot) downs a $35K drone."
+      }
+    },
+    {
+      "id": "mil-match-010",
+      "type": "matching",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "وصّل كل وثيقة أو مبادرة بمضمونها:",
+        "en": "Match each document or initiative with its content:"
+      },
+      "left": [
+        {
+          "id": "L1",
+          "text": {
+            "ar": "DoD Directive 3000.09",
+            "en": "DoD Directive 3000.09"
+          }
+        },
+        {
+          "id": "L2",
+          "text": {
+            "ar": "Political Declaration on AI (2023)",
+            "en": "Political Declaration on AI (2023)"
+          }
+        },
+        {
+          "id": "L3",
+          "text": {
+            "ar": "Stop Killer Robots (2013)",
+            "en": "Stop Killer Robots (2013)"
+          }
+        },
+        {
+          "id": "L4",
+          "text": {
+            "ar": "UNGA Resolution 79/62",
+            "en": "UNGA Resolution 79/62"
+          }
+        }
+      ],
+      "right": [
+        {
+          "id": "R1",
+          "text": {
+            "ar": "متطلبات التمييز البشري على استخدام القوة",
+            "en": "Requirements for human judgment over use of force"
+          }
+        },
+        {
+          "id": "R2",
+          "text": {
+            "ar": "إعلان أمريكي طوعي وقّعته 50+ دولة (بدون الصين/روسيا)",
+            "en": "US voluntary declaration signed by 50+ countries (not China/Russia)"
+          }
+        },
+        {
+          "id": "R3",
+          "text": {
+            "ar": "تحالف 270+ منظمة غير حكومية يطالب بمعاهدة حظر ملزمة",
+            "en": "Coalition of 270+ NGOs calling for a binding ban treaty"
+          }
+        },
+        {
+          "id": "R4",
+          "text": {
+            "ar": "تأييد 166 دولة لبدء مسار تنظيمي دولي للأسلحة الذاتية",
+            "en": "166-country support for starting international autonomous weapons regulatory track"
+          }
+        }
+      ],
+      "correct_pairs": [
+        {
+          "left": "L1",
+          "right": "R1"
+        },
+        {
+          "left": "L2",
+          "right": "R2"
+        },
+        {
+          "left": "L3",
+          "right": "R3"
+        },
+        {
+          "left": "L4",
+          "right": "R4"
+        }
+      ],
+      "hint_after": {
+        "ar": "المشهد التنظيمي مشتت: إعلانات طوعية، توجيهات وطنية، حملات مجتمع مدني، قرارات أممية. غياب معاهدة ملزمة يعني أن السباق التقني يسبق التنظيم — وهو ما يقلق المنظمات الحقوقية عالمياً.",
+        "en": "The regulatory landscape is fragmented: voluntary declarations, national directives, civil society campaigns, UN resolutions. The lack of a binding treaty means tech outpaces regulation — worrying global rights groups."
+      }
+    },
+    {
+      "id": "mil-sort-002",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "رتّب هذه الأحداث الرئيسية في تطور AI العسكري زمنياً (الأقدم أولاً):",
+        "en": "Order these major milestones in military AI development chronologically (earliest first):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "2012: صدور DoD Directive 3000.09 الأصلي",
+            "en": "2012: Original DoD Directive 3000.09 issued"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "2017: إطلاق Project Maven لتحليل مقاطع الطائرات المسيّرة",
+            "en": "2017: Project Maven launched for drone footage analysis"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "أبريل 2024: كشف +972 عن نظام Lavender الإسرائيلي",
+            "en": "April 2024: +972 exposes Israel's Lavender system"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "مارس 2025: ناتو يتبنّى Project Maven",
+            "en": "March 2025: NATO adopts Project Maven"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "هذا الخط الزمني يظهر تسارع تبنّي AI في القرار العسكري الحرج. من توجيه محافظ (2012) إلى شبكة استخبارات دولية (2025) خلال 13 سنة. Stop Killer Robots كانت تحذّر منذ 2013.",
+        "en": "This timeline shows accelerating AI adoption in critical military decisions. From a cautious directive (2012) to an international intelligence network (2025) in 13 years. Stop Killer Robots has warned since 2013."
+      }
+    },
+    {
+      "id": "mil-sort-003",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "رتّب خطوات عملية استهداف بـ AI في سياق عسكري حديث (من جمع البيانات إلى التنفيذ):",
+        "en": "Order the AI-assisted targeting workflow in a modern military context (from data collection to execution):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "جمع البيانات من المستشعرات والأقمار والطائرات",
+            "en": "Collect data from sensors, satellites, and drones"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "AI يدمج المصادر ويقترح أهدافاً محتملة مرتبة بالأولوية",
+            "en": "AI fuses sources and suggests prioritized candidate targets"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "مراجعة بشرية للتقييم القانوني والأخلاقي",
+            "en": "Human review for legal and ethical assessment"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "إصدار أمر الاشتباك والتنفيذ",
+            "en": "Issuing engagement order and execution"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "المشكلة في Lavender كانت أن الخطوة 3 (المراجعة البشرية) اختُصرت إلى ~20 ثانية لكل هدف. هذا يحوّل \"الإنسان في الحلقة\" إلى ختم مطاطي بدل ضمانة فعلية. الجدل القانوني يركّز على هذه الخطوة بالذات.",
+        "en": "The Lavender problem was step 3 (human review) was shortened to ~20 seconds per target. This turns 'human in the loop' into a rubber stamp instead of a real safeguard. Legal debate focuses on this exact step."
+      }
+    },
+    {
+      "id": "mil-sort-004",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "رتّب مستويات استقلالية الطائرات المسيّرة من الأقل للأكثر تطوراً:",
+        "en": "Order drone autonomy levels from least to most advanced:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "طائرة يتحكم بها مشغّل بـ First-Person View في كل قرار",
+            "en": "FPV drone controlled by operator for every decision"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "طائرة تطير ذاتياً لنقطة GPS محددة ثم تعود",
+            "en": "Drone flies autonomously to a fixed GPS point and returns"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "طائرة تستخدم AI بصري لتتبع هدف محدد وإعادة التعرف عليه",
+            "en": "Drone uses visual AI to track a designated target and re-identify it"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "سرب من الطائرات يتنسّق ويتخذ قرارات تكتيكية جماعية",
+            "en": "Drone swarm that coordinates and makes collective tactical decisions"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "معظم المستوى 3 متاح اليوم (HX-2 Karma مثال)، بينما المستوى 4 (الأسراب الحقيقية) لا يزال محدوداً. Replicator 1 الأمريكي يستهدف هذا المستوى بالذات، ويواجه صعوبات كبيرة في البرمجيات والدمج.",
+        "en": "Most of Level 3 is available today (HX-2 Karma is an example), while Level 4 (true swarms) remains limited. US Replicator 1 specifically targets this level and faces major software and integration challenges."
+      }
+    },
+    {
+      "id": "mil-sort-005",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "رتّب هذه الدول حسب إنفاقها العسكري السنوي (2024) من الأعلى للأقل:",
+        "en": "Order these countries by 2024 annual military spending (highest to lowest):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "الولايات المتحدة (~916 مليار دولار)",
+            "en": "United States (~$916B)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "الصين (~296 مليار دولار)",
+            "en": "China (~$296B)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "السعودية (~78 مليار دولار)",
+            "en": "Saudi Arabia (~$78B)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "الإمارات (~22 مليار دولار)",
+            "en": "UAE (~$22B)"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الإجمالي العالمي 2.72 تريليون دولار في 2024. الولايات المتحدة تتفوق على الـ10 التالية مجتمعة تقريباً. السعودية في المرتبة 5 عالمياً — أعلى إنفاق فردي في منطقة الخليج. هذه الأرقام وفق SIPRI.",
+        "en": "The global total is $2.72T in 2024. The US exceeds the next 10 combined roughly. Saudi Arabia ranks 5th globally — highest individual spend in the Gulf. These figures per SIPRI."
+      }
+    },
+    {
+      "id": "mil-sort-006",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "specialty",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "رتّب خطوات تقييم الاستعداد الأخلاقي لنظام AI عسكري قبل نشره:",
+        "en": "Order the steps to assess ethical readiness of a military AI system before deployment:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "مراجعة قانونية داخلية وفق القانون الدولي الإنساني",
+            "en": "Internal legal review under IHL"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "اختبار مستقل للأداء ومعدلات الخطأ في بيئات واقعية",
+            "en": "Independent testing for performance and error rates in realistic environments"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تقييم مخاطر الإساءة للمدنيين والأعطال غير المتوقعة",
+            "en": "Civilian harm and unexpected failure risk assessment"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "قرار نشر نهائي مع قيود استخدام محددة وآلية مساءلة",
+            "en": "Final deployment decision with specific use constraints and accountability mechanism"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "هذا الترتيب مطلوب نظرياً لكنه كثيراً ما يُضغط تحت ضغط الوقت والمنافسة. تحليل Lavender يشير إلى أن خطوات 2 و3 كانت ضعيفة. Directive 3000.09 يتطلب هذه المراجعات لكن لا آلية تنفيذ دولية.",
+        "en": "This sequence is theoretically required but often squeezed under time and competitive pressure. Lavender analysis suggests steps 2 and 3 were weak. Directive 3000.09 requires these reviews but lacks international enforcement."
+      }
+    },
+    {
+      "id": "mil-sort-007",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "رتّب هذه المنظومات حسب ميزانيتها التقريبية (من الأعلى للأقل):",
+        "en": "Order these programs by approximate budget (highest to lowest):"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "ميزانية البنتاغون FY2026 لـ AI/autonomy ($13.4B)",
+            "en": "Pentagon FY2026 AI/autonomy budget ($13.4B)"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "عقد Palantir لـ Maven حتى 2029 ($1.3B)",
+            "en": "Palantir Maven contract through 2029 ($1.3B)"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "عقد NATO/UK مع Palantir (£750M ≈ $950M)",
+            "en": "NATO/UK Palantir contract (£750M ≈ $950M)"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "عقود EDGE التصديرية في 2024 ($2.3B) — رقم تصدير لا ميزانية",
+            "en": "EDGE 2024 export contracts ($2.3B — export figure not budget)"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "ملاحظة: EDGE رقم تصدير وليس ميزانية شراء، ووُضع هنا للمقارنة فقط. الحجم النسبي يوضح أن الولايات المتحدة تهيمن تقنياً ومالياً، بينما دول الخليج تبني قدرات محلية متسارعة لكن بأحجام أصغر.",
+        "en": "Note: EDGE is an export figure not a procurement budget, placed here for comparison. Relative scale shows US tech and financial dominance, while Gulf states build rapidly growing local capacity at smaller scale."
+      }
+    },
+    {
+      "id": "mil-sort-008",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "practice",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "رتّب هذه المراحل لبناء قدرة عسكرية AI وطنية من الصفر:",
+        "en": "Order these phases for building a national military AI capability from scratch:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "تأسيس وحدة بحثية أكاديمية-عسكرية مشتركة",
+            "en": "Establishing a joint academic-military research unit"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "شراكات مع شركات أجنبية لنقل المعرفة وبناء رأس المال البشري",
+            "en": "Foreign company partnerships for knowledge transfer and human capital"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "تطوير منتجات أولى محلية الصنع مع اختبار ميداني محدود",
+            "en": "Developing first locally-made products with limited field testing"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "تصدير تقنيات متقدمة وتحقيق استقلال استراتيجي نسبي",
+            "en": "Exporting advanced tech and achieving relative strategic independence"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الإمارات اتبعت تقريباً هذا المسار عبر EDGE وADASI — بدأت 2019 ووصلت لـ 2.3 مليار تصدير في 2024. السعودية تتبع خطى مشابهة عبر SAMI. تسريع المسار يتطلب عادة شراكات استحواذ مثل Milrem.",
+        "en": "The UAE roughly followed this path via EDGE and ADASI — starting 2019 and reaching $2.3B exports in 2024. Saudi Arabia follows similar steps via SAMI. Accelerating usually requires acquisition partnerships like Milrem."
+      }
+    },
+    {
+      "id": "mil-sort-009",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "رتّب هذه الحوادث/الإعلانات حول Lavender وGospel زمنياً:",
+        "en": "Order these Lavender and Gospel events/announcements chronologically:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "2021: إشارات أولى لاستخدام IDF لـ AI في تحليل الأهداف",
+            "en": "2021: First references to IDF using AI in target analysis"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "نوفمبر 2023: تقرير +972 الأول عن Gospel",
+            "en": "November 2023: First +972 report on Gospel"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "أبريل 2024: كشف +972 عن Lavender و37,000 هدف",
+            "en": "April 2024: +972 exposes Lavender and 37,000 targets"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "سبتمبر 2024: هيومن رايتس ووتش تدين الأنظمة رسمياً",
+            "en": "September 2024: Human Rights Watch officially condemns the systems"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "الكشف تدرج من إشارات عامة إلى تفاصيل صادمة. شهادات ستة ضباط استخبارات كانت أساس تقرير أبريل 2024. الإدانة الحقوقية تحوّل النقاش من تقني/أمني إلى قانون دولي إنساني.",
+        "en": "Exposure progressed from general hints to shocking details. Six intelligence officers' testimonies underpinned the April 2024 report. Rights-group condemnation shifts the debate from technical/security to IHL."
+      }
+    },
+    {
+      "id": "mil-sort-010",
+      "type": "sorting",
+      "purpose": "core",
+      "axis": "knowledge",
+      "time_seconds": 45,
+      "points": 3,
+      "text": {
+        "ar": "رتّب هذه الأحداث زمنياً في ملف الأسلحة الذاتية بالأمم المتحدة:",
+        "en": "Order these events chronologically in the UN autonomous weapons file:"
+      },
+      "items": [
+        {
+          "id": "S1",
+          "text": {
+            "ar": "2013: إطلاق حملة Stop Killer Robots الدولية",
+            "en": "2013: International Stop Killer Robots campaign launched"
+          }
+        },
+        {
+          "id": "S2",
+          "text": {
+            "ar": "2014: بداية نقاشات CCW الأممية حول الأسلحة الذاتية",
+            "en": "2014: Start of UN CCW discussions on autonomous weapons"
+          }
+        },
+        {
+          "id": "S3",
+          "text": {
+            "ar": "2023: الإعلان السياسي الأمريكي للاستخدام المسؤول لـ AI عسكري",
+            "en": "2023: US Political Declaration on Responsible Military AI Use"
+          }
+        },
+        {
+          "id": "S4",
+          "text": {
+            "ar": "2024: قرار الجمعية العامة 79/62 بتأييد 166 دولة",
+            "en": "2024: General Assembly Resolution 79/62 with 166-country support"
+          }
+        }
+      ],
+      "correct_order": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "hint_after": {
+        "ar": "11 سنة بين بداية الحملة والقرار الأممي الشامل. الحملة المدنية سبقت الحكومات. معظم الخبراء يرون أن التنظيم الدولي الملزم يتأخر كثيراً خلف التسارع التقني — وهذا ما يخشاه منتقدو السياسات الحالية.",
+        "en": "11 years between campaign start and comprehensive UN resolution. Civil society preceded governments. Most experts see binding international regulation lagging far behind tech acceleration — a key concern for current policy critics."
+      }
+    },
+    {
+      "id": "mil-self-003",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت قائد سرب جوي. القيادة تقترح استبدال ~30% من مهام الطيارين بأنظمة AI ذاتية القيادة (مثل برنامج Loyal Wingman). ما ردّك؟",
+        "en": "You command a squadron. Command proposes replacing ~30% of pilot missions with autonomous AI systems (like Loyal Wingman). Your response?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أرى هذا تطوراً طبيعياً — سأقود تكيّف سربي مع أدوات تدريب ودمج AI",
+            "en": "I see this as natural evolution — I'll lead my squadron's adaptation with training and AI integration tools"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "مقبول مع اختبار تدريجي محدود قبل توسيع النطاق لضمان الثقة",
+            "en": "Acceptable with limited gradual testing before scaling to build trust"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "متردد — يجب إجراء مراجعة مستقلة لمعدلات الخطأ قبل أي تحوّل كبير",
+            "en": "Hesitant — independent error rate review is needed before major shifts"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض — الطيار البشري غير قابل للاستبدال في بيئات معقدة وغير متوقعة",
+            "en": "I refuse — a human pilot is irreplaceable in complex, unpredictable environments"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "برنامج Loyal Wingman الأمريكي يهدف لإقران طائرات مأهولة بـ ذاتية القيادة. القوات الجوية تستهدف النشر قبل نهاية العقد. الواقع: AI لن يُلغي الطيارين، لكنه سيعيد تعريف دورهم.",
+        "en": "The US Loyal Wingman program aims to pair piloted with autonomous aircraft. The Air Force targets deployment before decade's end. Reality: AI won't eliminate pilots but will redefine their role."
+      }
+    },
+    {
+      "id": "mil-self-004",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت ضابط قانوني في قوة مسلحة. قائدك يطلب منك إعداد إطار قانوني يسمح بنشر طائرات ذاتية القرار في ظروف محددة. كيف تتعامل؟",
+        "en": "You're a legal officer in the armed forces. Your commander asks you to draft a legal framework allowing deployment of autonomous drones in specific conditions. How do you approach this?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أعدّ إطاراً يدمج IHL مع ضوابط تقنية وآلية مراجعة حية ومساءلة واضحة",
+            "en": "I draft a framework integrating IHL with technical safeguards, a live review mechanism, and clear accountability"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أعدّ إطاراً مع تحفّظات قوية وأشير لمخاطر عدم التوافق مع المعاهدات الناشئة",
+            "en": "I draft with strong reservations and flag non-compliance risks with emerging treaties"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفض إعداده إلا بعد استشارة لجنة أخلاقية مستقلة وخبراء دوليين",
+            "en": "I decline until consulting an independent ethics committee and international experts"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض تماماً — لا إطار قانوني يمكنه تبرير قرارات القتل الذاتي أخلاقياً",
+            "en": "I completely refuse — no legal framework can ethically justify autonomous kill decisions"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا موقف يواجهه ضباط قانونيون فعلياً في عدة جيوش. Directive 3000.09 يُلزم مراجعة قانونية لكنها تختلف عملياً. القانون الدولي الإنساني يتطلب التمييز والتناسب والاحتياط — الأسلحة الذاتية تتحدى الثلاثة.",
+        "en": "This situation actually faces legal officers in several militaries. Directive 3000.09 requires legal review but practice varies. IHL requires distinction, proportionality, and precaution — autonomous weapons challenge all three."
+      }
+    },
+    {
+      "id": "mil-self-005",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "شركة ناشئة محلية تقترح عليك، كمسؤول مشتريات عسكرية، طائرات مسيّرة ذاتية التعرف البصري بربع سعر الأنظمة الغربية. ما قرارك؟",
+        "en": "A local startup offers you, as a military procurement officer, visually-autonomous drones at one-quarter the price of Western systems. Your decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أشتري كمية محدودة للاختبار الميداني وأضع الشركة على مسار تطوير شراكة استراتيجية",
+            "en": "I buy a limited quantity for field testing and put the company on a strategic partnership path"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطلب تدقيقاً تقنياً مستقلاً أولاً ثم أشتري بناءً على النتائج",
+            "en": "I request independent technical audit first, then buy based on results"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أفضّل البقاء مع المورد الأجنبي الموثوق رغم السعر الأعلى",
+            "en": "I prefer sticking with the trusted foreign supplier despite higher price"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض تماماً — الشركات الناشئة خطر كبير في قطاع حيوي كالدفاع",
+            "en": "I refuse — startups are too risky in a critical sector like defense"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا بالضبط ما حدث في أوكرانيا: مئات الشركات الناشئة المحلية تفوّقت على موردين كبار في السرعة والتكلفة. Brave1 موّلت 450+ مشروعاً. السؤال الحقيقي: كيف توازن بين المخاطرة والاستقلال التقني؟",
+        "en": "This is exactly what happened in Ukraine: hundreds of local startups outperformed big suppliers on speed and cost. Brave1 funded 450+ projects. The real question: how to balance risk with tech sovereignty?"
+      }
+    },
+    {
+      "id": "mil-self-006",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "بصفتك محلل استخبارات، تتلقى يومياً 200 هدف مقترح من نظام AI. فريقك عدده 5 أشخاص — المراجعة الحقيقية مستحيلة. ماذا تفعل؟",
+        "en": "As an intelligence analyst, you receive 200 AI-suggested targets daily. Your team of 5 can't actually review them all. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أرفع تقريراً صريحاً للقيادة أن المراجعة الحالية غير فعّالة وأقترح نظام عيّنات مدروسة",
+            "en": "I file a frank report to command that current review is ineffective and propose a studied sampling system"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أطلب زيادة الفريق أو خفض معدل الإنتاج حتى تكون المراجعة معقولة",
+            "en": "I request larger team or lower production rate until review is reasonable"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أفعل ما يمكن وأسجل تحفظاتي كتابياً لحماية نفسي قانونياً",
+            "en": "I do what I can and document my reservations in writing to legally protect myself"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض المشاركة وأطلب نقلي فوراً من هذه المهمة",
+            "en": "I refuse to participate and request immediate reassignment"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا سيناريو مشابه لما وصفه ضباط استخبارات إسرائيليون في تحقيق +972. \"أبيّض\" الهدف خلال 20 ثانية مجرد مسرحية. المسؤولية القانونية والأخلاقية للفرد تبقى حتى لو كان النظام يفرض السرعة.",
+        "en": "This is similar to what Israeli intelligence officers described in the +972 investigation. 'Clearing' a target in 20 seconds is theater. Individual legal and moral responsibility remains even when the system imposes speed."
+      }
+    },
+    {
+      "id": "mil-self-007",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "حكومتك تدرس الانضمام لمعاهدة دولية لحظر الأسلحة الذاتية. كخبير دفاعي، ما توصيتك؟",
+        "en": "Your government is considering joining an international treaty banning autonomous weapons. As a defense expert, what's your recommendation?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أوصي بالانضمام مع المشاركة في صياغة تفاصيلها لضمان توازن الأمن والأخلاق",
+            "en": "I recommend joining while helping draft details to balance security and ethics"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أؤيد الانضمام لكن مع تحفظات تحمي قدراتنا الدفاعية الأساسية",
+            "en": "I support joining with reservations protecting our core defense capabilities"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أوصي بالانتظار حتى تنضم القوى الكبرى أولاً لتجنب الإضرار بأمننا",
+            "en": "I advise waiting until major powers join to avoid harming our security"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض الانضمام — المعاهدة ستقيّدنا بينما خصومنا غير ملتزمين",
+            "en": "I refuse — the treaty would constrain us while adversaries remain unbound"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه معضلة حقيقية. النمسا تقود جهود الحظر. الولايات المتحدة والصين وروسيا تعارض. 166 دولة أيدت قرار 79/62. الدول الصغيرة والمتوسطة تواجه ضغطاً بين المبادئ والواقعية الأمنية.",
+        "en": "This is a real dilemma. Austria leads ban efforts. US, China, Russia oppose. 166 countries backed Resolution 79/62. Small and mid-sized states face pressure between principles and security pragmatism."
+      }
+    },
+    {
+      "id": "mil-self-008",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مدرب في أكاديمية عسكرية. طلاب السنة الأخيرة يستخدمون ChatGPT لكتابة أطروحات التخرج الاستراتيجية. ما موقفك؟",
+        "en": "You're a military academy instructor. Senior students use ChatGPT to write their strategic theses. Your stance?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أعيد تصميم المنهج ليركّز على التفكير النقدي والنقد البشري لمخرجات AI",
+            "en": "I redesign the curriculum to emphasize critical thinking and human critique of AI output"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أسمح باستخدام AI كأداة مع اشتراط الإفصاح والتحقق البشري الواضح",
+            "en": "I allow AI as a tool requiring disclosure and clear human verification"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أحظر استخدام AI في الأطروحات لضمان قياس قدرات الطالب الفعلية",
+            "en": "I ban AI in theses to ensure measurement of actual student abilities"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفع توصية بطرد أي طالب يُضبط مستخدماً AI",
+            "en": "I recommend expelling any student caught using AI"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الكليات الحربية الأمريكية أضافت مساقات إلزامية عن AI والأخلاقيات. المنع الكامل غير واقعي. الواقع: القادة الذين لا يفهمون AI لن يستطيعوا قيادة جيوش المستقبل بفعالية.",
+        "en": "US war colleges added mandatory AI ethics courses. Total bans are unrealistic. Reality: commanders who don't understand AI can't effectively lead future militaries."
+      }
+    },
+    {
+      "id": "mil-self-009",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "كمحلل في مركز أبحاث دفاعي، تُطلب منك دراسة جدوى نشر أسراب طائرات مسيّرة ذاتية القرار. ما منهجك؟",
+        "en": "As an analyst at a defense think tank, you're asked to study the feasibility of deploying autonomous drone swarms. Your approach?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أُجري دراسة متوازنة تغطي الفرص والمخاطر والأبعاد القانونية والأخلاقية",
+            "en": "I conduct a balanced study covering opportunities, risks, legal and ethical dimensions"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أركّز على الجدوى التقنية والتكلفة وأترك الأبعاد الأخلاقية لخبراء آخرين",
+            "en": "I focus on technical feasibility and cost, leaving ethics to other experts"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أركّز على مخاطر الخصوم المحتملة لتقديم إطار دفاعي فقط",
+            "en": "I focus on potential adversary risks for a defensive framing only"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض إجراء الدراسة لأن أي دعم لهذه الأسلحة غير أخلاقي",
+            "en": "I refuse the study because any endorsement of these weapons is unethical"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الدراسات المتوازنة هي الأكثر فائدة للقادة. Paul Scharre في \"Four Battlegrounds\" قدّم نموذجاً جيداً. مراكز مثل CSIS وCNAS وRAND تنتج تقارير مرجعية. الانحياز لأي جانب يُضعف المصداقية.",
+        "en": "Balanced studies are most useful to commanders. Paul Scharre's 'Four Battlegrounds' offered a good model. Centers like CSIS, CNAS, and RAND produce reference reports. Bias to either side weakens credibility."
+      }
+    },
+    {
+      "id": "mil-self-010",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول إعلام عسكري. صحفي يسألك عن استخدام جيشك لـ AI في الاستهداف. ماذا تقول؟",
+        "en": "You're a military press officer. A journalist asks about your military's AI targeting. What do you say?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أقدّم إجاباً شفافاً عن الاستخدامات المسموح الإفصاح عنها وأوضح الضوابط البشرية",
+            "en": "I transparently answer about disclosable uses and clarify human safeguards"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أؤكد وجود استخدامات لـ AI دون تفاصيل تقنية مع التركيز على الأخلاقيات",
+            "en": "I confirm AI uses without technical details, emphasizing ethics"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أكتفي بقول \"لا تعليق على التفاصيل العملياتية\" بشكل ودي",
+            "en": "I say politely 'no comment on operational details'"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أنفي أي استخدام لـ AI حتى لو كان الواقع عكس ذلك",
+            "en": "I deny any AI use even if reality says otherwise"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الشفافية السليمة تبني الثقة العامة. النفي يولّد أزمات حين تُكشف الحقيقة — كما حدث مع الحكومات في قضايا Lavender وGospel. صحفيو +972 وLocal Call كشفوا ما نفاه الجيش لأشهر.",
+        "en": "Sound transparency builds public trust. Denial creates crises when truth emerges — as with governments in Lavender/Gospel cases. +972 and Local Call journalists exposed what the military denied for months."
+      }
+    },
+    {
+      "id": "mil-self-011",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت ضابط في وحدة حرب سيبرانية. فريقك يكتشف أن خصماً يستخدم نماذج LLM لأتمتة هجماته. ماذا تفعل أولاً؟",
+        "en": "You're an officer in a cyber warfare unit. Your team discovers an adversary automating attacks with LLMs. What do you do first?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أحلّل التكتيكات لبناء دفاع مقابل قبل الاستجابة الهجومية",
+            "en": "I analyze tactics to build counter-defense before any offensive response"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أرفع تقريراً عاجلاً للقيادة مع خيارات رد متدرجة",
+            "en": "I urgently report to command with graduated response options"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أطلق رداً سيبرانياً فورياً لردع الخصم",
+            "en": "I launch immediate cyber response to deter the adversary"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتجاهل — LLMs أدوات عادية والهجمات ليست جديدة فعلاً",
+            "en": "I ignore — LLMs are ordinary tools and attacks aren't really new"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "أتمتة الهجمات بـ LLMs ظاهرة متسارعة. Microsoft ومركز تهديدات CrowdStrike رصدا مجموعات من إيران والصين وروسيا تستخدم ChatGPT ونماذج أخرى لتوسيع هجمات التصيّد والهندسة الاجتماعية.",
+        "en": "LLM-automated attacks are an accelerating phenomenon. Microsoft and CrowdStrike's threat centers tracked Iranian, Chinese, and Russian groups using ChatGPT and other models to scale phishing and social engineering."
+      }
+    },
+    {
+      "id": "mil-self-012",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "القيادة تخبرك، كضابط ميداني، أن طائرة مسيّرة ذاتية أخطأت الهدف وأصابت مدنيين. ما تصرفك؟",
+        "en": "Command informs you, as a field officer, that an autonomous drone mistook the target and hit civilians. Your action?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أطالب بوقف استخدام النظام فوراً وفتح تحقيق مستقل وتبليغ كامل للسلطات المدنية",
+            "en": "I demand immediate suspension, independent investigation, and full disclosure to civilian authorities"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أوثّق الحادثة بدقة وأرفع تقريراً للقيادة مع توصية بمراجعة النظام",
+            "en": "I thoroughly document and report to command with a system review recommendation"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أتبع التعليمات الرسمية فقط دون مبادرة شخصية",
+            "en": "I follow official procedures only without personal initiative"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أكتم الحادثة حفاظاً على معنويات الوحدة وسمعة البرنامج",
+            "en": "I conceal the incident to protect unit morale and program reputation"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "القانون الدولي الإنساني يتطلب التحقيق في ضحايا مدنيين. الإفلات من العقاب يغذي المزيد من الانتهاكات. قضايا مثل Nisour Square (2007) وAzhar Hashmi (2021) تظهر أن الشفافية الصعبة أفضل من التستّر.",
+        "en": "IHL requires investigating civilian casualties. Impunity fuels more violations. Cases like Nisour Square (2007) and Azhar Hashmi (2021) show difficult transparency beats cover-ups."
+      }
+    },
+    {
+      "id": "mil-self-013",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "كمخطط استراتيجي، تُطلب منك توصية بميزانية دفاعية لعشر سنوات. كم تخصص لـ AI والأنظمة الذاتية؟",
+        "en": "As a strategic planner, you're asked to recommend a 10-year defense budget. How much do you allocate to AI and autonomous systems?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نسبة متزايدة تدريجياً من 5% إلى 20% مع مراجعة سنوية للأداء والتهديدات",
+            "en": "Gradually increase from 5% to 20% with annual performance and threat review"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "15% ثابتة من اليوم الأول لضمان التفوق التكنولوجي الفوري",
+            "en": "A fixed 15% from day one to ensure immediate tech superiority"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أقل من 5% — الأسلحة التقليدية أكثر إثباتاً وموثوقية",
+            "en": "Less than 5% — conventional weapons are more proven and reliable"
+          },
+          "flexibility_score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "40%+ — مستقبل الحرب كله ذاتي، ولا مفر من استثمار ضخم",
+            "en": "40%+ — the future of war is autonomous, massive investment is inevitable"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "البنتاغون FY2026 خصّص ~13.4 مليار من ~900 مليار، أي ~1.5%. السعودية والإمارات في حدود 5-10%. التوازن المطلوب: لا مبالغة ولا تجاهل. المراجعة الدورية أهم من الرقم الأولي.",
+        "en": "Pentagon FY2026 allocated ~$13.4B of ~$900B, about 1.5%. Saudi/UAE are in the 5-10% range. The needed balance: neither overreach nor neglect. Periodic review matters more than initial number."
+      }
+    },
+    {
+      "id": "mil-self-014",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "زميلك ضابط يقول لك: \"كل هذا الكلام عن أخلاقيات AI مضيعة وقت — الصين لا تلتزم بشيء\". ما ردّك؟",
+        "en": "A fellow officer tells you: 'All this AI ethics talk is a waste — China doesn't respect anything.' Your response?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "الأخلاقيات ليست ترفاً بل ميزة استراتيجية: شرعية دولية وثقة حلفاء وحماية لجنودنا من جرائم حرب",
+            "en": "Ethics isn't a luxury but a strategic edge: international legitimacy, allied trust, and protection for our troops from war crimes"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أوافقه جزئياً — يجب تطوير القدرات بسرعة مع ضوابط عملية لا مثالية",
+            "en": "I partially agree — build capabilities fast with practical, not idealistic, safeguards"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "الخصوم لا يلتزمون فعلاً وهذا يقيّدنا — أفهم إحباطه لكن لا أوافق",
+            "en": "Adversaries indeed don't comply and this constrains us — I understand his frustration but disagree"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أوافقه تماماً — المبالغة الأخلاقية تضعف جيشنا أمام خصم شرس",
+            "en": "I fully agree — ethical exaggeration weakens us against ruthless adversaries"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "حجة \"الخصوم لا يلتزمون\" شائعة. لكنها تتجاهل أن معاهدات مثل حظر الألغام نجحت رغم عدم توقيع الجميع. القوات الأمريكية والأوروبية تحرص على IHL لحماية سمعتها وإمكانية التحالف. فقدان الأخلاقيات = فقدان الحلفاء.",
+        "en": "The 'adversaries don't comply' argument is common. But it ignores treaties like the mine ban succeeding despite non-universal signature. US/European forces uphold IHL for reputation and alliance viability. Losing ethics = losing allies."
+      }
+    },
+    {
+      "id": "mil-self-015",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت مسؤول دفاعي في دولة نامية. هل تدعم بناء قدرات AI عسكرية محلية رغم التكلفة العالية؟",
+        "en": "You're a defense official in a developing country. Do you support building local military AI capabilities despite the high cost?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "نعم بمسار تدريجي يدمج شراكات دولية وبحث أكاديمي مشترك وتصدير لاحق",
+            "en": "Yes via a gradual path combining international partnerships, joint academic research, and eventual export"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "نعم لكن بأولويات محدودة في المراقبة والاستخبارات لا في الأسلحة الفتاكة",
+            "en": "Yes but with limited priorities in surveillance and intelligence, not lethal weapons"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "لا — أفضل الشراء من موردين موثوقين وتوفير الميزانية للصحة والتعليم",
+            "en": "No — I prefer buying from trusted suppliers and saving budget for health/education"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "لا — الاعتماد على حلفاء مقرّبين أفضل من محاولات محلية قد تفشل",
+            "en": "No — relying on close allies is better than local efforts that may fail"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "تركيا (Baykar) والإمارات (EDGE) نماذج ناجحة، لكن تطلب عقوداً ومليارات. الحل غالباً هجين: بناء قدرات محدودة ذكية في مجالات معينة + شراكات استراتيجية. الاعتماد الكلي خطر استراتيجي.",
+        "en": "Turkey (Baykar) and UAE (EDGE) are success models but require decades and billions. The solution is usually hybrid: smart limited capabilities in specific areas + strategic partnerships. Total dependency is a strategic risk."
+      }
+    },
+    {
+      "id": "mil-self-016",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت قائد قوة متعددة الجنسيات. حليف يستخدم نظام AI لتقييم الأهداف لم تتم مراجعته بـ IHL. ما موقفك؟",
+        "en": "You command a multinational force. An ally uses an AI targeting system not reviewed for IHL. Your position?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أطلب مراجعة مشتركة قبل أي استخدام في عمليات التحالف لحماية الجميع قانونياً",
+            "en": "I request joint review before any use in coalition ops to legally protect everyone"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أرفع الموضوع للقيادة السياسية مع توصية بمراجعة فورية",
+            "en": "I raise it to political command with an immediate review recommendation"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أفصل وحدتي عن أي مهام مرتبطة بهذا النظام دون فرض على الحلفاء",
+            "en": "I separate my unit from any missions involving the system without imposing on allies"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتجاهل — الحلفاء يتحملون مسؤوليتهم الخاصة",
+            "en": "I ignore — allies carry their own responsibility"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "الولايات المتحدة والمملكة المتحدة وناتو يجرون مراجعات IHL منفصلة. قضية Lavender أظهرت أن شراكة AI بدون معايير مشتركة تعرّض الحلفاء لمسؤولية قانونية غير متوقعة. التناسق القانوني ضرورة.",
+        "en": "US, UK, and NATO conduct separate IHL reviews. Lavender showed AI partnership without shared standards exposes allies to unexpected legal liability. Legal consistency is essential."
+      }
+    },
+    {
+      "id": "mil-self-017",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "كمهندس عسكري، شركتك تطلب منك تطوير نظام AI قد يستخدم في استهداف. أنت تعلم أن ضوابطه ضعيفة. ماذا تفعل؟",
+        "en": "As a military engineer, your company asks you to develop an AI system that may be used for targeting. You know its safeguards are weak. What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أرفض المشاركة كتابياً وأرفع مخاوفي للإدارة والمجلس الأخلاقي",
+            "en": "I refuse in writing and escalate concerns to management and the ethics board"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أشارك بشرط تقوية الضوابط كتابياً قبل البدء",
+            "en": "I participate on the condition of written stronger safeguards before starting"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أشارك مع توثيق تحفظاتي لحماية نفسي قانونياً وأخلاقياً",
+            "en": "I participate while documenting my reservations for legal/ethical self-protection"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أشارك — القرار النهائي للقيادة وليس لي علاقة أخلاقية شخصية",
+            "en": "I participate — the final decision is command's; I have no personal ethical stake"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "موظفو Google أجبروا الشركة 2018 على الانسحاب من Maven بعد اعتراض 3000 موظف. Microsoft وAnthropic وOpenAI كلهم واجهوا معضلات مشابهة. المهندسون أصحاب نفوذ أخلاقي حقيقي.",
+        "en": "Google employees forced their company to exit Maven in 2018 after 3,000 objected. Microsoft, Anthropic, OpenAI all faced similar dilemmas. Engineers hold real ethical leverage."
+      }
+    },
+    {
+      "id": "mil-self-018",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "كمسؤول عمليات، تواجه ضغط الوقت لنشر نظام AI لم يُختبر بالكامل. القائد الأعلى يقول \"الخصم لا ينتظر\". ماذا تفعل؟",
+        "en": "As an operations officer, you face time pressure to deploy a not-fully-tested AI system. Senior command says 'the adversary won't wait.' What do you do?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أصرّ على اختبار محدود سريع مع قيود نشر واضحة بدل تجنّب الاختبار كلياً",
+            "en": "I insist on rapid limited testing with clear deployment constraints instead of skipping tests"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقبل النشر المحدود مع بروتوكول مراقبة مكثّف ومراجعة أسبوعية",
+            "en": "I accept limited deployment with intensive monitoring and weekly review"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفض وأرفع مخاوفي كتابياً للتصعيد — مسؤوليتي القانونية لا تسقط بأمر شفهي",
+            "en": "I refuse and escalate in writing — my legal responsibility doesn't vanish with verbal orders"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أنفّذ الأمر كما هو — الانضباط العسكري أساس، والمسؤولية على القيادة",
+            "en": "I execute as ordered — military discipline is foundational; responsibility lies with command"
+          },
+          "flexibility_score": 2
+        }
+      ],
+      "hint_after": {
+        "ar": "هذا هو الضغط الذي أدى لفشل Replicator في تحقيق أهدافه. \"الخصم لا ينتظر\" غالباً ذريعة لتجاوز المراجعات الضرورية. Kargu-2 في ليبيا 2020، أول قتل ذاتي موثق، كان نتيجة نظام لم يُختبر كفايةً.",
+        "en": "This is the pressure that made Replicator fail its targets. 'Adversary won't wait' is often an excuse to skip necessary review. Kargu-2 in Libya 2020, the first documented autonomous killing, resulted from an insufficiently tested system."
+      }
+    },
+    {
+      "id": "mil-self-019",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "منظمة حقوقية تطلب منك، كضابط متقاعد، شهادتك على استخدام AI في الاستهداف في عملية شاركت فيها. ما قرارك؟",
+        "en": "A human rights organization asks you, as a retired officer, to testify on AI targeting use in an operation you participated in. Your decision?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أشهد بصدق ضمن حدود قانونية وسرية معقولة — الشفافية جزء من المساءلة",
+            "en": "I testify honestly within legal and reasonable confidentiality limits — transparency is part of accountability"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أستشير محامياً أولاً لحماية نفسي قانونياً ثم أشهد بما هو مسموح",
+            "en": "I consult a lawyer first for legal protection, then testify on what's permissible"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أرفض بسبب اتفاقيات السرية التي وقّعتها طوال خدمتي",
+            "en": "I decline due to confidentiality agreements from my service"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أرفض رفضاً قاطعاً — الولاء للجيش لا يسقط بالتقاعد",
+            "en": "I absolutely refuse — loyalty to the military doesn't end with retirement"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "ضباط استخبارات إسرائيليين أدلوا بشهاداتهم لـ +972 مجهولي الهوية لكشف Lavender. هذه الشهادات أساسية للمساءلة القانونية. القانون الدولي يعتبرها واجباً أخلاقياً في حالات الشبهة بجرائم حرب.",
+        "en": "Israeli intelligence officers testified anonymously to +972 to expose Lavender. Such testimonies are essential for legal accountability. International law considers them a moral duty in suspected war crimes cases."
+      }
+    },
+    {
+      "id": "mil-self-020",
+      "type": "self_assessment",
+      "purpose": "self_assessment",
+      "axis": "flexibility",
+      "time_seconds": 0,
+      "points": 0,
+      "text": {
+        "ar": "أنت قائد عسكري في 2030. كل قوات خصمك المحتمل تعتمد على أسراب ذاتية. قواتك تتمسك بـ \"الإنسان في الحلقة\". هل تغيّر العقيدة؟",
+        "en": "You're a military commander in 2030. All your potential adversary's forces use autonomous swarms. Your forces stick to 'human-in-the-loop.' Do you change doctrine?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "ar": "أحافظ على العقيدة وأوظّف AI لتسريع اتخاذ القرار البشري بدل استبداله",
+            "en": "I keep the doctrine and use AI to speed human decision-making rather than replace it"
+          },
+          "flexibility_score": 5
+        },
+        {
+          "id": "b",
+          "text": {
+            "ar": "أقبل تخفيف محدود في مهام دفاعية بحتة (مثل اعتراض الطائرات المسيّرة)",
+            "en": "I accept limited relaxation for purely defensive missions (e.g., drone interception)"
+          },
+          "flexibility_score": 4
+        },
+        {
+          "id": "c",
+          "text": {
+            "ar": "أطوّر عقيدة مزدوجة: تحكم بشري افتراضي واستقلالية عند الحاجة الحرجة",
+            "en": "I develop dual doctrine: default human control, autonomy in critical necessity"
+          },
+          "flexibility_score": 3
+        },
+        {
+          "id": "d",
+          "text": {
+            "ar": "أتخلى عن \"الإنسان في الحلقة\" — البقاء العسكري يتطلب مجاراة الخصم",
+            "en": "I abandon 'human-in-the-loop' — survival requires matching the adversary"
+          },
+          "flexibility_score": 1
+        }
+      ],
+      "hint_after": {
+        "ar": "هذه معضلة \"Offset Strategy\" الثالثة للبنتاغون منذ 2014. بعض الخبراء يرون أن AI-augmented human (إنسان معزز) يتفوق على AI المستقل لأنه يجمع الحكمة البشرية مع السرعة الآلية. الحرب ليست مباراة سرعة فقط.",
+        "en": "This is the Pentagon's Third Offset Strategy dilemma since 2014. Some experts argue AI-augmented humans outperform autonomous AI by combining human judgment with machine speed. War isn't just a speed contest."
+      }
     }
   ]
 }
