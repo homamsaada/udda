@@ -1,5 +1,10 @@
 # 📊 kaffara-calculator — Progress
 
+> 📅 **آخر نشاط على هذه الأداة:** 2026-05-09 (إنشاء workspace + temporal markers)
+> 🔍 **آخر فحص توافق:** 2026-05-09
+> 📜 **التاريخ التفصيلي:** `git log -- src/tools/kaffara-calculator.html`
+> 🔍 **فحوصات خاصة بهذه الأداة عند فجوة > 90 يوماً:** هل صدرت قرارات معاصرة جديدة عن مقدار "إطعام مسكين"؟ هل تغيّرت أسعار الكفارات في البلدان المرجعية؟
+
 > الحالة والخطة لحاسبة الكفارات والفدية.
 > [`memory.md`](memory.md) · [`../../tools/kaffara-calculator.spec.md`](../../tools/kaffara-calculator.spec.md)
 

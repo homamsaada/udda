@@ -1,5 +1,10 @@
 # 📊 age-calculator — Progress
 
+> 📅 **آخر نشاط على هذه الأداة:** 2026-05-09 (إنشاء workspace + temporal markers)
+> 🔍 **آخر فحص توافق:** 2026-05-09
+> 📜 **التاريخ التفصيلي:** `git log -- src/tools/age-calculator.html`
+> 🔍 **فحوصات خاصة بهذه الأداة عند فجوة > 90 يوماً:** Date APIs في JS ثابتة. لكن — لو أُضيف دعم التقويم الهجري لاحقاً، تأكّد من بيانات Umm Al-Qura calendar الحديثة (تتغيّر سنوياً).
+
 > [`memory.md`](memory.md) · [`../../tools/age-calculator.spec.md`](../../tools/age-calculator.spec.md)
 
 ---

@@ -1,5 +1,10 @@
 # 📊 body-calculator — Progress
 
+> 📅 **آخر نشاط على هذه الأداة:** 2026-05-09 (إنشاء workspace + temporal markers)
+> 🔍 **آخر فحص توافق:** 2026-05-09
+> 📜 **التاريخ التفصيلي:** `git log -- src/tools/body-calculator.html`
+> 🔍 **فحوصات خاصة بهذه الأداة عند فجوة > 90 يوماً:** هل WHO حدّث BMI Standards أو WHR criteria؟ هل ظهرت معادلات بديلة لـ BMR/IBW أكثر دقّة؟ هل تغيّرت تصنيفات السمنة/الوزن المثالي؟
+
 > الحالة والخطة لحاسبة الجسم.
 > [`memory.md`](memory.md) · [`../../tools/body-calculator.spec.md`](../../tools/body-calculator.spec.md)
 

@@ -1,5 +1,10 @@
 # 📊 interest-calculator — Progress
 
+> 📅 **آخر نشاط على هذه الأداة:** 2026-05-09 (إنشاء workspace + temporal markers)
+> 🔍 **آخر فحص توافق:** 2026-05-09
+> 📜 **التاريخ التفصيلي:** `git log -- src/tools/interest-calculator.html`
+> 🔍 **فحوصات خاصة بهذه الأداة عند فجوة > 90 يوماً:** المعادلات الرياضية ثابتة تاريخياً، لكن — هل ظهرت بدائل إسلامية شائعة جديدة (مرابحة رقمية، تورّق، إلخ) تستحق الإشارة في disclaimer؟
+
 > [`memory.md`](memory.md) · [`../../tools/interest-calculator.spec.md`](../../tools/interest-calculator.spec.md)
 
 ---

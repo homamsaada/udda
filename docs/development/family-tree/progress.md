@@ -1,5 +1,10 @@
 # 📊 family-tree — Progress
 
+> 📅 **آخر نشاط على هذه الأداة:** 2026-05-09 (إنشاء workspace + temporal markers)
+> 🔍 **آخر فحص توافق:** 2026-05-09
+> 📜 **التاريخ التفصيلي:** `git log -- src/tools/family-tree.html`
+> 🔍 **فحوصات خاصة بهذه الأداة عند فجوة > 90 يوماً:** SVG APIs ثابتة. لكن — هل ظهرت conventions جديدة لـ accessibility في SVG التفاعلي؟ هل GEDCOM v7 (إن أصبح standard) يستحق دعمه للتصدير؟
+
 > [`memory.md`](memory.md) · [`../../tools/family-tree.spec.md`](../../tools/family-tree.spec.md)
 
 ---

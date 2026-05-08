@@ -97,6 +97,42 @@ Any other key in `tools.{id}.{lang}` becomes available as `{{tool.{customKey}}}`
 - Push to `main` → deploy via `.github/workflows/deploy.yml`
 - Base URL: `https://udda.tools`
 
+## 📅 Session Resume Protocol
+
+When starting work on this project, **always begin with this temporal check** (multi-level, fractal — mirrors the docs structure).
+
+### 1. Site-level check (always)
+```bash
+git log -1 --format='%ai' main           # last commit on main
+```
+Compare with today's date. **If gap > 30 days:**
+- [ ] `npm outdated` — stale or insecure dependencies?
+- [ ] Review `.github/workflows/*.yml` — actions versions still current?
+- [ ] Skim recent commits: `git log --oneline -10`
+- [ ] **Compare today's date with your own training cutoff.** If you might be working on a topic that evolved since your cutoff, use WebFetch or ask the user before asserting facts.
+
+### 2. Tool-level check (when working on a specific tool)
+```bash
+git log -1 --format='%ai' -- src/tools/{tool-id}.html
+```
+Compare with today's date. **If gap > 90 days:**
+- [ ] Open `docs/development/{tool}/progress.md` — review the temporal markers and tool-specific compatibility checklist
+- [ ] Open `docs/development/{tool}/memory.md` — are decisions still valid?
+- [ ] Tool-specific external concerns (examples — see each tool's `progress.md` for the canonical list):
+  - **ai-readiness:** AI tools mentioned in `src/assets/data/ai-readiness/*.json` (ChatGPT, Sora, Midjourney, Copilot, Stitch, etc.) — still real and named correctly?
+  - **zakat / inheritance / kaffara:** new contemporary fiqh rulings (AAOIFI, مجمع الفقه الإسلامي الدولي)?
+  - **gpa-calculator:** grading systems in covered countries — any changes?
+  - **body-calculator:** WHO update to BMI standards or WHR criteria?
+- [ ] Review `git log -- src/tools/{tool-id}.html` for recent code changes
+
+### 3. Update temporal markers after work
+- Update `docs/04-PROGRESS.md` header date
+- Update `docs/development/{tool}/progress.md` header date (if you worked on a tool)
+- For major sessions, add an entry to `docs/_sessions.md`
+
+### Why this matters
+Each session may have a different agent with a different training cutoff. External dependencies and standards drift. AI tool names change monthly. Fiqh references evolve with new resolutions. The protocol prevents acting on stale assumptions. **The detailed file history is `git log` — don't maintain manual per-tool changelogs.**
+
 ## For Agents
 
 ### When working on a specific tool:

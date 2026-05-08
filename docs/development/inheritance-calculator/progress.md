@@ -1,5 +1,10 @@
 # 📊 inheritance-calculator — Progress
 
+> 📅 **آخر نشاط على هذه الأداة:** 2026-05-09 (إنشاء workspace + temporal markers)
+> 🔍 **آخر فحص توافق:** 2026-05-09
+> 📜 **التاريخ التفصيلي:** `git log -- src/tools/inheritance-calculator.html`
+> 🔍 **فحوصات خاصة بهذه الأداة عند فجوة > 90 يوماً:** هل صدرت تعديلات في الفقه المقارن (المذاهب الأربعة)؟ هل ظهرت اجتهادات معاصرة في الحالات الخاصة (المفقود، الأسير، الخنثى)؟
+
 > الحالة الحالية والخطة المستقبلية لحاسبة المواريث.
 > للسياق والقرارات → [`memory.md`](memory.md). للمواصفة → [`../../tools/inheritance-calculator.spec.md`](../../tools/inheritance-calculator.spec.md).
 

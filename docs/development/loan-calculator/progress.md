@@ -1,5 +1,10 @@
 # 📊 loan-calculator — Progress
 
+> 📅 **آخر نشاط على هذه الأداة:** 2026-05-09 (إنشاء workspace + temporal markers)
+> 🔍 **آخر فحص توافق:** 2026-05-09
+> 📜 **التاريخ التفصيلي:** `git log -- src/tools/loan-calculator.html`
+> 🔍 **فحوصات خاصة بهذه الأداة عند فجوة > 90 يوماً:** المعادلات (Amortized، Declining، Interest-Only) ثابتة تاريخياً. لكن — هل ظهرت طرق احتساب جديدة شائعة في القطاع المصرفي؟ هل المرابحة الإسلامية تستحق إضافة كحاسبة بديلة؟
+
 > [`memory.md`](memory.md) · [`../../tools/loan-calculator.spec.md`](../../tools/loan-calculator.spec.md)
 
 ---
