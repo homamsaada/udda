@@ -1,815 +1,128 @@
 # Udda | عُدّة
 
-A free, multilingual (Arabic/English) online tools website with calculators, converters, text tools, and more.
+> Free, multilingual (Arabic/English) online tools website. Static site, vanilla JS, no frameworks. Lives at [https://udda.tools](https://udda.tools).
+
+📚 **Full documentation:** [`docs/`](docs/) — start with [`docs/README.md`](docs/README.md).
+
+---
 
 ## Commands
 
-- `npm run build` — Build the site (generates `dist/`)
-- `npm run serve` — Start local server on port 3000
-- `npm run dev` — Build + serve
+```bash
+npm run build      # → dist/
+npm run serve      # → port 3000
+npm run dev        # build + serve
+```
 
-No test or lint commands are configured.
+No tests or lint configured.
 
 ## Project Structure
 
 ```
-src/                        Source files (edit here)
-  assets/css/main.css       Main stylesheet (CSS variables, RTL/LTR, themes)
-  assets/js/app.js          Main application JS (global App object)
-  assets/images/ads/        Ad placeholder images (replace with real ads later)
-  data/i18n.json            All translations (AR/EN)
-  data/tools.json           Tools registry and category order
-  blog/ar/                  Arabic blog posts (Markdown with frontmatter)
-  blog/en/                  English blog posts (Markdown with frontmatter)
-  layouts/                  LEGACY — NOT used by build (see Critical Notes)
-  tools/                    Individual tool HTML templates
-dist/                       Generated output — do NOT edit directly
-docs/                       GitHub Pages deployment folder — do NOT edit directly
-build.js                    Build script — contains the actual HTML layout template
+src/
+├── assets/css/main.css       Stylesheet (CSS vars, themes, RTL/LTR)
+├── assets/js/app.js          App object (theme, search, settings, favorites)
+├── assets/data/ai-readiness/ AI readiness question bank (44 JSON files)
+├── data/i18n.json            All translations (single source of truth)
+├── data/tools.json           Tool registry + categoryOrder
+├── tools/                    11 tool HTML templates
+├── blog/{ar,en}/             Markdown blog posts
+└── pages/{ar,en}/            Static pages (about, contact, privacy, terms, disclaimer)
+
+build.js                      Build script (~1,400 lines) — contains the actual HTML
+                              template inline in buildPageHTML(), NOT in src/layouts/
+docs/                         Full project documentation (markdown)
+dist/                         Build output (gitignored, regenerated each deploy)
 ```
 
-## Tech Stack
+## Hard Rules (top 10 — full list in [`docs/02-PRINCIPLES.md`](docs/02-PRINCIPLES.md))
 
-- Vanilla HTML/CSS/JS — no frameworks or runtime dependencies
-- Node.js for the build system only (`build.js`)
-- `markdown-it` — the only npm dependency, used to convert blog Markdown to HTML
+1. **Vanilla JS only** — no React/Vue/Svelte, no CDN scripts in production
+2. **Bilingual by default** — every user-facing string in `i18n.json` with both `ar` and `en`
+3. **Static-only** — no backend, no database, all client-side
+4. **Privacy-first** — no tracking, no cookies beyond essentials
+5. **Disclaimers required** for Islamic / financial-with-interest / medical tools
+6. **CSS variables, not hex hardcoded** — `var(--success)` not `#22c55e`
+7. **Logical properties** — `margin-inline-start` not `margin-left`
+8. **IIFE wrapping** for all tool JS (only `window.x` for HTML-referenced functions)
+9. **Scoped CSS** via wrapper class — `.zakat-calculator .calc-tab { ... }`
+10. **Mobile-first** — reference: `inheritance-calculator` (see [`docs/standards/mobile-design.md`](docs/standards/mobile-design.md))
 
-## Critical Notes
+## Reserved i18n Keys
 
-- `dist/` and `docs/` are auto-generated — always edit files in `src/` and `build.js`
-- Layout changes go in `build.js` (function `buildPageHTML()`), not in `src/layouts/`
-- Every tool must support both Arabic and English
-- The site supports dark/light/auto themes via `data-theme` attribute
+These keys are processed specially by `build.js` and **must not be used as `{{tool.xxx}}` placeholders**:
+`title`, `metaDescription`, `keywords`, `searchTerms`
+
+These ARE valid as placeholders (build.js provides them explicitly): `name`, `description`, `howToUseText`.
+
+Any other key in `tools.{id}.{lang}` becomes available as `{{tool.{customKey}}}`.
+
+## Adding Things
+
+| Task | Step-by-step guide |
+|---|---|
+| New tool | [`docs/standards/tool-template.md`](docs/standards/tool-template.md) |
+| New blog post | [`docs/standards/blog-template.md`](docs/standards/blog-template.md) |
+| Sub-calculator (percentage) | [`docs/tools/percentage.spec.md`](docs/tools/percentage.spec.md) §4 |
+| Edit tool spec | [`docs/tools/{tool-id}.spec.md`](docs/tools/) |
+
+## Tools (11)
+
+| Tool | Category | Spec |
+|---|---|---|
+| zakat-calculator | calculators | [spec](docs/tools/zakat-calculator.spec.md) — 7 wealth types + Zakat al-Fitr |
+| inheritance-calculator | calculators | [spec](docs/tools/inheritance-calculator.spec.md) — 4 madhabs, hajb, awl, radd |
+| kaffara-calculator | calculators | [spec](docs/tools/kaffara-calculator.spec.md) — 8 expiation types |
+| percentage | calculators | [spec](docs/tools/percentage.spec.md) — 13 sub-calculators |
+| interest-calculator | calculators | [spec](docs/tools/interest-calculator.spec.md) — simple + compound + riba warning |
+| loan-calculator | calculators | [spec](docs/tools/loan-calculator.spec.md) — 3 amortization methods |
+| gpa-calculator | calculators (other) | [spec](docs/tools/gpa-calculator.spec.md) — 20 grading systems |
+| body-calculator | calculators (other) | [spec](docs/tools/body-calculator.spec.md) — BMI, BMR, IBW, BF, WHR |
+| age-calculator | calculators (other) | [spec](docs/tools/age-calculator.spec.md) — date math |
+| ai-readiness | generators | [spec](docs/tools/ai-readiness.spec.md) — 41 specialties × ~100 questions |
+| family-tree | everyday | [spec](docs/tools/family-tree.spec.md) — SVG tree builder |
+
+## Build & Deploy
+
+- `npm run build` → `dist/` (gitignored, regenerated each deploy)
+- Push to `claude/**` branch → auto-merge to `main` (via `.github/workflows/auto-pr.yml`)
+- Push to `main` → deploy via `.github/workflows/deploy.yml`
 - Base URL: `https://udda.tools`
 
-## Current Tools
+## For Agents
 
-| ID | Category | Description |
-|---|---|---|
-| `gpa-calculator` | calculators (other) | GPA calculator: 20 grading templates, retake policies, semester/cumulative/multi/converter/reference |
-| `percentage` | calculators | 13 inline percentage calculators |
-| `interest-calculator` | calculators | Simple & compound interest |
-| `loan-calculator` | calculators | Loan payments & amortization |
-| `body-calculator` | calculators | BMI, BMR, ideal weight, body fat |
-| `age-calculator` | calculators | Age, date difference, date math |
-| `family-tree` | everyday | Interactive family tree builder (SVG) |
-| `zakat-calculator` | calculators | Zakat calculation (gold, silver, cash, stocks, debt, real estate, trade) |
-| `inheritance-calculator` | calculators | Islamic inheritance (faraid) calculator with 4 madhabs, awl, radd, hajb |
-| `kaffara-calculator` | calculators | Kaffara & fidya calculator for 8 types of Islamic expiations |
-| `ai-readiness` | generators | AI readiness assessment: timed quiz with 6 question types, 25 specialties, scoring engine, interactive report |
+- ✅ Use `{{tool.xxx}}` placeholders, never hardcode strings
+- ✅ Read [`docs/standards/`](docs/standards/) before adding tools/posts
+- ✅ Run `npm run build` before claiming completion
+- ✅ Update [`docs/04-PROGRESS.md`](docs/04-PROGRESS.md) when you complete or start major work
+- ❌ Don't add CDN dependencies
+- ❌ Don't commit `dist/` (gitignored)
+- ❌ Don't hardcode hex colors — use CSS variables
+- ❌ Don't break the build
 
-## AI Readiness Assessment Architecture
+## CSS Quick Reference
 
-The AI readiness tool (`src/tools/ai-readiness.html`) is a self-contained interactive quiz. Key notes:
-
-### Question bank
-- Index: `src/assets/data/ai-readiness/questions-index.json` — lists all sections (general + 25 specialties)
-- General questions: `src/assets/data/ai-readiness/general.json`
-- Specialty questions: `src/assets/data/ai-readiness/{specialty-id}.json` (loaded on demand)
-- All text fields are bilingual `{"ar": "...", "en": "..."}`
-
-### Adding a new specialty
-1. Create `src/assets/data/ai-readiness/{id}.json` following the `general.json` structure
-2. Add an entry in `questions-index.json` under `sections[]` with `id`, `name`, `category`, `file`, `code`
-3. The specialty auto-appears in the selection screen
-
-### Adding questions to an existing section
-Add objects to the `questions[]` array in the relevant JSON file. Supported types:
-- `mcq`: options with `score` (0 to max points)
-- `true_false`: `correct_answer` (boolean)
-- `fill_blank`: `blanks[]` with `correct` and `options`
-- `matching`: `left[]`, `right[]`, `correct_pairs[]`
-- `sorting`: `items[]`, `correct_order[]`
-- `self_assessment`: options with `flexibility_score` (1-5)
-
-Each question requires: `id`, `type`, `purpose` (core/cultural/self_assessment), `axis` (knowledge/practice/flexibility), `time_seconds`, `points`, `text`, `hint_after`.
-
-### Scoring
-- Core questions: earned/max → raw score %
-- Cultural questions: tracked separately for display
-- Self-assessment: avg flexibility_score → multiplier (0.7–1.3)
-- Final: min(100, rawScore × multiplier)
-- Levels: Pioneer (90+), Advanced (75+), Aware (60+), Beginner (40+), At Risk (<40)
-
-### Data path
-Files in `src/assets/data/ai-readiness/` are copied to `dist/assets/data/ai-readiness/` automatically by the build system's `copyDirRecursive` call.
-
-## Adding a New Tool — Step by Step
-
-This is the most common task. Follow these steps exactly:
-
-### Step 1: Add translations in `src/data/i18n.json`
-
-Location: inside `"tools"` object, add a new key matching your tool ID.
-
-```json
-"tools": {
-  "my-tool": {
-    "ar": {
-      "name": "اسم الأداة",
-      "title": "اسم الأداة - وصف قصير | عُدّة",
-      "metaDescription": "وصف SEO بالعربي (150-160 حرف)",
-      "keywords": "كلمة1، كلمة2، كلمة3",
-      "description": "وصف قصير يظهر تحت اسم الأداة",
-      "searchTerms": "كلمات بحث متنوعة بالعامي والفصحى والإنجليزي",
-      "howToUseText": "شرح مختصر لكيفية الاستخدام",
-      "customKey1": "نص مخصص 1",
-      "customKey2": "نص مخصص 2"
-    },
-    "en": {
-      "name": "Tool Name",
-      "title": "Tool Name - Short Description | Udda",
-      "metaDescription": "English SEO description (150-160 chars)",
-      "keywords": "keyword1, keyword2, keyword3",
-      "description": "Short description shown under tool name",
-      "searchTerms": "various search terms synonyms misspellings",
-      "howToUseText": "Brief usage instructions",
-      "customKey1": "Custom text 1",
-      "customKey2": "Custom text 2"
-    }
-  }
-}
-```
-
-**Reserved keys** (handled automatically by build.js, do NOT use as `{{tool.xxx}}` in templates):
-`name`, `title`, `metaDescription`, `keywords`, `description`, `searchTerms`, `howToUseText`
-
-**Custom keys**: Any other key you add (like `customKey1`) becomes available as `{{tool.customKey1}}` in the HTML template. Add as many as needed for your tool's UI labels.
-
-**searchTerms tips**: Include the word without "ال", slang/colloquial variants, common misspellings (مئوية/مئويه), and English equivalents.
-
-### Step 2: Register in `src/data/tools.json`
-
-```json
-{
-  "id": "my-tool",
-  "category": "calculators",
-  "icon": "🔢",
-  "popular": true,
-  "new": true,
-  "related": ["percentage", "other-tool"]
-}
-```
-
-Available categories: `calculators`, `converters`, `text`, `datetime`, `generators`, `image`, `developers`, `everyday`
-
-### Step 3: Create HTML template `src/tools/my-tool.html`
-
-The template gets wrapped automatically by `build.js` inside the full page layout. You only write the tool content.
-
-```html
-<!-- Tool card with header -->
-<div class="tool-card">
-  <div class="tool-header">
-    <div class="tool-icon">🔢</div>
-    <div>
-      <h1 class="tool-title">{{tool.name}}</h1>
-      <p class="tool-description">{{tool.description}}</p>
-    </div>
-  </div>
-
-  <!-- Your tool UI here -->
-</div>
-
-<!-- How to Use section -->
-<div class="how-to-use">
-  <h3>📖 {{ui.howToUse}}</h3>
-  <p>{{tool.howToUseText}}</p>
-</div>
-
-<!-- Disclaimer (if needed) — must be last section before related tools -->
-<div class="tool-disclaimer">
-  <h4>⚠️ {{tool.disclaimerTitle}}</h4>
-  <div class="tool-disclaimer-item"><span>📌</span> {{tool.disclaimer1}}</div>
-</div>
-
-<!-- Scoped styles -->
-<style>
-/* Your tool-specific CSS */
-</style>
-
-<!-- Scoped script -->
-<script>
-// Your tool-specific JS
-</script>
-```
-
-### Step 4: Build and verify
-
-```bash
-npm run build
-npm run serve
-# Check both http://localhost:3000/ar/tools/my-tool.html
-# and   http://localhost:3000/en/tools/my-tool.html
-```
-
-## Adding a Blog Post — Step by Step
-
-### Step 1: Create a Markdown file
-
-Create a file at `src/blog/{lang}/my-post-slug.md` (e.g., `src/blog/ar/how-to-calculate-zakat.md`).
-
-Each post file starts with YAML frontmatter:
-
-```markdown
----
-title: "كيف تحسب زكاة المال"
-description: "شرح مبسط لطريقة حساب زكاة المال مع أمثلة عملية"
-date: "2026-03-20"
-topic: "zakat-calculator"
-keywords: "حساب الزكاة، زكاة المال، نصاب الزكاة"
-relatedTool: "zakat-calculator"
----
-
-محتوى المقال هنا بصيغة Markdown...
-
-## عنوان فرعي
-
-نص الفقرة...
-```
-
-**Frontmatter fields:**
-
-| Field | Required | Description |
-|---|---|---|
-| `title` | Yes | Article title (used as h1 and title tag) |
-| `description` | Yes | Short description (meta description + index card) |
-| `date` | Yes | Publish date in YYYY-MM-DD format |
-| `topic` | Yes | Tool ID from `tools.json` (e.g. `zakat-calculator`, `inheritance-calculator`) or `"news"` for site news/updates. The build system auto-resolves the main category from `tools.json`. |
-| `keywords` | Yes | Comma-separated keywords for SEO |
-| `relatedTool` | No | Tool ID from tools.json — shows a link card at article end |
-
-**Available `topic` values:**
-- Any tool ID from `tools.json`: `zakat-calculator`, `inheritance-calculator`, `kaffara-calculator`, `percentage`, `interest-calculator`, `loan-calculator`, `gpa-calculator`, `body-calculator`, `age-calculator`, `family-tree`
-- `"news"` — for site updates/announcements not tied to a specific tool
-- Legacy `category` field (`"seo"`, `"news"`) still works as fallback if `topic` is not set
-
-**Blog URL structure:**
-
-```
-/{lang}/blog/                                    ← Main index (all posts)
-/{lang}/blog/{category}/                         ← Main category page (e.g. calculators)
-/{lang}/blog/{category}/{tool-id}/               ← Tool topic page (e.g. calculators/zakat-calculator)
-/{lang}/blog/{slug}.html                         ← Article page (unchanged)
-```
-
-Category and subcategory pages are auto-generated only when posts exist for them.
-
-### Step 2: Build and verify
-
-```bash
-npm run build
-npm run serve
-# Check both http://localhost:3000/ar/blog/my-post-slug.html
-# and   http://localhost:3000/en/blog/my-post-slug.html (if English version exists)
-# Also check the blog index at http://localhost:3000/ar/blog/
-# Check category page at http://localhost:3000/ar/blog/calculators/
-# Check topic page at http://localhost:3000/ar/blog/calculators/zakat-calculator/
-```
-
-**Blog index page structure (`/{lang}/blog/`):**
-1. **Header** — blog title and description
-2. **Dropdown filter bar** — two `<select>` dropdowns side by side: Category (main categories with icons) and Topic (tools with shortName). Category dropdown dynamically updates Topic dropdown options. Filtering is client-side JS, no page reload.
-3. **All Articles** — full post grid sorted by date (newest first)
-
-**`shortName` field in i18n.json:**
-Tools with blog posts should have a `shortName` field (e.g., "الزكاة" instead of "حاسبة الزكاة") used in blog dropdowns, topic badges, and subcategory page titles. Falls back to `name` if not set.
-
-**Notes:**
-- Each language is independent — a post in `src/blog/ar/` doesn't need a matching file in `src/blog/en/`
-- Posts are sorted by date (newest first) on the blog index page
-- The homepage automatically shows the latest 3 posts (if any exist)
-- Blog posts are automatically added to sitemap.xml (including category/topic pages)
-- Links inside blog content using absolute paths (`/ar/...` or `/en/...`) are automatically converted to relative paths at build time, so always write them in absolute form
-- Use the `.blog-cta` class to add a prominent CTA block linking to a related tool. The CTA icon should match the tool's icon from `tools.json`. Ideal count: **two CTAs per article** (intro + mid-article), since the `relatedTool` card auto-appended at the end covers the closing CTA:
-
-```html
-<div class="blog-cta">
-  <div class="blog-cta-icon">🕌</div>
-  <div class="blog-cta-body">
-    <p>CTA text here</p>
-    <a href="/ar/tools/tool-id.html">Button label ←</a>
-  </div>
-</div>
-```
-
-**SEO conventions for blog posts:**
-- `description` must be 150-160 characters (Arabic) or 150-160 characters (English) — shorter is better for search snippets
-- `keywords` should include colloquial search phrases, question forms ("هل الذهب عليه زكاة"), and common misspellings
-- Each topic cluster has a **pillar article** (e.g., `how-to-calculate-zakat.md`) with a "مواضيع ذات صلة" section linking to all sub-articles
-- Each **sub-article** links back to the pillar article and to 1-2 related sub-articles, placed mid-article in natural context (not at the end)
-- Cross-topic links are encouraged where relevant (e.g., zakat article linking to inheritance article when discussing "what happens to wealth after death")
-
-## Adding a Sub-Calculator to `percentage`
-
-The percentage tool uses a numbered calculator pattern (`calc1` through `calc13`). To add a new one:
-
-1. Add HTML block in `src/tools/percentage.html` following the `calc-row-inline` pattern with `id="calcN-*"` inputs and `id="resultN"`
-2. Add translations in `src/data/i18n.json` under `percentage.ar` and `percentage.en` (at minimum `calcNTitle`)
-3. Update the JS in the same file:
-   - Increase the loop bound: `for (let i = 1; i <= N; i++)`
-   - Add `N` to the `isPercent` array if the result is a percentage
-   - Add `N` to the `signed` array if the result can be negative (shows +/− and color)
-   - Add `case N` in the `calculate()` switch
-4. Run `npm run build`
-
-## Template Placeholder System
-
-Placeholders use `{{key}}` syntax and are replaced at build time.
-
-| Placeholder | Source | Example |
-|---|---|---|
-| `{{tool.name}}` | `i18n.json → tools.{id}.{lang}.name` | حاسبة النسبة المئوية |
-| `{{tool.description}}` | `i18n.json → tools.{id}.{lang}.description` | احسب النسبة بسهولة |
-| `{{tool.howToUseText}}` | `i18n.json → tools.{id}.{lang}.howToUseText` | أدخل الأرقام... |
-| `{{tool.customKey}}` | `i18n.json → tools.{id}.{lang}.customKey` | أي نص مخصص |
-| `{{ui.calculate}}` | `i18n.json → ui.{lang}.calculate` | احسب |
-| `{{ui.result}}` | `i18n.json → ui.{lang}.result` | النتيجة |
-| `{{ui.howToUse}}` | `i18n.json → ui.{lang}.howToUse` | كيفية الاستخدام |
-| `{{validationMsg}}` | Hardcoded in build.js | أدخل أرقاماً صحيحة |
-
-Language detection at runtime:
-
-```js
-const lang = App.state.lang; // 'ar' or 'en'
-const isArabic = lang === 'ar';
-```
-
-Toast messages:
-
-```js
-App.showToast(App.state.lang === 'ar' ? 'تم النسخ!' : 'Copied!');
-```
-
-## CSS Architecture
-
-### Theme colors (use these CSS variables, never hardcode colors)
+Most-used variables (full list in [`docs/standards/design-system.md`](docs/standards/design-system.md)):
 
 ```css
-var(--bg-primary)         /* Page background */
-var(--bg-secondary)       /* Cards, inputs */
-var(--bg-tertiary)        /* Alternate sections */
-var(--text-primary)       /* Main text */
-var(--text-secondary)     /* Secondary text */
-var(--text-muted)         /* Placeholders, hints */
-var(--accent-primary)     /* Primary brand color (indigo) */
-var(--accent-secondary)   /* Secondary accent */
-var(--accent-gradient)    /* Gradient for buttons/results */
-var(--border-color)       /* Borders */
-var(--border-radius)      /* Standard radius */
-var(--border-radius-lg)   /* Large radius */
-var(--transition-fast)    /* Fast transition */
+var(--bg-primary)         /* page background */
+var(--bg-secondary)       /* cards, inputs */
+var(--text-primary)       /* main text */
+var(--accent-primary)     /* indigo brand color */
+var(--accent-gradient)    /* indigo → violet gradient */
+var(--success/warning/error/info)
+var(--card-border)        /* card border style */
+var(--card-shadow)        /* card shadow */
+var(--border-radius)      /* 12px default */
 ```
 
-### Extended color palette
-
-Semantic color variables for tool UIs. Use these instead of hardcoding hex values:
-
-```css
-/* Status colors (same in light & dark — used on colored backgrounds) */
-var(--success)            /* #22c55e — positive, normal, gain */
-var(--success-dark)       /* #16a34a */
-var(--warning)            /* #f59e0b — caution, moderate */
-var(--warning-dark)       /* #d97706 */
-var(--warning-deeper)     /* #b45309 */
-var(--error)              /* #ef4444 — negative, danger, loss */
-var(--error-dark)         /* #dc2626 */
-var(--error-deeper)       /* #991b1b — severe (e.g. severe obesity) */
-var(--info)               /* #3b82f6 light / #60a5fa dark — informational */
-
-/* Accent colors (change between light & dark for readability) */
-var(--accent-dark)        /* #7c3aed */
-var(--pink)               /* #ec4899 light / #f472b6 dark */
-var(--pink-dark)          /* #831843 */
-var(--pink-light)         /* #fce7f3 light / rgba(236,72,153,0.15) dark */
-var(--teal)               /* #059669 light / #34d399 dark */
-var(--teal-dark)          /* #047857 light / #059669 dark */
-```
-
-### Chart colors
-
-For JS-generated charts (SVG/Canvas). These invert between themes:
-
-```css
-var(--chart-text)           /* #374151 light / #E5E7EB dark */
-var(--chart-grid)           /* #E5E7EB light / #374151 dark */
-var(--chart-bg)             /* #FFFFFF light / #1F2937 dark */
-var(--chart-text-secondary) /* #4b5563 light / #94a3b8 dark */
-var(--chart-muted)          /* #6b7280 — same in both */
-```
-
-### Card glow & depth effects
-
-All cards use glow variables instead of plain borders/shadows:
-
-```css
-var(--card-border)        /* Subtle indigo border */
-var(--card-shadow)        /* Indigo-tinted shadow */
-var(--card-shadow-hover)  /* Stronger shadow on hover */
-var(--btn-glow)           /* Button glow */
-var(--btn-glow-hover)     /* Button glow on hover */
-var(--accent-line)        /* Gradient for top accent stripe (indigo → violet → cyan) */
-```
-
-Card pattern (applied to `.tool-grid-card`, `.category-card`, `.similar-tool-card`, `.blog-post-card`, `.blog-related-tool-card`, `.blog-subcat-card`):
-- `border: var(--card-border)` + `box-shadow: var(--card-shadow)`
-- `position: relative; overflow: hidden;` + `::before` pseudo-element for 3px top accent stripe
-- Hover: `box-shadow: var(--card-shadow-hover)` + `border-color: rgba(99, 102, 241, 0.35)`
-
-`.calc-section` uses card-border + card-shadow but **no** `::before` stripe.
-
-### Ambient glow background
-
-The page background uses 5 radial gradient spots on `body` via `background-image`. Colors are all from the blue/cyan family:
-
-```css
---glow-1  /* Sky blue (#38bdf8) — top right, 900px */
---glow-2  /* Teal (#2dd4bf) — center left, 700px */
---glow-3  /* Dark cyan (#06b6d4) — bottom left, 800px */
---glow-4  /* Soft blue (#63b3ed) — far bottom left, 400px */
---glow-5  /* Turquoise (#38e0d0) — top left, 500px */
-```
-
-Opacity levels: desktop light 0.50–0.65, desktop dark 0.45–0.60, mobile (≤768px) 0.15–0.25. Defined in `:root`, `[data-theme="dark"]`, and `@media (max-width: 768px)`.
-
-**Dark mode note:** The dark theme does NOT override `--accent-primary`, `--accent-secondary`, or `--accent-gradient` — it inherits them from the light theme. Only backgrounds, text colors, borders, and shadows are overridden.
-
-### Hardcoded colors — migration rule
-
-Never hardcode hex colors in tool HTML files. Use the CSS variables above. When working on a tool that still has hardcoded colors, replace them:
-
-| Hardcoded hex | Replace with |
-|---|---|
-| `#3b82f6` | `var(--info)` |
-| `#22c55e` | `var(--success)` |
-| `#f59e0b` | `var(--warning)` |
-| `#ef4444` | `var(--error)` |
-| `#991b1b` | `var(--error-deeper)` |
-| `#dc2626` | `var(--error-dark)` |
-| `#16a34a` | `var(--success-dark)` |
-| `#d97706` | `var(--warning-dark)` |
-| `#ec4899` | `var(--pink)` |
-| `#059669` | `var(--teal)` |
-
-Also move inline `style="color: #xxx"` to CSS classes.
-
-### RTL support
-
-```css
-/* Use logical properties */
-margin-inline-start: 8px;   /* NOT margin-left */
-padding-inline-end: 12px;   /* NOT padding-right */
-
-/* For directional overrides */
-[dir="rtl"] .my-element { /* RTL-specific */ }
-```
-
-### CSS scoping with wrapper class
-
-Every tool should wrap its content in a container with a unique class (e.g., `.kaffara-calculator`, `.zakat-calculator`) and scope all CSS selectors under it. This prevents style conflicts between tools:
-
-```css
-.my-tool .calc-tab { /* scoped to this tool only */ }
-```
-
-### Key UI classes
-
-- `.tool-card` — Main tool container (no border/background/shadow — tools render directly on page background)
-- `.tool-header` — Icon + title + description row
-- `.tool-icon` — Emoji icon container
-- `.tool-title` — H1 tool name
-- `.how-to-use` — Usage instructions section
-
-### Responsive breakpoints
-
-| Breakpoint | Changes |
-|---|---|
-| ≤1024px | Sidebar hidden, bottom sticky ad shown |
-| ≤768px | Reduced padding, smaller hero, compact layouts |
-| ≤480px | Compact search bar, smaller header, 2-col categories |
-
-## JavaScript Patterns
-
-### Global App object (defined in `src/assets/js/app.js`)
-
-```js
-App.state.lang      // Current language: 'ar' | 'en'
-App.state.theme     // Current theme: 'light' | 'dark' | 'auto'
-App.showToast(msg)  // Show temporary notification
-```
-
-### IIFE wrapping (required for all tool JS)
-
-All tool-specific JavaScript MUST be wrapped in an IIFE to avoid polluting the global scope. Only expose functions that are referenced in HTML `onclick`/`oninput` attributes via `window.funcName`:
-
-```js
-<script>
-(function() {
-  var lang = document.documentElement.lang || 'ar';
-  var isArabic = lang === 'ar';
-
-  // Private helper — not accessible outside
-  function formatNumber(n) { /* ... */ }
-
-  // Public — referenced in HTML oninput="myCalc()"
-  window.myCalc = function() { /* ... */ };
-  window.myReset = function() { /* ... */ };
-})();
-</script>
-```
-
-### Calculator pattern (used in percentage tool)
-
-Each calculator row follows this structure:
-1. Inputs with `oninput="calculate(n)"` for instant results
-2. Result displayed in `<span class="calc-result" id="resultN">`
-3. Precision controls (+/−) and copy button
-4. Results update in real-time, no submit button needed
-
-### Shared computation pattern (used in GPA calculator)
-
-When multiple sections depend on the same derived values, extract a shared helper function and call it from all sections. Never let sections compute the same values independently — this causes contradictions.
-
-```js
-// GOOD: Single source of truth
-function getEffectiveEarned() {
-  // Compute once, return object
-  return { credits: earnedCredits, points: earnedPoints, gpa: effectiveGpa };
-}
-function calcTarget() { var eff = getEffectiveEarned(); /* use eff */ }
-function calcMaxGpa() { var eff = getEffectiveEarned(); /* use eff */ }
-
-// BAD: Each section reads inputs and computes independently
-function calcTarget() { var credits = parseFloat($('#credits').value); /* ... */ }
-function calcMaxGpa() { var credits = parseFloat($('#credits').value); /* different logic */ }
-```
-
-### Input → recalc wiring
-
-When an input affects multiple sections, its `oninput` must trigger ALL dependent calculations, not just the nearest one. Use a combined handler:
-
-```js
-// Shared inputs trigger everything they affect
-window.gpaCalcCumBoth = function() { calcCumulative(); calcTarget(); calcMaxGpa(); };
-// In HTML: oninput="gpaCalcCumBoth()"
-```
-
-### Converter dropdowns — show all options
-
-Never hide options from `<select>` dropdowns to prevent selecting the same value in both. Instead, show all options in both dropdowns. If the user selects the same value in "from" and "to", return the input as-is without error messages:
-
-```js
-var converted = (fromSys === toSys) ? inputVal : convertGpa(inputVal, fromSys, toSys);
-```
-
-### Clipboard
-
-```js
-navigator.clipboard.writeText(text).then(() => {
-  App.showToast(App.state.lang === 'ar' ? 'تم النسخ!' : 'Copied!');
-});
-```
-
-### CSV export (no CDN dependencies)
-
-Never add CDN dependencies (like ExcelJS, SheetJS, etc.). Use native CSV generation with BOM for Arabic Excel compatibility:
-
-```js
-function exportCsv(rows, filename) {
-  var bom = '\uFEFF';
-  var csv = rows.map(function(r) {
-    return r.map(function(c) { return '"' + String(c).replace(/"/g, '""') + '"'; }).join(',');
-  }).join('\n');
-  var blob = new Blob([bom + csv], { type: 'text/csv;charset=utf-8' });
-  var a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = filename;
-  a.click();
-}
-```
-
-## Page Layout Architecture
-
-Controlled by `isHome`/`isCategory` flags in `build.js` → `buildPageHTML()`:
-
-### Homepage & Category Pages (full-width)
-- No sidebar — `.page-content--full`
-- Horizontal ad banner (728×90) between hero and categories
-- Mobile: banner scales to 320×100
-
-### Tool Pages (with sidebar)
-- Content + sidebar via `.content-wrapper` (flexbox)
-- Sidebar (`.ad-sidebar`): two 300×250 ad units, sticky
-- Sidebar hidden on ≤1024px
-- No inline ads inside tool content
-
-### All Pages
-- Mobile bottom sticky ad (320×50), visible only ≤1024px
-- `body` has `padding-bottom: 58px` on mobile to prevent content overlap
-- Footer with links to about, contact, privacy, terms, disclaimer
-
-## Ad Placements (Google AdSense)
-
-| Placement | Size | Class | Visibility |
-|---|---|---|---|
-| Sidebar (desktop) | 300×250 × 2 | `.ad-unit` | >1024px only |
-| Homepage banner | 728×90 | `.ad-banner` | All devices |
-| Mobile bottom sticky | 320×50 | `.ad-bottom-sticky` | ≤1024px only |
-
-- All ad containers have `border-radius: 0` (square corners)
-- Ads currently use placeholder images from `src/assets/images/ads/`:
-  - `ad-sidebar-300x250.png` — sidebar ad (desktop)
-  - `ad-banner-728x90.png` — homepage banner
-  - `ad-mobile-320x50.png` — mobile bottom sticky
-- Replace these with real ad creatives or AdSense code when ready
-
-## Header Structure
-
-- One button: Settings (gear icon)
-- Favorite and Share are inside Settings panel
-- Search bar visible on all screen sizes
-
-## Build Output
-
-`build.js` generates under `dist/`:
-- `ar/` and `en/` — full site in both languages
-- `ar/tools/` and `en/tools/` — individual tool pages
-- `ar/category/` and `en/category/` — category listing pages
-- `ar/blog/` and `en/blog/` — blog index and article pages
-- `sitemap.xml` and `robots.txt` — SEO files
-- `index.html` — language-detection redirect
-
-## Deployment
-
-GitHub Actions (`.github/workflows/deploy.yml`) auto-deploys `dist/` to GitHub Pages on push to `main`.
-
-**Important**: Changes on feature branches do NOT appear on the live site. To deploy:
-1. Push to the feature branch
-2. Create a PR to `main` (use `mcp__github__create_pull_request`)
-3. Merge the PR (use `mcp__github__merge_pull_request` with `squash` method)
-4. After squash-merge, the feature branch falls behind `main` — rebase before the next PR: `git fetch origin main && git rebase origin/main`
-
-## Reusable UI Patterns
-
-These patterns are already used in zakat-calculator and kaffara-calculator. Reuse them instead of inventing new ones:
-
-### Tab-based tools
-
-```html
-<div class="calc-tabs">  <!-- or .kf-tabs for scrollable -->
-  <button class="calc-tab active" onclick="switchTab('tab1')">Tab 1</button>
-  <button class="calc-tab" onclick="switchTab('tab2')">Tab 2</button>
-</div>
-<div class="calc-section active" id="tab1-section">...</div>
-<div class="calc-section" id="tab2-section">...</div>
-```
-
-- التبويبات دائماً تلتف (flex-wrap: wrap) ولا تستخدم scroll أبداً
-- على الموبايل التبويبات تنضغط وتصغر وتنتقل لأسطر متعددة
-- انظر أزرار المذاهب في حاسبة المواريث كمرجع
-
-### Shared price/input bar
-
-```html
-<div class="price-bar my-color">
-  <span class="bar-icon">🍽️</span>
-  <div class="bar-input-wrap">
-    <label>Label</label>
-    <input type="number" oninput="recalc()">
-  </div>
-  <span class="bar-hint">Hint text</span>
-</div>
-```
-
-### Disclaimer section
-
-Use the shared `.tool-disclaimer` class from `main.css` (styled like `.how-to-use` with consistent background and border). Place the disclaimer as the **last section** in the tool template, after how-to-use — it will appear right before "Related Tools" which is appended by `build.js`.
-
-Add `disclaimerTitle`, `disclaimer1`–`disclaimerN` keys to the tool's i18n translations (both `ar` and `en`).
-
-```html
-<div class="tool-disclaimer">
-  <h4>⚠️ {{tool.disclaimerTitle}}</h4>
-  <div class="tool-disclaimer-item"><span>📌</span> {{tool.disclaimer1}}</div>
-  <div class="tool-disclaimer-item"><span>📋</span> {{tool.disclaimer2}}</div>
-</div>
-```
-
-**Note:** The older `.zakat-disclaimer` class (amber-tinted, defined inside `zakat-calculator.html`) is used by zakat, inheritance, and kaffara calculators. For new tools, use `.tool-disclaimer` instead for consistent styling.
-
-### Result display patterns
-
-- **Stat cards**: `.stats-grid` > `.stat-card` (used in zakat for summary numbers)
-- **Result box**: `.result-box` with gradient background (used for main results)
-- **Total cost banner**: `.kf-total` with accent gradient (used in kaffara for totals)
-
-## Inheritance Calculator Architecture
-
-The inheritance calculator (`src/tools/inheritance-calculator.html`) is the most complex tool (~2800+ lines). Key architectural notes:
-
-### Dynamic heir layers
-- Users can add deeper descendant layers (sons of sons of sons...), higher grandfathers, higher grandmothers, and extended agnates
-- Max 7 layers per category, tracked in `dynState` object
-- Dynamic IDs: `dynDescM{N}`, `dynDescF{N}`, `dynGf{N}`, `dynGmP{N}`, `dynGmM{N}`, `dynExtFull{N}`, `dynExtPat{N}`
-- `createHeirRow(heirId, name, maxCount)` — creates DOM elements for dynamic heirs
-- `inhAddLayer(category)` — handles 'descendants', 'ascendants', 'extended'
-
-### Blocking (hajb) system
-- `getBlockReason(heirId)` — returns blocking reason or null
-- `updateHeirStates()` — auto-unchecks blocked heirs and shows blocking reasons
-- Blocking rules depend on madhab (Hanafi, Maliki, Shafi'i, Hanbali)
-
-### Share assignment
-- `assignShares()` — the core calculation engine
-- Handles: fard (fixed shares), asaba (residuary), awl (proportional reduction), radd (redistribution of remainder)
-- Special cases: mushtaraka (shared case), akdariyyah, umariyyatan, grandfather with siblings (muqasama)
-- Radd varies by madhab: Shafi'i = no radd, Hanbali = radd to spouses when no other fard heirs
-
-### Shared pool pattern
-When multiple entries share a single fard fraction (e.g., maternal siblings sharing 1/3), use proportional distribution:
-```js
-entry.parts = sharedPoolParts * entry.count / entry.shared;
-```
-
-## GPA Calculator Architecture
-
-The GPA calculator (`src/tools/gpa-calculator.html`) is a large tool (~3200 lines). Key architectural notes:
-
-### Layout structure
-- **Settings Card 1**: Grading system dropdown (20 templates) + Customize button + description
-- **Settings Card 2**: Retake policy dropdown + description
-- **5 Tabs**: Semester GPA, Cumulative, Multi-Semester, Converter, Reference
-- **Save/Load bar**: Inside semester tab, small inline card above courses
-
-### 20 Grading Templates
-Stored in JS `templates` object, grouped in `templateGroups` (Arab World + International). Each template: `{ nameAr, nameEn, descAr, descEn, max, grades: [{label, value}], classifications: [{min, ar, en}], inverted? }`.
-
-Templates: saudi5 (default), saudi4, gulf4, jordan4, egypt100, iraq100, syria100, lebanon4, maghreb20, us4, us433, canada433, turkey4, uk, german (inverted), french20, india10, korea45, australia7, percent100.
-
-### Active template pattern
-`getActiveTemplate(templateId)` returns the original or customized template. ALL calculations and UI use this — never read `templates[currentTemplate]` directly in functions (except `updateTemplateDescription` and `updateDropdownLabel` which need the original name).
-
-### Customization system
-- `customizations` object stores per-template overrides `{ max, grades }` in localStorage
-- `ensureCustomization()` copies base template on first edit
-- Customize panel: editable grade table + add/delete/reset + max field + export/import JSON
-- Dropdown shows "Template / مخصص" when customized
-
-### Percentage vs grade systems
-`isPercentSystem(templateId)` — templates without `grades` array use numeric input instead of dropdown.
-
-### Inverted system (German)
-`isInverted(templateId)` — 1.0 is best, 5.0 is fail. Affects:
-- `calcMaxGpa`: best possible = 1.0 (not max)
-- `calcTarget`: impossible if required < 1.0
-- `calcMulti`: best/worst semester inverted, chart bars inverted
-- `calcCumulative`/`calcWhatIf`: change indicator colors swapped
-- `renderRefTables`: classification ranges inverted
-
-### Course structure (7 columns)
-Each course: `{ name, credits, gradeIndex, gradeValue, isRetake, oldGradeIndex, oldGradeValue, altGradeIndex, altGradeValue }`.
-
-Desktop: 7-column CSS grid `1fr 70px 140px 50px 140px 140px 30px` — name, credits, grade, retake toggle, old grade, what-if, delete. Each is a flat `div.gpa-col` direct child.
-
-Mobile (≤768px): `display: flex; flex-wrap: wrap` — row 1: ×+name, row 2: credits+grade, row 3: retake+oldgrade, row 4: what-if. Labels shown inline on mobile, hidden on desktop (header suffices).
-
-### What-if (always-on)
-No toggle button — what-if column always visible. Default: highest grade. Comparison auto-shows when any what-if grade differs from original.
-
-### Retake policy
-`retakePolicy` variable: 'replace' | 'best' | 'countAll' | 'average'. Retake toggle per course enables old grade input. `retakeAdj` stores adjustment (credits/points) computed by `gpaUseFromSemester`. `getEffectiveEarned` subtracts old grades from previous cumulative. Manual cumulative input resets `retakeAdj`.
-
-### Shared inputs in Cumulative tab
-- "Current GPA" and "Earned credits" shared across all 3 sections
-- "Total graduation credits" shared between sections 2 and 3
-- `getEffectiveEarned()` computes once, applying `retakeAdj`
-- Both `calcTarget()` and `calcMaxGpa()` call `getEffectiveEarned()`
-
-### Converter
-- All 20 templates available in from/to dropdowns with optgroup
-- Converts via percentage intermediate: `toPercent(val, fromId)` → `fromPercent(pct, toId)`
-- Piecewise linear interpolation on grade boundaries
-- Handles inverted German system (1.0 = 100%)
-- Note always visible with WES reference
-
-### Save/Load
-`gpaSaveData()` exports JSON with: template, customization, retakePolicy, courses (all fields), semesters, cumulative inputs, converter state. `gpaLoadData()` restores everything and recalculates.
-
-## General Preferences
-
-These reflect the current style of the project. They're guidelines, not hard rules — use your judgment and adapt as the project grows:
-
-- Prefer instant results (`oninput`) over submit buttons where it makes sense
-- Prefer vanilla JS; use external libraries only when genuinely needed — never add CDN dependencies
-- Keep calculators in a math-sentence style when they fit that pattern
-- Use `{{tool.xxx}}` placeholders instead of hardcoding text — never hardcode Arabic or English strings in HTML
-- Ads are handled by the layout in `build.js`, not inside tool templates
-- Islamic tools must include a "this is not a fatwa" disclaimer
-- Financial tools involving interest/riba must include a disclaimer noting the Islamic prohibition
-- Medical/health tools must include a "consult a professional" disclaimer
-- Disclaimers use `.tool-disclaimer` class and are placed as the last section in the template (after how-to-use, before related tools)
-- Tool page section order: tool content → how-to-use → disclaimer → related tools (auto-appended by build.js)
-- Islamic terminology must be accurate — use proper fiqh terms with transliteration in English (e.g., "Kaffarat al-Yamin" not just "oath penalty")
-- Place related fields on the same row (`.gpa-form-row` with 2 columns) to reduce vertical space — e.g., "graduation credits" and "target GPA" side by side
-- Use short labels in dropdowns (e.g., "4.0" not "نظام 4.0") — add separate i18n keys if the full label is needed elsewhere
-- When a tool has multiple sections that share inputs, place shared inputs above the sections, not duplicated inside each one
+Card pattern: `.tool-grid-card`, `.category-card`, `.similar-tool-card`, `.blog-post-card`, `.blog-related-tool-card`, `.blog-subcat-card` use `border + card-shadow + ::before stripe`. `.calc-section` uses border + shadow without stripe.
+
+## Mobile Design (critical)
+
+Reference: `inheritance-calculator`. Key rules ([full list](docs/standards/mobile-design.md)):
+1. Every field has a label above it (form-group)
+2. Max 2 fields per row on mobile
+3. Tabs use `flex-wrap: wrap`, never `overflow-x: auto`
+4. No element exceeds screen width (`box-sizing: border-box`)
+5. Buttons shrink to 0.75rem font + 8px padding on mobile

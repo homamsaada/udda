@@ -4,191 +4,165 @@
 
 🔧 **أدوات مجانية للجميع | Free Tools for Everyone**
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Languages](https://img.shields.io/badge/languages-AR%20%7C%20EN-orange)
+[![License](https://img.shields.io/badge/license-MIT-green)]() [![Languages](https://img.shields.io/badge/languages-AR%20%7C%20EN-orange)]() [![Live](https://img.shields.io/badge/live-udda.tools-purple)](https://udda.tools)
 
 </div>
 
 ---
 
-## 📖 عن المشروع
+## 📖 ما هي عُدّة؟ | What is Udda?
 
-**عُدّة** موقع أدوات مجانية متعدد اللغات (عربي/إنجليزي) يقدم مجموعة من الأدوات المفيدة للجميع:
-- 🧮 حاسبات (نسبة مئوية، خصومات، BMI...)
-- 🔄 محوّلات (وحدات، عملات، تواريخ...)
-- 📝 أدوات نصية (عداد كلمات، تنسيق...)
-- ⚡ مولّدات (QR، كلمات سر...)
-- والمزيد!
+**عُدّة** موقع أدوات مجانية متعدد اللغات (عربي/إنجليزي) — حاسبات، محوّلات، أدوات نصية، ومولّدات للاستخدام اليومي. مبني كموقع ساكن (static) يعمل في المتصفح مباشرة، بدون تسجيل أو تتبّع.
+
+**Udda** is a free, multilingual (Arabic/English) tools website — calculators, converters, text tools, and generators for everyday use. Built as a static site that runs entirely in the browser, with no signup or tracking.
+
+🌐 **Live:** [https://udda.tools](https://udda.tools)
 
 ---
 
-## 🚀 البدء السريع
+## 🛠️ الأدوات الحالية | Current Tools
 
-### التشغيل المحلي
+### 🧮 حاسبات | Calculators
+- 🕌 **Zakat Calculator** — حاسبة الزكاة (نقد، ذهب، فضة، أسهم، عقار، زكاة الفطر)
+- ⚖️ **Inheritance Calculator** — حاسبة المواريث (4 مذاهب فقهية)
+- ⚖️ **Kaffara Calculator** — حاسبة الكفارات والفدية (8 أنواع)
+- 🔢 **Percentage** — حاسبة النسب المئوية (13 حاسبة فرعية)
+- 💰 **Interest Calculator** — الفائدة البسيطة والمركبة
+- 🏦 **Loan Calculator** — حاسبة القروض (3 طرق احتساب)
+- 🎓 **GPA Calculator** — حاسبة المعدل (20 نظام تقدير عالمي)
+- ⚖️ **Body Calculator** — BMI, BMR, IBW, Body Fat, WHR
+- 🎂 **Age Calculator** — حاسبة العمر والفرق بين التواريخ
+
+### ⚡ مولّدات | Generators
+- 🤖 **AI Readiness Assessment** — تقييم الجاهزية للذكاء الاصطناعي (41 تخصص)
+
+### 🏠 أدوات يومية | Everyday
+- 🌳 **Family Tree** — بناء شجرة العائلة التفاعلية
+
+---
+
+## 🚀 البدء السريع | Quick Start
 
 ```bash
-# 1. انتقل لمجلد المشروع
+git clone https://github.com/{owner}/udda.git
 cd udda
-
-# 2. ابني الموقع
-node build.js
-
-# 3. شغّل سيرفر محلي
-npx serve dist -p 3000
-
-# 4. افتح المتصفح على http://localhost:3000
-```
-
-### البناء للإنتاج
-
-```bash
-node build.js
-# الملفات الجاهزة في مجلد dist/
+npm install
+npm run build      # → dist/
+npm run serve      # → http://localhost:3000
 ```
 
 ---
 
-## 📁 هيكل المشروع
+## 📁 هيكل المشروع | Project Structure
 
 ```
 udda/
-├── src/                      # ملفات المصدر
-│   ├── assets/
-│   │   ├── css/main.css      # الأنماط الرئيسية
-│   │   └── js/app.js         # JavaScript الرئيسي
-│   ├── data/
-│   │   ├── i18n.json         # الترجمات
-│   │   └── tools.json        # قائمة الأدوات
-│   ├── layouts/
-│   │   └── base.html         # القالب الأساسي
-│   └── tools/
-│       └── percentage.html   # قالب كل أداة
-│
-├── dist/                     # الملفات المُنتجة (للنشر)
-│   ├── ar/                   # النسخة العربية
-│   ├── en/                   # النسخة الإنجليزية
-│   ├── assets/
-│   ├── sitemap.xml
-│   └── robots.txt
-│
-├── build.js                  # سكريبت البناء
-├── package.json
-└── README.md
+├── src/                  المصادر | Source files
+│   ├── assets/           CSS, JS, AI readiness data, ad placeholders
+│   ├── data/             i18n.json + tools.json (مصدر الحقيقة)
+│   ├── tools/            11 tool HTML templates
+│   ├── blog/{ar,en}/     Markdown blog posts (40 articles)
+│   └── pages/{ar,en}/    Static pages (about, contact, privacy, terms, disclaimer)
+├── docs/                 التوثيق الكامل | Full documentation
+├── build.js              سكريبت البناء | Build script (~1,400 lines)
+├── dist/                 الإخراج | Build output (gitignored)
+└── package.json          markdown-it (only dependency)
 ```
 
 ---
 
-## ➕ إضافة أداة جديدة
+## 📚 التوثيق | Documentation
 
-### 1. أضف الترجمات في `src/data/i18n.json`:
+التوثيق الكامل للمشروع منظم في مجلد [`docs/`](docs/):
 
-```json
-{
-  "tools": {
-    "my-tool": {
-      "ar": {
-        "name": "اسم الأداة",
-        "title": "عنوان الصفحة | عُدّة",
-        "metaDescription": "وصف للـ SEO",
-        "keywords": "كلمات، مفتاحية",
-        "description": "وصف قصير"
-      },
-      "en": {
-        "name": "Tool Name",
-        "title": "Page Title | Udda",
-        "metaDescription": "SEO description",
-        "keywords": "keywords, here",
-        "description": "Short description"
-      }
-    }
-  }
-}
-```
+### ملفات التأسيس | Foundation
+| الملف | الموضوع |
+|---|---|
+| [`docs/00-VISION.md`](docs/00-VISION.md) | الرؤية، الجمهور، نقاط التميّز |
+| [`docs/01-ARCHITECTURE.md`](docs/01-ARCHITECTURE.md) | البنية التقنية + تدفق البناء |
+| [`docs/02-PRINCIPLES.md`](docs/02-PRINCIPLES.md) | المبادئ الثابتة (تقنية + محتوى) |
+| [`docs/03-ROADMAP.md`](docs/03-ROADMAP.md) | الأدوات المقترحة للتصنيفات الفارغة |
+| [`docs/04-PROGRESS.md`](docs/04-PROGRESS.md) | الحالة الحالية للمشروع |
 
-### 2. أضف الأداة في `src/data/tools.json`:
+### المعايير | Standards
+[`docs/standards/`](docs/standards/) — معايير إلزامية على أي تطوير جديد:
+- نظام التصميم (Design System)
+- تصميم الموبايل
+- قواعد الترجمة
+- استراتيجية SEO
+- استراتيجية المحتوى
+- قوالب الأدوات والمدونة
+- قائمة فحص الجودة
 
-```json
-{
-  "tools": [
-    {
-      "id": "my-tool",
-      "category": "calculators",
-      "icon": "🔢",
-      "popular": true
-    }
-  ]
-}
-```
-
-### 3. أنشئ قالب الأداة `src/tools/my-tool.html`:
-
-```html
-<div class="tool-card">
-  <div class="tool-header">
-    <div class="tool-icon">🔢</div>
-    <div>
-      <h1 class="tool-title">{{tool.name}}</h1>
-      <p class="tool-description">{{tool.description}}</p>
-    </div>
-  </div>
-  
-  <!-- محتوى الأداة -->
-</div>
-
-<script>
-// كود الأداة
-</script>
-```
-
-### 4. ابني المشروع:
-
-```bash
-node build.js
-```
+### مواصفات الأدوات | Tool Specs
+[`docs/tools/`](docs/tools/) — ملف لكل أداة من الأدوات الـ11 (عمق متفاوت حسب الحاجة).
 
 ---
 
-## 🎨 المميزات
+## ✨ المميزات | Features
 
-- ✅ **ثنائي اللغة**: عربي وإنجليزي مع RTL كامل
-- ✅ **SEO محسّن**: Open Graph, Twitter Cards, Schema.org
-- ✅ **وضع داكن/فاتح**: مع خيار تلقائي
-- ✅ **تصميم متجاوب**: يعمل على جميع الأجهزة
-- ✅ **سريع**: ملفات HTML ثابتة بدون سيرفر
-- ✅ **سهل النشر**: GitHub Pages, Netlify, Vercel...
+- ✅ **ثنائي اللغة** — RTL/LTR كامل + hreflang
+- ✅ **SEO محسَّن** — Open Graph، Twitter Cards، Schema.org
+- ✅ **3 ثيمات** — فاتح / داكن / تلقائي
+- ✅ **متجاوب** — Mobile-first design
+- ✅ **خصوصية تامة** — لا تتبّع، كل الحسابات client-side
+- ✅ **سريع** — صفحات HTML ثابتة، بلا frameworks
+- ✅ **مجاني** — رخصة MIT، مدعوم بإعلانات AdSense
 
 ---
 
-## 🌐 النشر
+## ➕ إضافة أداة جديدة | Adding a New Tool
 
-### GitHub Pages
+اتبع الدليل التفصيلي خطوة بخطوة:
+**[`docs/standards/tool-template.md`](docs/standards/tool-template.md)**
 
-```bash
-# في مجلد dist
-git init
-git add .
-git commit -m "Deploy"
-git remote add origin YOUR_REPO
-git push -u origin main
+ملخّص:
+1. أضف الترجمات في `src/data/i18n.json`
+2. سجّل الأداة في `src/data/tools.json`
+3. أنشئ `src/tools/{id}.html`
+4. `npm run build` للاختبار
+
+---
+
+## ➕ إضافة مقال مدونة | Adding a Blog Post
+
+اتبع: **[`docs/standards/blog-template.md`](docs/standards/blog-template.md)**
+
+---
+
+## 🌐 النشر | Deployment
+
+GitHub Actions ينشر تلقائياً إلى GitHub Pages:
+
+```yaml
+# .github/workflows/deploy.yml
+- run: npm ci
+- run: npm run build
+- uses: actions/upload-pages-artifact@v3
+  with: { path: dist }
 ```
 
-### Netlify / Vercel
-
-1. ارفع المشروع كاملاً
-2. Build command: `node build.js`
-3. Publish directory: `dist`
+أي push للـ `main` يُشغّل البناء والنشر تلقائياً.
 
 ---
 
-## 📝 الرخصة
+## 🤝 المساهمة | Contributing
 
-MIT License - استخدم المشروع كما تشاء!
+قبل المساهمة، اقرأ:
+1. [`docs/02-PRINCIPLES.md`](docs/02-PRINCIPLES.md) — المبادئ الثابتة
+2. [`docs/standards/`](docs/standards/) — المعايير الإلزامية
+3. [`docs/standards/testing-checklist.md`](docs/standards/testing-checklist.md) — قائمة الفحص
+
+---
+
+## 📝 الرخصة | License
+
+[MIT License](LICENSE) — استخدم المشروع كما تشاء.
 
 ---
 
 <div align="center">
 
-صُنع بـ ❤️
+**صُنع بـ ❤️ | Made with ❤️**
 
 </div>
