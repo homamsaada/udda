@@ -41,18 +41,20 @@ docs/                         Full project documentation (markdown)
 dist/                         Build output (gitignored, regenerated each deploy)
 ```
 
-## Hard Rules (top 10 — full list in [`docs/02-PRINCIPLES.md`](docs/02-PRINCIPLES.md))
+## Current Rules (full list + categories in [`docs/02-PRINCIPLES.md`](docs/02-PRINCIPLES.md))
 
-1. **Vanilla JS only** — no React/Vue/Svelte, no CDN scripts in production
-2. **Bilingual by default** — every user-facing string in `i18n.json` with both `ar` and `en`
-3. **Static-only** — no backend, no database, all client-side
-4. **Privacy-first** — no tracking, no cookies beyond essentials
-5. **Disclaimers required** for Islamic / financial-with-interest / medical tools
+🔒 = philosophical (won't change) · ⚙️ = current implementation choice (may evolve under specific conditions — see [`docs/05-MEMORY.md`](docs/05-MEMORY.md))
+
+1. ⚙️ **Vanilla JS** by default — no React/Vue/Svelte, no CDN scripts in production
+2. 🔒 **Bilingual by default** — every user-facing string in `i18n.json` with both `ar` and `en`
+3. ⚙️ **Static-first** — no backend or DB by default (a specific tool may add backend if it genuinely needs it)
+4. 🔒 **Privacy-first** — no tracking, no cookies beyond essentials, no data sale
+5. 🔒 **Disclaimers required** for Islamic / financial-with-interest / medical tools
 6. **CSS variables, not hex hardcoded** — `var(--success)` not `#22c55e`
 7. **Logical properties** — `margin-inline-start` not `margin-left`
 8. **IIFE wrapping** for all tool JS (only `window.x` for HTML-referenced functions)
 9. **Scoped CSS** via wrapper class — `.zakat-calculator .calc-tab { ... }`
-10. **Mobile-first** — reference: `inheritance-calculator` (see [`docs/standards/mobile-design.md`](docs/standards/mobile-design.md))
+10. 🔒 **Mobile-first** — reference: `inheritance-calculator` (see [`docs/standards/mobile-design.md`](docs/standards/mobile-design.md))
 
 ## Reserved i18n Keys
 
