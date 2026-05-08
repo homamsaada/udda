@@ -8,6 +8,7 @@
 
 | الملف | الموضوع |
 |---|---|
+| [`playbooks.md`](playbooks.md) | 🎯 **خرائط سير العمل** — كيف يفسّر الوكيل أنواع الطلبات (جديد/توسيع/إصلاح/...) |
 | [`design-system.md`](design-system.md) | متغيرات CSS، الألوان، البطاقات، الثيمات، التوهج، RTL/LTR |
 | [`mobile-design.md`](mobile-design.md) | قواعد الموبايل (مرجع: inheritance-calculator) |
 | [`i18n-conventions.md`](i18n-conventions.md) | قواعد الترجمة، المفاتيح المحجوزة، searchTerms |
@@ -19,6 +20,7 @@
 
 ## كيف تُستخدم
 
+- **عند تلقّي أي طلب من المستخدم:** ابدأ بـ [`playbooks.md`](playbooks.md) — يُحدّد نوع العمل ويرشدك للملفات الصحيحة بالترتيب الصحيح
 - **قبل البدء بأداة جديدة:** اقرأ [`tool-template.md`](tool-template.md) + [`design-system.md`](design-system.md) + [`mobile-design.md`](mobile-design.md)
 - **قبل كتابة مقال:** اقرأ [`blog-template.md`](blog-template.md) + [`content-strategy.md`](content-strategy.md)
 - **قبل دمج أي شيء:** اتبع [`testing-checklist.md`](testing-checklist.md)

@@ -133,6 +133,23 @@ Compare with today's date. **If gap > 90 days:**
 ### Why this matters
 Each session may have a different agent with a different training cutoff. External dependencies and standards drift. AI tool names change monthly. Fiqh references evolve with new resolutions. The protocol prevents acting on stale assumptions. **The detailed file history is `git log` — don't maintain manual per-tool changelogs.**
 
+## 🎯 Standard Workflow (Playbooks)
+
+For **any user request**, the agent follows a recognized playbook from [`docs/standards/playbooks.md`](docs/standards/playbooks.md). Each request type has its own light workflow:
+
+| Request type | Playbook | Reference |
+|---|---|---|
+| 🆕 New tool ("أنشئ", "بدّي") | Full development cycle | [playbook §1](docs/standards/playbooks.md#1-أداة-جديدة-) |
+| ✏️ Tool extension ("حدّث", "طوّر") | Partial update | [playbook §2](docs/standards/playbooks.md#2-توسيع-أداة-موجودة-) |
+| 🐛 Bug fix ("أصلح", "fix") | Reproduce → root cause → fix → document | [playbook §3](docs/standards/playbooks.md#3-إصلاح-bug-) |
+| 📝 Blog post ("اكتب مقالاً") | Content workflow | [playbook §4](docs/standards/playbooks.md#4-مقال-مدونة-) |
+| 🔧 Cross-tool refactor | Sample → approve → propagate | [playbook §5](docs/standards/playbooks.md#5-refactoring-عابر-للأدوات-) |
+| 📚 Docs update | No build needed | [playbook §6](docs/standards/playbooks.md#6-تحديث-توثيق-) |
+| 🔍 Compatibility check | Read-only report | [playbook §7](docs/standards/playbooks.md#7-فحص-توافق-) |
+| 🤔 Ambiguous request | Ask before acting | [playbook fallback](docs/standards/playbooks.md#fallback--طلب-غامض-) |
+
+The playbooks file orchestrates the existing standards (`tool-template.md`, `testing-checklist.md`, etc.) — it doesn't duplicate them.
+
 ## For Agents
 
 ### When working on a specific tool:
