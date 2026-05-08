@@ -146,9 +146,12 @@ For **any user request**, the agent follows a recognized playbook from [`docs/st
 | 🔧 Cross-tool refactor | Sample → approve → propagate | [playbook §5](docs/standards/playbooks.md#5-refactoring-عابر-للأدوات-) |
 | 📚 Docs update | No build needed | [playbook §6](docs/standards/playbooks.md#6-تحديث-توثيق-) |
 | 🔍 Compatibility check | Read-only report | [playbook §7](docs/standards/playbooks.md#7-فحص-توافق-) |
+| 🤖 **AEM (autonomous loop)** | **Modifier on playbooks 1-6** — investigate prepared spec → synthesize plan → user approves → execute autonomously | [playbook §9](docs/standards/playbooks.md#9-autonomous-execution-mode-aem-) |
 | 🤔 Ambiguous request | Ask before acting | [playbook fallback](docs/standards/playbooks.md#fallback--طلب-غامض-) |
 
 The playbooks file orchestrates the existing standards (`tool-template.md`, `testing-checklist.md`, etc.) — it doesn't duplicate them.
+
+**Important about AEM:** When the user provides a prepared spec/plan and asks for autonomous execution, **do not just implement it**. AEM Phase 0 requires you to: (a) investigate the codebase for integration concerns, (b) ask 3-7 strategic questions to enrich/decide/integrate (not to verify), (c) synthesize your own plan that combines the user's input + your findings, and (d) get explicit approval before entering the execution loop. The investigation phase is what differentiates AEM from passive execution.
 
 ## For Agents
 
