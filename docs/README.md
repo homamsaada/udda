@@ -1,74 +1,83 @@
 # 📚 مستندات عُدّة | Udda Documentation
 
-هذا المجلد يحتوي على كل توثيق المشروع — الرؤية والمعمارية والمعايير ومواصفات الأدوات.
-
 > ✍️ **اللغة:** عربية للمحتوى، إنجليزية للمصطلحات التقنية (`build.js`, CSS variables, JSON keys, function names).
+
+البنية تكرارية (fractal): نفس النمط على مستوى الموقع وعلى مستوى الأداة. كل "مشروع" (الموقع كله، أو أداة منفردة) له **identity** + **workspace**.
 
 ---
 
-## 🏛️ ملفات التأسيس (Foundation)
+## 🏛️ مستوى الموقع
 
-| الملف | الوصف |
-|---|---|
-| [`00-VISION.md`](00-VISION.md) | الرؤية، الجمهور، المشكلة التي يحلها المشروع، نقاط التميّز |
-| [`01-ARCHITECTURE.md`](01-ARCHITECTURE.md) | المعمارية التقنية، تدفق البناء، مكونات النظام |
-| [`02-PRINCIPLES.md`](02-PRINCIPLES.md) | المبادئ الثابتة (تقنية، تصميم، محتوى، UX) |
-| [`03-ROADMAP.md`](03-ROADMAP.md) | الأدوات المقترحة، التوسعات، خطة المنصة |
-| [`04-PROGRESS.md`](04-PROGRESS.md) | الحالة الحالية: ما اكتمل، قيد العمل، لاحق |
-
-## 📐 المعايير (Standards)
-
-ملفات إلزامية على أي تطوير جديد. الفهرس الكامل في [`standards/README.md`](standards/README.md).
-
+### Identity (ما هو الموقع)
 | الملف | الموضوع |
 |---|---|
-| [`standards/design-system.md`](standards/design-system.md) | متغيرات CSS، الألوان، البطاقات، الثيمات |
-| [`standards/mobile-design.md`](standards/mobile-design.md) | قواعد الموبايل (مرجع: inheritance-calculator) |
-| [`standards/i18n-conventions.md`](standards/i18n-conventions.md) | قواعد الترجمة، المفاتيح المحجوزة |
-| [`standards/seo-strategy.md`](standards/seo-strategy.md) | SEO، hreflang، Schema.org |
-| [`standards/content-strategy.md`](standards/content-strategy.md) | استراتيجية المدونة، Pillar/Sub |
-| [`standards/tool-template.md`](standards/tool-template.md) | قالب أداة جديدة |
-| [`standards/blog-template.md`](standards/blog-template.md) | قالب مقال جديد |
-| [`standards/testing-checklist.md`](standards/testing-checklist.md) | فحص الجودة قبل الدمج |
+| [`00-VISION.md`](00-VISION.md) | الرؤية، الجمهور، نقاط التميّز |
+| [`01-ARCHITECTURE.md`](01-ARCHITECTURE.md) | المعمارية التقنية + تدفق البناء |
+| [`02-PRINCIPLES.md`](02-PRINCIPLES.md) | المبادئ الثابتة (تقنية + محتوى) |
 
-## 🛠️ مواصفات الأدوات (Tool Specs)
-
-ملف لكل أداة من الأدوات الـ11. الفهرس الكامل في [`tools/README.md`](tools/README.md).
-
-| المستوى | الأدوات |
+### Workspace (ما نفعله بالموقع)
+| الملف | الموضوع |
 |---|---|
-| 🟢 عميق | [zakat](tools/zakat-calculator.spec.md), [inheritance](tools/inheritance-calculator.spec.md), [ai-readiness](tools/ai-readiness.spec.md) |
-| 🟡 متوسط | [kaffara](tools/kaffara-calculator.spec.md), [body](tools/body-calculator.spec.md), [gpa](tools/gpa-calculator.spec.md) |
-| ⚪ موجز | [interest](tools/interest-calculator.spec.md), [loan](tools/loan-calculator.spec.md), [percentage](tools/percentage.spec.md), [age](tools/age-calculator.spec.md), [family-tree](tools/family-tree.spec.md) |
+| [`03-ROADMAP.md`](03-ROADMAP.md) | الأدوات والميزات المقترحة |
+| [`04-PROGRESS.md`](04-PROGRESS.md) | الحالة الحالية للمشروع |
+| [`05-MEMORY.md`](05-MEMORY.md) | القرارات الكبرى + الدروس + المراجع |
+| [`06-TODO.md`](06-TODO.md) | مهام آنية عابرة للأدوات |
 
-## 📋 المراحل القادمة (لم تُبنَ بعد)
+### Instructions (كيف نعمل على الموقع)
+| المجلد | الموضوع |
+|---|---|
+| [`standards/`](standards/) | معايير إلزامية لكل تطوير (design, mobile, i18n, SEO, content, templates, testing) |
 
-- **`docs/decisions/`** — سجل القرارات المعمارية (ADRs) — مستقبلاً
+## 🛠️ مستوى الأداة (لكل واحدة من الـ11)
+
+### Identity (ما هي الأداة)
+| المجلد | الموضوع |
+|---|---|
+| [`tools/`](tools/) | spec واحد لكل أداة — المرجع الثابت |
+
+### Workspace (ما نفعله بالأداة)
+| المجلد | الموضوع |
+|---|---|
+| [`development/`](development/) | لكل أداة 4 ملفات: `progress`, `memory`, `instructions`, `todo` |
+
+---
+
+## 🪞 التماثل (Fractal Pattern)
+
+| السؤال | على مستوى الموقع | على مستوى الأداة |
+|---|---|---|
+| ما هي الفكرة؟ | `00-VISION.md` | `tools/{X}.spec.md §1` |
+| كيف بُنيت؟ | `01-ARCHITECTURE.md` | `tools/{X}.spec.md §5` |
+| ما القواعد؟ | `02-PRINCIPLES.md` + `standards/` | `development/{X}/instructions.md` |
+| ما المخطّط/الأفكار؟ | `03-ROADMAP.md` | `development/{X}/progress.md` (📋💡) |
+| ما الحالة الآن؟ | `04-PROGRESS.md` | `development/{X}/progress.md` (✅🚧) |
+| القرارات والدروس؟ | `05-MEMORY.md` | `development/{X}/memory.md` |
+| المهام الفورية؟ | `06-TODO.md` | `development/{X}/todo.md` |
 
 ## 🔄 كيف تستخدم هذه المستندات
 
-- **مطوّر جديد على المشروع:** ابدأ بـ [`00-VISION`](00-VISION.md) ثم [`01-ARCHITECTURE`](01-ARCHITECTURE.md)
-- **قبل إضافة أداة جديدة:** راجع [`02-PRINCIPLES`](02-PRINCIPLES.md) و [`03-ROADMAP`](03-ROADMAP.md)
-- **أثناء العمل على مهمة:** حدّث [`04-PROGRESS`](04-PROGRESS.md) حين تبدأ أو تُكمل
-- **عند تغيير قرار معماري:** سجّل السبب في `decisions/` (مستقبلاً) مع التاريخ
+- **مطوّر جديد على المشروع:** ابدأ بـ [`00-VISION`](00-VISION.md) → [`01-ARCHITECTURE`](01-ARCHITECTURE.md) → [`02-PRINCIPLES`](02-PRINCIPLES.md)
+- **قبل العمل على أداة محددة:** افتح `development/{tool}/` بكامله
+- **قبل إضافة أداة جديدة:** [`standards/tool-template.md`](standards/tool-template.md) + [`03-ROADMAP.md`](03-ROADMAP.md)
+- **قبل دمج أي شيء:** [`standards/testing-checklist.md`](standards/testing-checklist.md)
+- **عند قرار معماري:** سجّله في `05-MEMORY.md` (موقع) أو `development/{tool}/memory.md` (أداة)
 
-## 🤖 ملاحظة للوكلاء (Claude / AI agents)
-
-- `CLAUDE.md` في جذر المشروع هو نقطة الدخول السريعة (سيُقلَّص لاحقاً ليصبح فهرساً يربط بهذه المستندات)
-- هذه المستندات هي **المرجع الكامل والمتعمّق**
-- لا تكرّر معلومات بين CLAUDE.md و docs/ — اربط فقط
-
-## 🌳 خريطة المجلد (مستقبلاً، عند اكتمال كل المراحل)
+## 🌳 خريطة المجلد الكاملة
 
 ```
 docs/
-├── README.md                      ← أنت هنا
-├── 00-VISION.md
-├── 01-ARCHITECTURE.md
-├── 02-PRINCIPLES.md
-├── 03-ROADMAP.md
-├── 04-PROGRESS.md
-├── standards/                     ✅ مكتمل
+├── README.md                        ← أنت هنا (الفهرس)
+│
+├── 00-VISION.md                     ┐
+├── 01-ARCHITECTURE.md               │ Identity للموقع
+├── 02-PRINCIPLES.md                 ┘
+│
+├── 03-ROADMAP.md                    ┐
+├── 04-PROGRESS.md                   │ Workspace للموقع
+├── 05-MEMORY.md                     │
+├── 06-TODO.md                       ┘
+│
+├── standards/                       Instructions للموقع (لكل الأدوات)
 │   ├── README.md
 │   ├── design-system.md
 │   ├── mobile-design.md
@@ -78,19 +87,37 @@ docs/
 │   ├── tool-template.md
 │   ├── blog-template.md
 │   └── testing-checklist.md
-├── tools/                         ✅ مكتمل
+│
+├── tools/                           Identity للأدوات (spec لكل واحدة)
 │   ├── README.md
 │   ├── zakat-calculator.spec.md
 │   ├── inheritance-calculator.spec.md
 │   ├── kaffara-calculator.spec.md
+│   ├── ai-readiness.spec.md
 │   ├── body-calculator.spec.md
 │   ├── gpa-calculator.spec.md
-│   ├── ai-readiness.spec.md
 │   ├── interest-calculator.spec.md
 │   ├── loan-calculator.spec.md
 │   ├── percentage.spec.md
 │   ├── age-calculator.spec.md
 │   └── family-tree.spec.md
-└── decisions/
-    └── (ADRs مستقبلاً)
+│
+└── development/                     Workspace للأدوات (لكل أداة 4 ملفات)
+    ├── README.md
+    ├── zakat-calculator/
+    │   ├── progress.md
+    │   ├── memory.md
+    │   ├── instructions.md
+    │   └── todo.md
+    ├── inheritance-calculator/
+    │   └── (نفس البنية)
+    └── ... (لكل الـ11 أداة)
 ```
+
+## 🤖 ملاحظة للوكلاء (Claude / AI agents)
+
+- `CLAUDE.md` في جذر المشروع هو نقطة الدخول السريعة (موجز ~150 سطر)
+- هذه المستندات هي **المرجع الكامل والمتعمّق**
+- **عند العمل على أداة:** اقرأ `tools/{X}.spec.md` (المرجع) + `development/{X}/` (السياق الحي)
+- **عند العمل على ميزة عابرة:** `06-TODO.md` + `05-MEMORY.md` + `standards/`
+- **لا تكرّر معلومات** بين CLAUDE.md و docs/ — اربط فقط

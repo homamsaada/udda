@@ -4,6 +4,12 @@
 
 📚 **Full documentation:** [`docs/`](docs/) — start with [`docs/README.md`](docs/README.md).
 
+The docs follow a **fractal pattern**: site and tool levels mirror each other.
+- Site identity → `docs/00-VISION.md`, `01-ARCHITECTURE.md`, `02-PRINCIPLES.md`
+- Site workspace → `docs/03-ROADMAP.md`, `04-PROGRESS.md`, `05-MEMORY.md`, `06-TODO.md`
+- Tool identity → `docs/tools/{tool}.spec.md`
+- Tool workspace → `docs/development/{tool}/{progress,memory,instructions,todo}.md`
+
 ---
 
 ## Commands
@@ -91,10 +97,19 @@ Any other key in `tools.{id}.{lang}` becomes available as `{{tool.{customKey}}}`
 
 ## For Agents
 
+### When working on a specific tool:
+1. Read `docs/tools/{tool}.spec.md` (the canonical "what is")
+2. Read `docs/development/{tool}/memory.md` (decisions, references, lessons)
+3. Read `docs/development/{tool}/instructions.md` (tool-specific how-tos)
+4. Check `docs/development/{tool}/todo.md` for current tasks
+5. Update `docs/development/{tool}/progress.md` and `todo.md` as you work
+
+### General rules:
 - ✅ Use `{{tool.xxx}}` placeholders, never hardcode strings
 - ✅ Read [`docs/standards/`](docs/standards/) before adding tools/posts
 - ✅ Run `npm run build` before claiming completion
-- ✅ Update [`docs/04-PROGRESS.md`](docs/04-PROGRESS.md) when you complete or start major work
+- ✅ Update [`docs/04-PROGRESS.md`](docs/04-PROGRESS.md) for major project-level work
+- ✅ Update `docs/development/{tool}/` for tool-level work
 - ❌ Don't add CDN dependencies
 - ❌ Don't commit `dist/` (gitignored)
 - ❌ Don't hardcode hex colors — use CSS variables

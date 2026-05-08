@@ -165,6 +165,9 @@ src/tools/kaffara-calculator.html (~784 سطر)
 
 ## 8. التطوير المستقبلي
 
+> 📊 **القائمة الحيّة + المهام الفعلية** → [`../development/kaffara-calculator/`](../development/kaffara-calculator/)
+> القرارات الفقهية والمراجع → [`../development/kaffara-calculator/memory.md`](../development/kaffara-calculator/memory.md)
+
 من [`../03-ROADMAP.md`](../03-ROADMAP.md):
 - 📋 إضافة الكسوة كحساب تفصيلي (سعر الثوب في كل بلد)
 - 📋 تحسين عرض جزاء الصيد (شجرة قرارات للحيوانات الشائعة)

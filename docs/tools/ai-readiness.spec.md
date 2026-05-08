@@ -425,6 +425,9 @@ window.addEventListener('beforeunload', function(e) {
 
 ## 13. التطوير المستقبلي
 
+> 📊 **القائمة الحيّة + المهام الفعلية** → [`../development/ai-readiness/`](../development/ai-readiness/)
+> القرارات والذاكرة → [`../development/ai-readiness/memory.md`](../development/ai-readiness/memory.md)
+
 من [`../03-ROADMAP.md`](../03-ROADMAP.md):
 - 📋 تحسين التقرير البصري (مشاركة كصورة على السوشال)
 - 📋 تخصصات إضافية (طب الأطفال، طب الأسنان التخصصي، إلخ)

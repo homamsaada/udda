@@ -153,6 +153,9 @@ src/tools/zakat-calculator.html (~960 سطر)
 
 ## 6. التطوير المستقبلي
 
+> 📊 **القائمة الحيّة + المهام الفعلية** → [`../development/zakat-calculator/`](../development/zakat-calculator/)
+> القرارات الفقهية والمراجع → [`../development/zakat-calculator/memory.md`](../development/zakat-calculator/memory.md)
+
 من [`../03-ROADMAP.md`](../03-ROADMAP.md):
 - ✅ زكاة الفطر (موجودة كتبويب)
 - 📋 زكاة الزروع والثمار (1/10 أو 1/20)

@@ -75,6 +75,8 @@ src/tools/loan-calculator.html (~1,042 سطر)
 
 ## 6. التطوير المستقبلي
 
+> 📊 **القائمة الحيّة + المهام الفعلية** → [`../development/loan-calculator/`](../development/loan-calculator/)
+
 - 📋 حاسبة المرابحة الإسلامية (بديل شرعي)
 - 📋 حاسبة الإجارة المنتهية بالتمليك
 - 📋 تصدير الجدول كـ Excel/PDF

@@ -192,6 +192,9 @@ entry.parts = sharedPoolParts * entry.count / entry.shared;
 
 ## 6. التطوير المستقبلي
 
+> 📊 **القائمة الحيّة + المهام الفعلية** → [`../development/inheritance-calculator/`](../development/inheritance-calculator/)
+> القرارات الفقهية والمراجع → [`../development/inheritance-calculator/memory.md`](../development/inheritance-calculator/memory.md)
+
 من [`../03-ROADMAP.md`](../03-ROADMAP.md):
 - 📋 الخنثى المشكِل
 - 📋 حالة المفقود

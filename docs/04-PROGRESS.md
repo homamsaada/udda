@@ -1,6 +1,6 @@
 # ✅ التقدم الحالي | Progress
 
-> آخر تحديث: **2026-05-08** (المراحل 1-4 مكتملة — التوثيق الكامل + التنظيف النهائي)
+> آخر تحديث: **2026-05-08** (المراحل 1-4.5 مكتملة — التوثيق الكامل + بنية تطوير fractal)
 
 هذا الملف **سجل حي** يُحدَّث باستمرار. يعكس الحالة الفعلية، ليس الخطة. للخطة المستقبلية انظر [`03-ROADMAP.md`](03-ROADMAP.md).
 
@@ -103,12 +103,22 @@
 
 ### المرحلة 4: التنظيف النهائي ✅ (مايو 2026)
 
-- [x] إضافة `.claude/worktrees/` إلى `.gitignore`
+- [x] إضافة `.claude/worktrees/` و `.idea/` إلى `.gitignore`
 - [x] حذف `udda-ai-readiness-spec.md` (محتواه في [`tools/ai-readiness.spec.md`](tools/ai-readiness.spec.md))
 - [x] حذف `specialties-comprehensive-list.md` (محتواه في نفس الملف)
 - [x] حذف `.claude/rules/mobile-design.md` (محتواه موسَّع في [`standards/mobile-design.md`](standards/mobile-design.md))
 - [x] إعادة كتابة `README.md` ليصبح بوابة دخول حديثة (تشمل كل الأدوات الـ11 + روابط لـ `docs/`)
-- [x] تقليص `CLAUDE.md` من 36KB إلى ~100 سطر (فهرس يربط بـ `docs/`)
+- [x] تقليص `CLAUDE.md` من 36KB إلى ~140 سطر (فهرس يربط بـ `docs/`)
+
+### المرحلة 4.5: بنية التطوير Fractal ✅ (مايو 2026)
+
+- [x] إنشاء [`05-MEMORY.md`](05-MEMORY.md) (مستوى الموقع — قرارات + دروس + مراجع)
+- [x] إنشاء [`06-TODO.md`](06-TODO.md) (مستوى الموقع — مهام عابرة للأدوات)
+- [x] إنشاء [`development/`](development/) (مساحات عمل الأدوات)
+- [x] لكل من الـ11 أداة: 4 ملفات (progress + memory + instructions + todo) = 44 ملف
+- [x] إضافة مؤشّرات في كل spec → development/{tool}/
+
+**المبدأ:** بنية تكرارية (fractal). نفس النمط على مستوى الموقع وعلى مستوى الأداة. تفاصيل في [`README.md`](README.md).
 
 ### المرحلة 5: تخطيط البناء العلمي
 

@@ -224,6 +224,9 @@ src/tools/gpa-calculator.html (~3,580 سطر — ثاني أطول أداة)
 
 ## 9. التطوير المستقبلي
 
+> 📊 **القائمة الحيّة + المهام الفعلية** → [`../development/gpa-calculator/`](../development/gpa-calculator/)
+> القرارات المعمارية → [`../development/gpa-calculator/memory.md`](../development/gpa-calculator/memory.md)
+
 من [`../03-ROADMAP.md`](../03-ROADMAP.md):
 - 📋 إضافة أنظمة تقدير: مصري 2.0، روسي 5.0، إيراني 20
 - 📋 تصدير محضر النتائج كـ PDF

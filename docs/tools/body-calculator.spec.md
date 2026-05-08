@@ -188,6 +188,9 @@ src/tools/body-calculator.html (~1,609 سطر)
 
 ## 6. التطوير المستقبلي
 
+> 📊 **القائمة الحيّة + المهام الفعلية** → [`../development/body-calculator/`](../development/body-calculator/)
+> المراجع الطبية والقرارات → [`../development/body-calculator/memory.md`](../development/body-calculator/memory.md)
+
 من [`../03-ROADMAP.md`](../03-ROADMAP.md):
 - 📋 معادلة Hamwi و Robinson كبدائل لـ Devine
 - 📋 BMR بمعادلة Harris-Benedict (للمقارنة)

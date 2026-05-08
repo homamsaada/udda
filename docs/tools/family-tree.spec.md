@@ -83,6 +83,8 @@ src/tools/family-tree.html (~2,379 سطر)
 
 ## 7. التطوير المستقبلي
 
+> 📊 **القائمة الحيّة + المهام الفعلية** → [`../development/family-tree/`](../development/family-tree/)
+
 - 📋 سحب وإفلات لإعادة ترتيب
 - 📋 Zoom + Pan
 - 📋 تصدير الشجرة كصورة PNG/SVG
