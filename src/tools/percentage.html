@@ -1,226 +1,13 @@
 <!-- Tool: Percentage Calculator | حاسبة النسبة المئوية -->
-<div class="tool-card">
-  <div class="tool-header">
-    <div class="tool-icon">🔢</div>
-    <div>
-      <h1 class="tool-title">{{tool.name}}</h1>
-      <p class="tool-description">{{tool.description}}</p>
-    </div>
-  </div>
-  
-  <!-- Calculator 1: What is X% of Y? -->
-  <div class="calc-row-inline">
-    <div class="calc-title">{{tool.calc1Title}}:</div>
-    <span class="calc-label">{{tool.whatIsPercent}}</span>
-    <input type="number" class="calc-input-sm" id="calc1-percent" placeholder="10" oninput="calculate(1)">
-    <span class="calc-label">{{tool.percentOf}}</span>
-    <input type="number" class="calc-input-sm" id="calc1-number" placeholder="200" oninput="calculate(1)">
-    <span class="calc-label">=</span>
-    <span class="calc-result" id="result1">—</span>
-    <div class="result-controls">
-      <button class="ctrl-btn" onclick="adjustPrecision(1, -1)">−</button>
-      <button class="ctrl-btn" onclick="adjustPrecision(1, 1)">+</button>
-      <button class="ctrl-btn" onclick="copyResult(1)">📋</button>
-    </div>
-  </div>
-  
-  <!-- Calculator 2: X is what % of Y? -->
-  <div class="calc-row-inline">
-    <div class="calc-title">{{tool.calc2Title}}:</div>
-    <input type="number" class="calc-input-sm" id="calc2-part" placeholder="25" oninput="calculate(2)">
-    <span class="calc-label">{{tool.isWhatPercent}}</span>
-    <input type="number" class="calc-input-sm" id="calc2-whole" placeholder="200" oninput="calculate(2)">
-    <span class="calc-label">=</span>
-    <span class="calc-result" id="result2">—</span>
-    <div class="result-controls">
-      <button class="ctrl-btn" onclick="adjustPrecision(2, -1)">−</button>
-      <button class="ctrl-btn" onclick="adjustPrecision(2, 1)">+</button>
-      <button class="ctrl-btn" onclick="copyResult(2)">📋</button>
-    </div>
-  </div>
-  
-  <!-- Calculator 3: Percentage Change -->
-  <div class="calc-row-inline">
-    <div class="calc-title">{{tool.calc3Title}}:</div>
-    <span class="calc-label">{{tool.percentChange}} {{tool.from}}</span>
-    <input type="number" class="calc-input-sm" id="calc3-from" placeholder="100" oninput="calculate(3)">
-    <span class="calc-label">{{tool.to}}</span>
-    <input type="number" class="calc-input-sm" id="calc3-to" placeholder="150" oninput="calculate(3)">
-    <span class="calc-label">=</span>
-    <span class="calc-result" id="result3">—</span>
-    <div class="result-controls">
-      <button class="ctrl-btn" onclick="adjustPrecision(3, -1)">−</button>
-      <button class="ctrl-btn" onclick="adjustPrecision(3, 1)">+</button>
-      <button class="ctrl-btn" onclick="copyResult(3)">📋</button>
-    </div>
-  </div>
-  
-  <!-- Calculator 4: Discount -->
-  <div class="calc-row-inline">
-    <div class="calc-title">{{tool.calc4Title}}:</div>
-    <span class="calc-label">{{tool.originalPrice}}</span>
-    <input type="number" class="calc-input-sm" id="calc4-price" placeholder="500" oninput="calculate(4)">
-    <span class="calc-label">− {{tool.discount}}</span>
-    <input type="number" class="calc-input-sm" id="calc4-discount" placeholder="20" oninput="calculate(4)">
-    <span class="calc-label">% =</span>
-    <span class="calc-result" id="result4">—</span>
-    <div class="result-controls">
-      <button class="ctrl-btn" onclick="adjustPrecision(4, -1)">−</button>
-      <button class="ctrl-btn" onclick="adjustPrecision(4, 1)">+</button>
-      <button class="ctrl-btn" onclick="copyResult(4)">📋</button>
-    </div>
-  </div>
-  
-  <!-- Calculator 5: Add percentage to number -->
-  <div class="calc-row-inline">
-    <div class="calc-title">{{tool.calc5Title}}:</div>
-    <input type="number" class="calc-input-sm" id="calc5-number" placeholder="200" oninput="calculate(5)">
-    <span class="calc-label">+</span>
-    <input type="number" class="calc-input-sm" id="calc5-percent" placeholder="15" oninput="calculate(5)">
-    <span class="calc-label">% =</span>
-    <span class="calc-result" id="result5">—</span>
-    <div class="result-controls">
-      <button class="ctrl-btn" onclick="adjustPrecision(5, -1)">−</button>
-      <button class="ctrl-btn" onclick="adjustPrecision(5, 1)">+</button>
-      <button class="ctrl-btn" onclick="copyResult(5)">📋</button>
-    </div>
-  </div>
-  
-  <!-- Calculator 6: Original price before discount -->
-  <div class="calc-row-inline">
-    <div class="calc-title">{{tool.calc6Title}}:</div>
-    <span class="calc-label">{{tool.afterDiscount}}</span>
-    <input type="number" class="calc-input-sm" id="calc6-discount" placeholder="20" oninput="calculate(6)">
-    <span class="calc-label">% {{tool.priceBecame}}</span>
-    <input type="number" class="calc-input-sm" id="calc6-final" placeholder="80" oninput="calculate(6)">
-    <span class="calc-label">{{tool.originalWas}}</span>
-    <span class="calc-result" id="result6">—</span>
-    <div class="result-controls">
-      <button class="ctrl-btn" onclick="adjustPrecision(6, -1)">−</button>
-      <button class="ctrl-btn" onclick="adjustPrecision(6, 1)">+</button>
-      <button class="ctrl-btn" onclick="copyResult(6)">📋</button>
-    </div>
-  </div>
-  
-  <!-- Calculator 7: Profit/Loss percentage -->
-  <div class="calc-row-inline">
-    <div class="calc-title">{{tool.calc7Title}}:</div>
-    <span class="calc-label">{{tool.buyPrice}}</span>
-    <input type="number" class="calc-input-sm" id="calc7-buy" placeholder="100" oninput="calculate(7)">
-    <span class="calc-label">{{tool.sellPrice}}</span>
-    <input type="number" class="calc-input-sm" id="calc7-sell" placeholder="130" oninput="calculate(7)">
-    <span class="calc-label">=</span>
-    <span class="calc-result" id="result7">—</span>
-    <div class="result-controls">
-      <button class="ctrl-btn" onclick="adjustPrecision(7, -1)">−</button>
-      <button class="ctrl-btn" onclick="adjustPrecision(7, 1)">+</button>
-      <button class="ctrl-btn" onclick="copyResult(7)">📋</button>
-    </div>
-  </div>
-  
-  <!-- Calculator 8: Fraction to Percentage -->
-  <div class="calc-row-inline">
-    <div class="calc-title">{{tool.calc8Title}}:</div>
-    <input type="number" class="calc-input-sm" id="calc8-num" placeholder="3" oninput="calculate(8)">
-    <span class="calc-label">÷</span>
-    <input type="number" class="calc-input-sm" id="calc8-den" placeholder="4" oninput="calculate(8)">
-    <span class="calc-label">=</span>
-    <span class="calc-result" id="result8">—</span>
-    <div class="result-controls">
-      <button class="ctrl-btn" onclick="adjustPrecision(8, -1)">−</button>
-      <button class="ctrl-btn" onclick="adjustPrecision(8, 1)">+</button>
-      <button class="ctrl-btn" onclick="copyResult(8)">📋</button>
-    </div>
-  </div>
-  
-  <!-- Calculator 9: Add Tax -->
-  <div class="calc-row-inline">
-    <div class="calc-title">{{tool.calc9Title}}:</div>
-    <span class="calc-label">{{tool.priceBeforeTax}}</span>
-    <input type="number" class="calc-input-sm" id="calc9-price" placeholder="100" oninput="calculate(9)">
-    <span class="calc-label">+ {{tool.tax}}</span>
-    <input type="number" class="calc-input-sm" id="calc9-tax" placeholder="18" oninput="calculate(9)">
-    <span class="calc-label">% =</span>
-    <span class="calc-result" id="result9">—</span>
-    <div class="result-controls">
-      <button class="ctrl-btn" onclick="adjustPrecision(9, -1)">−</button>
-      <button class="ctrl-btn" onclick="adjustPrecision(9, 1)">+</button>
-      <button class="ctrl-btn" onclick="copyResult(9)">📋</button>
-    </div>
-  </div>
-  
-  <!-- Calculator 10: Price Before Tax -->
-  <div class="calc-row-inline">
-    <div class="calc-title">{{tool.calc10Title}}:</div>
-    <span class="calc-label">{{tool.priceWithTax}}</span>
-    <input type="number" class="calc-input-sm" id="calc10-total" placeholder="118" oninput="calculate(10)">
-    <span class="calc-label">{{tool.includesTax}}</span>
-    <input type="number" class="calc-input-sm" id="calc10-tax" placeholder="18" oninput="calculate(10)">
-    <span class="calc-label">% {{tool.originalWas}}</span>
-    <span class="calc-result" id="result10">—</span>
-    <div class="result-controls">
-      <button class="ctrl-btn" onclick="adjustPrecision(10, -1)">−</button>
-      <button class="ctrl-btn" onclick="adjustPrecision(10, 1)">+</button>
-      <button class="ctrl-btn" onclick="copyResult(10)">📋</button>
-    </div>
-  </div>
-  
-  <!-- Calculator 11: Profit Margin -->
-  <div class="calc-row-inline">
-    <div class="calc-title">{{tool.calc11Title}}:</div>
-    <span class="calc-label">{{tool.cost}}</span>
-    <input type="number" class="calc-input-sm" id="calc11-cost" placeholder="80" oninput="calculate(11)">
-    <span class="calc-label">{{tool.soldFor}}</span>
-    <input type="number" class="calc-input-sm" id="calc11-sell" placeholder="100" oninput="calculate(11)">
-    <span class="calc-label">{{tool.margin}} =</span>
-    <span class="calc-result" id="result11">—</span>
-    <div class="result-controls">
-      <button class="ctrl-btn" onclick="adjustPrecision(11, -1)">−</button>
-      <button class="ctrl-btn" onclick="adjustPrecision(11, 1)">+</button>
-      <button class="ctrl-btn" onclick="copyResult(11)">📋</button>
-    </div>
-  </div>
-  
-  <!-- Calculator 12: Part of Total -->
-  <div class="calc-row-inline">
-    <div class="calc-title">{{tool.calc12Title}}:</div>
-    <input type="number" class="calc-input-sm" id="calc12-part" placeholder="30" oninput="calculate(12)">
-    <span class="calc-label">{{tool.outOf}} (</span>
-    <input type="number" class="calc-input-sm" id="calc12-part2" placeholder="70" oninput="calculate(12)">
-    <span class="calc-label">+ {{tool.first}}) =</span>
-    <span class="calc-result" id="result12">—</span>
-    <div class="result-controls">
-      <button class="ctrl-btn" onclick="adjustPrecision(12, -1)">−</button>
-      <button class="ctrl-btn" onclick="adjustPrecision(12, 1)">+</button>
-      <button class="ctrl-btn" onclick="copyResult(12)">📋</button>
-    </div>
-  </div>
-
-  <!-- Calculator 13: Sequential Discount -->
-  <div class="calc-row-inline">
-    <div class="calc-title">{{tool.calc13Title}}:</div>
-    <span class="calc-label">{{tool.firstDiscount}}</span>
-    <input type="number" class="calc-input-sm" id="calc13-d1" placeholder="20" oninput="calculate(13)">
-    <span class="calc-label">% + {{tool.secondDiscount}}</span>
-    <input type="number" class="calc-input-sm" id="calc13-d2" placeholder="10" oninput="calculate(13)">
-    <span class="calc-label">% = {{tool.totalDiscount}}</span>
-    <span class="calc-result" id="result13">—</span>
-    <div class="result-controls">
-      <button class="ctrl-btn" onclick="adjustPrecision(13, -1)">−</button>
-      <button class="ctrl-btn" onclick="adjustPrecision(13, 1)">+</button>
-      <button class="ctrl-btn" onclick="copyResult(13)">📋</button>
-    </div>
-  </div>
-</div>
-
-<!-- How to Use -->
-<div class="how-to-use">
-  <h3>📖 {{ui.howToUse}}</h3>
-  <p>{{tool.howToUseText}}</p>
-</div>
-
 <style>
-.calc-row-inline {
+/* percentage — أنماط خاصة بالأداة (pc- prefix). 13 sub-calculator
+   كل واحد على شكل سطر واحد inline (تصميم مقصود — ليس form-based).
+   يستخدم .tool-header من main.css. */
+.percentage { font-family: inherit; }
+.percentage * { font-family: inherit; }
+
+/* Single calculator row (inline, no form-row pattern) */
+.percentage .pc-row {
   display: flex;
   align-items: baseline;
   gap: 8px;
@@ -234,7 +21,7 @@
   width: 100%;
 }
 
-.calc-title {
+.percentage .pc-title {
   width: 100%;
   font-size: 0.95rem;
   font-weight: 700;
@@ -242,11 +29,11 @@
   margin-bottom: -4px;
 }
 
-.calc-label {
+.percentage .pc-label {
   color: var(--text-primary);
 }
 
-.calc-input-sm {
+.percentage .pc-input {
   width: 90px;
   padding: 4px 8px;
   background: transparent;
@@ -261,18 +48,18 @@
   transition: all var(--transition-fast);
 }
 
-.calc-input-sm:focus {
+.percentage .pc-input:focus {
   outline: none;
   border-bottom-color: var(--accent-secondary);
   background: rgba(99, 102, 241, 0.05);
 }
 
-.calc-input-sm::placeholder {
+.percentage .pc-input::placeholder {
   color: var(--text-muted);
   font-weight: 400;
 }
 
-.calc-result {
+.percentage .pc-result {
   min-width: 60px;
   padding: 4px 12px;
   background: var(--accent-gradient);
@@ -284,22 +71,22 @@
   transition: all var(--transition-fast);
 }
 
-.calc-result.increase {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
+.percentage .pc-result.increase {
+  background: linear-gradient(135deg, var(--success), var(--success-dark));
 }
 
-.calc-result.decrease {
-  background: linear-gradient(135deg, #ef4444, #dc2626);
+.percentage .pc-result.decrease {
+  background: linear-gradient(135deg, var(--error), var(--error-dark));
 }
 
-.result-controls {
+.percentage .pc-controls {
   display: flex;
   gap: 4px;
   align-items: center;
   margin-inline-start: auto;
 }
 
-.ctrl-btn {
+.percentage .pc-ctrl {
   width: 28px;
   height: 28px;
   border: none;
@@ -312,42 +99,43 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: inherit;
 }
 
-.ctrl-btn:hover {
+.percentage .pc-ctrl:hover {
   background: var(--accent-primary);
   color: white;
 }
 
-.ctrl-btn:active {
+.percentage .pc-ctrl:active {
   transform: scale(0.95);
 }
 
 @media (max-width: 768px) {
-  .calc-row-inline {
+  .percentage .pc-row {
     justify-content: center;
     font-size: 1rem;
   }
 
-  .calc-input-sm {
+  .percentage .pc-input {
     width: 70px;
     font-size: 1rem;
   }
 
-  .calc-result {
+  .percentage .pc-result {
     width: 100%;
     font-size: 1rem;
     text-align: center;
     margin-top: 4px;
   }
 
-  .result-controls {
+  .percentage .pc-controls {
     width: 100%;
     justify-content: center;
     margin-top: -4px;
   }
 
-  .ctrl-btn {
+  .percentage .pc-ctrl {
     width: 26px;
     height: 26px;
     font-size: 0.9rem;
@@ -355,206 +143,419 @@
 }
 </style>
 
+<div class="percentage">
+  <div class="tool-header">
+    <div class="tool-icon">🔢</div>
+    <div>
+      <h1 class="tool-title">{{tool.name}}</h1>
+      <p class="tool-description">{{tool.description}}</p>
+    </div>
+  </div>
+
+  <!-- Calculator 1: What is X% of Y? -->
+  <div class="pc-row">
+    <div class="pc-title">{{tool.calc1Title}}:</div>
+    <span class="pc-label">{{tool.whatIsPercent}}</span>
+    <input type="number" class="pc-input" id="calc1-percent" placeholder="10" oninput="calculate(1)">
+    <span class="pc-label">{{tool.percentOf}}</span>
+    <input type="number" class="pc-input" id="calc1-number" placeholder="200" oninput="calculate(1)">
+    <span class="pc-label">=</span>
+    <span class="pc-result" id="result1">—</span>
+    <div class="pc-controls">
+      <button class="pc-ctrl" onclick="adjustPrecision(1, -1)">−</button>
+      <button class="pc-ctrl" onclick="adjustPrecision(1, 1)">+</button>
+      <button class="pc-ctrl" onclick="copyResult(1)">📋</button>
+    </div>
+  </div>
+
+  <!-- Calculator 2: X is what % of Y? -->
+  <div class="pc-row">
+    <div class="pc-title">{{tool.calc2Title}}:</div>
+    <input type="number" class="pc-input" id="calc2-part" placeholder="25" oninput="calculate(2)">
+    <span class="pc-label">{{tool.isWhatPercent}}</span>
+    <input type="number" class="pc-input" id="calc2-whole" placeholder="200" oninput="calculate(2)">
+    <span class="pc-label">=</span>
+    <span class="pc-result" id="result2">—</span>
+    <div class="pc-controls">
+      <button class="pc-ctrl" onclick="adjustPrecision(2, -1)">−</button>
+      <button class="pc-ctrl" onclick="adjustPrecision(2, 1)">+</button>
+      <button class="pc-ctrl" onclick="copyResult(2)">📋</button>
+    </div>
+  </div>
+
+  <!-- Calculator 3: Percentage Change -->
+  <div class="pc-row">
+    <div class="pc-title">{{tool.calc3Title}}:</div>
+    <span class="pc-label">{{tool.percentChange}} {{tool.from}}</span>
+    <input type="number" class="pc-input" id="calc3-from" placeholder="100" oninput="calculate(3)">
+    <span class="pc-label">{{tool.to}}</span>
+    <input type="number" class="pc-input" id="calc3-to" placeholder="150" oninput="calculate(3)">
+    <span class="pc-label">=</span>
+    <span class="pc-result" id="result3">—</span>
+    <div class="pc-controls">
+      <button class="pc-ctrl" onclick="adjustPrecision(3, -1)">−</button>
+      <button class="pc-ctrl" onclick="adjustPrecision(3, 1)">+</button>
+      <button class="pc-ctrl" onclick="copyResult(3)">📋</button>
+    </div>
+  </div>
+
+  <!-- Calculator 4: Discount -->
+  <div class="pc-row">
+    <div class="pc-title">{{tool.calc4Title}}:</div>
+    <span class="pc-label">{{tool.originalPrice}}</span>
+    <input type="number" class="pc-input" id="calc4-price" placeholder="500" oninput="calculate(4)">
+    <span class="pc-label">− {{tool.discount}}</span>
+    <input type="number" class="pc-input" id="calc4-discount" placeholder="20" oninput="calculate(4)">
+    <span class="pc-label">% =</span>
+    <span class="pc-result" id="result4">—</span>
+    <div class="pc-controls">
+      <button class="pc-ctrl" onclick="adjustPrecision(4, -1)">−</button>
+      <button class="pc-ctrl" onclick="adjustPrecision(4, 1)">+</button>
+      <button class="pc-ctrl" onclick="copyResult(4)">📋</button>
+    </div>
+  </div>
+
+  <!-- Calculator 5: Add percentage to number -->
+  <div class="pc-row">
+    <div class="pc-title">{{tool.calc5Title}}:</div>
+    <input type="number" class="pc-input" id="calc5-number" placeholder="200" oninput="calculate(5)">
+    <span class="pc-label">+</span>
+    <input type="number" class="pc-input" id="calc5-percent" placeholder="15" oninput="calculate(5)">
+    <span class="pc-label">% =</span>
+    <span class="pc-result" id="result5">—</span>
+    <div class="pc-controls">
+      <button class="pc-ctrl" onclick="adjustPrecision(5, -1)">−</button>
+      <button class="pc-ctrl" onclick="adjustPrecision(5, 1)">+</button>
+      <button class="pc-ctrl" onclick="copyResult(5)">📋</button>
+    </div>
+  </div>
+
+  <!-- Calculator 6: Original price before discount -->
+  <div class="pc-row">
+    <div class="pc-title">{{tool.calc6Title}}:</div>
+    <span class="pc-label">{{tool.afterDiscount}}</span>
+    <input type="number" class="pc-input" id="calc6-discount" placeholder="20" oninput="calculate(6)">
+    <span class="pc-label">% {{tool.priceBecame}}</span>
+    <input type="number" class="pc-input" id="calc6-final" placeholder="80" oninput="calculate(6)">
+    <span class="pc-label">{{tool.originalWas}}</span>
+    <span class="pc-result" id="result6">—</span>
+    <div class="pc-controls">
+      <button class="pc-ctrl" onclick="adjustPrecision(6, -1)">−</button>
+      <button class="pc-ctrl" onclick="adjustPrecision(6, 1)">+</button>
+      <button class="pc-ctrl" onclick="copyResult(6)">📋</button>
+    </div>
+  </div>
+
+  <!-- Calculator 7: Profit/Loss percentage -->
+  <div class="pc-row">
+    <div class="pc-title">{{tool.calc7Title}}:</div>
+    <span class="pc-label">{{tool.buyPrice}}</span>
+    <input type="number" class="pc-input" id="calc7-buy" placeholder="100" oninput="calculate(7)">
+    <span class="pc-label">{{tool.sellPrice}}</span>
+    <input type="number" class="pc-input" id="calc7-sell" placeholder="130" oninput="calculate(7)">
+    <span class="pc-label">=</span>
+    <span class="pc-result" id="result7">—</span>
+    <div class="pc-controls">
+      <button class="pc-ctrl" onclick="adjustPrecision(7, -1)">−</button>
+      <button class="pc-ctrl" onclick="adjustPrecision(7, 1)">+</button>
+      <button class="pc-ctrl" onclick="copyResult(7)">📋</button>
+    </div>
+  </div>
+
+  <!-- Calculator 8: Fraction to Percentage -->
+  <div class="pc-row">
+    <div class="pc-title">{{tool.calc8Title}}:</div>
+    <input type="number" class="pc-input" id="calc8-num" placeholder="3" oninput="calculate(8)">
+    <span class="pc-label">÷</span>
+    <input type="number" class="pc-input" id="calc8-den" placeholder="4" oninput="calculate(8)">
+    <span class="pc-label">=</span>
+    <span class="pc-result" id="result8">—</span>
+    <div class="pc-controls">
+      <button class="pc-ctrl" onclick="adjustPrecision(8, -1)">−</button>
+      <button class="pc-ctrl" onclick="adjustPrecision(8, 1)">+</button>
+      <button class="pc-ctrl" onclick="copyResult(8)">📋</button>
+    </div>
+  </div>
+
+  <!-- Calculator 9: Add Tax -->
+  <div class="pc-row">
+    <div class="pc-title">{{tool.calc9Title}}:</div>
+    <span class="pc-label">{{tool.priceBeforeTax}}</span>
+    <input type="number" class="pc-input" id="calc9-price" placeholder="100" oninput="calculate(9)">
+    <span class="pc-label">+ {{tool.tax}}</span>
+    <input type="number" class="pc-input" id="calc9-tax" placeholder="18" oninput="calculate(9)">
+    <span class="pc-label">% =</span>
+    <span class="pc-result" id="result9">—</span>
+    <div class="pc-controls">
+      <button class="pc-ctrl" onclick="adjustPrecision(9, -1)">−</button>
+      <button class="pc-ctrl" onclick="adjustPrecision(9, 1)">+</button>
+      <button class="pc-ctrl" onclick="copyResult(9)">📋</button>
+    </div>
+  </div>
+
+  <!-- Calculator 10: Price Before Tax -->
+  <div class="pc-row">
+    <div class="pc-title">{{tool.calc10Title}}:</div>
+    <span class="pc-label">{{tool.priceWithTax}}</span>
+    <input type="number" class="pc-input" id="calc10-total" placeholder="118" oninput="calculate(10)">
+    <span class="pc-label">{{tool.includesTax}}</span>
+    <input type="number" class="pc-input" id="calc10-tax" placeholder="18" oninput="calculate(10)">
+    <span class="pc-label">% {{tool.originalWas}}</span>
+    <span class="pc-result" id="result10">—</span>
+    <div class="pc-controls">
+      <button class="pc-ctrl" onclick="adjustPrecision(10, -1)">−</button>
+      <button class="pc-ctrl" onclick="adjustPrecision(10, 1)">+</button>
+      <button class="pc-ctrl" onclick="copyResult(10)">📋</button>
+    </div>
+  </div>
+
+  <!-- Calculator 11: Profit Margin -->
+  <div class="pc-row">
+    <div class="pc-title">{{tool.calc11Title}}:</div>
+    <span class="pc-label">{{tool.cost}}</span>
+    <input type="number" class="pc-input" id="calc11-cost" placeholder="80" oninput="calculate(11)">
+    <span class="pc-label">{{tool.soldFor}}</span>
+    <input type="number" class="pc-input" id="calc11-sell" placeholder="100" oninput="calculate(11)">
+    <span class="pc-label">{{tool.margin}} =</span>
+    <span class="pc-result" id="result11">—</span>
+    <div class="pc-controls">
+      <button class="pc-ctrl" onclick="adjustPrecision(11, -1)">−</button>
+      <button class="pc-ctrl" onclick="adjustPrecision(11, 1)">+</button>
+      <button class="pc-ctrl" onclick="copyResult(11)">📋</button>
+    </div>
+  </div>
+
+  <!-- Calculator 12: Part of Total -->
+  <div class="pc-row">
+    <div class="pc-title">{{tool.calc12Title}}:</div>
+    <input type="number" class="pc-input" id="calc12-part" placeholder="30" oninput="calculate(12)">
+    <span class="pc-label">{{tool.outOf}} (</span>
+    <input type="number" class="pc-input" id="calc12-part2" placeholder="70" oninput="calculate(12)">
+    <span class="pc-label">+ {{tool.first}}) =</span>
+    <span class="pc-result" id="result12">—</span>
+    <div class="pc-controls">
+      <button class="pc-ctrl" onclick="adjustPrecision(12, -1)">−</button>
+      <button class="pc-ctrl" onclick="adjustPrecision(12, 1)">+</button>
+      <button class="pc-ctrl" onclick="copyResult(12)">📋</button>
+    </div>
+  </div>
+
+  <!-- Calculator 13: Sequential Discount -->
+  <div class="pc-row">
+    <div class="pc-title">{{tool.calc13Title}}:</div>
+    <span class="pc-label">{{tool.firstDiscount}}</span>
+    <input type="number" class="pc-input" id="calc13-d1" placeholder="20" oninput="calculate(13)">
+    <span class="pc-label">% + {{tool.secondDiscount}}</span>
+    <input type="number" class="pc-input" id="calc13-d2" placeholder="10" oninput="calculate(13)">
+    <span class="pc-label">% = {{tool.totalDiscount}}</span>
+    <span class="pc-result" id="result13">—</span>
+    <div class="pc-controls">
+      <button class="pc-ctrl" onclick="adjustPrecision(13, -1)">−</button>
+      <button class="pc-ctrl" onclick="adjustPrecision(13, 1)">+</button>
+      <button class="pc-ctrl" onclick="copyResult(13)">📋</button>
+    </div>
+  </div>
+</div>
+
+<!-- How to Use -->
+<div class="how-to-use">
+  <h3>📖 {{ui.howToUse}}</h3>
+  <p>{{tool.howToUseText}}</p>
+</div>
+
 <script>
-// Store raw results and precision for each calculator
-const calcData = {};
-for (let i = 1; i <= 13; i++) {
-  calcData[i] = { raw: null, precision: null, maxPrecision: 10, isPercent: false, signed: false };
-}
-// Set percent flags
-[2, 3, 7, 8, 11, 12, 13].forEach(i => calcData[i].isPercent = true);
-// Set signed flags
-[3, 7].forEach(i => calcData[i].signed = true);
-
-// Get actual decimal places of a number
-function getDecimalPlaces(num) {
-  if (Number.isInteger(num)) return 0;
-  const str = num.toString();
-  if (str.includes('e')) {
-    return Math.min(10, parseInt(str.split('e-')[1]) || 10);
+(function() {
+  const calcData = {};
+  for (let i = 1; i <= 13; i++) {
+    calcData[i] = { raw: null, precision: null, maxPrecision: 10, isPercent: false, signed: false };
   }
-  const decimalPart = str.split('.')[1];
-  return decimalPart ? Math.min(decimalPart.length, 10) : 0;
-}
+  [2, 3, 7, 8, 11, 12, 13].forEach(i => calcData[i].isPercent = true);
+  [3, 7].forEach(i => calcData[i].signed = true);
 
-// Format number based on precision
-function formatResult(calcId) {
-  const data = calcData[calcId];
-  const resultEl = document.getElementById('result' + calcId);
-  
-  if (data.raw === null || isNaN(data.raw)) {
-    resultEl.textContent = '—';
-    resultEl.className = 'calc-result';
-    return;
+  function getDecimalPlaces(num) {
+    if (Number.isInteger(num)) return 0;
+    const str = num.toString();
+    if (str.includes('e')) {
+      return Math.min(10, parseInt(str.split('e-')[1]) || 10);
+    }
+    const decimalPart = str.split('.')[1];
+    return decimalPart ? Math.min(decimalPart.length, 10) : 0;
   }
-  
-  const precision = data.precision !== null ? data.precision : getDecimalPlaces(data.raw);
-  
-  let formatted;
-  
-  if (precision === 0 && Number.isInteger(data.raw)) {
-    formatted = data.raw.toString();
-  } else {
-    formatted = data.raw.toFixed(precision);
+
+  function formatResult(calcId) {
+    const data = calcData[calcId];
+    const resultEl = document.getElementById('result' + calcId);
+
+    if (data.raw === null || isNaN(data.raw)) {
+      resultEl.textContent = '—';
+      resultEl.className = 'pc-result';
+      return;
+    }
+
+    const precision = data.precision !== null ? data.precision : getDecimalPlaces(data.raw);
+
+    let formatted;
+    if (precision === 0 && Number.isInteger(data.raw)) {
+      formatted = data.raw.toString();
+    } else {
+      formatted = data.raw.toFixed(precision);
+      if (data.precision === null) {
+        formatted = parseFloat(formatted).toString();
+      }
+    }
+
+    if (data.signed && data.raw > 0) {
+      formatted = '+' + formatted;
+    }
+
+    if (data.isPercent) {
+      formatted += '%';
+    }
+
+    resultEl.textContent = formatted;
+
+    if (data.signed) {
+      resultEl.className = 'pc-result ' + (data.raw >= 0 ? 'increase' : 'decrease');
+    }
+  }
+
+  window.adjustPrecision = function(calcId, delta) {
+    const data = calcData[calcId];
+    if (data.raw === null) return;
+
     if (data.precision === null) {
-      formatted = parseFloat(formatted).toString();
+      data.precision = getDecimalPlaces(data.raw);
     }
-  }
-  
-  if (data.signed && data.raw > 0) {
-    formatted = '+' + formatted;
-  }
-  
-  if (data.isPercent) {
-    formatted += '%';
-  }
-  
-  resultEl.textContent = formatted;
-  
-  if (data.signed) {
-    resultEl.className = 'calc-result ' + (data.raw >= 0 ? 'increase' : 'decrease');
-  }
-}
 
-// Adjust precision
-function adjustPrecision(calcId, delta) {
-  const data = calcData[calcId];
-  if (data.raw === null) return;
-  
-  if (data.precision === null) {
-    data.precision = getDecimalPlaces(data.raw);
-  }
-  
-  data.precision = Math.max(0, Math.min(data.maxPrecision, data.precision + delta));
-  formatResult(calcId);
-}
+    data.precision = Math.max(0, Math.min(data.maxPrecision, data.precision + delta));
+    formatResult(calcId);
+  };
 
-// Copy result
-function copyResult(calcId) {
-  const data = calcData[calcId];
-  if (data.raw === null || isNaN(data.raw)) return;
-  
-  const precision = data.precision !== null ? data.precision : getDecimalPlaces(data.raw);
-  const text = data.raw.toFixed(precision);
-  
-  navigator.clipboard.writeText(text).then(() => {
-    App.showToast(App.state.lang === 'ar' ? 'تم النسخ!' : 'Copied!');
-  });
-}
+  window.copyResult = function(calcId) {
+    const data = calcData[calcId];
+    if (data.raw === null || isNaN(data.raw)) return;
 
-// Main calculate function
-function calculate(calcId) {
-  let result = null;
-  
-  switch(calcId) {
-    case 1: { // X% of Y
-      const percent = parseFloat(document.getElementById('calc1-percent').value);
-      const number = parseFloat(document.getElementById('calc1-number').value);
-      if (!isNaN(percent) && !isNaN(number)) {
-        result = (percent / 100) * number;
+    const precision = data.precision !== null ? data.precision : getDecimalPlaces(data.raw);
+    const text = data.raw.toFixed(precision);
+
+    navigator.clipboard.writeText(text).then(() => {
+      App.showToast(App.state.lang === 'ar' ? 'تم النسخ!' : 'Copied!');
+    });
+  };
+
+  window.calculate = function(calcId) {
+    let result = null;
+
+    switch(calcId) {
+      case 1: {
+        const percent = parseFloat(document.getElementById('calc1-percent').value);
+        const number = parseFloat(document.getElementById('calc1-number').value);
+        if (!isNaN(percent) && !isNaN(number)) {
+          result = (percent / 100) * number;
+        }
+        break;
       }
-      break;
-    }
-    case 2: { // X is what % of Y
-      const part = parseFloat(document.getElementById('calc2-part').value);
-      const whole = parseFloat(document.getElementById('calc2-whole').value);
-      if (!isNaN(part) && !isNaN(whole) && whole !== 0) {
-        result = (part / whole) * 100;
+      case 2: {
+        const part = parseFloat(document.getElementById('calc2-part').value);
+        const whole = parseFloat(document.getElementById('calc2-whole').value);
+        if (!isNaN(part) && !isNaN(whole) && whole !== 0) {
+          result = (part / whole) * 100;
+        }
+        break;
       }
-      break;
-    }
-    case 3: { // Percentage change
-      const from = parseFloat(document.getElementById('calc3-from').value);
-      const to = parseFloat(document.getElementById('calc3-to').value);
-      if (!isNaN(from) && !isNaN(to) && from !== 0) {
-        result = ((to - from) / Math.abs(from)) * 100;
+      case 3: {
+        const from = parseFloat(document.getElementById('calc3-from').value);
+        const to = parseFloat(document.getElementById('calc3-to').value);
+        if (!isNaN(from) && !isNaN(to) && from !== 0) {
+          result = ((to - from) / Math.abs(from)) * 100;
+        }
+        break;
       }
-      break;
-    }
-    case 4: { // Discount
-      const price = parseFloat(document.getElementById('calc4-price').value);
-      const discount = parseFloat(document.getElementById('calc4-discount').value);
-      if (!isNaN(price) && !isNaN(discount)) {
-        result = price - (price * discount / 100);
+      case 4: {
+        const price = parseFloat(document.getElementById('calc4-price').value);
+        const discount = parseFloat(document.getElementById('calc4-discount').value);
+        if (!isNaN(price) && !isNaN(discount)) {
+          result = price - (price * discount / 100);
+        }
+        break;
       }
-      break;
-    }
-    case 5: { // Add percentage
-      const number = parseFloat(document.getElementById('calc5-number').value);
-      const percent = parseFloat(document.getElementById('calc5-percent').value);
-      if (!isNaN(number) && !isNaN(percent)) {
-        result = number + (number * percent / 100);
+      case 5: {
+        const number = parseFloat(document.getElementById('calc5-number').value);
+        const percent = parseFloat(document.getElementById('calc5-percent').value);
+        if (!isNaN(number) && !isNaN(percent)) {
+          result = number + (number * percent / 100);
+        }
+        break;
       }
-      break;
-    }
-    case 6: { // Original before discount
-      const discount = parseFloat(document.getElementById('calc6-discount').value);
-      const finalPrice = parseFloat(document.getElementById('calc6-final').value);
-      if (!isNaN(discount) && !isNaN(finalPrice) && discount !== 100) {
-        result = finalPrice / (1 - discount / 100);
+      case 6: {
+        const discount = parseFloat(document.getElementById('calc6-discount').value);
+        const finalPrice = parseFloat(document.getElementById('calc6-final').value);
+        if (!isNaN(discount) && !isNaN(finalPrice) && discount !== 100) {
+          result = finalPrice / (1 - discount / 100);
+        }
+        break;
       }
-      break;
-    }
-    case 7: { // Profit/Loss
-      const buyPrice = parseFloat(document.getElementById('calc7-buy').value);
-      const sellPrice = parseFloat(document.getElementById('calc7-sell').value);
-      if (!isNaN(buyPrice) && !isNaN(sellPrice) && buyPrice !== 0) {
-        result = ((sellPrice - buyPrice) / buyPrice) * 100;
+      case 7: {
+        const buyPrice = parseFloat(document.getElementById('calc7-buy').value);
+        const sellPrice = parseFloat(document.getElementById('calc7-sell').value);
+        if (!isNaN(buyPrice) && !isNaN(sellPrice) && buyPrice !== 0) {
+          result = ((sellPrice - buyPrice) / buyPrice) * 100;
+        }
+        break;
       }
-      break;
-    }
-    case 8: { // Fraction to %
-      const num = parseFloat(document.getElementById('calc8-num').value);
-      const den = parseFloat(document.getElementById('calc8-den').value);
-      if (!isNaN(num) && !isNaN(den) && den !== 0) {
-        result = (num / den) * 100;
+      case 8: {
+        const num = parseFloat(document.getElementById('calc8-num').value);
+        const den = parseFloat(document.getElementById('calc8-den').value);
+        if (!isNaN(num) && !isNaN(den) && den !== 0) {
+          result = (num / den) * 100;
+        }
+        break;
       }
-      break;
-    }
-    case 9: { // Add tax
-      const price = parseFloat(document.getElementById('calc9-price').value);
-      const tax = parseFloat(document.getElementById('calc9-tax').value);
-      if (!isNaN(price) && !isNaN(tax)) {
-        result = price + (price * tax / 100);
+      case 9: {
+        const price = parseFloat(document.getElementById('calc9-price').value);
+        const tax = parseFloat(document.getElementById('calc9-tax').value);
+        if (!isNaN(price) && !isNaN(tax)) {
+          result = price + (price * tax / 100);
+        }
+        break;
       }
-      break;
-    }
-    case 10: { // Price before tax
-      const total = parseFloat(document.getElementById('calc10-total').value);
-      const tax = parseFloat(document.getElementById('calc10-tax').value);
-      if (!isNaN(total) && !isNaN(tax) && tax !== -100) {
-        result = total / (1 + tax / 100);
+      case 10: {
+        const total = parseFloat(document.getElementById('calc10-total').value);
+        const tax = parseFloat(document.getElementById('calc10-tax').value);
+        if (!isNaN(total) && !isNaN(tax) && tax !== -100) {
+          result = total / (1 + tax / 100);
+        }
+        break;
       }
-      break;
-    }
-    case 11: { // Profit margin
-      const cost = parseFloat(document.getElementById('calc11-cost').value);
-      const sell = parseFloat(document.getElementById('calc11-sell').value);
-      if (!isNaN(cost) && !isNaN(sell) && sell !== 0) {
-        result = ((sell - cost) / sell) * 100;
+      case 11: {
+        const cost = parseFloat(document.getElementById('calc11-cost').value);
+        const sell = parseFloat(document.getElementById('calc11-sell').value);
+        if (!isNaN(cost) && !isNaN(sell) && sell !== 0) {
+          result = ((sell - cost) / sell) * 100;
+        }
+        break;
       }
-      break;
-    }
-    case 12: { // Part of total
-      const part1 = parseFloat(document.getElementById('calc12-part').value);
-      const part2 = parseFloat(document.getElementById('calc12-part2').value);
-      if (!isNaN(part1) && !isNaN(part2) && (part1 + part2) !== 0) {
-        result = (part1 / (part1 + part2)) * 100;
+      case 12: {
+        const part1 = parseFloat(document.getElementById('calc12-part').value);
+        const part2 = parseFloat(document.getElementById('calc12-part2').value);
+        if (!isNaN(part1) && !isNaN(part2) && (part1 + part2) !== 0) {
+          result = (part1 / (part1 + part2)) * 100;
+        }
+        break;
       }
-      break;
-    }
-    case 13: { // Sequential discount
-      const d1 = parseFloat(document.getElementById('calc13-d1').value);
-      const d2 = parseFloat(document.getElementById('calc13-d2').value);
-      if (!isNaN(d1) && !isNaN(d2)) {
-        result = (1 - (1 - d1 / 100) * (1 - d2 / 100)) * 100;
+      case 13: {
+        const d1 = parseFloat(document.getElementById('calc13-d1').value);
+        const d2 = parseFloat(document.getElementById('calc13-d2').value);
+        if (!isNaN(d1) && !isNaN(d2)) {
+          result = (1 - (1 - d1 / 100) * (1 - d2 / 100)) * 100;
+        }
+        break;
       }
-      break;
     }
-  }
-  
-  calcData[calcId].raw = result;
-  calcData[calcId].precision = null;
-  formatResult(calcId);
-}
+
+    calcData[calcId].raw = result;
+    calcData[calcId].precision = null;
+    formatResult(calcId);
+  };
+})();
 </script>
