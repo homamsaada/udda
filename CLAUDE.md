@@ -28,6 +28,7 @@ No tests or lint configured.
 src/
 ├── assets/css/main.css       Stylesheet (CSS vars, themes, RTL/LTR)
 ├── assets/js/app.js          App object (theme, search, settings, favorites)
+├── assets/vendor/            Local copies of external JS libraries (chart.js, exceljs)
 ├── assets/data/ai-readiness/ AI readiness question bank (44 JSON files)
 ├── data/i18n.json            All translations (single source of truth)
 ├── data/tools.json           Tool registry + categoryOrder
@@ -168,7 +169,8 @@ The playbooks file orchestrates the existing standards (`tool-template.md`, `tes
 - ✅ Run `npm run build` before claiming completion
 - ✅ Update [`docs/04-PROGRESS.md`](docs/04-PROGRESS.md) for major project-level work
 - ✅ Update `docs/development/{tool}/` for tool-level work
-- ❌ Don't add CDN dependencies
+- ❌ Don't load JS/CSS libraries from CDN — download them to `src/assets/vendor/` instead (see [`docs/05-MEMORY.md`](docs/05-MEMORY.md) "Vendor محلي"). Live services (APIs, OAuth, payment, embeds) are decided case-by-case, not by default.
+- ✅ For new calculator-style tools, consume the **Standard Calc Kit** from `main.css` instead of redefining. Tool-specific styles use a wrapper + prefix (`.tool-name` + `.tn-*`). See the kit reference below.
 - ❌ Don't commit `dist/` (gitignored)
 - ❌ Don't hardcode hex colors — use CSS variables
 - ❌ Don't break the build
@@ -190,6 +192,21 @@ var(--border-radius)      /* 12px default */
 ```
 
 Card pattern: `.tool-grid-card`, `.category-card`, `.similar-tool-card`, `.blog-post-card`, `.blog-related-tool-card`, `.blog-subcat-card` use `border + card-shadow + ::before stripe`. `.calc-section` uses border + shadow without stripe.
+
+## Standard Calc Kit (in main.css)
+
+Calculator-style tools share a unified set of classes — single source of truth, theme-aware, mobile-friendly out of the box:
+
+- `.calc-tabs` + `.calc-tab` + `.calc-pane` — tabs container/buttons + content panel (display none/block with `.active`)
+- `.calc-form` + `.calc-form-row` + `.calc-form-group` — form container, 2-col grid (1-col on mobile), label-above-input
+- `.calc-stats-grid` + `.calc-stat-card` (+ `.highlight`) — auto-fit result stats (`.value` + `.label`)
+- `.calc-result.show` — collapsible result wrapper with fade-in
+- `.calc-disclaimer` + `.calc-disclaimer-item` — amber-warning style for fiqh/financial/medical tools (use `.tool-disclaimer` from main.css for neutral disclaimers)
+- Mobile breakpoint at 768px is built-in (button shrink, form 1-col, stats 2-col)
+
+**Currently consumed by 7 of 11 tools:** zakat, kaffara, body, age, percentage, loan, interest. `inheritance`, `gpa`, `ai-readiness` use prefix-only scoping (clean already, no migration needed). `family-tree` is pending a broader rework.
+
+⚠️ **Disambiguation:** the kit deliberately uses `.calc-pane` (not `.calc-section`, which is a section-card pattern in main.css) and `.calc-result` (not `.result-box`, which is a styled result panel in main.css). Other names use the `.calc-*` prefix to avoid colliding with `.form-group`/`.form-row` from the contact form.
 
 ## Mobile Design (critical)
 
