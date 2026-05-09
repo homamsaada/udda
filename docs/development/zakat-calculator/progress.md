@@ -1,7 +1,7 @@
 # 📊 zakat-calculator — Progress
 
-> 📅 **آخر نشاط على هذه الأداة:** 2026-05-09 (إنشاء workspace + temporal markers)
-> 🔍 **آخر فحص توافق:** 2026-05-09
+> 📅 **آخر نشاط على هذه الأداة:** 2026-05-10 (Refactor للستايل — اعتماد Standard Calc Kit)
+> 🔍 **آخر فحص توافق:** 2026-05-10 (12/12 معايير ✅)
 > 📜 **التاريخ التفصيلي:** `git log -- src/tools/zakat-calculator.html`
 > 🔍 **فحوصات خاصة بهذه الأداة عند فجوة > 90 يوماً:** هل صدرت قرارات معاصرة جديدة من AAOIFI أو مجمع الفقه الإسلامي الدولي؟ هل تغيّرت أسعار الذهب/الفضة المرجعية بشكل كبير؟
 
@@ -12,6 +12,12 @@
 
 ## ✅ منجَز (Done)
 
+- **Refactor للستايل (2026-05-10)** — أداة zakat هي **النموذج الأول** لتبنّي Standard Calc Kit الموحَّد:
+  - أنماط مشتركة (`.calc-tabs`, `.calc-pane`, `.calc-form`, `.calc-form-row`, `.calc-form-group`, `.calc-stats-grid`, `.calc-stat-card`, `.calc-result`, `.calc-disclaimer`) تأتي الآن من [`main.css`](../../../src/assets/css/main.css)
+  - Wrapper class `.zakat-calculator` + prefix `zk-*` لكل classes الخاصة بالأداة (price-bar، nisab، stocks، fitr...)
+  - استبدال 7 hex hardcoded بـ CSS variables (`var(--success)`, `var(--error)`, `var(--warning-deeper)`, `var(--accent-secondary)`)
+  - Mobile breakpoint موحَّد عند 768px (نمط inheritance)
+  - النتيجة: ملف الأداة من 960 → 739 سطر (-23%) مع توافق كامل (12/12 معيار)
 - **إصدار أولي مستقر** — يحسب 7 أنواع أموال (نقد، ذهب، فضة، عروض تجارة، أسهم، ديون، فطر)
 - **دعم نصاب الذهب والفضة** — مع تبني نصاب الفضة كافتراضي (الأحوط)
 - **دعم أعيرة الذهب المختلفة** — 24/22/21/18/14/10

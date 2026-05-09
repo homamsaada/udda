@@ -1,7 +1,7 @@
 # ✅ التقدم الحالي | Progress
 
-> 📅 **آخر نشاط على المشروع:** 2026-05-09 — المرحلة 4.9 (AEM)
-> 🔍 **آخر فحص توافق شامل:** 2026-05-09
+> 📅 **آخر نشاط على المشروع:** 2026-05-10 — المرحلة 4.10 (Standard Calc Kit + zakat refactor)
+> 🔍 **آخر فحص توافق شامل:** 2026-05-10
 > ⏰ **ملاحظة للوكيل:** قبل أي تطوير، اقرأ [Session Resume Protocol في CLAUDE.md](../CLAUDE.md). يجب التحقق من training cutoff الخاص بك مقابل تاريخ اليوم عند الفجوات > 30 يوماً.
 >
 > هذا الملف **سجل حي** يُحدَّث باستمرار. يعكس الحالة الفعلية، ليس الخطة. للخطة المستقبلية انظر [`03-ROADMAP.md`](03-ROADMAP.md).
@@ -17,7 +17,7 @@
 | 1 | percentage | calculators | ✅ مستقر | 13 حاسبة فرعية |
 | 2 | interest-calculator | calculators | ✅ مستقر | يحتوي تحذير الربا |
 | 3 | loan-calculator | calculators | ✅ مستقر | جدول أقساط |
-| 4 | zakat-calculator | calculators | ✅ مستقر | إسلامي + إخلاء مسؤولية |
+| 4 | zakat-calculator | calculators | ✅ مستقر | إسلامي + إخلاء مسؤولية — **النموذج الأول لـ Standard Calc Kit (2026-05-10)** |
 | 5 | inheritance-calculator | calculators | ✅ مستقر | الأعقد فقهياً، 4 مذاهب — **مرجع تصميم الموبايل** |
 | 6 | kaffara-calculator | calculators | ✅ مستقر | 8 أنواع كفارات |
 | 7 | gpa-calculator | calculators (other) | ✅ مستقر | 20 نظام تقدير، 5 تبويبات |
@@ -192,6 +192,23 @@
 - المستخدم يأتي بمدخل ناضج (spec/خطة) — ليس جملة بسيطة
 - الوكيل ليس منفّذاً سلبياً — هو شريك ناقد يُثري ويُحقّق
 - بعد الموافقة على خطة الوكيل المُركَّبة، التنفيذ مستقل بالكامل (إلا عند نقاط قرار حقيقية)
+
+### المرحلة 4.10: Standard Calc Kit + zakat refactor ✅ (2026-05-10)
+
+أول refactor عابر لتوحيد ستايل الأدوات. فحص شامل للأدوات الـ11 كشف أن **8 من 11** أداة لها مخالفات معمارية (scope كارثي، hex hardcoded، classes مكرَّرة عبر الأدوات بقيم مختلفة، CDN في loan/interest، إلخ). الحل: refactor عابر بمرحلتين.
+
+- [x] **Standard Calc Kit في `main.css`** — كتلة موحَّدة من classes (`.calc-tabs`, `.calc-tab`, `.calc-pane`, `.calc-form`, `.calc-form-row`, `.calc-form-group`, `.calc-stats-grid`, `.calc-stat-card`, `.calc-result`, `.calc-disclaimer`, `.calc-disclaimer-item`) — single source of truth لأنماط الحاسبات.
+- [x] **أسماء disambiguated** لتجنّب التصادمات: `.calc-pane` بدل `.calc-section` (المعرَّف بدلالة مختلفة)، `.calc-result` بدل `.result-box`، `.calc-form-*` لتجنّب اصطدام `.form-*` المُستخدم في contact form.
+- [x] **zakat كنموذج أول** — Wrapper `.zakat-calculator` + prefix `zk-*` للأنماط الخاصة، بقية الأنماط من main.css. النتيجة: -23% من حجم الملف، توافق كامل (12/12 معيار).
+- [x] **اختبار بصري + بناء نظيف** — لا regressions على الأدوات الأخرى (تعريفاتها المحلية ما زالت تطغى على main.css لأن inline يأتي بعد main).
+
+**الفائدة:** صار لدينا "العقد المركزي". لو غيّرنا Standard Kit في main.css → zakat (وكل أداة قادمة تستهلكه) تتأثّر فوراً. النموذج جاهز للتعميم على البقية.
+
+**القادم في هذه المرحلة (لم يُنفَّذ بعد):**
+- [ ] تعميم النمط على body, age, kaffara, loan, interest, percentage (Step C من Playbook 5)
+- [ ] قرارات تصميمية لكل من loan/interest (CDN: تنزيل محلي vs استبدال vs exception موثَّقة)
+- [ ] family-tree i18n migration (مكسور كلياً — bilingual معطّل)
+- [ ] تحسينات صغرى: hex وحيد في inheritance، 11 hex في gpa، canvas في ai-readiness
 
 ### المرحلة 5: تخطيط البناء العلمي
 
