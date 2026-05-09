@@ -1,75 +1,18 @@
 <style>
-/* Kaffara Calculator Styles */
-.kaffara-calculator {
-  font-family: inherit;
-}
+/* kaffara-calculator — أنماط خاصة بالأداة (kf- prefix).
+   الأنماط المشتركة (calc-tabs, calc-tab, calc-pane, calc-disclaimer)
+   تأتي من Standard Calc Kit في src/assets/css/main.css */
+.kaffara-calculator { font-family: inherit; }
+.kaffara-calculator * { font-family: inherit; }
 
-.kaffara-calculator * {
-  font-family: inherit;
-}
-
-/* Scrollable tabs for 8 tabs */
-.kaffara-calculator .kf-tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 24px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  padding-bottom: 4px;
-}
-
-.kaffara-calculator .kf-tabs .calc-tab {
-  flex: 0 0 auto;
-  min-width: auto;
-  white-space: nowrap;
-  padding: 10px 16px;
-  border: 2px solid var(--border-color);
-  border-radius: 12px;
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  text-align: center;
-}
-
-.kaffara-calculator .kf-tabs .calc-tab:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-}
-
-.kaffara-calculator .kf-tabs .calc-tab.active {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
-  color: white;
-}
-
-.kaffara-calculator .calc-section {
-  display: none;
-}
-
-.kaffara-calculator .calc-section.active {
-  display: block;
-  animation: kfFadeIn 0.3s ease;
-}
-
-@keyframes kfFadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Price bar for feeding cost */
+/* Price bar (سعر إطعام مسكين واحد) */
 .kaffara-calculator .kf-price-row {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
   margin-bottom: 20px;
 }
-
-.kaffara-calculator .price-bar.kaffara-price {
+.kaffara-calculator .kf-price-bar {
   background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(16, 185, 129, 0.12));
   border: 1px solid rgba(34, 197, 94, 0.2);
   display: flex;
@@ -79,28 +22,24 @@
   border-radius: 14px;
   flex-wrap: wrap;
 }
-
-.kaffara-calculator .price-bar .bar-icon {
+.kaffara-calculator .kf-bar-icon {
   font-size: 1.3rem;
   flex-shrink: 0;
 }
-
-.kaffara-calculator .price-bar .bar-input-wrap {
+.kaffara-calculator .kf-bar-input-wrap {
   display: flex;
   align-items: center;
   gap: 8px;
   flex: 1;
   min-width: 200px;
 }
-
-.kaffara-calculator .price-bar .bar-input-wrap label {
+.kaffara-calculator .kf-bar-input-wrap label {
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--text-primary);
   white-space: nowrap;
 }
-
-.kaffara-calculator .price-bar .bar-input-wrap input {
+.kaffara-calculator .kf-bar-input-wrap input {
   padding: 8px 12px;
   border: 2px solid rgba(34, 197, 94, 0.3);
   border-radius: 8px;
@@ -111,33 +50,29 @@
   width: 130px;
   transition: border-color var(--transition-fast);
 }
-
-.kaffara-calculator .price-bar .bar-input-wrap input:focus {
+.kaffara-calculator .kf-bar-input-wrap input:focus {
   outline: none;
-  border-color: #22c55e;
+  border-color: var(--success);
 }
-
-.kaffara-calculator .bar-hint {
+.kaffara-calculator .kf-bar-hint {
   font-size: 0.75rem;
   color: var(--text-muted);
   white-space: nowrap;
 }
 
 /* Ruling card */
-.kf-ruling-card {
+.kaffara-calculator .kf-ruling-card {
   background: var(--bg-secondary);
   border-radius: 16px;
   padding: 24px;
   margin-top: 8px;
 }
-
-.kf-ruling-card h3 {
+.kaffara-calculator .kf-ruling-card h3 {
   font-size: 1.1rem;
   margin: 0 0 8px;
   color: var(--text-primary);
 }
-
-.kf-desc {
+.kaffara-calculator .kf-desc {
   color: var(--text-secondary);
   font-size: 0.9rem;
   margin-bottom: 20px;
@@ -145,7 +80,7 @@
 }
 
 /* Order label */
-.kf-order-label {
+.kaffara-calculator .kf-order-label {
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--accent-primary);
@@ -155,13 +90,12 @@
 }
 
 /* Option steps (vertical timeline) */
-.kf-options {
+.kaffara-calculator .kf-options {
   display: flex;
   flex-direction: column;
   gap: 0;
 }
-
-.kf-option-step {
+.kaffara-calculator .kf-option-step {
   display: flex;
   gap: 14px;
   align-items: flex-start;
@@ -170,8 +104,7 @@
   padding-inline-start: 16px;
   margin-inline-start: 14px;
 }
-
-.kf-step-num {
+.kaffara-calculator .kf-step-num {
   width: 28px;
   height: 28px;
   min-width: 28px;
@@ -184,24 +117,20 @@
   font-size: 0.85rem;
   font-weight: 700;
 }
-
-.kf-step-content {
+.kaffara-calculator .kf-step-content {
   flex: 1;
 }
-
-.kf-step-text {
+.kaffara-calculator .kf-step-text {
   font-weight: 600;
   margin-bottom: 6px;
   color: var(--text-primary);
 }
-
-.kf-step-cost {
+.kaffara-calculator .kf-step-cost {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--accent-primary);
 }
-
-.kf-step-cost.no-cost {
+.kaffara-calculator .kf-step-cost.no-cost {
   font-size: 0.9rem;
   color: var(--text-muted);
   font-weight: 400;
@@ -209,7 +138,7 @@
 }
 
 /* "or" / "if unable" dividers */
-.kf-or {
+.kaffara-calculator .kf-or {
   text-align: center;
   padding: 6px 0;
   font-size: 0.8rem;
@@ -217,8 +146,7 @@
   font-weight: 600;
   margin-inline-start: 14px;
 }
-
-.kf-divider {
+.kaffara-calculator .kf-divider {
   text-align: center;
   padding: 8px 0;
   font-size: 0.85rem;
@@ -230,21 +158,21 @@
   margin-top: 4px;
 }
 
-/* Choice label (for hajj — not ordered) */
-.kf-choice-label {
+/* Choice label (للحج — تخيير لا ترتيب) */
+.kaffara-calculator .kf-choice-label {
   background: rgba(245, 158, 11, 0.1);
   border: 1px solid rgba(245, 158, 11, 0.3);
   border-radius: 8px;
   padding: 8px 14px;
   text-align: center;
   font-weight: 600;
-  color: #d97706;
+  color: var(--warning-dark);
   margin-bottom: 12px;
   font-size: 0.9rem;
 }
 
-/* Slave note (struck through) */
-.kf-slave-note {
+/* Slave note */
+.kaffara-calculator .kf-slave-note {
   font-size: 0.8rem;
   color: var(--text-muted);
   font-style: italic;
@@ -253,7 +181,7 @@
 }
 
 /* Info note */
-.kf-info-note {
+.kaffara-calculator .kf-info-note {
   background: rgba(99, 102, 241, 0.06);
   border: 1px solid rgba(99, 102, 241, 0.15);
   border-radius: 10px;
@@ -264,33 +192,31 @@
   line-height: 1.6;
 }
 
-/* No feeding note */
-.kf-no-feeding {
+/* No feeding note (للقتل الخطأ) */
+.kaffara-calculator .kf-no-feeding {
   background: rgba(239, 68, 68, 0.06);
   border: 1px solid rgba(239, 68, 68, 0.15);
   border-radius: 10px;
   padding: 10px 14px;
   margin-top: 12px;
   font-size: 0.85rem;
-  color: #dc2626;
+  color: var(--error-dark);
   text-align: center;
   font-weight: 500;
 }
 
 /* Tab-specific input */
-.kf-tab-input {
+.kaffara-calculator .kf-tab-input {
   margin-top: 16px;
 }
-
-.kf-tab-input label {
+.kaffara-calculator .kf-tab-input label {
   font-weight: 600;
   display: block;
   margin-bottom: 6px;
   color: var(--text-primary);
   font-size: 0.9rem;
 }
-
-.kf-tab-input input {
+.kaffara-calculator .kf-tab-input input {
   width: 100%;
   max-width: 250px;
   padding: 10px 14px;
@@ -302,14 +228,13 @@
   font-family: inherit;
   transition: border-color var(--transition-fast);
 }
-
-.kf-tab-input input:focus {
+.kaffara-calculator .kf-tab-input input:focus {
   outline: none;
   border-color: var(--accent-primary);
 }
 
 /* Total cost display */
-.kf-total {
+.kaffara-calculator .kf-total {
   margin-top: 16px;
   padding: 16px;
   background: var(--accent-gradient);
@@ -317,26 +242,23 @@
   text-align: center;
   color: white;
 }
-
-.kf-total-label {
+.kaffara-calculator .kf-total-label {
   font-size: 0.85rem;
   opacity: 0.9;
   margin-bottom: 4px;
 }
-
-.kf-total-value {
+.kaffara-calculator .kf-total-value {
   font-size: 1.5rem;
   font-weight: 700;
 }
 
 /* Hunting rules list */
-.kf-rules-list {
+.kaffara-calculator .kf-rules-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
-.kf-rules-list li {
+.kaffara-calculator .kf-rules-list li {
   padding: 10px 0;
   border-bottom: 1px solid var(--border-color);
   display: flex;
@@ -345,12 +267,10 @@
   color: var(--text-primary);
   font-size: 0.95rem;
 }
-
-.kf-rules-list li:last-child {
+.kaffara-calculator .kf-rules-list li:last-child {
   border-bottom: none;
 }
-
-.kf-rule-num {
+.kaffara-calculator .kf-rule-num {
   width: 24px;
   height: 24px;
   min-width: 24px;
@@ -364,44 +284,16 @@
   font-weight: 700;
 }
 
-/* Disclaimer reuse from zakat */
-.kaffara-calculator .zakat-disclaimer {
-  margin-top: 24px;
-  padding: 20px;
-  background: rgba(245, 158, 11, 0.06);
-  border: 1px solid rgba(245, 158, 11, 0.2);
-  border-radius: 12px;
-}
-
-.kaffara-calculator .disclaimer-item {
-  padding: 6px 0;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
-  line-height: 1.5;
-}
-
-/* Responsive */
+/* Mobile (breakpoint موحَّد عند 768px) */
 @media (max-width: 768px) {
-  .kf-ruling-card {
+  .kaffara-calculator .kf-ruling-card {
     padding: 16px;
   }
-
-  .kf-step-cost {
+  .kaffara-calculator .kf-step-cost {
     font-size: 1rem;
   }
-
-  .kf-total-value {
+  .kaffara-calculator .kf-total-value {
     font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .kaffara-calculator .kf-tabs .calc-tab {
-    padding: 8px 12px;
-    font-size: 0.8rem;
   }
 }
 </style>
@@ -418,18 +310,18 @@
 
     <!-- Shared Price Input -->
     <div class="kf-price-row">
-      <div class="price-bar kaffara-price">
-        <span class="bar-icon">🍽️</span>
-        <div class="bar-input-wrap">
+      <div class="kf-price-bar">
+        <span class="kf-bar-icon">🍽️</span>
+        <div class="kf-bar-input-wrap">
           <label>{{tool.feedingPriceLabel}}</label>
           <input type="number" id="kf-feeding-price" min="0" step="0.5" placeholder="0" oninput="kfCalculate()">
         </div>
-        <span class="bar-hint">{{tool.feedingPriceHint}}</span>
+        <span class="kf-bar-hint">{{tool.feedingPriceHint}}</span>
       </div>
     </div>
 
-    <!-- 8 Tabs -->
-    <div class="kf-tabs">
+    <!-- 8 Tabs (الآن flex-wrap من Standard Kit بدل overflow-x:auto) -->
+    <div class="calc-tabs kf-tabs">
       <button class="calc-tab active" onclick="kfSwitchTab('oath')">{{tool.tabOath}}</button>
       <button class="calc-tab" onclick="kfSwitchTab('zihar')">{{tool.tabZihar}}</button>
       <button class="calc-tab" onclick="kfSwitchTab('ramadan')">{{tool.tabRamadan}}</button>
@@ -441,7 +333,7 @@
     </div>
 
     <!-- Tab 1: Oath -->
-    <div class="calc-section active" id="kf-oath-section">
+    <div class="calc-pane active" id="kf-oath-section">
       <div class="kf-ruling-card">
         <h3>{{tool.oathTitle}}</h3>
         <p class="kf-desc">{{tool.oathDesc}}</p>
@@ -484,7 +376,7 @@
     </div>
 
     <!-- Tab 2: Zihar -->
-    <div class="calc-section" id="kf-zihar-section">
+    <div class="calc-pane" id="kf-zihar-section">
       <div class="kf-ruling-card">
         <h3>{{tool.ziharTitle}}</h3>
         <p class="kf-desc">{{tool.ziharDesc}}</p>
@@ -518,7 +410,7 @@
     </div>
 
     <!-- Tab 3: Ramadan -->
-    <div class="calc-section" id="kf-ramadan-section">
+    <div class="calc-pane" id="kf-ramadan-section">
       <div class="kf-ruling-card">
         <h3>{{tool.ramadanTitle}}</h3>
         <p class="kf-desc">{{tool.ramadanDesc}}</p>
@@ -552,7 +444,7 @@
     </div>
 
     <!-- Tab 4: Killing -->
-    <div class="calc-section" id="kf-killing-section">
+    <div class="calc-pane" id="kf-killing-section">
       <div class="kf-ruling-card">
         <h3>{{tool.killingTitle}}</h3>
         <p class="kf-desc">{{tool.killingDesc}}</p>
@@ -579,7 +471,7 @@
     </div>
 
     <!-- Tab 5: Fasting Ransom -->
-    <div class="calc-section" id="kf-fasting-section">
+    <div class="calc-pane" id="kf-fasting-section">
       <div class="kf-ruling-card">
         <h3>{{tool.fastingTitle}}</h3>
         <p class="kf-desc">{{tool.fastingDesc}}</p>
@@ -603,7 +495,7 @@
     </div>
 
     <!-- Tab 6: Vow -->
-    <div class="calc-section" id="kf-vow-section">
+    <div class="calc-pane" id="kf-vow-section">
       <div class="kf-ruling-card">
         <h3>{{tool.vowTitle}}</h3>
         <p class="kf-desc">{{tool.vowDesc}}</p>
@@ -646,7 +538,7 @@
     </div>
 
     <!-- Tab 7: Hajj -->
-    <div class="calc-section" id="kf-hajj-section">
+    <div class="calc-pane" id="kf-hajj-section">
       <div class="kf-ruling-card">
         <h3>{{tool.hajjTitle}}</h3>
         <p class="kf-desc">{{tool.hajjDesc}}</p>
@@ -684,7 +576,7 @@
     </div>
 
     <!-- Tab 8: Hunting -->
-    <div class="calc-section" id="kf-hunting-section">
+    <div class="calc-pane" id="kf-hunting-section">
       <div class="kf-ruling-card">
         <h3>{{tool.huntingTitle}}</h3>
         <p class="kf-desc">{{tool.huntingDesc}}</p>
@@ -707,11 +599,11 @@
       </div>
     </div>
 
-    <!-- Disclaimers -->
-    <div class="zakat-disclaimer">
-      <div class="disclaimer-item"><span>📊</span> {{tool.disclaimer1}}</div>
-      <div class="disclaimer-item"><span>📋</span> {{tool.disclaimer2}}</div>
-      <div class="disclaimer-item"><span>⚖️</span> {{tool.disclaimer3}}</div>
+    <!-- Disclaimers (الآن من Standard Kit) -->
+    <div class="calc-disclaimer">
+      <div class="calc-disclaimer-item"><span>📊</span> {{tool.disclaimer1}}</div>
+      <div class="calc-disclaimer-item"><span>📋</span> {{tool.disclaimer2}}</div>
+      <div class="calc-disclaimer-item"><span>⚖️</span> {{tool.disclaimer3}}</div>
     </div>
   </div>
 
@@ -728,7 +620,7 @@
   var isArabic = lang === 'ar';
 
   function fmt(num) {
-    if (num === null || isNaN(num) || num <= 0) return '\u2014';
+    if (num === null || isNaN(num) || num <= 0) return '—';
     return num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
 
@@ -741,7 +633,7 @@
     var container = document.querySelector('.kaffara-calculator');
     if (!container) return;
     container.querySelectorAll('.kf-tabs .calc-tab').forEach(function(t) { t.classList.remove('active'); });
-    container.querySelectorAll('.calc-section').forEach(function(s) { s.classList.remove('active'); });
+    container.querySelectorAll('.calc-pane').forEach(function(s) { s.classList.remove('active'); });
     var section = document.getElementById('kf-' + tab + '-section');
     if (section) section.classList.add('active');
     var tabNames = ['oath','zihar','ramadan','killing','fasting','vow','hajj','hunting'];
@@ -757,28 +649,28 @@
     var fastingDays = parseInt(document.getElementById('kf-fasting-days').value) || 0;
 
     // Oath: feed 10
-    setText('kf-oath-cost1', feedPrice > 0 ? fmt(feedPrice * 10) : '\u2014');
+    setText('kf-oath-cost1', feedPrice > 0 ? fmt(feedPrice * 10) : '—');
 
     // Zihar: feed 60
-    setText('kf-zihar-cost1', feedPrice > 0 ? fmt(feedPrice * 60) : '\u2014');
+    setText('kf-zihar-cost1', feedPrice > 0 ? fmt(feedPrice * 60) : '—');
 
     // Ramadan: feed 60
-    setText('kf-ramadan-cost1', feedPrice > 0 ? fmt(feedPrice * 60) : '\u2014');
+    setText('kf-ramadan-cost1', feedPrice > 0 ? fmt(feedPrice * 60) : '—');
 
     // Fasting ransom: days × feeding price
     var fastingTotal = feedPrice > 0 && fastingDays > 0 ? feedPrice * fastingDays : 0;
-    setText('kf-fasting-cost1', fastingTotal > 0 ? fmt(fastingTotal) : '\u2014');
+    setText('kf-fasting-cost1', fastingTotal > 0 ? fmt(fastingTotal) : '—');
     var fastingTotalEl = document.getElementById('kf-fasting-total');
     if (fastingTotalEl) {
       fastingTotalEl.style.display = fastingTotal > 0 ? 'block' : 'none';
     }
 
     // Vow: same as oath (feed 10)
-    setText('kf-vow-cost1', feedPrice > 0 ? fmt(feedPrice * 10) : '\u2014');
+    setText('kf-vow-cost1', feedPrice > 0 ? fmt(feedPrice * 10) : '—');
 
     // Hajj: feed 6 or sheep
-    setText('kf-hajj-cost-feed', feedPrice > 0 ? fmt(feedPrice * 6) : '\u2014');
-    setText('kf-hajj-cost-sheep', sheepPrice > 0 ? fmt(sheepPrice) : '\u2014');
+    setText('kf-hajj-cost-feed', feedPrice > 0 ? fmt(feedPrice * 6) : '—');
+    setText('kf-hajj-cost-sheep', sheepPrice > 0 ? fmt(sheepPrice) : '—');
   };
 })();
 </script>
