@@ -1,7 +1,7 @@
 # 📊 body-calculator — Progress
 
-> 📅 **آخر نشاط على هذه الأداة:** 2026-05-09 (إنشاء workspace + temporal markers)
-> 🔍 **آخر فحص توافق:** 2026-05-09
+> 📅 **آخر نشاط على هذه الأداة:** 2026-05-10 (Refactor للستايل — Standard Kit + bd- prefix + logical props + IIFE)
+> 🔍 **آخر فحص توافق:** 2026-05-10 (12/12 معايير ✅)
 > 📜 **التاريخ التفصيلي:** `git log -- src/tools/body-calculator.html`
 > 🔍 **فحوصات خاصة بهذه الأداة عند فجوة > 90 يوماً:** هل WHO حدّث BMI Standards أو WHR criteria؟ هل ظهرت معادلات بديلة لـ BMR/IBW أكثر دقّة؟ هل تغيّرت تصنيفات السمنة/الوزن المثالي؟
 

@@ -1,7 +1,7 @@
 # 📊 age-calculator — Progress
 
-> 📅 **آخر نشاط على هذه الأداة:** 2026-05-09 (إنشاء workspace + temporal markers)
-> 🔍 **آخر فحص توافق:** 2026-05-09
+> 📅 **آخر نشاط على هذه الأداة:** 2026-05-10 (Refactor للستايل — Standard Kit + bug fixes: CSS brace + duplicate formatDate + missing media query + var(--primary-dark))
+> 🔍 **آخر فحص توافق:** 2026-05-10 (12/12 معايير ✅)
 > 📜 **التاريخ التفصيلي:** `git log -- src/tools/age-calculator.html`
 > 🔍 **فحوصات خاصة بهذه الأداة عند فجوة > 90 يوماً:** Date APIs في JS ثابتة. لكن — لو أُضيف دعم التقويم الهجري لاحقاً، تأكّد من بيانات Umm Al-Qura calendar الحديثة (تتغيّر سنوياً).
 

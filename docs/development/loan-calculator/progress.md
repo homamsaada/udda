@@ -1,7 +1,7 @@
 # 📊 loan-calculator — Progress
 
-> 📅 **آخر نشاط على هذه الأداة:** 2026-05-09 (إنشاء workspace + temporal markers)
-> 🔍 **آخر فحص توافق:** 2026-05-09
+> 📅 **آخر نشاط على هذه الأداة:** 2026-05-10 (Refactor — Standard Kit + ln- prefix + chart.js/exceljs vendor محلي + bug fix term-unit)
+> 🔍 **آخر فحص توافق:** 2026-05-10 (12/12 معايير ✅، CDN→vendor)
 > 📜 **التاريخ التفصيلي:** `git log -- src/tools/loan-calculator.html`
 > 🔍 **فحوصات خاصة بهذه الأداة عند فجوة > 90 يوماً:** المعادلات (Amortized، Declining، Interest-Only) ثابتة تاريخياً. لكن — هل ظهرت طرق احتساب جديدة شائعة في القطاع المصرفي؟ هل المرابحة الإسلامية تستحق إضافة كحاسبة بديلة؟
 

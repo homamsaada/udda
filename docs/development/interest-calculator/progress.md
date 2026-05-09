@@ -1,7 +1,7 @@
 # 📊 interest-calculator — Progress
 
-> 📅 **آخر نشاط على هذه الأداة:** 2026-05-09 (إنشاء workspace + temporal markers)
-> 🔍 **آخر فحص توافق:** 2026-05-09
+> 📅 **آخر نشاط على هذه الأداة:** 2026-05-10 (Refactor — wrapper .interest-calculator جديد + int- prefix + chart.js/exceljs vendor محلي + IIFE)
+> 🔍 **آخر فحص توافق:** 2026-05-10 (12/12 معايير ✅، CDN→vendor)
 > 📜 **التاريخ التفصيلي:** `git log -- src/tools/interest-calculator.html`
 > 🔍 **فحوصات خاصة بهذه الأداة عند فجوة > 90 يوماً:** المعادلات الرياضية ثابتة تاريخياً، لكن — هل ظهرت بدائل إسلامية شائعة جديدة (مرابحة رقمية، تورّق، إلخ) تستحق الإشارة في disclaimer؟
 

@@ -1,7 +1,7 @@
 # 📊 percentage — Progress
 
-> 📅 **آخر نشاط على هذه الأداة:** 2026-05-09 (إنشاء workspace + temporal markers)
-> 🔍 **آخر فحص توافق:** 2026-05-09
+> 📅 **آخر نشاط على هذه الأداة:** 2026-05-10 (Refactor للستايل — wrapper .percentage جديد + pc- prefix + IIFE — inline-row pattern محفوظ)
+> 🔍 **آخر فحص توافق:** 2026-05-10 (12/12 معايير ✅)
 > 📜 **التاريخ التفصيلي:** `git log -- src/tools/percentage.html`
 > 🔍 **فحوصات خاصة بهذه الأداة عند فجوة > 90 يوماً:** المعادلات رياضيات أساسية ثابتة. الفحوص هنا UI/UX فقط — هل ظهرت أنماط تفاعل أفضل (input modes، keyboard shortcuts، إلخ)؟
 

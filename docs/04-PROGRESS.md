@@ -1,6 +1,6 @@
 # ✅ التقدم الحالي | Progress
 
-> 📅 **آخر نشاط على المشروع:** 2026-05-10 — المرحلة 4.10 (Standard Calc Kit + zakat refactor)
+> 📅 **آخر نشاط على المشروع:** 2026-05-10 — المرحلة 4.11 (اكتمال Step C — تعميم Standard Kit + Vendor محلي على 6 أدوات)
 > 🔍 **آخر فحص توافق شامل:** 2026-05-10
 > ⏰ **ملاحظة للوكيل:** قبل أي تطوير، اقرأ [Session Resume Protocol في CLAUDE.md](../CLAUDE.md). يجب التحقق من training cutoff الخاص بك مقابل تاريخ اليوم عند الفجوات > 30 يوماً.
 >
@@ -14,15 +14,15 @@
 
 | # | الأداة | التصنيف | الحالة | ملاحظات |
 |---|---|---|---|---|
-| 1 | percentage | calculators | ✅ مستقر | 13 حاسبة فرعية |
-| 2 | interest-calculator | calculators | ✅ مستقر | يحتوي تحذير الربا |
-| 3 | loan-calculator | calculators | ✅ مستقر | جدول أقساط |
+| 1 | percentage | calculators | ✅ مستقر | 13 حاسبة فرعية — **Standard Kit (2026-05-10)** |
+| 2 | interest-calculator | calculators | ✅ مستقر | يحتوي تحذير الربا — **Standard Kit + vendor محلي (2026-05-10)** |
+| 3 | loan-calculator | calculators | ✅ مستقر | جدول أقساط — **Standard Kit + vendor محلي (2026-05-10)** |
 | 4 | zakat-calculator | calculators | ✅ مستقر | إسلامي + إخلاء مسؤولية — **النموذج الأول لـ Standard Calc Kit (2026-05-10)** |
 | 5 | inheritance-calculator | calculators | ✅ مستقر | الأعقد فقهياً، 4 مذاهب — **مرجع تصميم الموبايل** |
-| 6 | kaffara-calculator | calculators | ✅ مستقر | 8 أنواع كفارات |
+| 6 | kaffara-calculator | calculators | ✅ مستقر | 8 أنواع كفارات — **Standard Kit (2026-05-10)** |
 | 7 | gpa-calculator | calculators (other) | ✅ مستقر | 20 نظام تقدير، 5 تبويبات |
-| 8 | body-calculator | calculators (other) | ✅ مستقر | BMI/BMR/BF/IBW |
-| 9 | age-calculator | calculators (other) | ✅ مستقر | حسابات تواريخ |
+| 8 | body-calculator | calculators (other) | ✅ مستقر | BMI/BMR/BF/IBW — **Standard Kit (2026-05-10)** |
+| 9 | age-calculator | calculators (other) | ✅ مستقر | حسابات تواريخ — **Standard Kit + bug fixes (2026-05-10)** |
 | 10 | family-tree | everyday | ✅ مستقر | شجرة عائلة SVG |
 | 11 | ai-readiness | generators | ✅ مستقر | 41 تخصص، ~200K سطر JSON |
 
@@ -205,10 +205,24 @@
 **الفائدة:** صار لدينا "العقد المركزي". لو غيّرنا Standard Kit في main.css → zakat (وكل أداة قادمة تستهلكه) تتأثّر فوراً. النموذج جاهز للتعميم على البقية.
 
 **القادم في هذه المرحلة (لم يُنفَّذ بعد):**
-- [ ] تعميم النمط على body, age, kaffara, loan, interest, percentage (Step C من Playbook 5)
-- [ ] قرارات تصميمية لكل من loan/interest (CDN: تنزيل محلي vs استبدال vs exception موثَّقة)
 - [ ] family-tree i18n migration (مكسور كلياً — bilingual معطّل)
 - [ ] تحسينات صغرى: hex وحيد في inheritance، 11 hex في gpa، canvas في ai-readiness
+
+### المرحلة 4.11: اكتمال Step C — تعميم Standard Kit + Vendor محلي ✅ (2026-05-10)
+
+تعميم النمط الذي بنيناه في 4.10 على الـ6 أدوات الباقية ذات المخالفات. كل أداة الآن تستهلك Standard Calc Kit من main.css + لها prefix محلي (`kf-`, `bd-`, `ag-`, `pc-`, `ln-`, `int-`) لما يخصّها. كذلك: قرار معماري كبير — أيّ مكتبة خارجية تُنزَّل محلياً في `src/assets/vendor/`، لا CDN (انظر [`05-MEMORY.md`](05-MEMORY.md) "Vendor محلي بدلاً من CDN").
+
+- [x] **kaffara-calculator** — `kf-` prefix كان موجوداً جزئياً، تابات تحوّلت من `nowrap+overflow-x:auto` إلى `flex-wrap`، 3 hex→vars، استخدام `.calc-pane` و `.calc-disclaimer` من Standard Kit
+- [x] **body-calculator** — أسوأ scope (2/103 → 100%)، تطبيق logical props، IIFE wrap، `bd-` prefix على ~50 class داخلية، -16% حجم
+- [x] **age-calculator** — أُصلح bug CSS (`}` زائدة سطر 126)، `formatDate` المعرَّفة مرتين، `var(--primary-dark)` غير الموجود، أُضيف media query (كان غائباً تماماً!)، `ag-` prefix، IIFE wrap
+- [x] **percentage** — أُضيف wrapper `.percentage` (لم يكن موجوداً)، `pc-` prefix لكل الـ classes الداخلية (بسبب تصادمات مع main.css و Standard Kit)، IIFE wrap. الـ inline-row pattern (13 sub-calc كل في سطر) محفوظ — تصميم مقصود.
+- [x] **loan-calculator** — `chart.js` + `exceljs` نُقلتا إلى vendor المحلي، `var(--primary-dark)` غير الموجود → `var(--accent-secondary)`، `padding-right` → `padding-inline-end`، `right` → `inset-inline-end`، 6 hex→vars، إصلاح bug `term-unit` element non-existent، `ln-` prefix، chart colors تقرأ من CSS vars (theme-aware)
+- [x] **interest-calculator** — `chart.js` + `exceljs` إلى vendor المحلي، أُضيف wrapper `.interest-calculator` (لم يكن موجوداً)، `int-` prefix على ~30 class، 9 hex→vars، chart colors theme-aware، IIFE wrap
+- [x] **Standard Kit في main.css** يخدم الآن **7 أدوات** (zakat + الـ6 الجديدة) — single source of truth فعّالة
+
+**القادم بعد هذه المرحلة:**
+- المرحلة 5: قرارات تصميمية كبرى متبقية — family-tree i18n migration
+- المرحلة 6: تحسينات صغرى — hex في inheritance/gpa/ai-readiness
 
 ### المرحلة 5: تخطيط البناء العلمي
 
