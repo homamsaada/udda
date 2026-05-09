@@ -1,70 +1,19 @@
 <style>
-/* Zakat Calculator Styles */
-.zakat-calculator {
-  font-family: inherit;
-}
+/* zakat-calculator — أنماط خاصة بالأداة (zk- prefix).
+   الأنماط المشتركة (calc-tabs, calc-pane, calc-form, calc-form-row,
+   calc-form-group, calc-stats-grid, calc-stat-card, calc-result,
+   calc-disclaimer) تأتي من Standard Calc Kit في src/assets/css/main.css */
+.zakat-calculator { font-family: inherit; }
+.zakat-calculator * { font-family: inherit; }
 
-.zakat-calculator * {
-  font-family: inherit;
-}
-
-.calc-tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-}
-
-.calc-tab {
-  flex: 1;
-  min-width: 120px;
-  padding: 12px 16px;
-  border: 2px solid var(--border-color);
-  border-radius: 12px;
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  text-align: center;
-}
-
-.calc-tab:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-}
-
-.calc-tab.active {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
-  color: white;
-}
-
-.calc-section {
-  display: none;
-}
-
-.calc-section.active {
-  display: block;
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Price bars row */
-.price-bars-row {
+/* Price bars (gold & silver inputs side by side) */
+.zakat-calculator .zk-price-bars-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   margin-bottom: 16px;
 }
-
-/* Price bars (gold & silver) */
-.price-bar {
+.zakat-calculator .zk-price-bar {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -72,38 +21,32 @@
   border-radius: 14px;
   flex-wrap: wrap;
 }
-
-.price-bar.gold {
+.zakat-calculator .zk-price-bar.gold {
   background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(234, 179, 8, 0.12));
   border: 1px solid rgba(245, 158, 11, 0.25);
 }
-
-.price-bar.silver {
+.zakat-calculator .zk-price-bar.silver {
   background: linear-gradient(135deg, rgba(148, 163, 184, 0.1), rgba(203, 213, 225, 0.15));
   border: 1px solid rgba(148, 163, 184, 0.3);
 }
-
-.price-bar .bar-icon {
+.zakat-calculator .zk-bar-icon {
   font-size: 1.3rem;
   flex-shrink: 0;
 }
-
-.price-bar .bar-input-wrap {
+.zakat-calculator .zk-bar-input-wrap {
   display: flex;
   align-items: center;
   gap: 8px;
   flex: 1;
   min-width: 200px;
 }
-
-.price-bar .bar-input-wrap label {
+.zakat-calculator .zk-bar-input-wrap label {
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--text-primary);
   white-space: nowrap;
 }
-
-.price-bar .bar-input-wrap input {
+.zakat-calculator .zk-bar-input-wrap input {
   padding: 8px 12px;
   border: 2px solid var(--border-color);
   border-radius: 8px;
@@ -114,26 +57,21 @@
   width: 130px;
   transition: border-color var(--transition-fast);
 }
-
-.price-bar.gold .bar-input-wrap input {
+.zakat-calculator .zk-price-bar.gold .zk-bar-input-wrap input {
   border-color: rgba(245, 158, 11, 0.3);
 }
-
-.price-bar.gold .bar-input-wrap input:focus {
+.zakat-calculator .zk-price-bar.gold .zk-bar-input-wrap input:focus {
   outline: none;
-  border-color: #f59e0b;
+  border-color: var(--warning);
 }
-
-.price-bar.silver .bar-input-wrap input {
+.zakat-calculator .zk-price-bar.silver .zk-bar-input-wrap input {
   border-color: rgba(148, 163, 184, 0.4);
 }
-
-.price-bar.silver .bar-input-wrap input:focus {
+.zakat-calculator .zk-price-bar.silver .zk-bar-input-wrap input:focus {
   outline: none;
-  border-color: #94a3b8;
+  border-color: var(--border-color);
 }
-
-.price-bar .bar-link {
+.zakat-calculator .zk-bar-link {
   font-size: 0.8rem;
   color: var(--accent-primary);
   text-decoration: none;
@@ -144,14 +82,13 @@
   gap: 4px;
   transition: opacity var(--transition-fast);
 }
-
-.price-bar .bar-link:hover {
+.zakat-calculator .zk-bar-link:hover {
   opacity: 0.8;
   text-decoration: underline;
 }
 
 /* Currency note */
-.currency-note {
+.zakat-calculator .zk-currency-note {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -164,14 +101,13 @@
   color: var(--text-secondary);
   font-weight: 500;
 }
-
-.currency-note .icon {
+.zakat-calculator .zk-currency-note .zk-icon {
   font-size: 1.1rem;
   flex-shrink: 0;
 }
 
-/* Section headers inside comprehensive form */
-.section-header {
+/* Section headers inside form */
+.zakat-calculator .zk-section-header {
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--accent-primary);
@@ -183,71 +119,23 @@
   align-items: center;
   gap: 8px;
 }
-
-.section-header:first-child {
+.zakat-calculator .zk-section-header:first-child {
   margin-top: 0;
 }
 
-.input-form {
-  background: var(--bg-secondary);
-  border-radius: 16px;
-  padding: 24px;
-  margin-bottom: 24px;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.form-row:last-child {
-  margin-bottom: 0;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form-group label {
-  font-weight: 600;
-  color: var(--text-primary);
-  font-size: 0.9rem;
-}
-
-.form-group input, .form-group select {
-  padding: 12px 16px;
-  border: 2px solid var(--border-color);
-  border-radius: 10px;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  font-size: 1rem;
-  font-family: inherit;
-  transition: border-color var(--transition-fast);
-}
-
-.form-group input:focus, .form-group select:focus {
-  outline: none;
-  border-color: var(--accent-primary);
-}
-
-.optional-badge {
+.zakat-calculator .zk-optional-badge {
   font-size: 0.75rem;
   color: var(--text-muted);
   font-weight: 400;
 }
 
 /* Stock type toggle */
-.stock-type-toggle {
+.zakat-calculator .zk-stock-toggle {
   display: flex;
   gap: 8px;
   margin-bottom: 12px;
 }
-
-.stock-type-btn {
+.zakat-calculator .zk-stock-btn {
   flex: 1;
   padding: 10px;
   border: 2px solid var(--border-color);
@@ -261,14 +149,12 @@
   text-align: center;
   font-family: inherit;
 }
-
-.stock-type-btn.active {
+.zakat-calculator .zk-stock-btn.active {
   background: var(--accent-primary);
   border-color: var(--accent-primary);
   color: white;
 }
-
-.stock-note {
+.zakat-calculator .zk-stock-note {
   font-size: 0.8rem;
   color: var(--text-muted);
   margin-top: 8px;
@@ -276,8 +162,8 @@
   font-style: italic;
 }
 
-/* Nisab Status */
-.nisab-status {
+/* Nisab status */
+.zakat-calculator .zk-nisab-status {
   text-align: center;
   padding: 16px;
   border-radius: 12px;
@@ -289,154 +175,24 @@
   justify-content: center;
   gap: 8px;
 }
-
-.nisab-status.reached {
+.zakat-calculator .zk-nisab-status.reached {
   background: rgba(34, 197, 94, 0.1);
-  color: #22c55e;
+  color: var(--success);
   border: 1px solid rgba(34, 197, 94, 0.3);
 }
-
-.nisab-status.not-reached {
+.zakat-calculator .zk-nisab-status.not-reached {
   background: var(--bg-tertiary);
   color: var(--text-muted);
   border: 1px solid var(--border-color);
 }
 
-/* Stats Grid */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 12px;
-  margin: 16px 0;
-}
-
-.stat-card {
-  background: var(--bg-secondary);
-  border-radius: 12px;
-  padding: 14px;
-  text-align: center;
-}
-
-.stat-card.highlight {
-  border: 2px solid var(--accent-primary);
-  background: rgba(99, 102, 241, 0.05);
-}
-
-.stat-card .value {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.stat-card.highlight .value {
-  color: var(--accent-primary);
-}
-
-.stat-card .label {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  margin-top: 4px;
-}
-
-/* Result Box */
-.result-box {
-  display: none;
-  margin-top: 24px;
-}
-
-.result-box.show {
-  display: block;
-  animation: fadeIn 0.3s ease;
-}
-
-/* Fitr result */
-.fitr-main-result {
-  text-align: center;
-  padding: 24px;
-  background: var(--bg-secondary);
-  border-radius: 16px;
-  margin-bottom: 16px;
-}
-
-.fitr-main-result .result-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--accent-primary), #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.fitr-main-result .result-label {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-top: 4px;
-}
-
-/* Info Note */
-.info-note {
-  background: rgba(59, 130, 246, 0.08);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  border-radius: 10px;
-  padding: 12px 16px;
-  margin-top: 16px;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-/* Disclaimer */
-.zakat-disclaimer {
-  margin-top: 24px;
-  padding: 20px;
-  background: rgba(245, 158, 11, 0.06);
-  border: 1px solid rgba(245, 158, 11, 0.2);
-  border-radius: 12px;
-}
-
-.zakat-disclaimer h4 {
-  margin: 0 0 12px 0;
-  color: var(--text-primary);
-  font-size: 0.95rem;
-}
-
-.disclaimer-item {
-  padding: 6px 0;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  line-height: 1.5;
-}
-
-/* Gold price warning */
-.gold-price-warning {
-  display: none;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
-  background: rgba(245, 158, 11, 0.08);
-  border: 1px solid rgba(245, 158, 11, 0.25);
-  border-radius: 10px;
-  margin-top: 16px;
-  font-size: 0.9rem;
-  color: #b45309;
-  font-weight: 500;
-}
-
-.gold-price-warning.show {
-  display: flex;
-}
-
 /* Nisab toggle */
-.nisab-toggle {
+.zakat-calculator .zk-nisab-toggle {
   display: flex;
   gap: 8px;
   margin-bottom: 12px;
 }
-
-.nisab-btn {
+.zakat-calculator .zk-nisab-btn {
   flex: 1;
   padding: 10px;
   border: 2px solid var(--border-color);
@@ -450,29 +206,78 @@
   text-align: center;
   font-family: inherit;
 }
-
-.nisab-btn.active {
+.zakat-calculator .zk-nisab-btn.active {
   background: var(--accent-primary);
   border-color: var(--accent-primary);
   color: white;
 }
-
-.nisab-label-row {
+.zakat-calculator .zk-nisab-label-row {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
 }
-
-.nisab-label-hint {
+.zakat-calculator .zk-nisab-label-hint {
   font-size: 0.8rem;
   color: var(--text-muted);
   font-weight: 400;
   font-style: italic;
 }
 
-/* Field note */
-.field-note {
+/* Fitr result (نتيجة كبيرة بـ gradient) */
+.zakat-calculator .zk-fitr-result {
+  text-align: center;
+  padding: 24px;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+.zakat-calculator .zk-fitr-result .zk-result-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.zakat-calculator .zk-fitr-result .zk-result-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Info note */
+.zakat-calculator .zk-info-note {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Gold price warning */
+.zakat-calculator .zk-gold-warning {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 10px;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--warning-deeper);
+  font-weight: 500;
+}
+.zakat-calculator .zk-gold-warning.show {
+  display: flex;
+}
+
+/* Field note (تنبيه صغير تحت حقل) */
+.zakat-calculator .zk-field-note {
   font-size: 0.8rem;
   color: var(--text-muted);
   margin-top: 4px;
@@ -481,7 +286,7 @@
 }
 
 /* Reset button */
-.reset-btn {
+.zakat-calculator .zk-reset-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -499,51 +304,25 @@
   transition: all var(--transition-fast);
   font-family: inherit;
 }
-
-.reset-btn:hover {
-  border-color: #ef4444;
-  color: #ef4444;
+.zakat-calculator .zk-reset-btn:hover {
+  border-color: var(--error);
+  color: var(--error);
   background: rgba(239, 68, 68, 0.05);
 }
 
-/* Responsive */
+/* Mobile (breakpoint موحَّد عند 768px — نمط inheritance) */
 @media (max-width: 768px) {
-  .calc-tab {
-    min-width: 100px;
-    font-size: 0.85rem;
-    padding: 10px 12px;
-  }
-
-  .input-form {
-    padding: 16px;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stat-card .value {
-    font-size: 1.1rem;
-  }
-
-  .fitr-main-result .result-number {
-    font-size: 2rem;
-  }
-
-  .stock-type-toggle {
+  .zakat-calculator .zk-stock-toggle {
     flex-direction: column;
   }
-
-  .price-bars-row {
+  .zakat-calculator .zk-price-bars-row {
     grid-template-columns: 1fr;
   }
-
-  .price-bar .bar-input-wrap input {
+  .zakat-calculator .zk-bar-input-wrap input {
     width: 100px;
+  }
+  .zakat-calculator .zk-fitr-result .zk-result-number {
+    font-size: 2rem;
   }
 }
 </style>
@@ -556,68 +335,68 @@
   </div>
 
   <!-- Tab 1: Comprehensive Zakat -->
-  <div class="calc-section active" id="comprehensive-section">
+  <div class="calc-pane active" id="comprehensive-section">
     <!-- Gold & Silver price inputs side by side -->
-    <div class="price-bars-row">
-      <div class="price-bar gold">
-        <span class="bar-icon">🥇</span>
-        <div class="bar-input-wrap">
+    <div class="zk-price-bars-row">
+      <div class="zk-price-bar gold">
+        <span class="zk-bar-icon">🥇</span>
+        <div class="zk-bar-input-wrap">
           <label>{{tool.goldPricePerGram}}</label>
           <input type="number" id="gold-price-global" placeholder="0" step="0.01" oninput="calculateComprehensive()">
         </div>
-        <a class="bar-link" href="https://www.goldprice.org" target="_blank" rel="noopener noreferrer">{{tool.checkGoldPrice}} ↗</a>
+        <a class="zk-bar-link" href="https://www.goldprice.org" target="_blank" rel="noopener noreferrer">{{tool.checkGoldPrice}} ↗</a>
       </div>
-      <div class="price-bar silver">
-        <span class="bar-icon">🥈</span>
-        <div class="bar-input-wrap">
+      <div class="zk-price-bar silver">
+        <span class="zk-bar-icon">🥈</span>
+        <div class="zk-bar-input-wrap">
           <label>{{tool.silverPricePerGram}}</label>
           <input type="number" id="silver-price-global" placeholder="0" step="0.01" oninput="calculateComprehensive()">
         </div>
-        <a class="bar-link" href="https://www.silverprice.org" target="_blank" rel="noopener noreferrer">{{tool.checkSilverPrice}} ↗</a>
+        <a class="zk-bar-link" href="https://www.silverprice.org" target="_blank" rel="noopener noreferrer">{{tool.checkSilverPrice}} ↗</a>
       </div>
     </div>
 
     <!-- Nisab standard selector -->
-    <div class="form-group" style="margin-bottom: 4px">
-      <div class="nisab-label-row">
+    <div class="calc-form-group" style="margin-bottom: 4px">
+      <div class="zk-nisab-label-row">
         <label>{{tool.nisabStandard}}</label>
-        <span class="nisab-label-hint" id="nisab-hint">— {{tool.nisabSilverNote}}</span>
+        <span class="zk-nisab-label-hint" id="nisab-hint">— {{tool.nisabSilverNote}}</span>
       </div>
-      <div class="nisab-toggle">
-        <button class="nisab-btn active" onclick="setNisabStandard('gold', this)">🥇 {{tool.nisabGold}}</button>
-        <button class="nisab-btn" onclick="setNisabStandard('silver', this)">🥈 {{tool.nisabSilver}}</button>
+      <div class="zk-nisab-toggle">
+        <button class="zk-nisab-btn active" onclick="setNisabStandard('gold', this)">🥇 {{tool.nisabGold}}</button>
+        <button class="zk-nisab-btn" onclick="setNisabStandard('silver', this)">🥈 {{tool.nisabSilver}}</button>
       </div>
     </div>
 
     <!-- Currency note -->
-    <div class="currency-note">
-      <span class="icon">💱</span>
+    <div class="zk-currency-note">
+      <span class="zk-icon">💱</span>
       <span>{{tool.currencyNote}}</span>
     </div>
 
     <!-- Gold price warning -->
-    <div class="gold-price-warning" id="gold-price-warning">
+    <div class="zk-gold-warning" id="gold-price-warning">
       ⚠️ {{tool.goldPriceRequired}}
     </div>
 
-    <div class="input-form">
+    <div class="calc-form">
       <!-- Cash -->
-      <div class="section-header">💵 {{tool.sectionCash}}</div>
-      <div class="form-row">
-        <div class="form-group">
+      <div class="zk-section-header">💵 {{tool.sectionCash}}</div>
+      <div class="calc-form-row">
+        <div class="calc-form-group">
           <label>{{tool.cashSavings}}</label>
           <input type="number" id="comp-cash" placeholder="0" oninput="calculateComprehensive()">
         </div>
       </div>
 
       <!-- Gold -->
-      <div class="section-header">🥇 {{tool.sectionGold}}</div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>{{tool.goldWeightGrams}} <span class="optional-badge">({{tool.optional}})</span></label>
+      <div class="zk-section-header">🥇 {{tool.sectionGold}}</div>
+      <div class="calc-form-row">
+        <div class="calc-form-group">
+          <label>{{tool.goldWeightGrams}} <span class="zk-optional-badge">({{tool.optional}})</span></label>
           <input type="number" id="comp-gold-weight" placeholder="0" oninput="calculateComprehensive()">
         </div>
-        <div class="form-group">
+        <div class="calc-form-group">
           <label>{{tool.goldKarat}}</label>
           <select id="comp-gold-karat" onchange="calculateComprehensive()">
             <option value="24" selected>24K</option>
@@ -629,13 +408,13 @@
       </div>
 
       <!-- Silver -->
-      <div class="section-header">🥈 {{tool.sectionSilver}}</div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>{{tool.silverWeightGrams}} <span class="optional-badge">({{tool.optional}})</span></label>
+      <div class="zk-section-header">🥈 {{tool.sectionSilver}}</div>
+      <div class="calc-form-row">
+        <div class="calc-form-group">
+          <label>{{tool.silverWeightGrams}} <span class="zk-optional-badge">({{tool.optional}})</span></label>
           <input type="number" id="comp-silver-weight" placeholder="0" oninput="calculateComprehensive()">
         </div>
-        <div class="form-group">
+        <div class="calc-form-group">
           <label>{{tool.silverKarat}}</label>
           <select id="comp-silver-karat" onchange="calculateComprehensive()">
             <option value="999" selected>999 ({{tool.fineSilver}})</option>
@@ -647,65 +426,65 @@
       </div>
 
       <!-- Trade Goods -->
-      <div class="section-header">📦 {{tool.sectionTrade}}</div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>{{tool.tradeGoodsValue}} <span class="optional-badge">({{tool.optional}})</span></label>
+      <div class="zk-section-header">📦 {{tool.sectionTrade}}</div>
+      <div class="calc-form-row">
+        <div class="calc-form-group">
+          <label>{{tool.tradeGoodsValue}} <span class="zk-optional-badge">({{tool.optional}})</span></label>
           <input type="number" id="comp-trade" placeholder="0" oninput="calculateComprehensive()">
         </div>
       </div>
 
       <!-- Stocks -->
-      <div class="section-header">📈 {{tool.sectionStocks}}</div>
-      <div class="form-group" style="margin-bottom: 12px">
+      <div class="zk-section-header">📈 {{tool.sectionStocks}}</div>
+      <div class="calc-form-group" style="margin-bottom: 12px">
         <label>{{tool.stockType}}</label>
-        <div class="stock-type-toggle">
-          <button class="stock-type-btn active" data-type="trading" onclick="setStockType('trading', this)">{{tool.tradingStocks}}</button>
-          <button class="stock-type-btn" data-type="investment" onclick="setStockType('investment', this)">{{tool.investmentStocks}}</button>
+        <div class="zk-stock-toggle">
+          <button class="zk-stock-btn active" data-type="trading" onclick="setStockType('trading', this)">{{tool.tradingStocks}}</button>
+          <button class="zk-stock-btn" data-type="investment" onclick="setStockType('investment', this)">{{tool.investmentStocks}}</button>
         </div>
       </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>{{tool.stocksValue}} <span class="optional-badge">({{tool.optional}})</span></label>
+      <div class="calc-form-row">
+        <div class="calc-form-group">
+          <label>{{tool.stocksValue}} <span class="zk-optional-badge">({{tool.optional}})</span></label>
           <input type="number" id="comp-stocks" placeholder="0" oninput="calculateComprehensive()">
         </div>
-        <div class="form-group" id="dividends-group" style="display:none">
+        <div class="calc-form-group" id="dividends-group" style="display:none">
           <label>{{tool.dividendsAmount}}</label>
           <input type="number" id="comp-dividends" placeholder="0" oninput="calculateComprehensive()">
         </div>
       </div>
-      <div class="stock-note" id="stock-note-text"></div>
+      <div class="zk-stock-note" id="stock-note-text"></div>
 
       <!-- Debts -->
-      <div class="section-header">📋 {{tool.sectionDebts}}</div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>{{tool.debtsOwed}} <span class="optional-badge">({{tool.optional}})</span></label>
+      <div class="zk-section-header">📋 {{tool.sectionDebts}}</div>
+      <div class="calc-form-row">
+        <div class="calc-form-group">
+          <label>{{tool.debtsOwed}} <span class="zk-optional-badge">({{tool.optional}})</span></label>
           <input type="number" id="comp-debts" placeholder="0" oninput="calculateComprehensive()">
-          <div class="field-note">{{tool.debtsNote}}</div>
+          <div class="zk-field-note">{{tool.debtsNote}}</div>
         </div>
       </div>
 
     </div>
 
-    <button class="reset-btn" onclick="resetComprehensive()">🗑️ {{tool.resetBtn}}</button>
+    <button class="zk-reset-btn" onclick="resetComprehensive()">🗑️ {{tool.resetBtn}}</button>
 
-    <div class="result-box" id="comp-result">
-      <div class="nisab-status" id="comp-nisab-status"></div>
-      <div class="stats-grid">
-        <div class="stat-card">
+    <div class="calc-result" id="comp-result">
+      <div class="zk-nisab-status" id="comp-nisab-status"></div>
+      <div class="calc-stats-grid">
+        <div class="calc-stat-card">
           <div class="value" id="comp-total-wealth">—</div>
           <div class="label">{{tool.totalWealth}}</div>
         </div>
-        <div class="stat-card">
+        <div class="calc-stat-card">
           <div class="value" id="comp-nisab-value">—</div>
           <div class="label">{{tool.nisabValue}}</div>
         </div>
-        <div class="stat-card highlight">
+        <div class="calc-stat-card highlight">
           <div class="value" id="comp-zakat-amount">—</div>
           <div class="label">{{tool.zakatAmount}}</div>
         </div>
-        <div class="stat-card">
+        <div class="calc-stat-card">
           <div class="value" id="comp-remaining">—</div>
           <div class="label">{{tool.remainingWealth}}</div>
         </div>
@@ -714,39 +493,39 @@
   </div>
 
   <!-- Tab 2: Zakat al-Fitr -->
-  <div class="calc-section" id="fitr-section">
-    <div class="info-note" style="margin-top:0; margin-bottom:20px">{{tool.fitrNote}}</div>
-    <div class="input-form">
-      <div class="form-row">
-        <div class="form-group">
+  <div class="calc-pane" id="fitr-section">
+    <div class="zk-info-note" style="margin-top:0; margin-bottom:20px">{{tool.fitrNote}}</div>
+    <div class="calc-form">
+      <div class="calc-form-row">
+        <div class="calc-form-group">
           <label>{{tool.familyMembers}}</label>
           <input type="number" id="fitr-members" placeholder="1" min="1" oninput="calculateFitr()">
         </div>
-        <div class="form-group">
+        <div class="calc-form-group">
           <label>{{tool.saWeight}}</label>
           <input type="number" id="fitr-sa-weight" placeholder="3" min="0.1" step="0.1" value="3" oninput="calculateFitr()">
-          <div class="field-note">{{tool.saWeightNote}}</div>
+          <div class="zk-field-note">{{tool.saWeightNote}}</div>
         </div>
-        <div class="form-group">
+        <div class="calc-form-group">
           <label>{{tool.pricePerKg}}</label>
           <input type="number" id="fitr-price" placeholder="0" step="0.01" oninput="calculateFitr()">
         </div>
       </div>
     </div>
 
-    <button class="reset-btn" onclick="resetFitr()">🗑️ {{tool.resetBtn}}</button>
+    <button class="zk-reset-btn" onclick="resetFitr()">🗑️ {{tool.resetBtn}}</button>
 
-    <div class="result-box" id="fitr-result">
-      <div class="fitr-main-result">
-        <div class="result-number" id="fitr-total-cost">—</div>
-        <div class="result-label">{{tool.totalCost}}</div>
+    <div class="calc-result" id="fitr-result">
+      <div class="zk-fitr-result">
+        <div class="zk-result-number" id="fitr-total-cost">—</div>
+        <div class="zk-result-label">{{tool.totalCost}}</div>
       </div>
-      <div class="stats-grid">
-        <div class="stat-card">
+      <div class="calc-stats-grid">
+        <div class="calc-stat-card">
           <div class="value" id="fitr-total-kg">—</div>
           <div class="label">{{tool.totalKg}}</div>
         </div>
-        <div class="stat-card">
+        <div class="calc-stat-card">
           <div class="value" id="fitr-per-person">≈ 3</div>
           <div class="label">{{tool.perPerson}}</div>
         </div>
@@ -756,11 +535,11 @@
 </div>
 
 <!-- Sharia Disclaimers -->
-<div class="zakat-disclaimer">
+<div class="calc-disclaimer">
   <h4>⚠️ {{tool.importantNotes}}</h4>
-  <div class="disclaimer-item">📌 {{tool.disclaimer1}}</div>
-  <div class="disclaimer-item">📅 {{tool.disclaimer2}}</div>
-  <div class="disclaimer-item">🏠 {{tool.disclaimer3}}</div>
+  <div class="calc-disclaimer-item">📌 {{tool.disclaimer1}}</div>
+  <div class="calc-disclaimer-item">📅 {{tool.disclaimer2}}</div>
+  <div class="calc-disclaimer-item">🏠 {{tool.disclaimer3}}</div>
 </div>
 
 <!-- How to Use -->
@@ -782,7 +561,7 @@
 
   // Nisab standard toggle
   window.setNisabStandard = function(standard, btn) {
-    document.querySelectorAll('.nisab-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.zakat-calculator .zk-nisab-btn').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
     nisabStandard = standard;
     updateNisabNote();
@@ -797,7 +576,7 @@
   // Tab switching
   window.switchZakatTab = function(tab) {
     document.querySelectorAll('.zakat-calculator .calc-tab').forEach(function(t) { t.classList.remove('active'); });
-    document.querySelectorAll('.zakat-calculator .calc-section').forEach(function(s) { s.classList.remove('active'); });
+    document.querySelectorAll('.zakat-calculator .calc-pane').forEach(function(s) { s.classList.remove('active'); });
     document.querySelectorAll('.zakat-calculator .calc-tab').forEach(function(t) {
       if (t.getAttribute('onclick') && t.getAttribute('onclick').indexOf("'" + tab + "'") !== -1) t.classList.add('active');
     });
@@ -817,10 +596,10 @@
   function showNisabStatus(elementId, reached) {
     var el = document.getElementById(elementId);
     if (reached) {
-      el.className = 'nisab-status reached';
+      el.className = 'zk-nisab-status reached';
       el.textContent = '✅ ' + (isArabic ? 'بلغت النصاب — تجب الزكاة' : 'Nisab Reached — Zakat is Due');
     } else {
-      el.className = 'nisab-status not-reached';
+      el.className = 'zk-nisab-status not-reached';
       el.textContent = '⛔ ' + (isArabic ? 'لم تبلغ النصاب — لا تجب الزكاة' : 'Nisab Not Reached — No Zakat Due');
     }
   }
@@ -832,7 +611,7 @@
 
   // Stock type toggle
   window.setStockType = function(type, btn) {
-    document.querySelectorAll('.stock-type-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.zakat-calculator .zk-stock-btn').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
     currentStockType = type;
     document.getElementById('dividends-group').style.display = type === 'investment' ? 'flex' : 'none';
@@ -940,8 +719,8 @@
     document.getElementById('comp-result').classList.remove('show');
     document.getElementById('gold-price-warning').classList.remove('show');
     currentStockType = 'trading';
-    document.querySelectorAll('.stock-type-btn').forEach(function(b) { b.classList.remove('active'); });
-    document.querySelector('.stock-type-btn[data-type="trading"]').classList.add('active');
+    document.querySelectorAll('.zakat-calculator .zk-stock-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelector('.zakat-calculator .zk-stock-btn[data-type="trading"]').classList.add('active');
     document.getElementById('dividends-group').style.display = 'none';
     updateStockNote();
   };
