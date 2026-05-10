@@ -527,6 +527,93 @@
   border-color: var(--success);
 }
 
+/* ============ Settlement Transfers ============ */
+.abu-najeeb .an-transfers-list {
+  display: grid;
+  gap: 8px;
+}
+
+.abu-najeeb .an-transfer-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+  border: 1px solid var(--card-border-color, rgba(99, 102, 241, 0.2));
+  border-radius: 10px;
+}
+
+.abu-najeeb .an-transfer-flow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.abu-najeeb .an-transfer-arrow {
+  color: var(--accent-primary);
+  font-size: 1.1rem;
+}
+
+.abu-najeeb .an-transfer-amount {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--accent-primary);
+}
+
+.abu-najeeb .an-savings-banner {
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, var(--success), #16a34a);
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.abu-najeeb .an-all-settled-banner {
+  padding: 30px 20px;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 12px;
+  text-align: center;
+  color: var(--success);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.abu-najeeb .an-balance-list {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.abu-najeeb .an-balance-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.abu-najeeb .an-balance-row.creditor {
+  background: rgba(34, 197, 94, 0.08);
+  color: var(--success);
+}
+
+.abu-najeeb .an-balance-row.debtor {
+  background: rgba(239, 68, 68, 0.08);
+  color: var(--error);
+}
+
+.abu-najeeb .an-balance-row.neutral {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
 /* ============ Mobile (768px) ============ */
 @media (max-width: 768px) {
   .abu-najeeb .an-people-header {
@@ -714,7 +801,51 @@
   <!-- ============ TAB 3: Settlement ============ -->
   <div class="calc-pane" id="an-pane-settlement">
     <div class="an-tab-intro">{{tool.settlementIntro}}</div>
-    <div class="an-placeholder">{{tool.settlementIntro}}</div>
+
+    <div class="an-need-people" id="an-set-need-people" style="display:none;">{{tool.errMinPeople}}</div>
+
+    <h4 style="margin: 8px 0 8px; font-size: 1.05rem; color: var(--text-primary);">{{tool.expensesTitle}}</h4>
+    <div class="an-items-list" id="an-set-expenses"></div>
+
+    <div class="an-add-item-card" id="an-set-add-card">
+      <div class="an-add-item-row">
+        <input id="an-set-new-desc" type="text" placeholder="{{tool.expenseDescPlaceholder}}" maxlength="40">
+        <input id="an-set-new-amount" type="number" min="0" step="1" placeholder="{{tool.expenseAmountLabel}}">
+      </div>
+      <div class="calc-form-row" style="margin-bottom: 10px;">
+        <div class="calc-form-group">
+          <label>{{tool.paidByLabel}}</label>
+          <select id="an-set-paid-by" style="padding: 8px 12px; border: 1px solid var(--card-border-color, rgba(0,0,0,0.15)); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); font-size: 0.95rem;"></select>
+        </div>
+        <div class="calc-form-group"></div>
+      </div>
+      <div class="an-share-pills-label">{{tool.expenseShareWithLabel}}</div>
+      <div class="an-share-pills" id="an-set-share-pills"></div>
+      <button class="an-btn" onclick="anAddExpense()">+ {{tool.addExpense}}</button>
+    </div>
+
+    <div class="calc-result" id="an-set-result">
+      <div class="calc-stats-grid">
+        <div class="calc-stat-card highlight">
+          <div class="value" id="an-set-total">—</div>
+          <div class="label">{{tool.totalLabel}}</div>
+        </div>
+        <div class="calc-stat-card">
+          <div class="value" id="an-set-per">—</div>
+          <div class="label">{{tool.perPersonLabel}}</div>
+        </div>
+        <div class="calc-stat-card">
+          <div class="value" id="an-set-transfers-count">—</div>
+          <div class="label">{{tool.transfersTitle}}</div>
+        </div>
+      </div>
+
+      <div class="an-result-section" id="an-set-transfers-section">
+        <h4>{{tool.transfersTitle}}</h4>
+        <div class="an-transfers-list" id="an-set-transfers"></div>
+        <div class="an-savings-banner" id="an-set-savings" style="display:none;"></div>
+      </div>
+    </div>
   </div>
 
   <!-- ============ TAB 4: Percentage ============ -->
@@ -994,6 +1125,7 @@
     if (state.activeTab === 'equal') renderEqual();
     else if (state.activeTab === 'percent') renderPercent();
     else if (state.activeTab === 'consumption') renderConsumption();
+    else if (state.activeTab === 'settlement') renderSettlement();
   }
 
   function renderAll() {
@@ -1455,6 +1587,306 @@
     result.classList.add('show');
   }
 
+  // ============ Settlement Tab + Greedy Algorithm ============
+  var newExpenseShared = 'all';
+
+  window.anToggleSetSharePill = function(value) {
+    if (value === 'all') {
+      newExpenseShared = 'all';
+    } else {
+      if (isAll(newExpenseShared)) {
+        newExpenseShared = [value];
+      } else {
+        var idx = newExpenseShared.indexOf(value);
+        if (idx === -1) newExpenseShared.push(value);
+        else newExpenseShared.splice(idx, 1);
+        if (newExpenseShared.length === 0) newExpenseShared = 'all';
+      }
+    }
+    renderSetSharePills();
+  };
+
+  function renderSetSharePills() {
+    var el = $('an-set-share-pills');
+    if (!el) return;
+    el.innerHTML = '';
+
+    var allPill = document.createElement('span');
+    allPill.className = 'an-share-pill an-all-pill' + (isAll(newExpenseShared) ? ' active' : '');
+    allPill.textContent = isArabic ? 'الجميع' : 'Everyone';
+    allPill.onclick = function() { anToggleSetSharePill('all'); };
+    el.appendChild(allPill);
+
+    state.people.forEach(function(p) {
+      var pill = document.createElement('span');
+      var active = !isAll(newExpenseShared) && newExpenseShared.indexOf(p.id) !== -1;
+      pill.className = 'an-share-pill' + (active ? ' active' : '');
+      pill.textContent = p.name;
+      pill.onclick = function() { anToggleSetSharePill(p.id); };
+      el.appendChild(pill);
+    });
+  }
+
+  function renderSetPaidBySelect() {
+    var sel = $('an-set-paid-by');
+    if (!sel) return;
+    var prev = sel.value;
+    sel.innerHTML = '';
+    state.people.forEach(function(p) {
+      var opt = document.createElement('option');
+      opt.value = p.id;
+      opt.textContent = p.name;
+      sel.appendChild(opt);
+    });
+    // restore previous if still exists
+    if (prev && state.people.find(function(p) { return p.id === prev; })) {
+      sel.value = prev;
+    }
+  }
+
+  window.anAddExpense = function() {
+    if (state.people.length < 2) { alert(T.errMinPeople); return; }
+    var descInput = $('an-set-new-desc');
+    var amtInput = $('an-set-new-amount');
+    var paidSel = $('an-set-paid-by');
+
+    var desc = (descInput.value || '').trim();
+    var amt = parseFloat(amtInput.value);
+    var paidBy = paidSel.value;
+    if (!desc) { descInput.focus(); return; }
+    if (isNaN(amt) || amt <= 0) { amtInput.focus(); return; }
+    if (!paidBy || !state.people.find(function(p) { return p.id === paidBy; })) {
+      paidSel.focus(); return;
+    }
+
+    state.settlement.expenses.push({
+      id: uid('e'),
+      description: desc,
+      amount: Math.round(amt),
+      paidBy: paidBy,
+      sharedWith: isAll(newExpenseShared) ? 'all' : newExpenseShared.slice()
+    });
+
+    descInput.value = '';
+    amtInput.value = '';
+    newExpenseShared = 'all';
+    descInput.focus();
+    renderSettlement();
+  };
+
+  window.anRemoveExpense = function(id) {
+    state.settlement.expenses = state.settlement.expenses.filter(function(e) { return e.id !== id; });
+    renderSettlement();
+  };
+
+  // Core greedy settlement algorithm
+  function computeSettlement() {
+    // 1) net per person
+    var net = {};
+    state.people.forEach(function(p) { net[p.id] = 0; });
+
+    state.settlement.expenses.forEach(function(exp) {
+      // paid by
+      net[exp.paidBy] = (net[exp.paidBy] || 0) + exp.amount;
+
+      // owed by each shared person
+      var ids = exp.sharedWith === 'all'
+        ? state.people.map(function(p) { return p.id; })
+        : exp.sharedWith.slice();
+      ids = ids.filter(function(id) { return state.people.find(function(p) { return p.id === id; }); });
+      if (ids.length === 0) return;
+
+      var shares = computeShares(exp.amount, ids);
+      shares.forEach(function(s) {
+        net[s.personId] = (net[s.personId] || 0) - s.share;
+      });
+    });
+
+    // 2) Build creditors and debtors lists (excluding zero)
+    var creditors = [];
+    var debtors = [];
+    Object.keys(net).forEach(function(id) {
+      var v = net[id];
+      if (v > 0) creditors.push({ id: id, net: v });
+      else if (v < 0) debtors.push({ id: id, net: v });
+    });
+    // Σ creditors should equal -Σ debtors (zero-sum). Any imbalance is rounding noise — assign to first creditor.
+    var sumC = creditors.reduce(function(s, x) { return s + x.net; }, 0);
+    var sumD = debtors.reduce(function(s, x) { return s + x.net; }, 0);
+    var imbalance = sumC + sumD; // should be 0
+    if (imbalance !== 0 && creditors.length > 0) {
+      creditors[0].net -= imbalance;
+      if (creditors[0].net <= 0) {
+        // edge: rounding could flip; redistribute
+        creditors[0].net += imbalance;
+      }
+    }
+
+    creditors.sort(function(a, b) { return b.net - a.net; });
+    debtors.sort(function(a, b) { return a.net - b.net; });
+
+    // 3) Greedy match
+    var transfers = [];
+    var safety = 1000; // protect against pathological cases
+    while (creditors.length && debtors.length && safety-- > 0) {
+      var c = creditors[0];
+      var d = debtors[0];
+      var amt = Math.min(c.net, -d.net);
+      if (amt <= 0) break;
+      transfers.push({ from: d.id, to: c.id, amount: amt });
+      c.net -= amt;
+      d.net += amt;
+      if (c.net === 0) creditors.shift();
+      if (d.net === 0) debtors.shift();
+    }
+
+    return { transfers: transfers, originalNet: net };
+  }
+
+  function renderSettlement() {
+    var need = $('an-set-need-people');
+    var addCard = $('an-set-add-card');
+    var result = $('an-set-result');
+
+    if (state.people.length < 2) {
+      need.style.display = 'block';
+      addCard.style.display = 'none';
+      result.classList.remove('show');
+      $('an-set-expenses').innerHTML = '';
+      return;
+    }
+    need.style.display = 'none';
+    addCard.style.display = 'block';
+
+    renderSetPaidBySelect();
+    renderSetSharePills();
+
+    // Expenses list
+    var listEl = $('an-set-expenses');
+    listEl.innerHTML = '';
+    if (state.settlement.expenses.length === 0) {
+      var empty = document.createElement('div');
+      empty.className = 'an-no-items';
+      empty.textContent = isArabic ? 'لا توجد مصاريف بعد' : 'No expenses yet';
+      listEl.appendChild(empty);
+    } else {
+      state.settlement.expenses.forEach(function(exp) {
+        var card = document.createElement('div');
+        card.className = 'an-item-card';
+
+        var main = document.createElement('div');
+        main.className = 'an-item-main';
+        var nm = document.createElement('span');
+        nm.className = 'an-item-name';
+        nm.textContent = exp.description;
+        var meta = document.createElement('span');
+        meta.className = 'an-item-meta';
+        var payerName = getPersonName(exp.paidBy);
+        var sharedTxt = exp.sharedWith === 'all'
+          ? (isArabic ? 'الجميع' : 'Everyone')
+          : exp.sharedWith.map(getPersonName).join(' • ');
+        meta.textContent = (isArabic ? 'دفع: ' : 'Paid: ') + payerName +
+                           ' · ' + (isArabic ? 'لمن: ' : 'For: ') + sharedTxt;
+        main.appendChild(nm);
+        main.appendChild(meta);
+
+        var price = document.createElement('span');
+        price.className = 'an-item-price';
+        price.textContent = fmt(exp.amount);
+
+        var del = document.createElement('button');
+        del.className = 'an-item-delete';
+        del.innerHTML = '✕';
+        del.onclick = function() { anRemoveExpense(exp.id); };
+
+        card.appendChild(main);
+        card.appendChild(price);
+        card.appendChild(del);
+        listEl.appendChild(card);
+      });
+    }
+
+    if (state.settlement.expenses.length === 0) {
+      result.classList.remove('show');
+      return;
+    }
+
+    var total = state.settlement.expenses.reduce(function(s, e) { return s + e.amount; }, 0);
+    var totalWeight = state.people.reduce(function(s, p) { return s + getWeight(p); }, 0);
+    var per = totalWeight > 0 ? Math.round(total / totalWeight) : 0;
+
+    $('an-set-total').textContent = fmt(total);
+    $('an-set-per').textContent = fmt(per);
+
+    var settled = computeSettlement();
+    $('an-set-transfers-count').textContent = settled.transfers.length;
+
+    var transEl = $('an-set-transfers');
+    var savings = $('an-set-savings');
+    transEl.innerHTML = '';
+
+    if (settled.transfers.length === 0) {
+      var banner = document.createElement('div');
+      banner.className = 'an-all-settled-banner';
+      banner.textContent = isArabic ? '✅ الجميع متعادل، لا توجد ديون 🎉' : '✅ Everyone is settled — no debts 🎉';
+      transEl.appendChild(banner);
+      savings.style.display = 'none';
+    } else {
+      settled.transfers.forEach(function(t) {
+        var card = document.createElement('div');
+        card.className = 'an-transfer-card';
+
+        var flow = document.createElement('div');
+        flow.className = 'an-transfer-flow';
+        var fromName = document.createElement('span');
+        fromName.textContent = getPersonName(t.from);
+        var arrow = document.createElement('span');
+        arrow.className = 'an-transfer-arrow';
+        arrow.textContent = isArabic ? '←' : '→';
+        var toName = document.createElement('span');
+        toName.textContent = getPersonName(t.to);
+
+        // In Arabic, "from ← to" reads visually; in English, "from → to"
+        if (isArabic) {
+          flow.appendChild(toName);
+          flow.appendChild(arrow);
+          flow.appendChild(fromName);
+        } else {
+          flow.appendChild(fromName);
+          flow.appendChild(arrow);
+          flow.appendChild(toName);
+        }
+
+        var amt = document.createElement('span');
+        amt.className = 'an-transfer-amount';
+        amt.textContent = fmt(t.amount);
+
+        card.appendChild(flow);
+        card.appendChild(amt);
+        transEl.appendChild(card);
+      });
+
+      // Savings vs naive (every debtor pays every creditor proportionally)
+      var debtorCount = 0, creditorCount = 0;
+      Object.keys(settled.originalNet).forEach(function(id) {
+        if (settled.originalNet[id] > 0) creditorCount++;
+        else if (settled.originalNet[id] < 0) debtorCount++;
+      });
+      var naive = debtorCount * creditorCount;
+      var saved = naive - settled.transfers.length;
+      if (saved > 0) {
+        savings.style.display = 'block';
+        savings.textContent = isArabic
+          ? '✨ وفّر أبو نجيب ' + saved + ' تحويلاً'
+          : '✨ Abu Najeeb saved you ' + saved + ' transfers';
+      } else {
+        savings.style.display = 'none';
+      }
+    }
+
+    result.classList.add('show');
+  }
+
   // ============ Init ============
   document.addEventListener('DOMContentLoaded', function() {
     renderAll();
@@ -1472,6 +1904,14 @@
       var el = $(id);
       if (el) el.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') { e.preventDefault(); anAddConsItem(); }
+      });
+    });
+
+    // Enter key on settlement add inputs
+    ['an-set-new-desc', 'an-set-new-amount'].forEach(function(id) {
+      var el = $(id);
+      if (el) el.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') { e.preventDefault(); anAddExpense(); }
       });
     });
   });
