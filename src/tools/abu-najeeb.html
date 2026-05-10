@@ -402,6 +402,131 @@
   margin-top: 16px;
 }
 
+/* ============ Items List (Consumption/Settlement) ============ */
+.abu-najeeb .an-items-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.abu-najeeb .an-item-card {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--bg-secondary);
+  border: var(--card-border);
+  border-radius: 10px;
+}
+
+.abu-najeeb .an-item-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.abu-najeeb .an-item-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.abu-najeeb .an-item-meta {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.abu-najeeb .an-item-price {
+  font-weight: 700;
+  color: var(--accent-primary);
+  font-size: 1rem;
+}
+
+.abu-najeeb .an-item-delete {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--error);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  transition: all 0.15s ease;
+}
+
+.abu-najeeb .an-item-delete:hover {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.abu-najeeb .an-no-items {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.abu-najeeb .an-add-item-card {
+  margin-top: 14px;
+  padding: 14px;
+  background: var(--bg-secondary);
+  border: 1px dashed var(--card-border-color, rgba(99, 102, 241, 0.3));
+  border-radius: 12px;
+}
+
+.abu-najeeb .an-add-item-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.abu-najeeb .an-add-item-row input,
+.abu-najeeb .an-add-item-row select {
+  padding: 8px 12px;
+  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.abu-najeeb .an-share-pills-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.abu-najeeb .an-share-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.abu-najeeb .an-share-pills .an-share-pill {
+  padding: 5px 11px;
+  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
+  border-radius: 14px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.abu-najeeb .an-share-pills .an-share-pill.active {
+  background: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+}
+
+.abu-najeeb .an-share-pills .an-share-pill.an-all-pill.active {
+  background: var(--success);
+  border-color: var(--success);
+}
+
 /* ============ Mobile (768px) ============ */
 @media (max-width: 768px) {
   .abu-najeeb .an-people-header {
@@ -534,7 +659,56 @@
   <!-- ============ TAB 2: Consumption ============ -->
   <div class="calc-pane" id="an-pane-consumption">
     <div class="an-tab-intro">{{tool.consumptionIntro}}</div>
-    <div class="an-placeholder">{{tool.consumptionIntro}}</div>
+
+    <div class="an-need-people" id="an-cons-need-people" style="display:none;">{{tool.errMinPeople}}</div>
+
+    <div class="calc-form">
+      <div class="calc-form-row">
+        <div class="calc-form-group">
+          <label for="an-cons-tax">{{tool.taxLabel}}</label>
+          <input id="an-cons-tax" type="number" min="0" step="0.1" placeholder="0" oninput="anOnConsumptionInput()">
+        </div>
+        <div class="calc-form-group">
+          <label for="an-cons-tip">{{tool.tipLabel}}</label>
+          <input id="an-cons-tip" type="number" min="0" step="0.1" placeholder="0" oninput="anOnConsumptionInput()">
+        </div>
+      </div>
+    </div>
+
+    <h4 style="margin: 18px 0 8px; font-size: 1.05rem; color: var(--text-primary);">{{tool.itemsTitle}}</h4>
+    <div class="an-items-list" id="an-cons-items"></div>
+
+    <div class="an-add-item-card" id="an-cons-add-card">
+      <div class="an-add-item-row">
+        <input id="an-cons-new-name" type="text" placeholder="{{tool.itemNamePlaceholder}}" maxlength="40">
+        <input id="an-cons-new-price" type="number" min="0" step="1" placeholder="{{tool.itemPriceLabel}}">
+      </div>
+      <div class="an-share-pills-label">{{tool.sharedWithLabel}}</div>
+      <div class="an-share-pills" id="an-cons-share-pills"></div>
+      <button class="an-btn" onclick="anAddConsItem()">+ {{tool.addItem}}</button>
+    </div>
+
+    <div class="calc-result" id="an-cons-result">
+      <div class="calc-stats-grid">
+        <div class="calc-stat-card highlight">
+          <div class="value" id="an-cons-final">—</div>
+          <div class="label">{{tool.finalAmountLabel}}</div>
+        </div>
+        <div class="calc-stat-card">
+          <div class="value" id="an-cons-subtotal">—</div>
+          <div class="label">{{tool.totalLabel}}</div>
+        </div>
+        <div class="calc-stat-card">
+          <div class="value" id="an-cons-people">—</div>
+          <div class="label">{{tool.peopleCountLabel}}</div>
+        </div>
+      </div>
+
+      <div class="an-result-section">
+        <h4>{{tool.resultsTitle}}</h4>
+        <div class="an-shares-list" id="an-cons-shares"></div>
+      </div>
+    </div>
   </div>
 
   <!-- ============ TAB 3: Settlement ============ -->
@@ -819,6 +993,7 @@
   function renderActiveTab() {
     if (state.activeTab === 'equal') renderEqual();
     else if (state.activeTab === 'percent') renderPercent();
+    else if (state.activeTab === 'consumption') renderConsumption();
   }
 
   function renderAll() {
@@ -1057,6 +1232,229 @@
     result.classList.add('show');
   }
 
+  // ============ Consumption Tab ============
+  // Buffer for the new-item share selection
+  var newItemShared = 'all'; // 'all' | array of personIds
+
+  function isAll(s) { return s === 'all'; }
+
+  window.anOnConsumptionInput = function() {
+    state.consumption.tax = getNum('an-cons-tax');
+    state.consumption.tip = getNum('an-cons-tip');
+    renderConsumption();
+  };
+
+  window.anToggleConsSharePill = function(value) {
+    if (value === 'all') {
+      newItemShared = 'all';
+    } else {
+      if (isAll(newItemShared)) {
+        newItemShared = [value];
+      } else {
+        var idx = newItemShared.indexOf(value);
+        if (idx === -1) newItemShared.push(value);
+        else newItemShared.splice(idx, 1);
+        if (newItemShared.length === 0) newItemShared = 'all';
+      }
+    }
+    renderConsSharePills();
+  };
+
+  function renderConsSharePills() {
+    var el = $('an-cons-share-pills');
+    if (!el) return;
+    el.innerHTML = '';
+
+    // "All" pill
+    var allPill = document.createElement('span');
+    allPill.className = 'an-share-pill an-all-pill' + (isAll(newItemShared) ? ' active' : '');
+    allPill.textContent = isArabic ? 'الجميع' : 'Everyone';
+    allPill.onclick = function() { anToggleConsSharePill('all'); };
+    el.appendChild(allPill);
+
+    state.people.forEach(function(p) {
+      var pill = document.createElement('span');
+      var active = !isAll(newItemShared) && newItemShared.indexOf(p.id) !== -1;
+      pill.className = 'an-share-pill' + (active ? ' active' : '');
+      pill.textContent = p.name;
+      pill.onclick = function() { anToggleConsSharePill(p.id); };
+      el.appendChild(pill);
+    });
+  }
+
+  window.anAddConsItem = function() {
+    if (state.people.length < 2) { alert(T.errMinPeople); return; }
+    var nameInput = $('an-cons-new-name');
+    var priceInput = $('an-cons-new-price');
+    var name = (nameInput.value || '').trim();
+    var price = parseFloat(priceInput.value);
+    if (!name) { nameInput.focus(); return; }
+    if (isNaN(price) || price <= 0) { priceInput.focus(); return; }
+
+    state.consumption.items.push({
+      id: uid('i'),
+      name: name,
+      price: Math.round(price),
+      sharedWith: isAll(newItemShared) ? 'all' : newItemShared.slice()
+    });
+
+    nameInput.value = '';
+    priceInput.value = '';
+    newItemShared = 'all';
+    nameInput.focus();
+    renderConsumption();
+  };
+
+  window.anRemoveConsItem = function(id) {
+    state.consumption.items = state.consumption.items.filter(function(it) { return it.id !== id; });
+    renderConsumption();
+  };
+
+  function sharedLabel(item) {
+    if (item.sharedWith === 'all') return isArabic ? 'الجميع' : 'Everyone';
+    var names = item.sharedWith.map(function(id) { return getPersonName(id); });
+    return names.join(' • ');
+  }
+
+  function renderConsumption() {
+    var need = $('an-cons-need-people');
+    var addCard = $('an-cons-add-card');
+    var result = $('an-cons-result');
+
+    if (state.people.length < 2) {
+      need.style.display = 'block';
+      addCard.style.display = 'none';
+      result.classList.remove('show');
+      $('an-cons-items').innerHTML = '';
+      return;
+    }
+    need.style.display = 'none';
+    addCard.style.display = 'block';
+
+    renderConsSharePills();
+
+    // Items list
+    var listEl = $('an-cons-items');
+    listEl.innerHTML = '';
+    if (state.consumption.items.length === 0) {
+      var empty = document.createElement('div');
+      empty.className = 'an-no-items';
+      empty.textContent = isArabic ? 'لا توجد طلبات بعد' : 'No items yet';
+      listEl.appendChild(empty);
+    } else {
+      state.consumption.items.forEach(function(item) {
+        var card = document.createElement('div');
+        card.className = 'an-item-card';
+
+        var main = document.createElement('div');
+        main.className = 'an-item-main';
+        var nm = document.createElement('span');
+        nm.className = 'an-item-name';
+        nm.textContent = item.name;
+        var meta = document.createElement('span');
+        meta.className = 'an-item-meta';
+        meta.textContent = sharedLabel(item);
+        main.appendChild(nm);
+        main.appendChild(meta);
+
+        var price = document.createElement('span');
+        price.className = 'an-item-price';
+        price.textContent = fmt(item.price);
+
+        var del = document.createElement('button');
+        del.className = 'an-item-delete';
+        del.innerHTML = '✕';
+        del.onclick = function() { anRemoveConsItem(item.id); };
+
+        card.appendChild(main);
+        card.appendChild(price);
+        card.appendChild(del);
+        listEl.appendChild(card);
+      });
+    }
+
+    // Compute per-person subtotals
+    if (state.consumption.items.length === 0) {
+      result.classList.remove('show');
+      return;
+    }
+
+    var personTotals = {};
+    state.people.forEach(function(p) { personTotals[p.id] = 0; });
+
+    state.consumption.items.forEach(function(item) {
+      var ids = item.sharedWith === 'all'
+        ? state.people.map(function(p) { return p.id; })
+        : item.sharedWith.slice();
+      // Drop any IDs no longer in state.people
+      ids = ids.filter(function(id) { return state.people.find(function(p) { return p.id === id; }); });
+      if (ids.length === 0) return;
+
+      var shares = computeShares(item.price, ids);
+      shares.forEach(function(s) {
+        personTotals[s.personId] = (personTotals[s.personId] || 0) + s.share;
+      });
+    });
+
+    var subtotal = state.consumption.items.reduce(function(s, it) { return s + it.price; }, 0);
+    var taxTipMult = 1 + state.consumption.tax / 100 + state.consumption.tip / 100;
+    var finalTotal = Math.round(subtotal * taxTipMult);
+
+    $('an-cons-subtotal').textContent = fmt(subtotal);
+    $('an-cons-final').textContent = fmt(finalTotal);
+    $('an-cons-people').textContent = state.people.length;
+
+    // Apply tax+tip proportionally
+    var sharesEl = $('an-cons-shares');
+    sharesEl.innerHTML = '';
+
+    var finalShares = [];
+    var sumFinal = 0;
+    state.people.forEach(function(p, i) {
+      var sub = personTotals[p.id] || 0;
+      var finalShare = Math.round(sub * taxTipMult);
+      finalShares.push({ p: p, sub: sub, final: finalShare });
+      sumFinal += finalShare;
+    });
+    // rounding-fix
+    var diff = finalTotal - sumFinal;
+    if (diff !== 0 && finalShares.length > 0) {
+      // give to the highest-subtotal person to minimize visible distortion
+      var maxIdx = 0;
+      for (var j = 1; j < finalShares.length; j++) {
+        if (finalShares[j].sub > finalShares[maxIdx].sub) maxIdx = j;
+      }
+      finalShares[maxIdx].final += diff;
+    }
+
+    finalShares.forEach(function(f) {
+      var card = document.createElement('div');
+      card.className = 'an-share-card';
+      var nameWrap = document.createElement('div');
+      var name = document.createElement('span');
+      name.className = 'an-share-name';
+      name.textContent = f.p.name;
+      nameWrap.appendChild(name);
+
+      if (f.sub !== f.final) {
+        var meta = document.createElement('span');
+        meta.className = 'an-share-weight';
+        meta.textContent = '(' + (isArabic ? 'قبل الإضافات' : 'before') + ' ' + fmt(f.sub) + ')';
+        nameWrap.appendChild(meta);
+      }
+
+      var value = document.createElement('span');
+      value.className = 'an-share-value';
+      value.textContent = fmt(f.final);
+
+      card.appendChild(nameWrap);
+      card.appendChild(value);
+      sharesEl.appendChild(card);
+    });
+
+    result.classList.add('show');
+  }
+
   // ============ Init ============
   document.addEventListener('DOMContentLoaded', function() {
     renderAll();
@@ -1068,6 +1466,14 @@
         if (e.key === 'Enter') { e.preventDefault(); anAddPerson(); }
       });
     }
+
+    // Enter key on consumption add inputs
+    ['an-cons-new-name', 'an-cons-new-price'].forEach(function(id) {
+      var el = $(id);
+      if (el) el.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') { e.preventDefault(); anAddConsItem(); }
+      });
+    });
   });
 
   // Expose state for debugging (dev convenience)
