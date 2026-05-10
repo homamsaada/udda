@@ -1,6 +1,6 @@
 # ✅ التقدم الحالي | Progress
 
-> 📅 **آخر نشاط على المشروع:** 2026-05-11 — المرحلة 5.1 (أداة جديدة: أبو نجيب — حاسبة تقسيم فواتير بأربع طرق + خوارزمية Greedy)
+> 📅 **آخر نشاط على المشروع:** 2026-05-11 — المرحلة 5.2 (refactor أبو نجيب → Trip-only + نموذج أمين الصندوق + أرقام إنكليزية لكل الموقع)
 > 🔍 **آخر فحص توافق شامل:** 2026-05-11
 > ⏰ **ملاحظة للوكيل:** قبل أي تطوير، اقرأ [Session Resume Protocol في CLAUDE.md](../CLAUDE.md). يجب التحقق من training cutoff الخاص بك مقابل تاريخ اليوم عند الفجوات > 30 يوماً.
 >
@@ -25,7 +25,7 @@
 | 9 | age-calculator | calculators (other) | ✅ مستقر | حسابات تواريخ — **Standard Kit + bug fixes (2026-05-10)** |
 | 10 | family-tree | everyday | ✅ مستقر | شجرة عائلة SVG |
 | 11 | ai-readiness | generators | ✅ مستقر | 41 تخصص، ~200K سطر JSON |
-| 12 | abu-najeeb | everyday | ✅ مستقر | 🆕 حاسبة تقسيم فواتير 4 تبويبات + خوارزمية Greedy + html2canvas (vendor) (2026-05-11) |
+| 12 | abu-najeeb | everyday | ✅ مستقر | 🆕 حاسبة رحلات Trip-only + نموذج أمين الصندوق + Greedy view + html2canvas (vendor) (refactor 2026-05-11) |
 
 ### المحتوى
 
@@ -235,6 +235,26 @@
 - [x] **docs/standards/tool-template.md** — خطوة 4a جديدة "اختر الأسلوب" قبل HTML template، مع skeleton جاهز للنسخ يستخدم `.calc-*` classes للأدوات الحاسبية، ومسار بديل (wrapper + prefix) للأدوات غير-الحاسبية. تنبيهات تسمية مضافة (`.calc-pane` لا `.calc-section`، `.calc-result` لا `.result-box`).
 - [x] **ai-readiness Canvas** — 28+ hex/rgba literal في `renderRadar()` انتقلت إلى `.ai-readiness --canvas-*` namespace + helper `getCanvasColors()` يقرأها مرة عند بداية الرسم. تصميم متعمَّد: Canvas يبقى داكناً عبر الثيمين (Light/Dark) لتناسق صورة المشاركة بصرياً (commit `80acf80`).
 - [x] **خارج النطاق المُتعمَّد:** تدرّجات CSS في `.air-report-summary.level-aware` (سطور 1019, 1026)، SVG timer ring color (`lerpColor` سطور 2441-2443)، family-tree i18n migration (مهمة كبرى منفصلة).
+
+### المرحلة 5.2: Refactor أبو نجيب → Trip-only + Treasurer model ✅ (2026-05-11)
+
+بعد إكمال 5.1 ومراجعة الأداة، رأى المستخدم أن المعمارية الأصلية خلطت مستويَين: طُرق التقسيم (متساوي/استهلاك/نسب) كانت أخوة مع المخرج النهائي (من دفع لمن). الواقع: الأداة للرحلات، وَ"من دفع لمن" هو **الناتج النهائي دائماً**.
+
+كذلك في المجموعات الكبيرة (10+ أشخاص)، Greedy يُنتج فوضى — كل شخص يتعامل مع عدّة أشخاص. الحلّ المتّبع واقعياً هو **أمير الرحلة / أمين الصندوق** (شخص واحد ينسّق كل المعاملات).
+
+- [x] **حذف Quick Mode** بالكامل (4 تبويبات → شاشة موحَّدة)
+- [x] **إعادة كتابة `abu-najeeb.html`** (~1,100 سطر، State مُبسَّط)
+- [x] **`computeTreasurerModel()`** الجديدة + Greedy view كـ toggle
+- [x] **اختيار الأمين:** تلقائي (أكبر دائن) أو يدوي من dropdown
+- [x] **chip الأمين** يُمَيَّز بـ ⭐ ولون مختلف
+- [x] **Site-wide:** `App.formatNumber` يستخدم `en-US` (أرقام إنكليزية في AR + EN لكل الأدوات الـ12)
+- [x] **seedDemo**: رحلة كاملة (5 أشخاص، 4 مصاريف)
+- [x] **Docs:** spec/progress/memory/04-PROGRESS/_sessions محدَّثة
+
+**القرارات المعمارية الكبيرة:**
+- **Trip-only** هو القرار الفلسفي — الأداة بـvision واضح
+- **Treasurer model** أبسط نفسياً من Greedy في المجموعات الكبيرة
+- **أرقام إنكليزية موقعياً** — وحدة عرض عبر اللغتَين، رفع لـUX التقني
 
 ### المرحلة 5.1: أداة جديدة — أبو نجيب ✅ (2026-05-11)
 
