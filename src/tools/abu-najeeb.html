@@ -970,22 +970,26 @@
       else if (v > 0) disburses.push({ id: id, amount: v });
     });
 
-    // Rounding-fix: treasurer should net out to 0 after these flows.
-    // Treasurer's pre-flow net is net[tId]. After collecting: net[tId] + Σ collects.
-    // After disbursing: ... - Σ disburses. Should equal 0.
-    // Imbalance can occur from share rounding; absorb in last entry.
+    // Invariant: sumCollects - sumDisburses == net[tId]
+    //   - treasurer creditor (net[t]>0): keeps net[t] from collections
+    //   - treasurer debtor   (net[t]<0): pays |net[t]| more than collected
+    // Deviation from this invariant = rounding noise. Absorb in last entry.
     var sumCollects = collects.reduce(function(s, x) { return s + x.amount; }, 0);
     var sumDisburses = disburses.reduce(function(s, x) { return s + x.amount; }, 0);
-    var imbalance = (net[tId] || 0) + sumCollects - sumDisburses;
-    // If imbalance > 0, treasurer ends up with extra → reduce a disburse, or add to collects
-    // Simpler: adjust the last disburse to absorb.
-    if (imbalance !== 0) {
-      if (disburses.length > 0) {
-        disburses[disburses.length - 1].amount += imbalance;
-        if (disburses[disburses.length - 1].amount <= 0) disburses.pop();
-      } else if (collects.length > 0) {
+    var imbalance = sumCollects - sumDisburses - (net[tId] || 0);
+    if (imbalance > 0) {
+      // Treasurer has extra cash → pay it out (or collect less)
+      if (disburses.length > 0) disburses[disburses.length - 1].amount += imbalance;
+      else if (collects.length > 0) {
         collects[collects.length - 1].amount -= imbalance;
         if (collects[collects.length - 1].amount <= 0) collects.pop();
+      }
+    } else if (imbalance < 0) {
+      // Treasurer has deficit → collect more (or pay less)
+      if (collects.length > 0) collects[collects.length - 1].amount += -imbalance;
+      else if (disburses.length > 0) {
+        disburses[disburses.length - 1].amount -= -imbalance;
+        if (disburses[disburses.length - 1].amount <= 0) disburses.pop();
       }
     }
 
@@ -1400,11 +1404,9 @@
     $('an-per-person').textContent = fmtAmount(per);
     $('an-people-stat').textContent = state.people.length;
 
-    if (state.settlementMode === 'greedy') {
-      renderGreedy();
-    } else {
-      renderTreasurer();
-    }
+    // Render both views; visibility is toggled below based on settlementMode
+    renderTreasurer();
+    renderGreedy();
     // Apply visibility consistent with current mode
     if (state.settlementMode === 'treasurer') {
       $('an-treasurer-view').classList.remove('hidden');
