@@ -614,6 +614,80 @@
   color: var(--text-secondary);
 }
 
+/* ============ Main Action Toolbar ============ */
+.abu-najeeb .an-main-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 10px 12px;
+  background: var(--bg-secondary);
+  border: var(--card-border);
+  border-radius: 12px;
+}
+
+.abu-najeeb .an-main-toolbar .an-btn {
+  padding: 7px 12px;
+  font-size: 0.85rem;
+}
+
+.abu-najeeb .an-saved-groups-panel {
+  display: none;
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--bg-primary);
+  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
+  border-radius: 10px;
+}
+
+.abu-najeeb .an-saved-groups-panel.show {
+  display: block;
+}
+
+.abu-najeeb .an-saved-group-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.abu-najeeb .an-saved-group-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.abu-najeeb .an-saved-group-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.abu-najeeb .an-saved-group-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.abu-najeeb .an-no-groups {
+  padding: 14px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ============ Result Action Bar (per tab) ============ */
+.abu-najeeb .calc-result .an-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--card-border-color, rgba(0,0,0,0.08));
+}
+
 /* ============ Mobile (768px) ============ */
 @media (max-width: 768px) {
   .abu-najeeb .an-people-header {
@@ -692,6 +766,21 @@
       <label for="an-currency">{{tool.currencyLabel}}</label>
       <input id="an-currency" type="text" placeholder="{{tool.currencyPlaceholder}}" maxlength="8" oninput="anOnCurrencyChange()">
     </div>
+  </div>
+
+  <!-- Main action toolbar -->
+  <div class="an-main-toolbar">
+    <button class="an-btn" onclick="anSeedDemo()">🎲 {{tool.tryExample}}</button>
+    <button class="an-btn an-btn-secondary" onclick="anCopyResult()">📋 {{tool.copyResultBtn}}</button>
+    <button class="an-btn an-btn-secondary" onclick="anSaveGroup()">💾 {{tool.saveGroupBtn}}</button>
+    <button class="an-btn an-btn-secondary" onclick="anToggleSavedPanel()">📂 {{tool.savedGroupsTitle}}</button>
+    <button class="an-btn an-btn-danger" onclick="anResetAll()">🔄 {{tool.resetAll}}</button>
+  </div>
+
+  <!-- Saved Groups Panel -->
+  <div class="an-saved-groups-panel" id="an-saved-panel">
+    <div style="font-weight: 700; margin-bottom: 8px; color: var(--text-primary);">📂 {{tool.savedGroupsTitle}}</div>
+    <div id="an-saved-groups-list"></div>
   </div>
 
   <!-- ============ TAB 1: Equal Split ============ -->
@@ -1131,6 +1220,7 @@
   function renderAll() {
     renderPeopleList();
     renderActiveTab();
+    saveSession();
   }
 
   // ============ Currency ============
@@ -1887,8 +1977,388 @@
     result.classList.add('show');
   }
 
+  // ============ sessionStorage (auto-save state) ============
+  var SESSION_KEY = 'udda:abu-najeeb:session';
+  var GROUPS_KEY = 'udda:abu-najeeb:groups';
+
+  function saveSession() {
+    try {
+      var snapshot = {
+        activeTab: state.activeTab,
+        currency: state.currency,
+        people: state.people,
+        equal: state.equal,
+        consumption: state.consumption,
+        settlement: state.settlement,
+        percent: state.percent
+      };
+      sessionStorage.setItem(SESSION_KEY, JSON.stringify(snapshot));
+    } catch (e) { /* ignore quota/private-mode errors */ }
+  }
+
+  function loadSession() {
+    try {
+      var raw = sessionStorage.getItem(SESSION_KEY);
+      if (!raw) return false;
+      var snap = JSON.parse(raw);
+      if (!snap || typeof snap !== 'object') return false;
+      // Merge defensively (preserve current state defaults if old version)
+      if (snap.activeTab) state.activeTab = snap.activeTab;
+      if (typeof snap.currency === 'string') state.currency = snap.currency;
+      if (Array.isArray(snap.people)) state.people = snap.people;
+      if (snap.equal) state.equal = Object.assign({}, state.equal, snap.equal);
+      if (snap.consumption) state.consumption = Object.assign({}, state.consumption, snap.consumption);
+      if (snap.settlement) state.settlement = Object.assign({}, state.settlement, snap.settlement);
+      if (snap.percent) state.percent = Object.assign({}, state.percent, snap.percent);
+      return true;
+    } catch (e) { return false; }
+  }
+
+  function applySessionToUI() {
+    // Sync input values from state
+    $('an-currency').value = state.currency || '';
+    $('an-equal-amount').value = state.equal.amount || '';
+    $('an-equal-tax').value = state.equal.tax || '';
+    $('an-equal-tip').value = state.equal.tip || '';
+    $('an-cons-tax').value = state.consumption.tax || '';
+    $('an-cons-tip').value = state.consumption.tip || '';
+    $('an-percent-amount').value = state.percent.amount || '';
+    // Apply active tab visual
+    anSwitchTab(state.activeTab || 'equal');
+  }
+
+  // ============ Saved Groups (localStorage) ============
+  function getSavedGroups() {
+    try {
+      var raw = localStorage.getItem(GROUPS_KEY);
+      if (!raw) return [];
+      var parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (e) { return []; }
+  }
+
+  function persistGroups(groups) {
+    try { localStorage.setItem(GROUPS_KEY, JSON.stringify(groups)); }
+    catch (e) { /* ignore */ }
+  }
+
+  window.anSaveGroup = function() {
+    if (state.people.length < 2) { alert(T.errMinPeople); return; }
+    var name = (prompt(isArabic ? 'اسم المجموعة (شلة الجامعة...)' : 'Group name (College Crew...)') || '').trim();
+    if (!name) return;
+    var groups = getSavedGroups();
+    // Replace if same name exists
+    groups = groups.filter(function(g) { return g.name !== name; });
+    groups.push({
+      name: name,
+      savedAt: Date.now(),
+      people: state.people.map(function(p) {
+        return { id: p.id, name: p.name, companions: p.companions, companionShare: p.companionShare };
+      })
+    });
+    persistGroups(groups);
+    if (typeof App !== 'undefined' && App.showToast) {
+      App.showToast(isArabic ? 'تم حفظ المجموعة' : 'Group saved');
+    }
+    renderSavedGroups();
+  };
+
+  window.anLoadGroup = function(name) {
+    var groups = getSavedGroups();
+    var g = groups.find(function(x) { return x.name === name; });
+    if (!g) return;
+    // Replace people, keep tab data — but reset rows since person IDs changed
+    state.people = g.people.map(function(p) {
+      return { id: p.id, name: p.name, companions: p.companions || 0, companionShare: p.companionShare || 'full' };
+    });
+    state.percent.rows = []; // regenerate from new people
+    // Cleanup obsolete references in items/expenses
+    var validIds = state.people.map(function(p) { return p.id; });
+    state.consumption.items.forEach(function(it) {
+      if (Array.isArray(it.sharedWith)) {
+        it.sharedWith = it.sharedWith.filter(function(id) { return validIds.indexOf(id) !== -1; });
+      }
+    });
+    state.settlement.expenses = state.settlement.expenses.filter(function(e) {
+      return validIds.indexOf(e.paidBy) !== -1;
+    });
+    state.settlement.expenses.forEach(function(e) {
+      if (Array.isArray(e.sharedWith)) {
+        e.sharedWith = e.sharedWith.filter(function(id) { return validIds.indexOf(id) !== -1; });
+      }
+    });
+
+    anCancelEdit();
+    renderAll();
+    $('an-saved-panel').classList.remove('show');
+    if (typeof App !== 'undefined' && App.showToast) {
+      App.showToast(isArabic ? 'تم تحميل المجموعة' : 'Group loaded');
+    }
+  };
+
+  window.anDeleteGroup = function(name) {
+    if (!confirm(isArabic ? 'حذف هذه المجموعة؟' : 'Delete this group?')) return;
+    var groups = getSavedGroups().filter(function(g) { return g.name !== name; });
+    persistGroups(groups);
+    renderSavedGroups();
+  };
+
+  window.anToggleSavedPanel = function() {
+    var panel = $('an-saved-panel');
+    panel.classList.toggle('show');
+    if (panel.classList.contains('show')) renderSavedGroups();
+  };
+
+  function renderSavedGroups() {
+    var listEl = $('an-saved-groups-list');
+    if (!listEl) return;
+    var groups = getSavedGroups();
+    listEl.innerHTML = '';
+    if (groups.length === 0) {
+      var empty = document.createElement('div');
+      empty.className = 'an-no-groups';
+      empty.textContent = isArabic ? 'لا توجد مجموعات محفوظة' : 'No saved groups';
+      listEl.appendChild(empty);
+      return;
+    }
+    groups.sort(function(a, b) { return (b.savedAt || 0) - (a.savedAt || 0); });
+    groups.forEach(function(g) {
+      var card = document.createElement('div');
+      card.className = 'an-saved-group-card';
+
+      var info = document.createElement('div');
+      var nm = document.createElement('div');
+      nm.className = 'an-saved-group-name';
+      nm.textContent = g.name;
+      var meta = document.createElement('div');
+      meta.className = 'an-saved-group-meta';
+      meta.textContent = (g.people || []).length + (isArabic ? ' أشخاص' : ' people');
+      info.appendChild(nm);
+      info.appendChild(meta);
+
+      var actions = document.createElement('div');
+      actions.className = 'an-saved-group-actions';
+      var loadBtn = document.createElement('button');
+      loadBtn.className = 'an-btn';
+      loadBtn.textContent = isArabic ? 'تحميل' : 'Load';
+      loadBtn.onclick = function() { anLoadGroup(g.name); };
+      var delBtn = document.createElement('button');
+      delBtn.className = 'an-btn an-btn-danger';
+      delBtn.textContent = isArabic ? 'حذف' : 'Delete';
+      delBtn.onclick = function() { anDeleteGroup(g.name); };
+      actions.appendChild(loadBtn);
+      actions.appendChild(delBtn);
+
+      card.appendChild(info);
+      card.appendChild(actions);
+      listEl.appendChild(card);
+    });
+  }
+
+  // ============ Reset All ============
+  window.anResetAll = function() {
+    var msg = isArabic ? 'إعادة تعيين كل البيانات؟' : 'Reset all data?';
+    if (!confirm(msg)) return;
+    state.activeTab = 'equal';
+    state.currency = '';
+    state.people = [];
+    state.equal = { amount: 0, tax: 0, tip: 0 };
+    state.consumption = { items: [], tax: 0, tip: 0 };
+    state.settlement = { expenses: [] };
+    state.percent = { amount: 0, mode: 'percent', rows: [] };
+    anCancelEdit();
+    // Clear inputs
+    ['an-currency', 'an-equal-amount', 'an-equal-tax', 'an-equal-tip',
+     'an-cons-tax', 'an-cons-tip', 'an-percent-amount',
+     'an-new-person-name', 'an-cons-new-name', 'an-cons-new-price',
+     'an-set-new-desc', 'an-set-new-amount'
+    ].forEach(function(id) { var el = $(id); if (el) el.value = ''; });
+    anSwitchTab('equal');
+    renderAll();
+  };
+
+  // ============ Seed Demo (per tab) ============
+  function makePerson(name, companions, share) {
+    return { id: uid('p'), name: name, companions: companions || 0, companionShare: share || 'full' };
+  }
+
+  window.anSeedDemo = function() {
+    // Reset relevant tab data; keep currency/people if user prefers? — for clarity, reset all
+    var tab = state.activeTab;
+    state.currency = state.currency || (isArabic ? 'ر.س' : '$');
+
+    if (tab === 'equal') {
+      var names = isArabic ? ['أحمد', 'خالد', 'سارة', 'عمر'] : ['Ahmed', 'Khaled', 'Sara', 'Omar'];
+      state.people = [
+        makePerson(names[0], 1, 'half'),
+        makePerson(names[1]),
+        makePerson(names[2]),
+        makePerson(names[3])
+      ];
+      state.equal = { amount: 1000, tax: 15, tip: 10 };
+      $('an-equal-amount').value = 1000;
+      $('an-equal-tax').value = 15;
+      $('an-equal-tip').value = 10;
+
+    } else if (tab === 'consumption') {
+      var nms = isArabic ? ['أحمد', 'سارة', 'خالد'] : ['Ahmed', 'Sara', 'Khaled'];
+      state.people = [makePerson(nms[0]), makePerson(nms[1]), makePerson(nms[2])];
+      state.consumption = {
+        items: [
+          { id: uid('i'), name: isArabic ? 'ستيك' : 'Steak', price: 200, sharedWith: [state.people[0].id] },
+          { id: uid('i'), name: isArabic ? 'سلطة' : 'Salad', price: 50, sharedWith: [state.people[1].id] },
+          { id: uid('i'), name: isArabic ? 'بيتزا' : 'Pizza', price: 150, sharedWith: [state.people[2].id] },
+          { id: uid('i'), name: isArabic ? 'مقبلات' : 'Appetizers', price: 100, sharedWith: 'all' },
+          { id: uid('i'), name: isArabic ? 'مشروبات' : 'Drinks', price: 80, sharedWith: 'all' }
+        ],
+        tax: 0, tip: 0
+      };
+      $('an-cons-tax').value = 0;
+      $('an-cons-tip').value = 0;
+
+    } else if (tab === 'settlement') {
+      var sn = isArabic ? ['أحمد', 'خالد', 'سارة', 'عمر'] : ['Ahmed', 'Khaled', 'Sara', 'Omar'];
+      state.people = [makePerson(sn[0]), makePerson(sn[1]), makePerson(sn[2]), makePerson(sn[3])];
+      state.settlement = {
+        expenses: [
+          { id: uid('e'), description: isArabic ? 'البنزين' : 'Gas', amount: 400, paidBy: state.people[0].id, sharedWith: 'all' },
+          { id: uid('e'), description: isArabic ? 'الفندق' : 'Hotel', amount: 800, paidBy: state.people[1].id, sharedWith: 'all' },
+          { id: uid('e'), description: isArabic ? 'الأكل' : 'Food', amount: 200, paidBy: state.people[2].id, sharedWith: 'all' }
+        ]
+      };
+
+    } else if (tab === 'percent') {
+      var pn = isArabic ? ['أحمد', 'خالد', 'سارة'] : ['Ahmed', 'Khaled', 'Sara'];
+      state.people = [makePerson(pn[0]), makePerson(pn[1]), makePerson(pn[2])];
+      state.percent = {
+        amount: 3000, mode: 'percent',
+        rows: [
+          { personId: state.people[0].id, value: 50 },
+          { personId: state.people[1].id, value: 30 },
+          { personId: state.people[2].id, value: 20 }
+        ]
+      };
+      $('an-percent-amount').value = 3000;
+      anSetPercentMode('percent');
+    }
+
+    $('an-currency').value = state.currency;
+    renderAll();
+  };
+
+  // ============ Copy Result (per tab) ============
+  function buildResultText() {
+    var lines = [];
+    var name = isArabic ? 'أبو نجيب' : 'Abu Najeeb';
+    var subtitle = isArabic ? 'من يدفع لمن؟' : 'Who pays whom?';
+    lines.push('💰 ' + name + ' — ' + subtitle);
+
+    if (state.activeTab === 'equal') {
+      var amount = state.equal.amount;
+      var finalAmount = Math.round(amount * (1 + state.equal.tax / 100 + state.equal.tip / 100));
+      lines.push((isArabic ? 'المبلغ النهائي: ' : 'Total: ') + fmt(finalAmount));
+      lines.push((isArabic ? 'عدد الأشخاص: ' : 'People: ') + state.people.length);
+      lines.push('');
+      lines.push(isArabic ? '📋 نصيب كل شخص:' : '📋 Per-person shares:');
+      var ids = state.people.map(function(p) { return p.id; });
+      computeShares(finalAmount, ids).forEach(function(s) {
+        lines.push('- ' + getPersonName(s.personId) + ': ' + fmt(s.share));
+      });
+
+    } else if (state.activeTab === 'consumption') {
+      var total = state.consumption.items.reduce(function(s, it) { return s + it.price; }, 0);
+      var mult = 1 + state.consumption.tax / 100 + state.consumption.tip / 100;
+      var finalT = Math.round(total * mult);
+      lines.push((isArabic ? 'مجموع الفاتورة: ' : 'Subtotal: ') + fmt(total));
+      lines.push((isArabic ? 'بعد الضريبة والإكرامية: ' : 'After tax & tip: ') + fmt(finalT));
+      lines.push('');
+      lines.push(isArabic ? '📋 نصيب كل شخص:' : '📋 Per-person shares:');
+      // recompute
+      var totals = {};
+      state.people.forEach(function(p) { totals[p.id] = 0; });
+      state.consumption.items.forEach(function(it) {
+        var sIds = it.sharedWith === 'all' ? state.people.map(function(p) { return p.id; }) : it.sharedWith;
+        var sh = computeShares(it.price, sIds);
+        sh.forEach(function(s) { totals[s.personId] += s.share; });
+      });
+      state.people.forEach(function(p) {
+        lines.push('- ' + p.name + ': ' + fmt(Math.round((totals[p.id] || 0) * mult)));
+      });
+
+    } else if (state.activeTab === 'settlement') {
+      var totalE = state.settlement.expenses.reduce(function(s, e) { return s + e.amount; }, 0);
+      lines.push((isArabic ? 'مجموع المصاريف: ' : 'Total expenses: ') + fmt(totalE));
+      lines.push((isArabic ? 'عدد الأشخاص: ' : 'People: ') + state.people.length);
+      var s = computeSettlement();
+      lines.push('');
+      if (s.transfers.length === 0) {
+        lines.push(isArabic ? '✅ الجميع متعادل، لا توجد ديون 🎉' : '✅ Everyone settled — no debts 🎉');
+      } else {
+        lines.push((isArabic ? '📋 التسوية (' : '📋 Settlement (') + s.transfers.length + (isArabic ? ' تحويلاً):' : ' transfers):'));
+        s.transfers.forEach(function(t) {
+          var arrow = isArabic ? '←' : '→';
+          var fromN = getPersonName(t.from);
+          var toN = getPersonName(t.to);
+          var line = isArabic
+            ? '- ' + toN + ' ' + arrow + ' ' + fromN + ': ' + fmt(t.amount)
+            : '- ' + fromN + ' ' + arrow + ' ' + toN + ': ' + fmt(t.amount);
+          lines.push(line);
+        });
+      }
+
+    } else if (state.activeTab === 'percent') {
+      var amt = state.percent.amount;
+      lines.push((isArabic ? 'المبلغ: ' : 'Amount: ') + fmt(amt));
+      lines.push('');
+      lines.push(isArabic ? '📋 نصيب كل شخص:' : '📋 Per-person shares:');
+      var totalUnits = state.percent.rows.reduce(function(s, r) { return s + r.value; }, 0);
+      state.percent.rows.forEach(function(r) {
+        var p = state.people.find(function(x) { return x.id === r.personId; });
+        if (!p) return;
+        var share = state.percent.mode === 'percent'
+          ? Math.round(amt * r.value / 100)
+          : (totalUnits > 0 ? Math.round(amt * r.value / totalUnits) : 0);
+        var suffix = state.percent.mode === 'percent' ? r.value + '%' : r.value + (isArabic ? ' وحدة' : ' units');
+        lines.push('- ' + p.name + ' (' + suffix + '): ' + fmt(share));
+      });
+    }
+
+    lines.push('');
+    lines.push(isArabic ? '✨ احسبها مع أبو نجيب — udda.tools' : '✨ Calculate with Abu Najeeb — udda.tools');
+    return lines.join('\n');
+  }
+
+  window.anCopyResult = function() {
+    if (state.people.length < 2) { alert(T.errMinPeople); return; }
+    var text = buildResultText();
+    var done = function() {
+      if (typeof App !== 'undefined' && App.showToast) {
+        App.showToast(isArabic ? 'تم النسخ!' : 'Copied!');
+      }
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function() { fallbackCopy(text, done); });
+    } else {
+      fallbackCopy(text, done);
+    }
+  };
+
+  function fallbackCopy(text, done) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) { /* ignore */ }
+    document.body.removeChild(ta);
+    done();
+  }
+
   // ============ Init ============
   document.addEventListener('DOMContentLoaded', function() {
+    var loaded = loadSession();
+    if (loaded) applySessionToUI();
     renderAll();
 
     // Enter key on add-person input
