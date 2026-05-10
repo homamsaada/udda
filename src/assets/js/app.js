@@ -397,7 +397,8 @@ const App = {
 
   formatNumber(num, decimals = 2) {
     if (isNaN(num)) return '0';
-    return Number(num).toLocaleString(this.state.lang === 'ar' ? 'ar-SA' : 'en-US', {
+    // Always Western Arabic numerals (0-9) site-wide, regardless of UI language.
+    return Number(num).toLocaleString('en-US', {
       minimumFractionDigits: 0,
       maximumFractionDigits: decimals
     });
