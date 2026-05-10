@@ -1786,14 +1786,14 @@
         lines.push(T.allSettled);
       } else {
         if (m.collects.length > 0) {
-          lines.push('💰 ' + (isArabic ? 'يُسلَّم لـ' : 'Paid to') + ' ' + tName + ':');
+          lines.push('💰 ' + (isArabic ? 'يستلم ' + tName + ' من:' : tName + ' receives from:'));
           m.collects.forEach(function(c) {
             lines.push('- ' + getPersonName(c.id) + ': ' + fmtAmount(c.amount));
           });
         }
         if (m.disburses.length > 0) {
           if (m.collects.length > 0) lines.push('');
-          lines.push('💸 ' + tName + ' ' + (isArabic ? 'يُسلّم' : 'pays to') + ':');
+          lines.push('💸 ' + (isArabic ? 'يدفع ' + tName + ' لـ:' : tName + ' pays to:'));
           m.disburses.forEach(function(d) {
             lines.push('- ' + getPersonName(d.id) + ': ' + fmtAmount(d.amount));
           });
