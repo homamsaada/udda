@@ -1,0 +1,305 @@
+<style>
+/* abu-najeeb — أنماط خاصة بالأداة (an- prefix).
+   الأنماط المشتركة (calc-tabs, calc-tab, calc-pane, calc-form,
+   calc-form-row, calc-form-group, calc-stats-grid, calc-stat-card,
+   calc-result) تأتي من Standard Calc Kit في src/assets/css/main.css */
+
+.abu-najeeb {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: inherit;
+}
+.abu-najeeb * { font-family: inherit; }
+
+/* ============ People Bar (Shared across tabs) ============ */
+.abu-najeeb .an-people-bar {
+  background: var(--bg-secondary);
+  border: var(--card-border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+
+.abu-najeeb .an-people-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.abu-najeeb .an-people-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.abu-najeeb .an-people-count {
+  background: var(--accent-primary);
+  color: white;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.abu-najeeb .an-people-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 32px;
+}
+
+.abu-najeeb .an-person-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--bg-primary);
+  border: 1px solid var(--card-border-color, rgba(0,0,0,0.1));
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.abu-najeeb .an-person-chip:hover {
+  border-color: var(--accent-primary);
+  background: var(--bg-secondary);
+}
+
+.abu-najeeb .an-person-chip .an-companions-badge {
+  background: var(--accent-primary);
+  color: white;
+  font-size: 0.7rem;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.abu-najeeb .an-person-empty {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.abu-najeeb .an-add-person-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.abu-najeeb .an-add-person-form input {
+  flex: 1;
+  min-width: 180px;
+  padding: 8px 12px;
+  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.abu-najeeb .an-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent-primary);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.abu-najeeb .an-btn:hover {
+  background: var(--accent-secondary);
+}
+
+.abu-najeeb .an-btn.an-btn-secondary {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
+}
+
+.abu-najeeb .an-btn.an-btn-secondary:hover {
+  background: var(--bg-secondary);
+}
+
+.abu-najeeb .an-btn.an-btn-danger {
+  background: var(--error);
+}
+
+.abu-najeeb .an-btn.an-btn-danger:hover {
+  background: var(--error-dark, var(--error));
+}
+
+/* ============ Tab Intro Text ============ */
+.abu-najeeb .an-tab-intro {
+  background: rgba(99, 102, 241, 0.06);
+  border-inline-start: 3px solid var(--accent-primary);
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+/* ============ Currency Inline ============ */
+.abu-najeeb .an-currency-row {
+  margin-bottom: 14px;
+}
+
+.abu-najeeb .an-currency-row input {
+  max-width: 200px;
+}
+
+/* ============ Tab placeholder (until implementation) ============ */
+.abu-najeeb .an-placeholder {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px dashed var(--card-border-color, rgba(0,0,0,0.15));
+}
+
+/* ============ Mobile (768px) ============ */
+@media (max-width: 768px) {
+  .abu-najeeb .an-people-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .abu-najeeb .an-add-person-form {
+    flex-direction: column;
+  }
+  .abu-najeeb .an-add-person-form input {
+    min-width: 0;
+    width: 100%;
+  }
+  .abu-najeeb .an-btn {
+    width: 100%;
+  }
+}
+</style>
+
+<div class="abu-najeeb">
+  <!-- Calculator Tabs -->
+  <div class="calc-tabs">
+    <button class="calc-tab active" onclick="anSwitchTab('equal')">{{tool.tabEqual}}</button>
+    <button class="calc-tab" onclick="anSwitchTab('consumption')">{{tool.tabConsumption}}</button>
+    <button class="calc-tab" onclick="anSwitchTab('settlement')">{{tool.tabSettlement}}</button>
+    <button class="calc-tab" onclick="anSwitchTab('percent')">{{tool.tabPercent}}</button>
+  </div>
+
+  <!-- People Bar (shared across tabs) -->
+  <div class="an-people-bar">
+    <div class="an-people-header">
+      <div class="an-people-title">
+        <span>👥</span>
+        <span>{{tool.peopleBarTitle}}</span>
+        <span class="an-people-count" id="an-people-count">0</span>
+      </div>
+    </div>
+    <div class="an-people-list" id="an-people-list">
+      <span class="an-person-empty">{{tool.noPeople}}</span>
+    </div>
+    <div class="an-add-person-form">
+      <input id="an-new-person-name" type="text" placeholder="{{tool.personNamePlaceholder}}" maxlength="40">
+      <button class="an-btn" onclick="anAddPerson()">+ {{tool.addPerson}}</button>
+    </div>
+  </div>
+
+  <!-- Currency (shared, optional) -->
+  <div class="an-currency-row">
+    <div class="calc-form-group">
+      <label for="an-currency">{{tool.currencyLabel}}</label>
+      <input id="an-currency" type="text" placeholder="{{tool.currencyPlaceholder}}" maxlength="8">
+    </div>
+  </div>
+
+  <!-- ============ TAB 1: Equal Split ============ -->
+  <div class="calc-pane active" id="an-pane-equal">
+    <div class="an-tab-intro">{{tool.equalIntro}}</div>
+    <div class="an-placeholder">{{tool.equalIntro}}</div>
+  </div>
+
+  <!-- ============ TAB 2: Consumption ============ -->
+  <div class="calc-pane" id="an-pane-consumption">
+    <div class="an-tab-intro">{{tool.consumptionIntro}}</div>
+    <div class="an-placeholder">{{tool.consumptionIntro}}</div>
+  </div>
+
+  <!-- ============ TAB 3: Settlement ============ -->
+  <div class="calc-pane" id="an-pane-settlement">
+    <div class="an-tab-intro">{{tool.settlementIntro}}</div>
+    <div class="an-placeholder">{{tool.settlementIntro}}</div>
+  </div>
+
+  <!-- ============ TAB 4: Percentage ============ -->
+  <div class="calc-pane" id="an-pane-percent">
+    <div class="an-tab-intro">{{tool.percentIntro}}</div>
+    <div class="an-placeholder">{{tool.percentIntro}}</div>
+  </div>
+</div>
+
+<!-- How to Use -->
+<div class="how-to-use">
+  <h3>📖 {{ui.howToUse}}</h3>
+  <p>{{tool.howToUseText}}</p>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  var lang = document.documentElement.lang || 'ar';
+  var isArabic = lang === 'ar';
+
+  function $(id) { return document.getElementById(id); }
+
+  // ============ State ============
+  var state = {
+    activeTab: 'equal',
+    currency: '',
+    people: [],
+    equal: { amount: 0, tax: 0, tip: 0 },
+    consumption: { items: [], tax: 0, tip: 0 },
+    settlement: { expenses: [] },
+    percent: { amount: 0, mode: 'percent', rows: [] }
+  };
+
+  // ============ Tab Switching ============
+  window.anSwitchTab = function(tab) {
+    state.activeTab = tab;
+    var tabs = document.querySelectorAll('.abu-najeeb .calc-tab');
+    var panes = document.querySelectorAll('.abu-najeeb .calc-pane');
+    tabs.forEach(function(t) { t.classList.remove('active'); });
+    panes.forEach(function(p) { p.classList.remove('active'); });
+
+    // Find tab button by its onclick attribute matching this tab
+    var btnIdx = ['equal', 'consumption', 'settlement', 'percent'].indexOf(tab);
+    if (btnIdx >= 0 && tabs[btnIdx]) tabs[btnIdx].classList.add('active');
+    var pane = $('an-pane-' + tab);
+    if (pane) pane.classList.add('active');
+  };
+
+  // ============ People Management (stubs — full impl in next commit) ============
+  window.anAddPerson = function() {
+    // Implemented in next commit
+  };
+
+  // ============ Init ============
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialization happens in the next commit
+  });
+})();
+</script>
