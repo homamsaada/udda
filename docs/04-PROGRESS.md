@@ -1,6 +1,6 @@
 # ✅ التقدم الحالي | Progress
 
-> 📅 **آخر نشاط على المشروع:** 2026-05-10 — المرحلة 4.11 (اكتمال Step C — تعميم Standard Kit + Vendor محلي على 6 أدوات)
+> 📅 **آخر نشاط على المشروع:** 2026-05-10 — المرحلة 4.12 (إغلاق دورة Polish — hex إلى vars في inheritance/gpa + Standard Kit في docs/standards + Canvas brand colors في ai-readiness)
 > 🔍 **آخر فحص توافق شامل:** 2026-05-10
 > ⏰ **ملاحظة للوكيل:** قبل أي تطوير، اقرأ [Session Resume Protocol في CLAUDE.md](../CLAUDE.md). يجب التحقق من training cutoff الخاص بك مقابل تاريخ اليوم عند الفجوات > 30 يوماً.
 >
@@ -221,8 +221,19 @@
 - [x] **Standard Kit في main.css** يخدم الآن **7 أدوات** (zakat + الـ6 الجديدة) — single source of truth فعّالة
 
 **القادم بعد هذه المرحلة:**
+- المرحلة 4.12: تحسينات صغرى متبقية — hex في inheritance/gpa/ai-readiness ✅ (نُفِّذت)
 - المرحلة 5: قرارات تصميمية كبرى متبقية — family-tree i18n migration
-- المرحلة 6: تحسينات صغرى — hex في inheritance/gpa/ai-readiness
+
+### المرحلة 4.12: إغلاق دورة Polish ✅ (2026-05-10)
+
+أتمّت دورة الـ Polish لمرحلة 4.10-4.11. بعد إنجازها، صار المشروع نظيفاً تماماً من hex hardcoded في الأدوات (باستثناء family-tree والـ SVG timer/تدرّجات الصفحة في ai-readiness — مهام أخرى)، وأداة جديدة تُبنى على Standard Kit بسهولة عبر التوثيق.
+
+- [x] **inheritance-calculator** — `#ef4444` × 2 على `.inh-action-btn.danger:hover` → `var(--error)` (commit `4c65122`)
+- [x] **gpa-calculator** — 11 hex literal → CSS vars (9× error + 2× success) (commit `4c65122`)
+- [x] **docs/standards/mobile-design.md** — قسم 6.3 جديد يربط القواعد الإلزامية 1-5 بـ Standard Kit، يوضح أن استخدام الـ Kit يغطّيها تلقائياً عند 768px
+- [x] **docs/standards/tool-template.md** — خطوة 4a جديدة "اختر الأسلوب" قبل HTML template، مع skeleton جاهز للنسخ يستخدم `.calc-*` classes للأدوات الحاسبية، ومسار بديل (wrapper + prefix) للأدوات غير-الحاسبية. تنبيهات تسمية مضافة (`.calc-pane` لا `.calc-section`، `.calc-result` لا `.result-box`).
+- [x] **ai-readiness Canvas** — 28+ hex/rgba literal في `renderRadar()` انتقلت إلى `.ai-readiness --canvas-*` namespace + helper `getCanvasColors()` يقرأها مرة عند بداية الرسم. تصميم متعمَّد: Canvas يبقى داكناً عبر الثيمين (Light/Dark) لتناسق صورة المشاركة بصرياً (commit `80acf80`).
+- [x] **خارج النطاق المُتعمَّد:** تدرّجات CSS في `.air-report-summary.level-aware` (سطور 1019, 1026)، SVG timer ring color (`lerpColor` سطور 2441-2443)، family-tree i18n migration (مهمة كبرى منفصلة).
 
 ### المرحلة 5: تخطيط البناء العلمي
 

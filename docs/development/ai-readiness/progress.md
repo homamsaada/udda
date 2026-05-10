@@ -1,6 +1,6 @@
 # 📊 ai-readiness — Progress
 
-> 📅 **آخر نشاط على هذه الأداة:** 2026-05-09 (إنشاء workspace + temporal markers)
+> 📅 **آخر نشاط على هذه الأداة:** 2026-05-10 (Canvas brand colors → `--canvas-*` namespace + getCanvasColors() helper)
 > 🔍 **آخر فحص توافق:** 2026-05-09
 > 📜 **التاريخ التفصيلي:** `git log -- src/tools/ai-readiness.html src/assets/data/ai-readiness/`
 > 🔍 **فحوصات خاصة بهذه الأداة عند فجوة > 90 يوماً (⚠️ حساسة جداً للزمن):**
@@ -16,6 +16,7 @@
 
 ## ✅ منجَز (Done)
 
+- **Canvas Share Image — ألوان CSS مُحلَّيّة** (2026-05-10) — 28+ hex/rgba literal كانت متناثرة في `renderRadar()` انتقلت إلى `.ai-readiness --canvas-*` namespace، مع helper `getCanvasColors()` يقرأها مرة عند بداية الرسم. تصميم متعمَّد: الـ Canvas يبقى داكناً عبر الثيمين (Light/Dark) لتناسق صورة المشاركة بصرياً.
 - **بنية الاختبار الكاملة** — 5 مدد (5/10/15/20/30 دقيقة)
 - **6 أنواع أسئلة** — mcq, true_false, fill_blank, matching, sorting, self_assessment
 - **41 تخصصاً** عبر 7 فئات (~100 سؤال لكل تخصص)
