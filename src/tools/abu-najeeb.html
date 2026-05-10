@@ -58,9 +58,9 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 10px;
+  padding: 6px 12px;
   background: var(--bg-primary);
-  border: 1px solid var(--card-border-color, rgba(0,0,0,0.1));
+  border: 1px solid var(--card-border-color, rgba(99, 102, 241, 0.2));
   border-radius: 20px;
   font-size: 0.9rem;
   color: var(--text-primary);
@@ -73,7 +73,13 @@
   background: var(--bg-secondary);
 }
 
-.abu-najeeb .an-person-chip .an-companions-badge {
+.abu-najeeb .an-person-chip.editing {
+  border-color: var(--accent-primary);
+  background: rgba(99, 102, 241, 0.08);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.abu-najeeb .an-companions-badge {
   background: var(--accent-primary);
   color: white;
   font-size: 0.7rem;
@@ -120,7 +126,10 @@
 
 .abu-najeeb .an-btn:hover {
   background: var(--accent-secondary);
+  transform: translateY(-1px);
 }
+
+.abu-najeeb .an-btn:active { transform: translateY(0); }
 
 .abu-najeeb .an-btn.an-btn-secondary {
   background: var(--bg-primary);
@@ -137,7 +146,81 @@
 }
 
 .abu-najeeb .an-btn.an-btn-danger:hover {
-  background: var(--error-dark, var(--error));
+  background: var(--error);
+  filter: brightness(0.9);
+}
+
+/* ============ Person Edit Panel (inline) ============ */
+.abu-najeeb .an-edit-panel {
+  margin-top: 14px;
+  padding: 14px;
+  background: var(--bg-primary);
+  border: 1px solid var(--accent-primary);
+  border-radius: 12px;
+  display: none;
+}
+
+.abu-najeeb .an-edit-panel.show {
+  display: block;
+  animation: anFade 0.2s ease;
+}
+
+@keyframes anFade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.abu-najeeb .an-edit-panel-title {
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.abu-najeeb .an-edit-fields {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.abu-najeeb .an-edit-fields input,
+.abu-najeeb .an-edit-fields select {
+  padding: 8px 10px;
+  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.abu-najeeb .an-share-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.abu-najeeb .an-share-pill {
+  padding: 6px 12px;
+  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
+  border-radius: 16px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.abu-najeeb .an-share-pill.active {
+  background: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+}
+
+.abu-najeeb .an-edit-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 /* ============ Tab Intro Text ============ */
@@ -159,9 +242,15 @@
 
 .abu-najeeb .an-currency-row input {
   max-width: 200px;
+  padding: 8px 12px;
+  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.95rem;
 }
 
-/* ============ Tab placeholder (until implementation) ============ */
+/* ============ Placeholder (tabs not yet implemented) ============ */
 .abu-najeeb .an-placeholder {
   text-align: center;
   padding: 40px 20px;
@@ -170,6 +259,147 @@
   background: var(--bg-secondary);
   border-radius: 12px;
   border: 1px dashed var(--card-border-color, rgba(0,0,0,0.15));
+}
+
+/* ============ Need People Warning ============ */
+.abu-najeeb .an-need-people {
+  padding: 16px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 10px;
+  color: var(--text-primary);
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+/* ============ Result Display ============ */
+.abu-najeeb .an-result-section {
+  margin-top: 20px;
+}
+
+.abu-najeeb .an-result-section h4 {
+  margin: 16px 0 10px;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.abu-najeeb .an-shares-list {
+  display: grid;
+  gap: 8px;
+}
+
+.abu-najeeb .an-share-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  background: var(--bg-secondary);
+  border: var(--card-border);
+  border-radius: 10px;
+}
+
+.abu-najeeb .an-share-card .an-share-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.abu-najeeb .an-share-card .an-share-weight {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-inline-start: 6px;
+}
+
+.abu-najeeb .an-share-card .an-share-value {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent-primary);
+}
+
+/* ============ Percentage rows ============ */
+.abu-najeeb .an-percent-rows {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.abu-najeeb .an-percent-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+}
+
+.abu-najeeb .an-percent-row .an-pr-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.abu-najeeb .an-percent-row input {
+  width: 90px;
+  padding: 8px 10px;
+  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  text-align: center;
+  font-size: 1rem;
+}
+
+.abu-najeeb .an-percent-sum {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.abu-najeeb .an-percent-sum.ok {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--success);
+}
+
+.abu-najeeb .an-percent-sum.warn {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+}
+
+.abu-najeeb .an-mode-pills {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.abu-najeeb .an-mode-pill {
+  flex: 1;
+  padding: 8px 14px;
+  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+
+.abu-najeeb .an-mode-pill.active {
+  background: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+}
+
+/* ============ Action Bar (under result) ============ */
+.abu-najeeb .an-action-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
 }
 
 /* ============ Mobile (768px) ============ */
@@ -185,8 +415,14 @@
     min-width: 0;
     width: 100%;
   }
-  .abu-najeeb .an-btn {
+  .abu-najeeb .an-add-person-form .an-btn {
     width: 100%;
+  }
+  .abu-najeeb .an-edit-fields {
+    grid-template-columns: 1fr;
+  }
+  .abu-najeeb .an-percent-row {
+    grid-template-columns: 1fr auto;
   }
 }
 </style>
@@ -216,20 +452,83 @@
       <input id="an-new-person-name" type="text" placeholder="{{tool.personNamePlaceholder}}" maxlength="40">
       <button class="an-btn" onclick="anAddPerson()">+ {{tool.addPerson}}</button>
     </div>
+
+    <!-- Edit Panel (shown when editingPersonId is set) -->
+    <div class="an-edit-panel" id="an-edit-panel">
+      <div class="an-edit-panel-title" id="an-edit-panel-title">—</div>
+      <div class="an-edit-fields">
+        <input id="an-edit-name" type="text" placeholder="{{tool.personNamePlaceholder}}" maxlength="40">
+        <input id="an-edit-companions" type="number" min="0" max="20" placeholder="{{tool.companionsCountLabel}}">
+      </div>
+      <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 6px;">{{tool.companionShareLabel}}:</div>
+      <div class="an-share-options" id="an-share-options">
+        <span class="an-share-pill" data-share="full" onclick="anSetEditShare('full')">{{tool.companionShareFull}}</span>
+        <span class="an-share-pill" data-share="half" onclick="anSetEditShare('half')">{{tool.companionShareHalf}}</span>
+        <span class="an-share-pill" data-share="quarter" onclick="anSetEditShare('quarter')">{{tool.companionShareQuarter}}</span>
+      </div>
+      <div class="an-edit-actions">
+        <button class="an-btn" onclick="anSaveEdit()">{{tool.personEdit}}</button>
+        <button class="an-btn an-btn-secondary" onclick="anCancelEdit()">{{ui.clear}}</button>
+        <button class="an-btn an-btn-danger" onclick="anDeleteEditing()">{{tool.personRemove}}</button>
+      </div>
+    </div>
   </div>
 
   <!-- Currency (shared, optional) -->
   <div class="an-currency-row">
     <div class="calc-form-group">
       <label for="an-currency">{{tool.currencyLabel}}</label>
-      <input id="an-currency" type="text" placeholder="{{tool.currencyPlaceholder}}" maxlength="8">
+      <input id="an-currency" type="text" placeholder="{{tool.currencyPlaceholder}}" maxlength="8" oninput="anOnCurrencyChange()">
     </div>
   </div>
 
   <!-- ============ TAB 1: Equal Split ============ -->
   <div class="calc-pane active" id="an-pane-equal">
     <div class="an-tab-intro">{{tool.equalIntro}}</div>
-    <div class="an-placeholder">{{tool.equalIntro}}</div>
+
+    <div class="an-need-people" id="an-equal-need-people" style="display:none;">{{tool.errMinPeople}}</div>
+
+    <div class="calc-form">
+      <div class="calc-form-row">
+        <div class="calc-form-group">
+          <label for="an-equal-amount">{{tool.totalAmountLabel}}</label>
+          <input id="an-equal-amount" type="number" min="0" step="1" placeholder="0" oninput="anOnEqualInput()">
+        </div>
+        <div class="calc-form-group">
+          <label for="an-equal-tax">{{tool.taxLabel}}</label>
+          <input id="an-equal-tax" type="number" min="0" step="0.1" placeholder="0" oninput="anOnEqualInput()">
+        </div>
+      </div>
+      <div class="calc-form-row">
+        <div class="calc-form-group">
+          <label for="an-equal-tip">{{tool.tipLabel}}</label>
+          <input id="an-equal-tip" type="number" min="0" step="0.1" placeholder="0" oninput="anOnEqualInput()">
+        </div>
+        <div class="calc-form-group"></div>
+      </div>
+    </div>
+
+    <div class="calc-result" id="an-equal-result">
+      <div class="calc-stats-grid">
+        <div class="calc-stat-card highlight">
+          <div class="value" id="an-equal-final">—</div>
+          <div class="label">{{tool.finalAmountLabel}}</div>
+        </div>
+        <div class="calc-stat-card">
+          <div class="value" id="an-equal-per">—</div>
+          <div class="label">{{tool.perPersonLabel}}</div>
+        </div>
+        <div class="calc-stat-card">
+          <div class="value" id="an-equal-people">—</div>
+          <div class="label">{{tool.peopleCountLabel}}</div>
+        </div>
+      </div>
+
+      <div class="an-result-section">
+        <h4>{{tool.resultsTitle}}</h4>
+        <div class="an-shares-list" id="an-equal-shares"></div>
+      </div>
+    </div>
   </div>
 
   <!-- ============ TAB 2: Consumption ============ -->
@@ -247,7 +546,34 @@
   <!-- ============ TAB 4: Percentage ============ -->
   <div class="calc-pane" id="an-pane-percent">
     <div class="an-tab-intro">{{tool.percentIntro}}</div>
-    <div class="an-placeholder">{{tool.percentIntro}}</div>
+
+    <div class="an-need-people" id="an-percent-need-people" style="display:none;">{{tool.errMinPeople}}</div>
+
+    <div class="calc-form">
+      <div class="calc-form-row">
+        <div class="calc-form-group">
+          <label for="an-percent-amount">{{tool.totalAmountLabel}}</label>
+          <input id="an-percent-amount" type="number" min="0" step="1" placeholder="0" oninput="anOnPercentInput()">
+        </div>
+        <div class="calc-form-group">
+          <label>{{tool.percentModeLabel}}</label>
+          <div class="an-mode-pills" id="an-percent-mode-pills">
+            <span class="an-mode-pill active" data-mode="percent" onclick="anSetPercentMode('percent')">{{tool.percentModePercent}}</span>
+            <span class="an-mode-pill" data-mode="units" onclick="anSetPercentMode('units')">{{tool.percentModeUnits}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="an-percent-rows" id="an-percent-rows"></div>
+    <div class="an-percent-sum" id="an-percent-sum" style="display:none;"></div>
+
+    <div class="calc-result" id="an-percent-result">
+      <div class="an-result-section">
+        <h4>{{tool.resultsTitle}}</h4>
+        <div class="an-shares-list" id="an-percent-shares"></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -265,17 +591,77 @@
   var isArabic = lang === 'ar';
 
   function $(id) { return document.getElementById(id); }
+  function getNum(id) { var v = parseFloat($(id).value); return isNaN(v) ? 0 : v; }
+
+  // i18n strings used at runtime
+  var T = {
+    errMinPeople: isArabic ? 'أضف شخصين على الأقل' : 'Add at least two people',
+    errMaxPeople: isArabic ? 'الحدّ الأقصى 50 شخصاً' : 'Maximum 50 people',
+    errEmptyName: isArabic ? 'أدخل اسماً' : 'Enter a name',
+    personHasExpense: isArabic ? 'لا يمكن حذف هذا الشخص — هو دافع لمصروف. غيِّر الدافع أولاً.' : 'Cannot remove — this person paid for an expense. Change the payer first.',
+    removeConfirm: isArabic ? 'حذف هذا الشخص؟' : 'Remove this person?',
+    editingTitle: isArabic ? 'تعديل: ' : 'Editing: ',
+    weightShare: isArabic ? 'نصيب' : 'share',
+    percentSumOk: isArabic ? '✅ المجموع 100%' : '✅ Total is 100%',
+    percentSumWarn: isArabic ? '⚠️ المجموع' : '⚠️ Total is',
+    percentSumOffBy: isArabic ? 'الفرق' : 'off by'
+  };
 
   // ============ State ============
   var state = {
     activeTab: 'equal',
     currency: '',
+    editingPersonId: null,
+    editBuffer: null,
     people: [],
     equal: { amount: 0, tax: 0, tip: 0 },
     consumption: { items: [], tax: 0, tip: 0 },
     settlement: { expenses: [] },
     percent: { amount: 0, mode: 'percent', rows: [] }
   };
+
+  // ============ Helpers ============
+  function uid(prefix) {
+    return (prefix || 'id') + '_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+  }
+
+  function getWeight(p) {
+    if (!p) return 1;
+    var mult = ({ full: 1, half: 0.5, quarter: 0.25 })[p.companionShare] || 1;
+    return 1 + (p.companions || 0) * mult;
+  }
+
+  function computeShares(amount, includedIds) {
+    if (!Array.isArray(includedIds) || includedIds.length === 0) return [];
+    var weights = includedIds.map(function(id) {
+      var p = state.people.find(function(x) { return x.id === id; });
+      return { id: id, w: getWeight(p) };
+    });
+    var total = weights.reduce(function(s, x) { return s + x.w; }, 0);
+    if (total === 0) return [];
+
+    var shares = weights.map(function(x) {
+      return { personId: x.id, share: Math.round(amount * x.w / total), weight: x.w };
+    });
+
+    // Rounding-fix: distribute leftover to last share
+    var sumShares = shares.reduce(function(s, x) { return s + x.share; }, 0);
+    var diff = Math.round(amount) - sumShares;
+    if (diff !== 0 && shares.length > 0) shares[shares.length - 1].share += diff;
+    return shares;
+  }
+
+  function fmt(n) {
+    var v = Math.round(n);
+    var s = (typeof App !== 'undefined' && App.formatNumber) ? App.formatNumber(v) : String(v);
+    if (state.currency) s += ' ' + state.currency;
+    return s;
+  }
+
+  function getPersonName(id) {
+    var p = state.people.find(function(x) { return x.id === id; });
+    return p ? p.name : '?';
+  }
 
   // ============ Tab Switching ============
   window.anSwitchTab = function(tab) {
@@ -285,21 +671,406 @@
     tabs.forEach(function(t) { t.classList.remove('active'); });
     panes.forEach(function(p) { p.classList.remove('active'); });
 
-    // Find tab button by its onclick attribute matching this tab
-    var btnIdx = ['equal', 'consumption', 'settlement', 'percent'].indexOf(tab);
-    if (btnIdx >= 0 && tabs[btnIdx]) tabs[btnIdx].classList.add('active');
+    var order = ['equal', 'consumption', 'settlement', 'percent'];
+    var idx = order.indexOf(tab);
+    if (idx >= 0 && tabs[idx]) tabs[idx].classList.add('active');
     var pane = $('an-pane-' + tab);
     if (pane) pane.classList.add('active');
+
+    renderActiveTab();
   };
 
-  // ============ People Management (stubs — full impl in next commit) ============
+  // ============ People CRUD ============
   window.anAddPerson = function() {
-    // Implemented in next commit
+    var inp = $('an-new-person-name');
+    var name = (inp.value || '').trim();
+    if (!name) { inp.focus(); return; }
+    if (state.people.length >= 50) { alert(T.errMaxPeople); return; }
+
+    state.people.push({
+      id: uid('p'),
+      name: name,
+      companions: 0,
+      companionShare: 'full'
+    });
+    inp.value = '';
+    inp.focus();
+    renderAll();
   };
+
+  window.anEditPerson = function(id) {
+    var p = state.people.find(function(x) { return x.id === id; });
+    if (!p) return;
+    state.editingPersonId = id;
+    state.editBuffer = { name: p.name, companions: p.companions, companionShare: p.companionShare };
+
+    $('an-edit-panel-title').textContent = T.editingTitle + p.name;
+    $('an-edit-name').value = p.name;
+    $('an-edit-companions').value = p.companions;
+    renderShareOptions();
+    $('an-edit-panel').classList.add('show');
+    renderPeopleList();
+  };
+
+  window.anSetEditShare = function(share) {
+    if (!state.editBuffer) return;
+    state.editBuffer.companionShare = share;
+    renderShareOptions();
+  };
+
+  window.anSaveEdit = function() {
+    if (!state.editingPersonId || !state.editBuffer) return;
+    var p = state.people.find(function(x) { return x.id === state.editingPersonId; });
+    if (!p) return;
+
+    var nameInput = $('an-edit-name').value.trim();
+    if (!nameInput) { alert(T.errEmptyName); return; }
+
+    var cmp = parseInt($('an-edit-companions').value, 10);
+    if (isNaN(cmp) || cmp < 0) cmp = 0;
+    if (cmp > 20) cmp = 20;
+
+    p.name = nameInput;
+    p.companions = cmp;
+    p.companionShare = state.editBuffer.companionShare || 'full';
+
+    anCancelEdit();
+    renderAll();
+  };
+
+  window.anCancelEdit = function() {
+    state.editingPersonId = null;
+    state.editBuffer = null;
+    $('an-edit-panel').classList.remove('show');
+    renderPeopleList();
+  };
+
+  window.anDeleteEditing = function() {
+    if (!state.editingPersonId) return;
+    var id = state.editingPersonId;
+
+    var isPayer = state.settlement.expenses.some(function(e) { return e.paidBy === id; });
+    if (isPayer) { alert(T.personHasExpense); return; }
+
+    if (!confirm(T.removeConfirm)) return;
+
+    // cascade
+    state.consumption.items.forEach(function(it) {
+      if (Array.isArray(it.sharedWith)) {
+        it.sharedWith = it.sharedWith.filter(function(pid) { return pid !== id; });
+      }
+    });
+    state.settlement.expenses.forEach(function(ex) {
+      if (Array.isArray(ex.sharedWith)) {
+        ex.sharedWith = ex.sharedWith.filter(function(pid) { return pid !== id; });
+      }
+    });
+    state.percent.rows = state.percent.rows.filter(function(r) { return r.personId !== id; });
+
+    state.people = state.people.filter(function(x) { return x.id !== id; });
+    anCancelEdit();
+    renderAll();
+  };
+
+  // ============ Renderers ============
+  function renderPeopleList() {
+    var listEl = $('an-people-list');
+    var countEl = $('an-people-count');
+    countEl.textContent = state.people.length;
+
+    if (state.people.length === 0) {
+      listEl.innerHTML = '<span class="an-person-empty">' +
+        (isArabic ? 'لا يوجد أشخاص بعد' : 'No people yet') +
+        '</span>';
+      return;
+    }
+
+    listEl.innerHTML = '';
+    state.people.forEach(function(p) {
+      var chip = document.createElement('span');
+      chip.className = 'an-person-chip' + (state.editingPersonId === p.id ? ' editing' : '');
+      chip.onclick = function() { anEditPerson(p.id); };
+
+      var nameSpan = document.createElement('span');
+      nameSpan.textContent = p.name;
+      chip.appendChild(nameSpan);
+
+      if (p.companions > 0) {
+        var badge = document.createElement('span');
+        badge.className = 'an-companions-badge';
+        var mult = { full: '1', half: '½', quarter: '¼' }[p.companionShare] || '1';
+        badge.textContent = '+' + p.companions + '×' + mult;
+        chip.appendChild(badge);
+      }
+      listEl.appendChild(chip);
+    });
+  }
+
+  function renderShareOptions() {
+    if (!state.editBuffer) return;
+    var pills = document.querySelectorAll('.abu-najeeb .an-share-pill');
+    pills.forEach(function(pill) {
+      var s = pill.getAttribute('data-share');
+      if (s === state.editBuffer.companionShare) pill.classList.add('active');
+      else pill.classList.remove('active');
+    });
+  }
+
+  function renderActiveTab() {
+    if (state.activeTab === 'equal') renderEqual();
+    else if (state.activeTab === 'percent') renderPercent();
+  }
+
+  function renderAll() {
+    renderPeopleList();
+    renderActiveTab();
+  }
+
+  // ============ Currency ============
+  window.anOnCurrencyChange = function() {
+    state.currency = ($('an-currency').value || '').trim();
+    renderActiveTab();
+  };
+
+  // ============ Equal Tab ============
+  window.anOnEqualInput = function() {
+    state.equal.amount = getNum('an-equal-amount');
+    state.equal.tax = getNum('an-equal-tax');
+    state.equal.tip = getNum('an-equal-tip');
+    renderEqual();
+  };
+
+  function renderEqual() {
+    var need = $('an-equal-need-people');
+    var result = $('an-equal-result');
+
+    if (state.people.length < 2) {
+      need.style.display = 'block';
+      result.classList.remove('show');
+      return;
+    }
+    need.style.display = 'none';
+
+    var amount = state.equal.amount;
+    if (amount <= 0) {
+      result.classList.remove('show');
+      return;
+    }
+
+    var finalAmount = Math.round(amount * (1 + state.equal.tax / 100 + state.equal.tip / 100));
+    var ids = state.people.map(function(p) { return p.id; });
+    var shares = computeShares(finalAmount, ids);
+
+    $('an-equal-final').textContent = fmt(finalAmount);
+    $('an-equal-people').textContent = state.people.length;
+
+    var totalWeight = state.people.reduce(function(s, p) { return s + getWeight(p); }, 0);
+    var perOne = Math.round(finalAmount / totalWeight);
+    $('an-equal-per').textContent = fmt(perOne);
+
+    var sharesEl = $('an-equal-shares');
+    sharesEl.innerHTML = '';
+    shares.forEach(function(s) {
+      var p = state.people.find(function(x) { return x.id === s.personId; });
+      var card = document.createElement('div');
+      card.className = 'an-share-card';
+
+      var nameWrap = document.createElement('div');
+      var name = document.createElement('span');
+      name.className = 'an-share-name';
+      name.textContent = p ? p.name : '?';
+      nameWrap.appendChild(name);
+
+      var w = s.weight;
+      if (w !== 1) {
+        var weightSpan = document.createElement('span');
+        weightSpan.className = 'an-share-weight';
+        weightSpan.textContent = '(' + w + '× ' + T.weightShare + ')';
+        nameWrap.appendChild(weightSpan);
+      }
+
+      var value = document.createElement('span');
+      value.className = 'an-share-value';
+      value.textContent = fmt(s.share);
+
+      card.appendChild(nameWrap);
+      card.appendChild(value);
+      sharesEl.appendChild(card);
+    });
+
+    result.classList.add('show');
+  }
+
+  // ============ Percentage Tab ============
+  window.anOnPercentInput = function() {
+    state.percent.amount = getNum('an-percent-amount');
+    renderPercent();
+  };
+
+  window.anSetPercentMode = function(mode) {
+    state.percent.mode = mode;
+    var pills = document.querySelectorAll('.abu-najeeb .an-mode-pill');
+    pills.forEach(function(pill) {
+      var m = pill.getAttribute('data-mode');
+      if (m === mode) pill.classList.add('active');
+      else pill.classList.remove('active');
+    });
+    renderPercent();
+  };
+
+  function ensurePercentRows() {
+    // Ensure one row per person (preserve existing values, add missing, remove gone)
+    var existingIds = state.percent.rows.map(function(r) { return r.personId; });
+    var currentIds = state.people.map(function(p) { return p.id; });
+
+    state.percent.rows = state.percent.rows.filter(function(r) {
+      return currentIds.indexOf(r.personId) !== -1;
+    });
+    state.people.forEach(function(p) {
+      if (existingIds.indexOf(p.id) === -1) {
+        state.percent.rows.push({ personId: p.id, value: 0 });
+      }
+    });
+  }
+
+  function renderPercent() {
+    var need = $('an-percent-need-people');
+    var result = $('an-percent-result');
+    var sumEl = $('an-percent-sum');
+    var rowsEl = $('an-percent-rows');
+
+    if (state.people.length < 2) {
+      need.style.display = 'block';
+      result.classList.remove('show');
+      sumEl.style.display = 'none';
+      rowsEl.innerHTML = '';
+      return;
+    }
+    need.style.display = 'none';
+    ensurePercentRows();
+
+    rowsEl.innerHTML = '';
+    state.percent.rows.forEach(function(r) {
+      var p = state.people.find(function(x) { return x.id === r.personId; });
+      if (!p) return;
+
+      var row = document.createElement('div');
+      row.className = 'an-percent-row';
+
+      var name = document.createElement('span');
+      name.className = 'an-pr-name';
+      name.textContent = p.name;
+
+      var input = document.createElement('input');
+      input.type = 'number';
+      input.min = '0';
+      input.step = state.percent.mode === 'percent' ? '0.1' : '1';
+      input.value = r.value;
+      input.oninput = function() {
+        r.value = parseFloat(input.value) || 0;
+        renderPercent();
+      };
+
+      row.appendChild(name);
+      row.appendChild(input);
+      rowsEl.appendChild(row);
+    });
+
+    // Compute sum/total and show warning
+    var totalUnits = state.percent.rows.reduce(function(s, r) { return s + r.value; }, 0);
+    var amount = state.percent.amount;
+
+    if (state.percent.mode === 'percent') {
+      sumEl.style.display = 'block';
+      if (Math.abs(totalUnits - 100) < 0.01) {
+        sumEl.className = 'an-percent-sum ok';
+        sumEl.textContent = T.percentSumOk;
+      } else {
+        sumEl.className = 'an-percent-sum warn';
+        var diff = (totalUnits - 100).toFixed(1);
+        sumEl.textContent = T.percentSumWarn + ' ' + totalUnits.toFixed(1) + '% (' + T.percentSumOffBy + ' ' + diff + '%)';
+      }
+    } else {
+      sumEl.style.display = 'none';
+    }
+
+    if (amount <= 0 || totalUnits <= 0) {
+      result.classList.remove('show');
+      return;
+    }
+
+    // Compute shares
+    var sharesEl = $('an-percent-shares');
+    sharesEl.innerHTML = '';
+    var totalShares = 0;
+    state.percent.rows.forEach(function(r, i) {
+      var p = state.people.find(function(x) { return x.id === r.personId; });
+      if (!p) return;
+
+      var share;
+      if (state.percent.mode === 'percent') {
+        share = Math.round(amount * r.value / 100);
+      } else {
+        share = totalUnits > 0 ? Math.round(amount * r.value / totalUnits) : 0;
+      }
+      totalShares += share;
+
+      // Last-share rounding correction for units mode (and percent if it's perfectly 100)
+      if (i === state.percent.rows.length - 1) {
+        var expected = state.percent.mode === 'percent'
+          ? Math.round(amount * totalUnits / 100)
+          : amount;
+        if (Math.abs(totalUnits - 100) < 0.01 || state.percent.mode === 'units') {
+          var fix = expected - totalShares;
+          if (fix !== 0) share += fix;
+        }
+      }
+
+      var card = document.createElement('div');
+      card.className = 'an-share-card';
+      var nameWrap = document.createElement('div');
+      var name = document.createElement('span');
+      name.className = 'an-share-name';
+      name.textContent = p.name;
+      nameWrap.appendChild(name);
+
+      if (state.percent.mode === 'percent') {
+        var pct = document.createElement('span');
+        pct.className = 'an-share-weight';
+        pct.textContent = '(' + r.value + '%)';
+        nameWrap.appendChild(pct);
+      } else {
+        var u = document.createElement('span');
+        u.className = 'an-share-weight';
+        u.textContent = '(' + r.value + (isArabic ? ' وحدة' : ' units') + ')';
+        nameWrap.appendChild(u);
+      }
+
+      var value = document.createElement('span');
+      value.className = 'an-share-value';
+      value.textContent = fmt(share);
+      card.appendChild(nameWrap);
+      card.appendChild(value);
+      sharesEl.appendChild(card);
+    });
+
+    result.classList.add('show');
+  }
 
   // ============ Init ============
   document.addEventListener('DOMContentLoaded', function() {
-    // Initialization happens in the next commit
+    renderAll();
+
+    // Enter key on add-person input
+    var inp = $('an-new-person-name');
+    if (inp) {
+      inp.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') { e.preventDefault(); anAddPerson(); }
+      });
+    }
   });
+
+  // Expose state for debugging (dev convenience)
+  window.__abuNajeeb = { state: state };
 })();
 </script>
