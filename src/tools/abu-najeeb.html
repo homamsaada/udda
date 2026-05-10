@@ -473,12 +473,27 @@
   border-color: var(--success);
 }
 
+/* ============ Settlement Settings (above expenses) ============ */
+.abu-najeeb .an-settlement-settings {
+  background: var(--bg-secondary);
+  border: var(--card-border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+
+.abu-najeeb .an-settlement-settings-hint {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
 /* ============ Settlement Controls ============ */
 .abu-najeeb .an-settlement-controls {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  margin: 14px 0;
 }
 
 .abu-najeeb .an-settlement-controls .calc-form-group label {
@@ -710,7 +725,7 @@
       </div>
       <div class="an-edit-actions">
         <button class="an-btn" onclick="anSaveEdit()">{{tool.personEdit}}</button>
-        <button class="an-btn an-btn-secondary" onclick="anCancelEdit()">{{ui.clear}}</button>
+        <button class="an-btn an-btn-secondary" onclick="anCancelEdit()">{{tool.cancelBtn}}</button>
         <button class="an-btn an-btn-danger" onclick="anDeleteEditing()">{{tool.personRemove}}</button>
       </div>
     </div>
@@ -742,6 +757,24 @@
 
   <!-- Need People Warning -->
   <div class="an-need-people" id="an-need-people" style="display:none;">{{tool.errMinPeople}}</div>
+
+  <!-- Settlement Settings (visible when people >= 2, before expenses) -->
+  <div class="an-settlement-settings" id="an-settlement-settings" style="display:none;">
+    <div class="an-settlement-settings-hint">💡 {{tool.treasurerHint}}</div>
+    <div class="an-settlement-controls">
+      <div class="calc-form-group">
+        <label for="an-treasurer">⭐ {{tool.treasurerLabel}}</label>
+        <select id="an-treasurer" class="an-treasurer-select" onchange="anOnTreasurerChange()"></select>
+      </div>
+      <div class="calc-form-group">
+        <label>{{tool.settlementModeLabel}}</label>
+        <div class="an-mode-pills">
+          <span class="an-mode-pill active" data-mode="treasurer" onclick="anSetSettlementMode('treasurer')">{{tool.modeTreasurer}}</span>
+          <span class="an-mode-pill" data-mode="greedy" onclick="anSetSettlementMode('greedy')">{{tool.modeGreedy}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Expenses Section -->
   <h3 class="an-section-title" id="an-expenses-section-title"><span>🧾</span> {{tool.expensesTitle}}</h3>
@@ -775,21 +808,6 @@
       <div class="calc-stat-card">
         <div class="value" id="an-people-stat">—</div>
         <div class="label">{{tool.peopleCountLabel}}</div>
-      </div>
-    </div>
-
-    <!-- Settlement controls: treasurer select + mode toggle -->
-    <div class="an-settlement-controls">
-      <div class="calc-form-group">
-        <label for="an-treasurer">⭐ {{tool.treasurerLabel}}</label>
-        <select id="an-treasurer" class="an-treasurer-select" onchange="anOnTreasurerChange()"></select>
-      </div>
-      <div class="calc-form-group">
-        <label>{{tool.settlementModeLabel}}</label>
-        <div class="an-mode-pills">
-          <span class="an-mode-pill active" data-mode="treasurer" onclick="anSetSettlementMode('treasurer')">{{tool.modeTreasurer}}</span>
-          <span class="an-mode-pill" data-mode="greedy" onclick="anSetSettlementMode('greedy')">{{tool.modeGreedy}}</span>
-        </div>
       </div>
     </div>
 
@@ -1351,16 +1369,19 @@
     var result = $('an-result');
     var needEl = $('an-need-people');
     var addCard = $('an-add-card');
+    var settings = $('an-settlement-settings');
 
     var ready = state.people.length >= 2;
     if (!ready) {
       needEl.style.display = 'block';
       addCard.style.display = 'none';
+      if (settings) settings.style.display = 'none';
       result.classList.remove('show');
       return;
     }
     needEl.style.display = 'none';
     addCard.style.display = 'block';
+    if (settings) settings.style.display = 'block';
 
     renderPaidBySelect();
     renderSharePills();
