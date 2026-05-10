@@ -9,11 +9,12 @@
 1. تخطيط (قبل أي كود)
 2. إضافة ترجمات (`i18n.json`)
 3. تسجيل الأداة (`tools.json`)
-4. كتابة قالب HTML (`src/tools/{id}.html`)
-5. (اختياري) إخلاء مسؤولية لو إسلامي/مالي/طبي
-6. بناء + اختبار محلي
-7. اختبار ثنائي اللغة + الموبايل
-8. تحديث `04-PROGRESS.md`
+4. **اختيار الأسلوب** (Standard Calc Kit ↔ wrapper مخصّص) — *جديد*
+5. كتابة قالب HTML (`src/tools/{id}.html`)
+6. (اختياري) إخلاء مسؤولية لو إسلامي/مالي/طبي
+7. بناء + اختبار محلي
+8. اختبار ثنائي اللغة + الموبايل
+9. تحديث `04-PROGRESS.md`
 
 ---
 
@@ -96,6 +97,84 @@
 | `new` | اختياري | `true` لإضافة شارة "جديد" |
 | `related` | ✅ | 3-5 IDs لأدوات ذات صلة |
 | `subcategory` | اختياري | `"other"` للأدوات الفرعية في صفحة التصنيف |
+
+---
+
+## الخطوة 4a: اختر الأسلوب قبل كتابة CSS
+
+قبل كتابة قالب HTML، اختر بين خيارين:
+
+### الخيار 1 (الافتراضي للحاسبات): Standard Calc Kit ⚡
+
+إذا كانت أداتك تتضمن: tabs / form rows / stats grid / نتيجة محسوبة —
+**استهلك `.calc-*` classes من `main.css`** وستحصل على mobile + animation مجاناً.
+
+**Skeleton جاهز للنسخ:**
+
+```html
+<div class="my-tool tool-card">
+  <div class="tool-header">
+    <div class="tool-icon">🧮</div>
+    <div>
+      <h1 class="tool-title">{{tool.name}}</h1>
+      <p class="tool-description">{{tool.description}}</p>
+    </div>
+  </div>
+
+  <!-- Tabs (اختياري) -->
+  <div class="calc-tabs">
+    <button class="calc-tab active" onclick="window.switchTab('a')">{{tool.tabA}}</button>
+    <button class="calc-tab" onclick="window.switchTab('b')">{{tool.tabB}}</button>
+  </div>
+
+  <div class="calc-pane active" id="pane-a">
+    <!-- Form -->
+    <div class="calc-form">
+      <div class="calc-form-row">
+        <div class="calc-form-group">
+          <label for="x">{{tool.x}}</label>
+          <input id="x" type="number" oninput="window.myToolCalc()">
+        </div>
+        <div class="calc-form-group">
+          <label for="y">{{tool.y}}</label>
+          <input id="y" type="number" oninput="window.myToolCalc()">
+        </div>
+      </div>
+    </div>
+
+    <!-- Result (مخفي افتراضياً، يظهر بـ .show) -->
+    <div class="calc-result" id="result-section">
+      <div class="calc-stats-grid">
+        <div class="calc-stat-card highlight">
+          <div class="value" id="result-value">—</div>
+          <div class="label">{{ui.result}}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Disclaimer (للأدوات الفقهية/المالية/الطبية) -->
+    <div class="calc-disclaimer">
+      <h4>⚠️ {{tool.disclaimerTitle}}</h4>
+      <div class="calc-disclaimer-item"><span>📌</span> {{tool.disclaimer1}}</div>
+    </div>
+  </div>
+</div>
+```
+
+**ما تحصل عليه مجاناً (لا CSS إضافي):**
+- ✅ 768px breakpoint مدمج (button shrink، form 1-col، stats 2-col)
+- ✅ Tabs flex-wrap (لا `overflow-x: auto`)
+- ✅ Form 1-col على الموبايل (grid auto-fit)
+- ✅ Button shrinking (0.75rem @ 768px)
+- ✅ Fade-in animation للنتيجة (`.calc-result.show` مع `@keyframes calcFadeIn`)
+
+**يستهلكها حالياً:** zakat, kaffara, body, age, percentage, loan, interest. راجع [`mobile-design.md` §6.3](mobile-design.md) لخريطة القواعد.
+
+⚠️ **تنبيه التسمية:** الـ Kit يستخدم `.calc-pane` (لا `.calc-section`، التي نمط مختلف في `main.css`) و `.calc-result` (لا `.result-box` لذلك السبب). راجع `CLAUDE.md` "Standard Calc Kit (in main.css)".
+
+### الخيار 2 (للأدوات غير-الحاسبية): wrapper class + prefix
+
+إذا لم تكن أداتك حاسبة بنمط tabs/form/stats (مثل family-tree أو ai-readiness أو حالة gpa-calculator التي تحتوي جداول معقدة) — استخدم wrapper class + prefix scoping بدون kit، وطبّق القواعد اليدوية من [`mobile-design.md`](mobile-design.md) (1-9). القالب أدناه (الخطوة 4) مكتوب لهذا الخيار.
 
 ---
 
@@ -283,7 +362,9 @@ npm run serve
 
 ## مكونات جاهزة للاستخدام
 
-### Result Box (نتيجة بارزة)
+> 💡 **الكلاسات `.calc-*` التالية جزء من Standard Calc Kit** — استخدمها كما هي في الأدوات الحاسبية. للتفاصيل الكاملة راجع `CLAUDE.md` و [`mobile-design.md` §6.3](mobile-design.md).
+
+### Result Box (نتيجة بارزة) — للأدوات غير-Kit
 ```html
 <div class="result-box">
   <span class="result-label">{{ui.result}}</span>
@@ -291,15 +372,17 @@ npm run serve
 </div>
 ```
 
-### Tabs (تبويبات)
+### Tabs (تبويبات) — Standard Kit
 ```html
 <div class="calc-tabs">
-  <button class="calc-tab active" onclick="switchTab('tab1')">{{tool.tab1}}</button>
-  <button class="calc-tab" onclick="switchTab('tab2')">{{tool.tab2}}</button>
+  <button class="calc-tab active" onclick="window.switchTab('tab1')">{{tool.tab1}}</button>
+  <button class="calc-tab" onclick="window.switchTab('tab2')">{{tool.tab2}}</button>
 </div>
-<div class="calc-section active" id="tab1-section">...</div>
-<div class="calc-section" id="tab2-section">...</div>
+<div class="calc-pane active" id="tab1">...</div>
+<div class="calc-pane" id="tab2">...</div>
 ```
+
+⚠️ ملاحظة: الـ Kit يستخدم `.calc-pane` (لا `.calc-section` — تلك نمط section-card مختلف في main.css).
 
 ### Stats Grid (شبكة إحصائيات)
 ```html

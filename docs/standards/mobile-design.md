@@ -202,6 +202,25 @@ var converted = (fromSys === toSys) ? inputVal : convert(inputVal, fromSys, toSy
 }
 ```
 
+### 6.3 Standard Calc Kit (الطريقة الموصى بها للحاسبات)
+
+⚡ بدلاً من نسخ الأنماط يدويّاً، استخدم **Standard Calc Kit** من `main.css` — مجموعة موحَّدة من `.calc-*` classes تغطي القواعد 1-5 أعلاه تلقائياً:
+
+| القاعدة | الكلاس المُغطّي | السلوك |
+|---|---|---|
+| القاعدة 1 (لا أنماط مُختَلَقة) | `.calc-tabs` / `.calc-form` / `.calc-stats-grid` | نمط موحد لكل الحاسبات |
+| القاعدة 2 (label فوق input) | `.calc-form-group` | flex-direction: column |
+| القاعدة 3 (≤2 حقل/صف على الموبايل) | `.calc-form-row` | grid auto-fit؛ 1fr عند 768px |
+| القاعدة 4 (tabs flex-wrap) | `.calc-tabs` | `flex-wrap: wrap` (لا `overflow-x`) |
+| القاعدة 5 (لا فيض شاشة) | `.calc-form` + box-sizing | padding يتقلّص على الموبايل |
+
+**Breakpoint الـ Kit:** `768px` (button shrink، form 1-col، stats 2-col).
+ملاحظة: القواعد 4 و 6 الإلزامية أعلاه تستخدم `480px` للأنماط اليدوية في الأدوات غير-الحاسبية. الـ Kit يستخدم `768px` لأنه أوسع تغطية للأجهزة المتوسطة (Tablet portrait).
+
+**يستهلكها حالياً:** zakat, kaffara, body, age, percentage, loan, interest (7/11). الباقية تستخدم prefix-only scoping بدون kit (inheritance, gpa, ai-readiness, family-tree).
+
+📖 لـ skeleton كود جاهز للنسخ، انظر [`tool-template.md` §4a](tool-template.md).
+
 ## 7. مرجع سريع
 
 - نظام التصميم → [`design-system.md`](design-system.md)
