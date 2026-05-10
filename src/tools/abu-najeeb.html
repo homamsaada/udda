@@ -772,6 +772,7 @@
   <div class="an-main-toolbar">
     <button class="an-btn" onclick="anSeedDemo()">🎲 {{tool.tryExample}}</button>
     <button class="an-btn an-btn-secondary" onclick="anCopyResult()">📋 {{tool.copyResultBtn}}</button>
+    <button class="an-btn an-btn-secondary" onclick="anExportImage()">📷 {{tool.exportImageBtn}}</button>
     <button class="an-btn an-btn-secondary" onclick="anSaveGroup()">💾 {{tool.saveGroupBtn}}</button>
     <button class="an-btn an-btn-secondary" onclick="anToggleSavedPanel()">📂 {{tool.savedGroupsTitle}}</button>
     <button class="an-btn an-btn-danger" onclick="anResetAll()">🔄 {{tool.resetAll}}</button>
@@ -2354,6 +2355,74 @@
     document.body.removeChild(ta);
     done();
   }
+
+  // ============ Export as Image (lazy html2canvas) ============
+  var h2cLoading = null;
+
+  function ensureHtml2Canvas() {
+    if (window.html2canvas) return Promise.resolve(window.html2canvas);
+    if (h2cLoading) return h2cLoading;
+
+    h2cLoading = new Promise(function(resolve, reject) {
+      var s = document.createElement('script');
+      var base = document.documentElement.lang === 'ar' ? '/ar/' : '/en/';
+      // Try root-absolute path first (works for both /ar/tools/ and /en/tools/)
+      s.src = '/assets/vendor/html2canvas.min.js';
+      s.async = true;
+      s.onload = function() {
+        if (window.html2canvas) resolve(window.html2canvas);
+        else reject(new Error('html2canvas loaded but global not found'));
+      };
+      s.onerror = function() {
+        // Fallback: try relative path
+        var s2 = document.createElement('script');
+        s2.src = '../../assets/vendor/html2canvas.min.js';
+        s2.onload = function() {
+          if (window.html2canvas) resolve(window.html2canvas);
+          else reject(new Error('html2canvas loaded but global not found'));
+        };
+        s2.onerror = function() { reject(new Error('Failed to load html2canvas')); };
+        document.head.appendChild(s2);
+      };
+      document.head.appendChild(s);
+    });
+    return h2cLoading;
+  }
+
+  window.anExportImage = function() {
+    if (state.people.length < 2) { alert(T.errMinPeople); return; }
+    var pane = document.querySelector('.abu-najeeb .calc-pane.active');
+    if (!pane) return;
+    var target = pane.querySelector('.calc-result');
+    if (!target || !target.classList.contains('show')) {
+      alert(isArabic ? 'لا توجد نتيجة لتصديرها بعد' : 'No result to export yet');
+      return;
+    }
+
+    ensureHtml2Canvas().then(function(h2c) {
+      var bg = getComputedStyle(document.body).getPropertyValue('--bg-primary').trim() || '#ffffff';
+      return h2c(target, {
+        backgroundColor: bg,
+        scale: 2,
+        logging: false,
+        useCORS: true
+      });
+    }).then(function(canvas) {
+      var link = document.createElement('a');
+      link.download = 'abu-najeeb-' + state.activeTab + '-' + Date.now() + '.png';
+      link.href = canvas.toDataURL('image/png');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      if (typeof App !== 'undefined' && App.showToast) {
+        App.showToast(isArabic ? 'الصورة جاهزة' : 'Image ready');
+      }
+    }).catch(function(err) {
+      console.error('Export failed:', err);
+      alert(isArabic ? 'تعذّر التصدير، حاول نسخ النص بدلاً' : 'Export failed, try copying as text instead');
+    });
+  };
 
   // ============ Init ============
   document.addEventListener('DOMContentLoaded', function() {
