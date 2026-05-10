@@ -6,10 +6,10 @@
 
 ## 1. الحالة الحالية (snapshot)
 
-- **11 أداة** في 3 تصنيفات نشطة:
+- **12 أداة** في 3 تصنيفات نشطة:
   - **calculators** (9): zakat, inheritance, kaffara, percentage, interest, loan, gpa, body, age
   - **generators** (1): ai-readiness
-  - **everyday** (1): family-tree
+  - **everyday** (2): family-tree, **abu-najeeb** (🆕 2026-05-11)
 - **5 تصنيفات فارغة:** `converters`, `text`, `datetime`, `image`, `developers`
 - **40 مقال مدونة** (20 ar + 20 en) — كلها زكاة وميراث
 - **10 صفحات ثابتة** (5 × 2 لغة)

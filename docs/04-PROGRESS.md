@@ -1,7 +1,7 @@
 # ✅ التقدم الحالي | Progress
 
-> 📅 **آخر نشاط على المشروع:** 2026-05-10 — المرحلة 4.12 (إغلاق دورة Polish — hex إلى vars في inheritance/gpa + Standard Kit في docs/standards + Canvas brand colors في ai-readiness)
-> 🔍 **آخر فحص توافق شامل:** 2026-05-10
+> 📅 **آخر نشاط على المشروع:** 2026-05-11 — المرحلة 5.1 (أداة جديدة: أبو نجيب — حاسبة تقسيم فواتير بأربع طرق + خوارزمية Greedy)
+> 🔍 **آخر فحص توافق شامل:** 2026-05-11
 > ⏰ **ملاحظة للوكيل:** قبل أي تطوير، اقرأ [Session Resume Protocol في CLAUDE.md](../CLAUDE.md). يجب التحقق من training cutoff الخاص بك مقابل تاريخ اليوم عند الفجوات > 30 يوماً.
 >
 > هذا الملف **سجل حي** يُحدَّث باستمرار. يعكس الحالة الفعلية، ليس الخطة. للخطة المستقبلية انظر [`03-ROADMAP.md`](03-ROADMAP.md).
@@ -10,7 +10,7 @@
 
 ## ✅ مكتمل
 
-### الأدوات (11)
+### الأدوات (12)
 
 | # | الأداة | التصنيف | الحالة | ملاحظات |
 |---|---|---|---|---|
@@ -25,6 +25,7 @@
 | 9 | age-calculator | calculators (other) | ✅ مستقر | حسابات تواريخ — **Standard Kit + bug fixes (2026-05-10)** |
 | 10 | family-tree | everyday | ✅ مستقر | شجرة عائلة SVG |
 | 11 | ai-readiness | generators | ✅ مستقر | 41 تخصص، ~200K سطر JSON |
+| 12 | abu-najeeb | everyday | ✅ مستقر | 🆕 حاسبة تقسيم فواتير 4 تبويبات + خوارزمية Greedy + html2canvas (vendor) (2026-05-11) |
 
 ### المحتوى
 
@@ -235,17 +236,35 @@
 - [x] **ai-readiness Canvas** — 28+ hex/rgba literal في `renderRadar()` انتقلت إلى `.ai-readiness --canvas-*` namespace + helper `getCanvasColors()` يقرأها مرة عند بداية الرسم. تصميم متعمَّد: Canvas يبقى داكناً عبر الثيمين (Light/Dark) لتناسق صورة المشاركة بصرياً (commit `80acf80`).
 - [x] **خارج النطاق المُتعمَّد:** تدرّجات CSS في `.air-report-summary.level-aware` (سطور 1019, 1026)، SVG timer ring color (`lerpColor` سطور 2441-2443)، family-tree i18n migration (مهمة كبرى منفصلة).
 
-### المرحلة 5: تخطيط البناء العلمي
+### المرحلة 5.1: أداة جديدة — أبو نجيب ✅ (2026-05-11)
 
-- [ ] اختيار أول أداة من ROADMAP بالنقاش
-- [ ] تصميم الأداة على الورق (UI mockup + حالات الاستخدام)
-- [ ] كتابة spec لها قبل أي كود
+أول أداة جديدة بعد إكمال البنية التحتية. تطبيق Playbook 1 الكامل + AEM Phase 0 (استكشاف الكود، أسئلة استراتيجية، خطة معتمدة).
 
-### المرحلة 6: البرمجة
+- [x] **spec + workspace fractal:** `docs/tools/abu-najeeb.spec.md` 🟢 + 4 ملفات `development/abu-najeeb/`
+- [x] **scaffold:** `src/tools/abu-najeeb.html` (shell + 4 tabs + i18n 50+ مفتاح × 2 لغة)
+- [x] **People bar مشترك** عبر التبويبات (single source of truth) + Edit panel inline + 3 presets للمرافقين (كامل/نصف/ربع) + cascade delete
+- [x] **Tab 1 — متساوٍ:** مبلغ + ضريبة% + إكرامية% → finalAmount + breakdown
+- [x] **Tab 2 — استهلاك:** طلبات ديناميكية + share pills (الجميع/شخص/مجموعة) + ضريبة/إكرامية نسبياً
+- [x] **Tab 3 — تسوية:** مصاريف ديناميكية + **خوارزمية Greedy Settlement** + savings vs naive
+- [x] **Tab 4 — نسب:** نسبة% أو وحدات + تحقق المجموع + rounding-fix
+- [x] **Polish:** seedDemo per-tab، copyResult بصياغة لكل tab، sessionStorage auto-save، localStorage saved groups (load/delete)، resetAll
+- [x] **html2canvas محلية في vendor + lazy loading** عند الضغط أول مرة فقط
+- [x] **Standard Calc Kit** مستهلَك بالكامل + prefix `an-*` للأنماط الخاصة
+- [x] **مثال spec التحقق:** 4 أشخاص × 3 مصاريف (1400 مجموع) → **3 تحويلات بالضبط** ✓
 
-- [ ] تنفيذ الأداة المختارة وفق المعايير الموثّقة
-- [ ] إضافة 2-3 مقالات مدونة لها
-- [ ] مراجعة وتعديل + اختبار يدوي ثنائي اللغة
+**الفلسفة المحقّقة:** أول أداة في فئة `everyday` بعد family-tree. ميزة Greedy نقطة بيع نادرة بالعربية. الـ Standard Kit أثبت قيمته (Mobile/Theme/RTL مجاناً).
+
+**v2 backlog:** مرافقون بنسب مخصّصة، 3 مقالات مدونة، اختصارات كيبورد، paste import، Web Share API.
+
+### المرحلة 5 (السابقة): تخطيط البناء العلمي ✅
+
+اكتمل التخطيط في 2026-05-11. الأداة المختارة: `abu-najeeb`. spec كاملة قبل الكود، خطة معتمدة، تنفيذ بـ 8 commits منطقية.
+
+### المرحلة 6: البرمجة (مستمرة — أدوات لاحقة)
+
+- [ ] أداة قادمة من ROADMAP أو طلب مستخدم
+- [ ] مقالات مدونة لـabu-najeeb (3 مقترحة)
+- [ ] family-tree i18n migration (مهمة مؤجَّلة كبرى)
 
 ## 📝 ملاحظات تطوير
 

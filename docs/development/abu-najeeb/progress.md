@@ -13,20 +13,40 @@
 
 ---
 
-## ✅ منجَز (Done)
+## ✅ منجَز (Done — 2026-05-11)
 
-_(بعد إكمال البناء يُملأ هنا — حالياً البناء قيد التنفيذ)_
+### الـ MVP الكامل في جلسة واحدة (8 commits)
 
-## 🚧 قيد العمل (Active — 2026-05-11)
+- ✅ **Spec كاملة** في `docs/tools/abu-najeeb.spec.md` (🟢 عميق)
+- ✅ **Workspace fractal** (4 ملفات `development/abu-najeeb/`)
+- ✅ **Scaffold:** HTML shell + 4 tabs + كل i18n (50+ مفتاح × ar/en)
+- ✅ **tools.json registry** (فئة `everyday`، icon 🧮، related: percentage/loan)
+- ✅ **People bar مشترك:** add/edit/delete + companions panel inline + cascade
+- ✅ **3 presets للمرافقين** (كامل/نصف/ربع) — custom في v2
+- ✅ **Tab 1 (متساوٍ):** مبلغ + ضريبة + إكرامية + breakdown لكل شخص
+- ✅ **Tab 2 (استهلاك):** طلبات ديناميكية + share pills + tax/tip نسبياً
+- ✅ **Tab 3 (تسوية):** مصاريف + **خوارزمية Greedy Settlement** + savings banner
+- ✅ **Tab 4 (نسب):** % أو units + تحقق المجموع
+- ✅ **computeShares() الموحَّدة** + rounding-fix لإغلاق التوازن
+- ✅ **العملة الاختيارية** نصّية تُلصق بالنتيجة
+- ✅ **seedDemo per-tab** بأمثلة spec (4×1400=3 تحويلات بالضبط، ...)
+- ✅ **copyResult** بصياغة نص لكل tab
+- ✅ **sessionStorage auto-save** عند كل renderAll
+- ✅ **localStorage saved groups** (حفظ/استرجاع/حذف الأشخاص بالاسم)
+- ✅ **resetAll** مع تأكيد
+- ✅ **html2canvas vendor محلي** (~195KB) + lazy loading
+- ✅ **Standard Calc Kit مستهلَك** + prefix `an-*`
 
-- **Commit 1:** docs (spec + workspace) — جارٍ
-- **Commit 2:** scaffold + i18n + tools.json — قادم
-- **Commit 3:** people bar + equal + percentage tabs
-- **Commit 4:** consumption tab
-- **Commit 5:** settlement tab + greedy
-- **Commit 6:** seedDemo + copy + sessionStorage + saved groups
-- **Commit 7:** export as image
-- **Commit 8:** update progress + markers
+### التحقق
+
+- 🧪 مثال spec للتسوية: 4 أشخاص × 3 مصاريف (1400 مجموع) → **3 تحويلات** ✓
+- 🧪 npm run build نظيف، لا warnings
+- 🧪 الأداة تظهر بـ AR + EN كاملاً
+- 🧪 Mobile-friendly (Standard Kit + custom 768px breakpoint)
+
+## 🚧 قيد العمل (Active)
+
+_(لا شيء — MVP اكتمل في جلسة 2026-05-11)_
 
 ## 📋 مخطّط (Planned — v2)
 

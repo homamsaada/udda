@@ -2,16 +2,9 @@
 
 ---
 
-## 🚧 الآن (جلسة 2026-05-11)
+## 🚧 الآن
 
-- [ ] Commit 1: docs (spec + workspace) — 🔧 جارٍ
-- [ ] Commit 2: scaffold + i18n + tools.json
-- [ ] Commit 3: people bar + equal + percentage tabs
-- [ ] Commit 4: consumption tab
-- [ ] Commit 5: settlement tab + greedy
-- [ ] Commit 6: seedDemo + copy + sessionStorage + saved groups
-- [ ] Commit 7: export as image (html2canvas)
-- [ ] Commit 8: update progress + temporal markers
+_(لا شيء — MVP اكتمل في جلسة 2026-05-11)_
 
 ## 📋 قريباً (v2)
 

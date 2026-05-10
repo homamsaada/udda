@@ -104,6 +104,58 @@
 
 ---
 
+## 2026-05-11 — أداة جديدة: أبو نجيب (الـ12)
+
+- **الفجوة من السابق:** يوم واحد (الجلسة السابقة 2026-05-10)
+- **المدة:** جلسة كاملة مكثَّفة (Playbook 1 + AEM Phase 0)
+- **حجم التغيير:** 8 commits، 12 ملف، أداة جديدة كاملة (~1,500 سطر HTML/CSS/JS)
+
+### ما تم
+
+**A. تطبيق AEM Phase 0 (Autonomous Execution Mode)**
+- استكشاف ثلاثي متوازي (Standard Kit، أدوات مرجعية، build system)
+- استجواب استراتيجي للمستخدم (4 أسئلة جوهرية: نطاق MVP، التابة الافتراضية، العملة، disclaimer)
+- خطة معتمدة قبل التنفيذ (`structured-toasting-fairy.md`)
+
+**B. الأداة الـ12: `abu-najeeb` — حاسبة تقسيم فواتير**
+- 4 تبويبات: تقسيم متساوٍ / استهلاك / من دفع لمن / بالنسب
+- **خوارزمية Greedy Settlement** — تُقلِّل التحويلات للحد الأدنى (نقطة بيع نادرة بالعربية)
+- شريط أشخاص مشترك (single source of truth) + 3 presets للمرافقين
+- ميزات polish: seedDemo، copyResult، sessionStorage auto-save، localStorage saved groups، resetAll، export as image
+- **html2canvas** نُزِّلت كـ vendor محلي + lazy loading (~195KB، يُحمَّل عند الطلب فقط)
+- اختُبرت بمثال spec (4 أشخاص، 1400 مجموع، 3 تحويلات بالضبط) ✓
+
+**C. هيكلة المرحلة 5.1 في PROGRESS**
+- إغلاق المرحلة 5 (التخطيط) واعتمادها للأداة
+- إنشاء قسم 5.1 (التنفيذ) مع تفصيل الـ 8 commits
+
+**D. الفئة `everyday` تنمو**
+- كانت تحوي family-tree فقط، الآن أصبحت 2 (مع abu-najeeb)
+- أول استهلاك لـ Standard Calc Kit في فئة غير-calculators
+
+### حالة التبعيات (لقطة)
+- **markdown-it:** 14.1.1 (مستقرة)
+- **chart.js:** 4.x (vendor)
+- **exceljs:** 4.x (vendor)
+- **html2canvas:** 1.4.x (vendor، **جديدة في هذه الجلسة**)
+- **GitHub Actions:** v4 / v5 (مستقرة)
+- **Node.js:** v20+
+
+### قرارات معمارية كبيرة
+- **`computeShares()` موحَّدة** عبر التبويبات (DRY مكتمل) + last-share rounding fix
+- **Greedy Settlement** قرار pragmatic (NP-hard لكن بحجم صغير لا يهم)
+- **Currency حقل اختياري نصّي** (لا يدخل الحساب) — حلّ وسط بين spec وUX
+- **html2canvas vendor + lazy** — بقاء TTI نظيف لأغلب المستخدمين
+- **sessionStorage مرآة شفّافة** للحالة، localStorage فقط للأشخاص المسمّاة
+
+### ملاحظات للجلسات القادمة
+- ⚠️ **abu-najeeb v2 backlog:** custom مرافقون، مقالات مدونة، اختصارات كيبورد، Web Share API
+- ⚠️ **html2canvas حجمها 195KB** — أكبر من vendor الباقي. أي أداة قادمة تستهلكها يجب أن تُعيد استخدامها لا تضاعفها
+- ⚠️ الفئة `everyday` صارت أعمق — قد تستحق أدوات يومية أكثر (موعد، قائمة تسوّق، إلخ)
+- ⚠️ التحقق من خوارزمية Greedy تم يدوياً بمثال واحد — يستحق unit tests لو دخلت TDD لاحقاً
+
+---
+
 ## ___ — الجلسة التالية (template — احذف عند الاستخدام)
 
 - **الفجوة من السابق:** ___ يوماً
