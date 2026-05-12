@@ -1,7 +1,7 @@
 # ✅ التقدم الحالي | Progress
 
-> 📅 **آخر نشاط على المشروع:** 2026-05-11 — المرحلة 5.2 (refactor أبو نجيب → Trip-only + نموذج أمين الصندوق + أرقام إنكليزية لكل الموقع)
-> 🔍 **آخر فحص توافق شامل:** 2026-05-11
+> 📅 **آخر نشاط على المشروع:** 2026-05-12 — المرحلة 5.3 (refactor v2 لأبو نجيب → Bulk + Buyers، حذف المرافقين والـ Greedy، عرض ذو وجهَين)
+> 🔍 **آخر فحص توافق شامل:** 2026-05-12
 > ⏰ **ملاحظة للوكيل:** قبل أي تطوير، اقرأ [Session Resume Protocol في CLAUDE.md](../CLAUDE.md). يجب التحقق من training cutoff الخاص بك مقابل تاريخ اليوم عند الفجوات > 30 يوماً.
 >
 > هذا الملف **سجل حي** يُحدَّث باستمرار. يعكس الحالة الفعلية، ليس الخطة. للخطة المستقبلية انظر [`03-ROADMAP.md`](03-ROADMAP.md).
@@ -25,7 +25,7 @@
 | 9 | age-calculator | calculators (other) | ✅ مستقر | حسابات تواريخ — **Standard Kit + bug fixes (2026-05-10)** |
 | 10 | family-tree | everyday | ✅ مستقر | شجرة عائلة SVG |
 | 11 | ai-readiness | generators | ✅ مستقر | 41 تخصص، ~200K سطر JSON |
-| 12 | abu-najeeb | everyday | ✅ مستقر | 🆕 حاسبة رحلات Trip-only + نموذج أمين الصندوق + Greedy view + html2canvas (vendor) (refactor 2026-05-11) |
+| 12 | abu-najeeb | everyday | ✅ مستقر | 🆕 حاسبة تسوية رحلات v2: **Bulk + Buyers** (4 buckets: full/half/quarter anonymous + named buyers)، نموذج أمين الصندوق فقط، عرض ذو وجهَين (inbound/outbound) — refactor v2 (2026-05-12) |
 
 ### المحتوى
 

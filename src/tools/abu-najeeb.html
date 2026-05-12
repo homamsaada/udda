@@ -1,274 +1,353 @@
 <style>
-/* abu-najeeb — حاسبة الرحلات (Trip Mode موحَّد).
-   prefix: an-* للأنماط الخاصة، .abu-najeeb wrapper.
-   الأنماط المشتركة (calc-form, calc-form-row, calc-form-group,
-   calc-stats-grid, calc-stat-card, calc-result) من Standard Calc Kit
-   في src/assets/css/main.css */
-
+/* abu-najeeb — Trip Settlement (v2: Bulk + Buyers, no companions, treasurer-only) */
 .abu-najeeb {
-  max-width: 900px;
-  margin: 0 auto;
-  font-family: inherit;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.abu-najeeb * { font-family: inherit; }
 
 /* ============ Intro Text ============ */
 .abu-najeeb .an-intro {
-  background: rgba(99, 102, 241, 0.06);
-  border-inline-start: 3px solid var(--accent-primary);
-  padding: 12px 14px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  color: var(--text-primary);
-  font-size: 0.92rem;
-  line-height: 1.5;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-inline-start: 4px solid var(--accent-primary);
+  border-radius: var(--border-radius);
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
 }
 
 /* ============ Section title ============ */
 .abu-najeeb .an-section-title {
-  margin: 18px 0 10px;
-  font-size: 1.05rem;
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  font-weight: 800;
   color: var(--text-primary);
-  font-weight: 700;
   display: flex;
   align-items: center;
   gap: 8px;
 }
-
-/* ============ People Bar ============ */
-.abu-najeeb .an-people-bar {
-  background: var(--bg-secondary);
-  border: var(--card-border);
-  border-radius: 14px;
-  padding: 14px 16px;
-  margin-bottom: 20px;
+.abu-najeeb .an-section-title > span:first-child {
+  font-size: 1.3rem;
 }
 
-.abu-najeeb .an-people-header {
+.abu-najeeb .an-hint {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ============ Currency ============ */
+.abu-najeeb .an-currency-row {
+  max-width: 240px;
+}
+.abu-najeeb .an-currency-row input {
+  padding: 10px 12px;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  width: 100%;
+  font-family: inherit;
+}
+.abu-najeeb .an-currency-row input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* ============ Trip Config (total + bulk) ============ */
+.abu-najeeb .an-trip-config {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  box-shadow: var(--card-shadow);
+}
+.abu-najeeb .an-trip-config .calc-form-group {
+  margin: 0;
+}
+.abu-najeeb .an-trip-config label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.abu-najeeb .an-trip-config input[type="number"] {
+  width: 100%;
+  max-width: 180px;
+  padding: 10px 12px;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: inherit;
+  text-align: center;
+}
+.abu-najeeb .an-trip-config input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+.abu-najeeb .an-trip-config input[readonly] {
+  background: var(--bg-tertiary, var(--bg-secondary));
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+.abu-najeeb .an-bulk-section {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--card-border);
+}
+.abu-najeeb .an-bulk-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.abu-najeeb .an-bulk-hint {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.abu-najeeb .an-bulk-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.abu-najeeb .an-bulk-row label {
+  font-size: 0.85rem;
+}
+.abu-najeeb .an-bulk-row input {
+  max-width: 100%;
+}
+
+/* ============ Buyers Bar ============ */
+.abu-najeeb .an-buyers-bar {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  box-shadow: var(--card-shadow);
+}
+.abu-najeeb .an-buyers-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
+  gap: 12px;
   flex-wrap: wrap;
 }
-
-.abu-najeeb .an-people-title {
+.abu-najeeb .an-buyers-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
   font-weight: 700;
-  font-size: 1rem;
   color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
-
-.abu-najeeb .an-people-count {
+.abu-najeeb .an-buyers-count {
   background: var(--accent-primary);
   color: white;
+  border-radius: 999px;
   padding: 2px 10px;
-  border-radius: 12px;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
 }
-
-.abu-najeeb .an-people-list {
+.abu-najeeb .an-buyers-hint {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.abu-najeeb .an-buyers-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  min-height: 32px;
-}
-
-.abu-najeeb .an-person-chip {
-  display: inline-flex;
+  min-height: 38px;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  background: var(--bg-primary);
-  border: 1px solid var(--card-border-color, rgba(99, 102, 241, 0.2));
-  border-radius: 20px;
-  font-size: 0.9rem;
-  color: var(--text-primary);
-  cursor: pointer;
-  transition: all 0.15s ease;
+  margin-bottom: 12px;
 }
-
-.abu-najeeb .an-person-chip:hover {
-  border-color: var(--accent-primary);
-  background: var(--bg-secondary);
-}
-
-.abu-najeeb .an-person-chip.editing {
-  border-color: var(--accent-primary);
-  background: rgba(99, 102, 241, 0.08);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-}
-
-.abu-najeeb .an-person-chip.treasurer {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(245, 158, 11, 0.06));
-  border-color: var(--warning);
-}
-
-.abu-najeeb .an-treasurer-star {
-  font-size: 0.85rem;
-}
-
-.abu-najeeb .an-companions-badge {
-  background: var(--accent-primary);
-  color: white;
-  font-size: 0.7rem;
-  padding: 1px 6px;
-  border-radius: 10px;
-  font-weight: 600;
-}
-
-.abu-najeeb .an-person-empty {
+.abu-najeeb .an-buyer-empty {
   color: var(--text-secondary);
   font-size: 0.9rem;
   font-style: italic;
 }
-
-.abu-najeeb .an-add-person-form {
-  display: flex;
-  gap: 8px;
-  margin-top: 12px;
-  flex-wrap: wrap;
-}
-
-.abu-najeeb .an-add-person-form input {
-  flex: 1;
-  min-width: 180px;
-  padding: 8px 12px;
-  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
-  border-radius: 8px;
+.abu-najeeb .an-buyer-chip {
   background: var(--bg-primary);
-  color: var(--text-primary);
-  font-size: 0.95rem;
-}
-
-.abu-najeeb .an-btn {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 8px;
-  background: var(--accent-primary);
-  color: white;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.9rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.abu-najeeb .an-btn:hover {
-  background: var(--accent-secondary);
-  transform: translateY(-1px);
-}
-
-.abu-najeeb .an-btn:active { transform: translateY(0); }
-
-.abu-najeeb .an-btn.an-btn-secondary {
-  background: var(--bg-primary);
   color: var(--text-primary);
-  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
+  cursor: pointer;
+  transition: all 0.15s;
 }
-
-.abu-najeeb .an-btn.an-btn-secondary:hover {
+.abu-najeeb .an-buyer-chip:hover {
+  border-color: var(--accent-primary);
   background: var(--bg-secondary);
 }
-
-.abu-najeeb .an-btn.an-btn-danger {
-  background: var(--error);
+.abu-najeeb .an-buyer-chip.editing {
+  background: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+}
+.abu-najeeb .an-buyer-chip.treasurer {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #1f2937;
+  border-color: #f59e0b;
+  font-weight: 800;
+}
+.abu-najeeb .an-treasurer-star {
+  display: inline-block;
+}
+.abu-najeeb .an-share-badge {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--accent-primary);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.abu-najeeb .an-buyer-chip.treasurer .an-share-badge {
+  background: rgba(31, 41, 55, 0.2);
+  color: #1f2937;
+}
+.abu-najeeb .an-buyer-chip.editing .an-share-badge {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+.abu-najeeb .an-add-buyer-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.abu-najeeb .an-add-buyer-form input {
+  flex: 1;
+  min-width: 200px;
+  padding: 9px 12px;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+.abu-najeeb .an-add-buyer-form input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
-.abu-najeeb .an-btn.an-btn-danger:hover {
-  background: var(--error);
-  filter: brightness(0.9);
-}
-
-/* ============ Person Edit Panel (inline) ============ */
+/* ============ Buyer Edit Panel ============ */
 .abu-najeeb .an-edit-panel {
-  margin-top: 14px;
+  display: none;
+  margin-top: 12px;
   padding: 14px;
   background: var(--bg-primary);
-  border: 1px solid var(--accent-primary);
-  border-radius: 12px;
-  display: none;
+  border: 1px dashed var(--accent-primary);
+  border-radius: 8px;
 }
-
 .abu-najeeb .an-edit-panel.show {
   display: block;
-  animation: anFade 0.2s ease;
 }
-
-@keyframes anFade {
-  from { opacity: 0; transform: translateY(-4px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 .abu-najeeb .an-edit-panel-title {
   font-weight: 700;
-  margin-bottom: 12px;
-  color: var(--text-primary);
+  margin-bottom: 10px;
+  color: var(--accent-primary);
 }
-
 .abu-najeeb .an-edit-fields {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
-
-.abu-najeeb .an-edit-fields input,
-.abu-najeeb .an-edit-fields select {
+.abu-najeeb .an-edit-fields input {
   padding: 8px 10px;
-  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
-  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
   background: var(--bg-secondary);
   color: var(--text-primary);
   font-size: 0.95rem;
+  font-family: inherit;
 }
-
+.abu-najeeb .an-share-options-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
 .abu-najeeb .an-share-options {
   display: flex;
-  flex-wrap: wrap;
   gap: 6px;
-  margin: 10px 0;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
 }
-
 .abu-najeeb .an-share-pill {
   padding: 6px 12px;
-  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
-  border-radius: 16px;
-  background: var(--bg-secondary);
-  color: var(--text-primary);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
   font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
   cursor: pointer;
-  transition: all 0.15s ease;
+  user-select: none;
+  transition: all 0.15s;
 }
-
+.abu-najeeb .an-share-pill:hover {
+  border-color: var(--accent-primary);
+}
 .abu-najeeb .an-share-pill.active {
   background: var(--accent-primary);
   color: white;
   border-color: var(--accent-primary);
 }
-
 .abu-najeeb .an-edit-actions {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
 
-/* ============ Currency ============ */
-.abu-najeeb .an-currency-row {
-  margin-bottom: 14px;
-}
-
-.abu-najeeb .an-currency-row input {
-  max-width: 200px;
-  padding: 8px 12px;
-  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
+/* ============ Buttons ============ */
+.abu-najeeb .an-btn {
+  padding: 9px 14px;
+  background: var(--accent-primary);
+  color: white;
+  border: none;
   border-radius: 8px;
-  background: var(--bg-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+.abu-najeeb .an-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+.abu-najeeb .an-btn-secondary {
+  background: var(--bg-tertiary, var(--bg-secondary));
   color: var(--text-primary);
-  font-size: 0.95rem;
+  border: 1px solid var(--card-border);
+}
+.abu-najeeb .an-btn-secondary:hover {
+  background: var(--bg-secondary);
+}
+.abu-najeeb .an-btn-danger {
+  background: var(--error, #ef4444);
 }
 
 /* ============ Main Toolbar ============ */
@@ -276,415 +355,337 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 20px;
-  padding: 10px 12px;
-  background: var(--bg-secondary);
-  border: var(--card-border);
-  border-radius: 12px;
 }
 
-.abu-najeeb .an-main-toolbar .an-btn {
-  padding: 7px 12px;
-  font-size: 0.85rem;
-}
-
+/* ============ Saved Groups Panel ============ */
 .abu-najeeb .an-saved-groups-panel {
   display: none;
-  margin-top: 12px;
-  padding: 12px;
-  background: var(--bg-primary);
-  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
-  border-radius: 10px;
-}
-
-.abu-najeeb .an-saved-groups-panel.show { display: block; }
-
-.abu-najeeb .an-saved-group-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 10px 12px;
   background: var(--bg-secondary);
-  border-radius: 8px;
-  margin-bottom: 6px;
-}
-
-.abu-najeeb .an-saved-group-name { font-weight: 600; color: var(--text-primary); }
-.abu-najeeb .an-saved-group-meta { font-size: 0.8rem; color: var(--text-secondary); }
-.abu-najeeb .an-saved-group-actions { display: flex; gap: 6px; }
-.abu-najeeb .an-no-groups {
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius);
   padding: 14px;
-  text-align: center;
+}
+.abu-najeeb .an-saved-groups-panel.show {
+  display: block;
+}
+.abu-najeeb .an-saved-groups-hint {
+  font-size: 0.8rem;
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  margin-bottom: 10px;
   font-style: italic;
 }
-
-/* ============ Need People Warning ============ */
-.abu-najeeb .an-need-people {
-  padding: 16px;
-  background: rgba(245, 158, 11, 0.08);
-  border: 1px solid rgba(245, 158, 11, 0.25);
-  border-radius: 10px;
+.abu-najeeb .an-saved-group-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--bg-primary);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.abu-najeeb .an-saved-group-name {
+  font-weight: 700;
   color: var(--text-primary);
+}
+.abu-najeeb .an-saved-group-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.abu-najeeb .an-saved-group-actions {
+  display: flex;
+  gap: 6px;
+}
+.abu-najeeb .an-no-groups {
   text-align: center;
+  color: var(--text-secondary);
+  padding: 14px;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* ============ Warnings ============ */
+.abu-najeeb .an-need-config {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--text-primary);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ============ Settlement Settings ============ */
+.abu-najeeb .an-settlement-settings {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius);
+  padding: 14px;
+}
+.abu-najeeb .an-settlement-settings-hint {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  line-height: 1.55;
+}
+.abu-najeeb .an-settlement-controls .calc-form-group {
+  margin: 0;
+}
+.abu-najeeb .an-treasurer-select {
+  width: 100%;
+  max-width: 320px;
+  padding: 9px 12px;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
   font-size: 0.95rem;
-  margin-bottom: 16px;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 /* ============ Expenses List ============ */
 .abu-najeeb .an-items-list {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
-  margin-top: 14px;
+  margin-bottom: 12px;
 }
-
 .abu-najeeb .an-item-card {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  gap: 10px;
+  display: flex;
   align-items: center;
   padding: 10px 14px;
   background: var(--bg-secondary);
-  border: var(--card-border);
+  border: 1px solid var(--card-border);
   border-radius: 10px;
+  gap: 12px;
 }
-
 .abu-najeeb .an-item-main {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 2px;
 }
-
 .abu-najeeb .an-item-name {
-  font-weight: 600;
-  color: var(--text-primary);
-  font-size: 0.95rem;
-}
-
-.abu-najeeb .an-item-meta {
-  font-size: 0.78rem;
-  color: var(--text-secondary);
-}
-
-.abu-najeeb .an-item-price {
   font-weight: 700;
-  color: var(--accent-primary);
-  font-size: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-primary);
 }
-
+.abu-najeeb .an-item-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+.abu-najeeb .an-item-price {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--accent-primary);
+}
 .abu-najeeb .an-item-delete {
-  background: transparent;
-  border: 1px solid transparent;
-  color: var(--error);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
   cursor: pointer;
   padding: 4px 8px;
-  border-radius: 6px;
   font-size: 1.1rem;
-  transition: all 0.15s ease;
+  border-radius: 4px;
+  transition: all 0.15s;
+  font-family: inherit;
 }
-
 .abu-najeeb .an-item-delete:hover {
-  background: rgba(239, 68, 68, 0.08);
-  border-color: rgba(239, 68, 68, 0.3);
+  color: var(--error, #ef4444);
+  background: rgba(239, 68, 68, 0.1);
 }
-
 .abu-najeeb .an-no-items {
-  padding: 20px;
   text-align: center;
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  padding: 18px;
   font-style: italic;
+  font-size: 0.9rem;
+  background: var(--bg-secondary);
+  border: 1px dashed var(--card-border);
+  border-radius: 8px;
 }
 
 /* ============ Add Expense Card ============ */
 .abu-najeeb .an-add-item-card {
-  margin-top: 14px;
-  padding: 14px;
   background: var(--bg-secondary);
-  border: 1px dashed var(--card-border-color, rgba(99, 102, 241, 0.3));
-  border-radius: 12px;
+  border: 1px dashed var(--card-border);
+  border-radius: var(--border-radius);
+  padding: 14px;
+  display: none;
 }
-
+.abu-najeeb .an-add-item-card.show {
+  display: block;
+}
 .abu-najeeb .an-add-item-row {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 10px;
 }
-
-.abu-najeeb .an-add-item-row input,
-.abu-najeeb .an-add-item-row select {
-  padding: 8px 12px;
-  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
+.abu-najeeb .an-add-item-row input {
+  padding: 9px 12px;
+  border: 1px solid var(--card-border);
   border-radius: 8px;
   background: var(--bg-primary);
   color: var(--text-primary);
   font-size: 0.95rem;
+  font-family: inherit;
 }
-
-.abu-najeeb .an-paid-by-row {
-  margin-bottom: 10px;
-}
-
-.abu-najeeb .an-paid-by-row select {
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
-  border-radius: 8px;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  font-size: 0.95rem;
-}
-
-.abu-najeeb .an-share-pills-label {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  margin-bottom: 6px;
-}
-
-.abu-najeeb .an-share-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 10px;
-}
-
-.abu-najeeb .an-share-pills .an-share-pill {
-  padding: 5px 11px;
-  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
-  border-radius: 14px;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.abu-najeeb .an-share-pills .an-share-pill.active {
-  background: var(--accent-primary);
-  color: white;
+.abu-najeeb .an-add-item-row input:focus {
+  outline: none;
   border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
-
-.abu-najeeb .an-share-pills .an-share-pill.an-all-pill.active {
-  background: var(--success);
-  border-color: var(--success);
-}
-
-/* ============ Settlement Settings (above expenses) ============ */
-.abu-najeeb .an-settlement-settings {
-  background: var(--bg-secondary);
-  border: var(--card-border);
-  border-radius: 14px;
-  padding: 14px 16px;
-  margin-bottom: 20px;
-}
-
-.abu-najeeb .an-settlement-settings-hint {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  margin-bottom: 12px;
-  line-height: 1.5;
-}
-
-/* ============ Settlement Controls ============ */
-.abu-najeeb .an-settlement-controls {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.abu-najeeb .an-settlement-controls .calc-form-group label {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  display: block;
-  margin-bottom: 6px;
-}
-
-.abu-najeeb .an-treasurer-select {
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
-  border-radius: 8px;
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-  font-size: 0.95rem;
-}
-
-.abu-najeeb .an-mode-pills {
+.abu-najeeb .an-paid-by-row {
   display: flex;
-  gap: 6px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
 }
-
-.abu-najeeb .an-mode-pill {
+.abu-najeeb .an-paid-by-label {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.abu-najeeb .an-paid-by-row select {
   flex: 1;
-  padding: 8px 14px;
-  border: 1px solid var(--card-border-color, rgba(0,0,0,0.15));
-  border-radius: 8px;
-  background: var(--bg-secondary);
+  min-width: 160px;
+  padding: 8px 10px;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  background: var(--bg-primary);
   color: var(--text-primary);
   font-size: 0.9rem;
-  font-weight: 600;
+  font-family: inherit;
   cursor: pointer;
-  transition: all 0.15s ease;
-  text-align: center;
 }
 
-.abu-najeeb .an-mode-pill.active {
-  background: var(--accent-primary);
-  color: white;
-  border-color: var(--accent-primary);
-}
-
-/* ============ Treasurer View ============ */
-.abu-najeeb .an-treasurer-view {
-  display: grid;
-  gap: 16px;
-}
-
-.abu-najeeb .an-treasurer-banner {
-  padding: 14px 16px;
-  background: linear-gradient(135deg, var(--warning), #d97706);
-  color: white;
-  border-radius: 10px;
+/* ============ Result Views ============ */
+.abu-najeeb .an-stat-breakdown .value {
+  font-size: 0.85rem;
   font-weight: 600;
-  text-align: center;
+  line-height: 1.4;
 }
-
-.abu-najeeb .an-treasurer-section h5 {
-  margin: 0 0 8px;
-  font-size: 0.95rem;
-  font-weight: 700;
+.abu-najeeb .an-view-inbound,
+.abu-najeeb .an-view-outbound {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius);
+  padding: 14px;
+  margin-top: 14px;
+}
+.abu-najeeb .an-view-title {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  font-weight: 800;
   color: var(--text-primary);
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.abu-najeeb .an-tr-banner {
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #1f2937;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.abu-najeeb .an-tr-banner-note {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+.abu-najeeb .an-inbound-list,
+.abu-najeeb .an-outbound-list {
+  display: flex;
+  flex-direction: column;
   gap: 6px;
 }
-
-.abu-najeeb .an-treasurer-section.collect h5 { color: var(--success); }
-.abu-najeeb .an-treasurer-section.disburse h5 { color: var(--error); }
-
-.abu-najeeb .an-treasurer-list {
-  display: grid;
-  gap: 6px;
-}
-
-.abu-najeeb .an-treasurer-row {
+.abu-najeeb .an-result-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 12px;
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
+  border: 1px solid var(--card-border);
   border-radius: 8px;
-  border-inline-start: 3px solid;
+  gap: 10px;
+  flex-wrap: wrap;
 }
-
-.abu-najeeb .an-treasurer-row.collect { border-inline-start-color: var(--success); }
-.abu-najeeb .an-treasurer-row.disburse { border-inline-start-color: var(--error); }
-
-.abu-najeeb .an-treasurer-row .an-tr-name {
+.abu-najeeb .an-result-row.bulk {
+  border-inline-start: 3px solid var(--info, #3b82f6);
+}
+.abu-najeeb .an-result-row.debtor {
+  border-inline-start: 3px solid var(--warning, #f59e0b);
+}
+.abu-najeeb .an-result-row.creditor {
+  border-inline-start: 3px solid var(--success, #22c55e);
+}
+.abu-najeeb .an-row-label {
   font-weight: 600;
   color: var(--text-primary);
-}
-
-.abu-najeeb .an-treasurer-row .an-tr-amount {
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.abu-najeeb .an-treasurer-row.collect .an-tr-amount { color: var(--success); }
-.abu-najeeb .an-treasurer-row.disburse .an-tr-amount { color: var(--error); }
-
-/* ============ Greedy View ============ */
-.abu-najeeb .an-greedy-view {
-  display: none;
-}
-.abu-najeeb .an-greedy-view.show { display: block; }
-.abu-najeeb .an-treasurer-view.hidden { display: none; }
-
-.abu-najeeb .an-transfers-list {
-  display: grid;
-  gap: 8px;
-}
-
-.abu-najeeb .an-transfer-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 12px 14px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
-  border: 1px solid var(--card-border-color, rgba(99, 102, 241, 0.2));
-  border-radius: 10px;
-}
-
-.abu-najeeb .an-transfer-flow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.abu-najeeb .an-transfer-arrow {
-  color: var(--accent-primary);
-  font-size: 1.1rem;
-}
-
-.abu-najeeb .an-transfer-amount {
-  font-weight: 800;
-  font-size: 1.1rem;
-  color: var(--accent-primary);
-}
-
-.abu-najeeb .an-savings-banner {
-  margin-top: 12px;
-  padding: 12px 16px;
-  background: linear-gradient(135deg, var(--success), #16a34a);
-  color: white;
-  border-radius: 10px;
-  font-weight: 600;
-  text-align: center;
   font-size: 0.95rem;
 }
-
+.abu-najeeb .an-row-detail {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+.abu-najeeb .an-row-amount {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--accent-primary);
+}
 .abu-najeeb .an-all-settled-banner {
-  padding: 30px 20px;
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  border-radius: 12px;
   text-align: center;
-  color: var(--success);
-  font-weight: 600;
-  font-size: 1rem;
+  padding: 16px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid var(--success, #22c55e);
+  border-radius: 8px;
+  font-weight: 700;
+  color: var(--success, #22c55e);
 }
 
 /* ============ Mobile (768px) ============ */
 @media (max-width: 768px) {
-  .abu-najeeb .an-people-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .abu-najeeb .an-add-person-form {
-    flex-direction: column;
-  }
-  .abu-najeeb .an-add-person-form input {
-    min-width: 0;
-    width: 100%;
-  }
-  .abu-najeeb .an-add-person-form .an-btn {
-    width: 100%;
-  }
-  .abu-najeeb .an-edit-fields {
+  .abu-najeeb .an-bulk-row {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
-  .abu-najeeb .an-settlement-controls {
-    grid-template-columns: 1fr;
+  .abu-najeeb .an-bulk-row .calc-form-group {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    align-items: center;
+    gap: 10px;
+  }
+  .abu-najeeb .an-bulk-row label {
+    margin-bottom: 0;
+  }
+  .abu-najeeb .an-bulk-row input {
+    max-width: 100%;
   }
   .abu-najeeb .an-add-item-row {
     grid-template-columns: 1fr;
+  }
+  .abu-najeeb .an-main-toolbar .an-btn {
+    flex: 1 0 calc(50% - 4px);
+    font-size: 0.75rem;
+    padding: 8px 6px;
+  }
+  .abu-najeeb .an-result-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .abu-najeeb .an-row-amount {
+    align-self: flex-end;
   }
 }
 </style>
@@ -693,49 +694,77 @@
   <!-- Intro -->
   <div class="an-intro">{{tool.tripIntro}}</div>
 
-  <!-- People Bar -->
-  <div class="an-people-bar">
-    <div class="an-people-header">
-      <div class="an-people-title">
-        <span>👥</span>
-        <span>{{tool.peopleBarTitle}}</span>
-        <span class="an-people-count" id="an-people-count">0</span>
+  <!-- Currency (optional) -->
+  <div class="an-currency-row">
+    <div class="calc-form-group">
+      <label for="an-currency">{{tool.currencyLabel}}</label>
+      <input id="an-currency" type="text" placeholder="{{tool.currencyPlaceholder}}" maxlength="8" oninput="anOnCurrencyChange()">
+    </div>
+  </div>
+
+  <!-- Trip Config -->
+  <div class="an-trip-config">
+    <h3 class="an-section-title"><span>👥</span> {{tool.tripConfigTitle}}</h3>
+    <div class="calc-form-group">
+      <label for="an-total">{{tool.totalHeadCountLabel}}</label>
+      <input id="an-total" type="number" min="0" max="50" step="1" placeholder="0" oninput="anOnTotalChange()">
+      <div class="an-hint">{{tool.totalHeadCountHint}}</div>
+    </div>
+    <div class="an-bulk-section">
+      <div class="an-bulk-title">{{tool.bulkSectionTitle}}</div>
+      <div class="an-bulk-hint">{{tool.bulkSectionHint}}</div>
+      <div class="an-bulk-row">
+        <div class="calc-form-group">
+          <label for="an-bulk-full">{{tool.bulkFullLabel}}</label>
+          <input id="an-bulk-full" type="number" min="0" step="1" readonly tabindex="-1">
+        </div>
+        <div class="calc-form-group">
+          <label for="an-bulk-half">{{tool.bulkHalfLabel}}</label>
+          <input id="an-bulk-half" type="number" min="0" step="1" placeholder="0" oninput="anOnBulkChange('half')">
+        </div>
+        <div class="calc-form-group">
+          <label for="an-bulk-quarter">{{tool.bulkQuarterLabel}}</label>
+          <input id="an-bulk-quarter" type="number" min="0" step="1" placeholder="0" oninput="anOnBulkChange('quarter')">
+        </div>
       </div>
     </div>
-    <div class="an-people-list" id="an-people-list">
-      <span class="an-person-empty">{{tool.noPeople}}</span>
+  </div>
+
+  <!-- Buyers Bar -->
+  <div class="an-buyers-bar">
+    <div class="an-buyers-header">
+      <div class="an-buyers-title">
+        <span>🧾</span>
+        <span>{{tool.buyersBarTitle}}</span>
+        <span class="an-buyers-count" id="an-buyers-count">0</span>
+      </div>
     </div>
-    <div class="an-add-person-form">
-      <input id="an-new-person-name" type="text" placeholder="{{tool.personNamePlaceholder}}" maxlength="40">
-      <button class="an-btn" onclick="anAddPerson()">+ {{tool.addPerson}}</button>
+    <div class="an-buyers-hint">{{tool.buyersBarHint}}</div>
+    <div class="an-buyers-list" id="an-buyers-list">
+      <span class="an-buyer-empty">{{tool.noBuyers}}</span>
+    </div>
+    <div class="an-add-buyer-form">
+      <input id="an-new-buyer-name" type="text" placeholder="{{tool.buyerNamePlaceholder}}" maxlength="40">
+      <button class="an-btn" onclick="anAddBuyer()">+ {{tool.addBuyer}}</button>
     </div>
 
     <!-- Edit Panel -->
     <div class="an-edit-panel" id="an-edit-panel">
       <div class="an-edit-panel-title" id="an-edit-panel-title">—</div>
       <div class="an-edit-fields">
-        <input id="an-edit-name" type="text" placeholder="{{tool.personNamePlaceholder}}" maxlength="40">
-        <input id="an-edit-companions" type="number" min="0" max="20" placeholder="{{tool.companionsCountLabel}}">
+        <input id="an-edit-name" type="text" placeholder="{{tool.buyerNamePlaceholder}}" maxlength="40">
       </div>
-      <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 6px;">{{tool.companionShareLabel}}:</div>
+      <div class="an-share-options-label">{{tool.buyerShareFactorLabel}}</div>
       <div class="an-share-options" id="an-share-options">
-        <span class="an-share-pill" data-share="full" onclick="anSetEditShare('full')">{{tool.companionShareFull}}</span>
-        <span class="an-share-pill" data-share="half" onclick="anSetEditShare('half')">{{tool.companionShareHalf}}</span>
-        <span class="an-share-pill" data-share="quarter" onclick="anSetEditShare('quarter')">{{tool.companionShareQuarter}}</span>
+        <span class="an-share-pill" data-share="full" onclick="anSetEditShare('full')">{{tool.shareFull}}</span>
+        <span class="an-share-pill" data-share="half" onclick="anSetEditShare('half')">{{tool.shareHalf}}</span>
+        <span class="an-share-pill" data-share="quarter" onclick="anSetEditShare('quarter')">{{tool.shareQuarter}}</span>
       </div>
       <div class="an-edit-actions">
         <button class="an-btn" onclick="anSaveEdit()">{{tool.personEdit}}</button>
         <button class="an-btn an-btn-secondary" onclick="anCancelEdit()">{{tool.cancelBtn}}</button>
         <button class="an-btn an-btn-danger" onclick="anDeleteEditing()">{{tool.personRemove}}</button>
       </div>
-    </div>
-  </div>
-
-  <!-- Currency (optional) -->
-  <div class="an-currency-row">
-    <div class="calc-form-group">
-      <label for="an-currency">{{tool.currencyLabel}}</label>
-      <input id="an-currency" type="text" placeholder="{{tool.currencyPlaceholder}}" maxlength="8" oninput="anOnCurrencyChange()">
     </div>
   </div>
 
@@ -751,14 +780,15 @@
 
   <!-- Saved Groups Panel -->
   <div class="an-saved-groups-panel" id="an-saved-panel">
-    <div style="font-weight: 700; margin-bottom: 8px; color: var(--text-primary);">📂 {{tool.savedGroupsTitle}}</div>
+    <div style="font-weight: 700; margin-bottom: 4px; color: var(--text-primary);">📂 {{tool.savedGroupsTitle}}</div>
+    <div class="an-saved-groups-hint">{{tool.groupOnlySavesBuyers}}</div>
     <div id="an-saved-groups-list"></div>
   </div>
 
-  <!-- Need People Warning -->
-  <div class="an-need-people" id="an-need-people" style="display:none;">{{tool.errMinPeople}}</div>
+  <!-- Config warning -->
+  <div class="an-need-config" id="an-need-config" style="display:none;">{{tool.errNoTotal}}</div>
 
-  <!-- Settlement Settings (visible when people >= 2, before expenses) -->
+  <!-- Settlement Settings -->
   <div class="an-settlement-settings" id="an-settlement-settings" style="display:none;">
     <div class="an-settlement-settings-hint">💡 {{tool.treasurerHint}}</div>
     <div class="an-settlement-controls">
@@ -766,18 +796,11 @@
         <label for="an-treasurer">⭐ {{tool.treasurerLabel}}</label>
         <select id="an-treasurer" class="an-treasurer-select" onchange="anOnTreasurerChange()"></select>
       </div>
-      <div class="calc-form-group">
-        <label>{{tool.settlementModeLabel}}</label>
-        <div class="an-mode-pills">
-          <span class="an-mode-pill active" data-mode="treasurer" onclick="anSetSettlementMode('treasurer')">{{tool.modeTreasurer}}</span>
-          <span class="an-mode-pill" data-mode="greedy" onclick="anSetSettlementMode('greedy')">{{tool.modeGreedy}}</span>
-        </div>
-      </div>
     </div>
   </div>
 
   <!-- Expenses Section -->
-  <h3 class="an-section-title" id="an-expenses-section-title"><span>🧾</span> {{tool.expensesTitle}}</h3>
+  <h3 class="an-section-title" id="an-expenses-section-title"><span>💵</span> {{tool.expensesTitle}}</h3>
   <div class="an-items-list" id="an-expenses-list"></div>
 
   <div class="an-add-item-card" id="an-add-card">
@@ -786,11 +809,9 @@
       <input id="an-new-amount" type="number" min="0" step="1" placeholder="{{tool.expenseAmountLabel}}">
     </div>
     <div class="an-paid-by-row">
-      <div class="an-share-pills-label">{{tool.paidByLabel}}</div>
+      <span class="an-paid-by-label">{{tool.paidByLabel}}</span>
       <select id="an-paid-by"></select>
     </div>
-    <div class="an-share-pills-label">{{tool.expenseShareWithLabel}}</div>
-    <div class="an-share-pills" id="an-share-pills"></div>
     <button class="an-btn" onclick="anAddExpense()">+ {{tool.addExpense}}</button>
   </div>
 
@@ -798,39 +819,36 @@
   <div class="calc-result" id="an-result">
     <div class="calc-stats-grid">
       <div class="calc-stat-card highlight">
-        <div class="value" id="an-total">—</div>
+        <div class="value" id="an-stat-total">—</div>
         <div class="label">{{tool.totalLabel}}</div>
       </div>
       <div class="calc-stat-card">
-        <div class="value" id="an-per-person">—</div>
-        <div class="label">{{tool.perPersonLabel}}</div>
+        <div class="value" id="an-stat-cps">—</div>
+        <div class="label">{{tool.costPerFullShareLabel}}</div>
       </div>
       <div class="calc-stat-card">
-        <div class="value" id="an-people-stat">—</div>
+        <div class="value" id="an-stat-people">—</div>
         <div class="label">{{tool.peopleCountLabel}}</div>
       </div>
-    </div>
-
-    <!-- Treasurer view -->
-    <div class="an-treasurer-view" id="an-treasurer-view">
-      <div class="an-treasurer-banner" id="an-treasurer-banner">⭐ —</div>
-
-      <div class="an-treasurer-section collect">
-        <h5>💰 {{tool.treasurerCollects}}</h5>
-        <div class="an-treasurer-list" id="an-treasurer-collects"></div>
-      </div>
-
-      <div class="an-treasurer-section disburse">
-        <h5>💸 {{tool.treasurerDisburses}}</h5>
-        <div class="an-treasurer-list" id="an-treasurer-disburses"></div>
+      <div class="calc-stat-card an-stat-breakdown">
+        <div class="value" id="an-stat-breakdown">—</div>
+        <div class="label">{{tool.perFactorBreakdownLabel}}</div>
       </div>
     </div>
 
-    <!-- Greedy view -->
-    <div class="an-greedy-view" id="an-greedy-view">
-      <h4 style="margin: 0 0 10px; font-size: 1.05rem; color: var(--text-primary); font-weight: 700;">{{tool.transfersTitle}}</h4>
-      <div class="an-transfers-list" id="an-transfers"></div>
-      <div class="an-savings-banner" id="an-savings" style="display:none;"></div>
+    <!-- Inbound view -->
+    <div class="an-view-inbound" id="an-view-inbound">
+      <h4 class="an-view-title">💰 {{tool.viewInboundTitle}}
+        <span class="an-tr-banner" id="an-tr-banner">—</span>
+        <span class="an-tr-banner-note" id="an-tr-banner-note"></span>
+      </h4>
+      <div class="an-inbound-list" id="an-inbound-list"></div>
+    </div>
+
+    <!-- Outbound view -->
+    <div class="an-view-outbound" id="an-view-outbound">
+      <h4 class="an-view-title">💸 {{tool.viewOutboundTitle}}</h4>
+      <div class="an-outbound-list" id="an-outbound-list"></div>
     </div>
   </div>
 </div>
@@ -849,6 +867,7 @@
   var isArabic = lang === 'ar';
 
   function $(id) { return document.getElementById(id); }
+
   function fmtAmount(n) {
     var v = Math.round(n);
     var s = (typeof App !== 'undefined' && App.formatNumber) ? App.formatNumber(v) : String(v);
@@ -856,244 +875,266 @@
     return s;
   }
 
-  // i18n runtime strings
+  // i18n runtime strings (used in alerts, dynamic text)
   var T = {
-    errMinPeople: isArabic ? 'أضف شخصين على الأقل، ومصروفاً واحداً' : 'Add at least two people and one expense',
-    errMaxPeople: isArabic ? 'الحدّ الأقصى 50 شخصاً' : 'Maximum 50 people',
-    errEmptyName: isArabic ? 'أدخل اسماً' : 'Enter a name',
-    personHasExpense: isArabic ? 'لا يمكن حذف هذا الشخص — هو دافع لمصروف. غيِّر الدافع أولاً.' : 'Cannot remove — this person paid for an expense. Change the payer first.',
-    removeConfirm: isArabic ? 'حذف هذا الشخص؟' : 'Remove this person?',
-    editingTitle: isArabic ? 'تعديل: ' : 'Editing: ',
-    weightShare: isArabic ? 'نصيب' : 'share',
-    everyone: isArabic ? 'الجميع' : 'Everyone',
-    isTreasurer: isArabic ? 'أمين الصندوق' : 'Treasurer',
-    allSettled: isArabic ? '✅ الجميع متعادل، لا توجد ديون 🎉' : '✅ Everyone is settled — no debts 🎉',
-    treasurerIs: isArabic ? '⭐ أمين الصندوق: ' : '⭐ Treasurer: ',
-    autoTreasurer: isArabic ? '(مقترح تلقائياً — أكبر دائن)' : '(auto-suggested — biggest creditor)',
-    units: isArabic ? ' وحدة' : ' units',
-    people: isArabic ? ' أشخاص' : ' people'
+    errNoTotal:        isArabic ? 'أدخل العدد الكلي للمشاركين أولاً' : 'Enter the total number of participants first',
+    errNoBuyers:       isArabic ? 'أضف شخصاً واحداً مسمَّى على الأقل لتسجيل المصاريف' : 'Add at least one named buyer to record expenses',
+    errMaxPeople:      isArabic ? 'الحدّ الأقصى 50 مشاركاً' : 'Maximum 50 participants',
+    errEmptyName:      isArabic ? 'أدخل اسماً' : 'Enter a name',
+    errNoExpenses:     isArabic ? 'أضف مصروفاً واحداً على الأقل' : 'Add at least one expense',
+    errInvalidAmount:  isArabic ? 'أدخل مبلغاً صحيحاً أكبر من 0' : 'Enter a valid amount greater than 0',
+    buyerHasExpense:   isArabic ? 'لا يمكن حذف هذا الشخص — هو دافع لمصروف. غيِّر الدافع أولاً.' : 'Cannot remove — this person paid for an expense. Change the payer first.',
+    removeConfirm:     isArabic ? 'حذف هذا الشخص؟' : 'Remove this person?',
+    editingTitle:      isArabic ? 'تعديل: ' : 'Editing: ',
+    allSettled:        isArabic ? '✅ الجميع متعادل، لا توجد ديون 🎉' : '✅ Everyone is settled — no debts 🎉',
+    treasurerIs:       isArabic ? '⭐ أمين الصندوق: ' : '⭐ Treasurer: ',
+    autoTreasurer:     isArabic ? 'مقترح تلقائياً' : 'auto-suggested',
+    autoTreasurerOpt:  isArabic ? 'مقترح تلقائياً (أكبر دائن)' : 'Auto-suggest (biggest creditor)',
+    payHint:           isArabic ? 'يدفع' : 'pays',
+    receiveHint:       isArabic ? 'يستلم' : 'receives',
+    paidLabel:         isArabic ? 'دفع' : 'paid',
+    needTreasurerLabel: isArabic ? 'يحتاج أمين الصندوق' : 'needs a treasurer',
+    breakdownFull:     isArabic ? 'كامل' : 'full',
+    breakdownHalf:     isArabic ? 'نصف' : 'half',
+    breakdownQuarter:  isArabic ? 'ربع' : 'quarter',
+    bulkLineFull:      isArabic ? 'شخص بنصاب كامل' : 'people on full share',
+    bulkLineHalf:      isArabic ? 'شخص بنصف نصاب' : 'people on half share',
+    bulkLineQuarter:   isArabic ? 'شخص بربع نصاب' : 'people on quarter share',
+    factorLabelFull:   isArabic ? 'كامل' : 'full',
+    factorLabelHalf:   isArabic ? 'نصف' : 'half',
+    factorLabelQuarter: isArabic ? 'ربع' : 'quarter',
+    groupNamePrompt:   isArabic ? 'اسم المجموعة (شلة الجامعة...)' : 'Group name (College Crew...)',
+    groupSavedToast:   isArabic ? 'تم حفظ المجموعة' : 'Group saved',
+    groupLoadedToast:  isArabic ? 'تم تحميل المجموعة' : 'Group loaded',
+    groupDeleteConfirm: isArabic ? 'حذف هذه المجموعة؟' : 'Delete this group?',
+    noSavedGroups:     isArabic ? 'لا توجد مجموعات محفوظة' : 'No saved groups',
+    loadGroupBtn:      isArabic ? 'تحميل' : 'Load',
+    deleteGroupBtn:    isArabic ? 'حذف' : 'Delete',
+    buyersCountSuffix: isArabic ? ' أشخاص' : ' buyers',
+    resetConfirm:      isArabic ? 'إعادة تعيين كل البيانات؟' : 'Reset all data?',
+    copiedToast:       isArabic ? 'تم النسخ!' : 'Copied!',
+    imageReadyToast:   isArabic ? 'الصورة جاهزة' : 'Image ready',
+    exportNoResult:    isArabic ? 'لا توجد نتيجة لتصديرها بعد' : 'No result to export yet',
+    exportFailed:      isArabic ? 'تعذّر التصدير، حاول نسخ النص بدلاً' : 'Export failed, try copying as text instead'
   };
 
   // ============ State ============
   var state = {
     currency: '',
-    editingPersonId: null,
-    editBuffer: null,
-    people: [],
+    total: 0,
+    bulk: { full: 0, half: 0, quarter: 0 },
+    buyers: [],
     expenses: [],
-    treasurer: null,           // personId | null (null = auto = biggest creditor)
-    settlementMode: 'treasurer' // 'treasurer' | 'greedy'
+    treasurer: null,           // buyerId | null (null = auto = biggest creditor)
+    editingBuyerId: null,
+    editBuffer: null
   };
 
   // ============ Helpers ============
+  var FACTOR_MULTIPLIER = { full: 1, half: 0.5, quarter: 0.25 };
+
   function uid(prefix) {
     return (prefix || 'id') + '_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
   }
 
-  function getWeight(p) {
-    if (!p) return 1;
-    var mult = ({ full: 1, half: 0.5, quarter: 0.25 })[p.companionShare] || 1;
-    return 1 + (p.companions || 0) * mult;
+  function shareMult(factor) {
+    return FACTOR_MULTIPLIER[factor] || 1;
   }
 
-  function computeShares(amount, includedIds) {
-    if (!Array.isArray(includedIds) || includedIds.length === 0) return [];
-    var weights = includedIds.map(function(id) {
-      var p = state.people.find(function(x) { return x.id === id; });
-      return { id: id, w: getWeight(p) };
+  function getBuyer(id) {
+    return state.buyers.find(function(b) { return b.id === id; });
+  }
+
+  function getBuyerName(id) {
+    var b = getBuyer(id);
+    return b ? b.name : '?';
+  }
+
+  function factorLabel(f) {
+    return f === 'half' ? T.factorLabelHalf : f === 'quarter' ? T.factorLabelQuarter : T.factorLabelFull;
+  }
+
+  function bulkLineLabel(factor) {
+    return factor === 'half' ? T.bulkLineHalf : factor === 'quarter' ? T.bulkLineQuarter : T.bulkLineFull;
+  }
+
+  function getTotalShares() {
+    var bulkShares = state.bulk.full * 1 + state.bulk.half * 0.5 + state.bulk.quarter * 0.25;
+    var buyerShares = state.buyers.reduce(function(s, b) { return s + shareMult(b.shareFactor); }, 0);
+    return bulkShares + buyerShares;
+  }
+
+  function getTotalCost() {
+    return state.expenses.reduce(function(s, e) { return s + e.amount; }, 0);
+  }
+
+  // ============ Math ============
+  function computeCostPerFullShare() {
+    var totalShares = getTotalShares();
+    if (totalShares <= 0) return 0;
+    return Math.round(getTotalCost() / totalShares);
+  }
+
+  function computeBuyerStats() {
+    var cps = computeCostPerFullShare();
+    return state.buyers.map(function(b) {
+      var paid = state.expenses
+        .filter(function(e) { return e.paidBy === b.id; })
+        .reduce(function(s, e) { return s + e.amount; }, 0);
+      var owed = Math.round(cps * shareMult(b.shareFactor));
+      return {
+        id: b.id,
+        name: b.name,
+        shareFactor: b.shareFactor,
+        paid: paid,
+        owed: owed,
+        net: paid - owed
+      };
     });
-    var total = weights.reduce(function(s, x) { return s + x.w; }, 0);
-    if (total === 0) return [];
-
-    var shares = weights.map(function(x) {
-      return { personId: x.id, share: Math.round(amount * x.w / total), weight: x.w };
-    });
-
-    var sumShares = shares.reduce(function(s, x) { return s + x.share; }, 0);
-    var diff = Math.round(amount) - sumShares;
-    if (diff !== 0 && shares.length > 0) shares[shares.length - 1].share += diff;
-    return shares;
   }
 
-  function getPersonName(id) {
-    var p = state.people.find(function(x) { return x.id === id; });
-    return p ? p.name : '?';
-  }
-
-  function computeNet() {
-    var net = {};
-    state.people.forEach(function(p) { net[p.id] = 0; });
-    state.expenses.forEach(function(exp) {
-      if (!net.hasOwnProperty(exp.paidBy)) return;
-      net[exp.paidBy] += exp.amount;
-      var ids = exp.sharedWith === 'all'
-        ? state.people.map(function(p) { return p.id; })
-        : exp.sharedWith.slice();
-      ids = ids.filter(function(id) { return state.people.find(function(p) { return p.id === id; }); });
-      if (ids.length === 0) return;
-      var shares = computeShares(exp.amount, ids);
-      shares.forEach(function(s) { net[s.personId] -= s.share; });
-    });
-    return net;
-  }
-
-  function autoSuggestedTreasurer(net) {
-    // Biggest creditor (highest net). Fallback to first person.
+  function autoSuggestedTreasurer(buyerStats) {
+    if (buyerStats.length === 0) return null;
     var best = null;
     var bestNet = -Infinity;
-    state.people.forEach(function(p) {
-      var v = net[p.id] || 0;
-      if (v > bestNet) { bestNet = v; best = p.id; }
+    buyerStats.forEach(function(b) {
+      if (b.net > bestNet) { bestNet = b.net; best = b.id; }
     });
-    return best || (state.people[0] && state.people[0].id);
+    return best || buyerStats[0].id;
   }
 
-  function getEffectiveTreasurer(net) {
-    if (state.treasurer && state.people.find(function(p) { return p.id === state.treasurer; })) {
+  function getEffectiveTreasurer(buyerStats) {
+    if (state.treasurer && state.buyers.find(function(b) { return b.id === state.treasurer; })) {
       return state.treasurer;
     }
-    return autoSuggestedTreasurer(net);
+    return autoSuggestedTreasurer(buyerStats);
   }
 
-  // ============ Settlement: Treasurer model ============
-  function computeTreasurerModel() {
-    var net = computeNet();
-    var tId = getEffectiveTreasurer(net);
+  function computeSettlement() {
+    var cps = computeCostPerFullShare();
+    var buyerStats = computeBuyerStats();
+    var tId = getEffectiveTreasurer(buyerStats);
+    var totalCost = getTotalCost();
+    var trStats = tId ? buyerStats.find(function(b) { return b.id === tId; }) : null;
 
-    var collects = []; // debtors → treasurer
-    var disburses = []; // treasurer → creditors
-
-    Object.keys(net).forEach(function(id) {
-      if (id === tId) return;
-      var v = net[id];
-      if (v < 0) collects.push({ id: id, amount: -v });
-      else if (v > 0) disburses.push({ id: id, amount: v });
+    var inboundBulk = [];
+    ['full', 'half', 'quarter'].forEach(function(factor) {
+      var count = state.bulk[factor];
+      if (count > 0) {
+        var perPerson = Math.round(cps * shareMult(factor));
+        inboundBulk.push({
+          factor: factor,
+          count: count,
+          perPerson: perPerson,
+          total: count * perPerson
+        });
+      }
     });
 
-    // Invariant: sumCollects - sumDisburses == net[tId]
-    //   - treasurer creditor (net[t]>0): keeps net[t] from collections
-    //   - treasurer debtor   (net[t]<0): pays |net[t]| more than collected
-    // Deviation from this invariant = rounding noise. Absorb in last entry.
-    var sumCollects = collects.reduce(function(s, x) { return s + x.amount; }, 0);
-    var sumDisburses = disburses.reduce(function(s, x) { return s + x.amount; }, 0);
-    var imbalance = sumCollects - sumDisburses - (net[tId] || 0);
-    if (imbalance > 0) {
-      // Treasurer has extra cash → pay it out (or collect less)
-      if (disburses.length > 0) disburses[disburses.length - 1].amount += imbalance;
-      else if (collects.length > 0) {
-        collects[collects.length - 1].amount -= imbalance;
-        if (collects[collects.length - 1].amount <= 0) collects.pop();
+    var inboundBuyers = [];
+    var outboundBuyers = [];
+    buyerStats.forEach(function(b) {
+      if (b.id === tId) return;
+      if (b.net < 0) {
+        inboundBuyers.push({ id: b.id, name: b.name, factor: b.shareFactor, amount: -b.net });
+      } else if (b.net > 0) {
+        outboundBuyers.push({ id: b.id, name: b.name, factor: b.shareFactor, amount: b.net });
       }
-    } else if (imbalance < 0) {
-      // Treasurer has deficit → collect more (or pay less)
-      if (collects.length > 0) collects[collects.length - 1].amount += -imbalance;
-      else if (disburses.length > 0) {
-        disburses[disburses.length - 1].amount -= -imbalance;
-        if (disburses[disburses.length - 1].amount <= 0) disburses.pop();
-      }
-    }
-
-    return { treasurerId: tId, collects: collects, disburses: disburses, net: net };
-  }
-
-  // ============ Settlement: Greedy ============
-  function computeGreedy() {
-    var net = computeNet();
-
-    var creditors = [];
-    var debtors = [];
-    Object.keys(net).forEach(function(id) {
-      var v = net[id];
-      if (v > 0) creditors.push({ id: id, net: v });
-      else if (v < 0) debtors.push({ id: id, net: v });
     });
 
-    var sumC = creditors.reduce(function(s, x) { return s + x.net; }, 0);
-    var sumD = debtors.reduce(function(s, x) { return s + x.net; }, 0);
-    var imbalance = sumC + sumD;
-    if (imbalance !== 0 && creditors.length > 0) {
-      creditors[0].net -= imbalance;
-      if (creditors[0].net <= 0) creditors[0].net += imbalance;
-    }
+    // Rounding fix:
+    //   net of treasurer should equal (sumInbound - sumOutbound)
+    // because treasurer collects inbound and pays outbound.
+    // Any deviation is rounding noise; absorb in the longest list.
+    if (trStats) {
+      var sumInbound = inboundBulk.reduce(function(s, x) { return s + x.total; }, 0)
+                     + inboundBuyers.reduce(function(s, x) { return s + x.amount; }, 0);
+      var sumOutbound = outboundBuyers.reduce(function(s, x) { return s + x.amount; }, 0);
+      var imbalance = (sumInbound - sumOutbound) - trStats.net;
 
-    creditors.sort(function(a, b) { return b.net - a.net; });
-    debtors.sort(function(a, b) { return a.net - b.net; });
-
-    var transfers = [];
-    var safety = 1000;
-    while (creditors.length && debtors.length && safety-- > 0) {
-      var c = creditors[0];
-      var d = debtors[0];
-      var amt = Math.min(c.net, -d.net);
-      if (amt <= 0) break;
-      transfers.push({ from: d.id, to: c.id, amount: amt });
-      c.net -= amt;
-      d.net += amt;
-      if (c.net === 0) creditors.shift();
-      if (d.net === 0) debtors.shift();
-    }
-    return { transfers: transfers, net: net };
-  }
-
-  // ============ Tab Switching (kept for backwards compat — no-op) ============
-  // Removed in v2 refactor; settlement mode toggle replaces tabs.
-
-  // ============ Add-Expense Pills State ============
-  var newExpenseShared = 'all';
-
-  window.anToggleSharePill = function(value) {
-    if (value === 'all') {
-      newExpenseShared = 'all';
-    } else {
-      if (newExpenseShared === 'all') {
-        newExpenseShared = [value];
-      } else {
-        var idx = newExpenseShared.indexOf(value);
-        if (idx === -1) newExpenseShared.push(value);
-        else newExpenseShared.splice(idx, 1);
-        if (newExpenseShared.length === 0) newExpenseShared = 'all';
+      if (imbalance !== 0) {
+        // Absorb on the side with the most entries
+        if (inboundBulk.length + inboundBuyers.length >= outboundBuyers.length && (inboundBulk.length + inboundBuyers.length) > 0) {
+          // adjust inbound (reduce by imbalance to balance)
+          if (inboundBuyers.length > 0) {
+            inboundBuyers[inboundBuyers.length - 1].amount -= imbalance;
+            if (inboundBuyers[inboundBuyers.length - 1].amount <= 0) inboundBuyers.pop();
+          } else if (inboundBulk.length > 0) {
+            inboundBulk[inboundBulk.length - 1].total -= imbalance;
+          }
+        } else if (outboundBuyers.length > 0) {
+          outboundBuyers[outboundBuyers.length - 1].amount += imbalance;
+          if (outboundBuyers[outboundBuyers.length - 1].amount <= 0) outboundBuyers.pop();
+        }
       }
     }
-    renderSharePills();
+
+    return {
+      treasurerId: tId,
+      treasurerName: tId ? getBuyerName(tId) : null,
+      inboundBulk: inboundBulk,
+      inboundBuyers: inboundBuyers,
+      outboundBuyers: outboundBuyers,
+      buyerStats: buyerStats,
+      costPerFullShare: cps,
+      totalCost: totalCost,
+      isAuto: !state.treasurer
+    };
+  }
+
+  // ============ Trip Config CRUD ============
+  window.anOnTotalChange = function() {
+    var input = $('an-total');
+    var raw = input.value;
+    var newTotal = parseInt(raw, 10);
+    if (isNaN(newTotal) || newTotal < 0) newTotal = 0;
+    if (newTotal > 50) newTotal = 50;
+
+    // Clamp to at least buyers.length
+    if (newTotal < state.buyers.length) newTotal = state.buyers.length;
+
+    var diff = newTotal - state.total;
+    state.total = newTotal;
+
+    if (diff > 0) {
+      state.bulk.full += diff;
+    } else if (diff < 0) {
+      var toRemove = -diff;
+      var fromFull = Math.min(state.bulk.full, toRemove);
+      state.bulk.full -= fromFull;
+      toRemove -= fromFull;
+      if (toRemove > 0) {
+        var fromHalf = Math.min(state.bulk.half, toRemove);
+        state.bulk.half -= fromHalf;
+        toRemove -= fromHalf;
+      }
+      if (toRemove > 0) {
+        state.bulk.quarter = Math.max(0, state.bulk.quarter - toRemove);
+      }
+    }
+
+    input.value = state.total;
+    renderAll();
   };
 
-  function renderSharePills() {
-    var el = $('an-share-pills');
-    if (!el) return;
-    el.innerHTML = '';
-    var isAllMode = newExpenseShared === 'all';
+  window.anOnBulkChange = function(factor) {
+    if (factor === 'full') return; // full is readonly, derived
+    var input = $('an-bulk-' + factor);
+    var newValue = parseInt(input.value, 10);
+    if (isNaN(newValue) || newValue < 0) newValue = 0;
 
-    var allPill = document.createElement('span');
-    allPill.className = 'an-share-pill an-all-pill' + (isAllMode ? ' active' : '');
-    allPill.textContent = T.everyone;
-    allPill.onclick = function() { anToggleSharePill('all'); };
-    el.appendChild(allPill);
+    // Max allowed: current value + currently available bulk.full
+    var maxAllowed = state.bulk[factor] + state.bulk.full;
+    if (newValue > maxAllowed) newValue = maxAllowed;
 
-    state.people.forEach(function(p) {
-      var pill = document.createElement('span');
-      var active = !isAllMode && newExpenseShared.indexOf(p.id) !== -1;
-      pill.className = 'an-share-pill' + (active ? ' active' : '');
-      pill.textContent = p.name;
-      pill.onclick = function() { anToggleSharePill(p.id); };
-      el.appendChild(pill);
-    });
-  }
+    var diff = newValue - state.bulk[factor];
+    state.bulk[factor] = newValue;
+    state.bulk.full -= diff;
+    if (state.bulk.full < 0) state.bulk.full = 0;
 
-  function renderPaidBySelect() {
-    var sel = $('an-paid-by');
-    if (!sel) return;
-    var prev = sel.value;
-    sel.innerHTML = '';
-    state.people.forEach(function(p) {
-      var opt = document.createElement('option');
-      opt.value = p.id;
-      opt.textContent = p.name;
-      sel.appendChild(opt);
-    });
-    if (prev && state.people.find(function(p) { return p.id === prev; })) {
-      sel.value = prev;
-    }
-  }
+    input.value = newValue;
+    renderAll();
+  };
 
   // ============ Treasurer Select ============
   function renderTreasurerSelect() {
@@ -1101,16 +1142,15 @@
     if (!sel) return;
     sel.innerHTML = '';
 
-    // First option: auto
     var autoOpt = document.createElement('option');
     autoOpt.value = '';
-    autoOpt.textContent = isArabic ? 'مقترح تلقائياً (أكبر دائن)' : 'Auto-suggest (biggest creditor)';
+    autoOpt.textContent = T.autoTreasurerOpt;
     sel.appendChild(autoOpt);
 
-    state.people.forEach(function(p) {
+    state.buyers.forEach(function(b) {
       var opt = document.createElement('option');
-      opt.value = p.id;
-      opt.textContent = p.name;
+      opt.value = b.id;
+      opt.textContent = b.name;
       sel.appendChild(opt);
     });
 
@@ -1124,114 +1164,96 @@
     saveSession();
   };
 
-  window.anSetSettlementMode = function(mode) {
-    state.settlementMode = mode;
-    var pills = document.querySelectorAll('.abu-najeeb .an-mode-pill');
-    pills.forEach(function(pill) {
-      if (pill.getAttribute('data-mode') === mode) pill.classList.add('active');
-      else pill.classList.remove('active');
-    });
-    var tv = $('an-treasurer-view');
-    var gv = $('an-greedy-view');
-    if (mode === 'treasurer') {
-      tv.classList.remove('hidden');
-      gv.classList.remove('show');
-    } else {
-      tv.classList.add('hidden');
-      gv.classList.add('show');
-    }
-    saveSession();
-  };
-
-  // ============ People CRUD ============
-  window.anAddPerson = function() {
-    var inp = $('an-new-person-name');
+  // ============ Buyers CRUD ============
+  window.anAddBuyer = function() {
+    var inp = $('an-new-buyer-name');
     var name = (inp.value || '').trim();
     if (!name) { inp.focus(); return; }
-    if (state.people.length >= 50) { alert(T.errMaxPeople); return; }
+    if (state.total === 0 && state.buyers.length === 0) {
+      // No total yet — auto-bump total to 1, this buyer takes the slot
+      state.total = 1;
+      state.bulk.full = 1;
+    }
+    if (state.buyers.length >= 50) { alert(T.errMaxPeople); return; }
 
-    state.people.push({
-      id: uid('p'),
+    state.buyers.push({
+      id: uid('b'),
       name: name,
-      companions: 0,
-      companionShare: 'full'
+      shareFactor: 'full'
     });
+
+    // Take a slot from bulk.full if available; otherwise expand total
+    if (state.bulk.full > 0) {
+      state.bulk.full -= 1;
+    } else {
+      state.total += 1;
+    }
+
     inp.value = '';
     inp.focus();
     renderAll();
   };
 
-  window.anEditPerson = function(id) {
-    var p = state.people.find(function(x) { return x.id === id; });
-    if (!p) return;
-    state.editingPersonId = id;
-    state.editBuffer = { name: p.name, companions: p.companions, companionShare: p.companionShare };
+  window.anEditBuyer = function(id) {
+    var b = getBuyer(id);
+    if (!b) return;
+    state.editingBuyerId = id;
+    state.editBuffer = { name: b.name, shareFactor: b.shareFactor };
 
-    $('an-edit-panel-title').textContent = T.editingTitle + p.name;
-    $('an-edit-name').value = p.name;
-    $('an-edit-companions').value = p.companions;
+    $('an-edit-panel-title').textContent = T.editingTitle + b.name;
+    $('an-edit-name').value = b.name;
     renderShareOptions();
     $('an-edit-panel').classList.add('show');
-    renderPeopleList();
+    renderBuyersList();
   };
 
   window.anSetEditShare = function(share) {
     if (!state.editBuffer) return;
-    state.editBuffer.companionShare = share;
+    state.editBuffer.shareFactor = share;
     renderShareOptions();
   };
 
   window.anSaveEdit = function() {
-    if (!state.editingPersonId || !state.editBuffer) return;
-    var p = state.people.find(function(x) { return x.id === state.editingPersonId; });
-    if (!p) return;
+    if (!state.editingBuyerId || !state.editBuffer) return;
+    var b = getBuyer(state.editingBuyerId);
+    if (!b) return;
 
     var nameInput = $('an-edit-name').value.trim();
     if (!nameInput) { alert(T.errEmptyName); return; }
 
-    var cmp = parseInt($('an-edit-companions').value, 10);
-    if (isNaN(cmp) || cmp < 0) cmp = 0;
-    if (cmp > 20) cmp = 20;
-
-    p.name = nameInput;
-    p.companions = cmp;
-    p.companionShare = state.editBuffer.companionShare || 'full';
+    b.name = nameInput;
+    b.shareFactor = state.editBuffer.shareFactor || 'full';
 
     anCancelEdit();
     renderAll();
   };
 
   window.anCancelEdit = function() {
-    state.editingPersonId = null;
+    state.editingBuyerId = null;
     state.editBuffer = null;
     $('an-edit-panel').classList.remove('show');
-    renderPeopleList();
+    renderBuyersList();
   };
 
   window.anDeleteEditing = function() {
-    if (!state.editingPersonId) return;
-    var id = state.editingPersonId;
+    if (!state.editingBuyerId) return;
+    var id = state.editingBuyerId;
 
     var isPayer = state.expenses.some(function(e) { return e.paidBy === id; });
-    if (isPayer) { alert(T.personHasExpense); return; }
+    if (isPayer) { alert(T.buyerHasExpense); return; }
 
     if (!confirm(T.removeConfirm)) return;
 
-    state.expenses.forEach(function(ex) {
-      if (Array.isArray(ex.sharedWith)) {
-        ex.sharedWith = ex.sharedWith.filter(function(pid) { return pid !== id; });
-      }
-    });
-
-    if (state.treasurer === id) state.treasurer = null; // revert to auto
-    state.people = state.people.filter(function(x) { return x.id !== id; });
+    if (state.treasurer === id) state.treasurer = null;
+    state.buyers = state.buyers.filter(function(x) { return x.id !== id; });
+    state.bulk.full += 1; // slot returns to bulk
     anCancelEdit();
     renderAll();
   };
 
   // ============ Expenses CRUD ============
   window.anAddExpense = function() {
-    if (state.people.length < 2) { alert(T.errMinPeople); return; }
+    if (state.buyers.length < 1) { alert(T.errNoBuyers); return; }
     var descInput = $('an-new-desc');
     var amtInput = $('an-new-amount');
     var paidSel = $('an-paid-by');
@@ -1241,21 +1263,17 @@
     var paidBy = paidSel.value;
     if (!desc) { descInput.focus(); return; }
     if (isNaN(amt) || amt <= 0) { amtInput.focus(); return; }
-    if (!paidBy || !state.people.find(function(p) { return p.id === paidBy; })) {
-      paidSel.focus(); return;
-    }
+    if (!paidBy || !getBuyer(paidBy)) { paidSel.focus(); return; }
 
     state.expenses.push({
       id: uid('e'),
       description: desc,
       amount: Math.round(amt),
-      paidBy: paidBy,
-      sharedWith: newExpenseShared === 'all' ? 'all' : newExpenseShared.slice()
+      paidBy: paidBy
     });
 
     descInput.value = '';
     amtInput.value = '';
-    newExpenseShared = 'all';
     descInput.focus();
     renderAll();
   };
@@ -1266,31 +1284,42 @@
   };
 
   // ============ Renderers ============
-  function renderPeopleList() {
-    var listEl = $('an-people-list');
-    var countEl = $('an-people-count');
-    countEl.textContent = state.people.length;
+  function renderTripConfig() {
+    var totalInput = $('an-total');
+    if (totalInput && document.activeElement !== totalInput) totalInput.value = state.total || '';
+    var fullInput = $('an-bulk-full');
+    if (fullInput) fullInput.value = state.bulk.full;
+    ['half', 'quarter'].forEach(function(f) {
+      var el = $('an-bulk-' + f);
+      if (el && document.activeElement !== el) el.value = state.bulk[f];
+    });
+  }
 
-    if (state.people.length === 0) {
-      listEl.innerHTML = '<span class="an-person-empty">' +
-        (isArabic ? 'لا يوجد أشخاص بعد' : 'No people yet') +
+  function renderBuyersList() {
+    var listEl = $('an-buyers-list');
+    var countEl = $('an-buyers-count');
+    countEl.textContent = state.buyers.length;
+
+    if (state.buyers.length === 0) {
+      listEl.innerHTML = '<span class="an-buyer-empty">' +
+        (isArabic ? 'لا أحد بعد' : 'No buyers yet') +
         '</span>';
       return;
     }
 
-    var net = state.expenses.length > 0 ? computeNet() : null;
-    var tId = net ? getEffectiveTreasurer(net) : null;
+    var stats = state.expenses.length > 0 ? computeBuyerStats() : null;
+    var tId = stats ? getEffectiveTreasurer(stats) : null;
 
     listEl.innerHTML = '';
-    state.people.forEach(function(p) {
+    state.buyers.forEach(function(b) {
       var chip = document.createElement('span');
-      var cls = 'an-person-chip';
-      if (state.editingPersonId === p.id) cls += ' editing';
-      if (p.id === tId) cls += ' treasurer';
+      var cls = 'an-buyer-chip';
+      if (state.editingBuyerId === b.id) cls += ' editing';
+      if (b.id === tId) cls += ' treasurer';
       chip.className = cls;
-      chip.onclick = function() { anEditPerson(p.id); };
+      chip.onclick = function() { anEditBuyer(b.id); };
 
-      if (p.id === tId) {
+      if (b.id === tId) {
         var star = document.createElement('span');
         star.className = 'an-treasurer-star';
         star.textContent = '⭐';
@@ -1298,14 +1327,13 @@
       }
 
       var nameSpan = document.createElement('span');
-      nameSpan.textContent = p.name;
+      nameSpan.textContent = b.name;
       chip.appendChild(nameSpan);
 
-      if (p.companions > 0) {
+      if (b.shareFactor !== 'full') {
         var badge = document.createElement('span');
-        badge.className = 'an-companions-badge';
-        var mult = { full: '1', half: '½', quarter: '¼' }[p.companionShare] || '1';
-        badge.textContent = '+' + p.companions + '×' + mult;
+        badge.className = 'an-share-badge';
+        badge.textContent = b.shareFactor === 'half' ? '½' : '¼';
         chip.appendChild(badge);
       }
       listEl.appendChild(chip);
@@ -1317,9 +1345,25 @@
     var pills = document.querySelectorAll('.abu-najeeb .an-share-options .an-share-pill');
     pills.forEach(function(pill) {
       var s = pill.getAttribute('data-share');
-      if (s === state.editBuffer.companionShare) pill.classList.add('active');
+      if (s === state.editBuffer.shareFactor) pill.classList.add('active');
       else pill.classList.remove('active');
     });
+  }
+
+  function renderPaidBySelect() {
+    var sel = $('an-paid-by');
+    if (!sel) return;
+    var prev = sel.value;
+    sel.innerHTML = '';
+    state.buyers.forEach(function(b) {
+      var opt = document.createElement('option');
+      opt.value = b.id;
+      opt.textContent = b.name;
+      sel.appendChild(opt);
+    });
+    if (prev && getBuyer(prev)) {
+      sel.value = prev;
+    }
   }
 
   function renderExpenses() {
@@ -1344,12 +1388,7 @@
       nm.textContent = exp.description;
       var meta = document.createElement('span');
       meta.className = 'an-item-meta';
-      var payerName = getPersonName(exp.paidBy);
-      var sharedTxt = exp.sharedWith === 'all'
-        ? T.everyone
-        : exp.sharedWith.map(getPersonName).join(' • ');
-      meta.textContent = (isArabic ? 'دفع: ' : 'Paid by: ') + payerName +
-                         ' · ' + (isArabic ? 'لمن: ' : 'For: ') + sharedTxt;
+      meta.textContent = (isArabic ? 'دفع: ' : 'Paid by: ') + getBuyerName(exp.paidBy);
       main.appendChild(nm);
       main.appendChild(meta);
 
@@ -1371,24 +1410,36 @@
 
   function renderResult() {
     var result = $('an-result');
-    var needEl = $('an-need-people');
+    var needEl = $('an-need-config');
     var addCard = $('an-add-card');
     var settings = $('an-settlement-settings');
 
-    var ready = state.people.length >= 2;
-    if (!ready) {
+    var hasTotal = state.total > 0;
+    var hasBuyers = state.buyers.length >= 1;
+
+    if (!hasTotal) {
       needEl.style.display = 'block';
-      addCard.style.display = 'none';
+      needEl.textContent = T.errNoTotal;
+      addCard.classList.remove('show');
       if (settings) settings.style.display = 'none';
       result.classList.remove('show');
       return;
     }
+
+    if (!hasBuyers) {
+      needEl.style.display = 'block';
+      needEl.textContent = T.errNoBuyers;
+      addCard.classList.remove('show');
+      if (settings) settings.style.display = 'none';
+      result.classList.remove('show');
+      return;
+    }
+
     needEl.style.display = 'none';
-    addCard.style.display = 'block';
+    addCard.classList.add('show');
     if (settings) settings.style.display = 'block';
 
     renderPaidBySelect();
-    renderSharePills();
     renderTreasurerSelect();
 
     if (state.expenses.length === 0) {
@@ -1396,160 +1447,125 @@
       return;
     }
 
-    var total = state.expenses.reduce(function(s, e) { return s + e.amount; }, 0);
-    var totalWeight = state.people.reduce(function(s, p) { return s + getWeight(p); }, 0);
-    var per = totalWeight > 0 ? Math.round(total / totalWeight) : 0;
+    var s = computeSettlement();
 
-    $('an-total').textContent = fmtAmount(total);
-    $('an-per-person').textContent = fmtAmount(per);
-    $('an-people-stat').textContent = state.people.length;
+    // Stats
+    $('an-stat-total').textContent = fmtAmount(s.totalCost);
+    $('an-stat-cps').textContent = fmtAmount(s.costPerFullShare);
+    $('an-stat-people').textContent = state.total;
 
-    // Render both views; visibility is toggled below based on settlementMode
-    renderTreasurer();
-    renderGreedy();
-    // Apply visibility consistent with current mode
-    if (state.settlementMode === 'treasurer') {
-      $('an-treasurer-view').classList.remove('hidden');
-      $('an-greedy-view').classList.remove('show');
-    } else {
-      $('an-treasurer-view').classList.add('hidden');
-      $('an-greedy-view').classList.add('show');
-    }
+    // Per-factor breakdown
+    var breakdown = [];
+    breakdown.push(T.breakdownFull + ': ' + fmtAmount(s.costPerFullShare));
+    breakdown.push(T.breakdownHalf + ': ' + fmtAmount(Math.round(s.costPerFullShare * 0.5)));
+    breakdown.push(T.breakdownQuarter + ': ' + fmtAmount(Math.round(s.costPerFullShare * 0.25)));
+    $('an-stat-breakdown').innerHTML = breakdown.join('<br>');
+
+    // Treasurer banner
+    var banner = $('an-tr-banner');
+    var bannerNote = $('an-tr-banner-note');
+    banner.textContent = '⭐ ' + (s.treasurerName || '—');
+    bannerNote.textContent = s.isAuto ? '(' + T.autoTreasurer + ')' : '';
+
+    renderViewInbound(s);
+    renderViewOutbound(s);
 
     result.classList.add('show');
   }
 
-  function renderTreasurer() {
-    var m = computeTreasurerModel();
-    var tName = getPersonName(m.treasurerId);
-    var isAuto = !state.treasurer;
-    var banner = $('an-treasurer-banner');
-    banner.textContent = '⭐ ' + (isArabic ? 'أمين الصندوق: ' : 'Treasurer: ') + tName +
-      (isAuto ? ' ' + T.autoTreasurer : '');
+  function renderViewInbound(s) {
+    var listEl = $('an-inbound-list');
+    listEl.innerHTML = '';
 
-    var collectsEl = $('an-treasurer-collects');
-    var disbursesEl = $('an-treasurer-disburses');
-    collectsEl.innerHTML = '';
-    disbursesEl.innerHTML = '';
-
-    if (m.collects.length === 0 && m.disburses.length === 0) {
-      var banner2 = document.createElement('div');
-      banner2.className = 'an-all-settled-banner';
-      banner2.textContent = T.allSettled;
-      collectsEl.appendChild(banner2);
-      return;
-    }
-
-    if (m.collects.length === 0) {
-      var empty1 = document.createElement('div');
-      empty1.className = 'an-no-items';
-      empty1.textContent = isArabic ? 'لا أحد يدين لك' : 'No one owes you';
-      collectsEl.appendChild(empty1);
-    } else {
-      m.collects.forEach(function(c) {
-        var row = document.createElement('div');
-        row.className = 'an-treasurer-row collect';
-        var n = document.createElement('span');
-        n.className = 'an-tr-name';
-        n.textContent = getPersonName(c.id);
-        var a = document.createElement('span');
-        a.className = 'an-tr-amount';
-        a.textContent = fmtAmount(c.amount);
-        row.appendChild(n);
-        row.appendChild(a);
-        collectsEl.appendChild(row);
-      });
-    }
-
-    if (m.disburses.length === 0) {
-      var empty2 = document.createElement('div');
-      empty2.className = 'an-no-items';
-      empty2.textContent = isArabic ? 'لا تدين لأحد' : 'You owe no one';
-      disbursesEl.appendChild(empty2);
-    } else {
-      m.disburses.forEach(function(d) {
-        var row = document.createElement('div');
-        row.className = 'an-treasurer-row disburse';
-        var n = document.createElement('span');
-        n.className = 'an-tr-name';
-        n.textContent = getPersonName(d.id);
-        var a = document.createElement('span');
-        a.className = 'an-tr-amount';
-        a.textContent = fmtAmount(d.amount);
-        row.appendChild(n);
-        row.appendChild(a);
-        disbursesEl.appendChild(row);
-      });
-    }
-  }
-
-  function renderGreedy() {
-    var g = computeGreedy();
-    var transEl = $('an-transfers');
-    var savings = $('an-savings');
-    transEl.innerHTML = '';
-
-    if (g.transfers.length === 0) {
+    var hasAny = s.inboundBulk.length > 0 || s.inboundBuyers.length > 0;
+    if (!hasAny) {
       var banner = document.createElement('div');
       banner.className = 'an-all-settled-banner';
       banner.textContent = T.allSettled;
-      transEl.appendChild(banner);
-      savings.style.display = 'none';
+      listEl.appendChild(banner);
       return;
     }
 
-    g.transfers.forEach(function(t) {
-      var card = document.createElement('div');
-      card.className = 'an-transfer-card';
+    // Bulk lines
+    s.inboundBulk.forEach(function(item) {
+      var row = document.createElement('div');
+      row.className = 'an-result-row bulk';
 
-      var flow = document.createElement('div');
-      flow.className = 'an-transfer-flow';
-      var fromName = document.createElement('span');
-      fromName.textContent = getPersonName(t.from);
-      var arrow = document.createElement('span');
-      arrow.className = 'an-transfer-arrow';
-      arrow.textContent = isArabic ? '←' : '→';
-      var toName = document.createElement('span');
-      toName.textContent = getPersonName(t.to);
+      var leftWrap = document.createElement('div');
+      var label = document.createElement('div');
+      label.className = 'an-row-label';
+      label.textContent = item.count + ' ' + bulkLineLabel(item.factor);
+      var detail = document.createElement('div');
+      detail.className = 'an-row-detail';
+      detail.textContent = item.count + ' × ' + fmtAmount(item.perPerson);
+      leftWrap.appendChild(label);
+      leftWrap.appendChild(detail);
 
-      if (isArabic) {
-        flow.appendChild(toName);
-        flow.appendChild(arrow);
-        flow.appendChild(fromName);
-      } else {
-        flow.appendChild(fromName);
-        flow.appendChild(arrow);
-        flow.appendChild(toName);
-      }
+      var amount = document.createElement('span');
+      amount.className = 'an-row-amount';
+      amount.textContent = fmtAmount(item.total);
 
-      var amt = document.createElement('span');
-      amt.className = 'an-transfer-amount';
-      amt.textContent = fmtAmount(t.amount);
-
-      card.appendChild(flow);
-      card.appendChild(amt);
-      transEl.appendChild(card);
+      row.appendChild(leftWrap);
+      row.appendChild(amount);
+      listEl.appendChild(row);
     });
 
-    var dCount = 0, cCount = 0;
-    Object.keys(g.net).forEach(function(id) {
-      if (g.net[id] > 0) cCount++;
-      else if (g.net[id] < 0) dCount++;
+    // Buyer debtor lines
+    s.inboundBuyers.forEach(function(b) {
+      var row = document.createElement('div');
+      row.className = 'an-result-row debtor';
+
+      var leftWrap = document.createElement('div');
+      var label = document.createElement('div');
+      label.className = 'an-row-label';
+      label.textContent = b.name + ' (' + factorLabel(b.factor) + ')';
+      leftWrap.appendChild(label);
+
+      var amount = document.createElement('span');
+      amount.className = 'an-row-amount';
+      amount.textContent = fmtAmount(b.amount);
+
+      row.appendChild(leftWrap);
+      row.appendChild(amount);
+      listEl.appendChild(row);
     });
-    var naive = dCount * cCount;
-    var saved = naive - g.transfers.length;
-    if (saved > 0) {
-      savings.style.display = 'block';
-      savings.textContent = isArabic
-        ? '✨ وفّر أبو نجيب ' + saved + ' تحويلاً'
-        : '✨ Abu Najeeb saved you ' + saved + ' transfers';
-    } else {
-      savings.style.display = 'none';
+  }
+
+  function renderViewOutbound(s) {
+    var listEl = $('an-outbound-list');
+    listEl.innerHTML = '';
+
+    if (s.outboundBuyers.length === 0) {
+      var empty = document.createElement('div');
+      empty.className = 'an-no-items';
+      empty.textContent = isArabic ? 'لا يوجد من دفع زيادة' : 'No one over-paid';
+      listEl.appendChild(empty);
+      return;
     }
+
+    s.outboundBuyers.forEach(function(b) {
+      var row = document.createElement('div');
+      row.className = 'an-result-row creditor';
+
+      var leftWrap = document.createElement('div');
+      var label = document.createElement('div');
+      label.className = 'an-row-label';
+      label.textContent = b.name;
+      leftWrap.appendChild(label);
+
+      var amount = document.createElement('span');
+      amount.className = 'an-row-amount';
+      amount.textContent = fmtAmount(b.amount);
+
+      row.appendChild(leftWrap);
+      row.appendChild(amount);
+      listEl.appendChild(row);
+    });
   }
 
   function renderAll() {
-    renderPeopleList();
+    renderTripConfig();
+    renderBuyersList();
     renderExpenses();
     renderResult();
     saveSession();
@@ -1568,11 +1584,13 @@
   function saveSession() {
     try {
       var snapshot = {
+        schema: 'v2',
         currency: state.currency,
-        people: state.people,
+        total: state.total,
+        bulk: state.bulk,
+        buyers: state.buyers,
         expenses: state.expenses,
-        treasurer: state.treasurer,
-        settlementMode: state.settlementMode
+        treasurer: state.treasurer
       };
       sessionStorage.setItem(SESSION_KEY, JSON.stringify(snapshot));
     } catch (e) { /* ignore */ }
@@ -1584,20 +1602,42 @@
       if (!raw) return false;
       var snap = JSON.parse(raw);
       if (!snap || typeof snap !== 'object') return false;
+      // Discard old shape (had `people` or `settlementMode`)
+      if (snap.people || snap.settlementMode || snap.schema !== 'v2') return false;
       if (typeof snap.currency === 'string') state.currency = snap.currency;
-      if (Array.isArray(snap.people)) state.people = snap.people;
-      if (Array.isArray(snap.expenses)) state.expenses = snap.expenses;
-      if (typeof snap.treasurer !== 'undefined') state.treasurer = snap.treasurer || null;
-      if (snap.settlementMode === 'greedy' || snap.settlementMode === 'treasurer') {
-        state.settlementMode = snap.settlementMode;
+      if (typeof snap.total === 'number') state.total = snap.total;
+      if (snap.bulk && typeof snap.bulk === 'object') {
+        state.bulk.full = parseInt(snap.bulk.full, 10) || 0;
+        state.bulk.half = parseInt(snap.bulk.half, 10) || 0;
+        state.bulk.quarter = parseInt(snap.bulk.quarter, 10) || 0;
       }
+      if (Array.isArray(snap.buyers)) {
+        state.buyers = snap.buyers.map(function(b) {
+          return {
+            id: b.id || uid('b'),
+            name: String(b.name || ''),
+            shareFactor: FACTOR_MULTIPLIER[b.shareFactor] ? b.shareFactor : 'full'
+          };
+        });
+      }
+      if (Array.isArray(snap.expenses)) {
+        state.expenses = snap.expenses.map(function(e) {
+          return {
+            id: e.id || uid('e'),
+            description: String(e.description || ''),
+            amount: Math.round(e.amount || 0),
+            paidBy: e.paidBy
+          };
+        }).filter(function(e) { return getBuyer(e.paidBy); });
+      }
+      if (typeof snap.treasurer !== 'undefined') state.treasurer = snap.treasurer || null;
       return true;
     } catch (e) { return false; }
   }
 
   function applySessionToUI() {
     $('an-currency').value = state.currency || '';
-    anSetSettlementMode(state.settlementMode);
+    $('an-total').value = state.total || '';
   }
 
   // ============ Saved Groups (localStorage) ============
@@ -1615,22 +1655,20 @@
   }
 
   window.anSaveGroup = function() {
-    if (state.people.length < 2) { alert(T.errMinPeople); return; }
-    var name = (prompt(isArabic ? 'اسم المجموعة (شلة الجامعة...)' : 'Group name (College Crew...)') || '').trim();
+    if (state.buyers.length < 1) { alert(T.errNoBuyers); return; }
+    var name = (prompt(T.groupNamePrompt) || '').trim();
     if (!name) return;
     var groups = getSavedGroups();
     groups = groups.filter(function(g) { return g.name !== name; });
     groups.push({
       name: name,
       savedAt: Date.now(),
-      people: state.people.map(function(p) {
-        return { id: p.id, name: p.name, companions: p.companions, companionShare: p.companionShare };
+      buyers: state.buyers.map(function(b) {
+        return { name: b.name, shareFactor: b.shareFactor };
       })
     });
     persistGroups(groups);
-    if (typeof App !== 'undefined' && App.showToast) {
-      App.showToast(isArabic ? 'تم حفظ المجموعة' : 'Group saved');
-    }
+    if (typeof App !== 'undefined' && App.showToast) App.showToast(T.groupSavedToast);
     renderSavedGroups();
   };
 
@@ -1638,30 +1676,32 @@
     var groups = getSavedGroups();
     var g = groups.find(function(x) { return x.name === name; });
     if (!g) return;
-    state.people = g.people.map(function(p) {
-      return { id: p.id, name: p.name, companions: p.companions || 0, companionShare: p.companionShare || 'full' };
+
+    // Accept v2 buyers OR legacy people (lossy migration: drop companions, default shareFactor=full)
+    var sourceList = Array.isArray(g.buyers) ? g.buyers : (Array.isArray(g.people) ? g.people : []);
+    state.buyers = sourceList.map(function(p) {
+      return {
+        id: uid('b'),
+        name: p.name,
+        shareFactor: FACTOR_MULTIPLIER[p.shareFactor] ? p.shareFactor : 'full'
+      };
     });
-    var validIds = state.people.map(function(p) { return p.id; });
-    state.expenses = state.expenses.filter(function(e) {
-      return validIds.indexOf(e.paidBy) !== -1;
-    });
-    state.expenses.forEach(function(e) {
-      if (Array.isArray(e.sharedWith)) {
-        e.sharedWith = e.sharedWith.filter(function(id) { return validIds.indexOf(id) !== -1; });
-      }
-    });
-    if (state.treasurer && validIds.indexOf(state.treasurer) === -1) state.treasurer = null;
+
+    // Reset trip config to match the loaded buyers (user can adjust)
+    state.total = state.buyers.length;
+    state.bulk = { full: 0, half: 0, quarter: 0 };
+    state.expenses = [];
+    state.treasurer = null;
 
     anCancelEdit();
+    $('an-total').value = state.total;
     renderAll();
     $('an-saved-panel').classList.remove('show');
-    if (typeof App !== 'undefined' && App.showToast) {
-      App.showToast(isArabic ? 'تم تحميل المجموعة' : 'Group loaded');
-    }
+    if (typeof App !== 'undefined' && App.showToast) App.showToast(T.groupLoadedToast);
   };
 
   window.anDeleteGroup = function(name) {
-    if (!confirm(isArabic ? 'حذف هذه المجموعة؟' : 'Delete this group?')) return;
+    if (!confirm(T.groupDeleteConfirm)) return;
     var groups = getSavedGroups().filter(function(g) { return g.name !== name; });
     persistGroups(groups);
     renderSavedGroups();
@@ -1681,7 +1721,7 @@
     if (groups.length === 0) {
       var empty = document.createElement('div');
       empty.className = 'an-no-groups';
-      empty.textContent = isArabic ? 'لا توجد مجموعات محفوظة' : 'No saved groups';
+      empty.textContent = T.noSavedGroups;
       listEl.appendChild(empty);
       return;
     }
@@ -1696,7 +1736,8 @@
       nm.textContent = g.name;
       var meta = document.createElement('div');
       meta.className = 'an-saved-group-meta';
-      meta.textContent = (g.people || []).length + T.people;
+      var count = Array.isArray(g.buyers) ? g.buyers.length : (Array.isArray(g.people) ? g.people.length : 0);
+      meta.textContent = count + T.buyersCountSuffix;
       info.appendChild(nm);
       info.appendChild(meta);
 
@@ -1704,11 +1745,11 @@
       actions.className = 'an-saved-group-actions';
       var loadBtn = document.createElement('button');
       loadBtn.className = 'an-btn';
-      loadBtn.textContent = isArabic ? 'تحميل' : 'Load';
+      loadBtn.textContent = T.loadGroupBtn;
       loadBtn.onclick = function() { anLoadGroup(g.name); };
       var delBtn = document.createElement('button');
       delBtn.className = 'an-btn an-btn-danger';
-      delBtn.textContent = isArabic ? 'حذف' : 'Delete';
+      delBtn.textContent = T.deleteGroupBtn;
       delBtn.onclick = function() { anDeleteGroup(g.name); };
       actions.appendChild(loadBtn);
       actions.appendChild(delBtn);
@@ -1721,46 +1762,40 @@
 
   // ============ Reset All ============
   window.anResetAll = function() {
-    var msg = isArabic ? 'إعادة تعيين كل البيانات؟' : 'Reset all data?';
-    if (!confirm(msg)) return;
+    if (!confirm(T.resetConfirm)) return;
     state.currency = '';
-    state.people = [];
+    state.total = 0;
+    state.bulk = { full: 0, half: 0, quarter: 0 };
+    state.buyers = [];
     state.expenses = [];
     state.treasurer = null;
-    state.settlementMode = 'treasurer';
     anCancelEdit();
-    ['an-currency', 'an-new-person-name', 'an-new-desc', 'an-new-amount']
+    ['an-currency', 'an-new-buyer-name', 'an-new-desc', 'an-new-amount', 'an-total', 'an-bulk-half', 'an-bulk-quarter']
       .forEach(function(id) { var el = $(id); if (el) el.value = ''; });
-    anSetSettlementMode('treasurer');
     renderAll();
   };
 
   // ============ Seed Demo ============
-  function makePerson(name, companions, share) {
-    return { id: uid('p'), name: name, companions: companions || 0, companionShare: share || 'full' };
-  }
-
   window.anSeedDemo = function() {
     state.currency = state.currency || (isArabic ? 'ر.س' : '$');
-
-    var names = isArabic ? ['أحمد', 'خالد', 'سارة', 'عمر', 'لينا'] : ['Ahmed', 'Khaled', 'Sara', 'Omar', 'Lina'];
-    state.people = [
-      makePerson(names[0]),
-      makePerson(names[1]),
-      makePerson(names[2], 1, 'half'),
-      makePerson(names[3]),
-      makePerson(names[4])
+    state.total = 12;
+    state.bulk = { full: 8, half: 0, quarter: 0 }; // 12 total - 4 buyers
+    var names = isArabic ? ['أحمد', 'خالد', 'سارة', 'عمر'] : ['Ahmed', 'Khaled', 'Sara', 'Omar'];
+    state.buyers = [
+      { id: uid('b'), name: names[0], shareFactor: 'full' },
+      { id: uid('b'), name: names[1], shareFactor: 'full' },
+      { id: uid('b'), name: names[2], shareFactor: 'full' },
+      { id: uid('b'), name: names[3], shareFactor: 'full' }
     ];
-
     state.expenses = [
-      { id: uid('e'), description: isArabic ? 'البنزين' : 'Gas', amount: 400, paidBy: state.people[0].id, sharedWith: 'all' },
-      { id: uid('e'), description: isArabic ? 'الفندق' : 'Hotel', amount: 1200, paidBy: state.people[1].id, sharedWith: 'all' },
-      { id: uid('e'), description: isArabic ? 'العشاء' : 'Dinner', amount: 350, paidBy: state.people[2].id, sharedWith: 'all' },
-      { id: uid('e'), description: isArabic ? 'تذاكر متحف' : 'Museum tickets', amount: 180, paidBy: state.people[3].id, sharedWith: 'all' }
+      { id: uid('e'), description: isArabic ? 'البنزين' : 'Gas',            amount: 480,  paidBy: state.buyers[0].id },
+      { id: uid('e'), description: isArabic ? 'الفندق' : 'Hotel',           amount: 1800, paidBy: state.buyers[1].id },
+      { id: uid('e'), description: isArabic ? 'العشاء' : 'Dinner',          amount: 350,  paidBy: state.buyers[2].id },
+      { id: uid('e'), description: isArabic ? 'تذاكر متحف' : 'Museum tickets', amount: 60,   paidBy: state.buyers[3].id }
     ];
-
-    state.treasurer = null; // auto
+    state.treasurer = null;
     $('an-currency').value = state.currency;
+    $('an-total').value = state.total;
     renderAll();
   };
 
@@ -1771,48 +1806,42 @@
     var subtitle = isArabic ? 'تسوية الرحلة' : 'Trip Settlement';
     lines.push('💰 ' + name + ' — ' + subtitle);
 
-    var total = state.expenses.reduce(function(s, e) { return s + e.amount; }, 0);
-    lines.push((isArabic ? 'مجموع المصاريف: ' : 'Total expenses: ') + fmtAmount(total));
-    lines.push((isArabic ? 'عدد الأشخاص: ' : 'People: ') + state.people.length);
+    var s = computeSettlement();
+    lines.push((isArabic ? 'مجموع المصاريف: ' : 'Total expenses: ') + fmtAmount(s.totalCost));
+    lines.push((isArabic ? 'عدد المشاركين: ' : 'Participants: ') + state.total);
+    lines.push((isArabic ? 'تكلفة النصاب الكامل: ' : 'Cost per full share: ') + fmtAmount(s.costPerFullShare));
     lines.push('');
 
-    if (state.settlementMode === 'treasurer') {
-      var m = computeTreasurerModel();
-      var tName = getPersonName(m.treasurerId);
-      lines.push('⭐ ' + (isArabic ? 'أمين الصندوق: ' : 'Treasurer: ') + tName);
-      lines.push('');
+    if (!s.treasurerName) {
+      lines.push(T.allSettled);
+      return lines.join('\n');
+    }
 
-      if (m.collects.length === 0 && m.disburses.length === 0) {
-        lines.push(T.allSettled);
-      } else {
-        if (m.collects.length > 0) {
-          lines.push('💰 ' + (isArabic ? 'ما يدفعه المدينون لـ' + tName + ':' : 'What debtors pay to ' + tName + ':'));
-          m.collects.forEach(function(c) {
-            lines.push('- ' + getPersonName(c.id) + ': ' + fmtAmount(c.amount));
-          });
-        }
-        if (m.disburses.length > 0) {
-          if (m.collects.length > 0) lines.push('');
-          lines.push('💸 ' + (isArabic ? 'ما يدفعه ' + tName + ' للدائنين:' : 'What ' + tName + ' pays to creditors:'));
-          m.disburses.forEach(function(d) {
-            lines.push('- ' + getPersonName(d.id) + ': ' + fmtAmount(d.amount));
-          });
-        }
-      }
+    lines.push('⭐ ' + (isArabic ? 'أمين الصندوق: ' : 'Treasurer: ') + s.treasurerName +
+               (s.isAuto ? ' (' + T.autoTreasurer + ')' : ''));
+    lines.push('');
+
+    var hasInbound = s.inboundBulk.length > 0 || s.inboundBuyers.length > 0;
+    var hasOutbound = s.outboundBuyers.length > 0;
+
+    if (!hasInbound && !hasOutbound) {
+      lines.push(T.allSettled);
     } else {
-      var g = computeGreedy();
-      if (g.transfers.length === 0) {
-        lines.push(T.allSettled);
-      } else {
-        lines.push((isArabic ? '📋 التسوية (' : '📋 Settlement (') + g.transfers.length + (isArabic ? ' تحويلاً):' : ' transfers):'));
-        g.transfers.forEach(function(t) {
-          var arrow = isArabic ? '←' : '→';
-          var fromN = getPersonName(t.from);
-          var toN = getPersonName(t.to);
-          var line = isArabic
-            ? '- ' + toN + ' ' + arrow + ' ' + fromN + ': ' + fmtAmount(t.amount)
-            : '- ' + fromN + ' ' + arrow + ' ' + toN + ': ' + fmtAmount(t.amount);
-          lines.push(line);
+      if (hasInbound) {
+        lines.push('💰 ' + (isArabic ? 'يُسلَّم لـ ' : 'Paid to ') + s.treasurerName + ':');
+        s.inboundBulk.forEach(function(b) {
+          var lbl = b.count + ' ' + bulkLineLabel(b.factor);
+          lines.push('- ' + lbl + ' × ' + fmtAmount(b.perPerson) + ' = ' + fmtAmount(b.total));
+        });
+        s.inboundBuyers.forEach(function(b) {
+          lines.push('- ' + b.name + ' (' + factorLabel(b.factor) + '): ' + fmtAmount(b.amount));
+        });
+      }
+      if (hasOutbound) {
+        if (hasInbound) lines.push('');
+        lines.push('💸 ' + (isArabic ? s.treasurerName + ' يردّ:' : s.treasurerName + ' pays back:'));
+        s.outboundBuyers.forEach(function(b) {
+          lines.push('- ' + b.name + ': ' + fmtAmount(b.amount));
         });
       }
     }
@@ -1823,15 +1852,13 @@
   }
 
   window.anCopyResult = function() {
-    if (state.people.length < 2 || state.expenses.length === 0) {
-      alert(T.errMinPeople);
+    if (state.buyers.length < 1 || state.expenses.length === 0) {
+      alert(state.buyers.length < 1 ? T.errNoBuyers : T.errNoExpenses);
       return;
     }
     var text = buildResultText();
     var done = function() {
-      if (typeof App !== 'undefined' && App.showToast) {
-        App.showToast(isArabic ? 'تم النسخ!' : 'Copied!');
-      }
+      if (typeof App !== 'undefined' && App.showToast) App.showToast(T.copiedToast);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(done, function() { fallbackCopy(text, done); });
@@ -1883,13 +1910,13 @@
   }
 
   window.anExportImage = function() {
-    if (state.people.length < 2 || state.expenses.length === 0) {
-      alert(T.errMinPeople);
+    if (state.buyers.length < 1 || state.expenses.length === 0) {
+      alert(state.buyers.length < 1 ? T.errNoBuyers : T.errNoExpenses);
       return;
     }
     var target = document.querySelector('.abu-najeeb .calc-result');
     if (!target || !target.classList.contains('show')) {
-      alert(isArabic ? 'لا توجد نتيجة لتصديرها بعد' : 'No result to export yet');
+      alert(T.exportNoResult);
       return;
     }
 
@@ -1909,26 +1936,23 @@
       link.click();
       document.body.removeChild(link);
 
-      if (typeof App !== 'undefined' && App.showToast) {
-        App.showToast(isArabic ? 'الصورة جاهزة' : 'Image ready');
-      }
+      if (typeof App !== 'undefined' && App.showToast) App.showToast(T.imageReadyToast);
     }).catch(function(err) {
       console.error('Export failed:', err);
-      alert(isArabic ? 'تعذّر التصدير، حاول نسخ النص بدلاً' : 'Export failed, try copying as text instead');
+      alert(T.exportFailed);
     });
   };
 
   // ============ Init ============
   document.addEventListener('DOMContentLoaded', function() {
-    var loaded = loadSession();
-    if (loaded) applySessionToUI();
-    else anSetSettlementMode('treasurer');
+    loadSession();
+    applySessionToUI();
     renderAll();
 
-    ['an-new-person-name'].forEach(function(id) {
+    ['an-new-buyer-name'].forEach(function(id) {
       var el = $(id);
       if (el) el.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') { e.preventDefault(); anAddPerson(); }
+        if (e.key === 'Enter') { e.preventDefault(); anAddBuyer(); }
       });
     });
 

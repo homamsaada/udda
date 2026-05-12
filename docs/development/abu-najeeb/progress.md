@@ -1,19 +1,60 @@
 # 📊 abu-najeeb — Progress
 
-> 📅 **آخر نشاط على هذه الأداة:** 2026-05-11 (Refactor — Trip mode موحَّد + نموذج أمين الصندوق)
-> 🔍 **آخر فحص توافق:** 2026-05-11
+> 📅 **آخر نشاط على هذه الأداة:** 2026-05-12 (Refactor v2 — Bulk + Buyers، حذف المرافقين، حذف Greedy)
+> 🔍 **آخر فحص توافق:** 2026-05-12
 > 📜 **التاريخ التفصيلي:** `git log -- src/tools/abu-najeeb.html`
 > 🔍 **فحوصات خاصة بهذه الأداة عند فجوة > 90 يوماً:**
 > - Clipboard API: لا يزال مدعوماً بنفس الشكل؟
 > - html2canvas: نسخة جديدة في vendor؟ baseline browsers تغيّرت؟
 > - sessionStorage / localStorage: لم تتغيّر، لكن انتبه لو السعة قُلِّصت في WebKit حديثاً
 
-> الحالة والخطة لحاسبة تقسيم الفواتير "أبو نجيب".
+> الحالة والخطة لحاسبة تسوية مصاريف الرحلات "أبو نجيب".
 > [`memory.md`](memory.md) · [`../../tools/abu-najeeb.spec.md`](../../tools/abu-najeeb.spec.md)
 
 ---
 
-## ✅ منجَز (Done — 2026-05-11)
+## ✅ منجَز (Done — 2026-05-12)
+
+### Refactor v2 إلى نموذج Bulk + Buyers (2026-05-12 — refactor كبير ثاني)
+
+بعد v1 (Trip-only + Treasurer)، تبيّن أن النموذج الذي يفترض إدخال كل شخص بالاسم غير عملي لرحلات 20-30 شخص. الواقع: "نحن 25، منهم 4 اشتروا أغراضاً". الحلّ: تقسيم المشاركين إلى **4 buckets** (3 anonymous + buyers مسمَّون)، وحذف مفهوم المرافقين كلياً، وحذف Greedy.
+
+- ✅ **حذف Greedy mode بالكامل** — يفقد معناه مع anonymous bulk
+- ✅ **حذف مفهوم "المرافقين" كلياً** — كل شخص في bucket واحد فقط
+- ✅ **State shape جديد:** `{currency, total, bulk:{full,half,quarter}, buyers, expenses, treasurer, editingBuyerId, editBuffer}`
+- ✅ **Invariant مفروض:** `bulk.full + bulk.half + bulk.quarter + buyers.length === total`
+- ✅ **Trip config UI جديد:** total input + 3 bulk inputs مع cascade (تعديل half/quarter → نقص في full)
+- ✅ **إضافة/حذف buyer يضبط bulk.full** تلقائياً
+- ✅ **clamp**: لا يمكن تخفيض `total` تحت `buyers.length`
+- ✅ **Two-View output:**
+  - View A (inbound): bulk lines مجمَّعة + buyer debtor lines
+  - View B (outbound): buyer creditor lines
+- ✅ **stats grid مُحدَّث:** Total + Cost-per-full-share + Participants + **بطاقة per-factor breakdown** جديدة (full/half/quarter)
+- ✅ **seedDemo مختبَر للحالة المختلطة:** 12 مشارك، 4 buyers، عمر كـ debtor، الباقي creditors، خالد كأمين
+- ✅ **copyResult محدَّث** بصياغة الوجهين الجديدة
+- ✅ **i18n مُعاد هيكلته:**
+  - أُضيفت: `tripConfigTitle`, `totalHeadCount*`, `bulkSection*`, `bulkFull/Half/QuarterLabel`, `buyersBarTitle/Hint`, `addBuyer`, `noBuyers`, `buyerShareFactorLabel`, `shareFull/Half/Quarter`, `viewInboundTitle`, `viewOutboundTitle`, `costPerFullShareLabel`, `perFactorBreakdownLabel`, `errNoTotal`, `errNoBuyers`, `groupOnlySavesBuyers`
+  - حُذفت: كل `tab*`, `*Intro` (للتبويبات القديمة)، `items*`, `sharedWith*`, `percent*`, `tax/tip*`, `settlementModeLabel`, `mode*`, `companions*`, `transfers*`, `savedTransfers`, `errMinPeople`, `minPeopleNote`, `errPercentSum`, `errNoItems`
+  - تحديث: `title`, `metaDescription`, `keywords`, `searchTerms`, `description`, `howToUseText`, `tripIntro` لتعكس scope الجديد
+- ✅ **Migration:** sessionStorage القديم (يحوي `people` أو `settlementMode`) يُكتشَف ويُتجاهَل. saved groups القديمة تُحمَّل بإسقاط `companions/companionShare`.
+- ✅ **Saved groups يحفظ buyers فقط** (لا trip config)
+
+### التحقّق (verification — 2026-05-12)
+
+- 🧪 `npm run build` نظيف، لا warnings
+- 🧪 الحالة الأولية تظهر "أدخل العدد الكلي" warning بشكل صحيح
+- 🧪 إدخال total → bulk.full يتطابق تلقائياً
+- 🧪 إضافة buyer → bulk.full -= 1
+- 🧪 cascade على half: bulk.half=2 → bulk.full=6 (في رحلة total=12 ببداية bulk.full=8)
+- 🧪 clamp: محاولة total=0 مع 1 buyer → total clamps إلى 1
+- 🧪 seedDemo ينتج النتيجة المتوقّعة (View A: 8 شخص × 224 + عمر 166، View B: أحمد 256 + سارة 126)
+- 🧪 EN version يعمل ("Paid to the treasurer" + "Treasurer pays back")
+- 🧪 mobile (375px): `.an-bulk-row` ينتقل إلى 1 col، لا horizontal scroll
+- 🧪 copyResult ينتج نصاً منسَّقاً لكلا الوجهَين
+
+---
+
+## ✅ منجَز سابقاً (Done — 2026-05-11)
 
 ### Refactor إلى Trip mode موحَّد (2026-05-11 — بعد نقاش معماري)
 
@@ -62,26 +103,30 @@
 
 ## 🚧 قيد العمل (Active)
 
-_(لا شيء — MVP اكتمل في جلسة 2026-05-11)_
+_(لا شيء — v2 اكتمل في جلسة 2026-05-12)_
 
-## 📋 مخطّط (Planned — v2)
+## 📋 مخطّط (Planned — v2.1)
 
-- مرافقون بنسب مخصّصة (custom %)
+- نسب مخصّصة بدل 3 buckets ثابتة (custom %)
+- حفظ trip config كامل في saved groups (total + bulk + buyers + currency)
+- بطاقة per-factor breakdown قابلة للتفصيل عند الضغط
 - 3 مقالات مدونة:
-  - "تقسيم فاتورة المطعم بدقّة"
-  - "حساب مصاريف الرحلة الجماعية"
-  - "تقسيم الإيجار بين الشركاء"
-- اختصارات كيبورد (Enter يُضيف)
+  - "تقسيم مصاريف الرحلة الجماعية بنموذج أمين الصندوق"
+  - "كم يدفع كل شخص في رحلة 25 مشاركاً؟"
+  - "نموذج Bulk + Buyers — متى تستخدمه؟"
 - استيراد قائمة أشخاص من نص (paste)
 - Web Share API على الموبايل
+- تصدير CSV للتسوية
 
 ## 💡 أفكار (Ideas — تحتاج نقاشاً)
 
 - **تكامل مع تطبيق بنكي:** فتح رابط تحويل في تطبيق محلي (سعودي/خليجي) عبر deep link — يحتاج بحث
-- **تصدير CSV** للتسوية (لأمناء الصندوق في رحلات أكبر)
 - **رمز QR لكل مجموعة** يفتح الأداة بحالة محفوظة عبر URL hash
+- **عدّة عملات** (USD + SAR في نفس الرحلة)
 
 ## ❄️ مرفوض / مؤجَّل
 
+- **مفهوم المرافقين** — حُذف نهائياً في v2. لو احتاج المستخدم تتبّع "أب يدفع عن عائلته" بشكل أعمق، الأداة ليست المكان (يضيف buyer بـ shareFactor مُجمَّع، أو يستخدم Splitwise)
+- **Greedy mode** — حُذف نهائياً في v2 (يفقد معناه مع anonymous bulk)
 - **حساب فوائد على تأخير التحويل** — مخالف لفلسفة الأداة (اجتماعية، ليست رِبا)
-- **تصنيف المصاريف (طعام/مواصلات/إقامة)** — تعقيد بلا قيمة واضحة في MVP
+- **تصنيف المصاريف (طعام/مواصلات/إقامة)** — تعقيد بلا قيمة واضحة
