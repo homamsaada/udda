@@ -1,5 +1,5 @@
 <style>
-/* abu-najeeb — Trip Settlement (v2: Bulk + Buyers, no companions, treasurer-only) */
+/* abu-najeeb — Trip Settlement (v2.1: Bulk + Buyers + File I/O + Excel + treasurer-in-edit-panel) */
 .abu-najeeb {
   padding: 0;
   display: flex;
@@ -79,8 +79,6 @@
   margin-bottom: 6px;
 }
 .abu-najeeb .an-trip-config input[type="number"] {
-  width: 100%;
-  max-width: 180px;
   padding: 10px 12px;
   border: 1px solid var(--card-border);
   border-radius: 8px;
@@ -101,6 +99,10 @@
   cursor: not-allowed;
   opacity: 0.85;
 }
+.abu-najeeb .an-trip-config #an-total {
+  width: 100%;
+  max-width: 180px;
+}
 .abu-najeeb .an-bulk-section {
   margin-top: 16px;
   padding-top: 14px;
@@ -119,14 +121,20 @@
   line-height: 1.5;
 }
 .abu-najeeb .an-bulk-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 12px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.abu-najeeb .an-bulk-row .calc-form-group {
+  flex: 0 0 auto;
+  margin: 0;
 }
 .abu-najeeb .an-bulk-row label {
   font-size: 0.85rem;
 }
-.abu-najeeb .an-bulk-row input {
+.abu-najeeb .an-bulk-row input[type="number"] {
+  width: 90px;
   max-width: 100%;
 }
 
@@ -167,6 +175,16 @@
   color: var(--text-secondary);
   margin-bottom: 10px;
   line-height: 1.5;
+}
+.abu-najeeb .an-treasurer-hint-line {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  line-height: 1.55;
+  padding: 8px 12px;
+  background: var(--bg-primary);
+  border-inline-start: 3px solid var(--accent-primary);
+  border-radius: 6px;
 }
 .abu-najeeb .an-buyers-list {
   display: flex;
@@ -315,6 +333,45 @@
   color: white;
   border-color: var(--accent-primary);
 }
+
+/* Treasurer toggle inside edit panel */
+.abu-najeeb .an-treasurer-toggle-row {
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+}
+.abu-najeeb .an-treasurer-toggle {
+  padding: 7px 14px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.abu-najeeb .an-treasurer-toggle:hover {
+  border-color: var(--warning, #f59e0b);
+}
+.abu-najeeb .an-treasurer-toggle.active {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #1f2937;
+  border-color: #f59e0b;
+}
+.abu-najeeb .an-treasurer-toggle-hint {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  font-style: italic;
+}
+
 .abu-najeeb .an-edit-actions {
   display: flex;
   gap: 8px;
@@ -357,53 +414,17 @@
   gap: 8px;
 }
 
-/* ============ Saved Groups Panel ============ */
-.abu-najeeb .an-saved-groups-panel {
-  display: none;
-  background: var(--bg-secondary);
-  border: 1px solid var(--card-border);
-  border-radius: var(--border-radius);
-  padding: 14px;
-}
-.abu-najeeb .an-saved-groups-panel.show {
-  display: block;
-}
-.abu-najeeb .an-saved-groups-hint {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  margin-bottom: 10px;
-  font-style: italic;
-}
-.abu-najeeb .an-saved-group-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 12px;
-  background: var(--bg-primary);
-  border: 1px solid var(--card-border);
-  border-radius: 8px;
-  margin-bottom: 8px;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.abu-najeeb .an-saved-group-name {
-  font-weight: 700;
-  color: var(--text-primary);
-}
-.abu-najeeb .an-saved-group-meta {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-}
-.abu-najeeb .an-saved-group-actions {
-  display: flex;
-  gap: 6px;
-}
-.abu-najeeb .an-no-groups {
-  text-align: center;
-  color: var(--text-secondary);
-  padding: 14px;
-  font-style: italic;
-  font-size: 0.9rem;
+/* Hidden file inputs */
+.abu-najeeb .an-hidden-file {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* ============ Warnings ============ */
@@ -415,35 +436,6 @@
   color: var(--text-primary);
   font-weight: 600;
   text-align: center;
-}
-
-/* ============ Settlement Settings ============ */
-.abu-najeeb .an-settlement-settings {
-  background: var(--bg-secondary);
-  border: 1px solid var(--card-border);
-  border-radius: var(--border-radius);
-  padding: 14px;
-}
-.abu-najeeb .an-settlement-settings-hint {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  margin-bottom: 10px;
-  line-height: 1.55;
-}
-.abu-najeeb .an-settlement-controls .calc-form-group {
-  margin: 0;
-}
-.abu-najeeb .an-treasurer-select {
-  width: 100%;
-  max-width: 320px;
-  padding: 9px 12px;
-  border: 1px solid var(--card-border);
-  border-radius: 8px;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  font-size: 0.95rem;
-  font-family: inherit;
-  cursor: pointer;
 }
 
 /* ============ Expenses List ============ */
@@ -655,21 +647,11 @@
 
 /* ============ Mobile (768px) ============ */
 @media (max-width: 768px) {
-  .abu-najeeb .an-bulk-row {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
   .abu-najeeb .an-bulk-row .calc-form-group {
-    display: grid;
-    grid-template-columns: 1fr 100px;
-    align-items: center;
-    gap: 10px;
+    flex: 1 0 calc(33.333% - 8px);
   }
-  .abu-najeeb .an-bulk-row label {
-    margin-bottom: 0;
-  }
-  .abu-najeeb .an-bulk-row input {
-    max-width: 100%;
+  .abu-najeeb .an-bulk-row input[type="number"] {
+    width: 100%;
   }
   .abu-najeeb .an-add-item-row {
     grid-template-columns: 1fr;
@@ -740,6 +722,7 @@
       </div>
     </div>
     <div class="an-buyers-hint">{{tool.buyersBarHint}}</div>
+    <div class="an-treasurer-hint-line">💡 {{tool.treasurerHint}}</div>
     <div class="an-buyers-list" id="an-buyers-list">
       <span class="an-buyer-empty">{{tool.noBuyers}}</span>
     </div>
@@ -760,6 +743,15 @@
         <span class="an-share-pill" data-share="half" onclick="anSetEditShare('half')">{{tool.shareHalf}}</span>
         <span class="an-share-pill" data-share="quarter" onclick="anSetEditShare('quarter')">{{tool.shareQuarter}}</span>
       </div>
+
+      <!-- Treasurer toggle inside edit panel -->
+      <div class="an-treasurer-toggle-row">
+        <button type="button" class="an-treasurer-toggle" id="an-edit-treasurer-toggle" onclick="anToggleEditTreasurer()">
+          ⭐ <span id="an-edit-treasurer-label">{{tool.makeTreasurerBtn}}</span>
+        </button>
+        <div class="an-treasurer-toggle-hint" id="an-edit-treasurer-hint">{{tool.autoTreasurerHint}}</div>
+      </div>
+
       <div class="an-edit-actions">
         <button class="an-btn" onclick="anSaveEdit()">{{tool.personEdit}}</button>
         <button class="an-btn an-btn-secondary" onclick="anCancelEdit()">{{tool.cancelBtn}}</button>
@@ -770,34 +762,22 @@
 
   <!-- Main action toolbar -->
   <div class="an-main-toolbar">
-    <button class="an-btn" onclick="anSeedDemo()">🎲 {{tool.tryExample}}</button>
     <button class="an-btn an-btn-secondary" onclick="anCopyResult()">📋 {{tool.copyResultBtn}}</button>
     <button class="an-btn an-btn-secondary" onclick="anExportImage()">📷 {{tool.exportImageBtn}}</button>
-    <button class="an-btn an-btn-secondary" onclick="anSaveGroup()">💾 {{tool.saveGroupBtn}}</button>
-    <button class="an-btn an-btn-secondary" onclick="anToggleSavedPanel()">📂 {{tool.savedGroupsTitle}}</button>
+    <button class="an-btn an-btn-secondary" onclick="anExportExcel()">📊 {{tool.exportExcelBtn}}</button>
+    <button class="an-btn an-btn-secondary" onclick="anExportTrip()">💾 {{tool.exportTripBtn}}</button>
+    <button class="an-btn an-btn-secondary" onclick="document.getElementById('an-import-trip-input').click()">📂 {{tool.importTripBtn}}</button>
+    <button class="an-btn an-btn-secondary" onclick="anExportGroup()">👥 {{tool.exportGroupBtn}}</button>
+    <button class="an-btn an-btn-secondary" onclick="document.getElementById('an-import-group-input').click()">📥 {{tool.importGroupBtn}}</button>
     <button class="an-btn an-btn-danger" onclick="anResetAll()">🔄 {{tool.resetAll}}</button>
   </div>
 
-  <!-- Saved Groups Panel -->
-  <div class="an-saved-groups-panel" id="an-saved-panel">
-    <div style="font-weight: 700; margin-bottom: 4px; color: var(--text-primary);">📂 {{tool.savedGroupsTitle}}</div>
-    <div class="an-saved-groups-hint">{{tool.groupOnlySavesBuyers}}</div>
-    <div id="an-saved-groups-list"></div>
-  </div>
+  <!-- Hidden file inputs -->
+  <input type="file" id="an-import-trip-input" class="an-hidden-file" accept=".json,application/json" onchange="anImportTripFile(event)">
+  <input type="file" id="an-import-group-input" class="an-hidden-file" accept=".json,application/json" onchange="anImportGroupFile(event)">
 
   <!-- Config warning -->
   <div class="an-need-config" id="an-need-config" style="display:none;">{{tool.errNoTotal}}</div>
-
-  <!-- Settlement Settings -->
-  <div class="an-settlement-settings" id="an-settlement-settings" style="display:none;">
-    <div class="an-settlement-settings-hint">💡 {{tool.treasurerHint}}</div>
-    <div class="an-settlement-controls">
-      <div class="calc-form-group">
-        <label for="an-treasurer">⭐ {{tool.treasurerLabel}}</label>
-        <select id="an-treasurer" class="an-treasurer-select" onchange="anOnTreasurerChange()"></select>
-      </div>
-    </div>
-  </div>
 
   <!-- Expenses Section -->
   <h3 class="an-section-title" id="an-expenses-section-title"><span>💵</span> {{tool.expensesTitle}}</h3>
@@ -875,7 +855,7 @@
     return s;
   }
 
-  // i18n runtime strings (used in alerts, dynamic text)
+  // i18n runtime strings
   var T = {
     errNoTotal:        isArabic ? 'أدخل العدد الكلي للمشاركين أولاً' : 'Enter the total number of participants first',
     errNoBuyers:       isArabic ? 'أضف شخصاً واحداً مسمَّى على الأقل لتسجيل المصاريف' : 'Add at least one named buyer to record expenses',
@@ -887,13 +867,7 @@
     removeConfirm:     isArabic ? 'حذف هذا الشخص؟' : 'Remove this person?',
     editingTitle:      isArabic ? 'تعديل: ' : 'Editing: ',
     allSettled:        isArabic ? '✅ الجميع متعادل، لا توجد ديون 🎉' : '✅ Everyone is settled — no debts 🎉',
-    treasurerIs:       isArabic ? '⭐ أمين الصندوق: ' : '⭐ Treasurer: ',
     autoTreasurer:     isArabic ? 'مقترح تلقائياً' : 'auto-suggested',
-    autoTreasurerOpt:  isArabic ? 'مقترح تلقائياً (أكبر دائن)' : 'Auto-suggest (biggest creditor)',
-    payHint:           isArabic ? 'يدفع' : 'pays',
-    receiveHint:       isArabic ? 'يستلم' : 'receives',
-    paidLabel:         isArabic ? 'دفع' : 'paid',
-    needTreasurerLabel: isArabic ? 'يحتاج أمين الصندوق' : 'needs a treasurer',
     breakdownFull:     isArabic ? 'كامل' : 'full',
     breakdownHalf:     isArabic ? 'نصف' : 'half',
     breakdownQuarter:  isArabic ? 'ربع' : 'quarter',
@@ -903,19 +877,21 @@
     factorLabelFull:   isArabic ? 'كامل' : 'full',
     factorLabelHalf:   isArabic ? 'نصف' : 'half',
     factorLabelQuarter: isArabic ? 'ربع' : 'quarter',
-    groupNamePrompt:   isArabic ? 'اسم المجموعة (شلة الجامعة...)' : 'Group name (College Crew...)',
-    groupSavedToast:   isArabic ? 'تم حفظ المجموعة' : 'Group saved',
-    groupLoadedToast:  isArabic ? 'تم تحميل المجموعة' : 'Group loaded',
-    groupDeleteConfirm: isArabic ? 'حذف هذه المجموعة؟' : 'Delete this group?',
-    noSavedGroups:     isArabic ? 'لا توجد مجموعات محفوظة' : 'No saved groups',
-    loadGroupBtn:      isArabic ? 'تحميل' : 'Load',
-    deleteGroupBtn:    isArabic ? 'حذف' : 'Delete',
-    buyersCountSuffix: isArabic ? ' أشخاص' : ' buyers',
     resetConfirm:      isArabic ? 'إعادة تعيين كل البيانات؟' : 'Reset all data?',
     copiedToast:       isArabic ? 'تم النسخ!' : 'Copied!',
     imageReadyToast:   isArabic ? 'الصورة جاهزة' : 'Image ready',
+    excelReadyToast:   isArabic ? 'ملف Excel جاهز' : 'Excel file ready',
+    exportedToast:     isArabic ? 'تم التصدير' : 'Exported',
+    importedToast:     isArabic ? 'تم الاستيراد' : 'Imported',
+    importErrorMsg:    isArabic ? 'ملف غير صالح أو تالف' : 'Invalid or corrupted file',
     exportNoResult:    isArabic ? 'لا توجد نتيجة لتصديرها بعد' : 'No result to export yet',
-    exportFailed:      isArabic ? 'تعذّر التصدير، حاول نسخ النص بدلاً' : 'Export failed, try copying as text instead'
+    exportFailed:      isArabic ? 'تعذّر التصدير، حاول نسخ النص بدلاً' : 'Export failed, try copying as text instead',
+    groupNameForExport: isArabic ? 'اسم المجموعة (شلة الجامعة...)' : 'Group name (College Crew...)',
+    makeTreasurerBtn:  isArabic ? 'اجعله أمين الصندوق' : 'Make treasurer',
+    isCurrentTreasurer: isArabic ? 'هو أمين الصندوق (اضغط للإلغاء)' : 'Current treasurer (click to release)',
+    autoTreasurerHint: isArabic ? 'افتراضياً يُختار تلقائياً (أكبر دائن)' : 'Auto-selected by default (biggest creditor)',
+    willRevertToAuto:  isArabic ? 'سيعود للاقتراح التلقائي عند الإلغاء' : 'Releases to auto-suggest when clicked',
+    replaceTreasurerPrefix: isArabic ? 'اجعله الأمين بدل ' : 'Make treasurer instead of '
   };
 
   // ============ State ============
@@ -925,7 +901,7 @@
     bulk: { full: 0, half: 0, quarter: 0 },
     buyers: [],
     expenses: [],
-    treasurer: null,           // buyerId | null (null = auto = biggest creditor)
+    treasurer: null,
     editingBuyerId: null,
     editBuffer: null
   };
@@ -948,6 +924,10 @@
   function getBuyerName(id) {
     var b = getBuyer(id);
     return b ? b.name : '?';
+  }
+
+  function getBuyerByName(name) {
+    return state.buyers.find(function(b) { return b.name === name; });
   }
 
   function factorLabel(f) {
@@ -1042,10 +1022,6 @@
       }
     });
 
-    // Rounding fix:
-    //   net of treasurer should equal (sumInbound - sumOutbound)
-    // because treasurer collects inbound and pays outbound.
-    // Any deviation is rounding noise; absorb in the longest list.
     if (trStats) {
       var sumInbound = inboundBulk.reduce(function(s, x) { return s + x.total; }, 0)
                      + inboundBuyers.reduce(function(s, x) { return s + x.amount; }, 0);
@@ -1053,9 +1029,7 @@
       var imbalance = (sumInbound - sumOutbound) - trStats.net;
 
       if (imbalance !== 0) {
-        // Absorb on the side with the most entries
         if (inboundBulk.length + inboundBuyers.length >= outboundBuyers.length && (inboundBulk.length + inboundBuyers.length) > 0) {
-          // adjust inbound (reduce by imbalance to balance)
           if (inboundBuyers.length > 0) {
             inboundBuyers[inboundBuyers.length - 1].amount -= imbalance;
             if (inboundBuyers[inboundBuyers.length - 1].amount <= 0) inboundBuyers.pop();
@@ -1085,12 +1059,9 @@
   // ============ Trip Config CRUD ============
   window.anOnTotalChange = function() {
     var input = $('an-total');
-    var raw = input.value;
-    var newTotal = parseInt(raw, 10);
+    var newTotal = parseInt(input.value, 10);
     if (isNaN(newTotal) || newTotal < 0) newTotal = 0;
     if (newTotal > 50) newTotal = 50;
-
-    // Clamp to at least buyers.length
     if (newTotal < state.buyers.length) newTotal = state.buyers.length;
 
     var diff = newTotal - state.total;
@@ -1118,12 +1089,11 @@
   };
 
   window.anOnBulkChange = function(factor) {
-    if (factor === 'full') return; // full is readonly, derived
+    if (factor === 'full') return;
     var input = $('an-bulk-' + factor);
     var newValue = parseInt(input.value, 10);
     if (isNaN(newValue) || newValue < 0) newValue = 0;
 
-    // Max allowed: current value + currently available bulk.full
     var maxAllowed = state.bulk[factor] + state.bulk.full;
     if (newValue > maxAllowed) newValue = maxAllowed;
 
@@ -1136,41 +1106,12 @@
     renderAll();
   };
 
-  // ============ Treasurer Select ============
-  function renderTreasurerSelect() {
-    var sel = $('an-treasurer');
-    if (!sel) return;
-    sel.innerHTML = '';
-
-    var autoOpt = document.createElement('option');
-    autoOpt.value = '';
-    autoOpt.textContent = T.autoTreasurerOpt;
-    sel.appendChild(autoOpt);
-
-    state.buyers.forEach(function(b) {
-      var opt = document.createElement('option');
-      opt.value = b.id;
-      opt.textContent = b.name;
-      sel.appendChild(opt);
-    });
-
-    sel.value = state.treasurer || '';
-  }
-
-  window.anOnTreasurerChange = function() {
-    var sel = $('an-treasurer');
-    state.treasurer = sel.value || null;
-    renderResult();
-    saveSession();
-  };
-
   // ============ Buyers CRUD ============
   window.anAddBuyer = function() {
     var inp = $('an-new-buyer-name');
     var name = (inp.value || '').trim();
     if (!name) { inp.focus(); return; }
     if (state.total === 0 && state.buyers.length === 0) {
-      // No total yet — auto-bump total to 1, this buyer takes the slot
       state.total = 1;
       state.bulk.full = 1;
     }
@@ -1182,7 +1123,6 @@
       shareFactor: 'full'
     });
 
-    // Take a slot from bulk.full if available; otherwise expand total
     if (state.bulk.full > 0) {
       state.bulk.full -= 1;
     } else {
@@ -1203,6 +1143,7 @@
     $('an-edit-panel-title').textContent = T.editingTitle + b.name;
     $('an-edit-name').value = b.name;
     renderShareOptions();
+    renderEditTreasurerToggle();
     $('an-edit-panel').classList.add('show');
     renderBuyersList();
   };
@@ -1211,6 +1152,17 @@
     if (!state.editBuffer) return;
     state.editBuffer.shareFactor = share;
     renderShareOptions();
+  };
+
+  window.anToggleEditTreasurer = function() {
+    if (!state.editingBuyerId) return;
+    if (state.treasurer === state.editingBuyerId) {
+      state.treasurer = null; // release → auto
+    } else {
+      state.treasurer = state.editingBuyerId;
+    }
+    renderEditTreasurerToggle();
+    renderAll();
   };
 
   window.anSaveEdit = function() {
@@ -1246,7 +1198,7 @@
 
     if (state.treasurer === id) state.treasurer = null;
     state.buyers = state.buyers.filter(function(x) { return x.id !== id; });
-    state.bulk.full += 1; // slot returns to bulk
+    state.bulk.full += 1;
     anCancelEdit();
     renderAll();
   };
@@ -1308,7 +1260,7 @@
     }
 
     var stats = state.expenses.length > 0 ? computeBuyerStats() : null;
-    var tId = stats ? getEffectiveTreasurer(stats) : null;
+    var tId = stats ? getEffectiveTreasurer(stats) : (state.treasurer || (state.buyers[0] && state.buyers[0].id));
 
     listEl.innerHTML = '';
     state.buyers.forEach(function(b) {
@@ -1350,6 +1302,32 @@
     });
   }
 
+  function renderEditTreasurerToggle() {
+    if (!state.editingBuyerId) return;
+    var toggle = $('an-edit-treasurer-toggle');
+    var label = $('an-edit-treasurer-label');
+    var hint = $('an-edit-treasurer-hint');
+    if (!toggle || !label || !hint) return;
+
+    var isCurrentlyTreasurer = state.treasurer === state.editingBuyerId;
+    var anotherIsTreasurer = state.treasurer && state.treasurer !== state.editingBuyerId;
+
+    if (isCurrentlyTreasurer) {
+      toggle.classList.add('active');
+      label.textContent = T.isCurrentTreasurer;
+      hint.textContent = T.willRevertToAuto;
+    } else if (anotherIsTreasurer) {
+      toggle.classList.remove('active');
+      var other = getBuyer(state.treasurer);
+      label.textContent = T.replaceTreasurerPrefix + (other ? other.name : '?');
+      hint.textContent = T.autoTreasurerHint;
+    } else {
+      toggle.classList.remove('active');
+      label.textContent = T.makeTreasurerBtn;
+      hint.textContent = T.autoTreasurerHint;
+    }
+  }
+
   function renderPaidBySelect() {
     var sel = $('an-paid-by');
     if (!sel) return;
@@ -1361,9 +1339,7 @@
       opt.textContent = b.name;
       sel.appendChild(opt);
     });
-    if (prev && getBuyer(prev)) {
-      sel.value = prev;
-    }
+    if (prev && getBuyer(prev)) sel.value = prev;
   }
 
   function renderExpenses() {
@@ -1412,7 +1388,6 @@
     var result = $('an-result');
     var needEl = $('an-need-config');
     var addCard = $('an-add-card');
-    var settings = $('an-settlement-settings');
 
     var hasTotal = state.total > 0;
     var hasBuyers = state.buyers.length >= 1;
@@ -1421,7 +1396,6 @@
       needEl.style.display = 'block';
       needEl.textContent = T.errNoTotal;
       addCard.classList.remove('show');
-      if (settings) settings.style.display = 'none';
       result.classList.remove('show');
       return;
     }
@@ -1430,17 +1404,14 @@
       needEl.style.display = 'block';
       needEl.textContent = T.errNoBuyers;
       addCard.classList.remove('show');
-      if (settings) settings.style.display = 'none';
       result.classList.remove('show');
       return;
     }
 
     needEl.style.display = 'none';
     addCard.classList.add('show');
-    if (settings) settings.style.display = 'block';
 
     renderPaidBySelect();
-    renderTreasurerSelect();
 
     if (state.expenses.length === 0) {
       result.classList.remove('show');
@@ -1449,19 +1420,16 @@
 
     var s = computeSettlement();
 
-    // Stats
     $('an-stat-total').textContent = fmtAmount(s.totalCost);
     $('an-stat-cps').textContent = fmtAmount(s.costPerFullShare);
     $('an-stat-people').textContent = state.total;
 
-    // Per-factor breakdown
     var breakdown = [];
     breakdown.push(T.breakdownFull + ': ' + fmtAmount(s.costPerFullShare));
     breakdown.push(T.breakdownHalf + ': ' + fmtAmount(Math.round(s.costPerFullShare * 0.5)));
     breakdown.push(T.breakdownQuarter + ': ' + fmtAmount(Math.round(s.costPerFullShare * 0.25)));
     $('an-stat-breakdown').innerHTML = breakdown.join('<br>');
 
-    // Treasurer banner
     var banner = $('an-tr-banner');
     var bannerNote = $('an-tr-banner-note');
     banner.textContent = '⭐ ' + (s.treasurerName || '—');
@@ -1486,7 +1454,6 @@
       return;
     }
 
-    // Bulk lines
     s.inboundBulk.forEach(function(item) {
       var row = document.createElement('div');
       row.className = 'an-result-row bulk';
@@ -1510,7 +1477,6 @@
       listEl.appendChild(row);
     });
 
-    // Buyer debtor lines
     s.inboundBuyers.forEach(function(b) {
       var row = document.createElement('div');
       row.className = 'an-result-row debtor';
@@ -1518,7 +1484,7 @@
       var leftWrap = document.createElement('div');
       var label = document.createElement('div');
       label.className = 'an-row-label';
-      label.textContent = b.name + ' (' + factorLabel(b.factor) + ')';
+      label.textContent = b.name;
       leftWrap.appendChild(label);
 
       var amount = document.createElement('span');
@@ -1579,7 +1545,7 @@
 
   // ============ sessionStorage (auto-save) ============
   var SESSION_KEY = 'udda:abu-najeeb:session';
-  var GROUPS_KEY = 'udda:abu-najeeb:groups';
+  var LEGACY_GROUPS_KEY = 'udda:abu-najeeb:groups';
 
   function saveSession() {
     try {
@@ -1602,7 +1568,6 @@
       if (!raw) return false;
       var snap = JSON.parse(raw);
       if (!snap || typeof snap !== 'object') return false;
-      // Discard old shape (had `people` or `settlementMode`)
       if (snap.people || snap.settlementMode || snap.schema !== 'v2') return false;
       if (typeof snap.currency === 'string') state.currency = snap.currency;
       if (typeof snap.total === 'number') state.total = snap.total;
@@ -1640,126 +1605,6 @@
     $('an-total').value = state.total || '';
   }
 
-  // ============ Saved Groups (localStorage) ============
-  function getSavedGroups() {
-    try {
-      var raw = localStorage.getItem(GROUPS_KEY);
-      if (!raw) return [];
-      var parsed = JSON.parse(raw);
-      return Array.isArray(parsed) ? parsed : [];
-    } catch (e) { return []; }
-  }
-
-  function persistGroups(groups) {
-    try { localStorage.setItem(GROUPS_KEY, JSON.stringify(groups)); } catch (e) {}
-  }
-
-  window.anSaveGroup = function() {
-    if (state.buyers.length < 1) { alert(T.errNoBuyers); return; }
-    var name = (prompt(T.groupNamePrompt) || '').trim();
-    if (!name) return;
-    var groups = getSavedGroups();
-    groups = groups.filter(function(g) { return g.name !== name; });
-    groups.push({
-      name: name,
-      savedAt: Date.now(),
-      buyers: state.buyers.map(function(b) {
-        return { name: b.name, shareFactor: b.shareFactor };
-      })
-    });
-    persistGroups(groups);
-    if (typeof App !== 'undefined' && App.showToast) App.showToast(T.groupSavedToast);
-    renderSavedGroups();
-  };
-
-  window.anLoadGroup = function(name) {
-    var groups = getSavedGroups();
-    var g = groups.find(function(x) { return x.name === name; });
-    if (!g) return;
-
-    // Accept v2 buyers OR legacy people (lossy migration: drop companions, default shareFactor=full)
-    var sourceList = Array.isArray(g.buyers) ? g.buyers : (Array.isArray(g.people) ? g.people : []);
-    state.buyers = sourceList.map(function(p) {
-      return {
-        id: uid('b'),
-        name: p.name,
-        shareFactor: FACTOR_MULTIPLIER[p.shareFactor] ? p.shareFactor : 'full'
-      };
-    });
-
-    // Reset trip config to match the loaded buyers (user can adjust)
-    state.total = state.buyers.length;
-    state.bulk = { full: 0, half: 0, quarter: 0 };
-    state.expenses = [];
-    state.treasurer = null;
-
-    anCancelEdit();
-    $('an-total').value = state.total;
-    renderAll();
-    $('an-saved-panel').classList.remove('show');
-    if (typeof App !== 'undefined' && App.showToast) App.showToast(T.groupLoadedToast);
-  };
-
-  window.anDeleteGroup = function(name) {
-    if (!confirm(T.groupDeleteConfirm)) return;
-    var groups = getSavedGroups().filter(function(g) { return g.name !== name; });
-    persistGroups(groups);
-    renderSavedGroups();
-  };
-
-  window.anToggleSavedPanel = function() {
-    var panel = $('an-saved-panel');
-    panel.classList.toggle('show');
-    if (panel.classList.contains('show')) renderSavedGroups();
-  };
-
-  function renderSavedGroups() {
-    var listEl = $('an-saved-groups-list');
-    if (!listEl) return;
-    var groups = getSavedGroups();
-    listEl.innerHTML = '';
-    if (groups.length === 0) {
-      var empty = document.createElement('div');
-      empty.className = 'an-no-groups';
-      empty.textContent = T.noSavedGroups;
-      listEl.appendChild(empty);
-      return;
-    }
-    groups.sort(function(a, b) { return (b.savedAt || 0) - (a.savedAt || 0); });
-    groups.forEach(function(g) {
-      var card = document.createElement('div');
-      card.className = 'an-saved-group-card';
-
-      var info = document.createElement('div');
-      var nm = document.createElement('div');
-      nm.className = 'an-saved-group-name';
-      nm.textContent = g.name;
-      var meta = document.createElement('div');
-      meta.className = 'an-saved-group-meta';
-      var count = Array.isArray(g.buyers) ? g.buyers.length : (Array.isArray(g.people) ? g.people.length : 0);
-      meta.textContent = count + T.buyersCountSuffix;
-      info.appendChild(nm);
-      info.appendChild(meta);
-
-      var actions = document.createElement('div');
-      actions.className = 'an-saved-group-actions';
-      var loadBtn = document.createElement('button');
-      loadBtn.className = 'an-btn';
-      loadBtn.textContent = T.loadGroupBtn;
-      loadBtn.onclick = function() { anLoadGroup(g.name); };
-      var delBtn = document.createElement('button');
-      delBtn.className = 'an-btn an-btn-danger';
-      delBtn.textContent = T.deleteGroupBtn;
-      delBtn.onclick = function() { anDeleteGroup(g.name); };
-      actions.appendChild(loadBtn);
-      actions.appendChild(delBtn);
-
-      card.appendChild(info);
-      card.appendChild(actions);
-      listEl.appendChild(card);
-    });
-  }
-
   // ============ Reset All ============
   window.anResetAll = function() {
     if (!confirm(T.resetConfirm)) return;
@@ -1772,30 +1617,6 @@
     anCancelEdit();
     ['an-currency', 'an-new-buyer-name', 'an-new-desc', 'an-new-amount', 'an-total', 'an-bulk-half', 'an-bulk-quarter']
       .forEach(function(id) { var el = $(id); if (el) el.value = ''; });
-    renderAll();
-  };
-
-  // ============ Seed Demo ============
-  window.anSeedDemo = function() {
-    state.currency = state.currency || (isArabic ? 'ر.س' : '$');
-    state.total = 12;
-    state.bulk = { full: 8, half: 0, quarter: 0 }; // 12 total - 4 buyers
-    var names = isArabic ? ['أحمد', 'خالد', 'سارة', 'عمر'] : ['Ahmed', 'Khaled', 'Sara', 'Omar'];
-    state.buyers = [
-      { id: uid('b'), name: names[0], shareFactor: 'full' },
-      { id: uid('b'), name: names[1], shareFactor: 'full' },
-      { id: uid('b'), name: names[2], shareFactor: 'full' },
-      { id: uid('b'), name: names[3], shareFactor: 'full' }
-    ];
-    state.expenses = [
-      { id: uid('e'), description: isArabic ? 'البنزين' : 'Gas',            amount: 480,  paidBy: state.buyers[0].id },
-      { id: uid('e'), description: isArabic ? 'الفندق' : 'Hotel',           amount: 1800, paidBy: state.buyers[1].id },
-      { id: uid('e'), description: isArabic ? 'العشاء' : 'Dinner',          amount: 350,  paidBy: state.buyers[2].id },
-      { id: uid('e'), description: isArabic ? 'تذاكر متحف' : 'Museum tickets', amount: 60,   paidBy: state.buyers[3].id }
-    ];
-    state.treasurer = null;
-    $('an-currency').value = state.currency;
-    $('an-total').value = state.total;
     renderAll();
   };
 
@@ -1834,7 +1655,7 @@
           lines.push('- ' + lbl + ' × ' + fmtAmount(b.perPerson) + ' = ' + fmtAmount(b.total));
         });
         s.inboundBuyers.forEach(function(b) {
-          lines.push('- ' + b.name + ' (' + factorLabel(b.factor) + '): ' + fmtAmount(b.amount));
+          lines.push('- ' + b.name + ': ' + fmtAmount(b.amount));
         });
       }
       if (hasOutbound) {
@@ -1879,6 +1700,164 @@
     done();
   }
 
+  // ============ File download helper ============
+  function downloadFile(content, filename, mimeType) {
+    var blob = new Blob([content], { type: mimeType });
+    var url = URL.createObjectURL(blob);
+    var link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }
+
+  function todayStamp() {
+    return new Date().toISOString().slice(0, 10);
+  }
+
+  // ============ JSON export/import: full trip state ============
+  window.anExportTrip = function() {
+    if (state.buyers.length < 1) { alert(T.errNoBuyers); return; }
+    var data = {
+      schema: 'v2',
+      tool: 'abu-najeeb',
+      exportedAt: new Date().toISOString(),
+      currency: state.currency,
+      total: state.total,
+      bulk: { full: state.bulk.full, half: state.bulk.half, quarter: state.bulk.quarter },
+      treasurerName: state.treasurer ? getBuyerName(state.treasurer) : null,
+      buyers: state.buyers.map(function(b) {
+        return { name: b.name, shareFactor: b.shareFactor };
+      }),
+      expenses: state.expenses.map(function(e) {
+        return {
+          description: e.description,
+          amount: e.amount,
+          paidByName: getBuyerName(e.paidBy)
+        };
+      })
+    };
+    downloadFile(JSON.stringify(data, null, 2),
+                 'abu-najeeb-trip-' + todayStamp() + '.json',
+                 'application/json');
+    if (typeof App !== 'undefined' && App.showToast) App.showToast(T.exportedToast);
+  };
+
+  window.anImportTripFile = function(event) {
+    var file = event.target.files && event.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+      try {
+        var data = JSON.parse(ev.target.result);
+        if (data.tool !== 'abu-najeeb' || data.schema !== 'v2') throw new Error('Invalid schema');
+        if (!Array.isArray(data.buyers) || typeof data.total !== 'number') throw new Error('Missing fields');
+
+        var nameToId = {};
+        var newBuyers = data.buyers.map(function(b) {
+          var id = uid('b');
+          nameToId[b.name] = id;
+          return {
+            id: id,
+            name: String(b.name || ''),
+            shareFactor: FACTOR_MULTIPLIER[b.shareFactor] ? b.shareFactor : 'full'
+          };
+        });
+        var newExpenses = (Array.isArray(data.expenses) ? data.expenses : []).map(function(e) {
+          return {
+            id: uid('e'),
+            description: String(e.description || ''),
+            amount: Math.round(e.amount || 0),
+            paidBy: nameToId[e.paidByName]
+          };
+        }).filter(function(e) { return e.paidBy; });
+
+        state.buyers = newBuyers;
+        state.expenses = newExpenses;
+        state.currency = typeof data.currency === 'string' ? data.currency : '';
+        state.total = Math.max(0, Math.min(50, Math.round(data.total)));
+        state.bulk = {
+          full: Math.max(0, parseInt(data.bulk && data.bulk.full, 10) || 0),
+          half: Math.max(0, parseInt(data.bulk && data.bulk.half, 10) || 0),
+          quarter: Math.max(0, parseInt(data.bulk && data.bulk.quarter, 10) || 0)
+        };
+        state.treasurer = data.treasurerName ? (nameToId[data.treasurerName] || null) : null;
+
+        $('an-currency').value = state.currency;
+        $('an-total').value = state.total;
+        anCancelEdit();
+        renderAll();
+        if (typeof App !== 'undefined' && App.showToast) App.showToast(T.importedToast);
+      } catch (err) {
+        console.error('Import trip failed:', err);
+        alert(T.importErrorMsg);
+      }
+    };
+    reader.readAsText(file);
+    event.target.value = '';
+  };
+
+  // ============ JSON export/import: buyer group only ============
+  window.anExportGroup = function() {
+    if (state.buyers.length < 1) { alert(T.errNoBuyers); return; }
+    var groupName = (prompt(T.groupNameForExport) || '').trim();
+    if (!groupName) return;
+    var data = {
+      schema: 'v2-group',
+      tool: 'abu-najeeb',
+      exportedAt: new Date().toISOString(),
+      name: groupName,
+      buyers: state.buyers.map(function(b) {
+        return { name: b.name, shareFactor: b.shareFactor };
+      })
+    };
+    var safeName = groupName.replace(/[^؀-ۿa-zA-Z0-9_-]/g, '_').slice(0, 40);
+    downloadFile(JSON.stringify(data, null, 2),
+                 'abu-najeeb-group-' + safeName + '.json',
+                 'application/json');
+    if (typeof App !== 'undefined' && App.showToast) App.showToast(T.exportedToast);
+  };
+
+  window.anImportGroupFile = function(event) {
+    var file = event.target.files && event.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+      try {
+        var data = JSON.parse(ev.target.result);
+        if (data.tool !== 'abu-najeeb') throw new Error('Invalid tool');
+        if (data.schema !== 'v2-group' && data.schema !== 'v2') throw new Error('Invalid schema');
+        if (!Array.isArray(data.buyers)) throw new Error('Missing buyers');
+
+        var newBuyers = data.buyers.map(function(b) {
+          return {
+            id: uid('b'),
+            name: String(b.name || ''),
+            shareFactor: FACTOR_MULTIPLIER[b.shareFactor] ? b.shareFactor : 'full'
+          };
+        });
+
+        state.buyers = newBuyers;
+        state.expenses = [];
+        state.treasurer = null;
+        state.total = newBuyers.length;
+        state.bulk = { full: 0, half: 0, quarter: 0 };
+
+        anCancelEdit();
+        $('an-total').value = state.total;
+        renderAll();
+        if (typeof App !== 'undefined' && App.showToast) App.showToast(T.importedToast);
+      } catch (err) {
+        console.error('Import group failed:', err);
+        alert(T.importErrorMsg);
+      }
+    };
+    reader.readAsText(file);
+    event.target.value = '';
+  };
+
   // ============ Export as Image (lazy html2canvas) ============
   var h2cLoading = null;
 
@@ -1922,12 +1901,7 @@
 
     ensureHtml2Canvas().then(function(h2c) {
       var bg = getComputedStyle(document.body).getPropertyValue('--bg-primary').trim() || '#ffffff';
-      return h2c(target, {
-        backgroundColor: bg,
-        scale: 2,
-        logging: false,
-        useCORS: true
-      });
+      return h2c(target, { backgroundColor: bg, scale: 2, logging: false, useCORS: true });
     }).then(function(canvas) {
       var link = document.createElement('a');
       link.download = 'abu-najeeb-' + Date.now() + '.png';
@@ -1935,16 +1909,268 @@
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-
       if (typeof App !== 'undefined' && App.showToast) App.showToast(T.imageReadyToast);
     }).catch(function(err) {
-      console.error('Export failed:', err);
+      console.error('Export image failed:', err);
+      alert(T.exportFailed);
+    });
+  };
+
+  // ============ Export Excel (lazy ExcelJS) ============
+  var excelLoading = null;
+
+  function ensureExcelJS() {
+    if (window.ExcelJS) return Promise.resolve(window.ExcelJS);
+    if (excelLoading) return excelLoading;
+    excelLoading = new Promise(function(resolve, reject) {
+      var s = document.createElement('script');
+      s.src = '/assets/vendor/exceljs.min.js';
+      s.async = true;
+      s.onload = function() {
+        if (window.ExcelJS) resolve(window.ExcelJS);
+        else reject(new Error('ExcelJS loaded but global not found'));
+      };
+      s.onerror = function() {
+        var s2 = document.createElement('script');
+        s2.src = '../../assets/vendor/exceljs.min.js';
+        s2.onload = function() {
+          if (window.ExcelJS) resolve(window.ExcelJS);
+          else reject(new Error('ExcelJS loaded but global not found'));
+        };
+        s2.onerror = function() { reject(new Error('Failed to load ExcelJS')); };
+        document.head.appendChild(s2);
+      };
+      document.head.appendChild(s);
+    });
+    return excelLoading;
+  }
+
+  function xlsxAddSectionHeader(ws, row, text) {
+    ws.mergeCells('A' + row + ':E' + row);
+    var cell = ws.getCell('A' + row);
+    cell.value = text;
+    cell.font = { size: 12, bold: true, color: { argb: 'FFFFFFFF' } };
+    cell.alignment = { horizontal: 'center', vertical: 'middle' };
+    cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF6366F1' } };
+    ws.getRow(row).height = 22;
+  }
+
+  function xlsxAddTableHeader(ws, row, headers) {
+    ['A', 'B', 'C', 'D', 'E'].forEach(function(c, i) {
+      if (headers[i] !== undefined && headers[i] !== null && headers[i] !== '') {
+        var cell = ws.getCell(c + row);
+        cell.value = headers[i];
+        cell.font = { bold: true, color: { argb: 'FFFFFFFF' } };
+        cell.alignment = { horizontal: 'center' };
+        cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF818CF8' } };
+      }
+    });
+    ws.getRow(row).height = 18;
+  }
+
+  function xlsxApplyAltRow(ws, row, cols) {
+    cols.forEach(function(c) {
+      ws.getCell(c + row).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF9FAFB' } };
+    });
+  }
+
+  window.anExportExcel = function() {
+    if (state.buyers.length < 1 || state.expenses.length === 0) {
+      alert(state.buyers.length < 1 ? T.errNoBuyers : T.errNoExpenses);
+      return;
+    }
+    ensureExcelJS().then(function(ExcelJS) {
+      var s = computeSettlement();
+      var wb = new ExcelJS.Workbook();
+      wb.creator = 'Abu Najeeb (udda.tools)';
+      wb.created = new Date();
+
+      var ws = wb.addWorksheet(isArabic ? 'تسوية الرحلة' : 'Trip Settlement');
+      if (isArabic) ws.views = [{ rightToLeft: true }];
+
+      ws.columns = [
+        { key: 'a', width: 28 },
+        { key: 'b', width: 14 },
+        { key: 'c', width: 4 },
+        { key: 'd', width: 14 },
+        { key: 'e', width: 14 }
+      ];
+
+      // Title
+      ws.mergeCells('A1:E1');
+      var titleCell = ws.getCell('A1');
+      titleCell.value = isArabic ? '💰 أبو نجيب — تسوية الرحلة' : '💰 Abu Najeeb — Trip Settlement';
+      titleCell.font = { size: 18, bold: true, color: { argb: 'FF6366F1' } };
+      titleCell.alignment = { horizontal: 'center', vertical: 'middle' };
+      ws.getRow(1).height = 30;
+
+      ws.mergeCells('A2:E2');
+      var dateCell = ws.getCell('A2');
+      dateCell.value = (isArabic ? 'تاريخ التصدير: ' : 'Exported: ') + todayStamp();
+      dateCell.font = { italic: true, color: { argb: 'FF6B7280' }, size: 10 };
+      dateCell.alignment = { horizontal: 'center' };
+
+      var row = 4;
+
+      // Summary
+      var summaryRows = [
+        [isArabic ? 'العملة' : 'Currency', state.currency || '—', false],
+        [isArabic ? 'العدد الكلي للمشاركين' : 'Total participants', state.total, false],
+        [isArabic ? 'مجموع المصاريف' : 'Total expenses', s.totalCost, true],
+        [isArabic ? 'تكلفة النصاب الكامل' : 'Cost per full share', s.costPerFullShare, true],
+        [isArabic ? 'أمين الصندوق' : 'Treasurer', (s.treasurerName || '—') + (s.isAuto && s.treasurerName ? ' (' + T.autoTreasurer + ')' : ''), false]
+      ];
+      summaryRows.forEach(function(pair) {
+        ws.getCell('A' + row).value = pair[0];
+        ws.getCell('A' + row).font = { bold: true };
+        ws.getCell('B' + row).value = pair[1];
+        if (pair[2]) ws.getCell('B' + row).numFmt = '#,##0';
+        row++;
+      });
+      row++;
+
+      // Anonymous section
+      if (state.bulk.full + state.bulk.half + state.bulk.quarter > 0) {
+        xlsxAddSectionHeader(ws, row, isArabic ? 'المشاركون بدون أسماء' : 'Anonymous Participants');
+        row++;
+        xlsxAddTableHeader(ws, row,
+          isArabic ? ['النصاب', 'العدد', '×', 'لكل شخص', 'المجموع'] : ['Share', 'Count', '×', 'Per person', 'Total']);
+        row++;
+        ['full', 'half', 'quarter'].forEach(function(f, i) {
+          if (state.bulk[f] > 0) {
+            var per = Math.round(s.costPerFullShare * shareMult(f));
+            var total = state.bulk[f] * per;
+            ws.getCell('A' + row).value = factorLabel(f);
+            ws.getCell('B' + row).value = state.bulk[f];
+            ws.getCell('C' + row).value = '×';
+            ws.getCell('C' + row).alignment = { horizontal: 'center' };
+            ws.getCell('D' + row).value = per;
+            ws.getCell('D' + row).numFmt = '#,##0';
+            ws.getCell('E' + row).value = total;
+            ws.getCell('E' + row).numFmt = '#,##0';
+            ws.getCell('E' + row).font = { bold: true };
+            if (i % 2 === 1) xlsxApplyAltRow(ws, row, ['A','B','C','D','E']);
+            row++;
+          }
+        });
+        row++;
+      }
+
+      // Buyers section
+      xlsxAddSectionHeader(ws, row, isArabic ? 'المشاركون المسمَّون' : 'Named Buyers');
+      row++;
+      xlsxAddTableHeader(ws, row,
+        isArabic ? ['الاسم', 'النصاب', 'دفع', 'حصته', 'الصافي'] : ['Name', 'Share', 'Paid', 'Owed', 'Net']);
+      row++;
+      s.buyerStats.forEach(function(b, i) {
+        var isTr = b.id === s.treasurerId;
+        ws.getCell('A' + row).value = (isTr ? '⭐ ' : '') + b.name;
+        if (isTr) ws.getCell('A' + row).font = { bold: true };
+        ws.getCell('B' + row).value = factorLabel(b.shareFactor);
+        ws.getCell('C' + row).value = b.paid;
+        ws.getCell('C' + row).numFmt = '#,##0';
+        ws.getCell('D' + row).value = b.owed;
+        ws.getCell('D' + row).numFmt = '#,##0';
+        ws.getCell('E' + row).value = b.net;
+        ws.getCell('E' + row).numFmt = '+#,##0;-#,##0;0';
+        ws.getCell('E' + row).font = {
+          bold: true,
+          color: { argb: b.net > 0 ? 'FF16A34A' : b.net < 0 ? 'FFDC2626' : 'FF6B7280' }
+        };
+        if (i % 2 === 1) xlsxApplyAltRow(ws, row, ['A','B','C','D','E']);
+        row++;
+      });
+      row++;
+
+      // Expenses
+      xlsxAddSectionHeader(ws, row, isArabic ? 'المصاريف' : 'Expenses');
+      row++;
+      xlsxAddTableHeader(ws, row,
+        isArabic ? ['الوصف', 'المبلغ', '', 'من دفع', ''] : ['Description', 'Amount', '', 'Paid by', '']);
+      row++;
+      state.expenses.forEach(function(e, i) {
+        ws.getCell('A' + row).value = e.description;
+        ws.getCell('B' + row).value = e.amount;
+        ws.getCell('B' + row).numFmt = '#,##0';
+        ws.getCell('B' + row).font = { bold: true };
+        ws.getCell('D' + row).value = getBuyerName(e.paidBy);
+        if (i % 2 === 1) xlsxApplyAltRow(ws, row, ['A','B','C','D','E']);
+        row++;
+      });
+      row++;
+
+      // View A
+      xlsxAddSectionHeader(ws, row, (isArabic ? '💰 يُسلَّم لأمين الصندوق' : '💰 Paid to the treasurer'));
+      row++;
+      if (!s.inboundBulk.length && !s.inboundBuyers.length) {
+        ws.mergeCells('A' + row + ':E' + row);
+        ws.getCell('A' + row).value = T.allSettled;
+        ws.getCell('A' + row).alignment = { horizontal: 'center' };
+        row++;
+      } else {
+        s.inboundBulk.forEach(function(item) {
+          ws.getCell('A' + row).value = item.count + ' × ' + factorLabel(item.factor);
+          ws.getCell('B' + row).value = item.perPerson;
+          ws.getCell('B' + row).numFmt = '#,##0';
+          ws.getCell('C' + row).value = '=';
+          ws.getCell('C' + row).alignment = { horizontal: 'center' };
+          ws.getCell('D' + row).value = item.total;
+          ws.getCell('D' + row).numFmt = '#,##0';
+          ws.getCell('D' + row).font = { bold: true };
+          row++;
+        });
+        s.inboundBuyers.forEach(function(b) {
+          ws.getCell('A' + row).value = b.name;
+          ws.getCell('D' + row).value = b.amount;
+          ws.getCell('D' + row).numFmt = '#,##0';
+          ws.getCell('D' + row).font = { bold: true };
+          row++;
+        });
+      }
+      row++;
+
+      // View B
+      xlsxAddSectionHeader(ws, row, isArabic ? '💸 يردّه أمين الصندوق' : '💸 Treasurer pays back');
+      row++;
+      if (!s.outboundBuyers.length) {
+        ws.mergeCells('A' + row + ':E' + row);
+        ws.getCell('A' + row).value = isArabic ? 'لا يوجد من دفع زيادة' : 'No one over-paid';
+        ws.getCell('A' + row).font = { italic: true, color: { argb: 'FF6B7280' } };
+        ws.getCell('A' + row).alignment = { horizontal: 'center' };
+        row++;
+      } else {
+        s.outboundBuyers.forEach(function(b) {
+          ws.getCell('A' + row).value = b.name;
+          ws.getCell('D' + row).value = b.amount;
+          ws.getCell('D' + row).numFmt = '#,##0';
+          ws.getCell('D' + row).font = { bold: true };
+          row++;
+        });
+      }
+
+      return wb.xlsx.writeBuffer();
+    }).then(function(buffer) {
+      var blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      var url = URL.createObjectURL(blob);
+      var link = document.createElement('a');
+      link.href = url;
+      link.download = 'abu-najeeb-trip-' + todayStamp() + '.xlsx';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      if (typeof App !== 'undefined' && App.showToast) App.showToast(T.excelReadyToast);
+    }).catch(function(err) {
+      console.error('Excel export failed:', err);
       alert(T.exportFailed);
     });
   };
 
   // ============ Init ============
   document.addEventListener('DOMContentLoaded', function() {
+    // Cleanup legacy localStorage (saved groups feature removed in v2.1)
+    try { localStorage.removeItem(LEGACY_GROUPS_KEY); } catch (e) {}
+
     loadSession();
     applySessionToUI();
     renderAll();
@@ -1964,7 +2190,6 @@
     });
   });
 
-  // Expose state for debugging
   window.__abuNajeeb = { state: state };
 })();
 </script>

@@ -1,6 +1,6 @@
 # ✅ التقدم الحالي | Progress
 
-> 📅 **آخر نشاط على المشروع:** 2026-05-12 — المرحلة 5.3 (refactor v2 لأبو نجيب → Bulk + Buyers، حذف المرافقين والـ Greedy، عرض ذو وجهَين)
+> 📅 **آخر نشاط على المشروع:** 2026-05-12 — المرحلة 5.4 (أبو نجيب v2.1 → Excel export + ملفات JSON بدل saved groups + treasurer inline في edit panel + UX polish)
 > 🔍 **آخر فحص توافق شامل:** 2026-05-12
 > ⏰ **ملاحظة للوكيل:** قبل أي تطوير، اقرأ [Session Resume Protocol في CLAUDE.md](../CLAUDE.md). يجب التحقق من training cutoff الخاص بك مقابل تاريخ اليوم عند الفجوات > 30 يوماً.
 >
@@ -25,7 +25,7 @@
 | 9 | age-calculator | calculators (other) | ✅ مستقر | حسابات تواريخ — **Standard Kit + bug fixes (2026-05-10)** |
 | 10 | family-tree | everyday | ✅ مستقر | شجرة عائلة SVG |
 | 11 | ai-readiness | generators | ✅ مستقر | 41 تخصص، ~200K سطر JSON |
-| 12 | abu-najeeb | everyday | ✅ مستقر | 🆕 حاسبة تسوية رحلات v2: **Bulk + Buyers** (4 buckets: full/half/quarter anonymous + named buyers)، نموذج أمين الصندوق فقط، عرض ذو وجهَين (inbound/outbound) — refactor v2 (2026-05-12) |
+| 12 | abu-najeeb | everyday | ✅ مستقر | 🆕 حاسبة تسوية رحلات v2.1: Bulk + Buyers + عرض ذو وجهَين + **تصدير Excel (.xlsx) + ملفات JSON (تصدير/استيراد رحلة ومجموعة) + treasurer inline في لوحة تعديل الـ buyer** (2026-05-12) |
 
 ### المحتوى
 

@@ -7,6 +7,25 @@
 
 ## 🏛️ قرارات معمارية
 
+### File I/O بدل localStorage saved groups (2026-05-12 — v2.1)
+- **القرار:** حذف نظام "المجموعات المحفوظة" (localStorage) واستبداله بنظام ملفات JSON.
+  - تصدير/استيراد حالة الرحلة كاملة (`schema: v2`)
+  - تصدير/استيراد قائمة buyers فقط (`schema: v2-group`)
+- **السبب:** localStorage محصور في المتصفح الواحد، الملفات قابلة للمشاركة بين الأجهزة وبين الأشخاص، وتفتح الباب لتعديل يدوي إن لزم. أيضاً يفصل بين "هذه الرحلة" و"قائمة الناس" بشكل أوضح.
+- **التطبيق:** `Blob + URL.createObjectURL + anchor.click()` للتصدير، `FileReader` + `try/catch` على JSON.parse للاستيراد. النمط مأخوذ من `family-tree.html` و `gpa-calculator.html`.
+- **Migration:** في الـ init، `localStorage.removeItem('udda:abu-najeeb:groups')` لتنظيف الـ legacy تلقائياً.
+
+### Treasurer toggle inline في لوحة تعديل الـ buyer (2026-05-12 — v2.1)
+- **القرار:** حذف قسم "Settlement Settings" المنفصل (dropdown) ونقل اختيار الأمين إلى داخل لوحة تعديل الـ buyer (toggle button).
+- **السبب:** القسم المنفصل كان يضيف ضوضاء بصرية. منطقياً، اختيار "هذا الشخص أمين الصندوق" يتعلق بالـ buyer ذاته، فالمكان الطبيعي للخيار هو في عرض/تعديل الـ buyer.
+- **التطبيق:** زر toggle داخل `.an-edit-panel` يعكس الحالة (active إن كان هذا الـ buyer هو الأمين). الـ auto-suggest (أكبر دائن) يبقى فعّالاً عند `state.treasurer === null`.
+
+### Excel export بنفس نمط loan-calculator (2026-05-12 — v2.1)
+- **القرار:** تصدير `.xlsx` متعدد الأقسام: Title → Summary → Anonymous → Buyers → Expenses → View A → View B.
+- **السبب:** Excel أكثر مرونة للمستخدمين الذين يريدون مشاركة النتائج كملف رسمي (محاسب، مدير رحلة).
+- **التطبيق:** `ExcelJS.Workbook` مع RTL للعربية، indigo header `#6366F1`، alternating gray rows، numFmt `#,##0` للمبالغ، `+#,##0;-#,##0;0` للصافي مع لون أخضر/أحمر.
+- **Lazy loading:** نفس النمط مثل html2canvas — `ensureExcelJS()` بـ Promise.
+
 ### Bulk + Buyers + إلغاء المرافقين (2026-05-12 — refactor كبير ثاني)
 - **القرار:** نموذج جديد يقسم المشاركين إلى bulk anonymous (4 buckets: full/half/quarter للـ anonymous + buyers مسمَّون). إلغاء مفهوم "المرافقين" كلياً.
 - **السبب:** النموذج السابق كان يفترض إدخال كل شخص بالاسم. في رحلات 20-30 شخص، هذا غير عملي. الواقع: "نحن 25، منهم 4 اشتروا أغراضاً" — لا داعي لتسمية الـ 21 الباقين.

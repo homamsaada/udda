@@ -1,6 +1,6 @@
 # 📊 abu-najeeb — Progress
 
-> 📅 **آخر نشاط على هذه الأداة:** 2026-05-12 (Refactor v2 — Bulk + Buyers، حذف المرافقين، حذف Greedy)
+> 📅 **آخر نشاط على هذه الأداة:** 2026-05-12 (v2.1 — Excel export + File I/O + treasurer-inline + bulk-row polish)
 > 🔍 **آخر فحص توافق:** 2026-05-12
 > 📜 **التاريخ التفصيلي:** `git log -- src/tools/abu-najeeb.html`
 > 🔍 **فحوصات خاصة بهذه الأداة عند فجوة > 90 يوماً:**
@@ -13,7 +13,49 @@
 
 ---
 
-## ✅ منجَز (Done — 2026-05-12)
+## ✅ منجَز (Done — 2026-05-12، v2.1)
+
+### Excel export + File I/O + UX polish (2026-05-12، نفس اليوم بعد v2)
+
+بعد نشر v2، استعرض المستخدم النتيجة وطلب تعديلات وظيفية وشكلية:
+
+- ✅ **تصدير Excel (.xlsx) بتنسيق غني:**
+  - sheet واحد متعدد الأقسام (Title → Summary → Anonymous → Buyers → Expenses → View A → View B)
+  - RTL للعربية، indigo header `#6366F1`، alternating gray، numFmt `#,##0` و `+#,##0;-#,##0;0` للصافي مع ألوان
+  - lazy loading لـ `exceljs.min.js` (~750KB) عبر `ensureExcelJS()` Promise
+- ✅ **استبدال "المجموعات المحفوظة" بـ ملفات JSON:**
+  - `💾 تصدير الرحلة` / `📂 استيراد رحلة` (schema `v2`، الحالة الكاملة)
+  - `👥 تصدير المجموعة` / `📥 استيراد مجموعة` (schema `v2-group`، buyers فقط)
+  - استخدام `Blob + URL.createObjectURL + anchor.click()` للتصدير، `FileReader + try/catch` للاستيراد
+  - استبدال نظام localStorage بالكامل، مع تنظيف legacy data تلقائياً في init
+- ✅ **نقل اختيار أمين الصندوق إلى داخل لوحة تعديل الـ buyer:**
+  - حذف القسم المنفصل `.an-settlement-settings` و `<select>`
+  - toggle button داخل `.an-edit-panel`، حالات active/inactive
+  - hint ديناميكي حسب الحالة (auto / current / replacing)
+  - الـ auto-suggest (أكبر دائن) يبقى فعّالاً عند `state.treasurer === null`
+- ✅ **تخطيط bulk row جديد:**
+  - من `grid: repeat(3, 1fr) gap:12px` (1/3 لكل input، عريض) إلى `flex: 90px inputs + 12px gap` (متجاور طبيعي)
+- ✅ **حذف "(كامل)/(نصف)/(ربع)" بجانب الاسم في View A:**
+  - debtor rows + copy text — الاسم وحده، الشارة `½`/`¼` تبقى على chip فقط للتمييز البصري
+- ✅ **حذف زر "جرّب مثالاً" (seedDemo) من الـ toolbar:**
+  - والدالة `anSeedDemo` بالكامل (المستخدم لم يعد بحاجة للديمو بعد فهم النموذج)
+- ✅ **i18n:** أُضيفت 15+ مفتاحاً (file ops + Excel + treasurer toggle)، حُذفت 9 مفاتيح (saved groups + tryExample)
+
+### التحقّق (verification — 2026-05-12 v2.1)
+
+- 🧪 `npm run build` نظيف
+- 🧪 الـ DOM لا يحوي `.an-saved-groups-panel` ولا `.an-settlement-settings` ولا زر seedDemo
+- 🧪 Toolbar: 8 أزرار (نسخ، صورة، Excel، تصدير رحلة، استيراد رحلة، تصدير مجموعة، استيراد مجموعة، إعادة تعيين)
+- 🧪 hidden file inputs `an-import-trip-input` و `an-import-group-input` موجودان
+- 🧪 legacy localStorage يُحذف تلقائياً في init (`localStorage.getItem` يعود null)
+- 🧪 Treasurer toggle: تفعيل/إلغاء يعمل ⭐ ينتقل على chip فوراً
+- 🧪 JSON export: ينتج schema صحيح مع `paidByName` (لا IDs)
+- 🧪 JSON import (full trip): يرجع total + bulk + currency + buyers + expenses + treasurer بشكل صحيح
+- 🧪 JSON import (group only): يستبدل buyers ويصفّر trip config
+- 🧪 invalid file: alert + state لا يتغيّر
+- 🧪 Excel export: blob URL مُولَّد، download name `abu-najeeb-trip-YYYY-MM-DD.xlsx`
+- 🧪 bulk row: flex 90px inputs (متجاور)، لا grid عريض
+- 🧪 View A: لا يحوي "(كامل)/(نصف)/(ربع)" بعد الأسماء
 
 ### Refactor v2 إلى نموذج Bulk + Buyers (2026-05-12 — refactor كبير ثاني)
 

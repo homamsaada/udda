@@ -80,9 +80,11 @@ Trip-only موحَّد بنموذج Treasurer + بديل Greedy. لكن النم
 - أكبر دائن (buyer ذو أكبر `net` موجب)
 - الفكرة: غالباً هو الذي تكفّل بأكبر النفقات، فمن المنطقي أن يُكمل دور التجميع
 
-**يدوي:**
-- المستخدم يُغيِّر من dropdown
-- مفيد لو شخص آخر متطوّع لإدارة الصندوق (مدير الرحلة، الأكبر سناً، إلخ)
+**يدوي (داخل لوحة تعديل الـ buyer، v2.1+):**
+- المستخدم يضغط على chip أيّ buyer → تُفتح لوحة التعديل
+- داخلها toggle "⭐ اجعله أمين الصندوق"
+- إذا فعّله: `state.treasurer = buyer.id` (يطغى على الاقتراح التلقائي)
+- إذا ألغاه: `state.treasurer = null` → يعود الاقتراح التلقائي
 
 **قيد:** الأمين يجب أن يكون buyer (مسمَّى). لا يمكن لأحد anonymous أن يكون أميناً.
 
@@ -148,11 +150,7 @@ Trip-only موحَّد بنموذج Treasurer + بديل Greedy. لكن النم
 
 ## 7. الميزات
 
-### 7.1 جرّب مثالاً (`seedDemo`)
-رحلة عملية: 12 مشارك، 4 buyers (أحمد، خالد، سارة، عمر) كلهم بنصاب كامل، و 8 anonymous بنصاب كامل، 4 مصاريف.
-مُصمَّمة لتختبر **حالة مختلطة** (3 creditors + 1 debtor): خالد كأمين، عمر مدين، الباقي دائنون.
-
-### 7.2 نسخ النتيجة (`copyResult`)
+### 7.1 نسخ النتيجة (`copyResult`)
 نصّ منسَّق لكلا الوجهين:
 ```
 💰 أبو نجيب — تسوية الرحلة
@@ -164,21 +162,56 @@ Trip-only موحَّد بنموذج Treasurer + بديل Greedy. لكن النم
 
 💰 يُسلَّم لـ خالد:
 - 8 شخص بنصاب كامل × 224 ر.س = 1792 ر.س
-- عمر (كامل): 166 ر.س
+- عمر: 166 ر.س
 
 💸 خالد يردّ:
 - أحمد: 256 ر.س
 - سارة: 126 ر.س
 ```
 
-### 7.3 sessionStorage + Saved Groups
+### 7.2 sessionStorage فقط (لا saved groups)
 - `udda:abu-najeeb:session` — auto-save الحالة الكاملة (schema=`v2`)
-- `udda:abu-najeeb:groups` — مجموعات أشخاص محفوظة بالاسم
-  - **يحفظ buyers فقط** (اسم + shareFactor)
-  - **لا يحفظ trip config** (total + bulk + expenses) — كل رحلة مختلفة
-  - عند التحميل: يُستبدَل `state.buyers` بالمحفوظ، ويُعاد ضبط `total = buyers.length` و `bulk = {0,0,0}`، يبدأ المستخدم رحلة جديدة
+- **لا localStorage** — نظام "المجموعات المحفوظة" حُذف في v2.1 لصالح ملفات
+- في الـ init يُحذَف `udda:abu-najeeb:groups` تلقائياً (cleanup legacy data)
 
-### 7.4 تصدير صورة (html2canvas vendor lazy)
+### 7.3 تصدير/استيراد ملفات JSON
+- **تصدير الرحلة:** زر `💾 تصدير الرحلة` → ملف `abu-najeeb-trip-YYYY-MM-DD.json` يحوي الحالة الكاملة (total + bulk + buyers + expenses + treasurer)
+- **استيراد رحلة:** زر `📂 استيراد رحلة` → file picker → استبدال الحالة الكاملة
+- **تصدير مجموعة buyers فقط:** زر `👥 تصدير المجموعة` → يطلب اسماً → ملف `abu-najeeb-group-{name}.json`
+- **استيراد مجموعة:** زر `📥 استيراد مجموعة` → يستبدل buyers ويصفّر trip config
+
+**Schema الحالة الكاملة (`v2`):**
+```json
+{
+  "schema": "v2", "tool": "abu-najeeb",
+  "exportedAt": "ISO date",
+  "currency": "...", "total": N, "bulk": {full, half, quarter},
+  "treasurerName": "..." | null,
+  "buyers": [{name, shareFactor}],
+  "expenses": [{description, amount, paidByName}]
+}
+```
+
+**Schema المجموعة (`v2-group`):**
+```json
+{
+  "schema": "v2-group", "tool": "abu-najeeb",
+  "exportedAt": "ISO date", "name": "...",
+  "buyers": [{name, shareFactor}]
+}
+```
+
+عند الاستيراد: try/catch، تحقّق من `tool === 'abu-najeeb'` + schema، توليد IDs جديدة. إن فشل: alert + لا تغيير.
+
+### 7.4 تصدير Excel (.xlsx، ExcelJS vendor lazy)
+- ~750KB، يُحمَّل عند الطلب فقط (`ensureExcelJS` Promise pattern)
+- sheet واحد بـ RTL للعربية
+- أقسام: Title → Summary → Anonymous Participants → Named Buyers → Expenses → View A → View B
+- ألوان: header indigo `#6366F1` (white text)، sub-header indigo فاتح `#818CF8`، alternating gray `#F9FAFB`
+- numFmt: `#,##0` للمبالغ، `+#,##0;-#,##0;0` لصافي الـ buyer (مع لون: أخضر للموجب، أحمر للسالب)
+- اسم الملف: `abu-najeeb-trip-YYYY-MM-DD.xlsx`
+
+### 7.5 تصدير صورة (html2canvas vendor lazy)
 - ~195KB، يُحمَّل عند الطلب فقط
 - يلتقط `.calc-result` كاملة (stats + view A + view B)
 
@@ -206,7 +239,7 @@ Trip-only موحَّد بنموذج Treasurer + بديل Greedy. لكن النم
 
 ### الملف
 ```
-src/tools/abu-najeeb.html (~1,500 سطر)
+src/tools/abu-najeeb.html (~1,700 سطر بعد v2.1)
 ```
 
 ### Wrapper class
@@ -223,7 +256,7 @@ src/tools/abu-najeeb.html (~1,500 سطر)
 .calc-result.show              ← حاوية النتيجة
 ```
 
-⚠️ **لا تبويبات، لا Greedy، لا share pills للمصاريف.**
+⚠️ **لا تبويبات، لا Greedy، لا share pills للمصاريف، لا seedDemo، لا saved groups (في v2.1).**
 
 ### State (مركزي)
 ```js
@@ -242,22 +275,26 @@ state = {
 
 ### Persistence
 - `sessionStorage["udda:abu-najeeb:session"]` (schema=`v2`)
-- `localStorage["udda:abu-najeeb:groups"]` (buyers فقط)
+- **لا localStorage** — في v2.1 حُلَّ نظام saved groups مكانه ملفات JSON
+
+### Vendor libs (lazy)
+- `assets/vendor/html2canvas.min.js` للتصدير صورة (~195KB، lazy)
+- `assets/vendor/exceljs.min.js` لتصدير Excel (~750KB، lazy)
 
 ### Reactivity
 كل تعديل state يستدعي `renderAll()` → `renderTripConfig + renderBuyersList + renderExpenses + renderResult + saveSession`.
 
 ---
 
-## 10. v2.1 backlog
+## 10. v2.2 backlog
 
 - مرافقون بنسب مخصّصة (custom %) — للحالات التي تحتاج 30%/40%/إلخ
-- حفظ trip config كامل في saved groups (total + bulk + buyers + currency)
 - 3 مقالات مدونة (تقسيم رحلة، أمين الصندوق، نموذج bulk للمجموعات الكبيرة)
-- استيراد قائمة أشخاص من نص (paste)
+- استيراد قائمة أشخاص من نص (paste — سطر لكل اسم)
 - Web Share API على الموبايل
 - تصدير CSV للتسوية
 - تعدّد عملات (USD + SAR في نفس الرحلة)
+- استيراد مصاريف من Excel/CSV
 
 ---
 
